@@ -1,0 +1,169 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; новую волну финансового кризиса
+; a new wave of financial crisis 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name wave1) (=> (wave-nn e1 x1 :0.9) (волна-nn e2 x1)) )
+
+(B (name wave2) (=> (^ (sudden-adv e3 e4 :0.2) (occurrence-nn e4 x3 :0.1) (of-in e5 x3 x2 :0.2) (increase-nn e6 x4 :0.2) (in-in e7 x4 x2 :0.2)) (^ (wave-nn e1 x1) (of-in e2 x1 x2))) )
+
+(O (name waveofcrisis) (^ (специалист-nn e1 x1) (прогнозировать-vb e2 x1 x2 u1) (новая-adj e3 x2) (волна-nn e4 x2) (финансовый-nn e5 x3) (кризис-nn e6 x3) (of-in e7 x2 x3)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; средний класс возрос и окреп
+; the middle class has grown and strengthened 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name grow1) (=> (grow-vb e1 x1 u1 u2 :0.9) (возрасти-vb e2 x1 u1 u2)))
+
+(B (name grow2) (=> (^ (become-vb e2 x1 e3 u3  :0.45) (large-adj e3 x1  :0.45)) (grow-vb e1 x1 u1 u2) ))
+
+(B (name strengthen1) (=> (strengthen-vb e1 x1 u1 u2 :0.9) (окрепнуть-vb e2 x1 u1 u2)))
+
+(B (name strengthen2) (=> (^ (gain-vb e2 x1 x2 u3 :0.45) (strength-nn e3 x2 :0.45)) (strengthen-vb e1 x1 u1 u2) ))
+
+(B (name strength) (=> (^ (pos e3 :0.3) (cause e3 x1 e4 :0.3) (goal e4 x1 :0.3))(strength-nn e1 x0)))
+
+(O (name middleclassgrown) (^ (средний-adj e1 x1) (класс-nn e2 x1) (возрасти-vb e3 x1 u1 u2) (окрепнуть-vb e4 x2 u3 u4)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; отток капитала из России
+; the outflow of capital from Russia
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+
+(B (name outflow1) (=> (outflow-nn e2 x1 :0.9) (отток-nn e1 x1) ))
+
+(B (name outflow2) (=> (^ (discharge-nn e2 x1 :0.18) (of-in e3 x1 x2 :0.18) (fluid-nn e4 x2 :0.18) (from-in e5 x1 x3 :0.18) (container-nn e6 x3 :0.18)) (outflow-nn e1 x1)))
+
+(B (name from) (=> (from-in e1 x1 x2) (из-in e2 x1 x2)))
+
+(O (name outflowofcapital) (^ (отток-nn e1 x1) (капитал-nn e2 x2) (of-in e3 x1 x2) (из-in e4 x1 x3) (россия-nn e5 x3)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; мы залезаем в кошельки наших граждан
+; we get into the wallets of our citizens
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name wallet1) (=> (wallet-nn e2 x1 :0.9)(кошелек-nn e1 x1)))
+
+(B (name wallet2) (=> (^ (container-nn e2 x1 :0.9))(wallet-nn e1 x1)))
+
+(B (name wallet3) (=> (money-nn e4 x1 :0.1) (^ (content-nn e1 x1) (of-in e2 x1 x2) (wallet-nn e3 x2))))
+
+(B (name getinto1) (=> (^ (get-vb e3 x1 u1 u2 :0.45) (into-in e4 e3 x2 :0.45)) (^ (залезать-vb e1 x1 u1 u2) (в-in e2 e1 x2)) ))
+
+(B (name getinto2) (=> (^ (goal e4 x1 :0.1)(get-vb e4 x1 x3 u3 :0.1)(content-nn e5 x3 :0.1) (of-in e6 x3 x2 :0.1)) (^ (get-vb e1 x1 u1 u2)(into-in e2 e1 x2) (container-nn e3 x2)) ))
+
+(B (name container) (=> (^ (content-nn e3 x3 :0.45) (of-in e4 x3 x2 :0.45))(^ (container-nn e1 x1) (of-in e2 x1 x2))))
+
+;(B (name we) (=> (per e1 x :0.4)(мы e2 x)))
+
+(B (_|_ (мы e1 x) (кошелек-nn e2 x)) )
+
+(B (_|_ (кошелек-nn e1 x) (гражданин-nn e2 x)) )
+
+(O (name walletsofcitizens) (^ (мы e1 x1) (залезать-vb e2 x1 u1 u2) (в-in e3 e2 x2) (кошелек-nn e4 x2) (мы e5 x3) (гражданин-nn e6 x4) (of-in e7 x4 x3) (of-in e8 x2 x4) (!= x3 x4) (!= x2 x4)))
+
+;;;;;;;;;;;;;;;;;;;;;
+; бороться за власть
+; fight for power
+;;;;;;;;;;;;;;;;;;;;;
+
+(B (name fight1) (=> (^ (fight-vb e3 x1 u1 u2 :0.45)(for-in e4 e3 x2 :0.45))(^ (бороться-vb e1 x1 u1 u2)(за-in e2 e1 x2))))
+
+(B (name fight2) (=> (^ (goal e3 x1 :0.45) (get-vb e3 x1 x2 u3 :0.45))(^ (fight-vb e1 x1 u1 u2)(for-in e2 e1 x2))))
+
+(O (name fightforpower) (^ (бороться-vb e1 u1 u2 u3) (за-in e2 e1 x1) (власть-nn e3 x1)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; заниматься серьезной, не раздутой политикой 
+; to engage in serious, not bloated policy
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name politics1) (=> (politics-nn e2 x1 :1)(политика-nn e1 x1)))
+
+(B (name politics2) (=> (^ (member e2 x1 :0.24) (act e2 x2 u1 u2 :0.24) (goal e3 x2 :0.24) (cause e3 x2 e4 :0.24) (governance e4 x3 :0.24))(politics-nn e1 x1)))
+
+(B (name inflated1) (=> (inflated-adj e2 x1 :1)(раздутый-adj e1 x1)))
+
+(B (name inflated2) (=> (^ (perceive-vb e2 x2 x1 u1 :0.3) (big-adj e3 x1 :0.3) (not e4 e5 :0.3) (big-adj e5 x1 :0.3))(inflated-adj e1 x1)))
+
+(B (name serious1) (=> (serious-adj e2 x1 :1)(серьезный-adj e1 x1)))
+
+(B (name serious2) (=> (important-adj e2 x1 :1.2)(serious-adj e1 x1)))
+
+(B (name big) (=> (important-adj e2 x1 :1.2)(big-adj e1 x1)))
+
+(B (name important) (=> (^ (relation e2 x1 e3 :0.6) (goal e3 x2 :0.6))(important-adj e1 x1)))
+
+(B (name cause) (=> (relation e3 x1 e2 :1.2)(cause e1 x1 e2)))
+
+(O (name inflatedpolitics) (^ (заниматься-vb e1 u1 x1 u2) (серьезный-adj e2 x1) (not e3 e4) (раздутый-adj e4 x1) (политика-nn e5 x1)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Политическая реформа не только назрела -- она "перезрела" 
+; Political reform isnt just overdue - its "overripen"
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;(B (name due1) (=> (^ (trans-action e0 x3 x1 :0.5) (due e0 t :0.5))(назреть-vb e1 x1 u1 u2)))
+
+(B (name due1) (=> (ripe-vb e0 x1 u1 u2 :1.2)(назреть-vb e1 x1 u1 u2)))
+
+(B (name due2) (=> (^ (atTime e2 e0 t1 :0.8) (obligate e3 u1 u2 e0 :0.1))(due e0 t1)))
+
+(B (name ripe) (=> (^ (pick-vb e2 u1 x1 u2 :0.6) (due e2 t1 :0.6))(ripe-vb e1 x1 u2 u3)))
+
+;(B (name pick) (=> (trans-action e1 x1 x2 :1.2)(pick-vb e2 x1 x2 u)))
+
+(B (name overripe1) (=> (overripe-vb e2 x1 u1 u2 :1)(перезреть-vb e1 x1 u1 u2)))
+
+(B (name overripe2) (=> (^ (atTime e4 e1 t2 :0.2) (ripe-vb e2 x1 u3 u4 :0.3) (atTime e3 e2 t1 :0.4)(before t1 t2 :0.3))(overripe-vb e1 x1 u1 u2)))
+
+(B (name before) (=> (!= t1 t2 :-1)(before t1 t2)))
+
+(O (name overripereform) (^ (политический-adj e1 x1) (реформа-nn e2 x1) (not e3 e4) (только-rb e4 e5) (назреть-vb e5 x1 u1 u2) (она e6 x2) (перезреть-vb e6 x2 u3 u4)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; У нас украли наши голоса 
+; Our votes were stolen
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name of) (=> (have e2 x2 x1 u1 :1)(of-in e1 x1 x2)))
+
+(B (name steal1) (=> (^ (steal-vb e3 x1 x2 u2 :0.45) (from-in e4 e3 x3 :0.45))(^ (украсть-vb e1 x1 x2 u1) (у-in e2 e1 x3) )))
+
+(B (name steal2) (=> (^ (cause e3 x1 e4 :0.4) (not e4 e5 :0.4) (have e5 x3 x2 u2 :0.4))(^ (steal-vb e1 x1 x2 u1) (from-in e2 e1 x3))))
+
+(B (name have-vote1) (=> (^ (vote-vb e3 x1 u2 u3 :0.45) (for-in e4 e3 x3 :0.45))(^ (have e1 x1 x2 u1) (vote-nn e2 x2))))
+
+(B (name have-vote2) (=> (^ (vote-vb e3 x3 u2 u3 :0.45) (for-in e4 e3 x1 :0.45))(^ (have e1 x1 x2 u1) (vote-nn e2 x2))))
+
+(B (name vote) (=> (vote-nn e2 x1 :0.9)(голос-nn e1 x1)))
+
+(O (name stolenvotes) (^ (у-in e1 e3 x1) (мы e2 x1) (украсть-vb e3 u1 x3 u3) (мы e4 x2) (голос-nn e5 x3) (of-in e6 x3 x2)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; коррупция душит Россию 
+; corruption is suffocating Russia 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name suffocate1) (=> (suffocate-vb e3 x1 x2 u1 :0.9)(душить-vb e1 x1 x2 u1)))
+
+(B (name suffocate2) (=> (^ (cause e2 x1 e3 :0.22) (not e3 e4 :0.22) (increase-vb e4 u2 e5 u3 :0.22) (function-vb e5 x2 u4 u5 :0.22))(suffocate-vb e1 x1 x2 u1)))
+
+(O (name corruption) (^ (коррупция-nn e1 x1) (душить-vb e2 x1 x2 u1) (россия-nn e3 x2)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; напряженность на рынке труда
+; the tensions in the labor market 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name labormarket1) (=> (^ (labor-nn e4 x2 :0.3) (market-nn e5 x1 :0.3) (nn e6 x2 x1 :0.3))(^ (рынок-nn e1 x1 :0.45) (труд-nn e2 x2) (of-in e3 x1 x2))))
+
+(B (name labormarket2) (=> (^ (function e3 e4 x3 :0.45) (exchange-vb e4 x3 x2 u3 :0.45))(^ (market-nn e1 x1) (nn e2 x2 x1))))
+
+(B (name tension1) (=> (^ (tension-nn e3 x1 :0.45) (in-in e4 x1 x2 :0.45))(^ (напряженность-nn e1 x1) (на-in e2 x1 x2))))
+
+(B (name tension2) (=> (^ (cause e3 x3 e4 :0.3) (not e4 e5 :0.3) (function e5 e6 u1 :0.3))(^ (tension-nn e1 x1) (in-in e2 x1 x2))))
+
+(O (name tension) (^ (напряженность-nn e2 x1) (на-in e3 x1 x2) (рынок-nn e4 x2) (труд-nn e5 x3) (of-in e6 x2 x3)))

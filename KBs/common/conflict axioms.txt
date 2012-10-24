@@ -1,0 +1,102 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Conflict ontology
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; A conflict has two adversaries. 
+(B (name adversary1) (=> (conflict e :1.2) (adversary x y e)))
+
+; The adversary relation is symmetric.  
+(B (name adversary2) (=> (adversary x y :1.2)(adversary y x)) )
+
+; In conflicts, adversaries attack each other. 
+(B (name adversary3) (=> (^ (conflict e :0.6)(adversary x y e :0.6))(^ (attack e1 x y)(attack e2 y x))))
+
+; Agents of attacks use weapons for the attack. 
+(B (name weapon) (=> (attack e1 x y :1.2) (^ (use x w e1)(weapon w))) )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Conflict words English
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; A conflict is a fight. 
+(B (name fight) (=> (conflict e :1.2) (fight e)) )
+
+; One kind of conflict is a war. 
+(B (name war) (=> (^ (conflict e :0.6)(etc3 e :0.6)) (war e))) 
+
+; Conflict is combat. 
+(B (name combat) (=> (conflict e :1.2) (combat e)) )
+
+; One way of attacking is a barrage.  
+(B (name baragge) (=> (^ (attack e1 x y :0.6)(etc1 e1 x y :0.6))(baragge e1 x y)))
+
+; To attack is to target. 
+(B (name target) (=> (attack e1 x y :1.2) (target e1 x y)) )
+
+; One way of attacking a target using a weapon is aiming the weapon at the target. 
+(B (name aim1) (=> (^ (attack e1 x y :0.3)(use x w e1 :0.3)(weapon w :0.3)(etc2 e1 x y w :0.3)) (aim e1 x w y)) )
+
+; To attack a target is to aim an attack at a target.
+(B (name aim2) (=> (attack e1 x y  :1.2) (aim e3 x e1 y)))
+
+; To aim a weapon at a target is to train the weapon on the target. 
+(B (name train) (=> (aim e1 x w y :1.2) (train e1 x w y))) 
+
+; One kind of gun is a rifle.
+(B (name rifle) (=> (^ (gun w :0.6)(etc4 w :0.6)) (rifle w))) 
+
+; One kind of weapon is a gun.
+(B (name gun) (=> (^ (weapon w :0.6)(etc5 w :0.6)) (gun w)))
+
+; A gun has a sight.
+(B (name sight) (=> (gun w) (^ (sight u :1.2)(part u w))))
+
+; To aim a gun is to aim the sight of the gun. (The function of sights.)
+(B (name gun) (=> (^ (gun w :0.3)(sight u :0.3)(part u w :0.3)(aim e1 x w y :0.3))(aim e1 x u y)))
+
+; One type of sight of a gun is crosshairs.
+(B (name crosshairs) (=> (^ (gun w :0.4)(sight u :0.4)(part u w :0.4)) (crosshairs u))) 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Conflict words Spanish
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Conflict is combate.
+(B (name combate) (=> (conflict e :1.2) (combate e)))
+
+; Conflict is lucha.
+(B (name lucha) (=> (conflict e :1.2) (lucha e)))
+
+; If y is the adversary of x, then y is the enemigo of x.
+(B (name enemigo) (=> (adversary x y e :1.2) (enemigo y x)))
+
+; One way of attacking is to abatir.
+(B (name abatir) (=> ((attack e1 x y :0.6)(etc1 e1 x y :0.6)) (abatir e1 x y))) 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Conflict words Russian
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Conflict is конфликт
+(B (name конфликт) (=> (conflict-nn e1 x :1.2)(конфликт-nn e2 x)))
+
+; Fight is борьба
+(B (name борьба) (=> (fight-nn e1 x :1.2)(борьба-nn e2 x)))
+
+; Fight is сражение
+(B (name сражение) (=> (fight-nn e1 x :1.2)(сражение-nn e2 x)))
+
+; Fight is битва
+(B (name битва) (=> (fight-nn e1 x :1.2)(битва-nn e2 x)))
+
+; Attack is атака
+(B (name атака) (=> (attack-nn e1 x :1.2)(атака-nn e2 x)))
+
+; To attack is атаковать
+(B (name атаковать) (=> (attack-vb e1 x1 x2 u :1.2)(атаковать-vb e2 x1 x2 u)))
+
+; If y is the adversary of x, then y is the враг of x.
+(B (name враг) (=> (adversary x y e :1.2) (враг-nn e2 x) (of-in e3 x y)))
+
+; If y is the adversary of x, then y is the противник of x.
+(B (name противник) (=> (adversary x y e :1.2) (противник-nn e2 x) (of-in e3 x y)))

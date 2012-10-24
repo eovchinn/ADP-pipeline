@@ -1,0 +1,1661 @@
+have-vb'(v,x1,y1,y2) & interview-nn'(n1,y1) & with-in'(p,y1,x2) & city-nn'(n2,x2)	12.270000
+equal'(eq,x1,y1) & pinnacle-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	61.000000
+equal'(eq,x1,y1) & gift-nn'(n1,y1) & from-in'(p,y1,x2) & company-nn'(n2,x2)	63.970000
+equal'(eq,x1,y1) & chiropractor-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & national-adj'(a,y1) & holiday-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	18.950000
+equal'(eq,x1,y1) & home-nn'(n1,y1) & of-in'(p1,y1,y4) & university-nn'(n2,y4) & of-in'(p2,y4,x2) & state-nn'(n3,x2)	0.000000
+have-vb'(v,x1,y1,y2) & friend-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & second-adj'(a,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	85.950000
+equal'(eq,x1,y1) & first-adj'(a,y1) & municipality-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & bread-nn'(n1,y3) & basket-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & continent-nn'(n3,x2)	33.270000
+equal'(eq,x1,y1) & home-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	396.730000
+equal'(eq,x1,y1) & law-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & student-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & staple-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	24.700000
+equal'(eq,x1,y1) & cultural-adj'(a,y1) & heart-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	28.700000
+equal'(eq,x1,y1) & form-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	22.790000
+equal'(eq,x1,y1) & first-adj'(a,y1) & country-nn'(n1,y1) & outside-in'(p,y1,x2) & continent-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & father-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	56.310000
+equal'(eq,x1,y1) & way-nn'(n1,y1) & that-in'(p,y1,x2) & company-nn'(n2,x2)	57.150000
+equal'(eq,x1,y1) & prisoner-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & heart-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	187.720000
+equal'(eq,x1,y1) & big-adj'(a,y1) & hit-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & custom-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & name-nn'(n1,y1) & in-in'(p,y1,x2) & language-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & member-nn'(n1,y1) & from-in'(p,y1,x2) & year-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & owner-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	318.630000
+equal'(eq,x1,y1) & news-nn'(n1,y1) & that-in'(p,y1,x2) & country-nn'(n2,x2)	11.210000
+have-vb'(v,x1,y1,y2) & story-nn'(n1,y1) & about-in'(p,y1,x2) & film-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & only-adj'(a,y1) & area-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & period-nn'(n1,y1) & from-in'(p,y1,x2) & month-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & facility-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & director-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	136.780000
+have-vb'(v,x1,y1,y2) & little-adj'(a,y1) & bit-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & month-nn'(n1,y1) & of-in'(p,y1,x2) & month-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & first-adj'(a,y1) & in-in'(p,y1,x2) & country-nn'(n,x2)	24.190000
+equal'(eq,x1,y1) & current-adj'(a,y1) & president-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	102.710000
+equal'(eq,x1,y1) & face-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	36.880000
+equal'(eq,x1,y1) & band-nn'(n1,y1) & from-in'(p,y1,x2) & city-nn'(n2,x2)	239.930000
+equal'(eq,x1,y1) & native-adj'(a,y1) & speaker-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a,y1) & Sunday-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	19.790000
+equal'(eq,x1,y1) & first-adj'(a,y1) & player-nn'(n1,y1) & since-in'(p,y1,x2) & year-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & partner-nn'(n1,y1) & at-in'(p,y1,x2) & city-nn'(n2,x2)	102.590000
+equal'(eq,x1,y1) & currency-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	37.740000
+have-vb'(v,x1,y1,y2) & office-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	50.840000
+equal'(eq,x1,y1) & only-adj'(a,y1) & bank-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	9.210000
+have-vb'(v,x1,y1,y2) & rainy-adj'(a,y1) & season-nn'(n1,y1) & from-in'(p,y1,x2) & month-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & good-adj'(a,y1) & thing-nn'(n1,y1) & for-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & part-nn'(n1,y1) & of-in'(p1,y1,y4) & life-nn'(n2,y4) & in-in'(p2,y4,x2) & state-nn'(n3,x2)	0.000000
+have-vb'(v,x1,y1,y2) & major-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & country-nn'(n2,x2)	30.990000
+have-vb'(v,x1,y1,y2) & basic-adj'(a,y1) & understanding-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	8.920000
+have-vb'(v,x1,y1,y2) & positive-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & product-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	24.700000
+equal'(eq,x1,y1) & correct-adj'(a,y1) & spelling-nn'(n1,y1) & in-in'(p,y1,x2) & language-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & center-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+have-vb'(v,x1,y1,y2) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & continent-nn'(n2,x2)	6.640000
+equal'(eq,x1,y1) & opposite-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	39.090000
+equal'(eq,x1,y1) & state-nn'(n1,y3) & bird-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & state-nn'(n3,x2)	42.800000
+equal'(eq,x1,y1) & disaster-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	15.540000
+have-vb'(v,x1,y1,y2) & lot-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	39.580000
+equal'(eq,x1,y1) & first-adj'(a,y1) & building-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	13.860000
+have-vb'(v,x1,y1,y2) & boyfriend-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & little-adj'(a,y1) & over-in'(p,y1,x2) & percent-nn'(n,x2)	36.040000
+equal'(eq,x1,y1) & mother-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	102.590000
+equal'(eq,x1,y1) & federal-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & public-adj'(a,y1) & holiday-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	10.420000
+equal'(eq,x1,y1) & size-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	27.730000
+have-vb'(v,x1,y1,y2) & bit-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & last-adj'(a,y1) & country-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	58.220000
+equal'(eq,x1,y1) & huge-adj'(a,y1) & success-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	22.190000
+have-vb'(v,x1,y1,y2) & joint-adj'(a,y1) & venture-nn'(n1,y1) & with-in'(p,y1,x2) & company-nn'(n2,x2)	26.430000
+have-vb'(v,x1,y1,y2) & solid-nn'(n1,y3) & content-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	22.100000
+equal'(eq,x1,y1) & city-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	196.740000
+equal'(eq,x1,y1) & big-adj'(a,y1) & deal-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & solution-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	13.860000
+have-vb'(v,x1,y1,y2) & role-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & rage-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & airline-nn'(n1,y1) & base-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & city-nn'(n2,x2)	152.000000
+equal'(eq,x1,y1) & heart-nn'(n1,y1) & of-in'(p,y1,x2) & artwork-nn'(n2,x2)	119.630000
+equal'(eq,x1,y1) & only-adj'(a,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	143.700000
+equal'(eq,x1,y1) & gift-nn'(n1,y1) & from-in'(p,y1,x2) & artwork-nn'(n2,x2)	8.720000
+equal'(eq,x1,y1) & case-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	20.120000
+equal'(eq,x1,y1) & integral-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	353.840000
+equal'(eq,x1,y1) & translation-nn'(n1,y1) & from-in'(p,y1,x2) & language-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & business-nn'(n1,y3) & center-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & country-nn'(n3,x2)	27.730000
+equal'(eq,x1,y1) & first-adj'(a,y1) & operator-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	97.040000
+equal'(eq,x1,y1) & perfect-adj'(a,y1) & gift-nn'(n1,y1) & for-in'(p,y1,x2) & gender-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & vision-nn'(n1,y1) & in-in'(p,y1,x2) & color-nn'(n2,x2)	11.020000
+have-vb'(v,x1,y1,y2) & facility-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & son-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	1314.600000
+equal'(eq,x1,y1) & majority-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	149.770000
+equal'(eq,x1,y1) & company-nn'(n1,y1) & register-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & country-nn'(n2,x2)	874.090000
+equal'(eq,x1,y1) & pride-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & opposite-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	37.170000
+equal'(eq,x1,y1) & first-adj'(a,y1) & hotel-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	169.330000
+have-vb'(v,x1,y1,y2) & company-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.320000
+have-vb'(v,x1,y1,y2) & agent-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	38.820000
+have-vb'(v,x1,y1,y2) & maximum-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	8.790000
+equal'(eq,x1,y1) & current-adj'(a,y1) & resident-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & website-nn'(n1,y1) & in-in'(p,y1,x2) & language-nn'(n2,x2)	36.040000
+have-vb'(v,x1,y1,y2) & sensitivity-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	72.090000
+equal'(eq,x1,y1) & grow-vb'(v1,y1,u1,u2) & problem-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & problem-nn'(n1,y1) & with-in'(p,y1,x2) & person-nn'(n2,x2)	66.540000
+equal'(eq,x1,y1) & perfect-adj'(a,y1) & accessory-nn'(n1,y1) & for-in'(p,y1,x2) & gender-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & first-adj'(a,y1) & woman-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	34.160000
+equal'(eq,x1,y1) & only-adj'(a,y1) & university-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	188.320000
+equal'(eq,x1,y1) & head-nn'(n1,y3) & coach-nn'(n2,y1) & nn'(e,y1,y3) & at-in'(p,y1,x2) & state-nn'(n3,x2)	47.130000
+equal'(eq,x1,y1) & only-adj'(a,y1) & in-in'(p,y1,x2) & state-nn'(n,x2)	38.820000
+equal'(eq,x1,y1) & airline-nn'(n1,y1) & base-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & country-nn'(n2,x2)	72.090000
+have-vb'(v,x1,y1,y2) & facility-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	13.280000
+equal'(eq,x1,y1) & same-adj'(a,y1) & as-in'(p,y1,x2) & color-nn'(n,x2)	19.410000
+equal'(eq,x1,y1) & minority-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	7.600000
+equal'(eq,x1,y1) & only-adj'(a,y1) & jurisdiction-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & name-nn'(n1,y1) & of-in'(p,y1,x2) & planet-nn'(n2,x2)	22.180000
+have-vb'(v,x1,y1,y2) & article-nn'(n1,y1) & about-in'(p,y1,x2) & person-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & kind-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	30.500000
+have-vb'(v,x1,y1,y2) & place-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & first-adj'(a,y1) & company-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & sophomore-nn'(n1,y1) & at-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & writer-nn'(n1,y1) & base-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & state-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & only-adj'(a,y1) & restaurant-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.030000
+have-vb'(v,x1,y1,y2) & impression-nn'(n1,y1) & that-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & winner-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & son-nn'(n1,y1) & of-in'(p,y1,x2) & superhero-nn'(n2,x2)	183.140000
+have-vb'(v,x1,y1,y2) & satellite-nn'(n1,y3) & office-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & state-nn'(n3,x2)	16.640000
+equal'(eq,x1,y1) & only-adj'(a,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & artwork-nn'(n2,x2)	90.020000
+equal'(eq,x1,y1) & joint-adj'(a,y1) & venture-nn'(n1,y1) & between-in'(p,y1,x2) & company-nn'(n2,x2)	59.780000
+equal'(eq,x1,y1) & head-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	8.790000
+equal'(eq,x1,y1) & case-nn'(n1,y1) & before-in'(p,y1,x2) & year-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & office-nn'(n1,y1) & in-in'(p,y1,x2) & artwork-nn'(n2,x2)	25.840000
+equal'(eq,x1,y1) & foundation-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	139.270000
+equal'(eq,x1,y1) & student-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & huge-adj'(a,y1) & hit-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	30.760000
+equal'(eq,x1,y1) & first-adj'(a,y1) & person-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	39.370000
+equal'(eq,x1,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & central-adj'(a,x2) & country-nn'(n2,x2)	113.680000
+equal'(eq,x1,y1) & television-nn'(n1,y3) & station-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & city-nn'(n3,x2)	11.090000
+equal'(eq,x1,y1) & basis-nn'(n1,y1) & for-in'(p,y1,x2) & film-nn'(n2,x2)	17.900000
+equal'(eq,x1,y1) & priest-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & only-adj'(a,y1) & museum-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	28.990000
+equal'(eq,x1,y1) & second-adj'(a,y1) & Sunday-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & only-adj'(a,y1) & region-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & capital-nn'(n1,y3) & city-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & country-nn'(n3,x2)	3679.780000
+have-vb'(v,x1,y1,y2) & contract-nn'(n1,y1) & with-in'(p,y1,x2) & city-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & first-adj'(a,y1) & school-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & first-adj'(a,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	141.400000
+equal'(eq,x1,y1) & first-adj'(a,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	40.970000
+equal'(eq,x1,y1) & first-adj'(a,y1) & hospital-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & only-adj'(a,y1) & island-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	52.440000
+equal'(eq,x1,y1) & town-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	374.220000
+equal'(eq,x1,y1) & rare-adj'(a,y1) & sight-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & home-nn'(n1,y1) & of-in'(p,y1,x2) & artwork-nn'(n2,x2)	143.960000
+have-vb'(v,x1,y1,y2) & wingspan-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	90.680000
+equal'(eq,x1,y1) & offensive-adj'(a,y1) & coordinator-nn'(n1,y1) & at-in'(p,y1,x2) & state-nn'(n2,x2)	15.670000
+have-vb'(v,x1,y1,y2) & vision-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & first-adj'(a,y1) & state-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	196.850000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & month-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & only-adj'(a,y1) & school-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	38.800000
+equal'(eq,x1,y1) & rarity-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & important-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	44.360000
+equal'(eq,x1,y1) & finalist-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	112.080000
+equal'(eq,x1,y1) & writer-nn'(n1,y3) & living-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & state-nn'(n3,x2)	20.490000
+equal'(eq,x1,y1) & only-adj'(a,y1) & group-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	52.680000
+equal'(eq,x1,y1) & hub-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	113.680000
+equal'(eq,x1,y1) & only-adj'(a,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	229.240000
+equal'(eq,x1,y1) & soul-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	52.680000
+have-vb'(v,x1,y1,y2) & interest-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	8.280000
+have-vb'(v,x1,y1,y2) & place-nn'(n1,y1) & in-in'(p,y1,x2) & sport-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & former-adj'(a,y1) & senator-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & daughter-nn'(n1,y1) & of-in'(p,y1,x2) & planet-nn'(n2,x2)	80.410000
+equal'(eq,x1,y1) & company-nn'(n1,y1) & establish-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & year-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & citizen-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	33.070000
+have-vb'(v,x1,y1,y2) & show-nn'(n1,y1) & on-in'(p,y1,x2) & month-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & yield-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	22.940000
+equal'(eq,x1,y1) & protected-adj'(a,y1) & species-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	13.210000
+equal'(eq,x1,y1) & only-adj'(a,y1) & event-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & current-adj'(a,y1) & situation-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a,y1) & governor-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	43.420000
+equal'(eq,x1,y1) & minimum-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	20.710000
+have-vb'(v,x1,y1,y2) & maximum-adj'(a,y1) & range-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	13.810000
+have-vb'(v,x1,y1,y2) & home-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	50.700000
+equal'(eq,x1,y1) & creation-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	890.350000
+equal'(eq,x1,y1) & son-nn'(n1,y1) & of-in'(p,y1,x2) & planet-nn'(n2,x2)	85.950000
+equal'(eq,x1,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & unique-adj'(a,y1) & of-in'(p,y1,x2) & language-nn'(n,x2)	16.640000
+equal'(eq,x1,y1) & expert-nn'(n1,y1) & on-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & superhero-nn'(n2,x2)	43.090000
+equal'(eq,x1,y1) & founder-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	234.620000
+equal'(eq,x1,y1) & only-adj'(a,y1) & municipality-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & defensive-adj'(a,y1) & coordinator-nn'(n1,y1) & at-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & limit-nn'(n1,y1) & for-in'(p,y1,x2) & gender-nn'(n2,x2)	61.000000
+equal'(eq,x1,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & eastern-adj'(a,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & beautiful-adj'(a,y1) & shade-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	18.060000
+equal'(eq,x1,y1) & way-nn'(n1,y1) & that-in'(p,y1,x2) & religion-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & senator-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	63.770000
+equal'(eq,x1,y1) & delicacy-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	18.770000
+equal'(eq,x1,y1) & only-adj'(a,y1) & agency-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & name-nn'(n1,y1) & give-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & country-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & complement-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	19.530000
+have-vb'(v,x1,y1,y2) & composition-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & own-vb'(v1,u1,y1,u2) & subsidiary-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	1350.680000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	733.600000
+equal'(eq,x1,y1) & store-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & profound-adj'(a,y1) & effect-nn'(n1,y1) & on-in'(p,y1,x2) & country-nn'(n2,x2)	38.820000
+have-vb'(v,x1,y1,y2) & relationship-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & long-adj'(a,y1) & way-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & only-adj'(a,y1) & one-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	6.900000
+have-vb'(v,x1,y1,y2) & long-adj'(a,y1) & association-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & relationship-nn'(n1,y1) & with-in'(p,y1,x2) & film-nn'(n2,x2)	22.670000
+have-vb'(v,x1,y1,y2) & good-adj'(a,y1) & understanding-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	49.430000
+equal'(eq,x1,y1) & responsibility-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	164.630000
+equal'(eq,x1,y1) & right-adj'(a,y1) & thing-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	27.730000
+have-vb'(v,x1,y1,y2) & message-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+have-vb'(v,x1,y1,y2) & link-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & village-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	220.980000
+equal'(eq,x1,y1) & owner-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	105.530000
+equal'(eq,x1,y1) & people-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & founder-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	900.390000
+have-vb'(v,x1,y1,y2) & problem-nn'(n1,y1) & with-in'(p,y1,x2) & company-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & norm-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	30.420000
+equal'(eq,x1,y1) & venue-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & threat-nn'(n1,y1) & from-in'(p,y1,x2) & month-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & angle-nn'(n1,y1) & of-in'(p,y1,x2) & temperature-nn'(n2,x2)	15.410000
+equal'(eq,x1,y1) & expert-nn'(n1,y1) & on-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & type-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	30.760000
+equal'(eq,x1,y1) & king-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	237.500000
+have-vb'(v,x1,y1,y2) & alliance-nn'(n1,y1) & with-in'(p,y1,x2) & company-nn'(n2,x2)	23.330000
+equal'(eq,x1,y1) & student-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	343.800000
+equal'(eq,x1,y1) & first-adj'(a1,y1) & prime-adj'(a2,y1) & minister-nn'(n1,y1) & of-in'(p2,y1,x2) & country-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & jewel-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & trade-nn'(n1,y3) & surplus-nn'(n2,y1) & nn'(e,y1,y3) & with-in'(p,y1,x2) & country-nn'(n3,x2)	8.720000
+equal'(eq,x1,y1) & journalist-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & laugh-vb'(v1,y1,u1,u2) & stock-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & ancient-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	158.040000
+equal'(eq,x1,y1) & only-adj'(a,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	144.170000
+equal'(eq,x1,y1) & big-adj'(a,y1) & thing-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & toast-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	102.590000
+equal'(eq,x1,y1) & small-adj'(a,y1) & village-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & senior-adj'(a,y1) & senator-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	48.350000
+equal'(eq,x1,y1) & national-adj'(a,y1) & symbol-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	124.590000
+have-vb'(v,x1,y1,y2) & established-adj'(a,y1) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a,y1) & resort-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & economic-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	74.860000
+equal'(eq,x1,y1) & area-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & economic-adj'(a,y1) & powerhouse-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	99.810000
+equal'(eq,x1,y1) & same-adj'(a,y1) & in-in'(p,y1,x2) & language-nn'(n,x2)	16.640000
+equal'(eq,x1,y1) & destiny-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & planet-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & heart-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	353.040000
+equal'(eq,x1,y1) & spiritual-adj'(a,y1) & home-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	17.650000
+equal'(eq,x1,y1) & first-adj'(a,y1) & facility-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & first-adj'(a,y1) & person-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	47.130000
+equal'(eq,x1,y1) & only-adj'(a,y1) & site-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & jewel-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & duty-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	155.260000
+equal'(eq,x1,y1) & official-adj'(a,y1) & language-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	99.810000
+have-vb'(v,x1,y1,y2) & strong-adj'(a,y1) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & gift-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	47.350000
+equal'(eq,x1,y1) & first-adj'(a,y1) & newspaper-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & idea-nn'(n1,y1) & that-in'(p,y1,x2) & country-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & person-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	80.410000
+equal'(eq,x1,y1) & first-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	266.550000
+equal'(eq,x1,y1) & first-adj'(a,y1) & school-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & circumference-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	28.700000
+equal'(eq,x1,y1) & deadline-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & language-nn'(n2,x2)	18.060000
+equal'(eq,x1,y1) & only-adj'(a,y1) & person-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	18.060000
+equal'(eq,x1,y1) & invasion-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	32.950000
+have-vb'(v,x1,y1,y2) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	37.560000
+equal'(eq,x1,y1) & only-adj'(a,y1) & facility-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	50.000000
+equal'(eq,x1,y1) & only-adj'(a1,y1) & political-adj'(a2,y1) & party-nn'(n1,y1) & in-in'(p2,y1,x2) & state-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & last-adj'(a,y1) & Monday-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & big-adj'(a,y1) & winner-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & boiling-adj'(a,y1) & point-nn'(n1,y1) & of-in'(p,y1,x2) & temperature-nn'(n2,x2)	25.410000
+equal'(eq,x1,y1) & native-adj'(a,y1) & people-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	49.910000
+have-vb'(v,x1,y1,y2) & resolution-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	61.000000
+equal'(eq,x1,y1) & national-adj'(a,y1) & flower-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	463.950000
+equal'(eq,x1,y1) & way-nn'(n1,y1) & for-in'(p,y1,x2) & gender-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & way-nn'(n1,y1) & that-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & leader-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	172.480000
+equal'(eq,x1,y1) & rule-vb'(v1,y1,u1,u2) & party-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.940000
+equal'(eq,x1,y1) & capitol-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	206.530000
+have-vb'(v,x1,y1,y2) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & company-nn'(n2,x2)	21.730000
+equal'(eq,x1,y1) & first-adj'(a,y1) & bank-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	52.680000
+equal'(eq,x1,y1) & major-adj'(a,y1) & problem-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	62.220000
+equal'(eq,x1,y1) & only-adj'(a,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	8.320000
+have-vb'(v,x1,y1,y2) & right-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+have-vb'(v,x1,y1,y2) & store-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & certain-adj'(a,y1) & kind-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & avid-adj'(a,y1) & fan-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & significant-adj'(a,y1) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	20.490000
+equal'(eq,x1,y1) & spirit-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & affiliate-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	303.010000
+have-vb'(v,x1,y1,y2) & negative-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & film-nn'(n2,x2)	378.320000
+equal'(eq,x1,y1) & business-nn'(n1,y3) & hub-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & continent-nn'(n3,x2)	49.910000
+equal'(eq,x1,y1) & ruler-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	71.280000
+equal'(eq,x1,y1) & combination-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & substantial-adj'(a,y1) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & member-nn'(n1,y1) & of-in'(p,y1,x2) & first-adj'(a,x2) & religion-nn'(n2,x2)	79.250000
+equal'(eq,x1,y1) & geographical-adj'(a,y1) & center-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & same-adj'(a,y1) & problem-nn'(n1,y1) & as-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & norm-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	56.600000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	194.080000
+equal'(eq,x1,y1) & opposite-nn'(n1,y1) & of-in'(p,y1,x2) & planet-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & integral-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & artwork-nn'(n2,x2)	7.970000
+have-vb'(v,x1,y1,y2) & rate-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	38.820000
+have-vb'(v,x1,y1,y2) & hint-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	23.200000
+equal'(eq,x1,y1) & second-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	33.270000
+have-vb'(v,x1,y1,y2) & permanent-adj'(a,y1) & establishment-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & doctor-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & spirit-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & place-nn'(n1,y1) & in-in'(p,y1,x2) & religion-nn'(n2,x2)	15.410000
+equal'(eq,x1,y1) & major-adj'(a,y1) & concern-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & only-adj'(a,y1) & museum-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.740000
+equal'(eq,x1,y1) & lot-nn'(n1,y1) & like-in'(p,y1,x2) & film-nn'(n2,x2)	45.880000
+equal'(eq,x1,y1) & national-adj'(a,y1) & emblem-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	87.960000
+have-vb'(v,x1,y1,y2) & long-adj'(a,y1) & tradition-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	116.340000
+equal'(eq,x1,y1) & only-adj'(a,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	598.880000
+equal'(eq,x1,y1) & first-adj'(a,y1) & carrier-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	58.220000
+equal'(eq,x1,y1) & paradise-nn'(n1,y1) & for-in'(p,y1,x2) & sport-nn'(n2,x2)	19.410000
+have-vb'(v,x1,y1,y2) & significant-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & state-nn'(n2,x2)	27.730000
+have-vb'(v,x1,y1,y2) & office-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	30.370000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & religion-nn'(n2,x2)	159.910000
+equal'(eq,x1,y1) & border-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	13.280000
+equal'(eq,x1,y1) & first-adj'(a,y1) & in-in'(p,y1,x2) & state-nn'(n,x2)	19.410000
+equal'(eq,x1,y1) & daughter-nn'(n1,y1) & of-in'(p,y1,x2) & artwork-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & way-nn'(n1,y1) & of-in'(p1,y1,y4) & life-nn'(n2,y4) & in-in'(p2,y4,x2) & country-nn'(n3,x2)	0.000000
+have-vb'(v,x1,y1,y2) & approval-nn'(n1,y3) & rating-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	11.090000
+have-vb'(v,x1,y1,y2) & long-adj'(a,y1) & history-nn'(n1,y1) & in-in'(p,y1,x2) & religion-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & cultural-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	277.260000
+have-vb'(v,x1,y1,y2) & certain-adj'(a,y1) & type-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & only-adj'(a,y1) & way-nn'(n1,y1) & for-in'(p,y1,x2) & continent-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & first-adj'(a,y1) & county-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & only-adj'(a,y1) & institution-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & school-nn'(n1,y3) & teacher-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & state-nn'(n3,x2)	11.090000
+equal'(eq,x1,y1) & tradition-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	19.410000
+have-vb'(v,x1,y1,y2) & house-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	13.320000
+equal'(eq,x1,y1) & first-adj'(a,y1) & institution-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	47.130000
+have-vb'(v,x1,y1,y2) & thing-nn'(n1,y1) & for-in'(p,y1,x2) & person-nn'(n2,x2)	94.480000
+equal'(eq,x1,y1) & only-adj'(a,y1) & institution-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	97.040000
+have-vb'(v,x1,y1,y2) & water-nn'(n1,y3) & depth-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & distance-nn'(n3,x2)	11.090000
+equal'(eq,x1,y1) & original-adj'(a,y1) & inhabitant-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	35.200000
+equal'(eq,x1,y1) & music-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & continent-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & album-nn'(n1,y1) & by-in'(p,y1,x2) & person-nn'(n2,x2)	185.270000
+equal'(eq,x1,y1) & joint-adj'(a,y1) & venture-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	142.100000
+equal'(eq,x1,y1) & native-nn'(n1,y1) & of-in'(p,y1,x2) & artwork-nn'(n2,x2)	312.050000
+equal'(eq,x1,y1) & place-nn'(n1,y1) & for-in'(p,y1,x2) & film-nn'(n2,x2)	19.990000
+equal'(eq,x1,y1) & only-adj'(a1,y1) & political-adj'(a2,y1) & party-nn'(n1,y1) & in-in'(p2,y1,x2) & country-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & first-adj'(a,y1) & Tuesday-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & tourist-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & turn-vb'(v1,y1,u1,u2) & point-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	13.180000
+equal'(eq,x1,y1) & national-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	77.630000
+have-vb'(v,x1,y1,y2) & article-nn'(n1,y1) & about-in'(p,y1,x2) & company-nn'(n2,x2)	11.120000
+equal'(eq,x1,y1) & former-adj'(a1,y1) & prime-adj'(a2,y1) & minister-nn'(n1,y1) & of-in'(p2,y1,x2) & country-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & activity-nn'(n2,x2)	61.000000
+equal'(eq,x1,y1) & top-adj'(a,y1) & priority-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & first-adj'(a,y1) & area-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & essence-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	39.370000
+equal'(eq,x1,y1) & rule-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & old-adj'(a,x2) & gender-nn'(n2,x2)	33.270000
+have-vb'(v,x1,y1,y2) & vision-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	8.220000
+equal'(eq,x1,y1) & main-adj'(a,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a,y1) & person-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & son-nn'(n1,y1) & of-in'(p,y1,x2) & artwork-nn'(n2,x2)	111.140000
+have-vb'(v,x1,y1,y2) & value-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	13.320000
+have-vb'(v,x1,y1,y2) & article-nn'(n1,y1) & about-in'(p,y1,x2) & city-nn'(n2,x2)	11.950000
+have-vb'(v,x1,y1,y2) & shot-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+have-vb'(v,x1,y1,y2) & strong-adj'(a,y1) & background-nn'(n1,y1) & in-in'(p,y1,x2) & sport-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & word-nn'(n1,y1) & in-in'(p,y1,x2) & language-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & first-adj'(a,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	36.040000
+have-vb'(v,x1,y1,y2) & stake-nn'(n1,y1) & in-in'(p,y1,x2) & company-nn'(n2,x2)	14.160000
+equal'(eq,x1,y1) & president-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	381.220000
+equal'(eq,x1,y1) & winner-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	10.950000
+have-vb'(v,x1,y1,y2) & bright-adj'(a,y1) & future-nn'(n1,y1) & in-in'(p,y1,x2) & sport-nn'(n2,x2)	19.790000
+equal'(eq,x1,y1) & source-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & poet-nn'(n1,y3) & laureate-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & state-nn'(n3,x2)	16.640000
+equal'(eq,x1,y1) & newspaper-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & standard-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & member-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+have-vb'(v,x1,y1,y2) & melting-adj'(a,y1) & point-nn'(n1,y1) & of-in'(p,y1,x2) & temperature-nn'(n2,x2)	17.740000
+equal'(eq,x1,y1) & serious-adj'(a,y1) & problem-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	18.710000
+equal'(eq,x1,y1) & majority-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	29.920000
+equal'(eq,x1,y1) & conflict-nn'(n1,y1) & between-in'(p,y1,x2) & country-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & new-adj'(a,y1) & governor-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+have-vb'(v,x1,y1,y2) & thing-nn'(n1,y1) & for-in'(p,y1,x2) & city-nn'(n2,x2)	19.000000
+equal'(eq,x1,y1) & sign-nn'(n1,y1) & that-in'(p,y1,x2) & film-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & western-adj'(a,x2) & country-nn'(n2,x2)	41.590000
+have-vb'(v,x1,y1,y2) & good-adj'(a,y1) & level-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	59.650000
+have-vb'(v,x1,y1,y2) & efficiency-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	69.850000
+equal'(eq,x1,y1) & basis-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	63.730000
+equal'(eq,x1,y1) & hub-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & violation-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & problem-nn'(n1,y1) & with-in'(p,y1,x2) & color-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & first-adj'(a,y1) & in-in'(p,y1,x2) & continent-nn'(n,x2)	27.730000
+equal'(eq,x1,y1) & last-adj'(a,y1) & week-nn'(n1,y1) & of-in'(p,y1,x2) & month-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & joint-adj'(a,y1) & venture-nn'(n1,y1) & between-in'(p,y1,x2) & country-nn'(n2,x2)	15.410000
+equal'(eq,x1,y1) & need-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & one-nn'(n1,y1) & in-in'(p,y1,x2) & color-nn'(n2,x2)	19.410000
+have-vb'(v,x1,y1,y2) & significant-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & company-nn'(n2,x2)	148.290000
+equal'(eq,x1,y1) & citizen-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	94.270000
+equal'(eq,x1,y1) & beautiful-adj'(a,y1) & day-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & first-adj'(a,y1) & Sunday-nn'(n1,y1) & of-in'(p,y1,x2) & month-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & only-adj'(a,y1) & firm-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & map-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & municipality-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	52.680000
+have-vb'(v,x1,y1,y2) & success-nn'(n1,y3) & rate-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	141.380000
+equal'(eq,x1,y1) & medical-adj'(a,y1) & student-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & look-nn'(n1,y1) & at-in'(p,y1,x2) & programminglang-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & film-nn'(n1,y1) & make-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & year-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & official-adj'(a,y1) & language-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & capitol-nn'(n1,y3) & city-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & state-nn'(n3,x2)	77.630000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & videogame-nn'(n2,x2)	145.020000
+equal'(eq,x1,y1) & law-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	13.320000
+equal'(eq,x1,y1) & assistant-adj'(a,y1) & professor-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	91.500000
+equal'(eq,x1,y1) & case-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	8.740000
+equal'(eq,x1,y1) & second-adj'(a,y1) & weekend-nn'(n1,y1) & of-in'(p,y1,x2) & month-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & artwork-nn'(n2,x2)	271.710000
+equal'(eq,x1,y1) & authority-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & new-adj'(a,y1) & president-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	69.310000
+equal'(eq,x1,y1) & father-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	644.260000
+have-vb'(v,x1,y1,y2) & height-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	72.920000
+have-vb'(v,x1,y1,y2) & special-adj'(a,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & only-adj'(a,y1) & site-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & form-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & common-adj'(a,y1) & problem-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & filmdistributor-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & important-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	55.450000
+have-vb'(v,x1,y1,y2) & good-adj'(a,y1) & shot-nn'(n1,y1) & at-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+have-vb'(v,x1,y1,y2) & ego-nn'(n1,y3) & size-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & state-nn'(n3,x2)	15.550000
+equal'(eq,x1,y1) & massive-adj'(a,y1) & hit-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & partner-nn'(n1,y1) & with-in'(p,y1,x2) & company-nn'(n2,x2)	100.190000
+equal'(eq,x1,y1) & region-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	47.130000
+equal'(eq,x1,y1) & big-adj'(a,y1) & deal-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & effective-adj'(a,y1) & range-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	13.320000
+equal'(eq,x1,y1) & only-adj'(a,y1) & hospital-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	13.280000
+equal'(eq,x1,y1) & delegate-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & company-nn'(n1,y1) & locate-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & city-nn'(n2,x2)	20.120000
+equal'(eq,x1,y1) & nonprofit-adj'(a1,y1) & organization-nn'(n1,y1) & base-vb'(v2,u1,y1,u2) & in-in'(p2,v2,x2) & state-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & language-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	51.540000
+have-vb'(v,x1,y1,y2) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & state-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & nurse-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & brother-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	497.260000
+equal'(eq,x1,y1) & administrative-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	182.990000
+have-vb'(v,x1,y1,y2) & average-adj'(a,y1) & width-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & capitol-nn'(n1,y3) & city-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & country-nn'(n3,x2)	30.500000
+have-vb'(v,x1,y1,y2) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	41.590000
+have-vb'(v,x1,y1,y2) & work-vb'(v1,y1,u1,u2) & knowledge-nn'(n1,y1) & of-in'(p,y1,x2) & programminglang-nn'(n2,x2)	55.450000
+have-vb'(v,x1,y1,y2) & long-adj'(a,y1) & history-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	157.120000
+have-vb'(v,x1,y1,y2) & positive-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & country-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & first-adj'(a,y1) & woman-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & only-adj'(a,y1) & airport-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	64.090000
+have-vb'(v,x1,y1,y2) & chance-nn'(n1,y1) & against-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & distributor-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & issue-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.510000
+equal'(eq,x1,y1) & member-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	561.710000
+equal'(eq,x1,y1) & book-nn'(n1,y1) & by-in'(p,y1,x2) & person-nn'(n2,x2)	184.300000
+equal'(eq,x1,y1) & issue-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	6.640000
+equal'(eq,x1,y1) & wife-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	166.730000
+equal'(eq,x1,y1) & first-adj'(a,y1) & area-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	27.730000
+have-vb'(v,x1,y1,y2) & article-nn'(n1,y1) & on-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & advantage-nn'(n1,y1) & over-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & hard-adj'(a,y1) & time-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	15.670000
+equal'(eq,x1,y1) & preacher-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & sensation-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.020000
+equal'(eq,x1,y1) & people-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	33.270000
+have-vb'(v,x1,y1,y2) & width-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & teenager-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & shot-nn'(n1,y1) & at-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & case-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	17.680000
+equal'(eq,x1,y1) & form-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	114.640000
+have-vb'(v,x1,y1,y2) & capacity-nn'(n1,y1) & of-in'(p,y1,x2) & weight-nn'(n2,x2)	104.010000
+equal'(eq,x1,y1) & first-adj'(a,y1) & female-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & name-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	413.670000
+equal'(eq,x1,y1) & trade-nn'(n1,y3) & name-nn'(n2,y1) & nn'(e,y1,y3) & for-in'(p,y1,x2) & drug-nn'(n3,x2)	213.490000
+have-vb'(v,x1,y1,y2) & negative-adj'(a,y1) & effect-nn'(n1,y1) & on-in'(p,y1,x2) & film-nn'(n2,x2)	138.660000
+equal'(eq,x1,y1) & case-nn'(n1,y1) & with-in'(p,y1,x2) & color-nn'(n2,x2)	8.790000
+equal'(eq,x1,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	76.410000
+have-vb'(v,x1,y1,y2) & alliance-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & history-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	11.210000
+equal'(eq,x1,y1) & serious-adj'(a,y1) & issue-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & gift-nn'(n1,y1) & for-in'(p,y1,x2) & activity-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & island-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	58.220000
+have-vb'(v,x1,y1,y2) & problem-nn'(n1,y1) & with-in'(p,y1,x2) & brand-nn'(n2,x2)	8.430000
+have-vb'(v,x1,y1,y2) & overall-adj'(a,y1) & length-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	14.580000
+equal'(eq,x1,y1) & flop-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & last-adj'(a,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & division-nn'(n1,y1) & of-in'(p,y1,x2) & filmdistributor-nn'(n2,x2)	29.510000
+equal'(eq,x1,y1) & type-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	47.130000
+equal'(eq,x1,y1) & form-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	218.680000
+equal'(eq,x1,y1) & lawyer-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	30.500000
+have-vb'(v,x1,y1,y2) & huge-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & god-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	104.050000
+equal'(eq,x1,y1) & national-adj'(a,y1) & carrier-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	224.120000
+equal'(eq,x1,y1) & conflict-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & first-adj'(a,y1) & quarter-nn'(n1,y1) & of-in'(p,y1,x2) & year-nn'(n2,x2)	27.910000
+equal'(eq,x1,y1) & good-adj'(a,y1) & idea-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	13.180000
+equal'(eq,x1,y1) & reality-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & case-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	18.200000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	444.240000
+equal'(eq,x1,y1) & guy-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & native-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	304.180000
+equal'(eq,x1,y1) & state-nn'(n1,y3) & capital-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & state-nn'(n3,x2)	624.950000
+equal'(eq,x1,y1) & only-adj'(a,y1) & college-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	65.910000
+equal'(eq,x1,y1) & director-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	1016.080000
+equal'(eq,x1,y1) & new-adj'(a,y1) & coach-nn'(n1,y1) & at-in'(p,y1,x2) & state-nn'(n2,x2)	72.090000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	185.760000
+have-vb'(v,x1,y1,y2) & criminal-adj'(a,y1) & history-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & exaltation-nn'(n1,y1) & of-in'(p,y1,x2) & planet-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & toast-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & home-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	469.270000
+equal'(eq,x1,y1) & major-adj'(a,y1) & issue-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & state-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & register-vb'(v1,u1,y1,u2) & agent-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	52.440000
+equal'(eq,x1,y1) & first-adj'(a,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	282.800000
+equal'(eq,x1,y1) & right-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	144.170000
+equal'(eq,x1,y1) & lifeline-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & only-adj'(a,y1) & school-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	44.360000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	61.980000
+equal'(eq,x1,y1) & center-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	172.480000
+equal'(eq,x1,y1) & meeting-nn'(n1,y3) & point-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & continent-nn'(n3,x2)	24.950000
+equal'(eq,x1,y1) & orbit-nn'(n1,y1) & of-in'(p,y1,x2) & planet-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & country-nn'(n2,x2)	15.940000
+equal'(eq,x1,y1) & tradition-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & big-adj'(a,y1) & business-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & width-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	28.820000
+have-vb'(v,x1,y1,y2) & same-adj'(a,y1) & name-nn'(n1,y1) & as-in'(p,y1,x2) & film-nn'(n2,x2)	23.820000
+have-vb'(v,x1,y1,y2) & top-adj'(a,y1) & speed-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & first-adj'(a,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	237.260000
+equal'(eq,x1,y1) & official-adj'(a1,y1) & state-nn'(n1,y3) & song-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p2,y1,x2) & state-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & sign-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	11.480000
+equal'(eq,x1,y1) & only-adj'(a,y1) & man-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & hero-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	58.220000
+equal'(eq,x1,y1) & native-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	54.520000
+equal'(eq,x1,y1) & only-adj'(a,y1) & restaurant-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & only-adj'(a,y1) & community-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & reflection-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	41.940000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & of-in'(p1,y1,y4) & life-nn'(n2,y4) & in-in'(p2,y4,x2) & country-nn'(n3,x2)	0.000000
+equal'(eq,x1,y1) & nonresident-adj'(a,y1) & of-in'(p,y1,x2) & state-nn'(n,x2)	27.730000
+equal'(eq,x1,y1) & currency-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	153.610000
+equal'(eq,x1,y1) & young-adj'(a,y1) & man-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & king-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & name-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	47.130000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	130.310000
+equal'(eq,x1,y1) & first-adj'(a1,y1) & british-adj'(a2,y1) & colony-nn'(n1,y1) & in-in'(p2,y1,x2) & continent-nn'(n2,x2)	0.000000
+have-vb'(v,x1,y1,y2) & shoreline-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & colony-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	292.240000
+equal'(eq,x1,y1) & people-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	8.220000
+equal'(eq,x1,y1) & first-adj'(a,y1) & patient-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & queen-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	58.220000
+equal'(eq,x1,y1) & child-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & only-adj'(a,y1) & zoo-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & course-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	67.270000
+equal'(eq,x1,y1) & head-nn'(n1,y1) & of-in'(p1,y1,y4) & state-nn'(n2,y4) & of-in'(p2,y4,x2) & country-nn'(n3,x2)	0.000000
+equal'(eq,x1,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	73.000000
+equal'(eq,x1,y1) & capitol-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	341.030000
+have-vb'(v,x1,y1,y2) & problem-nn'(n1,y1) & with-in'(p,y1,x2) & state-nn'(n2,x2)	6.640000
+equal'(eq,x1,y1) & presence-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & important-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & national-adj'(a,y1) & bird-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	269.270000
+have-vb'(v,x1,y1,y2) & reciprocal-adj'(a,y1) & agreement-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	9.210000
+equal'(eq,x1,y1) & first-adj'(a,y1) & port-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & first-adj'(a,y1) & course-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & defensive-adj'(a,y1) & coordinator-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & attempt-nn'(n1,y1) & by-in'(p,y1,x2) & company-nn'(n2,x2)	22.260000
+equal'(eq,x1,y1) & talk-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	33.270000
+have-vb'(v,x1,y1,y2) & literacy-nn'(n1,y3) & rate-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	52.860000
+equal'(eq,x1,y1) & birthplace-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	44.360000
+equal'(eq,x1,y1) & only-adj'(a,y1) & county-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	92.770000
+equal'(eq,x1,y1) & leader-nn'(n1,y1) & in-in'(p,y1,x2) & film-nn'(n2,x2)	144.170000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & remarkable-adj'(a,x2) & gender-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & pioneer-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	6.640000
+equal'(eq,x1,y1) & first-adj'(a,y1) & company-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	331.780000
+have-vb'(v,x1,y1,y2) & article-nn'(n1,y1) & about-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & one-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & key-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	24.950000
+have-vb'(v,x1,y1,y2) & opportunity-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & lifelong-adj'(a,y1) & resident-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & tale-nn'(n1,y1) & of-in'(p,y1,x2) & young-adj'(a,x2) & gender-nn'(n2,x2)	13.860000
+have-vb'(v,x1,y1,y2) & location-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & big-adj'(a,y1) & deal-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & first-adj'(a,y1) & university-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	80.410000
+have-vb'(v,x1,y1,y2) & own-vb'(v1,u1,y1,u2) & subsidiary-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	7.290000
+equal'(eq,x1,y1) & lifeblood-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	29.510000
+equal'(eq,x1,y1) & nature-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & word-nn'(n1,y1) & for-in'(p,y1,x2) & gender-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & size-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	33.650000
+equal'(eq,x1,y1) & leader-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & champion-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	639.240000
+have-vb'(v,x1,y1,y2) & stake-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & second-adj'(a,y1) & quarter-nn'(n1,y1) & of-in'(p,y1,x2) & year-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & president-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	224.580000
+equal'(eq,x1,y1) & former-adj'(a,y1) & governor-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	287.970000
+have-vb'(v,x1,y1,y2) & team-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & integral-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a,y1) & bank-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & only-adj'(a,y1) & team-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & star-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & old-adj'(a,y1) & name-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & graduate-adj'(a,y1) & assistant-nn'(n1,y1) & at-in'(p,y1,x2) & state-nn'(n2,x2)	52.680000
+equal'(eq,x1,y1) & only-adj'(a,y1) & site-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & consort-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & comedy-nn'(n1,y1) & about-in'(p,y1,x2) & young-adj'(a,x2) & gender-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & mayor-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	274.820000
+equal'(eq,x1,y1) & civil-adj'(a,y1) & war-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	9.580000
+equal'(eq,x1,y1) & site-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	27.730000
+have-vb'(v,x1,y1,y2) & interesting-adj'(a,y1) & interview-nn'(n1,y1) & with-in'(p,y1,x2) & person-nn'(n2,x2)	9.210000
+equal'(eq,x1,y1) & assistant-adj'(a,y1) & coach-nn'(n1,y1) & at-in'(p,y1,x2) & state-nn'(n2,x2)	66.620000
+equal'(eq,x1,y1) & decision-nn'(n1,y1) & by-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & keen-adj'(a,y1) & interest-nn'(n1,y1) & in-in'(p,y1,x2) & activity-nn'(n2,x2)	15.550000
+equal'(eq,x1,y1) & combination-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	48.920000
+equal'(eq,x1,y1) & birthplace-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	438.280000
+equal'(eq,x1,y1) & artist-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.320000
+have-vb'(v,x1,y1,y2) & direct-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & combination-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	100.270000
+equal'(eq,x1,y1) & third-adj'(a,y1) & country-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & market-nn'(n1,y3) & leader-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & continent-nn'(n3,x2)	103.570000
+equal'(eq,x1,y1) & first-adj'(a,y1) & people-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & world-nn'(n1,y3) & champion-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & year-nn'(n3,x2)	8.790000
+equal'(eq,x1,y1) & legal-adj'(a,y1) & holiday-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & only-adj'(a,y1) & agency-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & dialect-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & look-nn'(n1,y1) & at-in'(p,y1,x2) & planet-nn'(n2,x2)	8.790000
+equal'(eq,x1,y1) & same-adj'(a,y1) & time-nn'(n1,y1) & as-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & second-adj'(a,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	74.660000
+have-vb'(v,x1,y1,y2) & profound-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & game-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	17.680000
+have-vb'(v,x1,y1,y2) & significant-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & country-nn'(n2,x2)	22.940000
+have-vb'(v,x1,y1,y2) & crush-nn'(n1,y1) & on-in'(p,y1,x2) & city-nn'(n2,x2)	61.030000
+equal'(eq,x1,y1) & band-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	150.830000
+equal'(eq,x1,y1) & only-adj'(a,y1) & in-in'(p,y1,x2) & film-nn'(n,x2)	74.860000
+have-vb'(v,x1,y1,y2) & future-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & hot-adj'(a,y1) & topic-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & national-adj'(a,y1) & team-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	266.730000
+equal'(eq,x1,y1) & only-adj'(a,y1) & restaurant-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & soldier-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	21.210000
+equal'(eq,x1,y1) & huge-adj'(a,y1) & success-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	28.990000
+equal'(eq,x1,y1) & heart-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	69.310000
+equal'(eq,x1,y1) & heart-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	24.950000
+have-vb'(v,x1,y1,y2) & home-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	15.550000
+equal'(eq,x1,y1) & first-adj'(a,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	43.940000
+have-vb'(v,x1,y1,y2) & close-adj'(a,y1) & relationship-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+have-vb'(v,x1,y1,y2) & child-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	30.420000
+equal'(eq,x1,y1) & second-adj'(a,y1) & half-nn'(n1,y1) & of-in'(p,y1,x2) & month-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & backing-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	44.360000
+equal'(eq,x1,y1) & person-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	105.360000
+equal'(eq,x1,y1) & language-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	99.810000
+have-vb'(v,x1,y1,y2) & strong-adj'(a,y1) & background-nn'(n1,y1) & in-in'(p,y1,x2) & language-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & property-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & special-adj'(a,y1) & relationship-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	15.410000
+equal'(eq,x1,y1) & backbone-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	20.940000
+equal'(eq,x1,y1) & essence-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	210.720000
+have-vb'(v,x1,y1,y2) & plan-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	11.020000
+equal'(eq,x1,y1) & woman-nn'(n1,y1) & from-in'(p,y1,x2) & city-nn'(n2,x2)	199.980000
+equal'(eq,x1,y1) & only-adj'(a,y1) & person-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	17.680000
+equal'(eq,x1,y1) & jewel-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & type-nn'(n1,y1) & of-in'(p,y1,x2) & activity-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & only-adj'(a,y1) & hotel-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	209.550000
+equal'(eq,x1,y1) & former-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	227.350000
+equal'(eq,x1,y1) & size-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	73.640000
+equal'(eq,x1,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & northern-adj'(a,x2) & country-nn'(n2,x2)	146.950000
+equal'(eq,x1,y1) & common-adj'(a,y1) & disease-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & visa-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	8.790000
+have-vb'(v,x1,y1,y2) & major-adj'(a,y1) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & main-adj'(a,y1) & problem-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	9.210000
+equal'(eq,x1,y1) & first-adj'(a,y1) & building-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & resident-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	262.000000
+have-vb'(v,x1,y1,y2) & different-adj'(a,y1) & meaning-nn'(n1,y1) & in-in'(p,y1,x2) & language-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & hotel-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	91.500000
+equal'(eq,x1,y1) & study-nn'(n1,y1) & in-in'(p,y1,x2) & color-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & annual-adj'(a1,y1) & event-nn'(n1,y1) & hold-vb'(v2,u1,y1,u2) & in-in'(p2,v2,x2) & month-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & close-adj'(a,y1) & ally-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+have-vb'(v,x1,y1,y2) & background-nn'(n1,y1) & in-in'(p,y1,x2) & activity-nn'(n2,x2)	8.790000
+have-vb'(v,x1,y1,y2) & strong-adj'(a,y1) & connection-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & party-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	25.410000
+equal'(eq,x1,y1) & incarnation-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	35.630000
+equal'(eq,x1,y1) & cultural-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	80.410000
+equal'(eq,x1,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	5232.980000
+have-vb'(v,x1,y1,y2) & direct-adj'(a,y1) & effect-nn'(n1,y1) & on-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & first-adj'(a,y1) & university-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	38.820000
+have-vb'(v,x1,y1,y2) & sister-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	8.790000
+have-vb'(v,x1,y1,y2) & partnership-nn'(n1,y1) & with-in'(p,y1,x2) & company-nn'(n2,x2)	25.540000
+equal'(eq,x1,y1) & popular-adj'(a,y1) & place-nn'(n1,y1) & for-in'(p,y1,x2) & sport-nn'(n2,x2)	38.820000
+have-vb'(v,x1,y1,y2) & direct-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+have-vb'(v,x1,y1,y2) & foothold-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+have-vb'(v,x1,y1,y2) & physical-adj'(a,y1) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & religion-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & use-nn'(n1,y1) & of-in'(p,y1,x2) & drug-nn'(n2,x2)	171.900000
+equal'(eq,x1,y1) & notion-nn'(n1,y1) & that-in'(p,y1,x2) & country-nn'(n2,x2)	6.900000
+equal'(eq,x1,y1) & way-nn'(n1,y1) & that-in'(p,y1,x2) & gender-nn'(n2,x2)	8.320000
+have-vb'(v,x1,y1,y2) & maximum-nn'(n1,y3) & depth-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & distance-nn'(n3,x2)	17.610000
+equal'(eq,x1,y1) & opposite-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	8.430000
+equal'(eq,x1,y1) & only-adj'(a,y1) & people-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & perfect-adj'(a,y1) & fit-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & capital-nn'(n1,y3) & city-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & continent-nn'(n3,x2)	121.990000
+equal'(eq,x1,y1) & rock-nn'(n1,y3) & band-nn'(n2,y1) & nn'(e,y1,y3) & from-in'(p,y1,x2) & state-nn'(n3,x2)	19.410000
+equal'(eq,x1,y1) & immigrant-adj'(a,y1) & from-in'(p,y1,x2) & country-nn'(n,x2)	27.730000
+have-vb'(v,x1,y1,y2) & chance-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	40.620000
+equal'(eq,x1,y1) & term-nn'(n1,y1) & use-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & country-nn'(n2,x2)	44.360000
+equal'(eq,x1,y1) & second-adj'(a,y1) & Tuesday-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & continent-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & former-adj'(a,y1) & president-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	130.310000
+have-vb'(v,x1,y1,y2) & studio-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a,y1) & region-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & prime-adj'(a,y1) & minister-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	51.970000
+equal'(eq,x1,y1) & state-nn'(n1,y3) & flower-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & state-nn'(n3,x2)	286.110000
+equal'(eq,x1,y1) & layer-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	11.020000
+have-vb'(v,x1,y1,y2) & operation-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & article-nn'(n1,y1) & from-in'(p,y1,x2) & year-nn'(n2,x2)	8.320000
+have-vb'(v,x1,y1,y2) & upper-adj'(a,y1) & hand-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & victory-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & day-nn'(n1,y1) & of-in'(p,y1,x2) & activity-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & country-nn'(n1,y3) & size-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & state-nn'(n3,x2)	8.330000
+equal'(eq,x1,y1) & nurse-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & form-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	24.330000
+equal'(eq,x1,y1) & main-adj'(a,y1) & port-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & videogame-nn'(n2,x2)	146.010000
+equal'(eq,x1,y1) & national-adj'(a,y1) & hero-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	6.900000
+equal'(eq,x1,y1) & different-adj'(a,y1) & kind-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & region-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	82.630000
+equal'(eq,x1,y1) & daughter-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	200.520000
+equal'(eq,x1,y1) & answer-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & place-nn'(n1,y1) & for-in'(p,y1,x2) & sport-nn'(n2,x2)	69.310000
+have-vb'(v,x1,y1,y2) & material-nn'(n1,y3) & impact-nn'(n2,y1) & nn'(e,y1,y3) & on-in'(p,y1,x2) & company-nn'(n3,x2)	127.760000
+equal'(eq,x1,y1) & case-nn'(n1,y1) & with-in'(p,y1,x2) & religion-nn'(n2,x2)	6.640000
+equal'(eq,x1,y1) & only-adj'(a,y1) & firm-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & ordinary-adj'(a,x2) & gender-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & song-nn'(n1,y1) & by-in'(p,y1,x2) & person-nn'(n2,x2)	589.970000
+equal'(eq,x1,y1) & major-adj'(a,y1) & issue-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.790000
+have-vb'(v,x1,y1,y2) & property-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & mix-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	40.020000
+have-vb'(v,x1,y1,y2) & strong-adj'(a,y1) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	50.970000
+equal'(eq,x1,y1) & difference-nn'(n1,y1) & between-in'(p,y1,x2) & percent-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & sign-nn'(n1,y1) & that-in'(p,y1,x2) & country-nn'(n2,x2)	38.540000
+equal'(eq,x1,y1) & partnership-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	80.410000
+equal'(eq,x1,y1) & season-nn'(n1,y1) & for-in'(p,y1,x2) & color-nn'(n2,x2)	6.900000
+have-vb'(v,x1,y1,y2) & difficult-adj'(a,y1) & time-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & crush-nn'(n1,y1) & on-in'(p,y1,x2) & person-nn'(n2,x2)	33.620000
+equal'(eq,x1,y1) & refugee-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & hub-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	44.360000
+equal'(eq,x1,y1) & band-nn'(n1,y1) & form-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & year-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & maximum-nn'(n1,y3) & width-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & distance-nn'(n3,x2)	19.790000
+equal'(eq,x1,y1) & company-nn'(n1,y1) & incorporate-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & country-nn'(n2,x2)	82.750000
+equal'(eq,x1,y1) & only-adj'(a,y1) & jurisdiction-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	158.040000
+have-vb'(v,x1,y1,y2) & huge-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & film-nn'(n2,x2)	48.370000
+equal'(eq,x1,y1) & norm-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & long-adj'(a,y1) & history-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	67.380000
+equal'(eq,x1,y1) & turn-vb'(v1,y1,u1,u2) & point-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & girl-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	14.580000
+equal'(eq,x1,y1) & pride-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	90.190000
+equal'(eq,x1,y1) & subsidiary-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	2141.920000
+have-vb'(v,x1,y1,y2) & foothold-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & village-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & football-nn'(n1,y3) & club-nn'(n2,y1) & nn'(e,y1,y3) & base-vb'(v2,u1,y1,u2) & in-in'(p2,v2,x2) & city-nn'(n3,x2)	0.000000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	38.000000
+equal'(eq,x1,y1) & success-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	11.020000
+equal'(eq,x1,y1) & end-nn'(n1,y1) & of-in'(p,y1,x2) & year-nn'(n2,x2)	12.440000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & indian-adj'(a,x2) & gender-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	91.500000
+equal'(eq,x1,y1) & writer-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	74.860000
+equal'(eq,x1,y1) & lawyer-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & result-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+have-vb'(v,x1,y1,y2) & chance-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	33.270000
+have-vb'(v,x1,y1,y2) & office-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	37.510000
+have-vb'(v,x1,y1,y2) & support-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	64.090000
+equal'(eq,x1,y1) & first-adj'(a,y1) & state-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	313.450000
+have-vb'(v,x1,y1,y2) & effect-nn'(n1,y1) & on-in'(p,y1,x2) & artwork-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & certified-adj'(a1,y1) & public-adj'(a2,y1) & accountant-nn'(n1,y1) & in-in'(p2,y1,x2) & state-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & leading-adj'(a,y1) & country-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	38.820000
+have-vb'(v,x1,y1,y2) & problem-nn'(n1,y1) & with-in'(p,y1,x2) & city-nn'(n2,x2)	13.860000
+have-vb'(v,x1,y1,y2) & article-nn'(n1,y1) & on-in'(p,y1,x2) & person-nn'(n2,x2)	69.200000
+equal'(eq,x1,y1) & assistant-nn'(n1,y1) & at-in'(p,y1,x2) & city-nn'(n2,x2)	14.170000
+equal'(eq,x1,y1) & only-adj'(a,y1) & person-nn'(n1,y1) & in-in'(p,y1,x2) & film-nn'(n2,x2)	74.860000
+have-vb'(v,x1,y1,y2) & verse-nn'(n1,y1) & in-in'(p,y1,x2) & language-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & symbol-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	307.760000
+equal'(eq,x1,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & geographic-adj'(a,y1) & center-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	24.950000
+have-vb'(v,x1,y1,y2) & market-nn'(n1,y3) & share-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	33.270000
+equal'(eq,x1,y1) & minimum-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	55.450000
+equal'(eq,x1,y1) & only-adj'(a,y1) & company-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	39.550000
+equal'(eq,x1,y1) & financial-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	44.360000
+have-vb'(v,x1,y1,y2) & office-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & major-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & only-adj'(a,y1) & event-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	91.500000
+equal'(eq,x1,y1) & division-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	3134.750000
+have-vb'(v,x1,y1,y2) & military-adj'(a,y1) & base-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & combination-nn'(n1,y1) & of-in'(p,y1,x2) & drug-nn'(n2,x2)	210.770000
+equal'(eq,x1,y1) & only-adj'(a,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	91.500000
+equal'(eq,x1,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & southern-adj'(a,x2) & country-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & birthright-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	47.130000
+equal'(eq,x1,y1) & congressman-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & mixture-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	114.380000
+have-vb'(v,x1,y1,y2) & devastating-adj'(a,y1) & effect-nn'(n1,y1) & on-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+have-vb'(v,x1,y1,y2) & coupon-nn'(n1,y3) & rate-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	24.950000
+equal'(eq,x1,y1) & only-adj'(a,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	538.720000
+equal'(eq,x1,y1) & last-adj'(a,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & hard-adj'(a,y1) & time-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & temple-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	74.800000
+equal'(eq,x1,y1) & only-adj'(a,y1) & one-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & clue-nn'(n1,y1) & about-in'(p,y1,x2) & sport-nn'(n2,x2)	16.870000
+have-vb'(v,x1,y1,y2) & unemployment-nn'(n1,y3) & rate-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	17.830000
+have-vb'(v,x1,y1,y2) & devastating-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & endanger-vb'(v1,u1,y1,u2) & species-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	32.950000
+equal'(eq,x1,y1) & head-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	127.540000
+have-vb'(v,x1,y1,y2) & abortion-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	15.670000
+equal'(eq,x1,y1) & average-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & history-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & indigenous-adj'(a,y1) & people-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+have-vb'(v,x1,y1,y2) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & film-nn'(n2,x2)	118.940000
+equal'(eq,x1,y1) & crown-nn'(n1,y3) & jewel-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & state-nn'(n3,x2)	11.090000
+equal'(eq,x1,y1) & ally-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	62.910000
+have-vb'(v,x1,y1,y2) & water-nn'(n1,y3) & content-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	33.050000
+equal'(eq,x1,y1) & northern-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	36.040000
+have-vb'(v,x1,y1,y2) & mass-nn'(n1,y1) & of-in'(p,y1,x2) & weight-nn'(n2,x2)	36.340000
+equal'(eq,x1,y1) & small-adj'(a,y1) & minority-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	21.460000
+equal'(eq,x1,y1) & time-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+have-vb'(v,x1,y1,y2) & contract-nn'(n1,y1) & with-in'(p,y1,x2) & company-nn'(n2,x2)	94.270000
+equal'(eq,x1,y1) & native-adj'(a,y1) & son-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+have-vb'(v,x1,y1,y2) & feeling-nn'(n1,y1) & that-in'(p,y1,x2) & gender-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & symbol-nn'(n1,y1) & of-in'(p,y1,x2) & planet-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & great-adj'(a,y1) & day-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.020000
+equal'(eq,x1,y1) & combination-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+have-vb'(v,x1,y1,y2) & average-adj'(a,y1) & temperature-nn'(n1,y1) & of-in'(p,y1,x2) & temperature-nn'(n2,x2)	8.710000
+equal'(eq,x1,y1) & father-nn'(n1,y1) & of-in'(p,y1,x2) & superhero-nn'(n2,x2)	225.960000
+equal'(eq,x1,y1) & daughter-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	764.080000
+have-vb'(v,x1,y1,y2) & voice-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & member-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	213.490000
+have-vb'(v,x1,y1,y2) & look-nn'(n1,y1) & at-in'(p,y1,x2) & videogame-nn'(n2,x2)	12.290000
+equal'(eq,x1,y1) & native-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	792.650000
+equal'(eq,x1,y1) & attempt-nn'(n1,y1) & by-in'(p,y1,x2) & country-nn'(n2,x2)	19.990000
+have-vb'(v,x1,y1,y2) & excellent-adj'(a,y1) & command-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	81.240000
+equal'(eq,x1,y1) & war-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & singer-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & american-adj'(a,x2) & gender-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & former-adj'(a,y1) & name-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & primary-adj'(a1,y1) & drug-nn'(n1,y3) & threat-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p2,y1,x2) & state-nn'(n2,x2)	0.000000
+have-vb'(v,x1,y1,y2) & special-adj'(a,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & religion-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & future-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & problem-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & county-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & ethnic-adj'(a,y1) & group-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & only-adj'(a,y1) & organization-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	110.930000
+equal'(eq,x1,y1) & movie-nn'(n1,y1) & about-in'(p,y1,x2) & sport-nn'(n2,x2)	34.410000
+equal'(eq,x1,y1) & grow-vb'(v1,y1,u1,u2) & problem-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & mixture-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	28.990000
+equal'(eq,x1,y1) & first-adj'(a,y1) & emperor-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	35.500000
+have-vb'(v,x1,y1,y2) & basic-adj'(a,y1) & grasp-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & emblem-nn'(n1,y1) & of-in'(p,y1,x2) & planet-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & about-in'(p,y1,x2) & young-adj'(a,x2) & gender-nn'(n2,x2)	61.000000
+equal'(eq,x1,y1) & airport-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & novel-adj'(a,y1) & by-in'(p,y1,x2) & person-nn'(n,x2)	427.200000
+have-vb'(v,x1,y1,y2) & problem-nn'(n1,y1) & with-in'(p,y1,x2) & sport-nn'(n2,x2)	9.210000
+equal'(eq,x1,y1) & first-adj'(a,y1) & organization-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & next-adj'(a1,y1) & big-adj'(a2,y1) & thing-nn'(n1,y1) & in-in'(p2,y1,x2) & country-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & national-adj'(a,y1) & airline-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	643.410000
+equal'(eq,x1,y1) & only-adj'(a,y1) & company-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	143.460000
+equal'(eq,x1,y1) & only-adj'(a,y1) & center-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & positive-adj'(a,y1) & effect-nn'(n1,y1) & on-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & small-adj'(a,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & minimum-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	33.730000
+equal'(eq,x1,y1) & color-nn'(n1,y1) & of-in'(p,y1,x2) & planet-nn'(n2,x2)	63.770000
+equal'(eq,x1,y1) & indigenous-adj'(a,y1) & people-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	112.840000
+have-vb'(v,x1,y1,y2) & poverty-nn'(n1,y3) & rate-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	16.640000
+have-vb'(v,x1,y1,y2) & good-adj'(a,y1) & knowledge-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & associate-nn'(n1,y1) & at-in'(p,y1,x2) & company-nn'(n2,x2)	33.270000
+have-vb'(v,x1,y1,y2) & crush-nn'(n1,y1) & on-in'(p,y1,x2) & film-nn'(n2,x2)	52.860000
+have-vb'(v,x1,y1,y2) & place-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	13.320000
+equal'(eq,x1,y1) & agent-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & brother-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	34.190000
+equal'(eq,x1,y1) & assistant-nn'(n1,y1) & at-in'(p,y1,x2) & state-nn'(n2,x2)	16.470000
+equal'(eq,x1,y1) & only-adj'(a,y1) & people-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	41.760000
+equal'(eq,x1,y1) & letter-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & base-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	23.370000
+equal'(eq,x1,y1) & face-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	61.000000
+equal'(eq,x1,y1) & gateway-nn'(n1,y1) & between-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & candidate-nn'(n1,y1) & for-in'(p1,y1,y4) & governor-nn'(n2,y4) & of-in'(p2,y4,x2) & state-nn'(n3,x2)	0.000000
+equal'(eq,x1,y1) & big-adj'(a,y1) & hit-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & currency-nn'(n1,y1) & use-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & country-nn'(n2,x2)	14.950000
+have-vb'(v,x1,y1,y2) & story-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & end-nn'(n1,y1) & of-in'(p,y1,x2) & month-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & central-adj'(a,x2) & country-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & first-adj'(a,y1) & site-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.790000
+equal'(eq,x1,y1) & last-adj'(a,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & celebration-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & seat-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & drug-nn'(n2,x2)	27.090000
+equal'(eq,x1,y1) & chiropractor-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & only-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & son-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	148.500000
+have-vb'(v,x1,y1,y2) & average-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	64.800000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & person-nn'(n2,x2)	223.230000
+equal'(eq,x1,y1) & national-adj'(a,y1) & day-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	8.710000
+equal'(eq,x1,y1) & southernmost-adj'(a,y1) & point-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & dominant-adj'(a,y1) & religion-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & only-adj'(a,y1) & group-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & combination-nn'(n1,y1) & of-in'(p,y1,x2) & activity-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & superhero-nn'(n2,x2)	64.300000
+equal'(eq,x1,y1) & official-adj'(a,y1) & language-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	218.560000
+have-vb'(v,x1,y1,y2) & good-adj'(a,y1) & reputation-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & province-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	43.200000
+equal'(eq,x1,y1) & last-adj'(a,y1) & person-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & accuracy-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & deity-nn'(n2,x2)	17.830000
+have-vb'(v,x1,y1,y2) & choice-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a1,y1) & european-nn'(n1,y3) & settlement-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p2,y1,x2) & state-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & government-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & only-adj'(a,y1) & place-nn'(n1,y1) & outside-in'(p,y1,x2) & continent-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & only-adj'(a,y1) & team-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	19.410000
+have-vb'(v,x1,y1,y2) & significant-adj'(a,y1) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	29.510000
+equal'(eq,x1,y1) & ancient-adj'(a,y1) & name-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	69.310000
+equal'(eq,x1,y1) & relationship-nn'(n1,y1) & between-in'(p,y1,x2) & film-nn'(n2,x2)	30.640000
+equal'(eq,x1,y1) & combination-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & student-nn'(n1,y1) & at-in'(p,y1,x2) & city-nn'(n2,x2)	38.000000
+equal'(eq,x1,y1) & drive-vb'(v1,y1,u1,u2) & force-nn'(n1,y1) & behind-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a1,y1) & full-adj'(a2,y1) & weekend-nn'(n1,y1) & in-in'(p2,y1,x2) & month-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & time-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & import-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	27.730000
+have-vb'(v,x1,y1,y2) & strong-adj'(a,y1) & interest-nn'(n1,y1) & in-in'(p,y1,x2) & activity-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & presidential-adj'(a,y1) & candidate-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	11.510000
+have-vb'(v,x1,y1,y2) & daughter-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & organization-nn'(n1,y1) & found-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & year-nn'(n2,x2)	33.270000
+have-vb'(v,x1,y1,y2) & problem-nn'(n1,y1) & with-in'(p,y1,x2) & gender-nn'(n2,x2)	24.950000
+have-vb'(v,x1,y1,y2) & future-nn'(n1,y1) & in-in'(p,y1,x2) & sport-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & essence-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	122.910000
+have-vb'(v,x1,y1,y2) & degree-nn'(n1,y1) & in-in'(p,y1,x2) & language-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a,y1) & nation-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & only-adj'(a,y1) & state-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	264.190000
+have-vb'(v,x1,y1,y2) & commanding-adj'(a,y1) & lead-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & young-adj'(a,y1) & man-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & birthday-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & associate-adj'(a,y1) & professor-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	99.170000
+have-vb'(v,x1,y1,y2) & conversation-nn'(n1,y1) & in-in'(p,y1,x2) & language-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & record-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	19.410000
+have-vb'(v,x1,y1,y2) & impact-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & student-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	55.450000
+equal'(eq,x1,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & eastern-adj'(a,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a,y1) & woman-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	26.370000
+equal'(eq,x1,y1) & country-nn'(n1,y3) & code-nn'(n2,y1) & nn'(e,y1,y3) & for-in'(p,y1,x2) & country-nn'(n3,x2)	36.040000
+equal'(eq,x1,y1) & war-nn'(n1,y1) & between-in'(p,y1,x2) & country-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & law-nn'(n1,y1) & pass-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & year-nn'(n2,x2)	13.320000
+equal'(eq,x1,y1) & soul-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	30.990000
+equal'(eq,x1,y1) & piece-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & daughter-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	301.610000
+equal'(eq,x1,y1) & lifeblood-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & color-nn'(n2,x2)	37.360000
+have-vb'(v,x1,y1,y2) & friend-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & first-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	52.680000
+have-vb'(v,x1,y1,y2) & subsidiary-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	66.540000
+have-vb'(v,x1,y1,y2) & long-adj'(a,y1) & history-nn'(n1,y1) & in-in'(p,y1,x2) & sport-nn'(n2,x2)	19.990000
+have-vb'(v,x1,y1,y2) & treaty-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	9.240000
+have-vb'(v,x1,y1,y2) & purity-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	19.550000
+equal'(eq,x1,y1) & economic-adj'(a,y1) & heart-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & possibility-nn'(n1,y1) & that-in'(p,y1,x2) & country-nn'(n2,x2)	77.080000
+equal'(eq,x1,y1) & answer-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a,y1) & area-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	47.130000
+equal'(eq,x1,y1) & govern-vb'(v1,y1,u1,u2) & body-nn'(n1,y1) & for-in'(p,y1,x2) & sport-nn'(n2,x2)	272.100000
+equal'(eq,x1,y1) & difference-nn'(n1,y1) & between-in'(p,y1,x2) & film-nn'(n2,x2)	28.420000
+equal'(eq,x1,y1) & one-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & last-adj'(a,y1) & Saturday-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & month-nn'(n1,y1) & of-in'(p,y1,x2) & month-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & antithesis-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & disaster-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	83.180000
+have-vb'(v,x1,y1,y2) & plant-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	14.580000
+equal'(eq,x1,y1) & first-adj'(a,y1) & track-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & partner-nn'(n1,y1) & at-in'(p,y1,x2) & company-nn'(n2,x2)	123.700000
+equal'(eq,x1,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & northern-adj'(a,x2) & country-nn'(n2,x2)	38.820000
+have-vb'(v,x1,y1,y2) & depth-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	12.500000
+have-vb'(v,x1,y1,y2) & reflectance-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	17.830000
+equal'(eq,x1,y1) & key-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & employee-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	96.660000
+equal'(eq,x1,y1) & old-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	152.490000
+equal'(eq,x1,y1) & lake-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & wife-nn'(n1,y1) & of-in'(p,y1,x2) & planet-nn'(n2,x2)	69.310000
+equal'(eq,x1,y1) & drive-vb'(v1,y1,u1,u2) & force-nn'(n1,y1) & behind-in'(p,y1,x2) & film-nn'(n2,x2)	93.410000
+equal'(eq,x1,y1) & freelance-adj'(a1,y1) & journalist-nn'(n1,y1) & base-vb'(v2,u1,y1,u2) & in-in'(p2,v2,x2) & state-nn'(n2,x2)	0.000000
+have-vb'(v,x1,y1,y2) & reciprocity-nn'(n1,y3) & agreement-nn'(n2,y1) & nn'(e,y1,y3) & with-in'(p,y1,x2) & state-nn'(n3,x2)	9.570000
+have-vb'(v,x1,y1,y2) & operation-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.020000
+equal'(eq,x1,y1) & man-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & reason-nn'(n1,y1) & for-in'(p,y1,x2) & film-nn'(n2,x2)	30.020000
+have-vb'(v,x1,y1,y2) & relative-adj'(a,y1) & humidity-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	29.580000
+have-vb'(v,x1,y1,y2) & history-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & first-adj'(a,y1) & woman-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & intellectual-adj'(a,y1) & property-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	37.750000
+equal'(eq,x1,y1) & priority-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+have-vb'(v,x1,y1,y2) & dramatic-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & elongation-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & same-adj'(a,y1) & as-in'(p,y1,x2) & film-nn'(n,x2)	170.670000
+equal'(eq,x1,y1) & member-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	34.410000
+equal'(eq,x1,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & first-adj'(a,y1) & school-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	40.620000
+equal'(eq,x1,y1) & dime-nn'(n1,y3) & dozen-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & state-nn'(n3,x2)	60.850000
+equal'(eq,x1,y1) & winner-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	69.310000
+equal'(eq,x1,y1) & same-adj'(a,y1) & size-nn'(n1,y1) & as-in'(p,y1,x2) & state-nn'(n2,x2)	30.500000
+have-vb'(v,x1,y1,y2) & great-adj'(a,y1) & passion-nn'(n1,y1) & for-in'(p,y1,x2) & sport-nn'(n2,x2)	13.180000
+equal'(eq,x1,y1) & choice-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & way-nn'(n1,y1) & that-in'(p,y1,x2) & film-nn'(n2,x2)	67.240000
+have-vb'(v,x1,y1,y2) & effect-nn'(n1,y1) & on-in'(p,y1,x2) & film-nn'(n2,x2)	389.740000
+equal'(eq,x1,y1) & hybrid-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & agreement-nn'(n1,y1) & with-in'(p,y1,x2) & company-nn'(n2,x2)	83.510000
+equal'(eq,x1,y1) & flag-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	80.410000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & young-adj'(a,x2) & gender-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & long-adj'(a,y1) & history-nn'(n1,y1) & in-in'(p,y1,x2) & artwork-nn'(n2,x2)	53.290000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	665.830000
+equal'(eq,x1,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	62.750000
+have-vb'(v,x1,y1,y2) & contract-nn'(n1,y1) & with-in'(p,y1,x2) & filmdistributor-nn'(n2,x2)	24.950000
+have-vb'(v,x1,y1,y2) & deep-adj'(a,y1) & passion-nn'(n1,y1) & for-in'(p,y1,x2) & sport-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & state-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.790000
+equal'(eq,x1,y1) & company-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	44.360000
+have-vb'(v,x1,y1,y2) & work-vb'(v1,y1,u1,u2) & knowledge-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	49.910000
+have-vb'(v,x1,y1,y2) & good-adj'(a1,y1) & working-nn'(n1,y3) & knowledge-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p2,y1,x2) & language-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & governor-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	155.260000
+equal'(eq,x1,y1) & man-nn'(n1,y1) & in-in'(p,y1,x2) & color-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & enemy-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & country-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	14.580000
+equal'(eq,x1,y1) & first-adj'(a,y1) & woman-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	99.810000
+equal'(eq,x1,y1) & great-adj'(a,y1) & choice-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a,y1) & airport-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & form-nn'(n1,y1) & of-in'(p,y1,x2) & activity-nn'(n2,x2)	63.770000
+equal'(eq,x1,y1) & battle-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & term-nn'(n1,y1) & use-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & continent-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & freelance-nn'(n1,y3) & writer-nn'(n2,y1) & nn'(e,y1,y3) & base-vb'(v2,u1,y1,u2) & in-in'(p2,v2,x2) & city-nn'(n3,x2)	0.000000
+equal'(eq,x1,y1) & only-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & holiday-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & war-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & smash-nn'(n1,y3) & hit-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & country-nn'(n3,x2)	18.200000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	39.840000
+equal'(eq,x1,y1) & professor-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & region-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	40.970000
+equal'(eq,x1,y1) & first-adj'(a,y1) & car-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & touch-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	15.400000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & brand-nn'(n2,x2)	38.340000
+equal'(eq,x1,y1) & significant-adj'(a,y1) & problem-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.920000
+equal'(eq,x1,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	404.800000
+equal'(eq,x1,y1) & first-adj'(a,y1) & institution-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & day-nn'(n1,y1) & that-in'(p,y1,x2) & state-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & rock-nn'(n1,y3) & band-nn'(n2,y1) & nn'(e,y1,y3) & from-in'(p,y1,x2) & country-nn'(n3,x2)	122.830000
+equal'(eq,x1,y1) & home-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & strong-adj'(a,y1) & reputation-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	44.360000
+equal'(eq,x1,y1) & need-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & main-adj'(a,y1) & island-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & field-nn'(n1,y3) & day-nn'(n2,y1) & nn'(e,y1,y3) & with-in'(p,y1,x2) & gender-nn'(n3,x2)	19.410000
+equal'(eq,x1,y1) & executive-nn'(n1,y1) & with-in'(p,y1,x2) & company-nn'(n2,x2)	46.370000
+equal'(eq,x1,y1) & sister-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	77.630000
+equal'(eq,x1,y1) & song-nn'(n1,y1) & write-vb'(v2,u1,y1,u2) & by-in'(p,v2,x2) & person-nn'(n2,x2)	526.590000
+have-vb'(v,x1,y1,y2) & contract-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & norm-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & strong-adj'(a,y1) & interest-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.020000
+equal'(eq,x1,y1) & financial-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	176.160000
+equal'(eq,x1,y1) & commercial-adj'(a,y1) & heart-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & attorney-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	19.790000
+equal'(eq,x1,y1) & organization-nn'(n1,y1) & establish-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & year-nn'(n2,x2)	30.500000
+have-vb'(v,x1,y1,y2) & leg-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & only-adj'(a,y1) & magazine-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & important-adj'(a,y1) & step-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & junior-nn'(n1,y3) & senator-nn'(n2,y1) & nn'(e,y1,y3) & from-in'(p,y1,x2) & state-nn'(n3,x2)	52.680000
+equal'(eq,x1,y1) & first-adj'(a,y1) & president-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	153.780000
+equal'(eq,x1,y1) & first-adj'(a,y1) & hospital-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	85.790000
+equal'(eq,x1,y1) & heart-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	95.140000
+have-vb'(v,x1,y1,y2) & option-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	38.820000
+have-vb'(v,x1,y1,y2) & story-nn'(n1,y1) & about-in'(p,y1,x2) & country-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & home-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	518.710000
+equal'(eq,x1,y1) & political-adj'(a,y1) & center-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	58.220000
+equal'(eq,x1,y1) & mother-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & national-adj'(a,y1) & currency-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	41.870000
+have-vb'(v,x1,y1,y2) & concentration-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	42.760000
+equal'(eq,x1,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & southern-adj'(a,x2) & country-nn'(n2,x2)	38.820000
+have-vb'(v,x1,y1,y2) & criminal-adj'(a,y1) & record-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	15.670000
+equal'(eq,x1,y1) & only-adj'(a,y1) & hospital-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	163.950000
+equal'(eq,x1,y1) & leader-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & day-nn'(n1,y1) & of-in'(p,y1,x2) & planet-nn'(n2,x2)	63.770000
+equal'(eq,x1,y1) & extension-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	88.150000
+have-vb'(v,x1,y1,y2) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	43.980000
+equal'(eq,x1,y1) & ancient-adj'(a,y1) & name-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	63.770000
+equal'(eq,x1,y1) & first-adj'(a,y1) & retailer-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	22.180000
+have-vb'(v,x1,y1,y2) & passion-nn'(n1,y1) & for-in'(p,y1,x2) & film-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & slave-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & combination-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	44.360000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & videogame-nn'(n2,x2)	328.020000
+equal'(eq,x1,y1) & current-adj'(a1,y1) & prime-adj'(a2,y1) & minister-nn'(n1,y1) & of-in'(p2,y1,x2) & country-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & lot-nn'(n1,y1) & like-in'(p,y1,x2) & artwork-nn'(n2,x2)	13.320000
+equal'(eq,x1,y1) & last-adj'(a,y1) & Friday-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	14.700000
+equal'(eq,x1,y1) & senator-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & home-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & brainchild-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	1068.080000
+equal'(eq,x1,y1) & heart-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	124.770000
+equal'(eq,x1,y1) & capital-nn'(n1,y1) & until-in'(p,y1,x2) & year-nn'(n2,x2)	24.700000
+equal'(eq,x1,y1) & first-adj'(a,y1) & operator-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	72.090000
+have-vb'(v,x1,y1,y2) & tough-adj'(a,y1) & time-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	9.210000
+equal'(eq,x1,y1) & same-adj'(a,y1) & thing-nn'(n1,y1) & as-in'(p,y1,x2) & film-nn'(n2,x2)	22.940000
+equal'(eq,x1,y1) & voice-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	213.850000
+equal'(eq,x1,y1) & commercial-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	189.630000
+equal'(eq,x1,y1) & only-adj'(a,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	261.330000
+equal'(eq,x1,y1) & only-adj'(a,y1) & place-nn'(n1,y1) & outside-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & responsibility-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	594.970000
+equal'(eq,x1,y1) & first-adj'(a1,y1) & permanent-adj'(a2,y1) & settlement-nn'(n1,y1) & in-in'(p2,y1,x2) & state-nn'(n2,x2)	0.000000
+have-vb'(v,x1,y1,y2) & contract-nn'(n1,y1) & with-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & son-nn'(n1,y1) & of-in'(p,y1,x2) & white-adj'(a,x2) & gender-nn'(n2,x2)	44.360000
+have-vb'(v,x1,y1,y2) & friend-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & name-nn'(n1,y1) & of-in'(p,y1,x2) & artwork-nn'(n2,x2)	92.570000
+equal'(eq,x1,y1) & attorney-nn'(n1,y3) & general-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & state-nn'(n3,x2)	18.060000
+equal'(eq,x1,y1) & friend-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	69.310000
+equal'(eq,x1,y1) & first-adj'(a,y1) & country-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	780.810000
+equal'(eq,x1,y1) & lead-vb'(v1,y1,u1,u2) & event-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & kind-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	8.320000
+have-vb'(v,x1,y1,y2) & major-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & film-nn'(n2,x2)	49.410000
+have-vb'(v,x1,y1,y2) & diameter-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	81.420000
+equal'(eq,x1,y1) & example-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & representative-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & area-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & problem-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	12.490000
+equal'(eq,x1,y1) & essential-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	66.740000
+equal'(eq,x1,y1) & first-adj'(a,y1) & person-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	24.180000
+equal'(eq,x1,y1) & only-adj'(a,y1) & organization-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	58.220000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & state-nn'(n2,x2)	107.340000
+equal'(eq,x1,y1) & format-nn'(n1,y1) & use-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & continent-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & second-adj'(a,y1) & city-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	202.660000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	282.800000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & ethnicity-nn'(n2,x2)	69.780000
+equal'(eq,x1,y1) & work-nn'(n1,y1) & of-in'(p,y1,x2) & single-adj'(a,x2) & gender-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & epitome-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & former-adj'(a,y1) & colony-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & only-adj'(a,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	292.820000
+equal'(eq,x1,y1) & company-nn'(n1,y1) & base-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & city-nn'(n2,x2)	138.450000
+have-vb'(v,x1,y1,y2) & background-nn'(n1,y1) & in-in'(p,y1,x2) & sport-nn'(n2,x2)	52.440000
+equal'(eq,x1,y1) & organization-nn'(n1,y1) & base-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & state-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & essence-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & small-adj'(a1,y1) & company-nn'(n1,y1) & base-vb'(v2,u1,y1,u2) & in-in'(p2,v2,x2) & city-nn'(n2,x2)	0.000000
+have-vb'(v,x1,y1,y2) & branch-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	18.230000
+equal'(eq,x1,y1) & teacher-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & cultural-adj'(a,y1) & center-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	91.500000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	5100.880000
+equal'(eq,x1,y1) & champion-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	109.380000
+have-vb'(v,x1,y1,y2) & weight-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & power-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a,y1) & person-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	13.320000
+equal'(eq,x1,y1) & company-nn'(n1,y1) & base-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & country-nn'(n2,x2)	62.220000
+equal'(eq,x1,y1) & good-adj'(a,y1) & thing-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & father-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	173.200000
+equal'(eq,x1,y1) & founder-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & village-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	226.910000
+equal'(eq,x1,y1) & law-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.790000
+equal'(eq,x1,y1) & unit-nn'(n1,y1) & of-in'(p1,y1,y4) & currency-nn'(n2,y4) & in-in'(p2,y4,x2) & country-nn'(n3,x2)	0.000000
+equal'(eq,x1,y1) & brand-nn'(n1,y3) & name-nn'(n2,y1) & nn'(e,y1,y3) & for-in'(p,y1,x2) & drug-nn'(n3,x2)	530.040000
+equal'(eq,x1,y1) & only-adj'(a,y1) & school-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	7.290000
+equal'(eq,x1,y1) & leader-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	27.730000
+have-vb'(v,x1,y1,y2) & large-adj'(a,y1) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & daughter-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	187.000000
+equal'(eq,x1,y1) & work-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	272.310000
+have-vb'(v,x1,y1,y2) & long-adj'(a,y1) & relationship-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & dime-nn'(n1,y3) & dozen-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & country-nn'(n3,x2)	81.240000
+equal'(eq,x1,y1) & home-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	61.000000
+equal'(eq,x1,y1) & only-adj'(a,y1) & way-nn'(n1,y1) & that-in'(p,y1,x2) & gender-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & gift-nn'(n1,y1) & from-in'(p,y1,x2) & deity-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & new-adj'(a,y1) & program-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & solubility-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & first-adj'(a,y1) & organization-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & birthplace-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	117.440000
+equal'(eq,x1,y1) & woman-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	348.480000
+equal'(eq,x1,y1) & sensitive-adj'(a,y1) & issue-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & birthstone-nn'(n1,y1) & for-in'(p,y1,x2) & month-nn'(n2,x2)	570.490000
+equal'(eq,x1,y1) & trademark-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	6406.840000
+equal'(eq,x1,y1) & same-adj'(a,y1) & thing-nn'(n1,y1) & as-in'(p,y1,x2) & religion-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & commercial-adj'(a,y1) & center-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	44.360000
+have-vb'(v,x1,y1,y2) & chance-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & mix-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & center-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	116.450000
+equal'(eq,x1,y1) & resident-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & member-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	461.060000
+equal'(eq,x1,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	1776.460000
+equal'(eq,x1,y1) & matter-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & coach-nn'(n1,y1) & at-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & national-adj'(a,y1) & language-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	262.670000
+equal'(eq,x1,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	110.900000
+equal'(eq,x1,y1) & legend-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & future-nn'(n1,y1) & of-in'(p,y1,x2) & activity-nn'(n2,x2)	58.220000
+equal'(eq,x1,y1) & actress-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & woman-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & airline-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & home-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & focus-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	149.810000
+equal'(eq,x1,y1) & market-nn'(n1,y3) & leader-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & country-nn'(n3,x2)	246.090000
+have-vb'(v,x1,y1,y2) & significant-adj'(a,y1) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	13.320000
+equal'(eq,x1,y1) & use-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & man-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & certain-adj'(a,y1) & type-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	121.990000
+equal'(eq,x1,y1) & only-adj'(a,y1) & area-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	50.000000
+have-vb'(v,x1,y1,y2) & reflectivity-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	158.040000
+equal'(eq,x1,y1) & only-adj'(a,y1) & hope-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	22.940000
+have-vb'(v,x1,y1,y2) & deal-nn'(n1,y1) & with-in'(p,y1,x2) & company-nn'(n2,x2)	29.110000
+have-vb'(v,x1,y1,y2) & adverse-adj'(a,y1) & effect-nn'(n1,y1) & on-in'(p,y1,x2) & film-nn'(n2,x2)	672.520000
+equal'(eq,x1,y1) & executive-nn'(n1,y1) & at-in'(p,y1,x2) & company-nn'(n2,x2)	81.240000
+equal'(eq,x1,y1) & physician-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & birthplace-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	68.950000
+have-vb'(v,x1,y1,y2) & interview-nn'(n1,y1) & with-in'(p,y1,x2) & film-nn'(n2,x2)	10.470000
+have-vb'(v,x1,y1,y2) & advantage-nn'(n1,y1) & over-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & major-adj'(a,y1) & language-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & unit-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	621.090000
+have-vb'(v,x1,y1,y2) & dominant-adj'(a,y1) & position-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & name-nn'(n1,y1) & use-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & continent-nn'(n2,x2)	13.860000
+have-vb'(v,x1,y1,y2) & range-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	133.610000
+equal'(eq,x1,y1) & major-adj'(a,y1) & success-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	13.320000
+equal'(eq,x1,y1) & true-adj'(a,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & only-adj'(a,y1) & bank-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & writer-nn'(n1,y1) & base-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & city-nn'(n2,x2)	60.850000
+equal'(eq,x1,y1) & case-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	13.320000
+have-vb'(v,x1,y1,y2) & private-adj'(a,y1) & practice-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	37.930000
+equal'(eq,x1,y1) & mountain-nn'(n1,y3) & range-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & country-nn'(n3,x2)	49.910000
+equal'(eq,x1,y1) & minister-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & graduate-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	61.460000
+equal'(eq,x1,y1) & setting-nn'(n1,y1) & for-in'(p,y1,x2) & film-nn'(n2,x2)	99.360000
+equal'(eq,x1,y1) & lead-vb'(v1,y1,u1,u2) & bank-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	63.770000
+have-vb'(v,x1,y1,y2) & reputation-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & heart-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	363.690000
+have-vb'(v,x1,y1,y2) & vacation-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.790000
+equal'(eq,x1,y1) & future-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	24.950000
+have-vb'(v,x1,y1,y2) & border-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	45.390000
+equal'(eq,x1,y1) & first-adj'(a,y1) & hospital-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.330000
+have-vb'(v,x1,y1,y2) & long-adj'(a,y1) & history-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	22.940000
+equal'(eq,x1,y1) & organization-nn'(n1,y1) & base-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & country-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & national-adj'(a,y1) & anthem-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	194.080000
+equal'(eq,x1,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & northwestern-adj'(a,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & captain-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & capital-nn'(n1,y3) & city-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & state-nn'(n3,x2)	581.260000
+equal'(eq,x1,y1) & only-adj'(a,y1) & newspaper-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & major-adj'(a,y1) & event-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & head-nn'(n1,y1) & of-in'(p1,y1,y4) & government-nn'(n2,y4) & in-in'(p2,y4,x2) & country-nn'(n3,x2)	0.000000
+have-vb'(v,x1,y1,y2) & problem-nn'(n1,y1) & with-in'(p,y1,x2) & ethnicity-nn'(n2,x2)	15.010000
+equal'(eq,x1,y1) & time-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	9.540000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & programminglang-nn'(n2,x2)	105.360000
+equal'(eq,x1,y1) & emperor-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & symbol-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	22.180000
+have-vb'(v,x1,y1,y2) & office-nn'(n1,y1) & in-in'(p,y1,x2) & film-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & important-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	251.010000
+equal'(eq,x1,y1) & case-nn'(n1,y1) & with-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & massive-adj'(a,y1) & hit-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	48.350000
+have-vb'(v,x1,y1,y2) & hard-adj'(a,y1) & time-nn'(n1,y1) & with-in'(p,y1,x2) & language-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & long-adj'(a,y1) & tradition-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & edge-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & great-adj'(a,y1) & interview-nn'(n1,y1) & with-in'(p,y1,x2) & person-nn'(n2,x2)	13.590000
+have-vb'(v,x1,y1,y2) & rich-adj'(a,y1) & history-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	19.410000
+have-vb'(v,x1,y1,y2) & special-adj'(a,y1) & interest-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & idea-nn'(n1,y1) & that-in'(p,y1,x2) & film-nn'(n2,x2)	22.940000
+equal'(eq,x1,y1) & time-nn'(n1,y1) & for-in'(p,y1,x2) & continent-nn'(n2,x2)	19.790000
+have-vb'(v,x1,y1,y2) & alcohol-nn'(n1,y3) & content-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	22.180000
+have-vb'(v,x1,y1,y2) & special-adj'(a,y1) & relationship-nn'(n1,y1) & with-in'(p,y1,x2) & continent-nn'(n2,x2)	8.320000
+have-vb'(v,x1,y1,y2) & extensive-adj'(a,y1) & background-nn'(n1,y1) & in-in'(p,y1,x2) & sport-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & long-adj'(a,y1) & history-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	52.760000
+equal'(eq,x1,y1) & trade-nn'(n1,y3) & association-nn'(n2,y1) & nn'(e,y1,y3) & for-in'(p,y1,x2) & state-nn'(n3,x2)	11.090000
+have-vb'(v,x1,y1,y2) & place-nn'(n1,y1) & of-in'(p1,y1,y4) & business-nn'(n2,y4) & in-in'(p2,y4,x2) & state-nn'(n3,x2)	0.000000
+equal'(eq,x1,y1) & shade-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & probability-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & protected-adj'(a,y1) & species-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	54.890000
+have-vb'(v,x1,y1,y2) & subsidiary-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & active-adj'(a,y1) & ingredient-nn'(n1,y1) & in-in'(p,y1,x2) & brand-nn'(n2,x2)	138.610000
+equal'(eq,x1,y1) & suburb-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	152.950000
+equal'(eq,x1,y1) & register-vb'(v1,u1,y1,u2) & trademark-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	5582.390000
+equal'(eq,x1,y1) & first-adj'(a,y1) & for-in'(p,y1,x2) & country-nn'(n,x2)	13.320000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & company-nn'(n2,x2)	196.380000
+equal'(eq,x1,y1) & first-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	15.410000
+equal'(eq,x1,y1) & first-adj'(a,y1) & man-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	44.360000
+equal'(eq,x1,y1) & mixture-nn'(n1,y1) & of-in'(p,y1,x2) & ethnicity-nn'(n2,x2)	55.820000
+have-vb'(v,x1,y1,y2) & length-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	137.350000
+have-vb'(v,x1,y1,y2) & growth-nn'(n1,y3) & rate-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	21.970000
+equal'(eq,x1,y1) & symbol-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	187.230000
+have-vb'(v,x1,y1,y2) & rich-adj'(a,y1) & history-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	9.210000
+equal'(eq,x1,y1) & time-nn'(n1,y1) & for-in'(p,y1,x2) & film-nn'(n2,x2)	45.040000
+have-vb'(v,x1,y1,y2) & major-adj'(a,y1) & impact-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & same-adj'(a,y1) & in-in'(p,y1,x2) & year-nn'(n,x2)	16.640000
+equal'(eq,x1,y1) & hit-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & sign-nn'(n1,y1) & that-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & only-adj'(a,y1) & coach-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	8.790000
+equal'(eq,x1,y1) & guest-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	557.990000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	1126.990000
+equal'(eq,x1,y1) & reason-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	26.650000
+equal'(eq,x1,y1) & small-adj'(a,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & advantage-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & farmer-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & president-nn'(n1,y1) & from-in'(p,y1,x2) & year-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & same-adj'(a,y1) & word-nn'(n1,y1) & in-in'(p,y1,x2) & language-nn'(n2,x2)	13.860000
+have-vb'(v,x1,y1,y2) & affair-nn'(n1,y1) & with-in'(p,y1,x2) & young-adj'(a,x2) & gender-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & dictator-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	82.630000
+equal'(eq,x1,y1) & member-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	173.600000
+equal'(eq,x1,y1) & perfect-adj'(a,y1) & place-nn'(n1,y1) & for-in'(p,y1,x2) & film-nn'(n2,x2)	13.810000
+equal'(eq,x1,y1) & home-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	36.130000
+have-vb'(v,x1,y1,y2) & transmittance-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	61.000000
+have-vb'(v,x1,y1,y2) & density-nn'(n1,y1) & of-in'(p,y1,x2) & weight-nn'(n2,x2)	35.500000
+equal'(eq,x1,y1) & inspiration-nn'(n1,y1) & for-in'(p,y1,x2) & film-nn'(n2,x2)	41.570000
+equal'(eq,x1,y1) & gift-nn'(n1,y1) & from-in'(p,y1,x2) & person-nn'(n2,x2)	8.320000
+have-vb'(v,x1,y1,y2) & great-adj'(a,y1) & reputation-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & museum-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	72.090000
+equal'(eq,x1,y1) & great-adj'(a,y1) & success-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	25.410000
+have-vb'(v,x1,y1,y2) & deal-nn'(n1,y1) & with-in'(p,y1,x2) & filmdistributor-nn'(n2,x2)	53.590000
+equal'(eq,x1,y1) & vote-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	31.950000
+equal'(eq,x1,y1) & home-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	722.100000
+equal'(eq,x1,y1) & first-adj'(a,y1) & station-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+have-vb'(v,x1,y1,y2) & strategic-adj'(a,y1) & alliance-nn'(n1,y1) & with-in'(p,y1,x2) & company-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & chef-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & show-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & next-adj'(a1,y1) & big-adj'(a2,y1) & thing-nn'(n1,y1) & in-in'(p2,y1,x2) & sport-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & only-adj'(a,y1) & company-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	428.450000
+equal'(eq,x1,y1) & company-nn'(n1,y1) & found-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & year-nn'(n2,x2)	13.810000
+equal'(eq,x1,y1) & symbol-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	50.000000
+have-vb'(v,x1,y1,y2) & place-nn'(n1,y1) & in-in'(p,y1,x2) & film-nn'(n2,x2)	71.280000
+have-vb'(v,x1,y1,y2) & map-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & freelance-nn'(n1,y3) & writer-nn'(n2,y1) & nn'(e,y1,y3) & base-vb'(v2,u1,y1,u2) & in-in'(p2,v2,x2) & state-nn'(n3,x2)	0.000000
+equal'(eq,x1,y1) & household-nn'(n1,y3) & name-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & country-nn'(n3,x2)	41.590000
+equal'(eq,x1,y1) & staple-adj'(a,y1) & food-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	13.320000
+equal'(eq,x1,y1) & decision-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & pastor-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	6.640000
+equal'(eq,x1,y1) & quartet-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & prisoner-nn'(n1,y1) & of-in'(p1,y1,y4) & war-nn'(n2,y4) & in-in'(p2,y4,x2) & country-nn'(n3,x2)	0.000000
+equal'(eq,x1,y1) & mother-nn'(n1,y1) & of-in'(p,y1,x2) & planet-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & duty-nn'(n1,y3) & cycle-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	194.080000
+equal'(eq,x1,y1) & first-adj'(a,y1) & restaurant-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & core-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	22.330000
+equal'(eq,x1,y1) & big-adj'(a,y1) & problem-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & album-nn'(n1,y1) & release-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & year-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	1668.990000
+have-vb'(v,x1,y1,y2) & common-adj'(a,y1) & border-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	8.790000
+equal'(eq,x1,y1) & only-adj'(a,y1) & event-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & way-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	7.190000
+equal'(eq,x1,y1) & first-adj'(a,y1) & Saturday-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & only-adj'(a,y1) & kind-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & emblem-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	88.720000
+have-vb'(v,x1,y1,y2) & excellent-adj'(a,y1) & reputation-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & chairman-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	169.130000
+equal'(eq,x1,y1) & drug-nn'(n1,y1) & of-in'(p1,y1,y4) & choice-nn'(n2,y4) & in-in'(p2,y4,x2) & state-nn'(n3,x2)	0.000000
+equal'(eq,x1,y1) & attorney-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & program-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & friend-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & practice-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	44.360000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & artwork-nn'(n2,x2)	283.190000
+equal'(eq,x1,y1) & young-adj'(a,y1) & woman-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	13.180000
+equal'(eq,x1,y1) & lawyer-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & only-adj'(a,y1) & country-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	152.490000
+equal'(eq,x1,y1) & son-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	557.920000
+equal'(eq,x1,y1) & vice-nn'(n1,y3) & president-nn'(n2,y1) & nn'(e,y1,y3) & at-in'(p,y1,x2) & company-nn'(n3,x2)	53.590000
+equal'(eq,x1,y1) & future-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	45.780000
+equal'(eq,x1,y1) & province-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	102.260000
+equal'(eq,x1,y1) & native-adj'(a,y1) & species-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & home-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	58.220000
+have-vb'(v,x1,y1,y2) & long-adj'(a,y1) & history-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	83.000000
+equal'(eq,x1,y1) & group-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & ancient-adj'(a,y1) & city-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	27.730000
+have-vb'(v,x1,y1,y2) & plan-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	28.700000
+have-vb'(v,x1,y1,y2) & base-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & government-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	58.220000
+have-vb'(v,x1,y1,y2) & bad-adj'(a,y1) & reputation-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & next-adj'(a,y1) & step-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & birthplace-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	63.770000
+equal'(eq,x1,y1) & transplant-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & politician-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & third-adj'(a,y1) & Saturday-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & passion-nn'(n1,y1) & for-in'(p,y1,x2) & sport-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & young-adj'(a,y1) & girl-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & major-adj'(a,y1) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & sport-nn'(n2,x2)	66.540000
+equal'(eq,x1,y1) & first-adj'(a,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	77.630000
+have-vb'(v,x1,y1,y2) & solid-adj'(a,y1) & reputation-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & leader-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a,y1) & website-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & only-adj'(a,y1) & state-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	401.750000
+equal'(eq,x1,y1) & lead-nn'(n1,y3) & agency-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & state-nn'(n3,x2)	13.860000
+equal'(eq,x1,y1) & only-adj'(a,y1) & student-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & third-adj'(a,y1) & Wednesday-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & same-adj'(a,y1) & as-in'(p,y1,x2) & gender-nn'(n,x2)	11.090000
+have-vb'(v,x1,y1,y2) & sound-adj'(a,y1) & knowledge-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & branch-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	110.900000
+equal'(eq,x1,y1) & success-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	2146.250000
+equal'(eq,x1,y1) & major-adj'(a,y1) & problem-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & teenager-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	19.410000
+have-vb'(v,x1,y1,y2) & factory-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	30.420000
+equal'(eq,x1,y1) & only-adj'(a,y1) & airport-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & mortality-nn'(n1,y3) & rate-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	49.910000
+equal'(eq,x1,y1) & teacher-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & location-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & host-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & first-adj'(a,y1) & king-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	110.900000
+have-vb'(v,x1,y1,y2) & problem-nn'(n1,y1) & with-in'(p,y1,x2) & religion-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & hero-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & member-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	51.970000
+equal'(eq,x1,y1) & man-nn'(n1,y1) & from-in'(p,y1,x2) & city-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & same-adj'(a,y1) & shade-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & essence-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	81.030000
+equal'(eq,x1,y1) & last-adj'(a,y1) & Friday-nn'(n1,y1) & of-in'(p,y1,x2) & month-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & breadbasket-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & first-adj'(a,y1) & inhabitant-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & memoir-nn'(n1,y1) & of-in'(p,y1,x2) & young-adj'(a,x2) & gender-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & student-nn'(n1,y1) & at-in'(p1,y1,y4) & university-nn'(n2,y4) & of-in'(p2,y4,x2) & state-nn'(n3,x2)	0.000000
+equal'(eq,x1,y1) & priority-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	11.510000
+have-vb'(v,x1,y1,y2) & relationship-nn'(n1,y1) & with-in'(p,y1,x2) & gender-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & recipient-adj'(a,y1) & in-in'(p,y1,x2) & year-nn'(n,x2)	27.730000
+equal'(eq,x1,y1) & first-adj'(a,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	18.060000
+have-vb'(v,x1,y1,y2) & material-adj'(a,y1) & effect-nn'(n1,y1) & on-in'(p,y1,x2) & company-nn'(n2,x2)	157.280000
+equal'(eq,x1,y1) & opportunity-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & brother-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & foundation-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & only-adj'(a,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & film-nn'(n2,x2)	71.570000
+equal'(eq,x1,y1) & result-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	255.860000
+equal'(eq,x1,y1) & jewel-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & integral-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	306.230000
+equal'(eq,x1,y1) & nonprofit-adj'(a1,y1) & group-nn'(n1,y1) & base-vb'(v2,u1,y1,u2) & in-in'(p2,v2,x2) & state-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & lecturer-nn'(n1,y1) & in-in'(p,y1,x2) & language-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & first-adj'(a,y1) & since-in'(p,y1,x2) & year-nn'(n,x2)	18.470000
+equal'(eq,x1,y1) & mecca-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	52.680000
+equal'(eq,x1,y1) & opportunity-nn'(n1,y1) & for-in'(p,y1,x2) & continent-nn'(n2,x2)	13.180000
+equal'(eq,x1,y1) & extension-nn'(n1,y1) & of-in'(p,y1,x2) & religion-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & volunteer-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & area-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & size-nn'(n1,y1) & of-in'(p,y1,x2) & planet-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & economic-adj'(a,y1) & center-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	52.680000
+have-vb'(v,x1,y1,y2) & inflation-nn'(n1,y3) & rate-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	16.640000
+equal'(eq,x1,y1) & gift-nn'(n1,y1) & from-in'(p,y1,x2) & city-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & same-adj'(a,y1) & as-in'(p,y1,x2) & country-nn'(n,x2)	22.180000
+equal'(eq,x1,y1) & sort-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & huge-adj'(a,y1) & problem-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & specificity-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	27.910000
+have-vb'(v,x1,y1,y2) & temperature-nn'(n1,y1) & of-in'(p,y1,x2) & temperature-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & first-adj'(a,y1) & state-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	8.790000
+equal'(eq,x1,y1) & man-nn'(n1,y1) & from-in'(p,y1,x2) & continent-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & tinge-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & thing-nn'(n1,y1) & for-in'(p,y1,x2) & color-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & little-adj'(a,y1) & over-in'(p,y1,x2) & distance-nn'(n,x2)	13.860000
+equal'(eq,x1,y1) & only-adj'(a,y1) & hotel-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	124.770000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & young-adj'(a,x2) & gender-nn'(n2,x2)	992.590000
+equal'(eq,x1,y1) & only-adj'(a,y1) & resort-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & program-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & freelance-nn'(n1,y3) & writer-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & state-nn'(n3,x2)	38.820000
+equal'(eq,x1,y1) & director-nn'(n1,y1) & from-in'(p,y1,x2) & year-nn'(n2,x2)	22.030000
+equal'(eq,x1,y1) & pearl-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	27.730000
+have-vb'(v,x1,y1,y2) & look-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	102.590000
+equal'(eq,x1,y1) & corporation-nn'(n1,y1) & incorporate-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & father-nn'(n1,y1) & of-in'(p,y1,x2) & planet-nn'(n2,x2)	74.860000
+equal'(eq,x1,y1) & only-adj'(a,y1) & university-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	146.640000
+equal'(eq,x1,y1) & friend-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	6.900000
+equal'(eq,x1,y1) & capital-nn'(n1,y1) & from-in'(p,y1,x2) & year-nn'(n2,x2)	19.410000
+have-vb'(v,x1,y1,y2) & strong-adj'(a,y1) & reputation-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	44.360000
+equal'(eq,x1,y1) & register-vb'(v1,u1,y1,u2) & trademark-nn'(n1,y1) & of-in'(p,y1,x2) & filmdistributor-nn'(n2,x2)	66.540000
+equal'(eq,x1,y1) & freelance-nn'(n1,y3) & writer-nn'(n2,y1) & nn'(e,y1,y3) & base-vb'(v2,u1,y1,u2) & in-in'(p2,v2,x2) & artwork-nn'(n3,x2)	0.000000
+equal'(eq,x1,y1) & reason-nn'(n1,y1) & that-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & only-adj'(a,y1) & facility-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & superhero-nn'(n2,x2)	161.010000
+equal'(eq,x1,y1) & writer-nn'(n1,y3) & living-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & city-nn'(n3,x2)	13.500000
+equal'(eq,x1,y1) & only-adj'(a,y1) & university-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	74.860000
+equal'(eq,x1,y1) & first-adj'(a,y1) & community-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	97.040000
+equal'(eq,x1,y1) & size-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	144.770000
+equal'(eq,x1,y1) & only-adj'(a,y1) & manufacturer-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.030000
+equal'(eq,x1,y1) & offensive-adj'(a1,y1) & line-nn'(n1,y3) & coach-nn'(n2,y1) & nn'(e,y1,y3) & at-in'(p2,y1,x2) & state-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & first-adj'(a,y1) & bank-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	123.090000
+have-vb'(v,x1,y1,y2) & profound-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & country-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & state-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	74.860000
+equal'(eq,x1,y1) & political-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & official-adj'(a,y1) & currency-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	47.240000
+have-vb'(v,x1,y1,y2) & article-nn'(n1,y1) & on-in'(p,y1,x2) & company-nn'(n2,x2)	29.580000
+equal'(eq,x1,y1) & future-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	38.050000
+have-vb'(v,x1,y1,y2) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	74.980000
+equal'(eq,x1,y1) & one-nn'(n1,y1) & with-in'(p,y1,x2) & film-nn'(n2,x2)	8.720000
+equal'(eq,x1,y1) & duo-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & product-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	169.190000
+equal'(eq,x1,y1) & representative-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & world-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & only-adj'(a,y1) & people-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & region-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	141.720000
+equal'(eq,x1,y1) & doctor-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	13.620000
+equal'(eq,x1,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+have-vb'(v,x1,y1,y2) & degree-nn'(n1,y1) & in-in'(p,y1,x2) & activity-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & programminglang-nn'(n2,x2)	48.380000
+equal'(eq,x1,y1) & central-adj'(a,y1) & bank-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	207.940000
+have-vb'(v,x1,y1,y2) & vested-adj'(a,y1) & interest-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & soldier-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & city-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	19.990000
+equal'(eq,x1,y1) & equivalent-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & son-nn'(n1,y1) & of-in'(p,y1,x2) & deity-nn'(n2,x2)	325.580000
+have-vb'(v,x1,y1,y2) & opportunity-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	41.590000
+have-vb'(v,x1,y1,y2) & fat-adj'(a,y1) & content-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & southernmost-adj'(a,y1) & point-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & major-adj'(a1,y1) & health-nn'(n1,y3) & problem-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p2,y1,x2) & country-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & champion-nn'(n1,y1) & of-in'(p,y1,x2) & videogame-nn'(n2,x2)	1181.860000
+equal'(eq,x1,y1) & only-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	167.850000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & country-nn'(n2,x2)	37.450000
+equal'(eq,x1,y1) & beginning-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	50.500000
+equal'(eq,x1,y1) & brand-nn'(n1,y3) & name-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & drug-nn'(n3,x2)	119.220000
+equal'(eq,x1,y1) & day-nn'(n1,y1) & that-in'(p,y1,x2) & company-nn'(n2,x2)	8.320000
+have-vb'(v,x1,y1,y2) & message-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & area-nn'(n1,y3) & size-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & state-nn'(n3,x2)	11.090000
+equal'(eq,x1,y1) & first-adj'(a,y1) & facility-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & subject-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	33.270000
+have-vb'(v,x1,y1,y2) & chance-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & only-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	157.580000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	469.940000
+have-vb'(v,x1,y1,y2) & weight-nn'(n1,y1) & of-in'(p,y1,x2) & weight-nn'(n2,x2)	28.580000
+equal'(eq,x1,y1) & friend-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	250.140000
+equal'(eq,x1,y1) & time-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & future-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & company-nn'(n2,x2)	378.230000
+have-vb'(v,x1,y1,y2) & similar-adj'(a,y1) & agreement-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & big-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	44.820000
+equal'(eq,x1,y1) & political-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	102.590000
+equal'(eq,x1,y1) & first-adj'(a,y1) & college-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & first-adj'(a,y1) & company-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	129.560000
+have-vb'(v,x1,y1,y2) & edge-nn'(n1,y1) & over-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & river-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	76.110000
+equal'(eq,x1,y1) & man-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	8.720000
+have-vb'(v,x1,y1,y2) & lot-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & college-nn'(n1,y3) & student-nn'(n2,y1) & nn'(e,y1,y3) & from-in'(p,y1,x2) & state-nn'(n3,x2)	19.410000
+equal'(eq,x1,y1) & individual-adj'(a,y1) & residing-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & wine-nn'(n1,y3) & capital-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & continent-nn'(n3,x2)	36.040000
+equal'(eq,x1,y1) & legal-adj'(a,y1) & resident-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	41.590000
+equal'(eq,x1,y1) & kind-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	44.360000
+have-vb'(v,x1,y1,y2) & thing-nn'(n1,y1) & for-in'(p,y1,x2) & film-nn'(n2,x2)	13.800000
+have-vb'(v,x1,y1,y2) & failure-nn'(n1,y3) & rate-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	38.820000
+have-vb'(v,x1,y1,y2) & rich-adj'(a,y1) & history-nn'(n1,y1) & in-in'(p,y1,x2) & sport-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & last-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & place-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & negative-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & country-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & freelance-adj'(a1,y1) & journalist-nn'(n1,y1) & base-vb'(v2,u1,y1,u2) & in-in'(p2,v2,x2) & country-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & hit-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	38.540000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & courageous-adj'(a,x2) & gender-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & long-adj'(a,y1) & history-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	68.390000
+equal'(eq,x1,y1) & story-nn'(n1,y1) & of-in'(p,y1,x2) & artwork-nn'(n2,x2)	97.370000
+equal'(eq,x1,y1) & hold-vb'(v1,y1,u1,u2) & company-nn'(n1,y1) & for-in'(p,y1,x2) & company-nn'(n2,x2)	247.130000
+equal'(eq,x1,y1) & only-adj'(a,y1) & resort-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	113.680000
+equal'(eq,x1,y1) & woman-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	149.720000
+equal'(eq,x1,y1) & daughter-nn'(n1,y1) & of-in'(p,y1,x2) & superhero-nn'(n2,x2)	49.910000
+equal'(eq,x1,y1) & only-adj'(a,y1) & institution-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	50.000000
+equal'(eq,x1,y1) & reminder-nn'(n1,y1) & that-in'(p,y1,x2) & country-nn'(n2,x2)	44.360000
+have-vb'(v,x1,y1,y2) & offer-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	8.790000
+have-vb'(v,x1,y1,y2) & military-adj'(a,y1) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.020000
+have-vb'(v,x1,y1,y2) & tax-nn'(n1,y3) & rate-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	11.090000
+have-vb'(v,x1,y1,y2) & variety-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	10.010000
+equal'(eq,x1,y1) & first-adj'(a,y1) & settler-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	19.410000
+have-vb'(v,x1,y1,y2) & support-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	52.680000
+equal'(eq,x1,y1) & wife-nn'(n1,y1) & of-in'(p,y1,x2) & person-nn'(n2,x2)	285.660000
+equal'(eq,x1,y1) & foundation-nn'(n1,y1) & for-in'(p,y1,x2) & film-nn'(n2,x2)	26.160000
+equal'(eq,x1,y1) & govern-vb'(v1,y1,u1,u2) & body-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	737.510000
+equal'(eq,x1,y1) & first-adj'(a,y1) & museum-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & backbone-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	38.820000
+have-vb'(v,x1,y1,y2) & job-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	8.920000
+equal'(eq,x1,y1) & dream-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & writer-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & third-adj'(a,y1) & Friday-nn'(n1,y1) & of-in'(p,y1,x2) & month-nn'(n2,x2)	19.410000
+have-vb'(v,x1,y1,y2) & long-adj'(a,y1) & association-nn'(n1,y1) & with-in'(p,y1,x2) & sport-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & good-adj'(a,y1) & thing-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	7.290000
+equal'(eq,x1,y1) & patron-nn'(n1,y3) & saint-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & country-nn'(n3,x2)	431.500000
+equal'(eq,x1,y1) & friend-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	146.950000
+equal'(eq,x1,y1) & extension-nn'(n1,y1) & of-in'(p,y1,x2) & programminglang-nn'(n2,x2)	67.380000
+have-vb'(v,x1,y1,y2) & place-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & place-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	24.950000
+have-vb'(v,x1,y1,y2) & rich-adj'(a,y1) & history-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	45.780000
+equal'(eq,x1,y1) & only-adj'(a,y1) & hotel-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	52.680000
+have-vb'(v,x1,y1,y2) & lot-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	31.590000
+equal'(eq,x1,y1) & way-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	62.220000
+equal'(eq,x1,y1) & only-adj'(a,y1) & one-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	8.790000
+have-vb'(v,x1,y1,y2) & bright-adj'(a,y1) & future-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & campus-nn'(n1,y1) & in-in'(p,y1,x2) & city-nn'(n2,x2)	37.430000
+equal'(eq,x1,y1) & artist-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	77.630000
+have-vb'(v,x1,y1,y2) & license-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & son-nn'(n1,y1) & of-in'(p,y1,x2) & gender-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & parent-nn'(n1,y3) & company-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & company-nn'(n3,x2)	519.050000
+have-vb'(v,x1,y1,y2) & softening-nn'(n1,y3) & point-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & temperature-nn'(n3,x2)	11.090000
+have-vb'(v,x1,y1,y2) & important-adj'(a,y1) & role-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & country-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	47.130000
+equal'(eq,x1,y1) & big-adj'(a,y1) & fan-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & first-adj'(a,y1) & hotel-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	55.450000
+equal'(eq,x1,y1) & national-adj'(a,y1) & sport-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	285.960000
+have-vb'(v,x1,y1,y2) & soft-adj'(a,y1) & spot-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	7.050000
+have-vb'(v,x1,y1,y2) & large-adj'(a,y1) & presence-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & sport-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & author-nn'(n1,y1) & of-in'(p,y1,x2) & year-nn'(n2,x2)	58.220000
+equal'(eq,x1,y1) & center-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	58.220000
+equal'(eq,x1,y1) & first-adj'(a,y1) & university-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	80.390000
+have-vb'(v,x1,y1,y2) & surgery-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & boy-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	19.550000
+equal'(eq,x1,y1) & resident-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & freelance-adj'(a1,y1) & journalist-nn'(n1,y1) & base-vb'(v2,u1,y1,u2) & in-in'(p2,v2,x2) & city-nn'(n2,x2)	0.000000
+have-vb'(v,x1,y1,y2) & good-adj'(a,y1) & command-nn'(n1,y1) & of-in'(p,y1,x2) & language-nn'(n2,x2)	30.420000
+have-vb'(v,x1,y1,y2) & strong-adj'(a,y1) & presence-nn'(n1,y1) & across-in'(p,y1,x2) & continent-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & law-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & father-nn'(n1,y1) & of-in'(p,y1,x2) & city-nn'(n2,x2)	387.800000
+equal'(eq,x1,y1) & ability-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	252.220000
+equal'(eq,x1,y1) & only-adj'(a,y1) & college-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.210000
+equal'(eq,x1,y1) & leader-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	101.760000
+have-vb'(v,x1,y1,y2) & major-adj'(a,y1) & impact-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+have-vb'(v,x1,y1,y2) & strong-adj'(a,y1) & relationship-nn'(n1,y1) & with-in'(p,y1,x2) & country-nn'(n2,x2)	20.490000
+equal'(eq,x1,y1) & attack-nn'(n1,y1) & on-in'(p,y1,x2) & country-nn'(n2,x2)	44.360000
+equal'(eq,x1,y1) & man-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	30.500000
+equal'(eq,x1,y1) & band-nn'(n1,y1) & from-in'(p,y1,x2) & state-nn'(n2,x2)	57.080000
+have-vb'(v,x1,y1,y2) & death-nn'(n1,y3) & penalty-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & state-nn'(n3,x2)	8.320000
+equal'(eq,x1,y1) & current-adj'(a,y1) & governor-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	94.270000
+have-vb'(v,x1,y1,y2) & significant-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & film-nn'(n2,x2)	986.640000
+equal'(eq,x1,y1) & color-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & language-nn'(n1,y1) & speak-vb'(v2,u1,y1,u2) & in-in'(p,v2,x2) & country-nn'(n2,x2)	58.220000
+equal'(eq,x1,y1) & minor-adj'(a,y1) & hit-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	6.900000
+have-vb'(v,x1,y1,y2) & thing-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & freelance-nn'(n1,y3) & writer-nn'(n2,y1) & nn'(e,y1,y3) & base-vb'(v2,u1,y1,u2) & in-in'(p2,v2,x2) & country-nn'(n3,x2)	0.000000
+equal'(eq,x1,y1) & only-adj'(a,y1) & town-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	85.950000
+equal'(eq,x1,y1) & venue-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & belief-nn'(n1,y1) & that-in'(p,y1,x2) & religion-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & only-adj'(a,y1) & organization-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	64.780000
+equal'(eq,x1,y1) & home-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	144.090000
+have-vb'(v,x1,y1,y2) & average-adj'(a,y1) & depth-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	7.430000
+equal'(eq,x1,y1) & college-nn'(n1,y3) & student-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p,y1,x2) & country-nn'(n3,x2)	8.320000
+equal'(eq,x1,y1) & view-nn'(n1,y1) & that-in'(p,y1,x2) & country-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & source-nn'(n1,y1) & of-in'(p,y1,x2) & film-nn'(n2,x2)	6.640000
+equal'(eq,x1,y1) & rookie-nn'(n1,y1) & in-in'(p,y1,x2) & year-nn'(n2,x2)	10.050000
+equal'(eq,x1,y1) & freelance-nn'(n1,y3) & writer-nn'(n2,y1) & nn'(e,y1,y3) & from-in'(p,y1,x2) & state-nn'(n3,x2)	24.950000
+equal'(eq,x1,y1) & common-adj'(a,y1) & sight-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	41.590000
+have-vb'(v,x1,y1,y2) & proven-adj'(a1,y1) & track-nn'(n1,y3) & record-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p2,y1,x2) & state-nn'(n2,x2)	0.000000
+have-vb'(v,x1,y1,y2) & crush-nn'(n1,y1) & on-in'(p,y1,x2) & superhero-nn'(n2,x2)	24.950000
+have-vb'(v,x1,y1,y2) & relationship-nn'(n1,y1) & with-in'(p,y1,x2) & company-nn'(n2,x2)	15.410000
+equal'(eq,x1,y1) & cultural-adj'(a,y1) & capital-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & opening-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	21.420000
+have-vb'(v,x1,y1,y2) & contract-nn'(n1,y1) & until-in'(p,y1,x2) & year-nn'(n2,x2)	110.900000
+equal'(eq,x1,y1) & birthplace-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	152.430000
+equal'(eq,x1,y1) & people-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & southernmost-adj'(a,y1) & region-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	80.410000
+have-vb'(v,x1,y1,y2) & good-adj'(a1,y1) & honor-nn'(n1,y3) & degree-nn'(n2,y1) & nn'(e,y1,y3) & in-in'(p2,y1,x2) & language-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & lead-vb'(v1,y1,u1,u2) & company-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & little-adj'(a,y1) & girl-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & assumption-nn'(n1,y1) & that-in'(p,y1,x2) & film-nn'(n2,x2)	31.330000
+equal'(eq,x1,y1) & subset-nn'(n1,y1) & of-in'(p,y1,x2) & programminglang-nn'(n2,x2)	94.270000
+equal'(eq,x1,y1) & way-nn'(n1,y1) & of-in'(p1,y1,y4) & life-nn'(n2,y4) & in-in'(p2,y4,x2) & state-nn'(n3,x2)	0.000000
+have-vb'(v,x1,y1,y2) & negative-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+equal'(eq,x1,y1) & important-adj'(a,y1) & part-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & need-nn'(n1,y1) & for-in'(p,y1,x2) & film-nn'(n2,x2)	27.730000
+equal'(eq,x1,y1) & geographical-adj'(a,y1) & center-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	8.320000
+equal'(eq,x1,y1) & mixture-nn'(n1,y1) & of-in'(p,y1,x2) & color-nn'(n2,x2)	414.350000
+equal'(eq,x1,y1) & third-adj'(a,y1) & weekend-nn'(n1,y1) & in-in'(p,y1,x2) & month-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & direct-adj'(a,y1) & impact-nn'(n1,y1) & on-in'(p,y1,x2) & film-nn'(n2,x2)	19.040000
+have-vb'(v,x1,y1,y2) & radius-nn'(n1,y1) & of-in'(p,y1,x2) & distance-nn'(n2,x2)	22.180000
+have-vb'(v,x1,y1,y2) & moisture-nn'(n1,y3) & content-nn'(n2,y1) & nn'(e,y1,y3) & of-in'(p,y1,x2) & percent-nn'(n3,x2)	12.740000
+equal'(eq,x1,y1) & first-adj'(a1,y1) & full-adj'(a2,y1) & week-nn'(n1,y1) & in-in'(p2,y1,x2) & month-nn'(n2,x2)	0.000000
+equal'(eq,x1,y1) & mixture-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	57.470000
+equal'(eq,x1,y1) & trio-nn'(n1,y1) & from-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+equal'(eq,x1,y1) & southernmost-adj'(a,y1) & point-nn'(n1,y1) & of-in'(p,y1,x2) & continent-nn'(n2,x2)	38.820000
+equal'(eq,x1,y1) & native-nn'(n1,y1) & of-in'(p,y1,x2) & state-nn'(n2,x2)	164.710000
+have-vb'(v,x1,y1,y2) & extensive-adj'(a,y1) & background-nn'(n1,y1) & in-in'(p,y1,x2) & activity-nn'(n2,x2)	13.860000
+equal'(eq,x1,y1) & location-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	24.950000
+equal'(eq,x1,y1) & island-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	44.360000
+equal'(eq,x1,y1) & problem-nn'(n1,y1) & for-in'(p,y1,x2) & country-nn'(n2,x2)	13.280000
+equal'(eq,x1,y1) & week-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	22.180000
+equal'(eq,x1,y1) & major-adj'(a,y1) & airport-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	97.040000
+equal'(eq,x1,y1) & political-adj'(a,y1) & party-nn'(n1,y1) & in-in'(p,y1,x2) & country-nn'(n2,x2)	147.130000
+equal'(eq,x1,y1) & right-adj'(a,y1) & choice-nn'(n1,y1) & for-in'(p,y1,x2) & state-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & name-nn'(n1,y1) & in-in'(p,y1,x2) & language-nn'(n2,x2)	11.090000
+have-vb'(v,x1,y1,y2) & version-nn'(n1,y1) & in-in'(p,y1,x2) & language-nn'(n2,x2)	19.410000
+equal'(eq,x1,y1) & fact-nn'(n1,y1) & that-in'(p,y1,x2) & film-nn'(n2,x2)	239.750000
+equal'(eq,x1,y1) & hybrid-nn'(n1,y1) & of-in'(p,y1,x2) & sport-nn'(n2,x2)	33.270000
+equal'(eq,x1,y1) & district-nn'(n1,y1) & of-in'(p,y1,x2) & country-nn'(n2,x2)	16.640000
+have-vb'(v,x1,y1,y2) & chance-nn'(n1,y1) & in-in'(p,y1,x2) & state-nn'(n2,x2)	36.040000
+equal'(eq,x1,y1) & case-nn'(n1,y1) & in-in'(p,y1,x2) & continent-nn'(n2,x2)	36.040000
+have-vb'(v,x1,y1,y2) & porosity-nn'(n1,y1) & of-in'(p,y1,x2) & percent-nn'(n2,x2)	73.280000
