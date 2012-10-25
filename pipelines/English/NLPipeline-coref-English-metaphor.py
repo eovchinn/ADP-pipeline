@@ -8,8 +8,8 @@ import re
 boxerdir = '/home/ovchinnikova/candc/'
 boxer2henry_path = './Boxer2Henry.pl'
 henrydir = '/home/ovchinnikova/henry-n700/'
-features = '../../models/data'
-kbpath = '../../models/data/kb-wnfn-noder-lmap.da'
+features = '../../models/English-features-henry'
+kbpath = '../../KBs/English/kb-wnfn-noder-lmap.da'
 
 def extract_hypotheses(filepath,outputdir,fname):
 	lines = open(filepath, "r")
