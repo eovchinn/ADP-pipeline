@@ -1,1 +1,8 @@
-Farsi discourse processing pipeline to be stored here.
+Running instructions:
+
+1.change dir to this directory
+2. run:
+   ./createLF <sentence-file-name>
+   
+* Note that <sentence-file-name> should be the absolute path.
+
