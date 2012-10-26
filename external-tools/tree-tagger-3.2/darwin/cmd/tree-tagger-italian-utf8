@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Set these paths appropriately
+
+BIN=/Users/zvm/code/nlp/Metaphor-ADP/external-tools/tree-tagger-3.2/osx-intel/bin
+CMD=/Users/zvm/code/nlp/Metaphor-ADP/external-tools/tree-tagger-3.2/osx-intel/cmd
+LIB=/Users/zvm/code/nlp/Metaphor-ADP/external-tools/tree-tagger-3.2/osx-intel/lib
+
+OPTIONS="-token -lemma -sgml"
+
+TOKENIZER=${CMD}/utf8-tokenize.perl
+TAGGER=${BIN}/tree-tagger
+ABBR_LIST=${LIB}/italian-abbreviations
+PARFILE=${LIB}/italian-utf8.par
+
+$TOKENIZER -i -a $ABBR_LIST $* |
+$TAGGER $OPTIONS $PARFILE

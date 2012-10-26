@@ -1,0 +1,19 @@
+
+# Set these paths appropriately
+
+BIN=/Users/zvm/code/nlp/Metaphor-ADP/external-tools/tree-tagger-3.2-linux-64bit/bin
+CMD=/Users/zvm/code/nlp/Metaphor-ADP/external-tools/tree-tagger-3.2-linux-64bit/cmd
+LIB=/Users/zvm/code/nlp/Metaphor-ADP/external-tools/tree-tagger-3.2-linux-64bit/lib
+
+OPTIONS="-token -lemma -sgml"
+
+TOKENIZER=${CMD}/utf8-tokenize.perl
+MWL=${CMD}/mwl-lookup-greek-utf8.perl
+TAGGER=${BIN}/tree-tagger
+PARFILE=${LIB}/greek-utf8.par
+
+$TOKENIZER $* |
+# recognition of MWLs
+$MWL |
+# tagging
+$TAGGER $OPTIONS $PARFILE

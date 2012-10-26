@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Set these paths appropriately
+
+BIN=/Users/zvm/code/nlp/Metaphor-ADP/external-tools/tree-tagger-3.2-linux-64bit/bin
+CMD=/Users/zvm/code/nlp/Metaphor-ADP/external-tools/tree-tagger-3.2-linux-64bit/cmd
+LIB=/Users/zvm/code/nlp/Metaphor-ADP/external-tools/tree-tagger-3.2-linux-64bit/lib
+
+OPTIONS="-token -lemma -sgml -pt-with-lemma"
+
+TOKENIZER=${CMD}/tokenize.pl
+TAGGER=${BIN}/tree-tagger
+ABBR_LIST=${LIB}/english-abbreviations
+PARFILE=${LIB}/english.par
+LEXFILE=${LIB}/english-lexicon.txt
+
+$TOKENIZER -e -a $ABBR_LIST $* |
+# remove empty lines
+grep -v '^$' |
+# external lexicon lookup
+perl $CMD/lookup.perl $LEXFILE |
+# tagging
+$TAGGER $OPTIONS $PARFILE | 
+perl -pe 's/\tV[BDHV]/\tVB/;s/IN\/that/\tIN/;'
