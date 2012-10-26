@@ -1,4 +1,4 @@
-MALT pipline for Russian
+Russian discourse processing pipeline.
 ===
 
 **DESCRIPTION**
