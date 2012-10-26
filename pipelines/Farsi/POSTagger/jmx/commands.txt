@@ -1,0 +1,7 @@
+cd /Users/niloofar/Desktop/Work/Works/1.Research/4.Metaphor/farsiPipeline/POSTagger/jmx
+
+export CLASSPATH=$CLASSPATH:/Users/niloofar/Desktop/Work/Works/1.Research/4.Metaphor/farsiPipeline/POSTagger/jmx/mxpost.jar
+
+./trainmxpost /Users/niloofar/Desktop/Work/Works/1.Research/4.Metaphor/farsiPipeline/POSTagger/farsiPOSModel /Users/niloofar/Desktop/Work/Works/1.Research/4.Metaphor/farsiPipeline/Corpus/dependencyTreebank/train.for.tagger.train.txt
+
+./mxpost /Users/niloofar/Desktop/Work/Works/1.Research/4.Metaphor/farsiPipeline/POSTagger/farsiPOSModel < /Users/niloofar/Desktop/Work/Works/1.Research/4.Metaphor/farsiPipeline/Corpus/dependencyTreebank/train.for.tagger.test.txt> /Users/niloofar/Desktop/Work/Works/1.Research/4.Metaphor/farsiPipeline/Corpus/dependencyTreebank/train.for.tagger.test.tagged.txt
