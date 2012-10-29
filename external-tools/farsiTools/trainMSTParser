@@ -1,0 +1,8 @@
+#!/bin/bash
+
+trainFile=`pwd`/trainData/dep
+modelFile=`pwd`/models/farsi.dep.model
+
+cd mstparser
+
+java -classpath ".:lib/trove.jar" -Xmx1800m mstparser.DependencyParser train train-file:$trainFile model-name:$modelFile format:MST
