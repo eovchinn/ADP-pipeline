@@ -1,1 +1,32 @@
 Spanish discrouse processing pipeline to be stored here.
+
+PREPROCESSING (Does not need to be re-run)
+create malty (conll) instances (anc_to_malt.py) (ancora.malt)
+Make maltparse (MP) model (maltparse1.5)
+extract words, pos, and lemmas from ancora.conll to make treetagger (TT) model (to_tree.py) (ancora.treetagger)
+use (full_stop.py) to replace sentence final punct pos tags with "fs" tag for TT in ancora.treetagger (ancora.treetagger.fs)
+useTT included script (make-lex.perl) to create a lexicon from word-pos-lemma file (ancora.lex)
+use (ancora.lex), (ancora.unknown), and (ancora.treetagger.fs) files to create TT model with (specify fs as sentence final punct) (ancora.treetagger.par)
+END PREPROCESSING
+
+CURRENT PIPELINE
+tokenize raw Spanish data (spanish_text.txt) with Freeling tokenizer (spanish_text.tokens)
+2 TT options (bin/treetagger + new model, prebuilt spanish-utf8 tagger in cmd)
+  if uing new TT model (ancora.treetagger.par), output will have ancora tags (spanish_text.ancora.tagged)
+  if using prebuilt spanish tagger, output will have larger tagset that must be reduced (spanish_text.tree.tagged)
+run to_malt.py on tagged text to make conll-style file for MP (works with either TT output) spanish_text.conll
+parse with maltparser (model not complete as of 10/28)
+create propositions with malt_to_prop.py
+
+examples:
+CESS-CAST-P_107_19991001.malt - sample dependency output
+CESS-CAST-P_107_19991001.props - sample proposition output
+ancora.lex - lexicon for use with treetagger
+ancora.malt - conll file to build maltparser model
+ancora.treetagger - word, pos, lemmas from ancora.malt 
+ancora.treetagger.fs - word, pos, lemmas from ancora.malt with 'fs' sentence-final punct-pos; to train treetagger
+spanish_text.ancora.tagged - output of treetagger with ancora corpus pos tags 
+spanish_text.tree.tagged - output of treetagger with default treetagger spanish pos tags 
+spanish_text.conll - output of to_malt.py from treetagged file
+spanish_text.tokens - output of freeling tokenizer
+spanish_text.txt - raw file of spanish text from web
