@@ -1,0 +1,275 @@
+عده‌ای	من	را	متهم	کرد#کن	که	نسبت	به	بزرگان	پیشین	گستاخی	کرد#کن	.
+N	PR	POSTP	AJ	V	SUBR	P	P	N	AJ	N	V	PUNC
+SBJ	PREDEP	OBJ	MOS	ROOT	VCL	NPP	POSDEP	POSDEP	NPOSTMOD	NVE	PRD	PUNC
+5	3	5	5	0	5	11	7	8	9	12	6	5
+
+به	عظمت	کسی	که	در	محضرش	گستاخی	کرد#کن	اندیشید#اندیش	.
+P	N	N	SUBR	P	N	N	V	V	PUNC
+VPP	POSDEP	MOZ	NCL	ADV	POSDEP	NVE	PRD	ROOT	PUNC
+9	1	2	3	8	5	8	4	0	9
+
+اینجا	در	حق	نیما	گستاخی	کرد#کن	.
+N	P	N	N	N	V	PUNC
+ADV	ADV	POSDEP	MOZ	NVE	ROOT	PUNC
+6	6	2	3	6	0	6
+
+به	هر	رو	در	هر	مورد	و	به	هر	گونه	#توان	گزافه‌گویی	کرد#کن	.
+P	PREM	N	P	PREM	N	CONJ	P	PREM	N	V	N	V	PUNC
+ADV	NPREMOD	POSDEP	ADV	NPREMOD	POSDEP	PCONJ	POSDEP	NPREMOD	POSDEP	ROOT	NVE	VCL	PUNC
+11	3	1	11	6	4	4	7	10	8	0	13	11	11
+
+نمایشنامه‌نویس	در	فیلمی	به	همین	نام	ساختۀ	برادران	کوئن	،	ساعت‌ها	دربارۀ	«	حس	بارتن	فینک	»	گزافه‌گویی	کرد#کن	.
+N	P	N	P	PREM	N	AJ	N	N	PUNC	N	P	PUNC	N	N	N	PUNC	N	V	PUNC
+SBJ	ADV	POSDEP	NPP	NPREMOD	POSDEP	NPOSTMOD	NEZ	MOZ	PUNC	ADV	NPP	PUNC	POSDEP	MOZ	MOZ	PUNC	NVE	ROOT	PUNC
+19	19	2	3	6	4	3	7	8	9	19	18	14	12	14	15	14	19	0	19
+
+شکی	#هست	که	دربارۀ	سندروم	عراق	گزافه‌گویی	کرد#کن	.
+N	V	SUBR	P	N	N	N	V	PUNC
+MOS	ROOT	VCL	ADV	POSDEP	MOZ	NVE	PRD	PUNC
+2	0	2	8	4	5	8	3	2
+
+ما	در	مورد	دیروز	گزافه‌گویی	کرد#کن	.
+PR	P	N	N	N	V	PUNC
+SBJ	ADV	POSDEP	MOZ	NVE	ROOT	PUNC
+6	6	2	3	6	0	6
+
+مشکل	آن	#است	که	شما	در	دین	خدا	گزافه‌گویی	کرد#کن	.
+N	PR	V	SUBR	PR	P	N	N	N	V	PUNC
+SBJ	MOS	ROOT	VCL	SBJ	ADV	POSDEP	MOZ	NVE	PRD	PUNC
+3	3	0	3	10	10	6	7	10	4	3
+
+مایل	#هست	که	در	اینجا	مبالغه	و	یا	گزافه‌گویی	کرد#کن	.
+AJ	V	SUBR	P	N	N	CONJ	CONJ	N	V	PUNC
+MOS	ROOT	ACL	ADV	POSDEP	NVE	NCONJ	POSDEP	POSDEP	PRD	PUNC
+2	0	1	10	4	10	6	7	7	3	2
+
+در	نشان‌پذیری	اقبال	از	نیچه	گزافه‌گویی	کرد#کن	.
+P	N	N	P	N	N	V	PUNC
+ADV	POSDEP	MOZ	NPP	POSDEP	NVE	ROOT	PUNC
+7	1	2	3	4	7	0	7
+
+تقریباً	نیمی	از	آنان	دربارۀ	میانگین	نمراتشان	گزافه‌گویی	کرد#کن	.
+ADV	N	P	PR	P	N	N	N	V	PUNC
+PREDEP	SBJ	NPP	POSDEP	ADV	POSDEP	MOZ	NVE	ROOT	PUNC
+2	9	2	3	9	5	6	9	0	9
+
+نکات	ابهام	را	بررسی	و	گزارش	کرد#کن	.
+N	N	POSTP	N	CONJ	N	V	PUNC
+PREDEP	MOZ	OBJ	NVE	NCONJ	POSDEP	ROOT	PUNC
+3	1	7	7	4	5	0	7
+
+بانک‌ها	میزان	سوددهی	خود	را	گزارش	کرد#کن	.
+N	N	N	PR	POSTP	N	V	PUNC
+SBJ	PREDEP	MOZ	MOZ	OBJ	NVE	ROOT	PUNC
+7	5	2	3	7	7	0	7
+
+تخلفات	انتخاباتی	را	به	دستگاه‌های	مسئول	گزارش	کرد#کن	.
+N	AJ	POSTP	P	N	AJ	N	V	PUNC
+PREDEP	NPOSTMOD	OBJ	NPP	POSDEP	NPOSTMOD	NVE	ROOT	PUNC
+3	1	8	7	4	5	8	0	8
+
+گاهی	داغ‌ترین	بازی‌ها	را	آنقدر	سرد	گزارش	کرد#کن	که	به	مخاطب	حس	قدم	زدن	روی	ماسه‌های	داغ	وسط	تابستان	دست	داد#ده	.
+N	AJ	N	POSTP	ADV	AJ	N	V	SUBR	P	N	N	N	N	P	N	AJ	N	N	N	V	PUNC
+ADV	NPREMOD	PREDEP	OBJ	ADV	TAM	NVE	ROOT	NCL	VPP	POSDEP	SBJ	NE	MOZ	NPP	POSDEP	NPOSTMOD	MOZ	MOZ	NVE	PRD	PUNC
+8	3	4	8	8	8	8	0	5	21	10	21	14	12	14	15	16	16	18	21	9	8
+
+عواقب	گودبرداری	در	تئاتر	شهر	را	گزارش	کرد#کن	.
+N	N	P	N	N	POSTP	N	V	PUNC
+SBJ	MOZ	NPP	POSDEP	MOZ	OBJ	NVE	ROOT	PUNC
+8	1	2	3	4	8	8	0	8
+
+نتیجۀ	تحقیقات	را	سریعاً	به	این	بازپرسی	گزارش	کرد#کن	.
+N	N	POSTP	ADV	P	PREM	N	N	V	PUNC
+PREDEP	MOZ	OBJ	ADV	NPP	NPREMOD	POSDEP	NVE	ROOT	PUNC
+3	1	9	9	8	7	5	9	0	9
+
+15	تخلف	انتخاباتی	در	خراسان	جنوبی	گزارش	کرد#کن	.
+NUM	N	AJ	P	N	AJ	N	V	PUNC
+NPREMOD	SBJ	NPOSTMOD	ADV	POSDEP	NPOSTMOD	NVE	ROOT	PUNC
+2	8	2	8	4	5	8	0	8
+
+معتقد	من	کرد#کن	در	یک	ساعت	و	با	چند	کلمه	صحبت	کردن	،	فردی	را	گزینش	کرد#کن	.
+AJ	V	V	P	NUM	N	CONJ	P	PREM	N	N	N	PUNC	N	POSTP	N	V	PUNC
+MOS	ROOT	VCL	ADV	NPREMOD	POSDEP	PCONJ	POSDEP	NPREMOD	POSDEP	NE	POSDEP	PUNC	PREDEP	OBJ	NVE	VCL	PUNC
+2	0	2	17	6	4	4	7	10	12	12	8	12	15	17	17	3	2
+
+شیخ	شهید	برای	سازماندهی	جنبش	انقلابی	خود	افراد	فعال	،	توانمند	،	و	از	نظر	جسمی	و	روحی	افراد	آمادۀ	ایثار	و	فداکاری	را	گزینش	کرد#کن	.
+N	AJ	P	N	N	AJ	PR	N	AJ	PUNC	AJ	PUNC	CONJ	P	N	AJ	CONJ	AJ	N	AJ	N	CONJ	N	POSTP	N	V	PUNC
+SBJ	NPOSTMOD	ADV	POSDEP	MOZ	NPOSTMOD	MOZ	PREDEP	NPOSTMOD	PUNC	AJCONJ	PUNC	NCONJ	AJPP	POSDEP	NPOSTMOD	AJCONJ	POSDEP	POSDEP	NPOSTMOD	NEZ	NCONJ	POSDEP	OBJ	NVE	ROOT	PUNC
+26	1	26	3	4	5	5	24	8	9	9	11	8	20	14	15	16	17	13	19	20	21	22	26	26	0	26
+
+مردم	استان	ایلام	از	میان	34	داوطلب	نمایندگی	مجلس	نهم	سه	نامزد	را	با	رأی	خود	برای	مسئولیت	خطیر	نمایندگی	مجلس	گزینش	کرد#کن	.
+N	N	N	P	N	NUM	N	N	N	POSNUM	NUM	N	POSTP	P	N	PR	P	N	AJ	N	N	N	V	PUNC
+SBJ	MOZ	MOZ	NPP	POSDEP	NPREMOD	MOZ	MOZ	MOZ	NPOSTMOD	NPREMOD	PREDEP	OBJ	ADV	POSDEP	MOZ	ADV	POSDEP	NPOSTMOD	MOZ	MOZ	NVE	ROOT	PUNC
+23	1	2	22	4	7	5	7	8	9	12	13	23	23	14	15	23	17	18	18	20	23	0	23
+
+ملی‌پوشان	را	بر	اساس	استعداد	و	توانایی‌شان	گزینش	کرد#کن	.
+N	POSTP	P	N	N	CONJ	N	N	V	PUNC
+PREDEP	OBJ	NPP	POSDEP	MOZ	NCONJ	POSDEP	NVE	ROOT	PUNC
+2	9	8	3	4	5	6	9	0	9
+
+شما	نیروی	انسانی	توانمند	را	از	بازار	رقابتی	عرضۀ	نیروی	انسانی	گزینش	کرد#کن	.
+PR	N	AJ	AJ	POSTP	P	N	AJ	N	N	AJ	N	V	PUNC
+SBJ	PREDEP	NPOSTMOD	NPOSTMOD	OBJ	ADV	POSDEP	NPOSTMOD	MOZ	MOZ	NPOSTMOD	NVE	ROOT	PUNC
+13	5	2	2	13	13	6	7	7	9	10	13	0	13
+
+او	را	گزینش	کرد#کن	.
+PR	POSTP	N	V	PUNC
+PREDEP	OBJ	NVE	ROOT	PUNC
+2	4	4	0	4
+
+رئیس	جدید	هیئت	تیراندازی	ایلام	گزینش	کرد#کن	.
+N	AJ	N	N	N	N	V	PUNC
+SBJ	NPOSTMOD	MOZ	MOZ	MOZ	NVE	ROOT	PUNC
+7	1	1	3	4	7	0	7
+
+استرالیا	تحریم‌های	خود	بر	ضد	جمهوری	اسلامی	ایران	را	گسترش	داد#ده	.
+N	N	PR	P	N	N	AJ	N	POSTP	N	V	PUNC
+SBJ	PREDEP	MOZ	NPP	POSDEP	MOZ	NPOSTMOD	MOZ	OBJ	NVE	ROOT	PUNC
+11	9	2	2	4	5	6	6	11	11	0	11
+
+ما	فعالیت‌های	مردم‌نهاد	خود	را	گسترش	داد#ده	.
+PR	N	AJ	PR	POSTP	N	V	PUNC
+SBJ	PREDEP	NPOSTMOD	MOZ	OBJ	NVE	ROOT	PUNC
+7	5	2	2	7	7	0	7
+
+بر	اساس	پیشنهادات	و	پیش‌نویس‌های	گوگباشویلی	،	«	انجمن	»	به	تدریج	فعالیت	خود	را	گسترش	داد#ده	.
+P	N	N	CONJ	N	N	PUNC	PUNC	N	PUNC	P	N	N	PR	POSTP	N	V	PUNC
+ADV	POSDEP	MOZ	NCONJ	POSDEP	MOZ	PUNC	PUNC	SBJ	PUNC	ADV	POSDEP	PREDEP	MOZ	OBJ	NVE	ROOT	PUNC
+17	1	2	3	4	5	6	9	17	9	17	11	15	13	17	17	0	17
+
+با	این	نوع	رفتارها	بدبینی	را	گسترش	داد#ده	.
+P	PREM	N	N	N	POSTP	N	V	PUNC
+ADV	NPREMOD	MESU	PREDEP	PREDEP	OBJ	NVE	ROOT	PUNC
+8	4	4	1	6	8	8	0	8
+
+در	دورۀ	کارآموزی	شما	با	انجام	بهتر	شغل	خود	،	دانش	حسابداری	خود	را	گسترش	داد#ده	.
+P	N	N	PR	P	N	AJ	N	PR	PUNC	N	N	PR	POSTP	N	V	PUNC
+ADV	POSDEP	MOZ	SBJ	ADV	POSDEP	NPOSTMOD	MOZ	MOZ	PUNC	PREDEP	MOZ	MOZ	OBJ	NVE	ROOT	PUNC
+16	1	2	16	16	5	6	6	8	9	14	11	11	16	16	0	16
+
+مراکز	ملی	پاسخگویی	به	سوالات	را	در	همه	جا	گسترش	داد#ده	.
+N	AJ	N	P	N	POSTP	P	PREM	N	N	V	PUNC
+PREDEP	NPOSTMOD	MOZ	NPP	POSDEP	OBJ	NPP	NPREMOD	POSDEP	NVE	ROOT	PUNC
+6	1	1	3	4	11	10	9	7	11	0	11
+
+فعالیت	شرکت	در	سال‌های	بعد	نیز	گسترش	داد#ده	.
+N	N	P	N	POSTP	ADV	N	V	PUNC
+SBJ	MOZ	ADV	POSDEP	NPOSTMOD	POSDEP	NVE	ROOT	PUNC
+8	1	8	3	4	4	8	0	8
+
+تصاویر	جنازۀ	قذافی	،	مبارک	را	به	گریه	انداخت#انداز	.
+N	N	N	PUNC	N	POSTP	P	N	V	PUNC
+SBJ	MOZ	MOZ	PUNC	PREDEP	OBJ	VPP	POSDEP	ROOT	PUNC
+9	1	2	3	6	9	9	7	0	9
+
+و	صدای	ترکیدن	حشرات	نوزادان	تازه	به	دنیا	آمده	را	به	گریه	انداخت#انداز	.
+CONJ	N	N	N	N	ADV	P	N	AJ	POSTP	P	N	V	PUNC
+ADV	SBJ	MOZ	MOZ	PREDEP	PREDEP	AJPP	POSDEP	NPOSTMOD	OBJ	VPP	POSDEP	ROOT	PUNC
+13	13	2	3	10	9	9	7	5	13	13	11	0	13
+
+سیاهی	آن	سوی	پنجره	گریه‌اش	انداخت#انداز	.
+N	PREM	N	N	N	V	PUNC
+SBJ	NPREMOD	MOZ	MOZ	NVE	ROOT	PUNC
+6	3	1	3	6	0	6
+
+این	بار	نیز	سید	حسن	مصطفوی	را	به	گریه	انداخت#انداز	.
+PREM	N	ADV	IDEN	N	N	POSTP	P	N	V	PUNC
+NPREMOD	ADV	POSDEP	PREDEP	PREDEP	MOZ	OBJ	VPP	POSDEP	ROOT	PUNC
+2	10	2	5	7	5	10	10	8	0	10
+
+اگر	دانست#دان	چطور	داستان	را	گفت#گوی	همه	را	به	گریه	انداخت#انداز	.
+SUBR	V	ADV	N	POSTP	V	N	POSTP	P	N	V	PUNC
+AJUCL	PRD	ADV	PREDEP	OBJ	VCL	PREDEP	OBJ	VPP	POSDEP	ROOT	PUNC
+11	1	6	5	6	2	8	11	11	9	0	11
+
+ما	کسانی	که	به	فکرمان	#هست	را	به	گریه	انداخت#انداز	.
+PR	N	SUBR	P	N	V	POSTP	P	N	V	PUNC
+SBJ	PREDEP	NCL	MOS	POSDEP	PRD	OBJ	VPP	POSDEP	ROOT	PUNC
+10	7	2	6	4	3	10	10	8	0	10
+
+حریفان	را	به	گریه	انداخت#انداز	.
+N	POSTP	P	N	V	PUNC
+PREDEP	OBJ	VPP	POSDEP	ROOT	PUNC
+2	5	5	3	0	5
+
+سام	صورتش	را	در	مهد	گریم	کرد#کن	.
+N	N	POSTP	P	N	N	V	PUNC
+SBJ	PREDEP	OBJ	ADV	POSDEP	NVE	ROOT	PUNC
+7	3	7	7	4	7	0	7
+
+ابتدا	روی	چهرۀ	جمشید	آریا	(	هاشم‌پور	)	گریم	کرد#کن	.
+N	P	N	N	N	PUNC	N	PUNC	N	V	PUNC
+ADV	NPP	POSDEP	MOZ	MOZ	PUNC	APP	PUNC	NVE	ROOT	PUNC
+10	9	2	3	4	7	5	7	10	0	10
+
+گروه	چهره‌آرایی	بعد	از	انتخاب	شما	،	به	بهترین	وجه	،	شما	را	آرایش	و	گریم	کرد#کن	.
+N	N	P	P	N	PR	PUNC	P	AJ	N	PUNC	PR	POSTP	N	CONJ	N	V	PUNC
+SBJ	MOZ	ADV	POSDEP	POSDEP	MOZ	PUNC	ADV	NPREMOD	POSDEP	PUNC	PREDEP	OBJ	NVE	NCONJ	POSDEP	ROOT	PUNC
+17	1	17	3	4	5	6	17	10	8	10	13	17	17	14	15	0	17
+
+یکی	از	بچه‌ها	را	به	شکل	پیرمرد	گریم	کرد#کن	.
+N	P	N	POSTP	P	N	N	N	V	PUNC
+PREDEP	NPP	POSDEP	OBJ	ADV	POSDEP	MOZ	NVE	ROOT	PUNC
+4	1	2	9	9	5	6	9	0	9
+
+حتی	بازیگرتان	را	هم	مثل	همان	نابازیگرها	گریم	کرد#کن	.
+ADV	N	POSTP	ADV	P	PREM	N	N	V	PUNC
+ADV	PREDEP	OBJ	POSDEP	ADV	NPREMOD	POSDEP	NVE	ROOT	PUNC
+9	3	9	2	9	7	5	9	0	9
+
+برای	تغییر	چهره	کمی	گریم	کرد#کن	.
+P	N	N	ADV	N	V	PUNC
+ADV	POSDEP	MOZ	ADV	NVE	ROOT	PUNC
+6	1	2	6	6	0	6
+
+خیلی‌ها	برای	بازی	در	مختارنامه	تست	گریم	کرد#کن	.
+N	P	N	P	N	N	N	V	PUNC
+SBJ	ADV	POSDEP	NPP	POSDEP	NVE	MOZ	ROOT	PUNC
+8	8	2	3	4	8	6	0	8
+
+ما	تقریباً	لباس	پوشیده	و	گریم	کرد#کن	.
+PR	ADV	N	V	CONJ	N	V	PUNC
+SBJ	ADV	OBJ	PREDEP	VCONJ	NVE	ROOT	PUNC
+7	4	4	5	7	7	0	7
+
+این	شهر	که	دومین	پایتخت	حمادیان	بود#باش	و	در	پناه	کوه‌های	تل	،	از	اعراب	بدوی	گزند	دید#بین	.
+PREM	N	SUBR	NUM	N	N	V	CONJ	P	N	N	N	PUNC	P	N	AJ	N	V	PUNC
+NPREMOD	SBJ	NCL	NPREMOD	MOS	MOZ	PRD	NCONJ	POSDEP	POSDEP	MOZ	MOZ	PUNC	NPP	POSDEP	NPOSTMOD	NVE	ROOT	PUNC
+2	18	2	5	7	5	3	5	8	9	10	11	12	17	14	15	18	0	18
+
+ناوگان	ایران	نیز	بر	اثر	ناآشنایی	با	کرانه‌های	آن	پیرامون	و	دگرگونی	آب	و	هوا	گزند	فراوان	دید#بین	.
+N	N	ADV	P	N	AJ	P	N	PREM	P	CONJ	N	N	CONJ	N	N	AJ	V	PUNC
+SBJ	MOZ	ADV	ADV	POSDEP	NPOSTMOD	AJPP	POSDEP	NPREMOD	MOZ	NCONJ	POSDEP	MOZ	NCONJ	POSDEP	NVE	NPOSTMOD	ROOT	PUNC
+18	1	18	18	4	5	6	7	10	8	8	11	12	13	14	18	16	0	18
+
+هر	سنگی	پس	از	قرن‌ها	از	سردی	و	گرمی	هوا	،	از	باد	و	باران	گزند	دید#بین	.
+PREM	N	P	P	N	P	N	CONJ	N	N	PUNC	P	N	CONJ	N	N	V	PUNC
+NPREMOD	SBJ	ADV	POSDEP	POSDEP	NPP	POSDEP	NCONJ	POSDEP	MOZ	PUNC	PCONJ	POSDEP	NCONJ	POSDEP	NVE	ROOT	PUNC
+2	17	17	3	4	16	6	7	8	9	10	6	12	13	14	17	0	17
+
+شهرهای	مختلف	گزند	دید#بین	.
+N	AJ	N	V	PUNC
+SBJ	NPOSTMOD	NVE	ROOT	PUNC
+4	1	4	0	4
+
+چه	خواست#خواه	و	چه	خواست#خواه	از	مکر	بریتانیا	گزند	دید#بین	.
+ADV	V	CONJ	ADV	V	P	N	N	N	V	PUNC
+ADV	PREDEP	VCONJ	ADV	ROOT	NPP	POSDEP	MOZ	NVE	VCL	PUNC
+2	3	5	5	0	9	6	7	10	5	5
+
+گرسیوز	تنی	چند	از	پهلوانان	تورانی	گزین	کرد#کن	.
+N	AJ	AJ	P	N	AJ	N	V	PUNC
+SBJ	OBJ	NPOSTMOD	NPP	POSDEP	NPOSTMOD	NVE	ROOT	PUNC
+8	8	2	2	4	5	8	0	8
+
+او	که	آمد#آ	یارانش	را	در	دریایی	از	خون	و	عرق	،	گزین	کرد#کن	.
+PR	SUBR	V	N	POSTP	P	N	P	N	CONJ	N	PUNC	N	V	PUNC
+SBJ	AJUCL	PRD	PREDEP	OBJ	ADV	POSDEP	NPP	POSDEP	NCONJ	POSDEP	PUNC	NVE	ROOT	PUNC
+3	14	2	5	14	14	6	7	8	9	10	11	14	0	14
+
+شاعر	خوبی	را	گزین	کرد#کن	.
+N	AJ	POSTP	N	V	PUNC
+PREDEP	NPOSTMOD	OBJ	NVE	ROOT	PUNC
+3	1	5	5	0	5
+
