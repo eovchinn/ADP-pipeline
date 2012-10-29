@@ -4,7 +4,6 @@
 # Malt Parser output processing pipeline for Russian.
 # The script takes the output of the Malt Parser and converts it to <ABC> format.
 
-import os
 import re
 import sys
 import argparse
@@ -27,11 +26,14 @@ def format_sent(sent, prop, sent_count):
     e_count = 1
     x_count = 1
     preds = []
-    for word_id, lemma, cpostag in prop:
+    for i, (word_id, lemma, cpostag) in enumerate(prop):
         if cpostag not in postag_map or punct.match(lemma):
             continue
         pred = u"[%d]:" % (1000 * sent_count + int(word_id))
-        pred += lemma + u"-"
+        if lemma == "<unknown>":
+            pred += sent[i] + u"-"
+        else:
+            pred += lemma + u"-"
         postag, args = postag_map[cpostag]
         pred += postag + u"(e%d" % e_count
         e_count += 1
@@ -54,7 +56,7 @@ def main():
     pa = parser.parse_args()
     lines = open(pa.input, "r") if pa.input else sys.stdin
     out = open(pa.output, "w") if pa.output else sys.stdout
-    
+
     sent_count = 1
     sent = []
     prop = []
