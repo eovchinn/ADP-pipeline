@@ -1,0 +1,12 @@
+#!/bin/bash
+
+modelDir=`pwd`/models/farsiPOSModel
+inputFile=`pwd`/trainData/tagger
+taggerDir=`pwd`/POSTagger/jmx
+
+
+mkdir $modelDir
+
+export CLASSPATH=$CLASSPATH:$taggerDir/mxpost.jar
+
+$taggerDir/trainmxpost $modelDir $inputFile
