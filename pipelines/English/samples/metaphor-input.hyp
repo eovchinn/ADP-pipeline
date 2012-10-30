@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<henry-output parameter="-m infer /home/ovchinnikova/henry-n700/models/w.hard samples/metaphor-input.obs -d 3 -T 120 -e /home/ovchinnikova/henry-n700/models/i12.py -O statistics -f --datadir ../../models/English-features-henry -t 4">
+<result-inference target="1">
+[]
+['YY:0', 'NY:0', 'NN:0', 'YN:0']
+1 1
+<observed size="82" domain_size="0">
+romney-nn(1e33,1x6) ^ in-in(1e43,1x14,1x13) ^ give-vb(1x11,1x1,1x12,1x0) ^ per(1e34,1x6) ^ blue-adj(1e61,1x21) ^ between-in(1e54,1x20,1x19) ^ romney-nn(1e24,1x1) ^ more-adj(1e42,1x12) ^ direction-nn(1e44,1x13) ^ per(1e39,1x10) ^ right-nn(1e37,1x9) ^ steadily-rb(1e46,1x14) ^ cut-nn(1e30,1x2) ^ subset-of(1e57,1x17,1x19) ^ run-vb(1x20,1x22,1x21,1u59) ^ male(1e35,1x7) ^ state-nn(1e23,1x0) ^ conservative-adj(1e41,1x12) ^ run-vb(1x15,1x7,1x8,1u51) ^ subset-of(1e31,1x3,1x5) ^ state-nn(1e60,1x21) ^ of-in(1e50,1x9,1x8) ^ rel(1e26,1x13,1x5) ^ govern-vb(1x16,1x10,1u52,1u53) ^ tax-nn(1e28,1x4) ^ pro-life-adj(1e45,1x13) ^ per(1e25,1x1) ^ t-2003xxxx(1e56,1x18) ^ campaign-nn(1e36,1x8) ^ nn(1e29,1x4,1x2) ^ spending-nn(1e27,1x3) ^ to-in(1e49,1x16,1x9) ^ subset-of(1e58,1x18,1x19) ^ subset-of(1e32,1x4,1x5) ^ t-2007xxxx(1e55,1x17) ^ government-nn(1e40,1x12) ^ move-vb(1x14,1x6,1u47,1u48) ^ romney-nn(1e38,1x10) ^ !=(1e50,1x9,1x8) ^ !=(1e38,1x10) ^ !=(1e56,1x18) ^ !=(1e42,1x12) ^ !=(1e40,1x12) ^ !=(1e54,1x20,1x19) ^ !=(1e55,1x17) ^ !=(1e36,1x8) ^ !=(1e38,1e33) ^ !=(1x16,1x10,1u52,1u53) ^ !=(1x15,1x7,1x8,1u51) ^ !=(1e38,1e24) ^ !=(1e29,1x4,1x2) ^ !=(1e44,1x13) ^ !=(1e27,1x3) ^ !=(1e34,1x6) ^ !=(1e28,1x4) ^ !=(1e26,1x13,1x5) ^ !=(1e57,1x17,1x19) ^ !=(1e34,1e39) ^ !=(1e61,1x21) ^ !=(1e43,1x14,1x13) ^ !=(1e49,1x16,1x9) ^ !=(1e35,1x7) ^ !=(1e32,1x4,1x5) ^ !=(1x14,1x6,1u47,1u48) ^ !=(1e33,1x6) ^ !=(1e46,1x14) ^ !=(1e60,1x21) ^ !=(1x20,1x22,1x21,1u59) ^ !=(1e41,1x12) ^ !=(1e37,1x9) ^ !=(1e45,1x13) ^ !=(1e23,1x0) ^ !=(1x11,1x1,1x12,1x0) ^ !=(1e30,1x2) ^ !=(1e25,1e39) ^ !=(1e24,1x1) ^ !=(1e31,1x3,1x5) ^ !=(1e58,1x18,1x19) ^ !=(1e25,1e34) ^ !=(1e24,1e33) ^ !=(1e39,1x10) ^ !=(1e25,1x1)
+</observed>
+<hypothesis score="-29.038">
+romney-nn(1e33,1x6) ^ in-in(1e43,1x14,1x13) ^ give-vb(1x11,1x1,1x12,1x0) ^ per(1e34,1x6) ^ blue-adj(1e61,1x21) ^ between-in(1e54,1x20,1x19) ^ romney-nn(1e24,1x1) ^ more-adj(1e42,1x12) ^ direction-nn(1e44,1x13) ^ per(1e39,1x10) ^ right-nn(1e37,1x9) ^ steadily-rb(1e46,1x14) ^ cut-nn(1e30,1x2) ^ subset-of(1e57,1x17,1x19) ^ run-vb(1x20,1x22,1x21,1u59) ^ male(1e35,1x7) ^ state-nn(1e23,1x0) ^ conservative-adj(1e41,1x12) ^ run-vb(1x15,1x7,1x8,1u51) ^ subset-of(1e31,1x3,1x5) ^ state-nn(1e60,1x21) ^ of-in(1e50,1x9,1x8) ^ rel(1e26,1x13,1x5) ^ govern-vb(1x16,1x10,1u52,1u53) ^ tax-nn(1e28,1x4) ^ pro-life-adj(1e45,1x13) ^ per(1e25,1x1) ^ t-2003xxxx(1e56,1x18) ^ campaign-nn(1e36,1x8) ^ nn(1e29,1x4,1x2) ^ spending-nn(1e27,1x3) ^ to-in(1e49,1x16,1x9) ^ subset-of(1e58,1x18,1x19) ^ subset-of(1e32,1x4,1x5) ^ t-2007xxxx(1e55,1x17) ^ government-nn(1e40,1x12) ^ move-vb(1x14,1x6,1u47,1u48) ^ romney-nn(1e38,1x10) ^ !=(1e50,1x9,1x8) ^ !=(1e38,1x10) ^ !=(1e56,1x18) ^ !=(1e42,1x12) ^ !=(1e40,1x12) ^ !=(1e54,1x20,1x19) ^ !=(1e55,1x17) ^ !=(1e36,1x8) ^ !=(1e38,1e33) ^ !=(1x16,1x10,1u52,1u53) ^ !=(1x15,1x7,1x8,1u51) ^ !=(1e38,1e24) ^ !=(1e29,1x4,1x2) ^ !=(1e44,1x13) ^ !=(1e27,1x3) ^ !=(1e34,1x6) ^ !=(1e28,1x4) ^ !=(1e26,1x13,1x5) ^ !=(1e57,1x17,1x19) ^ !=(1e34,1e39) ^ !=(1e61,1x21) ^ !=(1e43,1x14,1x13) ^ !=(1e49,1x16,1x9) ^ !=(1e35,1x7) ^ !=(1e32,1x4,1x5) ^ !=(1x14,1x6,1u47,1u48) ^ !=(1e33,1x6) ^ !=(1e46,1x14) ^ !=(1e60,1x21) ^ !=(1x20,1x22,1x21,1u59) ^ !=(1e41,1x12) ^ !=(1e37,1x9) ^ !=(1e45,1x13) ^ !=(1e23,1x0) ^ !=(1x11,1x1,1x12,1x0) ^ !=(1e30,1x2) ^ !=(1e25,1e39) ^ !=(1e24,1x1) ^ !=(1e31,1x3,1x5) ^ !=(1e58,1x18,1x19) ^ !=(1e25,1e34) ^ !=(1e24,1e33) ^ !=(1e39,1x10) ^ !=(1e25,1x1) ^ =(1x15,1x20) ^ =(1x19,1x5) ^ =(1e58,1e57,1e32,1e31) ^ =(1x4,1x17,1x18,1x3) ^ =(1u51,1u59) ^ =(1e60,1e23) ^ =(1x7,1x13,1x22) ^ =(1x0,1x21,1x8)
+</hypothesis>
+<vector score="-29.038">
+"!HYPOTHESIZED_2003xxxx":-1.001 "STR_MATCH_COMP_vb":0.000528821 "!EXPLAINED_of":3 "!HYPOTHESIZED_":-6.006 "!HYPOTHESIZED_of":-4.004 "WORD_FREQ_vb":0 "ABST_LEVEL_vb":0 "!HYPOTHESIZED_nn":-12.012 "!HYPOTHESIZED_adj":-4.004 "!EXPLAINED_":4 "WORD_FREQ_nn":0 "!EXPLAINED_nn":1 "ABST_LEVEL_nn":-8.81368e-05 "!HYPOTHESIZED_rb":-1.001 "!HYPOTHESIZED_in":-4.004 "!HYPOTHESIZED_2007xxxx":-1.001 "STR_MATCH_COMP_nn":0.000528821 "!HYPOTHESIZED_vb":-5.005 "!EXPLAINED_vb":1 
+</vector>
+<statistics>
+<time total="6.29712" prepare="4.4121" ilp="1.88502" />
+<ilp solution="Optimal" variables="2181" constraints="113750" />
+<search-space literals="82" axiom="0" />
+</statistics>
+</result-inference>
+<result-inference target="2">
+[]
+['YY:0', 'NY:0', 'NN:0', 'YN:0']
+1 1
+<observed size="18" domain_size="0">
+of-in(2e12,2x3,2x4) ^ work-nn(2e11,2x3) ^ world-nn(2e5,2x0) ^ direction-nn(2e9,2x2) ^ in-in(2e8,2x0,2x2) ^ bend-vb(2x1,2x3,2x0,2u7) ^ thing(2e6,2x4) ^ rightward-adj(2e10,2x2) ^ thing(2e13,2x4) ^ !=(2e10,2x2) ^ !=(2e5,2x0) ^ !=(2e11,2x3) ^ !=(2x1,2x3,2x0,2u7) ^ !=(2e13,2x4) ^ !=(2e9,2x2) ^ !=(2e6,2x4) ^ !=(2e8,2x0,2x2) ^ !=(2e12,2x3,2x4)
+</observed>
+<hypothesis score="-7.009">
+of-in(2e12,2x3,2x4) ^ work-nn(2e11,2x3) ^ world-nn(2e5,2x0) ^ direction-nn(2e9,2x2) ^ in-in(2e8,2x0,2x2) ^ bend-vb(2x1,2x3,2x0,2u7) ^ thing(2e6,2x4) ^ rightward-adj(2e10,2x2) ^ thing(2e13,2x4) ^ !=(2e10,2x2) ^ !=(2e5,2x0) ^ !=(2e11,2x3) ^ !=(2x1,2x3,2x0,2u7) ^ !=(2e13,2x4) ^ !=(2e9,2x2) ^ !=(2e6,2x4) ^ !=(2e8,2x0,2x2) ^ !=(2e12,2x3,2x4) ^ =(2x0,2x4)
+</hypothesis>
+<vector score="-7.009">
+"!EXPLAINED_":2 "!HYPOTHESIZED_in":-2.002 "!HYPOTHESIZED_vb":-1.001 "!HYPOTHESIZED_nn":-3.003 "!HYPOTHESIZED_adj":-1.001 "!HYPOTHESIZED_":-2.002 
+</vector>
+<statistics>
+<time total="0.0235362" prepare="0.0168881" ilp="0.00664806" />
+<ilp solution="Optimal" variables="144" constraints="1145" />
+<search-space literals="18" axiom="0" />
+</statistics>
+</result-inference>
+</henry-output>
