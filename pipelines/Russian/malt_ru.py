@@ -17,7 +17,7 @@ class WordToken(object):
         "N": ("nn", 2),     # adjective - adj/2
         "R": ("rb", 2),     # adverb - rb/2
         "S": ("in", 3),     # preposition - in/3
-        "P": ("dadj", -1),  # pronoun or demonstrative adjective
+        "P": ("pr", -1),    # pronoun or demonstrative adjective
     }
 
     def __init__(self, line):
@@ -109,10 +109,10 @@ class MaltConverter(object):
 
             if w.cpostag == "vb":
                 arg_text, u_count = self.__handle_verb(w, e_count, u_count)
-            elif w.cpostag == "dadj":
+            elif w.cpostag == "pr":
                 arg_text = None
             elif w.cpostag:
-                arg_text = self.__handle_generic(w, e_count)
+                arg_text, u_count = self.__handle_generic(w, e_count, u_count)
             e_count += 1
 
             if arg_text:
@@ -135,12 +135,15 @@ class MaltConverter(object):
             if dep.deprel == u"предик":
                 w_subject = "x%d" % dep.id
             elif dep.deprel == u"1-компл":
-                if dep.cpostag == "dadj":
+                if dep.cpostag == "pr":
                     d_object = "e%d" % dep.id
                 else:
                     d_object = "x%d" % dep.id
             elif dep.deprel == u"2-компл":
-                i_object = "x%d" % dep.id
+                if dep.cpostag == "pr":
+                    i_object = "e%d" % dep.id
+                else:
+                    i_object = "x%d" % dep.id
 
         if not w_subject:
             w_subject = "u%d" % u_count
@@ -157,11 +160,12 @@ class MaltConverter(object):
         return "(e%d,%s,%s,%s)" % (e_count, w_subject, d_object, i_object), \
             u_count
 
-    def __handle_generic(self, word, e_count):
+    def __handle_generic(self, word, e_count, u_count):
         arg_text = "(e%d" % e_count
         for i in xrange(1, word.args):
-            arg_text += ",x?"  # % i
-        return arg_text + ")"
+            arg_text += ",u%d" % u_count
+            u_count += 1
+        return arg_text + ")", u_count
 
     def flush(self, sent_count, ofile):
         output = self.format_output(sent_count)
