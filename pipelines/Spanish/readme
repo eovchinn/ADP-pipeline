@@ -1,6 +1,9 @@
 Run mac pipeline with:
 ./run_spanish_mac.sh examples/spanish_text.txt
 
+Run spanish pipeline with:
+./run_spanish_linux.sh examples/spanish_text.txt
+
 
 PREPROCESSING (Does not need to be re-run)
 create malty (conll) instances (anc_to_malt.py) (ancora.malt)
