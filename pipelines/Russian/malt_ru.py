@@ -17,7 +17,7 @@ class WordToken(object):
         "N": ("nn", 2),     # adjective - adj/2
         "R": ("rb", 2),     # adverb - rb/2
         "S": ("in", 3),     # preposition - in/3
-        "P": ("dadj", -1),  # demonstrative adjective
+        "P": ("dadj", -1),  # pronoun or demonstrative adjective
     }
 
     def __init__(self, line):
@@ -58,10 +58,13 @@ class WordToken(object):
         # 5. опред (modiﬁer), which connects a noun head with an
         #    adjective/participle dependent if the latter serves as an
         #    adjectival modiﬁer to the noun;
-        # 6. (prepositional), which accounts for the relation between a
+        # 6. предл (prepositional), which accounts for the relation between a
         #    preposition as head and a noun as dependent.
 
-        self.cpostag, self.args = self.postag_map.get(cpostag)
+        if cpostag in self.postag_map:
+            self.cpostag, self.args = self.postag_map.get(cpostag)
+        else:
+            self.cpostag, self.args = None, -1
 
 
 class MaltConverter(object):
@@ -109,20 +112,13 @@ class MaltConverter(object):
             elif w.cpostag == "dadj":
                 arg_text = None
             elif w.cpostag:
-                arg_text = self.__handle_others(w, e_count)
+                arg_text = self.__handle_generic(w, e_count)
             e_count += 1
 
             if arg_text:
                 pred += w.cpostag
                 pred += arg_text
                 preds.append(pred)
-            # print "%d, %s, %s, %s" % (w.id, w.lemma, arg_text, w.cpostag)
-            # # pred += postag + u"(e%d" % e_count
-            # # e_count += 1
-            # # for i in xrange(args - 1):
-            # #     pred += u",x%d" % x_count
-            # #     x_count += 1
-            # # pred += u")"
 
         pred_text = u" & ".join(preds)
         return u"%s\n%s\n%s\n\n" % (sent_text, id_text, pred_text,)
@@ -170,7 +166,7 @@ class MaltConverter(object):
         return "(e%d,%s,%s,%s)" % (e_count, w_subject, d_object, i_object), \
             u_count
 
-    def __handle_others(self, word, e_count):
+    def __handle_generic(self, word, e_count):
         arg_text = "(e%d" % e_count
         for i in xrange(1, word.args):
             arg_text += ",x?"  # % i
