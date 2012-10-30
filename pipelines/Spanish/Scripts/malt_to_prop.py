@@ -77,7 +77,7 @@ def build_predicate(pos,eCount,xCount):
         xCount+=1
         predicate=tag+"("+",".join(pred)+")"
         return predicate,eCount,xCount
-    if nounTag.match(pos):
+    if nounTag.match(pos) or pronounTag.match(pos):
         tag="nn"
         pred.append("e"+str(eCount))
         eCount+=1
@@ -121,11 +121,12 @@ if options.tagset == "ancora":
     adjectiveTag = re.compile("a")
     adverbTag = re.compile("r")
     prepositionTag = re.compile("s")
-    propTags = re.compile("n|v|a|r|s")
+    propTags = re.compile("n|v|a|r|s|p")
+    pronounTag = re.compile("p")
 
     #[??:??/??/1987:??.??]
 date = re.compile("\[\?\?\:\?\?\/\?\?\/\d\d\d\d\:\?\?\.\?\?\]")
-puncts = re.compile('[\.,\?\!{}()\[\]:;¿¡\"]')
+puncts = re.compile("[\.,\?\!{}()\[\]:;¿¡]")
 
 def main():
     if options.input_FileName:
