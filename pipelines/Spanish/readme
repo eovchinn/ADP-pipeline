@@ -1,16 +1,18 @@
-Spanish discrouse processing pipeline to be stored here.
+Run mac pipeline with:
+./run_spanish_mac.sh examples/spanish_text.txt
+
 
 PREPROCESSING (Does not need to be re-run)
 create malty (conll) instances (anc_to_malt.py) (ancora.malt)
 Make maltparse (MP) model (maltparse1.5)
 extract words, pos, and lemmas from ancora.conll to make treetagger (TT) model (to_tree.py) (ancora.treetagger)
 use (full_stop.py) to replace sentence final punct pos tags with "fs" tag for TT in ancora.treetagger (ancora.treetagger.fs)
-useTT included script (make-lex.perl) to create a lexicon from word-pos-lemma file (ancora.lex)
+use TT included script (make-lex.perl) to create a lexicon from word-pos-lemma file (ancora.lex)
 use (ancora.lex), (ancora.unknown), and (ancora.treetagger.fs) files to create TT model with (specify fs as sentence final punct) (ancora.treetagger.par)
 END PREPROCESSING
 
 CURRENT PIPELINE
-tokenize raw Spanish data (spanish_text.txt) with Freeling tokenizer (spanish_text.tokens)
+tokenize raw Spanish data (spanish_text.txt) with Treetagger tokenizer (utf8-tokenize.perl) (spanish_text.tokens)
 2 TT options (bin/treetagger + new model, prebuilt spanish-utf8 tagger in cmd)
   if uing new TT model (ancora.treetagger.par), output will have ancora tags (spanish_text.ancora.tagged)
   if using prebuilt spanish tagger, output will have larger tagset that must be reduced (spanish_text.tree.tagged)
