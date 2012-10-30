@@ -9,7 +9,7 @@ sudo port install sqlite3
 
 echo install python related packages
 sudo port install python27
-sudo easy-install lxml
+sudo easy_install lxml
 
 echo install graphviz
 sudo port install graphviz

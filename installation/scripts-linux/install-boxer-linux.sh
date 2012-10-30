@@ -17,6 +17,7 @@ cd $ADP_HOME/boxer
 ln -s Makefile.unix Makefile
 make
 make bin/boxer
+make bin/tokkie
 
 echo unpack models
 cp $boxer_models .
