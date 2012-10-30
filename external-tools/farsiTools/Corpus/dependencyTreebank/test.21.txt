@@ -1,0 +1,30 @@
+بر	خدا	گستاخی	کرد#کن	.
+P	N	N	V	PUNC
+NPP	POSDEP	NVE	ROOT	PUNC
+3	1	4	0	4
+
+پلیس	علت	مرگ	احمد	رضایی	را	گزارش	کرد#کن	.
+N	N	N	N	N	POSTP	N	V	PUNC
+SBJ	PREDEP	MOZ	MOZ	MOZ	OBJ	NVE	ROOT	PUNC
+8	6	2	3	4	8	8	0	8
+
+بهترین	نفرات	را	برای	حضور	در	المپیک	گزینش	کرد#کن	.
+AJ	N	POSTP	P	N	P	N	N	V	PUNC
+NPREMOD	PREDEP	OBJ	NPP	POSDEP	NPP	POSDEP	NVE	ROOT	PUNC
+2	3	9	8	4	5	6	9	0	9
+
+شبکه‌های	فارسی‌زبان	را	گسترش	داد#ده	.
+N	AJ	POSTP	N	V	PUNC
+PREDEP	NPOSTMOD	OBJ	NVE	ROOT	PUNC
+3	1	5	5	0	5
+
+هر	روز	با	دست‌ها	و	زبانتان	کتاب	آسمانیتان	را	به	گریه	انداخت#انداز	.
+PREM	N	P	N	CONJ	N	N	AJ	POSTP	P	N	V	PUNC
+NPREMOD	ADV	ADV	POSDEP	NCONJ	POSDEP	PREDEP	NPOSTMOD	OBJ	VPP	POSDEP	ROOT	PUNC
+2	12	12	3	4	5	9	7	12	12	10	0	12
+
+اگر	مدیر	به	پست	و	وظایفش	و	موقعیتش	به	دید	امانت	نگریست#نگر	هرگز	از	بسیاری	خطرات	گزند	دید#بین	.
+SUBR	N	P	N	CONJ	N	CONJ	N	P	N	N	V	ADV	P	PREM	N	N	V	PUNC
+AJUCL	SBJ	VPP	POSDEP	NCONJ	POSDEP	NCONJ	POSDEP	VPP	POSDEP	MOZ	PRD	ADV	NPP	NPREMOD	POSDEP	NVE	ROOT	PUNC
+18	12	12	3	4	5	6	7	12	9	10	1	18	17	16	14	18	0	18
+

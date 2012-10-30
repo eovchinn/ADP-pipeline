@@ -1,21 +1,24 @@
 #!/bin/bash
 
-baseDir=`pwd`
-
 inputFile=$1
 taggedFile=$1.tagged.txt
 modifiedTaggedFile=$1.modified.tagged.txt
 parserOutputFileName=$1.parsed.txt
 LFFileName=$1.LF.txt
 
-taggerDir=$baseDir/POSTagger/jmx
-parserDir=$baseDir/mstparser
-taggedFileModifier=$baseDir/taggedFileModifier.py
-parseToLFConverter=$baseDir/convertParseTreeToLF.py
-transliterationDict=$baseDir/translitDict.txt
+farsiPipelineDir=`pwd`
+taggedFileModifier=$farsiPipelineDir/taggedFileModifier.py
+parseToLFConverter=$farsiPipelineDir/convertParseTreeToLF.py
+transliterationDict=$farsiPipelineDir/translitDict.txt
 
-POSmodelDir=$baseDir/models/farsiPOSModel
-depModelFile=$baseDir/models/farsi.dep.model
+cd ../..
+MetaphorADPDir=`pwd`
+taggerDir=$MetaphorADPDir/external-tools/farsiTools/POSTagger/jmx
+parserDir=$MetaphorADPDir/external-tools/farsiTools/mstparser
+
+
+POSmodelDir=$MetaphorADPDir/models/farsiModels/farsiPOSModel
+depModelFile=$MetaphorADPDir/models/farsiModels/farsi.dep.model
 
 #POS tag the input file
 
@@ -30,6 +33,7 @@ python $taggedFileModifier $taggedFile $modifiedTaggedFile
 
 echo "Parsing..."
 #run parser
+
 cd $parserDir
 java -classpath ".:lib/trove.jar" -Xmx1800m mstparser.DependencyParser test model-name:$depModelFile test-file:$modifiedTaggedFile output-file:$parserOutputFileName format:MST
 
