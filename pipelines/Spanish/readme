@@ -1,8 +1,8 @@
 Run mac pipeline with:
-./run_spanish_mac.sh examples/spanish_text.txt
+./run_spanish_mac.sh 
 
 Run spanish pipeline with:
-./run_spanish_linux.sh examples/spanish_text.txt
+./run_spanish_linux.sh 
 
 
 PREPROCESSING (Does not need to be re-run)
