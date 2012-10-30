@@ -1,4 +1,4 @@
-Russian discourse processing pipeline.
+Russian discourse processing pipeline
 ===
 
 **DESCRIPTION**
@@ -9,8 +9,26 @@ Processing pipeline for Russian.
 * `malt_ru_test.py` – test script which reproduces full processing pipline for parsing Russian. This includes: tokenizing (using `utf8-tokenize.perl` from [TreeTagger](http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/) package), lemmatization (using TreeTagger on OS X or [CSTLEMMA](http://cst.dk/online/lemmatiser/uk/) on Linux), POS tagging (usign TreeTagger), converting TreeTagger output to Malt compatible format ([CoNLL](http://nextens.uvt.nl/depparse-wiki/DataFormat)), dependency parsing (using [MaltParser](http://www.maltparser.org/) 1.5 with [these](http://corpus.leeds.ac.uk/mocky/) tools).
 * `rus-test.mco` – MALT model for Russian.
 
-===
 
+---
+
+**REQUIREMENTS**
+
+* `lemmatizer.pl` requeres `smallutils.pm` module was installed in you system:
+
+```
+cpan -i smallutils.pm
+```
+
+---
+
+<!--**INSTALLION**
+
+*
+*
+
+===
+-->
 
 **PIPELINING COMMAND EXAMPLES**
 
