@@ -1,0 +1,15 @@
+عده‌ای	من	را	متهم	کرد#کن	که	نسبت	به	بزرگان	پیشین	گستاخی	کرد#کن	.
+N	PR	POSTP	N	V	SUBR	N	P	N	AJ	N	V	PUNC
+LAB	LAB	LAB	LAB	LAB	LAB	LAB	LAB	LAB	LAB	LAB	LAB	LAB
+0	0	0	0	0	0	0	0	0	0	0	0	0
+
+به	عظمت	کسی	که	در	محضرش	گستاخی	کرد#کن	اندیشید#اندیش	.
+P	N	N	SUBR	P	N	N	V	V	PUNC
+LAB	LAB	LAB	LAB	LAB	LAB	LAB	LAB	LAB	LAB
+0	0	0	0	0	0	0	0	0	0
+
+اینجا	در	حق	نیما	گستاخی	کرد#کن	.
+N	P	N	N	N	V	PUNC
+LAB	LAB	LAB	LAB	LAB	LAB	LAB
+0	0	0	0	0	0	0
+

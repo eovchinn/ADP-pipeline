@@ -1,0 +1,15 @@
+عده‌ای	من	را	متهم	کرد#کن	که	نسبت	به	بزرگان	پیشین	گستاخی	کرد#کن	.
+N	P	P	N	V	S	N	P	N	A	N	V	P
+SBJ	PREDEP	OBJ	NVE	ROOT	VCL	PRD	NPP	POSDEP	NPOSTMOD	NVE	PRD	PUNC
+5	3	5	5	0	5	6	7	8	9	12	6	5
+
+به	عظمت	کسی	که	در	محضرش	گستاخی	کرد#کن	اندیشید#اندیش	.
+P	N	N	S	P	N	N	V	V	P
+VPP	POSDEP	MOZ	NCL	ADV	POSDEP	NVE	PRD	ROOT	PUNC
+9	1	2	3	8	5	8	4	0	9
+
+اینجا	در	حق	نیما	گستاخی	کرد#کن	.
+N	P	N	N	N	V	P
+ADV	ADV	POSDEP	MOZ	NVE	ROOT	PUNC
+6	6	2	3	6	0	6
+
