@@ -49,7 +49,7 @@ Linux:
 ```
 ../../external-tools/tree-tagger-3.2/linux/cmd/utf8-tokenize.perl samples/raw_text_input.txt |
 ../../external-tools/tree-tagger-3.2/linux/bin/tree-tagger -lemma -token -sgml ../../external-tools/malt-ru/russian.par |
-../../external-tools/malt-ru/lemmatiser.pl -l ../../external-tools/malt-ru/msd-ru-lemma.lex.gz -p ../../external-tools/malt-ru/wform2011.ptn1 -c ../../external-tools/malt-ru/cstlemma-linux-64bit |
+../../external-tools/malt-ru/lemmatiser.pl -l ../../external-tools/malt-ru/msd-ru-lemma.lex.gz -p ../../external-tools/malt-ru/wform2011.ptn1 -c ../../external-tools/malt-ru/cstlemma |
 ../../external-tools/malt-ru/make-malt.pl |
 java -Xmx16g -jar ../../external-tools/malt-1.5/malt.jar -c rus-test.mco -m parse |
 python malt_ru.py
