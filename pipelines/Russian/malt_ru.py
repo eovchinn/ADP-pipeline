@@ -123,15 +123,6 @@ class MaltConverter(object):
         pred_text = u" & ".join(preds)
         return u"%s\n%s\n%s\n\n" % (sent_text, id_text, pred_text,)
 
-    def word(self, word_id):
-        return self.__words[word_id - 1]
-
-    def is_subject(self, word_id):
-        return self.word(word_id).deprel == u"предик"
-
-    def is_direct_object(self, word_id):
-        return self.word(word_id)
-
     def __handle_verb(self, word, e_count, u_count):
 
         # 1. Link arguments
