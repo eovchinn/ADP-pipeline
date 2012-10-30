@@ -125,7 +125,7 @@ if options.tagset == "ancora":
 
     #[??:??/??/1987:??.??]
 date = re.compile("\[\?\?\:\?\?\/\?\?\/\d\d\d\d\:\?\?\.\?\?\]")
-puncts = re.compile("[\.,\?\!{}()\[\]:;¿¡]")
+puncts = re.compile('[\.,\?\!{}()\[\]:;¿¡\"]')
 
 def main():
     if options.input_FileName:
