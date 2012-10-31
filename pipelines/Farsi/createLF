@@ -6,18 +6,17 @@ modifiedTaggedFile=$1.modified.tagged.txt
 parserOutputFileName=$1.parsed.txt
 LFFileName=$1.LF.txt
 
-farsiPipelineDir=`pwd`
+farsiPipelineDir=$METAPHOR_DIR/pipelines/Farsi
 taggedFileModifier=$farsiPipelineDir/taggedFileModifier.py
 parseToLFConverter=$farsiPipelineDir/convertParseTreeToLF.py
 transliterationDict=$farsiPipelineDir/translitDict.txt
 
-cd ../..
-MetaphorADPDir=`pwd`
-taggerDir=$MetaphorADPDir/external-tools/farsiTools/POSTagger/jmx
-parserDir=$MetaphorADPDir/external-tools/farsiTools/mstparser
+
+taggerDir=$METAPHOR_DIR/external-tools/farsiTools/POSTagger/stanford-postagger
+parserDir=$METAPHOR_DIR/external-tools/farsiTools/mstparser
 
 
-POSmodelDir=$MetaphorADPDir/models/farsiModels/farsiPOSModel
+POSmodelDir=$METAPHOR_DIR/models/farsiModels/farsiPOSModel/StanfordTagger/farsi.tagger.model.bijankhan
 depModelFile=$MetaphorADPDir/models/farsiModels/farsi.dep.model
 
 #POS tag the input file
