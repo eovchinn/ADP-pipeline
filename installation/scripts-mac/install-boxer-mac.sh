@@ -17,6 +17,7 @@ cd $ADP_HOME/boxer
 ln -s Makefile.macosx Makefile
 make
 make bin/boxer
+make bin/tokkie
 
 echo unpack models
 #in mac it's .tar because it is unzipped when downloaded
