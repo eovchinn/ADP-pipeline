@@ -1,0 +1,129 @@
+; CONFLICT ONTOLOGY
+
+;Conflict has two adversaries.
+(B (name adversary1) (=> (conflict e :1.2) (adversary x y e)))
+
+;Adversaries have degree of strength.
+;   [Let's talk about how to represent this.]
+
+;Adversaries have contradictory goals.
+(B (name adversary2) (=> (adversary x y e :1.2) 
+   	 	     	 (^ (goal g x) (goal h y) (not g h))))
+
+; For a stronger adversarial relation, we may add that goals preclude each other
+(B (name adversary3) (=> (adversary x y e :1.2) 
+   	 	     	 (^ (goal g x) (goal h y) 
+			    (=> (accomplish-goal e1 g)
+			        (!accomplish-goal e2 h)))))
+
+
+
+;To win is to achieve the goal.
+
+;To lose is for your adversary to win.
+
+;Adversaries attack each other.
+
+;Adversaries use weapons in attacks.
+
+;Weapons are aimed.
+
+;Adversaries are targeted.
+
+
+: ENGLISH LEXICAL AXIOMS FOR CONFLICT
+
+;A fight is a conflict.
+
+;Combat is conflict.
+
+;Enemies are adversaries.
+
+;Adversaries compete with each other.  
+
+;Victory is winning.
+
+;A barrage is an attack.
+
+;A slap is an attack.
+
+;A rifle is a weapon.
+
+;A rifle has sights/crosshairs for aiming.
+
+;To train a weapon is to aim a weapon.
+
+;A bullet is a weapon.  
+
+;To shoot a gun is an attack.
+
+
+; WAR ONTOLOGY
+
+;War is a conflict.
+
+;Adversaries in war are groups to which members are loyal.
+
+;A flank is a part of a group adversary that is not strong.
+
+;A frontline is a part of a group adversary that attacks.
+
+;Members of groups sometimes defect.
+
+;Subgroups of groups sometimes revolt.
+
+;Dresden was destroyed by an attack with bombs.  
+;   [Maybe we'll ignore this.]
+
+
+: ENGLISH LEXICAL AXIOMS FOR WAR
+
+;A betrayal is when members of groups defect.
+
+
+; SPORTS ONTOLOGY
+
+;Sport is conflict constrained by rules of behavior.
+;   [Let's talk about how to represent this.]
+
+;Adversary in sport is a player.
+
+;Players wear uniform identifying their team.
+
+;In some sports, the adversaries are teams of persons.
+
+
+; RACING  ONTOLOGY
+
+;Racing is a sport.
+
+;A marathon is a race.
+
+;A race has stages.
+
+
+; BOXING  ONTOLOGY
+
+;Boxing is a sport.
+
+;Blow is an attack in boxing.
+
+;Low blow is blow against the rules.
+
+;Adversaries are in same weight class.
+
+;Heavyweight is the highest weight class.
+
+;A round is a part of a boxing match.  
+
+
+; WRESTLING ONTOLOGY
+
+;Wrestling is a sport.
+
+
+; CARD GAME ONTOLOGY
+
+;A card game is a sport.
+
+;A hand is a weapon in an attack.  
