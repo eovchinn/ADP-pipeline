@@ -44,7 +44,7 @@ id(' 1 ',1).
 1040 conservative JJ conservative O 
 1041 government NN government O 
 1042 . . . O 
-[1003]:blue-a(e61,x21) & [1004]:state-n(e60,x21) & [1001]:run-v(x20,x22,x21,u59) & []:subset_of(e58,x18,x19) & []:subset_of(e57,x17,x19) & [1006]:t_2003XXXX(e56,x18) & [1008]:t_2007XXXX(e55,x17) & [1005]:between-p(e54,x20,x19) & [1011]:govern-v(x16,x10,u52,u53) & [1020]:run-v(x15,x7,x8,u51) & [1015]:of-p(e50,x9,x8) & [1012]:to(e49,x16,x9) & [1022]:move-v(x14,x6,u47,u48) & [1023]:steadily-r(e46,x14) & [1026]:pro-life-a(e45,x13) & [1027]:direction-n(e44,x13) & [1024]:in-p(e43,x14,x13) & [1039]:more-a(e42,x12) & [1040]:conservative-a(e41,x12) & [1041]:government-n(e40,x12) & [1035]:give-v(x11,x1,x12,x0) & [1010]:romney-n(e38,x10) & [1010]:per(e39,x10) & [1014]:right-n(e37,x9) & [1017]:campaign-n(e36,x8) & [1018]:male(e35,x7) & [1010]:romney-n(e33,x6) & [1010]:per(e34,x6) & []:subset_of(e32,x4,x5) & []:subset_of(e31,x3,x5) & [1029]:cut-n(e30,x2) & []:nn(e29,x4,x2) & [1030]:tax-n(e28,x4) & [1032]:spending-n(e27,x3) & [1028]:rel(e26,x13,x5) & [1010]:romney-n(e24,x1) & [1010]:per(e25,x1) & [1037]:state-n(e23,x0)
+[1035]:give-v(x18,x0,x17,x7) & [1039]:more-a(e52,x17) & [1040]:conservative-a(e51,x17) & [1041]:government-n(e50,x17) & [1024]:in-p(e49,x12,x11) & []:subset_of(e48,x15,x16) & []:subset_of(e47,x14,x16) & [1029]:cut-n(e46,x13) & []:nn(e45,x15,x13) & [1030]:tax-n(e44,x15) & [1032]:spending-n(e43,x14) & [1028]:rel(e42,x11,x16) & [1022]:move-v(x12,x0,u40,u41) & [1023]:steadily-r(e39,x12) & [1026]:pro-life-a(e38,x11) & [1027]:direction-n(e37,x11) & [1015]:of-p(e36,x1,x2) & [1012]:to(e35,x9,x1) & [1020]:run-v(x10,x0,x2,u34) & [1011]:govern-v(x9,x0,u32,u33) & [1003]:blue-a(e31,x7) & [1001]:run-v(x6,x8,x7,u30) & []:subset_of(e29,x4,x5) & []:subset_of(e28,x3,x5) & [1006]:t_2003XXXX(e27,x4) & [1008]:t_2007XXXX(e26,x3) & [1005]:between-p(e25,x6,x5) & [1004,1037]:state-n(e24,x7) & [1017]:campaign-n(e23,x2) & [1014]:right-n(e22,x1) & [1018]:male(e21,x0) & [1010]:romney-n(e19,x0) & [1010]:per(e20,x0)
 %%% whose works bend the world in a rightward direction 
 id(' 2 ',2).
 2001 whose WP$ whose O 
@@ -56,4 +56,4 @@ id(' 2 ',2).
 2007 a DT a O 
 2008 rightward JJ rightward O 
 2009 direction NN direction O 
-[]:thing(e13,x4) & [2001]:of(e12,x3,x4) & [2002]:work-n(e11,x3) & [2008]:rightward-a(e10,x2) & [2009]:direction-n(e9,x2) & [2006]:in-p(e8,x0,x2) & [2003]:bend-v(x1,x3,x0,u7) & []:thing(e6,x4) & [2005]:world-n(e5,x0)
+[]:thing(e13,x1) & [2008]:rightward-a(e12,x4) & [2009]:direction-n(e11,x4) & [2006]:in-p(e10,x0,x4) & [2003]:bend-v(x3,x2,x0,u9) & [2001]:of(e8,x2,x1) & [2002]:work-n(e7,x2) & []:thing(e6,x1) & [2005]:world-n(e5,x0)
