@@ -1,0 +1,104 @@
+CONFIGURATION
+Configuration name:   farsiMALTSmallModel
+Configuration type:   singlemalt
+Created:              Tue Oct 30 21:47:54 PDT 2012
+
+SYSTEM
+Operating system architecture: x86_64
+Operating system name:         Mac OS X
+JRE vendor name:               Apple Inc.
+JRE version number:            1.6.0_26
+
+MALTPARSER
+Version:                       1.5
+Build date:                    April 21 2011
+
+SETTINGS
+2planar
+  reduceonswitch (-2pr)                 false
+  planar_root_handling (-prh)           normal
+config
+  workingdir (  -w)                     user.dir
+  name (  -c)                           farsiMALTSmallModel
+  logging ( -cl)                        info
+  flowchart (  -m)                      learn
+  type (  -t)                           singlemalt
+  logfile (-lfi)                        stdout
+  url (  -u)                            
+covington
+  allow_root ( -cr)                     true
+  allow_shift ( -cs)                    false
+graph
+  max_sentence_length (-gsl)            256
+  head_rules (-ghr)                     
+  root_label (-grl)                     ROOT
+guide
+  decision_settings (-gds)              T.TRANS+A.DEPREL
+  kbest_type ( -kt)                     rank
+  data_split_structure (  -s)           
+  learner (  -l)                        libsvm
+  kbest (  -k)                          -1
+  features (  -F)                       
+  classitem_separator (-gcs)            ~
+  data_split_column (  -d)              
+  data_split_threshold (  -T)           50
+input
+  infile (  -i)                         /Users/niloofar/Metaphor-ADP/external-tools/farsiTools/MALTParser/trainData/dependency.train.dashSeparated
+  reader ( -ir)                         tab
+  iterations ( -it)                     1
+  charset ( -ic)                        UTF-8
+  reader_options (-iro)                 
+  format ( -if)                         /appdata/dataformat/conllx.xml
+lib
+  save_instance_files ( -li)            false
+  external ( -lx)                       
+  verbosity ( -lv)                      silent
+  options ( -lo)                        
+nivre
+  root_handling (  -r)                  normal
+output
+  charset ( -oc)                        UTF-8
+  writer_options (-owo)                 
+  format ( -of)                         
+  writer ( -ow)                         tab
+  outfile (  -o)                        
+planar
+  no_covered_roots (-pcov)               false
+  connectedness (-pcon)                  none
+  acyclicity (-pacy)                     true
+pproj
+  covered_root (-pcr)                   none
+  marking_strategy ( -pp)               none
+  lifting_order (-plo)                  shortest
+singlemalt
+  parsing_algorithm (  -a)              nivreeager
+  null_value ( -nv)                     one
+  guide_model ( -gm)                    single
+  propagation ( -fp)                    
+  diagnostics ( -di)                    false
+  use_partial_tree ( -up)               false
+  diafile (-dif)                        stdout
+  mode ( -sm)                           parse
+
+DEPENDENCIES
+--guide-features (  -F)                 NivreEager.xml
+
+FEATURE MODEL
+MAIN
+InputColumn(FORM,Input[0])
+InputColumn(FORM,Input[1])
+InputColumn(FORM,Stack[0])
+InputColumn(FORM,head(Stack[0]))
+InputColumn(POSTAG,Input[0])
+InputColumn(POSTAG,Input[1])
+InputColumn(POSTAG,Input[2])
+InputColumn(POSTAG,Input[3])
+InputColumn(POSTAG,Stack[0])
+InputColumn(POSTAG,Stack[1])
+OutputColumn(DEPREL,Stack[0])
+OutputColumn(DEPREL,ldep(Input[0]))
+OutputColumn(DEPREL,ldep(Stack[0]))
+OutputColumn(DEPREL,rdep(Stack[0]))
+
+libsvm INTERFACE
+-s 0 -t 1 -d 2 -g 0.2 -r 0.0 -n 0.5 -m 100 -c 1.0 -e 1.0 -p 0.1 -h 1 -b 0 
