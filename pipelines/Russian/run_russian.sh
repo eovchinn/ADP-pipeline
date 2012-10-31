@@ -1,6 +1,6 @@
 #! /bin/bash
 # Variable $METAPHOR_DIR should point to the root of 
-# Metaphor-ADP directory (e.g ~/code/Metaphor-ADP directory)
+# Metaphor-ADP directory (e.g. ~/code/Metaphor-ADP directory)
 # usage:
 #   $ ./run_russian.sh <input> <output>
 # or
@@ -63,7 +63,7 @@ elif [[ $PLATFORM == "darwin" ]]; then
     java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse |
     python $RU_PIPELINE_DIR/malt_ru.py > "${2:-/dev/stdout}"
 else
-    echo "Unsopported platform $OSTYPE"
+    echo "Unsupported platform $OSTYPE"
 fi
 
 cd $CURRENT_DIR
