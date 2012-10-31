@@ -3,70 +3,52 @@
 import argparse
 import os
 import re
+import sys
+
+METAPHOR_DIR = os.environ['METAPHOR_DIR']
+BOXER_DIR = os.environ['BOXER_DIR']
+HENRY_DIR = os.environ['HENRY_DIR']
 
 # paths
-boxerdir = '/home/ovchinnikova/candc/'
-boxer2henry_path = './Boxer2Henry.pl'
-henrydir = '/home/ovchinnikova/henry-n700/'
-features = '../../models/English-features-henry'
-kbpath = '../../KBs/English/kb-wnfn-noder-lmap.da'
-
-def extract_hypotheses(filepath,outputdir,fname):
-	lines = open(filepath, "r")
-	fout = open(os.path.join(outputdir,fname+".out"), 'w')
-
-	hypothesis_found = False
-	p = re.compile('<result-inference target="(.+)"')
-	target = ''
-
-	for line in lines:
-		matchObj = p.match(line)
-		if matchObj: target = matchObj.group(1)	
-		elif line.startswith('<hypothesis'): hypothesis_found = True
-		else:
-			if hypothesis_found:	
-				fout.write(target+': '+line)
-				hypothesis_found = False
-	fout.close()
+boxer2henry_path = "%s/pipelines/English/Boxer2Henry.pl" % METAPHOR_DIR
+features = "%s/models/English-features-henry" % METAPHOR_DIR
+kbpath = "%s/KBs/English/kb-wnfn-noder-lmap.da" % METAPHOR_DIR
+extract_hypotheses_path = "%s/pipelines/common/extract_hypotheses.py" % METAPHOR_DIR
 
 def main():
-	parser = argparse.ArgumentParser( description="Discource processing pipeline." )
-	parser.add_argument( "--input", help="The input file to be processed.", nargs="+", default=["-"] )
-	parser.add_argument( "--outputdir", help="The output directory. Default is the dir of the input file.", default='' )
+	parser = argparse.ArgumentParser( description="English discource processing pipeline with coref for metaphor project." )
+	parser.add_argument( "--outputdir", help="The output directory. Default is METAPHOR_DIR.", default=METAPHOR_DIR )
 	parser.add_argument( "--kb", help="Path to knowledge base.", default='' )
 	parser.add_argument( "--kbcompiled", help="Use compiled WN-FN knowledge base.", action="store_true", default=False )
+
+	pa = parser.parse_args()
+	if len(pa.outputdir) != 0: outputdir = pa.outputdir
+	input = sys.stdin.read()
+
+       # tokenization
+	tokenizer = 'echo "' + input + '"' + ' | ' + BOXER_DIR + '/bin/tokkie --stdin'
+
+	# parsing
+	candcParser = BOXER_DIR + '/bin/candc --output ' + os.path.join(outputdir,"tmp.ccg") + ' --models ' + BOXER_DIR + '/models/boxer --candc-printer boxer'
 	
-	pa = parser.parse_args()	
 
-	outputdir = pa.outputdir
-	for f in pa.input:
-		fname = os.path.splitext(os.path.basename(f))[0]
-		if len(pa.outputdir) == 0 : outputdir = os.path.dirname(f)
+	# Boxer processing
+	boxer = BOXER_DIR + '/bin/boxer --semantics tacitus --resolve true --input ' + os.path.join(outputdir,"tmp.ccg")
 
-		# tokenization
-		tokenizer = boxerdir + 'bin/tokkie --input ' + f + ' --output ' + os.path.join(outputdir,fname+'.tok')
-		os.system(tokenizer)	
+	# Boxer2Henry processing
+	b2h = 'perl ' + boxer2henry_path + ' --output ' + os.path.join(outputdir,"tmp.obs") + ' --nonmerge sameargs'
 
-		# parsing
-		candcParser = boxerdir + 'bin/candc --input ' + os.path.join(outputdir,fname+'.tok') + ' --output ' + pa.outputdir + os.path.join(outputdir,fname+'.ccg') +' --models ' + boxerdir + 'models/boxer --candc-printer boxer'
-		os.system(candcParser)
+	boxer_proc = tokenizer + ' | ' + candcParser + ' | ' + boxer + ' | ' + b2h
+	os.system(boxer_proc)
+	
+	# Henry processing
+	if pa.kbcompiled:
+		henry = HENRY_DIR + "/bin/henry -m infer " + HENRY_DIR + "/models/w.hard " + pa.kb + " " + os.path.join(outputdir,"tmp.obs") + " -d 3 -T 120 -e " + HENRY_DIR + "/models/i12.py -O proofgraph,statistics -f '--datadir " + features + "' -b " + kbpath + " -t 4"
+	else:
+		henry = HENRY_DIR + "/bin/henry -m infer " + HENRY_DIR + "/models/w.hard " + pa.kb + " " + os.path.join(outputdir,"tmp.obs") + " -d 3 -T 120 -e " + HENRY_DIR + "/models/i12.py -O proofgraph,statistics -f '--datadir " + features + "' -t 4"
 
-		# Boxer processing
-		boxer = boxerdir + 'bin/boxer --input ' + os.path.join(outputdir,fname+'.ccg') + ' --output ' + os.path.join(outputdir,fname+'.drs') + ' --semantics tacitus --resolve true'
-		os.system(boxer) 
-
-		# Boxer2Henry processing
-		b2h = 'perl ' + boxer2henry_path + ' --input ' + os.path.join(outputdir,fname+'.drs') + ' --output ' + os.path.join(outputdir,fname+'.obs')
-		os.system(b2h)
-
-		# Henry processing
-		if pa.kbcompiled:
-			henry = henrydir + "bin/henry -m infer " + henrydir + "models/w.hard " + pa.kb + " " + os.path.join(outputdir,fname+".obs") + " -d 3 -T 120 -e " + henrydir + "models/i12.py -O statistics -f '--datadir " + features + "' -b " + kbpath + " -t 4 > " + os.path.join(outputdir,fname+'.hyp')
-			os.system(henry)
-		else:
-			henry = henrydir + "bin/henry -m infer " + henrydir + "models/w.hard " + pa.kb + " " + os.path.join(outputdir,fname+".obs") + " -d 3 -T 120 -e " + henrydir + "models/i12.py -O statistics -f '--datadir " + features + "' -t 4 > " + os.path.join(outputdir,fname+'.hyp')
-			os.system(henry)
-
-	extract_hypotheses(os.path.join(outputdir,fname+".hyp"),outputdir,fname)
+	# henry inference and extraction of hypotheses
+	henry_hyp_extr = henry + ' | python ' + extract_hypotheses_path
+	os.system(henry_hyp_extr)
 
 if "__main__" == __name__: main()
