@@ -18,6 +18,7 @@ class WordToken(object):
         "R": ("rb", 2),     # adverb - rb/2
         "S": ("in", 3),     # preposition - in/3
         "P": ("pr", -1),    # pronoun or demonstrative adjective
+        "M": ("num", -1),   # numeral
     }
 
     def __init__(self, line):
@@ -72,6 +73,10 @@ class WordToken(object):
         else:
             self.cpostag, self.args = None, -1
 
+    def __repr__(self):
+        return u"<WordToken(%s)>" \
+            % (self.id, )
+
 
 class MaltConverter(object):
     line_splitter = re.compile("\s+")
@@ -79,7 +84,7 @@ class MaltConverter(object):
 
     def __init__(self):
         self.__words = []
-        self.__additional_preds = []
+        self.__extra_preds = []
 
     def add_line(self, line):
         line = self.line_splitter.split(line.decode("utf-8"))
@@ -90,10 +95,10 @@ class MaltConverter(object):
         else:
             return False  # Line was not added (end of sentence).
 
-    def __deps(self, word_id):
-        for word in self.__words:
-            if word.head == word_id:
-                yield word
+    def __deps(self, word):
+        for w in self.__words:
+            if w.head == word.id:
+                yield w
 
     def format_output(self, sent_count):
 
@@ -117,22 +122,25 @@ class MaltConverter(object):
             if w.cpostag == "vb":
                 arg_text, e_count, u_count = \
                     self.__handle_verb(w, e_count, u_count)
-            if w.cpostag == "nn":
+            elif w.cpostag == "nn":
                 arg_text, e_count, u_count = \
                     self.__handle_noun(w, e_count, u_count)
             elif w.cpostag == "pr":
                 arg_text = None
-            elif w.cpostag:
+            elif w.args != -1:
+                print w.lemma, w.args
                 arg_text, e_count, u_count = \
                     self.__handle_generic(w, e_count, u_count)
-            e_count += 1
 
             if arg_text:
                 pred += w.cpostag
                 pred += arg_text
                 preds.append(pred)
+                arg_text = None
 
-        pred_text = u" & ".join(preds + self.__additional_preds)
+        pred_text = u" & ".join(
+            preds +
+            self.extra_preds(sent_count, e_count, u_count))
         return u"%s\n%s\n%s\n\n" % (sent_text, id_text, pred_text,)
 
     def __handle_verb(self, word, e_count, u_count):
@@ -145,7 +153,7 @@ class MaltConverter(object):
         d_object = None
         i_object = None
 
-        for dep in self.__deps(word.id):
+        for dep in self.__deps(word):
             if dep.deprel == u"предик":
                 w_subject = "x%d" % dep.id
             elif dep.deprel == u"1-компл":
@@ -183,24 +191,40 @@ class MaltConverter(object):
        # 3. Add tense information if available from the parser.
 
         # TODO(zaytsev@udc.edu): implement this
-
+        # print word.lemma, "(%s,%s,%s,%s)" % (e_arg, w_subject, d_object, i_object)
         return "(%s,%s,%s,%s)" % (e_arg, w_subject, d_object, i_object), \
             e_count, u_count
 
     def __handle_noun(self, word, e_count, u_count):
 
+        # 1. Noun compounds: if there are noun compounds in the language you are
+        #    working with, use the predicate "nn" to express it.
+
+        # TODO(zaytsev@udc.edu): implement this
+
         # 2. Genitive: always use the predicate "of-in" for expressing
         #    genitives.
 
-        if word.feats[4] == "g":
-            pred = "of-in(e%d,x%d,x%d)" % (e_count, word.id, word.head,)
-            e_count += 1
-            self.__additional_preds.append(pred)
+        if word.feats[4] == "g":  # if genitives
+            # epred = (tag, (x args))
+            epred = ("of-in", ("x%d" % word.id, "x%d" % word.head,))
+            self.__extra_preds.append(epred)
+
+        # 3. Add number information if available from the parser (if plural).
+
+        if word.feats[3] == "p":  # if plural
+            for dep in self.__deps(word):
+                if dep.cpostag == "num":
+                    try:
+                        num = dep.form
+                    except ValueError:
+                        num = "s"
+                    epred = ("typelt", ("x%d" % word.id, num))
+                    self.__extra_preds.append(epred)
 
         args_text = "e%d,u%d" % (e_count, u_count)
         u_count += 1
         e_count += 1
-
         return "(%s)" % args_text, e_count, u_count
 
     def __handle_generic(self, word, e_count, u_count):
@@ -211,10 +235,26 @@ class MaltConverter(object):
             u_count += 1
         return arg_text + ")", e_count, u_count
 
+    def extra_preds(self, sent_count, e_count, u_count):
+        epreds = []
+        for tag, x_args in self.__extra_preds:
+            epred_str = "%s(e%d" % (tag, e_count,)
+            e_count += 1
+            for x in x_args:
+                if x != None:
+                    epred_str += "," + x
+                else:
+                    epred_str += ",u%d" % u_count
+                    u_count += 1
+            epred_str += ")"
+            epreds.append(epred_str)
+        return epreds
+
     def flush(self, sent_count, ofile):
         output = self.format_output(sent_count)
         ofile.write(output.encode("utf-8"))
         self.__words = []
+        self.__extra_preds = []
 
 
 def main():
