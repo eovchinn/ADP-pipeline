@@ -1,66 +1,33 @@
-; CONFLICT ONTOLOGY
+;;;; CONFLICT ONTOLOGY
 
 ;Conflict has two adversaries.
-(B (name adversary1) (=> (conflict e :1.2) (adversary x y e)))
+(B (name adversary1) (=> (conflict c :1.2) (adversary e x y c)))
+
+; The adversary relation is symmetric.  *imported from old conflict ontology, may remove*
+; (B (name adversary2) (=> (adversary e x y c :1.2)(adversary e1 y x c)) )
 
 ;Adversaries have degree of strength.
 ;   [Let's talk about how to represent this.]
 
 ;Adversaries have contradictory goals.
-(B (name adversary2) (=> (adversary x y e :1.2) 
-   	 	     	 (^ (goal g x) (goal h y) (not g h))))
-
-; For a stronger adversarial relation, we may add that goals preclude each other
-(B (name adversary3) (=> (adversary x y e :1.2) 
-   	 	     	 (^ (goal g x) (goal h y) 
-			    (=> (accomplish-goal e1 g)
-			        (!accomplish-goal e2 h)))))
-
-
-
-;To win is to achieve the goal.
-
-;To lose is for your adversary to win.
-
-;Adversaries attack each other.
-
-;Adversaries use weapons in attacks.
-
-;Weapons are aimed.
-
-;Adversaries are targeted.
-
-
-: ENGLISH LEXICAL AXIOMS FOR CONFLICT
-
-;A fight is a conflict.
-
-;Combat is conflict.
-
-;Enemies are adversaries.
+(B (name adversary3) (=> (adversary e x y c :1.2) 
+   	 	     	 (^ (conflict c) (goal g x) (goal h y) (not g h))))
 
 ;Adversaries compete with each other.  
-
-;Victory is winning.
-
-;A barrage is an attack.
-
-;A slap is an attack.
-
-;A rifle is a weapon.
-
-;A rifle has sights/crosshairs for aiming.
-
-;To train a weapon is to aim a weapon.
-
-;A bullet is a weapon.  
-
-;To shoot a gun is an attack.
+(B (name compete) (=> (^ (adversary x y e :0.3) (conflict e :0.6)) (compete e x y u)))
 
 
-; WAR ONTOLOGY
+;Adversaries attack each other.
+(B (name adversary7) (=> (^ (conflict e :0.6)(adversary x y e :0.6))
+   	 	     	 (^ (attack e1 x y)(attack e2 y x))))
 
-;War is a conflict.
+;Adversaries use weapons in attacks.
+(B (name weapon) (=> (attack e1 x y :1.2) (^ (use x w e1)(weapon w))) )
+
+;;;; WAR ONTOLOGY
+
+; One kind of conflict is a war. 
+(B (name war) (=> (^ (conflict e :0.6)(etc3 e :0.6)) (war e)))
 
 ;Adversaries in war are groups to which members are loyal.
 
@@ -76,12 +43,7 @@
 ;   [Maybe we'll ignore this.]
 
 
-: ENGLISH LEXICAL AXIOMS FOR WAR
-
-;A betrayal is when members of groups defect.
-
-
-; SPORTS ONTOLOGY
+;;;; SPORTS ONTOLOGY
 
 ;Sport is conflict constrained by rules of behavior.
 ;   [Let's talk about how to represent this.]
@@ -93,7 +55,7 @@
 ;In some sports, the adversaries are teams of persons.
 
 
-; RACING  ONTOLOGY
+;;;; RACING  ONTOLOGY
 
 ;Racing is a sport.
 
@@ -102,7 +64,7 @@
 ;A race has stages.
 
 
-; BOXING  ONTOLOGY
+;;;; BOXING  ONTOLOGY
 
 ;Boxing is a sport.
 
@@ -117,12 +79,12 @@
 ;A round is a part of a boxing match.  
 
 
-; WRESTLING ONTOLOGY
+;;;; WRESTLING ONTOLOGY
 
 ;Wrestling is a sport.
 
 
-; CARD GAME ONTOLOGY
+;;;; CARD GAME ONTOLOGY
 
 ;A card game is a sport.
 
