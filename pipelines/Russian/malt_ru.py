@@ -83,7 +83,9 @@ class MaltConverter(object):
     punct = re.compile("[\.,\?\!{}()\[\]:;¿¡]")
 
     def __init__(self):
+        # __words = [WordToken]
         self.__words = []
+        # __extra_preds = [(prefix, ( x-u args))]
         self.__extra_preds = []
 
     def add_line(self, line):
@@ -94,6 +96,9 @@ class MaltConverter(object):
             return True  # Line successfully added.
         else:
             return False  # Line was not added (end of sentence).
+
+    def word(self, word_id):
+        return self.__words[word_id - 1]
 
     def __deps(self, word):
         for w in self.__words:
@@ -186,12 +191,12 @@ class MaltConverter(object):
         #    prepositions (e.g. Russian), then introduce additional predicates
         #    expressing these cases is need.
 
-       # TODO(zaytsev@udc.edu): implement this
+        # TODO(zaytsev@udc.edu): implement this
 
-       # 3. Add tense information if available from the parser.
+        # 3. Add tense information if available from the parser.
 
         # TODO(zaytsev@udc.edu): implement this
-        # print word.lemma, "(%s,%s,%s,%s)" % (e_arg, w_subject, d_object, i_object)
+
         return "(%s,%s,%s,%s)" % (e_arg, w_subject, d_object, i_object), \
             e_count, u_count
 
@@ -205,8 +210,7 @@ class MaltConverter(object):
         # 2. Genitive: always use the predicate "of-in" for expressing
         #    genitives.
 
-        if word.feats[4] == "g":  # if genitives
-            # epred = (tag, (x args))
+        if word.feats[4] == "g" and self.word(word.head).cpostag == "nn":
             epred = ("of-in", ("x%d" % word.id, "x%d" % word.head,))
             self.__extra_preds.append(epred)
 
