@@ -28,7 +28,13 @@ class WordToken(object):
                                     # particular data set) of word form, or an
                                     # underscore if not available.
         cpostag = line[3]           # CPOSTAG. Coarse-grained part-of-speech
-                                    # tag, where tagset depends on the
+                                    # tag, where tagset depends on the language.
+        self.feats = line[5]        # FEATS. Unordered set of syntactic and/or
+                                    # morphological features (depending on the
+                                    # particular language), separated by a
+                                    # vertical bar (|), or an underscore if not
+                                    # available. See this for more details:
+                                    # corpus.leeds.ac.uk/mocky/msd-ru.html
         self.head = int(line[6])    # HEAD. language HEAD. Head of the current
                                     # token, which is either a value of ID or
                                     # zero ('0'). Note that depending on the
@@ -73,6 +79,7 @@ class MaltConverter(object):
 
     def __init__(self):
         self.__words = []
+        self.__additional_preds = []
 
     def add_line(self, line):
         line = self.line_splitter.split(line.decode("utf-8"))
@@ -108,11 +115,16 @@ class MaltConverter(object):
                 pred += w.lemma + u"-"
 
             if w.cpostag == "vb":
-                arg_text, u_count = self.__handle_verb(w, e_count, u_count)
+                arg_text, e_count, u_count = \
+                    self.__handle_verb(w, e_count, u_count)
+            if w.cpostag == "nn":
+                arg_text, e_count, u_count = \
+                    self.__handle_noun(w, e_count, u_count)
             elif w.cpostag == "pr":
                 arg_text = None
             elif w.cpostag:
-                arg_text, u_count = self.__handle_generic(w, e_count, u_count)
+                arg_text, e_count, u_count = \
+                    self.__handle_generic(w, e_count, u_count)
             e_count += 1
 
             if arg_text:
@@ -120,12 +132,14 @@ class MaltConverter(object):
                 pred += arg_text
                 preds.append(pred)
 
-        pred_text = u" & ".join(preds)
+        pred_text = u" & ".join(preds + self.__additional_preds)
         return u"%s\n%s\n%s\n\n" % (sent_text, id_text, pred_text,)
 
     def __handle_verb(self, word, e_count, u_count):
 
-        # 1. Link arguments
+        # 1. Link arguments: subject - second arg, direct object - third arg,
+        #    indirect object - fourth arg. Direct obj can be a clause; then the
+        #    head of the clause should be used as the verb argument.
 
         w_subject = None
         d_object = None
@@ -157,15 +171,45 @@ class MaltConverter(object):
             i_object = "u%d" % u_count
             u_count += 1
 
-        return "(e%d,%s,%s,%s)" % (e_count, w_subject, d_object, i_object), \
-            u_count
+        e_arg = "e%d" % e_count
+        e_count += 1
+
+        # 2. If in  there are more than 3 cases which can be expressed without
+        #    prepositions (e.g. Russian), then introduce additional predicates
+        #    expressing these cases is need.
+
+       # TODO(zaytsev@udc.edu): implement this
+
+       # 3. Add tense information if available from the parser.
+
+        # TODO(zaytsev@udc.edu): implement this
+
+        return "(%s,%s,%s,%s)" % (e_arg, w_subject, d_object, i_object), \
+            e_count, u_count
+
+    def __handle_noun(self, word, e_count, u_count):
+
+        # 2. Genitive: always use the predicate "of-in" for expressing
+        #    genitives.
+
+        if word.feats[4] == "g":
+            pred = "of-in(e%d,x%d,x%d)" % (e_count, word.id, word.head,)
+            e_count += 1
+            self.__additional_preds.append(pred)
+
+        args_text = "e%d,u%d" % (e_count, u_count)
+        u_count += 1
+        e_count += 1
+
+        return "(%s)" % args_text, e_count, u_count
 
     def __handle_generic(self, word, e_count, u_count):
         arg_text = "(e%d" % e_count
+        e_count += 1
         for i in xrange(1, word.args):
             arg_text += ",u%d" % u_count
             u_count += 1
-        return arg_text + ")", u_count
+        return arg_text + ")", e_count, u_count
 
     def flush(self, sent_count, ofile):
         output = self.format_output(sent_count)
