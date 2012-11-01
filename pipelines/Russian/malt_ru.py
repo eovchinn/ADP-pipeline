@@ -133,7 +133,7 @@ class MaltConverter(object):
             elif w.cpostag == "pr":
                 arg_text = None
             elif w.args != -1:
-                print w.lemma, w.args
+                # print w.lemma, w.args
                 arg_text, e_count, u_count = \
                     self.__handle_generic(w, e_count, u_count)
 
@@ -230,6 +230,13 @@ class MaltConverter(object):
         u_count += 1
         e_count += 1
         return "(%s)" % args_text, e_count, u_count
+
+    def __handle_adj(self, word, e_count, u_count):
+        # 1. Adjectives share the second argument with the noun they are
+        #    modifying
+
+         # TODO(zaytsev@udc.edu): implement this
+        pass
 
     def __handle_generic(self, word, e_count, u_count):
         arg_text = "(e%d" % e_count
