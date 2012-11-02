@@ -4,7 +4,7 @@
 
 * ***VERBS***
 
-	1. Not implemented
+	1. ***Implemented***
 	2. Not implemented
 	3. Not implemented
 	4. Not implemented
@@ -12,8 +12,8 @@
 * ***NOUNS***
 
 	1. Not implemented
-	2. Not implemented
-	3. Not implemented
+	2. ***Implemented***
+	3. ***Implemented***
 	4. Not implemented
 
 * ***ADJECTIVES***

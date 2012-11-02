@@ -83,14 +83,13 @@ class MaltConverter(object):
     punct = re.compile("[\.,\?\!{}()\[\]:;¿¡]")
 
     def __init__(self):
-        # __words = [WordToken]
         self.__words = []
-        # __extra_preds = [(prefix, ( x-u args))]
         self.__extra_preds = []
+        self.__u_count = 1
+        self.__e_count = 1
 
     def add_line(self, line):
         line = self.line_splitter.split(line.decode("utf-8"))
-        # print line
         if len(line) > 2:
             self.__words.append(WordToken(line))
             return True  # Line successfully added.
@@ -110,8 +109,6 @@ class MaltConverter(object):
         sent_text = u"% " + u" ".join([w.form for w in self.__words])
         id_text = u"id(%d)." % sent_count
         preds = []
-        e_count = 1
-        u_count = 1
 
         for w in self.__words:
 
@@ -125,17 +122,13 @@ class MaltConverter(object):
                 pred += w.lemma + u"-"
 
             if w.cpostag == "vb":
-                arg_text, e_count, u_count = \
-                    self.__handle_verb(w, e_count, u_count)
+                arg_text = self.__handle_verb(w)
             elif w.cpostag == "nn":
-                arg_text, e_count, u_count = \
-                    self.__handle_noun(w, e_count, u_count)
+                arg_text = self.__handle_noun(w)
             elif w.cpostag == "pr":
                 arg_text = None
             elif w.args != -1:
-                # print w.lemma, w.args
-                arg_text, e_count, u_count = \
-                    self.__handle_generic(w, e_count, u_count)
+                arg_text = self.__handle_generic(w)
 
             if arg_text:
                 pred += w.cpostag
@@ -145,10 +138,10 @@ class MaltConverter(object):
 
         pred_text = u" & ".join(
             preds +
-            self.extra_preds(sent_count, e_count, u_count))
+            self.extra_preds(sent_count))
         return u"%s\n%s\n%s\n\n" % (sent_text, id_text, pred_text,)
 
-    def __handle_verb(self, word, e_count, u_count):
+    def __handle_verb(self, word):
 
         # 1. Link arguments: subject - second arg, direct object - third arg,
         #    indirect object - fourth arg. Direct obj can be a clause; then the
@@ -173,19 +166,19 @@ class MaltConverter(object):
                     i_object = "x%d" % dep.id
 
         if not w_subject:
-            w_subject = "u%d" % u_count
-            u_count += 1
+            w_subject = "u%d" % self.__u_count
+            self.__u_count += 1
 
         if not d_object:
-            d_object = "u%d" % u_count
-            u_count += 1
+            d_object = "u%d" % self.__u_count
+            self.__u_count += 1
 
         if not i_object:
-            i_object = "u%d" % u_count
-            u_count += 1
+            i_object = "u%d" % self.__u_count
+            self.__u_count += 1
 
-        e_arg = "e%d" % e_count
-        e_count += 1
+        e_arg = "e%d" % self.__e_count
+        self.__e_count += 1
 
         # 2. If in  there are more than 3 cases which can be expressed without
         #    prepositions (e.g. Russian), then introduce additional predicates
@@ -197,10 +190,9 @@ class MaltConverter(object):
 
         # TODO(zaytsev@udc.edu): implement this
 
-        return "(%s,%s,%s,%s)" % (e_arg, w_subject, d_object, i_object), \
-            e_count, u_count
+        return "(%s,%s,%s,%s)" % (e_arg, w_subject, d_object, i_object)
 
-    def __handle_noun(self, word, e_count, u_count):
+    def __handle_noun(self, word):
 
         # 1. Noun compounds: if there are noun compounds in the language you are
         #    working with, use the predicate "nn" to express it.
@@ -226,10 +218,10 @@ class MaltConverter(object):
                     epred = ("typelt", ("x%d" % word.id, num))
                     self.__extra_preds.append(epred)
 
-        args_text = "e%d,u%d" % (e_count, u_count)
-        u_count += 1
-        e_count += 1
-        return "(%s)" % args_text, e_count, u_count
+        args_text = "e%d,u%d" % (self.__e_count, self.__u_count)
+        self.__u_count += 1
+        self.__e_count += 1
+        return "(%s)" % args_text
 
     def __handle_adj(self, word, e_count, u_count):
         # 1. Adjectives share the second argument with the noun they are
@@ -238,25 +230,25 @@ class MaltConverter(object):
          # TODO(zaytsev@udc.edu): implement this
         pass
 
-    def __handle_generic(self, word, e_count, u_count):
-        arg_text = "(e%d" % e_count
-        e_count += 1
+    def __handle_generic(self, word):
+        arg_text = "(e%d" % self.__e_count
+        self.__e_count += 1
         for i in xrange(1, word.args):
-            arg_text += ",u%d" % u_count
-            u_count += 1
-        return arg_text + ")", e_count, u_count
+            arg_text += ",u%d" % self.__u_count
+            self.__u_count += 1
+        return arg_text + ")"
 
-    def extra_preds(self, sent_count, e_count, u_count):
+    def extra_preds(self, sent_count):
         epreds = []
         for tag, x_args in self.__extra_preds:
-            epred_str = "%s(e%d" % (tag, e_count,)
-            e_count += 1
+            epred_str = "%s(e%d" % (tag, self.__e_count,)
+            self.__e_count += 1
             for x in x_args:
                 if x != None:
                     epred_str += "," + x
                 else:
-                    epred_str += ",u%d" % u_count
-                    u_count += 1
+                    epred_str += ",u%d" % self.__u_count
+                    self.__u_count += 1
             epred_str += ")"
             epreds.append(epred_str)
         return epreds
@@ -266,6 +258,8 @@ class MaltConverter(object):
         ofile.write(output.encode("utf-8"))
         self.__words = []
         self.__extra_preds = []
+        self.__u_count = 1
+        self.__e_count = 1
 
 
 def main():
