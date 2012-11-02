@@ -1,0 +1,6 @@
+#!/bin/bash
+
+inputFile="${1:-/dev/stdin}"
+outputFile="${2:-/dev/stdout}"
+
+cat $inputFile > $outputFile
