@@ -1,3 +1,25 @@
+;;;; CONFLICT-WAR-SPORTS ONTOLOGY
+
+; Change Log
+; 10/31/2012 aks - created file by merging existing "conflict axioms.txt" with new plain-english "conflict-facts.txt" from Jerry
+;
+; Questions
+;
+
+
+
+;;;; CONFLICT PREDICATES
+
+; A fight is a conflict. 
+(B (name fight) (=> (conflict e :1.2) (fight e)) )
+
+; A fight is a conflict. 
+(B (name fight) (=> (conflict e :1.2) (fight e)) )
+
+; Combat is a conflict. 
+(B (name combat) (=> (conflict e :1.2) (combat e)) )
+
+
 ;;;; CONFLICT ONTOLOGY
 
 ;Conflict has two adversaries.
@@ -23,6 +45,7 @@
 
 ;Adversaries use weapons in attacks.
 (B (name weapon) (=> (attack e1 x y :1.2) (^ (use x w e1)(weapon w))) )
+
 
 ;;;; WAR ONTOLOGY
 
@@ -53,7 +76,6 @@
 ;Players wear uniform identifying their team.
 
 ;In some sports, the adversaries are teams of persons.
-
 
 ;;;; RACING  ONTOLOGY
 
