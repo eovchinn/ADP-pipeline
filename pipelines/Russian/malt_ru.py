@@ -181,7 +181,13 @@ class MaltConverter(object):
 
         # 4. Add tense information if available from the parser.
 
-        # TODO(zaytsev@udc.edu): implement this
+        if word.feats[3] == "s":  # if past
+            epred = ("past", ("e%d" % word.id, ))
+            self.__extra_preds.append(epred)
+
+        if word.feats[3] == "f":  # if furure
+            epred = ("future", ("e%d" % word.id, ))
+            self.__extra_preds.append(epred)
 
         if not w_subject:
             w_subject = "u%d" % self.__u_count
