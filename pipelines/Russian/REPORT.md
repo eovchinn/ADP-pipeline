@@ -19,12 +19,12 @@ Use `run_test.sh` wich will read input from `test_data/input.txt` and store resu
 1. Not implemented
 2. ***Implemented***
 3. ***Implemented***
-4. ***Implemented*** (proper names)
+4. Not implemented
 
 
 * ***ADJECTIVES***
 
-1. Not implemented
+1. ***Implemented***
 
 
 * ***ADVERB***

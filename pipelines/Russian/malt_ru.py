@@ -87,6 +87,7 @@ class MaltConverter(object):
         self.__extra_preds = []
         self.__u_count = 1
         self.__e_count = 1
+        self.__x_count = 1
 
     def add_line(self, line):
         line = self.line_splitter.split(line.decode("utf-8"))
@@ -125,6 +126,8 @@ class MaltConverter(object):
                 arg_text = self.__handle_verb(w)
             elif w.cpostag == "nn":
                 arg_text = self.__handle_noun(w)
+            elif w.cpostag == "adj":
+                arg_text = self.__handle_adj(w)
             elif w.cpostag == "pr":
                 arg_text = None
             elif w.args != -1:
@@ -238,21 +241,27 @@ class MaltConverter(object):
         # 4. If there is other information available from the parser (e.g. type
         #    of the named entity), please add it.
 
-        if word.feats[1] == "p":  # if proper
-            epred = ("proper", ("x%d" % word.id, ))
-            self.__extra_preds.append(epred)
+        # if word.feats[1] == "p":  # if proper
+        #     epred = ("???", ("x%d" % word.id, ))
+        #     self.__extra_preds.append(epred)
 
-        args_text = "e%d,u%d" % (self.__e_count, self.__u_count)
-        self.__u_count += 1
+        args_text = "e%d,x%d" % (self.__e_count, self.__x_count)
+        self.__x_count += 1
         self.__e_count += 1
         return "(%s)" % args_text
 
     def __handle_adj(self, word):
+
         # 1. Adjectives share the second argument with the noun they are
         #    modifying
 
-         # TODO(zaytsev@udc.edu): implement this
-        pass
+        if word.head and self.word(word.head).cpostag == "nn":
+            args_text = "(e%d,x%d)" % (self.__e_count, word.head)
+        else:
+            args_text = "(e%d,x%d)" % (self.__e_count, self.__x_count)
+            self.__x_count += 1
+
+        return args_text
 
     def __handle_generic(self, word):
         arg_text = "(e%d" % self.__e_count
@@ -284,6 +293,7 @@ class MaltConverter(object):
         self.__extra_preds = []
         self.__u_count = 1
         self.__e_count = 1
+        self.__x_count = 1
 
 
 def main():
