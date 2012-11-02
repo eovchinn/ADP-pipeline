@@ -7,6 +7,7 @@ translitDictFile=codecs.open(sys.argv[3], encoding='utf-8')
 
 
 #this is a global dict for easy handling of different POS schema
+POSStopList=["PUNC"]
 POSDict={"N":"N","V":"V","ADJ":"ADJ","ADV":"ADV","PREP":"PREP","PR":"PR"}
 postFixDict={"N":"-nn","V":"-vb","ADJ":"-adj","ADV":"-rb","PREP":"-in","":""}
 argDict={"N":2,"V":4,"ADJ":2,"ADV":2,"PREP":3,"PR":2,"":1}
@@ -85,6 +86,8 @@ def createLF(tokens,sentenceId):
     props=[]
     for token in tokens:
         (id,word,lemma,POS,dep,rel)=token
+        if POS in POSStopList:
+            continue
         props+=[(id,word,lemma,POS,dep,rel,getArgs(POS))]
     return (sentenceId,props)
 
@@ -97,7 +100,7 @@ def lfToString(lf):
         words+=[word]
         PropStrings+=[propToString(sentenceId,prop)]
     lfLine=" & ".join(PropStrings)
-    returnString= "%s\n%s\n%s\n"%(" ".join(words),str(sentenceId),lfLine)
+    returnString= "%s\nid(%s).\n%s\n"%(" ".join(words),str(sentenceId),lfLine)
     returnString="% "+returnString
     return returnString
         
@@ -116,7 +119,8 @@ while line!="":
     if line.strip()=="":   
         #one sentence read, process it and output it
         lf=createLF(tokens,sentenceId)
-        outputFile.write(lfToString(lf))
+#        outputFile.write(lfToString(lf))
+        sys.stdout.write(lfToString(lf).encode("utf-8"))
         tokens=[]
         sentenceId+=1
     else:

@@ -1,44 +1,12 @@
 #!/bin/bash
 
-inputFile=$1
-taggedFile=$1.tagged.txt
-conllTaggedFile=$1.tagged.conll.txt
-parserOutputFileName=$1.parsed.txt
-LFFileName=$1.LF.txt
-
 farsiPipelineDir=$METAPHOR_DIR/pipelines/Farsi
-taggedFileToCONLL=$farsiPipelineDir/taggedFileToCONLL.py
+
+parserOutputFileName="${1:-/dev/stdin}"
+LFFileName="${2:-/dev/stdout}"
+
 parseToLFConverter=$farsiPipelineDir/convertParseTreeToLF.py
 transliterationDict=$farsiPipelineDir/translitDict.txt
 
-
-taggerDir=$METAPHOR_DIR/external-tools/farsiTools/POSTagger/stanford-postagger
-parserDir=$METAPHOR_DIR/external-tools/malt-1.5
-
-taggerModelFile=$METAPHOR_DIR/models/farsiModels/farsiPOSModel/StanfordTagger/farsi.tagger.model.treebank
-parserModelFile=farsiMALTModel
-
-POSmodelDir=$METAPHOR_DIR/models/farsiModels/farsiPOSModel/StanfordTagger/farsi.tagger.model.bijankhan
-depModelFile=$MetaphorADPDir/models/farsiModels/farsi.dep.model
-
-#POS tag the input file
-
-echo "POS Tagging..."
-cd $taggerDir
-java -mx2G  -classpath stanford-postagger.jar edu.stanford.nlp.tagger.maxent.MaxentTagger -prop models/farsiPropsFile.prop -model $taggerModelFile -textFile $inputFile > $taggedFile
-
-
-echo "Modifying the Tagger output for parser..."
-#modify the POS tagged file to include dummy label & dep lines
-python $taggedFileToCONLL $taggedFile $conllTaggedFile
-
-
-echo "Parsing..."
-#run parser
-
-cd $parserDir
-
-java -mx2G -jar malt.jar -c $parserModelFile -i $conllTaggedFile -m parse -o $parserOutputFileName
-echo "converting parser output to logical form"
 # convert the parse results to LF
 python $parseToLFConverter $parserOutputFileName $LFFileName $transliterationDict
