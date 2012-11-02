@@ -226,7 +226,15 @@ class MaltConverter(object):
                         epred = ("card", ("x%d" % word.id, str(num)))
                         self.__extra_preds.append(epred)
                     except ValueError:
+                        # TODO(zaytsev@udc.edu): parse word numeral
                         pass
+
+        # 4. If there is other information available from the parser (e.g. type
+        #    of the named entity), please add it.
+
+        if word.feats[1] == "p":  # if proper
+            epred = ("proper", ("x%d" % word.id, ))
+            self.__extra_preds.append(epred)
 
         args_text = "e%d,u%d" % (self.__e_count, self.__u_count)
         self.__u_count += 1
