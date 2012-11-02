@@ -73,6 +73,9 @@ class WordToken(object):
         else:
             self.cpostag, self.args = None, -1
 
+        if self.lemma == "<unknown>":
+            self.lemma = self.form
+
     def __repr__(self):
         return u"<WordToken(%s)>" \
             % (self.id, )
@@ -84,6 +87,7 @@ class MaltConverter(object):
 
     def __init__(self):
         self.__words = []
+        self.__preds = []
         self.__extra_preds = []
         self.__u_count = 1
         self.__e_count = 1
@@ -100,6 +104,12 @@ class MaltConverter(object):
     def word(self, word_id):
         return self.__words[word_id - 1]
 
+    def pred(self, word_id):
+        for pred in self.__preds:
+            if pred[0] == word_id:
+                return pred[0]
+        return None
+
     def __deps(self, word):
         for w in self.__words:
             if w.head == word.id:
@@ -109,39 +119,45 @@ class MaltConverter(object):
 
         sent_text = u"% " + u" ".join([w.form for w in self.__words])
         id_text = u"id(%d)." % sent_count
-        preds = []
 
         for w in self.__words:
 
             if not w.cpostag or self.punct.match(w.lemma):
                 continue
-            pred = u"[%d]:" % (1000 * sent_count + w.id)
-
-            if w.lemma == "<unknown>":
-                pred += w.form + u"-"
-            else:
-                pred += w.lemma + u"-"
 
             if w.cpostag == "vb":
-                arg_text = self.__handle_verb(w)
+                args = self.__handle_verb(w)
             elif w.cpostag == "nn":
-                arg_text = self.__handle_noun(w)
+                args = self.__handle_noun(w)
             elif w.cpostag == "adj":
-                arg_text = self.__handle_adj(w)
+                args = self.__handle_adj(w)
             elif w.cpostag == "pr":
-                arg_text = None
+                args = None
             elif w.args != -1:
-                arg_text = self.__handle_generic(w)
+                args = self.__handle_generic(w)
 
-            if arg_text:
-                pred += w.cpostag
-                pred += arg_text
-                preds.append(pred)
-                arg_text = None
+            if args:
+                self.__preds.append((
+                    w.id,
+                    w.lemma,
+                    w.cpostag,
+                    args,
+                ))
+
+        fpreds = []
+        for p_id, p_lemma, p_postag, p_args in self.__preds:
+            pred_str = u"[%d]%s-%s(%s)" % (
+                1000 * sent_count + p_id,
+                p_lemma,
+                p_postag,
+                ",".join(p_args)
+            )
+            fpreds.append(pred_str)
 
         pred_text = u" & ".join(
-            preds +
+            fpreds +
             self.extra_preds(sent_count))
+
         return u"%s\n%s\n%s\n\n" % (sent_text, id_text, pred_text,)
 
     def __handle_verb(self, word):
@@ -207,7 +223,7 @@ class MaltConverter(object):
         e_arg = "e%d" % self.__e_count
         self.__e_count += 1
 
-        return "(%s,%s,%s,%s)" % (e_arg, w_subject, d_object, i_object)
+        return [e_arg, w_subject, d_object, i_object]
 
     def __handle_noun(self, word):
 
@@ -245,31 +261,40 @@ class MaltConverter(object):
         #     epred = ("???", ("x%d" % word.id, ))
         #     self.__extra_preds.append(epred)
 
-        args_text = "e%d,x%d" % (self.__e_count, self.__x_count)
+        args = ["e%d" % self.__e_count, "x%d" % self.__x_count]
         self.__x_count += 1
         self.__e_count += 1
-        return "(%s)" % args_text
+
+        return args
 
     def __handle_adj(self, word):
 
         # 1. Adjectives share the second argument with the noun they are
         #    modifying
 
-        if word.head and self.word(word.head).cpostag == "nn":
-            args_text = "(e%d,x%d)" % (self.__e_count, word.head)
-        else:
-            args_text = "(e%d,x%d)" % (self.__e_count, self.__x_count)
-            self.__x_count += 1
+        # print self.__preds
 
-        return args_text
+        # if word.head and self.word(word.head).cpostag == "nn":
+        #     args = [
+        #     "e%d" % self.__e_count,
+        #     self.pred(word.head)[-1][1]
+        # ]
+        # else:
+        args = ["e%d" % self.__e_count, "x%d" % self.__x_count]
+        # self.__x_count += 1
+
+        return args
 
     def __handle_generic(self, word):
-        arg_text = "(e%d" % self.__e_count
-        self.__e_count += 1
+        u_args = []
         for i in xrange(1, word.args):
-            arg_text += ",u%d" % self.__u_count
+            u_args.append("u%d" % self.__u_count)
             self.__u_count += 1
-        return arg_text + ")"
+
+        e_arg = "e%d" % self.__e_count
+        self.__e_count += 1
+
+        return [e_arg] + u_args
 
     def extra_preds(self, sent_count):
         epreds = []
@@ -290,6 +315,7 @@ class MaltConverter(object):
         output = self.format_output(sent_count)
         ofile.write(output.encode("utf-8"))
         self.__words = []
+        self.__preds = []
         self.__extra_preds = []
         self.__u_count = 1
         self.__e_count = 1
