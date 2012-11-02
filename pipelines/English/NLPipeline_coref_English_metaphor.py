@@ -16,14 +16,15 @@ boxer2henry_path = "%s/pipelines/English/Boxer2Henry.pl" % METAPHOR_DIR
 features = "%s/models/English-features-henry" % METAPHOR_DIR
 kbpath = "%s/KBs/English/kb-wnfn-noder-lmap.da" % METAPHOR_DIR
 extract_hypotheses_path = "%s/pipelines/common/extract_hypotheses.py" % METAPHOR_DIR
+kb = ''
 
 # switches
 kbcompiled = False
-kb = ''
 
 def extract_hypotheses(filename):
 	f = open(filename, 'r')
-	output_struc = defaultdict(dict)	
+	#output_struct = defaultdict(dict)	
+	output_struct = []
 	hypothesis_found = False
 	p = re.compile('<result-inference target="(.+)"')
 	target = ''
@@ -32,6 +33,7 @@ def extract_hypotheses(filename):
 	explanation = False
 
 	for line in f:
+		output_struct_item={} 
 		matchObj = p.match(line)
 		if matchObj: target = matchObj.group(1)	
 		elif line.startswith('<hypothesis'): hypothesis_found = True
@@ -40,14 +42,17 @@ def extract_hypotheses(filename):
 		elif line.startswith('<unification'): unification = True
 		elif line.startswith('<explanation'): explanation = True
 		elif line.startswith('</result-inference>'):
-			output_struc[target]['abductive_hypothesis'] = hypothesis
-			output_struc[target]['abductive_unification'] = unification
-			output_struc[target]['abductive_explanation'] = explanation
+			output_struct_item['annotation_id'] = target
+			output_struct_item['abductive_hypothesis'] = hypothesis
+			output_struct_item['abductive_unification'] = unification
+			output_struct_item['abductive_explanation'] = explanation
+			output_struct_item['description'] = 'Abductive engine output; abductive_hypothesis: metaphor interpretation; abductive_unification: unifications happened or not; abductive_explanation: axioms applied or not'
+			output_struct.append(output_struct_item) 
 			target = ''
 			unification = False
 			explanation = False
 
-	return json.dumps(output_struc)
+	return json.dumps(output_struct)
 	
 
 def English_ADP(input):

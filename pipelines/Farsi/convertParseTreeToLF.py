@@ -7,9 +7,10 @@ translitDictFile=codecs.open(sys.argv[3], encoding='utf-8')
 
 
 #this is a global dict for easy handling of different POS schema
-POSDict={"N":"N","V":"V","AJ":"AJ","ADV":"ADV","P":"P","PR":"PR"}
-postFixDict={"N":"-nn","V":"-vb","AJ":"-adj","ADV":"-rb","P":"-in","":""}
-argDict={"N":2,"V":4,"AJ":2,"ADV":2,"P":3,"PR":2,"":1}
+POSStopList=["PUNC"]
+POSDict={"N":"N","V":"V","ADJ":"ADJ","ADV":"ADV","PREP":"PREP","PR":"PR"}
+postFixDict={"N":"-nn","V":"-vb","ADJ":"-adj","ADV":"-rb","PREP":"-in","":""}
+argDict={"N":2,"V":4,"ADJ":2,"ADV":2,"PREP":3,"PR":2,"":1}
 transLitDict={}
 #tempFile=codecs.open("%s.tmp.txt"%sys.argv[3], encoding='utf-8',mode='w')
 
@@ -42,11 +43,11 @@ def getTranslit(lemma):
         
     
 
-def propToString(prop):
-    (tokenId,lemma,POS,args)=prop
+def propToString(sentenceId,prop):
+    (id,word,lemma,POS,dep,rel,args)=prop
     postfix=""
     if POS in postFixDict: postfix=postFixDict[POS]
-    token="[%s]:%s%s(%s)"%(tokenId,getTranslit(lemma),postfix,",".join(args))
+    token="[%s]:%s%s(%s)"%(sentenceId*1000+id,getTranslit(lemma),postfix,",".join(args))
     return token
     
 def getLemma(word):
@@ -80,7 +81,28 @@ def getArgs(POS):
         unknownargCounter+=1
    
     return args     
-        
+ 
+def createLF(tokens,sentenceId):
+    props=[]
+    for token in tokens:
+        (id,word,lemma,POS,dep,rel)=token
+        if POS in POSStopList:
+            continue
+        props+=[(id,word,lemma,POS,dep,rel,getArgs(POS))]
+    return (sentenceId,props)
+
+def lfToString(lf):
+    (sentenceId,props)=lf
+    words=[]
+    PropStrings=[]
+    for prop in props:
+        (id,word,lemma,POS,dep,rel,args)=prop
+        words+=[word]
+        PropStrings+=[propToString(sentenceId,prop)]
+    lfLine=" & ".join(PropStrings)
+    returnString= "%s\nid(%s).\n%s\n"%(" ".join(words),str(sentenceId),lfLine)
+    returnString="% "+returnString
+    return returnString
         
 unknownargCounter=0
 entityArgCounter=0
@@ -89,47 +111,33 @@ eventualityArgCounter=0
 loadtranslitDict(translitDictFile)
 
 
-wordLine=inputFile.readline()
+line=inputFile.readline()
 sentenceId=1
-while wordLine!="":
-    words=wordLine.split()
-    
-    eof=False
-    while len(words)==0:
-        wordLine=inputFile.readline()
-        if wordLine=="":
-            eof=True
-            break
-        words=wordLine.split()
-    if eof:
-        break    
-    POSs=inputFile.readline().split()
-    print POSs
-    labels=inputFile.readline().split()
-    deps=inputFile.readline().split()
-    
-    props=[]
-    for i in range(0,len(words)):
-        tokenId=sentenceId*1000+(i+1)
-        word=words[i]
-        lemma=getLemma(word)
-        POS=POSs[i]
-        if POS=="PR":
-            niloo=1
-       
-        props+=[(tokenId,lemma,POS,getArgs(POS))]
-    
-    PropStrings=[propToString(prop) for prop in props]    
-    lfLine=" & ".join(PropStrings)
-    outputFile.write("% "+" ".join(words)+"\n")
-    outputFile.write("id(%s).\n"%sentenceId)
-    outputFile.write("%s\n"%lfLine)
-     
-    wordLine=inputFile.readline()
-    sentenceId+=1
-    
+tokens=[]
+
+while line!="":
+    if line.strip()=="":   
+        #one sentence read, process it and output it
+        lf=createLF(tokens,sentenceId)
+#        outputFile.write(lfToString(lf))
+        sys.stdout.write(lfToString(lf).encode("utf-8"))
+        tokens=[]
+        sentenceId+=1
+    else:
+        a=line.split("\t")
+        if len(a)!=10:
+            line=inputFile.readline()
+            continue
+        #id,word,lemma,CoarsePOS,FinePOS,etc1,dep,rel,etc2,etc3
+        id=int(a[0])
+        CoarsePOS=a[-7]
+        rel=a[-3]
+        dep=a[-4]
+        lemma=a[-8]
+        word="-".join(" ".join(a[1:-8]).split())
+        tokens+=[(id,word,lemma,CoarsePOS,dep,rel)]
+        
+    line=inputFile.readline()
 inputFile.close()
 outputFile.close()
 
-#tempFile.write("\n".join(farsiLitSet))    
-#tempFile.close()

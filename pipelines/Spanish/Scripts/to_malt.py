@@ -1,25 +1,35 @@
-#! bash/bin/env python
-import sys,re
-arg_list = sys.argv
-file = arg_list[1]
+#! /usr/bin/python
+import sys,re,optparse
 
+##################### I/O ##################################
+usage = "usage: %prog [options] <input_file>"
+parser = optparse.OptionParser(usage=usage)
+parser.add_option("-i", "--inFile", dest="input",
+                  action="store", help="read from FILE", metavar="FILE")
+(options, args) = parser.parse_args()
 
 def malter(LINE_OBJECT):
     """formats lines for maltparser in conll format"""
     #Lemma
-    Token = LINE_OBJECT[0].strip()
+    Token = LINE_OBJECT[0].strip().split()
+    tokenString = "_".join(Token)
     #Use twice: POS and CPOS
     POS = replace_tag(LINE_OBJECT[1].strip())
-    Lemma = LINE_OBJECT[2].strip()
-    malt_line = "0"+"\t"+Token+"\t"+Lemma+"\t"+POS+"\t"+POS+"\t"+"0"+"\t"+"0"+"\t"+"ROOT"+"\t"+"-"+"\t"+"-"
+    Lemma = determineLemma(LINE_OBJECT[2].strip(),tokenString)
+    malt_line = "0"+"\t"+tokenString+"\t"+Lemma+"\t"+POS+"\t"+POS+"\t"+"0"+"\t"+"0"+"\t"+"ROOT"+"\t"+"-"+"\t"+"-"
     return malt_line
 
-def reform(File):
-    file_object = open(File,'r')
+def determineLemma(original,token):
+    if original == "<unknown>":
+        return token
+    else:
+        return original.replace("~", "_");
+
+def reform(infile):
     malt_lines = []
-    for line in file_object:
+    for line in infile:
         line = line.rstrip()
-        listed = line.split()
+        listed = line.split("\t")
         #print line
         try:
             if re.search ("%%",line):
@@ -74,13 +84,14 @@ treeInter = re.compile("ITJN|PNC")
 treeNoun = re.compile("NMEA|NMON|NC|NP|ALF*|ACRNM|CODE|PE")
 treePro = re.compile("INT|PPC|PPO|PPX|REL|SE")
 treeAdv = re.compile("CSUBF|ADV|NEG")
-treePrep = re.compile("PREP|CSUBI|PAL|PDAL|PREP/DEL")
+treePrep = re.compile("PREP|CSUBI|PAL|PDEL|PREP/DEL")
 treeVerb = re.compile("^V.*")
 #treeDate = re.compile("")
 treeNum = re.compile("CARD|FO|ORD")
 
 def main():
-    printable = reform(file)
+    lines = open(options.input, "r") if options.input else sys.stdin
+    printable = reform(lines)
     for line in printable:
         line_list = line.split('\t')
         try:
