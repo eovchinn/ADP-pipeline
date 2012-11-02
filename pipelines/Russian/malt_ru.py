@@ -165,6 +165,24 @@ class MaltConverter(object):
                 else:
                     i_object = "x%d" % dep.id
 
+        # 2. Argument control: first arguments of both verbs are the same.
+
+        if word.head and self.word(word.head).cpostag == "vb":
+            # Use VERB#1 rule to find subject of the head
+            for dep in self.__deps(self.word(word.head)):
+                if dep.deprel == u"предик":
+                    w_subject = "x%d" % dep.id
+
+        # 3. If in  there are more than 3 cases which can be expressed without
+        #    prepositions (e.g. Russian), then introduce additional predicates
+        #    expressing these cases is need.
+
+        # TODO(zaytsev@udc.edu): implement this
+
+        # 4. Add tense information if available from the parser.
+
+        # TODO(zaytsev@udc.edu): implement this
+
         if not w_subject:
             w_subject = "u%d" % self.__u_count
             self.__u_count += 1
@@ -179,16 +197,6 @@ class MaltConverter(object):
 
         e_arg = "e%d" % self.__e_count
         self.__e_count += 1
-
-        # 2. If in  there are more than 3 cases which can be expressed without
-        #    prepositions (e.g. Russian), then introduce additional predicates
-        #    expressing these cases is need.
-
-        # TODO(zaytsev@udc.edu): implement this
-
-        # 3. Add tense information if available from the parser.
-
-        # TODO(zaytsev@udc.edu): implement this
 
         return "(%s,%s,%s,%s)" % (e_arg, w_subject, d_object, i_object)
 
@@ -211,19 +219,21 @@ class MaltConverter(object):
         if word.feats[3] == "p":  # if plural
             for dep in self.__deps(word):
                 if dep.cpostag == "num":
-                    try:
-                        num = dep.form
-                    except ValueError:
-                        num = "s"
-                    epred = ("typelt", ("x%d" % word.id, num))
+                    epred = ("typelt", ("x%d" % word.id, "s"))
                     self.__extra_preds.append(epred)
+                    try:
+                        num = int(dep.form)
+                        epred = ("card", ("x%d" % word.id, str(num)))
+                        self.__extra_preds.append(epred)
+                    except ValueError:
+                        pass
 
         args_text = "e%d,u%d" % (self.__e_count, self.__u_count)
         self.__u_count += 1
         self.__e_count += 1
         return "(%s)" % args_text
 
-    def __handle_adj(self, word, e_count, u_count):
+    def __handle_adj(self, word):
         # 1. Adjectives share the second argument with the noun they are
         #    modifying
 
