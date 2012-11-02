@@ -1,6 +1,6 @@
 ### How to run tests
 
-Use `run_test.sh` wich will read input from test_data/input.txt and store results in test_data/omalt.txt and test_data/olf.txt (for MaltPasrer and malt_ru.py).
+Use `run_test.sh` wich will read input from `test_data/input.txt` and store results in `test_data/omalt.txt` and `test_data/olf`.txt (for **MaltPasrer** and `malt_ru.py`).
 
 
 ---
@@ -9,7 +9,7 @@ Use `run_test.sh` wich will read input from test_data/input.txt and store result
 * ***VERBS***
 
 1. ***Implemented***
-2. Not implemented
+2. ***Implemented***
 3. Not implemented
 4. Not implemented
 
@@ -50,7 +50,7 @@ Use `run_test.sh` wich will read input from test_data/input.txt and store result
 
 * ***Numerals***
 
-1. Not implemented
+1. **Implemented** in NOUNS#2 rule. (for case where numerals have digital representation).
 
 
 * ***CONNECTORS***
