@@ -19,7 +19,7 @@ Use `run_test.sh` wich will read input from `test_data/input.txt` and store resu
 1. Not implemented
 2. ***Implemented***
 3. ***Implemented***
-4. Not implemented
+4. ***Implemented*** (proper names)
 
 
 * ***ADJECTIVES***
@@ -50,7 +50,7 @@ Use `run_test.sh` wich will read input from `test_data/input.txt` and store resu
 
 * ***Numerals***
 
-1. **Implemented** in NOUNS#2 rule. (for case where numerals have digital representation).
+1. **Implemented** in NOUNS#2 rule. (for case when numerals have digital representation).
 
 
 * ***CONNECTORS***
