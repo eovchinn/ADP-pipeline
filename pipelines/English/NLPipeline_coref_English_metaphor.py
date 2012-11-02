@@ -3,7 +3,6 @@
 import os
 import re
 import sys
-import json
 from collections import defaultdict
 
 METAPHOR_DIR = os.environ['METAPHOR_DIR']
@@ -47,7 +46,7 @@ def extract_hypotheses(filename):
 			unification = False
 			explanation = False
 
-	return json.dumps(output_struc)
+	return output_struc
 	
 
 def English_ADP(input):
