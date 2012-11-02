@@ -40,7 +40,9 @@ MALT_MODEL=rus-test.mco
 MALT_IFORMAT=$MALT_RU_DIR/make-malt.pl
 
 
-IFILE=$RU_PIPELINE_DIR/examples/raw_text_input.txt
+IFILE=$RU_PIPELINE_DIR/test_data/input.txt
+OMALT=$RU_PIPELINE_DIR/test_data/omalt.txt
+OLF=$RU_PIPELINE_DIR/test_data/olf.txt
 
 
 CURRENT_DIR=`pwd`
@@ -51,14 +53,14 @@ if [[ $PLATFORM == "linux" ]]; then
     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
     $LEMMATIZER_BIN -l $MALT_RU_DIR/msd-ru-lemma.lex.gz -p $MALT_RU_DIR/wform2011.ptn1 -c $MALT_RU_DIR/cstlemma |
     $MALT_IFORMAT | 
-    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse |
-    python $RU_PIPELINE_DIR/malt_ru.py > /dev/stdout
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse | tee > $OMALT
+    python $RU_PIPELINE_DIR/malt_ru.py < $OMALT | tee > $OLF
 elif [[ $PLATFORM == "darwin" ]]; then
     $TOKENIZER_BIN < $IFILE |
     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
     $MALT_IFORMAT | 
-    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse |
-    python $RU_PIPELINE_DIR/malt_ru.py > /dev/stdout
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse | tee > $OMALT
+    python $RU_PIPELINE_DIR/malt_ru.py < $OMALT | tee > $OLF
 else
     echo "Unsupported platform $OSTYPE"
 fi
