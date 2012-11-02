@@ -1,0 +1,23 @@
+Test Input file:
+pipelines/Spanish/examples/CESS-CAST-P_107_19991001.props
+
+To run (until malt training is done, the pipeline isn't fully functional): 
+pipelines/Spanish/Scripts/malt_to_prop.py  pipelines/Spanish/examples/CESS-CAST-P_107_19991001.props
+
+Test output file:
+pipelines/Spanish/examples/CESS-CAST-P_107_19991001.props
+
+Functions Implemented:
+
+Verbs:
+Find subject
+
+Adjectives:
+Find head noun
+
+Prepositions:
+find head noun
+find complement noun
+
+Nouns:
+Link coreferent nouns (e.g. ministro <=> Josep_Piqué in Test output file)
