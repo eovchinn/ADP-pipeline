@@ -181,7 +181,13 @@ class MaltConverter(object):
 
         # 4. Add tense information if available from the parser.
 
-        # TODO(zaytsev@udc.edu): implement this
+        if word.feats[3] == "s":  # if past
+            epred = ("past", ("e%d" % word.id, ))
+            self.__extra_preds.append(epred)
+
+        if word.feats[3] == "f":  # if furure
+            epred = ("future", ("e%d" % word.id, ))
+            self.__extra_preds.append(epred)
 
         if not w_subject:
             w_subject = "u%d" % self.__u_count
@@ -226,7 +232,15 @@ class MaltConverter(object):
                         epred = ("card", ("x%d" % word.id, str(num)))
                         self.__extra_preds.append(epred)
                     except ValueError:
+                        # TODO(zaytsev@udc.edu): parse word numeral
                         pass
+
+        # 4. If there is other information available from the parser (e.g. type
+        #    of the named entity), please add it.
+
+        if word.feats[1] == "p":  # if proper
+            epred = ("proper", ("x%d" % word.id, ))
+            self.__extra_preds.append(epred)
 
         args_text = "e%d,u%d" % (self.__e_count, self.__u_count)
         self.__u_count += 1
