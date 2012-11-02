@@ -1,0 +1,6 @@
+#!/bin/bash
+
+inputFile="${1:-/dev/stdin}"
+outputFileName="${2:-/dev/stdout}"
+
+./tokenize < $inputFile |./tag |./parse|./createLF > $outputFileName
