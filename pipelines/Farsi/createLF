@@ -1,41 +1,12 @@
 #!/bin/bash
 
-inputFile=$1
-taggedFile=$1.tagged.txt
-modifiedTaggedFile=$1.modified.tagged.txt
-parserOutputFileName=$1.parsed.txt
-LFFileName=$1.LF.txt
-
 farsiPipelineDir=$METAPHOR_DIR/pipelines/Farsi
-taggedFileModifier=$farsiPipelineDir/taggedFileModifier.py
+
+parserOutputFileName="${1:-/dev/stdin}"
+LFFileName="${2:-/dev/stdout}"
+
 parseToLFConverter=$farsiPipelineDir/convertParseTreeToLF.py
 transliterationDict=$farsiPipelineDir/translitDict.txt
 
-
-taggerDir=$METAPHOR_DIR/external-tools/farsiTools/POSTagger/stanford-postagger
-parserDir=$METAPHOR_DIR/external-tools/farsiTools/mstparser
-
-
-POSmodelDir=$METAPHOR_DIR/models/farsiModels/farsiPOSModel/StanfordTagger/farsi.tagger.model.bijankhan
-depModelFile=$MetaphorADPDir/models/farsiModels/farsi.dep.model
-
-#POS tag the input file
-
-echo "POS Tagging..."
-export CLASSPATH=$CLASSPATH:$taggerDir/mxpost.jar
-$taggerDir/mxpost $POSmodelDir < $inputFile > $taggedFile
-
-echo "Modifying the Tagger output for parser..."
-#modify the POS tagged file to include dummy label & dep lines
-python $taggedFileModifier $taggedFile $modifiedTaggedFile
-
-
-echo "Parsing..."
-#run parser
-
-cd $parserDir
-java -classpath ".:lib/trove.jar" -Xmx1800m mstparser.DependencyParser test model-name:$depModelFile test-file:$modifiedTaggedFile output-file:$parserOutputFileName format:MST
-
-echo "converting parser output to logical form"
 # convert the parse results to LF
 python $parseToLFConverter $parserOutputFileName $LFFileName $transliterationDict

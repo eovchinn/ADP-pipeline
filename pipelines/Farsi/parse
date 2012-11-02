@@ -1,0 +1,24 @@
+#!/bin/bash
+
+farsiPipelineDir=$METAPHOR_DIR/pipelines/Farsi
+tempDir=$farsiPipelineDir/tmp
+
+taggedInputFile="${1:-/dev/stdin}"
+parsedFileName="${2:-/dev/stdout}"
+conllTaggedFile=$tempDir/taggedConll.txt
+
+taggedFileToCONLL=$farsiPipelineDir/taggedFileToCONLL.py
+
+parserDir=$METAPHOR_DIR/external-tools/malt-1.5
+parserModelFile=farsiMALTModel
+
+echo "**Modifying the Tagger output for parser..." >&2
+#modify the POS tagged file to include dummy label & dep lines
+python $taggedFileToCONLL $taggedInputFile $conllTaggedFile
+
+
+#run parser
+
+cd $parserDir
+
+java -mx2G -jar malt.jar -c $parserModelFile -i $conllTaggedFile -m parse > $parsedFileName
