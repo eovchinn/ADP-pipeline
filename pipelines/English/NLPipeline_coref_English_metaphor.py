@@ -16,10 +16,10 @@ boxer2henry_path = "%s/pipelines/English/Boxer2Henry.pl" % METAPHOR_DIR
 features = "%s/models/English-features-henry" % METAPHOR_DIR
 kbpath = "%s/KBs/English/kb-wnfn-noder-lmap.da" % METAPHOR_DIR
 extract_hypotheses_path = "%s/pipelines/common/extract_hypotheses.py" % METAPHOR_DIR
+kb = ''
 
 # switches
 kbcompiled = False
-kb = ''
 
 def extract_hypotheses(filename):
 	f = open(filename, 'r')
@@ -46,6 +46,7 @@ def extract_hypotheses(filename):
 			output_struct_item['abductive_hypothesis'] = hypothesis
 			output_struct_item['abductive_unification'] = unification
 			output_struct_item['abductive_explanation'] = explanation
+			output_struct_item['description'] = 'Abductive engine output; abductive_hypothesis: metaphor interpretation; abductive_unification: unifications happened or not; abductive_explanation: axioms applied or not'
 			output_struct.append(output_struct_item) 
 			target = ''
 			unification = False
