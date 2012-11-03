@@ -1,11 +1,27 @@
 (adversary e1 y x c) : y and x are rivals in the context of conflict c
+(aim e1 x w y) : x directs weapon (or attack) w at target y
 (attack e1 x y) : x attacks y
-(combat e) : e is a type of conflict known as combat
-(compete e x y u) : x and y are rivals in a conflict 
+(baragge e1 x y) : x attacks y with a showering of weapons
+(bullet w) : w is a bullet
+(combat c) : c is a type of conflict known as combat
+(compete e1 x y u) : x and y are rivals in a conflict 
 (conflict c) : x is a conflict
-(fight e) : e is a fight
-(goal g x) : x has goal g
+(crosshairs u) : u is a crosshairs
+(enemy e1 x y) : x is an enemy of y 
+(fight f) : f is a fight
+(goal e1 g x) : x has goal g
+(gun x) : x is a gun
 (not g h) : g and h are not equal
+(part u w) : u is part of w
+(president x) : x is a president
+(rifle w) : w is a rifle
+(shoot e1 x w u) : x shoots weapon w at u
+(sight u) : u is the sight of a gun or other weapon
+(slap e1 x y) : x slaps y
+(target e1 x y w) : x targets y with weapon (or attack) w
+(train e1 x w y) : x focuses weapon w on target y
 (use e1 x w) : x uses weapon x 
 (war e) : e is a war
 (weapon w) : w is a weapon
+
+
