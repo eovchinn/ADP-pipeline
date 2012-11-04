@@ -217,6 +217,8 @@ class MaltConverter(object):
                 self.apply_vb_rules(p.word)
             if p.word.cpostag == "nn":
                 self.apply_nn_rules(p.word)
+            if p.word.cpostag == "adj":
+                self.apply_adj_rules(p.word)
 
         self.assign_indexes()
 
@@ -257,9 +259,9 @@ class MaltConverter(object):
 
         # 2. Argument control: first arguments of both verbs are the same.
 
-        if word.head and self.word(word.head).cpostag == "vb":
+        head = self.word(word.head)
+        if head and head.cpostag == "vb":
             # Use VERB#1 rule to find subject of the head
-            head = self.word(word.head)
             w_subject = head.pred.args[1]
             head.pred.args[2].point_to(word.pred.args[0])
 
@@ -304,8 +306,8 @@ class MaltConverter(object):
         # 2. Genitive: always use the predicate "of-in" for expressing
         #    genitives.
 
-        if word.feats[4] == "g" and self.word(word.head).cpostag == "nn":
-            head = self.word(word.head)
+        head = self.word(word.head)
+        if word.feats[4] == "g" and head.cpostag == "nn":
             epred = ("of-in",
                         [Argument("e"),
                          head.pred.args[1],
@@ -316,13 +318,13 @@ class MaltConverter(object):
         # 3. Add number information if available from the parser (if plural).
 
         if word.feats[3] == "p":  # if plural
+            epred = ("typelt", [
+                word.pred.args[1],
+                Argument("s"),
+                ])
+            self.__extra_preds.append(epred)
             for dep in self.__deps(word):
                 if dep.cpostag == "num":
-                    epred = ("typelt", [
-                        word.pred.args[1],
-                        Argument("s"),
-                    ])
-                    self.__extra_preds.append(epred)
                     try:
                         num = int(dep.form)
                         epred = ("card", [
@@ -345,18 +347,9 @@ class MaltConverter(object):
         # 1. Adjectives share the second argument with the noun they are
         #    modifying
 
-        # print self.__preds
-
-        # if word.head and self.word(word.head).cpostag == "nn":
-        #     args = [
-        #     "e%d" % self.__e_count,
-        #     self.pred(word.head)[-1][1]
-        # ]
-        # else:
-        args = ["e%d" % self.__e_count, "x%d" % self.__x_count]
-        self.__x_count += 1
-
-        return Predicate(word, args)
+        head = self.word(word.head)
+        if head and head.cpostag == "nn":
+            word.pred.args[1].point_to(head.pred.args[1])
 
     def init_predicate(self, word):
         args = [Argument("e")]\
