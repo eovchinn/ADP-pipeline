@@ -192,8 +192,13 @@ class MaltConverter(object):
         label, args = epred
         argsf = []
         for a in args:
-            argsf.append("%s%d"\
-                         % (a.resolve_pointer().type, a.resolve_pointer().index, ))
+            if a.type in ["e", "x", "u", ]:
+                argsf.append("%s%d"\
+                             % (a.resolve_pointer().type,
+                                a.resolve_pointer().index)
+                )
+            else:
+                argsf.append(a.type)
         return u"%s(%s)" % (label, ",".join(argsf), )
 
     def format_output(self, sent_count):
@@ -210,15 +215,10 @@ class MaltConverter(object):
         for p in self.__preds:
             if p.word.cpostag == "vb":
                 self.apply_vb_rules(p.word)
-#            if p.word.cpostag == "nn":
-#                self.apply_nn_rules(p.word)
+            if p.word.cpostag == "nn":
+                self.apply_nn_rules(p.word)
 
         self.assign_indexes()
-
-
-        # pred_text = u" & ".join(
-        #     fpreds +
-        #     self.extra_preds(sent_count))
 
 
         predf = [self.format_pred(p, sent_count) for p in self.__preds]
@@ -294,47 +294,51 @@ class MaltConverter(object):
             word.pred.args[3] = Argument("u")
 
 
-#    def apply_nn_rules(self, word):
-#
-#        # 1. Noun compounds: if there are noun compounds in the language you are
-#        #    working with, use the predicate "nn" to express it.
-#
-#        # TODO(zaytsev@udc.edu): implement this
-#
-#        # 2. Genitive: always use the predicate "of-in" for expressing
-#        #    genitives.
-#
-#        if word.feats[4] == "g" and self.word(word.head).cpostag == "nn":
-#            epred = ("of-in", ("x%d" % word.id, "x%d" % word.head,))
-#            self.__extra_preds.append(epred)
-#
-#        # 3. Add number information if available from the parser (if plural).
-#
-#        if word.feats[3] == "p":  # if plural
-#            for dep in self.__deps(word):
-#                if dep.cpostag == "num":
-#                    epred = ("typelt", ("x%d" % word.id, "s"))
-#                    self.__extra_preds.append(epred)
-#                    try:
-#                        num = int(dep.form)
-#                        epred = ("card", ("x%d" % word.id, str(num)))
-#                        self.__extra_preds.append(epred)
-#                    except ValueError:
-#                        # TODO(zaytsev@udc.edu): parse word numeral
-#                        pass
-#
-#        # 4. If there is other information available from the parser (e.g. type
-#        #    of the named entity), please add it.
-#
-#        # if word.feats[1] == "p":  # if proper
-#        #     epred = ("???", ("x%d" % word.id, ))
-#        #     self.__extra_preds.append(epred)
-#
-#        args = ["e%d" % self.__e_count, "x%d" % self.__x_count]
-#        self.__x_count += 1
-#        self.__e_count += 1
-#
-#        return Predicate(word, args)
+    def apply_nn_rules(self, word):
+
+        # 1. Noun compounds: if there are noun compounds in the language you are
+        #    working with, use the predicate "nn" to express it.
+
+        # TODO(zaytsev@udc.edu): implement this
+
+        # 2. Genitive: always use the predicate "of-in" for expressing
+        #    genitives.
+
+        if word.feats[4] == "g" and self.word(word.head).cpostag == "nn":
+            head = self.word(word.head)
+            epred = ("of-in",
+                        [Argument("e"),
+                         head.pred.args[1],
+                         word.pred.args[1],
+                ])
+            self.__extra_preds.append(epred)
+
+        # 3. Add number information if available from the parser (if plural).
+
+        if word.feats[3] == "p":  # if plural
+            for dep in self.__deps(word):
+                if dep.cpostag == "num":
+                    epred = ("typelt", [
+                        word.pred.args[1],
+                        Argument("s"),
+                    ])
+                    self.__extra_preds.append(epred)
+                    try:
+                        num = int(dep.form)
+                        epred = ("card", [
+                            word.pred.args[1],
+                            Argument(str(num)),
+                        ])
+                        self.__extra_preds.append(epred)
+                    except ValueError:
+                        # TODO(zaytsev@udc.edu): parse word numeral
+                        pass
+
+        # 4. If there is other information available from the parser (e.g. type
+        #    of the named entity), please add it.
+
+        # TODO(zaytsev@udc.edu): implement this
+
 
     def apply_adj_rules(self, word):
 
