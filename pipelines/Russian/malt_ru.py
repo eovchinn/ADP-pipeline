@@ -9,7 +9,6 @@ import re
 import sys
 import argparse
 
-
 class WordToken(object):
     postag_map = {
         "V": ("vb", 4),     # verb - vb/4
@@ -17,7 +16,7 @@ class WordToken(object):
         "N": ("nn", 2),     # adjective - adj/2
         "R": ("rb", 2),     # adverb - rb/2
         "S": ("in", 3),     # preposition - in/3
-        "P": ("pr", -1),    # pronoun or demonstrative adjective
+        "P": ("pr", -1),    # pronoun
         "M": ("num", -1),   # numeral
     }
 
@@ -47,6 +46,8 @@ class WordToken(object):
                                     # depending on the original treebank
                                     # annotation, the dependency relation may
                                     # be meaningful or simply 'ROOT'.
+
+        self.pred = None
 
         # Deprel types are defined in the following article:
         # http://www.aclweb.org/anthology-new/C/C08/C08-1081.pdf
@@ -81,6 +82,43 @@ class WordToken(object):
             % (self.id, )
 
 
+class Argument(object):
+
+    def __init__(self, arg_type):
+        global UID
+        self.type = arg_type
+        self.index = None
+        self.pointer = None
+
+    def point_to(self, another_arg):
+        if self != another_arg:
+            self.pointer = another_arg
+
+    def resolve_pointer(self):
+        if not self.pointer:
+            return self
+        else:
+            return self.pointer.resolve_pointer()
+
+    def __repr__(self):
+        arg = self.resolve_pointer()
+        if arg.index:
+            return "%s%d" % (arg.type, arg.index, )
+        else:
+            return "%s" % self.type
+
+class Predicate(object):
+
+    def __init__(self, word, args):
+        self.word = word
+        self.label = u"%s-%s" % (word.lemma, word.cpostag, )
+        self.args = args
+
+    def __repr__(self):
+        return u"<Predicate(label=%s, args=%s)>" \
+            % (self.label, self.args, )
+
+
 class MaltConverter(object):
     line_splitter = re.compile("\s+")
     punct = re.compile("[\.,\?\!{}()\[\]:;¿¡]")
@@ -89,78 +127,109 @@ class MaltConverter(object):
         self.__words = []
         self.__preds = []
         self.__extra_preds = []
-        self.__u_count = 1
-        self.__e_count = 1
-        self.__x_count = 1
+
+    def assign_indexes(self):
+        e_count = 1
+        x_count = 1
+        u_count = 1
+
+        arg_set = set()
+        arg_list = []
+        for w in self.__words:
+            if w.pred:
+                for a in w.pred.args:
+                    if a.resolve_pointer() not in arg_set:
+                        arg_set.add(a.resolve_pointer())
+                        arg_list.append(a.resolve_pointer())
+
+        for ep, ep_args in self.__extra_preds:
+            for a in ep_args:
+                if a.resolve_pointer() not in arg_set:
+                    arg_set.add(a.resolve_pointer())
+                    arg_list.append(a.resolve_pointer())
+
+
+        for a in arg_list:
+            if a.type == "e":
+                a.index = e_count
+                e_count += 1
+            elif a.type == "x":
+                a.index = x_count
+                x_count += 1
+            elif a.type == "u":
+                a.index = u_count
+                u_count += 1
+
 
     def add_line(self, line):
         line = self.line_splitter.split(line.decode("utf-8"))
         if len(line) > 2:
             self.__words.append(WordToken(line))
-            return True  # Line successfully added.
+            return True
         else:
-            return False  # Line was not added (end of sentence).
+            return False
 
     def word(self, word_id):
         return self.__words[word_id - 1]
-
-    def pred(self, word_id):
-        for pred in self.__preds:
-            if pred[0] == word_id:
-                return pred[0]
-        return None
 
     def __deps(self, word):
         for w in self.__words:
             if w.head == word.id:
                 yield w
 
-    def format_output(self, sent_count):
+    def format_pred(self, pred, sent_count=None):
+        argsf = []
+        for a in pred.args:
+            argsf.append("%s%d" \
+                % (a.resolve_pointer().type, a.resolve_pointer().index, ))
+        if sent_count is not None:
+            id_text = "[%d]:" % (1000 * sent_count + pred.word.id)
+        else:
+            id_text = ""
+        return u"%s%s(%s)" % (id_text, pred.label, ",".join(argsf), )
 
-        sent_text = u"% " + u" ".join([w.form for w in self.__words])
-        id_text = u"id(%d)." % sent_count
+    def format_epred(self, epred):
+        label, args = epred
+        argsf = []
+        for a in args:
+            argsf.append("%s%d"\
+                         % (a.resolve_pointer().type, a.resolve_pointer().index, ))
+        return u"%s(%s)" % (label, ",".join(argsf), )
+
+    def format_output(self, sent_count):
 
         for w in self.__words:
 
             if not w.cpostag or self.punct.match(w.lemma):
                 continue
 
-            if w.cpostag == "vb":
-                args = self.__handle_verb(w)
-            elif w.cpostag == "nn":
-                args = self.__handle_noun(w)
-            elif w.cpostag == "adj":
-                args = self.__handle_adj(w)
-            elif w.cpostag == "pr":
-                args = None
-            elif w.args != -1:
-                args = self.__handle_generic(w)
+            if w.args != -1:
+                pred = self.init_predicate(w)
+                self.__preds.append(pred)
 
-            if args:
-                self.__preds.append((
-                    w.id,
-                    w.lemma,
-                    w.cpostag,
-                    args,
-                ))
+        for p in self.__preds:
+            if p.word.cpostag == "vb":
+                self.apply_vb_rules(p.word)
+#            if p.word.cpostag == "nn":
+#                self.apply_nn_rules(p.word)
 
-        fpreds = []
-        for p_id, p_lemma, p_postag, p_args in self.__preds:
-            pred_str = u"[%d]%s-%s(%s)" % (
-                1000 * sent_count + p_id,
-                p_lemma,
-                p_postag,
-                ",".join(p_args)
-            )
-            fpreds.append(pred_str)
+        self.assign_indexes()
 
-        pred_text = u" & ".join(
-            fpreds +
-            self.extra_preds(sent_count))
 
-        return u"%s\n%s\n%s\n\n" % (sent_text, id_text, pred_text,)
+        # pred_text = u" & ".join(
+        #     fpreds +
+        #     self.extra_preds(sent_count))
 
-    def __handle_verb(self, word):
+
+        predf = [self.format_pred(p, sent_count) for p in self.__preds]
+        epredf = [self.format_epred(ep) for ep in self.__extra_preds]
+        sent_text = u"% " + u" ".join([w.form for w in self.__words])
+        id_text = u"id(%d)." % sent_count
+        pred_text = " & ".join(predf + epredf)
+
+        return u"%s\n%s\n%s\n\n" % (sent_text, id_text, pred_text)
+
+    def apply_vb_rules(self, word):
 
         # 1. Link arguments: subject - second arg, direct object - third arg,
         #    indirect object - fourth arg. Direct obj can be a clause; then the
@@ -171,26 +240,29 @@ class MaltConverter(object):
         i_object = None
 
         for dep in self.__deps(word):
-            if dep.deprel == u"предик":
-                w_subject = "x%d" % dep.id
-            elif dep.deprel == u"1-компл":
-                if dep.cpostag == "pr":
-                    d_object = "e%d" % dep.id
-                else:
-                    d_object = "x%d" % dep.id
-            elif dep.deprel == u"2-компл":
-                if dep.cpostag == "pr":
-                    i_object = "e%d" % dep.id
-                else:
-                    i_object = "x%d" % dep.id
+            ddeps = list(self.__deps(dep))
+            if dep.cpostag == "pr" and len(ddeps) > 0:
+                dep = ddeps[0]
+                if dep.cpostag == "vb" and dep.pred:
+                    d_object = dep.pred.args[0]
+            elif dep.cpostag == "nn":
+                if dep.deprel == u"предик" and dep.pred:
+                    w_subject = dep.pred.args[1]
+                elif dep.deprel == u"2-компл" and dep.pred:
+                    d_object = dep.pred.args[1]
+                elif dep.deprel == u"1-компл" and dep.pred:
+                    i_object = dep.pred.args[1]
+
+
 
         # 2. Argument control: first arguments of both verbs are the same.
 
         if word.head and self.word(word.head).cpostag == "vb":
             # Use VERB#1 rule to find subject of the head
-            for dep in self.__deps(self.word(word.head)):
-                if dep.deprel == u"предик":
-                    w_subject = "x%d" % dep.id
+            head = self.word(word.head)
+            w_subject = head.pred.args[1]
+            head.pred.args[2].point_to(word.pred.args[0])
+
 
         # 3. If in  there are more than 3 cases which can be expressed without
         #    prepositions (e.g. Russian), then introduce additional predicates
@@ -201,73 +273,70 @@ class MaltConverter(object):
         # 4. Add tense information if available from the parser.
 
         if word.feats[3] == "s":  # if past
-            epred = ("past", ("e%d" % word.id, ))
+            epred = ("past", [Argument("e"), word.pred.args[0]])
             self.__extra_preds.append(epred)
 
         if word.feats[3] == "f":  # if furure
-            epred = ("future", ("e%d" % word.id, ))
+            epred = ("future", [Argument("e"), word.pred.args[0]])
             self.__extra_preds.append(epred)
 
-        if not w_subject:
-            w_subject = "u%d" % self.__u_count
-            self.__u_count += 1
+        if w_subject:
+            word.pred.args[1].point_to(w_subject)
+        else:
+            word.pred.args[1] = Argument("u")
+        if d_object:
+            word.pred.args[2].point_to(d_object)
+        else:
+            word.pred.args[2] = Argument("u")
+        if i_object:
+            word.pred.args[3].point_to(i_object)
+        else:
+            word.pred.args[3] = Argument("u")
 
-        if not d_object:
-            d_object = "u%d" % self.__u_count
-            self.__u_count += 1
 
-        if not i_object:
-            i_object = "u%d" % self.__u_count
-            self.__u_count += 1
+#    def apply_nn_rules(self, word):
+#
+#        # 1. Noun compounds: if there are noun compounds in the language you are
+#        #    working with, use the predicate "nn" to express it.
+#
+#        # TODO(zaytsev@udc.edu): implement this
+#
+#        # 2. Genitive: always use the predicate "of-in" for expressing
+#        #    genitives.
+#
+#        if word.feats[4] == "g" and self.word(word.head).cpostag == "nn":
+#            epred = ("of-in", ("x%d" % word.id, "x%d" % word.head,))
+#            self.__extra_preds.append(epred)
+#
+#        # 3. Add number information if available from the parser (if plural).
+#
+#        if word.feats[3] == "p":  # if plural
+#            for dep in self.__deps(word):
+#                if dep.cpostag == "num":
+#                    epred = ("typelt", ("x%d" % word.id, "s"))
+#                    self.__extra_preds.append(epred)
+#                    try:
+#                        num = int(dep.form)
+#                        epred = ("card", ("x%d" % word.id, str(num)))
+#                        self.__extra_preds.append(epred)
+#                    except ValueError:
+#                        # TODO(zaytsev@udc.edu): parse word numeral
+#                        pass
+#
+#        # 4. If there is other information available from the parser (e.g. type
+#        #    of the named entity), please add it.
+#
+#        # if word.feats[1] == "p":  # if proper
+#        #     epred = ("???", ("x%d" % word.id, ))
+#        #     self.__extra_preds.append(epred)
+#
+#        args = ["e%d" % self.__e_count, "x%d" % self.__x_count]
+#        self.__x_count += 1
+#        self.__e_count += 1
+#
+#        return Predicate(word, args)
 
-        e_arg = "e%d" % self.__e_count
-        self.__e_count += 1
-
-        return [e_arg, w_subject, d_object, i_object]
-
-    def __handle_noun(self, word):
-
-        # 1. Noun compounds: if there are noun compounds in the language you are
-        #    working with, use the predicate "nn" to express it.
-
-        # TODO(zaytsev@udc.edu): implement this
-
-        # 2. Genitive: always use the predicate "of-in" for expressing
-        #    genitives.
-
-        if word.feats[4] == "g" and self.word(word.head).cpostag == "nn":
-            epred = ("of-in", ("x%d" % word.id, "x%d" % word.head,))
-            self.__extra_preds.append(epred)
-
-        # 3. Add number information if available from the parser (if plural).
-
-        if word.feats[3] == "p":  # if plural
-            for dep in self.__deps(word):
-                if dep.cpostag == "num":
-                    epred = ("typelt", ("x%d" % word.id, "s"))
-                    self.__extra_preds.append(epred)
-                    try:
-                        num = int(dep.form)
-                        epred = ("card", ("x%d" % word.id, str(num)))
-                        self.__extra_preds.append(epred)
-                    except ValueError:
-                        # TODO(zaytsev@udc.edu): parse word numeral
-                        pass
-
-        # 4. If there is other information available from the parser (e.g. type
-        #    of the named entity), please add it.
-
-        # if word.feats[1] == "p":  # if proper
-        #     epred = ("???", ("x%d" % word.id, ))
-        #     self.__extra_preds.append(epred)
-
-        args = ["e%d" % self.__e_count, "x%d" % self.__x_count]
-        self.__x_count += 1
-        self.__e_count += 1
-
-        return args
-
-    def __handle_adj(self, word):
+    def apply_adj_rules(self, word):
 
         # 1. Adjectives share the second argument with the noun they are
         #    modifying
@@ -281,35 +350,16 @@ class MaltConverter(object):
         # ]
         # else:
         args = ["e%d" % self.__e_count, "x%d" % self.__x_count]
-        # self.__x_count += 1
+        self.__x_count += 1
 
-        return args
+        return Predicate(word, args)
 
-    def __handle_generic(self, word):
-        u_args = []
-        for i in xrange(1, word.args):
-            u_args.append("u%d" % self.__u_count)
-            self.__u_count += 1
-
-        e_arg = "e%d" % self.__e_count
-        self.__e_count += 1
-
-        return [e_arg] + u_args
-
-    def extra_preds(self, sent_count):
-        epreds = []
-        for tag, x_args in self.__extra_preds:
-            epred_str = "%s(e%d" % (tag, self.__e_count,)
-            self.__e_count += 1
-            for x in x_args:
-                if x != None:
-                    epred_str += "," + x
-                else:
-                    epred_str += ",u%d" % self.__u_count
-                    self.__u_count += 1
-            epred_str += ")"
-            epreds.append(epred_str)
-        return epreds
+    def init_predicate(self, word):
+        args = [Argument("e")]\
+             + [Argument("x") for _ in xrange(1, word.args)]
+        pred = Predicate(word, args)
+        word.pred = pred
+        return pred
 
     def flush(self, sent_count, ofile):
         output = self.format_output(sent_count)
@@ -317,9 +367,6 @@ class MaltConverter(object):
         self.__words = []
         self.__preds = []
         self.__extra_preds = []
-        self.__u_count = 1
-        self.__e_count = 1
-        self.__x_count = 1
 
 
 def main():
@@ -345,6 +392,7 @@ def main():
         else:
             mc.flush(sent_count, ofile)
             sent_count += 1
+            print
 
 
 if __name__ == "__main__":
