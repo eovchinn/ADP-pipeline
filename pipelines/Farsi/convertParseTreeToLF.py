@@ -1,9 +1,12 @@
 import sys
 import codecs
+import re
 inputFile=codecs.open(sys.argv[1], encoding='utf-8')
 outputFile=codecs.open(sys.argv[2], encoding='utf-8',mode="w")
 translitDictFile=codecs.open(sys.argv[3], encoding='utf-8')
 
+#each rule is in the form "relationName":(headArgIndex,dependentArgIndex)
+rules={"SBJ":(1,1),"OBJ":(2,1),"NPOSTMOD":(1,1)}
 
 
 #this is a global dict for easy handling of different POS schema
@@ -26,12 +29,15 @@ def loadtranslitDict(translitDictFile):
 def getTranslit(lemma):
     englishStr=""
     for i in range(0,len(lemma)):
-        if lemma[i] not in transLitDict:
-            print lemma[i]
-            for key in transLitDict:
-                print key
-            niloo=1
-        englishStr+=transLitDict[lemma[i]]
+#        if lemma[i] not in transLitDict:
+#            print lemma[i]
+#            for key in transLitDict:
+#                print key
+#            niloo=1
+        translit=lemma[i]
+        if lemma[i] in transLitDict:
+            translit=transLitDict[lemma[i]]
+        englishStr+=translit
     return englishStr
 
 
@@ -44,7 +50,7 @@ def getTranslit(lemma):
     
 
 def propToString(sentenceId,prop):
-    (id,word,lemma,POS,dep,rel,args)=prop
+    (id,word,lemma,POS,args)=prop
     postfix=""
     if POS in postFixDict: postfix=postFixDict[POS]
     token="[%s]:%s%s(%s)"%(sentenceId*1000+id,getTranslit(lemma),postfix,",".join(args))
@@ -80,23 +86,96 @@ def getArgs(POS):
         args+=["u%s"%unknownargCounter]
         unknownargCounter+=1
    
-    return args     
- 
+    return args 
+  
+def createPropDict(props):
+    propDict={}
+    for prop in props:
+        (id,word,lemma,POS,args)=prop
+        propDict[id]=prop
+    return propDict
+
+def convertSetsToLists(EqualArgMap):
+    returnList=[]
+    for equalSet in EqualArgMap:
+        returnList+=[sorted(list(equalSet))]
+    return returnList
+        
+def getRepresentativeArgName(equalList):
+    for argName in equalList:
+        if re.match("x.*",argName):
+            return argName
+        if re.match("e.*",argName):
+            return argName
+    return equalList[0]
+
+def resolveArgs(LF):
+    (sentenceId,props,rels)=LF
+    propDict=createPropDict(props)
+    equalArgMap=[]
+    for rel in rels:
+        (relName,dependent,head)=rel
+        
+        if relName not in rules:
+            continue
+              
+        (headArgIndex,dependentArgIndex)=rules[relName]
+        
+        headProp=propDict[head]
+        (headId,headWord,headLemma,headPOS,headArgs)=headProp
+        
+        dependentProp=propDict[dependent]
+        (dependentId,dependentWord,dependentLemma,dependentPOS,dependentArgs)=dependentProp
+        
+        headArgName=headArgs[headArgIndex]
+        dependentArgName=dependentArgs[dependentArgIndex]
+        
+        foundSet=None
+        for equalitySet in equalArgMap:
+            if headArgName in equalitySet or dependentArgName in equalitySet:
+                foundSet=equalitySet
+                break
+        if foundSet==None:
+            foundSet=set()
+            equalArgMap+=[foundSet]
+        foundSet.add(headArgName)
+        foundSet.add(dependentArgName)
+    
+    equalArgMap=convertSetsToLists(equalArgMap)
+            
+    for prop in props:
+        (Id,Word,Lemma,POS,Args)=prop
+        for i in range(0,len(Args)):
+            for equalSet in equalArgMap:
+                if Args[i] in equalSet:
+                    Args[i]=getRepresentativeArgName(equalSet)
+        
+    return (sentenceId,props,rels)        
+        
+                
+            
+        
+    
+     
 def createLF(tokens,sentenceId):
     props=[]
+    rels=[]
     for token in tokens:
-        (id,word,lemma,POS,dep,rel)=token
+        (id,word,lemma,POS,relName,dep)=token
         if POS in POSStopList:
             continue
-        props+=[(id,word,lemma,POS,dep,rel,getArgs(POS))]
-    return (sentenceId,props)
+        props+=[(id,word,lemma,POS,getArgs(POS))]
+        rels+=[(relName,id,dep)]
+    LF=(sentenceId,props,rels)
+    LF2=resolveArgs(LF)
+    return LF2
 
 def lfToString(lf):
-    (sentenceId,props)=lf
+    (sentenceId,props,rels)=lf
     words=[]
     PropStrings=[]
     for prop in props:
-        (id,word,lemma,POS,dep,rel,args)=prop
+        (id,word,lemma,POS,args)=prop
         words+=[word]
         PropStrings+=[propToString(sentenceId,prop)]
     lfLine=" & ".join(PropStrings)
@@ -119,8 +198,8 @@ while line!="":
     if line.strip()=="":   
         #one sentence read, process it and output it
         lf=createLF(tokens,sentenceId)
-#        outputFile.write(lfToString(lf))
-        sys.stdout.write(lfToString(lf).encode("utf-8"))
+        outputFile.write(lfToString(lf))
+#        sys.stdout.write(lfToString(lf).encode("utf-8"))
         tokens=[]
         sentenceId+=1
     else:
@@ -128,14 +207,14 @@ while line!="":
         if len(a)!=10:
             line=inputFile.readline()
             continue
-        #id,word,lemma,CoarsePOS,FinePOS,etc1,dep,rel,etc2,etc3
+        #id,word,lemma,CoarsePOS,FinePOS,etc1,dep,relName,etc2,etc3
         id=int(a[0])
         CoarsePOS=a[-7]
-        rel=a[-3]
-        dep=a[-4]
+        relName=a[-3]
+        dep=int(a[-4])
         lemma=a[-8]
         word="-".join(" ".join(a[1:-8]).split())
-        tokens+=[(id,word,lemma,CoarsePOS,dep,rel)]
+        tokens+=[(id,word,lemma,CoarsePOS,relName,dep)]
         
     line=inputFile.readline()
 inputFile.close()
