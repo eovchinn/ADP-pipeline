@@ -56,13 +56,12 @@ def extract_hypotheses(filename):
 	
 
 def English_ADP(input):
-
        # tokenization
 	tokenizer = 'echo "' + input + '"' + ' | ' + BOXER_DIR + '/bin/tokkie --stdin'
 
 	# parsing
 	candcParser = BOXER_DIR + '/bin/candc --output ' + os.path.join(TMP_DIR,"tmp.ccg") + ' --models ' + BOXER_DIR + '/models/boxer --candc-printer boxer'
-	
+	# --models ' + BOXER_DIR + '/models/boxer --candc-printer boxer'	
 
 	# Boxer processing
 	boxer = BOXER_DIR + '/bin/boxer --semantics tacitus --resolve true --input ' + os.path.join(TMP_DIR,"tmp.ccg")
@@ -70,7 +69,9 @@ def English_ADP(input):
 	# Boxer2Henry processing
 	b2h = 'perl ' + boxer2henry_path + ' --output ' + os.path.join(TMP_DIR,"tmp.obs") + ' --nonmerge sameargs'
 
-	boxer_proc = tokenizer + ' | ' + candcParser + ' | ' + boxer + ' | ' + b2h
+	candc_proc = tokenizer + ' | ' + candcParser 
+	boxer_proc = boxer + ' | ' + b2h
+	os.system(candc_proc)
 	os.system(boxer_proc)
 	
 	# Henry processing
