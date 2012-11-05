@@ -45,7 +45,7 @@ If input and/or output files are not given as arguments, they are read from stan
 3. Command for running the parser
 	./parse [<input file>][<output file>]
 
-2. Command for running the LF generator
+4. Command for running the LF generator
 	./createLF [<input file>][<output file>]
 
 
