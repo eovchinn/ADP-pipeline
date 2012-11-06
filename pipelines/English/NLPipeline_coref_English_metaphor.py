@@ -4,7 +4,7 @@ import os
 import re
 import sys
 import json
-from collections import defaultdict
+import time
 
 METAPHOR_DIR = os.environ['METAPHOR_DIR']
 BOXER_DIR = os.environ['BOXER_DIR']
@@ -13,7 +13,7 @@ TMP_DIR = os.environ['TMP_DIR']
 
 # paths
 boxer2henry_path = "%s/pipelines/English/Boxer2Henry.pl" % METAPHOR_DIR
-features = "%s/models/English-features-henry" % METAPHOR_DIR
+#features = "%s/models/English-features-henry" % METAPHOR_DIR
 kbpath = "%s/KBs/English/kb-wnfn-noder-lmap.da" % METAPHOR_DIR
 extract_hypotheses_path = "%s/pipelines/common/extract_hypotheses.py" % METAPHOR_DIR
 kb = ''
@@ -22,8 +22,9 @@ kb = ''
 kbcompiled = False
 
 def extract_hypotheses(filename):
-	f = open(filename, 'r')
-	#output_struct = defaultdict(dict)	
+	#f = open(filename, 'r')
+	lines = open(filename, "r") if filename else sys.stdin
+
 	output_struct = []
 	hypothesis_found = False
 	p = re.compile('<result-inference target="(.+)"')
@@ -32,7 +33,7 @@ def extract_hypotheses(filename):
 	unification = False
 	explanation = False
 
-	for line in f:
+	for line in lines:
 		output_struct_item={} 
 		matchObj = p.match(line)
 		if matchObj: target = matchObj.group(1)	
@@ -54,34 +55,44 @@ def extract_hypotheses(filename):
 
 	return json.dumps(output_struct)
 	
+def generate_Boxer_input(input_dict):
+	output_str = ''
+	for id in input_dict.keys():
+		output_str += "<META>'" + id + "'\n\n " + input_dict[id] + "\n\n" 
+	return output_str	
 
-def English_ADP(input):
+def English_ADP(input_dict):
+	start_time = time.time()	
+
+	input_str = generate_Boxer_input(input_dict)       
+
        # tokenization
-	tokenizer = 'echo "' + input + '"' + ' | ' + BOXER_DIR + '/bin/tokkie --stdin'
+	tokenizer = 'echo "' + input_str + '"' + ' | ' + BOXER_DIR + '/bin/tokkie --stdin'
 
 	# parsing
-	candcParser = BOXER_DIR + '/bin/candc --output ' + os.path.join(TMP_DIR,"tmp.ccg") + ' --models ' + BOXER_DIR + '/models/boxer --candc-printer boxer'
-	# --models ' + BOXER_DIR + '/models/boxer --candc-printer boxer'	
+	candcParser = BOXER_DIR + '/bin/candc --models ' + BOXER_DIR + '/models/boxer --candc-printer boxer'	
 
 	# Boxer processing
-	boxer = BOXER_DIR + '/bin/boxer --semantics tacitus --resolve true --input ' + os.path.join(TMP_DIR,"tmp.ccg")
+	boxer = BOXER_DIR + '/bin/boxer --semantics tacitus --resolve true --stdin'
 
 	# Boxer2Henry processing
-	b2h = 'perl ' + boxer2henry_path + ' --output ' + os.path.join(TMP_DIR,"tmp.obs") + ' --nonmerge sameargs'
+	b2h = 'perl ' + boxer2henry_path + ' --nonmerge sameargs'
 
-	candc_proc = tokenizer + ' | ' + candcParser 
-	boxer_proc = boxer + ' | ' + b2h
-	os.system(candc_proc)
-	os.system(boxer_proc)
+	boxer_proc = tokenizer + ' | ' + candcParser + ' | ' + boxer + ' | ' + b2h
+	#os.system(boxer_proc)
+
+	boxer_time = (time.time() - start_time)*0.001 			# Boxer time in seconds
+	time_all_henry = 600 - boxer_time		    			# all time rest for Henry in seconds	
+	time_unit_henry = str(int(time_all_henry/len(input_dict)))	# time for one interpretation in Henry in seconds
 	
 	# Henry processing
 	if kbcompiled:
-		henry = HENRY_DIR + "/bin/henry -m infer " + HENRY_DIR + "/models/w.hard " + kb + " " + os.path.join(TMP_DIR,"tmp.obs") + " -d 3 -T 120 -e " + HENRY_DIR + "/models/i12.py -O proofgraph,statistics -f '--datadir " + features + "' -b " + kbpath + " -t 4 > " + os.path.join(TMP_DIR,"tmp.hyp")
+		henry = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry + ' -b ' + kbpath + ' > ' + os.path.join(TMP_DIR,"tmp.hyp")
 	else:
-		henry = HENRY_DIR + "/bin/henry -m infer " + HENRY_DIR + "/models/w.hard " + kb + " " + os.path.join(TMP_DIR,"tmp.obs") + " -d 3 -T 120 -e " + HENRY_DIR + "/models/i12.py -O proofgraph,statistics -f '--datadir " + features + "' -t 4 > " + os.path.join(TMP_DIR,"tmp.hyp")
+		henry = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry + ' > ' + os.path.join(TMP_DIR,"tmp.hyp")
 
-	# henry inference 
-	os.system(henry)
+	all_proc = boxer_proc + ' | ' + henry
+	os.system(all_proc)
 
 	return extract_hypotheses(os.path.join(TMP_DIR,"tmp.hyp"))
 
