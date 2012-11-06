@@ -1,8 +1,51 @@
-Running instructions:
+Farsi discourse processing pipeline:
 
-1.change dir to this directory
-2. run:
-   ./createLF <sentence-file-name>
-   
-* Note that <sentence-file-name> should be the absolute path.
+A pipeline that tokenizes (to be added), POS tags, Parses and creates logical form for farsi sentences.
+
+The tagger is stanford's tagger and the parser is MALT parser.
+The tagger and the parser are trained on persian dependency treebank.
+
+Tokenizing, tagging, parsing and LF generation can be invoked individually or altogether in a sequence using the LF_Pipeline module . It is also possible to pipe the output of each module to the next module. 
+
+A. Running the pipeline:
+
+1. It is necessary to set the environmental variabe METAPHOR_DIR to the root folder of the Metaphor-ADP project, eg:
+	
+	export METAPHOR_DIR=/Users/niloofar/Metaphor-ADP
+
+It is also necessary that the input file name be absolute.
+
+2. Command for running the pipeline:
+
+   ./LF_Pipeline [<input file>][<output file>]
+
+if input and/or output files are not given as arguments, they are read from standard stream.
+
+Sample commands:
+
+./LF_Pipeline $METAPHOR_DIR/pipelines/Farsi/samples/sentence.txt /Users/niloofar/Metaphor-ADP/pipelines/Farsi/samples/lf.txt
+
+cat $METAPHOR_DIR/pipelines/Farsi/samples/sentence.txt |./LF_Pipeline > $METAPHOR_DIR/pipelines/Farsi/samples/lf.txt   
+
+B. Running individual modules:
+
+Again it is necessary to have METAPHOR_DIR point to the root folder of the Metaphor-ADP project. 
+
+The input file name should be absolute.
+
+If input and/or output files are not given as arguments, they are read from standard stream.
+
+1. Command for running the tokenizer
+	./tokenize [<input file>][<output file>]
+
+
+2. Command for running the tagger
+	./tag [<input file>][<output file>]
+
+3. Command for running the parser
+	./parse [<input file>][<output file>]
+
+4. Command for running the LF generator
+	./createLF [<input file>][<output file>]
+
 
