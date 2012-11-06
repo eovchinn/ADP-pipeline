@@ -15,29 +15,34 @@ def annotate_document(annotate_document_request_body):
   try:
     language = document['language']
   except KeyError:
-    print 'No language information available.'
+    logging.info('No language information available.')
     return json.dumps([])
 
   # These are the annotations that were given in the web service call
   annotations = ro["annotations"]
  
-  #string that contains metaphors&annotation_id; input to English_ADP
-  input_metaphors = ""
+  #dict that contains metaphors&annotation_id
+  input_metaphors = {}
 
-  annotation_id=0
+  annotation_id_index=0
   for annotation in annotations:
+
+    try:
+      annotation_id = annotation["annotation_id"]
+    except KeyError:
+      logging.info('No annotation_id.Set one.')
+      annotation_id_index=annotation_id_index+1
+      annotation_id=annotation_id_index
+
     try:
       metaphor=annotation["metaphor"]
-      #annotation_id = annotation["annotation_id"]
-      annotation_id=annotation_id+1
-      input_metaphors = input_metaphors + "<META>'" + str(annotation_id) + "'\n\n " + metaphor + "\n\n" 
+      input_metaphors[str(annotation_id)]=metaphor
     except KeyError:
-      print 'No metaphor or no annotation_id.Skip it.'
+      logging.info('No metaphor.Skip it.')
 
-  print "Input metaphors:" + input_metaphors
+  logging.info("Input metaphors:"+ str(input_metaphors))
 
-  #eng_adp=English_ADP("<META>'5'\n\n Every student reads.\n\n<META>'3'\n\n This dog runs. The animal is funny.\n\n")
-  print "Processing " + language + "..."
+  logging.info("Processing " + language + "...")
 
   if language=='EN' :
     #English:returns JSON array

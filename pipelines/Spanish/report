@@ -1,16 +1,23 @@
+11/6/2012 - Pipeline fully functional
+./run_spanish.sh < examples/spanish_text.txt
+
 Test Input file:
 pipelines/Spanish/examples/CESS-CAST-P_107_19991001.props
 
 To run (until malt training is done, the pipeline isn't fully functional): 
 pipelines/Spanish/Scripts/malt_to_prop.py  pipelines/Spanish/examples/CESS-CAST-P_107_19991001.props
 
+
 Test output file:
 pipelines/Spanish/examples/CESS-CAST-P_107_19991001.props
+
+
 
 Functions Implemented:
 
 Verbs:
-Find subject
+Find subject (nn with relation "suj")
+Find direct object (dependent word
 
 Adjectives:
 Find head noun
@@ -18,6 +25,10 @@ Find head noun
 Prepositions:
 find head noun
 find complement noun
+find head verb (with dependency label "cag")
 
 Nouns:
 Link coreferent nouns (e.g. ministro <=> Josep_Piqué in Test output file)
+
+Pronouns:
+Find head verb for reflexive pronominal morphemes  (e.g. se esta recuperando)
