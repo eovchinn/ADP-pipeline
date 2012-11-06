@@ -9,6 +9,7 @@ import re
 import sys
 import argparse
 
+
 class WordToken(object):
     postag_map = {
         "V": ("vb", 4),     # verb - vb/4
@@ -85,27 +86,33 @@ class WordToken(object):
 class Argument(object):
 
     def __init__(self, arg_type):
-        global UID
         self.type = arg_type
         self.index = None
-        self.pointer = None
+        self.link = None
 
-    def point_to(self, another_arg):
+    def link_to(self, another_arg):
         if self != another_arg:
-            self.pointer = another_arg
+            self.link = another_arg
 
-    def resolve_pointer(self):
-        if not self.pointer:
+    def resolve_link(self):
+        if not self.link:
             return self
         else:
-            return self.pointer.resolve_pointer()
+            return self.link.resolve_link()
+
+    @staticmethod
+    def arg_link(arg):
+        arg = Argument(arg.type)
+        arg.link_to(arg)
+        return arg
 
     def __repr__(self):
-        arg = self.resolve_pointer()
+        arg = self.resolve_link()
         if arg.index:
             return "%s%d" % (arg.type, arg.index, )
         else:
             return "%s" % self.type
+
 
 class Predicate(object):
 
@@ -119,6 +126,10 @@ class Predicate(object):
             % (self.label, self.args, )
 
 
+class EPredicate(Predicate):
+    pass
+
+
 class MaltConverter(object):
     line_splitter = re.compile("\s+")
     punct = re.compile("[\.,\?\!{}()\[\]:;¿¡]")
@@ -129,6 +140,7 @@ class MaltConverter(object):
         self.__extra_preds = []
 
     def assign_indexes(self):
+
         e_count = 1
         x_count = 1
         u_count = 1
@@ -138,16 +150,15 @@ class MaltConverter(object):
         for w in self.__words:
             if w.pred:
                 for a in w.pred.args:
-                    if a.resolve_pointer() not in arg_set:
-                        arg_set.add(a.resolve_pointer())
-                        arg_list.append(a.resolve_pointer())
+                    if a.resolve_link() not in arg_set:
+                        arg_set.add(a.resolve_link())
+                        arg_list.append(a.resolve_link())
 
         for ep, ep_args in self.__extra_preds:
             for a in ep_args:
-                if a.resolve_pointer() not in arg_set:
-                    arg_set.add(a.resolve_pointer())
-                    arg_list.append(a.resolve_pointer())
-
+                if a.resolve_link() not in arg_set:
+                    arg_set.add(a.resolve_link())
+                    arg_list.append(a.resolve_link())
 
         for a in arg_list:
             if a.type == "e":
@@ -159,7 +170,6 @@ class MaltConverter(object):
             elif a.type == "u":
                 a.index = u_count
                 u_count += 1
-
 
     def add_line(self, line):
         line = self.line_splitter.split(line.decode("utf-8"))
@@ -181,7 +191,7 @@ class MaltConverter(object):
         argsf = []
         for a in pred.args:
             argsf.append("%s%d" \
-                % (a.resolve_pointer().type, a.resolve_pointer().index, ))
+                % (a.resolve_link().type, a.resolve_link().index, ))
         if sent_count is not None:
             id_text = "[%d]:" % (1000 * sent_count + pred.word.id)
         else:
@@ -194,8 +204,8 @@ class MaltConverter(object):
         for a in args:
             if a.type in ["e", "x", "u", ]:
                 argsf.append("%s%d"\
-                             % (a.resolve_pointer().type,
-                                a.resolve_pointer().index)
+                             % (a.resolve_link().type,
+                                a.resolve_link().index)
                 )
             else:
                 argsf.append(a.type)
@@ -221,7 +231,6 @@ class MaltConverter(object):
                 self.apply_adj_rules(p.word)
 
         self.assign_indexes()
-
 
         predf = [self.format_pred(p, sent_count) for p in self.__preds]
         epredf = [self.format_epred(ep) for ep in self.__extra_preds]
@@ -255,23 +264,18 @@ class MaltConverter(object):
                 elif dep.deprel == u"1-компл" and dep.pred:
                     i_object = dep.pred.args[1]
 
-
-
         # 2. Argument control: first arguments of both verbs are the same.
 
         head = self.word(word.head)
         if head and head.cpostag == "vb":
             # Use VERB#1 rule to find subject of the head
             w_subject = head.pred.args[1]
-            head.pred.args[2].point_to(word.pred.args[0])
-
+            head.pred.args[2].link_to(word.pred.args[0])
 
         # 3. If in  there are more than 3 cases which can be expressed without
         #    prepositions (e.g. Russian), then introduce additional predicates
         #    expressing these cases is need.
-
         # TODO(zaytsev@udc.edu): implement this
-
         # 4. Add tense information if available from the parser.
 
         if word.feats[3] == "s":  # if past
@@ -283,18 +287,17 @@ class MaltConverter(object):
             self.__extra_preds.append(epred)
 
         if w_subject:
-            word.pred.args[1].point_to(w_subject)
+            word.pred.args[1].link_to(w_subject)
         else:
             word.pred.args[1] = Argument("u")
         if d_object:
-            word.pred.args[2].point_to(d_object)
+            word.pred.args[2].link_to(d_object)
         else:
             word.pred.args[2] = Argument("u")
         if i_object:
-            word.pred.args[3].point_to(i_object)
+            word.pred.args[3].link_to(i_object)
         else:
             word.pred.args[3] = Argument("u")
-
 
     def apply_nn_rules(self, word):
 
@@ -319,8 +322,8 @@ class MaltConverter(object):
 
         if word.feats[3] == "p":  # if plural
             epred = ("typelt", [
-                word.pred.args[1],
-                Argument("s"),
+                    word.pred.args[1],
+                    Argument("s"),
                 ])
             self.__extra_preds.append(epred)
             for dep in self.__deps(word):
@@ -341,7 +344,6 @@ class MaltConverter(object):
 
         # TODO(zaytsev@udc.edu): implement this
 
-
     def apply_adj_rules(self, word):
 
         # 1. Adjectives share the second argument with the noun they are
@@ -349,7 +351,7 @@ class MaltConverter(object):
 
         head = self.word(word.head)
         if head and head.cpostag == "nn":
-            word.pred.args[1].point_to(head.pred.args[1])
+            word.pred.args[1].link_to(head.pred.args[1])
 
     def init_predicate(self, word):
         args = [Argument("e")]\
@@ -377,19 +379,18 @@ def main():
         default=None)
 
     pa = parser.parse_args()
-    lines = open(pa.input, "r") if pa.input else sys.stdin
+    ifile = open(pa.input, "r") if pa.input else sys.stdin
     ofile = open(pa.output, "w") if pa.output else sys.stdout
 
     sent_count = 1
     mc = MaltConverter()
 
-    for line in lines:
+    for line in ifile:
         if mc.add_line(line):
             continue
         else:
             mc.flush(sent_count, ofile)
             sent_count += 1
-            print
 
 
 if __name__ == "__main__":
