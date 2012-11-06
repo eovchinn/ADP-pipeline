@@ -1,78 +1,80 @@
 ; ENGLISH LEXICAL AXIOMS FOR CONFLICT, WAR, SPORTS, COMPETITION
 
-; UPDATES
+; CHANGE LOG
 ; 10/31/2012 aks - created file by moving English lexical items out of conflict kb
 ;
 ;
 ;
 ; QUESTIONS
 ; 10/31/2012 aks
-; 1. how to tell for sure when something is a lexical item, not a rule that belongs in the conflict kb? E.G. "a gun has a sight" 
+; 1. how to tell for sure when a rule should be entered as a lexical item? E.G. "combat is a conflict" could be (=> (conflict e :1.2)(combat e)) or (=> (conflict e :0.9)(combat-nn e1))
 ; 2. What is the total weight for the lhs of lexical rules? 0.9?
+;    ANS: 0.9
 ; 3. in rule "target", how to add role for adversaries?
+; 
+; 11/2 aks
+; 1. all lexical predicates ( *-nn, *-vb, etc.) start with an existence argument eN. Should the conceptual predicates also have existence args? That is, do we require (green e1 x) rather than (green x) to represent "x is green"?
+; 2. shortcuts for synonyms, e.g. directly from slapp-nn to (attack) in addition to slap-nn to (slap)
+; 3. target-aim-train are all similar, shall we use just one predicate and make the others lexical synonyms?
 ;
-;
 
 
-;;; ENGLISH LEXICAL AXIOMS FOR CONFLICT
-
-; A fight is a conflict. 
-(B (name fight) (=> (conflict e :1.2) (fight e)) )
-
-; Combat is a conflict. 
-(B (name combat) (=> (conflict e :1.2) (combat e)) )
+;;; ENGLISH LEXICAL AXIOMS FOR CONFLICT-WAR-SPORTS
 
 ;A barrage is an attack.
-(B (name baragge) (=> (^ (attack e1 x y :0.6)(etc1 e1 x y :0.6))(baragge e1 x y)))
+(B (name baragge) (=> (^ (attack e1 x y :0.6)(etcbaragge e1 x y :0.6))(barrage e1 x y)))
+(B (name barrage-nn1) (=> (barrage e1 x y :0.9) (barrage-nn e1 x)))
 
 ;A slap is an attack.
-(B (name slap) (=> (^ (attack e x y :0.6) (etc7 e :0.3)) (slap e1 x y)))
+(B (name slap) (=> (^ (attack e x y :0.6) (etcslap e :0.3)) (slap e1 x y)))
+(B (name slap-vb1) (=> (slap e1 x y :0.9) (slap-vb e1 x y u)))
+(B (name slap-nn1) (=> (slap e1 x y :0.9) (slap-nn e1 x)))
+; Comment: shall we also add synonym-style shortcut from slap-nn directly to attack?
 
 ;Enemies are adversaries.
 (B (name enemy) (=> (^ (conflict e :0.6) (adversary x y e :0.3)) (enemy e x y)))
-
-;To win is to achieve the goal.
-(B (name win) (=> (^ (conflict c) (adversary x y c) (goal g x) (goal h y) (accomplish-goal e1 g x))
-		      (win e x y c)))
-
-;Victory is winning.
-(B (name victory) (=> (^ (conflict c :0.3) (adversary x y c :0.3) (win e1 x y c :0.3)) (victory e1 x y c)))
-
-;To lose is for your adversary to win.
-(B (name lose) (=> (win e x y c :1.2) (lose e y x c)))
+(B (name enemy-nn) (=> (enemy e x y)(enemy-nn e x)))
 
 ;A bullet is a weapon.  
-(B (name bullet) (=> (^ (weapon w :0.6)(etc6 w :0.6)) (bullet w)))
+(B (name bullet) (=> (^ (weapon w :0.6)(etcbullet w :0.6)) (bullet w)))
+(B (name bullet-nn) (=> (bullet w :0.9)(bullet-nn e1 w)))
 
 ; To shoot a gun is an attack.
 ; Update: to use a gun is to shoot. Attack is achieved from "weapon" rule in conflict-facts kb
-(B (name shoot1) (=> (^ (gun w :0.3) (use x w e1)) (shoot e1 x w u)))
-
+(B (name shoot1) (=> (^ (gun w :0.3) (use e1 x w)) (shoot e1 x w u)))
+(B (name shoot-vb1) (=> (shoot e1 x w u)(shoot-vb e1 x w u)))
 
 ; To attack is to target an adversary. 
-(B (name target) (=> (attack e1 x y :1.2) (target e1 x y)))
+(B (name target) (=> (attack e1 x y :1.2) (target e1 x y w)))
+(B (name target-vb) (=> (target e1 x y w)(target-vb e1 x y u)))
+; Alternative form: (B (name target) (=> (attack e1 x y :1.2) (^ (target e2 x y w) (gen e1 e2) )))
+; This would be formally nicer, but for the current theorem prover we just use x1 in both predications
 
 ; Weapons are aimed
 ; One way of attacking a target using a weapon is aiming the weapon at the target. 
-(B (name aim1) (=> (^ (attack e1 x y :0.3)(use x w e1 :0.3)(weapon w :0.3)(etc2 e1 x y w :0.3)) (aim e1 x w y)) )
+(B (name aim1) (=> (^ (attack e1 x y :0.3)(use e1 x w :0.3)(weapon w :0.3)(etcaim e1 x y w :0.3)) (aim e1 x w y)) )
 
 ; To attack a target is to aim an attack at a target.
 (B (name aim2) (=> (attack e1 x y  :1.2) (aim e3 x e1 y)))
+
+(B (name aim-vb) (=> (aim e1 x w y)(aim-vb e1 x w y)))
+
+(B (name president-nn) (=> (president x) (president-nn e1 x)))
 
 ; To aim a weapon at a target is to train the weapon on the target. 
 (B (name train) (=> (aim e1 x w y :1.2) (train e1 x w y))) 
 
 ; One kind of gun is a rifle.
-(B (name rifle) (=> (^ (gun w :0.6)(etc4 w :0.6)) (rifle w)))
+(B (name rifle) (=> (^ (gun w :0.6)(etcrifle w :0.6)) (rifle w)))
 
 ; One kind of weapon is a gun.
-(B (name gun) (=> (^ (weapon w :0.6)(etc5 w :0.6)) (gun w)))
+(B (name gun) (=> (^ (weapon w :0.6)(etcgun w :0.6)) (gun w)))
 
 ; A gun has a sight.
 (B (name sight) (=> (gun w) (^ (sight u :1.2)(part u w))))
 
 ; To aim a gun is to aim the sight of the gun. (The function of sights.)
-(B (name gun1) (=> (^ (gun w :0.3)(sight u :0.3)(part u w :0.3)(aim e1 x w y :0.3))(aim e1 x u y)))
+(B (name gun1) (=> (^ (gun w :0.3)(sight u :0.3)(part u w :0.3)(aim e1 x u y :0.3))(aim e1 x w y)))
 
 ; One type of sight of a gun is crosshairs.
 (B (name crosshairs) (=> (^ (gun w :0.4)(sight u :0.4)(part u w :0.4)) (crosshairs u)))
