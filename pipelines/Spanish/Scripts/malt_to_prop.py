@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /bin/bash/python
 # -*- coding: utf-8 -*-
 import re,sys,optparse
 
@@ -31,6 +31,8 @@ def to_prop(infile):
             wordRel = line[7]
             longID = '%0*d' % (3, wordID)
             if date.match(wordLemma):
+                wordLemma = wordText
+            elif wordLemma == "<unknown>":
                 wordLemma = wordText
             prop = [longID,wordText,wordLemma,wordPOS,wordHead,wordRel,wordID,sent_count]
             sentence.append(wordText)
@@ -103,7 +105,13 @@ def replace_args(prop_sent,sent_dict):
         if rel == "cc" and pos == "r":
             sent_dict = insert_cc(head,wordID,sent_dict)
         if rel == "cd":
-            sent_dict = insert_cd(head,wordID,sent_dict)            
+            sent_dict = insert_cd(head,wordID,sent_dict)
+        if rel == "cag" and pos == "s":
+            sent_dict = insert_cag(head,wordID,sent_dict)
+        if rel == "morfema.pronominal" and pos == "p":
+            sent_dict = insert_m_p(head,wordID,sent_dict)            
+        # if rel == "atr" and pos == "a":
+        #     sent_dict = insert_atr(head,wordID,sent_dict)  
             
     for prop in prop_sent:
         position +=1
@@ -116,6 +124,7 @@ def replace_args(prop_sent,sent_dict):
         predicate = prop[6]
         tag = prop[7]
         propID = prop[8]                
+        #print propID,lemma,tag,predicate,"-",wordID,head,rel
         if len(predicate) > 0:
             sys.stdout.write(propID+":"+lemma+"-"+tag+"("+",".join(predicate)+")")
         else:
@@ -161,6 +170,22 @@ def insert_sn(head,wordID,sent_dict):
     #     exit()
     return sent_dict
 
+def insert_cag(head,wordID,sent_dict):
+    if sent_dict[head][7] == "vb":
+        sent_dict[wordID][6][1] = sent_dict[head][6][0]
+    # else:
+    #     print "not a prep"
+    #     exit()
+    return sent_dict
+
+def insert_cpred(head,wordID,sent_dict):
+    if sent_dict[head][7] == "vb":
+        sent_dict[wordID][6][1] = sent_dict[head][6][0]
+    # else:
+    #     print "not a prep"
+    #     exit()
+    return sent_dict
+
 def insert_s_a(head,wordID,sent_dict):
     if sent_dict[head][7] == "nn":
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
@@ -169,9 +194,20 @@ def insert_s_a(head,wordID,sent_dict):
     #     exit()
     return sent_dict
 
+def insert_atr(head,wordID,sent_dict):
+    if sent_dict[head][7] == "vb":
+        #sent_dict[wordID][6][1] = sent_dict[head][6][0]
+        sent_dict[head][6][2] = sent_dict[wordID][6][0]
+    return sent_dict
+
 def insert_cc(head,wordID,sent_dict):
     if sent_dict[head][7] == "vb":
         sent_dict[wordID][6][1] = sent_dict[head][6][0]
+    return sent_dict
+
+def insert_m_p(head,wordID,sent_dict):
+    if sent_dict[head][7] == "vb":
+        sent_dict[head][6][2] = sent_dict[wordID][6][1]
     return sent_dict
 
 def build_predicate(pos,eCount,xCount,uCount):
@@ -196,10 +232,10 @@ def build_predicate(pos,eCount,xCount,uCount):
         xCount+=1
         return pred,tag,eCount,xCount,uCount
     if pronounTag.match(pos):
-        tag="p"
+        tag="pro"
         pred.append("e"+str(eCount))
         eCount+=1
-        pred.append("u"+str(uCount))
+        pred.append("x"+str(uCount))
         uCount+=1
         return pred,tag,eCount,xCount,uCount 
     if adjectiveTag.match(pos):
