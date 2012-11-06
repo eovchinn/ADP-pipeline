@@ -38,10 +38,7 @@ SPANISH_TT=ES_PIPELINE_DIR/tree-tagger-spanish-utf8
 MALT_BIN=malt.jar
 MALT_MODEL=ancora_model.mco
 MALT_IFORMAT=$ES_PIPELINE_DIR/Scripts/to_malt.py
-
-BIN=../../external-tools/tree-tagger-3.2/darwin/bin
-CMD=../../external-tools/tree-tagger-3.2/darwin/cmd
-LIB=../../external-tools/tree-tagger-3.2/darwin/lib
+MALT_OFORMAT=$ES_PIPELINE_DIR/Scripts/malt_to_prop.py
 
 OPTIONS="-token -lemma -sgml -quiet"
 
@@ -56,21 +53,19 @@ CURRENT_DIR=`pwd`
 cd $MALT_DIR
 
 if [[ $PLATFORM == "linux" ]]; then
-#    $TOKENIZER_BIN < "${1:-/dev/stdin}" | # < $IFILE
     $TOKENIZER -a $ABBR_LIST $* |
+    $MWL -f $MWLFILE |
     $TAGGER $OPTIONS $PARFILE |
     $MALT_IFORMAT |
     java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off |
-    python $ES_PIPELINE_DIR/Scripts/malt_to_prop.py > "${2:-/dev/stdout}"
+    $MALT_OFORMAT
 elif [[ $PLATFORM == "darwin" ]]; then
     $TOKENIZER -a $ABBR_LIST $* |
-    # recognition of MWLs
     $MWL -f $MWLFILE |
-    # tagging
     $TAGGER $OPTIONS $PARFILE | 
     $MALT_IFORMAT | 
     java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off |
-    python $ES_PIPELINE_DIR/Scripts/malt_to_prop.py > "${2:-/dev/stdout}"
+    $MALT_OFORMAT
 else
     echo "Unsupported platform $OSTYPE"
 fi
