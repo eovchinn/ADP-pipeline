@@ -1,15 +1,15 @@
 11/6/2012 - Pipeline fully functional
 ./run_spanish.sh < examples/spanish_text.txt
 
-Test Input file:
-pipelines/Spanish/examples/CESS-CAST-P_107_19991001.props
 
-To run (until malt training is done, the pipeline isn't fully functional): 
-pipelines/Spanish/Scripts/malt_to_prop.py  pipelines/Spanish/examples/CESS-CAST-P_107_19991001.props
+Test Input file:
+pipelines/Spanish/examples/spanish_text.conll.malt
+To run only proposition building: 
+pipelines/Spanish/Scripts/malt_to_prop.py  pipelines/Spanish/examples/spanish_text.conll.malt
 
 
 Test output file:
-pipelines/Spanish/examples/CESS-CAST-P_107_19991001.props
+pipelines/Spanish/examples/spanish_text.props
 
 
 
