@@ -56,12 +56,12 @@ CURRENT_DIR=`pwd`
 cd $MALT_DIR
 
 if [[ $PLATFORM == "linux" ]]; then
-    $TOKENIZER_BIN < "${1:-/dev/stdin}" | # < $IFILE
-    $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
-    #$LEMMATIZER_BIN -l $MALT_RU_DIR/msd-ru-lemma.lex.gz -p $MALT_RU_DIR/wform2011.ptn1 -c $MALT_RU_DIR/cstlemma |
-    $MALT_IFORMAT #| 
-    #java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse |
-    #python $ES_PIPELINE_DIR/malt_ru.py > "${2:-/dev/stdout}" # > $IFILE
+#    $TOKENIZER_BIN < "${1:-/dev/stdin}" | # < $IFILE
+    $TOKENIZER -a $ABBR_LIST $* |
+    $TAGGER $OPTIONS $PARFILE |
+    $MALT_IFORMAT |
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off |
+    python $ES_PIPELINE_DIR/Scripts/malt_to_prop.py > "${2:-/dev/stdout}"
 elif [[ $PLATFORM == "darwin" ]]; then
     $TOKENIZER -a $ABBR_LIST $* |
     # recognition of MWLs
