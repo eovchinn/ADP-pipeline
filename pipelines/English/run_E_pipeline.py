@@ -4,4 +4,5 @@ import NLPipeline_coref_English_metaphor
 from NLPipeline_coref_English_metaphor import *
 
 if __name__ == "__main__":
-	print English_ADP("<META>'5'\n\n Every student reads.\n\n<META>'3'\n\n This dog runs. The animal is funny.") 
+	metaphors = {'5': 'Every student reads.', '3': 'This dog runs. The animal is funny.'}
+	print English_ADP(metaphors) 
