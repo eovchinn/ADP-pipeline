@@ -1,4 +1,4 @@
-#! /bin/bash/python
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 import re,sys,optparse
 
