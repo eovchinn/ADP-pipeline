@@ -14,9 +14,10 @@ def malter(LINE_OBJECT):
     Token = LINE_OBJECT[0].strip().split()
     tokenString = "_".join(Token)
     #Use twice: POS and CPOS
-    POS = replace_tag(LINE_OBJECT[1].strip())
+    tPOS = LINE_OBJECT[1].strip()
+    aPOS = replace_tag(tPOS)
     Lemma = determineLemma(LINE_OBJECT[2].strip(),tokenString)
-    malt_line = "0"+"\t"+tokenString+"\t"+Lemma+"\t"+POS+"\t"+POS+"\t"+"0"+"\t"+"0"+"\t"+"ROOT"+"\t"+"-"+"\t"+"-"
+    malt_line = "0"+"\t"+tokenString+"\t"+Lemma+"\t"+aPOS+"\t"+aPOS+"\t"+"0"+"\t"+"0"+"\t"+"ROOT"+"\t"+"-"+"\t"+tPOS
     return malt_line
 
 def determineLemma(original,token):
