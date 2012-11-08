@@ -66,9 +66,9 @@ elif [[ $PLATFORM == "darwin" ]]; then
     $MALT_IFORMAT |
     #cat > temp;
     #java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -i temp -m parse -v off >temp2;
-    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off #|
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off |
     #paste temp2 temp | cut -d "	" -f 1-10,20 |
-    #$MALT_OFORMAT
+    $MALT_OFORMAT
 else
     echo "Unsupported platform $OSTYPE"
 fi

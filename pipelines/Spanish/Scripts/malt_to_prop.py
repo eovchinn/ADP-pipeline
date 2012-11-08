@@ -11,11 +11,11 @@ parser.add_option("-t","--tagset",action="store",
                   help="tagset in input file",default="ancora")
 (options, args) = parser.parse_args()
 
-def to_prop(infile):
-    props = []
+def to_sents(infile):
+    words = []
     sentence = []
     full_sents = []
-    all_props = []
+    all_words = []
     sent_count = 1
     eCount = 1
     xCount = 1
@@ -29,26 +29,27 @@ def to_prop(infile):
             wordPOS = line[3]
             wordHead = int(line[6])
             wordRel = line[7]
+            #wordTPOS = line[10]
             longID = '%0*d' % (3, wordID)
             if date.match(wordLemma):
                 wordLemma = wordText
             elif wordLemma == "<unknown>":
                 wordLemma = wordText
-            prop = [longID,wordText,wordLemma,wordPOS,wordHead,wordRel,wordID,sent_count]
+            info = [longID,wordText,wordLemma,wordPOS,wordHead,wordRel,wordID,sent_count]#,wordTPOS]
             sentence.append(wordText)
-            props.append(prop)
+            words.append(info)
         else:
             full_sents.append(sentence)
-            all_props.append(props)
+            all_words.append(words)
             sentence = []
             new_prop_sent = []
-            props = []
+            words = []
             eCount = 1
             xCount = 1
             uCount = 1
             sent_count += 1
     infile.close()
-    return full_sents,all_props
+    return full_sents,all_words
         
 def prop_to_dict(props):
     sent_dict = {}    
@@ -67,6 +68,7 @@ def prop_to_dict(props):
         rel = prop[5]
         shortID = prop[6]
         sent_count = prop[7]
+        #finePOS = prop[8]
         propID = "["+str(sent_count)+str(ID)+"]"
         if not propTags.match(pos) and not puncts.match(lemma):            
             args = []
@@ -94,8 +96,10 @@ def replace_args(prop_sent,sent_dict):
         predicate = prop[6]
         tag = prop[7]
         propID = prop[8]
-        if rel == "suj" and pos == "n":
+        if rel == "suj":
             sent_dict = insert_suj(head,wordID,sent_dict)
+        if tag == "vb" and head != 0:
+            sent_dict = inheret_suj(head,wordID,sent_dict)
         if rel == "sp" and pos == "s":
             sent_dict = insert_sp(head,wordID,sent_dict)
         if rel == "sn" and pos == "n":
@@ -106,10 +110,12 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = insert_cc(head,wordID,sent_dict)
         if rel == "cd":
             sent_dict = insert_cd(head,wordID,sent_dict)
-        if rel == "cag" and pos == "s":
-            sent_dict = insert_cag(head,wordID,sent_dict)
+        # if rel == "cag" and pos == "s":
+        #     sent_dict = insert_cag(head,wordID,sent_dict)
         if rel == "morfema.pronominal" and pos == "p":
-            sent_dict = insert_m_p(head,wordID,sent_dict)            
+            sent_dict = insert_m_p(head,wordID,sent_dict)
+        if tag == "in":
+            sent_dict = insert_prep_head(head,wordID,sent_dict)
         # if rel == "atr" and pos == "a":
         #     sent_dict = insert_atr(head,wordID,sent_dict)  
             
@@ -137,6 +143,24 @@ def replace_args(prop_sent,sent_dict):
 def insert_suj(head,wordID,sent_dict):
     if sent_dict[head][7] == "vb":
         sent_dict[head][6][1] = sent_dict[wordID][6][1]
+    # else:
+    #     print "not a verb"
+    #     exit()
+    return sent_dict
+
+nounArg = re.compile("x\d")
+
+def inheret_suj(head,wordID,sent_dict):
+    if sent_dict[head][7] == "vb" and not nounArg.search(sent_dict[wordID][6][1]):
+        sent_dict[wordID][6][1] = sent_dict[head][6][1]
+    # else:
+    #     print "not a verb"
+    #     exit()
+    return sent_dict
+
+def insert_prep_head(head,wordID,sent_dict):
+    if sent_dict[head][7] == "vb":
+        sent_dict[wordID][6][1] = sent_dict[head][6][0]
     # else:
     #     print "not a verb"
     #     exit()
@@ -236,7 +260,7 @@ def build_predicate(pos,eCount,xCount,uCount):
         pred.append("e"+str(eCount))
         eCount+=1
         pred.append("x"+str(uCount))
-        uCount+=1
+        xCount+=1
         return pred,tag,eCount,xCount,uCount 
     if adjectiveTag.match(pos):
         tag="adj"
@@ -281,13 +305,13 @@ puncts = re.compile("[\.,\?\!{}()\[\]:;¿¡\"]")
 
 def main():
     lines = open(options.input, "r") if options.input else sys.stdin
-    full_sents,all_props = to_prop(lines)
+    full_sents,all_words = to_sents(lines)
     sent_count = 0
-    for sent,prop in zip(full_sents,all_props):
+    for sent,word in zip(full_sents,all_words):
         sent_count += 1
         print "% "+" ".join(sent)
         print "id("+str(sent_count)+")."
-        prop_sent,prop_dict = prop_to_dict(prop)
+        prop_sent,prop_dict = prop_to_dict(word)
         replace_args(prop_sent,prop_dict)
 
 if __name__ == "__main__":
