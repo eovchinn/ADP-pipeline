@@ -11,4 +11,4 @@ TOKENIZER_BIN=$METAPHOR_DIR/external-tools/farsiTools/Tokenizer/utf8-tokenize.pe
 
 $TOKENIZER_BIN < $inputFile >$intermediateFile
 
-python ./convertTokenizerOutputForTagger.py $intermediateFile $outputFile
+python $farsiPipelineDir/convertTokenizerOutputForTagger.py $intermediateFile $outputFile
