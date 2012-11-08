@@ -5,6 +5,7 @@ import re
 import sys
 import json
 import time
+from subprocess import Popen, PIPE, STDOUT
 
 METAPHOR_DIR = os.environ['METAPHOR_DIR']
 BOXER_DIR = os.environ['BOXER_DIR']
@@ -21,10 +22,7 @@ kb = ''
 # switches
 kbcompiled = False
 
-def extract_hypotheses(filename):
-	#f = open(filename, 'r')
-	lines = open(filename, "r") if filename else sys.stdin
-
+def extract_hypotheses(inputString):
 	output_struct = []
 	hypothesis_found = False
 	p = re.compile('<result-inference target="(.+)"')
@@ -33,7 +31,7 @@ def extract_hypotheses(filename):
 	unification = False
 	explanation = False
 
-	for line in lines:
+	for line in inputString.splitlines():
 		output_struct_item={} 
 		matchObj = p.match(line)
 		if matchObj: target = matchObj.group(1)	
@@ -64,7 +62,7 @@ def generate_Boxer_input(input_dict):
 def English_ADP(input_dict):
 	start_time = time.time()	
 
-	input_str = generate_Boxer_input(input_dict)       
+	input_str = generate_Boxer_input(input_dict)      
 
        # tokenization
 	tokenizer = 'echo "' + input_str + '"' + ' | ' + BOXER_DIR + '/bin/tokkie --stdin'
@@ -87,13 +85,16 @@ def English_ADP(input_dict):
 	
 	# Henry processing
 	if kbcompiled:
-		henry = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry + ' -b ' + kbpath + ' > ' + os.path.join(TMP_DIR,"tmp.hyp")
+		henry = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry + ' -b ' + kbpath 
 	else:
-		henry = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry + ' > ' + os.path.join(TMP_DIR,"tmp.hyp")
+		henry = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry
 
 	all_proc = boxer_proc + ' | ' + henry
-	os.system(all_proc)
+	#os.system(all_proc)
 
-	return extract_hypotheses(os.path.join(TMP_DIR,"tmp.hyp"))
+	pipeline = Popen(all_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=STDOUT, close_fds=True)
+	henry_output = pipeline.stdout.read()
+
+	return extract_hypotheses(henry_output)
 
 if "__main__" == __name__: main()

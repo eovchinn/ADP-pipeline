@@ -5,6 +5,7 @@ import os
 import re
 import json
 import time
+from subprocess import Popen, PIPE, STDOUT
 
 METAPHOR_DIR = os.environ['METAPHOR_DIR']
 HENRY_DIR = os.environ['HENRY_DIR']
@@ -20,8 +21,7 @@ kb = ''
 kbcompiled = False
 
 
-def extract_hypotheses(filename):
-	f = open(filename, 'r')
+def extract_hypotheses(inputString):
 	output_struct = []
 	hypothesis_found = False
 	p = re.compile('<result-inference target="(.+)"')
@@ -30,7 +30,7 @@ def extract_hypotheses(filename):
 	unification = False
 	explanation = False
 
-	for line in f:
+	for line in inputString.splitlines():
 		output_struct_item={} 
 		matchObj = p.match(line)
 		if matchObj: target = matchObj.group(1)	
@@ -71,13 +71,16 @@ def Russian_ADP(input_dict):
 
 	# Henry processing
 	if kbcompiled:
-		henry = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry + ' -b ' + kbpath + ' > ' + os.path.join(TMP_DIR,"tmp.hyp")
+		henry = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry + ' -b ' + kbpath 
 	else:
-		henry = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry + ' > ' + os.path.join(TMP_DIR,"tmp.hyp")
+		henry = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry 
 
 	all_proc = r_pipeline + ' | ' + henry
-	os.system(all_proc)
+	#os.system(all_proc)
 
-	return extract_hypotheses(os.path.join(TMP_DIR,"tmp.hyp"))
+	pipeline = Popen(all_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=STDOUT, close_fds=True)
+	henry_output = pipeline.stdout.read()
+
+	return extract_hypotheses(henry_output)
 
 if "__main__" == __name__: main()
