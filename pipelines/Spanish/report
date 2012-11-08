@@ -1,11 +1,17 @@
 11/6/2012 - Pipeline fully functional
 ./run_spanish.sh < examples/spanish_text.txt
-
+OR
+./run_spanish.sh < examples/spanish_translations.txt
 
 Test Input file:
 pipelines/Spanish/examples/spanish_text.conll.malt
+OR
+pipelines/Spanish/examples/spanish_translations.conll.malt
+
 To run only proposition building: 
 pipelines/Spanish/Scripts/malt_to_prop.py  pipelines/Spanish/examples/spanish_text.conll.malt
+OR
+pipelines/Spanish/Scripts/malt_to_prop.py  pipelines/Spanish/examples/spanish_translations.conll.malt
 
 
 Test output file:
@@ -18,10 +24,11 @@ Functions Implemented:
 Verbs:
 Find subject (nn with relation "suj")
 Find direct object (dependent word)
-Inherent head verb's sbj if no sbj is found
+Inherit head verb's sbj if no sbj is found
 
 Adjectives:
 Find head noun
+Inherit sbj from copula "ser"
 
 Adverb:
 Find head
@@ -46,3 +53,8 @@ In Spanish, the patient or recipient is always marked with a preposition. So, sh
 Juan preguntó dónde María leyo.
 "For now, leave "where" out." (from pipelines/readme)
      - "donde" is tagged as an adverb, and thus is marked as modifying "leyo"
+
+The two word sentences ("Juan correro", etc.) do not parse correctly
+
+Verb tense is not currently made explicit by the tools in the pipeline
+Number (plurality) is not currently made explicit by the tools in the pipeline
