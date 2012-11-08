@@ -13,6 +13,8 @@
 
 if [[ $OSTYPE == "linux-gnu" ]]; then
    PLATFORM="linux"
+elif [[ $OSTYPE == "linux" ]]; then
+   PLATFORM="linux"
 elif [[ $OSTYPE == "darwin12" ]]; then
    PLATFORM="darwin"
 elif [[ $OSTYPE == "darwin11" ]]; then
