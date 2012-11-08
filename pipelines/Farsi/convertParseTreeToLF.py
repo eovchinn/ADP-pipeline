@@ -12,6 +12,7 @@ rules={"SBJ":[(1,1)],"OBJ":[(2,1)],"VCL":[(2,0)],"PRD":[(0,0)],"NPOSTMOD":[(1,1)
 
 #this is a global dict for easy handling of different POS schema
 POSStopList=["PUNC"]
+wordStopList=["\"","'","(",")"]
 POSDict={"N":"N","V":"V","ADJ":"ADJ","ADV":"ADV","PREP":"PREP","PR":"PR"}
 postFixDict={"N":"-nn","V":"-vb","ADJ":"-adj","ADV":"-rb","PREP":"-in","":""}
 argDict={"N":2,"V":4,"ADJ":2,"ADV":2,"PREP":3,"PR":2,"":1}
@@ -316,7 +317,7 @@ def createLF(tokens,sentenceId):
     for token in tokens:
         (id,word,lemma,POS,relName,dep)=token
         words+=[word]
-        if POS in POSStopList:
+        if POS in POSStopList or word in wordStopList:
             continue
         props+=[(id,word,lemma,POS,getArgs(POS))]
         rels+=[(relName,id,dep)]
@@ -385,6 +386,8 @@ while line!="":
         dep=int(a[-4])
         lemma=a[-8]
         word="-".join(" ".join(a[1:-8]).split())
+        if word=="-LRB-": word="("
+        if word=="-RRB-": word=")"
         tokens+=[(id,word,lemma,CoarsePOS,relName,dep)]
         
     line=inputFile.readline()
