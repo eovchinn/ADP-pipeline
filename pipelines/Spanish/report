@@ -17,18 +17,32 @@ Functions Implemented:
 
 Verbs:
 Find subject (nn with relation "suj")
-Find direct object (dependent word
+Find direct object (dependent word)
+Inherent head verb's sbj if no sbj is found
 
 Adjectives:
 Find head noun
 
+Adverb:
+Find head
+
 Prepositions:
 find head noun
 find complement noun
-find head verb (with dependency label "cag")
+find head verb 
 
 Nouns:
 Link coreferent nouns (e.g. ministro <=> Josep_Piqué in Test output file)
 
 Pronouns:
 Find head verb for reflexive pronominal morphemes  (e.g. se esta recuperando)
+
+
+
+ISSUES:
+Juan da a María un libro.
+In Spanish, the patient or recipient is always marked with a preposition. So, should the third argument of the verb remain empty?
+
+Juan preguntó dónde María leyo.
+"For now, leave "where" out." (from pipelines/readme)
+     - "donde" is tagged as an adverb, and thus is marked as modifying "leyo"
