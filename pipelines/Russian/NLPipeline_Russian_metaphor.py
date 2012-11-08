@@ -55,7 +55,7 @@ def extract_hypotheses(inputString):
 def generate_text_input(input_dict):
 	output_str = ''
 	for id in input_dict.keys():
-		output_str += '.TEXTID('+id+').\n\n'+input_dict[id] + "\n\n" 
+		output_str += '.TEXTID('+id+').\n\n'+input_dict[id].replace("\u2019", "'") + "\n\n" 
 	return output_str	
 
 def Russian_ADP(input_dict):
@@ -63,23 +63,23 @@ def Russian_ADP(input_dict):
 	input_str = generate_text_input(input_dict)
 
        # Run Russian pipeline
-	r_pipeline = 'echo "' + input_str + '"' + ' | ' + RUSSIAN_PIPELINE + ' | python ' + PARSER2HENRY + ' --nonmerge --textid'
+	parser_proc = RUSSIAN_PIPELINE + ' | python ' + PARSER2HENRY + ' --nonmerge --textid'
+	
+	parser_pipeline = Popen(parser_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
+	parser_output = parser_pipeline.communicate(input=input_str)[0]
 
-	parser_time = 10 							# Assumed parser time in seconds
+	parser_time = (time.time()-start_time)*0.001			# Parser processing time in seconds
 	time_all_henry = 600 - parser_time		    			# all time rest for Henry in seconds	
 	time_unit_henry = str(int(time_all_henry/len(input_dict)))	# time for one interpretation in Henry in seconds
 
 	# Henry processing
 	if kbcompiled:
-		henry = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry + ' -b ' + kbpath 
+		henry_proc = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry + ' -b ' + kbpath 
 	else:
-		henry = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry 
+		henry_proc = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry 
 
-	all_proc = r_pipeline + ' | ' + henry
-	#os.system(all_proc)
-
-	pipeline = Popen(all_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=STDOUT, close_fds=True)
-	henry_output = pipeline.stdout.read()
+	henry_pipeline = Popen(henry_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
+	henry_output = henry_pipeline.communicate(input=parser_output)[0]
 
 	return extract_hypotheses(henry_output)
 

@@ -56,16 +56,16 @@ def extract_hypotheses(inputString):
 def generate_Boxer_input(input_dict):
 	output_str = ''
 	for id in input_dict.keys():
-		output_str += "<META>'" + id + "'\n\n " + input_dict[id] + "\n\n" 
+		output_str += "<META>'" + id + "'\n\n " + input_dict[id].replace("\u2019", "'") + "\n\n" 
 	return output_str	
 
 def English_ADP(input_dict):
 	start_time = time.time()	
 
-	input_str = generate_Boxer_input(input_dict)      
+	input_str = generate_Boxer_input(input_dict)    
 
        # tokenization
-	tokenizer = 'echo "' + input_str + '"' + ' | ' + BOXER_DIR + '/bin/tokkie --stdin'
+	tokenizer = BOXER_DIR + '/bin/tokkie --stdin'
 
 	# parsing
 	candcParser = BOXER_DIR + '/bin/candc --models ' + BOXER_DIR + '/models/boxer --candc-printer boxer'	
@@ -79,21 +79,31 @@ def English_ADP(input_dict):
 	boxer_proc = tokenizer + ' | ' + candcParser + ' | ' + boxer + ' | ' + b2h
 	#os.system(boxer_proc)
 
-	boxer_time = 10 							# Assumed Boxer time in seconds
+	boxer_pipeline = Popen(boxer_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
+	boxer_output = boxer_pipeline.communicate(input=input_str)[0]
+
+	boxer_time = (time.time()-start_time)*0.001			# Boxer processing time in seconds
 	time_all_henry = 600 - boxer_time		    			# all time rest for Henry in seconds	
 	time_unit_henry = str(int(time_all_henry/len(input_dict)))	# time for one interpretation in Henry in seconds
 	
 	# Henry processing
 	if kbcompiled:
-		henry = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry + ' -b ' + kbpath 
+		henry_proc = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry + ' -b ' + kbpath 
 	else:
-		henry = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry
+		henry_proc = HENRY_DIR + '/bin/henry -m infer -e ' +  HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T ' + time_unit_henry
 
-	all_proc = boxer_proc + ' | ' + henry
-	#os.system(all_proc)
+	henry_pipeline = Popen(henry_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
+	henry_output = henry_pipeline.communicate(input=boxer_output)[0]
+	
+	#ofile = open(os.path.join(TMP_DIR,'tmp.hyp'), "w")
+	#ofile.write(henry_output)
+	#ofile.close()
 
-	pipeline = Popen(all_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=STDOUT, close_fds=True)
-	henry_output = pipeline.stdout.read()
+	#viz = 'python ' + HENRY_DIR + '/tools/proofgraph.py | dot -T pdf'
+
+	#graph_output = os.path.join(TMP_DIR,'tmp.pdf')
+	#graphical_processing = Popen(viz, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
+	#pipeline.communicate(input=henry_output,output=graph_output)
 
 	return extract_hypotheses(henry_output)
 
