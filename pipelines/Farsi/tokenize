@@ -3,4 +3,12 @@
 inputFile="${1:-/dev/stdin}"
 outputFile="${2:-/dev/stdout}"
 
-cat $inputFile > $outputFile
+farsiPipelineDir=$METAPHOR_DIR/pipelines/Farsi
+tempDir=$farsiPipelineDir/tmp
+intermediateFile=$tempDir/tokenized.tmp.txt
+
+TOKENIZER_BIN=$METAPHOR_DIR/external-tools/farsiTools/Tokenizer/utf8-tokenize.perl
+
+$TOKENIZER_BIN < $inputFile >$intermediateFile
+
+python ./convertTokenizerOutputForTagger.py $intermediateFile $outputFile

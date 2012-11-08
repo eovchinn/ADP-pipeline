@@ -2,11 +2,13 @@ import sys
 import codecs
 import re
 inputFile=codecs.open(sys.argv[1], encoding='utf-8')
-outputFile=codecs.open(sys.argv[2], encoding='utf-8',mode="w")
+#outputFile=codecs.open(sys.argv[2], encoding='utf-8',mode="w")
+#sys.stdout.setdefaultencoding('utf-8')
+outputFile=sys.stdout
 translitDictFile=codecs.open(sys.argv[3], encoding='utf-8')
 
 #each rule is in the form "relationName":(headArgIndex,dependentArgIndex)
-rules={"SBJ":(1,1),"OBJ":(2,1),"VCL":(2,0),"PRD":(0,0),"NPOSTMOD":(1,1)}
+rules={"SBJ":[(1,1)],"OBJ":[(2,1)],"VCL":[(2,0)],"PRD":[(0,0)],"NPOSTMOD":[(1,1)]}
 
 #this is a global dict for easy handling of different POS schema
 POSStopList=["PUNC"]
@@ -58,7 +60,7 @@ def propToString(sentenceId,prop):
     (id,word,lemma,POS,args)=prop
     postfix=""
     if POS in postFixDict: postfix=postFixDict[POS]
-    print sentenceId
+#    print sentenceId
     if id==22:
         niloo=1
     token="[%s]:%s%s(%s)"%(sentenceId*1000+id,getTranslit(lemma),postfix,",".join(args))
@@ -122,28 +124,28 @@ def getEqualArgSets(propDict,rels):
         (relName,dependent,head)=rel    
         if relName not in rules:
             continue
-              
-        (headArgIndex,dependentArgIndex)=rules[relName]
-        
         headProp=propDict[head]
         (headId,headWord,headLemma,headPOS,headArgs)=headProp
         
         dependentProp=propDict[dependent]
         (dependentId,dependentWord,dependentLemma,dependentPOS,dependentArgs)=dependentProp
         
-        headArgName=headArgs[headArgIndex]
-        dependentArgName=dependentArgs[dependentArgIndex]
-        
-        foundSet=None
-        for equalitySet in equalArgSets:
-            if headArgName in equalitySet or dependentArgName in equalitySet:
-                foundSet=equalitySet
-                break
-        if foundSet==None:
-            foundSet=set()
-            equalArgSets+=[foundSet]
-        foundSet.add(headArgName)
-        foundSet.add(dependentArgName)
+        argUnifications=rules[relName]
+        for argUnification in argUnifications:      
+            (headArgIndex,dependentArgIndex)=argUnification
+            headArgName=headArgs[headArgIndex]
+            dependentArgName=dependentArgs[dependentArgIndex]
+            
+            foundSet=None
+            for equalitySet in equalArgSets:
+                if headArgName in equalitySet or dependentArgName in equalitySet:
+                    foundSet=equalitySet
+                    break
+            if foundSet==None:
+                foundSet=set()
+                equalArgSets+=[foundSet]
+            foundSet.add(headArgName)
+            foundSet.add(dependentArgName)
     
     equalArgSets=convertSetsToLists(equalArgSets)
     return equalArgSets
@@ -241,7 +243,7 @@ def createNewPropsForNounConjs(props,rels,nounConjArgSets):
     global propIdCounter
     propIdCounter+=1
     for originalProp in props:
-        print originalProp
+#        print originalProp
         (originalPropId,Word,Lemma,POS,Args)=originalProp
         if POS!=POSDict["V"]:
             continue
@@ -310,19 +312,22 @@ def createLF(tokens,sentenceId):
     global propIdCounter
     props=[]
     rels=[]
+    words=[]
     for token in tokens:
         (id,word,lemma,POS,relName,dep)=token
+        words+=[word]
         if POS in POSStopList:
             continue
         props+=[(id,word,lemma,POS,getArgs(POS))]
         rels+=[(relName,id,dep)]
-    LF=(sentenceId,props,rels)
+    sentence= " ".join(words)
+    LF=(sentenceId,sentence,props,rels)
     propIdCounter=getMaxPropId(props)
     LF2=resolveArgs(LF)
     return LF2
 
 def lfToString(lf):
-    (sentenceId,props,rels)=lf
+    (sentenceId,sentence,props,rels)=lf
     words=[]
     PropStrings=[]
     for prop in props:
@@ -330,12 +335,12 @@ def lfToString(lf):
         words+=[word]
         PropStrings+=[propToString(sentenceId,prop)]
     lfLine=" & ".join(PropStrings)
-    returnString= "%s\nid(%s).\n%s\n"%(" ".join(words),str(sentenceId),lfLine)
+    returnString= "%s\nid(%s).\n%s\n"%(sentence,str(sentenceId),lfLine)
     returnString="% "+returnString
     return returnString
 
 def resolveArgs(LF):
-    (sentenceId,props,rels)=LF
+    (sentenceId,sentence,props,rels)=LF
     #add new props for light verbs (add preds like NVE,ENC)
     props=createNewPropsForLightVerbs(props,rels)
     
@@ -346,7 +351,7 @@ def resolveArgs(LF):
     nounConjArgSets=getNounConjArgSets(props,rels)
     props=createNewPropsForNounConjs(props,rels,nounConjArgSets)
            
-    return (sentenceId,props,rels)               
+    return (sentenceId,sentence,props,rels)               
 
 unknownargCounter=0
 entityArgCounter=0
@@ -364,7 +369,7 @@ while line!="":
     if line.strip()=="":   
         #one sentence read, process it and output it
         lf=createLF(tokens,sentenceId)
-        outputFile.write(lfToString(lf))
+        outputFile.write(lfToString(lf).encode('utf-8'))
 #        sys.stdout.write(lfToString(lf).encode("utf-8"))
         tokens=[]
         sentenceId+=1
