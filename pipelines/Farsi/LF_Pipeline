@@ -3,4 +3,6 @@
 inputFile="${1:-/dev/stdin}"
 outputFileName="${2:-/dev/stdout}"
 
-./tokenize < $inputFile |./tag |./parse|./createLF > $outputFileName
+farsiPipelineDir=$METAPHOR_DIR/pipelines/Farsi
+
+$farsiPipelineDir/tokenize < $inputFile |$farsiPipelineDir/tag |$farsiPipelineDir/parse|$farsiPipelineDir/createLF > $outputFileName
