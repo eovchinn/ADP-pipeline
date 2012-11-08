@@ -3,7 +3,7 @@
 3	por	por	s	s	0	2	cag	_	_
 4	el	el	d	d	0	5	spec	_	_
 5	señor	señor	n	n	0	3	sn	_	_
-6	Obama	<unknown>	n	n	0	5	sn	_	_
+6	Obama	Obama	n	n	0	5	sn	_	_
 7	"	"	f	f	0	2	f	_	_
 8	,	,	f	f	0	2	f	_	_
 9	dijo	decir	v	v	0	0	sentence	_	_
@@ -85,17 +85,17 @@
 26	"	"	f	f	0	25	f	_	_
 27	.	.	f	f	0	6	f	_	_
 
-1	Sin	ADV	embargo	embargo	0	9	suj	_	_
-2	,	,	f	f	0	4	f	_	_
+1	Sin_embargo	sin_embargo	r	r	0	9	et	_	_
+2	,	,	f	f	0	1	f	_	_
 3	este	este	d	d	0	4	spec	_	_
-4	autoproclamado	<unknown>	n	n	0	1	sn	_	_
+4	autoproclamado	autoproclamado	n	n	0	9	suj	_	_
 5	independiente	independiente	a	a	0	4	s.a	_	_
 6	tampoco	tampoco	r	r	0	9	mod	_	_
 7	se	se	p	p	0	9	pass	_	_
 8	ha	haber	v	v	0	9	v	_	_
 9	decidido	decidir	v	v	0	0	sentence	_	_
-10	por	por	s	s	0	9	cag	_	_
-11	Romney	<unknown>	n	n	0	10	sn	_	_
+10	por	por	s	s	0	9	cc	_	_
+11	Romney	Romney	n	n	0	10	sn	_	_
 12	.	.	f	f	0	9	f	_	_
 
 1	"	"	f	f	0	3	f	_	_
