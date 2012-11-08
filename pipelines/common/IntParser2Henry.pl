@@ -6,6 +6,9 @@ use Getopt::Long;
 use utf8;
 use Encode;
 
+binmode STDIN, ':utf8';
+binmode STDOUT, ':utf8';
+
 my %conditional = ();
 my %regex_conditional = ();
 my %nonmerge = ();
@@ -18,15 +21,16 @@ my %global_token_index = ();
 my $ifile = "";
 my $ofile = "";
 my $cfile = "";
-my $sfile = "";
-my $nefile = "";
 my $nonmerge_opt = "";
+
+my $output_str = "";
 
 my $cost = "1";
 my $sameargs = 0;
 my $modality = 0;
 my $warnings = 0;
 my $wholefileoutput = 0;
+
 
 GetOptions ("input=s" => \$ifile,
 	    "output=s" => \$ofile,
@@ -40,13 +44,14 @@ GetOptions ("input=s" => \$ifile,
 
 &read_Conditional_file();
 
-open(OUT,">:utf8","$ofile") or die "Cannot open $ofile\n";
+if($ofile ne "") {open(OUT,">:utf8","$ofile") or die "Cannot open $ofile\n";}
 
 &read_Parser_file();
 
-
 if($warnings==1){print "Henry file printed.\n";}
-close OUT;
+
+if($ofile ne "") {close OUT;}
+else{print $output_str;}
 
 
 ###########################################################################
@@ -54,8 +59,6 @@ close OUT;
 ###########################################################################
 
 sub setParameters(){
-   if(($ifile eq "")||($ofile eq "")) {print("Input or output file missing.\n"); &printUsage();}
-
    if(($wholefileoutput!=0)&&($wholefileoutput!=1)) {print("Wrong value of 'wholefileoutput' parameter: $wholefileoutput Only '0' and '1' accepted.\n"); exit(0);}
 
    if(($warnings!=0)&&($warnings!=1)) {print("Wrong value of 'warnings' parameter: $warnings. Only '0' and '1' accepted.\n"); exit(0);}
@@ -233,7 +236,8 @@ sub printHenryFormat_batch(){
         %nonmerge = ();
    }
 
-   print OUT "\n(O (name 0) (^";
+   if($ofile ne ""){print OUT "\n(O (name 0) (^";}
+   else{$output_str = $output_str . "\n(O (name 0) (^";}
 
    foreach my $sent_id(keys %id2props){
         &add_nonmerge($sent_id);
@@ -250,7 +254,8 @@ sub printHenryFormat_batch(){
 	   $str = $str . ")";
    }
 
-   print OUT $str . "))\n";
+   if($ofile ne ""){print OUT $str . "))\n";}
+   else{$output_str = $output_str . $str . "))\n";}
 }
 
 ###########################################################################
@@ -308,7 +313,8 @@ sub printHenryFormat(){
     }
     else{$str = $str  . "\n";}
 
-    print OUT $str;
+    if($ofile ne ""){print OUT $str;}
+    else{$output_str = $output_str . $str;}
     %out_str = ();
 }
 
@@ -367,9 +373,14 @@ sub read_Parser_file(){
     my $sent_id = "";
     my $word_counter = 0;
 
-    open IN, "<:utf8", $ifile or die "Can't open '$ifile' for reading: $!";
+    my @lines = ();	
+    if($ifile ne ""){
+	open IN, "<:utf8", $ifile or die "Can't open '$ifile' for reading: $!";    	
+	@lines = <IN>;
+    }
+    else{@lines = <STDIN>;}
 
-    while(my $line=<IN>){
+    foreach my $line(@lines){
        chomp($line);
        if($line =~ /^%/){
 
@@ -381,7 +392,7 @@ sub read_Parser_file(){
                 }
     	   }
 
-           if(((($sfile eq "")&&($nefile eq ""))&&($sent_id ne ""))&&($wholefileoutput==0)){
+           if(($sent_id ne "")&&($wholefileoutput==0)){
                 if($warnings==1){
                 	print "Processing sentence $sent_id.\n";
                 }
@@ -404,8 +415,8 @@ sub read_Parser_file(){
                 my @ids = ();
 
                 if($p =~ /\[(.*)\]:([^\(]+)\(([^\)]+)\)/){
-                        $id_str = $1;
-                        $name = lc($2);
+                     $id_str = $1;
+                     $name = lc($2);
                 	@args = split(/,/,$3);
                 }
                 else{
@@ -463,7 +474,7 @@ sub read_Parser_file(){
                 }
     }
 
-    if(($sfile eq "")&&($wholefileoutput==0)){
+    if($wholefileoutput==0){
         if($warnings==1){
         	print "Processing sentence $sent_id.\n";
         }
