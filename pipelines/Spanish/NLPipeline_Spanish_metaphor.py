@@ -63,7 +63,7 @@ def generate_text_input(input_dict):
 def Spanish_ADP(input_dict):
 	start_time = time.time()
 	input_str = generate_text_input(input_dict)
-	
+
        # Run Spanish pipeline
 	parser_proc = SPANISH_PIPELINE + ' | python ' + PARSER2HENRY + ' --nonmerge --textid'
 
