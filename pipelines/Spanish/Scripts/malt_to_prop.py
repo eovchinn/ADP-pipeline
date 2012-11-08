@@ -99,7 +99,7 @@ def replace_args(prop_sent,sent_dict):
         if rel == "suj":
             sent_dict = insert_suj(head,wordID,sent_dict)
         if tag == "vb" and head != 0:
-            sent_dict = inheret_suj(head,wordID,sent_dict)
+            sent_dict = inherit_suj(head,wordID,sent_dict)
         if rel == "sp" and pos == "s":
             sent_dict = insert_sp(head,wordID,sent_dict)
         if rel == "sn" and pos == "n":
@@ -110,6 +110,8 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = insert_cc(head,wordID,sent_dict)
         if rel == "cd":
             sent_dict = insert_cd(head,wordID,sent_dict)
+        if rel == "atr":
+            sent_dict = inherit_suj(head,wordID,sent_dict)
         # if rel == "cag" and pos == "s":
         #     sent_dict = insert_cag(head,wordID,sent_dict)
         if rel == "morfema.pronominal" and pos == "p":
@@ -129,7 +131,9 @@ def replace_args(prop_sent,sent_dict):
         wordID = prop[5]
         predicate = prop[6]
         tag = prop[7]
-        propID = prop[8]                
+        propID = prop[8]
+        if lemma == "ser":
+            predicate = []
         #print propID,lemma,tag,predicate,"-",wordID,head,rel
         if len(predicate) > 0:
             sys.stdout.write(propID+":"+lemma+"-"+tag+"("+",".join(predicate)+")")
@@ -150,7 +154,7 @@ def insert_suj(head,wordID,sent_dict):
 
 nounArg = re.compile("x\d")
 
-def inheret_suj(head,wordID,sent_dict):
+def inherit_suj(head,wordID,sent_dict):
     if sent_dict[head][7] == "vb" and not nounArg.search(sent_dict[wordID][6][1]):
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
     # else:
@@ -259,7 +263,7 @@ def build_predicate(pos,eCount,xCount,uCount):
         tag="pro"
         pred.append("e"+str(eCount))
         eCount+=1
-        pred.append("x"+str(uCount))
+        pred.append("x"+str(xCount))
         xCount+=1
         return pred,tag,eCount,xCount,uCount 
     if adjectiveTag.match(pos):
