@@ -398,6 +398,9 @@ class MaltConverter(object):
                     word.pred.args[2].link_to(dep.pred.args[1])
                     break
 
+        # 3. Second arg is a prep
+        # 4. Verb+verb
+
     def init_predicate(self, word):
         args = [Argument("e")]\
              + [Argument("x") for _ in xrange(1, word.args)]
