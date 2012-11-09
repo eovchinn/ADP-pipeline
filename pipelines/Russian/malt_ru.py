@@ -235,6 +235,8 @@ class MaltConverter(object):
                 self.apply_adj_rules(p.word)
             if p.word.cpostag == "rb":
                 self.apply_adv_rules(p.word)
+            if p.word.cpostag == "in":
+                self.apply_pre_rules(p.word)
 
         self.assign_indexes()
 
@@ -291,6 +293,9 @@ class MaltConverter(object):
         if word.feats[3] == "f":  # if furure
             epred = ("future", [Argument("e"), word.pred.args[0]])
             self.__extra_preds.append(epred)
+
+        # 5. Correferent Nouns
+        # TODO(zaytsev@udc.edu): implement this
 
         if w_subject:
             word.pred.args[1].link_to(w_subject)
@@ -366,6 +371,12 @@ class MaltConverter(object):
         head = self.word(word.head)
         if head and head.cpostag == "vb":
             word.pred.args[1].link_to(head.pred.args[0])
+
+    def apply_pre_rules(self, word):
+        pass
+        # 1. Verb+noun.
+
+        # head = self.word(word.head)
 
     def init_predicate(self, word):
         args = [Argument("e")]\
