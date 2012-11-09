@@ -13,7 +13,7 @@ HENRY_DIR = os.environ['HENRY_DIR']
 TMP_DIR = os.environ['TMP_DIR']
 
 # paths
-boxer2henry_path = "%s/pipelines/English/Boxer2Henry.pl" % METAPHOR_DIR
+boxer2henry_path = "%s/pipelines/English/Boxer2Henry.py" % METAPHOR_DIR
 #features = "%s/models/English-features-henry" % METAPHOR_DIR
 kbpath = "%s/KBs/English/kb-wnfn-noder-lmap.da" % METAPHOR_DIR
 extract_hypotheses_path = "%s/pipelines/common/extract_hypotheses.py" % METAPHOR_DIR
@@ -56,7 +56,7 @@ def extract_hypotheses(inputString):
 def generate_Boxer_input(input_dict):
 	output_str = ''
 	for id in input_dict.keys():
-		output_str += "<META>'" + id + "'\n\n " + input_dict[id].replace("\u2019", "'") + "\n\n" 
+		output_str += "<META>" + id + "\n\n " + input_dict[id].replace("\u2019", "'") + "\n\n" 
 	return output_str	
 
 def English_ADP(input_dict):

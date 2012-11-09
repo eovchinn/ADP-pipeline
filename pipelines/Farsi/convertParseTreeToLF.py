@@ -5,33 +5,73 @@ inputFile=codecs.open(sys.argv[1], encoding='utf-8')
 #outputFile=codecs.open(sys.argv[2], encoding='utf-8',mode="w")
 #sys.stdout.setdefaultencoding('utf-8')
 outputFile=sys.stdout
-translitDictFile=codecs.open(sys.argv[3], encoding='utf-8')
+farsiWordsForLFFile=codecs.open(sys.argv[3], encoding='utf-8')
 
 #each rule is in the form "relationName":(headArgIndex,dependentArgIndex)
-rules={"SBJ":[(1,1)],"OBJ":[(2,1)],"VCL":[(2,0)],"PRD":[(0,0)],"NPOSTMOD":[(1,1)]}
+rules={"SBJ":[(1,1)],"OBJ":[(2,1)],"VCL":[(2,0)],"PRD":[(0,0)],"NPOSTMOD":[(1,1)],"NPREMOD":[(1,1)],"ADV":[(0,1)],"POSDEP":[(2,1)]}
 
 #this is a global dict for easy handling of different POS schema
 POSStopList=["PUNC"]
 wordStopList=["\"","'","(",")"]
 POSDict={"N":"N","V":"V","ADJ":"ADJ","ADV":"ADV","PREP":"PREP","PR":"PR"}
 postFixDict={"N":"-nn","V":"-vb","ADJ":"-adj","ADV":"-rb","PREP":"-in","":""}
-argDict={"N":2,"V":4,"ADJ":2,"ADV":2,"PREP":3,"PR":2,"":1}
-transLitDict={}
+argDict={"N":2,"V":4,"ADJ":2,"ADV":2,"PREP":3,"PR":2,"":1,"CONJ":2}
 #tempFile=codecs.open("%s.tmp.txt"%sys.argv[3], encoding='utf-8',mode='w')
+pronouns={}
+pluralPostfixes=[]
+transLitDict={}
 
 def findProp(props,propId):
+    global pronouns
     for prop in props:
         (id,word,lemma,POS,args)=prop
         if id==propId:
             return prop
     return None
-        
-def loadtranslitDict(translitDictFile):
-    lines=translitDictFile.readlines()
-    for line in lines:
-        (farsi,english)=line.split()
+    
+def readTransliterationDict(startLineNumber,lines):
+    for i in range(startLineNumber,len(lines)):
+        if re.match("--.*",lines[i]):
+            return i+1
+        (farsi,english)=lines[i].split()
         if english =="-":english=""
         transLitDict[farsi]=english
+    return i
+        
+def readPronounList(startLineNumber,lines):
+    global pronouns
+    for i in range(startLineNumber,len(lines)):
+        if re.match("--.*",lines[i]):
+            return i+1
+        (pronoun,person,animate)=lines[i].split()
+        pronouns[pronoun]=(person,animate)
+    return i
+
+def readPluralList(startLineNumber,lines):
+    global pluralPostfixes
+    for i in range(startLineNumber,len(lines)):
+        if re.match("--.*",lines[i]):
+            return i+1
+        pluralPostfix=lines[i].strip()
+        pluralPostfixes+=[pluralPostfix]
+    return i
+    
+
+              
+def loadFarsiWordsForLFFile(farsiWordsForLFFile):
+    lines=farsiWordsForLFFile.readlines()
+    startLineNumber=1
+    startLineNumber=readTransliterationDict(startLineNumber,lines)
+    startLineNumber=readPronounList(startLineNumber,lines)
+    startLineNumber=readPluralList(startLineNumber,lines)
+    
+#    print pronouns
+#    print pluralPostfixes
+#    print transLitDict
+            
+                
+            
+        
     
 
 def getTranslit(lemma):
@@ -62,7 +102,7 @@ def propToString(sentenceId,prop):
     postfix=""
     if POS in postFixDict: postfix=postFixDict[POS]
 #    print sentenceId
-    if id==22:
+    if id==23:
         niloo=1
     token="[%s]:%s%s(%s)"%(sentenceId*1000+id,getTranslit(lemma),postfix,",".join(args))
     return token
@@ -125,6 +165,9 @@ def getEqualArgSets(propDict,rels):
         (relName,dependent,head)=rel    
         if relName not in rules:
             continue
+        
+        if relName=="ADV":
+            niloo=1
         headProp=propDict[head]
         (headId,headWord,headLemma,headPOS,headArgs)=headProp
         
@@ -134,8 +177,14 @@ def getEqualArgSets(propDict,rels):
         argUnifications=rules[relName]
         for argUnification in argUnifications:      
             (headArgIndex,dependentArgIndex)=argUnification
+            if headArgIndex>=len(headArgs) or dependentArgIndex>len(dependentArgs):
+                #warning
+                continue
             headArgName=headArgs[headArgIndex]
             dependentArgName=dependentArgs[dependentArgIndex]
+            
+            if headArgName=="u2" or dependentArgName=="u2":
+                niloo=1
             
             foundSet=None
             for equalitySet in equalArgSets:
@@ -305,9 +354,78 @@ def createNewPropsForLightVerbs(props,rels):
             propIdCounter+=1
             
     return props+newProps
+
+def createNewPropsForNounsAndPossesives(props,rels):
+    global eventualityArgCounter
+    global propIdCounter
+    propIdCounter+=1
+    newProps=[]
+    for rel in rels:
+        (relName,dependentId,headId)=rel
+        if relName in ["MOZ"]:
+            eventualityArgCounter+=1
+            
+            dependentProp=findProp(props,dependentId)
+            (dependentPropId,dependentWord,dependentLemma,dependentPOS,dependentArgs)=dependentProp
+            
+            headProp=findProp(props,headId)
+            (headId,headWord,headLemma,headPOS,headArgs)=headProp
+            
+            if dependentLemma in pronouns:
+                newProp=(propIdCounter,"","of-in","",["e%s"%eventualityArgCounter,dependentArgs[1],headArgs[1]])
+            
+            else:
+                newProp=(propIdCounter,"","nn","",["e%s"%eventualityArgCounter,headArgs[1],dependentArgs[1]])
+            
+            newProps+=[newProp]
+            propIdCounter+=1
+            
+    return props+newProps
                 
-
-
+def createNewPropsForNounsWithPossesivePostfixes(props,rels):
+    global eventualityArgCounter
+    global propIdCounter
+    global entityArgCounter
+    for prop in props:
+        (id,word,lemma,POS,args)=prop 
+        postFix=word.replace(lemma, "")
+        if postFix not in pronouns:
+            continue
+        eventualityArgCounter+=1
+        propIdCounter+=1
+        entityArgCounter+=1
+        pronounArg="x%s"%entityArgCounter
+        newProp1=(propIdCounter,postFix,postFix,POSDict["PR"],["e%s"%eventualityArgCounter,pronounArg])
+        
+        eventualityArgCounter+=1
+        propIdCounter+=1
+        
+        newProp2=(propIdCounter,"","of-in","",["e%s"%eventualityArgCounter,args[1],pronounArg])
+        
+        props+=[newProp1,newProp2]
+        propIdCounter+=1
+    return props
+def createNewPropsForPlural(props,rels):
+    global eventualityArgCounter
+    global propIdCounter
+    global entityArgCounter
+    for prop in props:
+        (id,word,lemma,POS,args)=prop
+        if POS!=POSDict["N"]:
+            continue
+        postFix=word.replace(lemma, "")
+        if postFix not in pluralPostfixes:
+            continue
+        eventualityArgCounter+=1
+        propIdCounter+=1
+        entityArgCounter+=1
+        
+        newProp=(propIdCounter,"","typelt","",["e%s"%eventualityArgCounter,args[1],"s%s"%entityArgCounter])
+        
+        props+=[newProp]
+        propIdCounter+=1
+    return props
+    
         
 def createLF(tokens,sentenceId):
     global propIdCounter
@@ -342,8 +460,14 @@ def lfToString(lf):
 
 def resolveArgs(LF):
     (sentenceId,sentence,props,rels)=LF
+    if sentenceId==6:
+        niloo=1
     #add new props for light verbs (add preds like NVE,ENC)
     props=createNewPropsForLightVerbs(props,rels)
+    props=createNewPropsForNounsWithPossesivePostfixes(props,rels)
+    props=createNewPropsForNounsAndPossesives(props,rels)
+    props=createNewPropsForPlural(props,rels)
+    
     
     propDict=createPropDict(props)
     equalArgSets=getEqualArgSets(propDict,rels)    
@@ -351,6 +475,7 @@ def resolveArgs(LF):
     
     nounConjArgSets=getNounConjArgSets(props,rels)
     props=createNewPropsForNounConjs(props,rels,nounConjArgSets)
+    
            
     return (sentenceId,sentence,props,rels)               
 
@@ -359,7 +484,7 @@ entityArgCounter=0
 eventualityArgCounter=0
 propIdCounter=0
 
-loadtranslitDict(translitDictFile)
+loadFarsiWordsForLFFile(farsiWordsForLFFile)
 
 
 line=inputFile.readline()
@@ -374,6 +499,12 @@ while line!="":
 #        sys.stdout.write(lfToString(lf).encode("utf-8"))
         tokens=[]
         sentenceId+=1
+        
+        unknownargCounter=0
+        entityArgCounter=0
+        eventualityArgCounter=0
+        propIdCounter=0
+        
     else:
         a=line.split("\t")
         if len(a)!=10:
