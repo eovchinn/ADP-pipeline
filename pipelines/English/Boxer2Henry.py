@@ -6,8 +6,28 @@ import sys
 import re
 import os
 import json
+from collections import defaultdict
+
+# global vars
+id2prop = defaultdict(list)
 
 TMP_DIR = os.environ['TMP_DIR']
+
+def add_id2prop(id_str,arg_str):
+	ids = id_str.split(',')
+	args = arg_str.split(',')
+	for id in ids:
+		id2prop[id].append(args[0])	
+
+def generate_sameID_nm():
+	nm = ''
+	for id in id2prop.keys():
+		if len(id2prop[id])>1:
+			nm += ' (!='
+			for arg in id2prop[id]:
+				nm += ' ' + arg 
+			nm += ')'
+	return nm	
 
 def check_prep(pred):
 	prepositions = [
@@ -135,7 +155,6 @@ def main():
 			SIDmatchObj = sent_id_pattern.match(line)
 			if SIDmatchObj:
 				sent_id = SIDmatchObj.group(1)
-				prop_id_counter = 0
 				ofile.write('(O (name ' + sent_id + ') (^') 
 			#else: print 'Strange sent id: ' + line
 
@@ -147,7 +166,7 @@ def main():
 				if matchObj:
 					prop_id_counter+= 1
 
-					if matchObj.group(2): word_id = matchObj.group(1)
+					if matchObj.group(1): word_id = matchObj.group(1)
 					else: word_id = 'ID'+str(prop_id_counter)
 
 					prop_name = matchObj.group(2)
@@ -168,20 +187,24 @@ def main():
 						prop_name = pname+'-'+postfix
 					else:
 						prop_name = check_prep(prop_name)
-
-					if matchObj.group(4): prop_args = matchObj.group(4)
-					else: prop_args = ''
-				
+	
 					nm = ''
-					if prop_args!='': 
+					if matchObj.group(4): 
+						prop_args = matchObj.group(4)
 						prop_args = ' '+prop_args.replace(',',' ')
-						if pa.nonmerge: nm = ' (!='+prop_args+')'
-
+						if pa.nonmerge: 
+							nm = ' (!='+prop_args+')'
+							if matchObj.group(1): add_id2prop(matchObj.group(1),matchObj.group(4))
+					else: prop_args = ''
+	
 					ofile.write(' ('+prop_name+prop_args+' :'+str(pa.cost)+':'+sent_id+'-'+str(prop_id_counter)+':['+word_id+'])')
 					if pa.nonmerge: ofile.write(nm)
 				#else: print 'Strange proposition: ' + prop + '\n'				
-
+			
+			if pa.nonmerge: ofile.write(generate_sameID_nm())
 			ofile.write('))\n')
+			prop_id_counter = 0
+			id2prop.clear()
 
 	ofile.close()
 					 
