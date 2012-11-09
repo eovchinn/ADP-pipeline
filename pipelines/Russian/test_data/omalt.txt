@@ -119,6 +119,14 @@
 3	Мери	мери	N	N	Npfsgy	2	предл	_	_
 4	.	.	S	S	SENT	3	PUNC	_	_
 
+1	Спасибо	спасибо	Q	Q	Q	0	ROOT	_	_
+2	за	за	S	S	Sp-a	0	ROOT	_	_
+3	то	то	P	P	P--nsan	2	предл	_	_
+4	что	что	C	C	C	3	эксплет	_	_
+5	не	не	Q	Q	Q	6	огранич	_	_
+6	куришь	курить	V	V	Vmip2s-a-e	4	подч-союзн	_	_
+7	.	.	S	S	SENT	6	PUNC	_	_
+
 1	Джон	джон	N	N	Npmsny	2	предик	_	_
 2	выходит	выходить	V	V	Vmip3s-a-e	0	ROOT	_	_
 3	из	из	S	S	Sp-g	2	1-компл	_	_
