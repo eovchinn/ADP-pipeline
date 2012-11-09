@@ -69,7 +69,7 @@ def prop_to_dict(props):
         shortID = prop[6]
         sent_count = prop[7]
         #finePOS = prop[8]
-        propID = "["+str(sent_count)+str(ID)+"]"
+        propID = str(sent_count)+str(ID)
         if not propTags.match(pos) and not puncts.match(lemma):            
             args = []
             tag = ""
@@ -84,6 +84,7 @@ def prop_to_dict(props):
     return new_prop_sent,sent_dict
 
 def replace_args(prop_sent,sent_dict):
+    prop_dict = {}
     #loop over propositions, fill in variables, and print
     position = 0
     for prop in prop_sent:
@@ -117,10 +118,7 @@ def replace_args(prop_sent,sent_dict):
         if rel == "morfema.pronominal" and pos == "p":
             sent_dict = insert_m_p(head,wordID,sent_dict)
         if tag == "in":
-            sent_dict = insert_prep_head(head,wordID,sent_dict)
-        # if rel == "atr" and pos == "a":
-        #     sent_dict = insert_atr(head,wordID,sent_dict)  
-            
+            sent_dict = insert_prep_head(head,wordID,sent_dict)             
     for prop in prop_sent:
         position +=1
         token = prop[0]
@@ -132,21 +130,15 @@ def replace_args(prop_sent,sent_dict):
         predicate = prop[6]
         tag = prop[7]
         propID = prop[8]
-        if lemma == "ser":
-            predicate = []
-        #print propID,lemma,tag,predicate,"-",wordID,head,rel
         if len(predicate) > 0:
-            sys.stdout.write(propID+":"+lemma+"-"+tag+"("+",".join(predicate)+")")
-        else:
-            sys.stdout.write(propID+":"+lemma)
-        if position < len(prop_sent):
-             sys.stdout.write(" & ")
-    print ""
+            prop_dict[predicate[0]]=[propID,lemma,tag,predicate]
+    return prop_dict
 
     
 def insert_suj(head,wordID,sent_dict):
     if sent_dict[head][7] == "vb":
         sent_dict[head][6][1] = sent_dict[wordID][6][1]
+
     # else:
     #     print "not a verb"
     #     exit()
@@ -157,6 +149,8 @@ nounArg = re.compile("x\d")
 def inherit_suj(head,wordID,sent_dict):
     if sent_dict[head][7] == "vb" and not nounArg.search(sent_dict[wordID][6][1]):
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
+    if sent_dict[head][1] == "ser":
+        sent_dict[head][6][0:] = ""
     # else:
     #     print "not a verb"
     #     exit()
@@ -289,6 +283,14 @@ def build_predicate(pos,eCount,xCount,uCount):
         pred.append("u"+str(uCount))
         uCount+=1        
         return pred,tag,eCount,xCount,uCount
+    if cardTag.match(pos):
+        tag="card"
+        pred.append("e"+str(eCount))
+        eCount+=1
+        pred.append("u"+str(uCount))
+        uCount+=1        
+        pred.append("n")
+        return pred,tag,eCount,xCount,uCount
 
 def add_args(args,arg,count):
     args.append
@@ -299,8 +301,9 @@ if options.tagset == "ancora":
     adjectiveTag = re.compile("^a$")
     adverbTag = re.compile("^r$")
     prepositionTag = re.compile("^s$")
-    propTags = re.compile("^(n|v|a|r|s|p)$")
     pronounTag = re.compile("^p$")
+    cardTag = re.compile("^z$")
+    propTags = re.compile("^(n|v|a|r|s|p|z)$")
 
 nounPred = re.compile("nn\(e\d*,[ux]\d*\)")
 pronounPred = re.compile("p\(e\d*,[ux]\d*\)")
@@ -316,7 +319,14 @@ def main():
         print "% "+" ".join(sent)
         print "id("+str(sent_count)+")."
         prop_sent,prop_dict = prop_to_dict(word)
-        replace_args(prop_sent,prop_dict)
+        prop_dict = replace_args(prop_sent,prop_dict)
+        prop_count = 0
+        for key,prop in sorted(prop_dict.items()):
+            prop_count+=1
+            sys.stdout.write("["+prop[0]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
+            if prop_count < len(prop_dict.items()):
+                sys.stdout.write(" & ")
+        print ""
 
 if __name__ == "__main__":
     main()
