@@ -6,7 +6,7 @@ parserOutputFileName="${1:-/dev/stdin}"
 LFFileName="${2:-/dev/stdout}"
 
 parseToLFConverter=$farsiPipelineDir/convertParseTreeToLF.py
-transliterationDict=$farsiPipelineDir/translitDict.txt
+farsiWordsDict=$farsiPipelineDir/farsiWordsForLFCreation.txt
 
 # convert the parse results to LF
-python $parseToLFConverter $parserOutputFileName $LFFileName $transliterationDict
+python $parseToLFConverter $parserOutputFileName $LFFileName $farsiWordsDict
