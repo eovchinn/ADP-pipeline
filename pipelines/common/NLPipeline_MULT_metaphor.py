@@ -16,7 +16,7 @@ FARSI_PIPELINE = "%s/pipelines/Farsi/LF_Pipeline" % METAPHOR_DIR
 SPANISH_PIPELINE = "%s/pipelines/Spanish/run_spanish.sh" % METAPHOR_DIR
 RUSSIAN_PIPELINE = "%s/pipelines/Russian/run_russian.sh" % METAPHOR_DIR
 
-BOXER2HENRY = "%s/pipelines/English/Boxer2Henry.pl" % METAPHOR_DIR
+BOXER2HENRY = "%s/pipelines/English/Boxer2Henry.py" % METAPHOR_DIR
 PARSER2HENRY = "%s/pipelines/common/IntParser2Henry.py" % METAPHOR_DIR
 
 # Knowledge base
@@ -60,7 +60,7 @@ def extract_hypotheses(inputString):
 def generate_text_input(input_dict,language):
 	output_str = ''
 	for id in input_dict.keys():
-		if language == 'EN': output_str += "<META>'" + id + "'\n\n " + input_dict[id].replace("\u2019", "'") + "\n\n"
+		if language == 'EN': output_str += "<META>" + id + "\n\n " + input_dict[id].replace("\u2019", "'") + "\n\n"
 		else: output_str += '.TEXTID('+id+').\n\n'+input_dict[id].replace("\u2019", "'") + "\n\n" 
 	return output_str	
 
@@ -68,7 +68,7 @@ def ADP(input_dict,language):
 	start_time = time.time()
 	input_str = generate_text_input(input_dict,language)
 
-       # Run parser pipeline
+       # Parser pipeline
 	parser_proc = ''
 	if language == 'FA': 
 		parser_proc = FARSI_PIPELINE  + ' | python ' + PARSER2HENRY + ' --nonmerge --textid'
@@ -80,14 +80,14 @@ def ADP(input_dict,language):
 		tokenizer = BOXER_DIR + '/bin/tokkie --stdin'
 		candcParser = BOXER_DIR + '/bin/candc --models ' + BOXER_DIR + '/models/boxer --candc-printer boxer'
 		boxer = BOXER_DIR + '/bin/boxer --semantics tacitus --resolve true --stdin'
-		b2h = 'perl ' + BOXER2HENRY + ' --nonmerge sameargs'
+		b2h = 'python ' + BOXER2HENRY + ' --nonmerge'
 		parser_proc = tokenizer + ' | ' + candcParser + ' | ' + boxer + ' | ' + b2h
 
 	parser_pipeline = Popen(parser_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
 	parser_output = parser_pipeline.communicate(input=input_str)[0]
 
 	parser_time = (time.time()-start_time)*0.001			# Parser processing time in seconds
-	time_all_henry = 600 - parser_time		    			# all time rest for Henry in seconds	
+	time_all_henry = 600 - parser_time		    			# time left for Henry in seconds	
 	time_unit_henry = str(int(time_all_henry/len(input_dict)))	# time for one interpretation in Henry in seconds
 
 	# Henry processing
@@ -98,6 +98,14 @@ def ADP(input_dict,language):
 
 	henry_pipeline = Popen(henry_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
 	henry_output = henry_pipeline.communicate(input=parser_output)[0]
+
+	# Graphical output 
+	#for id in input_dict.keys():
+	#	graph_output = os.path.join(TMP_DIR,id+'.pdf')
+	#	viz = 'python ' + HENRY_DIR + '/tools/proofgraph.py --graph ' + id + ' | dot -T pdf > ' + graph_output
+	#
+	#	graphical_processing = Popen(viz, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
+	#	graphical_processing.communicate(input=henry_output)[0]
 
 	return extract_hypotheses(henry_output)
 
