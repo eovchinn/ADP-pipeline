@@ -30,7 +30,7 @@ def main():
 	output_str = ''
 	id_prop_args_pattern = re.compile('(\[(\d+)\]:)?([^\[\(]+)(\((.+)\))?')
 	sent_id_pattern = re.compile('id\((.+)\)')
-	text_id_pattern = re.compile('% TEXTID\(([^\s\t]+)')
+	text_id_pattern = re.compile('% TEXTID\s*\(\s*([^\s\t]+)')
 	sent_id = ''
 	prop_id_counter = 0
 	text_id = ''
@@ -49,7 +49,7 @@ def main():
 				sent_id = SIDmatchObj.group(1)
 				prop_id_counter = 0
 				if not pa.textid: ofile.write('(O (name ' + sent_id + ') (^') 
-			else: print 'Strange sent id: ' + line
+			#else: print 'Strange sent id: ' + line
 			
 			if just_TEXT_ID == 1: just_TEXT_ID = 2
 			else: just_TEXT_ID = 0
@@ -64,6 +64,11 @@ def main():
 					else: word_id = 'ID'+str(prop_id_counter)
 
 					prop_name = matchObj.group(3)
+					prop_name.replace(' ','-')
+					prop_name.replace('_','-')
+					prop_name.replace(':','-')
+					prop_name.replace('.','-')
+					prop_name.replace('/','-')
 
 					if matchObj.group(5): prop_args = matchObj.group(5)
 					else: prop_args = ''
@@ -71,10 +76,10 @@ def main():
 					nm = ''
 					if prop_args!='': 
 						prop_args = ' '+prop_args.replace(',',' ')
-						nm = ' (!='+prop_args+')'
+						if pa.nonmerge: nm = ' (!='+prop_args+')'
 
 					ofile.write(' ('+prop_name+prop_args+' :'+str(pa.cost)+':'+sent_id+'-'+str(prop_id_counter)+':['+word_id+'])')
-					ofile.write(nm)
+					if pa.nonmerge: ofile.write(nm)
 				#else: print 'Strange proposition: ' + prop + '\n'				
 
 			if not pa.textid: ofile.write('))\n')
