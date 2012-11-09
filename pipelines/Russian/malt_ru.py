@@ -378,10 +378,16 @@ class MaltConverter(object):
             word.pred.args[1].link_to(head.pred.args[0])
 
     def apply_pre_rules(self, word):
-        pass
+
         # 1. Verb+noun.
 
-        # head = self.word(word.head)
+        head = self.word(word.head)
+        if head.cpostag == "vb":
+            for dep in self.__deps(word):
+                if dep.cpostag == "nn":
+                    word.pred.args[1].link_to(head.pred.args[0])
+                    word.pred.args[2].link_to(dep.pred.args[1])
+                    break
 
     def init_predicate(self, word):
         args = [Argument("e")]\
