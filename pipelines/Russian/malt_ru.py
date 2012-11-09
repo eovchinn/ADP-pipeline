@@ -206,7 +206,7 @@ class MaltConverter(object):
         label, args = epred
         argsf = []
         for a in args:
-            if a.type in ["e", "x", "u", ]:
+            if a.type in ["e", "x", "u", "s", ]:
                 argsf.append("%s%d"\
                              % (a.resolve_link().type,
                                 a.resolve_link().index)
@@ -233,6 +233,8 @@ class MaltConverter(object):
                 self.apply_nn_rules(p.word)
             if p.word.cpostag == "adj":
                 self.apply_adj_rules(p.word)
+            if p.word.cpostag == "rb":
+                self.apply_adv_rules(p.word)
 
         self.assign_indexes()
 
@@ -356,6 +358,14 @@ class MaltConverter(object):
         head = self.word(word.head)
         if head and head.cpostag == "nn":
             word.pred.args[1].link_to(head.pred.args[1])
+
+    def apply_adv_rules(self, word):
+
+        # 1. Second args of adverbs are verbs they are modifying.
+
+        head = self.word(word.head)
+        if head and head.cpostag == "vb":
+            word.pred.args[1].link_to(head.pred.args[0])
 
     def init_predicate(self, word):
         args = [Argument("e")]\
