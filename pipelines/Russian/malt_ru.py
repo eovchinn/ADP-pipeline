@@ -78,6 +78,11 @@ class WordToken(object):
         if self.lemma == "<unknown>":
             self.lemma = self.form
 
+        self.lemma = self.lemma.replace(u"«", u"")
+        self.lemma = self.lemma.replace(u"»", u"")
+        self.form = self.form.replace(u"«", u"")
+        self.form = self.form.replace(u"»", u"")
+
     def __repr__(self):
         return u"<WordToken(%s)>" \
             % (self.id, )
