@@ -28,7 +28,7 @@ fi
 TREE_TAGGER_BIN=$METAPHOR_DIR/external-tools/tree-tagger-3.2/$PLATFORM/bin
 TREE_TAGGER_CMD=$METAPHOR_DIR/external-tools/tree-tagger-3.2/$PLATFORM/cmd
 TREE_TAGGER_LIB=$METAPHOR_DIR/external-tools/tree-tagger-3.2/$PLATFORM/lib
-TREE_TAGGER_OPT="-lemma -token -sgml"
+TREE_TAGGER_OPT="-lemma -token -sgml -quiet"
 
 MALT_DIR=$METAPHOR_DIR/external-tools/malt-1.5
 MALT_RU_DIR=$METAPHOR_DIR/external-tools/malt-ru
