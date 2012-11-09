@@ -144,6 +144,7 @@ class MaltConverter(object):
         e_count = 1
         x_count = 1
         u_count = 1
+        s_count = 1
 
         arg_set = set()
         arg_list = []
@@ -170,6 +171,9 @@ class MaltConverter(object):
             elif a.type == "u":
                 a.index = u_count
                 u_count += 1
+            elif a.type == "s":
+                a.index = s_count
+                s_count += 1
 
     def add_line(self, line):
         line = self.line_splitter.split(line.decode("utf-8"))
