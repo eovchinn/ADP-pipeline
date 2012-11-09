@@ -23,6 +23,8 @@ def malter(LINE_OBJECT):
 def determineLemma(original,token):
     if original == "<unknown>":
         return token
+    elif optional_lemma.search(original):
+        return original.split("|")[0]
     else:
         return original.replace("~", "_");
 
@@ -89,6 +91,7 @@ treePrep = re.compile("PREP|CSUBI|PAL|PDEL|PREP/DEL")
 treeVerb = re.compile("^V.*")
 #treeDate = re.compile("")
 treeNum = re.compile("CARD|FO|ORD")
+optional_lemma = re.compile(".*\|.*")
 
 def main():
     lines = open(options.input, "r") if options.input else sys.stdin

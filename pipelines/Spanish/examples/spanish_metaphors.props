@@ -1,0 +1,20 @@
+% Nos proponemos atacar dos grandes lastres , eliminar dos grilletes que no nos dejan competir al tú por tú con los mejores del mundo : me refiero a la corrupción y la impunidad .
+id(1).
+[1001]:nosotros-pro(e1,x1) & [1012]:no-rb(e10,u13) & [1013]:nosotros-pro(e11,x4) & [1014]:dejar-vb(e12,u17,u15,u16) & [1015]:competir-vb(e13,x1,u18,u19) & [1016]:al-in(e14,e13,u21) & [1017]:tú-pro(e15,x5) & [1018]:por-in(e16,e13,u23) & [1019]:tú-pro(e17,x6) & [1020]:con-in(e18,e13,u25) & [1022]:bueno-adj(e19,u26) & [1002]:proponer-vb(e2,x1,u2,u3) & [1023]:del-in(e20,u27,x7) & [1024]:mundo-nn(e21,x7) & [1026]:yo-pro(e22,x8) & [1027]:referir-vb(e23,x1,x8,u31) & [1028]:a-in(e24,e23,x9) & [1030]:corrupción-nn(e25,x9) & [1033]:impunidad-nn(e26,x9) & [1003]:atacar-vb(e3,x1,x2,u6) & [1004]:dos-nn(e4,x2) & [1005]:grande-adj(e5,x2) & [1006]:lastres-adj(e6,x2) & [1008]:eliminar-vb(e7,x1,x3,u11) & [1009]:dos-card(e8,u12,n) & [1010]:grilletes-nn(e9,x3)
+% hoy tenemos una economía fuerte , con mejores oportunidades para todos ; hoy tenemos crecimiento económico con estabilidad , que se va traduciendo en beneficios para todo el país , para las familias , para las y los emprendedores .
+id(2).
+[2001]:hoy-rb(e1,e2) & [2014]:tener-vb(e10,u12,x3,u14) & [2015]:crecimiento-nn(e11,x3) & [2016]:económico-adj(e12,u15) & [2017]:con-in(e13,u16,x4) & [2018]:estabilidad-nn(e14,x4) & [2021]:se-pro(e15,x5) & [2022]:ir-vb(e16,u21,u19,u20) & [2023]:traduciendo-vb(e17,u2,u22,u23) & [2024]:en-in(e18,e17,x6) & [2025]:beneficio-nn(e19,x6) & [2002]:tener-vb(e2,u2,x1,u4) & [2026]:para-in(e20,e17,x7) & [2029]:país-nn(e21,x7) & [2031]:para-in(e22,e17,x8) & [2033]:familia-nn(e23,x8) & [2035]:para-in(e24,e17,x9) & [2039]:emprendedores-nn(e25,x9) & [2004]:economía-nn(e3,x1) & [2005]:fuerte-adj(e4,x1) & [2007]:con-in(e5,e2,x2) & [2008]:bueno-adj(e6,x2) & [2009]:oportunidad-nn(e7,x2) & [2010]:para-in(e8,e2,u10) & [2013]:hoy-rb(e9,e10)
+% el piso de concreto sobre el cual se puede construir y sobre el cual se puede avanzar .
+id(3).
+[3002]:piso-nn(e1,x1) & [3014]:cual-pro(e10,x4) & [3015]:se-pro(e11,x5) & [3016]:poder-vb(e12,u17,u15,u16) & [3017]:avanzar-vb(e13,x1,u18,u19) & [3003]:de-in(e2,x1,u2) & [3004]:concreto-adj(e3,u3) & [3005]:sobre-in(e4,e8,u5) & [3007]:cual-pro(e5,x2) & [3008]:se-pro(e6,x3) & [3009]:poder-vb(e7,x1,u7,u8) & [3010]:construir-vb(e8,x1,u10,u11) & [3012]:sobre-in(e9,e13,u13)
+% el sector financiero ya no es un flanco vulnerable de nuestra economía .
+id(4).
+[4002]:sector-nn(e1,x1) & [4012]:economía-nn(e10,x3) & [4003]:financiero-adj(e2,x1) & [4004]:ya-rb(e3,e5) & [4005]:no-rb(e4,u3) & [4008]:flanco-nn(e6,x2) & [4009]:vulnerable-adj(e7,x2) & [4010]:de-in(e8,x2,x3) & [4011]:nuestra-adj(e9,x3)
+% Seguiremos combatiendo la inflación para lograr un crecimiento económico sostenido en provecho de todos .
+id(5).
+[5001]:seguir-vb(e1,u4,u2,u3) & [5012]:provecho-nn(e10,x3) & [5013]:de-in(e11,e8,u19) & [5002]:combatir-vb(e2,u13,x1,u6) & [5004]:inflación-nn(e3,x1) & [5005]:para-in(e4,e2,u8) & [5006]:lograr-vb(e5,u9,x2,u11) & [5008]:crecimiento-nn(e6,x2) & [5009]:económico-adj(e7,u12) & [5010]:sostener-vb(e8,u13,u14,u15) & [5011]:en-in(e9,e8,x3)
+% Micros , pequeñas , medianas empresas y grandes corporativos de alcance nacional e internacional , han nacido en este suelo pionero y son orgullo de_Nuevo León y de México .
+id(6).
+[6001]:Micros-nn(e1,x1) & [6014]:internacional-adj(e10,u8) & [6016]:haber-vb(e11,x1,u10,u11) & [6017]:nacer-vb(e12,x1,u13,u14) & [6018]:en-in(e13,e12,x4) & [6020]:suelo-nn(e14,x4) & [6021]:pionero-nn(e15,x4) & [6023]:ser-vb(e16,x1,u18,u19) & [6024]:orgullo-nn(e17,x6) & [6025]:de_nuevo-rb(e18,u20) & [6026]:León-nn(e19,x6) & [6003]:pequeño-adj(e2,x1) & [6028]:de-in(e20,e12,x8) & [6029]:México-nn(e21,x8) & [6005]:mediano-adj(e3,x1) & [6006]:empresa-nn(e4,x1) & [6008]:grande-adj(e5,u3) & [6009]:corporativo-adj(e6,u4) & [6010]:de-in(e7,x1,x3) & [6011]:alcance-nn(e8,x3) & [6012]:nacional-adj(e9,x3)
+% que pueden hacer de la educación una verdadera palanca de superación personal , y de movilidad económica y social .
+id(7).
