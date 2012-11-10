@@ -1,0 +1,36 @@
+1   Я   я   P   P   P-1-snn 2   предик  _   _
+2   пишу    писать  V   V   Vmip1s-a-e  0   ROOT    _   _
+3   карандашом  карандаш    N   N   Ncmsin  2   1-компл _   _
+4   .   .   S   S   SENT    3   PUNC    _   _
+
+1   Я   я   P   P   P-1-snn 2   предик  _   _
+2   боюсь   бояться V   V   Vmip1s-m-e  0   ROOT    _   _
+3   высоты  высота  N   N   Ncfsgn  2   1-компл _   _
+4   .   .   S   S   SENT    3   PUNC    _   _
+
+1   Ты  ты  P   P   P-2-snn 2   предик  _   _
+2   должен  должен  A   A   Afpmsns 0   ROOT    _   _
+3   уйти    уйти    V   V   Vmn----a-p  2   1-компл _   _
+4   .   .   S   S   SENT    3   PUNC    _   _
+
+1   Вы  вы  P   P   P-2-pnn 2   предик  _   _
+2   должны  должен  A   A   Afpmpns 0   ROOT    _   _
+3   уйти    уйти    V   V   Vmn----a-p  2   1-компл _   _
+4   .   .   S   S   SENT    3   PUNC    _   _
+
+1   Вы  вы  P   P   P-2-pnn 3   предик  _   _
+2   все все R   R   R   3   огранич _   _
+3   должны  должен  A   A   Afpmpns 0   ROOT    _   _
+4   уйти    уйти    V   V   Vmn----a-p  3   1-компл _   _
+5   .   .   S   S   SENT    4   PUNC    _   _
+
+1   Они они P   P   P-3-pnn 2   предик  _   _
+2   должны  должен  A   A   Afpmpns 0   ROOT    _   _
+3   уйти    уйти    V   V   Vmn----a-p  2   1-компл _   _
+4   .   .   S   S   SENT    3   PUNC    _   _
+
+1   Мы  мы  P   P   P-1-pnn 2   предик  _   _
+2   должны  должен  A   A   Afpmpns 0   ROOT    _   _
+3   уйти    уйти    V   V   Vmn----a-p  2   1-компл _   _
+4   .   .   S   S   SENT    3   PUNC    _   _
+

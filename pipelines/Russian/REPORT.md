@@ -12,6 +12,7 @@ Use `run_test.sh` wich will read input from `test_data/input.txt` and store resu
 2. ***Implemented***
 3. Not implemented
 4. ***Implemented***
+5. Not implemented
 
 
 * ***NOUNS***
@@ -36,13 +37,14 @@ Use `run_test.sh` wich will read input from `test_data/input.txt` and store resu
 
 1. ***Implemented***
 2. ***Implemented***
-3. Not implemented
-4. Not implemented
+3. Not implemented: ***not applicable***
+4. Not implemented: ***not applicable***
 
 
 * ***PRONOUNS***
 
-1. Not implemented
+1. ***Implemented***
+2. Not implemented: ***not applicable*** (not enought information from parser)
 
 
 * ***Numerals***
