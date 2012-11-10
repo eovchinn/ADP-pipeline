@@ -10,53 +10,95 @@
 
 ;;;; CONFLICT PREDICATES
 
-; A fight is a conflict. 
-(B (name fight) (=> (conflict f :1.2) (fight f)) )
+;A slap is an attack.
 
-; Combat is a conflict. 
-(B (name combat) (=> (conflict c :1.2) (combat c)) )
+(B (name slap) (=> (^ (attack e x y :0.9) (etcslap e :0.3)) (slap e1 x y)))
+
+; Aiming precedes an attack
+
+(B (name attack1) (=> (aim e x w y) (attack e1 x y)))
 
 
 ;;;; CONFLICT ONTOLOGY
 
 ;Conflict has two adversaries.
+
 (B (name adversary1) (=> (conflict c :1.2) (adversary e x y c)))
 
-; The adversary relation is symmetric.  *imported from old conflict ontology, may remove*
-; (B (name adversary2) (=> (adversary e x y c :1.2)(adversary e1 y x c)) )
+
+(B (name adversary1) (=> (adversary e x y c :1.2) (conflict c)))
+
+; The adversary relation is symmetric.
+
+(B (name adversary2) (=> (adversary e x y c :1.2)(adversary e1 y x c)) )
 
 ;Adversaries have degree of strength.
 ;   [Let's talk about how to represent this.]
 
 ;Adversaries have contradictory goals.
+
 (B (name adversary3) (=> (adversary e x y c :1.2) 
    	 	     	 (^ (conflict c) (goal e1 g x) (goal e2 h y) (not g h))))
 
+(B (name adversary4) (=> (^ (goal e1 g x) (goal e2 h y) (not g h)) 
+   	 	     	 (adversary e x y c :1.2)))
+	 
 ;To win is to achieve the goal.
-(B (name win) (=> (^ (conflict c) (adversary e x y c) (goal e1 g x) (goal e2 h y) (accomplish-goal e3 g x))
-		      (win e x y c)))
+
+(B (name win) (=> (^ (conflict c) (adversary e x y c) 
+   	      	     	          (goal e1 g x) (goal e2 h y) (accomplish-goal e3 g x))
+		     (win e x y c)))
 
 ;Victory is winning.
+
 (B (name victory) (=> (^ (conflict c :0.3) (adversary e1 x y c :0.3) (win e1 x y c :0.3)) (victory e1 x y c)))
 
 ;To lose is for your adversary to win.
+
 (B (name lose) (=> (win e x y c :1.2) (lose e y x c)))
 
 ;Adversaries compete with each other.  
+
 (B (name compete) (=> (^ (adversary e1 x y c :0.3) (conflict c :0.6)) (compete e x y u)))
 
 
 ;Adversaries attack each other.
+
 (B (name adversary7) (=> (^ (conflict e :0.6)(adversary e1 x y c :0.6))
    	 	     	 (^ (attack e1 x y)(attack e2 y x))))
 
 ;Adversaries use weapons in attacks.
-(B (name weapon) (=> (attack e1 x y :1.2) (^ (use e1 x w)(weapon w))) )
 
+(B (name weapon) (=> (attack e1 x y :1.2) (^ (use e1 x w y z)(weapon w))))
+
+; A bullet is a weapon.
+
+(B (name bullet) (=> (^ (weapon w :0.6)(etcbullet w :0.6)) (bullet w)))
+ 
+; One kind of gun is a rifle.
+
+(B (name rifle) (=> (^ (gun w :0.6)(etcrifle w :0.6)) (rifle w)))
+
+; One kind of weapon is a gun.
+
+(B (name gun) (=> (^ (weapon w :0.6)(etcgun w :0.6)) (gun w)))
+
+; A gun has a sight.
+
+(B (name sight) (=> (gun w) (^ (sight u :1.2)(part u w))))
+
+; One type of sight of a gun is crosshairs.
+
+(B (name crosshairs) (=> (^ (gun w :0.4)(sight u :0.4)(part u w :0.4)) (crosshairs u)))
+
+; To aim a gun is to aim the sight of the gun. (The function of sights.)
+
+(B (name gun1) (=> (^ (gun w :0.3)(sight u :0.3)(part u w :0.3)(aim e1 x u y :0.3))(aim e1 x w y)))
 
 ;;;; WAR ONTOLOGY
 
 ; One kind of conflict is a war. 
+
 (B (name war) (=> (^ (conflict e :0.6)(waretc e :0.6)) (war e)))
 
 ;Adversaries in war are groups to which members are loyal.
