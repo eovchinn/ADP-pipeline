@@ -17,7 +17,7 @@ class WordToken(object):
         "N": ("nn", 2),     # adjective - adj/2
         "R": ("rb", 2),     # adverb - rb/2
         "S": ("in", 3),     # preposition - in/3
-        "P": ("pr", 2),    # pronoun
+        "P": ("pr", 2),     # pronoun
         "M": ("num", -1),   # numeral
     }
 
