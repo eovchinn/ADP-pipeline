@@ -20,6 +20,7 @@ Use `run_test.sh` wich will read input from `test_data/input.txt` and store resu
 2. ***Implemented***
 3. ***Implemented***
 4. Not implemented
+5. Not implemented
 
 
 * ***ADJECTIVES***
@@ -29,16 +30,12 @@ Use `run_test.sh` wich will read input from `test_data/input.txt` and store resu
 
 * ***ADVERB***
 
-1. Not implemented
-2. Not implemented
-3. Not implemented
-4. Not implemented
-
+1. ***Implemented***
 
 * ***PREPOSITION***
 
-1. Not implemented
-2. Not implemented
+1. ***Implemented***
+2. ***Implemented***
 3. Not implemented
 4. Not implemented
 

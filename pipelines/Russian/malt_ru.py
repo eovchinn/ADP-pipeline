@@ -78,6 +78,11 @@ class WordToken(object):
         if self.lemma == "<unknown>":
             self.lemma = self.form
 
+        self.lemma = self.lemma.replace(u"«", u"")
+        self.lemma = self.lemma.replace(u"»", u"")
+        self.form = self.form.replace(u"«", u"")
+        self.form = self.form.replace(u"»", u"")
+
     def __repr__(self):
         return u"<WordToken(%s)>" \
             % (self.id, )
@@ -144,6 +149,7 @@ class MaltConverter(object):
         e_count = 1
         x_count = 1
         u_count = 1
+        s_count = 1
 
         arg_set = set()
         arg_list = []
@@ -170,6 +176,9 @@ class MaltConverter(object):
             elif a.type == "u":
                 a.index = u_count
                 u_count += 1
+            elif a.type == "s":
+                a.index = s_count
+                s_count += 1
 
     def add_line(self, line):
         line = self.line_splitter.split(line.decode("utf-8"))
@@ -202,7 +211,7 @@ class MaltConverter(object):
         label, args = epred
         argsf = []
         for a in args:
-            if a.type in ["e", "x", "u", ]:
+            if a.type in ["e", "x", "u", "s", ]:
                 argsf.append("%s%d"\
                              % (a.resolve_link().type,
                                 a.resolve_link().index)
@@ -229,6 +238,10 @@ class MaltConverter(object):
                 self.apply_nn_rules(p.word)
             if p.word.cpostag == "adj":
                 self.apply_adj_rules(p.word)
+            if p.word.cpostag == "rb":
+                self.apply_adv_rules(p.word)
+            if p.word.cpostag == "in":
+                self.apply_pre_rules(p.word)
 
         self.assign_indexes()
 
@@ -285,6 +298,9 @@ class MaltConverter(object):
         if word.feats[3] == "f":  # if furure
             epred = ("future", [Argument("e"), word.pred.args[0]])
             self.__extra_preds.append(epred)
+
+        # 5. Correferent Nouns
+        # TODO(zaytsev@udc.edu): implement this
 
         if w_subject:
             word.pred.args[1].link_to(w_subject)
@@ -352,6 +368,38 @@ class MaltConverter(object):
         head = self.word(word.head)
         if head and head.cpostag == "nn":
             word.pred.args[1].link_to(head.pred.args[1])
+
+    def apply_adv_rules(self, word):
+
+        # 1. Second args of adverbs are verbs they are modifying.
+
+        head = self.word(word.head)
+        if head and head.cpostag == "vb":
+            word.pred.args[1].link_to(head.pred.args[0])
+
+    def apply_pre_rules(self, word):
+
+        # 1. Verb+noun.
+
+        head = self.word(word.head)
+        if head.cpostag == "vb":
+            for dep in self.__deps(word):
+                if dep.cpostag == "nn":
+                    word.pred.args[1].link_to(head.pred.args[0])
+                    word.pred.args[2].link_to(dep.pred.args[1])
+                    break
+
+        # 2. Noun+noun.
+
+        elif head.cpostag == "nn":
+            for dep in self.__deps(word):
+                if dep.cpostag == "nn":
+                    word.pred.args[1].link_to(head.pred.args[1])
+                    word.pred.args[2].link_to(dep.pred.args[1])
+                    break
+
+        # 3. Second arg is a prep
+        # 4. Verb+verb
 
     def init_predicate(self, word):
         args = [Argument("e")]\
