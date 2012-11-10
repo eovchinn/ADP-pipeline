@@ -52,9 +52,9 @@
 
 ; Enemies are adversaries.
 
-(B (name enemy-nn1) (=> (^ (conflict e :0.6) (adversary x y e :0.3)) (enemy-nn e x)))
+(B (name enemy-nn1) (=> (^ (conflict e :0.6) (adversary x y e :0.3)) (enemy-nn e1 x)))
 
-(B (name enemy-nn2) (=> (^ (conflict e :0.6) (adversary x y e :0.3)) (^ (enemy-nn e x) (of-in x y))))
+(B (name enemy-nn2) (=> (^ (conflict e :0.6) (adversary x y e :0.3)) (^ (enemy-nn e1 x) (of-in e2 x y))))
 
 ;;; ATTACK
 
@@ -76,27 +76,27 @@
 
 (B (name shoot-vb1) (=> (^ (gun w :0.3) (use e1 x w)) (shoot-vb e1 x y w)))
 
-(B (name shoot-vb2) (=> (attack e1 x y :0.9) (^ (shoot-vb e1 x y w) (at-in e1 y))))
+(B (name shoot-vb2) (=> (attack e1 x y :0.9) (^ (shoot-vb e1 x y w) (at-in e2 e1 y))))
 
-(B (name shoot-vb3) (=> (attack e1 x y :0.9) (^ (shoot-vb e1 x w y) (at-in e1 y))))
+(B (name shoot-vb3) (=> (attack e1 x y :0.9) (^ (shoot-vb e1 x w y) (at-in e2 e1 y))))
 
 ;;; AIM
 
 ; Aim a weapon at a target.
 
-(B (name aim-vb1) (=> (aim e1 x w y :0.9) (^ (aim-vb e1 x w u) (at-in e1 y))))
+(B (name aim-vb1) (=> (aim e1 x w y :0.9) (^ (aim-vb e1 x w u) (at-in e2 e1 y))))
 
 (B (name aim-vb2) (=> (aim e1 x w y :0.9) (aim-vb e1 x w u)))
 
 ; To train a weapon on a target is to aim at the target.
 
-(B (name train-vb1) (=> (aim e1 x w y :1.2) (^ (train-vb e1 x w u) (on-in e1 w y))))
+(B (name train-vb1) (=> (aim e1 x w y :1.2) (^ (train-vb e1 x w u) (on-in e2 e1 y))))
 
 ; To target something is to aim at it.
 
 (B (name target-vb) (=> (aim e1 x w y :0.9) (target-vb e1 x y w)))
 
-(B (name target-nn) (=> (aim e1 x w y :0.9) (^ (target-nn e1 x) (of-in x w))))
+(B (name target-nn) (=> (aim e1 x w y :0.9) (^ (target-nn e1 x) (of-in e2 e1 w))))
 
 ;;; WEAPON
 
