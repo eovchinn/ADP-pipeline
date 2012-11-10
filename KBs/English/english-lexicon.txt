@@ -38,7 +38,7 @@
 
 ; Combat is conflict.
 
-(B (name combat-nn1) (=> (conflict e :0.9) (conflict-nn e x)))
+(B (name combat-nn1) (=> (conflict e :0.9) (combat-nn e x)))
 
 (B (name combat-vb1) (=> (^ (conflict e :0.3) (adversary e1 y x e :0.6)) (combat-vb e x y u)))
 
