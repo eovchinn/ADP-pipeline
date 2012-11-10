@@ -160,12 +160,11 @@ class MaltConverter(object):
 
         arg_set = set()
         arg_list = []
-        for w in self.__words:
-            if w.pred:
-                for a in w.pred.args:
-                    if a.resolve_link() not in arg_set:
-                        arg_set.add(a.resolve_link())
-                        arg_list.append(a.resolve_link())
+        for pred in self.__preds:
+            for a in pred.args:
+                if a.resolve_link() not in arg_set:
+                    arg_set.add(a.resolve_link())
+                    arg_list.append(a.resolve_link())
 
         for ep, ep_args in self.__extra_preds:
             for a in ep_args:

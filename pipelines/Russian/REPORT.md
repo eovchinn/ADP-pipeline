@@ -20,8 +20,8 @@ Use `run_test.sh` wich will read input from `test_data/input.txt` and store resu
 1. Not implemented
 2. ***Implemented***
 3. ***Implemented***
-4. Not implemented
-5. Not implemented
+4. Not implemented ***not applicable*** (there are no such cases in Russian)
+5. Not implemented ***not applicable*** (there are no such cases in Russian)
 
 
 * ***ADJECTIVES***
