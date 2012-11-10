@@ -429,6 +429,9 @@ class MaltConverter(object):
     }
 
     def apply_pr_rules(self, word):
+
+        # 1. Handle personal
+
         if word.lemma not in self.__pronouns:
             self.__preds.remove(word.pred)
         else:
@@ -443,6 +446,8 @@ class MaltConverter(object):
                     Argument.arg_link(word.pred.args[1]),
                     Argument("s"),
                 ]))
+
+        # 2. Handle reflexives
 
     def init_predicate(self, word):
         args = [Argument("e")]\
