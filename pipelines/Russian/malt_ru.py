@@ -17,7 +17,7 @@ class WordToken(object):
         "N": ("nn", 2),     # adjective - adj/2
         "R": ("rb", 2),     # adverb - rb/2
         "S": ("in", 3),     # preposition - in/3
-        "P": ("pr", -1),    # pronoun
+        "P": ("pr", 2),    # pronoun
         "M": ("num", -1),   # numeral
     }
 
@@ -98,6 +98,8 @@ class Argument(object):
     def link_to(self, another_arg):
         if self != another_arg:
             self.link = another_arg
+        else:
+            print "ERROR"
 
     def resolve_link(self):
         if not self.link:
@@ -107,9 +109,9 @@ class Argument(object):
 
     @staticmethod
     def arg_link(arg):
-        arg = Argument(arg.type)
-        arg.link_to(arg)
-        return arg
+        new_arg = Argument(arg.type)
+        new_arg.link_to(arg)
+        return new_arg
 
     def __repr__(self):
         arg = self.resolve_link()
@@ -123,16 +125,21 @@ class Predicate(object):
 
     def __init__(self, word, args):
         self.word = word
-        self.label = u"%s-%s" % (word.lemma, word.cpostag, )
+        self.prefix = word.lemma
         self.args = args
+        self.show_index = True
+        self.show_postag = True
 
     def __repr__(self):
-        return u"<Predicate(label=%s, args=%s)>" \
-            % (self.label, self.args, )
+        return u"<Predicate(prefix=%s, args=%s)>" \
+            % (self.prefix, self.args, )
 
 
-class EPredicate(Predicate):
-    pass
+class EPredicate(object):
+
+    def __init__(self, prefix, args):
+        self.prefix = prefix
+        self.args = []
 
 
 class MaltConverter(object):
@@ -201,14 +208,21 @@ class MaltConverter(object):
         for a in pred.args:
             argsf.append("%s%d" \
                 % (a.resolve_link().type, a.resolve_link().index, ))
-        if sent_count is not None:
+        if sent_count is not None and pred.show_index:
             id_text = "[%d]:" % (1000 * sent_count + pred.word.id)
         else:
             id_text = ""
-        return u"%s%s(%s)" % (id_text, pred.label, ",".join(argsf), )
+        if pred.show_postag:
+            cpostag = u"-%s" % pred.word.cpostag
+        else:
+            cpostag = ""
+        return u"%s%s%s(%s)" % (id_text,
+                                pred.prefix,
+                                cpostag,
+                                ",".join(argsf),)
 
     def format_epred(self, epred):
-        label, args = epred
+        prefix, args = epred
         argsf = []
         for a in args:
             if a.type in ["e", "x", "u", "s", ]:
@@ -218,7 +232,7 @@ class MaltConverter(object):
                 )
             else:
                 argsf.append(a.type)
-        return u"%s(%s)" % (label, ",".join(argsf), )
+        return u"%s(%s)" % (prefix, ",".join(argsf), )
 
     def format_output(self, sent_count):
 
@@ -232,15 +246,17 @@ class MaltConverter(object):
                 self.__preds.append(pred)
 
         for p in self.__preds:
-            if p.word.cpostag == "vb":
+            if p.word.cpostag == "pr":
+                self.apply_pr_rules(p.word)
+            elif p.word.cpostag == "vb":
                 self.apply_vb_rules(p.word)
-            if p.word.cpostag == "nn":
+            elif p.word.cpostag == "nn":
                 self.apply_nn_rules(p.word)
-            if p.word.cpostag == "adj":
+            elif p.word.cpostag == "adj":
                 self.apply_adj_rules(p.word)
-            if p.word.cpostag == "rb":
+            elif p.word.cpostag == "rb":
                 self.apply_adv_rules(p.word)
-            if p.word.cpostag == "in":
+            elif p.word.cpostag == "in":
                 self.apply_pre_rules(p.word)
 
         self.assign_indexes()
@@ -400,6 +416,33 @@ class MaltConverter(object):
 
         # 3. Second arg is a prep
         # 4. Verb+verb
+
+    __pronouns = {
+        u"он": "male",
+        u"она": "female",
+        u"оно": "neuter",
+        u"я": "person",
+        u"мы": "person",
+        u"ты": "person",
+        u"вы": "thing",
+        u"они": "thing",
+    }
+
+    def apply_pr_rules(self, word):
+        if word.lemma not in self.__pronouns:
+            self.__preds.remove(word.pred)
+        else:
+            word.cpostag = "nn"  # handle assumming that it's a noun
+            word.pred.prefix = self.__pronouns[word.lemma]
+            word.pred.show_index = False
+            word.pred.show_postag = False
+            self.apply_nn_rules(word)
+            if word.feats[4] == "p":
+                self.__extra_preds.append(("typelt", [
+                    Argument("e"),
+                    Argument.arg_link(word.pred.args[1]),
+                    Argument("s"),
+                ]))
 
     def init_predicate(self, word):
         args = [Argument("e")]\
