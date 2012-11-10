@@ -25,6 +25,7 @@ Verbs:
 Find subject (nn with relation "suj")
 Find direct object (dependent word)
 Inherit head verb's sbj if no sbj is found
+Handling copulas in different sentence structures
 
 Adjectives:
 Find head noun
@@ -43,6 +44,7 @@ Link coreferent nouns (e.g. ministro <=> Josep_Piqué in Test output file)
 
 Pronouns:
 Find head verb for reflexive pronominal morphemes  (e.g. se esta recuperando)
+Assign specific tags to male, female, person, etc...
 
 
 
