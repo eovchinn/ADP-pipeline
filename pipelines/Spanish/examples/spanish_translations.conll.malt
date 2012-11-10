@@ -82,6 +82,25 @@
 5	.	.	f	f	0	3	f	_	_
 
 1	Juan	Juan	n	n	0	2	suj	_	_
+2	es	ser	v	v	0	0	sentence	_	_
+3	mi	mío	p	p	0	4	spec	_	_
+4	hermano	hermano	n	n	0	2	atr	_	_
+5	.	.	f	f	0	2	f	_	_
+
+1	Juan	Juan	n	n	0	2	suj	_	_
+2	está	estar	v	v	0	0	sentence	_	_
+3	en	en	s	s	0	2	cc	_	_
+4	la	el	d	d	0	5	spec	_	_
+5	habitación	habitación	n	n	0	3	sn	_	_
+6	.	.	f	f	0	2	f	_	_
+
+1	Mi	mío	p	p	0	0	ROOT	_	_
+2	intención	intención	n	n	0	3	suj	_	_
+3	es	ser	v	v	0	0	sentence	_	_
+4	salir	salir	v	v	0	3	atr	_	_
+5	.	.	f	f	0	3	f	_	_
+
+1	Juan	Juan	n	n	0	2	suj	_	_
 2	corre	correr	v	v	0	0	sentence	_	_
 3	rápido	rápido	a	a	0	2	cpred	_	_
 4	.	.	f	f	0	2	f	_	_
@@ -119,14 +138,14 @@
 
 1	Juan	Juan	n	n	0	3	suj	_	_
 2	se	se	p	p	0	3	morfema.pronominal	_	_
-3	sienta	sentar|sentir	v	v	0	0	sentence	_	_
+3	sienta	sentar	v	v	0	0	sentence	_	_
 4	y	y	c	c	0	3	conj	_	_
 5	lee	leer	v	v	0	3	S	_	_
 6	.	.	f	f	0	3	f	_	_
 
 1	Juan	Juan	n	n	0	3	suj	_	_
 2	se	se	p	p	0	3	morfema.pronominal	_	_
-3	sienta	sentar|sentir	v	v	0	0	sentence	_	_
+3	sienta	sentar	v	v	0	0	sentence	_	_
 4	o	o	c	c	0	3	conj	_	_
 5	corre	correr	v	v	0	3	S	_	_
 6	.	.	f	f	0	3	f	_	_

@@ -71,13 +71,13 @@ def prop_to_dict(props):
         #finePOS = prop[8]
         propID = str(sent_count)+str(ID)
         if not propTags.match(pos) and not puncts.match(lemma):            
-            args = []
+            args = ["R"]
             tag = ""
             new_prop.extend([token,lemma,pos,head,rel,shortID,args,tag,propID])
             sent_dict[shortID]=[token,lemma,pos,head,rel,shortID,args,tag,propID]
             new_prop_sent.append(new_prop)
         elif propTags.match(pos):
-            args,tag,eCount,xCount,uCount = build_predicate(pos,eCount,xCount,uCount)
+            args,tag,eCount,xCount,uCount = build_predicate(pos,eCount,xCount,uCount,lemma)
             new_prop.extend([token,lemma,pos,head,rel,shortID,args,tag,propID])
             sent_dict[shortID]=[token,lemma,pos,head,rel,shortID,args,tag,propID]
             new_prop_sent.append(new_prop)
@@ -112,14 +112,14 @@ def replace_args(prop_sent,sent_dict):
         if rel == "cd":
             sent_dict = insert_cd(head,wordID,sent_dict)
         if rel == "atr":
-            sent_dict = inherit_suj(head,wordID,sent_dict)
+            sent_dict = inherit_atr(head,wordID,sent_dict)
         # if rel == "cag" and pos == "s":
         #     sent_dict = insert_cag(head,wordID,sent_dict)
         if rel == "morfema.pronominal" and pos == "p":
             sent_dict = insert_m_p(head,wordID,sent_dict)
-        if tag == "in":
+        if tag == "in" and head != 0:
             sent_dict = insert_prep_head(head,wordID,sent_dict)             
-    for prop in prop_sent:
+    for key,prop in sent_dict.items():
         position +=1
         token = prop[0]
         lemma = prop[1]
@@ -130,8 +130,11 @@ def replace_args(prop_sent,sent_dict):
         predicate = prop[6]
         tag = prop[7]
         propID = prop[8]
+        if predicate[-1] == "R":
+            predicate = []
         if len(predicate) > 0:
-            prop_dict[predicate[0]]=[propID,lemma,tag,predicate]
+            #print propID
+            prop_dict[propID]=[propID,lemma,tag,predicate]
     return prop_dict
 
     
@@ -149,16 +152,40 @@ nounArg = re.compile("x\d")
 def inherit_suj(head,wordID,sent_dict):
     if sent_dict[head][7] == "vb" and not nounArg.search(sent_dict[wordID][6][1]):
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
-    if sent_dict[head][1] == "ser":
-        sent_dict[head][6][0:] = ""
     # else:
     #     print "not a verb"
     #     exit()
     return sent_dict
 
+def inherit_atr(head,wordID,sent_dict,):
+    if sent_dict[head][7] == "vb" and not nounArg.search(sent_dict[wordID][6][1]):
+        sent_dict[wordID][6][1] = sent_dict[head][6][1]
+    if sent_dict[head][1] == "ser":
+        if sent_dict[wordID][7] == "adj":
+            sent_dict[head][6][3] = "R"
+        if sent_dict[wordID][7] == "nn":
+            sent_dict[head][6][3] = "R"
+            sent_dict = add_new_entry(sent_dict,"equal",sent_dict[head][6][1],sent_dict[wordID][6][1],sent_dict[wordID][8])
+    return sent_dict
+
+def add_new_entry(dictionary,tag,arg1,arg2,currID):
+    """Add a new entry to the sentence dictionary for items that aren't explicit in the surface form"""
+    last_key = int(sorted(dictionary.items())[-1][0])
+    last_e = int(sorted(dictionary.items())[-1][1][6][0].split("e")[1])
+    newE = "e"+str(last_e+1)
+    args = [newE,arg1,arg2]
+    propID = currID+"b"
+    dictionary[str(last_key)+"b"]=["","","",0,"",0,args,tag,propID]
+    return dictionary
+
 def insert_prep_head(head,wordID,sent_dict):
     if sent_dict[head][7] == "vb":
-        sent_dict[wordID][6][1] = sent_dict[head][6][0]
+        if sent_dict[head][1] == "estar":
+            sent_dict[wordID][6][1] = sent_dict[head][6][1]
+            sent_dict[head][6][3] = "R"
+        else:
+            sent_dict[wordID][6][1] = sent_dict[head][6][0]
+        
     # else:
     #     print "not a verb"
     #     exit()
@@ -229,10 +256,10 @@ def insert_cc(head,wordID,sent_dict):
 
 def insert_m_p(head,wordID,sent_dict):
     if sent_dict[head][7] == "vb":
-        sent_dict[head][6][2] = sent_dict[wordID][6][1]
+        sent_dict[head][6][2] = sent_dict[head][6][1]
     return sent_dict
 
-def build_predicate(pos,eCount,xCount,uCount):
+def build_predicate(pos,eCount,xCount,uCount,lemma):
     pred = []
     tag = ""
     if verbTag.match(pos):
@@ -254,12 +281,15 @@ def build_predicate(pos,eCount,xCount,uCount):
         xCount+=1
         return pred,tag,eCount,xCount,uCount
     if pronounTag.match(pos):
-        tag="pro"
-        pred.append("e"+str(eCount))
-        eCount+=1
-        pred.append("x"+str(xCount))
-        xCount+=1
-        return pred,tag,eCount,xCount,uCount 
+        tag = pronoun_tag(lemma)
+        if tag != "NULL":
+            pred.append("e"+str(eCount))
+            eCount+=1
+            pred.append("x"+str(xCount))
+            xCount+=1
+        else:
+            pred = ["R"]
+        return pred,tag,eCount,xCount,uCount
     if adjectiveTag.match(pos):
         tag="adj"
         pred.append("e"+str(eCount))
@@ -295,6 +325,20 @@ def build_predicate(pos,eCount,xCount,uCount):
 def add_args(args,arg,count):
     args.append
 
+def pronoun_tag(lemma):
+    if lemma in heProList:
+        return "male"
+    elif lemma in sheProList:
+        return "female"
+    elif lemma in personProList:
+        return "person"
+    elif lemma in thingProList:
+        return "thing"
+    # elif lemma in reflexProList:
+    #     return "reflexive"    
+    else:
+        return "NULL"
+
 if options.tagset == "ancora":
     nounTag = re.compile("^n$")
     verbTag = re.compile("^v$")
@@ -304,6 +348,24 @@ if options.tagset == "ancora":
     pronounTag = re.compile("^p$")
     cardTag = re.compile("^z$")
     propTags = re.compile("^(n|v|a|r|s|p|z)$")
+
+###############
+#"he" (ESP: el, lo, se)-> male(e1,x1)
+#"she" (ESP: ella, la, sua)->female(e1,x1)
+#"it"->neuter(e1,x1)
+#"I" (ESP: yo, me)->person(e1,x1)
+#"we" (ESP: nosotros, nos)->person(e1,x1) & typelt(e2,x1,s)
+#"you"(ESP: usted, ustedes)->person(e1,x1)
+#"they"(ESP: ellos, ellas)->thing(e1,x1) & typelt(e2,x1,s)
+###############
+
+heProList = ["el","lo"]
+sheProList = ["ella","la"]
+personProList = ["yo","me","nos","nosotros","usted","ustedes"]
+thingProList = ["ellos","ellas"]
+reflexProList = ["se"]
+
+noTokenList = ["male","female","person","thing","reflexive","equal","card"]
 
 nounPred = re.compile("nn\(e\d*,[ux]\d*\)")
 pronounPred = re.compile("p\(e\d*,[ux]\d*\)")
@@ -322,8 +384,12 @@ def main():
         prop_dict = replace_args(prop_sent,prop_dict)
         prop_count = 0
         for key,prop in sorted(prop_dict.items()):
+            #print key,prop
             prop_count+=1
-            sys.stdout.write("["+prop[0]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
+            if prop[2] in noTokenList:
+                sys.stdout.write("["+prop[0]+"]"+":"+prop[2]+"("+",".join(prop[3])+")")
+            else:
+                sys.stdout.write("["+prop[0]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
             if prop_count < len(prop_dict.items()):
                 sys.stdout.write(" & ")
         print ""
