@@ -33,6 +33,49 @@
 3	высоты	высота	N	N	Ncfsgn	2	1-компл	_	_
 4	.	.	S	S	SENT	3	PUNC	_	_
 
+1	Ты	ты	P	P	P-2-snn	2	предик	_	_
+2	должен	должен	A	A	Afpmsns	0	ROOT	_	_
+3	уйти	уйти	V	V	Vmn----a-p	2	1-компл	_	_
+4	.	.	S	S	SENT	3	PUNC	_	_
+
+1	Вы	вы	P	P	P-2-pnn	2	предик	_	_
+2	должны	должен	A	A	Afpmpns	0	ROOT	_	_
+3	уйти	уйти	V	V	Vmn----a-p	2	1-компл	_	_
+4	.	.	S	S	SENT	3	PUNC	_	_
+
+1	Вы	вы	P	P	P-2-pnn	3	предик	_	_
+2	все	все	R	R	R	3	огранич	_	_
+3	должны	должен	A	A	Afpmpns	0	ROOT	_	_
+4	уйти	уйти	V	V	Vmn----a-p	3	1-компл	_	_
+5	.	.	S	S	SENT	4	PUNC	_	_
+
+1	Они	они	P	P	P-3-pnn	2	предик	_	_
+2	должны	должен	A	A	Afpmpns	0	ROOT	_	_
+3	уйти	уйти	V	V	Vmn----a-p	2	1-компл	_	_
+4	.	.	S	S	SENT	3	PUNC	_	_
+
+1	Мы	мы	P	P	P-1-pnn	2	предик	_	_
+2	должны	должен	A	A	Afpmpns	0	ROOT	_	_
+3	уйти	уйти	V	V	Vmn----a-p	2	1-компл	_	_
+4	.	.	S	S	SENT	3	PUNC	_	_
+
+1	Джон	джон	N	N	Npmsny	2	предик	_	_
+2	помог	помочь	V	V	Vmis-sma-p	0	ROOT	_	_
+3	себе	себя	P	P	P----dn	2	1-компл	_	_
+4	.	.	S	S	SENT	3	PUNC	_	_
+
+1	Джон	джон	N	N	Npmsny	2	предик	_	_
+2	помог	помочь	V	V	Vmis-sma-p	0	ROOT	_	_
+3	сам	сам	P	P	P--msna	2	суб-копр	_	_
+4	себе	себя	P	P	P----dn	2	1-компл	_	_
+5	.	.	S	S	SENT	4	PUNC	_	_
+
+1	Джон	джон	N	N	Npmsny	2	предик	_	_
+2	сделал	сделать	V	V	Vmis-sma-p	0	ROOT	_	_
+3	это	это	P	P	P--nsan	2	1-компл	_	_
+4	сам	сам	P	P	P--msna	2	суб-копр	_	_
+5	.	.	S	S	SENT	4	PUNC	_	_
+
 1	Джон	джон	N	N	Npmsny	2	предик	_	_
 2	бегает	бегать	V	V	Vmip3s-a-e	0	ROOT	_	_
 3	.	.	S	S	SENT	2	PUNC	_	_
