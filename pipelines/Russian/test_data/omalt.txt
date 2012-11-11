@@ -202,6 +202,13 @@
 5	газету	газета	N	N	Ncfsan	4	соч-союзн	_	_
 6	.	.	S	S	SENT	5	PUNC	_	_
 
+1	Джон	джон	N	N	Npmsny	2	предик	_	_
+2	читает	читать	V	V	Vmip3s-a-e	0	ROOT	_	_
+3	книгу	книга	N	N	Ncfsan	2	1-компл	_	_
+4	или	или	C	C	C	3	сочин	_	_
+5	газету	газета	N	N	Ncfsan	4	соч-союзн	_	_
+6	.	.	S	S	SENT	5	PUNC	_	_
+
 1	Если	если	C	C	C	9	обст	_	_
 2	у	у	S	S	Sp-g	4	1-компл	_	_
 3	Джона	джон	N	N	Npmsgy	2	предл	_	_
@@ -212,6 +219,27 @@
 8	он	он	P	P	P-3msnn	9	предик	_	_
 9	читает	читать	V	V	Vmip3s-a-e	0	ROOT	_	_
 10	.	.	S	S	SENT	9	PUNC	_	_
+
+1	Если	если	C	C	C	8	обст	_	_
+2	Джон	джон	N	N	Npmsny	3	предик	_	_
+3	имеет	иметь	V	V	Vmip3s-a-e	1	подч-союзн	_	_
+4	время	время	N	N	Ncnsan	3	1-компл	_	_
+5	,	,	,	,	,	4	PUNC	_	_
+6	то	то	C	C	C	1	соотнос	_	_
+7	он	он	P	P	P-3msnn	8	предик	_	_
+8	читает	читать	V	V	Vmip3s-a-e	0	ROOT	_	_
+9	.	.	S	S	SENT	8	PUNC	_	_
+
+1	У	у	S	S	Sp-g	3	1-компл	_	_
+2	Джона	джон	N	N	Npmsgy	1	предл	_	_
+3	есть	быть	V	V	Vmip3s-a-e	0	ROOT	_	_
+4	книга	книга	N	N	Ncfsnn	3	предик	_	_
+5	.	.	S	S	SENT	4	PUNC	_	_
+
+1	Джон	джон	N	N	Npmsny	2	предик	_	_
+2	имеет	иметь	V	V	Vmip3s-a-e	0	ROOT	_	_
+3	книгу	книга	N	N	Ncfsan	2	1-компл	_	_
+4	.	.	S	S	SENT	3	PUNC	_	_
 
 1	Джон	джон	N	N	Npmsny	2	предик	_	_
 2	читает	читать	V	V	Vmip3s-a-e	0	ROOT	_	_
@@ -233,4 +261,11 @@
 2	не	не	Q	Q	Q	3	огранич	_	_
 3	Джон	джон	N	N	Npmsny	0	ROOT	_	_
 4	.	.	S	S	SENT	3	PUNC	_	_
+
+1	Джон	джон	N	N	Npmsny	2	предик	_	_
+2	был	быть	V	V	Vmis-sma-e	0	ROOT	_	_
+3	рожден	родить	V	V	Vmps-smpsp	2	пасс-анал	_	_
+4	в	в	S	S	Sp-l	3	обст	_	_
+5	Лондоне	лондон	N	N	Ncmsln	4	предл	_	_
+6	.	.	S	S	SENT	5	PUNC	_	_
 
