@@ -19,9 +19,25 @@ class WordToken(object):
         "S": ("in", 3),     # preposition - in/3
         "P": ("pr", 2),     # pronoun
         "M": ("num", -1),   # numeral
+        "C": ("cnj", 2),    # conjunction
     }
 
-    def __init__(self, line):
+    def __init__(self, line=None, word=None):
+
+        if not line and word:
+            self.id = word.id
+            self.form = word.form
+            self.lemma = word.lemma
+            self.cpostag = word.cpostag
+            self.feats = word.feats
+            self.head = word.head
+            self.deprel = word.deprel
+            self.pred = None
+            return
+
+        if not line and not word:
+            return
+
         self.id = int(line[0])      # ID. Token counter, starting at 1 for each
                                     # new sentence.
         self.form = line[1]         # FORM. Word form or punctuation symbol.
@@ -127,7 +143,7 @@ class Predicate(object):
         self.word = word
         self.prefix = word.lemma
         self.args = args
-        self.show_index = True
+        self.show_index = False
         self.show_postag = True
 
     def __repr__(self):
@@ -137,19 +153,20 @@ class Predicate(object):
 
 class EPredicate(object):
 
-    def __init__(self, prefix, args):
+    def __init__(self, prefix, args=list()):
         self.prefix = prefix
-        self.args = []
+        self.args = args
 
 
 class MaltConverter(object):
     line_splitter = re.compile("\s+")
-    punct = re.compile("[\.,\?\!{}()\[\]:;¿¡]")
+    punct = re.compile("[\.,\?!{}()\[\]:;¿¡]")
 
     def __init__(self):
         self.__words = []
-        self.__preds = []
+        self.__initial_preds = []
         self.__extra_preds = []
+        self.__visible_preds = []
 
     def assign_indexes(self):
 
@@ -160,7 +177,7 @@ class MaltConverter(object):
 
         arg_set = set()
         arg_list = []
-        for pred in self.__preds:
+        for pred in self.__visible_preds:
             for a in pred.args:
                 if a.resolve_link() not in arg_set:
                     arg_set.add(a.resolve_link())
@@ -202,6 +219,12 @@ class MaltConverter(object):
             if w.head == word.id:
                 yield w
 
+    def remove_pred(self, word):
+        for p in self.__visible_preds:
+            if p.word.id == word.id:
+                self.__visible_preds.remove(p)
+                break
+
     def format_pred(self, pred, sent_count=None):
         argsf = []
         for a in pred.args:
@@ -242,9 +265,11 @@ class MaltConverter(object):
 
             if w.args != -1:
                 pred = self.init_predicate(w)
-                self.__preds.append(pred)
+                self.__initial_preds.append(pred)
 
-        for p in self.__preds:
+        self.__visible_preds = self.__initial_preds[:]
+
+        for p in self.__initial_preds:
             if p.word.cpostag == "pr":
                 self.apply_pr_rules(p.word)
             elif p.word.cpostag == "vb":
@@ -257,10 +282,12 @@ class MaltConverter(object):
                 self.apply_adv_rules(p.word)
             elif p.word.cpostag == "in":
                 self.apply_pre_rules(p.word)
+            elif p.word.cpostag == "cnj":
+                self.apply_cnj_rules(p.word)
 
         self.assign_indexes()
 
-        predf = [self.format_pred(p, sent_count) for p in self.__preds]
+        predf = [self.format_pred(p, sent_count) for p in self.__visible_preds]
         epredf = [self.format_epred(ep) for ep in self.__extra_preds]
         sent_text = u"% " + u" ".join([w.form for w in self.__words])
         id_text = u"id(%d)." % sent_count
@@ -282,15 +309,16 @@ class MaltConverter(object):
             ddeps = list(self.__deps(dep))
             if dep.cpostag == "pr" and len(ddeps) > 0:
                 dep = ddeps[0]
-                if dep.cpostag == "vb" and dep.pred:
+                if dep.cpostag == "vb":
                     d_object = dep.pred.args[0]
             elif dep.cpostag == "nn":
-                if dep.deprel == u"предик" and dep.pred:
+                if dep.deprel == u"предик":
                     w_subject = dep.pred.args[1]
-                elif dep.deprel == u"2-компл" and dep.pred:
-                    d_object = dep.pred.args[1]
-                elif dep.deprel == u"1-компл" and dep.pred:
-                    i_object = dep.pred.args[1]
+                elif dep.deprel == u"1-компл" or dep.deprel == u"2-компл":
+                    if not d_object:
+                        d_object = dep.pred.args[1]
+                    else:
+                        i_object = dep.pred.args[1]
 
         # 2. Argument control: first arguments of both verbs are the same.
 
@@ -317,18 +345,23 @@ class MaltConverter(object):
         # 5. Correferent Nouns
         # TODO(zaytsev@udc.edu): implement this
 
-        if w_subject:
-            word.pred.args[1].link_to(w_subject)
-        else:
-            word.pred.args[1] = Argument("u")
-        if d_object:
-            word.pred.args[2].link_to(d_object)
-        else:
-            word.pred.args[2] = Argument("u")
-        if i_object:
-            word.pred.args[3].link_to(i_object)
-        else:
-            word.pred.args[3] = Argument("u")
+        if not word.pred.args[1].link:
+            if w_subject:
+                word.pred.args[1].link_to(w_subject)
+            else:
+                word.pred.args[1] = Argument("u")
+
+        if not word.pred.args[2].link:
+            if d_object:
+                word.pred.args[2].link_to(d_object)
+            else:
+                word.pred.args[2] = Argument("u")
+
+        if not word.pred.args[3].link:
+            if i_object:
+                word.pred.args[3].link_to(i_object)
+            else:
+                word.pred.args[3] = Argument("u")
 
     def apply_nn_rules(self, word):
 
@@ -432,7 +465,7 @@ class MaltConverter(object):
         # 1. Handle personal
 
         if word.lemma not in self.__pronouns:
-            self.__preds.remove(word.pred)
+            self.remove_pred(word)
         else:
             word.cpostag = "nn"  # handle assumming that it's a noun
             word.pred.prefix = self.__pronouns[word.lemma]
@@ -448,6 +481,46 @@ class MaltConverter(object):
 
         # 2. Handle reflexives
 
+    def apply_cnj_rules(self, word):
+        self.remove_pred(word)
+
+        head = self.word(word.head)
+
+        # 1. and, or
+
+        if word.lemma == u"и" or word.lemma == u"или":
+            if head.cpostag == "vb":
+                for dep in self.__deps(word):
+                    if dep.cpostag == "vb":
+                        dep.pred.args[1].link_to(head.pred.args[1])
+                        if word.lemma == u"или":
+                            self.__extra_preds.append(("or", [
+                                    Argument("e"),
+                                    Argument.arg_link(head.pred.args[0]),
+                                    Argument.arg_link(dep.pred.args[0]),
+                                ]))
+
+            elif head.cpostag == "nn":
+                for dep in self.__deps(word):
+                    if dep.cpostag == "nn":
+                        hhead = self.word(head.head)
+                        if hhead.cpostag == "vb":
+                            new_word = WordToken(word=hhead)
+                            vb_pred = Predicate(new_word, [
+                                    Argument("e"),
+                                    Argument.arg_link(hhead.pred.args[1]),
+                                    Argument.arg_link(dep.pred.args[1]),
+                                    Argument.arg_link(hhead.pred.args[3]),
+                                ])
+                            self.__visible_preds.append(vb_pred)
+                            if word.lemma == u"или":
+                                self.__extra_preds.append(("or", [
+                                        Argument("e"),
+                                        Argument.arg_link(hhead.pred.args[0]),
+                                        Argument.arg_link(dep.pred.args[0]),
+                                    ]))
+        # 2. if
+
     def init_predicate(self, word):
         args = [Argument("e")]\
              + [Argument("x") for _ in xrange(1, word.args)]
@@ -459,8 +532,9 @@ class MaltConverter(object):
         output = self.format_output(sent_count)
         ofile.write(output.encode("utf-8"))
         self.__words = []
-        self.__preds = []
+        self.__initial_preds = []
         self.__extra_preds = []
+        self.__visible_preds = []
 
 
 def main():
