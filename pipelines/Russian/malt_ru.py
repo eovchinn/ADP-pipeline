@@ -1,6 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+# Contributors:
+#   * Vladimir Zaytsev <vzaytsev@isi.edu>
+
 # Malt Parser output processing pipeline for Russian.
 # The script takes the output of the Malt Parser and converts it to
 # Logical Form format.
@@ -20,6 +23,7 @@ class WordToken(object):
         "P": ("pr", 2),     # pronoun
         "M": ("num", -1),   # numeral
         "C": ("cnj", 2),    # conjunction
+        "Q": ("par", 2),    # particle
     }
 
     def __init__(self, line=None, word=None):
@@ -269,6 +273,8 @@ class MaltConverter(object):
 
         self.__visible_preds = self.__initial_preds[:]
 
+        # self.preproc()
+
         for p in self.__initial_preds:
             if p.word.cpostag == "pr":
                 self.apply_pr_rules(p.word)
@@ -284,6 +290,8 @@ class MaltConverter(object):
                 self.apply_pre_rules(p.word)
             elif p.word.cpostag == "cnj":
                 self.apply_cnj_rules(p.word)
+            elif p.word.cpostag == "par":
+                self.apply_par_rules(p.word)
 
         self.assign_indexes()
 
@@ -294,6 +302,18 @@ class MaltConverter(object):
         pred_text = " & ".join(predf + epredf)
 
         return u"%s\n%s\n%s\n\n" % (sent_text, id_text, pred_text)
+
+    # def preproc(self):
+    #     for w in self.__words:
+    #         if w.cpostag == "in" and w.lemma == u"у":
+    #             head = self.word(w.head)
+    #             if head.lemma == u"быть":
+    #                 head.lemma = u"иметь"
+    #                 head.pred.prefox = head.lemma
+    #                 self.__visible_preds.remove(w.pred)
+    #                 for d in self.__deps(w):
+    #                     d.head = w.head
+    #                     d.deprel = w.deprel
 
     def apply_vb_rules(self, word):
 
@@ -520,6 +540,38 @@ class MaltConverter(object):
                                         Argument.arg_link(dep.pred.args[0]),
                                     ]))
         # 2. if
+
+        elif word.lemma == u"если":
+            if head.cpostag == "vb":
+                for dep in self.__deps(word):
+                    if dep.cpostag == "vb":
+                        self.__extra_preds.append(("imp", [
+                            Argument("e"),
+                            Argument.arg_link(head.pred.args[0]),
+                            Argument.arg_link(dep.pred.args[0]),
+                        ]))
+
+        # 3. because, while, when
+
+        # TODO(zaytsev@udc.edu): implement this
+
+    def apply_par_rules(self, word):
+        self.remove_pred(word)
+        head = self.word(word.head)
+
+        # 1. not
+
+        if word.lemma == u"не":
+            if head.cpostag == "vb":
+                self.__extra_preds.append(("not", [
+                    Argument("e"),
+                    Argument.arg_link(head.pred.args[0]),
+                ]))
+            elif head.cpostag == "nn":
+                self.__extra_preds.append(("not", [
+                    Argument("e"),
+                    Argument.arg_link(head.pred.args[1]),
+                ]))
 
     def init_predicate(self, word):
         args = [Argument("e")]\
