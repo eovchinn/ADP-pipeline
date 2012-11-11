@@ -54,7 +54,7 @@ Use `run_test.sh` wich will read input from `test_data/input.txt` and store resu
 
 * ***CONNECTORS***
 
-1. Not implemented
+1. **Implemented**
 2. Not implemented
 3. Not implemented
 4. Not implemented
