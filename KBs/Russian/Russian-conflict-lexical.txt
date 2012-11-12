@@ -10,13 +10,9 @@
 
 (B (name оппонент) (=> (adversary e1 x y c :0.9) (^ (оппонент-nn e2 x) (of-in e3 x y))))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;(enemy e1 x y) : x is an enemy of y
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(B (name враг) (=> (adversary e1 x y c :0.9) (^ (враг-nn e2 x) (of-in e3 x y))))
 
-(B (name враг) (=> (enemy e1 x y :0.9) (^ (враг-nn e2 x) (of-in e3 x y))))
-
-(B (name недруг) (=> (enemy e1 x y :0.9) (^ (недруг-nn e2 x) (of-in e3 x y))))
+(B (name недруг) (=> (adversary e1 x y c :0.9) (^ (недруг-nn e2 x) (of-in e3 x y))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (aim e1 x w y) : x directs weapon (or attack) w at target y
@@ -27,6 +23,10 @@
 (B (name прицеливаться) (=> (aim e1 x w y :0.9) (^ (прицеливаться-vb e2 x u1 u2) (в-in e3 e2 y) (из-in e4 e2 w))))
 
 (B (name метить) (=> (aim e1 x w y :0.9) (^ (метить-vb e2 x u1 u2) (в-in e3 e2 y) (из-in e4 e2 w))))
+
+(B (name делать-мишенью) (=> (aim e1 x y w :0.9) (^ (делать-vb e2 x y u1) (мишень-nn e3 z) (instr e4 e2 z))))
+
+(B (name фокусировать) (=> (aim e1 x y w :0.9) (^ (фокусировать-vb e2 x w u1) (на-in e3 e2 y))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (attack e1 x y) : x attacks y
@@ -58,9 +58,9 @@
 ; (combat e) : e is a type of conflict known as combat
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(B (name сражение) (=> (combat e :0.9)(сражение-nn e x)))
+(B (name сражение) (=> (combat x :0.9)(сражение-nn e x)))
 
-(B (name битва) (=> (combat e :0.9)(битва-nn e x)))
+(B (name битва) (=> (combat x :0.9)(битва-nn e x)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (compete e x y c) : x and y are rivals in conflict c
@@ -128,16 +128,9 @@
 
 (B (name обстрелять) (=> (use e1 x w :0.9)(^ (обстрелять-vb e1 x u1 u2)(из-in e2 e1 w))))
 
-
 (B (name бомбить) (=> (use e1 x w :0.9)(^ (бомбить-vb e1 x u1 u2)(из-in e2 e1 w))))
 
 (B (name палить) (=> (use e1 x w :0.9)(^ (палить-vb e1 x u1 u2)(из-in e2 e1 w))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; (shoot e1 x w u) : x shoots weapon w at u
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(B (name стрелять) (=> (shoot e1 x w u :0.9)(^ (стрелять-vb e1 x u1 u2)(из-in e2 e1 w) (в-in e3 e1 u))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (gun x) : x is a gun
@@ -161,11 +154,11 @@
 ; (part u w) : u is part of w
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(B (name часть) (=> (part x :0.9) (^ (часть-nn e1 x) (of-in e2 x y))))
+(B (name часть) (=> (part x y :0.9) (^ (часть-nn e1 x) (of-in e2 x y))))
 
-(B (name доля) (=> (part x :0.9) (^ (доля-nn e1 x) (of-in e2 x y))))
+(B (name доля) (=> (part x y :0.9) (^ (доля-nn e1 x) (of-in e2 x y))))
 
-(B (name компонент) (=> (part x :0.9) (^ (компонент-nn e1 x) (of-in e2 x y))))
+(B (name компонент) (=> (part x y :0.9) (^ (компонент-nn e1 x) (of-in e2 x y))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (president x) : x is a president
@@ -179,14 +172,3 @@
 
 (B (name винтовка) (=> (rifle x :0.9)(винтовка-nn e x)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; (target e1 x y w) : x targets y with weapon (or attack) w
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(B (name делать-мишенью) (=> (target e1 x y w:0.9) (^ (делать-vb e2 x y u1) (мишень-nn e3 z) (instr e4 e2 z))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; (train e1 x w y) : x focuses weapon w on target y
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(B (name фокусировать) (=> (train e1 x w y :0.9) (^ (фокусировать-vb e2 x ц u1) (на-in e3 e2 y))))
