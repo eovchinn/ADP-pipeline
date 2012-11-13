@@ -24,8 +24,8 @@ Gracias por no fumar.
 Juan tiene dos libros.
 Juan se sienta y lee.
 Juan se sienta o corre.
-Juan lee un libro y un periódico.
-Juan lee un libro o un periódico.
+Juan lee un libro y una revista.
+Juan lee un libro o una revista.
 Si Juan tiene tiempo entonces que lee.
 Juan lee, porque no tiene tiempo.
 Juan no lee.

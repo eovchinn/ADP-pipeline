@@ -155,8 +155,8 @@
 3	un	un	d	d	0	4	spec	_	_
 4	libro	libro	n	n	0	2	cd	_	_
 5	y	y	c	c	0	4	conj	_	_
-6	un	un	d	d	0	7	spec	_	_
-7	periódico	periódico	a	a	0	4	sn	_	_
+6	una	un	d	d	0	7	spec	_	_
+7	revista	revista	n	n	0	4	sn	_	_
 8	.	.	f	f	0	2	f	_	_
 
 1	Juan	Juan	n	n	0	2	suj	_	_
@@ -164,8 +164,8 @@
 3	un	un	d	d	0	4	spec	_	_
 4	libro	libro	n	n	0	2	cd	_	_
 5	o	o	c	c	0	4	conj	_	_
-6	un	un	d	d	0	7	spec	_	_
-7	periódico	periódico	a	a	0	4	sn	_	_
+6	una	un	d	d	0	7	spec	_	_
+7	revista	revista	n	n	0	4	sn	_	_
 8	.	.	f	f	0	2	f	_	_
 
 1	Si	si	c	c	0	3	conj	_	_
