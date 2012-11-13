@@ -141,7 +141,7 @@ def replace_args(prop_sent,sent_dict):
     
 def insert_suj(head,wordID,sent_dict):
     if sent_dict[head][7] == "vb":
-        print sent_dict[wordID]
+        #print sent_dict[wordID]
         sent_dict[head][6][1] = sent_dict[wordID][6][1]
     return sent_dict
 
@@ -335,7 +335,6 @@ def add_args(args,arg,count):
     args.append
 
 def pronoun_tag(lemma):
-    print lemma
     if lemma in heProList:
         return "male"
     elif lemma in sheProList:

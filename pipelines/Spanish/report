@@ -47,8 +47,8 @@ Find head verb for reflexive pronominal morphemes  (e.g. se esta recuperando)
 Assign specific tags to male, female, person, etc...
 
 Conjunctions:
-Inherit verb arguments if the conjunction is "y"
-Inherit verb arguments if the conjunction is "o" and add "or" proposition
+Inherit verb arguments and add "or" proposition if necessary
+For nouns, copy verb and replace arguments, and add "or" proposition if necessary
 
 
 ~~~~~~~~~~~~~~~~~~~~~~
