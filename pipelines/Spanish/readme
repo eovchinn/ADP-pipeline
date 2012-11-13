@@ -10,14 +10,24 @@ use TT included script (make-lex.perl) to create a lexicon from word-pos-lemma f
 use (ancora.lex), (ancora.unknown), and (ancora.treetagger.fs) files to create TT model with (specify fs as sentence final punct) (ancora.treetagger.par)
 END PREPROCESSING
 
-CURRENT PIPELINE
-tokenize raw Spanish data (spanish_text.txt) with Treetagger tokenizer (utf8-tokenize.perl) (spanish_text.tokens)
-2 TT options (bin/treetagger + new model, prebuilt spanish-utf8 tagger in cmd)
-  if uing new TT model (ancora.treetagger.par), output will have ancora tags (spanish_text.ancora.tagged)
-  if using prebuilt spanish tagger, output will have larger tagset that must be reduced (spanish_text.tree.tagged)
-run to_malt.py on tagged text to make conll-style file for MP (works with either TT output) spanish_text.conll
-parse with maltparser (model not complete as of 10/28)
-create propositions with malt_to_prop.py
+For tagging, I used Treetagger 3.2 along with the Spanish parameter file:
+ - treetagger 3.2 - http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/
+ - Spanish parameter file available from the same page, apparently trained on the Spanish CRATER corpus, using the Spanish lexicon of the CALLHOME corpus
+    - http://www.comp.lancs.ac.uk/linguistics/crater/corpus.html
+    - http://www.ldc.upenn.edu/Catalog/catalogEntry.jsp?catalogId=LDC96L16
+ - references - ftp://ftp.ims.uni-stuttgart.de/pub/corpora/tree-tagger1.pdf
+                     - ftp://ftp.ims.uni-stuttgart.de/pub/corpora/tree-tagger2.pdf
+
+For parsing, I used maltparser 1.5.
+ - maltparser 1.5 - http://www.maltparser.org/download.html
+ - references - http://www.maltparser.org/publications.html
+    I think I've used this one in the past - http://www.bibsonomy.org/bibtex/2219fdcfa3a894d52f158905978aafe09/arnsholt
+
+For training maltparser, I used the Ancora corpus:
+ - 500,000 words
+ - Ancora - http://clic.ub.edu/corpus/en
+                - http://clic.ub.edu/corpus/webfm_send/13
+ - reference - http://www.lrec-conf.org/proceedings/lrec2008/pdf/35_paper.pdf
 
 examples:
 CESS-CAST-P_107_19991001.malt - sample dependency output

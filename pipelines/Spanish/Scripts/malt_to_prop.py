@@ -1,5 +1,6 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
+from re import split as re_split
 import re,sys,optparse
 
 ##################### I/O ##################################
@@ -140,21 +141,27 @@ def replace_args(prop_sent,sent_dict):
     
 def insert_suj(head,wordID,sent_dict):
     if sent_dict[head][7] == "vb":
+        print sent_dict[wordID]
         sent_dict[head][6][1] = sent_dict[wordID][6][1]
-
-    # else:
-    #     print "not a verb"
-    #     exit()
     return sent_dict
 
 nounArg = re.compile("x\d")
 
 def inherit_suj(head,wordID,sent_dict):
+    #if the current verb doesn't already have a subject
     if sent_dict[head][7] == "vb" and not nounArg.search(sent_dict[wordID][6][1]):
+        #inherit the subject of the head
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
-    # else:
-    #     print "not a verb"
-    #     exit()
+        #if the current word doesn't already have an object
+        if not nounArg.search(sent_dict[wordID][6][2]) and nounArg.search(sent_dict[head][6][2]):
+            #inherit the object of the head
+            sent_dict[wordID][6][2] = sent_dict[head][6][2]
+    #if the current word has a clause deprel
+    if sent_dict[wordID][4] == "S":
+        for key, values in sent_dict.items():
+            #look for the "o" conjunction with the same head as the current word
+            if (values[4] == "conj") and (values[3] == sent_dict[wordID][3]) and (values[1] == "o"):
+                sent_dict = add_new_entry(sent_dict,"or",sent_dict[head][6][0],sent_dict[wordID][6][0],sent_dict[wordID][8])
     return sent_dict
 
 def inherit_atr(head,wordID,sent_dict,):
@@ -170,12 +177,28 @@ def inherit_atr(head,wordID,sent_dict,):
 
 def add_new_entry(dictionary,tag,arg1,arg2,currID):
     """Add a new entry to the sentence dictionary for items that aren't explicit in the surface form"""
-    last_key = int(sorted(dictionary.items())[-1][0])
+    last_key = int(re.split("[a-z]",str(sorted(dictionary.items())[-1][0]))[0])
     last_e = int(sorted(dictionary.items())[-1][1][6][0].split("e")[1])
     newE = "e"+str(last_e+1)
     args = [newE,arg1,arg2]
     propID = currID+"b"
-    dictionary[str(last_key)+"b"]=["","","",0,"",0,args,tag,propID]
+    newKey = str(last_key)+"b"
+    if dictionary.has_key(newKey):
+        newKey = str(last_key+1)+"b"
+    dictionary[newKey]=["","","",0,"",0,args,tag,propID]
+    return dictionary
+
+def add_new_verb(dictionary,token,tag,arg1,arg2,currID):
+    """Add a new entry to the sentence dictionary for items that aren't explicit in the surface form"""
+    last_key = int(re.split("[a-z]",str(sorted(dictionary.items())[-1][0]))[0])
+    last_e = int(sorted(dictionary.items())[-1][1][6][0].split("e")[1])
+    newE = "e"+str(last_e+1)
+    args = [newE,arg1,arg2]
+    propID = currID+"b"
+    newKey = str(last_key)+"b"
+    if dictionary.has_key(newKey):
+        newKey = str(last_key+1)+"b"
+    dictionary[newKey]=[token,token,"",0,"",0,args,tag,propID]
     return dictionary
 
 def insert_prep_head(head,wordID,sent_dict):
@@ -185,10 +208,6 @@ def insert_prep_head(head,wordID,sent_dict):
             sent_dict[head][6][3] = "R"
         else:
             sent_dict[wordID][6][1] = sent_dict[head][6][0]
-        
-    # else:
-    #     print "not a verb"
-    #     exit()
     return sent_dict
 
 def insert_cd(head,wordID,sent_dict):
@@ -196,56 +215,46 @@ def insert_cd(head,wordID,sent_dict):
         sent_dict[head][6][2] = sent_dict[wordID][6][1]
     if sent_dict[wordID][2] == "v" and sent_dict[head][7] == "vb":
         sent_dict[head][6][2] = sent_dict[wordID][6][0]        
-    # else:
-    #     print "not a verb"
-    #     exit()
     return sent_dict
 
 def insert_sp(head,wordID,sent_dict):
     if sent_dict[head][7] == "nn":
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
-    # else:
-    #     print "not a noun"
-    #     exit()
     return sent_dict
 
 def insert_sn(head,wordID,sent_dict):
     if sent_dict[head][7] == "in":
         sent_dict[head][6][2] = sent_dict[wordID][6][1]
     elif sent_dict[head][7] == "nn":
-        sent_dict[wordID][6][1] = sent_dict[head][6][1]
-    # else:
-    #     print "not a prep"
-    #     exit()
+        for key, values in sent_dict.items():
+            #look for the "o" conjunction with the same head as the current word
+            if (values[4] == "conj") and (values[3] == sent_dict[wordID][3]):
+                conjID = values[5]
+                conjHead = values[3]
+                headHead = sent_dict[conjHead][3]
+                #print sent_dict[headHead]
+                sent_dict = add_new_verb(sent_dict,sent_dict[headHead][7],sent_dict[headHead][1],sent_dict[headHead][6][1],sent_dict[wordID][6][1],sent_dict[conjID][8])        
+                if (values[1] == "o"):
+                    sent_dict = add_new_entry(sent_dict,"or",sent_dict[head][6][0],sent_dict[wordID][6][0],sent_dict[wordID][8])        
     return sent_dict
 
 def insert_cag(head,wordID,sent_dict):
     if sent_dict[head][7] == "vb":
         sent_dict[wordID][6][1] = sent_dict[head][6][0]
-    # else:
-    #     print "not a prep"
-    #     exit()
     return sent_dict
 
 def insert_cpred(head,wordID,sent_dict):
     if sent_dict[head][7] == "vb":
         sent_dict[wordID][6][1] = sent_dict[head][6][0]
-    # else:
-    #     print "not a prep"
-    #     exit()
     return sent_dict
 
 def insert_s_a(head,wordID,sent_dict):
     if sent_dict[head][7] == "nn":
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
-    # else:
-    #     print "not a noun"
-    #     exit()
     return sent_dict
 
 def insert_atr(head,wordID,sent_dict):
     if sent_dict[head][7] == "vb":
-        #sent_dict[wordID][6][1] = sent_dict[head][6][0]
         sent_dict[head][6][2] = sent_dict[wordID][6][0]
     return sent_dict
 
@@ -326,6 +335,7 @@ def add_args(args,arg,count):
     args.append
 
 def pronoun_tag(lemma):
+    print lemma
     if lemma in heProList:
         return "male"
     elif lemma in sheProList:
@@ -362,10 +372,10 @@ if options.tagset == "ancora":
 heProList = ["el","lo"]
 sheProList = ["ella","la"]
 personProList = ["yo","me","nos","nosotros","usted","ustedes"]
-thingProList = ["ellos","ellas"]
+thingProList = ["ellos","ellas","él"]
 reflexProList = ["se"]
 
-noTokenList = ["male","female","person","thing","reflexive","equal","card"]
+noTokenList = ["male","female","person","thing","reflexive","equal","card","or"]
 
 nounPred = re.compile("nn\(e\d*,[ux]\d*\)")
 pronounPred = re.compile("p\(e\d*,[ux]\d*\)")

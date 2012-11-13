@@ -46,8 +46,12 @@ Pronouns:
 Find head verb for reflexive pronominal morphemes  (e.g. se esta recuperando)
 Assign specific tags to male, female, person, etc...
 
+Conjunctions:
+Inherit verb arguments if the conjunction is "y"
+Inherit verb arguments if the conjunction is "o" and add "or" proposition
 
 
+~~~~~~~~~~~~~~~~~~~~~~
 ISSUES:
 Juan da a María un libro.
 In Spanish, the patient or recipient is always marked with a preposition. So, should the third argument of the verb remain empty?
@@ -60,3 +64,5 @@ The two word sentences ("Juan correro", etc.) do not parse correctly
 
 Verb tense is not currently made explicit by the tools in the pipeline
 Number (plurality) is not currently made explicit by the tools in the pipeline
+
+Treetagger tags "newspaper" as an ADJ -> changing readme sentences to use the word "magazine"
