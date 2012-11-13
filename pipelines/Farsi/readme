@@ -2,50 +2,102 @@ Farsi discourse processing pipeline:
 
 A pipeline that tokenizes (to be added), POS tags, Parses and creates logical form for farsi sentences.
 
-The tagger is stanford's tagger and the parser is MALT parser.
-The tagger and the parser are trained on persian dependency treebank.
+==== External Tools ====================================================
+
+A. Train data for tagger and parser
+
+
+	The tagger and the parser are trained on persian dependency treebank which has approx. 27,000 sentences:
+		
+		http://dadegan.ir/en
+	
+	about 24000 of the sentences are used for traning and the 3000 for testing.
+	
+	Papers:
+	
+		1. Rasooli, Mohammad Sadegh, et al. "A syntactic valency lexicon for Persian verbs: The first steps towards Persian dependency treebank." 5th Language & Technology Conference (LTC): Human Language Technologies as a Challenge for Computer Science and Linguistics. 2011.
+		2. Rasooli, Mohammad, Heshaam Faili, and Behrouz Minaei-Bidgoli. "Unsupervised identification of persian compound verbs." Advances in Artificial Intelligence (2011): 394-406.
+	
+B. Tagging
+
+	The tagger is stanford's tagger
+		http://nlp.stanford.edu/software/tagger.shtml
+	
+	Papers:
+		1. Kristina Toutanova and Christopher D. Manning. 2000. Enriching the Knowledge Sources Used in a Maximum Entropy Part-of-Speech Tagger. In Proceedings of the Joint SIGDAT Conference on Empirical Methods in Natural Language Processing and Very Large Corpora (EMNLP/VLC-2000), pp. 63-70. 
+    	2. Kristina Toutanova, Dan Klein, Christopher Manning, and Yoram Singer. 2003. Feature-Rich Part-of-Speech Tagging with a Cyclic Dependency Network. In Proceedings of HLT-NAACL 2003, pp. 252-259. 
+		
+	Here are POS tagging results:
+		
+		Total sentences right: 2050 (68.356119%); wrong: 949 (31.643881%).
+		Total tags right: 47627 (97.281343%); wrong: 1331 (2.718657%).
+		Unknown words right: 1800 (87.933561%); wrong: 247 (12.066439%).
+
+
+C. Parsing
+
+	The parser is MALT parser.
+		http://www.maltparser.org/
+		
+	publications:
+	
+		1. Nivre, J. (2003). An Efficient Algorithm for Projective Dependency Parsing. In Proceedings of the 8th International Workshop on Parsing Technologies (IWPT 03), Nancy, France, 23-25 April 2003, pp. 149-160. [ps]
+		2. Nivre, J., J. Hall and J. Nilsson (2004). Memory-Based Dependency Parsing. In Ng, H. T. and Riloff, E. (eds.) Proceedings of the Eighth Conference on Computational Natural Language Learning (CoNLL), May 6-7, 2004, Boston, Massachusetts, pp. 49-56. [ps]
+		3. ... Many more...
+		
+	Here are the results we get for the parser:
+		Labeled   attachment score: 36977 / 44377 * 100 = 83.32 %
+  		Unlabeled attachment score: 38799 / 44377 * 100 = 87.43 %
+  		Label accuracy score:       38099 / 44377 * 100 = 85.85 %
+  		
+D. Tokenizing
+
+	utf-8 tokenizer:
+		Author: Helmut Schmid, IMS, University of Stuttgart 
+
+==== Running Instructions ============================================================	
 
 Tokenizing, tagging, parsing and LF generation can be invoked individually or altogether in a sequence using the LF_Pipeline module . It is also possible to pipe the output of each module to the next module. 
 
 A. Running the pipeline:
 
-1. It is necessary to set the environmental variabe METAPHOR_DIR to the root folder of the Metaphor-ADP project, eg:
+	1. It is necessary to set the environmental variabe METAPHOR_DIR to the root folder of the Metaphor-ADP project, eg:
 	
-	export METAPHOR_DIR=/Users/niloofar/Metaphor-ADP
+		export METAPHOR_DIR=/Users/niloofar/Metaphor-ADP
 
-It is also necessary that the input file name be absolute.
+	It is also necessary that the input file name be absolute.
 
-2. Command for running the pipeline:
+	2. Command for running the pipeline:
 
-   ./LF_Pipeline [<input file>][<output file>]
+   		./LF_Pipeline [<input file>][<output file>]
 
-if input and/or output files are not given as arguments, they are read from standard stream.
+	if input and/or output files are not given as arguments, they are read from standard stream.
 
-Sample commands:
+	Sample commands:
 
-./LF_Pipeline $METAPHOR_DIR/pipelines/Farsi/samples/sentence.txt /Users/niloofar/Metaphor-ADP/pipelines/Farsi/samples/lf.txt
+		./LF_Pipeline $METAPHOR_DIR/pipelines/Farsi/samples/sentence.txt /Users/niloofar/Metaphor-ADP/pipelines/Farsi/samples/lf.txt
 
-cat $METAPHOR_DIR/pipelines/Farsi/samples/sentence.txt |./LF_Pipeline > $METAPHOR_DIR/pipelines/Farsi/samples/lf.txt   
+		cat $METAPHOR_DIR/pipelines/Farsi/samples/sentence.txt |./LF_Pipeline > $METAPHOR_DIR/pipelines/Farsi/samples/lf.txt   
 
 B. Running individual modules:
 
-Again it is necessary to have METAPHOR_DIR point to the root folder of the Metaphor-ADP project. 
+	- Again it is necessary to have METAPHOR_DIR point to the root folder of the Metaphor-ADP project. 
 
-The input file name should be absolute.
+	- The input file name should be absolute.
 
-If input and/or output files are not given as arguments, they are read from standard stream.
+	- If input and/or output files are not given as arguments, they are read from standard stream.
 
-1. Command for running the tokenizer
-	./tokenize [<input file>][<output file>]
+	1. Command for running the tokenizer
+		./tokenize [<input file>][<output file>]
 
 
-2. Command for running the tagger
-	./tag [<input file>][<output file>]
+	2. Command for running the tagger
+		./tag [<input file>][<output file>]
 
-3. Command for running the parser
-	./parse [<input file>][<output file>]
+	3. Command for running the parser
+		./parse [<input file>][<output file>]
 
-4. Command for running the LF generator
-	./createLF [<input file>][<output file>]
+	4. Command for running the LF generator
+		./createLF [<input file>][<output file>]
 
 
