@@ -39,6 +39,10 @@
 
 (B (name adversary3) (=> (adversary e x y c :1.2) 
    	 	     	 (^ (conflict c) (goal e1 g x) (goal e2 h y) (not g h))))
+;(B (name adversary3) (=> (adversary e x y c :1.2) 
+;   	 	     	 (^ (conflict c) (goal e1 g x) (goal e2 h y) (!= g h))))
+; (= g h) is also available
+;
 
 (B (name adversary4) (=> (^ (goal e1 g x) (goal e2 h y) (not g h)) 
    	 	     	 (adversary e x y c :1.2)))
