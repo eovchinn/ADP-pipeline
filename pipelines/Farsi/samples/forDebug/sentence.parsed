@@ -312,3 +312,35 @@
 19	یافتند	یافت#یاب	V	ACT	person=3|attachment=ISO|number=PLUR|tma=GS|senID=23490	14	PRD	_	_
 20	.	.	PUNC	PUNC	attachment=ISO|senID=23490	13	PUNC	_	_
 
+1	انجمن	انجمن	N	IANM	attachment=ISO|number=SING|senID=23495	29	SBJ	_	_
+2	نویسندگان	نویسنده	N	ANM	attachment=ISO|number=PLUR|senID=23495	1	MOZ	_	_
+3	،	،	PUNC	PUNC	attachment=ISO|senID=23495	2	PUNC	_	_
+4	خبرنگاران	خبرنگار	N	ANM	attachment=ISO|number=PLUR|senID=23495	2	NCONJ	_	_
+5	و	و	CONJ	CONJ	attachment=ISO|senID=23495	4	NCONJ	_	_
+6	عکاسان	عکاس	N	ANM	attachment=ISO|number=PLUR|senID=23495	5	POSDEP	_	_
+7	ورزشی	ورزشی	ADJ	AJP	attachment=ISO|senID=23495	2	NPOSTMOD	_	_
+8	نیز	نیز	ADV	SADV	attachment=ISO|senID=23495	2	POSDEP	_	_
+9	در	در	PREP	PREP	attachment=ISO|senID=23495	19	ADV	_	_
+10	بیانیه‌ای	بیانیه	N	IANM	attachment=ISO|number=SING|senID=23495	9	POSDEP	_	_
+11	این	این	PREM	DEMAJ	attachment=ISO|senID=23495	12	NPREMOD	_	_
+12	ضایعه	ضایعه	N	IANM	attachment=ISO|number=SING|senID=23495	19	OBJ	_	_
+13	را	را	POSTP	POSTP	attachment=ISO|senID=23495	12	ACC-CASE	_	_
+14	به	به	PREP	PREP	attachment=ISO|senID=23495	19	VPP	_	_
+15	استاد	استاد	IDEN	IDEN	attachment=ISO|number=SING|senID=23495	16	PREDEP	_	_
+16	عطاالله	عطاالله	N	ANM	attachment=ISO|number=SING|senID=23495	14	POSDEP	_	_
+17	بهمنش	بهمنش	N	ANM	attachment=ISO|number=SING|senID=23495	16	MOZ	_	_
+18	تسلیت	تسلیت	N	IANM	attachment=ISO|number=SING|senID=23495	19	OBJ	_	_
+19	گفته	گفت#گو	V	ACT	person=3|attachment=ISO|number=SING|tma=GN|senID=23495	29	PARCL	_	_
+20	،	،	PUNC	PUNC	attachment=ISO|senID=23495	19	PUNC	_	_
+21	برای	برای	PREP	PREP	attachment=ISO|senID=23495	29	ADV	_	_
+22	آن	آن	PREM	DEMAJ	attachment=ISO|senID=23495	23	NPREMOD	_	_
+23	مرحومه	مرحومه	N	ANM	attachment=ISO|number=SING|senID=23495	21	POSDEP	_	_
+24	از	از	PREP	PREP	attachment=ISO|senID=23495	27	NPP	_	_
+25	خداوند	خداوند	N	ANM	attachment=ISO|number=SING|senID=23495	24	POSDEP	_	_
+26	متعال	متعال	ADJ	AJP	attachment=ISO|senID=23495	25	NPOSTMOD	_	_
+27	طلب	طلب	N	IANM	attachment=ISO|number=SING|senID=23495	29	NVE	_	_
+28	آمرزش	آمرزش	N	IANM	attachment=ISO|number=SING|senID=23495	27	MOZ	_	_
+29	کرده-است	کرد#کن	V	ACT	person=3|attachment=ISO|number=SING|tma=GN|senID=23495	0	ROOT	_	_
+30	.	.	PUNC	PUNC	attachment=ISO|senID=23495	29	PUNC	_	_
+
+

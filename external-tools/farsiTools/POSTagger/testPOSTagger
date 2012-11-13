@@ -1,7 +1,7 @@
 #!/bin/bash
 
-modelFile=$METAPHOR_DIR/models/farsiModels/farsiPOSModel/StanfordTagger/farsi.tagger.model.bijankhan
-testFile=$METAPHOR_DIR/external-tools/farsiTools/POSTagger/testData/bijankhanForTagger
+modelFile=$METAPHOR_DIR/models/farsiModels/farsiPOSModel/StanfordTagger/farsi.tagger.model.treebank
+testFile=$METAPHOR_DIR/external-tools/farsiTools/POSTagger/testData/treebankForTagger
 taggerDir=$METAPHOR_DIR/external-tools/farsiTools/POSTagger/stanford-postagger
 
 cd $taggerDir
