@@ -19,8 +19,8 @@ global VB_TENSE
 class WordToken(object):
     postag_map = {
         "V": ("vb", 4),     # verb - vb/4
-        "A": ("adj", 2),    # noun - nn/2
-        "N": ("nn", 2),     # adjective - adj/2
+        "A": ("adj", 2),    # adjective - adj/2
+        "N": ("nn", 2),     # noun - nn/2
         "R": ("rb", 2),     # adverb - rb/2
         "S": ("in", 3),     # preposition - in/3
         "P": ("pr", 2),     # pronoun
@@ -118,11 +118,12 @@ class Argument(object):
         self.index = None
         self.link = None
 
-    def link_to(self, another_arg):
-        if self != another_arg:
-            self.link = another_arg
-        else:
-            print "ERROR"
+    def link_to(self, another_arg, force=False):
+        if not self.link or force:
+            if self != another_arg:
+                self.link = another_arg
+            else:
+                print "ERROR"
 
     def resolve_link(self):
         if not self.link:
@@ -185,6 +186,12 @@ class MaltConverter(object):
         arg_set = set()
         arg_list = []
         for pred in self.__visible_preds:
+            a = pred.args[0].resolve_link()
+            if a not in arg_set:
+                arg_set.add(a.resolve_link())
+                arg_list.append(a.resolve_link())
+
+        for pred in self.__visible_preds:
             for a in pred.args:
                 if a.resolve_link() not in arg_set:
                     arg_set.add(a.resolve_link())
@@ -231,6 +238,19 @@ class MaltConverter(object):
             if p.word.id == word.id:
                 self.__visible_preds.remove(p)
                 break
+        # print "removed", word.lemma
+        # print " ".join(map(lambda p: p.word.lemma.encode("utf-8"), self.__visible_preds))
+        # print
+
+    def unfold_dep(self, word, until_tag="nn"):
+        if word.head != 0:
+            head = self.word(word.head)
+            if head.cpostag == until_tag:
+                return head
+            else:
+                return self.unfold_dep(head, until_tag)
+        else:
+            return None
 
     def format_pred(self, pred, sent_count=None):
         argsf = []
@@ -298,6 +318,8 @@ class MaltConverter(object):
 
         self.assign_indexes()
 
+        # print " ".join(map(lambda p: p.word.lemma.encode("utf-8"), self.__visible_preds))
+
         predf = [self.format_pred(p, sent_count) for p in self.__visible_preds]
         epredf = [self.format_epred(ep) for ep in self.__extra_preds]
         sent_text = u"% " + u" ".join([w.form for w in self.__words])
@@ -330,6 +352,16 @@ class MaltConverter(object):
 
         for dep in self.__deps(word):
             ddeps = list(self.__deps(dep))
+
+            # print dep.cpostag, dep.lemma, dep.deprel
+
+            # if dep.cpostag == "adj":
+            #     print dep.cpostag
+            #     new_dep = self.unfold_dep(dep)
+            #     if new_dep:
+            #         print new_dep
+            #         dep = new_dep
+
             if dep.cpostag == "pr" and len(ddeps) > 0:
                 dep = ddeps[0]
                 if dep.cpostag == "vb":
@@ -370,23 +402,21 @@ class MaltConverter(object):
         # 5. Correferent Nouns
         # TODO(zaytsev@udc.edu): implement this
 
-        if not word.pred.args[1].link:
-            if w_subject:
-                word.pred.args[1].link_to(w_subject)
-            else:
-                word.pred.args[1] = Argument("u")
+        if w_subject:
+            word.pred.args[1].link_to(w_subject)
+        elif not word.pred.args[1].link:
+            word.pred.args[1] = Argument("u")
 
-        if not word.pred.args[2].link:
-            if d_object:
-                word.pred.args[2].link_to(d_object)
-            else:
-                word.pred.args[2] = Argument("u")
+        if d_object:
+            # print "link to", d_object
+            word.pred.args[2].link_to(d_object)
+        elif not word.pred.args[2].link:
+            word.pred.args[2] = Argument("u")
 
-        if not word.pred.args[3].link:
-            if i_object:
-                word.pred.args[3].link_to(i_object)
-            else:
-                word.pred.args[3] = Argument("u")
+        if i_object:
+            word.pred.args[3].link_to(i_object)
+        elif not word.pred.args[3].link:
+            word.pred.args[3] = Argument("u")
 
     number_map = {
         u"ноль": 0,
@@ -427,6 +457,7 @@ class MaltConverter(object):
         if NN_NUMBER:
             if word.feats[3] == "p":  # if plural
                 epred = ("typelt", [
+                        Argument("e"),
                         word.pred.args[1],
                         Argument("s"),
                     ])
@@ -469,8 +500,9 @@ class MaltConverter(object):
 
         # 1. Second args of adverbs are verbs they are modifying.
 
-        head = self.word(word.head)
-        if head and head.cpostag == "vb":
+        head = self.unfold_dep(word, "vb")
+        if head:
+            print word.lemma, head.lemma, head.cpostag
             word.pred.args[1].link_to(head.pred.args[0])
 
     def apply_pre_rules(self, word):
@@ -509,7 +541,6 @@ class MaltConverter(object):
     }
 
     def apply_pr_rules(self, word):
-
         # 1. Handle personal
 
         if word.lemma not in self.__pronouns:
@@ -520,12 +551,15 @@ class MaltConverter(object):
             word.pred.show_index = False
             word.pred.show_postag = False
             self.apply_nn_rules(word)
-            if word.feats[4] == "p":
-                self.__extra_preds.append(("typelt", [
-                    Argument("e"),
-                    Argument.arg_link(word.pred.args[1]),
-                    Argument("s"),
-                ]))
+
+            global NN_NUMBER
+            if NN_NUMBER:
+                if word.feats[4] == "p":
+                    self.__extra_preds.append(("typelt", [
+                        Argument("e"),
+                        Argument.arg_link(word.pred.args[1]),
+                        Argument("s"),
+                    ]))
 
         # 2. Handle reflexives
 
@@ -575,8 +609,8 @@ class MaltConverter(object):
                     if dep.cpostag == "vb":
                         self.__extra_preds.append(("imp", [
                             Argument("e"),
-                            Argument.arg_link(head.pred.args[0]),
                             Argument.arg_link(dep.pred.args[0]),
+                            Argument.arg_link(head.pred.args[0]),
                         ]))
 
         # 3. because, while, when
