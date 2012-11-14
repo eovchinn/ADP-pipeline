@@ -12,6 +12,9 @@ import re
 import sys
 import argparse
 
+global NN_NUMBER
+global VB_TENSE
+
 
 class WordToken(object):
     postag_map = {
@@ -354,13 +357,15 @@ class MaltConverter(object):
         # TODO(zaytsev@udc.edu): implement this
         # 4. Add tense information if available from the parser.
 
-        if word.feats[3] == "s":  # if past
-            epred = ("past", [Argument("e"), word.pred.args[0]])
-            self.__extra_preds.append(epred)
+        global VB_TENSE
+        if VB_TENSE:
+            if word.feats[3] == "s":  # if past
+                epred = ("past", [Argument("e"), word.pred.args[0]])
+                self.__extra_preds.append(epred)
 
-        if word.feats[3] == "f":  # if furure
-            epred = ("future", [Argument("e"), word.pred.args[0]])
-            self.__extra_preds.append(epred)
+            if word.feats[3] == "f":  # if furure
+                epred = ("future", [Argument("e"), word.pred.args[0]])
+                self.__extra_preds.append(epred)
 
         # 5. Correferent Nouns
         # TODO(zaytsev@udc.edu): implement this
@@ -403,25 +408,27 @@ class MaltConverter(object):
             self.__extra_preds.append(epred)
 
         # 3. Add number information if available from the parser (if plural).
+        global NN_NUMBER
 
-        if word.feats[3] == "p":  # if plural
-            epred = ("typelt", [
-                    word.pred.args[1],
-                    Argument("s"),
-                ])
-            self.__extra_preds.append(epred)
-            for dep in self.__deps(word):
-                if dep.cpostag == "num":
-                    try:
-                        num = int(dep.form)
-                        epred = ("card", [
-                            word.pred.args[1],
-                            Argument(str(num)),
-                        ])
-                        self.__extra_preds.append(epred)
-                    except ValueError:
-                        # TODO(zaytsev@udc.edu): parse word numeral
-                        pass
+        if NN_NUMBER:
+            if word.feats[3] == "p":  # if plural
+                epred = ("typelt", [
+                        word.pred.args[1],
+                        Argument("s"),
+                    ])
+                self.__extra_preds.append(epred)
+                for dep in self.__deps(word):
+                    if dep.cpostag == "num":
+                        try:
+                            num = int(dep.form)
+                            epred = ("card", [
+                                word.pred.args[1],
+                                Argument(str(num)),
+                            ])
+                            self.__extra_preds.append(epred)
+                        except ValueError:
+                            # TODO(zaytsev@udc.edu): parse word numeral
+                            pass
 
         # 4. If there is other information available from the parser (e.g. type
         #    of the named entity), please add it.
@@ -590,6 +597,10 @@ class MaltConverter(object):
 
 
 def main():
+
+    global NN_NUMBER
+    global VB_TENSE
+
     parser = argparse.ArgumentParser(
         description="MaltParser output processing pipeline for Russian.")
     parser.add_argument("--input",
@@ -598,8 +609,18 @@ def main():
     parser.add_argument("--output",
         help="Output file. Default is stdout.",
         default=None)
+    parser.add_argument("--vbtense",
+        help="Output file. Default is stdout.",
+        default=False)
+    parser.add_argument("--nnnumber",
+        help="Output file. Default is stdout.",
+        default=False)
 
     pa = parser.parse_args()
+
+    NN_NUMBER = bool(pa.vbtense)
+    VB_TENSE = bool(pa.vbtense)
+
     ifile = open(pa.input, "r") if pa.input else sys.stdin
     ofile = open(pa.output, "w") if pa.output else sys.stdout
 
