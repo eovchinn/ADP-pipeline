@@ -98,7 +98,7 @@ def replace_args(prop_sent,sent_dict):
         predicate = prop[6]
         tag = prop[7]
         propID = prop[8]
-        if rel == "suj":
+        if rel == "suj" and tag != "NULL":
             sent_dict = insert_suj(head,wordID,sent_dict)
         if tag == "vb" and head != 0 and rel in inheritingVbs:
             sent_dict = inherit_args(head,wordID,sent_dict)

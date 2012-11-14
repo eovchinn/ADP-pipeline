@@ -1,33 +1,33 @@
 % " Voté por el señor Obama " , dijo .
 id(1).
-[1002]:votar-vb(e1,u6,u2,u3) & [1003]:por-in(e2,e1,x1) & [1004]:el & [1005]:señor-nn(e3,x1) & [1006]:Obama-nn(e4,x1) & [1009]:decir-vb(e5,u6,e1,u8)
+[1002]:votar-vb(e1,u1,u2,u3) & [1003]:por-in(e2,e1,x1) & [1005]:señor-nn(e3,x1) & [1006]:Obama-nn(e4,x2) & [1009]:decir-vb(e5,u6,e1,u8)
 % " Fue algo nuevo para el país .
 id(2).
-[2002]:ir-vb(e1,u1,u2,u3) & [2003]:algo & [2004]:nuevo-adj(e2,u1) & [2005]:para-in(e3,u5,x1) & [2006]:el & [2007]:país-nn(e4,x1)
+[2002]:ir-vb(e1,u1,u2,u3) & [2004]:nuevo-adj(e2,u1) & [2005]:para-in(e3,u5,x1) & [2007]:país-nn(e4,x1)
 % Algo que no había ocurrido antes : un presidente negro .
 id(3).
-[3001]:algo & [3002]:que & [3003]:no-rb(e1,u1) & [3004]:haber-vb(e2,u5,u3,u4) & [3005]:ocurrir-vb(e3,u5,u6,u7) & [3006]:antes-rb(e4,e3) & [3008]:un & [3009]:presidente-nn(e5,x1) & [3010]:negro-adj(e6,x1)
+[3003]:no-rb(e1,u1) & [3004]:haber-vb(e2,u5,u3,u4) & [3005]:ocurrir-vb(e3,u5,u6,u7) & [3006]:antes-rb(e4,e3) & [3009]:presidente-nn(e5,x1) & [3010]:negro-adj(e6,x1)
 % Me dejé llevar un poco por eso .
 id(4).
-[4001]:yo-pro(e1,x1) & [4002]:dejar-vb(e2,u1,e3,u3) & [4003]:llevar-vb(e3,u1,u5,u6) & [4004]:un & [4005]:pocos & [4006]:por-in(e4,e3,u8) & [4007]:ese
+person(e1,x1) & [4002]:dejar-vb(e2,u1,e3,u3) & [4003]:llevar-vb(e3,u4,u5,u6) & [4006]:por-in(e4,e3,u8)
 % Pero creo que ha sido una decepción .
 id(5).
-[5001]:pero & [5002]:crear|creer-vb(e1,u7,u2,u3) & [5003]:que & [5004]:haber-vb(e2,u7,u5,u6) & [5005]:ser & [5006]:un & [5007]:decepción-nn(e4,x1)
+[5002]:crear|creer-vb(e1,u1,u2,u3) & [5004]:haber-vb(e2,u7,u5,u6) & [5007]:decepción-nn(e4,x1) & equal(e5,u7,x1)
 % No veo que se recuperen los empleos .
 id(6).
-[6001]:no-rb(e1,u1) & [6002]:ver-vb(e2,u2,e4,u4) & [6003]:que & [6004]:se-pro(e3,x1) & [6005]:recuperar-vb(e4,u2,x2,u7) & [6006]:el & [6007]:empleo-nn(e5,x2)
+[6001]:no-rb(e1,u1) & [6002]:ver-vb(e2,u2,e3,u4) & [6005]:recuperar-vb(e3,u5,x1,u7) & [6007]:empleo-nn(e4,x1)
 % El mercado inmobiliario se está recuperando un poco , pero el desempleo sigue siendo demasiado alto , más de lo que él predijo que sería " .
 id(7).
-[7001]:el & [7002]:mercado-nn(e1,x1) & [7003]:inmobiliario-adj(e2,x1) & [7004]:se-pro(e3,x2) & [7005]:estar-vb(e4,x1,u3,u4) & [7006]:recuperar-vb(e5,x1,x2,u7) & [7007]:un & [7008]:pocos & [7010]:pero & [7011]:el & [7012]:desempleo-nn(e6,x3) & [7013]:seguir-vb(e7,x3,u9,u10) & [7014]:ser & [7015]:demasiado-rb(e9,u14) & [7016]:alto-adj(e10,x3) & [7018]:más-rb(e11,u16) & [7019]:de-in(e12,u17,u18) & [7020]:el & [7021]:que & [7022]:él-pro(e13,x4) & [7023]:predecir-vb(e14,x4,e15,u21) & [7024]:que & [7025]:ser
+[7002]:mercado-nn(e1,x1) & [7003]:inmobiliario-adj(e2,x1) & [7005]:estar-vb(e3,x1,x1,u4) & [7006]:recuperar-vb(e4,x1,x1,u7) & [7012]:desempleo-nn(e5,x2) & [7013]:seguir-vb(e6,x2,u9,u10) & [7015]:demasiado-rb(e8,u14) & [7016]:alto-adj(e9,x2) & [7018]:más-rb(e10,u16) & [7019]:de-in(e11,u17,u18) & thing(e12,x3) & [7023]:predecir-vb(e13,x3,e14,u21) & [7025]:ser-vb(e14,u22,u23,u24)
 % Sin_embargo , este autoproclamado independiente tampoco se ha decidido por Romney .
 id(8).
-[8001]:sin_embargo-rb(e1,u1) & [8003]:este & [8004]:autoproclamado-nn(e2,x1) & [8005]:independiente-adj(e3,x1) & [8006]:tampoco-rb(e4,u3) & [8007]:se-pro(e5,x2) & [8008]:haber-vb(e6,x1,u5,u6) & [8009]:decidir-vb(e7,x1,u8,u9) & [8010]:por-in(e8,e7,x3) & [8011]:Romney-nn(e9,x3)
+[8001]:sin_embargo-rb(e1,u1) & [8004]:autoproclamado-nn(e2,x1) & [8005]:independiente-adj(e3,x1) & [8006]:tampoco-rb(e4,u3) & [8008]:haber-vb(e5,x1,u5,u6) & [8009]:decidir-vb(e6,x1,u8,u9) & [8010]:por-in(e7,e6,x2) & [8011]:Romney-nn(e8,x2)
 % " Definitivamente no .
 id(9).
 [9002]:definitivamente-rb(e1,u1) & [9003]:no-rb(e2,u2)
 % En este punto no sé por quién voy a votar " .
 id(10).
-[10001]:en-in(e1,e4,x1) & [10002]:este & [10003]:punto-nn(e2,x1) & [10004]:no-rb(e3,u3) & [10005]:saber|ser-vb(e4,u4,e7,u6) & [10006]:por-in(e5,e7,u8) & [10007]:quién-pro(e6,x2) & [10008]:ir-vb(e7,u4,u10,u11) & [10009]:a-in(e8,e7,u13) & [10010]:votar-vb(e9,u14,u15,u16)
+[10001]:en-in(e1,e4,x1) & [10003]:punto-nn(e2,x1) & [10004]:no-rb(e3,u3) & [10005]:saber|ser-vb(e4,u4,e6,u6) & [10006]:por-in(e5,e6,u8) & [10008]:ir-vb(e6,u9,u10,u11) & [10009]:a-in(e7,e6,e8) & [10010]:votar-vb(e8,u14,u15,u16)
 % Su decisión podría ser muy importante para determinar quién gana el estado de Virginia y la Casa Blanca .
 id(11).
-[11001]:suyo-pro(e1,x1) & [11002]:decisión-nn(e2,x2) & [11003]:poder-vb(e3,x2,u2,u3) & [11004]:ser & [11005]:muy-rb(e5,u7) & [11006]:importante-adj(e6,x2) & [11007]:para-in(e7,u9,u10) & [11008]:determinar-vb(e8,u14,u12,u13) & [11009]:quién-pro(e9,x3) & [11010]:ganar-vb(e10,x3,x4,u16) & [11011]:el & [11012]:estado-nn(e11,x4) & [11013]:de-in(e12,u17,x5) & [11014]:Virginia-nn(e13,x5) & [11015]:y & [11016]:el & [11017]:casa-nn(e14,x4) & [11018]:blanco-adj(e15,x4)
+[11002]:decisión-nn(e1,x1) & [11003]:poder-vb(e2,x1,u2,u3) & [11005]:muy-rb(e4,u7) & [11006]:importante-adj(e5,x1) & [11007]:para-in(e6,u9,e8) & [11008]:determinar-vb(e7,u11,u12,u13) & [11010]:ganar-vb(e8,u14,x2,u16) & [11012]:estado-nn(e9,x2) & [11010]:ganar-vb(e14,u14,x4) & [11013]:de-in(e10,x2,x3) & [11014]:Virginia-nn(e11,x3) & [11017]:casa-nn(e12,x4) & [11018]:blanco-adj(e13,x4)
