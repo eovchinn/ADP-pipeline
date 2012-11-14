@@ -122,8 +122,8 @@ class Argument(object):
         if not self.link or force:
             if self != another_arg:
                 self.link = another_arg
-            else:
-                print "ERROR"
+            # else:
+            #     print "ERROR"
 
     def resolve_link(self):
         if not self.link:
@@ -502,7 +502,7 @@ class MaltConverter(object):
 
         head = self.unfold_dep(word, "vb")
         if head:
-            print word.lemma, head.lemma, head.cpostag
+            # print word.lemma, head.lemma, head.cpostag
             word.pred.args[1].link_to(head.pred.args[0])
 
     def apply_pre_rules(self, word):
