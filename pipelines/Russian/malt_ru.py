@@ -388,6 +388,20 @@ class MaltConverter(object):
             else:
                 word.pred.args[3] = Argument("u")
 
+    number_map = {
+        u"ноль": 0,
+        u"один": 1,
+        u"два": 2,
+        u"три": 3,
+        u"четыре": 4,
+        u"пять": 5,
+        u"шесть": 6,
+        u"семь": 7,
+        u"восемь": 8,
+        u"девять": 9,
+        u"десять": 10,
+    }
+
     def apply_nn_rules(self, word):
 
         # 1. Noun compounds: if there are noun compounds in the language you are
@@ -422,13 +436,20 @@ class MaltConverter(object):
                         try:
                             num = int(dep.form)
                             epred = ("card", [
+                                Argument("e"),
                                 word.pred.args[1],
                                 Argument(str(num)),
                             ])
                             self.__extra_preds.append(epred)
                         except ValueError:
-                            # TODO(zaytsev@udc.edu): parse word numeral
-                            pass
+                            num = self.number_map.get(dep.form)
+                            if num is not None:
+                                epred = ("card", [
+                                    Argument("e"),
+                                    word.pred.args[1],
+                                    Argument(str(num)),
+                                ])
+                                self.__extra_preds.append(epred)
 
         # 4. If there is other information available from the parser (e.g. type
         #    of the named entity), please add it.
@@ -618,7 +639,7 @@ def main():
 
     pa = parser.parse_args()
 
-    NN_NUMBER = bool(pa.vbtense)
+    NN_NUMBER = bool(pa.nnnumber)
     VB_TENSE = bool(pa.vbtense)
 
     ifile = open(pa.input, "r") if pa.input else sys.stdin
