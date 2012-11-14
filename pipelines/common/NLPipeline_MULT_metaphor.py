@@ -60,8 +60,8 @@ def extract_hypotheses(inputString):
 def generate_text_input(input_dict,language):
 	output_str = ''
 	for id in input_dict.keys():
-		if language == 'EN': output_str += "<META>" + id + "\n\n " + input_dict[id].replace("\u2019", "'") + "\n\n"
-		else: output_str += '.TEXTID('+id+').\n\n'+input_dict[id].replace("\u2019", "'") + "\n\n" 
+		if language == 'EN': output_str += "<META>" + id + "\n\n " + input_dict[id] + "\n\n"
+		else: output_str += '.TEXTID('+id+').\n\n'+input_dict[id] + "\n\n" 
 	return output_str	
 
 def ADP(input_dict,language):
@@ -98,14 +98,20 @@ def ADP(input_dict,language):
 
 	henry_pipeline = Popen(henry_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
 	henry_output = henry_pipeline.communicate(input=parser_output)[0]
+	henry_file = os.path.join(TMP_DIR,'tmp.hyp')
+	f = open(henry_file,'w')
+	f.write(henry_output)
+	f.close()
 
 	# Graphical output 
-	#for id in input_dict.keys():
-	#	graph_output = os.path.join(TMP_DIR,id+'.pdf')
-	#	viz = 'python ' + HENRY_DIR + '/tools/proofgraph.py --graph ' + id + ' | dot -T pdf > ' + graph_output
-	#
-	#	graphical_processing = Popen(viz, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
-	#	graphical_processing.communicate(input=henry_output)[0]
+	for id in input_dict.keys():
+		graph_output = os.path.join(TMP_DIR,id+'.pdf')
+		#viz = 'python ' + HENRY_DIR + '/tools/proofgraph.py --graph ' + id + ' | dot -T pdf > ' + graph_output
+		viz = 'python ' + HENRY_DIR + '/tools/proofgraph.py --input ' + henry_file + ' --graph ' + id + ' | dot -T pdf > ' + graph_output
+	
+		#graphical_processing = Popen(viz, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
+		#graphical_processing.communicate(input=henry_output)[0]
+		os.system(viz)
 
 	return extract_hypotheses(henry_output)
 
