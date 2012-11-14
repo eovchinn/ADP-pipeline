@@ -17,11 +17,11 @@ def main():
 	parser = argparse.ArgumentParser( description="Discource processing pipeline." )
 	parser.add_argument( "--input", help="The input file to be processed.", nargs="+", default=["-"] )
 	parser.add_argument( "--outputdir", help="The output directory. Default is the dir of the input file.", default='' )
-	parser.add_argument( "--parse", help="Parse tokenized text with C&C.", action="store_true", default=False )
+	parser.add_argument( "--parse", help="Parse tokenized text.", action="store_true", default=False )
 	parser.add_argument( "--p2h", help="Process LF with Parser2Henry interface.", action="store_true", default=False )
 	parser.add_argument( "--henry", help="Process LF with Henry.", action="store_false", default=True )
 	parser.add_argument( "--kb", help="Path to knowledge base.", default='' )
-	parser.add_argument( "--graph", help="Number of sentence to vizualize.", default='1' )
+	parser.add_argument( "--graph", help="ID of sentence to vizualize. Possible value -- allN, where N is the total number of outputs to vizualize.", default='1' )
 
 	pa = parser.parse_args()
 	outputdir = pa.outputdir
