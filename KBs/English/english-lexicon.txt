@@ -36,6 +36,8 @@
 
 ;;; CONFLICT
 
+(B (name conflict-nn) (=> (conflict e :0.9)(conflict-nn e w)))
+
 ; Combat is conflict.
 
 (B (name combat-nn1) (=> (conflict e :0.9) (combat-nn e x)))
@@ -50,11 +52,19 @@
 
 ;;; ADVERSARY
 
+(B (name adversary-nn1) (=> (adversary x y e :0.9)(adversary-nn e1 x)))
+
 ; Enemies are adversaries.
 
 (B (name enemy-nn1) (=> (^ (conflict e :0.6) (adversary x y e :0.3)) (enemy-nn e1 x)))
 
 (B (name enemy-nn2) (=> (^ (conflict e :0.6) (adversary x y e :0.3)) (^ (enemy-nn e1 x) (of-in e2 x y))))
+
+; Adversaries have goals
+
+(B (name goal-nn) (=> (goal e1 g x :0.9)(goal-nn e1 g)))
+
+(B (name wants-goal-vb) (=> (goal e1 g x :0.9)(want-vb e1 x g u)))
 
 ;;; ATTACK
 
@@ -70,21 +80,23 @@
 
 ; A barrage is an attack.
 
-(B (name barrage-nn1) (=> (attack e1 x y :0.9) (barrage-nn e1 x)))
+(B (name barrage-nn1) (=> (attack e1 w y :0.9) (barrage-nn e1 x)))
 
 ; A slap is an attack.
 
-(B (name slap-vb1) (=> (attack e1 x y :0.9) (slap-vb e1 x y u)))
+(B (name slap-vb1) (=> (slap e1 x y :0.9) (slap-vb e1 x y u)))
 
 (B (name slap-nn1) (=> (slap e1 x y :0.9) (slap-nn e1 x)))
 
-(B (name slap-vb1) (=> (attack e1 x y :0.9) (slap-vb e1 x y u)))
+(B (name slap-vb1) (=> (slap e1 x y :0.9) (slap-vb e1 x y u)))
 
-(B (name slap-nn1) (=> (attack e1 x y :0.9) (slap-nn e1 x)))
+(B (name slap-nn1) (=> (slap e1 x y :0.9) (slap-nn e1 x)))
 
 ; To shoot a gun is an attack. Update: to use a gun is to shoot.
 
-(B (name shoot-vb1) (=> (^ (gun w :0.3) (use e1 x w)) (shoot-vb e1 x y w)))
+(B (name use-vb1) (=> (use e1 x w :0.9)(use-vb e1 x w u)))
+
+(B (name shoot-vb1) (=> (^ (gun w :0.3) (use e1 x w :0.6)) (shoot-vb e1 x y w)))
 
 (B (name shoot-vb2) (=> (attack e1 x y :0.9) (^ (shoot-vb e1 x y w) (at-in e2 e1 y))))
 
@@ -100,7 +112,7 @@
 
 ; To train a weapon on a target is to aim at the target.
 
-(B (name train-vb1) (=> (aim e1 x w y :1.2) (^ (train-vb e1 x w u) (on-in e2 e1 y))))
+(B (name train-vb1) (=> (aim e1 x w y :0.9) (^ (train-vb e1 x w u) (on-in e2 e1 y))))
 
 ; To target something is to aim at it.
 
@@ -136,9 +148,19 @@
 
 ;;;; ENGLISH LEXICAL AXIOMS FOR WAR
 
+(B (name war-nn) (=> (war w :0.9) (war-nn e w)))
+
 ;A betrayal is when members of groups defect.
 
 ;;;; ENGLISH LEXICAL AXIOMS FOR COMPETITION/SPORTS
+
+(B (name compete-vb1) (=> (compete e1 x y c :0.9)(compete-vb e x y u)))
+
+(B (name competitor-nn1) (=> (compete e1 x y c :0.9)(competitor-nn e x)))
+
+(B (name competitor-nn2) (=> (compete e1 x y c :0.9)(competitor-nn e y)))
+
+(B (name competition-nn3) (=> (compete e1 x y w :0.9)(competition e w)))
 
 
 ;;;; OTHER ENGLISH LEXICAL AXIOMS
@@ -146,3 +168,14 @@
 (B (name president-nn) (=> (president x :0.9) (president-nn e1 x)))
 
 (B (name union-nn) (=> (union x :0.9)(union-nn w x)))
+
+(B (name members-nn) (=> (members m g :0.9)(^ (member-nn e1 m)(of-in e2 e1 g))))
+
+(B (name members-nn) (=> (members m g :0.9)(member-nn e1 m)))
+
+(B (name not-rb) (=> (not g h :0.9)(not-rb e1 x)))
+
+(B (name part-nn) (=> (part u w :0.9)(^ (part-nn e1 x)(of-in e2 e1 w))))
+
+(B (name thrive-vb) (=> (thrive e1 m :0.9)(thrive-vb e2 m y u)))
+
