@@ -1,0 +1,209 @@
+; SPANISH LEXICAL AXIOMS FOR CONFLICT, WAR, SPORTS, COMPETITION
+
+; CHANGE LOG
+; 11/09/2012 aks : start file
+; 11/14/2012 aks : adding lexical axioms for conflict predicates
+;
+; ARGUMENT LISTS BY POS - TODO: verify this for the current ESP parser
+; (*-vb e x y u) : e - eventuality; x - subj; y - dirobj; u - iobj
+; (*-nn e x) : e - eventuality; x - subj
+; (*-in e x) : e - head (vb/noun); x - dependent
+; (*-adj e x) : adjective with eventuality e, modifying object x
+; (*-rb e1 e2) : adverb with eventuality e1 modifying eventuality e2
+;
+;
+
+;;; SPANISH LEXICAL AXIOMS FOR CONFLICT-WAR-SPORTS
+
+;;; CONFLICT
+
+(B (name conflicto-nn) (=> (conflict e :0.9)(conflicto-nn e w)))
+
+(B (name pugna-nn) (=> (conflict e :0.9)(pugna-nn e w)))
+
+(B (name pugnar-vb) (=> (^ (adversary e1 x y e2)(conflict e2 :0.9))(^ (pugnar-vb e3 x v w)(con-in e4 e3 y))))
+
+(B (name conflicto-vb) (=> (^ (adversary e1 x y e :0.3)(conflict e2 :0.6)) (^ (estar-vb e3 x z u)(en-in e2 e1 w)(conflicto-nn e2 w))))
+
+(B (name reñido-vb) (=> (^ (adversary e1 x y e :0.3)(conflict e2 :0.6))(^ (estar-vb e3 x z u)(reñido-vb e4 x y w))))
+
+; Combat is conflict.
+
+; Pie de lucha (combat) is conflict.
+(B (name piedelucha-nn) (=> (conflict e :0.9) (^ (pie-nn e1 x) (de-in x y) (lucha-nn e2 y))))
+
+; someone in pie de lucha is an adversary
+(B (name enpiedelucha-in) (=> (^ (conflict e :0.6) (adversary e1 x w c :0.3))(^ (en-in e1 x y) (pie-nn e2 y) (de-in e3 y z) (lucha-nn e4 z))))
+
+(B (combatir-vb) (=> (conflict e :0.3)(combatir-vb e1 x y u)))
+
+(B (combate-nn)(=> (conflict e :0.3)(combate-nn e x)))
+
+(B (pelea-nn)(=> (conflict e :0.3)(pelea-nn e x)))
+
+; A fight is a conflict.
+
+(B (name lucha-nn1) (=> (conflict e :0.9) (lucha-nn e x)))
+
+(B (name luchar-vb1) (=> (^ (conflict e1 :0.3) (adversary e2 y x e :0.9)) (^ (luchar-vb 3 x w u)(con-in e4 e3 y))))
+
+(B (name luchar-vb1) (=> (^ (conflict e1 :0.3) (adversary e2 y x e :0.9)) (^ (luchar-vb 3 x w u)(contra-in e4 e3 y))))
+
+(B (name luchar-vb2) (=> (^ (conflict e1 :0.3) (adversary e2 y x e :0.9)) (luchar-vb 3 x y u)))
+
+;;; ADVERSARY
+
+(B (name adversario-nn1) (=> (adversary e1 x y e :0.9)(adversario-nn e1 x)))
+
+(B (name contrincante-nn1) (=> (adversary e1 x y e :0.9)(contrincante-nn e1 x)))
+
+; Enemies are adversaries.
+
+(B (name enemigo-nn1) (=> (adversary e1 x y e :0.3) (enemigo-nn e1 x)))
+
+(B (name enemigo-nn2) (=> (adversary e1 x y e :0.9) (^ (enemigo-nn e1 x) (de-in e2 x y))))
+
+(B (name rival-nn1)(=> (^ (conflict e :0.6)(adversary e1 x y e :0.3))(rival-nn e1 x)))
+
+(B (name rival-nn2) (=> (^ (conflict e :0.6) (adversary e1 x y e :0.3)) (^ (rival-nn e1 x) (de-in e2 x y))))
+
+; Adversaries have goals
+
+(B (name objeto-nn) (=> (goal e1 g x :0.6)(objeto-nn e1 g)))
+
+(B (name objetivo-nn) (=> (goal e1 g x :0.6)(objetivo-nn e1 g)))
+
+(B (name desear-objeto-vb) (=> (goal e1 g x :0.6)(desear-vb e1 x g u)))
+
+(B (name querer-objeto-vb) (=> (goal e1 g x :0.6)(querer-vb e1 x g u)))
+
+;;; ATTACK
+
+; An attack.
+
+(B (name ataque-nn1) (=> (attack e1 x y :0.9) (ataque-nn e1 w)))
+
+(B (name ataque-nn2) (=> (attack e1 x y :0.9) (^ (ataque-nn e1 w) (a-in e2 e1 y))))
+
+(B (name ataque-nn2) (=> (attack e1 x y :0.9) (^ (ataque-nn e1 w) (contra-in e2 w y))))
+
+(B (name asalto-nn1) (=> (attack e1 x y :0.9) (asalto-nn e1 x)))
+
+(B (name asalto-nn1) (=> (attack e1 x y :0.9) (^ (asalto-nn e1 x)(a-in e2 x y))))
+
+(B (name atacar-vb1) (=> (attack e1 x y :0.9) (atacar-vb e1 x y u)))
+
+(B (name lanzar-ataque-vb)(=> (attack e1 x y :0.9)(^ (lanzar-vb e1 x w z)(ataque-nn e2 w))))
+
+(B (name lanzar-ataque-vb)(=> (attack e1 x y :0.9)(^ (lanzar-vb e1 x w z)(ataque-nn e2 w)(en-in e3 w y))))
+
+(B (name lanzar-ataque-vb)(=> (attack e1 x y :0.9)(^ (lanzar-vb e1 x w z)(ataque-nn e2 w)(contra-in e3 w y))))
+
+(B (name lanzar-ataque-vb)(=> (attack e1 x y :0.9)(^ (lanzar-vb e1 x w z)(ataque-nn e2 w)(a-in e3 w y))))
+
+(B (name lanzar-ataque-vb)(=> (attack e1 x y :0.9)(^ (lanzar-vb e1 x w z)(ataque-nn e2 w)(sobre-in e3 w y))))
+
+(B (name abatir-vb)(=> (attack e1 x y :0.9)(abatir-vb e1 x y u)))
+
+; A barrage is an attack.
+
+(B (name bombardeo-nn1) (=> (attack e1 w y :0.9) (bombardeo-nn e1 x)))
+
+(B (name bombardear-vb1) (=> (attack e1 x y :0.9) (bombardear-vb e1 x y u)))
+
+(B (name barrera-de-fuego-vb1)(=> (attack e1 x y :0.9)(^ (barrera-nn e2 e1)(de-in e3 e1 w)(fuego-nn e4 w))))
+
+; A slap is an attack.
+
+(B (name palmada-nn1) (=> (slap e1 x y :0.9) (palmada-nn e1 x)))
+
+(B (name bofetada-nn1) (=> (slap e1 x y :0.9) (bofetada-nn e1 x)))
+
+(B (name abofetear-vb1) (=> (slap e1 x y :0.9) (abofetear-vb e1 x y u)))
+
+(B (name golpear-vb1) (=> (slap e1 x y :0.9) (golpear-vb e1 x y u)))
+
+; To shoot a gun is an attack. Update: to use a gun is to shoot.
+
+(B (name usear-vb1) (=> (use e1 x w)(usear-vb e1 x w u)))
+
+(B (name utilizar-vb1) (=> (use e1 x w)(utilizar-vb e1 x w u)))
+
+(B (name tirar-vb1) (=> (^ (gun w :0.3) (use e1 x w)) (^ (tirar-vb e1 x y u)(a-in e1 z))))
+
+(B (name disparar-vb1) (=> (^ (gun w :0.3) (use e1 x w)) (disparar-vb e1 x w y)))
+
+;;; AIM
+
+; Aim a weapon at a target.
+
+(B (name apuntar-vb1) (=> (aim e1 x w y :0.9) (^ (apuntar-vb e1 x w u) (a-in e2 e1 y))))
+
+(B (name apuntar-vb2) (=> (aim e1 x w y :0.9) (apuntar-vb e1 x w u)))
+
+;;; WEAPON
+
+; weapon 
+
+(B (name arma-nn) (=> (weapon w :0.9) (arma-nn e1 w)))
+
+; bullet
+
+(B (name bala-nn) (=> (bullet w :0.9) (bala-nn e1 w)))
+
+; rifle
+
+(B (name rifle-nn) (=> (rifle w :0.9) (rifle-nn e1 w)))
+
+; gun 
+
+(B (name gun-nn) (=> (gun w :0.9) (gun-nn e1 w)))
+
+; sight 
+
+(B (name mira-nn) (=> (sight w :0.9) (mira-nn e1 w)))
+
+; crosshairs
+
+(B (name punto-de-mira-nn) (=> (crosshairs x :0.9) (^ (punto-nn e1 x)(de-in e2 x y)(mira-nn e3 y))))
+
+;;;; ENGLISH LEXICAL AXIOMS FOR WAR
+
+(B (name guerra-nn) (=> (war w) (guerra-nn e w)))
+
+;A betrayal is when members of groups defect.
+
+;;;; ENGLISH LEXICAL AXIOMS FOR COMPETITION/SPORTS
+
+(B (name competir-vb1) (=> (compete e1 x y c :0.9)(competir-nn e x)))
+
+(B (name competidor-nn1) (=> (compete e1 x y c :0.9)(competidor-nn e x)))
+
+(B (name concursante-nn1) (=> (compete e1 x y w :0.9)(concursante-nn e w)))
+
+
+;;;; OTHER ENGLISH LEXICAL AXIOMS
+
+(B (name presidente-nn) (=> (president x :0.9) (presidente-nn e1 x)))
+
+(B (name unión-nn) (=> (union x :0.9)(unión-nn w x)))
+
+(B (name sindicato-nn) (=> (union x :0.9)(sindicato-nn w x)))
+
+(B (name gremio-nn) (=> (union x :0.9)(gremio-nn w x)))
+
+(B (name miembro-nn) (=> (members m g :0.9)(^ (miembro-nn e1 m)(de-in e2 e1 g))))
+
+(B (name miembro-nn) (=> (members m g :0.9)(miembro-nn e1 m)))
+
+(B (name no-rb) (=> (not g h :0.9)(no-rb e1 x)))
+
+(B (name parte-nn) (=> (part u w :0.9)(^ (parte-nn e1 x)(de-in e2 e1 w))))
+
+(B (name pieza-nn) (=> (part u w :0.9)(^ (pieza-nn e1 x)(de-in e2 e1 w))))
+
+(B (name prosperar-vb) (=> (thrive e1 m :0.9)(prosperar-vb e2 m y u)))
+
+(B (name medrar-vb) (=> (thrive e1 m :0.9)(medrar-vb e2 m y u)))
+
+
