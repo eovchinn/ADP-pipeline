@@ -19,4 +19,4 @@
 (union u) : u is a labor union
 (members m g) : m is the set of members of group g
 (thrive e1 m) : m is an entity that thrives
-(goalNot e1 g y) : y has the goal of not g
+(goalNot e1 g y) : y has the goal of not g *Nonlexical*
