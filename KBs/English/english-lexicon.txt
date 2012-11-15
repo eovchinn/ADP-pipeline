@@ -58,6 +58,16 @@
 
 ;;; ATTACK
 
+; An attack.
+
+(B (name attack-nn1) (=> (attack e1 x y :0.9) (attack-nn e1 x)))
+
+(B (name attack-vb1) (=> (attack e1 x y :0.9) (attack-vb e1 x y u)))
+
+(B (name attack-nn2) (=> (attack e1 x y :0.9) (^ (launch-vb e1 x z u) (attack-nn e2 w))))
+
+(B (name attack-nn3) (=> (attack e1 x y :0.9) (^ (attack-nn e1 x) (on-in e2 x y))))
+
 ; A barrage is an attack.
 
 (B (name barrage-nn1) (=> (attack e1 x y :0.9) (barrage-nn e1 x)))
@@ -134,3 +144,5 @@
 ;;;; OTHER ENGLISH LEXICAL AXIOMS
 
 (B (name president-nn) (=> (president x :0.9) (president-nn e1 x)))
+
+(B (name union-nn) (=> (union x :0.9)(union-nn w x)))
