@@ -26,7 +26,6 @@ KBPATH = ''
 # switches
 kbcompiled = False
 
-
 def extract_hypotheses(inputString):
 	output_struct = []
 	hypothesis_found = False
@@ -35,6 +34,9 @@ def extract_hypotheses(inputString):
 	hypothesis = ''
 	unification = False
 	explanation = False
+
+	#for generating proofgraph URIs
+	webservice=get_webservice_location()
 
 	for line in inputString.splitlines():
 		output_struct_item={} 
@@ -50,6 +52,7 @@ def extract_hypotheses(inputString):
 			output_struct_item['abductive_hypothesis'] = hypothesis
 			output_struct_item['abductive_unification'] = unification
 			output_struct_item['abductive_explanation'] = explanation
+			output_struct_item['abductive_proofgraph'] = 'http://'+webservice+'/proofgraphs/'+target+'.pdf'
 			output_struct_item['description'] = 'Abductive engine output; abductive_hypothesis: metaphor interpretation; abductive_unification: unifications happened or not; abductive_explanation: axioms applied or not'
 			output_struct.append(output_struct_item)  
 			target = ''
@@ -105,15 +108,29 @@ def ADP(input_dict,language):
 
         return extract_hypotheses(henry_output)
 
+def get_webservice_location():
+	hostname='localhost'
+	if os.environ.get('HOSTNAME') is not None:
+           hostname=os.environ.get('HOSTNAME')
+	port='8000'
+	if os.environ.get('ADP_PORT') is not None:
+           port=os.environ.get('ADP_PORT')
+	return hostname+":"+port
 
 def generate_graph(input_dict,henry_output):
+   #create proofgraphs directory if it doesn't exist
+   graph_dir=TMP_DIR+'/proofgraphs' 
+   if not os.path.exists(graph_dir):
+        os.makedirs(graph_dir)
+
    for id in input_dict.keys():
-     graph_output = os.path.join(TMP_DIR,id+'.pdf')
+     graph_output = os.path.join(graph_dir,id+'.pdf')
      viz = 'python ' + HENRY_DIR + '/tools/proofgraph.py --graph ' + id + ' | dot -T pdf > ' + graph_output
      graphical_processing = Popen(viz, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
-     graphical_output=graphical_processing.communicate(input=henry_output)[0]
+     graphical_processing.communicate(input=henry_output)
      #print "sleep"
      #time.sleep(3)
+   print "Done generating proof graphs."
 
 
 if "__main__" == __name__: main()
