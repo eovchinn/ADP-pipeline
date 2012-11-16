@@ -9,10 +9,10 @@ id(3).
 [3001]:Juan-nn(e1,x1) & [3002]:preguntar-vb(e2,x1,e5,u3) & [3003]:dónde-rb(e3,e5) & [3004]:María-nn(e4,x2) & [3005]:leyo-vb(e5,x2,u6,u7)
 % Juan trató de ir .
 id(4).
-[4001]:Juan-nn(e1,x1) & [4002]:tratar-vb(e2,x1,u2,u3) & [4003]:de-in(e3,e4,u5) & [4004]:ir-vb(e4,x1,u7,u8)
+[4001]:Juan-nn(e1,x1) & [4002]:tratar-vb(e2,x1,e4,u3) & [4003]:de-in(e3,e4,u5) & [4004]:ir-vb(e4,x1,u7,u8)
 % Juan trataba de ir .
 id(5).
-[5001]:Juan-nn(e1,x1) & [5002]:tratar-vb(e2,x1,u2,u3) & [5003]:de-in(e3,e4,u5) & [5004]:ir-vb(e4,x1,u7,u8)
+[5001]:Juan-nn(e1,x1) & [5002]:tratar-vb(e2,x1,e4,u3) & [5003]:de-in(e3,e4,u5) & [5004]:ir-vb(e4,x1,u7,u8)
 % Juan corre .
 id(6).
 [6001]:Juan-nn(e1,x1) & [6002]:correr-vb(e2,u1,u2,u3)
@@ -54,7 +54,7 @@ id(18).
 [18002]:intención-nn(e1,x1) & [18004]:salir-vb(e3,x1,u5,u6) & be(e4,e2,e3)
 % Juan corre rápido .
 id(19).
-[19001]:Juan-nn(e1,x1) & [19002]:correr-vb(e2,x1,u2,u3) & [19003]:rápido-adj(e3,u4)
+[19001]:Juan-nn(e1,x1) & [19002]:correr-vb(e2,x1,u2,u3) & [19003]:rápido-adj(e3,e2)
 % Juan assiste a la escuela .
 id(20).
 [20001]:Juan-nn(e1,x1) & [20002]:assiste-vb(e2,x1,u2,u3) & [20003]:a-in(e3,e2,x2) & [20005]:escuela-nn(e4,x2)
