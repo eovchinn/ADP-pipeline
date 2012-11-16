@@ -341,6 +341,7 @@ class MaltConverter(object):
     copula_verbs = set([
         u"быть",
         u"являться",
+        u"находиться",
     ])
 
     def apply_vb_rules(self, word):
@@ -406,21 +407,35 @@ class MaltConverter(object):
         if word.lemma in self.copula_verbs:
             nouns = []
             adjs = []
+            preps = []
             for dep in self.__deps(word):
                 if dep.cpostag == "nn":
                     nouns.append(dep)
                 elif dep.cpostag == "adj":
                     adjs.append(dep)
-                # 2) Noun + Adj
-                if len(adjs) == 1 and len(nouns) == 1:
-                    adjs[0].pred.args[1].link_to(nouns[0].pred.args[1])
-                # 1) Nount + Noun
-                elif len(adjs) == 0 and len(nouns) == 2:
-                    self.__extra_preds.append(("equal", [
-                            Argument("e"),
-                            Argument.arg_link(nouns[0].pred.args[1]),
-                            Argument.arg_link(nouns[1].pred.args[1]),
-                        ]))
+                elif dep.cpostag == "in":
+                    preps.append(dep)
+
+            # a) Nount + Noun
+            if len(adjs) == 0 and len(nouns) == 2:
+                self.__extra_preds.append(("equal", [
+                        Argument("e"),
+                        Argument.arg_link(nouns[0].pred.args[1]),
+                        Argument.arg_link(nouns[1].pred.args[1]),
+                    ]))
+
+            # b) Noun + Adj
+            elif len(adjs) == 1 and len(nouns) == 1:
+                adjs[0].pred.args[1].link_to(nouns[0].pred.args[1])
+
+            # c) Nount + Prep
+            elif len(nouns) == 1 and len(preps) == 1:
+                ddeps = list(self.__deps(preps[0]))
+                if len(ddeps) == 1 and ddeps[0].cpostag == "nn":
+                    preps[0].pred.args[1].link_to(nouns[0].pred.args[1],
+                        force=True)
+                    preps[0].pred.args[2].link_to(ddeps[0].pred.args[1],
+                        force=True)
 
         if w_subject:
             word.pred.args[1].link_to(w_subject)
