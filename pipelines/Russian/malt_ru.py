@@ -529,9 +529,8 @@ class MaltConverter(object):
         # 1. Second args of adverbs are verbs they are modifying.
 
         head = self.word(word.head)
-        if head:
+        if head and head.pred:
             word.pred.args[1].link_to(head.pred.args[0])
-
 
     def apply_in_rules(self, word):
 
