@@ -338,7 +338,7 @@ class MaltConverter(object):
 
         return u"%s\n%s\n%s\n\n" % (sent_text, id_text, pred_text)
 
-    copula_verbs = {u"быть", u"являться", u"находиться"}
+    copula_verbs = set([u"быть", u"являться", u"находиться"])
 
     def apply_vb_rules(self, word):
 
