@@ -5,6 +5,7 @@ import os
 import re
 import json
 import time
+import thread
 from subprocess import Popen, PIPE, STDOUT
 
 METAPHOR_DIR = os.environ['METAPHOR_DIR']
@@ -25,7 +26,6 @@ KBPATH = ''
 # switches
 kbcompiled = False
 
-
 def extract_hypotheses(inputString):
 	output_struct = []
 	hypothesis_found = False
@@ -34,6 +34,9 @@ def extract_hypotheses(inputString):
 	hypothesis = ''
 	unification = False
 	explanation = False
+
+	#for generating proofgraph URIs
+	webservice=get_webservice_location()
 
 	for line in inputString.splitlines():
 		output_struct_item={} 
@@ -49,6 +52,7 @@ def extract_hypotheses(inputString):
 			output_struct_item['abductive_hypothesis'] = hypothesis
 			output_struct_item['abductive_unification'] = unification
 			output_struct_item['abductive_explanation'] = explanation
+			output_struct_item['abductive_proofgraph'] = 'http://'+webservice+'/proofgraphs/'+target+'.pdf'
 			output_struct_item['description'] = 'Abductive engine output; abductive_hypothesis: metaphor interpretation; abductive_unification: unifications happened or not; abductive_explanation: axioms applied or not'
 			output_struct.append(output_struct_item)  
 			target = ''
@@ -98,21 +102,35 @@ def ADP(input_dict,language):
 
 	henry_pipeline = Popen(henry_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
 	henry_output = henry_pipeline.communicate(input=parser_output)[0]
-	henry_file = os.path.join(TMP_DIR,'tmp.hyp')
-	f = open(henry_file,'w')
-	f.write(henry_output)
-	f.close()
 
-	# Graphical output 
-	for id in input_dict.keys():
-		graph_output = os.path.join(TMP_DIR,id+'.pdf')
-		#viz = 'python ' + HENRY_DIR + '/tools/proofgraph.py --graph ' + id + ' | dot -T pdf > ' + graph_output
-		viz = 'python ' + HENRY_DIR + '/tools/proofgraph.py --input ' + henry_file + ' --graph ' + id + ' | dot -T pdf > ' + graph_output
-	
-		#graphical_processing = Popen(viz, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
-		#graphical_processing.communicate(input=henry_output)[0]
-		os.system(viz)
+        #start graphical generation in thread; don't wait for it to finish
+	thread.start_new_thread(generate_graph, (input_dict,henry_output))
 
-	return extract_hypotheses(henry_output)
+        return extract_hypotheses(henry_output)
+
+def get_webservice_location():
+	hostname='localhost'
+	if os.environ.get('HOSTNAME') is not None:
+           hostname=os.environ.get('HOSTNAME')
+	port='8000'
+	if os.environ.get('ADP_PORT') is not None:
+           port=os.environ.get('ADP_PORT')
+	return hostname+":"+port
+
+def generate_graph(input_dict,henry_output):
+   #create proofgraphs directory if it doesn't exist
+   graph_dir=TMP_DIR+'/proofgraphs' 
+   if not os.path.exists(graph_dir):
+        os.makedirs(graph_dir)
+
+   for id in input_dict.keys():
+     graph_output = os.path.join(graph_dir,id+'.pdf')
+     viz = 'python ' + HENRY_DIR + '/tools/proofgraph.py --graph ' + id + ' | dot -T pdf > ' + graph_output
+     graphical_processing = Popen(viz, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
+     graphical_processing.communicate(input=henry_output)
+     #print "sleep"
+     #time.sleep(3)
+   print "Done generating proof graphs."
+
 
 if "__main__" == __name__: main()

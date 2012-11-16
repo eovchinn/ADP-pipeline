@@ -16,5 +16,7 @@
 (use e1 x w y z) : x uses w on object y for purpose z 
 (war e) : e is a war
 (weapon w) : w is a weapon
-
-
+(union u) : u is a labor union
+(members m g) : m is the set of members of group g
+(thrive e1 m) : m is an entity that thrives
+(goalNot e1 g y) : y has the goal of not g *Nonlexical*
