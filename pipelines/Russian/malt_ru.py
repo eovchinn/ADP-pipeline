@@ -243,14 +243,12 @@ class MaltConverter(object):
         # print
 
     def unfold_dep(self, word, until_tag="nn"):
-        if word.head != 0:
-            head = self.word(word.head)
-            if head.cpostag == until_tag:
-                return head
-            else:
-                return self.unfold_dep(head, until_tag)
-        else:
+        deps = list(self.__deps(word))
+        if len(deps) != 1:
             return None
+        if deps[0].cpostag == until_tag:
+            return deps[0]
+        return self.unfold_dep(deps[0], until_tag)
 
     def format_pred(self, pred, sent_count=None):
         argsf = []
@@ -355,19 +353,17 @@ class MaltConverter(object):
 
             # print dep.cpostag, dep.lemma, dep.deprel
 
-            # if dep.cpostag == "adj":
-            #     print dep.cpostag
-            #     new_dep = self.unfold_dep(dep)
-            #     if new_dep:
-            #         print new_dep
-            #         dep = new_dep
-
             if dep.cpostag == "pr" and len(ddeps) > 0:
                 dep = ddeps[0]
                 if dep.cpostag == "vb":
                     d_object = dep.pred.args[0]
-            elif dep.cpostag == "nn":
-                if dep.deprel == u"предик":
+            elif dep.cpostag != "nn":
+                new_dep = self.unfold_dep(dep, until_tag="nn")
+                if new_dep:
+                    dep = new_dep
+
+            if dep.cpostag == "nn":
+                if dep.deprel == u"предик" or dep.deprel == u"сравн-союзн":
                     w_subject = dep.pred.args[1]
                 elif dep.deprel == u"1-компл" or dep.deprel == u"2-компл":
                     if not d_object:
