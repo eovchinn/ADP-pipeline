@@ -175,13 +175,13 @@
 19	social	social	a	a	0	17	grup.a	_	_
 20	.	.	f	f	0	0	sentence	_	_
 
-1	los	el	d	d	0	2	spec	_	_
-2	“	“	n	n	0	7	suj	_	_
-3	jugadores	jugador	n	n	0	2	sn	_	_
+1	los	el	d	d	0	3	spec	_	_
+2	"	"	f	f	0	3	f	_	_
+3	jugadores	jugador	n	n	0	0	ROOT	_	_
 4	dominantes	dominante	a	a	0	3	s.a	_	_
-5	”	”	a	a	0	3	s.a	_	_
+5	"	"	f	f	0	7	f	_	_
 6	han	haber	v	v	0	7	v	_	_
-7	erigido	erigir	v	v	0	0	sentence	_	_
+7	erigido	erigir	v	v	0	3	S	_	_
 8	altas	alto	a	a	0	9	s.a	_	_
 9	barreras	barrera	n	n	0	7	cd	_	_
 10	de	de	s	s	0	9	sp	_	_
@@ -189,7 +189,7 @@
 12	a	a	s	s	0	11	cn	_	_
 13	nuevos	nuevo	a	a	0	14	s.a	_	_
 14	jugadores	jugador	n	n	0	12	sn	_	_
-15	.	.	f	f	0	7	f	_	_
+15	.	.	f	f	0	0	sentence	_	_
 
 1	La	el	d	d	0	2	spec	_	_
 2	democracia	democracia	n	n	0	4	suj	_	_
@@ -297,18 +297,16 @@
 17	país	país	n	n	0	16	sn	_	_
 18	.	.	f	f	0	3	f	_	_
 
-1	Social	social	n	n	0	3	suj	_	_
-2	programs	programs	n	n	0	1	sn	_	_
-3	designed	designed	v	v	0	0	sentence	_	_
-4	to	to	n	n	0	3	cd	_	_
-5	fix	fix	n	n	0	3	cc	_	_
-6	things	things	a	a	0	7	s.a	_	_
-7	are	are	n	n	0	3	cd	_	_
-8	scaffolds	scaffolds	n	n	0	7	sn	_	_
-9	on	on	n	n	0	3	cc	_	_
-10	a	a	n	n	0	3	cd	_	_
-11	building	building	n	n	0	10	sn	_	_
-12	.	.	f	f	0	3	f	_	_
+1	llevándose	llevar	v	v	0	0	sentence	_	_
+2	por	por	s	s	0	1	cc	_	_
+3	delante	delante	r	r	0	2	sadv	_	_
+4	los	el	d	d	0	5	spec	_	_
+5	andamios	andamio	n	n	0	1	suj	_	_
+6	del	del	s	s	0	5	sp	_	_
+7	Estado	estado	n	n	0	6	sn	_	_
+8	del	del	s	s	0	7	sp	_	_
+9	Bienestar	Bienestar	n	n	0	8	sn	_	_
+10	.	.	f	f	0	1	f	_	_
 
 1	Ha	haber	v	v	0	2	v	_	_
 2	sido	ser	v	v	0	0	sentence	_	_
@@ -380,16 +378,16 @@
 16	,	,	f	f	0	24	f	_	_
 17	tanto	tanto	r	r	0	24	conj	_	_
 18	a	a	s	s	0	24	sp	_	_
-19	la	el	d	d	0	20	spec	_	_
-20	“	“	n	n	0	18	sn	_	_
-21	izquierda	izquierdo	a	a	0	20	s.a	_	_
-22	”	”	n	n	0	20	sn	_	_
+19	la	el	d	d	0	21	spec	_	_
+20	"	"	f	f	0	21	f	_	_
+21	izquierda	izquierda	n	n	0	18	sn	_	_
+22	"	"	f	f	0	18	f	_	_
 23	como	como	c	c	0	24	conj	_	_
 24	a	a	s	s	0	31	ci	_	_
-25	la	el	d	d	0	26	spec	_	_
-26	“	“	n	n	0	24	sn	_	_
-27	derecha	derecho	a	a	0	26	s.a	_	_
-28	”	”	n	n	0	26	sn	_	_
+25	la	el	d	d	0	27	spec	_	_
+26	"	"	f	f	0	27	f	_	_
+27	derecha	derecha	n	n	0	24	sn	_	_
+28	"	"	f	f	0	24	f	_	_
 29	les	él	p	p	0	31	ci	_	_
 30	hace	hacer	v	v	0	31	v	_	_
 31	falta	faltar	v	v	0	5	S	_	_
