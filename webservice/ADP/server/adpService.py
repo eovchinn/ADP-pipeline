@@ -1,10 +1,10 @@
 import json, logging
 from optparse import OptionParser
 from restServer import start_server 
-from NLPipeline_coref_English_metaphor import *
+from NLPipeline_MULT_metaphor import *
 
 def annotate_document(annotate_document_request_body):
-  logging.info("Processing annotateDocumentADP...")
+  logging.info("Processing annotateDocument...")
 
   # The annotate_document_request_body object is a JSON string
   ro = json.loads(annotate_document_request_body)
@@ -19,7 +19,11 @@ def annotate_document(annotate_document_request_body):
     return json.dumps([])
 
   # These are the annotations that were given in the web service call
-  annotations = ro["annotations"]
+  try:
+    annotations = ro["annotations"]
+  except KeyError:
+    logging.info('No annotations available.')
+    return json.dumps([])
  
   #dict that contains metaphors&annotation_id
   input_metaphors = {}
@@ -36,7 +40,15 @@ def annotate_document(annotate_document_request_body):
 
     try:
       metaphor=annotation["metaphor"]
-      input_metaphors[str(annotation_id)]=metaphor
+      if language=='EN' :
+	 #replacing single quote, double quote (start/end), dash
+	 ascii_metaphor = metaphor.replace(u'\u2019',u'\u0027').replace(u'\u201c',u'\u0022').replace(u'\u201d',u'\u0022').replace(u'\u2014',u'\u002d')
+	 #see unicode chars
+	 #input_metaphors[str(annotation_id)]=metaphor
+	 #input_metaphors[str(annotation_id)]=metaphor.encode("ascii","ignore")
+	 input_metaphors[str(annotation_id)]=ascii_metaphor.encode("utf-8")
+      else:
+	 input_metaphors[str(annotation_id)]=metaphor.encode("utf-8")
     except KeyError:
       logging.info('No metaphor.Skip it.')
 
@@ -44,25 +56,12 @@ def annotate_document(annotate_document_request_body):
 
   logging.info("Processing " + language + "...")
 
-  if language=='EN' :
-    #English:returns JSON array
-    eng_adp=English_ADP(input_metaphors)
-    return eng_adp
-  elif language=='ES' :
-    #Spanish:returns JSON array
-    sp_adp=Spanish_ADP(input_metaphors)
-    return sp_adp
-  if language=='RU' :
-    #Russian:returns JSON array
-    ru_adp=Russian_ADP(input_metaphors)
-    return ru_adp
-  if language=='FA' :
-    #Farsi:returns JSON array
-    fa_adp=Farsi_ADP(input_metaphors)
-    return fa_adp
+  # if no metaphors
+  if not input_metaphors:
+    return json.dumps([])
 
-  #unknown language; return empty array
-  return json.dumps([])
+  adp_return = ADP(input_metaphors,language)
+  return adp_return
 
 if __name__ == '__main__':
   # Configure the logger
@@ -75,5 +74,9 @@ if __name__ == '__main__':
                          "listen on (default %default)",
                     metavar="INT", default=8000)
   (options, args) = parser.parse_args()
+
+  #set the port as an env var read in NL_pipeline; 
+  #necessary when generating proofgraph URIs
+  os.environ['ADP_PORT']=str(options.port)
 
   start_server(options, annotate_document)

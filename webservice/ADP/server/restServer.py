@@ -1,4 +1,5 @@
 import cherrypy
+import os
 
 class AnnotateDocumentResource(object):
   '''
@@ -22,6 +23,9 @@ def start_server(options, annotate_document_post_handler):
   to various server parameters (like 'port').
   '''
 
+  #root for images is the TMP_DIR
+  img_dir = os.environ['TMP_DIR']
+
   # Create the configuration for the server
   conf = { 
     'global': {
@@ -31,6 +35,11 @@ def start_server(options, annotate_document_post_handler):
     }, 
     '/': {
       'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
+    },
+    '/proofgraphs': {
+      'tools.staticdir.root':img_dir,
+      'tools.staticdir.dir':'proofgraphs',
+      'tools.staticdir.on': True
     }
   }
   

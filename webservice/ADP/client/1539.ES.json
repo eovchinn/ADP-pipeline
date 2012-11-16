@@ -1,0 +1,253 @@
+{
+  "document": {
+    "id": 1539,
+    "article_title": "[MACH]-1287 El laberinto de la impgnacion",
+    "authors_speakers_organization": "Romero Apis Jose Elias",
+    "characteristics_authors_speakers_organizations": "Male, mexican politician and attorney, late 50's",
+    "date_collected": "2012-09-04",
+    "date_of_publication": "2012-07-13",
+    "digital_rights": "Copyright",
+    "genre": "Opinion",
+    "url": "http://www.excelsior.com.mx/index.php?m=nota&seccion=opinion&cat=11&id_nota=847497",
+    "needs_review": "NO",
+    "source": "Excelsior",
+    "language": "ES",
+    "sentences": [
+      "El laberinto de la impugnación\r\nJosé Elías Romero Apis*",
+      "Uno de los temas que hoy encontramos hasta en las charlas de sobremesa o de taxi es el relacionado con las impugnaciones electorales, sus alcances y sus consecuencias.",
+      "Ante ello, me he propuesto no abordar un tema donde no puedo explicarme en menos de cien palabras, dada su complejidad.",
+      "Pero, aprovechando la hospitalidad de estas páginas, romperé mi propósito.",
+      "Me disculpo dada la razón de que soy un apasionado irredento de los temas procesales.",
+      "Soy procesalista, fui hijo y soy padre de procesalistas.",
+      "El proceso ha sido el tema profesional de mi familia desde antes de que yo naciera y lo seguirá siendo cuando yo ya litigue en otra jurisdicción, aún desconocida.",
+      "Por eso me animo a tratar de explicar lo que está sucediendo.",
+      "Sobre todo porque en muchos de nuestros compatriotas de todos los estratos he sentido incertidumbre y angustia sobre este asunto.",
+      "Todavía no he percibido, en nadie, certeza y alegría.",
+      "Lo haré, tan sólo, sobre diez temas.",
+      "El primero de ellos es para aclarar una confusión que he escuchado.",
+      "Es distinto el tema del tope de gastos de campaña que el de impugnación de la elección.",
+      "El primero se dirime ante el IFE, donde todos los partidos se están acusando recíprocamente y, en su caso, el IFE podría sancionarlos hasta con un monto igual al exceso.",
+      "Esto afectaría las finanzas de los partidos pero no la validez de la elección.",
+      "Lo segundo, ya entrando al juicio de inconformidad, como se llama lo que interpuso AMLO ante el TEPJF, donde acusa que el candidato Enrique Peña Nieto compró dinerariamente la voluntad de cinco millones de electores y que eso conlleva a la anulación de la elección y a la celebración de una nueva elección.",
+      "Esta sería dentro de 18 meses, previo presidente provisional.",
+      "Lo tercero es que, de acuerdo con el artículo 15 de la ley de la materia, como sucede en todo proceso, el que afirma tiene que probar, eso se llama carga de la prueba.",
+      "Pero, además, el juez sólo puede atenerse a las pruebas que le aportan las partes, eso se llama principio de necesidad de la prueba y significa que la prueba es absolutamente necesaria para la sentencia.",
+      "Ahora bien, lo cuarto, ¿cómo se prueba la afirmación del demandante?",
+      "Eso se llama principio de idoneidad y eficacia de la prueba, lo que significa que la prueba tiene que estar en congruencia idónea con lo que se está alegando y sirva para probarlo.",
+      "Quinto, sobre esto, para comenzar habría que contar con las declaraciones de los cinco millones de mexicanos que, dice el demandante, pudieron haber sido “comprados” y de lo cual afirma tener pruebas.",
+      "Eso implica cinco millones de pruebas.",
+      "Ello formaría el expediente más grande de la historia mexicana.",
+      "Integrar un aproximado de 20 millones de fojas a una institución tan grande como la PGR y tan sólo dedicada a ello le ocuparía como 10 años.",
+      "A una tan pequeña como el TEPJF le ocuparía como mil años.",
+      "Para entonces los testigos ya no existirían vivos.",
+      "Sexto, todo esto no serviría de nada si el elector “comprado” no puede identificar su voto, lo que es imposible porque la boleta es innominada.",
+      "Podría ser que le aceptó dinero, lo engañó y votó por otro.",
+      "No sería automática la descalificación de su voto, en tanto y en cuanto no se comprobara que, efectivamente votó por el comprador y que su voto mercenario está en la urna a favor del adquirente.",
+      "Séptimo, por si fuera poco se trata de una prueba ilegal y esas están prohibidas.",
+      "El voto es secreto por disposición constitucional.",
+      "Esto quiere decir que ninguna autoridad puede interrogar sobre el sentido de cada voto.",
+      "Pero, además, si voluntariamente el elector lo declarara, como solemos hacerlo a voz en cuello, ninguna autoridad puede tomar registro ni, mucho menos, archivo o expediente de lo que dijimos sobre el sentido y la dirección de nuestro voto.",
+      "Eso se llama prueba ilícita y es nula de origen.",
+      "Octavo, además de estas imposibilidades fácticas y jurídicas, no está clara la potestad jurisdiccional de anulación por las razones aducidas.",
+      "En su caso, podría ser un juicio tan largo que anulara una elección cuando el electo ya hubiera concluido su mandato, porque la tramitación no produce efectos suspensivos, de acuerdo con los artículos 41 constitucional y 6 de la citada ley.",
+      "Noveno, no pasará nada de acuerdo con mi muy modesto presagio.",
+      "Desde luego que en materia procesal no hay nada escrito.",
+      "Todo depende de muchos factores que no están en la ley, sino en los hombres.",
+      "Pero, en este caso, además de en la ley confío en los hombres.",
+      "Décimo, el proceso judicial no existe para alegar.",
+      "Los contendientes pueden alegar en el mitin, en los medios, en familia.",
+      "Pero el proceso tan sólo sirve para probar.",
+      "La única obligación de las partes es probar.",
+      "Esa es la única función del proceso y la única obligación del juzgador.",
+      "Esto no es una ocurrencia mía.",
+      "Así lo han dicho Carnelutti, Calamandrei, Chiovenda, Davis y 100 sabios más.",
+      "Pero, sobre todo y ante todo, así lo dice la Constitución Política de México."
+    ]
+  },
+  "annotations": [
+    {
+      "annotation_id": 16636,
+      "document_id": 1539,
+      "sentence_id": 21,
+      "char_begin_offset": 20,
+      "char_length": 180,
+      "metaphor": " para comenzar habría que contar con las declaraciones de los cinco millones de mexicanos que, dice el demandante, pudieron haber sido “comprados” y de lo cual afirma tener pruebas"
+    },
+    {
+      "annotation_id": 16641,
+      "document_id": 1539,
+      "sentence_id": 33,
+      "char_begin_offset": 58,
+      "char_length": 37,
+      "metaphor": " como solemos hacerlo a voz en cuello"
+    },
+    {
+      "annotation_id": 16650,
+      "document_id": 1539,
+      "sentence_id": 5,
+      "char_begin_offset": 0,
+      "char_length": 56,
+      "metaphor": " Soy procesalista, fui hijo y soy padre de procesalistas"
+    },
+    {
+      "annotation_id": 16653,
+      "document_id": 1539,
+      "sentence_id": 13,
+      "char_begin_offset": 0,
+      "char_length": 169,
+      "metaphor": " El primero se dirime ante el IFE, donde todos los partidos se están acusando recíprocamente y, en su caso, el IFE podría sancionarlos hasta con un monto igual al exceso"
+    },
+    {
+      "annotation_id": 16654,
+      "document_id": 1539,
+      "sentence_id": 24,
+      "char_begin_offset": 0,
+      "char_length": 140,
+      "metaphor": " Integrar un aproximado de 20 millones de fojas a una institución tan grande como la PGR y tan sólo dedicada a ello le ocuparía como 10 años"
+    },
+    {
+      "annotation_id": 16656,
+      "document_id": 1539,
+      "sentence_id": 26,
+      "char_begin_offset": 0,
+      "char_length": 50,
+      "metaphor": " Para entonces los testigos ya no existirían vivos"
+    },
+    {
+      "annotation_id": 16665,
+      "document_id": 1539,
+      "sentence_id": 42,
+      "char_begin_offset": 0,
+      "char_length": 71,
+      "metaphor": " Los contendientes pueden alegar en el mitin, en los medios, en familia"
+    },
+    {
+      "annotation_id": 18317,
+      "document_id": 1539,
+      "sentence_id": 5,
+      "char_begin_offset": 0,
+      "char_length": 56,
+      "metaphor": " Soy procesalista, fui hijo y soy padre de procesalistas"
+    },
+    {
+      "annotation_id": 18318,
+      "document_id": 1539,
+      "sentence_id": 13,
+      "char_begin_offset": 0,
+      "char_length": 134,
+      "metaphor": " El primero se dirime ante el IFE, donde todos los partidos se están acusando recíprocamente y, en su caso, el IFE podría sancionarlos"
+    },
+    {
+      "annotation_id": 18319,
+      "document_id": 1539,
+      "sentence_id": 13,
+      "char_begin_offset": 134,
+      "char_length": 35,
+      "metaphor": "hasta con un monto igual al exceso."
+    },
+    {
+      "annotation_id": 18320,
+      "document_id": 1539,
+      "sentence_id": 20,
+      "char_begin_offset": 0,
+      "char_length": 82,
+      "metaphor": " Eso se llama principio de idoneidad y eficacia de la prueba, lo que significa que"
+    },
+    {
+      "annotation_id": 18322,
+      "document_id": 1539,
+      "sentence_id": 21,
+      "char_begin_offset": 25,
+      "char_length": 123,
+      "metaphor": "comenzar habría que contar con las declaraciones de los cinco millones de mexicanos que, dice el demandante, pudieron haber"
+    },
+    {
+      "annotation_id": 18325,
+      "document_id": 1539,
+      "sentence_id": 21,
+      "char_begin_offset": 134,
+      "char_length": 33,
+      "metaphor": " pudieron haber  sido “comprados”"
+    },
+    {
+      "annotation_id": 18326,
+      "document_id": 1539,
+      "sentence_id": 42,
+      "char_begin_offset": 0,
+      "char_length": 72,
+      "metaphor": " Los contendientes pueden alegar en el mitin, en los medios, en familia."
+    },
+    {
+      "annotation_id": 18327,
+      "document_id": 1539,
+      "sentence_id": 39,
+      "char_begin_offset": 0,
+      "char_length": 77,
+      "metaphor": " Todo depende de muchos factores que no están en la ley, sino en los hombres."
+    },
+    {
+      "annotation_id": 18328,
+      "document_id": 1539,
+      "sentence_id": 24,
+      "char_begin_offset": 0,
+      "char_length": 94,
+      "metaphor": " Integrar un aproximado de 20 millones de fojas a una institución tan grande como la PGR y tan"
+    },
+    {
+      "annotation_id": 18329,
+      "document_id": 1539,
+      "sentence_id": 24,
+      "char_begin_offset": 94,
+      "char_length": 46,
+      "metaphor": "sólo dedicada a ello le ocuparía como 10 años."
+    },
+    {
+      "annotation_id": 18330,
+      "document_id": 1539,
+      "sentence_id": 26,
+      "char_begin_offset": 0,
+      "char_length": 50,
+      "metaphor": " Para entonces los testigos ya no existirían vivos"
+    },
+    {
+      "annotation_id": 18331,
+      "document_id": 1539,
+      "sentence_id": 32,
+      "char_begin_offset": 0,
+      "char_length": 57,
+      "metaphor": " Esto quiere decir que ninguna autoridad puede interrogar"
+    },
+    {
+      "annotation_id": 18339,
+      "document_id": 1539,
+      "sentence_id": 33,
+      "char_begin_offset": 96,
+      "char_length": 143,
+      "metaphor": "ninguna autoridad puede tomar registro ni, mucho menos, archivo o expediente de lo que dijimos sobre el sentido y la dirección de nuestro voto."
+    },
+    {
+      "annotation_id": 18364,
+      "document_id": 1539,
+      "sentence_id": 42,
+      "char_begin_offset": 0,
+      "char_length": 71,
+      "metaphor": " Los contendientes pueden alegar en el mitin, en los medios, en familia"
+    },
+    {
+      "annotation_id": 18365,
+      "document_id": 1539,
+      "sentence_id": 33,
+      "char_begin_offset": 96,
+      "char_length": 143,
+      "metaphor": " ninguna autoridad puede tomar registro ni, mucho menos, archivo o expediente de lo que dijimos sobre el sentido y la dirección de nuestro voto"
+    },
+    {
+      "annotation_id": 18415,
+      "document_id": 1539,
+      "sentence_id": 39,
+      "char_begin_offset": 0,
+      "char_length": 76,
+      "metaphor": " Todo depende de muchos factores que no están en la ley, sino en los hombres"
+    }
+  ]
+}
