@@ -363,7 +363,6 @@ class MaltConverter(object):
 
             if dep.cpostag == "nn":
                 if dep.deprel == u"предик":  # or dep.deprel == u"сравн-союзн":
-                    print word.lemma, dep.lemma
                     w_subject = dep.pred.args[1]
                 elif dep.deprel == u"1-компл" or dep.deprel == u"2-компл":
                     if not d_object:
