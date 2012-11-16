@@ -221,16 +221,33 @@ class MaltConverter(object):
             self.__words.append(WordToken(line))
             return True
         else:
-            return False
+            return
+
+    def preproc(self):
+        words = self.__words[:]
+
+        for i in xrange(0, len(self.__words) - 1):
+            w1 = self.__words[i]
+            w2 = self.__words[i + 1]
+
+            if w1.lemma == u"а" and w2.lemma == u"также":
+                w1.head = w2.head
+                w1.lemma = u"и"
+                w1.form = u"и"
+                words.remove(w2)
+
+        self.__words = words
 
     def word(self, word_id):
         return self.__words[word_id - 1]
 
     def deps(self, word, filt=None):
+        deps = []
         for w in self.__words:
             if w.head == word.id:
-                if word.cpostag in filt or filt is None:
-                    yield w
+                if filt is None or w.cpostag in filt:
+                    deps.append(w)
+        return deps
 
     def remove_pred(self, word):
         for p in self.__visible_preds:
@@ -279,6 +296,8 @@ class MaltConverter(object):
 
     def format_output(self, sent_count):
 
+        self.preproc()
+
         for w in self.__words:
 
             if not w.cpostag or self.punct.match(w.lemma):
@@ -287,6 +306,7 @@ class MaltConverter(object):
             if w.args != -1:
                 pred = self.init_predicate(w)
                 self.__initial_preds.append(pred)
+
 
         self.__visible_preds = self.__initial_preds[:]
 
@@ -300,9 +320,9 @@ class MaltConverter(object):
             elif p.word.cpostag == "adj":
                 self.apply_adj_rules(p.word)
             elif p.word.cpostag == "rb":
-                self.apply_adv_rules(p.word)
+                self.apply_rb_rules(p.word)
             elif p.word.cpostag == "in":
-                self.apply_pre_rules(p.word)
+                self.apply_in_rules(p.word)
             elif p.word.cpostag == "cnj":
                 self.apply_cnj_rules(p.word)
             elif p.word.cpostag == "par":
@@ -354,7 +374,7 @@ class MaltConverter(object):
         # 2. Argument control: first arguments of both verbs are the same.
 
         head = self.word(word.head)
-        if head and head.cpostag == "vb":
+        if head and head.cpostag == "vb" and not w_subject:
             # Use VERB#1 rule to find subject of the head
             w_subject = head.pred.args[1]
             head.pred.args[2].link_to(word.pred.args[0])
@@ -504,39 +524,34 @@ class MaltConverter(object):
         if head and head.cpostag == "nn":
             word.pred.args[1].link_to(head.pred.args[1])
 
-    def apply_adv_rules(self, word):
+    def apply_rb_rules(self, word):
 
         # 1. Second args of adverbs are verbs they are modifying.
 
-        head = self.unfold_dep(word, "vb")
+        head = self.word(word.head)
         if head:
             word.pred.args[1].link_to(head.pred.args[0])
 
-    def apply_pre_rules(self, word):
 
-        # 1. Verb+noun.
+    def apply_in_rules(self, word):
 
+        # 1. Verb + noun.
         head = self.word(word.head)
         if head.cpostag == "vb":
-            for dep in self.deps(word):
-                if dep.cpostag == "nn":
-                    word.pred.args[1].link_to(head.pred.args[0])
-                    word.pred.args[2].link_to(dep.pred.args[1])
-                    break
+            word.pred.args[1].link_to(head.pred.args[0])
 
-        # 2. Noun+noun.
-
+        # 2. Noun + noun.
         elif head.cpostag == "nn":
-            for dep in self.deps(word):
-                if dep.cpostag == "nn":
-                    word.pred.args[1].link_to(head.pred.args[1])
-                    word.pred.args[2].link_to(dep.pred.args[1])
-                    break
+            word.pred.args[1].link_to(head.pred.args[1])
+
+        for dep in self.deps(word, filt=["nn"]):
+            word.pred.args[2].link_to(dep.pred.args[1])
+
 
         # 3. Second arg is a prep
         # 4. Verb+verb
 
-    __pronouns = {
+    pronouns_map = {
         u"он": "male",
         u"она": "female",
         u"оно": "neuter",
@@ -550,11 +565,11 @@ class MaltConverter(object):
     def apply_pr_rules(self, word):
         # 1. Handle personal
 
-        if word.lemma not in self.__pronouns:
+        if word.lemma not in self.pronouns_map:
             self.remove_pred(word)
         else:
             word.cpostag = "nn"  # handle assumming that it's a noun
-            word.pred.prefix = self.__pronouns[word.lemma]
+            word.pred.prefix = self.pronouns_map[word.lemma]
             word.pred.show_index = False
             word.pred.show_postag = False
             self.apply_nn_rules(word)
