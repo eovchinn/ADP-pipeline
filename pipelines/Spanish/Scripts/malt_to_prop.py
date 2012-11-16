@@ -118,9 +118,9 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = insert_adjHead(head,wordID,sent_dict)
         if rel == "cc" and pos == "r":
             sent_dict = insert_cc(head,wordID,sent_dict)
-        if rel == "cd":
+        if rel == "cd" and predicate[-1] != "R":
             sent_dict = insert_cd(head,wordID,sent_dict)
-        if rel == "ci":
+        if rel == "ci" and predicate[-1] != "R":
             sent_dict = insert_ci(head,wordID,sent_dict)            
         if rel == "atr":
             sent_dict = inherit_atr(head,wordID,sent_dict)
@@ -135,7 +135,9 @@ def replace_args(prop_sent,sent_dict):
         if rel == "cpred":
             sent_dict = insert_cpred(head,wordID,sent_dict)
         if tag == "rb" and rel == "spec":
-            sent_dict = insert_rb_spec(head,wordID,sent_dict)            
+            sent_dict = insert_rb_spec(head,wordID,sent_dict)
+        if lemma == "no" and head !=0:
+            sent_dict = handle_negation(head,wordID,sent_dict)
     for key,prop in sent_dict.items():
         position +=1
         token = prop[0]
@@ -154,6 +156,14 @@ def replace_args(prop_sent,sent_dict):
             prop_dict[propID]=[propID,lemma,tag,predicate,head]
     return prop_dict
 
+def handle_negation(head,wordID,sent_dict):
+    sent_dict[wordID][7] = "not"
+    if sent_dict[head][7] == "nn":
+        sent_dict[wordID][6][1] = sent_dict[head][6][1]
+    else:
+        sent_dict[wordID][6][1] = sent_dict[head][6][0]
+
+    return sent_dict
     
 def insert_suj(head,wordID,sent_dict):
     """Insert the subject of a verb as its first argument"""
@@ -462,7 +472,7 @@ card_dict["diez"] = "10"
 
 heProList = ["el","lo"]
 sheProList = ["ella","la"]
-personProList = ["yo","me","nos","nosotros","usted","ustedes","mi","mis","su","sus","nuestro","nuestros","nuestra","nuestras"]
+personProList = ["yo","me","nos","nosotros","usted","ustedes","mi","mis","su","sus","nuestro","nuestros","nuestra","nuestras","quién"]
 thingProList = ["ellos","ellas","él"]
 reflexProList = ["se"]
 possessiveProList = ["mi","mis","tu","tus","su","sus","nuestro","nuestros","nuestra","nuestras"]
@@ -494,6 +504,10 @@ def main():
             prop_count+=1
             if prop[1] == "" and prop[2] in noTokenList:
                 sys.stdout.write(prop[2]+"("+",".join(prop[3])+")")
+            elif prop[2] in noTokenList:
+                sys.stdout.write(prop[2]+"("+",".join(prop[3])+")")
+            elif prop[2] == "not":
+                sys.stdout.write("["+prop[0]+"]"+":"+prop[2]+"("+",".join(prop[3])+")")
             elif re.search("[a-z]",prop[0]):# and (prop[2] == "vb" or prop[2] == "in"):
                 sys.stdout.write("["+prop[4]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
             else:
