@@ -338,6 +338,11 @@ class MaltConverter(object):
     #                     d.head = w.head
     #                     d.deprel = w.deprel
 
+    copula_verbs = set([
+        u"быть",
+        u"являться",
+    ])
+
     def apply_vb_rules(self, word):
 
         # 1. Link arguments: subject - second arg, direct object - third arg,
@@ -363,7 +368,7 @@ class MaltConverter(object):
                     dep = new_dep
 
             if dep.cpostag == "nn":
-                if dep.deprel == u"предик" or dep.deprel == u"сравн-союзн":
+                if dep.deprel == u"предик":  # or dep.deprel == u"сравн-союзн":
                     w_subject = dep.pred.args[1]
                 elif dep.deprel == u"1-компл" or dep.deprel == u"2-компл":
                     if not d_object:
@@ -382,6 +387,7 @@ class MaltConverter(object):
         # 3. If in  there are more than 3 cases which can be expressed without
         #    prepositions (e.g. Russian), then introduce additional predicates
         #    expressing these cases is need.
+
         # TODO(zaytsev@udc.edu): implement this
         # 4. Add tense information if available from the parser.
 
@@ -395,8 +401,26 @@ class MaltConverter(object):
                 epred = ("future", [Argument("e"), word.pred.args[0]])
                 self.__extra_preds.append(epred)
 
-        # 5. Correferent Nouns
-        # TODO(zaytsev@udc.edu): implement this
+        # 5. Copula
+
+        if word.lemma in self.copula_verbs:
+            nouns = []
+            adjs = []
+            for dep in self.__deps(word):
+                if dep.cpostag == "nn":
+                    nouns.append(dep)
+                elif dep.cpostag == "adj":
+                    adjs.append(dep)
+                # 2) Noun + Adj
+                if len(adjs) == 1 and len(nouns) == 1:
+                    adjs[0].pred.args[1].link_to(nouns[0].pred.args[1])
+                # 1) Nount + Noun
+                elif len(adjs) == 0 and len(nouns) == 2:
+                    self.__extra_preds.append(("equal", [
+                            Argument("e"),
+                            Argument.arg_link(nouns[0].pred.args[1]),
+                            Argument.arg_link(nouns[1].pred.args[1]),
+                        ]))
 
         if w_subject:
             word.pred.args[1].link_to(w_subject)
