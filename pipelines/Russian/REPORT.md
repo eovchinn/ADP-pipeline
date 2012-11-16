@@ -12,7 +12,11 @@ Use `run_test.sh` wich will read input from `test_data/input.txt` and store resu
 2. ***Implemented***
 3. Not implemented
 4. ***Implemented***
-5. Not implemented
+5.a ***Implemented***
+5.b ***Implemented***
+5.c ***Implemented***
+5.d Not implemented
+6. Not implemented
 
 
 * ***NOUNS***

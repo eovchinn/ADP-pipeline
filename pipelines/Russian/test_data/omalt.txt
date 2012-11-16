@@ -269,3 +269,41 @@
 5	Лондоне	лондон	N	N	Ncmsln	4	предл	_	_
 6	.	.	S	S	SENT	5	PUNC	_	_
 
+1	Выбор	выбор	N	N	Ncmsnn	2	предик	_	_
+2	является	являться	V	V	Vmip3s-m-e	0	ROOT	_	_
+3	тупиковым	тупиковый	A	A	Afpmsif	2	1-компл	_	_
+4	.	.	S	S	SENT	3	PUNC	_	_
+
+1	Выбор	выбор	N	N	Ncmsnn	2	предик	_	_
+2	является	являться	V	V	Vmip3s-m-e	0	ROOT	_	_
+3	тупиком	тупик	N	N	Ncmsin	2	1-компл	_	_
+4	.	.	S	S	SENT	3	PUNC	_	_
+
+1	Выбор	выбор	N	N	Ncmsnn	2	предик	_	_
+2	является	являться	V	V	Vmip3s-m-e	0	ROOT	_	_
+3	тупиковым	тупиковый	A	A	Afpmsif	4	опред	_	_
+4	выбор	выбор	N	N	Ncmsnn	2	1-компл	_	_
+5	.	.	S	S	SENT	4	PUNC	_	_
+
+1	Джон	джон	N	N	Npmsny	2	предик	_	_
+2	находится	находиться	V	V	Vmip3s-m-e	0	ROOT	_	_
+3	в	в	S	S	Sp-l	2	1-компл	_	_
+4	комнате	комната	N	N	Ncfsln	3	предл	_	_
+5	.	.	S	S	SENT	4	PUNC	_	_
+
+1	Джон	джон	N	N	Npmsny	0	ROOT	_	_
+2	в	в	S	S	Sp-l	1	атриб	_	_
+3	комнате	комната	N	N	Ncfsln	2	предл	_	_
+4	.	.	S	S	SENT	3	PUNC	_	_
+
+1	Книга	книга	N	N	Ncfsnn	0	ROOT	_	_
+2	на	на	S	S	Sp-l	1	атриб	_	_
+3	столе	стол	N	N	Ncmsln	2	предл	_	_
+4	.	.	S	S	SENT	3	PUNC	_	_
+
+1	Книга	книга	N	N	Ncfsnn	2	предик	_	_
+2	лежит	лежать	V	V	Vmip3s-a-e	0	ROOT	_	_
+3	на	на	S	S	Sp-l	2	1-компл	_	_
+4	столе	стол	N	N	Ncmsln	3	предл	_	_
+5	.	.	S	S	SENT	4	PUNC	_	_
+

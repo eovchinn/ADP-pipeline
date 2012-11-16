@@ -1,4 +1,5 @@
 #! /usr/bin/python
+# -*- coding: utf-8 -*-
 import sys,re,optparse
 
 ##################### I/O ##################################
@@ -99,12 +100,16 @@ def main():
     for line in printable:
         line_list = line.split('\t')
         try:
-            pos = line_list[3]
-            if pos == 'fs' or pos == 'FS':
+            token = line_list[1]
+            pos = line_list[3]              
+            if pos == 'fs' or pos =='FS' and token != "¿":
                 line_list[3] = "f"
                 line_list[4] = "f"
                 print "\t".join(line_list),'\n'
             else:
+                if token == "¿":
+                    line_list[3] = "f"
+                    line_list[4] = "f"                 
                 print "\t".join(line_list)
         except IndexError:
             print line

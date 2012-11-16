@@ -195,3 +195,180 @@
 2	no	no	r	r	0	1	neg	_	_
 3	.	.	f	f	0	1	f	_	_
 
+1	El	el	d	d	0	2	spec	_	_
+2	hombre	hombre	n	n	0	0	ROOT	_	_
+3	que	que	c	c	0	4	conj	_	_
+4	vive	vivir	v	v	0	2	S	_	_
+5	en	en	s	s	0	4	cc	_	_
+6	esta	este	d	d	0	7	spec	_	_
+7	casa	casa	n	n	0	5	sn	_	_
+8	.	.	f	f	0	0	sentence	_	_
+
+1	La	el	d	d	0	2	spec	_	_
+2	casa	casa	n	n	0	5	suj	_	_
+3	que	que	c	c	0	5	conj	_	_
+4	se	se	p	p	0	5	pass	_	_
+5	construyó	construir	v	v	0	0	sentence	_	_
+6	.	.	f	f	0	5	f	_	_
+
+1	El	el	d	d	0	2	spec	_	_
+2	hombre	hombre	n	n	0	6	suj	_	_
+3	a	a	s	s	0	6	cd	_	_
+4	quien	quien	p	p	0	3	sn	_	_
+5	vi	vi	z	z	0	6	suj	_	_
+6	corriendo	correr	v	v	0	0	sentence	_	_
+7	.	.	f	f	0	6	f	_	_
+
+1	El	el	d	d	0	2	spec	_	_
+2	lugar	lugar	n	n	0	5	suj	_	_
+3	donde	donde	r	r	0	4	spec	_	_
+4	vivo	vivo	a	a	0	2	s.a	_	_
+5	explotó	explotar	v	v	0	0	sentence	_	_
+6	.	.	f	f	0	5	f	_	_
+
+1	Esa	ese	d	d	0	2	spec	_	_
+2	es	ser	v	v	0	0	ROOT	_	_
+3	la	el	d	d	0	4	spec	_	_
+4	razón	razón	n	n	0	2	atr	_	_
+5	por	por	s	s	0	0	ROOT	_	_
+6	la	el	d	d	0	10	spec	_	_
+7	que	que	c	c	0	10	conj	_	_
+8	yo	yo	p	p	0	10	suj	_	_
+9	me	yo	p	p	0	10	cd	_	_
+10	vaya	ir	v	v	0	5	sn	_	_
+11	.	.	f	f	0	0	sentence	_	_
+
+1	Ese	ese	d	d	0	2	spec	_	_
+2	fue	ser	v	v	0	0	ROOT	_	_
+3	el	el	d	d	0	4	spec	_	_
+4	día	día	n	n	0	2	atr	_	_
+5	en	en	s	s	0	2	cc	_	_
+6	que	que	c	c	0	8	conj	_	_
+7	me	yo	p	p	0	8	cd	_	_
+8	fui	ir	v	v	0	5	S	_	_
+9	.	.	f	f	0	0	sentence	_	_
+
+1	Esa	ese	d	d	0	2	spec	_	_
+2	fue	ser	v	v	0	0	ROOT	_	_
+3	la	el	d	d	0	4	spec	_	_
+4	manera	manera	n	n	0	2	atr	_	_
+5	cómo	cómo	r	r	0	7	cc	_	_
+6	me	yo	p	p	0	7	cd	_	_
+7	fue	ir	v	v	0	4	S	_	_
+8	.	.	f	f	0	0	sentence	_	_
+
+1	El	el	d	d	0	2	spec	_	_
+2	lugar	lugar	n	n	0	5	suj	_	_
+3	donde	donde	r	r	0	4	spec	_	_
+4	vivo	vivo	a	a	0	2	s.a	_	_
+5	explotó	explotar	v	v	0	0	sentence	_	_
+6	.	.	f	f	0	5	f	_	_
+
+1	Esa	ese	d	d	0	2	spec	_	_
+2	es	ser	v	v	0	0	ROOT	_	_
+3	la	el	d	d	0	4	spec	_	_
+4	razón	razón	n	n	0	2	atr	_	_
+5	por	por	s	s	0	4	sp	_	_
+6	la	el	d	d	0	8	spec	_	_
+7	que	que	c	c	0	8	c	_	_
+8	van	ir	v	v	0	5	sn	_	_
+9	.	.	f	f	0	0	sentence	_	_
+
+1	Yo	yo	p	p	0	2	suj	_	_
+2	sé	saber	v	v	0	0	sentence	_	_
+3	lo	el	d	d	0	5	spec	_	_
+4	que	que	c	c	0	5	c	_	_
+5	quieres	querer	v	v	0	2	cd	_	_
+6	.	.	f	f	0	2	f	_	_
+
+1	Yo	yo	p	p	0	2	suj	_	_
+2	sé	saber	v	v	0	0	sentence	_	_
+3	que	que	c	c	0	5	c	_	_
+4	has	haber	v	v	0	5	v	_	_
+5	visto	ver	v	v	0	2	cd	_	_
+6	.	.	f	f	0	2	f	_	_
+
+1	Yo	yo	p	p	0	2	suj	_	_
+2	sé	saber	v	v	0	0	sentence	_	_
+3	dónde	dónde	r	r	0	2	cc	_	_
+4	vives	vivir	v	v	0	2	cd	_	_
+5	.	.	f	f	0	2	f	_	_
+
+1	Yo	yo	p	p	0	2	suj	_	_
+2	sé	saber	v	v	0	0	sentence	_	_
+3	cómo	cómo	r	r	0	5	cc	_	_
+4	se	se	p	p	0	5	impers	_	_
+5	vive	vivir	v	v	0	2	cd	_	_
+6	.	.	f	f	0	2	f	_	_
+
+1	Yo	yo	p	p	0	2	suj	_	_
+2	sé	saber	v	v	0	0	sentence	_	_
+3	cuando	cuando	c	c	0	5	conj	_	_
+4	se	se	p	p	0	5	morfema.pronominal	_	_
+5	llega	llegar	v	v	0	2	cd	_	_
+6	.	.	f	f	0	2	f	_	_
+
+1	Yo	yo	p	p	0	2	suj	_	_
+2	sé	saber	v	v	0	0	sentence	_	_
+3	por_qué	por_qué	r	r	0	2	cc	_	_
+4	te	tú	p	p	0	5	cd	_	_
+5	vas	ir	v	v	0	2	cd	_	_
+6	.	.	f	f	0	2	f	_	_
+
+1	Hagas	hacer	v	v	0	0	sentence	_	_
+2	lo	el	d	d	0	5	spec	_	_
+3	que	que	c	c	0	5	conj	_	_
+4	hagas	hacer	v	v	0	5	v	_	_
+5	está	estar	v	v	0	1	suj	_	_
+6	bien	bien	r	r	0	5	atr	_	_
+7	.	.	f	f	0	1	f	_	_
+
+1	Dondequiera	dondequiera	r	r	0	0	ROOT	_	_
+2	que	que	c	c	0	3	conj	_	_
+3	vaya	ir	v	v	0	0	ROOT	_	_
+4	está	estar	v	v	0	3	cd	_	_
+5	bien	bien	r	r	0	3	cc	_	_
+6	.	.	f	f	0	0	sentence	_	_
+
+1	¿	¿	f	f	0	3	f	_	_
+2	Qué	qué	p	p	0	3	suj	_	_
+3	hiciste	hacer	v	v	0	0	sentence	_	_
+4	?	?	f	f	0	3	f	_	_
+
+1	¿	¿	f	f	0	4	f	_	_
+2	A	a	s	s	0	4	cd	_	_
+3	quién	quién	p	p	0	2	sn	_	_
+4	ves	ver	v	v	0	0	sentence	_	_
+5	?	?	f	f	0	4	f	_	_
+
+1	¿	¿	f	f	0	3	f	_	_
+2	Cuándo	cuándo	r	r	0	3	cc	_	_
+3	llegaste	llegar	v	v	0	0	sentence	_	_
+4	?	?	f	f	0	3	f	_	_
+
+1	¿	¿	f	f	0	5	f	_	_
+2	Por	por	s	s	0	5	cc	_	_
+3	qué	qué	p	p	0	2	sn	_	_
+4	has	haber	v	v	0	5	v	_	_
+5	venido	venir	v	v	0	0	sentence	_	_
+6	?	?	f	f	0	5	f	_	_
+
+1	¿	¿	f	f	0	5	f	_	_
+2	Cómo	cómo	r	r	0	5	cc	_	_
+3	se	se	p	p	0	5	ci	_	_
+4	te	tú	p	p	0	5	cd	_	_
+5	ocurrió	ocurrir	v	v	0	0	sentence	_	_
+6	?	?	f	f	0	5	f	_	_
+
+1	Where	Where	n	n	0	4	suj	_	_
+2	did	did	n	n	0	4	cc	_	_
+3	you	you	n	n	0	4	suj	_	_
+4	come	comer	v	v	0	0	sentence	_	_
+5	?	?	f	f	0	4	f	_	_
+
+1	¿	¿	f	f	0	2	f	_	_
+2	De	de	s	s	0	4	cc	_	_
+3	dónde	dónde	r	r	0	2	sadv	_	_
+4	vienes	venir	v	v	0	0	sentence	_	_
+5	?	?	f	f	0	4	f	_	_
+
