@@ -116,7 +116,7 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = insert_sn(head,wordID,sent_dict)
         if rel in adjectiveRels and pos == "a":
             sent_dict = insert_adjHead(head,wordID,sent_dict)
-        if rel == "cc" and pos == "r":
+        if rel == "cc" and pos == "r" and lemma not in whWords:
             sent_dict = insert_cc(head,wordID,sent_dict)
         if rel == "cd" and predicate[-1] != "R":
             sent_dict = insert_cd(head,wordID,sent_dict)
@@ -138,6 +138,8 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = insert_rb_spec(head,wordID,sent_dict)
         if lemma == "no" and head !=0:
             sent_dict = handle_negation(head,wordID,sent_dict)
+        if tag == "wh" and head !=0:
+            sent_dict = handle_wh(head,wordID,sent_dict)              
     for key,prop in sent_dict.items():
         position +=1
         token = prop[0]
@@ -162,9 +164,34 @@ def handle_negation(head,wordID,sent_dict):
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
     else:
         sent_dict[wordID][6][1] = sent_dict[head][6][0]
-
     return sent_dict
-    
+
+def handle_wh(head,wordID,sent_dict):
+    """Handle all wh words"""
+    #for now, skip these words, remove this line, uncomment everything below to add functionality
+    #sent_dict[wordID][6].append("R")
+    extra = determine_wh_helper(sent_dict[wordID][1])
+    sent_dict[wordID][1] = ""
+    if sent_dict[head][7] == "vb":
+        headHead = sent_dict[head][3]
+        if headHead == 0:
+            sent_dict[head][6][2] = sent_dict[wordID][6][0]
+            #sent_dict = add_new_entry(sent_dict,"loc",sent_dict[wordID][6][1],sent_dict[head][6][0],sent_dict[wordID][8])          
+            for key, values in sent_dict.items():
+            #look for the "o" conjunction with the same head as the current word
+                if (values[4] == "cd") and (values[3] == sent_dict[wordID][3]):
+                    sent_dict = add_new_entry(sent_dict,extra,sent_dict[wordID][6][1],sent_dict[values[5]][6][0],sent_dict[wordID][8])        
+            return sent_dict
+        else:
+            sent_dict[headHead][6][2] = sent_dict[wordID][6][0]
+            sent_dict = add_new_entry(sent_dict,"loc",sent_dict[wordID][6][1],sent_dict[head][6][0],sent_dict[wordID][8])
+            return sent_dict
+    return sent_dict
+
+def determine_wh_helper(lemma):
+    if lemma == "dónde":
+        return "loc"
+
 def insert_suj(head,wordID,sent_dict):
     """Insert the subject of a verb as its first argument"""
     if sent_dict[head][7] == "vb":
@@ -188,7 +215,6 @@ def process_aux(head,wordID,sent_dict):
         sent_dict[wordID][6][2] = sent_dict[head][6][0]
     return sent_dict
 
-nounArg = re.compile("x\d")
 
 def inherit_args(head,wordID,sent_dict):
     """Inherit the arguments of a head verb"""
@@ -203,7 +229,8 @@ def inherit_args(head,wordID,sent_dict):
     #if the current word has a clause deprel
     if sent_dict[wordID][4] == "S":
         for key, values in sent_dict.items():
-            #look for the "o" conjunction with the same head as the current word
+            #look for the "o" conjunction with the same head as the current word, add a new entry it we find it
+            #otherwise add nothing
             if (values[4] == "conj") and (values[3] == sent_dict[wordID][3]) and (values[1] == "o"):
                 sent_dict = add_new_entry(sent_dict,"or",sent_dict[head][6][0],sent_dict[wordID][6][0],sent_dict[wordID][8])
     return sent_dict
@@ -257,7 +284,8 @@ def insert_cd(head,wordID,sent_dict):
     if sent_dict[wordID][2] in nominalList and sent_dict[head][7] == "vb":
         sent_dict[head][6][2] = sent_dict[wordID][6][1]
     if sent_dict[wordID][2] == "v" and sent_dict[head][7] == "vb":
-        sent_dict[head][6][2] = sent_dict[wordID][6][0]        
+        if not eventArg.search(sent_dict[head][6][2]):
+            sent_dict[head][6][2] = sent_dict[wordID][6][0]        
     return sent_dict
 
 def insert_ci(head,wordID,sent_dict):
@@ -342,7 +370,7 @@ def insert_rb_spec(head,wordID,sent_dict):
         sent_dict[wordID][6][1] = sent_dict[head][6][0]    
     return sent_dict
 
-def insert_cc(head,wordID,sent_dict):
+def insert_cc(head,wordID,sent_dict):    
     if sent_dict[head][7] == "vb":
         sent_dict[wordID][6][1] = sent_dict[head][6][0]
     return sent_dict
@@ -355,6 +383,14 @@ def insert_m_p(head,wordID,sent_dict):
 def build_predicate(pos,eCount,xCount,uCount,lemma):
     pred = []
     tag = ""
+    if lemma in whWords:
+        tag = "wh"
+        pos = "wh"
+        pred.append("e"+str(eCount))
+        eCount+=1
+        pred.append("x"+str(xCount))
+        xCount+=1
+        return pred,tag,eCount,xCount,uCount        
     if verbTag.match(pos):
         tag = "vb"
         pred.append("e"+str(eCount))
@@ -478,10 +514,14 @@ reflexProList = ["se"]
 possessiveProList = ["mi","mis","tu","tus","su","sus","nuestro","nuestros","nuestra","nuestras"]
 
 nominalList = ["n","p"]
-noTokenList = ["male","female","person","thing","reflexive","equal","card","or","be","nn","card"]
+noTokenList = ["male","female","person","thing","reflexive","equal","card","or","be","nn","card","loc"]
 inheritingVbs = ["S","v"]
 adjectiveRels = ["s.a","cn","grup.a"]
 prepRels = ["sp","cn"]
+whWords = ["dónde"]
+
+nounArg = re.compile("x\d")
+eventArg = re.compile("e\d")
 
 nounPred = re.compile("nn\(e\d*,[ux]\d*\)")
 pronounPred = re.compile("p\(e\d*,[ux]\d*\)")
@@ -504,9 +544,9 @@ def main():
             prop_count+=1
             if prop[1] == "" and prop[2] in noTokenList:
                 sys.stdout.write(prop[2]+"("+",".join(prop[3])+")")
-            elif prop[2] in noTokenList:
-                sys.stdout.write(prop[2]+"("+",".join(prop[3])+")")
-            elif prop[2] == "not":
+            elif prop[1] != "" and prop[2] in noTokenList:
+                sys.stdout.write("["+prop[0]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
+            elif prop[2] == "not" or prop[2] =="wh" :
                 sys.stdout.write("["+prop[0]+"]"+":"+prop[2]+"("+",".join(prop[3])+")")
             elif re.search("[a-z]",prop[0]):# and (prop[2] == "vb" or prop[2] == "in"):
                 sys.stdout.write("["+prop[4]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
