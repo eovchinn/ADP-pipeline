@@ -8,6 +8,13 @@
 # The script takes the output of the Malt Parser and converts it to
 # Logical Form format.
 
+# Options:
+#    [--input <input file>]
+#    [--output <output file>]
+#    [--nnnumber 1] – enables output numbers for nouns
+#    [--vbtense 1] – enables output tenses for verbs
+
+
 import re
 import sys
 import argparse
@@ -395,7 +402,7 @@ class MaltConverter(object):
                 epred = ("future", [Argument("e"), word.pred.args[0]])
                 self.__extra_preds.append(epred)
 
-        # 5. Copula
+        # 5. Copula expressed with a verb
 
         if word.lemma in self.copula_verbs:
             self.__visible_preds.remove(word.pred)
@@ -416,6 +423,26 @@ class MaltConverter(object):
                     adjs.append(dep)
                 elif dep.cpostag == "in":
                     preps.append(dep)
+
+            # number of dependents is equal to one
+            # try to find use dependents of the head
+            if len(nouns) + len(adjs) + len(preps) == 1:
+                print "TRUE"
+                print nouns, adjs, preps
+                for dep in self.deps(head, filt=["nn", "adj", "in"]):
+                    # if dep.cpostag not in ["nn", "adj", "in"]:
+                    #     new_dep = self.unfold_dep(dep, "adj")
+                    #     if not new_dep:
+                    #         continue
+                    #     else:
+                    #         dep = new_dep
+                    if dep.cpostag == "nn":
+                        nouns.append(dep)
+                    elif dep.cpostag == "adj":
+                        adjs.append(dep)
+                    elif dep.cpostag == "in":
+                        preps.append(dep)
+                print nouns, adjs, preps
 
             # a) Nount + Noun
             if len(adjs) == 0 and len(nouns) == 2:
@@ -479,13 +506,23 @@ class MaltConverter(object):
         #    genitives.
 
         head = self.word(word.head)
-        if word.feats[4] == "g" and head.cpostag == "nn":
-            epred = ("of-in",
-                        [Argument("e"),
-                         head.pred.args[1],
-                         word.pred.args[1],
-                ])
-            self.__extra_preds.append(epred)
+        if head.cpostag == "nn":
+            if word.feats[4] == "g":  # if genetive case
+                epred = ("of-in",
+                            [Argument("e"),
+                             head.pred.args[1],
+                             word.pred.args[1],
+                    ])
+
+        #  Copula. Without a verb.
+
+            elif head.feats[4] == "n" and word.feats[4] == "n":  # if nominative
+                epred = ("equal",
+                            [Argument("e"),
+                             word.pred.args[1],
+                             head.pred.args[1],
+                    ])
+                self.__extra_preds.append(epred)
 
         # 3. Add number information if available from the parser (if plural).
         global NN_NUMBER
@@ -542,22 +579,7 @@ class MaltConverter(object):
 
     def apply_in_rules(self, word):
 
-        # 5. Adj + noun
         head = self.word(word.head)
-        if head.cpostag == "nn":
-            for hdep in self.deps(head):
-                if hdep.cpostag == "adj" and hdep.deprel == u"опред":
-                    deps = self.deps(word, filt=["nn"])
-                    if len(deps) == 1:
-                        word.pred.args[1].link_to(hdep.pred.args[0])
-                        word.pred.args[2].link_to(deps[0].pred.args[1])
-                        return
-        elif head.cpostag == "adj":
-            deps = self.deps(word, filt=["nn"])
-            if len(deps) == 1:
-                word.pred.args[1].link_to(head.pred.args[0])
-                word.pred.args[2].link_to(deps[0].pred.args[1])
-                return
 
         # 1. Verb + noun.
         if head.cpostag == "vb":
@@ -566,6 +588,10 @@ class MaltConverter(object):
         # 2. Noun + noun.
         elif head.cpostag == "nn":
             word.pred.args[1].link_to(head.pred.args[1])
+
+        # 5. Adj + noun
+        elif head.cpostag == "adj":
+            word.pred.args[1].link_to(head.pred.args[0])
 
         for dep in self.deps(word, filt=["nn"]):
             word.pred.args[2].link_to(dep.pred.args[1])
