@@ -243,6 +243,18 @@ class MaltConverter(object):
                 w1.form = u"и"
                 words.remove(w2)
 
+        # for w in words:
+        #     if w.lemma == u"и" or w.lemma == u"или":
+        #         deps = self.deps(w)
+        #         if len(deps) == 1:
+        #             head = self.word(w.head)
+        #             if head:
+        #                 hdeps = self.deps(head)
+        #                 if len(hdeps) == 1:
+        #                     hhead = head.head
+        #                     head.head = w.head
+        #                     w.head = hhead
+
         self.__words = words
 
     def word(self, word_id):
@@ -427,8 +439,8 @@ class MaltConverter(object):
             # number of dependents is equal to one
             # try to find use dependents of the head
             if len(nouns) + len(adjs) + len(preps) == 1:
-                print "TRUE"
-                print nouns, adjs, preps
+                # print "TRUE"
+                # print nouns, adjs, preps
                 for dep in self.deps(head, filt=["nn", "adj", "in"]):
                     # if dep.cpostag not in ["nn", "adj", "in"]:
                     #     new_dep = self.unfold_dep(dep, "adj")
@@ -442,7 +454,7 @@ class MaltConverter(object):
                         adjs.append(dep)
                     elif dep.cpostag == "in":
                         preps.append(dep)
-                print nouns, adjs, preps
+                # print nouns, adjs, preps
 
             # a) Nount + Noun
             if len(adjs) == 0 and len(nouns) == 2:
