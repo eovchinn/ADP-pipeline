@@ -402,7 +402,7 @@ class MaltConverter(object):
         #    expressing these cases is need.
 
         for dep in self.deps(word, filt=["nn"]):
-            if dep.feats[4] == "i":
+            if dep.feats[4] == "i":  # instrumental
                 epred = ("instr", [
                         Argument("e"),
                         Argument.arg_link(word.pred.args[0]),
@@ -485,6 +485,17 @@ class MaltConverter(object):
                         force=True)
                     preps[0].pred.args[2].link_to(ddeps[0].pred.args[1],
                         force=True)
+
+        # 6. Passive
+        if head and head.cpostag == "vb" and \
+           head.lemma == u"быть" and head.feats[3] == "s":
+           for dep in self.deps(head, filt=["nn"]):
+                if dep.deprel == u"предик":
+                    word.pred.args[2].link_to(dep.pred.args[1])
+                    if w_subject.resolve_link() == \
+                       dep.pred.args[1].resolve_link():
+                        w_subject = None
+
 
         if w_subject:
             word.pred.args[1].link_to(w_subject)
