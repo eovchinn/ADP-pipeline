@@ -525,6 +525,7 @@ class MaltConverter(object):
                              head.pred.args[1],
                              word.pred.args[1],
                     ])
+                self.__extra_preds.append(epred)
 
         #  Copula. Without a verb.
 
