@@ -6,11 +6,15 @@ export PYTHONPATH=location of ADP pipelines (Metaphor-ADP/pipelines/English)
 Start web-service annotateDocument on default port 8000
 =======================================================
 
-python adpService.py 
+*if "-g" argument is present, web-service returns proofgraph as
+ base-64 string
+*if not present only returns URL of proofgraph
+
+python adpService.py -g 
 
 OR ... start on another port
 ============================
-python adpService.py -p 8080
+python adpService.py -p 8080 -g
 
 Send a request
 ==============
