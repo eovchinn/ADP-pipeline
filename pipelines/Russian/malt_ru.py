@@ -401,7 +401,15 @@ class MaltConverter(object):
         #    prepositions (e.g. Russian), then introduce additional predicates
         #    expressing these cases is need.
 
-        # TODO(zaytsev@udc.edu): implement this
+        for dep in self.deps(word, filt=["nn"]):
+            if dep.feats[4] == "i":
+                epred = ("instr", [
+                        Argument("e"),
+                        Argument.arg_link(word.pred.args[0]),
+                        Argument.arg_link(dep.pred.args[1]),
+                    ])
+                self.__extra_preds.append(epred)
+
         # 4. Add tense information if available from the parser.
 
         global VB_TENSE
