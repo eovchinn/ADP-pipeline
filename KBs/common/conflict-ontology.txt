@@ -23,11 +23,11 @@
 
 ; Conflict has two adversaries
 
-(B (name conflict0) (=> (conflict c :0.3) (adversary e x y c)))
+(B (name conflict0) (=> (conflict c x y g y :0.3) (adversary e x y c)))
 
 ;In conflict, adversaries attack each other.
 
-(B (name conflict3) (=> (^ (conflict c :1.2)(adversary e1 x y c :0.6)) (attack e1 x y)))
+(B (name conflict3) (=> (^ (conflict c x y g h:1.2)(adversary e1 x y c :0.6)) (attack e1 x y)))
 
 ; Adversaries have contradictory goals.
 
@@ -44,21 +44,21 @@
 
 ;To win is to achieve the goal.
 
-;(B (name win) (=> (^ (conflict c) (adversary e x y c) 
-;   	      	     	          (goal e1 g x) (goal e2 h y) (accomplish-goal e3 g x))
+;(B (name win) (=> (^ (conflict c x y g h :0.3) (adversary e x y c :0.3) 
+;   	      	     	          (goal e1 g x :0.3) (goal e2 h y :0.3) (accomplish-goal e3 g x :0.3))
 ;		     (win e x y c)))
 
 ;Victory is winning.
 
-;(B (name victory) (=> (^ (conflict c :0.3) (adversary e1 x y c :0.3) (win e1 x y c :0.3)) (victory e1 x y c)))
+;(B (name victory) (=> (^ (conflict c x y g h :0.3) (adversary e1 x y c :0.3) (win e1 x y c :0.3)) (victory e1 x y c)))
 
 ;To lose is for your adversary to win.
 
 ;(B (name lose) (=> (win e x y c :1.2) (lose e y x c)))
 
-;Adversaries compete with each other.  
+; Competition is a type of conflict with a set of rules
 
-;(B (name compete) (=> (^ (adversary e1 x y c :0.3) (conflict c :0.6)) (compete e x y u)))
+;(B (name compete) (=> (^ (conflict c x y g h :0.3) (etc-competition :0.9))(competition c x y g h r)))
 
 ;Adversaries use weapons in attacks.
 
@@ -92,7 +92,7 @@
 
 ; One kind of conflict is a war. 
 
-;(B (name war) (=> (^ (conflict e :0.6)(waretc e :0.6)) (war e)))
+;(B (name war) (=> (^ (conflict e x y g h :0.6) (waretc e :0.6)) (war e)))
 
 ;Adversaries in war are groups to which members are loyal.
 
