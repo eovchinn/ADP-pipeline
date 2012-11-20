@@ -401,7 +401,17 @@ class MaltConverter(object):
         #    prepositions (e.g. Russian), then introduce additional predicates
         #    expressing these cases is need.
 
-        # TODO(zaytsev@udc.edu): implement this
+        if word.lemma not in self.copula_verbs:
+            for dep in self.deps(word, filt=["nn"]):
+                if dep.feats[4] == "i":  # instrumental
+                    # print word.form, dep.form
+                    epred = ("instr", [
+                            Argument("e"),
+                            Argument.arg_link(word.pred.args[0]),
+                            Argument.arg_link(dep.pred.args[1]),
+                        ])
+                    self.__extra_preds.append(epred)
+
         # 4. Add tense information if available from the parser.
 
         global VB_TENSE
@@ -421,6 +431,7 @@ class MaltConverter(object):
             nouns = []
             adjs = []
             preps = []
+            head_was_used = False
             for dep in self.deps(word):
                 if dep.cpostag not in ["nn", "adj", "in"]:
                     new_dep = self.unfold_dep(dep, "adj")
@@ -454,15 +465,45 @@ class MaltConverter(object):
                         adjs.append(dep)
                     elif dep.cpostag == "in":
                         preps.append(dep)
-                # print nouns, adjs, preps
+
+                if len(nouns) + len(adjs) + len(preps) > 1:
+                    head_was_used = True
+
+            # print word.form
+            # print nouns, adjs, preps
 
             # a) Nount + Noun
             if len(adjs) == 0 and len(nouns) == 2:
-                self.__extra_preds.append(("equal", [
-                        Argument("e"),
-                        Argument.arg_link(nouns[0].pred.args[1]),
-                        Argument.arg_link(nouns[1].pred.args[1]),
-                    ]))
+                if nouns[1].feats[4] == "i":
+                    e = Argument("e")
+                    self.__extra_preds.append(("equal", [
+                            Argument("e"),
+                            Argument.arg_link(nouns[0].pred.args[1]),
+                            Argument.arg_link(nouns[1].pred.args[1]),
+                        ]))
+
+                    if head_was_used and head.cpostag == "adj":
+                        head.pred.args[1].link_to(nouns[0].pred.args[1])
+                        self.__extra_preds.append(("compl", [
+                                e,
+                                Argument.arg_link(head.pred.args[0]),
+                                Argument.arg_link(e),
+                            ]))
+
+                else:
+                    e = Argument("e")
+                    self.__extra_preds.append(("equal", [
+                            e,
+                            Argument.arg_link(nouns[1].pred.args[1]),
+                            Argument.arg_link(nouns[0].pred.args[1]),
+                        ]))
+                    if head_was_used and head.cpostag == "adj":
+                        head.pred.args[1].link_to(nouns[1].pred.args[1])
+                        self.__extra_preds.append(("compl", [
+                                Argument("e"),
+                                Argument.arg_link(head.pred.args[0]),
+                                Argument.arg_link(e),
+                            ]))
 
             # b) Noun + Adj
             elif len(adjs) >= 1 and len(nouns) == 1:
@@ -477,6 +518,16 @@ class MaltConverter(object):
                         force=True)
                     preps[0].pred.args[2].link_to(ddeps[0].pred.args[1],
                         force=True)
+
+        # 6. Passive
+        if head and head.cpostag == "vb" and \
+            head.lemma == u"быть" and head.feats[3] == "s":
+            for dep in self.deps(head, filt=["nn"]):
+                if dep.deprel == u"предик":
+                    word.pred.args[2].link_to(dep.pred.args[1])
+                    if w_subject.resolve_link() == \
+                       dep.pred.args[1].resolve_link():
+                        w_subject = None
 
         if w_subject:
             word.pred.args[1].link_to(w_subject)
@@ -525,6 +576,7 @@ class MaltConverter(object):
                              head.pred.args[1],
                              word.pred.args[1],
                     ])
+                self.__extra_preds.append(epred)
 
         #  Copula. Without a verb.
 

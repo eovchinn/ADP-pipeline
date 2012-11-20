@@ -2,21 +2,20 @@
 (aim e1 x w y) : x directs weapon (or attack) w at target y
 (attack e1 x y) : x attacks y
 (bullet w) : w is a bullet
-(compete e1 x y c) : x and y are rivals in a conflict 
-(conflict c) : x is a conflict
+(competition e1 x y g h r) : x and y, with goals g and h, respectively, are rivals in a competition with rule set r
+(conflict c x y g h) : c is a conflict with adversaries x and y who have goals g and h, respectively
 (crosshairs u) : u is a crosshairs
 (goal e1 g x) : x has goal g
 (gun x) : x is a gun
 (not g h) : g is the negation of h, where g and h are eventualities
 (part u w) : u is part of w
 (president x) : x is a president
-(rifle w) : w is a rifle
 (sight u) : u is the sight of a gun or other weapon
 (slap e1 x y) : x slaps y
 (use e1 x w y z) : x uses w on object y for purpose z 
 (war e) : e is a war
 (weapon w) : w is a weapon
 (union u) : u is a labor union
-(members m g) : m is the set of members of group g
+(members m g) : m is the set of members of group g *nonlexical*
 (thrive e1 m) : m is an entity that thrives
-(goalNot e1 g y) : y has the goal of not g *Nonlexical*
+(goalNot e1 g y) : y has the goal of not g *nonlexical*

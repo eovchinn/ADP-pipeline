@@ -271,8 +271,22 @@
 5	por	por	s	s	0	4	sp	_	_
 6	la	el	d	d	0	8	spec	_	_
 7	que	que	c	c	0	8	c	_	_
-8	van	ir	v	v	0	5	sn	_	_
+8	dejar	dejar	v	v	0	5	sn	_	_
 9	.	.	f	f	0	0	sentence	_	_
+
+1	Yo	yo	p	p	0	2	suj	_	_
+2	sé	saber	v	v	0	0	sentence	_	_
+3	que	que	c	c	0	5	conj	_	_
+4	él	él	p	p	0	5	suj	_	_
+5	viene	venir	v	v	0	2	cd	_	_
+6	.	.	f	f	0	2	f	_	_
+
+1	Estoy	estar	v	v	0	0	ROOT	_	_
+2	seguro	seguro	a	a	0	1	atr	_	_
+3	de	de	s	s	0	2	sp	_	_
+4	que	que	c	c	0	5	conj	_	_
+5	viene	venir	v	v	0	3	S	_	_
+6	.	.	f	f	0	0	sentence	_	_
 
 1	Yo	yo	p	p	0	2	suj	_	_
 2	sé	saber	v	v	0	0	sentence	_	_
@@ -359,12 +373,6 @@
 4	te	tú	p	p	0	5	cd	_	_
 5	ocurrió	ocurrir	v	v	0	0	sentence	_	_
 6	?	?	f	f	0	5	f	_	_
-
-1	Where	Where	n	n	0	4	suj	_	_
-2	did	did	n	n	0	4	cc	_	_
-3	you	you	n	n	0	4	suj	_	_
-4	come	comer	v	v	0	0	sentence	_	_
-5	?	?	f	f	0	4	f	_	_
 
 1	¿	¿	f	f	0	2	f	_	_
 2	De	de	s	s	0	4	cc	_	_
