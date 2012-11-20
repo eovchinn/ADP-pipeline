@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import json, logging
 from optparse import OptionParser
 from restServer import start_server 
@@ -60,7 +62,10 @@ def annotate_document(annotate_document_request_body):
   if not input_metaphors:
     return json.dumps([])
 
-  adp_return = ADP(input_metaphors,language)
+  print "OPTIONS:"+str(options.graph)
+
+  #options.graph is either True (return graph as base-64 str) or false
+  adp_return = ADP(input_metaphors,language,options.graph)
   return adp_return
 
 if __name__ == '__main__':
@@ -73,6 +78,9 @@ if __name__ == '__main__':
                     help="TCP port number that the REST server will "
                          "listen on (default %default)",
                     metavar="INT", default=8000)
+  parser.add_option("-g", "--graph", dest="graph", action="store_true",
+                    help="return proofgraph as base-64 string ",
+                    default=False)
   (options, args) = parser.parse_args()
 
   #set the port as an env var read in NL_pipeline; 

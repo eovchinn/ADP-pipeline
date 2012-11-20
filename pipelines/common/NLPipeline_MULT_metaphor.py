@@ -28,7 +28,8 @@ kbcompiled = False
 
 #unique_id used for proofgraph name (annotation_id may not be enough, as
 #different docs may have same annotation_ids)
-def extract_hypotheses(inputString,unique_id):
+#withPDFContent=true; generate graphs and include PDF content as base-64 in output
+def extract_hypotheses(inputString,unique_id,withPDFContent):
 	output_struct = []
 	hypothesis_found = False
 	p = re.compile('<result-inference target="(.+)"')
@@ -55,6 +56,8 @@ def extract_hypotheses(inputString,unique_id):
 			output_struct_item['abductive_unification'] = unification
 			output_struct_item['abductive_explanation'] = explanation
 			output_struct_item['abductive_proofgraph'] = 'http://'+webservice+'/proofgraphs/'+unique_id+'_'+target+'.pdf'
+			if withPDFContent:
+                           output_struct_item['abductive_proofgraph_str'] = get_base64(TMP_DIR+'/proofgraphs/'+unique_id+'_'+target+'.pdf')
 			output_struct_item['description'] = 'Abductive engine output; abductive_hypothesis: metaphor interpretation; abductive_unification: unifications happened or not; abductive_explanation: axioms applied or not'
 			output_struct.append(output_struct_item)  
 			target = ''
@@ -70,7 +73,8 @@ def generate_text_input(input_dict,language):
 		else: output_str += '.TEXTID('+id+').\n\n'+input_dict[id] + "\n\n" 
 	return output_str	
 
-def ADP(input_dict,language):
+#withPDFContent=true; generate graphs and include PDF content as base-64 in output
+def ADP(input_dict,language,withPDFContent):
 	start_time = time.time()
 	input_str = generate_text_input(input_dict,language)
 
@@ -108,10 +112,15 @@ def ADP(input_dict,language):
         #unique id used for proofgraph name
 	unique_id = get_unique_id()
 
-        #start graphical generation in thread; don't wait for it to finish
-	thread.start_new_thread(generate_graph, (input_dict,henry_output,unique_id))
+	if withPDFContent:
+          #generate graphs so we can return them with output
+          generate_graph(input_dict,henry_output,unique_id)		
+	else:
+          #start graphical generation in thread; don't wait for it to finish
+          thread.start_new_thread(generate_graph, (input_dict,henry_output,unique_id))
 
-        return extract_hypotheses(henry_output,unique_id)
+
+        return extract_hypotheses(henry_output,unique_id,withPDFContent)
 
 def get_webservice_location():
 	hostname='localhost'
@@ -141,6 +150,13 @@ def generate_graph(input_dict,henry_output,unique_id):
      #print "sleep"
      #time.sleep(3)
    print "Done generating proof graphs."
+
+#returns contents of PDF file in base-64
+def get_base64(pdffile):
+	f=open (pdffile,"rb")
+	binaryS = f.read()
+	encodeS = binaryS.encode("base64")
+	return encodeS
 
 
 if "__main__" == __name__: main()
