@@ -15,8 +15,8 @@ if __name__ == "__main__":
 
 	fa_metaphors = {'id2': 'باراک اوباما، رئیس جمهوری آمریکا، با پیروزی در برابر میت رامنی، رقیب جمهوریخواه خود، چهار سال دیگر در مقام خود باقی می‌ماند. آقای رامنی شکست خود در انتخابات را پذیرفته و به آقای اوباما تبریک گفته است.','id4': 'برخی از وبسایت های خبری گزارش کرده اند که ستار بهشتی، وبلاگ نویسی که گفته می‌شود در هفتم آبان توسط پلیس ایران بازداشت شده بوده، کشته شده است.'}
 
-	if lang == 'EN': print ADP(en_metaphors,'EN') 
-	elif lang == 'ES': print ADP(es_metaphors,'ES')
-	elif lang == 'RU': print ADP(ru_metaphors,'RU')
-	elif lang == 'FA': print ADP(fa_metaphors,'FA')
+	if lang == 'EN': print ADP(en_metaphors,'EN',True) 
+	elif lang == 'ES': print ADP(es_metaphors,'ES',True)
+	elif lang == 'RU': print ADP(ru_metaphors,'RU',True)
+	elif lang == 'FA': print ADP(fa_metaphors,'FA',True)
 	else: print 'Unknown language: '+lang+'\n'
