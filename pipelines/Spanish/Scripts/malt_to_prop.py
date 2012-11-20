@@ -58,6 +58,7 @@ def prop_to_dict(props):
     eCount = 1
     xCount = 1
     uCount = 1
+    question = False
     #loop over stored list of words and save initial props
     for prop in props:
         new_prop = []
@@ -78,10 +79,17 @@ def prop_to_dict(props):
             sent_dict[shortID]=[token,lemma,pos,head,rel,shortID,args,tag,propID]
             new_prop_sent.append(new_prop)
         elif propTags.match(pos):
-            args,tag,eCount,xCount,uCount = build_predicate(pos,eCount,xCount,uCount,lemma)
+            args,tag,eCount,xCount,uCount = build_predicate(pos,eCount,xCount,uCount,lemma,question)
             new_prop.extend([token,lemma,pos,head,rel,shortID,args,tag,propID])
             sent_dict[shortID]=[token,lemma,pos,head,rel,shortID,args,tag,propID]
             new_prop_sent.append(new_prop)
+        elif token == "¿":
+            args = ["R"]
+            tag = ""
+            new_prop.extend([token,lemma,pos,head,rel,shortID,args,tag,propID])
+            sent_dict[shortID]=[token,lemma,pos,head,rel,shortID,args,tag,propID]
+            new_prop_sent.append(new_prop)
+            question = True
     return new_prop_sent,sent_dict
 
 def replace_args(prop_sent,sent_dict):
@@ -172,25 +180,54 @@ def handle_wh(head,wordID,sent_dict):
     #sent_dict[wordID][6].append("R")
     extra = determine_wh_helper(sent_dict[wordID][1])
     sent_dict[wordID][1] = ""
-    if sent_dict[head][7] == "vb":
+    if sent_dict[1][1] == "¿" or sent_dict[2][1] == "¿":
+        sent_dict[wordID][7] = "whq"
+        #por que is tagged differently (words separated) when sentence intial
+        if sent_dict[wordID][0] == "qué" and sent_dict[wordID-1][1] == "por":
+            sent_dict[wordID][0] = "por_que"
+            extra = "reason"
+            sent_dict[wordID-1][6].append("R")
+            headHead = sent_dict[head][3]
+            sent_dict = add_new_entry(sent_dict,extra,sent_dict[wordID][6][1],sent_dict[headHead][6][0],sent_dict[wordID][8])
+            return sent_dict
+    if sent_dict[head][7] == "vb" or sent_dict[head][7] == "adj" or sent_dict[head][7] == "in":
         headHead = sent_dict[head][3]
         if headHead == 0:
             sent_dict[head][6][2] = sent_dict[wordID][6][0]
             #sent_dict = add_new_entry(sent_dict,"loc",sent_dict[wordID][6][1],sent_dict[head][6][0],sent_dict[wordID][8])          
             for key, values in sent_dict.items():
-            #look for the "o" conjunction with the same head as the current word
+            #look for the direct object with the same head as the current word
                 if (values[4] == "cd") and (values[3] == sent_dict[wordID][3]):
-                    sent_dict = add_new_entry(sent_dict,extra,sent_dict[wordID][6][1],sent_dict[values[5]][6][0],sent_dict[wordID][8])        
+                    if values[7] == "vb":
+                        sent_dict = add_new_entry(sent_dict,extra,sent_dict[wordID][6][1],sent_dict[values[5]][6][0],sent_dict[wordID][8])
+                    else:
+                        sent_dict = add_new_entry(sent_dict,extra,sent_dict[wordID][6][1],sent_dict[head][6][0],sent_dict[wordID][8])
+                    return sent_dict
+            sent_dict = add_new_entry(sent_dict,extra,sent_dict[wordID][6][1],sent_dict[head][6][0],sent_dict[wordID][8])
             return sent_dict
-        else:
+        elif sent_dict[headHead][7] == "vb":
             sent_dict[headHead][6][2] = sent_dict[wordID][6][0]
-            sent_dict = add_new_entry(sent_dict,"loc",sent_dict[wordID][6][1],sent_dict[head][6][0],sent_dict[wordID][8])
+            sent_dict = add_new_entry(sent_dict,extra,sent_dict[wordID][6][1],sent_dict[head][6][0],sent_dict[wordID][8])
+            return sent_dict
+        elif sent_dict[headHead][7] == "nn":
+            sent_dict[wordID][6].append("R")
+            sent_dict = add_new_entry(sent_dict,extra,sent_dict[headHead][6][1],sent_dict[head][6][0],sent_dict[wordID][8])
             return sent_dict
     return sent_dict
 
 def determine_wh_helper(lemma):
-    if lemma == "dónde":
+    if lemma == "dónde" or lemma == "donde":
         return "loc"
+    if lemma == "cómo":
+        return "manner"
+    if lemma == "cuando" or lemma == "cuándo":
+        return "time"
+    if lemma ==  "por_qué":
+        return "reason"
+    if lemma == "quién":
+        return "person"
+    if lemma == "qué":
+        return "thing"
 
 def insert_suj(head,wordID,sent_dict):
     """Insert the subject of a verb as its first argument"""
@@ -353,8 +390,6 @@ def insert_adjHead(head,wordID,sent_dict):
         #when the head is an adj, insert the first argument of the head of the head
     elif sent_dict[head][2] == "a":
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
-    else:
-        print sent_dict[head]
     if sent_dict[wordID][7] == "card":
         sent_dict[wordID][1] = ""
         sent_dict[wordID][8] = sent_dict[head][8]+"b"
@@ -380,7 +415,7 @@ def insert_m_p(head,wordID,sent_dict):
         sent_dict[head][6][2] = sent_dict[head][6][1]
     return sent_dict
 
-def build_predicate(pos,eCount,xCount,uCount,lemma):
+def build_predicate(pos,eCount,xCount,uCount,lemma,question):
     pred = []
     tag = ""
     if lemma in whWords:
@@ -390,7 +425,16 @@ def build_predicate(pos,eCount,xCount,uCount,lemma):
         eCount+=1
         pred.append("x"+str(xCount))
         xCount+=1
-        return pred,tag,eCount,xCount,uCount        
+        return pred,tag,eCount,xCount,uCount
+    if question:
+        if lemma == "qué":
+            tag = "wh"
+            pos = "wh"
+            pred.append("e"+str(eCount))
+            eCount+=1
+            pred.append("x"+str(xCount))
+            xCount+=1
+            return pred,tag,eCount,xCount,uCount
     if verbTag.match(pos):
         tag = "vb"
         pred.append("e"+str(eCount))
@@ -451,6 +495,8 @@ def build_predicate(pos,eCount,xCount,uCount,lemma):
         number = cardinal_number(lemma)
         pred.append(number)
         return pred,tag,eCount,xCount,uCount
+    else:
+        return ["R"],"",eCount,xCount,uCount
 
 def cardinal_number(lemma):
     if card_dict.has_key(lemma):
@@ -482,7 +528,7 @@ if options.tagset == "ancora":
     prepositionTag = re.compile("^s$")
     pronounTag = re.compile("^p$")
     cardTag = re.compile("^z$")
-    propTags = re.compile("^(n|v|a|r|s|p|z)$")
+    propTags = re.compile("^(n|v|a|r|s|p|z|c)$")
 
 card_dict={}
 card_dict["uno"] = "1"
@@ -508,17 +554,18 @@ card_dict["diez"] = "10"
 
 heProList = ["el","lo"]
 sheProList = ["ella","la"]
-personProList = ["yo","me","nos","nosotros","usted","ustedes","mi","mis","su","sus","nuestro","nuestros","nuestra","nuestras","quién"]
+personProList = ["yo","me","nos","nosotros","usted","ustedes","mi","mis","su","sus","nuestro","nuestros","nuestra","nuestras","quién","tú"]
 thingProList = ["ellos","ellas","él"]
 reflexProList = ["se"]
 possessiveProList = ["mi","mis","tu","tus","su","sus","nuestro","nuestros","nuestra","nuestras"]
 
 nominalList = ["n","p"]
-noTokenList = ["male","female","person","thing","reflexive","equal","card","or","be","nn","card","loc"]
+noTokenList = ["male","female","person","thing","reflexive"]
+insertList = ["equal","card","or","be","card","loc","manner","time","nn","reason"]
 inheritingVbs = ["S","v"]
 adjectiveRels = ["s.a","cn","grup.a"]
 prepRels = ["sp","cn"]
-whWords = ["dónde"]
+whWords = ["dónde","cómo","donde","cuando","cuándo","por_qué","quién"]
 
 nounArg = re.compile("x\d")
 eventArg = re.compile("e\d")
@@ -542,11 +589,11 @@ def main():
         for key,prop in sorted(prop_dict.items()):
             #print key,prop
             prop_count+=1
-            if prop[1] == "" and prop[2] in noTokenList:
+            if prop[1] == "" and prop[2] in insertList:
                 sys.stdout.write(prop[2]+"("+",".join(prop[3])+")")
-            elif prop[1] != "" and prop[2] in noTokenList:
-                sys.stdout.write("["+prop[0]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
-            elif prop[2] == "not" or prop[2] =="wh" :
+            elif prop[2] in noTokenList:
+                sys.stdout.write("["+prop[0]+"]"+":"+prop[2]+"("+",".join(prop[3])+")")
+            elif prop[2] == "not" or prop[2] =="wh" or prop[2] =="whq":
                 sys.stdout.write("["+prop[0]+"]"+":"+prop[2]+"("+",".join(prop[3])+")")
             elif re.search("[a-z]",prop[0]):# and (prop[2] == "vb" or prop[2] == "in"):
                 sys.stdout.write("["+prop[4]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
