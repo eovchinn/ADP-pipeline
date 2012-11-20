@@ -8,7 +8,7 @@ Processing pipeline for Russian.
 * `malt_ru.py` – converter for Malt parser output to Logical Form format:
 
 ```
-python malt_ru.py [--input <input file>] [--output <output file>]
+python malt_ru.py [--input <input file>] [--output <output file>] [--nnnumber 1] [--vbtense 1]
 ```
 
 Output should be generated using [this](http://corpus.leeds.ac.uk/mocky/msd-ru.html) part of speech tagset.
