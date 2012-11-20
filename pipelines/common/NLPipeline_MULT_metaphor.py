@@ -26,7 +26,9 @@ KBPATH = ''
 # switches
 kbcompiled = False
 
-def extract_hypotheses(inputString):
+#unique_id used for proofgraph name (annotation_id may not be enough, as
+#different docs may have same annotation_ids)
+def extract_hypotheses(inputString,unique_id):
 	output_struct = []
 	hypothesis_found = False
 	p = re.compile('<result-inference target="(.+)"')
@@ -52,7 +54,7 @@ def extract_hypotheses(inputString):
 			output_struct_item['abductive_hypothesis'] = hypothesis
 			output_struct_item['abductive_unification'] = unification
 			output_struct_item['abductive_explanation'] = explanation
-			output_struct_item['abductive_proofgraph'] = 'http://'+webservice+'/proofgraphs/'+target+'.pdf'
+			output_struct_item['abductive_proofgraph'] = 'http://'+webservice+'/proofgraphs/'+unique_id+'_'+target+'.pdf'
 			output_struct_item['description'] = 'Abductive engine output; abductive_hypothesis: metaphor interpretation; abductive_unification: unifications happened or not; abductive_explanation: axioms applied or not'
 			output_struct.append(output_struct_item)  
 			target = ''
@@ -103,10 +105,13 @@ def ADP(input_dict,language):
 	henry_pipeline = Popen(henry_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
 	henry_output = henry_pipeline.communicate(input=parser_output)[0]
 
-        #start graphical generation in thread; don't wait for it to finish
-	thread.start_new_thread(generate_graph, (input_dict,henry_output))
+        #unique id used for proofgraph name
+	unique_id = get_unique_id()
 
-        return extract_hypotheses(henry_output)
+        #start graphical generation in thread; don't wait for it to finish
+	thread.start_new_thread(generate_graph, (input_dict,henry_output,unique_id))
+
+        return extract_hypotheses(henry_output,unique_id)
 
 def get_webservice_location():
 	hostname='localhost'
@@ -117,14 +122,19 @@ def get_webservice_location():
            port=os.environ.get('ADP_PORT')
 	return hostname+":"+port
 
-def generate_graph(input_dict,henry_output):
+def get_unique_id():
+	current_time=int(time.time())
+	unique_id=str(current_time)[5:]
+	return unique_id
+
+def generate_graph(input_dict,henry_output,unique_id):
    #create proofgraphs directory if it doesn't exist
    graph_dir=TMP_DIR+'/proofgraphs' 
    if not os.path.exists(graph_dir):
         os.makedirs(graph_dir)
 
    for id in input_dict.keys():
-     graph_output = os.path.join(graph_dir,id+'.pdf')
+     graph_output = os.path.join(graph_dir,unique_id+'_'+id+'.pdf')
      viz = 'python ' + HENRY_DIR + '/tools/proofgraph.py --graph ' + id + ' | dot -T pdf > ' + graph_output
      graphical_processing = Popen(viz, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
      graphical_processing.communicate(input=henry_output)
