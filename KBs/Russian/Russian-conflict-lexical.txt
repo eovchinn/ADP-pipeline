@@ -2,31 +2,46 @@
 ; (adversary e1 y x c) : y and x are rivals in the context of conflict c
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(B (name противник) (=> (adversary e1 x y c :0.9) (^ (противник-nn e2 x) (of-in e3 x y))))
+(B (name противник) (=> (adversary e1 x y c :0.9) (противник-nn e2 x)))
 
-(B (name конкурент) (=> (adversary e1 x y c :0.9) (^ (конкурент-nn e2 x) (of-in e3 x y))))
+(B (name конкурент) (=> (adversary e1 x y c :0.9) (конкурент-nn e2 x)))
 
-(B (name соперник) (=> (adversary e1 x y c :0.9) (^ (соперник-nn e2 x) (of-in e3 x y))))
+(B (name соперник) (=> (adversary e1 x y c :0.9) (соперник-nn e2 x)))
 
-(B (name оппонент) (=> (adversary e1 x y c :0.9) (^ (оппонент-nn e2 x) (of-in e3 x y))))
+(B (name оппонент) (=> (adversary e1 x y c :0.9) (оппонент-nn e2 x)))
 
-(B (name враг) (=> (adversary e1 x y c :0.9) (^ (враг-nn e2 x) (of-in e3 x y))))
+(B (name враг) (=> (adversary e1 x y c :0.9) (враг-nn e2 x)))
 
-(B (name недруг) (=> (adversary e1 x y c :0.9) (^ (недруг-nn e2 x) (of-in e3 x y))))
+(B (name недруг) (=> (adversary e1 x y c :0.9) (недруг-nn e2 x)))
+
+(B (adversary-of) (=> (adversary e1 x y c :0.9) (^ (adversary e1 x z c)(of-in e3 x y))))
+
+(B (name враждовать) (=> (adversary e1 x y c :0.9) (враждовать-vb e1 x u1 u2)))
+
+(B (name соперничать) (=> (adversary e1 x y c :0.9) (соперничать-vb e1 x u1 u2))))
+
+(B (name конкурировать) (=> (adversary e1 x y c :0.9) (конкурировать-vb e1 x u1 u2)))
+
+(B (name adversary-with) (=> (adversary e1 x y c :0.9) (^ (adversary e1 x z c) (с-in e2 e1 y))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (aim e1 x w y) : x directs weapon (or attack) w at target y
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(B (name целиться) (=> (aim e1 x w y :0.9) (^ (целиться-vb e2 x u1 u2) (в-in e3 e2 y) (из-in e4 e2 w))))
+(B (name целиться) (=> (aim e1 x w y :0.9) (целиться-vb e1 x u1 u2)))
 
-(B (name прицеливаться) (=> (aim e1 x w y :0.9) (^ (прицеливаться-vb e2 x u1 u2) (в-in e3 e2 y) (из-in e4 e2 w))))
+(B (name прицеливаться) (=> (aim e1 x w y :0.9)(прицеливаться-vb e1 x u1 u2)))
 
-(B (name метить) (=> (aim e1 x w y :0.9) (^ (метить-vb e2 x u1 u2) (в-in e3 e2 y) (из-in e4 e2 w))))
+(B (name метить) (=> (aim e1 x w y :0.9) (метить-vb e1 x u1 u2)))
 
-(B (name делать-мишенью) (=> (aim e1 x y w :0.9) (^ (делать-vb e2 x y u1) (мишень-nn e3 z) (instr e4 e2 z))))
+(B (name aim-at) (=> (aim e1 x w y :0.9)(^ (aim e1 x w z) (в-in e2 e1 y))))
 
-(B (name фокусировать) (=> (aim e1 x y w :0.9) (^ (фокусировать-vb e2 x w u1) (на-in e3 e2 y))))
+(B (name aim-from) (=> (aim e1 x w y :0.9)(^ (aim e1 x z y) (из -in e2 e1 z))))
+
+
+(B (name делать-мишенью) (=> (aim e1 x y w :0.9) (^ (делать-vb e1 x y u1) (мишень-nn e2 z) (instr e3 e2 z))))
+
+(B (name фокусировать) (=> (aim e1 x y w :0.9) (^ (фокусировать-vb e1 x w u1) (на-in e2 e1 y))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (attack e1 x y) : x attacks y
@@ -40,43 +55,45 @@
 
 (B (name наступать) (=> (attack e1 x1 x2 :0.9)(наступать-vb e1 x1 x2 u)))
 
-(B (name атака) (=> (attack e1 x u :0.9)(^ (атака-nn e1 z) (of-in e2 z x))))
+(B (name атака) (=> (attack e1 x y :0.9)(атака-nn e0 e1)))
 
-(B (name штурм) (=> (attack e1 x u :0.9)(^ (штурм-nn e1 z) (of-in e2 z x))))
+(B (name штурм) (=> (attack e1 x y :0.9)(штурм-nn e0 e1)))
 
-(B (name нападение) (=> (attack e1 x u :0.9)(^ (нападение-nn e1 z) (of-in e2 z x))))
+(B (name нападение) (=> (attack e1 x y :0.9)(нападение-nn e0 e1)))
 
-(B (name наступление) (=> (attack e1 x u :0.9)(^ (наступление-nn e1 z) (of-in e2 z x))))
+(B (name наступление) (=> (attack e1 x y :0.9) (наступление-nn e1 z)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; (bullet w) : w is a bullet
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(B (attack-of) (=> (attack e1 x y :0.9) (^ (attack e1 z u)(of-in e2 e1 x))))
 
-(B (name сражение) (=> (bullet x :0.9)(пуля-nn e x)))
+(B (attack-at) (=> (attack e1 x y :0.9) (^ (attack e1 u z)(на-in e2 e1 y))))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; (combat e) : e is a type of conflict known as combat
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(B (name сражение) (=> (combat x :0.9)(сражение-nn e x)))
-
-(B (name битва) (=> (combat x :0.9)(битва-nn e x)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (compete e x y c) : x and y are rivals in conflict c
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(B (name соревноваться) (=> (compete e x y c :0.9)(^ (соревноваться-vb e1 x u1 u2)(в-in e2 e1 c) (с-in e3 e2 y))))
+(B (name соревноваться) (=> (compete e x y c :0.9)(соревноваться-vb e x u1 u2)))
 
-(B (name состязаться) (=> (compete e x y c :0.9)(^ (состязаться-vb e1 x u1 u2)(в-in e2 e1 c) (с-in e3 e2 y))))
+(B (name состязаться) (=> (compete e x y c :0.9)(состязаться-vb e x u1 u2))) 
 
-(B (name соперничать) (=> (compete e x y c :0.9)(^ (соперничать-vb e1 x u1 u2)(в-in e2 e1 c) (с-in e3 e2 y))))
+(B (name соперничать) (=> (compete e x y c :0.9)(соперничать-vb e x u1 u2))) 
 
-(B (name конкурировать) (=> (compete e x y c :0.9)(^ (конкурировать-vb e1 x u1 u2)(в-in e2 e1 c) (с-in e3 e2 y))))
+(B (name конкурировать) (=> (compete e x y c :0.9)(конкурировать-vb e x u1 u2)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; (conflict c) : x is a conflict
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(B (name соревнование) (=> (compete e x y c :0.9)(соревнование-nn e0 e)))
+
+(B (name состязание) (=> (compete e x y c :0.9)(состязание-nn e0 e)))
+
+(B (name соперничество) (=> (compete e x y c :0.9)(соперничество-nn e0 e)))
+
+(B (name конкурeнция) (=> (compete e x y c :0.9)(конкурeнция-nn e0 e)))
+(B (name compete-in) (=> (compete e x y c :0.9) (^ (compete e x y u)(в-in e1 e c))))
+(B (name compete-with) (=> (compete e x y c :0.9) (^ (compete e x u c)(с-in e1 e y))))
+(B (name compete-ща) (=> (compete e x y c :0.9) (^ (compete e u y c)(of-in e1 e x))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; (conflict c) : c is a conflict between x1 and x2
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (B (name конфликт) (=> (conflict c :0.9)(конфликт-nn e1 c)))
 
@@ -84,17 +101,29 @@
 
 (B (name противоречие) (=> (conflict c :0.9)(противоречие-nn e1 c)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; (fight e) : e is a fight
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(B (name битва) (=> (conflict c :0.9)(битва-nn e1 c)))
 
-(B (name битва) (=> (fight e :0.9)(битва-nn e1 e)))
+(B (name бой) (=> (conflict c :0.9)(бой-nn e1 c)))
 
-(B (name бой) (=> (fight e :0.9)(бой-nn e1 e)))
+(B (name драка) (=> (conflict c :0.9)(драка-nn e1 c)))
 
-(B (name драка) (=> (fight e :0.9)(драка-nn e1 e)))
+(B (name ссора) (=> (conflict c :0.9)(ссора-nn e1 c)))
 
-(B (name ссора) (=> (fight e :0.9)(ссора-nn e1 e)))
+(B (name сражение) (=> (conflict c :0.9)(сражение-nn e1 c)))
+
+(B (name конфликтовать) (=> (conflict c :0.9)(конфликтовать-vb e1 x1 x2 u)))
+
+(B (name сталкиваться) (=> (conflict c :0.9)(сталкиваться-vb e1 x1 x2 u)))
+
+(B (name биться) (=> (conflict c :0.9)(биться-vb e1 x1 x2 u)))
+
+(B (name драться) (=> (conflict c :0.9)(драться-vb e1 x1 x2 u)))
+
+B (name ссориться) (=> (conflict c :0.9)(ссориться-vb e1 x1 x2 u)))
+
+B (name сражаться) (=> (conflict c :0.9)(сражаться-vb e1 x1 x2 u)))
+
+B (name ругаться) (=> (conflict c :0.9)(ругаться-vb e1 x1 x2 u)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (goal g x) : x has goal g
@@ -118,19 +147,19 @@
 
 (B (name орудие) (=> (weapon w :0.9)(орудие-nn e1 w)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; (use e1 x w) : x uses weapon x 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; (use e1 x w y z) : x uses w on object y for purpose z 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(B (name стрелять) (=> (use e1 x w :0.9)(^ (стрелять-vb e1 x u1 u2)(из-in e2 e1 w))))
+(B (name стрелять) (=> (use e1 x w z :0.9)(^ (стрелять-vb e1 x u1 u2)(из-in e2 e1 w))))
 
-(B (name расстрелять) (=> (use e1 x w :0.9)(^ (расстрелять-vb e1 x u1 u2)(из-in e2 e1 w))))
+(B (name расстрелять) (=> (use e1 x w z :0.9)(^ (расстрелять-vb e1 x u1 u2)(из-in e2 e1 w))))
 
-(B (name обстрелять) (=> (use e1 x w :0.9)(^ (обстрелять-vb e1 x u1 u2)(из-in e2 e1 w))))
+(B (name обстрелять) (=> (use e1 x w z :0.9)(^ (обстрелять-vb e1 x u1 u2)(из-in e2 e1 w))))
 
-(B (name бомбить) (=> (use e1 x w :0.9)(^ (бомбить-vb e1 x u1 u2)(из-in e2 e1 w))))
+(B (name бомбить) (=> (use e1 x w z :0.9)(^ (бомбить-vb e1 x u1 u2)(из-in e2 e1 w))))
 
-(B (name палить) (=> (use e1 x w :0.9)(^ (палить-vb e1 x u1 u2)(из-in e2 e1 w))))
+(B (name палить) (=> (use e1 x w z :0.9)(^ (палить-vb e1 x u1 u2)(из-in e2 e1 w))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (gun x) : x is a gun
@@ -145,8 +174,6 @@
 (B (name оружие) (=> (gun x :0.9)(оружие-nn e x)))
 
 (B (name револьвер) (=> (gun x :0.9)(револьвер-nn e x)))
-
-(B (name пистолет) (=> (gun x :0.9)(пистолет-nn e x)))
 
 (B (name пистолет) (=> (gun x :0.9)(пистолет-nn e x)))
 
@@ -171,4 +198,34 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (B (name винтовка) (=> (rifle x :0.9)(винтовка-nn e x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; (bullet w) : w is a bullet
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name пуля) (=> (bullet x :0.9)(пуля-nn e x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; (union u) : u is a labor union
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name профсоюз) (=> (union x :0.9)(профсоюз-nn e x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; (member x y) : x is a member of
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name член) (=> (member x y :0.9)(^(член-nn e x)(of-in e1 x z))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; (thrive e1 m) : m is an entity that thrives
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name преуспевать) (=> (thrive e1 m :0.9)(преуспевать-vb e1 m u1 u2)))
+
+(B (name процветать) (=> (thrive e1 m :0.9)(процветать-vb e1 m u1 u2)))
+
+(B (name благоденствовать) (=> (thrive e1 m :0.9)(благоденствовать-vb e1 m u1 u2)))
+
+
 
