@@ -100,9 +100,9 @@
 
 (B (name compete-of) (=> (competition e x y g h r :0.9) (^ (competition e u y g h r)(of-in e1 e x))))
 
-(B (name compete-for1) (=> (competition e x y u h r :0.9) (^ (competition e x y g h r)(ради-in e1 e g))))
+(B (name compete-for1) (=> (competition e x y u h r :0.9) (^ (competition e x y u h r)(ради-in e1 e g))))
 
-(B (name compete-for2) (=> (competition e x y u h r :0.9) (^ (competition e x y g h r)(за-in e1 e g))))
+(B (name compete-for2) (=> (competition e x y u h r :0.9) (^ (competition e x y u h r)(за-in e1 e g))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (conflict c x y g h) : c is a conflict with adversaries x and y who have goals g and h, respectively
@@ -240,7 +240,9 @@
 
 (B (name use-weapon-instr) (=> (use-weapon e1 x w y z :0.9)(^ (use-weapon e1 x u y z)(instr e2 e1 w))))
 
-(B (name use-weapon-in) (=> (use-weapon e1 x w y z :0.9)(^ (use-weapon e1 x w u z)(в-in e2 e1 y))))
+(B (name use-weapon-in1) (=> (use-weapon e1 x w y z :0.9)(^ (use-weapon e1 x w u z)(в-in e2 e1 y))))
+
+(B (name use-weapon-in2) (=> (use-weapon e1 x w y z :0.9)(^ (use-weapon e1 x w u z)(по-in e2 e1 y))))
 
 (B (name use-weapon-instr) (=> (use-weapon e1 x w y z :0.9)(^ (use-weapon e1 x w y u)(для-in e2 e1 z)))) 
 
