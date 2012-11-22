@@ -46,7 +46,6 @@
 
 (B (name aim-from) (=> (aim e1 x w y :0.9)(^ (aim e1 x z y) (из-in e2 e1 z))))
 
-
 (B (name делать-мишенью) (=> (aim e1 x y w :0.9) (^ (делать-vb e1 x y u1) (мишень-nn e2 z) (instr e3 e2 z))))
 
 (B (name фокусировать) (=> (aim e1 x y w :0.9) (^ (фокусировать-vb e1 x w u1) (на-in e2 e1 y))))
@@ -63,6 +62,14 @@
 
 (B (name наступать) (=> (attack e1 x y :0.9)(наступать-vb e1 x u1 u2)))
 
+(B (name наброситься) (=> (attack e1 x y :0.9)(наброситься-vb e1 x u1 u2)))
+
+(B (name накинуться) (=> (attack e1 x y :0.9)(накинуться-vb e1 x u1 u2)))
+
+(B (name ударять) (=> (attack e1 x y :0.9)(ударять-vb e1 x u1 u2)))
+
+(B (name бить) (=> (attack e1 x y :0.9)(бить-vb e1 x y u2)))
+
 (B (name атака) (=> (attack e1 x y :0.9)(атака-nn e0 e1)))
 
 (B (name штурм) (=> (attack e1 x y :0.9)(штурм-nn e0 e1)))
@@ -71,9 +78,13 @@
 
 (B (name наступление) (=> (attack e1 x y :0.9) (наступление-nn e0 e1)))
 
+(B (name удар) (=> (attack e1 x y :0.9)(удар-nn e0 e1)))
+
 (B (attack-of) (=> (attack e1 x y :0.9) (^ (attack e1 u y)(of-in e2 e1 x))))
 
-(B (attack-at) (=> (attack e1 x y :0.9) (^ (attack e1 x u)(на-in e2 e1 y))))
+(B (attack-at1) (=> (attack e1 x y :0.9) (^ (attack e1 x u)(на-in e2 e1 y))))
+
+(B (attack-at2) (=> (attack e1 x y :0.9) (^ (attack e1 x u)(по-in e2 e1 y))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (competition e x y g h r) : x and y, with goals g and h, respectively, are rivals in a competition with rule set r
@@ -94,7 +105,6 @@
 (B (name соперничество) (=> (competition e x y g h r:0.9)(соперничество-nn e0 e)))
 
 (B (name конкурeнция) (=> (competition e x y g h r:0.9)(конкурeнция-nn e0 e)))
-
 
 (B (name compete-with) (=> (competition e x y g h r :0.9) (^ (competition e x u g h r)(с-in e1 e y))))
 
