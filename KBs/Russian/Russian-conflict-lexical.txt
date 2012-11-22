@@ -261,14 +261,16 @@
 (B (name use-weapon-expand) (=> (^ (use e1 x w y z :0.6)(weapon w :0.6))(use-weapon e1 x w y z)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; (part u w) : u is part of w
+; (part x y) : x is part of y
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(B (name часть) (=> (part x y :0.9) (^ (часть-nn e1 x) (of-in e2 x y))))
+(B (name часть) (=> (part x y :0.9) (часть-nn e1 x)))
 
-(B (name доля) (=> (part x y :0.9) (^ (доля-nn e1 x) (of-in e2 x y))))
+(B (name доля) (=> (part x y :0.9) (доля-nn e1 x)))
 
-(B (name компонент) (=> (part x y :0.9) (^ (компонент-nn e1 x) (of-in e2 x y))))
+(B (name компонент) (=> (part x y :0.9) (компонент-nn e1 x)))
+
+(B (name part-of) (=> (part x y :0.9) (^ (part x u) (of-in e x y))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (president x) : x is a president
