@@ -52,7 +52,10 @@
 
 (B (name fight-nn1) (=> (conflict e x y g h :0.9) (fight-nn e x)))
 
-(B (name fight-vb1) (=> (^ (conflict e x y g h :0.3) (adversary e1 y x e :0.9)) (fight-vb e x y u)))
+(B (name fight-vb1) (=> (^ (conflict e x y g h :0.3) (adversary e1 y x e :0.6)) (fight-vb e x y u)))
+
+(B (name fight-vb2) (=> (^ (conflict c x y g h :0.3)(adversary e1 x y c :0.3)(goal e3 g x :0.3))(^ (fight-vb c x y u)(for-in c g))))
+
 
 ;;; ADVERSARY
 
@@ -102,7 +105,7 @@
 
 (B (name use-vb1) (=> (use e1 x w :0.9)(use-vb e1 x w u)))
 
-(B (name shoot-vb1) (=> (^ (gun w :0.3) (use e1 x w :0.6)) (shoot-vb e1 x y w)))
+(B (name shoot-vb1) (=> (^ (weapon w :0.3) (use e1 x w :0.6)) (shoot-vb e1 x y w)))
 
 (B (name shoot-vb2) (=> (attack e1 x y :0.9) (^ (shoot-vb e1 x y w) (at-in e2 e1 y))))
 
