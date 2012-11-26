@@ -56,13 +56,13 @@ if [[ $PLATFORM == "linux" ]]; then
     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
     $LEMMATIZER_BIN -l $MALT_RU_DIR/msd-ru-lemma.lex.gz -p $MALT_RU_DIR/wform2011.ptn1 -c $MALT_RU_DIR/cstlemma |
     $MALT_IFORMAT | 
-    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse |
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off |
     python $RU_PIPELINE_DIR/malt_ru.py > "${2:-/dev/stdout}" # > $IFILE
 elif [[ $PLATFORM == "darwin" ]]; then
     $TOKENIZER_BIN < "${1:-/dev/stdin}" |
     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
     $MALT_IFORMAT | 
-    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse |
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off |
     python $RU_PIPELINE_DIR/malt_ru.py > "${2:-/dev/stdout}"
 else
     echo "Unsupported platform $OSTYPE"

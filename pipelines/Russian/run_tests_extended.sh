@@ -55,94 +55,119 @@ if [[ $PLATFORM == "linux" ]]; then
     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
     $LEMMATIZER_BIN -l $MALT_RU_DIR/msd-ru-lemma.lex.gz -p $MALT_RU_DIR/wform2011.ptn1 -c $MALT_RU_DIR/cstlemma |
     $MALT_IFORMAT | 
-    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse >/dev/stdout | tee > $OMALT
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off >/dev/stdout | tee > $OMALT
     python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
 elif [[ $PLATFORM == "darwin" ]]; then
     $TOKENIZER_BIN < $IFILE |
     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
     $MALT_IFORMAT | 
-    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse | tee > $OMALT
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off | tee > $OMALT
     python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
 else
     echo "Unsupported platform $OSTYPE"
 fi
-
-cd $CURRENT_DIR
 
 IFILE=$RU_PIPELINE_DIR/test_data/input_elections.txt
 OMALT=$RU_PIPELINE_DIR/test_data/omalt_elections.txt
 OLF=$RU_PIPELINE_DIR/test_data/olf_elections.txt
 
 
-CURRENT_DIR=`pwd`
-cd $MALT_RU_DIR
-
 if [[ $PLATFORM == "linux" ]]; then
     $TOKENIZER_BIN < $IFILE |
     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
     $LEMMATIZER_BIN -l $MALT_RU_DIR/msd-ru-lemma.lex.gz -p $MALT_RU_DIR/wform2011.ptn1 -c $MALT_RU_DIR/cstlemma |
     $MALT_IFORMAT | 
-    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse >/dev/stdout | tee > $OMALT
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off >/dev/stdout | tee > $OMALT
     python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
 elif [[ $PLATFORM == "darwin" ]]; then
     $TOKENIZER_BIN < $IFILE |
     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
     $MALT_IFORMAT | 
-    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse | tee > $OMALT
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off | tee > $OMALT
     python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
 else
     echo "Unsupported platform $OSTYPE"
 fi
-
-cd $CURRENT_DIR
 
 IFILE=$RU_PIPELINE_DIR/test_data/input_government.txt
 OMALT=$RU_PIPELINE_DIR/test_data/omalt_government.txt
 OLF=$RU_PIPELINE_DIR/test_data/olf_government.txt
 
-
-CURRENT_DIR=`pwd`
-cd $MALT_RU_DIR
-
 if [[ $PLATFORM == "linux" ]]; then
     $TOKENIZER_BIN < $IFILE |
     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
     $LEMMATIZER_BIN -l $MALT_RU_DIR/msd-ru-lemma.lex.gz -p $MALT_RU_DIR/wform2011.ptn1 -c $MALT_RU_DIR/cstlemma |
     $MALT_IFORMAT | 
-    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse >/dev/stdout | tee > $OMALT
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off >/dev/stdout | tee > $OMALT
     python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
 elif [[ $PLATFORM == "darwin" ]]; then
     $TOKENIZER_BIN < $IFILE |
     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
     $MALT_IFORMAT | 
-    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse | tee > $OMALT
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off | tee > $OMALT
     python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
 else
     echo "Unsupported platform $OSTYPE"
 fi
 
-cd $CURRENT_DIR
-
 IFILE=$RU_PIPELINE_DIR/test_data/input_politics.txt
 OMALT=$RU_PIPELINE_DIR/test_data/omalt_politics.txt
 OLF=$RU_PIPELINE_DIR/test_data/olf_politics.txt
-
-
-CURRENT_DIR=`pwd`
-cd $MALT_RU_DIR
 
 if [[ $PLATFORM == "linux" ]]; then
     $TOKENIZER_BIN < $IFILE |
     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
     $LEMMATIZER_BIN -l $MALT_RU_DIR/msd-ru-lemma.lex.gz -p $MALT_RU_DIR/wform2011.ptn1 -c $MALT_RU_DIR/cstlemma |
     $MALT_IFORMAT | 
-    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse >/dev/stdout | tee > $OMALT
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off >/dev/stdout | tee > $OMALT
     python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
 elif [[ $PLATFORM == "darwin" ]]; then
     $TOKENIZER_BIN < $IFILE |
     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
     $MALT_IFORMAT | 
-    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse | tee > $OMALT
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off | tee > $OMALT
+    python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
+else
+    echo "Unsupported platform $OSTYPE"
+fi
+
+IFILE=$RU_PIPELINE_DIR/test_data/special_cases/big_text.txt
+OMALT=$RU_PIPELINE_DIR/test_data/special_cases/omalt_big_text.txt
+OLF=$RU_PIPELINE_DIR/test_data/special_cases/olf_big_text.txt
+
+if [[ $PLATFORM == "linux" ]]; then
+    $TOKENIZER_BIN < $IFILE |
+    $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
+    $LEMMATIZER_BIN -l $MALT_RU_DIR/msd-ru-lemma.lex.gz -p $MALT_RU_DIR/wform2011.ptn1 -c $MALT_RU_DIR/cstlemma |
+    $MALT_IFORMAT | 
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off >/dev/stdout | tee > $OMALT
+    python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
+elif [[ $PLATFORM == "darwin" ]]; then
+    $TOKENIZER_BIN < $IFILE |
+    $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
+    $MALT_IFORMAT | 
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off | tee > $OMALT
+    python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
+else
+    echo "Unsupported platform $OSTYPE"
+fi
+
+IFILE=$RU_PIPELINE_DIR/test_data/special_cases/broken_encoding.txt
+OMALT=$RU_PIPELINE_DIR/test_data/special_cases/omalt_broken_encoding.txt
+OLF=$RU_PIPELINE_DIR/test_data/special_cases/olf_broken_encoding.txt
+
+if [[ $PLATFORM == "linux" ]]; then
+    $TOKENIZER_BIN < $IFILE |
+    $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
+    $LEMMATIZER_BIN -l $MALT_RU_DIR/msd-ru-lemma.lex.gz -p $MALT_RU_DIR/wform2011.ptn1 -c $MALT_RU_DIR/cstlemma |
+    $MALT_IFORMAT | 
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off >/dev/stdout | tee > $OMALT
+    python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
+elif [[ $PLATFORM == "darwin" ]]; then
+    $TOKENIZER_BIN < $IFILE |
+    $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
+    $MALT_IFORMAT | 
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off | tee > $OMALT
     python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
 else
     echo "Unsupported platform $OSTYPE"
