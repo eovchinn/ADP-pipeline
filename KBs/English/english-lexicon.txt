@@ -3,11 +3,13 @@
 ; CHANGE LOG
 ; 10/31/2012 aks - created file by moving English lexical items out of conflict kb
 ;
+; 11/20/2012 aks - updated predicates conflict, rifle, and compete->competition 
 ;
+; 11/21/2012 aks - removed rifle, gun, war, competition, sight, bullet, crosshairs, president
 ;
 ; QUESTIONS
 ; 10/31/2012 aks
-; 1. how to tell for sure when a rule should be entered as a lexical item? E.G. "combat is a conflict" could be (=> (conflict e :1.2)(combat e)) or (=> (conflict e :0.9)(combat-nn e1))
+; 1. how to tell for sure when a rule should be entered as a lexical item? E.G. "combat is a conflict" could be (=> (conflict e x y g h :1.2)(combat e)) or (=> (conflict e x y g h :0.9)(combat-nn e1))
 ;    ANS: prefer lexical synonyms when possible, to keep the concept vocabulary small
 ; 2. What is the total weight for the lhs of lexical rules? 0.9?
 ;    ANS: 0.9
@@ -28,7 +30,9 @@
 ; ARGUMENT LISTS BY POS
 ; (*-vb e x y u) : e - eventuality; x - subj; y - dirobj; u - iobj
 ; (*-nn e x) : e - eventuality; x - subj
-; (*-in e x) : e - head (vb/noun); x - dependent
+; (*-in e x y) : e - eventuality; x - head (vb/noun); y - dependent
+; (*-adj e x) : adjective with eventuality e, modifying object x
+; (*-rb e1 e2) : adverb with eventuality e1 modifying eventuality e2
 ;
 
 
@@ -36,34 +40,36 @@
 
 ;;; CONFLICT
 
-(B (name conflict-nn) (=> (conflict e :0.9)(conflict-nn e w)))
+(B (name conflict-nn) (=> (conflict e x y g h :0.9)(conflict-nn e w)))
 
 ; Combat is conflict.
 
-(B (name combat-nn1) (=> (conflict e :0.9) (combat-nn e x)))
+(B (name combat-nn1) (=> (conflict e x y g h :0.9) (combat-nn e x)))
 
-(B (name combat-vb1) (=> (^ (conflict e :0.3) (adversary e1 y x e :0.6)) (combat-vb e x y u)))
+(B (name combat-vb1) (=> (^ (conflict e x y g h :0.3) (adversary e1 y x e :0.6)) (combat-vb e x y u)))
 
 ; A fight is a conflict.
 
-(B (name fight-nn1) (=> (conflict e :0.9) (fight-nn e x)))
+(B (name fight-nn1) (=> (conflict e x y g h :0.9) (fight-nn e x)))
 
-(B (name fight-vb1) (=> (^ (conflict e :0.3) (adversary e1 y x e :0.9)) (fight-vb e x y u)))
+(B (name fight-vb1) (=> (^ (conflict e x y g h :0.3) (adversary e1 y x e :0.9)) (fight-vb e x y u)))
 
 ;;; ADVERSARY
 
 (B (name adversary-nn1) (=> (adversary x y e :0.9)(adversary-nn e1 x)))
 
+(B (name adversary-nn1) (=> (adversary x y e :0.9)(side-nn e1 x)))
+
 ; Enemies are adversaries.
 
-(B (name enemy-nn1) (=> (^ (conflict e :0.6) (adversary x y e :0.3)) (enemy-nn e1 x)))
+(B (name enemy-nn1) (=> (^ (conflict e x y g h :0.6) (adversary x y e :0.3)) (enemy-nn e1 x)))
 
-(B (name enemy-nn2) (=> (^ (conflict e :0.6) (adversary x y e :0.3)) (^ (enemy-nn e1 x) (of-in e2 x y))))
+(B (name enemy-nn2) (=> (^ (conflict e x y g h :0.6) (adversary x y e :0.3)) (^ (enemy-nn e1 x) (of-in e2 x y))))
 
 ; Adversaries have goals
 
 (B (name goal-nn) (=> (goal e1 g x :0.9)(goal-nn e1 g)))
-
+ 
 (B (name wants-goal-vb) (=> (goal e1 g x :0.9)(want-vb e1 x g u)))
 
 ;;; ATTACK
@@ -102,6 +108,18 @@
 
 (B (name shoot-vb3) (=> (attack e1 x y :0.9) (^ (shoot-vb e1 x w y) (at-in e2 e1 y))))
 
+; A blow is an attack.
+
+(B (name blow-nn1) (=> (attack e1 x y :0.9)(blow-nn e2 e1)))
+
+(B (name blow-nn1) (=> (attack e1 x y :0.9)(^ (blow-nn e2 e1)(from-in e3 e1 x))))
+
+(B (name blow-nn1) (=> (attack e1 x y :0.9)(^ (blow-nn e2 e1)(by-in e3 e1 x))))
+
+; A low blow is an illegal attack.
+
+(B (name low-blow-nn1) (=> (attack e1 x y :0.9)(low-adj e2 e1)))
+
 ;;; AIM
 
 ; Aim a weapon at a target.
@@ -128,44 +146,61 @@
 
 ; bullet
 
-(B (name bullet-nn) (=> (bullet w :0.9) (bullet-nn e1 w)))
+(B (name bullet-nn) (=> (weapon w :0.9) (bullet-nn e1 w)))
 
 ; rifle
 
-(B (name rifle-nn) (=> (rifle w :0.9) (rifle-nn e1 w)))
+(B (name rifle-nn) (=> (weapon w :0.9) (rifle-nn e1 w)))
 
 ; gun 
 
-(B (name gun-nn) (=> (gun w :0.9) (gun-nn e1 w)))
+(B (name gun-nn) (=> (weapon w :0.9) (gun-nn e1 w)))
 
 ; sight 
 
-(B (name sight-nn) (=> (sight w :0.9) (sight-nn e1 w)))
+(B (name sight-nn) (=> (aim e1 x w y :0.9) (sight-nn e1 w)))
 
 ; crosshairs
 
-(B (name crosshairs-nn) (=> (crosshairs w :0.9) (crosshairs-nn e1 w)))
+(B (name crosshairs-nn) (=> (aim e1 x w y :0.9) (crosshairs-nn e1 w)))
 
 ;;;; ENGLISH LEXICAL AXIOMS FOR WAR
 
-(B (name war-nn) (=> (war w :0.9) (war-nn e w)))
+; One kind of conflict is a war.
+
+(B (name war-nn) (=> (conflict e1 x y g h :0.9) (war-nn e2 e1)))
 
 ;A betrayal is when members of groups defect.
 
 ;;;; ENGLISH LEXICAL AXIOMS FOR COMPETITION/SPORTS
 
-(B (name compete-vb1) (=> (compete e1 x y c :0.9)(compete-vb e x y u)))
+(B (name compete-vb1) (=> (conflict e1 x y g h :0.9)(compete-vb e x y u)))
 
-(B (name competitor-nn1) (=> (compete e1 x y c :0.9)(competitor-nn e x)))
+(B (name competitor-nn1) (=> (conflict e1 x y g h :0.9)(competitor-nn e x)))
 
-(B (name competitor-nn2) (=> (compete e1 x y c :0.9)(competitor-nn e y)))
+(B (name competitor-nn2) (=> (conflict e1 x y g h :0.9)(competitor-nn e y)))
 
-(B (name competition-nn3) (=> (compete e1 x y w :0.9)(competition e w)))
+(B (name competition-nn3) (=> (conflict w x y g h :0.9)(competition e w)))
 
+;Players (i.e. adversaries) wear uniform identifying their team.
+
+(B (name uniform-nn1) (=> (^ (conflict e1 x y g h :0.3)(adversary e2 x y e1 :0.3)(part w x :0.3))(uniform-nn e2 w)))
+
+(B (name uniform-nn1) (=> (^ (conflict e1 x y g h :0.3)(adversary e2 x y e1 :0.3)(part w y :0.3))(uniform-nn e2 w)))
+
+; Adversary in sport is a player.
+
+(B (name player-nn1) (=> (adversary e x y c :0.9)(player-nn e x)))
+
+; Adversary in sport is a team.
+
+(B (name team-nn1) (=> (adversary e x y c :0.9)(team-nn e x)))
+
+; An adversary has a strategy
+
+(B (name plan-nn1) (=> (^ (conflict e1 x y g h)(adversary e x y c :0.9)(part p x))(plan-nn w p)))
 
 ;;;; OTHER ENGLISH LEXICAL AXIOMS
-
-(B (name president-nn) (=> (president x :0.9) (president-nn e1 x)))
 
 (B (name union-nn) (=> (union x :0.9)(union-nn w x)))
 
