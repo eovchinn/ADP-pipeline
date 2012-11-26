@@ -90,11 +90,15 @@
 ;Sport is conflict constrained by rules of behavior.
 ;   [Let's talk about how to represent this.]
 
-;Adversary in sport is a player.
+; A boxing match is a conflict
+(B (name boxing-match1)(=> (^ (conflict c x y g h :0.9)(boxing-etc c :0.3))(boxing-match c)))
 
-;Players wear uniform identifying their team.
+
+
 
 ;In some sports, the adversaries are teams of persons.
+
+
 
 ;;;; RACING  ONTOLOGY
 
