@@ -68,31 +68,8 @@
 
 ;(B (name bullet) (=> (^ (weapon w :0.6)(etcbullet w :0.6)) (bullet w)))
  
-; One kind of gun is a rifle.
-
-;(B (name rifle) (=> (^ (gun w :0.6)(etcrifle w :0.6)) (rifle w)))
-
-; One kind of weapon is a gun.
-
-;(B (name gun) (=> (^ (weapon w :0.6)(etcgun w :0.6)) (gun w)))
-
-; A gun has a sight.
-
-;(B (name sight) (=> (gun w) (^ (sight u :1.2)(part u w))))
-
-; One type of sight of a gun is crosshairs.
-
-;(B (name crosshairs) (=> (^ (gun w :0.4)(sight u :0.4)(part u w :0.4)) (crosshairs u)))
-
-; To aim a gun is to aim the sight of the gun. (The function of sights.)
-
-;(B (name gun1) (=> (^ (gun w :0.3)(sight u :0.3)(part u w :0.3)(aim e1 x u y :0.3))(aim e1 x w y)))
 
 ;;;; WAR ONTOLOGY
-
-; One kind of conflict is a war. 
-
-;(B (name war) (=> (^ (conflict e x y g h :0.6) (waretc e :0.6)) (war e)))
 
 ;Adversaries in war are groups to which members are loyal.
 
