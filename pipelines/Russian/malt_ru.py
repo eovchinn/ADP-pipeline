@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Contributors:
-#   * Vladimir Zaytsev <vzaytsev@isi.edu>
+#   * Vladimir Zaytsev <vzaytsev@isi.edu> (2012)
 
 # Malt Parser output processing pipeline for Russian.
 # The script takes the output of the Malt Parser and converts it to
@@ -230,33 +230,6 @@ class MaltConverter(object):
         else:
             return
 
-    def preproc(self):
-        words = self.__words[:]
-
-        for i in xrange(0, len(self.__words) - 1):
-            w1 = self.__words[i]
-            w2 = self.__words[i + 1]
-
-            if w1.lemma == u"а" and w2.lemma == u"также":
-                w1.head = w2.head
-                w1.lemma = u"и"
-                w1.form = u"и"
-                words.remove(w2)
-
-        # for w in words:
-        #     if w.lemma == u"и" or w.lemma == u"или":
-        #         deps = self.deps(w)
-        #         if len(deps) == 1:
-        #             head = self.word(w.head)
-        #             if head:
-        #                 hdeps = self.deps(head)
-        #                 if len(hdeps) == 1:
-        #                     hhead = head.head
-        #                     head.head = w.head
-        #                     w.head = hhead
-
-        self.__words = words
-
     def word(self, word_id):
         return self.__words[word_id - 1]
 
@@ -313,9 +286,47 @@ class MaltConverter(object):
                 argsf.append(a.type)
         return u"%s(%s)" % (prefix, ",".join(argsf), )
 
+    def preprocess(self):
+        words = self.__words[:]
+
+        for i in xrange(0, len(self.__words) - 1):
+            w1 = self.__words[i]
+            w2 = self.__words[i + 1]
+
+            if w1.lemma == u"а" and w2.lemma == u"также":
+                w1.head = w2.head
+                w1.lemma = u"и"
+                w1.form = u"и"
+                words.remove(w2)
+
+        for w in words:
+            if w.lemma == u"и":
+                deps = self.deps(w)
+                if len(deps) == 1 and \
+                   w.deprel[0:4] == u"союз" and \
+                   deps[0:4].deprel == u"союз":
+                    head = self.word(w.head)
+                    if head:
+                        hdeps = self.deps(head)
+                        if len(hdeps) == 1:
+                            hhead = head.head
+                            head.head = w.id
+                            w.head = hhead
+
+        self.__words = words
+
+    def subordinate_relatives(self):
+        pass
+
+    def subordinate_whnominals(self):
+        pass
+
+    def detect_questions(self):
+        pass
+
     def format_output(self, sent_count):
 
-        self.preproc()
+        self.preprocess()
 
         for w in self.__words:
 
@@ -368,7 +379,8 @@ class MaltConverter(object):
         d_object = None
         i_object = None
 
-        for dep in self.deps(word):
+        deps = reversed(sorted(self.deps(word), key=lambda d: d.deprel))
+        for dep in deps:
             ddeps = list(self.deps(dep))
 
             if dep.cpostag == "pr" and len(ddeps) > 0:
@@ -381,12 +393,13 @@ class MaltConverter(object):
                     dep = new_dep
 
             if dep.cpostag == "nn":
-                if dep.deprel == u"предик":  # or dep.deprel == u"сравн-союзн":
+                if dep.deprel == u"предик":
                     w_subject = dep.pred.args[1]
                 elif dep.deprel == u"1-компл" or dep.deprel == u"2-компл":
+                    # print dep.lemma, dep.deprel
                     if not d_object:
                         d_object = dep.pred.args[1]
-                    else:
+                    elif not i_object:
                         i_object = dep.pred.args[1]
 
         # 2. Argument control: first arguments of both verbs are the same.
