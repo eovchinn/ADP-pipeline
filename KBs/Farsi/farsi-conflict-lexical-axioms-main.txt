@@ -254,6 +254,7 @@
 (B (name ‎use-krd#kn) (=> (use e1 x w) (^ (krd#kn-vb e1 x w u2) (use x1 u1 u2) (ENC e4 x1 e1))))
 
 ;;;ta inja
+
 (B (name ‎use-dashtn) (=> (conflict e1 x y g h) (^ (dashtn-nn e1 e) (‎styzh-nn e3 x1) (NE e4 e x1))))
 (B (name ‎use-dasht#dar) (=> (conflict e1 x y g h) (^ (dasht#dar-vb e1 x u1 u2) (‎styzh-nn e3 x1) (NVE e4 x1 e1))))
 (B (name ‎use-dasht#dar) (=> (conflict e1 x y g h) (^ (dasht#dar-vb e1 x u1 u2) (‎styzh-nn e3 x1) (ENC e4 x1 e1))))
