@@ -64,6 +64,7 @@ def annotate_document(annotate_document_request_body):
 
   print "OPTIONS:"+str(options.graph)
 
+
   #options.graph is either True (return graph as base-64 str) or false
   adp_return = ADP(input_metaphors,language,options.graph)
   return adp_return
