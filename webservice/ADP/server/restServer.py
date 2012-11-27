@@ -35,6 +35,7 @@ def start_server(options, annotate_document_post_handler):
     }, 
     '/': {
       'request.dispatch': cherrypy.dispatch.MethodDispatcher(),
+      'response.timeout': 60*10,
     },
     '/proofgraphs': {
       'tools.staticdir.root':img_dir,
