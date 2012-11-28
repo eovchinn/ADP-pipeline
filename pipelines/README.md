@@ -103,6 +103,24 @@ Subj in a passive construction is the third arg of the corresponding verb
 john-nn(e1,x) & bear-vb(e2,u1,x,u2)
 ```
 
+7) Participle
+
+Participles should be treated as normal verbs
+
+a) active
+
+```
+% The man building a house
+man-nn(e1,x1) & build-vb(e2,x1,x2,u) & house-nn(e3,x2)
+```
+
+b) passive
+
+```
+% The house built here
+build-vb(e1,u1,x1,u2) & house-nn(e2,x1)
+```
+
 ============
 NOUNS
 ============
