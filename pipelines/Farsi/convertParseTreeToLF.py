@@ -8,18 +8,22 @@ outputFile=sys.stdout
 farsiWordsForLFFile=codecs.open(sys.argv[3], encoding='utf-8')
 
 #each rule is in the form "relationName":(headArgIndex,dependentArgIndex)
-rules={"SBJ":[(1,1)],"OBJ":[(2,1)],"VCL":[(2,0)],"PRD":[(0,0)],"NPOSTMOD":[(1,1)],"NPREMOD":[(1,1)],"ADV":[(0,1)],"POSDEP":[(2,1)]}
+rules={"SBJ":[(1,1)],"OBJ":[(2,1)],"NCL":[(1,1)],"PRD":[(2,0)],"NPOSTMOD":[(1,1)],"NPREMOD":[(1,1)],"ADV":[(0,1)],"POSDEP":[(2,1)],"VPP":[(0,1)],"NPP":[(1,1)],"PARCL":[(1,1)]}
 
 #this is a global dict for easy handling of different POS schema
 POSStopList=["PUNC"]
 wordStopList=["\"","'","(",")"]
-POSDict={"N":"N","V":"V","ADJ":"ADJ","ADV":"ADV","PREP":"PREP","PR":"PR"}
+POSDict={"N":"N","V":"V","ADJ":"ADJ","ADV":"ADV","PREP":"PREP","PR":"PR","CONJ":"CONJ","SUBR":"SUBR"}
 postFixDict={"N":"-nn","V":"-vb","ADJ":"-adj","ADV":"-rb","PREP":"-in","":""}
-argDict={"N":2,"V":4,"ADJ":2,"ADV":2,"PREP":3,"PR":2,"":1,"CONJ":2}
+argDict={"N":2,"V":4,"ADJ":2,"ADV":2,"PREP":3,"PR":2,"":1,"CONJ":2,"SUBR":3}
 #tempFile=codecs.open("%s.tmp.txt"%sys.argv[3], encoding='utf-8',mode='w')
 pronouns={}
 pluralPostfixes=[]
 transLitDict={}
+conditionalList=[]
+becauseList=[]
+negationList=[]
+#whileList=[]
 
 def findProp(props,propId):
     global pronouns
@@ -56,7 +60,42 @@ def readPluralList(startLineNumber,lines):
         pluralPostfixes+=[pluralPostfix]
     return i
     
+def readCondList(startLineNumber,lines):
+    global conditionalList
+    for i in range(startLineNumber,len(lines)):
+        if re.match("--.*",lines[i]):
+            return i+1
+        conditional=lines[i].strip()
+        conditionalList+=[conditional]
+    return i
 
+def readWhileList(startLineNumber,lines): 
+    global whileList
+    for i in range(startLineNumber,len(lines)):
+        if re.match("--.*",lines[i]):
+            return i+1
+        whileWord=lines[i].strip()
+        whileList+=[whileWord]
+    return i  
+
+def readBecauseList(startLineNumber,lines): 
+    global becauseList
+    for i in range(startLineNumber,len(lines)):
+        if re.match("--.*",lines[i]):
+            return i+1
+        becauseWord=lines[i].strip()
+        becauseList+=[becauseWord]
+    return i  
+
+def readNegationList(startLineNumber,lines):
+    global negationList
+    for i in range(startLineNumber,len(lines)):
+        if re.match("--.*",lines[i]):
+            return i+1
+        negationWord=lines[i].strip()
+        negationList+=[negationWord]
+    return i  
+    
               
 def loadFarsiWordsForLFFile(farsiWordsForLFFile):
     lines=farsiWordsForLFFile.readlines()
@@ -64,47 +103,30 @@ def loadFarsiWordsForLFFile(farsiWordsForLFFile):
     startLineNumber=readTransliterationDict(startLineNumber,lines)
     startLineNumber=readPronounList(startLineNumber,lines)
     startLineNumber=readPluralList(startLineNumber,lines)
-    
-#    print pronouns
-#    print pluralPostfixes
-#    print transLitDict
-            
-                
-            
-        
+    startLineNumber=readCondList(startLineNumber,lines)
+    startLineNumber=readBecauseList(startLineNumber,lines)
+    startLineNumber=readNegationList(startLineNumber,lines)
     
 
 def getTranslit(lemma):
     englishStr=""
     for i in range(0,len(lemma)):
-#        if lemma[i] not in transLitDict:
-#            print lemma[i]
-#            for key in transLitDict:
-#                print key
-#            niloo=1
         translit=lemma[i]
         if lemma[i] in transLitDict:
             translit=transLitDict[lemma[i]]
         englishStr+=translit
     return englishStr
 
-
-#farsiLitSet=set()
-#def getTranslit(lemma):
-#    global farsiLitSet
-#    for i in range(0,len(lemma)):
-#        farsiLitSet.add(lemma[i])
-        
-    
-
 def propToString(sentenceId,prop):
     (id,word,lemma,POS,args)=prop
     postfix=""
     if POS in postFixDict: postfix=postFixDict[POS]
 #    print sentenceId
-    if id==23:
-        niloo=1
-    token="[%s]:%s%s(%s)"%(sentenceId*1000+id,getTranslit(lemma),postfix,",".join(args))
+    if id==-1:
+        idString=""
+    else:
+        idString="[%s]:"%(sentenceId*1000+id)
+    token="%s%s%s(%s)"%(idString,getTranslit(lemma),postfix,",".join(args))
     return token
     
 def getLemma(word):
@@ -121,7 +143,7 @@ def getArgs(POS):
     args+=["e%s"%eventualityArgCounter]
     eventualityArgCounter+=1
     
-    if POS in POSDict and POSDict[POS]=="N":
+    if POS in POSDict and (POSDict[POS]=="N" or POSDict[POS]=="PR"):
         
         args+=["x%s"%entityArgCounter]
         entityArgCounter+=1
@@ -196,8 +218,6 @@ def getEqualArgSets(propDict,rels):
                 equalArgSets+=[foundSet]
             foundSet.add(headArgName)
             foundSet.add(dependentArgName)
-    
-    equalArgSets=convertSetsToLists(equalArgSets)
     return equalArgSets
 
 def getDependentId(rels,headId,relationName):
@@ -240,6 +260,7 @@ def getNounConjArgSets(props,rels):
     return nounConjArgSets
             
 def replaceEqualArgs(props,equalArgSets):
+    equalArgSets=convertSetsToLists(equalArgSets)
     for prop in props:
         (Id,Word,Lemma,POS,Args)=prop
         for i in range(0,len(Args)):
@@ -258,8 +279,6 @@ def getMaxPropId(props):
         
 def addModifiers(props,rels,originalProp,newProp):
     global eventualityArgCounter
-    global propIdCounter
-    propIdCounter+=1
     
     (originalPropId,originalPropWord,originalPropLemma,originalPropPOS,originalPropArgs)=originalProp
     (newPropId,newPropWord,newPropLemma,newPropPOS,newPropArgs)=newProp
@@ -272,26 +291,59 @@ def addModifiers(props,rels,originalProp,newProp):
 #    verbModifierRels=["NVE","ENC","VPP","ADV","AJUCL"]
     for prop in props:
         (propId,word,lemma,POS,args)=prop    
-        if lemma=="NVE":
-            niloo=1    
         for i in range(1,len(args)):
             if args[i]==originalPropArg0: # we found a prop that has originalPropArg0 as one of its arguments -> duplicate this prop and replace the argument with new argument
                 newDependentPropArgs=list(args)
                 newDependentPropArgs[i]= newPropArgs0
                 newDependentPropArgs[0]="e%s"%(eventualityArgCounter+1)
                 eventualityArgCounter+=1
-                newModifierProp=(propIdCounter+1,word,lemma,POS,newDependentPropArgs)
-                propIdCounter+=1
+                newModifierProp=(propId,word,lemma,POS,newDependentPropArgs) #same propId
                 newModifierProps+=[newModifierProp]
     return newModifierProps
+
+def handleBecauseWords(props,rels):
+    equalSet=set()
+    for rel in rels:
+        (relName,dependentId,headId)=rel
+        if relName!="AJUCL": continue
+        (headId,headWord,headLemma,headPOS,headArgs)=findProp(props,headId)
+        dependentProp=findProp(props,dependentId)
+        (dependentId,dependentWord,dependentLemma,dependentPOS,dependentArgs)=dependentProp
+        if dependentLemma not in becauseList:continue
+        becauseDependent=getDependentId(rels,headId,"PRD")
+        (becauseDependentId,becauseDependentWord,becauseDependentLemma,becauseDependentPOS,becauseDependentArgs)=becauseDependent
+        equalSet.add([headArgs[0],dependentArgs[1]])
+        equalSet.add([becauseDependentArgs[0],dependentArgs[2]])
+    return equalSet
+        
+#def handleWhileWords(props,rels):
+#    equalArgSets=[]
+#    for rel in rels:
+#        (relName,dependentId,headId)=rel
+#        if relName!="ADV": continue
+#        (headId,headWord,headLemma,headPOS,headArgs)=findProp(props,headId)
+#        dependentProp=findProp(props,dependentId)
+#        (dependentId,dependentWord,dependentLemma,dependentPOS,dependentArgs)=dependentProp
+#        if dependentLemma not in whileList:continue
+#        
+#        whileDependentId=getDependentId(rels,dependentId,"NCL")
+#        (whileDependentId,whileDependentWord,whileDependentLemma,whileDependentPOS,whileDependentArgs)=findProp(props,whileDependentId)
+#        
+#        prdDependentId=getDependentId(rels,whileDependentId,"PRD")
+#        (prdDependentId,prdDependentWord,prdDependentLemma,prdDependentPOS,prdDependentArgs)=findProp(props,prdDependentId)
+#        
+#        equalArgSets+=set([headArgs[0],dependentArgs[1]])
+#        equalArgSets+=set([prdDependentArgs[0],dependentArgs[2]])
+#    return equalArgSets
+                  
             
+    
+                
 def createNewPropsForNounConjs(props,rels,nounConjArgSets):
     global eventualityArgCounter
     eventualityArgCounter+=1
     newProps=[]
     newModifiers=[]
-    global propIdCounter
-    propIdCounter+=1
     for originalProp in props:
 #        print originalProp
         (originalPropId,Word,Lemma,POS,Args)=originalProp
@@ -325,18 +377,16 @@ def createNewPropsForNounConjs(props,rels,nounConjArgSets):
                     
                     if newArgs[1:]==Args[1:]: # if same argument, don't add anything
                         continue
-                    newPropId=propIdCounter+1
-                    newProp=(newPropId,Word,Lemma,POS,newArgs)
+#                    newPropId=propIdCounter+1
+                    newProp=(originalPropId,Word,Lemma,POS,newArgs) # Use original propId
                     newModifiers+=addModifiers(props,rels,originalProp,newProp)
                     newProps+=[newProp]
                     eventualityArgCounter+=1
-                    propIdCounter+=1
+#                    propIdCounter+=1
     return props+newProps+newModifiers
 
 def createNewPropsForLightVerbs(props,rels):
     global eventualityArgCounter
-    global propIdCounter
-    propIdCounter+=1
     newProps=[]
     for rel in rels:
         (relName,dependentId,headId)=rel
@@ -349,16 +399,13 @@ def createNewPropsForLightVerbs(props,rels):
             headProp=findProp(props,headId)
             (headId,headWord,headLemma,headPOS,headArgs)=headProp
             
-            newProp=(propIdCounter,"",relName,"",["e%s"%eventualityArgCounter,dependentArgs[0],headArgs[0]])
+            newProp=(-1,"",relName,"",["e%s"%eventualityArgCounter,dependentArgs[1],headArgs[0]])
             newProps+=[newProp]
-            propIdCounter+=1
             
     return props+newProps
 
 def createNewPropsForNounsAndPossesives(props,rels):
     global eventualityArgCounter
-    global propIdCounter
-    propIdCounter+=1
     newProps=[]
     for rel in rels:
         (relName,dependentId,headId)=rel
@@ -372,19 +419,17 @@ def createNewPropsForNounsAndPossesives(props,rels):
             (headId,headWord,headLemma,headPOS,headArgs)=headProp
             
             if dependentLemma in pronouns:
-                newProp=(propIdCounter,"","of-in","",["e%s"%eventualityArgCounter,dependentArgs[1],headArgs[1]])
+                newProp=(-1,"","of-in","",["e%s"%eventualityArgCounter,dependentArgs[1],headArgs[1]])
             
             else:
-                newProp=(propIdCounter,"","nn","",["e%s"%eventualityArgCounter,headArgs[1],dependentArgs[1]])
+                newProp=(-1,"","nn","",["e%s"%eventualityArgCounter,headArgs[1],dependentArgs[1]])
             
             newProps+=[newProp]
-            propIdCounter+=1
             
     return props+newProps
                 
 def createNewPropsForNounsWithPossesivePostfixes(props,rels):
     global eventualityArgCounter
-    global propIdCounter
     global entityArgCounter
     for prop in props:
         (id,word,lemma,POS,args)=prop 
@@ -392,23 +437,20 @@ def createNewPropsForNounsWithPossesivePostfixes(props,rels):
         if postFix not in pronouns:
             continue
         eventualityArgCounter+=1
-        propIdCounter+=1
         entityArgCounter+=1
         pronounArg="x%s"%entityArgCounter
-        newProp1=(propIdCounter,postFix,postFix,POSDict["PR"],["e%s"%eventualityArgCounter,pronounArg])
+        newProp1=(id,postFix,postFix,POSDict["PR"],["e%s"%eventualityArgCounter,pronounArg])
         
         eventualityArgCounter+=1
-        propIdCounter+=1
         
-        newProp2=(propIdCounter,"","of-in","",["e%s"%eventualityArgCounter,args[1],pronounArg])
+        newProp2=(-1,"","of-in","",["e%s"%eventualityArgCounter,args[1],pronounArg])
         
         props+=[newProp1,newProp2]
-        propIdCounter+=1
     return props
 def createNewPropsForPlural(props,rels):
     global eventualityArgCounter
-    global propIdCounter
     global entityArgCounter
+    newProps=[]
     for prop in props:
         (id,word,lemma,POS,args)=prop
         if POS!=POSDict["N"]:
@@ -417,18 +459,161 @@ def createNewPropsForPlural(props,rels):
         if postFix not in pluralPostfixes:
             continue
         eventualityArgCounter+=1
-        propIdCounter+=1
         entityArgCounter+=1
         
-        newProp=(propIdCounter,"","typelt","",["e%s"%eventualityArgCounter,args[1],"s%s"%entityArgCounter])
+        newProp=(-1,"","typelt","",["e%s"%eventualityArgCounter,args[1],"s%s"%entityArgCounter])
         
-        props+=[newProp]
-        propIdCounter+=1
-    return props
+        newProps+=[newProp]
+    return props+newProps
+
+def createNewPropsForNegation(props,rels):
+    global eventualityArgCounter
+    global entityArgCounter
+    newProps=[]
+    for prop in props:
+        (id,word,lemma,POS,args)=prop
+        
+        if POS!=POSDict["V"]:
+            continue
+        
+        prefix=word[0]
+        if word[0] in negationList and lemma[0]!=word[0]:
+        
+            eventualityArgCounter+=1
+            entityArgCounter+=1
+            
+            newProp=(-1,"","not","",["e%s"%eventualityArgCounter,args[0]])
+            
+            newProps+=[newProp]
+    return props+newProps
+
+
+def createNewPropsForPronouns(props,rels):
+    global eventualityArgCounter
+    global entityArgCounter
+    newProps=[]
+    for prop in props:
+        if len(prop)<5:
+            niloo=1
+        (id,word,lemma,POS,args)=prop
+        if POS!=POSDict["PR"]:
+            continue
+        if lemma not in pronouns:
+            continue
+        (person,animate)=pronouns[lemma]
+        if person=="2":
+            eventualityArgCounter+=1
+            entityArgCounter+=1
+            newProp=(-1,"","typelt","",["e%s"%eventualityArgCounter,args[1],"s%s"%entityArgCounter])
+            newProps+=[newProp]
+            
+        eventualityArgCounter+=1
+        entityArgCounter+=1
+        if animate=="1":
+            newProp=(-1,"","person","",["e%s"%eventualityArgCounter,args[1]])
+            newProps+=[newProp]
+        if animate=="0":
+            newProp=(-1,"","thing","",["e%s"%eventualityArgCounter,args[1]])
+            newProps+=[newProp]
+    return props+newProps
+
     
+def createNewPropsForConditionals(props,rels):
+    global eventualityArgCounter
+    newProps=[]
+    for rel in rels:
+        (relName,dependentId,headId)=rel
+        if relName in ["AJUCL"]:
+            eventualityArgCounter+=1
+            
+            headProp=findProp(props,headId)
+            (headId,headWord,headLemma,headPOS,headArgs)=headProp
+            
+            ifProp=findProp(props,dependentId) #if
+            (ifPropId,ifWord,ifLemma,ifPOS,ifArgs)=ifProp
+            if ifLemma not in conditionalList:continue
+            ifVerbId=getDependentId(rels,ifPropId,"PRD")
+            (ifVerbId,ifVerbWord,ifVerbLemma,ifVerbPOS,ifVerbArgs)=findProp(props,ifVerbId)
+            
+            newProp=(-1,"","imp","",["e%s"%eventualityArgCounter,headArgs[0],ifVerbArgs[0]])
+            
+            newProps+=[newProp]
+            
+    return props+newProps
+ 
+def handleVConj(props,rels):
+    #if one of the verbs has no subject, make their subject the same.
+    for rel in rels:
+        (relName,dependentId,headId)=rel
+        if relName =="VCONJ":
+            
+            conj1Prop=findProp(props,headId)
+            conj2Id=getDependentId(rels,dependentId,"PREDEP")
+            if conj2Id==None:
+                continue
+            conj2Prop=findProp(props,conj2Id)
+            (conj1Id,conj1Word,conj1Lemma,conj1POS,conj1Args)=conj1Prop
+            (conj2Id,conj2Word,conj2Lemma,conj2POS,conj2Args)=conj2Prop
+            conj1Arg=conj1Args[1]
+            conj2Arg=conj2Args[1]
+            
+            if "u" in conj1Arg and "x" in conj2Arg: 
+                conj1Args[1]=conj2Arg
+
+            if "x" in conj1Arg and "u" in conj2Arg:
+                conj2Args[1]=conj1Arg[1]
+    return props
+
+def handleVCL(props,rels):
+    global eventualityArgCounter
+    equalArgSets=[]
+#    newProp=None
+    for rel in rels:
+        (relName,dependentId,headId)=rel
+        if relName !="VCL":continue
+            
+        verb1Prop=findProp(props,headId)
+        (verb1Id,verb1Word,verb1Lemma,verb1POS,verb1Args)=verb1Prop
+        (dependentId,dependentWord,dependentLemma,dependentPOS,dependentArgs)=findProp(props,dependentId) #keh
+        verb2Id=getDependentId(rels,dependentId,"PRD")
+        if verb2Id==None:
+            verb2Id=dependentId
+            
+#            eventualityArgCounter+=1
+#            propIdCounter+=1
+#            newProp=(propIdCounter,"","VCL","",["e%s"%eventualityArgCounter,verb1Args[0],verb2Args[0]])
+            
+        else:
+            equalArgSets+=[set([dependentArgs[1],verb1Args[0]])]
         
+        (verb2Id,verb2Word,verb2Lemma,verb2POS,verb2Args)=findProp(props,verb2Id)
+        equalArgSets+=[set([verb1Args[2],verb2Args[0]])]
+    
+    return equalArgSets
+
+def handleAJUCL(props,rels): # although because words and conditional words are also identified with AJUCL, they are handled separately. This is for the cases like: in kaar ra bekonid <ta> rastegaar shavid. And we want to plug in the right arguments for <ta>
+    equalArgSets=[]
+#    newProp=None
+    for rel in rels:
+        (relName,dependentId,headId)=rel
+        if relName !="AJUCL":continue
+            
+        verb1Prop=findProp(props,headId)
+        (verb1Id,verb1Word,verb1Lemma,verb1POS,verb1Args)=verb1Prop
+        (dependentId,dependentWord,dependentLemma,dependentPOS,dependentArgs)=findProp(props,dependentId) #keh, ta
+        verb2Id=getDependentId(rels,dependentId,"PRD")
+        if verb2Id!=None:
+            (verb2Id,verb2Word,verb2Lemma,verb2POS,verb2Args)=findProp(props,verb2Id)
+            equalArgSets+=[set([dependentArgs[1],verb1Args[0]])]
+            equalArgSets+=[set([dependentArgs[2],verb2Args[0]])]
+    return equalArgSets
+        
+        
+    
+            
+    
+    
 def createLF(tokens,sentenceId):
-    global propIdCounter
     props=[]
     rels=[]
     words=[]
@@ -441,7 +626,6 @@ def createLF(tokens,sentenceId):
         rels+=[(relName,id,dep)]
     sentence= " ".join(words)
     LF=(sentenceId,sentence,props,rels)
-    propIdCounter=getMaxPropId(props)
     LF2=resolveArgs(LF)
     return LF2
 
@@ -457,32 +641,48 @@ def lfToString(lf):
     returnString= "%s\nid(%s).\n%s\n"%(sentence,str(sentenceId),lfLine)
     returnString="% "+returnString
     return returnString
-
+def addToEqualArgSet(equalArgSets,newEqualArgSets):
+    for argSet in newEqualArgSets:
+        found=0
+        for equalArgSet in equalArgSets:
+            if equalArgSet.intersection(argSet):
+                equalArgSet.update(argSet)
+                found=1
+        if not found:
+            equalArgSets+=[argSet]
+            
 def resolveArgs(LF):
     (sentenceId,sentence,props,rels)=LF
-    if sentenceId==6:
-        niloo=1
-    #add new props for light verbs (add preds like NVE,ENC)
+
     props=createNewPropsForLightVerbs(props,rels)
     props=createNewPropsForNounsWithPossesivePostfixes(props,rels)
     props=createNewPropsForNounsAndPossesives(props,rels)
     props=createNewPropsForPlural(props,rels)
+    props=createNewPropsForPronouns(props,rels)
+    props=createNewPropsForConditionals(props,rels)
+    props=createNewPropsForNegation(props,rels)
+    
     
     
     propDict=createPropDict(props)
-    equalArgSets=getEqualArgSets(propDict,rels)    
+    equalArgSets=getEqualArgSets(propDict,rels)  
+    addToEqualArgSet(equalArgSets,handleBecauseWords(props,rels))
+    addToEqualArgSet(equalArgSets,handleVCL(props,rels))
+    addToEqualArgSet(equalArgSets,handleAJUCL(props,rels))
+    
+    
+    #addToEqualArgSet(equalArgSets,handleWhileWords(props,rels))  because words are nouns and are adverbs in farsi.
     props=replaceEqualArgs(props,equalArgSets)
     
+    props=handleVConj(props,rels)
     nounConjArgSets=getNounConjArgSets(props,rels)
     props=createNewPropsForNounConjs(props,rels,nounConjArgSets)
-    
            
     return (sentenceId,sentence,props,rels)               
 
 unknownargCounter=0
 entityArgCounter=0
 eventualityArgCounter=0
-propIdCounter=0
 
 loadFarsiWordsForLFFile(farsiWordsForLFFile)
 
@@ -492,8 +692,10 @@ sentenceId=1
 tokens=[]
 
 while line!="":
-    if line.strip()=="":   
+    if line.strip()=="" and len(tokens)!=0:   
         #one sentence read, process it and output it
+        if sentenceId==17:
+            niloo=1
         lf=createLF(tokens,sentenceId)
         outputFile.write(lfToString(lf).encode('utf-8'))
 #        sys.stdout.write(lfToString(lf).encode("utf-8"))
@@ -503,11 +705,11 @@ while line!="":
         unknownargCounter=0
         entityArgCounter=0
         eventualityArgCounter=0
-        propIdCounter=0
         
     else:
         a=line.split("\t")
         if len(a)!=10:
+            
             line=inputFile.readline()
             continue
         #id,word,lemma,CoarsePOS,FinePOS,etc1,dep,relName,etc2,etc3
@@ -522,6 +724,10 @@ while line!="":
         tokens+=[(id,word,lemma,CoarsePOS,relName,dep)]
         
     line=inputFile.readline()
+    
+if len(tokens)!=0:
+    lf=createLF(tokens,sentenceId)
+    outputFile.write(lfToString(lf).encode('utf-8'))
 inputFile.close()
 outputFile.close()
 
