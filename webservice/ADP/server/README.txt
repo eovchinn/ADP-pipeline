@@ -1,7 +1,7 @@
 Set environment variable in ~/.bash_profile
 ===========================================
 
-export PYTHONPATH=location of ADP pipelines (Metaphor-ADP/pipelines/English)
+export PYTHONPATH=location of ADP pipelines (Metaphor-ADP/pipelines/common)
 
 Start web-service annotateDocument on default port 8000
 =======================================================
@@ -47,4 +47,20 @@ Kill proces:
 
 kill -9 84127 (make sure you use the currend PID)
 
+Change Timeout
+==============
+* in restServer.py search for response.timeout and change it's value
+(currently set to 15 minutes/default is 10 minutes)
 
+Change IP Address for proofgraph URLs
+=====================================
+* in NLpipeline_MULT_metaphor.py, go to get_webservice_location:
+
+###currently hostname is used, but during demo you might have to use
+###the IP address
+	hostname=socket.getfqdn()
+#this gives the IP address; you may want to use this during the demo
+	#hostname=socket.gethostbyname(hostname)
+
+***if the above doesn't return the correct IP address, just add the IP
+address instead of using socket functions
