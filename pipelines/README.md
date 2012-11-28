@@ -28,8 +28,16 @@ john-nn(e1,x1) & try-vb(e2,x1,e3,u1) & go-vb(e3,x1,u2,u3)
 3) Other args
 
 If in the language you are working with there are more than 3 cases which can be expressed without prepositions (e.g. Russian), then introduce additional predicates expressing these cases is need.
+Use compl if you don't know how to call the additional predicates.
 
-For example, Russian instrumental
+For example, in English
+
+```
+% John makes this house a home
+john-nn(e1,x1) & make-vb(e2,x1,x2,u2) & house-nn(e3,x2) & home-nn(e4,x3) & compl(e5,e2,x3)
+```
+
+One more example, Russian instrumental
 
 ```
 % Я пишу карандашом (I write with a pencil)

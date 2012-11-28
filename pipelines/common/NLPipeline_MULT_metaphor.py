@@ -6,6 +6,7 @@ import re
 import json
 import time
 import thread
+import socket
 from subprocess import Popen, PIPE, STDOUT
 
 METAPHOR_DIR = os.environ['METAPHOR_DIR']
@@ -123,9 +124,9 @@ def ADP(input_dict,language,withPDFContent):
         return extract_hypotheses(henry_output,unique_id,withPDFContent)
 
 def get_webservice_location():
-	hostname='localhost'
-	if os.environ.get('HOSTNAME') is not None:
-           hostname=os.environ.get('HOSTNAME')
+	hostname=socket.getfqdn()
+	#this gives the IP address; you may want to use this during the demo
+	#hostname=socket.gethostbyname(hostname)
 	port='8000'
 	if os.environ.get('ADP_PORT') is not None:
            port=os.environ.get('ADP_PORT')
