@@ -623,9 +623,18 @@ def refineRels(props,rels):
         if id in propIds and dep in propIds:
             newRels+=[rel]
     return newRels    
-        
-        
-    
+
+def hasAlphabet(word):
+    if re.match("\w+", word):
+        return 1        
+    return 0
+def refineProps(props):
+    newProps=[]
+    for prop in props:
+        (id,word,lemma,POS,args)=prop
+        if POS not in POSStopList and hasAlphabet(word):
+            newProps+=[prop]
+    return newProps    
 def createLF(tokens,sentenceId):
     props=[]
     rels=[]
@@ -633,11 +642,11 @@ def createLF(tokens,sentenceId):
     for token in tokens:
         (id,word,lemma,POS,relName,dep)=token
         words+=[word]
-        if POS in POSStopList or word in wordStopList:
-            continue
+        
         props+=[(id,word,lemma,POS,getArgs(POS))]
         rels+=[(relName,id,dep)]
     sentence= " ".join(words)
+    props=refineProps(props)
     rels=refineRels(props,rels)
     LF=(sentenceId,sentence,props,rels)
     LF2=resolveArgs(LF)

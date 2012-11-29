@@ -3,8 +3,10 @@
 1	TEXTID	TEXTID	N	N	_	_	_	_	_
 2	-LRB-	-LRB-	N	N	_	_	_	_	_
 3	1	1	N	N	_	_	_	_	_
-4	-RRB-	-RRB-	V	V	_	_	_	_	_
-5	.	.	PUNC	PUNC	_	_	_	_	_
+4	-RRB-	-RRB-	N	N	_	_	_	_	_
+5	''	''	N	N	_	_	_	_	_
+6	''	''	V	V	_	_	_	_	_
+7	.	.	PUNC	PUNC	_	_	_	_	_
 
 1	عقربه	عقربه	N	N	_	_	_	_	_
 2	هاي	هاي	N	N	_	_	_	_	_
@@ -16,20 +18,25 @@
 3	2	2	N	N	_	_	_	_	_
 4	-RRB-	-RRB-	V	V	_	_	_	_	_
 5	.	.	PUNC	PUNC	_	_	_	_	_
+6	'	'	PUNC	PUNC	_	_	_	_	_
 
 1	تفاوت	تفاوت	N	N	_	_	_	_	_
 2	نگاه	نگاه	N	N	_	_	_	_	_
-3	.	.	PUNC	PUNC	_	_	_	_	_
+3	'	'	PUNC	PUNC	_	_	_	_	_
+4	.	.	PUNC	PUNC	_	_	_	_	_
 
 1	TEXTID	TEXTID	N	N	_	_	_	_	_
 2	-LRB-	-LRB-	N	N	_	_	_	_	_
 3	3	3	N	N	_	_	_	_	_
 4	-RRB-	-RRB-	V	V	_	_	_	_	_
 5	.	.	PUNC	PUNC	_	_	_	_	_
+6	''	''	PUNC	PUNC	_	_	_	_	_
 
 1	موجوديت	موجوديت	N	N	_	_	_	_	_
-2	فيزيكي	فيزيكي	V	V	_	_	_	_	_
-3	.	.	PUNC	PUNC	_	_	_	_	_
+2	فيزيكي	فيزيكي	N	N	_	_	_	_	_
+3	'	'	PUNC	PUNC	_	_	_	_	_
+4	'	'	PUNC	PUNC	_	_	_	_	_
+5	.	.	PUNC	PUNC	_	_	_	_	_
 
 1	TEXTID	TEXTID	N	N	_	_	_	_	_
 2	-LRB-	-LRB-	N	N	_	_	_	_	_

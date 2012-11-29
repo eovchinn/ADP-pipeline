@@ -2,9 +2,11 @@
 
 1	TEXTID	TEXTID	N	N	_	0	ROOT	_	_
 2	-LRB-	-LRB-	N	N	_	0	ROOT	_	_
-3	1	1	N	N	_	4	PREDEP	_	_
-4	-RRB-	-RRB-	V	V	_	0	ROOT	_	_
-5	.	.	PUNC	PUNC	_	4	PUNC	_	_
+3	1	1	N	N	_	0	ROOT	_	_
+4	-RRB-	-RRB-	N	N	_	0	ROOT	_	_
+5	''	''	N	N	_	6	PREDEP	_	_
+6	''	''	V	V	_	0	ROOT	_	_
+7	.	.	PUNC	PUNC	_	6	PUNC	_	_
 
 1	عقربه	عقربه	N	N	_	0	ROOT	_	_
 2	هاي	هاي	N	N	_	3	PREDEP	_	_
@@ -15,21 +17,26 @@
 2	-LRB-	-LRB-	N	N	_	0	ROOT	_	_
 3	2	2	N	N	_	4	PREDEP	_	_
 4	-RRB-	-RRB-	V	V	_	0	ROOT	_	_
-5	.	.	PUNC	PUNC	_	4	PUNC	_	_
+5	.	.	PUNC	PUNC	_	0	ROOT	_	_
+6	'	'	PUNC	PUNC	_	5	PUNC	_	_
 
-1	تفاوت	تفاوت	N	N	_	2	PREDEP	_	_
+1	تفاوت	تفاوت	N	N	_	0	ROOT	_	_
 2	نگاه	نگاه	N	N	_	0	ROOT	_	_
-3	.	.	PUNC	PUNC	_	2	PUNC	_	_
+3	'	'	PUNC	PUNC	_	0	ROOT	_	_
+4	.	.	PUNC	PUNC	_	3	PUNC	_	_
 
 1	TEXTID	TEXTID	N	N	_	0	ROOT	_	_
 2	-LRB-	-LRB-	N	N	_	0	ROOT	_	_
 3	3	3	N	N	_	4	PREDEP	_	_
 4	-RRB-	-RRB-	V	V	_	0	ROOT	_	_
-5	.	.	PUNC	PUNC	_	4	PUNC	_	_
+5	.	.	PUNC	PUNC	_	0	ROOT	_	_
+6	''	''	PUNC	PUNC	_	5	PUNC	_	_
 
-1	موجوديت	موجوديت	N	N	_	2	PREDEP	_	_
-2	فيزيكي	فيزيكي	V	V	_	0	ROOT	_	_
-3	.	.	PUNC	PUNC	_	2	PUNC	_	_
+1	موجوديت	موجوديت	N	N	_	0	ROOT	_	_
+2	فيزيكي	فيزيكي	N	N	_	0	ROOT	_	_
+3	'	'	PUNC	PUNC	_	0	ROOT	_	_
+4	'	'	PUNC	PUNC	_	0	ROOT	_	_
+5	.	.	PUNC	PUNC	_	4	PUNC	_	_
 
 1	TEXTID	TEXTID	N	N	_	0	ROOT	_	_
 2	-LRB-	-LRB-	N	N	_	0	ROOT	_	_
