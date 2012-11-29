@@ -55,14 +55,19 @@ CURRENT_DIR=`pwd`
 cd $MALT_DIR
 
 if [[ $PLATFORM == "linux" ]]; then
-    $TOKENIZER -a $ABBR_LIST $* |
+ if [ -d "$2" ]; then
+    $TOKENIZER -a $ABBR_LIST < "${1:-/dev/stdin}" |
+    tee  $2/tokenizer_o.txt |
     $MWL -f $MWLFILE |
     $TAGGER $OPTIONS $PARFILE |
+    tee $2/tagger_o.txt |
     $MALT_IFORMAT |
+    tee $2/conll_o.txt |
     java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off |
-    $MALT_OFORMAT
-elif [[ $PLATFORM == "darwin" ]]; then
-    $TOKENIZER -a $ABBR_LIST $* |
+    tee $2/malt_o.txt |
+    $MALT_OFORMAT > /dev/stdout
+ else
+    $TOKENIZER -a $ABBR_LIST  < "${1:-/dev/stdin}" |
     $MWL -f $MWLFILE |
     $TAGGER $OPTIONS $PARFILE | 
     $MALT_IFORMAT |
@@ -70,7 +75,31 @@ elif [[ $PLATFORM == "darwin" ]]; then
     #java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -i temp -m parse -v off >temp2;
     java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off |
     #paste temp2 temp | cut -d "	" -f 1-10,20 |
-    $MALT_OFORMAT
+    $MALT_OFORMAT > "${2:-/dev/stdout}"
+ fi
+elif [[ $PLATFORM == "darwin" ]]; then
+ if [ -d "$2" ]; then
+    $TOKENIZER -a $ABBR_LIST < "${1:-/dev/stdin}" |
+    tee  $2/tokenizer_o.txt |
+    $MWL -f $MWLFILE |
+    $TAGGER $OPTIONS $PARFILE |
+    tee $2/tagger_o.txt |
+    $MALT_IFORMAT |
+    tee $2/conll_o.txt |
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off |
+    tee $2/malt_o.txt |
+    $MALT_OFORMAT > /dev/stdout
+ else
+    $TOKENIZER -a $ABBR_LIST  < "${1:-/dev/stdin}" |
+    $MWL -f $MWLFILE |
+    $TAGGER $OPTIONS $PARFILE | 
+    $MALT_IFORMAT |
+    #cat > temp;
+    #java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -i temp -m parse -v off >temp2;
+    java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off |
+    #paste temp2 temp | cut -d "	" -f 1-10,20 |
+    $MALT_OFORMAT > "${2:-/dev/stdout}"
+ fi
 else
     echo "Unsupported platform $OSTYPE"
 fi

@@ -369,9 +369,9 @@
 
 1	¿	¿	f	f	0	5	f	_	_
 2	Cómo	cómo	r	r	0	5	cc	_	_
-3	se	se	p	p	0	5	ci	_	_
-4	te	tú	p	p	0	5	cd	_	_
-5	ocurrió	ocurrir	v	v	0	0	sentence	_	_
+3	qué	qué	p	p	0	5	suj	_	_
+4	has	haber	v	v	0	5	v	_	_
+5	venido	venir	v	v	0	0	sentence	_	_
 6	?	?	f	f	0	5	f	_	_
 
 1	¿	¿	f	f	0	2	f	_	_
