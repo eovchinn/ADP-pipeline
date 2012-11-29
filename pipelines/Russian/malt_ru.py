@@ -690,6 +690,8 @@ class MaltConverter(object):
         u"ты": "person",
         u"вы": "thing",
         u"они": "thing",
+        u"это": "thing",
+        u"эти": "thing",
     }
 
     def apply_pr_rules(self, word):
