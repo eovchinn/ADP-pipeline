@@ -9,25 +9,40 @@ id(3).
 [3003]:not(e1,e3) & [3005]:ocurrir-vb(e3,u5,x1,u7) & [3006]:antes-rb(e4,e3) & [3009]:presidente-nn(e5,x1) & [3010]:negro-adj(e6,x1)
 % Me dejé llevar un poco por eso .
 id(4).
-[4001]:person(e1,x1) & [4002]:dejar-vb(e2,u1,e3,x1) & [4003]:llevar-vb(e3,u4,u5,u6) & [4006]:por-in(e4,e3,u8)
+[4001]:person(e1,x1) & [4002]:dejar-vb(e2,u1,e3,x1) & [4003]:llevar-vb(e3,u4,u5,u6) & [4006]:por-in(e4,e3,u8) & [4007]:thing(e5,x5)
 % Pero creo que ha sido una decepción .
 id(5).
-[5002]:crear|creer-vb(e1,u1,u2,u3) & [5007]:decepción-nn(e4,x1) & equal(e5,u7,x1)
+[5002]:crear-vb(e1,u1,u2,u3) & [5007]:decepción-nn(e4,x1) & equal(e5,u7,x1)
 % No veo que se recuperen los empleos .
 id(6).
-[6001]:not(e1,e2) & [6002]:ver-vb(e2,u2,e3,u4) & [6005]:recuperar-vb(e3,u5,x1,u7) & [6007]:empleo-nn(e4,x1)
+[6001]:not(e1,e2) & [6002]:ver-vb(e2,u2,e3,u4) & [6005]:recuperar-vb(e3,u7,x1,u9) & [6007]:empleo-nn(e4,x1)
 % El mercado inmobiliario se está recuperando un poco , pero el desempleo sigue siendo demasiado alto , más de lo que él predijo que sería " .
 id(7).
-[7002]:mercado-nn(e1,x1) & [7003]:inmobiliario-adj(e2,x1) & [7005]:estar-vb(e3,x1,e4,u4) & [7006]:recuperar-vb(e4,x1,x1,u7) & [7012]:desempleo-nn(e5,x2) & [7013]:seguir-vb(e6,x2,e7,u10) & [7015]:demasiado-rb(e8,e9) & [7016]:alto-adj(e9,x2) & [7018]:más-rb(e10,u16) & [7019]:de-in(e11,e10,u18) & [7022]:thing(e12,x3) & [7023]:predecir-vb(e13,x3,e14,u21) & [7025]:ser-vb(e14,u22,u23,u24)
+[7002]:mercado-nn(e1,x1) & [7003]:inmobiliario-adj(e2,x1) & [7006]:recuperar-vb(e4,x1,x1,u9) & [7012]:desempleo-nn(e5,x2) & [7013]:seguir-vb(e6,x2,e7,u12) & [7015]:demasiado-rb(e8,e9) & [7016]:alto-adj(e9,x2) & [7018]:más-rb(e10,u18) & [7019]:de-in(e11,e10,x15) & [7022]:thing(e15,x15) & [7023]:predecir-vb(e13,x15,e14,u23) & [7025]:ser-vb(e14,u24,u25,u26)
 % Sin_embargo , este autoproclamado independiente tampoco se ha decidido por Romney .
 id(8).
-[8001]:sin_embargo-rb(e1,u1) & [8004]:autoproclamado-nn(e2,x1) & [8005]:independiente-adj(e3,x1) & [8006]:tampoco-rb(e4,u3) & [8009]:decidir-vb(e6,u8,x1,u9) & [8010]:por-in(e7,e6,x2) & [8011]:Romney-nn(e8,x2)
+[8001]:sin_embargo-rb(e1,u1) & [8004]:autoproclamado-nn(e2,x1) & [8005]:independiente-adj(e3,x1) & [8006]:tampoco-rb(e4,u3) & [8009]:decidir-vb(e6,u10,x1,u11) & [8010]:por-in(e7,e6,x2) & [8011]:Romney-nn(e8,x2)
 % " Definitivamente no .
 id(9).
-[9002]:definitivamente-rb(e1,u1) & [9003]:no-rb(e2,u2)
+[9002]:definitivamente-rb(e1,e2) & [9003]:no-rb(e2,u2)
 % En este punto no sé por quién voy a votar " .
 id(10).
-[10001]:en-in(e1,e4,x1) & [10003]:punto-nn(e2,x1) & [10004]:not(e3,e4) & [10005]:saber|ser-vb(e4,u4,e7,u6) & [10006]:por-in(e5,e7,u8) & [10007]:wh(e6,x2) & [10007b]:person(e10,x2,e5) & [10008]:ir-vb(e7,u9,e6,u11) & [10009]:a-in(e8,e7,e9) & [10010]:votar-vb(e9,u14,u15,u16)
+[10001]:en-in(e1,e4,x1) & [10003]:punto-nn(e2,x1) & [10004]:not(e3,e4) & [10005]:saber-vb(e4,u4,e7,u6) & [10006]:por-in(e5,e7,x2) & [10007]:wh(e6,x2) & person(e10,x2) & [10008]:ir-vb(e7,u9,e6,u11) & [10009]:a-in(e8,e7,e9) & [10010]:votar-vb(e9,u14,u15,u16)
 % Su decisión podría ser muy importante para determinar quién gana el estado de Virginia y la Casa Blanca .
 id(11).
-[11002]:decisión-nn(e1,x1) & [11003]:poder-vb(e2,x1,e3,u3) & [11005]:muy-rb(e4,e5) & [11006]:importante-adj(e5,x1) & [11007]:para-in(e6,u9,e9) & [11008]:determinar-vb(e7,u11,u12,u13) & [11009]:wh(e8,x2) & [11010]:ganar-vb(e9,x2,x3,u16) & [11012]:estado-nn(e10,x3) & [11010]:ganar-vb(e15,x2,x5) & [11013]:de-in(e11,x3,x4) & [11014]:Virginia-nn(e12,x4) & [11017]:casa-nn(e13,x5) & [11018]:blanco-adj(e14,x5)
+[11001]:person(e1,x1) & [11002]:decisión-nn(e2,x2) & [11003]:poder-vb(e3,x2,e4,u3) & [11005]:muy-rb(e5,e6) & [11006]:importante-adj(e6,x2) & [11007]:para-in(e7,u9,e10) & [11008]:determinar-vb(e8,u11,u12,u13) & [11009]:wh(e9,x3) & person(e16,x3) & [11010]:ganar-vb(e10,x3,x4,u16) & [11012]:estado-nn(e11,x4) & [11010]:ganar-vb(e16,x3,x6) & [11013]:de-in(e12,x4,x5) & [11014]:Virginia-nn(e13,x5) & [11017]:casa-nn(e14,x6) & [11018]:blanco-adj(e15,x6)
+% " Lo más emocionante es cuando las parejas vienen a comprometerse " , dice Chen .
+id(12).
+[12003]:más-rb(e1,e2) & [12004]:emocionante-adj(e2,u2) & [12006]:wh(e4,x1) & time(e11,x1,e6) & [12008]:pareja-nn(e5,x2) & [12009]:venir-vb(e6,x2,u7,u8) & be(e12,e3,e6) & [12010]:a-in(e7,e6,e8) & [12011]:comprometer-vb(e8,u11,u12,u13) & [12014]:decir-vb(e9,x3,e3,u16) & [12015]:Chen-nn(e10,x3)
+% A_veces traigo a mis colegas femeninas a almorzar aquí porque sé que crecieron con Hello Kitty y aún la disfrutan " , dice .
+id(13).
+[13001]:a_veces-rb(e1,e2) & [13002]:traer-vb(e2,x2,e11,u4) & [13003]:a-in(e3,e2,x1) & [13004]:mis-nn(e4,x1) & [13005]:colega-nn(e5,x2) & [13006]:femenino-adj(e6,x2) & [13007]:a-in(e7,e2,e8) & [13008]:almorzar-vb(e8,u10,u11,u12) & [13009]:aquí-rb(e9,e8) & [13011]:saber-vb(e10,u17,e11,u16) & [13013]:crecer-vb(e11,u17,u18,u19) & [13014]:con-in(e12,e11,x3) & [13015]:Hello-nn(e13,x3) & [13016]:Kitty-nn(e14,x4) & [13018]:aún-rb(e15,u22) & [13019]:thing(e19,x19) & [13020]:disfrutar-vb(e17,u17,x19,u25) & [13023]:decir-vb(e18,x2,u27,u28)
+% ¿ Cómo puedes saber si estás usando HTTPS o HTTP ?
+id(14).
+[14002]:whq(e1,x1) & [14003]:poder-vb(e2,u4,e3,u3) & [14004]:saber-vb(e3,u4,e5,u6) & [14007]:usar-vb(e5,u10,x2,u12) & [14008]:HTTPS-nn(e6,x2) & [14007]:usar-vb(e8,u10,x3) & [14010]:HTTP-nn(e7,x3) & or(e9,e6,e7)
+% Mira en la parte superior de tu ventana del navegador , donde ingresas las direcciones de Internet .
+id(15).
+[15001]:mirar-vb(e1,u1,e10,u3) & [15002]:en-in(e2,e1,x1) & [15004]:parte-nn(e3,x1) & [15005]:superior-adj(e4,x1) & [15006]:de-in(e5,x1,x3) & [15007]:person(e6,x2) & of-in(e15,x3,x2) & [15008]:ventana-nn(e7,x3) & [15009]:del-in(e8,x3,x4) & [15010]:navegador-nn(e9,x4) & [15012]:wh(e10,x5) & loc(e16,x5,e11) & [15013]:ingresas-vb(e11,u11,x6,u13) & [15015]:dirección-nn(e12,x6) & [15016]:de-in(e13,x6,x7) & [15017]:Internet-nn(e14,x7)
+% Este es el tipo de riesgo que HTTP plantea , mientras_que HTTPS sería más como si tú y tu nueva pareja estuvieran hablando un nuevo idioma que sólo ustedes dos hablan .
+id(16).
+[16001]:thing(e23,x23) & [16004]:tipo-nn(e2,x1) & equal(e24,x23,x1) & [16005]:de-in(e3,x1,x2) & [16006]:riesgo-nn(e4,x2) & [16008]:HTTP-nn(e5,x3) & [16009]:plantear-vb(e6,x3,u7,u8) & [16012]:HTTPS-nn(e7,x4) & [16013]:ser-vb(e8,x4,u10,u11) & [16014]:más-rb(e9,e10) & [16015]:como-rb(e10,x4) & [16017]:person(e11,x5) & [16019]:person(e12,x6) & [16020]:nuevo-adj(e13,u14) & [16021]:pareja-nn(e14,x7) & [16023]:hablar-vb(e16,x23,x8,u20) & [16025]:nuevo-adj(e17,x8) & [16026]:idioma-nn(e18,x8) & [16028]:sólo-rb(e19,u22) & [16029]:person(e20,x9) & [16031]:hablar-vb(e22,u23,x9,u26) & card(e21,u23,2)
