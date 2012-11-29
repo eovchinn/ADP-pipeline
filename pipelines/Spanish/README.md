@@ -1,43 +1,72 @@
-Run Pipeline with:
-run_spanish.sh < examples/spanish_text.txt
+===========
+Spanish Discourse Pipeline
+===========
 
-PREPROCESSING (Does not need to be re-run)
-create malty (conll) instances (anc_to_malt.py) (ancora.malt)
-Make maltparse (MP) model (maltparse1.5)
-extract words, pos, and lemmas from ancora.conll to make treetagger (TT) model (to_tree.py) (ancora.treetagger)
-use (full_stop.py) to replace sentence final punct pos tags with "fs" tag for TT in ancora.treetagger (ancora.treetagger.fs)
-use TT included script (make-lex.perl) to create a lexicon from word-pos-lemma file (ancora.lex)
-use (ancora.lex), (ancora.unknown), and (ancora.treetagger.fs) files to create TT model with (specify fs as sentence final punct) (ancora.treetagger.par)
-END PREPROCESSING
+This file describes the Spanish discourse pipeline. 
+It has directions for running the pipeline, as well 
+as descriptions of the scripts, tools, and resources 
+used within the pipeline.
 
-For tagging, I used Treetagger 3.2 along with the Spanish parameter file:
- - treetagger 3.2 - http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/
- - Spanish parameter file available from the same page, apparently trained on the Spanish CRATER corpus, using the Spanish lexicon of the CALLHOME corpus
-    - http://www.comp.lancs.ac.uk/linguistics/crater/corpus.html
-    - http://www.ldc.upenn.edu/Catalog/catalogEntry.jsp?catalogId=LDC96L16
- - references - ftp://ftp.ims.uni-stuttgart.de/pub/corpora/tree-tagger1.pdf
-                     - ftp://ftp.ims.uni-stuttgart.de/pub/corpora/tree-tagger2.pdf
+###Running the pipeline
 
-For parsing, I used maltparser 1.5.
- - maltparser 1.5 - http://www.maltparser.org/download.html
- - references - http://www.maltparser.org/publications.html
-    I think I've used this one in the past - http://www.bibsonomy.org/bibtex/2219fdcfa3a894d52f158905978aafe09/arnsholt
+```
+./run_spanish.sh [<absolute path to input> [<absolute path to output>]]
+```
+To run the pipeline, call run_spanish.sh with the absolute path to the input file as an argument. 
+By default the system outputs the logical forms of the sentences in the input file to stdout.
+The second (optional) argument can be a file or a directory. If the optional argument is a file, 
+the system output will be redirected there. If it is a directory, the intermediate files (tokenized, tagged, etc.)
+will be put into that directory, and the final output will go to stdout.
 
-For training maltparser, I used the Ancora corpus:
- - 500,000 words
- - Ancora - http://clic.ub.edu/corpus/en
-                - http://clic.ub.edu/corpus/webfm_send/13
- - reference - http://www.lrec-conf.org/proceedings/lrec2008/pdf/35_paper.pdf
+###Subdirectories
 
-examples:
-CESS-CAST-P_107_19991001.malt - sample dependency output
-CESS-CAST-P_107_19991001.props - sample proposition output
-ancora.lex - lexicon for use with treetagger
-ancora.malt - conll file to build maltparser model
-ancora.treetagger - word, pos, lemmas from ancora.malt 
-ancora.treetagger.fs - word, pos, lemmas from ancora.malt with 'fs' sentence-final punct-pos; to train treetagger
-spanish_text.ancora.tagged - output of treetagger with ancora corpus pos tags 
-spanish_text.tree.tagged - output of treetagger with default treetagger spanish pos tags 
-spanish_text.conll - output of to_malt.py from treetagged file
-spanish_text.tokens - output of freeling tokenizer
-spanish_text.txt - raw file of spanish text from web
+**Scripts**
+- to_malt.py - Create conll style output. Input file should be output from treetagger. Outputs to stdout.
+   - To run: 
+
+```
+python to_malt.py -i <input_file>
+```
+
+- malt_to_prop.py - Create logical form output. Input file should be output from MaltParser. Outputs to stdout.
+   - To run: 
+
+```
+python malt_to_prop.py -i <input_file>
+```
+
+
+**Examples**
+ - spanish_text.txt - raw file (one sentence per line) of spanish text collected from web
+   - spanish_text.tree.tagged - POS tagged spanish_text
+   - spanish_text.conll - spanish_text input for MaltParser
+   - spanish_text.conll.malt - dependency parsed output of spanish_text
+   - spanish_text.props - logical forms of spanish_text
+ - spanish_metaphors.txt - raw file (one sentence per line) of spanish metaphor test sentences
+   - spanish_text.tree.tagged - POS tagged spanish_metaphors
+   - spanish_text.conll - spanish_metaphors input for MaltParser
+   - spanish_text.conll.malt - dependency parsed output of spanish_metaphors
+   - spanish_text.props - logical forms of spanish_metaphors
+ - spanish_translations.txt - raw file of sentences from pipelines/README.md translated into Spanish
+   - spanish_text.tree.tagged - POS tagged spanish_translations
+   - spanish_text.conll - spanish_translations input for MaltParser
+   - spanish_text.conll.malt - dependency parsed output of spanish_translations
+   - spanish_text.props - logical forms of spanish_translations
+
+###External Tools & Resources
+- POS Tagging
+ - treetagger 3.2 (http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/)
+   - Spanish parameter file available from the same page
+- Parsing
+  - MaltParser 1.5 (http://www.maltparser.org/download.html)
+     - training corpus: Ancora (http://clic.ub.edu/corpus/en)
+
+
+
+**Preprocessing for Dependency Parsing**
+
+NOTE: These steps do not need to be re-run.
+
+1. Created conll-style file using instances from the Ancora corpus > ancora.malt
+
+2. Made MaltParser model with maltparse1.5 using ancora.malt > ancora.model
