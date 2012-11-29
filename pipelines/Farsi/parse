@@ -6,6 +6,7 @@ tempDir=$farsiPipelineDir/tmp
 taggedInputFile="${1:-/dev/stdin}"
 parsedFileName="${2:-/dev/stdout}"
 conllTaggedFile=$tempDir/taggedConll.txt
+lemmaDictFile=$farsiPipelineDir/lemmatizationDict.txt
 
 taggedFileToCONLL=$farsiPipelineDir/taggedFileToCONLL.py
 
@@ -14,7 +15,7 @@ parserModelFile=farsiMALTModel
 
 echo "**Modifying the Tagger output for parser..." >&2
 #modify the POS tagged file to include dummy label & dep lines
-python $taggedFileToCONLL $taggedInputFile $conllTaggedFile
+python $taggedFileToCONLL $taggedInputFile $conllTaggedFile $lemmaDictFile
 
 
 #run parser
