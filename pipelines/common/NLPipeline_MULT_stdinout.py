@@ -97,8 +97,6 @@ def main():
 		HENRY = HENRY_DIR + '/bin/henry -m infer' + henry_input + ' -e ' + HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T 60'
 		if pa.kbcompiled: HENRY += ' -b ' + KBPATH 
 
-		print 'HENRY INPUT: ' + HENRY + '\n'
-
 		henry_proc = Popen(HENRY, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
 
 		if pa.kb: henry_output = henry_proc.communicate()[0]
