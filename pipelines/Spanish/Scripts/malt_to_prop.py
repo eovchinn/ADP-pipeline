@@ -6,7 +6,7 @@ import re,sys,optparse
 ##################### I/O ##################################
 usage = "usage: %prog [options] <input_file>"
 parser = optparse.OptionParser(usage=usage)
-parser.add_option("-i", "--inFile", dest="input",
+parser.add_option("-i", "--input", dest="input",
                   action="store", help="read from FILE", metavar="FILE")
 parser.add_option("-t","--tagset",action="store",
                   help="tagset in input file",default="ancora")
