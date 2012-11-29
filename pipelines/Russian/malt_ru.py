@@ -397,15 +397,16 @@ class MaltConverter(object):
                     w_subject = dep.pred.args[1]
                 elif dep.deprel == u"1-компл" or dep.deprel == u"2-компл":
                     # print dep.lemma, dep.deprel
-                    if not d_object:
+                    if dep.feats[4] in ["a", "g"]:  # not d_object and
                         d_object = dep.pred.args[1]
-                    elif not i_object:
+                    elif dep.feats[4] == "d":  # not i_object and
                         i_object = dep.pred.args[1]
 
         # 2. Argument control: first arguments of both verbs are the same.
 
         head = self.word(word.head)
-        if head and head.cpostag == "vb" and not w_subject:
+        if head and head.cpostag == "vb" and not w_subject \
+                and word.deprel != u"обств":
             # Use VERB#1 rule to find subject of the head
             w_subject = head.pred.args[1]
             head.pred.args[2].link_to(word.pred.args[0])
@@ -598,7 +599,7 @@ class MaltConverter(object):
 
         #  Copula. Without a verb.
 
-            print head.lemma, word.lemma, head.feats[4] == word.feats[4]
+            # print head.lemma, word.lemma, head.feats[4] == word.feats[4]
 
             if head.feats[4] == word.feats[4]:
                 epred = ("equal",
