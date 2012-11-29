@@ -98,7 +98,9 @@ def ADP(input_dict,language,withPDFContent):
 	parser_output = parser_pipeline.communicate(input=input_str)[0]
 
 	parser_time = (time.time()-start_time)*0.001			# Parser processing time in seconds
-	time_all_henry = 600 - parser_time		    			# time left for Henry in seconds	
+	generate_output_time = 2						# time to generate final output in seconds
+	time_all_henry = 600 - parser_time	- generate_output_time 	# time left for Henry in seconds	
+	if withPDFContent: time_all_henry = time_all_henry - 3		# time for graph generation subtracted from Henry time in seconds
 	time_unit_henry = str(int(time_all_henry/len(input_dict)))	# time for one interpretation in Henry in seconds
 
 	# Henry processing
