@@ -190,6 +190,8 @@ def getEqualArgSets(propDict,rels):
         
         if relName=="ADV":
             niloo=1
+        if head not in propDict:
+            niloo=1
         headProp=propDict[head]
         (headId,headWord,headLemma,headPOS,headArgs)=headProp
         
@@ -493,8 +495,7 @@ def createNewPropsForPronouns(props,rels):
     global entityArgCounter
     newProps=[]
     for prop in props:
-        if len(prop)<5:
-            niloo=1
+        
         (id,word,lemma,POS,args)=prop
         if POS!=POSDict["PR"]:
             continue
@@ -611,7 +612,19 @@ def handleAJUCL(props,rels): # although because words and conditional words are 
         
     
             
+def refineRels(props,rels):
+    newRels=[]
     
+    propIds=[]
+    for (id,word,lemma,POS,args) in props:
+        propIds+=[id]
+    for rel in rels:
+        (relName,id,dep)=rel
+        if id in propIds and dep in propIds:
+            newRels+=[rel]
+    return newRels    
+        
+        
     
 def createLF(tokens,sentenceId):
     props=[]
@@ -625,6 +638,7 @@ def createLF(tokens,sentenceId):
         props+=[(id,word,lemma,POS,getArgs(POS))]
         rels+=[(relName,id,dep)]
     sentence= " ".join(words)
+    rels=refineRels(props,rels)
     LF=(sentenceId,sentence,props,rels)
     LF2=resolveArgs(LF)
     return LF2
@@ -640,6 +654,7 @@ def lfToString(lf):
     lfLine=" & ".join(PropStrings)
     returnString= "%s\nid(%s).\n%s\n"%(sentence,str(sentenceId),lfLine)
     returnString="% "+returnString
+    
     return returnString
 def addToEqualArgSet(equalArgSets,newEqualArgSets):
     for argSet in newEqualArgSets:
@@ -653,7 +668,8 @@ def addToEqualArgSet(equalArgSets,newEqualArgSets):
             
 def resolveArgs(LF):
     (sentenceId,sentence,props,rels)=LF
-
+    
+    
     props=createNewPropsForLightVerbs(props,rels)
     props=createNewPropsForNounsWithPossesivePostfixes(props,rels)
     props=createNewPropsForNounsAndPossesives(props,rels)
@@ -661,8 +677,6 @@ def resolveArgs(LF):
     props=createNewPropsForPronouns(props,rels)
     props=createNewPropsForConditionals(props,rels)
     props=createNewPropsForNegation(props,rels)
-    
-    
     
     propDict=createPropDict(props)
     equalArgSets=getEqualArgSets(propDict,rels)  
@@ -694,8 +708,7 @@ tokens=[]
 while line!="":
     if line.strip()=="" and len(tokens)!=0:   
         #one sentence read, process it and output it
-        if sentenceId==17:
-            niloo=1
+        
         lf=createLF(tokens,sentenceId)
         outputFile.write(lfToString(lf).encode('utf-8'))
 #        sys.stdout.write(lfToString(lf).encode("utf-8"))
