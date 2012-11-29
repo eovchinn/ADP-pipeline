@@ -582,22 +582,26 @@ class MaltConverter(object):
         #    genitives.
 
         head = self.word(word.head)
+
         if head.cpostag == "nn":
-            if word.feats[4] == "g":  # if genetive case
-                epred = ("of-in",
-                            [Argument("e"),
-                             head.pred.args[1],
-                             word.pred.args[1],
-                    ])
-                self.__extra_preds.append(epred)
 
         #  Copula. Without a verb.
 
-            elif head.feats[4] == "n" and word.feats[4] == "n":  # if nominative
+            print head.lemma, word.lemma, head.feats[4] == word.feats[4]
+
+            if head.feats[4] == word.feats[4]:
                 epred = ("equal",
                             [Argument("e"),
                              word.pred.args[1],
                              head.pred.args[1],
+                    ])
+                self.__extra_preds.append(epred)
+
+            elif word.feats[4] == "g":  # if genetive case
+                epred = ("of-in",
+                            [Argument("e"),
+                             head.pred.args[1],
+                             word.pred.args[1],
                     ])
                 self.__extra_preds.append(epred)
 
