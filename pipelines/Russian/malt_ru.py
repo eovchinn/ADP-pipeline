@@ -569,6 +569,17 @@ class MaltConverter(object):
         u"восемь": 8,
         u"девять": 9,
         u"десять": 10,
+        u"нулевой": 0,
+        u"первый": 1,
+        u"второй": 2,
+        u"третий": 3,
+        u"четвертый": 4,
+        u"пятый": 5,
+        u"шестой": 6,
+        u"седьмой": 7,
+        u"восьмой": 8,
+        u"девятый": 9,
+        u"десятый": 10,
     }
 
     def apply_nn_rules(self, word):
@@ -628,13 +639,20 @@ class MaltConverter(object):
                             self.__extra_preds.append(epred)
                         except ValueError:
                             num = self.numeric_map.get(dep.form)
+                            epred = None
                             if num is not None:
                                 epred = ("card", [
                                     Argument("e"),
                                     word.pred.args[1],
                                     Argument(str(num)),
                                 ])
-                                self.__extra_preds.append(epred)
+                            else:
+                                epred = ("card", [
+                                    Argument("e"),
+                                    word.pred.args[1],
+                                    Argument(dep.form),
+                                ])
+                            self.__extra_preds.append(epred)
 
         # 4. If there is other information available from the parser (e.g. type
         #    of the named entity), please add it.
