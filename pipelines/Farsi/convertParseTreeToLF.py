@@ -126,7 +126,7 @@ def propToString(sentenceId,prop):
         idString=""
     else:
         idString="[%s]:"%(sentenceId*1000+id)
-    token="%s%s%s(%s)"%(idString,getTranslit(lemma),postfix,",".join(args))
+    token="%s%s%s(%s)"%(idString,lemma,postfix,",".join(args))
     return token
     
 def getLemma(word):
@@ -632,7 +632,7 @@ def refineProps(props):
     newProps=[]
     for prop in props:
         (id,word,lemma,POS,args)=prop
-        if POS not in POSStopList and hasAlphabet(word):
+        if POS not in POSStopList and hasAlphabet(lemma):
             newProps+=[prop]
     return newProps    
 def createLF(tokens,sentenceId):
@@ -643,7 +643,7 @@ def createLF(tokens,sentenceId):
         (id,word,lemma,POS,relName,dep)=token
         words+=[word]
         
-        props+=[(id,word,lemma,POS,getArgs(POS))]
+        props+=[(id,word,getTranslit(lemma),POS,getArgs(POS))]
         rels+=[(relName,id,dep)]
     sentence= " ".join(words)
     props=refineProps(props)
