@@ -318,14 +318,12 @@ def inherit_atr(head,wordID,sent_dict,):
             sent_dict,newKey = add_new_entry(sent_dict,"equal",sent_dict[head][6][1],sent_dict[wordID][6][1],sent_dict[wordID][8])
             sent_dict = replace_old_args(sent_dict,sent_dict[head][6][0],newKey)
         if sent_dict[wordID][7] == "vb":
-            print sent_dict[head]
             sent_dict[head][6][3] = "R"
             sent_dict,newKey = add_new_entry(sent_dict,"be",sent_dict[head][6][1],sent_dict[wordID][6][0],sent_dict[wordID][8])            
     return sent_dict
 
 def replace_old_args(sent_dict,headE,newKey):
-    """If a copula has been removed and replaced with 'equal', replace
-    any arguments based on the copula entity with the new equal entity """
+    """If a copula has been removed and replaced with 'equal', replace any arguments based on the copula entity with the new equal entity """
     newE = sent_dict[newKey][6][0]
     for key, values in sent_dict.items():
         for i in range(len(values[6])):
