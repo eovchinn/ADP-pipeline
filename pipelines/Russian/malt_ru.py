@@ -601,7 +601,7 @@ class MaltConverter(object):
 
             # print head.lemma, word.lemma, head.feats[4] == word.feats[4]
 
-            if head.feats[4] == word.feats[4]:
+            if head.feats[4] == word.feats[4] and word.deprel == u"аппоз":
                 epred = ("equal",
                             [Argument("e"),
                              word.pred.args[1],
@@ -660,6 +660,11 @@ class MaltConverter(object):
 
         # TODO(zaytsev@udc.edu): implement this
 
+        # 5. Coreferent Nouns
+
+        if head and head.cpostag == "nn" and  word.deprel == u"предик":
+            word.pred.args[1].link_to(head.pred.args[1])
+
     def apply_adj_rules(self, word):
 
         # 1. Adjectives share the second argument with the noun they are
@@ -714,6 +719,7 @@ class MaltConverter(object):
     }
 
     def apply_pr_rules(self, word):
+
         # 1. Handle personal
 
         if word.lemma not in self.pronouns_map:
