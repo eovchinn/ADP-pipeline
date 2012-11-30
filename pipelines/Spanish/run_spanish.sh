@@ -45,6 +45,9 @@ MALT_OFORMAT=$ES_PIPELINE_DIR/Scripts/malt_to_prop.py
 OPTIONS="-token -lemma -sgml -quiet"
 
 TOKENIZER=$TREE_TAGGER_CMD/utf8-tokenize.perl
+NLTK_TOKENIZER_DIR=$METAPHOR_DIR/external-tools/nltk_tokenizer
+TOKENIZER_BIN=$NLTK_TOKENIZER_DIR/nltk_tokenizer.py
+
 MWL=$TREE_TAGGER_CMD/mwl-lookup.perl
 TAGGER=$TREE_TAGGER_BIN/tree-tagger
 ABBR_LIST=$TREE_TAGGER_LIB/spanish-abbreviations
@@ -56,8 +59,10 @@ cd $MALT_DIR
 
 if [[ $PLATFORM == "linux" ]]; then
  if [ -d "$2" ]; then
-    $TOKENIZER -a $ABBR_LIST < "${1:-/dev/stdin}" |
-    tee  $2/tokenizer_o.txt |
+#    $TOKENIZER -a $ABBR_LIST < "${1:-/dev/stdin}" |
+#    tee  $2/tokenizer_o.txt |
+    python $TOKENIZER_BIN < "${1:-/dev/stdin}" |
+    tee $2/tokenizer_o.txt |
     $MWL -f $MWLFILE |
     $TAGGER $OPTIONS $PARFILE |
     tee $2/tagger_o.txt |
@@ -67,7 +72,8 @@ if [[ $PLATFORM == "linux" ]]; then
     tee $2/malt_o.txt |
     $MALT_OFORMAT > /dev/stdout
  else
-    $TOKENIZER -a $ABBR_LIST  < "${1:-/dev/stdin}" |
+#    $TOKENIZER -a $ABBR_LIST  < "${1:-/dev/stdin}" |
+    python $TOKENIZER_BIN < "${1:-/dev/stdin}" |
     $MWL -f $MWLFILE |
     $TAGGER $OPTIONS $PARFILE | 
     $MALT_IFORMAT |
@@ -79,8 +85,10 @@ if [[ $PLATFORM == "linux" ]]; then
  fi
 elif [[ $PLATFORM == "darwin" ]]; then
  if [ -d "$2" ]; then
-    $TOKENIZER -a $ABBR_LIST < "${1:-/dev/stdin}" |
-    tee  $2/tokenizer_o.txt |
+#    $TOKENIZER -a $ABBR_LIST < "${1:-/dev/stdin}" |
+#    tee  $2/tokenizer_o.txt |
+    python $TOKENIZER_BIN < "${1:-/dev/stdin}" |
+    tee $2/tokenizer_o.txt |
     $MWL -f $MWLFILE |
     $TAGGER $OPTIONS $PARFILE |
     tee $2/tagger_o.txt |
@@ -90,7 +98,8 @@ elif [[ $PLATFORM == "darwin" ]]; then
     tee $2/malt_o.txt |
     $MALT_OFORMAT > /dev/stdout
  else
-    $TOKENIZER -a $ABBR_LIST  < "${1:-/dev/stdin}" |
+#    $TOKENIZER -a $ABBR_LIST  < "${1:-/dev/stdin}" |
+    python $TOKENIZER_BIN < "${1:-/dev/stdin}" |
     $MWL -f $MWLFILE |
     $TAGGER $OPTIONS $PARFILE | 
     $MALT_IFORMAT |

@@ -3,10 +3,10 @@ id(1).
 [1001]:Juan-nn(e1,x1) & [1002]:dar-vb(e2,x1,x3,u3) & [1003]:a-in(e3,e2,x2) & [1004]:María-nn(e4,x2) & [1006]:libro-nn(e5,x3)
 % Juan dijo que María leyo .
 id(2).
-[2001]:Juan-nn(e1,x1) & [2002]:decir-vb(e2,x1,e4,u3) & [2004]:María-nn(e3,x2) & [2005]:leyo-vb(e4,x2,u5,u6)
+[2001]:Juan-nn(e1,x1) & [2002]:decir-vb(e2,x1,e4,u3) & [2004]:María-nn(e3,x2) & [2005]:leyo-vb(e4,x1,u5,u6)
 % Juan preguntó dónde María leyo .
 id(3).
-[3001]:Juan-nn(e1,x1) & [3002]:preguntar-vb(e2,x1,e3,u3) & [3003]:wh(e3,x2) & loc(e6,x2,e5) & [3004]:María-nn(e4,x3) & [3005]:leyo-vb(e5,x3,u5,u6)
+[3001]:Juan-nn(e1,x1) & [3002]:preguntar-vb(e2,x1,e3,u3) & [3003]:wh(e3,x2) & loc(e6,x2,e5) & [3004]:María-nn(e4,x3) & [3005]:leyo-vb(e5,x1,u5,u6)
 % Juan trató de ir .
 id(4).
 [4001]:Juan-nn(e1,x1) & [4002]:tratar-vb(e2,x1,e4,u3) & [4003]:de-in(e3,e4,u5) & [4004]:ir-vb(e4,x1,u7,u8)
@@ -51,7 +51,7 @@ id(17).
 [17001]:Juan-nn(e1,x1) & [17003]:en-in(e3,x1,x2) & [17005]:habitación-nn(e4,x2)
 % Mi intención es salir .
 id(18).
-[18002]:intención-nn(e1,x1) & [18004]:salir-vb(e3,x1,u7,u8) & be(e4,e2,e3)
+[18002]:intención-nn(e1,x1) & [18004]:salir-vb(e3,x1,u7,u8) & be(e4,x1,e3)
 % Juan corre rápido .
 id(19).
 [19001]:Juan-nn(e1,x1) & [19002]:correr-vb(e2,x1,u2,u3) & [19003]:rápido-adj(e3,e2)
@@ -78,16 +78,16 @@ id(26).
 [26001]:Juan-nn(e1,x1) & [26003]:sentar-vb(e2,x1,x1,u5) & [26005]:correr-vb(e3,x1,x1,u8) & or(e4,e2,e3)
 % Juan lee un libro y una revista .
 id(27).
-[27001]:Juan-nn(e1,x1) & [27002]:leer-vb(e2,x1,x2,u3) & [27004]:libro-nn(e3,x2) & [27002]:leer-vb(e5,x1,x3) & [27007]:revista-nn(e4,x3)
+[27001]:Juan-nn(e1,x1) & [27002]:leer-vb(e2,x1,x2,u3) & [27004]:libro-nn(e3,x2) & [27002]:leer-vb(e5,x1,x3,u3) & [27007]:revista-nn(e4,x3)
 % Juan lee un libro o una revista .
 id(28).
-[28001]:Juan-nn(e1,x1) & [28002]:leer-vb(e2,x1,x2,u3) & [28004]:libro-nn(e3,x2) & [28002]:leer-vb(e5,x1,x3) & [28007]:revista-nn(e4,x3) & or(e6,e3,e4)
+[28001]:Juan-nn(e1,x1) & [28002]:leer-vb(e2,x1,x2,u3) & [28004]:libro-nn(e3,x2) & [28002]:leer-vb(e5,x1,x3,u3) & [28007]:revista-nn(e4,x3) & or(e6,e3,e4)
 % Si Juan tiene tiempo entonces que lee .
 id(29).
-[29002]:Juan-nn(e1,x1) & [29003]:tener-vb(e2,x1,e5,u3) & [29004]:tiempo-nn(e3,x2) & [29005]:entonces-rb(e4,e2) & [29007]:leer-vb(e5,u5,u6,u7)
+[29002]:Juan-nn(e1,x1) & [29003]:tener-vb(e2,x1,e5,u3) & [29004]:tiempo-nn(e3,x2) & [29005]:entonces-rb(e4,e2) & [29007]:leer-vb(e5,x1,u6,u7)
 % Juan lee , porque no tiene tiempo .
 id(30).
-[30001]:Juan-nn(e1,x1) & [30002]:leer-vb(e2,x1,e4,u3) & [30005]:not(e3,e4) & [30006]:tener-vb(e4,u5,x2,u7) & [30007]:tiempo-nn(e5,x2)
+[30001]:Juan-nn(e1,x1) & [30002]:leer-vb(e2,x1,e5,u3) & [30004]:porque-in(e3,e2,e5) & [30005]:not(e4,e5) & [30006]:tener-vb(e5,x1,x2,u9) & [30007]:tiempo-nn(e6,x2)
 % Juan no lee .
 id(31).
 [31001]:Juan-nn(e1,x1) & [31002]:not(e2,e3) & [31003]:leer-vb(e3,x1,u3,u4)
@@ -102,70 +102,70 @@ id(34).
 [34002]:casa-nn(e1,x1) & [34005]:construir-vb(e2,x1,u4,u5)
 % El hombre a quien vi corriendo .
 id(35).
-[35002]:hombre-nn(e1,x1) & [35003]:a-in(e2,e5,x2) & [35004]:person(e3,x2) & [35006]:correr-vb(e5,u3,u5,u6) & card(e4,u3,vi)
+[35002]:hombre-nn(e1,x1) & [35003]:a-in(e2,e5,x2) & [35004]:person(e3,x2) & [35006]:correr-vb(e5,e4,u5,u6) & card(e4,u3,vi)
 % El lugar donde vivo explotó .
 id(36).
 [36002]:lugar-nn(e1,x1) & loc(e5,x1,e3) & [36004]:vivo-adj(e3,x1) & [36005]:explotar-vb(e4,x1,u3,u4)
 % Esa es la razón por la que yo me vaya .
 id(37).
-[37001]:thing(e7,x7) & [37004]:razón-nn(e2,x1) & equal(e8,x7,x1) & [37005]:por-in(e3,u4,x2) & [37008]:person(e4,x2) & [37009]:person(e5,x3) & [37010]:ir-vb(e6,x2,x3,u8)
+[37001]:thing(e7,x7) & [37004]:razón-nn(e2,x1) & equal(e8,e7,x1) & [37005]:por-in(e3,u4,e4) & [37008]:person(e4,x2) & [37009]:person(e5,x3) & [37010]:ir-vb(e6,e4,x3,u8)
 % Ese fue el día en que me fui .
 id(38).
-[38001]:thing(e6,x6) & [38004]:día-nn(e2,x1) & equal(e7,x6,x1) & [38005]:en-in(e3,e1,e5) & [38007]:person(e4,x2) & [38008]:ir-vb(e5,u6,x2,u8)
+[38001]:thing(e6,x6) & [38004]:día-nn(e2,x1) & equal(e7,e6,x1) & [38005]:en-in(e3,e7,e5) & [38007]:person(e4,x2) & [38008]:ir-vb(e5,u6,x2,u8)
 % Esa fue la manera cómo me fue .
 id(39).
-[39001]:thing(e6,x6) & [39004]:manera-nn(e2,x1) & equal(e7,x6,x1) & manner(e7,x1,e5) & [39006]:person(e4,x3) & [39007]:ir-vb(e5,u4,x3,u6)
+[39001]:thing(e6,x6) & [39004]:manera-nn(e2,x1) & equal(e7,e6,x1) & manner(e7,x1,e5) & [39006]:person(e4,x3) & [39007]:ir-vb(e5,u4,x3,u6)
 % El lugar donde vivo explotó .
 id(40).
 [40002]:lugar-nn(e1,x1) & loc(e5,x1,e3) & [40004]:vivo-adj(e3,x1) & [40005]:explotar-vb(e4,x1,u3,u4)
 % Esa es la razón por la que dejar .
 id(41).
-[41001]:thing(e5,x5) & [41004]:razón-nn(e2,x1) & equal(e6,x5,x1) & [41005]:por-in(e3,x1,u6) & [41008]:dejar-vb(e4,u6,u7,u8)
+[41001]:thing(e5,x5) & [41004]:razón-nn(e2,x1) & equal(e6,e5,x1) & [41005]:por-in(e3,x1,u6) & [41008]:dejar-vb(e4,u6,u7,u8)
 % Yo sé que él viene .
 id(42).
-[42001]:person(e1,x1) & [42002]:saber-vb(e2,x1,e4,u3) & [42004]:thing(e5,x5) & [42005]:venir-vb(e4,x5,u5,u6)
+[42001]:person(e1,x1) & [42002]:saber-vb(e2,e1,e4,u3) & [42004]:thing(e5,x5) & [42005]:venir-vb(e4,e1,u5,u6)
 % Estoy seguro de que viene .
 id(43).
-[43001]:estar-vb(e1,u1,u2,u3) & [43002]:seguro-adj(e2,u1) & [43003]:de-in(e3,u5,e4) & [43005]:venir-vb(e4,u7,u8,u9)
+[43001]:estar-vb(e1,u1,u2,u3) & [43002]:seguro-adj(e2,u1) & [43003]:de-in(e3,e2,e4) & [43005]:venir-vb(e4,u7,u8,u9)
 % Yo sé lo que quieres .
 id(44).
-[44001]:person(e1,x1) & [44002]:saber-vb(e2,x1,e3,u3) & [44005]:querer-vb(e3,u4,u5,u6)
+[44001]:person(e1,x1) & [44002]:saber-vb(e2,e1,e3,u3) & [44005]:querer-vb(e3,e1,u5,u6)
 % Yo sé que has visto .
 id(45).
-[45001]:person(e1,x1) & [45002]:saber-vb(e2,x1,e4,u3) & [45005]:ver-vb(e4,u7,u8,u9)
+[45001]:person(e1,x1) & [45002]:saber-vb(e2,e1,e4,u3) & [45005]:ver-vb(e4,e1,u8,u9)
 % Yo sé dónde vives .
 id(46).
-[46001]:person(e1,x1) & [46002]:saber-vb(e2,x1,e3,u3) & [46003]:wh(e3,x2) & loc(e5,x2,e4) & [46004]:vivir-vb(e4,u4,u5,u6)
+[46001]:person(e1,x1) & [46002]:saber-vb(e2,e1,e3,u3) & [46003]:wh(e3,x2) & loc(e5,x2,e4) & [46004]:vivir-vb(e4,e1,u5,u6)
 % Yo sé cómo se vive .
 id(47).
-[47001]:person(e1,x1) & [47002]:saber-vb(e2,x1,e3,u3) & [47003]:wh(e3,x2) & manner(e5,x2,e4) & [47005]:vivir-vb(e4,u6,u7,u8)
+[47001]:person(e1,x1) & [47002]:saber-vb(e2,e1,e3,u3) & [47003]:wh(e3,x2) & manner(e5,x2,e4) & [47005]:vivir-vb(e4,e1,u7,u8)
 % Yo sé cuando se llega .
 id(48).
-[48001]:person(e1,x1) & [48002]:saber-vb(e2,x1,e3,u3) & [48003]:wh(e3,x2) & time(e5,x2,e4) & [48005]:llegar-vb(e4,u6,u6,u8)
+[48001]:person(e1,x1) & [48002]:saber-vb(e2,e1,e3,u3) & [48003]:wh(e3,x2) & time(e5,x2,e4) & [48005]:llegar-vb(e4,e1,u6,u8)
 % Yo sé por_qué te vas .
 id(49).
-[49001]:person(e1,x1) & [49002]:saber-vb(e2,x1,e3,u3) & [49003]:wh(e3,x2) & reason(e6,x2,e5) & [49004]:person(e4,x3) & [49005]:ir-vb(e5,u4,x3,u6)
+[49001]:person(e1,x1) & [49002]:saber-vb(e2,e1,e3,u3) & [49003]:wh(e3,x2) & reason(e6,x2,e5) & [49004]:person(e4,x3) & [49005]:ir-vb(e5,e1,x3,u6)
 % Hagas lo que hagas está bien .
 id(50).
-[50001]:hacer-vb(e1,u7,u2,u3) & [50004]:hacer-vb(e2,u7,e3,u6) & [50005]:estar-vb(e3,u7,u8,u9) & [50006]:bien-rb(e4,u7)
+[50001]:hacer-vb(e1,e3,u2,u3) & [50004]:hacer-vb(e2,u7,e3,u6) & [50005]:estar-vb(e3,u7,u8,u9) & [50006]:bien-rb(e4,u7)
 % Dondequiera que vaya está bien .
 id(51).
-[51001]:dondequiera-rb(e1,u1) & [51003]:ir-vb(e2,u2,e3,u4) & [51004]:estar-vb(e3,u5,u6,u7) & [51005]:bien-rb(e4,e2)
+[51001]:dondequiera-rb(e1,u1) & [51003]:ir-vb(e2,u2,e3,u4) & [51004]:estar-vb(e3,u2,u6,u7) & [51005]:bien-rb(e4,e2)
 % ¿ Qué hiciste ?
 id(52).
-[52002]:whq(e1,x1) & [52003]:hacer-vb(e2,x1,u2,u3)
+[52002]:whq(e1,x1) & [52002b]:thing(e3,x1,e2) & [52003]:hacer-vb(e2,e1,e1,u3)
 % ¿ A quién ves ?
 id(53).
-[53002]:a-in(e1,e3,x1) & [53003]:whq(e2,x1) & [53004]:ver-vb(e3,u3,u4,u5)
+[53002]:a-in(e1,e3,x1) & [53003]:whq(e2,x1) & person(e4,x1) & [53004]:ver-vb(e3,u3,e2,u5)
 % ¿ Cuándo llegaste ?
 id(54).
-[54002]:whq(e1,x1) & [54003]:llegar-vb(e2,u1,u2,u3)
+[54002]:whq(e1,x1) & time(e3,x1,e2) & [54003]:llegar-vb(e2,u1,e1,u3)
 % ¿ Por qué has venido ?
 id(55).
-[55002]:por-in(e1,e4,x1) & [55003]:whq(e2,x1) & [55005]:venir-vb(e4,u6,u7,u8)
+[55002]:por-in(e1,e4,x1) & [55003]:whq(e2,x1) & [55003b]:thing(e5,x1,e1) & [55005]:venir-vb(e4,u6,e2,u8)
 % ¿ Cómo qué has venido ?
 id(56).
-[56002]:whq(e1,x1) & [56005]:venir-vb(e3,u2,u7,u8)
+[56002]:whq(e1,x1) & manner(e4,x1,e3) & [56005]:venir-vb(e3,u1,e1,u8)
 % ¿ De dónde vienes ?
 id(57).
-[57002]:de-in(e1,e3,u2) & [57003]:whq(e2,x1) & [57004]:venir-vb(e3,u3,u4,u5)
+[57002]:de-in(e1,e3,u2) & [57003]:whq(e2,x1) & loc(e4,x1,e1) & [57004]:venir-vb(e3,u3,e2,u5)
