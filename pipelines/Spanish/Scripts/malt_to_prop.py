@@ -73,7 +73,7 @@ def prop_to_dict(props):
         #finePOS = prop[8]
         propID = str(sent_count)+str(ID)
         if not propTags.match(pos) and not puncts.match(lemma):            
-            args = ["R"]
+            args = ["R","R"]
             tag = ""
             new_prop.extend([token,lemma,pos,head,rel,shortID,args,tag,propID])
             sent_dict[shortID]=[token,lemma,pos,head,rel,shortID,args,tag,propID]
@@ -84,7 +84,7 @@ def prop_to_dict(props):
             sent_dict[shortID]=[token,lemma,pos,head,rel,shortID,args,tag,propID]
             new_prop_sent.append(new_prop)
         elif token == "¿":
-            args = ["R"]
+            args = ["R","R"]
             tag = ""
             new_prop.extend([token,lemma,pos,head,rel,shortID,args,tag,propID])
             sent_dict[shortID]=[token,lemma,pos,head,rel,shortID,args,tag,propID]
@@ -273,7 +273,7 @@ def insert_suj(head,wordID,sent_dict):
 
 def process_passive(head,wordID,sent_dict):
     """Remove the passive verb, and move the subject to the object place (2nd arg) in the head verb"""
-    sent_dict[wordID][6][3] = "R"
+    sent_dict[wordID][6].append("R")
     if nounArg.search(sent_dict[head][6][1]):
         #print sent_dict[wordID]
         replace = sent_dict[head][6][2]
@@ -313,13 +313,13 @@ def inherit_atr(head,wordID,sent_dict,):
     if sent_dict[head][1] == "ser":
         headHead = sent_dict[head][3]
         if sent_dict[wordID][7] == "adj":
-            sent_dict[head][6][3] = "R"
+            sent_dict[head][6].append("R")
         if sent_dict[wordID][7] == "nn":
-            sent_dict[head][6][3] = "R"
+            sent_dict[head][6].append("R")
             sent_dict,newKey = add_new_entry(sent_dict,"equal",sent_dict[head][6][1],sent_dict[wordID][6][1],sent_dict[wordID][8])
             sent_dict = replace_old_args(sent_dict,sent_dict[head][6][0],newKey)
         if sent_dict[wordID][7] == "vb":
-            sent_dict[head][6][3] = "R"
+            sent_dict[head][6].append("R")
             sent_dict,newKey = add_new_entry(sent_dict,"be",sent_dict[head][6][1],sent_dict[wordID][6][0],sent_dict[wordID][8])            
     return sent_dict
 
@@ -510,7 +510,7 @@ def build_predicate(pos,eCount,xCount,uCount,lemma,question,token):
     tag = ""
     if not re.search("\w",lemma):
         
-        return ["R"],"",eCount,xCount,uCount,question        
+        return ["R","R"],"",eCount,xCount,uCount,question        
     if lemma in whWords:
         if not question:
             tag = "wh"
