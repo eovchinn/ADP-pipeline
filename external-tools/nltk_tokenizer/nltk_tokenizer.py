@@ -17,6 +17,10 @@ if __name__ == "__main__":
     wtt = WordPunctTokenizer()
 
     for line in sys.stdin:
+        line = line.replace("«", "\"")
+        line = line.replace("»", "\"")
+        line = line.replace("“", "\"")
+        line = line.replace("”", "\"")
         sentences = st.tokenize(line.decode("utf-8"))
         for s in sentences:
             for w1 in wtw.tokenize(s):
