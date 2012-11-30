@@ -5,10 +5,13 @@ outputFile="${2:-/dev/stdout}"
 
 farsiPipelineDir=$METAPHOR_DIR/pipelines/Farsi
 tempDir=$farsiPipelineDir/tmp
+inputFileDash=$tempDir/tokenized.dash.tmp.txt
 intermediateFile=$tempDir/tokenized.tmp.txt
 
 TOKENIZER_BIN=$METAPHOR_DIR/external-tools/farsiTools/Tokenizer/utf8-tokenize.perl
 
-$TOKENIZER_BIN < $inputFile >$intermediateFile
+python $farsiPipelineDir/replaceSemiSpaceWithDashInInput.py $inputFile $inputFileDash
+
+$TOKENIZER_BIN < $inputFileDash >$intermediateFile
 
 python $farsiPipelineDir/convertTokenizerOutputForTagger.py $intermediateFile $outputFile

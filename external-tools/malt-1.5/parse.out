@@ -1,0 +1,17 @@
+-----------------------------------------------------------------------------
+                          MaltParser 1.5                             
+-----------------------------------------------------------------------------
+         MALT (Models and Algorithms for Language Technology) Group          
+             Vaxjo University and Uppsala University                         
+                             Sweden                                          
+-----------------------------------------------------------------------------
+
+Started: Thu Nov 29 15:21:36 PST 2012
+  Transition system    : Arc-Eager
+  Parser configuration : Nivre with NORMAL root handling
+  Feature model        : NivreEager.xml
+  Classifier           : libsvm
+  Data Format          : /farsiMALTModel/conllx.xml
+.          	      0	      0s	     86MB
+Parsing time: 00:00:00 (87 ms)
+Finished: Thu Nov 29 15:21:36 PST 2012

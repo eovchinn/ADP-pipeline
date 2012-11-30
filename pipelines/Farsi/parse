@@ -13,13 +13,14 @@ taggedFileToCONLL=$farsiPipelineDir/taggedFileToCONLL.py
 parserDir=$METAPHOR_DIR/external-tools/malt-1.5
 parserModelFile=farsiMALTModel
 
-echo "**Modifying the Tagger output for parser..." >&2
+wait
+echo "Modifying the Tagger output for parser ..." >&2
 #modify the POS tagged file to include dummy label & dep lines
 python $taggedFileToCONLL $taggedInputFile $conllTaggedFile $lemmaDictFile
 
 
 #run parser
-
+echo "Parsing ..." >&2
 cd $parserDir
 
 java -mx2G -jar malt.jar -c $parserModelFile -i $conllTaggedFile -m parse > $parsedFileName

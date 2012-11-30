@@ -3,61 +3,67 @@ id(1).
 
 % TEXTID ( 1 ) .
 id(2).
-[2001]:TEXTID-nn(e0,x0) & [2003]:1-nn(e1,x1)
+[2001]:TEXTID-nn(e0,x0) & [2003]:1-nn(e2,x2)
 % عقربه هاي پرشتاب .
 id(3).
 [3001]:eghrbh-nn(e0,x0) & [3002]:hay-nn(e1,x1) & [3003]:prshtab-adj(e2,u0)
 % TEXTID ( 2 ) .
 id(4).
-[4001]:TEXTID-nn(e0,x0) & [4003]:2-nn(e1,x1)
+[4001]:TEXTID-nn(e0,x0) & [4003]:2-nn(e2,x2)
 % تفاوت نگاه .
 id(5).
 [5001]:tfavt-nn(e0,x0) & [5002]:ngah-nn(e1,x1)
 % TEXTID ( 3 ) .
 id(6).
-[6001]:TEXTID-nn(e0,x0) & [6003]:3-nn(e1,x1)
+[6001]:TEXTID-nn(e0,x0) & [6003]:3-nn(e2,x2)
 % موجوديت فيزيكي .
 id(7).
 [7001]:mvjvdyt-nn(e0,x0) & [7002]:fyzyky-vb(e1,u0,u1,u2)
 % TEXTID ( 4 ) .
 id(8).
-[8001]:TEXTID-nn(e0,x0) & [8003]:4-nn(e1,x1)
+[8001]:TEXTID-nn(e0,x0) & [8003]:4-nn(e2,x2)
 % ظرفيت چالشگرانه .
 id(9).
 [9001]:zrfyt-nn(e0,x0) & [9002]:chalshgranh-adj(e1,u0)
 % TEXTID ( 5 ) .
 id(10).
-[10001]:TEXTID-nn(e0,x0) & [10003]:5-nn(e1,x1)
+[10001]:TEXTID-nn(e0,x0) & [10003]:5-nn(e2,x2)
 % كانون اصلي .
 id(11).
 [11001]:kanvn-nn(e0,x0) & [11002]:asly-nn(e1,x1)
 % TEXTID ( 6 ) .
 id(12).
-[12001]:TEXTID-nn(e0,x0) & [12003]:6-nn(e1,x1)
+[12001]:TEXTID-nn(e0,x0) & [12003]:6-nn(e2,x2)
 % كانون اصلي .
 id(13).
 [13001]:kanvn-nn(e0,x0) & [13002]:asly-nn(e1,x1)
 % TEXTID ( 7 ) .
 id(14).
-[14001]:TEXTID-nn(e0,x0) & [14003]:7(e1,u0)
+[14001]:TEXTID-nn(e0,x0) & [14003]:7(e2,u0)
 % مرز سفيد .
 id(15).
 [15001]:mrz-nn(e0,x0) & [15002]:sfyd-vb(e1,u0,u1,u2)
 % TEXTID ( 8 ) .
 id(16).
-[16001]:TEXTID-nn(e0,x0) & [16003]:8-nn(e1,x1)
+[16001]:TEXTID-nn(e0,x0) & [16003]:8-nn(e2,x2)
 % مرز زرد .
 id(17).
 [17001]:mrz-nn(e0,x0) & [17002]:zrd-adj(e1,u0)
 % TEXTID ( 9 ) .
 id(18).
-[18001]:TEXTID-nn(e0,x0) & [18003]:9-nn(e1,x1)
+[18001]:TEXTID-nn(e0,x0) & [18003]:9-nn(e2,x2)
 % مرز قرمز .
 id(19).
 [19001]:mrz-nn(e0,x0) & [19002]:ghrmz-adj(e1,u0)
 % TEXTID ( 10 ) .
 id(20).
-[20001]:TEXTID-nn(e0,x0) & [20003]:10-nn(e1,x1)
-% در اندازه يك رئيس جمهور
+[20001]:TEXTID-nn(e0,x0) & [20003]:10-nn(e2,x2)
+% در اندازه يك رئيس جمهور .
 id(21).
-[21001]:dr-in(e0,u0,x0) & [21002]:andazh-nn(e1,x0) & [21003]:yk-nn(e2,x1) & [21004]:ryys-nn(e3,x2) & [21005]:jmhvr-nn(e4,x3)
+[21001]:dr-in(e0,e4,x0) & [21002]:andazh-nn(e1,x0) & [21003]:yk-nn(e2,x1) & [21004]:ryys-nn(e3,x2) & [21005]:jmhvr-nn(e4,x3)
+% TEXTID ( 24189 ) .
+id(22).
+[22001]:TEXTID-nn(e0,x0) & [22003]:24189-nn(e2,x2)
+% به سمت `` تفاهم '' سوق داد
+id(23).
+[23001]:bh-in(e0,u0,x0) & [23002]:smt-nn(e1,x0) & [23004]:tfahm-nn(e3,x2) & [23006]:svgh-nn(e5,x4) & [23007]:dad#dh-vb(e6,u2,u3,u4)
