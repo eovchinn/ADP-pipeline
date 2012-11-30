@@ -92,7 +92,9 @@ def main():
 		if pa.kb: 
 			henry_input += ' ' + pa.kb
 			if pa.parse: henry_input += ' ' + os.path.join(outputdir,fname+".obs")
-		elif (not pa.parse) and pa.input: henry_input += ' ' + pa.input
+			elif pa.input: henry_input += ' ' + pa.input
+		elif (not pa.parse) and pa.input: 
+			henry_input += ' ' + pa.input
 
 		HENRY = HENRY_DIR + '/bin/henry -m infer' + henry_input + ' -e ' + HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T 60'
 		if pa.kbcompiled: HENRY += ' -b ' + KBPATH 
