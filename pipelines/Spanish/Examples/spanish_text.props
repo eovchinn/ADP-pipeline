@@ -1,48 +1,66 @@
 % " Voté por el señor Obama " , dijo .
 id(1).
-[1002]:votar-vb(e1,u1,u2,u3) & [1003]:por-in(e2,e1,x1) & [1005]:señor-nn(e3,x1) & [1006]:Obama-nn(e4,x2) & nn(e6,x1,x2) & [1009]:decir-vb(e5,u6,e1,u8)
+[1002]:votar-vb(e1,u6,u2,u3) & [1003]:por-in(e2,e1,x1) & [1005]:señor-nn(e3,x1) & [1006]:Obama-nn(e4,x2) & equal(e6,x1,x2) & [1009]:decir-vb(e5,u6,e1,u8)
 % " Fue algo nuevo para el país .
 id(2).
-[2002]:ir-vb(e1,u1,u2,u3) & [2004]:nuevo-adj(e2,u1) & [2005]:para-in(e3,u5,x1) & [2007]:país-nn(e4,x1)
+[2002]:ir-vb(e1,u1,u2,u3) & [2004]:nuevo-adj(e2,u1) & [2005]:para-in(e3,e2,x1) & [2007]:país-nn(e4,x1)
 % Algo que no había ocurrido antes : un presidente negro .
 id(3).
 [3003]:not(e1,e3) & [3005]:ocurrir-vb(e3,u5,x1,u7) & [3006]:antes-rb(e4,e3) & [3009]:presidente-nn(e5,x1) & [3010]:negro-adj(e6,x1)
 % Me dejé llevar un poco por eso .
 id(4).
-[4001]:person(e1,x1) & [4002]:dejar-vb(e2,u1,e3,x1) & [4003]:llevar-vb(e3,u4,u5,u6) & [4006]:por-in(e4,e3,u8) & [4007]:thing(e5,x5)
+[4001]:person(e1,x1) & [4002]:dejar-vb(e2,u1,e3,x1) & [4003]:llevar-vb(e3,u1,u5,u6) & [4006]:por-in(e4,e3,u8) & [4007]:thing(e5,x5)
 % Pero creo que ha sido una decepción .
 id(5).
 [5002]:crear-vb(e1,u1,u2,u3) & [5007]:decepción-nn(e4,x1) & equal(e5,u7,x1)
 % No veo que se recuperen los empleos .
 id(6).
-[6001]:not(e1,e2) & [6002]:ver-vb(e2,u2,e3,u4) & [6005]:recuperar-vb(e3,u7,x1,u9) & [6007]:empleo-nn(e4,x1)
+[6001]:not(e1,e2) & [6002]:ver-vb(e2,u2,e3,u4) & [6005]:recuperar-vb(e3,u2,x1,u9) & [6007]:empleo-nn(e4,x1)
 % El mercado inmobiliario se está recuperando un poco , pero el desempleo sigue siendo demasiado alto , más de lo que él predijo que sería " .
 id(7).
-[7002]:mercado-nn(e1,x1) & [7003]:inmobiliario-adj(e2,x1) & [7006]:recuperar-vb(e4,x1,x1,u9) & [7012]:desempleo-nn(e5,x2) & [7013]:seguir-vb(e6,x2,e7,u12) & [7015]:demasiado-rb(e8,e9) & [7016]:alto-adj(e9,x2) & [7018]:más-rb(e10,u18) & [7019]:de-in(e11,e10,x15) & [7022]:thing(e15,x15) & [7023]:predecir-vb(e13,x15,e14,u23) & [7025]:ser-vb(e14,u24,u25,u26)
+[7002]:mercado-nn(e1,x1) & [7003]:inmobiliario-adj(e2,x1) & [7006]:recuperar-vb(e4,x1,x1,u9) & [7012]:desempleo-nn(e5,x2) & [7013]:seguir-vb(e6,x2,e7,u12) & [7015]:demasiado-rb(e8,e9) & [7016]:alto-adj(e9,x2) & [7018]:más-rb(e10,u18) & [7019]:de-in(e11,e10,e15) & [7022]:thing(e15,x15) & [7023]:predecir-vb(e13,e15,e14,u23) & [7025]:ser-vb(e14,e15,u25,u26)
 % Sin_embargo , este autoproclamado independiente tampoco se ha decidido por Romney .
 id(8).
-[8001]:sin_embargo-rb(e1,u1) & [8004]:autoproclamado-nn(e2,x1) & [8005]:independiente-adj(e3,x1) & [8006]:tampoco-rb(e4,u3) & [8009]:decidir-vb(e6,u10,x1,u11) & [8010]:por-in(e7,e6,x2) & [8011]:Romney-nn(e8,x2)
+[8001]:sin_embargo-rb(e1,u1) & [8004]:autoproclamado-nn(e2,x1) & [8005]:independiente-adj(e3,x1) & [8006]:tampoco-rb(e4,e6) & [8009]:decidir-vb(e6,u10,x1,u11) & [8010]:por-in(e7,e6,x2) & [8011]:Romney-nn(e8,x2)
 % " Definitivamente no .
 id(9).
 [9002]:definitivamente-rb(e1,e2) & [9003]:no-rb(e2,u2)
 % En este punto no sé por quién voy a votar " .
 id(10).
-[10001]:en-in(e1,e4,x1) & [10003]:punto-nn(e2,x1) & [10004]:not(e3,e4) & [10005]:saber-vb(e4,u4,e7,u6) & [10006]:por-in(e5,e7,x2) & [10007]:wh(e6,x2) & person(e10,x2) & [10008]:ir-vb(e7,u9,e6,u11) & [10009]:a-in(e8,e7,e9) & [10010]:votar-vb(e9,u14,u15,u16)
+[10001]:en-in(e1,e4,x1) & [10003]:punto-nn(e2,x1) & [10004]:not(e3,e4) & [10005]:saber-vb(e4,u4,e7,u6) & [10006]:por-in(e5,e7,x2) & [10007]:wh(e6,x2) & person(e10,x2) & [10008]:ir-vb(e7,u4,e6,u11) & [10009]:a-in(e8,e7,e9) & [10010]:votar-vb(e9,u14,u15,u16)
 % Su decisión podría ser muy importante para determinar quién gana el estado de Virginia y la Casa Blanca .
 id(11).
-[11001]:person(e1,x1) & [11002]:decisión-nn(e2,x2) & [11003]:poder-vb(e3,x2,e4,u3) & [11005]:muy-rb(e5,e6) & [11006]:importante-adj(e6,x2) & [11007]:para-in(e7,u9,e10) & [11008]:determinar-vb(e8,u11,u12,u13) & [11009]:wh(e9,x3) & person(e16,x3) & [11010]:ganar-vb(e10,x3,x4,u16) & [11012]:estado-nn(e11,x4) & [11010]:ganar-vb(e16,x3,x6) & [11013]:de-in(e12,x4,x5) & [11014]:Virginia-nn(e13,x5) & [11017]:casa-nn(e14,x6) & [11018]:blanco-adj(e15,x6)
+[11001]:person(e1,x1) & [11002]:decisión-nn(e2,x2) & [11003]:poder-vb(e3,x2,e4,u3) & [11005]:muy-rb(e5,e6) & [11006]:importante-adj(e6,x2) & [11007]:para-in(e7,e6,e10) & [11008]:determinar-vb(e8,u11,u12,u13) & [11009]:wh(e9,x3) & person(e16,x3) & [11010]:ganar-vb(e10,e9,x4,u16) & [11012]:estado-nn(e11,x4) & [11010]:ganar-vb(e16,e9,x6,u16) & [11013]:de-in(e12,x4,x5) & [11014]:Virginia-nn(e13,x5) & [11017]:casa-nn(e14,x6) & [11018]:blanco-adj(e15,x6)
 % " Lo más emocionante es cuando las parejas vienen a comprometerse " , dice Chen .
 id(12).
-[12003]:más-rb(e1,e2) & [12004]:emocionante-adj(e2,u2) & [12006]:wh(e4,x1) & time(e11,x1,e6) & [12008]:pareja-nn(e5,x2) & [12009]:venir-vb(e6,x2,u7,u8) & be(e12,e3,e6) & [12010]:a-in(e7,e6,e8) & [12011]:comprometer-vb(e8,u11,u12,u13) & [12014]:decir-vb(e9,x3,e3,u16) & [12015]:Chen-nn(e10,x3)
+[12003]:más-rb(e1,e2) & [12004]:emocionante-adj(e2,u2) & [12006]:wh(e4,x1) & time(e11,x1,e6) & [12008]:pareja-nn(e5,x2) & [12009]:venir-vb(e6,x2,u7,u8) & be(e12,u14,e6) & [12010]:a-in(e7,e6,e8) & [12011]:comprometer-vb(e8,u11,u12,u13) & [12014]:decir-vb(e9,x3,e3,u16) & [12015]:Chen-nn(e10,x3)
 % A_veces traigo a mis colegas femeninas a almorzar aquí porque sé que crecieron con Hello Kitty y aún la disfrutan " , dice .
 id(13).
-[13001]:a_veces-rb(e1,e2) & [13002]:traer-vb(e2,x2,e11,u4) & [13003]:a-in(e3,e2,x1) & [13004]:mis-nn(e4,x1) & [13005]:colega-nn(e5,x2) & [13006]:femenino-adj(e6,x2) & [13007]:a-in(e7,e2,e8) & [13008]:almorzar-vb(e8,u10,u11,u12) & [13009]:aquí-rb(e9,e8) & [13011]:saber-vb(e10,u17,e11,u16) & [13013]:crecer-vb(e11,u17,u18,u19) & [13014]:con-in(e12,e11,x3) & [13015]:Hello-nn(e13,x3) & [13016]:Kitty-nn(e14,x4) & [13018]:aún-rb(e15,u22) & [13019]:thing(e19,x19) & [13020]:disfrutar-vb(e17,u17,x19,u25) & [13023]:decir-vb(e18,x2,u27,u28)
+[13001]:a_veces-rb(e1,e2) & [13002]:traer-vb(e2,x2,e12,u4) & [13003]:a-in(e3,e2,x1) & [13004]:mis-nn(e4,x1) & [13005]:colega-nn(e5,x2) & [13006]:femenino-adj(e6,x2) & [13007]:a-in(e7,e2,e8) & [13008]:almorzar-vb(e8,u10,u11,u12) & [13009]:aquí-rb(e9,e8) & [13010]:porque-in(e10,e2,e12) & [13011]:saber-vb(e11,u19,e12,u18) & [13013]:crecer-vb(e12,x2,u20,u21) & [13014]:con-in(e13,e12,x3) & [13015]:Hello-nn(e14,x3) & [13016]:Kitty-nn(e15,x4) & [13018]:aún-rb(e16,e18) & [13019]:thing(e20,x20) & [13020]:disfrutar-vb(e18,x2,x20,u27) & [13023]:decir-vb(e19,x2,u29,u30)
 % ¿ Cómo puedes saber si estás usando HTTPS o HTTP ?
 id(14).
-[14002]:whq(e1,x1) & [14003]:poder-vb(e2,u4,e3,u3) & [14004]:saber-vb(e3,u4,e5,u6) & [14007]:usar-vb(e5,u10,x2,u12) & [14008]:HTTPS-nn(e6,x2) & [14007]:usar-vb(e8,u10,x3) & [14010]:HTTP-nn(e7,x3) & or(e9,e6,e7)
+[14002]:whq(e1,x1) & manner(e8,x1,e5) & [14003]:poder-vb(e2,u4,e3,u3) & [14004]:saber-vb(e3,u4,e1,u6) & [14007]:usar-vb(e5,u4,x2,u12) & [14008]:HTTPS-nn(e6,x2) & [14007]:usar-vb(e9,u4,x3,u12) & [14010]:HTTP-nn(e7,x3) & or(e9,e6,e7)
 % Mira en la parte superior de tu ventana del navegador , donde ingresas las direcciones de Internet .
 id(15).
 [15001]:mirar-vb(e1,u1,e10,u3) & [15002]:en-in(e2,e1,x1) & [15004]:parte-nn(e3,x1) & [15005]:superior-adj(e4,x1) & [15006]:de-in(e5,x1,x3) & [15007]:person(e6,x2) & of-in(e15,x3,x2) & [15008]:ventana-nn(e7,x3) & [15009]:del-in(e8,x3,x4) & [15010]:navegador-nn(e9,x4) & [15012]:wh(e10,x5) & loc(e16,x5,e11) & [15013]:ingresas-vb(e11,u11,x6,u13) & [15015]:dirección-nn(e12,x6) & [15016]:de-in(e13,x6,x7) & [15017]:Internet-nn(e14,x7)
 % Este es el tipo de riesgo que HTTP plantea , mientras_que HTTPS sería más como si tú y tu nueva pareja estuvieran hablando un nuevo idioma que sólo ustedes dos hablan .
 id(16).
-[16001]:thing(e23,x23) & [16004]:tipo-nn(e2,x1) & equal(e24,x23,x1) & [16005]:de-in(e3,x1,x2) & [16006]:riesgo-nn(e4,x2) & [16008]:HTTP-nn(e5,x3) & [16009]:plantear-vb(e6,x3,u7,u8) & [16012]:HTTPS-nn(e7,x4) & [16013]:ser-vb(e8,x4,u10,u11) & [16014]:más-rb(e9,e10) & [16015]:como-rb(e10,x4) & [16017]:person(e11,x5) & [16019]:person(e12,x6) & [16020]:nuevo-adj(e13,u14) & [16021]:pareja-nn(e14,x7) & [16023]:hablar-vb(e16,x23,x8,u20) & [16025]:nuevo-adj(e17,x8) & [16026]:idioma-nn(e18,x8) & [16028]:sólo-rb(e19,u22) & [16029]:person(e20,x9) & [16031]:hablar-vb(e22,u23,x9,u26) & card(e21,u23,2)
+[16001]:thing(e24,x24) & [16004]:tipo-nn(e2,x1) & equal(e25,e24,x1) & [16005]:de-in(e3,x1,x2) & [16006]:riesgo-nn(e4,x2) & [16008]:HTTP-nn(e5,x3) & [16009]:plantear-vb(e6,x3,u7,u8) & [16011]:mientras_que-in(e7,e25,u10) & [16012]:HTTPS-nn(e8,x4) & [16013]:ser-vb(e9,x4,u12,u13) & [16014]:más-rb(e10,e11) & [16015]:como-rb(e11,x4) & [16017]:person(e12,x5) & [16019]:person(e13,x6) & [16020]:nuevo-adj(e14,u16) & [16021]:pareja-nn(e15,x7) & [16023]:hablar-vb(e17,e24,x8,u22) & [16025]:nuevo-adj(e18,x8) & [16026]:idioma-nn(e19,x8) & [16028]:sólo-rb(e20,e23) & [16029]:person(e21,x9) & [16031]:hablar-vb(e23,e22,x9,u28) & card(e22,u25,2)
+% “ Tenía la opción de trabajar en otros lugares , pero elegí este empleo porque Hello Kitty me parece realmente interesante ” , explica .
+id(17).
+[17002]:tener-vb(e1,u1,x1,u3) & [17004]:opción-nn(e2,x1) & [17005]:de-in(e3,x1,e4) & [17006]:trabajar-vb(e4,u6,u7,u8) & [17007]:en-in(e5,e4,x2) & [17009]:lugar-nn(e6,x2) & [17012]:elegir-vb(e7,u1,x3,u13) & [17014]:empleo-nn(e8,x3) & [17015]:porque-in(e9,e1,e13) & [17016]:Hello-nn(e10,x4) & [17017]:Kitty-nn(e11,x5) & equal(e17,x4,x5) & [17018]:person(e12,x6) & [17019]:parecer-vb(e13,x4,u17,x6) & [17020]:realmente-rb(e14,e15) & [17021]:interesante-adj(e15,x4) & [17024]:explicar-vb(e16,u1,x1,u23)
+% Wang , de solo 25 años , dijo en una entrevista anterior que Hello Kitty Dreams se dirige al mercado femenino de entre 15 y 35 años .
+id(18).
+[18001]:Wang-nn(e1,x1) & [18003]:de-in(e2,x1,x2) & [18004]:solo-adj(e3,e4) & [18006]:año-nn(e5,x2) & card(e4,x2,25) & [18008]:decir-vb(e6,x1,e10,u7) & [18009]:en-in(e7,e6,u10) & [18011]:entrever-vb(e8,u10,u11,u12) & [18012]:anterior-adj(e9,e8) & [18014]:Hello-vb(e10,x4,x3,u16) & [18015]:Kitty-nn(e11,x3) & [18016]:Dreams-nn(e12,x4) & [18018]:dirigir-vb(e13,u19,u19,u21) & [18019]:al-in(e14,e13,x5) & [18020]:mercado-nn(e15,x5) & [18021]:femenino-adj(e16,x5) & [18022]:de-in(e17,x5,x6) & [18023]:entre-in(e18,u27,u28) & [18027]:año-nn(e21,x6) & card(e19,x6,15) & card(e20,e19,35)
+% <Tenía la opción de trabajar en otros lugares , pero elegí este empleo porque Hello Kitty me parece realmente interesante } , explica .
+id(19).
+[19001]:<Tenía-vb(e1,u1,x1,u3) & [19003]:opción-nn(e2,x1) & [19004]:de-in(e3,x1,e4) & [19005]:trabajar-vb(e4,u6,u7,u8) & [19006]:en-in(e5,e4,x2) & [19008]:lugar-nn(e6,x2) & [19011]:elegir-vb(e7,u1,x3,u13) & [19013]:empleo-nn(e8,x3) & [19014]:porque-in(e9,e13,u15) & [19015]:Hello-nn(e10,x4) & [19016]:Kitty-nn(e11,x5) & equal(e17,x4,x5) & [19017]:person(e12,x6) & [19018]:parecer-vb(e13,x4,u17,x6) & [19019]:realmente-rb(e14,e15) & [19020]:interesante-adj(e15,x4) & [19023]:explicar-vb(e16,u1,x1,u23)
+% [ Tenía la opción de trabajar en otros lugares , pero elegí este empleo porque Hello Kitty me parece realmente interesante^ , explica .
+id(20).
+[20002]:Tenía-vb(e1,u20,x1,u3) & [20004]:opción-nn(e2,x1) & [20005]:de-in(e3,x1,e4) & [20006]:trabajar-vb(e4,u6,u7,u8) & [20007]:en-in(e5,e4,x2) & [20009]:lugar-nn(e6,x2) & [20012]:elegir-vb(e7,u20,x3,u13) & [20014]:empleo-nn(e8,x3) & [20015]:porque-in(e9,e13,u15) & [20016]:Hello-nn(e10,x4) & [20017]:Kitty-nn(e11,x5) & equal(e17,x4,x5) & [20018]:person(e12,x6) & [20019]:parecer-vb(e13,x7,u17,x6) & [20020]:realmente-rb(e14,e13) & [20021]:interesante^-nn(e15,x7) & [20023]:explicar-vb(e16,u20,e1,u22)
+% @Tenía la opción de trabajar en otros lugares , pero elegí este empleo porque Hello Kitty me parece realmente interesante# , explica .
+id(21).
+[21001]:@Tenía-vb(e1,u1,x1,u3) & [21003]:opción-nn(e2,x1) & [21004]:de-in(e3,x1,e4) & [21005]:trabajar-vb(e4,u6,u7,u8) & [21006]:en-in(e5,e4,x2) & [21008]:lugar-nn(e6,x2) & [21011]:elegir-vb(e7,u1,x3,u13) & [21013]:empleo-nn(e8,x3) & [21014]:porque-in(e9,e13,u15) & [21015]:Hello-nn(e10,x4) & [21016]:Kitty-nn(e11,x5) & equal(e17,x4,x5) & [21017]:person(e12,x6) & [21018]:parecer-vb(e13,x4,u17,x6) & [21019]:realmente-rb(e14,e13) & [21020]:interesante#-nn(e15,x7) & [21022]:explicar-vb(e16,u1,x1,u22)
+% 'Tenía la opción de trabajar en otros lugares , pero elegí este empleo porque Hello Kitty me parece realmente interesante ' , explica .
+id(22).
+[22001]:'Tenía-vb(e1,u1,x1,u3) & [22003]:opción-nn(e2,x1) & [22004]:de-in(e3,x1,e4) & [22005]:trabajar-vb(e4,u6,u7,u8) & [22006]:en-in(e5,e4,x2) & [22008]:lugar-nn(e6,x2) & [22011]:elegir-vb(e7,u1,x3,u13) & [22013]:empleo-nn(e8,x3) & [22014]:porque-in(e9,e13,u15) & [22015]:Hello-nn(e10,x4) & [22016]:Kitty-nn(e11,x5) & equal(e17,x4,x5) & [22017]:person(e12,x6) & [22018]:parecer-vb(e13,x4,u17,x6) & [22019]:realmente-rb(e14,e15) & [22020]:interesante-adj(e15,x4) & [22023]:explicar-vb(e16,u1,x1,u23)
