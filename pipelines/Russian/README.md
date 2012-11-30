@@ -20,10 +20,16 @@ Output should be generated using [this](http://corpus.leeds.ac.uk/mocky/msd-ru.h
 ```
 
 
-Script runs tokenizing (using `utf8-tokenize.perl` from [TreeTagger](http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/) package), lemmatization (using TreeTagger on OS X or [CSTLEMMA](http://cst.dk/online/lemmatiser/uk/) on Linux), POS tagging (usign TreeTagger), converting TreeTagger output to Malt compatible [format](http://nextens.uvt.nl/depparse-wiki/DataFormat) and dependency parsing (using [MaltParser](http://www.maltparser.org/) 1.5 with [these](http://corpus.leeds.ac.uk/mocky/) tools).
+Script runs tokenizing (using nltk), lemmatization (using TreeTagger on OS X or [CSTLEMMA](http://cst.dk/online/lemmatiser/uk/) on Linux), POS tagging (usign TreeTagger), converting TreeTagger output to Malt compatible [format](http://nextens.uvt.nl/depparse-wiki/DataFormat) and dependency parsing (using [MaltParser](http://www.maltparser.org/) 1.5 with [these](http://corpus.leeds.ac.uk/mocky/) tools).
 
 
-===
+---
+
+**DEPENDECIES**
+
+* NLTK – [nltk.org](nltk.org/)
+
+---
 
 **OUTPUT EXAMPLES**
 
