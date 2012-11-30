@@ -19,6 +19,6 @@ if __name__ == "__main__":
         for s in sentences:
             words = wt.tokenize(s)
             for w in words:
-                sys.stdout.write(w)
+                sys.stdout.write(w.endcode("utf-8"))
                 sys.stdout.write("\n")
-            sys.stdout.write("\n")
+    sys.stdout.write("\n")
