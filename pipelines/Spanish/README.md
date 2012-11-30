@@ -54,6 +54,9 @@ python malt_to_prop.py -i <input_file>
    - spanish_text.props - logical forms of spanish_translations
 
 ###External Tools & Resources
+- Tokenization
+ - nltk_tokenize.py - Written by Vladamir Zaytsev
+   - uses nltk.tokenize (PunktSentenceTokenizer,WordPunctTokenizer, and TreebankWordTokenizer)
 - POS Tagging
  - treetagger 3.2 (http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/)
    - Spanish parameter file available from the same page
