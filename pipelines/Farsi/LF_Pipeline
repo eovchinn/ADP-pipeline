@@ -5,4 +5,4 @@ outputFileName="${2:-/dev/stdout}"
 
 farsiPipelineDir=$METAPHOR_DIR/pipelines/Farsi
 
-$farsiPipelineDir/tokenize < $inputFile |$farsiPipelineDir/tag |$farsiPipelineDir/parse|$farsiPipelineDir/createLF > $outputFileName
+$farsiPipelineDir/tokenize < $inputFile |$farsiPipelineDir/tag |$farsiPipelineDir/parse |$farsiPipelineDir/createLF > $outputFileName
