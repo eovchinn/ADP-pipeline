@@ -82,16 +82,16 @@ def ADP(input_dict,language,withPDFContent):
        # Parser pipeline
 	parser_proc = ''
 	if language == 'FA': 
-		parser_proc = FARSI_PIPELINE  + ' | python ' + PARSER2HENRY + ' --nonmerge --textid'
+		parser_proc = FARSI_PIPELINE  + ' | python ' + PARSER2HENRY + ' --nonmerge sameid freqpred --textid'
 	elif language == 'ES': 
-		parser_proc = SPANISH_PIPELINE  + ' | python ' + PARSER2HENRY + ' --nonmerge --textid'
+		parser_proc = SPANISH_PIPELINE  + ' | python ' + PARSER2HENRY + ' --nonmerge sameid freqpred --textid'
 	elif language == 'RU': 
-		parser_proc = RUSSIAN_PIPELINE  + ' | python ' + PARSER2HENRY + ' --nonmerge --textid'
+		parser_proc = RUSSIAN_PIPELINE  + ' | python ' + PARSER2HENRY + ' --nonmerge sameid freqpred --textid'
 	elif language == 'EN':
 		tokenizer = BOXER_DIR + '/bin/tokkie --stdin'
 		candcParser = BOXER_DIR + '/bin/candc --models ' + BOXER_DIR + '/models/boxer --candc-printer boxer'
 		boxer = BOXER_DIR + '/bin/boxer --semantics tacitus --resolve true --stdin'
-		b2h = 'python ' + BOXER2HENRY + ' --nonmerge'
+		b2h = 'python ' + BOXER2HENRY + ' --nonmerge sameid freqpred'
 		parser_proc = tokenizer + ' | ' + candcParser + ' | ' + boxer + ' | ' + b2h
 
 	parser_pipeline = Popen(parser_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
@@ -112,7 +112,7 @@ def ADP(input_dict,language,withPDFContent):
 	henry_pipeline = Popen(henry_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
 	henry_output = henry_pipeline.communicate(input=parser_output)[0]
 
-        #unique id used for proofgraph name
+       #unique id used for proofgraph name
 	unique_id = get_unique_id()
 
 	if withPDFContent:

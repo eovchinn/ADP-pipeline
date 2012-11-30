@@ -7,6 +7,9 @@
 ;
 ; 11/21/2012 aks - removed rifle, gun, war, competition, sight, bullet, crosshairs, president
 ;
+; 11/29/2012 aks - corrected typos in attack-nn2, fight-vb2, competition-nn3, members-nn
+;
+;
 ; QUESTIONS
 ; 10/31/2012 aks
 ; 1. how to tell for sure when a rule should be entered as a lexical item? E.G. "combat is a conflict" could be (=> (conflict e x y g h :1.2)(combat e)) or (=> (conflict e x y g h :0.9)(combat-nn e1))
@@ -54,7 +57,7 @@
 
 (B (name fight-vb1) (=> (^ (conflict e x y g h :0.3) (adversary e1 y x e :0.6)) (fight-vb e x y u)))
 
-(B (name fight-vb2) (=> (^ (conflict c x y g h :0.3)(adversary e1 x y c :0.3)(goal e3 g x :0.3))(^ (fight-vb c x y u)(for-in c g))))
+(B (name fight-vb2) (=> (^ (conflict c x y g h :0.3)(adversary e1 x y c :0.3)(goal e3 g x :0.3))(^ (fight-vb c x y u)(for-in e4 c g))))
 
 
 ;;; ADVERSARY
@@ -183,7 +186,7 @@
 
 (B (name competitor-nn2) (=> (conflict e1 x y g h :0.9)(competitor-nn e y)))
 
-(B (name competition-nn3) (=> (conflict w x y g h :0.9)(competition e w)))
+(B (name competition-nn3) (=> (conflict w x y g h :0.9)(competition-nn e w)))
 
 ;Players (i.e. adversaries) wear uniform identifying their team.
 
@@ -207,11 +210,11 @@
 
 (B (name union-nn) (=> (union x :0.9)(union-nn w x)))
 
-(B (name members-nn) (=> (members m g :0.9)(^ (member-nn e1 m)(of-in e2 e1 g))))
+(B (name members-nn) (=> (members m g :0.9)(^ (member-nn e1 m)(of-in e2 m g))))
 
 (B (name members-nn) (=> (members m g :0.9)(member-nn e1 m)))
 
-(B (name not-rb) (=> (not g h :0.9)(not-rb e1 x)))
+;(B (name not-rb) (=> (not g h :0.9)(not-rb e1 x)))
 
 (B (name part-nn) (=> (part u w :0.9)(^ (part-nn e1 x)(of-in e2 e1 w))))
 
