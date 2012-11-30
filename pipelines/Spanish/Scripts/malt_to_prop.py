@@ -6,7 +6,7 @@ import re,sys,optparse
 ##################### I/O ##################################
 usage = "usage: %prog [options] <input_file>"
 parser = optparse.OptionParser(usage=usage)
-parser.add_option("-i", "--input", dest="input",
+parser.add_option("-i", "--inFile", dest="input",
                   action="store", help="read from FILE", metavar="FILE")
 parser.add_option("-t","--tagset",action="store",
                   help="tagset in input file",default="ancora")
@@ -79,7 +79,7 @@ def prop_to_dict(props):
             sent_dict[shortID]=[token,lemma,pos,head,rel,shortID,args,tag,propID]
             new_prop_sent.append(new_prop)
         elif propTags.match(pos):
-            args,tag,eCount,xCount,uCount,question = build_predicate(pos,eCount,xCount,uCount,lemma,question)
+            args,tag,eCount,xCount,uCount,question = build_predicate(pos,eCount,xCount,uCount,lemma,question,token)
             new_prop.extend([token,lemma,pos,head,rel,shortID,args,tag,propID])
             sent_dict[shortID]=[token,lemma,pos,head,rel,shortID,args,tag,propID]
             new_prop_sent.append(new_prop)
@@ -106,7 +106,7 @@ def replace_args(prop_sent,sent_dict):
         predicate = prop[6]
         tag = prop[7]
         propID = prop[8]
-        if lemma in thingProList:
+        if lemma in thingProList and head != 0:
             sent_dict = det_to_pr(head,wordID,sent_dict)
         if (rel == "suj") or (rel == "spec") and tag != "NULL":
             sent_dict = insert_suj(head,wordID,sent_dict)
@@ -120,7 +120,7 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = process_aux(head,wordID,sent_dict)            
         if rel in prepRels and pos == "s":
             sent_dict = insert_prepHead(head,wordID,sent_dict)
-        if (rel == "sn" or rel == "grup.nom" or rel == "spec") and predicate[-1] != "R":
+        if (rel == "sn" or rel == "grup.nom" or rel == "spec") and predicate[-1] != "R" and head != 0:
             sent_dict = insert_sn(head,wordID,sent_dict)
         if rel in adjectiveRels and pos == "a":
             sent_dict = insert_adjHead(head,wordID,sent_dict)
@@ -140,12 +140,14 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = insert_prepHead(head,wordID,sent_dict)
         if tag == "card" and head !=0:
             sent_dict = insert_adjHead(head,wordID,sent_dict)
-        if rel == "cpred":
+        if rel == "cpred" and head != 0:
             sent_dict = insert_cpred(head,wordID,sent_dict)
         if tag == "rb" and (rel == "spec" or rel == "mod"):
             sent_dict = insert_rb_spec(head,wordID,sent_dict)
         if tag in proTagList and (rel == "spec"):
-            sent_dict = insert_pro_spec(head,wordID,sent_dict)            
+            sent_dict = insert_pro_spec(head,wordID,sent_dict)
+        if lemma in subConList and head !=0:
+            sent_dict = insert_subCon_head(head,wordID,sent_dict)
         if lemma == "no" and head !=0:
             sent_dict = handle_negation(head,wordID,sent_dict)
         if ((tag == "wh") or (tag == "whq")) and head !=0:
@@ -240,8 +242,7 @@ def det_to_pr(head,wordID,sent_dict):
 
 def find_last_e(sent_dict):
     for entry in reversed(sent_dict.items()):
-        #print entry
-        if len(entry[1][6]) > 1:
+        if re.search("e",entry[1][6][0]):
             return entry[1][6][0].split("e")[1]
 
 def determine_wh_helper(lemma):
@@ -266,7 +267,7 @@ def insert_suj(head,wordID,sent_dict):
         return sent_dict
     if sent_dict[head][7] == "vb" and sent_dict[wordID][7] == "nn":
         sent_dict[head][6][1] = sent_dict[wordID][6][1]
-    elif sent_dict[head][7] == "vb" and sent_dict[wordID][7] != "nn":
+    elif sent_dict[head][7] == "vb" and sent_dict[wordID][7] != "nn" and sent_dict[wordID][6][0] != "R":
         sent_dict[head][6][1] = sent_dict[wordID][6][0]
     return sent_dict
 
@@ -401,6 +402,27 @@ def insert_prepHead(head,wordID,sent_dict):
         sent_dict[wordID][6][1] = sent_dict[head][6][0]
     return sent_dict
 
+def insert_subCon_head(head,wordID,sent_dict):
+    """Insert the head of a preposition as its first argument"""
+    if sent_dict[head][7] == "vb" and sent_dict[head][4] not in rootList:#(sent_dict[head][4] == "cd" or sent_dict[head][4] == "ao"):
+        if sent_dict[head][1] == "estar":
+            sent_dict[wordID][6][2] = sent_dict[head][6][1]
+            sent_dict[head][6][3] = "R"
+        else:
+            sent_dict[wordID][6][2] = sent_dict[head][6][0]
+        headHead = sent_dict[head][3]
+        if sent_dict[headHead][7] == "vb":
+            sent_dict[wordID][6][1] = sent_dict[headHead][6][0]
+        if (sent_dict[head][7] == "vb") and sent_dict[head][4] in rootList:# (sent_dict[head][4] == "ROOT" or sent_dict[head][4] == "sentence"):
+            sent_dict[wordID][6][1] = sent_dict[head][6][0]
+    # if sent_dict[head][7] == "nn" and head < wordID:
+    #     sent_dict[wordID][6][1] = sent_dict[head][6][1]
+    # if sent_dict[head][7] == "nn" and head > wordID:
+    #     sent_dict[wordID][6][2] = sent_dict[head][6][1]        
+    # if sent_dict[head][7] == "rb" or sent_dict[head][7] == "adj":
+    #     sent_dict[wordID][6][1] = sent_dict[head][6][0]
+    return sent_dict
+
 def insert_sn(head,wordID,sent_dict):
     if sent_dict[wordID][4] == "spec" and sent_dict[wordID][1] not in thingProList:
         return sent_dict
@@ -418,7 +440,8 @@ def insert_sn(head,wordID,sent_dict):
             if (values[4] == "conj") and (values[3] == sent_dict[wordID][3]):
                 conjHead = values[3]
                 headHead = sent_dict[conjHead][3]
-                sent_dict = add_new_verb(sent_dict,sent_dict[headHead][1],sent_dict[headHead][7],sent_dict[headHead][6],sent_dict[wordID][6][1],sent_dict[headHead][8],sent_dict[head][8],wordID,head)
+                if headHead != 0:
+                    sent_dict = add_new_verb(sent_dict,sent_dict[headHead][1],sent_dict[headHead][7],sent_dict[headHead][6],sent_dict[wordID][6][1],sent_dict[headHead][8],sent_dict[head][8],wordID,head)
                  #if the conjuction is "o" add an "or" proposition
                 if (values[1] == "o"):
                     sent_dict,newKey = add_new_entry(sent_dict,"or",sent_dict[head][6][0],sent_dict[wordID][6][0],sent_dict[wordID][8])        
@@ -441,8 +464,10 @@ def insert_cpred(head,wordID,sent_dict):
 
 def insert_adjHead(head,wordID,sent_dict):
     #when the head is a noun, simply insert the first argument of the head
-    if sent_dict[head][7] == "nn":
+    if sent_dict[head][7] == "nn": 
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
+    if sent_dict[head][7] == "card":
+        sent_dict[wordID][6][1] = sent_dict[head][6][0]
         #when the head is an adj, insert the first argument of the head of the head
     elif sent_dict[head][2] == "a":
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
@@ -480,9 +505,12 @@ def insert_m_p(head,wordID,sent_dict):
         sent_dict[head][6][2] = sent_dict[head][6][1]
     return sent_dict
 
-def build_predicate(pos,eCount,xCount,uCount,lemma,question):
+def build_predicate(pos,eCount,xCount,uCount,lemma,question,token):
     pred = []
     tag = ""
+    if not re.search("\w",lemma):
+        
+        return ["R"],"",eCount,xCount,uCount,question        
     if lemma in whWords:
         if not question:
             tag = "wh"
@@ -563,6 +591,8 @@ def build_predicate(pos,eCount,xCount,uCount,lemma,question):
         return pred,tag,eCount,xCount,uCount,question
     if cardTag.match(pos):
         tag="card"
+        if lemma == "@card@":
+            lemma = token
         pred.append("e"+str(eCount))
         eCount+=1
         pred.append("u"+str(uCount))
@@ -570,8 +600,17 @@ def build_predicate(pos,eCount,xCount,uCount,lemma,question):
         number = cardinal_number(lemma)
         pred.append(number)
         return pred,tag,eCount,xCount,uCount,question
+    if lemma in subConList:
+        tag="in"
+        pred.append("e"+str(eCount))
+        eCount+=1
+        pred.append("u"+str(uCount))
+        uCount+=1
+        pred.append("u"+str(uCount))
+        uCount+=1
+        return pred,tag,eCount,xCount,uCount,question
     else:
-        return ["R"],"",eCount,xCount,uCount,question
+        return ["R","R"],"",eCount,xCount,uCount,question
 
 def cardinal_number(lemma):
     if card_dict.has_key(lemma):
@@ -629,7 +668,7 @@ card_dict["diez"] = "10"
 
 heProList = ["el","lo"]
 sheProList = ["ella","la"]
-personProList = ["yo","me","nos","nosotros","usted","ustedes","mi","mis","su","sus","nuestro","nuestros","nuestra","nuestras","quién","tú","suyo","quien"]
+personProList = ["yo","me","nos","nosotros","usted","ustedes","mi","mis","su","sus","nuestro","nuestros","nuestra","nuestras","quién","tú","quien"]
 thingProList = ["ellos","ellas","él","este","ese"]
 reflexProList = ["se"]
 possessiveProList = ["mi","mis","tu","tus","su","sus","nuestro","nuestros","nuestra","nuestras","suyo"]
@@ -637,12 +676,13 @@ proTagList = ["male","female","person","thing"]
 
 nominalList = ["n","p"]
 noTokenList = ["male","female","person","thing","reflexive"]
-insertList = ["equal","card","or","be","card","loc","manner","time","nn","reason","of-in","person"]
+insertList = ["equal","card","or","be","loc","manner","time","nn","reason","of-in","person"]
 inheritingVbs = ["S","v"]
 adjectiveRels = ["s.a","cn","grup.a"]
+rootList = ["ROOT","sentence"]
 prepRels = ["sp","cn"]
 whWords = ["dónde","cómo","donde","cuando","cuándo","por_qué","quién"]
-subConList = ["porque"]
+subConList = ["porque","mientras_que"]
 
 passivesList = ["haber","deber","tener","estar"]
 
