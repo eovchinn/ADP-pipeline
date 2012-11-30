@@ -101,6 +101,7 @@ def main():
 
 		if pa.kb: henry_output = henry_proc.communicate()[0]
 		elif pa.parse: henry_proc.communicate(input=nl_output)[0]
+		elif pa.input: henry_output = henry_proc.communicate()[0]
 		else: henry_output = henry_proc.communicate(input=sys.stdin.readline())[0]
 		
 		f_henry = open(os.path.join(outputdir,fname+".hyp"), "w")
