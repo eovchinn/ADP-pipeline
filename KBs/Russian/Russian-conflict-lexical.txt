@@ -210,6 +210,8 @@
 
 (B (name нож) (=> (weapon w :0.9)(нож-nn e w)))
 
+(B (name ножик) (=> (weapon w :0.9)(ножик-nn e w)))
+
 (B (name сабля) (=> (weapon w :0.9)(сабля-nn e w)))
 
 (B (name шпага) (=> (weapon w :0.9)(шпага-nn e w)))
@@ -260,6 +262,9 @@
 
 (B (name use-weapon-expand) (=> (^ (use e1 x w y z :0.6)(weapon w :0.6))(use-weapon e1 x w y z)))
 
+(B (name use-weapon-subj) (=> (use-weapon e1 x w y z)(use-weapon e1 w u y z) (weapon w)))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (part x y) : x is part of y
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -306,5 +311,71 @@
 
 (B (name благоденствовать) (=> (thrive e1 m :0.9)(благоденствовать-vb e1 m u1 u2)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; (illegal e) : e1 is illegal
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name беззаконный) (=> (illegal e :0.9) (беззаконный-adj e1 e)))
+
+(B (name незаконный) (=> (illegal e :0.9) (незаконный-adj e1 e)))
+
+(B (name противозаконный) (=> (illegal e :0.9) (противозаконный-adj e1 e)))
+
+(B (name неправомерный) (=> (illegal e :0.9) (неправомерный-adj e1 e)))
+
+(B (name противоправный) (=> (illegal e :0.9) (противоправный-adj e1 e)))
+
+(B (name запрещённый) (=> (illegal e :0.9) (запрещённый-adj e1 e)))
+
+(B (name запрещенный) (=> (illegal e :0.9) (запрещенный-adj e1 e)))
+
+(B (name недопустимый) (=> (illegal e :0.9) (недопустимый-adj e1 e)))
+
+(B (name неразрешённый) (=> (illegal e :0.9) (неразрешённый-adj e1 e)))
+
+(B (name неразрешенный) (=> (illegal e :0.9) (неразрешенный-adj e1 e)))
+
+(B (name несанкционированный) (=> (illegal e :0.9) (несанкционированный-adj e1 e)))
+
+(B (name нелегальный) (=> (illegal e :0.9) (нелегальный-adj e1 e)))
+
+(B (name криминальный) (=> (illegal e :0.9) (криминальный-adj e1 e)))
+
+(B (name самочинный) (=> (illegal e :0.9) (самочинный-adj e1 e)))
+
+(B (name неправосудный) (=> (illegal e :0.9) (неправосудный-adj e1 e)))
+
+(B (name легализовать-not) (=> (illegal e :0.9) (^(not e0 e1)(легализовать-vb e1 x e u))))
+
+(B (name легитимировать-not) (=> (illegal e :0.9) (^(not e0 e1)( легитимировать-vb e1 x e u))))
+
+(B (name узаконивать-not) (=> (illegal e :0.9) (^(not e0 e1)(узаконивать-vb e1 x e u))))
+(B (name разрешать-not) (=> (illegal e :0.9) (^(not e0 e1)(разрешать-vb e1 x e u))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; (lead e x y) : x exercises authority over y
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name руководить) (=> (lead e x y :0.9)(руководить-vb e x u1 u2)))
+
+(B (name управлять) (=> (lead e x y :0.9)(управлять-vb e x u1 u2)))
+
+(B (name командовать) (=> (lead e x y :0.9)(командовать-vb e x u1 u2)))
+
+(B (name управлять) (=> (lead e x y :0.9)(управлять-vb e x u1 u2)))
+
+(B (name lead-instr) (=> (lead e x y :0.9) (^ (lead e x u)(instr e1 e y))))
+
+(B (name возглавлять) (=> (lead e x y :0.9)( возглавлять-vb e x y u2)))
+
+(B (name лидерство) (=> (lead e x y :0.9)(лидерство-nn e1 e)))
+
+(B (name руководство) (=> (lead e x y :0.9)(руководство-nn e1 e)))
+
+(B (name управление) (=> (lead e x y :0.9)(управление-nn e1 e)))
+
+(B (name командование) (=> (lead e x y :0.9)(командование-nn e1 e)))
+
+(B (name lead-of) (=> (lead e x y :0.9) (^ (lead e u1 u2)(of e1 e x))))
 
 
