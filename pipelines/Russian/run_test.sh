@@ -42,9 +42,9 @@ MALT_MODEL=rus-test.mco
 MALT_IFORMAT=$MALT_RU_DIR/make-malt.pl
 
 
-IFILE=$RU_PIPELINE_DIR/test_data/input.txt
-OMALT=$RU_PIPELINE_DIR/test_data/omalt.txt
-OLF=$RU_PIPELINE_DIR/test_data/olf.txt
+IFILE=$RU_PIPELINE_DIR/test_data/validation/input
+OMALT=$RU_PIPELINE_DIR/test_data/validation/malt
+OLF=$RU_PIPELINE_DIR/test_data/validation/olf
 
 
 CURRENT_DIR=`pwd`
