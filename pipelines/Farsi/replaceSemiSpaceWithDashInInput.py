@@ -1,22 +1,20 @@
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 
 import sys
 import codecs
 
-inputFileName=sys.argv[1]
-outputFileName=sys.argv[2]
-
 #inputFileName="/Users/niloofar/Metaphor-ADP/pipelines/Farsi/samples/sentence.txt"
 #outputFileName="/Users/niloofar/Metaphor-ADP/pipelines/Farsi/samples/sentence.dash.txt"
 
 semiSpace=u"‌"
-inputFile=codecs.open(inputFileName, encoding='utf-8')
-outputFile=codecs.open(outputFileName, encoding='utf-8',mode="w")
+inputFile=codecs.open(sys.argv[1], encoding='utf-8') if len(sys.argv)>1 else codecs.getreader("utf-8")(sys.stdin)
+outputFile=codecs.open(sys.argv[2], encoding='utf-8',mode="w") if len(sys.argv)>2 else codecs.getreader("utf-8")(sys.stdout)
 
 line=inputFile.readline()
 while line!="":
-    newLine=line.replace(semiSpace,"-")
-    outputFile.write("%s\n"%newLine)
+    newLine=line.replace(semiSpace,"-").strip()
+    outputFile.write(("%s\n"%newLine).encode('utf-8'))
     line=inputFile.readline()
 
 inputFile.close()
