@@ -8,5 +8,6 @@ LFFileName="${2:-/dev/stdout}"
 parseToLFConverter=$farsiPipelineDir/convertParseTreeToLF.py
 farsiWordsDict=$farsiPipelineDir/farsiWordsForLFCreation.txt
 
+
 # convert the parse results to LF
 python $parseToLFConverter $parserOutputFileName $LFFileName $farsiWordsDict

@@ -1,3 +1,5 @@
+#! /usr/bin/python
+
 import sys
 import codecs
 
@@ -7,9 +9,9 @@ import codecs
 #    each line contains these 10 items, separated by tab: 
 #    (id,word,lemma,CoarsePOS,FinePOS,etc1,dep,rel,etc2,etc3)
 
-inputFile=codecs.open(sys.argv[1],encoding='utf-8')
-outputFile=codecs.open(sys.argv[2],encoding='utf-8',mode="w")
-lemmaFile=codecs.open(sys.argv[3], encoding='utf-8')
+inputFile=codecs.open(sys.argv[1],encoding='utf-8') if len(sys.argv)>1 else codecs.getreader("utf-8")(sys.stdin)
+outputFile=codecs.open(sys.argv[2],encoding='utf-8',mode="w") if len(sys.argv)>2 else codecs.getreader("utf-8")(sys.stdout)
+lemmaFile=codecs.open("/Users/niloofar/Metaphor-ADP/pipelines/Farsi/lemmatizationDict.txt", encoding='utf-8')
 
 
 def loadLemmaDict(lemmaFile):
@@ -26,7 +28,6 @@ def loadLemmaDict(lemmaFile):
 def getLemma(word,POS,lemmaDict):
     if (word,POS) not in lemmaDict: return word
     return lemmaDict[(word,POS)]
-
 lemmaDict=loadLemmaDict(lemmaFile)
 line=inputFile.readline()
 while line!="":
@@ -40,9 +41,9 @@ while line!="":
     for i in range(0,len(words)):
         lemma=getLemma(words[i],POSs[i],lemmaDict)
         items=(str(i+1),words[i],lemma,POSs[i],POSs[i],"_","_","_","_","_")
-        outputFile.write("%s\n"%"\t".join(items))
+        outputFile.write(("%s\n"%"\t".join(items)).encode('utf-8'))
     
-    outputFile.write("\n")
+    outputFile.write(("\n").encode('utf-8'))
     line=inputFile.readline()
     
 inputFile.close()

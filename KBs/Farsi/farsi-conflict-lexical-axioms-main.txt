@@ -183,6 +183,24 @@
 (B (name ‎sazgar-bvd#bash) (=> (conflict e1 x y g h) (^ (bvd#bash-vb e2 x u1 u2) (‎nasazgar-nn e3 x1) (not e1 e2))))
 (B (name ‎sazgar-bvd#bash) (=> (conflict e1 x y g h) (^ (bvd#bash-vb e2 x u1 u2) (‎nasazgar-nn e3 x1) (not e1 e2))))
 
+(B (name ‎jng) (=> (conflict e u1 u2 u3 u4) (‎jng-nn e2 e)))
+(B (name ‎jngydn) (=> (conflict e u1 u2 u3 u4) (‎jngydn-nn e2 e)))
+(B (name ‎jngyd#jng) (=> (conflict e x u2 u3 u4) (‎jngyd#jng-vb e x u1 u2)))
+(B (name ‎mharbh) (=> (conflict e u1 u2 u3 u4) (‎mharbh-nn e2 e)))
+(B (name ‎rzm) (=> (conflict e u1 u2 u3 u4) (‎rzm-nn e2 e)))
+(B (name ‎nzae) (=> (conflict e u1 u2 u3 u4) (‎nzae-nn e2 e)))
+(B (name ‎jng-krdn) (=> (conflict e2 u1 u2 u3 u4) (^ (krdn-nn e2 e) (‎jng-nn e3 x1) (NE e4 e x1))))
+(B (name ‎jng-krd#kn) (=> (conflict e1 x u2 u3 u4) (^ (krd#kn-vb e1 x u1 u2) (‎jng-nn e3 x1) (NVE e4 x1 e1))))
+(B (name ‎jng-krd#kn) (=> (conflict e x u2 u3 u4) (^ (krd#kn-vb e1 x u1 u2) (‎jng-nn e3 x1) (ENC e4 x1 e1))))
+(B (name ‎mharbh-krd#kn) (=> (conflict e x u2 u3 u4) (^ (krd#kn-vb e1 x u1 u2) (‎mharbh-nn e3 x1) (NVE e4 x1 e1))))
+(B (name ‎mharbh-krd#kn) (=> (conflict e x u2 u3 u4) (^ (krd#kn-vb e1 x u1 u2) (‎mharbh-nn e3 x1) (ENC e4 x1 e1))))
+(B (name ‎mharbh-krdn) (=> (conflict e x u2 u3 u4) (^ (krdn-nn e2 e) (‎mharbh-nn e3 x1) (NE e4 e x1))))
+(B (name ‎nzae-krd#kn) (=> (conflict e x u2 u3 u4) (^ (krd#kn-vb e1 x u1 u2) (‎nzae-nn e3 x1) (NVE e4 x1 e1))))
+(B (name ‎nzae-krd#kn) (=> (conflict e x u2 u3 u4) (^ (krd#kn-vb e1 x u1 u2) (‎nzae-nn e3 x1) (ENC e4 x1 e1))))
+(B (name ‎nzae-krdn) (=> (conflict e u1 u2 u3 u4) (^ (krdn-nn e2 e) (‎nzae-nn e3 x1) (NE e4 e x1))))
+(B (name ‎nzae-dasht#dar) (=> (conflict e x u2 u3 u4) (^ (dasht#dar-vb e1 x u1 u2) (‎nzae-nn e3 x1) (NVE e4 x1 e1))))
+(B (name ‎nzae-dasht#dar) (=> (conflict e x u2 u3 u4) (^ (dasht#dar-vb e1 x u1 u2) (‎nzae-nn e3 x1) (ENC e4 x1 e1))))
+(B (name ‎nzae-dashtn) (=> (conflict e u1 u2 u3 u4) (^ (dashtn-nn e2 e) (‎nzae-nn e3 x1) (NE e4 e x1))))
 
 ; dar tazad boodan
 ; motazad boodan
@@ -245,74 +263,37 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;(use e1 x w)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(B (name ‎astfadh) (=> (use e1 x w) (‎astfadh-nn e2 e1)))
-(B (name ‎msrf) (=> (use e1 x w) (‎msrf-nn e2 e1)))
-(B (name ‎astemal) (=> (use e1 x w) (‎astemal-nn e2 e1)))
+(B (name ‎astfadh) (=> (use e1 u1 u2) (‎astfadh-nn e2 e1)))
+(B (name ‎msrf) (=> (use e1 u1 u2) (‎msrf-nn e2 e1)))
+(B (name ‎astemal) (=> (use e1 u1 u2) (‎astemal-nn e2 e1)))
+(B (name ‎karbrd) (=> (use e1 x w y z) (‎karbrd-nn e2 e1)))
 
-(B (name ‎use-krdn) (=> (use e x u1) (^ (krdn-nn e1 e) (use x1 u1 u2) (NE e4 e x1))))
+
+(B (name ‎use-krdn) (=> (use x1 u1 u2) (^ (krdn-nn e1 e) (use x1 u1 u2) (NE e4 e x1))))
 (B (name ‎use-krd#kn) (=> (use e1 x w) (^ (krd#kn-vb e1 x w u2) (use x1 u1 u2) (NVE e4 x1 e1))))
 (B (name ‎use-krd#kn) (=> (use e1 x w) (^ (krd#kn-vb e1 x w u2) (use x1 u1 u2) (ENC e4 x1 e1))))
 
-;;;ta inja
+(B (name ‎use-dashtn) (=> (use x1 u1 u2) (^ (dashtn-nn e1 e) (use x1 u1 u2) (NE e4 e x1))))
+(B (name ‎use-dasht#dar) (=> (use e u1 w) (^ (dasht#dar-vb e w u1 u2) (use x1 u1 u2) (NVE e4 x1 e1))))
+(B (name ‎use-dasht#dar) (=> (use e u1 w) (^ (dasht#dar-vb e w u1 u2) (use x1 u1 u2) (ENC e4 x1 e1))))
 
-(B (name ‎use-dashtn) (=> (conflict e1 x y g h) (^ (dashtn-nn e1 e) (‎styzh-nn e3 x1) (NE e4 e x1))))
-(B (name ‎use-dasht#dar) (=> (conflict e1 x y g h) (^ (dasht#dar-vb e1 x u1 u2) (‎styzh-nn e3 x1) (NVE e4 x1 e1))))
-(B (name ‎use-dasht#dar) (=> (conflict e1 x y g h) (^ (dasht#dar-vb e1 x u1 u2) (‎styzh-nn e3 x1) (ENC e4 x1 e1))))
+(B (name ‎bkar-brdn) (=> (use e u1 u2) (^ (brdn-nn e2 e) (‎bkar-nn e3 x1) (NE e4 e x1))))
+(B (name ‎bkar-brd#br) (=> (use e x w) (^ (brd#br-vb e x w u2) (‎bkar-nn e3 x1) (NVE e4 x1 e1))))
+(B (name ‎bkar-brd#br) (=> (use e x w) (^ (brd#br-vb e x w u2) (‎bkar-nn e3 x1) (ENC e4 x1 e1))))
+(B (name ‎bkargyry) (=> (use e u1 u2) (‎bkargyry-nn e2 e)))
 
+(B (name ‎bkargrftn) (=> (use e u1 u2) (‎bkargrftn-nn e2 e)))
+(B (name ‎bkargrft) (=> (use e x w) (‎bkargrft-vb e x w u1)))
 
+(B (name ‎bh‌kargyry) (=> (use e u1 u2) (‎bh‌kargyry-nn e2 e)))
+(B (name ‎bh‌kargrftn) (=> (use e u1 u2) (‎bh‌kargrftn-nn e2 x)))
+(B (name ‎bh‌kargrft) (=> (use e x w) (‎bh‌kargrft-vb e x w u1)))
 
+(B (name ‎bh‌karbrdn) (=> (use e u1 u2) (‎bh‌karbrdn-nn e2 e)))
+(B (name ‎bh‌karbrd) (=> (use e x w) (‎bh‌karbrd-vb e x w u1)))
 
-(B (name ‎astfadh-krdn) (=> (use e x w y z) (^ (krdn-nn e2 e) (‎astfadh-nn e3 x1) (NE e4 e x1))))
-(B (name ‎astfadh-krd#kn) (=> (use e1 x w y z) (^ (krd#kn-vb e1 x u1 u2) (‎astfadh-nn e3 x1) (NVE e4 x1 e1))))
-(B (name ‎astfadh-krd#kn) (=> (use e1 x w y z) (^ (krd#kn-vb e1 x u1 u2) (‎astfadh-nn e3 x1) (ENC e4 x1 e1))))
-
-(B (name ‎msrf-krdn) (=> (use e x w y z) (^ (krdn-nn e2 e) (‎msrf-nn e3 x1) (NE e4 e x1))))
-(B (name ‎msrf-krd#kn) (=> (use e1 x w y z) (^ (krd#kn-vb e1 x u1 u2) (‎msrf-nn e3 x1) (NVE e4 x1 e1))))
-(B (name ‎msrf-krd#kn) (=> (use e1 x w y z) (^ (krd#kn-vb e1 x u1 u2) (‎msrf-nn e3 x1) (ENC e4 x1 e1))))
-
-(B (name ‎karbrd) (=> (use e1 x w y z) (‎karbrd-nn e2 x)))
-
-(B (name ‎bkar-brdn) (=> (use e x w y z) (^ (brdn-nn e2 e) (‎bkar-nn e3 x1) (NE e4 e x1))))
-(B (name ‎bkar-brd#br) (=> (use e1 x w y z) (^ (brd#br-vb e1 x u1 u2) (‎bkar-nn e3 x1) (NVE e4 x1 e1))))
-(B (name ‎bkar-brd#br) (=> (use e1 x w y z) (^ (brd#br-vb e1 x u1 u2) (‎bkar-nn e3 x1) (ENC e4 x1 e1))))
-(B (name ‎bkargyry) (=> (use e1 x w y z) (‎bkargyry-nn e2 e)))
-
-(B (name ‎bkargrftn) (=> (use e1 x w y z) (‎bkargrftn-nn e2 x)))
-(B (name ‎bkargrft) (=> (use e1 x w y z) (‎bkargrft-nn e2 x)))
-
-(B (name ‎bh‌kargyry) (=> (use e x w y z) (‎bh‌kargyry-nn e2 e)))
-(B (name ‎bh‌kargrftn) (=> (use e1 x w y z) (‎bh‌kargrftn-nn e2 x)))
-(B (name ‎bh‌kargrft) (=> (use e1 x w y z) (‎bh‌kargrft-nn e2 x)))
-
-(B (name ‎bh‌karbrdn) (=> (use e x w y z) (‎bh‌karbrdn-nn e2 e)))
-(B (name ‎bh‌karbrd) (=> (use e1 x w y z) (‎bh‌karbrd-nn e2 x)))
-
-(B (name ‎astemal-krdn) (=> (use e x w y z) (^ (krdn-nn e2 e) (‎astemal-nn e3 x1) (NE e4 e x1))))
-(B (name ‎astemal-krd#kn) (=> (use e1 x w y z) (^ (krd#kn-vb e1 x u1 u2) (‎astemal-nn e3 x1) (NVE e4 x1 e1))))
-(B (name ‎astemal-krd#kn) (=> (use e1 x w y z) (^ (krd#kn-vb e1 x u1 u2) (‎astemal-nn e3 x1) (ENC e4 x1 e1))))
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;(war e)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(B (name ‎jng) (=> (war e) (‎jng-nn e2 x)))
-(B (name ‎jngydn) (=> (war e) (‎jngydn-nn e2 x)))
-(B (name ‎jngyd) (=> (war e) (‎jngyd-nn e2 x)))
-(B (name ‎mharbh) (=> (war e) (‎mharbh-nn e2 x)))
-(B (name ‎rzm) (=> (war e) (‎rzm-nn e2 x)))
-(B (name ‎nzae) (=> (war e) (‎nzae-nn e2 x)))
-(B (name ‎jng-krdn) (=> (war e) (^ (krdn-nn e2 e) (‎jng-nn e3 x1) (NE e4 e x1))))
-(B (name ‎jng-krd#kn) (=> (war e1) (^ (krd#kn-vb e1 x u1 u2) (‎jng-nn e3 x1) (NVE e4 x1 e1))))
-(B (name ‎jng-krd#kn) (=> (war e1) (^ (krd#kn-vb e1 x u1 u2) (‎jng-nn e3 x1) (ENC e4 x1 e1))))
-(B (name ‎mharbh-krd#kn) (=> (war e1) (^ (krd#kn-vb e1 x u1 u2) (‎mharbh-nn e3 x1) (NVE e4 x1 e1))))
-(B (name ‎mharbh-krd#kn) (=> (war e1) (^ (krd#kn-vb e1 x u1 u2) (‎mharbh-nn e3 x1) (ENC e4 x1 e1))))
-(B (name ‎mharbh-krdn) (=> (war e) (^ (krdn-nn e2 e) (‎mharbh-nn e3 x1) (NE e4 e x1))))
-(B (name ‎nzae-krd#kn) (=> (war e1) (^ (krd#kn-vb e1 x u1 u2) (‎nzae-nn e3 x1) (NVE e4 x1 e1))))
-(B (name ‎nzae-krd#kn) (=> (war e1) (^ (krd#kn-vb e1 x u1 u2) (‎nzae-nn e3 x1) (ENC e4 x1 e1))))
-(B (name ‎nzae-krdn) (=> (war e) (^ (krdn-nn e2 e) (‎nzae-nn e3 x1) (NE e4 e x1))))
-(B (name ‎nzae-dasht#dar) (=> (war e1) (^ (dasht#dar-vb e1 x u1 u2) (‎nzae-nn e3 x1) (NVE e4 x1 e1))))
-(B (name ‎nzae-dasht#dar) (=> (war e1) (^ (dasht#dar-vb e1 x u1 u2) (‎nzae-nn e3 x1) (ENC e4 x1 e1))))
-(B (name ‎nzae-dashtn) (=> (war e) (^ (dashtn-nn e2 e) (‎nzae-nn e3 x1) (NE e4 e x1))))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;(weapon w)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(B (name ‎aslhh) (=> (weapon w) (‎aslhh-nn e2 x)))
-(B (name ‎tslyhat) (=> (weapon w) (‎tslyhat-nn e2 x)))
+(B (name ‎aslhh) (=> (weapon w) (‎aslhh-nn e2 w)))
+(B (name ‎tslyhat) (=> (weapon w) (‎tslyhat-nn e2 w)))
