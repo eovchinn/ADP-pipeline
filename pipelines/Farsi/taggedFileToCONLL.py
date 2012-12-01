@@ -2,6 +2,7 @@
 
 import sys
 import codecs
+import os
 
 #inputFormat: Each sentence is in a line:
 #    word1_POS1 word2_POS2 ...
@@ -11,7 +12,8 @@ import codecs
 
 inputFile=codecs.open(sys.argv[1],encoding='utf-8') if len(sys.argv)>1 else codecs.getreader("utf-8")(sys.stdin)
 outputFile=codecs.open(sys.argv[2],encoding='utf-8',mode="w") if len(sys.argv)>2 else codecs.getreader("utf-8")(sys.stdout)
-lemmaFile=codecs.open("/Users/niloofar/Metaphor-ADP/pipelines/Farsi/lemmatizationDict.txt", encoding='utf-8')
+metaphorDir=os.environ['METAPHOR_DIR']
+lemmaFile=codecs.open("%s/pipelines/Farsi/lemmatizationDict.txt"%metaphorDir, encoding='utf-8')
 
 
 def loadLemmaDict(lemmaFile):
