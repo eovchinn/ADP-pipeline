@@ -108,11 +108,6 @@ class WordToken(object):
         if self.lemma == "<unknown>":
             self.lemma = self.form
 
-        self.lemma = self.lemma.replace(u"«", u"")
-        self.lemma = self.lemma.replace(u"»", u"")
-        self.form = self.form.replace(u"«", u"")
-        self.form = self.form.replace(u"»", u"")
-
     def __repr__(self):
         return u"<WordToken(%s)>" \
             % (self.id, )
@@ -315,8 +310,62 @@ class MaltConverter(object):
 
         self.__words = words
 
+    person_relative_pr = [
+        u"который",
+        u"которая",
+        u"которое",
+        u"кто",
+    ]
+
+    location_relative_pr = [
+        u"где",
+        u"куда",
+    ]
+
     def subordinate_relatives(self):
-        pass
+        for w in self.__words:
+            if not w.cpostag == "pr":
+                continue
+            head = self.word(w.head)
+            if not head or not head.cpostag == "vb":
+                continue
+            hhead = self.word(head.head)
+            if not hhead or not hhead.cpostag == "nn":
+                continue
+
+            if w.lemma in self.person_relative_pr:
+                if hhead.feats[5] == "y":  # if animate
+                    # 1.
+                    self.__extra_preds.append(("person", [
+                        Argument("e"),
+                        Argument.arg_link(hhead.pred.args[1]),
+                    ]))
+                    if w.deprel == u"предик":
+                        head.pred.args[1].link_to(hhead.pred.args[1])
+                    elif w.deprel in [u"1-компл", u"2-комп"]:
+                        # 2.
+                        head.pred.args[2].link_to(hhead.pred.args[1])
+                else:
+                    # 3.
+                    if head.lemma == u"быть" and \
+                       head.feats[3] == "s":  # looks like passive voice
+                        for d in self.deps(head, filt=["vb"]):
+                            if d.feats[7] == "p":  # yeah, passive voice
+                                d.pred.args[2].link_to(
+                                    hhead.pred.args[1]
+                                )
+                    else:
+                        head.pred.args[2].link_to(
+                            hhead.pred.args[1]
+                        )
+
+            elif w.lemma in self.location_relative_pr:
+                # 4.
+                self.__extra_preds.append(("loc", [
+                    Argument("e"),
+                    Argument.arg_link(hhead.pred.args[1]),
+                    Argument.arg_link(head.pred.args[0]),
+                ]))
 
     def subordinate_whnominals(self):
         pass
@@ -338,6 +387,9 @@ class MaltConverter(object):
                 self.__initial_preds.append(pred)
 
         self.__visible_preds = self.__initial_preds[:]
+
+        self.subordinate_relatives()
+        self.subordinate_whnominals()
 
         for p in self.__initial_preds:
             if p.word.cpostag == "pr":
