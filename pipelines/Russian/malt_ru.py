@@ -857,9 +857,9 @@ class MaltConverter(object):
 
         # 1. Handle personal
 
-        if word.lemma not in self.pronouns_map:
+        if word.lemma not in self.pronouns_map and word.cpostag == "pr":
             self.remove_pred(word)
-        else:
+        elif word.cpostag == "pr":
             word.cpostag = "nn"  # handle assumming that it's a noun
             word.pred.prefix = self.pronouns_map[word.lemma]
             word.pred.show_index = False
