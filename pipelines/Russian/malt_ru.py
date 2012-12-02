@@ -867,13 +867,13 @@ class MaltConverter(object):
 
             # Update FEATS according to NN specification
             word.feats = "".join([
-                word.feats[0],  # 0
-                word.feats[1],  # 1
-                word.feats[3],  # 2
-                word.feats[4],  # 3
-                word.feats[5],  # 4
-                word.feats[7],  # 5
-                "?",            # 6
+                word.feats[0],  # 0 Noun
+                word.feats[1],  # 1 Type
+                word.feats[3],  # 2 Gender
+                word.feats[4],  # 3 Number
+                word.feats[5],  # 4 Case
+                "?",            # 5 Animate
+                "?",            # 6 Case2
             ])
 
             self.apply_nn_rules(word)
