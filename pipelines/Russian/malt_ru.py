@@ -864,6 +864,13 @@ class MaltConverter(object):
             word.pred.prefix = self.pronouns_map[word.lemma]
             word.pred.show_index = False
             word.pred.show_postag = False
+
+            # Update FEATS according to NN specification
+            word.feats[2] = word.feats[3]
+            word.feats[3] = word.feats[4]
+            word.feats[4] = word.feats[5]
+            word.feats[5] = word.feats[7]
+
             self.apply_nn_rules(word)
 
             global NN_NUMBER
