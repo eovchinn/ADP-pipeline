@@ -26,11 +26,18 @@ if __name__ == "__main__":
     wtt = WordPunctTokenizer()
 
     for line in sys.stdin:
-        line = line.replace("«", "'")
-        line = line.replace("»", "'")
-        line = line.replace("“", "'")
-        line = line.replace("”", "'")
-        line = line.replace("\"", "'")
+        if treebank == 0:
+            line = line.replace("«", " ' ")
+            line = line.replace("»", " ' ")
+            line = line.replace("“", " ' ")
+            line = line.replace("”", " ' ")
+            line = line.replace("\"", " ' ")
+        else:
+            line = line.replace("«", "'")
+            line = line.replace("»", "'")
+            line = line.replace("“", "'")
+            line = line.replace("”", "'")
+            line = line.replace("\"", "'")
         sentences = st.tokenize(line.decode("utf-8"))
         for s in sentences:
             if treebank == 0:
