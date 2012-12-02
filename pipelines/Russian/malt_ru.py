@@ -866,10 +866,15 @@ class MaltConverter(object):
             word.pred.show_postag = False
 
             # Update FEATS according to NN specification
-            word.feats[2] = word.feats[3]
-            word.feats[3] = word.feats[4]
-            word.feats[4] = word.feats[5]
-            word.feats[5] = word.feats[7]
+            word.feats = "".join([
+                word.feats[0],  # 0
+                word.feats[1],  # 1
+                word.feats[3],  # 2
+                word.feats[4],  # 3
+                word.feats[5],  # 4
+                word.feats[7],  # 5
+                "?",            # 6
+            ])
 
             self.apply_nn_rules(word)
 
