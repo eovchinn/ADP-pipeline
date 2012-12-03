@@ -108,11 +108,6 @@ class WordToken(object):
         if self.lemma == "<unknown>":
             self.lemma = self.form
 
-        self.lemma = self.lemma.replace(u"«", u"")
-        self.lemma = self.lemma.replace(u"»", u"")
-        self.form = self.form.replace(u"«", u"")
-        self.form = self.form.replace(u"»", u"")
-
     def __repr__(self):
         return u"<WordToken(%s)>" \
             % (self.id, )
@@ -304,7 +299,7 @@ class MaltConverter(object):
                 deps = self.deps(w)
                 if len(deps) == 1 and \
                    w.deprel[0:4] == u"союз" and \
-                   deps[0:4].deprel == u"союз":
+                   deps[0].deprel[0:4] == u"союз":
                     head = self.word(w.head)
                     if head:
                         hdeps = self.deps(head)
@@ -315,11 +310,268 @@ class MaltConverter(object):
 
         self.__words = words
 
+    person_relative_pr = [
+        u"который",
+        u"которая",
+        u"которое",
+        u"кто",
+    ]
+
+    location_relative_pr = [
+        u"где",
+        u"куда",
+    ]
+
+    time_indicators = [
+        u"год",
+        u"месяц",
+        u"день",
+        u"час",
+        u"минута",
+        u"секунда",
+        u"момент",
+        u"период",
+    ]
+
     def subordinate_relatives(self):
-        pass
+        # Relative clauses
+
+        for w in self.__words:
+
+            head = self.word(w.head)
+            if not head:
+                continue
+            hhead = self.word(head.head)
+
+            if w.cpostag == "pr":
+                if not hhead:
+                    continue
+                if w.lemma in self.person_relative_pr and \
+                   head.cpostag == "vb" and hhead.cpostag == "nn":
+                    if hhead.feats[5] == "y":  # if animate
+                        # 1. Person
+                        self.__extra_preds.append(("person", [
+                            Argument("e"),
+                            Argument.arg_link(hhead.pred.args[1]),
+                        ]))
+                        if w.deprel == u"предик":
+                            head.pred.args[1].link_to(hhead.pred.args[1])
+                        elif w.deprel in [u"1-компл", u"2-комп"]:
+                            # 3. Person
+                            head.pred.args[2].link_to(hhead.pred.args[1])
+                    else:
+                        # 2. not Animate
+                        if head.lemma == u"быть" and \
+                           head.feats[3] == "s":  # looks like passive voice
+                            for d in self.deps(head, filt=["vb"]):
+                                if d.feats[7] == "p":  # yeah, passive voice
+                                    d.pred.args[2].link_to(
+                                        hhead.pred.args[1]
+                                    )
+                        else:
+                            head.pred.args[2].link_to(
+                                hhead.pred.args[1]
+                            )
+
+                # 4. Location
+                elif w.lemma in self.location_relative_pr and \
+                   head.cpostag == "vb" and hhead.cpostag == "nn":
+                    self.__extra_preds.append(("loc", [
+                        Argument("e"),
+                        Argument.arg_link(hhead.pred.args[1]),
+                        Argument.arg_link(head.pred.args[0]),
+                    ]))
+
+                # 5. Reason
+                elif (w.lemma in self.person_relative_pr and
+                     head.deprel == u"обст" and hhead.cpostag == "vb") or \
+                     ((w.lemma == u"почему" or w.lemma == u"зачем") and
+                     w.deprel == u"обст"):
+                    if w.lemma in self.person_relative_pr:
+                        h_verb = hhead
+                    else:
+                        h_verb = head
+                    for d in self.deps(h_verb):
+                        if d.cpostag == "nn" and d.deprel == u"предик":
+                            self.__extra_preds.append(("reason", [
+                                Argument("e"),
+                                Argument.arg_link(d.pred.args[1]),
+                                Argument.arg_link(h_verb.pred.args[0]),
+                            ]))
+                            break
+
+            # 6. Time
+
+            # 6.1 Cases such "день/месяц/.., когда ..."
+            elif w.lemma == u"когда":
+                deps = list(self.deps(w))
+                if len(deps) == 1 and deps[0].cpostag == "vb":
+                    verb = deps[0]
+                    time_pointer = None
+                    if head.cpostag == "pr" and hhead and hhead.cpostag == "nn":
+                        time_pointer = hhead
+                    elif head.cpostag == "nn":
+                        time_pointer = head
+                    if time_pointer and \
+                       time_pointer.lemma in self.time_indicators:
+                        self.__extra_preds.append(("time", [
+                            Argument("e"),
+                            Argument.arg_link(time_pointer.pred.args[1]),
+                            Argument.arg_link(verb.pred.args[0]),
+                            ]))
+                        break
+            # 6.1 Cases such "день/месяц/.., в который ..."
+            elif w.lemma in self.time_indicators and head.cpostag == "vb":
+                time_pointer = w
+                verb = head
+                deps = self.deps(head)
+                clause_detected = False
+                for d in deps:
+                    if d.lemma == u"в" and d.deprel == u"обст":
+                        ddeps = self.deps(d)
+                        for dd in ddeps:
+                            if dd.lemma == u"который":
+                                clause_detected = True
+                if clause_detected:
+                    self.__extra_preds.append(("time", [
+                        Argument("e"),
+                        Argument.arg_link(time_pointer.pred.args[1]),
+                        Argument.arg_link(verb.pred.args[0]),
+                    ]))
+
+            # 7. Manner
+
+            elif w.lemma == u"как" and head.cpostag == "nn":
+                deps = self.deps(w)
+                if len(deps) == 1 and deps[0].cpostag == "vb":
+                    self.__extra_preds.append(("manner", [
+                        Argument("e"),
+                        Argument.arg_link(head.pred.args[1]),
+                        Argument.arg_link(deps[0].pred.args[0]),
+                    ]))
 
     def subordinate_whnominals(self):
-        pass
+
+        for w in self.__words:
+
+            head = self.word(w.head)
+            hhead = None
+            if head:
+                hhead = self.word(head.head)
+            deps = self.deps(w, filt=("vb",))
+
+            # 1. I know that he comes.
+            if w.lemma == u"что" and w.cpostag == "cnj" and \
+               head and head.cpostag == "vb" and \
+               len(deps) == 1 and deps[0].cpostag == "vb" and \
+               deps[0].deprel == u"подч-союзн":
+                head.pred.args[2].link_to(deps[0].pred.args[0])
+
+            # 2. I'm sure (that) he comes.
+            if w.lemma == u"уверенный" and w.cpostag == "adj" and \
+               len(deps) == 1 and deps[0].cpostag == "vb":
+                self.__extra_preds.append(("compl", [
+                    Argument("e"),
+                    Argument.arg_link(w.pred.args[0]),
+                    Argument.arg_link(deps[0].pred.args[0]),
+                ]))
+
+            # 3. I know what you want
+            # if w.lemma == u"что" and w.cpostag == "cnj" and \
+            #    (w.deprel == u"1-компл" or w.deprel == u"1-компл") and \
+            #    head and head.cpostag == "vb" and \
+            #    len(deps) == 1 and deps[0].cpostag == "vb" and\
+            #    deps[0].deprel == u"подч-союзн":
+            #     head.pred.args[2].link_to(deps[0].pred.args[0])
+
+            # 4. I know whom you saw.
+            if (w.form == u"кого" or w.form == u"что") and \
+               w.cpostag == "pr" and head and head.cpostag == "vb" and\
+               hhead and hhead.cpostag == "vb" and \
+               (head.deprel == u"1-компл" or head.deprel == u"2-компл"):
+                new_x = Argument("x")
+                self.__extra_preds.append(("person", [
+                    Argument("e"),
+                    new_x,
+                ]))
+                self.__extra_preds.append(("wh", [
+                    Argument("e"),
+                    Argument.arg_link(new_x),
+                ]))
+                hhead.pred.args[2].link_to(head.pred.args[0])
+                for d in self.deps(head, filt=["pr"]):
+                    if d.deprel == u"предик":
+                        head.pred.args[1].link_to(d.pred.args[1])
+                        head.pred.args[2].link_to(new_x)
+                        break
+
+            # 5. I know where you live.
+            if w.lemma == u"где" and head and hhead and \
+               head.cpostag == "vb" and hhead.cpostag == "vb":
+                for d in self.deps(head, filt=["pr"]):
+                    if d.deprel == u"предик":
+                        new_x = Argument("x")
+                        self.__extra_preds.append(("loc", [
+                            Argument("e"),
+                            new_x,
+                            head.pred.args[0],
+                        ]))
+                        wh_e = Argument("e")
+                        self.__extra_preds.append(("wh", [
+                            wh_e,
+                            Argument.arg_link(new_x),
+                         ]))
+                        hhead.pred.args[2].link_to(wh_e)
+                        head.pred.args[1].link_to(d.pred.args[1])
+                        break
+
+            # 6. I know how you live.
+            # 7. I know when you come.
+            # 8. I know why you go.
+            lemma = w.lemma
+            if (lemma == u"как" or lemma == u"когда" or lemma == u"зачем") \
+               and w.cpostag == "cnj" and head and head.cpostag == "vb" and \
+               len(deps) == 1 and deps[0].cpostag == "vb" and \
+               deps[0].deprel == u"подч-союзн":
+                for d in self.deps(deps[0]):
+                    if d.cpostag == "pr" and d.deprel == u"предик":
+                        new_x = Argument("x")
+                        wh_e = Argument("e")
+                        self.__extra_preds.append(("wh", [
+                            wh_e,
+                            new_x,
+                        ]))
+                        # 6, 7 or 8 depends on conjunction lemma
+                        if w.lemma == u"как":
+                            literal = "manner"
+                        elif w.lemma == u"когда":
+                            literal = "time"
+                        else:
+                            literal = "reason"
+                        self.__extra_preds.append((literal, [
+                            Argument("e"),
+                            Argument.arg_link(new_x),
+                            Argument.arg_link(deps[0].pred.args[0]),
+                        ]))
+                        head.pred.args[2].link_to(wh_e)
+
+            # 8.2 I know why you go.
+            if (w.lemma == u"почему" or w.lemma == u"зачем") and \
+               head and head.cpostag == "vb" and \
+               hhead and hhead.cpostag == "vb":
+                wh_e = Argument("e")
+                new_x = Argument("x")
+                self.__extra_preds.append(("wh", [
+                    wh_e,
+                    new_x,
+                ]))
+                self.__extra_preds.append(("reason", [
+                    Argument("e"),
+                    Argument.arg_link(new_x),
+                    Argument.arg_link(head.pred.args[0]),
+                ]))
+                hhead.pred.args[2].link_to(wh_e)
+
 
     def detect_questions(self):
         pass
@@ -338,6 +590,9 @@ class MaltConverter(object):
                 self.__initial_preds.append(pred)
 
         self.__visible_preds = self.__initial_preds[:]
+
+        self.subordinate_whnominals()
+        self.subordinate_relatives()
 
         for p in self.__initial_preds:
             if p.word.cpostag == "pr":
@@ -367,7 +622,7 @@ class MaltConverter(object):
 
         return u"%s\n%s\n%s\n\n" % (sent_text, id_text, pred_text)
 
-    copula_verbs = set([u"быть", u"являться", u"находиться"])
+    copula_verbs = [u"быть", u"являться", u"находиться"]
 
     def apply_vb_rules(self, word):
 
@@ -396,7 +651,6 @@ class MaltConverter(object):
                 if dep.deprel == u"предик":
                     w_subject = dep.pred.args[1]
                 elif dep.deprel == u"1-компл" or dep.deprel == u"2-компл":
-                    # print dep.lemma, dep.deprel
                     if dep.feats[4] in ["a", "g"]:  # not d_object and
                         d_object = dep.pred.args[1]
                     elif dep.feats[4] == "d":  # not i_object and
@@ -418,7 +672,6 @@ class MaltConverter(object):
         if word.lemma not in self.copula_verbs:
             for dep in self.deps(word, filt=["nn"]):
                 if dep.feats[4] == "i":  # instrumental
-                    # print word.form, dep.form
                     epred = ("instr", [
                             Argument("e"),
                             Argument.arg_link(word.pred.args[0]),
@@ -464,8 +717,6 @@ class MaltConverter(object):
             # number of dependents is equal to one
             # try to find use dependents of the head
             if len(nouns) + len(adjs) + len(preps) == 1:
-                # print "TRUE"
-                # print nouns, adjs, preps
                 for dep in self.deps(head, filt=["nn", "adj", "in"]):
                     # if dep.cpostag not in ["nn", "adj", "in"]:
                     #     new_dep = self.unfold_dep(dep, "adj")
@@ -482,9 +733,6 @@ class MaltConverter(object):
 
                 if len(nouns) + len(adjs) + len(preps) > 1:
                     head_was_used = True
-
-            # print word.form
-            # print nouns, adjs, preps
 
             # a) Nount + Noun
             if len(adjs) == 0 and len(nouns) == 2:
@@ -558,6 +806,8 @@ class MaltConverter(object):
         elif not word.pred.args[3].link:
             word.pred.args[3] = Argument("u")
 
+        # return
+
     numeric_map = {
         u"ноль": 0,
         u"один": 1,
@@ -599,8 +849,6 @@ class MaltConverter(object):
 
         #  Copula. Without a verb.
 
-            # print head.lemma, word.lemma, head.feats[4] == word.feats[4]
-
             if head.feats[4] == word.feats[4] and word.deprel == u"аппоз":
                 epred = ("equal",
                             [Argument("e"),
@@ -640,7 +888,6 @@ class MaltConverter(object):
                             self.__extra_preds.append(epred)
                         except ValueError:
                             num = self.numeric_map.get(dep.form)
-                            epred = None
                             if num is not None:
                                 epred = ("card", [
                                     Argument("e"),
@@ -722,13 +969,25 @@ class MaltConverter(object):
 
         # 1. Handle personal
 
-        if word.lemma not in self.pronouns_map:
+        if word.lemma not in self.pronouns_map and word.cpostag == "pr":
             self.remove_pred(word)
-        else:
+        elif word.cpostag == "pr":
             word.cpostag = "nn"  # handle assumming that it's a noun
             word.pred.prefix = self.pronouns_map[word.lemma]
             word.pred.show_index = False
             word.pred.show_postag = False
+
+            # Update FEATS according to NN specification
+            word.feats = "".join([
+                word.feats[0],  # 0 Noun
+                word.feats[1],  # 1 Type
+                word.feats[3],  # 2 Gender
+                word.feats[4],  # 3 Number
+                word.feats[5],  # 4 Case
+                "?",            # 5 Animate
+                "?",            # 6 Case2
+            ])
+
             self.apply_nn_rules(word)
 
             global NN_NUMBER

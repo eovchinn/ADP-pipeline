@@ -63,3 +63,16 @@ Use `run_test.sh` wich will read input from `test_data/input.txt` and store resu
 2. **Implemented**
 3. Not implemented
 4. **Implemented**
+
+* ***NEGATION***
+
+1. **Implemented**
+
+* ***SUBORDINATE CLAUSES***
+
+1. **Implemented**
+2. Not implemented
+
+* *** QUESTIONS ***
+
+1. Not implemented
