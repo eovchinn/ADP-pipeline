@@ -522,6 +522,7 @@ def createNewPropsForPronouns(props,rels):
 def createNewPropsForConditionals(props,rels):
     global eventualityArgCounter
     newProps=[]
+    relsToRemove=[]
     for rel in rels:
         (relName,dependentId,headId)=rel
         if relName in ["AJUCL"]:
@@ -535,12 +536,18 @@ def createNewPropsForConditionals(props,rels):
             if ifLemma not in conditionalList:continue
             ifVerbId=getDependentId(rels,ifPropId,"PRD")
             (ifVerbId,ifVerbWord,ifVerbLemma,ifVerbPOS,ifVerbArgs)=findProp(props,ifVerbId)
-            
+            if len(ifVerbArgs)<4:
+                relsToRemove+=[rel]
+                continue
             newProp=(-1,"","imp","",["e%s"%eventualityArgCounter,headArgs[0],ifVerbArgs[0]])
             
             newProps+=[newProp]
+    newRels=[]
+    for rel in rels:
+        if rel not in relsToRemove:
+            newRels+=[rel]
             
-    return props+newProps
+    return (newRels,props+newProps)
  
 def handleVConj(props,rels):
     #if one of the verbs has no subject, make their subject the same.
@@ -569,12 +576,16 @@ def handleVCL(props,rels):
     global eventualityArgCounter
     equalArgSets=[]
 #    newProp=None
+    relsToRemove=[]
     for rel in rels:
         (relName,dependentId,headId)=rel
         if relName !="VCL":continue
             
         verb1Prop=findProp(props,headId)
         (verb1Id,verb1Word,verb1Lemma,verb1POS,verb1Args)=verb1Prop
+        if len(verb1Args)<4:
+            relsToRemove+=[rel]
+            continue
         (dependentId,dependentWord,dependentLemma,dependentPOS,dependentArgs)=findProp(props,dependentId) #keh
         verb2Id=getDependentId(rels,dependentId,"PRD")
         if verb2Id==None:
@@ -588,26 +599,44 @@ def handleVCL(props,rels):
             equalArgSets+=[set([dependentArgs[1],verb1Args[0]])]
         
         (verb2Id,verb2Word,verb2Lemma,verb2POS,verb2Args)=findProp(props,verb2Id)
+        if len(verb2Args)<4:
+            relsToRemove+=[rel]
+            continue
         equalArgSets+=[set([verb1Args[2],verb2Args[0]])]
     
-    return equalArgSets
+    newRels=[]
+    for rel in rels:
+        if rel not in relsToRemove:
+            newRels+=[rel]
+    return (newRels,equalArgSets)
 
 def handleAJUCL(props,rels): # although because words and conditional words are also identified with AJUCL, they are handled separately. This is for the cases like: in kaar ra bekonid <ta> rastegaar shavid. And we want to plug in the right arguments for <ta>
     equalArgSets=[]
 #    newProp=None
+    relsToRemove=[]
     for rel in rels:
         (relName,dependentId,headId)=rel
         if relName !="AJUCL":continue
             
         verb1Prop=findProp(props,headId)
         (verb1Id,verb1Word,verb1Lemma,verb1POS,verb1Args)=verb1Prop
+        if len(verb1Args)<4:
+            relsToRemove+=[rel]
+            continue
         (dependentId,dependentWord,dependentLemma,dependentPOS,dependentArgs)=findProp(props,dependentId) #keh, ta
         verb2Id=getDependentId(rels,dependentId,"PRD")
         if verb2Id!=None:
             (verb2Id,verb2Word,verb2Lemma,verb2POS,verb2Args)=findProp(props,verb2Id)
+            if len(verb2Args)<4:
+                relsToRemove+=[rel]
+                continue
             equalArgSets+=[set([dependentArgs[1],verb1Args[0]])]
             equalArgSets+=[set([dependentArgs[2],verb2Args[0]])]
-    return equalArgSets
+    newRels=[]
+    for rel in rels:
+        if rel not in relsToRemove:
+            newRels+=[rel]
+    return (newRels,equalArgSets)
         
         
     
@@ -684,14 +713,19 @@ def resolveArgs(LF):
     props=createNewPropsForNounsAndPossesives(props,rels)
     props=createNewPropsForPlural(props,rels)
     props=createNewPropsForPronouns(props,rels)
-    props=createNewPropsForConditionals(props,rels)
+    (newRels,props)=createNewPropsForConditionals(props,rels)
+    rels=newRels
     props=createNewPropsForNegation(props,rels)
     
     propDict=createPropDict(props)
     equalArgSets=getEqualArgSets(propDict,rels)  
     addToEqualArgSet(equalArgSets,handleBecauseWords(props,rels))
-    addToEqualArgSet(equalArgSets,handleVCL(props,rels))
-    addToEqualArgSet(equalArgSets,handleAJUCL(props,rels))
+    (newRels,additionalEqualArgSets)=handleVCL(props,rels)
+    addToEqualArgSet(equalArgSets,additionalEqualArgSets)
+    rels=newRels
+    (newRels,additionalEqualArgSets)=handleAJUCL(props,rels)
+    addToEqualArgSet(equalArgSets,additionalEqualArgSets)
+    rels=newRels
     
     
     #addToEqualArgSet(equalArgSets,handleWhileWords(props,rels))  because words are nouns and are adverbs in farsi.
