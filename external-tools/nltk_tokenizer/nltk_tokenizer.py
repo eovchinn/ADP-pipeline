@@ -26,6 +26,15 @@ if __name__ == "__main__":
     wtt = WordPunctTokenizer()
 
     for line in sys.stdin:
+        
+        if line[0:7] == "TEXTID(":
+            sys.stdout.write(line)
+            continue
+        
+        if line == "\n":
+            sys.stdout.write(line)
+            continue
+        
         if treebank == 0:
             line = line.replace("«", " ' ")
             line = line.replace("»", " ' ")
