@@ -352,6 +352,8 @@ class MaltConverter(object):
                             hhead = head.head
                             head.head = w.id
                             w.head = hhead
+            elif w.lemma == u"нет" or w.lemma == u"не":
+                w.cpostag = "par"
 
         self.__words = words
 
@@ -1126,6 +1128,20 @@ class MaltConverter(object):
                 self.__extra_preds.append(("not", [
                     Argument("e"),
                     Argument.arg_link(head.pred.args[1]),
+                ]))
+
+        if word.lemma == u"нет":
+            deps = self.deps(word, filt=["nn", "pr"])
+            for d in deps:
+                new_e = Argument("e")
+                self.__extra_preds.append(("be", [
+                    new_e,
+                    Argument.arg_link(d.pred.args[1]),
+                    Argument("u")
+                ]))
+                self.__extra_preds.append(("not", [
+                    Argument("e"),
+                    new_e,
                 ]))
 
     def init_predicate(self, word):
