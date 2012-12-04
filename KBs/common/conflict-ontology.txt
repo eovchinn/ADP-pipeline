@@ -23,7 +23,7 @@
 
 ; Conflict has two adversaries
 
-(B (name conflict0) (=> (conflict c x y g y :0.3) (adversary e x y c)))
+(B (name conflict0) (=> (conflict c x y g h :0.3) (adversary e x y c)))
 
 ;In conflict, adversaries attack each other.
 
