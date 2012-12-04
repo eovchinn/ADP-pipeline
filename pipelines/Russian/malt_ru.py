@@ -508,15 +508,19 @@ class MaltConverter(object):
             deps = self.deps(w, filt=("vb",))
 
             # 1. I know that he comes.
+            deps2 = self.deps(w)
             if w.lemma == u"что" and w.cpostag == "cnj" and \
                head and head.cpostag == "vb" and \
-               len(deps) == 1 and deps[0].cpostag == "vb" and \
-               deps[0].deprel == u"подч-союзн":
+               len(deps2) == 1 and \
+               deps2[0].deprel == u"подч-союзн":
                 # print deps[0].lemma
-                head.pred.args[2].link_to(deps[0].pred.args[0])
+                if deps2[0].cpostag == "nn":
+                    head.pred.args[2].link_to(deps2[0].pred.args[1])
+                else:
+                    head.pred.args[2].link_to(deps2[0].pred.args[0])
 
             # 2. I'm sure (that) he comes.
-            if w.lemma == u"уверенный" and w.cpostag == "adj" and \
+            if w.cpostag == "adj" and \
                len(deps) == 1 and deps[0].cpostag == "vb":
                 self.__extra_preds.append(("compl", [
                     Argument("e"),
@@ -844,7 +848,7 @@ class MaltConverter(object):
             for dep in self.deps(head, filt=["nn"]):
                 if dep.deprel == u"предик":
                     word.pred.args[2].link_to(dep.pred.args[1])
-                    if w_subject.resolve_link() == \
+                    if w_subject and w_subject.resolve_link() == \
                        dep.pred.args[1].resolve_link():
                         w_subject = None
 
@@ -991,15 +995,15 @@ class MaltConverter(object):
         head = self.word(word.head)
 
         # 1. Verb + noun.
-        if head.cpostag == "vb":
+        if head and head.cpostag == "vb":
             word.pred.args[1].link_to(head.pred.args[0])
 
         # 2. Noun + noun.
-        elif head.cpostag == "nn":
+        elif head and head.cpostag == "nn":
             word.pred.args[1].link_to(head.pred.args[1])
 
         # 5. Adj + noun
-        elif head.cpostag == "adj":
+        elif head and head.cpostag == "adj":
             word.pred.args[1].link_to(head.pred.args[0])
 
         for dep in self.deps(word, filt=["nn"]):
