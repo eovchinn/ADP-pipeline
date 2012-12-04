@@ -167,9 +167,6 @@
 ; x is a competitor
 (B (name competitor-nn1) (=> (conflict e1 x y g h :0.9)(competitor-nn e x)))
 
-; y is a competitor
-(B (name competitor-nn2) (=> (conflict e1 x y g h :0.9)(competitor-nn e y)))
-
 ; competition
 (B (name competition-nn3) (=> (conflict w x y g h :0.9)(competition-nn e w)))
 
@@ -181,11 +178,9 @@
 
 ; an adversary has a uniform
 (B (name uniform-nn1) (=> (^ (conflict e1 x y g h :0.3)(adversary e2 x y e1 :0.3)(part w x :0.3))(uniform-nn e2 w)))
-(B (name uniform-nn1) (=> (^ (conflict e1 x y g h :0.3)(adversary e2 x y e1 :0.3)(part w y :0.3))(uniform-nn e2 w)))
 
 ; an adversary has a strategy
 (B (name plan-nn1) (=> (^ (conflict e1 x y g h)(adversary e x y c :0.9)(part p x))(plan-nn w p)))
-(B (name plan-nn1) (=> (^ (conflict e1 x y g h)(adversary e x y c :0.9)(part p y))(plan-nn w p)))
 
 ;;;; OTHER ENGLISH LEXICAL AXIOMS
 
