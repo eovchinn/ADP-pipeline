@@ -175,6 +175,7 @@ class MaltConverter(object):
         self.__initial_preds = []
         self.__extra_preds = []
         self.__visible_preds = []
+        self.__removed_preds = []
 
     def assign_indexes(self):
 
@@ -189,22 +190,25 @@ class MaltConverter(object):
             a = pred.args[0].resolve_link()
             if a not in arg_set:
                 arg_set.add(a.resolve_link())
-                arg_list.append(a.resolve_link())
+                arg_list.append((pred, a.resolve_link()))
 
         for pred in self.__visible_preds:
             for a in pred.args:
                 if a.resolve_link() not in arg_set:
                     arg_set.add(a.resolve_link())
-                    arg_list.append(a.resolve_link())
+                    arg_list.append((pred, a.resolve_link()))
 
         for ep, ep_args in self.__extra_preds:
             for a in ep_args:
                 if a.resolve_link() not in arg_set:
                     arg_set.add(a.resolve_link())
-                    arg_list.append(a.resolve_link())
-
-        for a in arg_list:
+                    arg_list.append((ep, a.resolve_link()))
+        
+        for pred, a in arg_list:
             if a.type == "e":
+                # try:
+                #     print ("e%d" % e_count), pred.word.lemma
+                # except Exception: pass
                 a.index = e_count
                 e_count += 1
             elif a.type == "x":
@@ -239,9 +243,49 @@ class MaltConverter(object):
     def remove_pred(self, word):
         for p in self.__visible_preds:
             if p.word.id == word.id:
-                self.__visible_preds.remove(p)
+                if p.word.cpostag in ["vb", "adj", "nn", "rb", "in"]:
+                    self.__removed_preds.append(p)
+                    # print "REMOVED: %s" % p.word.lemma
+                else:
+                    self.__visible_preds.remove(p)
                 break
-
+                
+    def __remove_preds(self):
+        
+        
+        # pp = [p.word.id for p in self.__removed_preds]
+        # print pp
+        
+        confirnmed = []
+        for p in self.__removed_preds:            
+            
+            confirm_remove = True
+            pw = p.word
+            
+            for w in self.__words:
+                if w.id != pw.id and w.pred:
+                    w_args = [a.resolve_link() for a in w.pred.args]
+                    for a in p.args:
+                        if a in w_args:
+                            confirm_remove = False
+            
+            if confirm_remove:
+                confirnmed.append(p.word.id)
+            
+        # self.__visible_preds.remove(p)
+        
+        # print confirnmed
+        preds = self.__visible_preds[:]
+        
+        for wid in confirnmed:
+            for p in self.__visible_preds:
+                if p.word.id == wid:
+                    preds.remove(p)
+                    # print "REMOVED: %s" % p.word.lemma
+        self.__visible_preds = preds
+        self.__removed_preds = []
+        # print confirnmed
+                
     def unfold_dep(self, word, until_tag="nn"):
         deps = list(self.deps(word))
         if len(deps) != 1:
@@ -293,6 +337,7 @@ class MaltConverter(object):
                 w1.lemma = u"и"
                 w1.form = u"и"
                 words.remove(w2)
+                # print "REMOVED: %d" % w2.lemma
 
         for w in words:
             if w.lemma == u"и":
@@ -465,6 +510,7 @@ class MaltConverter(object):
                head and head.cpostag == "vb" and \
                len(deps) == 1 and deps[0].cpostag == "vb" and \
                deps[0].deprel == u"подч-союзн":
+                # print deps[0].lemma
                 head.pred.args[2].link_to(deps[0].pred.args[0])
 
             # 2. I'm sure (that) he comes.
@@ -612,6 +658,13 @@ class MaltConverter(object):
             elif p.word.cpostag == "par":
                 self.apply_par_rules(p.word)
 
+        
+        # print "\n\n\n"
+        # for p in self.__visible:
+        #     print p.word.lemma
+        # print "\n\n\n"
+        
+        self.__remove_preds()
         self.assign_indexes()
 
         predf = [self.format_pred(p, sent_count) for p in self.__visible_preds]
@@ -694,7 +747,9 @@ class MaltConverter(object):
         # 5. Copula expressed with a verb
 
         if word.lemma in self.copula_verbs:
-            self.__visible_preds.remove(word.pred)
+            # TODO(vladimir@zvm.me): fix this
+            self.remove_pred(word)
+            # self.__visible_preds.remove(word.pred)
             nouns = []
             adjs = []
             preps = []
@@ -1084,9 +1139,10 @@ class MaltConverter(object):
         output = self.format_output(sent_count)
         ofile.write(output.encode("utf-8"))
         self.__words = []
-        self.__initial_preds = []
         self.__extra_preds = []
+        self.__initial_preds = []
         self.__visible_preds = []
+        self.__removed_preds = []
 
 
 def main():
