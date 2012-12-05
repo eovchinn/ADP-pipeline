@@ -175,6 +175,7 @@ class MaltConverter(object):
         self.__initial_preds = []
         self.__extra_preds = []
         self.__visible_preds = []
+        self.__removed_preds = []
 
     def assign_indexes(self):
 
@@ -189,22 +190,25 @@ class MaltConverter(object):
             a = pred.args[0].resolve_link()
             if a not in arg_set:
                 arg_set.add(a.resolve_link())
-                arg_list.append(a.resolve_link())
+                arg_list.append((pred, a.resolve_link()))
 
         for pred in self.__visible_preds:
             for a in pred.args:
                 if a.resolve_link() not in arg_set:
                     arg_set.add(a.resolve_link())
-                    arg_list.append(a.resolve_link())
+                    arg_list.append((pred, a.resolve_link()))
 
         for ep, ep_args in self.__extra_preds:
             for a in ep_args:
                 if a.resolve_link() not in arg_set:
                     arg_set.add(a.resolve_link())
-                    arg_list.append(a.resolve_link())
-
-        for a in arg_list:
+                    arg_list.append((ep, a.resolve_link()))
+        
+        for pred, a in arg_list:
             if a.type == "e":
+                # try:
+                #     print ("e%d" % e_count), pred.word.lemma
+                # except Exception: pass
                 a.index = e_count
                 e_count += 1
             elif a.type == "x":
@@ -217,13 +221,6 @@ class MaltConverter(object):
                 a.index = s_count
                 s_count += 1
 
-    def add_line(self, line):
-        line = self.line_splitter.split(line.decode("utf-8"))
-        if len(line) > 2:
-            self.__words.append(WordToken(line))
-            return True
-        else:
-            return
 
     def word(self, word_id):
         return self.__words[word_id - 1]
@@ -239,9 +236,49 @@ class MaltConverter(object):
     def remove_pred(self, word):
         for p in self.__visible_preds:
             if p.word.id == word.id:
-                self.__visible_preds.remove(p)
+                if p.word.cpostag in ["vb", "adj", "nn", "rb", "in"]:
+                    self.__removed_preds.append(p)
+                    # print "REMOVED: %s" % p.word.lemma
+                else:
+                    self.__visible_preds.remove(p)
                 break
-
+                
+    def __remove_preds(self):
+        
+        
+        # pp = [p.word.id for p in self.__removed_preds]
+        # print pp
+        
+        confirnmed = []
+        for p in self.__removed_preds:            
+            
+            confirm_remove = True
+            pw = p.word
+            
+            for w in self.__words:
+                if w.id != pw.id and w.pred:
+                    w_args = [a.resolve_link() for a in w.pred.args]
+                    for a in p.args:
+                        if a in w_args:
+                            confirm_remove = False
+            
+            if confirm_remove:
+                confirnmed.append(p.word.id)
+            
+        # self.__visible_preds.remove(p)
+        
+        # print confirnmed
+        preds = self.__visible_preds[:]
+        
+        for wid in confirnmed:
+            for p in self.__visible_preds:
+                if p.word.id == wid:
+                    preds.remove(p)
+                    # print "REMOVED: %s" % p.word.lemma
+        self.__visible_preds = preds
+        self.__removed_preds = []
+        # print confirnmed
+                
     def unfold_dep(self, word, until_tag="nn"):
         deps = list(self.deps(word))
         if len(deps) != 1:
@@ -293,6 +330,7 @@ class MaltConverter(object):
                 w1.lemma = u"и"
                 w1.form = u"и"
                 words.remove(w2)
+                # print "REMOVED: %d" % w2.lemma
 
         for w in words:
             if w.lemma == u"и":
@@ -307,6 +345,8 @@ class MaltConverter(object):
                             hhead = head.head
                             head.head = w.id
                             w.head = hhead
+            elif w.lemma == u"нет" or w.lemma == u"не":
+                w.cpostag = "par"
 
         self.__words = words
 
@@ -383,14 +423,16 @@ class MaltConverter(object):
                     ]))
 
                 # 5. Reason
-                elif (w.lemma in self.person_relative_pr and
-                     head.deprel == u"обст" and hhead.cpostag == "vb") or \
-                     ((w.lemma == u"почему" or w.lemma == u"зачем") and
-                     w.deprel == u"обст"):
-                    if w.lemma in self.person_relative_pr:
-                        h_verb = hhead
-                    else:
-                        h_verb = head
+#                elif (w.lemma in self.person_relative_pr and
+#                      head.deprel == u"обст" and hhead.cpostag == "vb") or\
+#                     ((w.lemma == u"почему" or w.lemma == u"зачем") and
+#                      w.deprel == u"обст"):
+                elif (w.lemma == u"почему" or w.lemma == u"зачем") and \
+                      w.deprel == u"обст" and head.cpostag == "vb":
+#                    if w.lemma in self.person_relative_pr:
+#                        h_verb = hhead
+#                    else:
+                    h_verb = head
                     for d in self.deps(h_verb):
                         if d.cpostag == "nn" and d.deprel == u"предик":
                             self.__extra_preds.append(("reason", [
@@ -461,14 +503,19 @@ class MaltConverter(object):
             deps = self.deps(w, filt=("vb",))
 
             # 1. I know that he comes.
+            deps2 = self.deps(w)
             if w.lemma == u"что" and w.cpostag == "cnj" and \
                head and head.cpostag == "vb" and \
-               len(deps) == 1 and deps[0].cpostag == "vb" and \
-               deps[0].deprel == u"подч-союзн":
-                head.pred.args[2].link_to(deps[0].pred.args[0])
+               len(deps2) == 1 and \
+               deps2[0].deprel == u"подч-союзн":
+                # print deps[0].lemma
+                if deps2[0].cpostag == "nn":
+                    head.pred.args[2].link_to(deps2[0].pred.args[1])
+                elif deps2[0].cpostag in ["vb", "pr", "adj"]:
+                    head.pred.args[2].link_to(deps2[0].pred.args[0])
 
             # 2. I'm sure (that) he comes.
-            if w.lemma == u"уверенный" and w.cpostag == "adj" and \
+            if w.cpostag == "adj" and \
                len(deps) == 1 and deps[0].cpostag == "vb":
                 self.__extra_preds.append(("compl", [
                     Argument("e"),
@@ -556,71 +603,25 @@ class MaltConverter(object):
                         head.pred.args[2].link_to(wh_e)
 
             # 8.2 I know why you go.
-            if (w.lemma == u"почему" or w.lemma == u"зачем") and \
-               head and head.cpostag == "vb" and \
-               hhead and hhead.cpostag == "vb":
-                wh_e = Argument("e")
-                new_x = Argument("x")
-                self.__extra_preds.append(("wh", [
-                    wh_e,
-                    new_x,
-                ]))
-                self.__extra_preds.append(("reason", [
-                    Argument("e"),
-                    Argument.arg_link(new_x),
-                    Argument.arg_link(head.pred.args[0]),
-                ]))
-                hhead.pred.args[2].link_to(wh_e)
+#            if (w.lemma == u"почему" or w.lemma == u"зачем") and \
+#               head and head.cpostag == "vb" and \
+#               hhead and hhead.cpostag == "vb":
+#                wh_e = Argument("e")
+#                new_x = Argument("x")
+#                self.__extra_preds.append(("wh", [
+#                    wh_e,
+#                    new_x,
+#                ]))
+#                self.__extra_preds.append(("reason", [
+#                    Argument("e"),
+#                    Argument.arg_link(new_x),
+#                    Argument.arg_link(head.pred.args[0]),
+#                ]))
+#                hhead.pred.args[2].link_to(wh_e)
 
 
     def detect_questions(self):
         pass
-
-    def format_output(self, sent_count):
-
-        self.preprocess()
-
-        for w in self.__words:
-
-            if not w.cpostag or self.punct.match(w.lemma):
-                continue
-
-            if w.args != -1:
-                pred = self.init_predicate(w)
-                self.__initial_preds.append(pred)
-
-        self.__visible_preds = self.__initial_preds[:]
-
-        self.subordinate_whnominals()
-        self.subordinate_relatives()
-
-        for p in self.__initial_preds:
-            if p.word.cpostag == "pr":
-                self.apply_pr_rules(p.word)
-            elif p.word.cpostag == "vb":
-                self.apply_vb_rules(p.word)
-            elif p.word.cpostag == "nn":
-                self.apply_nn_rules(p.word)
-            elif p.word.cpostag == "adj":
-                self.apply_adj_rules(p.word)
-            elif p.word.cpostag == "rb":
-                self.apply_rb_rules(p.word)
-            elif p.word.cpostag == "in":
-                self.apply_in_rules(p.word)
-            elif p.word.cpostag == "cnj":
-                self.apply_cnj_rules(p.word)
-            elif p.word.cpostag == "par":
-                self.apply_par_rules(p.word)
-
-        self.assign_indexes()
-
-        predf = [self.format_pred(p, sent_count) for p in self.__visible_preds]
-        epredf = [self.format_epred(ep) for ep in self.__extra_preds]
-        sent_text = u"% " + u" ".join([w.form for w in self.__words])
-        id_text = u"id(%d)." % sent_count
-        pred_text = " & ".join(predf + epredf)
-
-        return u"%s\n%s\n%s\n\n" % (sent_text, id_text, pred_text)
 
     copula_verbs = [u"быть", u"являться", u"находиться"]
 
@@ -694,7 +695,9 @@ class MaltConverter(object):
         # 5. Copula expressed with a verb
 
         if word.lemma in self.copula_verbs:
-            self.__visible_preds.remove(word.pred)
+            # TODO(vladimir@zvm.me): fix this
+            self.remove_pred(word)
+            # self.__visible_preds.remove(word.pred)
             nouns = []
             adjs = []
             preps = []
@@ -787,7 +790,7 @@ class MaltConverter(object):
             for dep in self.deps(head, filt=["nn"]):
                 if dep.deprel == u"предик":
                     word.pred.args[2].link_to(dep.pred.args[1])
-                    if w_subject.resolve_link() == \
+                    if w_subject and w_subject.resolve_link() == \
                        dep.pred.args[1].resolve_link():
                         w_subject = None
 
@@ -918,7 +921,7 @@ class MaltConverter(object):
         #    modifying
 
         head = self.word(word.head)
-        if head and head.cpostag == "nn":
+        if head and head.cpostag == "nn" and word.pred and head.pred:
             word.pred.args[1].link_to(head.pred.args[1])
 
     def apply_rb_rules(self, word):
@@ -934,20 +937,21 @@ class MaltConverter(object):
         head = self.word(word.head)
 
         # 1. Verb + noun.
-        if head.cpostag == "vb":
+        if head and head.cpostag == "vb":
             word.pred.args[1].link_to(head.pred.args[0])
 
         # 2. Noun + noun.
-        elif head.cpostag == "nn":
+        elif head and head.cpostag == "nn":
             word.pred.args[1].link_to(head.pred.args[1])
 
         # 5. Adj + noun
-        elif head.cpostag == "adj":
+        elif head and head.cpostag == "adj":
             word.pred.args[1].link_to(head.pred.args[0])
 
         for dep in self.deps(word, filt=["nn"]):
-            word.pred.args[2].link_to(dep.pred.args[1])
-            break
+            if word.pred and dep.pred:
+                word.pred.args[2].link_to(dep.pred.args[1])
+                break
 
         # 3. Second arg is a prep
         # 4. Verb+verb
@@ -1073,6 +1077,20 @@ class MaltConverter(object):
                     Argument.arg_link(head.pred.args[1]),
                 ]))
 
+        if word.lemma == u"нет":
+            deps = self.deps(word, filt=["nn", "pr"])
+            for d in deps:
+                new_e = Argument("e")
+                self.__extra_preds.append(("be", [
+                    new_e,
+                    Argument.arg_link(d.pred.args[1]),
+                    Argument("u")
+                ]))
+                self.__extra_preds.append(("not", [
+                    Argument("e"),
+                    new_e,
+                ]))
+
     def init_predicate(self, word):
         args = [Argument("e")]\
              + [Argument("x") for _ in xrange(1, word.args)]
@@ -1080,14 +1098,104 @@ class MaltConverter(object):
         word.pred = pred
         return pred
 
-    def flush(self, sent_count, ofile):
-        output = self.format_output(sent_count)
-        ofile.write(output.encode("utf-8"))
+    def flush(self):
         self.__words = []
         self.__initial_preds = []
         self.__extra_preds = []
         self.__visible_preds = []
 
+    def format_output(self, sent_count):
+
+        # if self.wordid
+
+        self.preprocess()
+
+        for w in self.__words:
+
+            if not w.cpostag or self.punct.match(w.lemma):
+                continue
+
+            if w.args != -1:
+                pred = self.init_predicate(w)
+                self.__initial_preds.append(pred)
+
+        self.__visible_preds = self.__initial_preds[:]
+
+        self.subordinate_whnominals()
+        self.subordinate_relatives()
+
+        for p in self.__initial_preds:
+            if p.word.cpostag == "pr":
+                self.apply_pr_rules(p.word)
+            elif p.word.cpostag == "vb":
+                self.apply_vb_rules(p.word)
+            elif p.word.cpostag == "nn":
+                self.apply_nn_rules(p.word)
+            elif p.word.cpostag == "adj":
+                self.apply_adj_rules(p.word)
+            elif p.word.cpostag == "rb":
+                self.apply_rb_rules(p.word)
+            elif p.word.cpostag == "in":
+                self.apply_in_rules(p.word)
+            elif p.word.cpostag == "cnj":
+                self.apply_cnj_rules(p.word)
+            elif p.word.cpostag == "par":
+                self.apply_par_rules(p.word)
+
+        self.assign_indexes()
+
+        predf = [self.format_pred(p, sent_count) for p in self.__visible_preds]
+        epredf = [self.format_epred(ep) for ep in self.__extra_preds]
+        sent_text = u" ".join([w.form for w in self.__words])
+        id_text = u"id(%d)." % sent_count
+        pred_text = " & ".join(predf + epredf)
+
+        return sent_text, id_text, pred_text
+
+    def sentid(self, wt):
+        if wt.form[0:3] == "{{{" and\
+           wt.form[len(wt.form) - 6:6] == "}}}!!!":
+            return True, wt.form[3:len(wt.form) - 9]
+        else:
+            return False, None
+
+    def add_line(self, malt_row):
+        wt = WordToken(malt_row)
+        self.__words.append(wt)
+
+
+def text_id(malt_row):
+    wt = WordToken(malt_row)
+    if wt.form[0:3] == "{{{" and\
+       wt.form[len(wt.form) - 6:len(wt.form)] == "}}}!!!":
+        return True, wt.form[3:len(wt.form) - 6]
+    else:
+        return False, None
+
+
+def process_sentences(sentences, mc):
+    processed = []
+    for sid, sent in sentences:
+        for row in sent:
+            mc.add_line(row)
+        sent_text, id_text, pred_text = mc.format_output(sid)
+        processed.append((sent_text, id_text, pred_text))
+        mc.flush()
+    return processed
+
+
+def write_sentences(textid, processed_sentences, ofile):
+    if not textid:
+        for psent in processed_sentences:
+            if psent[2]:
+                ofile.write(("% " + ("%s\n%s\n%s\n\n" % psent)).encode("utf-8"))
+    else:
+        text = " ".join(map(lambda s: s[0], processed_sentences))
+        preds = " & ".join(map(lambda s: s[2], processed_sentences))
+        ofile.write(("% " + text + "\n").encode("utf-8"))
+        ofile.write("id(%s).\n" % textid)
+        ofile.write((preds + "\n").encode("utf-8"))
+        ofile.write("\n")
 
 def main():
 
@@ -1117,15 +1225,50 @@ def main():
     ifile = open(pa.input, "r") if pa.input else sys.stdin
     ofile = open(pa.output, "w") if pa.output else sys.stdout
 
-    sent_count = 1
     mc = MaltConverter()
+    line_splitter = re.compile("\s+")
+    process_texts = False
+    sentence = []
+    sentences = []
+    sentences_count = 1
+    prev_textid = None
+
 
     for line in ifile:
-        if mc.add_line(line):
-            continue
+        malt_row = line_splitter.split(line.decode("utf-8"))
+        if len(malt_row) > 2:
+            detected, textid = text_id(malt_row)
+            if detected:
+                if process_texts:
+                    processed = process_sentences(sentences, mc)
+                    write_sentences(prev_textid, processed, ofile)
+                    sentences = []
+                else:
+                    processed = \
+                        process_sentences([(sentences_count, sentence)], mc)
+                    write_sentences(None, processed, ofile)
+                    sentences = []
+                process_texts = True
+                prev_textid = textid
+            else:
+                sentence.append(malt_row)
         else:
-            mc.flush(sent_count, ofile)
-            sent_count += 1
+            if sentence:
+                if process_texts:
+                    sentences.append((sentences_count, sentence))
+                else:
+                    processed = process_sentences([(sentences_count, sentence)], mc)
+                    write_sentences(None, processed, ofile)
+            sentence = []
+            sentences_count += 1
+
+    if sentences or sentence:
+        if process_texts:
+            processed = process_sentences(sentences, mc)
+            write_sentences(prev_textid, processed, ofile)
+        else:
+            processed = process_sentences([(sentences_count, sentence)], mc)
+            write_sentences(None, processed, ofile)
 
 
 if __name__ == "__main__":
