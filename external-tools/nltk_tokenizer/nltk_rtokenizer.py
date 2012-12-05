@@ -1,0 +1,70 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Contributors:
+#   * Vladimir Zaytsev <vzaytsev@isi.edu> (2012)
+#
+# python nltk_rtokenizer.py --sentid 1 --normquotes 1 --wptokenizer 0 < test
+
+import sys
+import argparse
+
+from nltk.tokenize import PunktSentenceTokenizer
+from nltk.tokenize import WordPunctTokenizer
+from nltk.tokenize import TreebankWordTokenizer
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("--sentid",
+    help="Hanle specific sentence IDs.",
+    default=0)
+parser.add_argument("--normquotes",
+    help="Normalize any quotes to quote single type.",
+    default=1)
+parser.add_argument("--wptokenizer",
+    help="Additionally apply treebank tokenizer.",
+    default=1)
+
+pa = parser.parse_args()
+sentid = int(pa.sentid)
+normquotes = int(pa.normquotes)
+wptokenizer = int(pa.wptokenizer)
+
+if __name__ == "__main__":
+    
+    st = PunktSentenceTokenizer()
+    wtw = WordPunctTokenizer() if wptokenizer == 1 else None
+    wtt = TreebankWordTokenizer()
+    
+    for line in sys.stdin:
+        
+        if sentid == 1:        
+            if line[0:7] == "TEXTID(" and line[-2] == ")":
+                sys.stdout.write(u"{{{%s}}}!!!\n" % line[7:(len(line) - 2)])
+                continue
+                
+            if line == "\n":
+                continue
+    
+        if normquotes == 1:
+            line = line.replace("«", " ' ")
+            line = line.replace("»", " ' ")
+            line = line.replace("“", " ' ")
+            line = line.replace("”", " ' ")
+            line = line.replace("\"", " ' ")
+
+
+        sentences = st.tokenize(line.decode("utf-8"))
+
+        for s in sentences:
+            if wptokenizer == 1:
+                for w1 in wtt.tokenize(s):
+                    for w in wtw.tokenize(w1):
+                        sys.stdout.write(w.encode("utf-8"))
+                        sys.stdout.write("\n")
+            else:
+                for w in wtt.tokenize(s):
+                    sys.stdout.write(w.encode("utf-8"))
+                    sys.stdout.write("\n")
+
+    sys.stdout.write("\n")

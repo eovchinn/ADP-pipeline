@@ -9,6 +9,7 @@
 ;
 ; 11/29/2012 aks - corrected typos in attack-nn2, fight-vb2, competition-nn3, members-nn
 ;
+; 12/3/2012 aks - corrected combat-nn1, fight-nn1, conflict-nn, combat-vb1, fight-vb2, enemy-nn1, attack-nn2, shoot-vb2
 ;
 ; QUESTIONS
 ; 10/31/2012 aks
@@ -43,180 +44,158 @@
 
 ;;; CONFLICT
 
-(B (name conflict-nn) (=> (conflict e x y g h :0.9)(conflict-nn e w)))
+(B (name conflict-nn) (=> (conflict e x y g h :0.9)(conflict-nn e1 e)))
 
 ; Combat is conflict.
-
-(B (name combat-nn1) (=> (conflict e x y g h :0.9) (combat-nn e x)))
+(B (name combat-nn1) (=> (conflict e x y g h :0.9) (combat-nn e1 e)))
 
 (B (name combat-vb1) (=> (^ (conflict e x y g h :0.3) (adversary e1 y x e :0.6)) (combat-vb e x y u)))
 
+; TODO: duplicate these rules for reordered args (e.g. x y -> y x)
+
 ; A fight is a conflict.
+(B (name fight-nn1) (=> (conflict e x y g h :0.9) (fight-nn e1 e)))
 
-(B (name fight-nn1) (=> (conflict e x y g h :0.9) (fight-nn e x)))
-
+; x fights y
 (B (name fight-vb1) (=> (^ (conflict e x y g h :0.3) (adversary e1 y x e :0.6)) (fight-vb e x y u)))
 
+; x fights y for g
 (B (name fight-vb2) (=> (^ (conflict c x y g h :0.3)(adversary e1 x y c :0.3)(goal e3 g x :0.3))(^ (fight-vb c x y u)(for-in e4 c g))))
 
 
 ;;; ADVERSARY
 
+; y's adversary, x
 (B (name adversary-nn1) (=> (adversary x y e :0.9)(adversary-nn e1 x)))
 
+; one side of a conflict
 (B (name adversary-nn1) (=> (adversary x y e :0.9)(side-nn e1 x)))
 
-; Enemies are adversaries.
-
+; y's enemy, x
 (B (name enemy-nn1) (=> (^ (conflict e x y g h :0.6) (adversary x y e :0.3)) (enemy-nn e1 x)))
 
+; x, enemy of y
 (B (name enemy-nn2) (=> (^ (conflict e x y g h :0.6) (adversary x y e :0.3)) (^ (enemy-nn e1 x) (of-in e2 x y))))
 
-; Adversaries have goals
-
+; x's goal, g
 (B (name goal-nn) (=> (goal e1 g x :0.9)(goal-nn e1 g)))
  
+; x wants g
 (B (name wants-goal-vb) (=> (goal e1 g x :0.9)(want-vb e1 x g u)))
 
 ;;; ATTACK
 
-; An attack.
-
+; an attack
 (B (name attack-nn1) (=> (attack e1 x y :0.9) (attack-nn e1 x)))
 
+; x attacks y
 (B (name attack-vb1) (=> (attack e1 x y :0.9) (attack-vb e1 x y u)))
 
-(B (name attack-nn2) (=> (attack e1 x y :0.9) (^ (launch-vb e1 x z u) (attack-nn e2 w))))
+; Joe (x) launches (e1) an attack (w) at Tom (y)
+(B (name attack-nn2) (=> (attack e1 x y :0.9) (^ (launch-vb e1 x w u) (attack-nn e2 w))))
 
+; An attack (x) on Tom (y)
 (B (name attack-nn3) (=> (attack e1 x y :0.9) (^ (attack-nn e1 x) (on-in e2 x y))))
 
-; A barrage is an attack.
+; A barrage is an attack
+(B (name barrage-nn1) (=> (attack x w y :0.9) (barrage-nn e1 x)))
 
-(B (name barrage-nn1) (=> (attack e1 w y :0.9) (barrage-nn e1 x)))
-
-; A slap is an attack.
-
+; A slap is an attack
 (B (name slap-vb1) (=> (slap e1 x y :0.9) (slap-vb e1 x y u)))
 
-(B (name slap-nn1) (=> (slap e1 x y :0.9) (slap-nn e1 x)))
-
+; a slap
+(B (name slap-nn1) (=> (slap e x y :0.9) (slap-nn e1 e)))
 (B (name slap-vb1) (=> (slap e1 x y :0.9) (slap-vb e1 x y u)))
-
 (B (name slap-nn1) (=> (slap e1 x y :0.9) (slap-nn e1 x)))
 
-; To shoot a gun is an attack. Update: to use a gun is to shoot.
-
+; use
 (B (name use-vb1) (=> (use e1 x w :0.9)(use-vb e1 x w u)))
 
+; x shoots victim y (w is the weapon)
 (B (name shoot-vb1) (=> (^ (weapon w :0.3) (use e1 x w :0.6)) (shoot-vb e1 x y w)))
 
-(B (name shoot-vb2) (=> (attack e1 x y :0.9) (^ (shoot-vb e1 x y w) (at-in e2 e1 y))))
+; x shoots weapon w at y
+(B (name shoot-vb2) (=> (attack e1 x y :0.9) (^ (shoot-vb e1 x w u) (at-in e2 e1 y))))
 
-(B (name shoot-vb3) (=> (attack e1 x y :0.9) (^ (shoot-vb e1 x w y) (at-in e2 e1 y))))
-
-; A blow is an attack.
-
+; a blow is an attack
 (B (name blow-nn1) (=> (attack e1 x y :0.9)(blow-nn e2 e1)))
 
+; a blow from x
 (B (name blow-nn1) (=> (attack e1 x y :0.9)(^ (blow-nn e2 e1)(from-in e3 e1 x))))
 
+; a blow by x
 (B (name blow-nn1) (=> (attack e1 x y :0.9)(^ (blow-nn e2 e1)(by-in e3 e1 x))))
 
 ; A low blow is an illegal attack.
-
-(B (name low-blow-nn1) (=> (attack e1 x y :0.9)(low-adj e2 e1)))
+(B (name low-blow-nn1) (=> (^ (illegal e1)(attack e2 x y :0.9))(^(blow-nn e3 b)(low-adj e4 b))))
 
 ;;; AIM
 
 ; Aim a weapon at a target.
 
+; x aims w at y
 (B (name aim-vb1) (=> (aim e1 x w y :0.9) (^ (aim-vb e1 x w u) (at-in e2 e1 y))))
 
+; x aims w
 (B (name aim-vb2) (=> (aim e1 x w y :0.9) (aim-vb e1 x w u)))
 
 ; To train a weapon on a target is to aim at the target.
 
+; x trains w on y
 (B (name train-vb1) (=> (aim e1 x w y :0.9) (^ (train-vb e1 x w u) (on-in e2 e1 y))))
 
 ; To target something is to aim at it.
 
+; x targets y
 (B (name target-vb) (=> (aim e1 x w y :0.9) (target-vb e1 x y w)))
 
-(B (name target-nn) (=> (aim e1 x w y :0.9) (^ (target-nn e1 x) (of-in e2 e1 w))))
-
-;;; WEAPON
-
 ; weapon 
-
 (B (name weapon-nn) (=> (weapon w :0.9) (weapon-nn e1 w)))
-
-; bullet
-
-(B (name bullet-nn) (=> (weapon w :0.9) (bullet-nn e1 w)))
-
-; rifle
-
-(B (name rifle-nn) (=> (weapon w :0.9) (rifle-nn e1 w)))
-
-; gun 
-
-(B (name gun-nn) (=> (weapon w :0.9) (gun-nn e1 w)))
-
-; sight 
-
-(B (name sight-nn) (=> (aim e1 x w y :0.9) (sight-nn e1 w)))
-
-; crosshairs
-
-(B (name crosshairs-nn) (=> (aim e1 x w y :0.9) (crosshairs-nn e1 w)))
 
 ;;;; ENGLISH LEXICAL AXIOMS FOR WAR
 
-; One kind of conflict is a war.
-
+; war is conflict
 (B (name war-nn) (=> (conflict e1 x y g h :0.9) (war-nn e2 e1)))
 
 ;A betrayal is when members of groups defect.
 
 ;;;; ENGLISH LEXICAL AXIOMS FOR COMPETITION/SPORTS
 
+; x and y compete
 (B (name compete-vb1) (=> (conflict e1 x y g h :0.9)(compete-vb e x y u)))
 
+; x is a competitor
 (B (name competitor-nn1) (=> (conflict e1 x y g h :0.9)(competitor-nn e x)))
 
-(B (name competitor-nn2) (=> (conflict e1 x y g h :0.9)(competitor-nn e y)))
-
+; competition
 (B (name competition-nn3) (=> (conflict w x y g h :0.9)(competition-nn e w)))
 
-;Players (i.e. adversaries) wear uniform identifying their team.
-
-(B (name uniform-nn1) (=> (^ (conflict e1 x y g h :0.3)(adversary e2 x y e1 :0.3)(part w x :0.3))(uniform-nn e2 w)))
-
-(B (name uniform-nn1) (=> (^ (conflict e1 x y g h :0.3)(adversary e2 x y e1 :0.3)(part w y :0.3))(uniform-nn e2 w)))
-
-; Adversary in sport is a player.
-
+; adversary in sport is a player
 (B (name player-nn1) (=> (adversary e x y c :0.9)(player-nn e x)))
 
-; Adversary in sport is a team.
-
+; adversary in sport is a team
 (B (name team-nn1) (=> (adversary e x y c :0.9)(team-nn e x)))
 
-; An adversary has a strategy
+; an adversary has a uniform
+(B (name uniform-nn1) (=> (^ (conflict e1 x y g h :0.3)(adversary e2 x y e1 :0.3)(part w x :0.3))(uniform-nn e2 w)))
 
+; an adversary has a strategy
 (B (name plan-nn1) (=> (^ (conflict e1 x y g h)(adversary e x y c :0.9)(part p x))(plan-nn w p)))
 
 ;;;; OTHER ENGLISH LEXICAL AXIOMS
 
+; union
 (B (name union-nn) (=> (union x :0.9)(union-nn w x)))
 
-(B (name members-nn) (=> (members m g :0.9)(^ (member-nn e1 m)(of-in e2 m g))))
-
+; member
 (B (name members-nn) (=> (members m g :0.9)(member-nn e1 m)))
 
-;(B (name not-rb) (=> (not g h :0.9)(not-rb e1 x)))
+; m is a member of g
+(B (name members-nn) (=> (members m g :0.9)(^ (member-nn e1 m)(of-in e2 m g))))
 
-(B (name part-nn) (=> (part u w :0.9)(^ (part-nn e1 x)(of-in e2 e1 w))))
+; u is part of w
+(B (name part-nn) (=> (part u w :0.9)(^ (part-nn e1 x)(of-in e2 x w))))
 
+; m thrives
 (B (name thrive-vb) (=> (thrive e1 m :0.9)(thrive-vb e2 m y u)))
 
