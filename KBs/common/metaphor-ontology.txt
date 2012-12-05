@@ -3,23 +3,15 @@
 ; Change Log
 ; 10/31/2012 aks - created file by merging existing "conflict axioms.txt" with new plain-english "conflict-facts.txt" from Jerry
 ;
+; 12/5/2012 aks - adding governance DFCE axiom
+;
 ; Questions
 ;
 
 
-
-;;;; CONFLICT PREDICATES
-
-;A slap is an attack.
-
-;(B (name slap) (=> (^ (attack e x y :0.9) (etcslap e :0.3)) (slap e1 x y)))
-
-; Aiming precedes an attack
-
-;(B (name attack1) (=> (aim e x w y :1.2) (attack e1 x y)))
-
-
-;;;; CONFLICT ONTOLOGY
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; CONFLICT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; Conflict has two adversaries
 
@@ -33,43 +25,39 @@
 
 (B (name adversary1) (=> (^ (adversary e1 x y c :1.2) (goalNot e2 g y :1.2))(goal e3 g x)))
 
-(B (name adversary2) (=> (^ (adversary e1 x y c :1.2) (goalNot e2 g y :1.2))(goal e3 g x)))
-
 ; The adversary relation is symmetric.
-
 ;(B (name adversary0) (=> (adversary e x y c :1.2)(adversary e1 y x c)) )
 
 ; Adversaries have degree of strength.
 ;   [Let's talk about how to represent this.]
 
 ;To win is to achieve the goal.
-
 ;(B (name win) (=> (^ (conflict c x y g h :0.3) (adversary e x y c :0.3) 
-;   	      	     	          (goal e1 g x :0.3) (goal e2 h y :0.3) (accomplish-goal e3 g x :0.3))
+;   	      	      (goal e1 g x :0.3) (goal e2 h y :0.3) (accomplish-goal e3 g x :0.3))
 ;		     (win e x y c)))
 
 ;Victory is winning.
-
-;(B (name victory) (=> (^ (conflict c x y g h :0.3) (adversary e1 x y c :0.3) (win e1 x y c :0.3)) (victory e1 x y c)))
+;(B (name victory)(=> (^ (conflict c x y g h :0.3) (adversary e1 x y c :0.3) (win e1 x y c :0.3))(victory e1 x y c)))
 
 ;To lose is for your adversary to win.
 
 ;(B (name lose) (=> (win e x y c :1.2) (lose e y x c)))
 
-; Competition is a type of conflict with a set of rules
-
-;(B (name compete) (=> (^ (conflict c x y g h :0.3) (etc-competition :0.9))(competition c x y g h r)))
-
 ;Adversaries use weapons in attacks.
 
 ;(B (name weapon) (=> (attack e1 x y :1.2) (^ (use e1 x w y z)(weapon w))))
 
-; A bullet is a weapon.
+;A slap is an attack.
 
-;(B (name bullet) (=> (^ (weapon w :0.6)(etcbullet w :0.6)) (bullet w)))
- 
+;(B (name slap) (=> (^ (attack e x y :0.9) (etc-slap e :0.3)) (slap e1 x y)))
 
-;;;; WAR ONTOLOGY
+; Aiming precedes an attack
+
+;(B (name attack1) (=> (aim e x w y :1.2) (attack e1 x y)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; WAR
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;Adversaries in war are groups to which members are loyal.
 
@@ -85,7 +73,10 @@
 ;   [Maybe we'll ignore this.]
 
 
-;;;; SPORTS ONTOLOGY
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; SPORTS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 ;Sport is conflict constrained by rules of behavior.
 ;   [Let's talk about how to represent this.]
@@ -93,14 +84,11 @@
 ; A boxing match is a conflict
 (B (name boxing-match1)(=> (^ (conflict c x y g h :0.9)(boxing-etc c :0.3))(boxing-match c)))
 
-
-
-
 ;In some sports, the adversaries are teams of persons.
 
-
-
-;;;; RACING  ONTOLOGY
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; RACING
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;Racing is a sport.
 
@@ -108,8 +96,9 @@
 
 ;A race has stages.
 
-
-;;;; BOXING  ONTOLOGY
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; BOXING
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;Boxing is a sport.
 
@@ -124,20 +113,31 @@
 ;A round is a part of a boxing match.  
 
 
-;;;; WRESTLING ONTOLOGY
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; WRESTLING
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;Wrestling is a sport.
 
-
-;;;; CARD GAME ONTOLOGY
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; CARD GAMES
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;A card game is a sport.
 
 ;A hand is a weapon in an attack.  
 
-;;;; MISC ONTOLOGY (governance-related terms)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; GOVERNANCE DFCEs
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; A union is an organization with the goal of having its members thrive
 
-(B (name union1) (=>  (^ (thrive e1 m1 :0.3)(members m1 u :0.3)(goal e2 e1 u :0.3)) (union u)))
+(B (name union1) 
+   (=>  (^ (thrive e1 m1 :0.3)(members m1 u :0.3)(goal e2 e1 u :0.3))
+   	(union u)))
 
+(B (name nation1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)
+          (thrive f s :0.1)(citizens s x :0.1))
+       (nation x)))
