@@ -203,7 +203,6 @@ class MaltConverter(object):
                 if a.resolve_link() not in arg_set:
                     arg_set.add(a.resolve_link())
                     arg_list.append((ep, a.resolve_link()))
-        
         for pred, a in arg_list:
             if a.type == "e":
                 # try:
@@ -220,7 +219,6 @@ class MaltConverter(object):
             elif a.type == "s":
                 a.index = s_count
                 s_count += 1
-
 
     def word(self, word_id):
         return self.__words[word_id - 1]
@@ -242,43 +240,28 @@ class MaltConverter(object):
                 else:
                     self.__visible_preds.remove(p)
                 break
-                
+
     def __remove_preds(self):
-        
-        
-        # pp = [p.word.id for p in self.__removed_preds]
-        # print pp
-        
         confirnmed = []
-        for p in self.__removed_preds:            
-            
+        for p in self.__removed_preds:
             confirm_remove = True
             pw = p.word
-            
             for w in self.__words:
                 if w.id != pw.id and w.pred:
                     w_args = [a.resolve_link() for a in w.pred.args]
                     for a in p.args:
                         if a in w_args:
                             confirm_remove = False
-            
             if confirm_remove:
                 confirnmed.append(p.word.id)
-            
-        # self.__visible_preds.remove(p)
-        
-        # print confirnmed
         preds = self.__visible_preds[:]
-        
         for wid in confirnmed:
             for p in self.__visible_preds:
                 if p.word.id == wid:
                     preds.remove(p)
-                    # print "REMOVED: %s" % p.word.lemma
         self.__visible_preds = preds
         self.__removed_preds = []
-        # print confirnmed
-                
+
     def unfold_dep(self, word, until_tag="nn"):
         deps = list(self.deps(word))
         if len(deps) != 1:
@@ -290,8 +273,8 @@ class MaltConverter(object):
     def format_pred(self, pred, sent_count=None):
         argsf = []
         for a in pred.args:
-            argsf.append("%s%d" \
-                % (a.resolve_link().type, a.resolve_link().index, ))
+            argsf.append("%s%d" %
+                        (a.resolve_link().type, a.resolve_link().index, ))
         if sent_count is not None and pred.show_index:
             id_text = "[%d]:" % (1000 * sent_count + pred.word.id)
         else:
@@ -310,10 +293,9 @@ class MaltConverter(object):
         argsf = []
         for a in args:
             if a.type in ["e", "x", "u", "s", ]:
-                argsf.append("%s%d"\
+                argsf.append("%s%d"
                              % (a.resolve_link().type,
-                                a.resolve_link().index)
-                )
+                                a.resolve_link().index))
             else:
                 argsf.append(a.type)
         return u"%s(%s)" % (prefix, ",".join(argsf), )
@@ -1185,6 +1167,9 @@ def process_sentences(sentences, mc):
 
 
 def write_sentences(textid, processed_sentences, ofile):
+    processed_sentences = filter(lambda s: len(s[2]) > 0, processed_sentences)
+    if len(processed_sentences) == 0:
+        return
     if not textid:
         for psent in processed_sentences:
             if psent[2]:
