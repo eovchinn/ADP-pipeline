@@ -423,10 +423,12 @@ class MaltConverter(object):
                     ]))
 
                 # 5. Reason
-                elif (w.lemma in self.person_relative_pr and
-                     head.deprel == u"обст" and hhead.cpostag == "vb") or \
-                     ((w.lemma == u"почему" or w.lemma == u"зачем") and
-                     w.deprel == u"обст"):
+#                elif (w.lemma in self.person_relative_pr and
+#                      head.deprel == u"обст" and hhead.cpostag == "vb") or\
+#                     ((w.lemma == u"почему" or w.lemma == u"зачем") and
+#                      w.deprel == u"обст"):
+                elif (w.lemma == u"почему" or w.lemma == u"зачем") and \
+                      w.deprel == u"обст":
                     if w.lemma in self.person_relative_pr:
                         h_verb = hhead
                     else:
@@ -947,8 +949,9 @@ class MaltConverter(object):
             word.pred.args[1].link_to(head.pred.args[0])
 
         for dep in self.deps(word, filt=["nn"]):
-            word.pred.args[2].link_to(dep.pred.args[1])
-            break
+            if word.pred and dep.pred:
+                word.pred.args[2].link_to(dep.pred.args[1])
+                break
 
         # 3. Second arg is a prep
         # 4. Verb+verb
