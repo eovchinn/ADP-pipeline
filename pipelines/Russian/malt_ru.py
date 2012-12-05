@@ -428,11 +428,11 @@ class MaltConverter(object):
 #                     ((w.lemma == u"почему" or w.lemma == u"зачем") and
 #                      w.deprel == u"обст"):
                 elif (w.lemma == u"почему" or w.lemma == u"зачем") and \
-                      w.deprel == u"обст":
-                    if w.lemma in self.person_relative_pr:
-                        h_verb = hhead
-                    else:
-                        h_verb = head
+                      w.deprel == u"обст" and head.cpostag == "vb":
+#                    if w.lemma in self.person_relative_pr:
+#                        h_verb = hhead
+#                    else:
+                    h_verb = head
                     for d in self.deps(h_verb):
                         if d.cpostag == "nn" and d.deprel == u"предик":
                             self.__extra_preds.append(("reason", [
@@ -603,21 +603,21 @@ class MaltConverter(object):
                         head.pred.args[2].link_to(wh_e)
 
             # 8.2 I know why you go.
-            if (w.lemma == u"почему" or w.lemma == u"зачем") and \
-               head and head.cpostag == "vb" and \
-               hhead and hhead.cpostag == "vb":
-                wh_e = Argument("e")
-                new_x = Argument("x")
-                self.__extra_preds.append(("wh", [
-                    wh_e,
-                    new_x,
-                ]))
-                self.__extra_preds.append(("reason", [
-                    Argument("e"),
-                    Argument.arg_link(new_x),
-                    Argument.arg_link(head.pred.args[0]),
-                ]))
-                hhead.pred.args[2].link_to(wh_e)
+#            if (w.lemma == u"почему" or w.lemma == u"зачем") and \
+#               head and head.cpostag == "vb" and \
+#               hhead and hhead.cpostag == "vb":
+#                wh_e = Argument("e")
+#                new_x = Argument("x")
+#                self.__extra_preds.append(("wh", [
+#                    wh_e,
+#                    new_x,
+#                ]))
+#                self.__extra_preds.append(("reason", [
+#                    Argument("e"),
+#                    Argument.arg_link(new_x),
+#                    Argument.arg_link(head.pred.args[0]),
+#                ]))
+#                hhead.pred.args[2].link_to(wh_e)
 
 
     def detect_questions(self):
@@ -921,7 +921,7 @@ class MaltConverter(object):
         #    modifying
 
         head = self.word(word.head)
-        if head and head.cpostag == "nn":
+        if head and head.cpostag == "nn" and word.pred and head.pred:
             word.pred.args[1].link_to(head.pred.args[1])
 
     def apply_rb_rules(self, word):
