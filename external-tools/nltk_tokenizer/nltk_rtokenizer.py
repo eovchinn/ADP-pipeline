@@ -8,6 +8,9 @@
 
 import sys
 import argparse
+import re
+
+textid_re = re.compile("\s*TEXTID\((.+)\)\s*$")
 
 from nltk.tokenize import PunktSentenceTokenizer
 from nltk.tokenize import WordPunctTokenizer
@@ -38,11 +41,11 @@ if __name__ == "__main__":
     
     for line in sys.stdin:
         
-        if sentid == 1:        
-            if line[0:7] == "TEXTID(" and line[-2] == ")":
-                sys.stdout.write(u"{{{%s}}}!!!\n" % line[7:(len(line) - 2)])
+        if sentid == 1:
+            m = textid_re.search(line)
+            if m:
+                sys.stdout.write(u"{{{%s}}}!!!\n" % m.group(1))
                 continue
-                
             if line == "\n":
                 continue
     
