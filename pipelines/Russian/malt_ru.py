@@ -1185,13 +1185,13 @@ def write_sentences(textid, processed_sentences, ofile):
     if not textid:
         for psent in processed_sentences:
             if psent[2]:
-                ofile.write("% " + ("%s\n%s\n%s\n\n" % psent))
+                ofile.write(("% " + ("%s\n%s\n%s\n\n" % psent)).encode("utf-8"))
     else:
         text = " ".join(map(lambda s: s[0], processed_sentences))
         preds = " & ".join(map(lambda s: s[2], processed_sentences))
-        ofile.write("id(%s)\n" % textid)
-        ofile.write("%" + text + "\n")
-        ofile.write(preds + "\n")
+        ofile.write(("% " + text + "\n").encode("utf-8"))
+        ofile.write("id(%s).\n" % textid)
+        ofile.write((preds + "\n").encode("utf-8"))
         ofile.write("\n")
 
 def main():
@@ -1230,21 +1230,21 @@ def main():
     sentences_count = 1
     prev_textid = None
 
+
     for line in ifile:
-
         malt_row = line_splitter.split(line.decode("utf-8"))
-
         if len(malt_row) > 2:
             detected, textid = text_id(malt_row)
-
             if detected:
                 if process_texts:
                     processed = process_sentences(sentences, mc)
                     write_sentences(prev_textid, processed, ofile)
+                    sentences = []
                 else:
                     processed = \
                         process_sentences([(sentences_count, sentence)], mc)
                     write_sentences(None, processed, ofile)
+                    sentences = []
                 process_texts = True
                 prev_textid = textid
             else:
@@ -1256,8 +1256,6 @@ def main():
                 else:
                     processed = process_sentences([(sentences_count, sentence)], mc)
                     write_sentences(None, processed, ofile)
-
-
             sentence = []
             sentences_count += 1
 
