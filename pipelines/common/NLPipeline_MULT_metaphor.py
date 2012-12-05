@@ -71,6 +71,7 @@ def generate_text_input(input_dict,language):
 	output_str = ''
 	for id in input_dict.keys():
 		if language == 'EN': output_str += "<META>" + id + "\n\n " + input_dict[id] + "\n\n"
+		elif language == 'RU': output_str += 'TEXTID('+id+')\n\n'+input_dict[id] + "\n\n" 
 		else: output_str += '.TEXTID('+id+').\n\n'+input_dict[id] + "\n\n" 
 	return output_str	
 
@@ -86,7 +87,7 @@ def ADP(input_dict,language,withPDFContent):
 	elif language == 'ES': 
 		parser_proc = SPANISH_PIPELINE  + ' | python ' + PARSER2HENRY + ' --nonmerge sameid freqpred --textid'
 	elif language == 'RU': 
-		parser_proc = RUSSIAN_PIPELINE  + ' | python ' + PARSER2HENRY + ' --nonmerge sameid freqpred --textid'
+		parser_proc = RUSSIAN_PIPELINE  + ' | python ' + PARSER2HENRY + ' --nonmerge sameid freqpred'
 	elif language == 'EN':
 		tokenizer = BOXER_DIR + '/bin/tokkie --stdin'
 		candcParser = BOXER_DIR + '/bin/candc --models ' + BOXER_DIR + '/models/boxer --candc-printer boxer'
