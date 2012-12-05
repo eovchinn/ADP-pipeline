@@ -1,3 +1,13 @@
+Start server: python adpService.py -p 8080 -g
+Send Request (for testing) : python sendRestRequest.py -p 8080 -j testRequest1.json
+
+Change timeout: see below
+Change IP address for proofgraphs: see below
+
+What they need to know:
+*port - 8080
+*IP address of machine 
+
 Set environment variable in ~/.bash_profile
 ===========================================
 
@@ -49,7 +59,7 @@ kill -9 84127 (make sure you use the currend PID)
 
 Change Timeout
 ==============
-* in restServer.py search for response.timeout and change it's value
+* in /server/restServer.py search for response.timeout and change it's value
 (currently set to 15 minutes/default is 10 minutes)
 
 Change IP Address for proofgraph URLs
