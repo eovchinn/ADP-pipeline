@@ -59,7 +59,7 @@ kill -9 84127 (make sure you use the currend PID)
 
 Change Timeout
 ==============
-* in restServer.py search for response.timeout and change it's value
+* in /server/restServer.py search for response.timeout and change it's value
 (currently set to 15 minutes/default is 10 minutes)
 
 Change IP Address for proofgraph URLs
