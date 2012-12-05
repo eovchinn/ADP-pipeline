@@ -509,7 +509,7 @@ class MaltConverter(object):
                 # print deps[0].lemma
                 if deps2[0].cpostag == "nn":
                     head.pred.args[2].link_to(deps2[0].pred.args[1])
-                else:
+                elif deps2[0].cpostag in ["vb", "pr", "adj"]:
                     head.pred.args[2].link_to(deps2[0].pred.args[0])
 
             # 2. I'm sure (that) he comes.
