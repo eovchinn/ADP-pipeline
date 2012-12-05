@@ -221,13 +221,6 @@ class MaltConverter(object):
                 a.index = s_count
                 s_count += 1
 
-    def add_line(self, line):
-        line = self.line_splitter.split(line.decode("utf-8"))
-        if len(line) > 2:
-            self.__words.append(WordToken(line))
-            return True
-        else:
-            return
 
     def word(self, word_id):
         return self.__words[word_id - 1]
@@ -627,59 +620,6 @@ class MaltConverter(object):
 
     def detect_questions(self):
         pass
-
-    def format_output(self, sent_count):
-
-        self.preprocess()
-
-        for w in self.__words:
-
-            if not w.cpostag or self.punct.match(w.lemma):
-                continue
-
-            if w.args != -1:
-                pred = self.init_predicate(w)
-                self.__initial_preds.append(pred)
-
-        self.__visible_preds = self.__initial_preds[:]
-
-        self.subordinate_whnominals()
-        self.subordinate_relatives()
-
-        for p in self.__initial_preds:
-            if p.word.cpostag == "pr":
-                self.apply_pr_rules(p.word)
-            elif p.word.cpostag == "vb":
-                self.apply_vb_rules(p.word)
-            elif p.word.cpostag == "nn":
-                self.apply_nn_rules(p.word)
-            elif p.word.cpostag == "adj":
-                self.apply_adj_rules(p.word)
-            elif p.word.cpostag == "rb":
-                self.apply_rb_rules(p.word)
-            elif p.word.cpostag == "in":
-                self.apply_in_rules(p.word)
-            elif p.word.cpostag == "cnj":
-                self.apply_cnj_rules(p.word)
-            elif p.word.cpostag == "par":
-                self.apply_par_rules(p.word)
-
-        
-        # print "\n\n\n"
-        # for p in self.__visible:
-        #     print p.word.lemma
-        # print "\n\n\n"
-        
-        self.__remove_preds()
-        self.assign_indexes()
-
-        predf = [self.format_pred(p, sent_count) for p in self.__visible_preds]
-        epredf = [self.format_epred(ep) for ep in self.__extra_preds]
-        sent_text = u"% " + u" ".join([w.form for w in self.__words])
-        id_text = u"id(%d)." % sent_count
-        pred_text = " & ".join(predf + epredf)
-
-        return u"%s\n%s\n%s\n\n" % (sent_text, id_text, pred_text)
 
     copula_verbs = [u"быть", u"являться", u"находиться"]
 
@@ -1155,15 +1095,104 @@ class MaltConverter(object):
         word.pred = pred
         return pred
 
-    def flush(self, sent_count, ofile):
-        output = self.format_output(sent_count)
-        ofile.write(output.encode("utf-8"))
+    def flush(self):
         self.__words = []
-        self.__extra_preds = []
         self.__initial_preds = []
+        self.__extra_preds = []
         self.__visible_preds = []
-        self.__removed_preds = []
 
+    def format_output(self, sent_count):
+
+        # if self.wordid
+
+        self.preprocess()
+
+        for w in self.__words:
+
+            if not w.cpostag or self.punct.match(w.lemma):
+                continue
+
+            if w.args != -1:
+                pred = self.init_predicate(w)
+                self.__initial_preds.append(pred)
+
+        self.__visible_preds = self.__initial_preds[:]
+
+        self.subordinate_whnominals()
+        self.subordinate_relatives()
+
+        for p in self.__initial_preds:
+            if p.word.cpostag == "pr":
+                self.apply_pr_rules(p.word)
+            elif p.word.cpostag == "vb":
+                self.apply_vb_rules(p.word)
+            elif p.word.cpostag == "nn":
+                self.apply_nn_rules(p.word)
+            elif p.word.cpostag == "adj":
+                self.apply_adj_rules(p.word)
+            elif p.word.cpostag == "rb":
+                self.apply_rb_rules(p.word)
+            elif p.word.cpostag == "in":
+                self.apply_in_rules(p.word)
+            elif p.word.cpostag == "cnj":
+                self.apply_cnj_rules(p.word)
+            elif p.word.cpostag == "par":
+                self.apply_par_rules(p.word)
+
+        self.assign_indexes()
+
+        predf = [self.format_pred(p, sent_count) for p in self.__visible_preds]
+        epredf = [self.format_epred(ep) for ep in self.__extra_preds]
+        sent_text = u" ".join([w.form for w in self.__words])
+        id_text = u"id(%d)." % sent_count
+        pred_text = " & ".join(predf + epredf)
+
+        return sent_text, id_text, pred_text
+
+    def sentid(self, wt):
+        if wt.form[0:3] == "{{{" and\
+           wt.form[len(wt.form) - 6:6] == "}}}!!!":
+            return True, wt.form[3:len(wt.form) - 9]
+        else:
+            return False, None
+
+    def add_line(self, malt_row):
+        wt = WordToken(malt_row)
+        self.__words.append(wt)
+
+
+def text_id(malt_row):
+    wt = WordToken(malt_row)
+    if wt.form[0:3] == "{{{" and\
+       wt.form[len(wt.form) - 6:len(wt.form)] == "}}}!!!":
+        return True, wt.form[3:len(wt.form) - 6]
+    else:
+        return False, None
+
+
+def process_sentences(sentences, mc):
+    processed = []
+    for sid, sent in sentences:
+        for row in sent:
+            mc.add_line(row)
+        sent_text, id_text, pred_text = mc.format_output(sid)
+        processed.append((sent_text, id_text, pred_text))
+        mc.flush()
+    return processed
+
+
+def write_sentences(textid, processed_sentences, ofile):
+    if not textid:
+        for psent in processed_sentences:
+            if psent[2]:
+                ofile.write("% " + ("%s\n%s\n%s\n\n" % psent))
+    else:
+        text = " ".join(map(lambda s: s[0], processed_sentences))
+        preds = " & ".join(map(lambda s: s[2], processed_sentences))
+        ofile.write("id(%s)\n" % textid)
+        ofile.write("%" + text + "\n")
+        ofile.write(preds + "\n")
+        ofile.write("\n")
 
 def main():
 
@@ -1193,15 +1222,52 @@ def main():
     ifile = open(pa.input, "r") if pa.input else sys.stdin
     ofile = open(pa.output, "w") if pa.output else sys.stdout
 
-    sent_count = 1
     mc = MaltConverter()
+    line_splitter = re.compile("\s+")
+    process_texts = False
+    sentence = []
+    sentences = []
+    sentences_count = 1
+    prev_textid = None
 
     for line in ifile:
-        if mc.add_line(line):
-            continue
+
+        malt_row = line_splitter.split(line.decode("utf-8"))
+
+        if len(malt_row) > 2:
+            detected, textid = text_id(malt_row)
+
+            if detected:
+                if process_texts:
+                    processed = process_sentences(sentences, mc)
+                    write_sentences(prev_textid, processed, ofile)
+                else:
+                    processed = \
+                        process_sentences([(sentences_count, sentence)], mc)
+                    write_sentences(None, processed, ofile)
+                process_texts = True
+                prev_textid = textid
+            else:
+                sentence.append(malt_row)
         else:
-            mc.flush(sent_count, ofile)
-            sent_count += 1
+            if sentence:
+                if process_texts:
+                    sentences.append((sentences_count, sentence))
+                else:
+                    processed = process_sentences([(sentences_count, sentence)], mc)
+                    write_sentences(None, processed, ofile)
+
+
+            sentence = []
+            sentences_count += 1
+
+    if sentences or sentence:
+        if process_texts:
+            processed = process_sentences(sentences, mc)
+            write_sentences(prev_textid, processed, ofile)
+        else:
+            processed = process_sentences([(sentences_count, sentence)], mc)
+            write_sentences(None, processed, ofile)
 
 
 if __name__ == "__main__":
