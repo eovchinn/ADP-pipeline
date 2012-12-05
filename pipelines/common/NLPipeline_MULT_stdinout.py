@@ -102,7 +102,7 @@ def main():
 		henry_proc = Popen(HENRY, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
 
 		if pa.kb: henry_output = henry_proc.communicate()[0]
-		elif pa.parse: henry_proc.communicate(input=nl_output)[0]
+		elif pa.parse: henry_output = henry_proc.communicate(input=nl_output)[0]
 		elif pa.input: henry_output = henry_proc.communicate()[0]
 		else: henry_output = henry_proc.communicate(input=sys.stdin.readline())[0]
 		
