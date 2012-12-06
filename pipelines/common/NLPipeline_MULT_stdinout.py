@@ -67,7 +67,7 @@ def main():
 				PARSER_PIPELINE += ' --input ' + pa.input
 			LF2HENRY = 'python ' + BOXER2HENRY + ' --nonmerge sameid freqpred'
 
-		if pa.textid: PARSER_PIPELINE += ' --textid'
+		print 'COMMAND: ' + PARSER_PIPELINE
 
 		parser_proc = Popen(PARSER_PIPELINE, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
 		if pa.input:
@@ -78,6 +78,8 @@ def main():
 		f_par = open(os.path.join(outputdir,fname+".par"), "w")
 		f_par.write(parser_output)
 		f_par.close()
+
+		if pa.textid: LF2HENRY += ' --textid'
 
 		lf2h_proc = Popen(LF2HENRY, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
 		nl_output = lf2h_proc.communicate(input=parser_output)[0]
