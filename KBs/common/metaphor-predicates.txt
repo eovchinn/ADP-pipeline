@@ -37,6 +37,7 @@
 (decreaseStruct x) 
 (dFCompEnt x)
 (functionality f x)
+(increaseFct x)
 (increaseStruct y)
 (leadP f s x)
 (nation x)

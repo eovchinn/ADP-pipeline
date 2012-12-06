@@ -11,6 +11,10 @@
 ;
 ; 12/3/2012 aks - corrected combat-nn1, fight-nn1, conflict-nn, combat-vb1, fight-vb2, enemy-nn1, attack-nn2, shoot-vb2
 ;
+; 12/4/2012 eo - added synonyms for conflict, attack, weapon
+; 
+; 12/5/2012 aks - added new build-destroy, politics, governance terms from Jerry
+;
 ; QUESTIONS
 ; 10/31/2012 aks
 ; 1. how to tell for sure when a rule should be entered as a lexical item? E.G. "combat is a conflict" could be (=> (conflict e x y g h :1.2)(combat e)) or (=> (conflict e x y g h :0.9)(combat-nn e1))
@@ -40,141 +44,77 @@
 ;
 
 
-;;; ENGLISH LEXICAL AXIOMS FOR CONFLICT-WAR-SPORTS
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; CONFLICT
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; NOUNS
 
 (B (name conflict-nn) (=> (conflict e x y g h :0.9)(conflict-nn e1 e)))
 
-; Combat is conflict.
-(B (name combat-nn1) (=> (conflict e x y g h :0.9) (combat-nn e1 e)))
+(B (name struggle-nn) (=> (conflict e x y g h :0.9)(struggle-nn e1 e)))
 
-(B (name combat-vb1) (=> (^ (conflict e x y g h :0.3) (adversary e1 y x e :0.6)) (combat-vb e x y u)))
+(B (name battle-nn) (=> (conflict e x y g h :0.9)(battle-nn e1 e)))
 
-; TODO: duplicate these rules for reordered args (e.g. x y -> y x)
+(B (name fight-nn) (=> (conflict e x y g h :0.9)(fight-nn e1 e)))
 
-; A fight is a conflict.
-(B (name fight-nn1) (=> (conflict e x y g h :0.9) (fight-nn e1 e)))
+(B (name dispute-nn) (=> (conflict e x y g h :0.9)(dispute-nn e1 e)))
 
-; x fights y
-(B (name fight-vb1) (=> (^ (conflict e x y g h :0.3) (adversary e1 y x e :0.6)) (fight-vb e x y u)))
+(B (name war-nn) (=> (conflict e x y g h :0.9)(war-nn e1 e)))
 
-; x fights y for g
-(B (name fight-vb2) (=> (^ (conflict c x y g h :0.3)(adversary e1 x y c :0.3)(goal e3 g x :0.3))(^ (fight-vb c x y u)(for-in e4 c g))))
+(B (name combat-nn) (=> (conflict e x y g h :0.9) (combat-nn e1 e)))
 
+(B (name quarrel-nn) (=> (conflict e x y g h :0.9) (quarrel-nn e1 e)))
 
-;;; ADVERSARY
+(B (name competition-nn) (=> (conflict e x y g h :0.9)(competition-nn e0 e)))
 
-; y's adversary, x
-(B (name adversary-nn1) (=> (adversary x y e :0.9)(adversary-nn e1 x)))
+; VERBS
 
-; one side of a conflict
-(B (name adversary-nn1) (=> (adversary x y e :0.9)(side-nn e1 x)))
+; x combats y
+(B (name combat-vb) (=> (^ (conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (combat-vb e x u1 u2)))
 
-; y's enemy, x
-(B (name enemy-nn1) (=> (^ (conflict e x y g h :0.6) (adversary x y e :0.3)) (enemy-nn e1 x)))
+; g and h conflict
+(B (name conflict-vb) (=> (^ (conflict e x y g h :0.3)) (conflict-vb e g u1 u2)))
 
-; x, enemy of y
-(B (name enemy-nn2) (=> (^ (conflict e x y g h :0.6) (adversary x y e :0.3)) (^ (enemy-nn e1 x) (of-in e2 x y))))
+; x struggles
+(B (name struggle-vb) (=> (^ (conflict e x y g h :0.3)) (struggle-vb e x u1 u2)))
 
-; x's goal, g
-(B (name goal-nn) (=> (goal e1 g x :0.9)(goal-nn e1 g)))
- 
-; x wants g
-(B (name wants-goal-vb) (=> (goal e1 g x :0.9)(want-vb e1 x g u)))
+; x battles 
+(B (name battle-vb) (=> (^ (conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (battle-vb e x u1 u2)))
 
-;;; ATTACK
+; x fights 
+(B (name fight-vb) (=> (^ (conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (fight-vb e x u1 u2)))
 
-; an attack
-(B (name attack-nn1) (=> (attack e1 x y :0.9) (attack-nn e1 x)))
+; x disputes
+(B (name dispute-vb) (=> (^ (conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (dispute-vb e x u1 u2)))
 
-; x attacks y
-(B (name attack-vb1) (=> (attack e1 x y :0.9) (attack-vb e1 x y u)))
+; x quarrels
+(B (name quarrel-vb) (=> (^ (conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (quarrel-vb e x u1 u2)))
 
-; Joe (x) launches (e1) an attack (w) at Tom (y)
-(B (name attack-nn2) (=> (attack e1 x y :0.9) (^ (launch-vb e1 x w u) (attack-nn e2 w))))
+; x opposes y
+(B (name oppose-vb) (=> (^ (conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (oppose-vb e x y u2)))
 
-; An attack (x) on Tom (y)
-(B (name attack-nn3) (=> (attack e1 x y :0.9) (^ (attack-nn e1 x) (on-in e2 x y))))
+; x confronts y
+(B (name confront-vb) (=> (^ (conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (confront-vb e x y u2)))
 
-; A barrage is an attack
-(B (name barrage-nn1) (=> (attack x w y :0.9) (barrage-nn e1 x)))
+; x resists y
+(B (name resist-vb) (=> (^ (conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (resist-vb e x y u2)))
 
-; A slap is an attack
-(B (name slap-vb1) (=> (slap e1 x y :0.9) (slap-vb e1 x y u)))
+; x withstands attack w
+(B (name withstand-vb) (=> (^ (conflict e x y g h :0.3) (attack e1 x y :0.6)) (withstand-vb e x w u2)))
 
-; a slap
-(B (name slap-nn1) (=> (slap e x y :0.9) (slap-nn e1 e)))
-(B (name slap-vb1) (=> (slap e1 x y :0.9) (slap-vb e1 x y u)))
-(B (name slap-nn1) (=> (slap e1 x y :0.9) (slap-nn e1 x)))
+; x competes 
+(B (name compete-vb) (=> (^ (conflict e x y g h :0.3)) (compete-vb e x u1 u2)))
 
-; use
-(B (name use-vb1) (=> (use e1 x w :0.9)(use-vb e1 x w u)))
+; PREP PHRASES
 
-; x shoots victim y (w is the weapon)
-(B (name shoot-vb1) (=> (^ (weapon w :0.3) (use e1 x w :0.6)) (shoot-vb e1 x y w)))
+(B (name conflict-with) (=> (adversary e1 x y e :1.2) (^(conflict e x u g h)(with-in e2 e y))))
 
-; x shoots weapon w at y
-(B (name shoot-vb2) (=> (attack e1 x y :0.9) (^ (shoot-vb e1 x w u) (at-in e2 e1 y))))
+(B (name conflict-against) (=> (adversary e1 x y e :1.2) (^(conflict e x u g h)(against-in e2 e y))))
 
-; a blow is an attack
-(B (name blow-nn1) (=> (attack e1 x y :0.9)(blow-nn e2 e1)))
+(B (name conflict-between) (=> (adversary e1 x y e :1.2) (^(conflict e u1 u2 g h)(between-in e2 e x)(between-in e2 e y))))
 
-; a blow from x
-(B (name blow-nn1) (=> (attack e1 x y :0.9)(^ (blow-nn e2 e1)(from-in e3 e1 x))))
-
-; a blow by x
-(B (name blow-nn1) (=> (attack e1 x y :0.9)(^ (blow-nn e2 e1)(by-in e3 e1 x))))
-
-; A low blow is an illegal attack.
-(B (name low-blow-nn1) (=> (^ (illegal e1)(attack e2 x y :0.9))(^(blow-nn e3 b)(low-adj e4 b))))
-
-;;; AIM
-
-; Aim a weapon at a target.
-
-; x aims w at y
-(B (name aim-vb1) (=> (aim e1 x w y :0.9) (^ (aim-vb e1 x w u) (at-in e2 e1 y))))
-
-; x aims w
-(B (name aim-vb2) (=> (aim e1 x w y :0.9) (aim-vb e1 x w u)))
-
-; To train a weapon on a target is to aim at the target.
-
-; x trains w on y
-(B (name train-vb1) (=> (aim e1 x w y :0.9) (^ (train-vb e1 x w u) (on-in e2 e1 y))))
-
-; To target something is to aim at it.
-
-; x targets y
-(B (name target-vb) (=> (aim e1 x w y :0.9) (target-vb e1 x y w)))
-
-; weapon 
-(B (name weapon-nn) (=> (weapon w :0.9) (weapon-nn e1 w)))
-
-;;;; ENGLISH LEXICAL AXIOMS FOR WAR
-
-; war is conflict
-(B (name war-nn) (=> (conflict e1 x y g h :0.9) (war-nn e2 e1)))
-
-;A betrayal is when members of groups defect.
-
-;;;; ENGLISH LEXICAL AXIOMS FOR COMPETITION/SPORTS
-
-; x and y compete
-(B (name compete-vb1) (=> (conflict e1 x y g h :0.9)(compete-vb e x y u)))
-
-; x is a competitor
-(B (name competitor-nn1) (=> (conflict e1 x y g h :0.9)(competitor-nn e x)))
-
-; competition
-(B (name competition-nn3) (=> (conflict w x y g h :0.9)(competition-nn e w)))
-
-; adversary in sport is a player
-(B (name player-nn1) (=> (adversary e x y c :0.9)(player-nn e x)))
-
-; adversary in sport is a team
-(B (name team-nn1) (=> (adversary e x y c :0.9)(team-nn e x)))
+(B (name conflict-for) (=> (goal e1 g x :1.2) (^(conflict e x y u h)(for-in e2 e g))))
 
 ; an adversary has a uniform
 (B (name uniform-nn1) (=> (^ (conflict e1 x y g h :0.3)(adversary e2 x y e1 :0.3)(part w x :0.3))(uniform-nn e2 w)))
@@ -182,7 +122,548 @@
 ; an adversary has a strategy
 (B (name plan-nn1) (=> (^ (conflict e1 x y g h)(adversary e x y c :0.9)(part p x))(plan-nn w p)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ADVERSARY
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; NOUNS
+
+; y's adversary, x
+(B (name adversary-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (adversary-nn e1 x)))
+
+; y's enemy, x
+(B (name enemy-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6))  (enemy-nn e1 x)))
+
+; opponent x
+(B (name opponent-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (opponent-nn e1 x)))
+
+; rival x
+(B (name rival-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (rival-nn e1 x)))
+
+; antagonist x
+(B (name antagonist-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (antagonist-nn e1 x)))
+
+; competitor x
+(B (name competitor-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (competitor-nn e1 x)))
+
+; contestant x
+(B (name contestant-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (contestant-nn e1 x)))
+
+; opposition x
+(B (name opposition-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (opposition-nn e1 x)))
+
+; player x
+(B (name player-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (player-nn e x)))
+
+; team x
+(B (name team-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (team-nn e x)))
+
+; PREP PHRASES
+
+; x adversary of y
+(B (name adversary-of) (=> (adversary e1 x y e :0.9) (^(adversary e1 x u e )(of-in e2 x y))))
+
+; x adversary in conflict e
+(B (name adversary-in) (=> (adversary e1 x y e :0.9) (^(adversary e1 x y u )(in-in e2 x e))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; x's goal, g
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name goal-nn) (=> (goal e1 g x :0.9)(goal-nn e1 g)))
+ 
+; x wants g
+(B (name wants-goal-vb) (=> (goal e1 g x :0.9)(want-vb e1 x g u)))
+
+; g, goal of x
+(B (name goal-of) (=> (goal e1 g x :0.9)(^(goal-nn e1 g)(of-in e2 g x))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; ATTACK
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; NOUN
+
+; an attack
+(B (name attack-nn) (=> (attack e1 x y :0.9) (attack-nn e0 e1)))
+
+(B (name assault-nn) (=> (attack e1 x y :0.9) (assault-nn e0 e1)))
+
+(B (name onrush-nn) (=> (attack e1 x y :0.9) (onrush-nn e0 e1)))
+
+(B (name onset-nn) (=> (attack e1 x y :0.9) (onset-nn e0 e1)))
+
+(B (name barrage-nn) (=> (attack e1 w y :0.9) (barrage-nn e0 e1)))
+
+(B (name insult-nn) (=> (attack e1 w y :0.9) (insult-nn e0 e1)))
+
+; aggressor x
+(B (name aggressor-nn) (=> (attack e1 x y :0.9) (aggressor-nn e0 x)))
+
+; sniper x
+(B (name sniper-nn) (=> (attack e1 x y :0.9) (sniper-nn e0 x)))
+
+; VERB
+
+; x attacks y
+(B (name attack-vb) (=> (attack e1 x y :0.9) (attack-vb e1 x y u)))
+
+; x assails y
+(B (name assail-vb) (=> (attack e1 x y :0.9) (assail-vb e1 x y u)))
+
+; x charges at y
+(B (name charge-vb) (=> (attack e1 x y :0.9) (^(charge-vb e1 x w u)(at-in e0 e1 y))))
+
+; x descends on y
+(B (name descend-vb) (=> (attack e1 x y :0.9) (^ (descend-vb e1 x w u)(on-in e0 e1 y))))
+
+; x advances on y
+(B (name advance-vb) (=> (attack e1 x y :0.9) (^ (advance-vb e1 x y u)(on-in e0 e1 y))))
+
+; x insults y
+(B (name insult-vb) (=> (attack e1 x y :0.9) (insult-vb e1 x y u)))
+
+; Joe (x) launches (e1) an attack (w) at Tom (y)
+(B (name launch-attach) (=> (attack e1 x y :0.9) (^ (launch-vb e2 x e1 u) (attack-nn e3 e1))))
+
+; An attack (x) on Tom (y)
+(B (name attack-nn3) (=> (attack e1 x y :0.9) (^ (attack-nn e1 x) (on-in e2 x y))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; SLAP
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; A slap is an attack
+(B (name slap-vb) (=> (slap e1 x y :0.9) (slap-vb e1 x y u)))
+
+; a slap
+(B (name slap-nn) (=> (slap e x y :0.9) (slap-nn e1 e)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; USE WEAPON
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; use
+; x uses w
+(B (name use-vb) (=> (use e1 x w y z :0.9)(use-vb e1 x w u)))
+
+; NOUN
+
+; e1 is a shot by x with w
+(B (name shot-nn) (=> (use-weapon e1 x w y z :0.9)(shot-nn e0 e1)))
+
+; e1 is a stroke by x with w
+(B (name stroke-nn) (=> (use-weapon e1 x w y z :0.9)(stroke-nn e0 e1)))
+
+; e1 is a blast
+(B (name blast-nn) (=> (attack e1 x y :0.9)(blast-nn e0 e1)))
+
+; e1 is an explosion
+(B (name explosion-nn) (=> (attack e1 x y :0.9)(explosion-nn e0 e1)))
+
+; x is fire (e.g. gunfire)
+(B (name gunfire-nn) (=> (attack e1 x y :0.9)(gunfire-nn e0 e1)))
+
+; VERB
+
+(B (name shoot-vb) (=> (use-weapon e1 x w y z :0.9)(shoot-vb e1 x y u2)))
+
+(B (name hit-vb) (=> (use-weapon e1 x w y z :0.9)(hit-vb e1 x y u2)))
+
+(B (name bomb-vb) (=> (use-weapon e1 x w y z :0.9)(bomb-vb e1 x y u2)))
+
+(B (name fire-vb) (=> (use-weapon e1 x w y z :0.9)(fire-vb e1 x w u2)))
+
+(B (name blast-vb) (=> (use-weapon e1 x w y z :0.9)(blast-vb e1 x y u2)))
+
+(B (name explode-vb) (=> (use-weapon e1 x w y z :0.9)(explode-vb e1 x y u2)))
+
+(B (name slaughter-vb) (=> (use-weapon e1 x w y z :0.9)(slaughter-vb e1 x y u2)))
+
+(B (name knife-vb) (=> (use-weapon e1 x w y z :0.9)(knife-vb e1 x y u2)))
+
+(B (name stab-vb) (=> (use-weapon e1 x w y z :0.9)(stab-vb e1 x y u2)))
+
+; PREP PHRASES
+
+(B (name use-weapon-with) (=> (use-weapon e1 x w y z :0.9)(^(use-weapon e1 x u y z)(with-in e2 e1 w))))
+
+(B (name use-weapon-by) (=> (use-weapon e1 x w y z :0.9)(^(use-weapon e1 u w y z)(by-in e2 e1 x))))
+
+(B (name use-weapon-of) (=> (use-weapon e1 x w y z :0.9)(^(use-weapon e1 u w y z)(of-in e2 e1 x))))
+
+(B (name use-weapon-at) (=> (use-weapon e1 x w y z :0.9)(^(use-weapon e1 x w u z)(at-in e2 e1 y))))
+
+; EXPANSION AXIOMS
+
+(B (name use-weapon-expand) (=> (^ (use e1 x w y z :0.6)(weapon w :0.6))(use-weapon e1 x w y z)))
+
+(B (name use-weapon-subj) (=> (use-weapon e1 x w y z :0.9)(^(use-weapon e1 w u y z) (weapon w))))
+
+; A low blow is an illegal attack.
+(B (name low-blow-nn) (=> (^ (illegal e2)(attack e2 x y :0.9))(^(blow-nn e3 b)(low-adj e4 b))))
+
+(B (name blow-nn) (=> (attack e1 x y :0.9)(blow-nn e0 e1)))
+
+(B (name blow-vb) (=> (attack e1 x y :0.9)(blow-vb e1 x y u2)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; AIM
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Aim a weapon at a target.
+
+; x aims w at y
+(B (name aim-vb) (=> (aim e1 x w y :0.9) (aim-vb e1 x w u)))
+
+; x targets y
+(B (name target-vb) (=> (aim e1 x w y :0.9) (target-vb e1 x y w)))
+
+; To train a weapon on a target is to aim at the target.
+
+; x trains w on y
+(B (name train-vb1) (=> (aim e1 x w y :0.9) (^ (train-vb e1 x w u) (on-in e2 e1 y))))
+
+(B (name aim-at) (=> (aim e1 x w y :0.9) (^ (aim-vb e1 x w u)(at-in e2 e1 y))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; WEAPON 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name weapon-nn) (=> (weapon w :0.9) (weapon-nn e1 w)))
+
+(B (name arm-nn) (=> (weapon w :0.9) (arm-nn e1 w)))
+
+(B (name gun-nn) (=> (weapon w :0.9) (gun-nn e1 w)))
+
+(B (name knife-nn) (=> (weapon w :0.9) (knife-nn e1 w)))
+
+(B (name missile-nn) (=> (weapon w :0.9) (missile-nn e1 w)))
+
+(B (name stick-nn) (=> (weapon w :0.9) (stick-nn e1 w)))
+
+(B (name pike-nn) (=> (weapon w :0.9) (pike-nn e1 w)))
+
+(B (name projectile-nn) (=> (weapon w :0.9) (projectile-nn e1 w)))
+
+(B (name spear-nn) (=> (weapon w :0.9) (spear-nn e1 w)))
+
+(B (name bomb-nn) (=> (weapon w :0.9) (bomb-nn e1 w)))
+
+(B (name sword-nn) (=> (weapon w :0.9) (sword-nn e1 w)))
+
+(B (name artillery-nn) (=> (weapon w :0.9) (artillery-nn e1 w)))
+
+(B (name revolver-nn) (=> (weapon w :0.9) (revolver-nn e1 w)))
+
+(B (name pistol-nn) (=> (weapon w :0.9) (pistol-nn e1 w)))
+
+(B (name shotgun-nn) (=> (weapon w :0.9) (shotgun-nn e1 w)))
+
+(B (name firearm-nn) (=> (weapon w :0.9) (firearm-nn e1 w)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; BUILD-DESTROY
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+; To decrease structure is to damage.
+
+; y damages x
+(B (name damage-vb1) (=> (decreaseStruct x :0.9) (damage-vb e y x u)))
+
+; One way of decreasing structure is to destroy.
+
+; y destroys x
+(B (name destroy-vb1)(=> (^ (decreaseStruct x :0.5)(etc-destroy-vb1 x :0.4)) (destroy-vb e y x u)))
+
+; One way of decreasing structure is to demolish.
+
+; y demolishes x
+(B (name demolish-vb1)(=> (^ (decreaseStruct x :0.5)(etc-demolish-vb1 x :0.4))(demolish-vb e y x u)))
+
+; One way of decreasing structure is to be a cataclysm..
+
+; x is cataclysmic
+(B (name cataclysmic-adj1)(=> (^ (decreaseStructP e1 x :0.5)(etc-cataclysmic-adj1 e1 x :0.4))(cataclysmic-adj e e1)))
+
+; e1 is a cataclysm that harms x
+(B (name cataclysm-nn1)(=> (^ (decreaseStruct x :0.5)(etc-cataclysm-nn1 x :0.4))(cataclysm-nn e e1)))
+
+; One way of increasing structure is to build.
+
+; z builds x
+(B (name build1)(=> (^ (increaseStruct x :0.5)(etc-build-vb1 x :0.4))(build-vb e z x u)))
+
+; buildP is the primed version of build.
+; (B (name buildP)(=> (^ (buildP e z x)(Rexist e)) (build z x)))
+
+; One way of increasing structure is to forge.
+
+; y forges x
+(B (name forge-vb1)(=> (^ (increaseStruct x :0.5)(etc-forge-vb1 x :0.4))(forge-vb e y x u)))
+
+; z paralyzes x
+(B (name paralyze1) (=> (^ (decreaseFct x :0.5)(etc-paralyze-vb1 x :0.4))(paralyze-vb e z x u)))
+
+; z incapacitates x
+(B (name incapacitate1)(=> (^ (decreaseFct x :0.5)(etc-incapacitate-vb1 x :0.4))(incapacitate-vb e z x u)))
+
+; z facilitates x
+(B (name facilitate-vb1)(=> (^ (increaseFct x :0.5)(etc-facilitate-vb1 x :0.4))(faciliitate-vb e z x u)))
+
+; z assists x
+(B (name assist-vb1)(=> (^ (increaseFct x :0.5)(etc-assist-vb1 x :0.4))(assist-vb e z x u)))
+
+; z rebuilds x
+(B (name rebuild1)(=> (^ (increaseStruct x :0.5)(etc-rebuild-vb1 x :0.4))(rebuild-vb e z x u)))
+
+; z detonates x
+(B (name detonate1)(=> (^ (decreaseFct x :0.5)(etc-detonate-vb1 x :0.4))(detonate-vb e z x u)))
+
+; z injures x
+(B (name injure1)(=> (^ (decreaseFct x :0.5)(etc-injure-vb1 x :0.4))(injure-vb e z x u)))
+
+; x falls apart
+(B (name fall-apart1)(=> (^ (decreaseStruct x :0.5)(etc-fall-apart-vb1 x :0.4))(^ (fall-vb e x y u)(apart-adv e1 e))))
+
+; z cracks x
+(B (name crack1)(=> (^ (decreaseStruct x :0.5)(etc-crack-vb1 x :0.4))(crack-vb e z x u)))
+
+; x grows
+(B (name grow1)(=> (^ (increaseStruct x :0.5)(etc-grow-vb1 x :0.4))(grow-vb e x y u)))
+
+; x grows y
+(B (name grow1)(=> (^ (increaseStruct y :0.5)(etc-grow-vb1 y :0.4))(grow-vb e x y u)))
+
+; z strengthens x
+(B (name strengthen1)(=> (^ (increaseStruct x :0.5)(etc-strengthen-vb1 x :0.4))(strengthen-vb e z x u)))
+
+; scorched x
+(B (name scorched1)(=> (^ (decreaseStruct x :0.5)(etc-scorched-vb1 x :0.4))(scorched-adj e x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; GOVERNANCE DFCEs
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name nation2)
+   (=> (nation x)(nation-nn e x)))
+
+(B (name Mexico1)
+   (=> (nation x)(Mexico-nn e x)))
+
+(B (name Russia1)
+   (=> (nation x)(Russia-nn e x)))
+
+(B (name Iran1)
+   (=> (nation x)(Iran-nn e x)))
+
+(B (name America1)
+   (=> (nation x)(America-nn e x)))
+
+(B (name country1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)
+          (thrive f s :0.1)(citizens s x :0.1))
+       (country-nn e x)))
+
+(B (name state1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)
+          (thrive f s :0.1)(citizens s x :0.1))
+       (state-nn e x)))
+
+(B (name government1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)
+          (thrive f s :0.1)(citizens s x :0.1))
+       (government-nn e x)))
+
+(B (name law1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)
+          (control f x s :0.1)(citizens s z :0.1))
+       (law-nn e x)))
+
+(B (name democracy1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
+          (leadP f s x :0.1)(citizens s x :0.1))
+       (democracy-nn e x)))
+
+(B (name authoritarianism1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
+          (control f x s :0.1)(citizens s z :0.1))
+       (authoritarianism-nn e x)))
+
+(B (name economy1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
+          (commerce f :0.1))
+       (economy-nn e x)))
+
+(B (name economic1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
+          (commerce f :0.1))
+       (economic-adj e x)))
+
+(B (name sector1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
+          (commerce f :0.1))
+       (sector-nn e x)))
+
+(B (name transportation1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
+          (commerce f :0.1))
+       (transportation-nn e x)))
+
+(B (name financial1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
+          (commerce f :0.1))
+       (financial-adj e x)))
+
+(B (name business1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
+          (commerce f :0.1))
+       (business-nn e x)))
+
+(B (name market1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
+          (commerce f :0.1))
+       (market-nn e x)))
+
+(B (name system1)
+   (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))
+       (system-nn e x)))
+
+(B (name body1)
+   (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))
+       (body-nn e x)))
+
+(B (name organization1)
+   (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4)
+          (sharedPlan f x))
+       (organization-nn e x)))
+
+(B (name program1)
+   (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))
+       (program-nn e x)))
+
+(B (name class1)
+   (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))
+       (class-nn e x)))
+
+(B (name progress1)
+   (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))
+       (progress-nn e x)))
+
+(B (name reputation1)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
+          (respectP f y z x :0.1))
+       (reputation-nn e x)))
+	   
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; POLITICS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+  
+	   
+(B (name voter-nn1)
+   (=> (^ (voter x :0.4)(etc-voter-nn1 :0.5))
+       (voter-nn e y)))
+
+(B (name election-nn1)
+   (=> (^ (conflict x a b g1 g2 :0.5)(etc-election-nn1 x a b g1 g2 :0.4))
+       (election-vb e x)))
+
+(B (name elect-vb1)
+   (=> (^ (conflict x a b g1 g2 :0.5)(etc-elect-vb1 x a b g1 g2 :0.4))
+       (elect-vb e x y g1)))
+
+(B (name vote-vb1)
+   (=> (^ (conflict e1 a b g1 g2 :0.5)(member x a :0.1)
+          (etc-vote-vb1 e1 x a b g1 g2 :0.3))
+       (vote-vb e x a u)))
+
+(B (name politicalParty1)
+   (=> (^ (conflict e x y g1 g2 :0.5)
+          (etc-politicalParty1 e x y g1 g2 :0.4))
+       (politicalParty x)))
+
+(B (name politicalParty2)
+   (=> (^ (dFCompEnt x :0.4)(functionality f x 0:3)(leadP f x y))
+       (politicalParty x)))
+
+
+(B (name Democratic-adj1)
+   (=> (^ (politicalParty x :0.5)(etc-Democratic-adj1 x :0.4))
+       (Democratic-adj e x)))
+
+(B (name Democrat-nn1)
+   (=> (^ (politicalParty x :0.5)(etc-Democrat-nn1 x :0.4))
+       (Democrat-nn e x)))
+
+(B (name Republican-nn1)
+   (=> (^ (politicalParty x :0.5)(etc-Republican-nn1 x :0.4))
+       (Republican-nn e x)))
+
+(B (name Republican-adj1)
+   (=> (^ (politicalParty x :0.5)(etc-Republican-adj1 x :0.4))
+       (Republican-adj e x)))
+
+(B (name GOP-nn1)
+   (=> (^ (politicalParty x :0.5)(etc-GOP-nn1 x :0.4))
+       (GOP-nn e x)))
+
+(B (name Right-winger-nn1)
+   (=> (^ (politicalParty x :0.5)(etc-Right-winger-nn1 x :0.4))
+       (Right-winger-nn e x)))
+
+(B (name Tea-party-nn1)
+   (=> (^ (politicalParty x :0.5)(etc-Tea-party-nn1 x :0.4))
+       (^ (Tea-nn e1 y)(nn y x)(party-nn e x))))
+
+(B (name PRI-nn1)
+   (=> (^ (politicalParty x :0.5)(etc-PRI-nn1 x :0.4))
+       (PRI-nn e x)))
+
+(B (name movement-nn1)
+   (=> (^ (politicalParty x :0.5)(etc-movement-nn1 x :0.4))
+       (movement-nn e x)))
+
+(B (name effort-nn1)
+   (=> (^ (politicalParty x :0.7)(etc-effort-nn1 x :0.5))
+       (effort-nn e x)))
+
+(B (name political-party-nn1)
+   (=> (^ (politicalParty x :0.5)(etc-political-party-nn1 x :0.4))
+       (^ (political-adj e1 x)(party-nn e x))))
+
+(B (name party-nn1)
+   (=> (politicalParty x :1.1)(party-nn e x)))
+
+; y is vulnerable
+(B (name vulnerable-adj1)
+   (=> (conflict c x y g1 g2 :0.9)(vulnerable-adj e y)))
+
+(B (name side-nn1)
+   (=> (^ (conflict c x y g1 g2 :1.5)(adversary e1 x y c))(side-nn e x)))
+
+(B (name nation-nn11)
+   (=> (^ (conflict c x y g1 g2 :0.7)
+          (etc-nation-nn11 c x y g1 g2 :0.5))
+       (nation-nn e x)))
+
+(B (name president-nn1)
+   (=> (^ (lead x y :0.5)(etc-president-nn1 x y :0.4))
+       (president-nn e x)))
+
+(B (name leader-nn1)
+   (=> (^ (lead x y :0.5)(etc-leader-nn1 x y :0.4))
+       (leader-nn e x)))
+
+(B (name governor-nn1)
+   (=> (^ (lead x y :0.5)(etc-governor-nn1 x y :0.4))
+       (governor-nn e x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; OTHER ENGLISH LEXICAL AXIOMS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; union
 (B (name union-nn) (=> (union x :0.9)(union-nn w x)))
