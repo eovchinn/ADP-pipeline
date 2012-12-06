@@ -514,7 +514,7 @@ class MaltConverter(object):
             #     head.pred.args[2].link_to(deps[0].pred.args[0])
 
             # 4. I know whom you saw.
-            if (w.form == u"кого" or w.form == u"что") and \
+            if (w.lemma == u"кто" or w.lemma == u"что") and \
                w.cpostag == "pr" and head and head.cpostag == "vb" and\
                hhead and hhead.cpostag == "vb" and \
                (head.deprel == u"1-компл" or head.deprel == u"2-компл"):
@@ -601,9 +601,51 @@ class MaltConverter(object):
 #                ]))
 #                hhead.pred.args[2].link_to(wh_e)
 
-
     def detect_questions(self):
-        pass
+
+        for w in self.__words:
+
+            head = self.word(w.head)
+            hhead = None
+            if head:
+                hhead = self.word(head.head)
+            deps = self.deps(w, filt=("vb",))
+
+            # 1. What did you do?
+            if w.lemma == u"что" and head and head.cpostag == "vb":
+                hdeps = self.deps(head, filt=["pr", "nn"])
+                for d in hdeps:
+                    if d.deprel == u"предик":
+                        if w.cpostag == "cnj":
+                            new_x = Argument("x")
+                            self.__extra_preds.append(("thing", [
+                                Argument("e"),
+                                new_x,
+                            ]))
+                        else:
+                            new_x = w.pred.args[1]
+                        self.__extra_preds.append(("whq", [
+                            Argument("e"),
+                            Argument.arg_link(new_x),
+                        ]))
+                        head.pred.args[2].link_to(new_x)
+
+            # 2 Whom did you see?
+            if w.lemma == u"кто" and head and head.cpostag == "vb":
+                hdeps = self.deps(head, filt=["pr", "nn"])
+                for d in hdeps:
+                    if d.deprel == u"предик":
+                        new_x = Argument("x")
+                        self.__extra_preds.append(("person", [
+                            Argument("e"),
+                            new_x,
+                         ]))
+                        self.__extra_preds.append(("whq", [
+                            Argument("e"),
+                            Argument.arg_link(new_x),
+                         ]))
+                        head.pred.args[2].link_to(new_x)
+
 
     copula_verbs = [u"быть", u"являться", u"находиться"]
 
@@ -1105,6 +1147,7 @@ class MaltConverter(object):
 
         self.subordinate_whnominals()
         self.subordinate_relatives()
+        self.detect_questions()
 
         for p in self.__initial_preds:
             if p.word.cpostag == "pr":
