@@ -15,7 +15,7 @@
 ; 
 ; 12/5/2012 aks - added new build-destroy, politics, governance terms from Jerry
 ;
-; 12/6/2012 aks - bug fixes
+; 12/6/2012 aks - bug fixes, removed *-etc predicates
 ;
 ; QUESTIONS
 ; 10/31/2012 aks
@@ -388,25 +388,25 @@
 ; One way of decreasing structure is to destroy.
 
 ; y destroys x
-(B (name destroy-vb1)(=> (^ (decreaseStruct x :0.5)(etc-destroy-vb1 x :0.4)) (destroy-vb e y x u)))
+(B (name destroy-vb1)(=> (decreaseStruct x :0.9)(destroy-vb e y x u)))
 
 ; One way of decreasing structure is to demolish.
 
 ; y demolishes x
-(B (name demolish-vb1)(=> (^ (decreaseStruct x :0.5)(etc-demolish-vb1 x :0.4))(demolish-vb e y x u)))
+(B (name demolish-vb1)(=> (decreaseStruct x :0.9)(demolish-vb e y x u)))
 
 ; One way of decreasing structure is to be a cataclysm..
 
 ; x is cataclysmic
-(B (name cataclysmic-adj1)(=> (^ (decreaseStructP e1 x :0.5)(etc-cataclysmic-adj1 e1 x :0.4))(cataclysmic-adj e e1)))
+(B (name cataclysmic-adj1)(=> (decreaseStructP e1 x :0.9)(cataclysmic-adj e e1)))
 
 ; e1 is a cataclysm that harms x
-(B (name cataclysm-nn1)(=> (^ (decreaseStruct x :0.5)(etc-cataclysm-nn1 x :0.4))(cataclysm-nn e e1)))
+(B (name cataclysm-nn1)(=> (decreaseStruct x :0.9)(cataclysm-nn e e1)))
 
 ; One way of increasing structure is to build.
 
 ; z builds x
-(B (name build1)(=> (^ (increaseStruct x :0.5)(etc-build-vb1 x :0.4))(build-vb e z x u)))
+(B (name build1)(=> (increaseStruct x :0.9)(build-vb e z x u)))
 
 ; buildP is the primed version of build.
 ; (B (name buildP)(=> (^ (buildP e z x)(Rexist e)) (build z x)))
@@ -414,46 +414,46 @@
 ; One way of increasing structure is to forge.
 
 ; y forges x
-(B (name forge-vb1)(=> (^ (increaseStruct x :0.5)(etc-forge-vb1 x :0.4))(forge-vb e y x u)))
+(B (name forge-vb1)(=> (increaseStruct x :0.9)(forge-vb e y x u)))
 
 ; z paralyzes x
-(B (name paralyze1) (=> (^ (decreaseFct x :0.5)(etc-paralyze-vb1 x :0.4))(paralyze-vb e z x u)))
+(B (name paralyze1) (=> (decreaseFct x :0.9)(paralyze-vb e z x u)))
 
 ; z incapacitates x
-(B (name incapacitate1)(=> (^ (decreaseFct x :0.5)(etc-incapacitate-vb1 x :0.4))(incapacitate-vb e z x u)))
+(B (name incapacitate1)(=> (decreaseFct x :0.9)(incapacitate-vb e z x u)))
 
 ; z facilitates x
-(B (name facilitate-vb1)(=> (^ (increaseFct x :0.5)(etc-facilitate-vb1 x :0.4))(faciliitate-vb e z x u)))
+(B (name facilitate-vb1)(=> (increaseFct x :0.9)(faciliitate-vb e z x u)))
 
 ; z assists x
-(B (name assist-vb1)(=> (^ (increaseFct x :0.5)(etc-assist-vb1 x :0.4))(assist-vb e z x u)))
+(B (name assist-vb1)(=> (increaseFct x :0.9)(assist-vb e z x u)))
 
 ; z rebuilds x
-(B (name rebuild1)(=> (^ (increaseStruct x :0.5)(etc-rebuild-vb1 x :0.4))(rebuild-vb e z x u)))
+(B (name rebuild1)(=> (increaseStruct x :0.9)(rebuild-vb e z x u)))
 
 ; z detonates x
-(B (name detonate1)(=> (^ (decreaseFct x :0.5)(etc-detonate-vb1 x :0.4))(detonate-vb e z x u)))
+(B (name detonate1)(=> (decreaseFct x :0.5)(detonate-vb e z x u)))
 
 ; z injures x
-(B (name injure1)(=> (^ (decreaseFct x :0.5)(etc-injure-vb1 x :0.4))(injure-vb e z x u)))
+(B (name injure1)(=> (decreaseFct x :0.9)(injure-vb e z x u)))
 
 ; x falls apart
-(B (name fall-apart1)(=> (^ (decreaseStruct x :0.5)(etc-fall-apart-vb1 x :0.4))(^ (fall-vb e x y u)(apart-adv e1 e))))
+(B (name fall-apart1)(=> (decreaseStruct x :0.9)(^ (fall-vb e x y u)(apart-adv e1 e))))
 
 ; z cracks x
-(B (name crack1)(=> (^ (decreaseStruct x :0.5)(etc-crack-vb1 x :0.4))(crack-vb e z x u)))
+(B (name crack1)(=> (decreaseStruct x :0.9)(crack-vb e z x u)))
 
 ; x grows
-(B (name grow1)(=> (^ (increaseStruct x :0.5)(etc-grow-vb1 x :0.4))(grow-vb e x y u)))
+(B (name grow1)(=> (increaseStruct x :0.9)(grow-vb e x y u)))
 
 ; x grows y
-(B (name grow1)(=> (^ (increaseStruct y :0.5)(etc-grow-vb1 y :0.4))(grow-vb e x y u)))
+(B (name grow1)(=> (increaseStruct y :0.9)(grow-vb e x y u)))
 
 ; z strengthens x
-(B (name strengthen1)(=> (^ (increaseStruct x :0.5)(etc-strengthen-vb1 x :0.4))(strengthen-vb e z x u)))
+(B (name strengthen1)(=> (increaseStruct x :0.9)(strengthen-vb e z x u)))
 
 ; scorched x
-(B (name scorched1)(=> (^ (decreaseStruct x :0.5)(etc-scorched-vb1 x :0.4))(scorched-adj e x)))
+(B (name scorched1)(=> (decreaseStruct x :0.9)(scorched-adj e x)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; GOVERNANCE DFCEs
@@ -513,57 +513,95 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; POLITICS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-  
 	   
-(B (name voter-nn1)(=> (^ (voter x :0.4)(etc-voter-nn1 :0.5))(voter-nn e y)))
+(B (name voter-nn1)(=> (voter x :0.9)(voter-nn e y)))
 
-(B (name election-nn1)(=> (^ (conflict x a b g1 g2 :0.5)(etc-election-nn1 x a b g1 g2 :0.4))(election-vb e x)))
+(B (name election-nn1)(=> (conflict x a b g1 g2 :0.9)(election-vb e x)))
 
-(B (name elect-vb1)(=> (^ (conflict x a b g1 g2 :0.5)(etc-elect-vb1 x a b g1 g2 :0.4))(elect-vb e x y g1)))
+(B (name elect-vb1)(=> (conflict x a b g1 g2 :0.9)(elect-vb e x y g1)))
 
-(B (name vote-vb1)(=> (^ (conflict e1 a b g1 g2 :0.5)(member x a :0.1)(etc-vote-vb1 e1 x a b g1 g2 :0.3))(vote-vb e x a u)))
+; x votes
+(B (name vote-vb1)(=> (^ (conflict e1 a b g1 g2 :0.9)(members x a :0.4))(vote-vb e x a u)))
 
-(B (name politicalParty1)(=> (^ (conflict e x y g1 g2 :0.5)(etc-politicalParty1 e x y g1 g2 :0.4))(politicalParty x)))
+(B (name politicalParty1)(=> (conflict e x y g1 g2 :0.9)(politicalParty x)))
 
 (B (name politicalParty2)(=> (^ (dFCompEnt x :0.4)(functionality f x 0:3)(leadP f x y))(politicalParty x)))
 
-(B (name Democratic-adj1)(=> (^ (politicalParty x :0.5)(etc-Democratic-adj1 x :0.4))(Democratic-adj e x)))
+(B (name Democratic-adj1)(=> (politicalParty x :0.9)(democratic-adj e x)))
 
-(B (name Democrat-nn1)(=> (^ (politicalParty x :0.5)(etc-Democrat-nn1 x :0.4))(Democrat-nn e x)))
+(B (name Democrat-nn1)(=> (politicalParty x :0.9)(democrat-nn e x)))
 
-(B (name Republican-nn1)(=> (^ (politicalParty x :0.5)(etc-Republican-nn1 x :0.4))(Republican-nn e x)))
+(B (name Republican-nn1)(=> (politicalParty x :0.9)(republican-nn e x)))
 
-(B (name Republican-adj1)(=> (^ (politicalParty x :0.5)(etc-Republican-adj1 x :0.4))(Republican-adj e x)))
+(B (name Republican-adj1)(=> (politicalParty x :0.9)(republican-adj e x)))
 
-(B (name GOP-nn1)(=> (^ (politicalParty x :0.5)(etc-GOP-nn1 x :0.4))(GOP-nn e x)))
+(B (name GOP-nn1)(=> (politicalParty x :0.9)(gop-nn e x)))
 
-(B (name Right-winger-nn1)(=> (^ (politicalParty x :0.5)(etc-Right-winger-nn1 x :0.4))(Right-winger-nn e x)))
+(B (name Right-winger-nn1)(=> (politicalParty x :0.9)(right-winger-nn e x)))
 
-(B (name Tea-party-nn1)(=> (^ (politicalParty x :0.5)(etc-Tea-party-nn1 x :0.4))(^ (Tea-nn e1 y)(nn y x)(party-nn e x))))
+(B (name Tea-party-nn1)(=> (politicalParty x :0.9)(^ (tea-nn e1 y)(nn e2 y x)(party-nn e x))))
 
-(B (name PRI-nn1)(=> (^ (politicalParty x :0.5)(etc-PRI-nn1 x :0.4))(PRI-nn e x)))
+(B (name PRI-nn1)(=> (politicalParty x :0.9)(pri-nn e x)))
 
-(B (name movement-nn1)(=> (^ (politicalParty x :0.5)(etc-movement-nn1 x :0.4))(movement-nn e x)))
+(B (name movement-nn1)(=> (politicalParty x :0.9)(movement-nn e x)))
 
-(B (name effort-nn1)(=> (^ (politicalParty x :0.7)(etc-effort-nn1 x :0.5))(effort-nn e x)))
+(B (name effort-nn1)(=> (politicalParty x :1.2)(effort-nn e x)))
 
-(B (name political-party-nn1)(=> (^ (politicalParty x :0.5)(etc-political-party-nn1 x :0.4))(^ (political-adj e1 x)(party-nn e x))))
+(B (name political-party-nn1)(=> (politicalParty x :0.9)(^ (political-adj e1 x)(party-nn e x))))
 
 (B (name party-nn1)(=> (politicalParty x :1.1)(party-nn e x)))
+
+(B (name democratic-attack-vb1) (=> (conflict c x y g1 g2 :1.1)(^ (democratic-adj e x)(attack c x y))))
+
+(B (name republican-attack-vb1) (=> (conflict c x y g1 g2 :1.1)(^ (republican-adj e x)(attack c x y))))
 
 ; y is vulnerable
 (B (name vulnerable-adj1)(=> (conflict c x y g1 g2 :0.9)(vulnerable-adj e y)))
 
 (B (name side-nn1)(=> (^ (conflict c x y g1 g2 :1.5)(adversary e1 x y c))(side-nn e x)))
 
-(B (name nation-nn11)(=> (^ (conflict c x y g1 g2 :0.7)(etc-nation-nn11 c x y g1 g2 :0.5))(nation-nn e x)))
+(B (name nation-nn11)(=> (conflict c x y g1 g2 :0.9)(nation-nn e x)))
 
-(B (name president-nn1)(=> (^ (lead x y :0.5)(etc-president-nn1 x y :0.4))(president-nn e x)))
+(B (name president-nn1)(=> (lead x y :0.9)(president-nn e x)))
 
-(B (name leader-nn1)(=> (^ (lead x y :0.5)(etc-leader-nn1 x y :0.4))(leader-nn e x)))
+(B (name leader-nn1)(=> (lead x y :0.9)(leader-nn e x)))
 
-(B (name governor-nn1)(=> (^ (lead x y :0.5)(etc-governor-nn1 x y :0.4))(governor-nn e x)))
+(B (name governor-nn1)(=> (lead x y :0.9)(governor-nn e x)))
+
+(B (name speaker-nn1)(=> (lead x y :0.9)(speaker-nn e x)))
+
+(B (name king-nn1)(=> (lead x y :0.9)(king-nn e x)))
+
+(B (name queen-nn1)(=> (lead x y :0.9)(queen-nn e x)))
+
+(B (name emir-nn1)(=> (lead x y :0.9)(emir-nn e x)))
+
+(B (name prime-minister-nn1)(=> (lead x y :0.9)(^(prime-adj e0 x)(minister-nn e x))))
+
+(B (name cheif-nn1)(=> (lead x y :0.9)(cheif-nn e x)))
+
+(B (name boss-nn1)(=> (lead x y :0.9)(boss-nn e x)))
+
+(B (name captain-nn1)(=> (lead x y :0.9)(captain-nn e x)))
+
+(B (name commander-nn1)(=> (lead x y :0.9)(commander-nn e x)))
+
+(B (name general-nn1)(=> (lead x y :0.9)(general-nn e x)))
+
+(B (name ruler-nn1)(=> (lead x y :0.9)(ruler-nn e x)))
+
+(B (name head-nn1)(=> (lead x y :0.9)(head-nn e x)))
+
+(B (name manager-nn1)(=> (lead x y :0.9)(manager-nn e x)))
+
+(B (name shah-nn1)(=> (lead x y :0.9)(shah-nn e x)))
+
+(B (name sheikh-nn1)(=> (lead x y :0.9)(sheikh-nn e x)))
+
+(B (name principal-nn1)(=> (lead x y :0.9)(principal-nn e x)))
+
+(B (name ringleader-nn1)(=> (lead x y :0.9)(ringleader-nn e x)))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; OTHER ENGLISH LEXICAL AXIOMS
