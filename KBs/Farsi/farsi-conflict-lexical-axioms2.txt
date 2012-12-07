@@ -153,6 +153,8 @@
 (B (name ‎ryys) (=> (president x) (‎ryys-nn e2 x)))
 (B (name ‎ryys-jmhvr) (=> (president x) (^ (jmhvr-vb e2 x u1 u2) (‎ryys-nn e3 x1) (NVE e4 x1 e2))))
 (B (name ‎ryys-jmhvr) (=> (president x) (^ (jmhvr-vb e2 x u1 u2) (‎ryys-nn e3 x1) (ENC e4 x1 e2))))
+(B (name rvysa) (=> (president x) (rvysa-nn e2 x)))
+(B (name rvysa) (=> (president x) (rvysa-nn e2 x)))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;(rifle w)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -18,3 +18,4 @@ parserModelFile=farsiMALTModel
 cd $parserDir
 #modify the POS tagged file to include dummy label & dep lines
 cat $taggedInputFile | $taggedFileToCONLL |java -mx2G -jar malt.jar -c $parserModelFile -m parse -v off> $parsedFileName
+#cat $taggedInputFile | $taggedFileToCONLL > $parsedFileName

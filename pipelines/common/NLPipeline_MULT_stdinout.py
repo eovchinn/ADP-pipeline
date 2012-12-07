@@ -49,7 +49,7 @@ def main():
 		if pa.lang == 'FA':
 			PARSER_PIPELINE = FARSI_PIPELINE 	
 			if pa.input: 
-				PARSER_PIPELINE += ' ' + pa.input + ' ' + outputdir
+				PARSER_PIPELINE += ' ' + pa.input #+ ' ' + outputdir
 			LF2HENRY = 'python ' + PARSER2HENRY + ' --nonmerge sameid freqpred'
 		elif pa.lang == 'ES': 
 			PARSER_PIPELINE = SPANISH_PIPELINE

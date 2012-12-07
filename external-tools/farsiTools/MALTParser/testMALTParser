@@ -4,7 +4,7 @@ MALTParserParameterDir=$METAPHOR_DIR/external-tools/farsiTools/MALTParser
 MALTParserDir=$METAPHOR_DIR/external-tools/malt-1.5
 
 
-testFile=$MALTParserParameterDir/testData/dependency.test.dashSeparated
+testFile=$MALTParserParameterDir/testData/dependency.test.dashSeparated.CoarsePOS
 modelFile=farsiMALTModel
 outputFile=$MALTParserParameterDir/test.out
 

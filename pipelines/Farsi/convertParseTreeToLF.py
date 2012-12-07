@@ -433,22 +433,23 @@ def createNewPropsForNounsAndPossesives(props,rels):
 def createNewPropsForNounsWithPossesivePostfixes(props,rels):
     global eventualityArgCounter
     global entityArgCounter
+    newProps=[]
     for prop in props:
         (id,word,lemma,POS,args)=prop 
+        if POS!=POSDict["N"]: continue
         postFix=word.replace(lemma, "")
         if postFix not in pronouns:
             continue
         eventualityArgCounter+=1
         entityArgCounter+=1
-        pronounArg="x%s"%entityArgCounter
-        newProp1=(id,postFix,postFix,POSDict["PR"],["e%s"%eventualityArgCounter,pronounArg])
+        pronounArg="x%s"%str(entityArgCounter)
+        newProps+=[(id,postFix,getTranslit(postFix),POSDict["PR"],["e%s"%str(eventualityArgCounter),pronounArg])]
         
         eventualityArgCounter+=1
         
-        newProp2=(-1,"","of-in","",["e%s"%eventualityArgCounter,args[1],pronounArg])
+        newProps+=[(-1,"","of-in","",["e%s"%eventualityArgCounter,args[1],pronounArg])]
         
-        props+=[newProp1,newProp2]
-    return props
+    return props+newProps
 def createNewPropsForPlural(props,rels):
     global eventualityArgCounter
     global entityArgCounter
@@ -709,13 +710,20 @@ def resolveArgs(LF):
     
     
     props=createNewPropsForLightVerbs(props,rels)
+#    print "1%s"%props
     props=createNewPropsForNounsWithPossesivePostfixes(props,rels)
+#    print "2%s"%props
     props=createNewPropsForNounsAndPossesives(props,rels)
+#    print "3%s"%props
     props=createNewPropsForPlural(props,rels)
+#    print "4%s"%props
     props=createNewPropsForPronouns(props,rels)
+#    print "5%s"%props
     (newRels,props)=createNewPropsForConditionals(props,rels)
+#    print "6%s"%props
     rels=newRels
     props=createNewPropsForNegation(props,rels)
+#    print "7%s"%props
     
     propDict=createPropDict(props)
     equalArgSets=getEqualArgSets(propDict,rels)  
@@ -730,10 +738,13 @@ def resolveArgs(LF):
     
     #addToEqualArgSet(equalArgSets,handleWhileWords(props,rels))  because words are nouns and are adverbs in farsi.
     props=replaceEqualArgs(props,equalArgSets)
+#    print "8%s"%props
     
     props=handleVConj(props,rels)
+#    print "9%s"%props
     nounConjArgSets=getNounConjArgSets(props,rels)
     props=createNewPropsForNounConjs(props,rels,nounConjArgSets)
+#    print "10%s"%props
            
     return (sentenceId,sentence,props,rels)               
 
