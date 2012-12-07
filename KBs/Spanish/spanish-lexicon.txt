@@ -28,9 +28,9 @@
 (B (name pugna-nn) (=> (conflict c x y g h :0.9)(pugna-nn e1 c)))
 
 ; Pie de lucha (combat) is conflict.
-(B (name piedelucha-nn) (=> (conflict c x1 y1 g h:0.9)(^ (pie-nn e1 x) (de-in e3 x y) (lucha-nn c y))))
+(B (name piedelucha-nn) (=> (conflict c x1 y1 g h :0.9)(^ (pie-nn e1 x) (de-in e3 x y) (lucha-nn c y))))
 
-(B (combate-nn)(=> (conflict c x y g h:0.3)(combate-nn e0 c)))
+(B (combate-nn)(=> (conflict c x y g h :0.3)(combate-nn e0 c)))
 
 (B (pelea-nn)(=> (conflict c x y g h :0.3)(pelea-nn e0 c)))
 
@@ -64,6 +64,9 @@
 ; conflicto contra y
 (B (name conflicto-contra) (=> (adversary e1 x y e :0.9)(^ (conflict e x u g h)(contra-in e1 e y))))
 
+; conflicto a y
+(B (name conflicto-a) (=> (adversary e1 x y e :0.9)(^ (conflict e x u g h)(a-in e1 e y))))
+
 ; en conflicto
 (B (name en-conflicto) (=> (adversary e1 x y e :0.9)(^ (en-in e0 x e) (conflict e u1 y g h))))
 
@@ -84,6 +87,15 @@
 (B (name rival-nn1)(=> (^ (conflict e x y g h :0.6)(adversary e1 x y e :0.3))(rival-nn e1 x)))
 
 (B (name rival-nn2) (=> (^ (conflict e x y g h :0.6) (adversary e1 x y e :0.3)) (^ (rival-nn e1 x) (de-in e2 x y))))
+
+; player x
+(B (name player-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (jugador-nn e x)))
+
+; team x
+(B (name team-nn) (=> (^ (dFCompEnt x)(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (equipo-nn e x)))
+
+; band/gang
+(B (name band-nn) (=> (^ (dFCompEnt x)(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (banda-nn e x)))
 
 ; Adversaries have goals
 
@@ -261,7 +273,10 @@
 
 ;paralyze/incapacitate
 
-;facilitate/assist
+; growth
+(B (name growth-nn1)(=> (^ (dFCompEnt x :0.3)(increaseFct x :0.6))(crecimiento-nn e0 e)))
+
+(B (name grow-vb1)(=> (^ (dFCompEnt x :0.3)(increaseFct x :0.6))(crecer-vb e0 x u1 u2)))
 
 ;rebuild
 
@@ -279,13 +294,216 @@
 
 ;scorch
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; GOVERNANCE DFCEs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; TO ADD
+(B (name nation11)(=> (conflict c x y g1 g2 :0.9)(nation x)))
 
+(B (name nation2)   (=> (nation x :0.9)(nación-nn e x)))
+
+(B (name Mexico1)   (=> (nation x :0.9)(méxico-nn e x)))
+
+(B (name Mexico1)   (=> (nation x :0.9)(México-nn e x)))
+
+(B (name Russia1)   (=> (nation x :0.9)(rusia-nn e x)))
+
+(B (name Russia2)   (=> (nation x :0.9)(Rusia-nn e x)))
+
+(B (name Iran1)   (=> (nation x :0.9)(irán-nn e x)))
+
+(B (name Iran1)   (=> (nation x :0.9)(Irán-nn e x)))
+
+(B (name America1)   (=> (nation x :0.9)(américa-nn e x)))
+
+(B (name America1)   (=> (nation x :0.9)(América-nn e x)))
+
+(B (name country1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)(thrive f s :0.1)(citizens s x :0.1))(país-nn e x)))
+
+(B (name state1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)(thrive f s :0.1)(citizens s x :0.1))(estado-nn e x)))
+
+(B (name government1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)(thrive f s :0.1)(citizens s x :0.1))(gobierno-nn e x)))
+
+(B (name government2)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)(thrive f s :0.1)(citizens s x :0.1))(administración-nn e x)))
+
+(B (name law1) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)(control f x s :0.1)(citizens s z :0.1))(ley-nn e x)))
+
+(B (name law2) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)(control f x s :0.1)(citizens s z :0.1))(jurisprudencia-nn e x)))
+
+(B (name law3) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)(control f x s :0.1)(citizens s z :0.1))(regla-nn e x)))
+
+(B (name democracy1) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(leadP f s x :0.1)(citizens s x :0.1))(democracia-nn e x)))
+
+(B (name authoritarianism1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(control f x s :0.1)(citizens s z :0.1))(autoritarismo-nn e x)))
+
+(B (name economy1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(economía-nn e x)))
+
+(B (name economic1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(economico-adj e x)))
+
+(B (name sector1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(sector-nn e x)))
+
+(B (name transportation1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(transporte-nn e x)))
+
+(B (name transportation1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(transportación-nn e x)))
+
+(B (name financial1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(financiero-adj e x)))
+
+(B (name financial2)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(económico-adj e x)))
+
+(B (name financial3)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(fiscal-adj e x)))
+
+(B (name business1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(negocios-nn e x)))
+
+(B (name business2)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(empresa-nn e x)))
+
+(B (name business3)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(comercio-nn e x)))
+
+(B (name business4)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(empleo-nn e x)))
+
+(B (name market1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(mercado-nn e x)))
+
+(B (name market2)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(bolsa-nn e x)))
+
+(B (name system1)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))(sistema-nn e x)))
+
+(B (name body1)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))(cuerpo-nn e x)))
+
+(B (name organization1)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4)(sharedPlan f x))(organización-nn e x)))
+
+(B (name organization1)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4)(sharedPlan f x))(organismo-nn e x)))
+
+(B (name program1)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))(programa-nn e x)))
+
+(B (name class1)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))(class-nn e x)))
+
+(B (name progress1)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))(progreso-nn e x)))
+
+(B (name progress2)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))(avance-nn e x)))
+
+(B (name progress3)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))(marcha-nn e x)))
+
+(B (name progress4)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))(evolución-nn e x)))
+
+(B (name progress5)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))(progresar-vb e x u1 u2)))
+
+(B (name reputation1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(respectP f y z x :0.1))(reputación-nn e x)))	  
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; POLITICS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	   
+(B (name votante-nn1)(=> (voter x :0.9)(votante-nn e y)))
+
+(B (name elector-nn1)(=> (voter x :0.9)(elector-nn e y)))
+
+(B (name elección-nn1)(=> (conflict x a b g1 g2 :0.9)(elección-nn e x)))
+
+(B (name votación-nn1)(=> (conflict x a b g1 g2 :0.9)(votación-nn e x)))
+
+(B (name eleccionario-nn1)(=> (conflict x a b g1 g2 :0.9)(eleccionario-nn e x)))
+
+(B (name elegir-vb1)(=> (conflict e x b g1 g2 :0.9)(elegir-vb e a b g1)))
+
+(B (name escoger-vb1)(=> (conflict x a b g1 g2 :0.9)(escoger-vb e x y g1)))
+
+; x votes
+(B (name votar-vb1)(=> (^ (conflict e1 a b g1 g2 :0.9)(members x a :0.4))(votar-vb e x u1 u2)))
+
+(B (name balotar-vb1)(=> (^ (conflict e1 a b g1 g2 :0.9)(members x a :0.4))(balotar-vb e x u1 u2)))
+
+; x votes for y
+(B (name votar-para-in1)(=> (^ (conflict e1 a b g1 g2 :0.9)(members x a :0.4))(^ (votar-vb e x a u)(para-in e2 e g1))))
+
+(B (name politica-nn1)(=> (conflict c x y g h :0.9)(politica-nn e c)))
+
+(B (name politico-adj)(=> (conflict c x y g h :1.2)(politico-adj e c)))
+
+(B (name contribuyente-nn)(=> (politicalParty x :1.2)(contribuyente-nn e x)))
+
+(B (name contribuidor-nn)(=> (politicalParty x :1.2)(contribuidor-nn e x)))
+
+(B (name Democratic-adj1)(=> (politicalParty x :0.9)(democrático-adj e x)))
+
+(B (name Democrat-nn1)(=> (politicalParty x :0.9)(Demócrata-nn e x)))
+
+(B (name Democrat-nn2)(=> (politicalParty x :0.9)(demócrata-nn e x)))
+
+(B (name Republican-nn1)(=> (politicalParty x :0.9)(Republicano-nn e x)))
+
+(B (name Republican-nn2)(=> (politicalParty x :0.9)(republicano-nn e x)))
+
+(B (name Republican-adj1)(=> (politicalParty x :0.9)(republicano-adj e x)))
+
+(B (name GOP-nn1)(=> (politicalParty x :0.9)(GOP-nn e x)))
+
+(B (name Right-winger-nn1)(=> (politicalParty x :0.9)(^ (banda-nn e x)(derecha-nn e0 y)(nn e1 x y))))
+
+(B (name Tea-party-nn1)(=> (politicalParty x :0.9)(^ (tea-nn e1 y)(nn e2 y x)(party-nn e x))))
+
+(B (name PRI-nn1)(=> (politicalParty x :0.9)(pri-nn e x)))
+
+(B (name PRI-nn1)(=> (politicalParty x :0.9)(PRI-nn e x)))
+
+(B (name movement-nn1)(=> (politicalParty x :0.9)(movimiento-nn e x)))
+
+(B (name political-party-nn1)(=> (politicalParty x :0.9)(^ (politico-adj e1 x)(partido-nn e x))))
+
+(B (name party-nn1)(=> (politicalParty x :1.1)(partido-nn e x)))
+
+; y is vulnerable
+(B (name vulnerable-adj1)(=> (conflict c x y g1 g2 :0.9)(vulnerable-adj e y)))
+
+(B (name vulnerable-adj1)(=> (conflict c x y g1 g2 :0.9)(desprotegido-adj e y)))
+
+(B (name side-nn1)(=> (^ (conflict c x y g1 g2 :1.5)(adversary e1 x y c))(lado-nn e x)))
+
+(B (name part-nn2)(=> (^ (conflict c x y g1 g2 :1.5)(adversary e1 x y c))(parte-nn e x)))
+
+(B (name flank-nn2)(=> (^ (conflict c x y g1 g2 :1.5)(adversary e1 x y c))(costado-nn e x)))
+
+(B (name president-nn1)(=> (lead x y :0.9)(presidente-nn e x)))
+
+(B (name leader-nn1)(=> (lead x y :0.9)(líder-nn e x)))
+
+(B (name leader-nn2)(=> (lead x y :0.9)(dirigente-nn e x)))
+
+(B (name leader-nn3)(=> (lead x y :0.9)(caudillo-nn e x)))
+
+(B (name leader-nn3)(=> (lead x y :0.9)(patrón-nn e x)))
+
+(B (name governor-nn1)(=> (lead x y :0.9)(gobernador-nn e x)))
+
+(B (name mayor-nn1)(=> (lead x y :0.9)(alcalde-nn e x)))
+
+(B (name speaker-nn1)(=> (lead x y :0.9)(speaker-nn e x)))
+
+(B (name king-nn1)(=> (lead x y :0.9)(rey-nn e x)))
+
+(B (name queen-nn1)(=> (lead x y :0.9)(reina-nn e x)))
+
+(B (name emir-nn1)(=> (lead x y :0.9)(emir-nn e x)))
+
+(B (name prime-minister-nn1)(=> (lead x y :0.9)(^(primer-adj e0 x)(ministro-nn e x))))
+
+(B (name minister-nn1)(=> (lead x y :0.9)(ministro-nn e x)))
+
+(B (name cheif-nn1)(=> (lead x y :0.9)(jefe-nn e x)))
+
+(B (name captain-nn1)(=> (lead x y :0.9)(capitán-nn e x)))
+
+(B (name commander-nn1)(=> (lead x y :0.9)(commandante-nn e x)))
+
+(B (name commander-nn2)(=> (lead x y :0.9)(commendador-nn e x)))
+
+(B (name general-nn1)(=> (lead x y :0.9)(generál-nn e x)))
+
+(B (name ruler-nn1)(=> (lead x y :0.9)(gobernante-nn e x)))
+
+(B (name shah-nn1)(=> (lead x y :0.9)(shah-nn e x)))
+
+(B (name sheikh-nn1)(=> (lead x y :0.9)(sheikh-nn e x)))
+
+(B (name ringleader-nn1)(=> (lead x y :0.9)(cabecilla-nn e x)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -144,3 +144,12 @@
    (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)
           (thrive f s :0.1)(citizens s x :0.1))
        (nation x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; POLITICS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name politicalParty1)(=> (conflict e x y g1 g2 :0.9)(politicalParty x)))
+
+(B (name politicalParty2)(=> (^ (dFCompEnt x :0.4)(functionality f x 0:3)(leadP f x y))(politicalParty x)))
+
