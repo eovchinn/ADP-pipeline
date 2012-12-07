@@ -1,17 +1,26 @@
+
+; reove typlt
+; conflict and adversary come together if we have adversary words like enemy
+;(B (name ‎styzh-krd#kn) (=> (^(conflict e1 x y g h)(adversary e1 y x c)) (^ (krd#kn-vb e1 x u1 u2) (‎styzh-nn e3 x1) (NVE e4 x1 e1))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;(adversary e1 y x c)
+;(adversary e1 x y c)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(B (name dshmn) (=> (adversary e1 y x c) (dshmn-nn e2 x)))
-(B (name bdkhvah) (=> (adversary e1 y x c) (bdkhvah-nn e2 x)))
-(B (name rghyb) (=> (adversary e1 y x c) (rghyb-nn e2 x)))
-(B (name edv) (=> (adversary e1 y x c) (edv-nn e2 x)))
-(B (name khsm) (=> (adversary e1 y x c) (khsm-nn e2 x)))
-(B (name hryf) (=> (adversary e1 y x c) (hryf-nn e2 x)))
-(B (name trf) (=> (adversary e1 y x c) (trf-nn e2 x)))
+(B (name dshmn) (=> (adversary e1 x y c) (dshmn-nn e2 x)))
+(B (name dshmn) (=> (adversary e1 x y c) (dshmnan-nn e2 x)))
+(B (name bdkhvah) (=> (adversary e1 x y c) (bdkhvah-nn e2 x)))
+(B (name bdkhvah) (=> (adversary e1 x y c) (bdkhvahan-nn e2 x)))
+(B (name rghyb) (=> (adversary e1 x y c) (rghyb-nn e2 x)))
+(B (name rghyb) (=> (adversary e1 x y c) (rghba-nn e2 x)))
+(B (name edv) (=> (adversary e1 x y c) (edv-nn e2 x)))
+(B (name khsm) (=> (adversary e1 x y c) (khsm-nn e2 x)))
+(B (name hryf) (=> (adversary e1 x y c) (hryf-nn e2 x)))
+(B (name trf) (=> (adversary e1 x y c) (trf-nn e2 x)))
+(B (name trf) (=> (^(adversary e1 x y c))(trfyn-nn e2 x)))
 
 ;;;manual
-(B (name adversary-of) (=> ((adversary e1 y x c))(^(adversary e1 u x c) (of-in e2 x y))))
-(B (name adversary-of2) (=> ((adversary e1 y x c))(^(adversary e1 u x c) (nn e2 x y))))
+(B (name adversary-of) (=> (adversary e1 x y c)(^(adversary e1 u x c) (of-in e2 x y))))
+(B (name adversary-of2) (=> (adversary e1 x y c)(^(adversary e1 u x c) (nn e2 x y))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;(aim e1 x w y)
@@ -214,8 +223,10 @@
 ;(goal e1 g x)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (B (name ‎hdf) (=> (goal e1 g x) (‎hdf-nn e2 x)))
+(B (name a‎hdaf) (=> (^(goal e1 g x)(typelt e3 x s1)) (a‎hdaf-nn e2 x)))
 (B (name ‎mnzvr) (=> (goal e1 g x) (‎mnzvr-nn e2 x)))
 (B (name ‎mghsd) (=> (goal e1 g x) (‎mghsd-nn e2 x)))
+(B (name ‎mghsd) (=> (^(goal e1 g x)(typelt e3 x s1)) (‎mghasd-nn e2 x)))
 (B (name ‎mghsvd) (=> (goal e1 g x) (‎mghsvd-nn e2 x)))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;(gun x)
@@ -246,6 +257,7 @@
 ;(president x)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (B (name ‎ryys) (=> (president x) (‎ryys-nn e2 x)))
+(B (name rvysa) (=> (president x)(rvysa-nn e2 x)))
 (B (name ‎ryys-jmhvr) (=> (president x) (‎ryys-jmhvr-nn e3 x1)))
 (B (name ‎ryys-jmhvr) (=> (president x) (‎ryys-jmhvr-nn e3 x1)))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -297,3 +309,4 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (B (name ‎aslhh) (=> (weapon w) (‎aslhh-nn e2 w)))
 (B (name ‎tslyhat) (=> (weapon w) (‎tslyhat-nn e2 w)))
+
