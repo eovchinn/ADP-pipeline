@@ -16,7 +16,7 @@ def malter(LINE_OBJECT):
     tokenString = "_".join(Token)
     #Use twice: POS and CPOS
     tPOS = LINE_OBJECT[1].strip()
-    aPOS = replace_tag(tPOS)
+    aPOS = replace_tag(tPOS,LINE_OBJECT[2].strip())
     Lemma = determineLemma(LINE_OBJECT[2].strip(),tokenString)
     malt_line = "0"+"\t"+tokenString+"\t"+Lemma+"\t"+aPOS+"\t"+aPOS+"\t"+"0"+"\t"+"0"+"\t"+"ROOT"+"\t"+"-"#+"\t"+tPOS
     return malt_line
@@ -51,7 +51,7 @@ def reform(infile):
     return malt_lines
     file_object.close()
 
-def replace_tag(tag):
+def replace_tag(tag,lemma):
     if treeAdj.match(tag):
         return "a"
     elif treeConj.match(tag):
@@ -76,16 +76,21 @@ def replace_tag(tag):
     #     return "w"
     elif treeNum.match(tag):
         return "z"
+    elif tag == "CODE":
+        if lemma == "@card@":
+            return "z"
+        else:
+            return "n"
     else:
         return tag
     
 treeAdj = re.compile("ADJ")
 treeConj = re.compile("CC.*|CQUE|CSUBX")
 treeDet = re.compile("ART|DM|QU")
-treePunct = re.compile("BACKSLASH|CM|COLON|DASH|DOTS|LP|PERCT|QT|RP|SEMICOLON|SLASH|SYM|UMMX")
+treePunct = re.compile("BACKSLASH|CM|COLON|DASH|DOTS|LP|PERCT|QT|RP|SEMICOLON|SLASH|SYM")
 #^also FS for full stop - but need this to sepatate sents
 treeInter = re.compile("ITJN|PNC")
-treeNoun = re.compile("NMEA|NMON|NC|NP|ALF*|ACRNM|CODE|PE")
+treeNoun = re.compile("NMEA|NMON|NC|NP|ALF*|ACRNM|PE|UMMX")
 treePro = re.compile("INT|PPC|PPO|PPX|REL|SE")
 treeAdv = re.compile("CSUBF|ADV|NEG")
 treePrep = re.compile("PREP|CSUBI|PAL|PDEL|PREP/DEL")
