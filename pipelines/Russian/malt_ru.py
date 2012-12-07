@@ -329,7 +329,7 @@ class MaltConverter(object):
                             self.__visible_preds.append(d.pred)
 #                            break
                         elif d.cpostag == "adj" and d.pred and d.pred.args:
-                            print "YES", d.lemma, c.lemma
+#                            print "YES", d.lemma, c.lemma
                             args[i] = d.pred.args[0]
                             d.important = True
 #                            break
