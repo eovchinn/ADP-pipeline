@@ -15,6 +15,8 @@
 ; 
 ; 12/5/2012 aks - added new build-destroy, politics, governance terms from Jerry
 ;
+; 12/6/2012 aks - bug fixes
+;
 ; QUESTIONS
 ; 10/31/2012 aks
 ; 1. how to tell for sure when a rule should be entered as a lexical item? E.G. "combat is a conflict" could be (=> (conflict e x y g h :1.2)(combat e)) or (=> (conflict e x y g h :0.9)(combat-nn e1))
@@ -32,7 +34,7 @@
 ;    ANS: yes, remove target and train, leave only "aim" as a concept and map the others lexically
 ;     
 ; 11/9 aks
-; 1. "one type of x is a y" does x or y got on the LHS of the rule?
+; 1. "one type of x is a y" does x or y go on the LHS of the rule?
 ;
 ;
 ; ARGUMENT LISTS BY POS
@@ -48,7 +50,7 @@
 ;;; CONFLICT
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; NOUNS
+; CONFLICT NOUNS
 
 (B (name conflict-nn) (=> (conflict e x y g h :0.9)(conflict-nn e1 e)))
 
@@ -66,21 +68,23 @@
 
 (B (name quarrel-nn) (=> (conflict e x y g h :0.9) (quarrel-nn e1 e)))
 
-(B (name competition-nn) (=> (conflict e x y g h :0.9)(competition-nn e0 e)))
+(B (name competition-nn) (=> (conflict e x y g h :0.9)(competition-nn e1 e)))
 
-; VERBS
+; CONFLICT VERBS
 
 ; x combats y
-(B (name combat-vb) (=> (^ (conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (combat-vb e x u1 u2)))
+(B (name combat-vb) (=> (^ (conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (combat-vb e x y u2)))
 
-; g and h conflict
-(B (name conflict-vb) (=> (^ (conflict e x y g h :0.3)) (conflict-vb e g u1 u2)))
+; g and h are goals that conflict
+(B (name conflict-vb) (=> (conflict e x y g h :0.9) (conflict-vb e g u1 u2)))
+
+(B (name conflict-vb) (=> (conflict e x y g h :0.9) (^ (conflict-vb e g u1 u2)(with-in e1 e y))))
 
 ; x struggles
-(B (name struggle-vb) (=> (^ (conflict e x y g h :0.3)) (struggle-vb e x u1 u2)))
+(B (name struggle-vb) (=> (^ (conflict e x y g h :0.3)(adversary e1 x y e)) (struggle-vb e x u1 u2)))
 
 ; x battles 
-(B (name battle-vb) (=> (^ (conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (battle-vb e x u1 u2)))
+(B (name battle-vb) (=> (^ (conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (battle-vb e x y u2)))
 
 ; x fights 
 (B (name fight-vb) (=> (^ (conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (fight-vb e x u1 u2)))
@@ -104,29 +108,31 @@
 (B (name withstand-vb) (=> (^ (conflict e x y g h :0.3) (attack e1 x y :0.6)) (withstand-vb e x w u2)))
 
 ; x competes 
-(B (name compete-vb) (=> (^ (conflict e x y g h :0.3)) (compete-vb e x u1 u2)))
+(B (name compete-vb) (=> (^ (conflict e x y g h :0.3)(adversary e1 x y e :0.6)) (compete-vb e x u1 u2)))
 
-; PREP PHRASES
+; CONFLICT PREP PHRASES
 
 (B (name conflict-with) (=> (adversary e1 x y e :1.2) (^(conflict e x u g h)(with-in e2 e y))))
 
 (B (name conflict-against) (=> (adversary e1 x y e :1.2) (^(conflict e x u g h)(against-in e2 e y))))
 
-(B (name conflict-between) (=> (adversary e1 x y e :1.2) (^(conflict e u1 u2 g h)(between-in e2 e x)(between-in e2 e y))))
+(B (name conflict-between) (=> (adversary e1 x y e :1.2) (^(conflict e u1 u2 g h)(between-in e2 e x)(between-in e3 e y))))
 
 (B (name conflict-for) (=> (goal e1 g x :1.2) (^(conflict e x y u h)(for-in e2 e g))))
 
-; an adversary has a uniform
-(B (name uniform-nn1) (=> (^ (conflict e1 x y g h :0.3)(adversary e2 x y e1 :0.3)(part w x :0.3))(uniform-nn e2 w)))
+(B (name conflict-over) (=> (goal e1 g x :1.2) (^(conflict e x y u h)(over-in e2 e g))))
 
 ; an adversary has a strategy
-(B (name plan-nn1) (=> (^ (conflict e1 x y g h)(adversary e x y c :0.9)(part p x))(plan-nn w p)))
+; relationship between the plan and the goals is unclear, but one is evidence for the other
+(B (name plan-nn1) (=> (goal e1 g x :1.2)(plan-nn e u1)))
+
+(B (name strategy-nn1) (=> (goal e1 g x :1.2)(strategy-nn e u1)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ADVERSARY
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; NOUNS
+; ADVERSARY NOUNS
 
 ; y's adversary, x
 (B (name adversary-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (adversary-nn e1 x)))
@@ -158,7 +164,7 @@
 ; team x
 (B (name team-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (team-nn e x)))
 
-; PREP PHRASES
+; ADVERSARY PREP PHRASES
 
 ; x adversary of y
 (B (name adversary-of) (=> (adversary e1 x y e :0.9) (^(adversary e1 x u e )(of-in e2 x y))))
@@ -182,7 +188,7 @@
 ;;; ATTACK
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; NOUN
+; ATTACK NOUNS
 
 ; an attack
 (B (name attack-nn) (=> (attack e1 x y :0.9) (attack-nn e0 e1)))
@@ -197,13 +203,18 @@
 
 (B (name insult-nn) (=> (attack e1 w y :0.9) (insult-nn e0 e1)))
 
+(B (name blow-nn) (=> (attack e1 x y :0.9)(blow-nn e0 e1)))
+
+; A low blow is an illegal attack.
+(B (name low-blow-nn) (=> (^ (illegal e1)(attack e1 x y :0.9))(^(blow-nn e0 e1)(low-adj e4 e1))))
+
 ; aggressor x
 (B (name aggressor-nn) (=> (attack e1 x y :0.9) (aggressor-nn e0 x)))
 
 ; sniper x
 (B (name sniper-nn) (=> (attack e1 x y :0.9) (sniper-nn e0 x)))
 
-; VERB
+; ATTACK VERBS
 
 ; x attacks y
 (B (name attack-vb) (=> (attack e1 x y :0.9) (attack-vb e1 x y u)))
@@ -223,11 +234,19 @@
 ; x insults y
 (B (name insult-vb) (=> (attack e1 x y :0.9) (insult-vb e1 x y u)))
 
-; Joe (x) launches (e1) an attack (w) at Tom (y)
-(B (name launch-attach) (=> (attack e1 x y :0.9) (^ (launch-vb e2 x e1 u) (attack-nn e3 e1))))
+; x launches an attack
+(B (name launch-attack) (=> (attack e1 x y :0.9) (^ (launch-vb e2 x a u) (attack-nn e1 a))))
 
-; An attack (x) on Tom (y)
-(B (name attack-nn3) (=> (attack e1 x y :0.9) (^ (attack-nn e1 x) (on-in e2 x y))))
+; x blows y away
+(B (name blow-vb) (=> (attack e1 x y :0.9)(^ (blow-vb e1 x y u2)(away-in e2 e1 u1))))
+
+; ATTACK PREP PHRASES
+
+(B (name attack-in1) (=> (attack e1 x y :0.9) (^ (attack e1 x u1) (on-in e2 e1 y))))
+
+(B (name attack-in2) (=> (attack e1 x y :0.9) (^ (attack e1 x u1) (at-in e2 e1 y))))
+
+(B (name attack-in2) (=> (attack e1 x y :0.9) (^ (attack e1 x u1) (of-in e2 e1 y))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; SLAP
@@ -247,7 +266,7 @@
 ; x uses w
 (B (name use-vb) (=> (use e1 x w y z :0.9)(use-vb e1 x w u)))
 
-; NOUN
+; WEAPON NOUNS
 
 ; e1 is a shot by x with w
 (B (name shot-nn) (=> (use-weapon e1 x w y z :0.9)(shot-nn e0 e1)))
@@ -264,7 +283,7 @@
 ; x is fire (e.g. gunfire)
 (B (name gunfire-nn) (=> (attack e1 x y :0.9)(gunfire-nn e0 e1)))
 
-; VERB
+; WEAPON VERBS
 
 (B (name shoot-vb) (=> (use-weapon e1 x w y z :0.9)(shoot-vb e1 x y u2)))
 
@@ -284,7 +303,7 @@
 
 (B (name stab-vb) (=> (use-weapon e1 x w y z :0.9)(stab-vb e1 x y u2)))
 
-; PREP PHRASES
+; WEAPON PREP PHRASES
 
 (B (name use-weapon-with) (=> (use-weapon e1 x w y z :0.9)(^(use-weapon e1 x u y z)(with-in e2 e1 w))))
 
@@ -294,18 +313,12 @@
 
 (B (name use-weapon-at) (=> (use-weapon e1 x w y z :0.9)(^(use-weapon e1 x w u z)(at-in e2 e1 y))))
 
-; EXPANSION AXIOMS
+; WEAPON EXPANSION AXIOMS
 
 (B (name use-weapon-expand) (=> (^ (use e1 x w y z :0.6)(weapon w :0.6))(use-weapon e1 x w y z)))
 
 (B (name use-weapon-subj) (=> (use-weapon e1 x w y z :0.9)(^(use-weapon e1 w u y z) (weapon w))))
 
-; A low blow is an illegal attack.
-(B (name low-blow-nn) (=> (^ (illegal e2)(attack e2 x y :0.9))(^(blow-nn e3 b)(low-adj e4 b))))
-
-(B (name blow-nn) (=> (attack e1 x y :0.9)(blow-nn e0 e1)))
-
-(B (name blow-vb) (=> (attack e1 x y :0.9)(blow-vb e1 x y u2)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; AIM
@@ -446,115 +459,55 @@
 ;;;; GOVERNANCE DFCEs
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(B (name nation2)
-   (=> (nation x)(nation-nn e x)))
+(B (name nation2)   (=> (nation x)(nation-nn e x)))
 
-(B (name Mexico1)
-   (=> (nation x)(Mexico-nn e x)))
+(B (name Mexico1)   (=> (nation x)(mexico-nn e x)))
 
-(B (name Russia1)
-   (=> (nation x)(Russia-nn e x)))
+(B (name Russia1)   (=> (nation x)(russia-nn e x)))
 
-(B (name Iran1)
-   (=> (nation x)(Iran-nn e x)))
+(B (name Iran1)   (=> (nation x)(iran-nn e x)))
 
-(B (name America1)
-   (=> (nation x)(America-nn e x)))
+(B (name America1)   (=> (nation x)(america-nn e x)))
 
-(B (name country1)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)
-          (thrive f s :0.1)(citizens s x :0.1))
-       (country-nn e x)))
+(B (name country1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)(thrive f s :0.1)(citizens s x :0.1))(country-nn e x)))
 
-(B (name state1)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)
-          (thrive f s :0.1)(citizens s x :0.1))
-       (state-nn e x)))
+(B (name state1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)(thrive f s :0.1)(citizens s x :0.1))(state-nn e x)))
 
-(B (name government1)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)
-          (thrive f s :0.1)(citizens s x :0.1))
-       (government-nn e x)))
+(B (name government1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)(thrive f s :0.1)(citizens s x :0.1))(government-nn e x)))
 
-(B (name law1)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)
-          (control f x s :0.1)(citizens s z :0.1))
-       (law-nn e x)))
+(B (name law1) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)(control f x s :0.1)(citizens s z :0.1))(law-nn e x)))
 
-(B (name democracy1)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
-          (leadP f s x :0.1)(citizens s x :0.1))
-       (democracy-nn e x)))
+(B (name democracy1) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(leadP f s x :0.1)(citizens s x :0.1))(democracy-nn e x)))
 
-(B (name authoritarianism1)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
-          (control f x s :0.1)(citizens s z :0.1))
-       (authoritarianism-nn e x)))
+(B (name authoritarianism1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(control f x s :0.1)(citizens s z :0.1))(authoritarianism-nn e x)))
 
-(B (name economy1)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
-          (commerce f :0.1))
-       (economy-nn e x)))
+(B (name economy1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(economy-nn e x)))
 
-(B (name economic1)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
-          (commerce f :0.1))
-       (economic-adj e x)))
+(B (name economic1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(economic-adj e x)))
 
-(B (name sector1)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
-          (commerce f :0.1))
-       (sector-nn e x)))
+(B (name sector1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(sector-nn e x)))
 
-(B (name transportation1)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
-          (commerce f :0.1))
-       (transportation-nn e x)))
+(B (name transportation1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(transportation-nn e x)))
 
-(B (name financial1)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
-          (commerce f :0.1))
-       (financial-adj e x)))
+(B (name financial1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(financial-adj e x)))
 
-(B (name business1)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
-          (commerce f :0.1))
-       (business-nn e x)))
+(B (name business1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(business-nn e x)))
 
-(B (name market1)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
-          (commerce f :0.1))
-       (market-nn e x)))
+(B (name market1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(commerce f :0.1))(market-nn e x)))
 
-(B (name system1)
-   (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))
-       (system-nn e x)))
+(B (name system1)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))(system-nn e x)))
 
-(B (name body1)
-   (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))
-       (body-nn e x)))
+(B (name body1)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))(body-nn e x)))
 
-(B (name organization1)
-   (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4)
-          (sharedPlan f x))
-       (organization-nn e x)))
+(B (name organization1)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4)(sharedPlan f x))(organization-nn e x)))
 
-(B (name program1)
-   (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))
-       (program-nn e x)))
+(B (name program1)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))(program-nn e x)))
 
-(B (name class1)
-   (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))
-       (class-nn e x)))
+(B (name class1)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))(class-nn e x)))
 
-(B (name progress1)
-   (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))
-       (progress-nn e x)))
+(B (name progress1)(=> (^ (dFCompEnt x :0.5)(functionality f x :0.4))(progress-nn e x)))
 
-(B (name reputation1)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)
-          (respectP f y z x :0.1))
-       (reputation-nn e x)))
+(B (name reputation1)(=> (^ (dFCompEnt x :0.4)(functionality f x :0.4)(respectP f y z x :0.1))(reputation-nn e x)))
 	   
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -563,103 +516,54 @@
 
   
 	   
-(B (name voter-nn1)
-   (=> (^ (voter x :0.4)(etc-voter-nn1 :0.5))
-       (voter-nn e y)))
+(B (name voter-nn1)(=> (^ (voter x :0.4)(etc-voter-nn1 :0.5))(voter-nn e y)))
 
-(B (name election-nn1)
-   (=> (^ (conflict x a b g1 g2 :0.5)(etc-election-nn1 x a b g1 g2 :0.4))
-       (election-vb e x)))
+(B (name election-nn1)(=> (^ (conflict x a b g1 g2 :0.5)(etc-election-nn1 x a b g1 g2 :0.4))(election-vb e x)))
 
-(B (name elect-vb1)
-   (=> (^ (conflict x a b g1 g2 :0.5)(etc-elect-vb1 x a b g1 g2 :0.4))
-       (elect-vb e x y g1)))
+(B (name elect-vb1)(=> (^ (conflict x a b g1 g2 :0.5)(etc-elect-vb1 x a b g1 g2 :0.4))(elect-vb e x y g1)))
 
-(B (name vote-vb1)
-   (=> (^ (conflict e1 a b g1 g2 :0.5)(member x a :0.1)
-          (etc-vote-vb1 e1 x a b g1 g2 :0.3))
-       (vote-vb e x a u)))
+(B (name vote-vb1)(=> (^ (conflict e1 a b g1 g2 :0.5)(member x a :0.1)(etc-vote-vb1 e1 x a b g1 g2 :0.3))(vote-vb e x a u)))
 
-(B (name politicalParty1)
-   (=> (^ (conflict e x y g1 g2 :0.5)
-          (etc-politicalParty1 e x y g1 g2 :0.4))
-       (politicalParty x)))
+(B (name politicalParty1)(=> (^ (conflict e x y g1 g2 :0.5)(etc-politicalParty1 e x y g1 g2 :0.4))(politicalParty x)))
 
-(B (name politicalParty2)
-   (=> (^ (dFCompEnt x :0.4)(functionality f x 0:3)(leadP f x y))
-       (politicalParty x)))
+(B (name politicalParty2)(=> (^ (dFCompEnt x :0.4)(functionality f x 0:3)(leadP f x y))(politicalParty x)))
 
+(B (name Democratic-adj1)(=> (^ (politicalParty x :0.5)(etc-Democratic-adj1 x :0.4))(Democratic-adj e x)))
 
-(B (name Democratic-adj1)
-   (=> (^ (politicalParty x :0.5)(etc-Democratic-adj1 x :0.4))
-       (Democratic-adj e x)))
+(B (name Democrat-nn1)(=> (^ (politicalParty x :0.5)(etc-Democrat-nn1 x :0.4))(Democrat-nn e x)))
 
-(B (name Democrat-nn1)
-   (=> (^ (politicalParty x :0.5)(etc-Democrat-nn1 x :0.4))
-       (Democrat-nn e x)))
+(B (name Republican-nn1)(=> (^ (politicalParty x :0.5)(etc-Republican-nn1 x :0.4))(Republican-nn e x)))
 
-(B (name Republican-nn1)
-   (=> (^ (politicalParty x :0.5)(etc-Republican-nn1 x :0.4))
-       (Republican-nn e x)))
+(B (name Republican-adj1)(=> (^ (politicalParty x :0.5)(etc-Republican-adj1 x :0.4))(Republican-adj e x)))
 
-(B (name Republican-adj1)
-   (=> (^ (politicalParty x :0.5)(etc-Republican-adj1 x :0.4))
-       (Republican-adj e x)))
+(B (name GOP-nn1)(=> (^ (politicalParty x :0.5)(etc-GOP-nn1 x :0.4))(GOP-nn e x)))
 
-(B (name GOP-nn1)
-   (=> (^ (politicalParty x :0.5)(etc-GOP-nn1 x :0.4))
-       (GOP-nn e x)))
+(B (name Right-winger-nn1)(=> (^ (politicalParty x :0.5)(etc-Right-winger-nn1 x :0.4))(Right-winger-nn e x)))
 
-(B (name Right-winger-nn1)
-   (=> (^ (politicalParty x :0.5)(etc-Right-winger-nn1 x :0.4))
-       (Right-winger-nn e x)))
+(B (name Tea-party-nn1)(=> (^ (politicalParty x :0.5)(etc-Tea-party-nn1 x :0.4))(^ (Tea-nn e1 y)(nn y x)(party-nn e x))))
 
-(B (name Tea-party-nn1)
-   (=> (^ (politicalParty x :0.5)(etc-Tea-party-nn1 x :0.4))
-       (^ (Tea-nn e1 y)(nn y x)(party-nn e x))))
+(B (name PRI-nn1)(=> (^ (politicalParty x :0.5)(etc-PRI-nn1 x :0.4))(PRI-nn e x)))
 
-(B (name PRI-nn1)
-   (=> (^ (politicalParty x :0.5)(etc-PRI-nn1 x :0.4))
-       (PRI-nn e x)))
+(B (name movement-nn1)(=> (^ (politicalParty x :0.5)(etc-movement-nn1 x :0.4))(movement-nn e x)))
 
-(B (name movement-nn1)
-   (=> (^ (politicalParty x :0.5)(etc-movement-nn1 x :0.4))
-       (movement-nn e x)))
+(B (name effort-nn1)(=> (^ (politicalParty x :0.7)(etc-effort-nn1 x :0.5))(effort-nn e x)))
 
-(B (name effort-nn1)
-   (=> (^ (politicalParty x :0.7)(etc-effort-nn1 x :0.5))
-       (effort-nn e x)))
+(B (name political-party-nn1)(=> (^ (politicalParty x :0.5)(etc-political-party-nn1 x :0.4))(^ (political-adj e1 x)(party-nn e x))))
 
-(B (name political-party-nn1)
-   (=> (^ (politicalParty x :0.5)(etc-political-party-nn1 x :0.4))
-       (^ (political-adj e1 x)(party-nn e x))))
-
-(B (name party-nn1)
-   (=> (politicalParty x :1.1)(party-nn e x)))
+(B (name party-nn1)(=> (politicalParty x :1.1)(party-nn e x)))
 
 ; y is vulnerable
-(B (name vulnerable-adj1)
-   (=> (conflict c x y g1 g2 :0.9)(vulnerable-adj e y)))
+(B (name vulnerable-adj1)(=> (conflict c x y g1 g2 :0.9)(vulnerable-adj e y)))
 
-(B (name side-nn1)
-   (=> (^ (conflict c x y g1 g2 :1.5)(adversary e1 x y c))(side-nn e x)))
+(B (name side-nn1)(=> (^ (conflict c x y g1 g2 :1.5)(adversary e1 x y c))(side-nn e x)))
 
-(B (name nation-nn11)
-   (=> (^ (conflict c x y g1 g2 :0.7)
-          (etc-nation-nn11 c x y g1 g2 :0.5))
-       (nation-nn e x)))
+(B (name nation-nn11)(=> (^ (conflict c x y g1 g2 :0.7)(etc-nation-nn11 c x y g1 g2 :0.5))(nation-nn e x)))
 
-(B (name president-nn1)
-   (=> (^ (lead x y :0.5)(etc-president-nn1 x y :0.4))
-       (president-nn e x)))
+(B (name president-nn1)(=> (^ (lead x y :0.5)(etc-president-nn1 x y :0.4))(president-nn e x)))
 
-(B (name leader-nn1)
-   (=> (^ (lead x y :0.5)(etc-leader-nn1 x y :0.4))
-       (leader-nn e x)))
+(B (name leader-nn1)(=> (^ (lead x y :0.5)(etc-leader-nn1 x y :0.4))(leader-nn e x)))
 
-(B (name governor-nn1)
-   (=> (^ (lead x y :0.5)(etc-governor-nn1 x y :0.4))
-       (governor-nn e x)))
+(B (name governor-nn1)(=> (^ (lead x y :0.5)(etc-governor-nn1 x y :0.4))(governor-nn e x)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; OTHER ENGLISH LEXICAL AXIOMS
