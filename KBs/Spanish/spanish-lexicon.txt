@@ -25,16 +25,16 @@
 (B (name conflicto-nn) (=> (conflict c x y g h :0.9)(conflicto-nn e1 c)))
 
 ; pugna is a conflict
-(B (name pugna-nn) (=> (^(conflict c x y g h :0.5)(etc-pugna-nn c :0.4))(pugna-nn e1 c)))
+(B (name pugna-nn) (=> (conflict c x y g h :0.9)(pugna-nn e1 c)))
 
 ; Pie de lucha (combat) is conflict.
-(B (name piedelucha-nn) (=> (^ (conflict e x1 y1 g h:0.5)(etc-piedelucha-nn e1 :0.4)) (^ (pie-nn e1 x) (de-in x y) (lucha-nn e2 y))))
+(B (name piedelucha-nn) (=> (conflict c x1 y1 g h:0.9)(^ (pie-nn e1 x) (de-in e3 x y) (lucha-nn c y))))
 
-(B (combate-nn)(=> (conflict e x y g h:0.3)(combate-nn e x)))
+(B (combate-nn)(=> (conflict c x y g h:0.3)(combate-nn e0 c)))
 
-(B (pelea-nn)(=> (conflict e x y g h :0.3)(pelea-nn e x)))
+(B (pelea-nn)(=> (conflict c x y g h :0.3)(pelea-nn e0 c)))
 
-(B (name lucha-nn1) (=> (conflict e x y g h :0.9) (lucha-nn e x)))
+(B (name lucha-nn1) (=> (conflict c x y g h :0.9) (lucha-nn e0 c)))
 
 ; VERBS
 
@@ -42,7 +42,7 @@
 (B (name pugnar-vb) (=> (conflict e1 x y g h :0.9)(pugnar-vb e1 x y u2)))
 
 ; x esta en conflicto 
-(B (name conflicto-vb) (=> (conflict w x y g h :0.9)(^ (estar-vb e3 x z u)(en-in e2 e3 w)(conflicto-nn e2 w))))
+(B (name conflicto-vb) (=> (conflict w x y g h :0.9)(^ (en-in e2 x w)(conflicto-nn e2 w))))
 
 ; x esta reñido
 (B (name reñido-vb) (=> (conflict e x y g h :0.9)(^ (estar-vb e3 x u u0)(reñido-vb e4 x y u2))))
@@ -59,7 +59,7 @@
 ; PREP PHRASES
 
 ; conflicto con y
-(B (name conflicto-con) (=> (adversary e1 x y e :0.9)(^ (conflict e x u g h)(con-in e1 e y))))
+(B (name conflicto-con) (=> (adversary e1 x y e :0.9)(^ (conflict e x u g h)(con-in e2 e y))))
 
 ; conflicto contra y
 (B (name conflicto-contra) (=> (adversary e1 x y e :0.9)(^ (conflict e x u g h)(contra-in e1 e y))))
@@ -102,11 +102,9 @@
 
 ; NOUN
 
-(B (name ataque-nn1) (=> (attack e1 x y :0.9) (ataque-nn e1 w)))
+(B (name ataque-nn1) (=> (attack w x y :0.9) (ataque-nn e1 w)))
 
-(B (name asalto-nn1) (=> (attack e1 x y :0.9) (asalto-nn e1 x)))
-
-(B (name asalto-nn1) (=> (attack e1 x y :0.9) (^ (asalto-nn e1 x)(a-in e2 x y))))
+(B (name asalto-nn1) (=> (attack w x y :0.9) (asalto-nn e1 w)))
 
 ; PREP PHRASES
 
@@ -204,7 +202,7 @@
 ;;;; WAR
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(B (name guerra-nn) (=> (war w) (guerra-nn e w)))
+(B (name guerra-nn) (=> (conflict w x y g h) (guerra-nn e w)))
 
 ;A betrayal is when members of groups defect.
 
@@ -212,11 +210,11 @@
 ;;;; COMPETITION/SPORTS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(B (name competir-vb1) (=> (compete e1 x y c :0.9)(competir-nn e x)))
+(B (name competir-vb1) (=> (conflict e1 x y g h :0.9)(competir-vb1 e1 x u1 u2)))
 
-(B (name competidor-nn1) (=> (compete e1 x y c :0.9)(competidor-nn e x)))
+(B (name competidor-nn1) (=> (conflict e1 x y g h :0.9)(competidor-nn e x)))
 
-(B (name concursante-nn1) (=> (compete e1 x y w :0.9)(concursante-nn e w)))
+(B (name concursante-nn1) (=> (conflict e1 x y g h :0.9)(concursante-nn e x)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
