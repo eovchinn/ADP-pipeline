@@ -231,6 +231,12 @@ class MaltConverter(object):
                     deps.append(w)
         return deps
 
+    def has_lemma(self, word, lemma, filt=None):
+        for d in self.deps(word, filt=filt):
+            if d.lemma == lemma:
+                return True
+        return False
+
     def remove_pred(self, word):
         for p in self.__visible_preds:
             if p.word.id == word.id:
@@ -585,6 +591,8 @@ class MaltConverter(object):
                         head.pred.args[2].link_to(wh_e)
 
             # 8.2 I know why you go.
+#            if (w.lemma == u"зачем" or w.lemma == u"почему") and head and \
+#               head.cpostag == "vb"
 #            if (w.lemma == u"почему" or w.lemma == u"зачем") and \
 #               head and head.cpostag == "vb" and \
 #               hhead and hhead.cpostag == "vb":
@@ -606,13 +614,11 @@ class MaltConverter(object):
         for w in self.__words:
 
             head = self.word(w.head)
-            hhead = None
-            if head:
-                hhead = self.word(head.head)
             deps = self.deps(w, filt=("vb",))
 
             # 1. What did you do?
-            if w.lemma == u"что" and head and head.cpostag == "vb":
+            if w.lemma == u"что" and head and head.cpostag == "vb" and \
+               self.has_lemma(head, "?"):
                 hdeps = self.deps(head, filt=["pr", "nn"])
                 for d in hdeps:
                     if d.deprel == u"предик":
@@ -630,8 +636,9 @@ class MaltConverter(object):
                         ]))
                         head.pred.args[2].link_to(new_x)
 
-            # 2 Whom did you see?
-            if w.lemma == u"кто" and head and head.cpostag == "vb":
+            # 2. Whom did you see?
+            if w.lemma == u"кто" and head and head.cpostag == "vb" and \
+               self.has_lemma(w, "?"):
                 hdeps = self.deps(head, filt=["pr", "nn"])
                 for d in hdeps:
                     if d.deprel == u"предик":
@@ -646,6 +653,74 @@ class MaltConverter(object):
                          ]))
                         head.pred.args[2].link_to(new_x)
 
+            # 3. When did you come?
+            if w.lemma == u"когда" and deps:
+                for d in deps:
+                    if d.deprel == u"подч-союзн" and self.has_lemma(d, "?"):
+                        ddeps = self.deps(d, filt=["pr", "nn"])
+                        for dd in ddeps:
+                            if dd.deprel == u"предик":
+                                new_x = Argument("x")
+                                self.__extra_preds.append(("time", [
+                                    Argument("e"),
+                                    new_x,
+                                    Argument.arg_link(d.pred.args[0])
+                                ]))
+                                self.__extra_preds.append(("whq", [
+                                    Argument("e"),
+                                    Argument.arg_link(new_x),
+                                ]))
+
+            # 4. Why did you come?
+            if w.lemma == u"зачем" or w.lemma == u"почему" and head and \
+               head.cpostag == "vb" and self.has_lemma(w, "?"):
+                hdeps = self.deps(head, filt=["pr", "nn"])
+                for d in hdeps:
+                    if d.deprel == u"предик":
+                        new_x = Argument("x")
+                        self.__extra_preds.append(("reason", [
+                            Argument("e"),
+                            new_x,
+                            Argument.arg_link(head.pred.args[0])
+                        ]))
+                        self.__extra_preds.append(("whq", [
+                            Argument("e"),
+                            Argument.arg_link(new_x),
+                        ]))
+
+            # 5. How did you come?
+            if w.lemma == u"как" and head and head.cpostag == "vb" and \
+               self.has_lemma(head, "?"):
+                hdeps = self.deps(head, filt=["pr", "nn"])
+                for d in hdeps:
+                    if d.deprel == u"предик":
+                        new_x = Argument("x")
+                        self.__extra_preds.append(("manner", [
+                            Argument("e"),
+                            new_x,
+                            Argument.arg_link(head.pred.args[0])
+                        ]))
+                        self.__extra_preds.append(("whq", [
+                            Argument("e"),
+                            Argument.arg_link(new_x),
+                        ]))
+
+            # 7. Where did you come?
+            if w.lemma == u"куда" or w.lemma == u"зачем" and head and \
+               head.cpostag == "vb" and self.has_lemma(head, "?"):
+                hdeps = self.deps(head, filt=["pr", "nn"])
+                for d in hdeps:
+                    if d.deprel == u"предик":
+                        new_x = Argument("x")
+                        self.__extra_preds.append(("loc", [
+                            Argument("e"),
+                            new_x,
+                            Argument.arg_link(head.pred.args[0])
+                        ]))
+                        self.__extra_preds.append(("whq", [
+                            Argument("e"),
+                            Argument.arg_link(new_x),
+                        ]))
 
     copula_verbs = [u"быть", u"являться", u"находиться"]
 
