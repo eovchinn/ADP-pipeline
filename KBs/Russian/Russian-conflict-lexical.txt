@@ -851,10 +851,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-(B (name politika)(=> (conflict c x y g h :0.9)(политика-nn e c)))
+(B (name politika)(=> (^(conflict c x y g h :0.5)(lead g x u :0.4))(политика-nn e c)))
 
-(B (name politik)(=> (^(conflict c x y g h :0.3)(adversary e1 x y c :0.6
-))(политик-nn e x)))
+(B (name politik)(=> (^(conflict c x y g h :0.3)(adversary e1 x y c :0.3
+)(lead g x u :0.3))(политик-nn e x)))
 
 (B (name politicheskij)(=> (conflict c x y g h :1.2)(политический-adj e c)))
 
