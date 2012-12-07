@@ -1,94 +1,8 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; (adversary e1 y x c) : y and x are rivals in the context of conflict c
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(B (name protivnik) (=> (adversary e1 x y c :0.9) (противник-nn e2 x)))
-
-(B (name konkurent) (=> (adversary e1 x y c :0.9) (конкурент-nn e2 x)))
-
-(B (name sopernik) (=> (adversary e1 x y c :0.9) (соперник-nn e2 x)))
-
-(B (name opponent) (=> (adversary e1 x y c :0.9) (оппонент-nn e2 x)))
-
-(B (name vrag) (=> (adversary e1 x y c :0.9) (враг-nn e2 x)))
-
-(B (name nedrug) (=> (adversary e1 x y c :0.9) (недруг-nn e2 x)))
-
-(B (adversary-of) (=> (adversary e1 x y c :0.9) (^ (adversary e1 x z c)(of-in e3 x y))))
-
-(B (name vrazhdovat) (=> (adversary e1 x y c :0.9) (враждовать-vb e1 x u1 u2)))
-
-(B (name sopernichat) (=> (adversary e1 x y c :0.9) (соперничать-vb e1 x u1 u2)))
-
-(B (name konkurirovat) (=> (adversary e1 x y c :0.9) (конкурировать-vb e1 x u1 u2)))
-
-(B (name adversary-with) (=> (adversary e1 x y c :0.9) (^ (adversary e1 x z c) (с-in e2 e1 y))))
-
-(B (name konkurencija) (=> (adversary e1 x y c :0.9) (конкуренция-nn e2 e1)))
-
-(B (name sopernichestvo) (=> (adversary e1 x y c :0.9) (соперничество-nn e2 e1)))
-
-(B (name vrazhda) (=> (adversary e1 x y c :0.9) (вражда-nn e2 e1)))
-
-(B (name adversary-between) (=> (adversary e1 x y c :0.9) (^ (adversary e1 u1 u2 c) (между-in e2 e1 x) (между-in e3 e1 y))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; (aim e1 x w y) : x directs weapon (or attack) w at target y
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(B (name celitsja) (=> (aim e1 x w y :0.9) (целиться-vb e1 x u1 u2)))
-
-(B (name pricelivatsja) (=> (aim e1 x w y :0.9)(прицеливаться-vb e1 x u1 u2)))
-
-(B (name metit) (=> (aim e1 x w y :0.9) (метить-vb e1 x u1 u2)))
-
-(B (name aim-at) (=> (aim e1 x w y :0.9)(^ (aim e1 x w z) (в-in e2 e1 y))))
-
-(B (name aim-from) (=> (aim e1 x w y :0.9)(^ (aim e1 x z y) (из-in e2 e1 z))))
-
-(B (name delat-mishenju) (=> (aim e1 x y w :0.9) (^ (делать-vb e1 x y u1) (мишень-nn e2 z) (instr e3 e2 z))))
-
-(B (name fokusirovat) (=> (aim e1 x y w :0.9) (^ (фокусировать-vb e1 x w u1) (на-in e2 e1 y))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; (attack e1 x y) : x attacks y
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(B (name atakovat) (=> (attack e1 x y :0.9)(атаковать-vb e1 x y u2)))
-
-(B (name shturmovat) (=> (attack e1 x y :0.9)(штурмовать-vb e1 x y u2)))
-
-(B (name napadat) (=> (attack e1 x y :0.9)(нападать-vb e1 x u1 u2)))
-
-(B (name nastupat) (=> (attack e1 x y :0.9)(наступать-vb e1 x u1 u2)))
-
-(B (name nabrositsja) (=> (attack e1 x y :0.9)(наброситься-vb e1 x u1 u2)))
-
-(B (name nakinutsja) (=> (attack e1 x y :0.9)(накинуться-vb e1 x u1 u2)))
-
-(B (name udarjat) (=> (attack e1 x y :0.9)(ударять-vb e1 x u1 u2)))
-
-(B (name bit) (=> (attack e1 x y :0.9)(бить-vb e1 x y u2)))
-
-(B (name ataka) (=> (attack e1 x y :0.9)(атака-nn e0 e1)))
-
-(B (name shturm) (=> (attack e1 x y :0.9)(штурм-nn e0 e1)))
-
-(B (name napadenie) (=> (attack e1 x y :0.9)(нападение-nn e0 e1)))
-
-(B (name nastuplenie) (=> (attack e1 x y :0.9) (наступление-nn e0 e1)))
-
-(B (name udar) (=> (attack e1 x y :0.9)(удар-nn e0 e1)))
-
-(B (attack-of) (=> (attack e1 x y :0.9) (^ (attack e1 u y)(of-in e2 e1 x))))
-
-(B (attack-at1) (=> (attack e1 x y :0.9) (^ (attack e1 x u)(на-in e2 e1 y))))
-
-(B (attack-at2) (=> (attack e1 x y :0.9) (^ (attack e1 x u)(по-in e2 e1 y))))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (conflict c x y g h) : c is a conflict with adversaries x and y who have goals g and h, respectively
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; NOUNS
 
 (B (name konflikt) (=> (conflict c x y g h :0.9)(конфликт-nn e1 c)))
 
@@ -110,49 +24,17 @@
 
 (B (name voina) (=> (conflict c x y g h :0.9)(война-nn e1 c)))
 
-(B (name konfliktovat) (=> (conflict c x y g h :0.9)(конфликтовать-vb c x u1 u2)))
+(B (name konkurencija) (=> (conflict c x y g h :0.9) (конкуренция-nn e1 c)))
 
-(B (name stalkivatsja) (=> (conflict c x y g h :0.9)(сталкиваться-vb c x u1 u2)))
+(B (name sopernichestvo) (=> (conflict c x y g h :0.9) (соперничество-nn e1 c)))
 
-(B (name bitsja) (=> (conflict c x y g h :0.9)(биться-vb c x u1 u2)))
+(B (name vrazhda) (=> (conflict c x y g h :0.9) (вражда-nn e1 c)))
 
-(B (name borotsja) (=> (conflict c x y g h :0.9)(бороться-vb c x u1 u2)))
+(B (name sorevnovanie) (=> (conflict c x y g h :0.9)(соревнование-nn e1 c)))
 
-(B (name dratsja) (=> (conflict c x y g h :0.9)(драться-vb c x u1 u2)))
+(B (name sostjazanie) (=> (conflict c x y g h :0.9)(состязание-nn e1 c)))
 
-(B (name ssoritsja) (=> (conflict c x y g h :0.9)(ссориться-vb c x u1 u2)))
-
-(B (name srazhatsja) (=> (conflict c x y g h :0.9)(сражаться-vb c x u1 u2)))
-
-(B (name voevat) (=> (conflict c x y g h :0.9)(воевать-vb c x u1 u2)))
-
-(B (name rugatsja) (=> (conflict c x y g h :0.9)(ругаться-vb c x u1 u2)))
-
-(B (name vratsja) (=> (conflict c x y g h :0.9)(рваться-vb c x u1 u2)))
-
-(B (name sorevnovatsja) (=> (conflict c x y g h :0.9)(соревноваться-vb c x u1 u2)))
-
-(B (name sostjazatsja) (=> (conflict c x y g h :0.9)(состязаться-vb c x u1 u2))) 
-
-(B (name sopernichat) (=> (conflict c x y g h :0.9)(соперничать-vb c x u1 u2))) 
-
-(B (name konkurirovat) (=> (conflict c x y g h :0.9)(конкурировать-vb c x u1 u2)))
-
-(B (name sorevnovanie) (=> (conflict c x y g h :0.9)(соревнование-nn e0 c)))
-
-(B (name sostjazanie) (=> (conflict c x y g h :0.9)(состязание-nn e0 c)))
-
-(B (name sopernichestvo) (=> (conflict c x y g h :0.9)(соперничество-nn e0 c)))
-
-(B (name konkurencija) (=> (conflict c x y g h :0.9)(конкурeнция-nn e0 c)))
-
-(B (name pobedit) (=> (conflict c x y g h :0.9)(победить-vb e x y u)))
-
-(B (name vyigrat) (=> (conflict c x y g h :0.9)(выиграть-vb e x y u)))
-
-(B (name proigrat) (=> (conflict c x y g h :0.9)(проиграть-vb e x y u)))
-
-(B (name razgromit) (=> (conflict c x y g h :0.9)(разгромить-vb e x y u)))
+(B (name sopernichestvo) (=> (conflict c x y g h :0.9)(соперничество-nn e1 c)))
 
 (B (name pobeda) (=> (conflict c x y g h :0.9)(победа-nn e0 e)))
 
@@ -167,26 +49,165 @@
 (B (name oppozicija) (=> (^(conflict c x y g h :0.6)(lead e x u :0.3))(оппозиция-nn e0 x)))
 
 
-(B (name conflict-with) (=> (conflict c x y g h :0.9) (^ (conflict c x u g h)(с-in e1 c u))))
+; VERBS
 
-(B (name conflict-for1) (=> (conflict c x y g h :0.9) (^ (conflict c x y u h)(за-in e1 c g))))
+(B (name konfliktovat) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (конфликтовать-vb c x u1 u2)))
 
-(B (name conflict-for2) (=> (conflict c x y g h :0.9) (^ (conflict c x y u h)(ради-in e1 c g))))
+(B (name stalkivatsja) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (сталкиваться-vb c x u1 u2)))
 
-(B (name conflict-between) (=> (conflict c x y g h :0.9) (^ (conflict c u1 u2 g h)(между-in e1 c x)(между-in e2 c y))))
+(B (name bitsja) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (биться-vb c x u1 u2)))
 
-(B (name conflict-of) (=> (conflict c x y g h :0.9) (^ (conflict c u y g h)(of-in e1 c x))))
+(B (name borotsja) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (бороться-vb c x u1 u2)))
 
+(B (name dratsja) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (драться-vb c x u1 u2)))
+
+(B (name ssoritsja) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (ссориться-vb c x u1 u2)))
+
+(B (name srazhatsja) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (сражаться-vb c x u1 u2)))
+
+(B (name voevat) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (воевать-vb c x u1 u2)))
+
+(B (name rugatsja) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (ругаться-vb c x u1 u2)))
+
+(B (name rvatsja-k) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (^(рваться-vb c x u1 u2)(к-in e2 c g))))
+
+(B (name sorevnovatsja) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (соревноваться-vb c x u1 u2)))
+
+(B (name sostjazatsja) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (состязаться-vb c x u1 u2))) 
+
+(B (name sopernichat) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (соперничать-vb c x u1 u2))) 
+
+(B (name konkurirovat) (=> (^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (конкурировать-vb c x u1 u2)))
+
+(B (name vrazhdovat) (=> (^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (враждовать-vb c x u1 u2)))
+
+(B (name pobedit) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (победить-vb e x y u)))
+
+(B (name vyigrat) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (выиграть-vb e x c u)))
+
+(B (name proigrat) (=> (^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (проиграть-vb e x c u)))
+
+(B (name razgromit) (=>  (^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (разгромить-vb e x y u)))
+
+
+; PREPOSITIONAL PHRASES
+
+(B (name conflict-with) (=> (adversary e1 x y c :0.9) (^ (conflict c x u g h)(с-in e1 c u))))
+
+(B (name conflict-for1) (=> (goal e g x :0.9) (^ (conflict c x y u h)(за-in e1 c g))))
+
+(B (name conflict-for2) (=> (goal e g x :0.9) (^ (conflict c x y u h)(ради-in e1 c g))))
+
+(B (name conflict-between) (=> (adversary e1 x y c :0.9) (^ (conflict c u1 u2 g h)(между-in e1 c x)(между-in e2 c y))))
+
+(B (name conflict-of) (=> (adversary e1 x y c :0.9) (^ (conflict c u y g h)(of-in e1 c x))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; (adversary e1 y x c) : y and x are rivals in the context of conflict c
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; NOUNS
+
+(B (name protivnik) (=> (^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (противник-nn e2 x)))
+
+(B (name konkurent) (=> (^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (конкурент-nn e2 x)))
+
+(B (name sopernik) (=> (^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (соперник-nn e2 x)))
+
+(B (name opponent) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (оппонент-nn e2 x)))
+
+(B (name vrag) (=> (^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (враг-nn e2 x)))
+
+(B (name nedrug) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (недруг-nn e2 x)))
+
+
+; PREPOSITIONAL PHRASES
+
+(B (adversary-of) (=> (adversary e1 x y c :0.9) (^ (adversary e1 x z c)(of-in e2 x y))))
+
+(B (adversary-in) (=> (adversary e1 x y c :0.9) (^ (adversary e1 x z c)(в-in e2 x c))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; (attack e1 x y) : x attacks y
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; NOUNS
+
+(B (name ataka) (=> (attack e1 x y :0.9)(атака-nn e0 e1)))
+
+(B (name shturm) (=> (attack e1 x y :0.9)(штурм-nn e0 e1)))
+
+(B (name napadenie) (=> (attack e1 x y :0.9)(нападение-nn e0 e1)))
+
+(B (name nastuplenie) (=> (attack e1 x y :0.9) (наступление-nn e0 e1)))
+
+(B (name udar) (=> (attack e1 x y :0.9)(удар-nn e0 e1)))
+
+
+; VERBS
+
+(B (name atakovat) (=> (attack e1 x y :0.9)(атаковать-vb e1 x y u2)))
+
+(B (name shturmovat) (=> (attack e1 x y :0.9)(штурмовать-vb e1 x y u2)))
+
+(B (name napadat) (=> (attack e1 x y :0.9)(нападать-vb e1 x u1 u2)))
+
+(B (name nastupat) (=> (attack e1 x y :0.9)(наступать-vb e1 x u1 u2)))
+
+(B (name nabrositsja) (=> (attack e1 x y :0.9)(наброситься-vb e1 x u1 u2)))
+
+(B (name nakinutsja) (=> (attack e1 x y :0.9)(накинуться-vb e1 x u1 u2)))
+
+(B (name udarjat) (=> (attack e1 x y :0.9)(ударять-vb e1 x u1 u2)))
+
+(B (name bit) (=> (attack e1 x y :0.9)(бить-vb e1 x y u2)))
+
+
+; PREPOSITIONAL PHRASES
+
+(B (attack-of) (=> (attack e1 x y :0.9) (^ (attack e1 u y)(of-in e2 e1 x))))
+
+(B (attack-at1) (=> (attack e1 x y :0.9) (^ (attack e1 x u)(на-in e2 e1 y))))
+
+(B (attack-at2) (=> (attack e1 x y :0.9) (^ (attack e1 x u)(по-in e2 e1 y))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; (aim e1 x w y) : x directs weapon (or attack) w at target y
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; VERBS
+
+(B (name celitsja) (=> (aim e1 x w y :0.9) (целиться-vb e1 x u1 u2)))
+
+(B (name pricelivatsja) (=> (aim e1 x w y :0.9)(прицеливаться-vb e1 x u1 u2)))
+
+(B (name metit) (=> (aim e1 x w y :0.9) (метить-vb e1 x u1 u2)))
+
+(B (name aim-at) (=> (aim e1 x w y :0.9)(^ (aim e1 x w z) (в-in e2 e1 y))))
+
+(B (name delat-mishenju) (=> (aim e1 x y w :0.9) (^ (делать-vb e1 x y u1) (мишень-nn e2 z) (instr e3 e2 z))))
+
+(B (name vzjat-na-pricel) (=> (aim e1 x y w :0.9) (^ (взять-vb e1 x y u1) (на-in e2 e1 z) (прицел-nn e3 z))))
+
+(B (name brat-na-pricel) (=> (aim e1 x y w :0.9) (^ (брать-vb e1 x y u1) (на-in e2 e1 z) (прицел-nn e3 z))))
+
+(B (name fokusirovat-na) (=> (aim e1 x y w :0.9) (^ (фокусировать-vb e1 x w u1) (на-in e2 e1 y))))
+
+; PREPOSITIONAL PHRASES
+
+(B (name aim-from) (=> (aim e1 x w y)(^ (aim e1 x z y) (из-in e2 e1 w))))
+
+(B (name aim-in) (=> (aim e1 x w y :0.9)(^ (aim e1 x w u) (в-in e2 e1 y))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (goal g x) : x has goal g
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(B (name cel) (=> (goal g x :0.9)(цель-nn e1 g)))
+(B (name cel) (=> (goal e1 g x :0.9)(цель-nn e1 g)))
 
-(B (name zadacha) (=> (goal g x :0.9)(задача-nn e1 g)))
+(B (name zadacha) (=> (goal e1 g x :0.9)(задача-nn e1 g)))
 
-(B (name goal-of) (=> (goal g x :0.9)(^ (goal g u)(of-in e g x))))
+(B (name goal-of) (=> (goal e1 g x :0.9)(^ (goal e1 g u)(of-in e g x))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (weapon w) : w is a weapon
@@ -238,9 +259,35 @@
 
 (B (name kinzhal) (=> (weapon w :0.9)(кинжал-nn e w)))
 
+(B (name minna) (=> (weapon w :0.9)(мина-nn e w)))
+
+(B (name minnyj) (=> (weapon w :0.9)(минный-adj e x)))
+
+(B (name pulja) (=> (^(weapon w :0.8)(part x w :0.1))(пуля-nn e x)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (use e1 x w y z) : x uses w on object y for purpose z 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; NOUN
+
+(B (name strelba) (=> (use-weapon e1 x w y z :0.9)(стрельба-nn e2 e1)))
+
+(B (name rasstrel) (=> (use-weapon e1 x w y z :0.9)(расстрел-nn e2 e1)))
+
+(B (name obstrel) (=> (use-weapon e1 x w y z :0.9)(обстрел-nn e2 e1)))
+
+(B (name bombezhka) (=> (use-weapon e1 x w y z :0.9)(бомбежка-nn e2 e1)))
+
+(B (name palba) (=> (use-weapon e1 x w y z :0.9)(пальба-nn e2 e1)))
+
+(B (name vzryv) (=> (use-weapon e1 x w y z :0.9)(взрыв-nn e2 e1)))
+
+(B (name reznja) (=> (use-weapon e1 x w y z :0.9)(резня-nn e2 e1)))
+
+(B (name udar) (=> (use-weapon e1 x w y z :0.9)(удар-nn e2 e1)))
+
+; VERB
 
 (B (name streljat) (=> (use-weapon e1 x w y z :0.9)(стрелять-vb e1 x u1 u2)))
 
@@ -263,6 +310,9 @@
 (B (name udarjat) (=> (use-weapon e1 x w y z :0.9)(ударять-vb e1 x y u2)))
 
 (B (name votknut) (=> (use-weapon e1 x w y z :0.9)(^(воткнуть-vb e1 x w u2)(в-in e2 e1 y))))
+
+
+; PREPOSITIONAL PHRASES
 
 (B (name use-weapon-from) (=> (use-weapon e1 x w y z :0.9)(^ (use-weapon e1 x u y z)(из-in e2 e1 w))))
 
@@ -299,12 +349,6 @@
 (B (name prezident) (=> (president x :0.9)(президент-nn e x)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; (bullet w) : w is a bullet
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(B (name pulja) (=> (bullet x :0.9)(пуля-nn e x)))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (union u) : u is a labor union
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -329,6 +373,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (illegal e) : e1 is illegal
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; ADJECTIVES 
 
 (B (name bezzakonnyj) (=> (illegal e :0.9) (беззаконный-adj e1 e)))
 
@@ -360,6 +406,9 @@
 
 (B (name nepravosudnyj) (=> (illegal e :0.9) (неправосудный-adj e1 e)))
 
+
+; ADVERBS
+
 (B (name bezzakonno) (=> (illegal e :0.9) (беззаконно-rb e1 e)))
 
 (B (name nezakonno) (=> (illegal e :0.9) (незаконно-rb e)))
@@ -382,6 +431,9 @@
 
 (B (name nepravosudno) (=> (illegal e :0.9) (неправосудно-rb e1 e)))
 
+
+; VERBS
+
 (B (name legalizovat-not) (=> (illegal e :0.9) (^(not e0 e1)(легализовать-vb e1 x e u))))
 
 (B (name legitimirovat-not) (=> (illegal e :0.9) (^(not e0 e1)(легитимировать-vb e1 x e u))))
@@ -392,6 +444,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; (lead e x y) : x exercises authority over y
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; VERBS 
 
 (B (name rukovodit) (=> (lead e x y :0.9)(руководить-vb e x u1 u2)))
 
@@ -413,7 +467,8 @@
 
 (B (name vlast) (=> (lead e x y :0.9)(власть-nn e1 e)))
 
-(B (name lead-of) (=> (lead e x y :0.9) (^ (lead e u1 u2)(of e1 e x))))
+; NOUNS
+
 
 (B (name pahan) (=> (^(lead e x y :0.6)(illegal e :0.3))(пахан-nn e1 x)))
 
@@ -429,6 +484,8 @@
 
 (B (name prezident2) (=> (lead e x y :0.9)(президент-nn e1 x)))
 
+(B (name gubernator) (=> (lead e x y :0.9)(губернатор-nn e1 x)))
+
 (B (name komandujushhij) (=> (lead e x y :0.9)(командующий-nn e1 x)))
 
 (B (name glavnokomandujushhij) (=> (lead e x y :0.9)(главнокомандующий-nn e1 x)))
@@ -437,4 +494,430 @@
 
 (B (name predvoditel) (=> (lead e x y :0.9)(предводитель-nn e1 x)))
 
+
+; PREPOSITIONAL PHRASES
+
+(B (name lead-of) (=> (lead e x y :0.9) (^ (lead e u1 u2)(of e1 e x))))
+
 (B (name lead-of2) (=> (lead e x y :0.9) (^ (lead e x u)(of e1 e y))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; decreaseStruct x
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; NOUNS
+
+(B (name povrezhdenie) (=> (decreaseStruct x :0.9)( повреждение-nn e1 y))) 
+
+(B (name defekt) (=> (decreaseStruct x :0.9)( дефект-nn e1 y)))
+
+(B (name polomka) (=> (decreaseStruct x :0.9)( поломка-nn e1 y)))
+
+(B (name porcha) (=> (decreaseStruct x :0.9)( порча-nn e1 y)))
+
+(B (name razrushenie) (=> (decreaseStruct x :0.9)( разрушение-nn e1 y)))
+
+(B (name krushenie) (=> (decreaseStruct x :0.9)( крушение-nn e1 y)))
+
+ (B (name unichtozhenie) (=> (decreaseStruct x :0.9)( уничтожение-nn e1 y)))
+
+(B (name likvidacija) (=> (decreaseStruct x :0.9)( ликвидация-nn e1 y)))
+
+(B (name razgrom) (=> (decreaseStruct x :0.9)( разгром-nn e1 y)))
+
+(B (name pogrom) (=> (decreaseStruct x :0.9)( погром-nn e1 y)))
+
+(B (name snos) (=> (decreaseStruct x :0.9)( снос-nn e1 y)))
+
+(B (name razval) (=> (decreaseStruct x :0.9)(развал-nn e1 y)))
+
+(B (name podryv) (=> (decreaseStruct x :0.9)(подрыв-nn e1 y)))
+
+
+
+; VERBS
+
+(B (name povredit) (=> (decreaseStruct x :0.9)( повреждать-vb e1 y x u))) 
+
+(B (name portit) (=> (decreaseStruct x :0.9)( портить-vb e1 y x u))) 
+
+(B (name razrushat) (=> (decreaseStruct x :0.9)( разрушать-vb e1 y x u))) 
+
+(B (name rushit) (=> (decreaseStruct x :0.9)( рушить-vb e1 y x u))) 
+
+(B (name lomat) (=> (decreaseStruct x :0.9)( ломать-vb e1 y x u))) 
+
+(B (name slomat) (=> (decreaseStruct x :0.9)( сломать-vb e1 y x u))) 
+
+(B (name unichtozhat) (=> (decreaseStruct x :0.9)( уничтожать-vb e1 y x u))) 
+
+(B (name likvidirovat) (=> (decreaseStruct x :0.9)( ликвидировать-vb e1 y x u))) 
+
+(B (name razgromit) (=> (decreaseStruct x :0.9)( разгромить-vb e1 y x u))) 
+
+(B (name gromit) (=> (decreaseStruct x :0.9)( громить-vb e1 y x u))) 
+
+(B (name krushit) (=> (decreaseStruct x :0.9)( крушить -vb e1 y x u))) 
+
+
+(B (name snosit) (=> (decreaseStruct x :0.9)( сносить-vb e1 y x u))) 
+
+(B (name razvalivat) (=> (decreaseStruct x :0.9)( разваливать-vb e1 y x u)))
+
+(B (name razbivat) (=> (decreaseStruct x :0.9)( разбивать-vb e1 y x u)))
+
+(B (name pordyvat) (=> (decreaseStruct x :0.9)( подрывать-vb e1 y x u)))
+
+(B (name vzryvat) (=> (decreaseStruct x :0.9)( взрывать-vb e1 y x u)))
+
+(B (name razvalitsja) (=> (decreaseStruct x :0.9)(развалиться-vb e1 x y u)))
+
+(B (name slomatsja) (=> (decreaseStruct x :0.9)(сломаться-vb e1 x y u)))
+
+
+; PREPOSITIONAL PHRASES
+
+(B (name decreaseStruct-of) (=> (decreaseStruct x :0.9) (^ (decreaseStruct u)(of-in e1 u x))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; increaseStruct x
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; NOUN
+(B (name postroenie) (=> (increaseStruct x :0.9)(построение-nn e1 y))) 
+
+(B (name stroenie) (=> (increaseStruct x :0.9)(строение-nn e1 y))) 
+
+(B (name strojka) (=> (increaseStruct x :0.9)(стройка-nn e1 y))) 
+
+(B (name postrojka) (=> (increaseStruct x :0.9)(постройка-nn e1 y))) 
+
+(B (name perestrojka) (=> (increaseStruct x :0.9)(перестройка-nn e1 y))) 
+
+(B (name nadstrojka) (=> (increaseStruct x :0.9)(надстройка-nn e1 y))) 
+
+(B (name vystraivanie) (=> (increaseStruct x :0.9)(выстраивание-nn e1 y))) 
+
+(B (name perestraivanie) (=> (increaseStruct x :0.9)(перестраивание-nn e1 y))) 
+
+(B (name zastraivanie) (=> (increaseStruct x :0.9)(застраивание-nn e1 y))) 
+
+(B (name vozdvizhenie) (=> (increaseStruct x :0.9)(воздвижение-nn e1 y))) 
+
+(B (name sooruzhenie) (=> (increaseStruct x :0.9)(сооружение-nn e1 y))) 
+
+(B (name sozdanie) (=> (increaseStruct x :0.9)(создание-nn e1 y))) 
+
+(B (name komponovka) (=> (increaseStruct x :0.9)(компоновка-nn e1 y))) 
+
+(B (name proizvodstvo) (=> (increaseStruct x :0.9)(производство-nn e1 y))) 
+
+(B (name rost) (=> (increaseStruct x :0.9)(рост-nn e1 y))) 
+
+(B (name usilenie) (=> (increaseStruct x :0.9)(усиление-nn e1 y))) 
+
+
+; VERB
+
+(B (name sozdat) (=> (increaseStruct x :0.9)(создать-vb e1 y x u)))
+
+(B (name sozdavat) (=> (increaseStruct x :0.9)(создавать-vb e1 y x u)))
+
+(B (name stroit) (=> (increaseStruct x :0.9)(строить-vb e1 y x u)))
+
+(B (name postroit) (=> (increaseStruct x :0.9)(построить-vb e1 y x u)))
+
+(B (name vystroit) (=> (increaseStruct x :0.9)(выстроить-vb e1 y x u)))
+
+(B (name vystraivat) (=> (increaseStruct x :0.9)(выстраивать-vb e1 y x u)))
+
+(B (name otstroit) (=> (increaseStruct x :0.9)(отстроить-vb e1 y x u)))
+
+(B (name otstraivat) (=> (increaseStruct x :0.9)(отстраивать-vb e1 y x u)))
+
+
+(B (name nadstroit) (=> (increaseStruct x :0.9)(надстроить-vb e1 y x u)))
+
+(B (name nadstraivat) (=> (increaseStruct x :0.9)(надстраивать-vb e1 y x u)))
+
+(B (name perestroit) (=> (increaseStruct x :0.9)(перестроить-vb e1 y x u)))
+
+(B (name perestraivat) (=> (increaseStruct x :0.9)(перестраивать-vb e1 y x u)))
+
+(B (name zastroit) (=> (increaseStruct x :0.9)(застроить-vb e1 y x u)))
+
+(B (name zastraivat) (=> (increaseStruct x :0.9)(застраивать-vb e1 y x u)))
+
+(B (name pristroit) (=> (increaseStruct x :0.9)(пристроить-vb e1 y x u)))
+
+(B (name pristraivat) (=> (increaseStruct x :0.9)(пристраивать-vb e1 y x u)))
+
+(B (name vozvodit) (=> (increaseStruct x :0.9)(возводить-vb e1 y x u)))
+
+(B (name vozvesti) (=> (increaseStruct x :0.9)(возвести-vb e1 y x u)))
+
+(B (name sooruzhat) (=> (increaseStruct x :0.9)(сооружать-vb e1 y x u)))
+
+(B (name soorudit) (=> (increaseStruct x :0.9)(соорудить-vb e1 y x u)))
+
+(B (name konstruirovat) (=> (increaseStruct x :0.9)(коструировать-vb e1 y x u)))
+
+(B (name vozdvigat) (=> (increaseStruct x :0.9)(воздвигать-vb e1 y x u)))
+
+(B (name vozdvignut) (=> (increaseStruct x :0.9)(воздвинуть-vb e1 y x u)))
+
+(B (name proizvodit) (=> (increaseStruct x :0.9)(производить-vb e1 y x u)))
+
+(B (name proizvesti) (=> (increaseStruct x :0.9)(произвести-vb e1 y x u)))
+
+(B (name komponovat) (=> (increaseStruct x :0.9)(компоновать-vb e1 y x u)))
+
+(B (name sobirat) (=> (increaseStruct x :0.9)(собирать-vb e1 y x u)))
+
+(B (name kovat) (=> (increaseStruct x :0.9)(ковать-vb e1 y x u)))
+
+(B (name vyrasti) (=> (increaseStruct x :0.9)(вырасти-vb e1 x y u)))
+
+(B (name vyrastit) (=> (increaseStruct x :0.9)(вырастить-vb e1 y x u)))
+
+(B (name vyrashivat) (=> (increaseStruct x :0.9)(выращивать-vb e1 y x u)))
+
+(B (name rasti) (=> (increaseStruct x :0.9)(расти-vb e1 x y u)))
+
+(B (name rastit) (=> (increaseStruct x :0.9)(растить-vb e1 y x u)))
+
+(B (name usilitsja) (=> (increaseStruct x :0.9)(усилиться-vb e1 x y u)))
+
+(B (name usilit) (=> (increaseStruct x :0.9)(усилить-vb e1 y x u)))
+
+
+; PREPOSITIONAL PHRASES
+
+(B (name increaseStruct-of) (=> (increaseStruct x :0.9) (^ (increaseStruct u)(of-in e1 u x))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; decreaseFct x
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; NOUNS
+
+(B (name uhudshenie) (=> (decreaseFct x :0.9)(ухудшение-nn e y)))
+
+(B (name uhudshenie-of) (=> (increaseFct x :0.9)(^(ухудшение-nn e y)(of-in e2 y x))))
+
+(B (name porcha) (=> (decreaseFct x :0.9)(порча-nn e y)))
+
+(B (name porcha-of) (=> (increaseFct x :0.9)(^(порча-nn e y)(of-in e2 y x))))
+
+(B (name polomka) (=> (decreaseFct x :0.9)(поломка-nn e y)))
+
+(B (name polomka-of) (=> (increaseFct x :0.9)(^(поломка-nn e y)(of-in e2 y x))))
+
+
+
+; VERBS
+
+(B (name paralizovat) (=> (decreaseFct x :0.9)(парализовать-vb e1 y x u)))
+
+(B (name povredit) (=> (decreaseFct x :0.9)(повредить-vb e1 y x u)))
+
+(B (name isportit) (=> (decreaseFct x :0.9)(испортить-vb e1 y x u)))
+
+(B (name portit) (=> (decreaseFct x :0.9)(портить-vb e1 y x u)))
+
+
+; ADJECTIVES
+
+(B (name netrudosposobnyj) (=> (decreaseFct x :0.9)(нетрудоспособный-adj e1 x))) 
+
+(B (name neprigodnyj) (=> (decreaseFct x :0.9)(непригодный-adj e1 x)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; increaseFct x
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; NOUNS
+
+(B (name uluchshenie) (=> (increaseFct x :0.9)(улучшение-nn e y)))
+
+(B (name uluchshenie-of) (=> (increaseFct x :0.9)(^(улучшение-nn e y)(of-in e2 y x))))
+
+(B (name sovershenstvovanie) (=> (increaseFct x :0.9)(совершенствование-nn e y)))
+
+(B (name sovershenstvovanie-of) (=> (increaseFct x :0.9)(^(совершенствование-nn e y)(of-in e2 y x))))
+
+(B (name dorabotka) (=> (increaseFct x :0.9)(доработка-nn e y)))
+
+(B (name dorabotka-of) (=> (increaseFct x :0.9)(^(доработка-nn e y)(of-in e2 y x))))
+
+(B (name razvitie) (=> (increaseFct x :0.9)(развитие-nn e y)))
+
+(B (name razvitie-of) (=> (increaseFct x :0.9)(^(развитие-nn e y)(of-in e2 y x))))
+
+(B (name ispravlenie) (=> (increaseFct x :0.9)(исправление-nn e y)))
+
+(B (name ispravlenie-of) (=> (increaseFct x :0.9)(^(исправление-nn e y)(of-in e2 y x))))
+
+
+
+; VERBS
+
+(B (name uluchshit) (=> (increaseFct x :0.9)(улучшить-vb e1 y x u)))
+
+(B (name sovershenstvovat) (=> (increaseFct x :0.9)(совершенствовать-vb e1 y x u)))
+
+(B (name dorabatyvat) (=> (increaseFct x :0.9)(дорабатывать-vb e1 y x u)))
+
+(B (name dorabotat) (=> (increaseFct x :0.9)(доработать-vb e1 y x u)))
+
+(B (name ispravljat) (=> (increaseFct x :0.9)(исправлять-vb e1 y x u)))
+
+(B (name ispravit) (=> (increaseFct x :0.9)(исправить-vb e1 y x u)))
+
+(B (name razvit) (=> (increaseFct x :0.9)(развить-vb e1 y x u)))
+
+(B (name razvivat) (=> (increaseFct x :0.9)(развивать-vb e1 y x u)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; nation x
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name nacija) (=> (nation x :0.9)(нация-nn e x))) 
+
+(B (name meksika) (=> (nation x :0.9)(мексика-nn e x))) 
+
+(B (name rossija) (=> (nation x :0.9)(россия-nn e x))) 
+
+(B (name iran) (=> (nation x :0.9)(иран-nn e x))) 
+
+(B (name ispanija) (=> (nation x :0.9)(испания-nn e x))) 
+
+(B (name america) (=> (nation x :0.9)(америка-nn e x)))
+
+(B (name ssha) (=> (nation x :0.9)(сша-nn e x)))
+
+(B (name nacionalnyj) (=> (nation x :0.9)(национальный-adj e y)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; dFCompEnt x
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name strana) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3)(thrive f s :0.1)(citizens s x :0.1)) (страна-nn e x))) 
+
+(B (name gosudarstvo) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3) (thrive f s :0.1)(citizens s x :0.1)) (государство-nn e x))) 
+
+(B (name pravitelstvo) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3) (thrive f s :0.1)(citizens s x :0.1)) (правительство-nn e x))) 
+
+(B (name zakon) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.3) (control f x s :0.1)(citizens s z :0.1)) (закон-nn e x))) 
+
+(B (name demokratija) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4) (leadP f s x :0.1)(citizens s x :0.1)) (демократия-nn e x))) 
+
+(B (name avtoritarizm) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4) (control f x s :0.1)(citizens s z :0.1)) (авторитаризм-nn e x))) 
+
+(B (name ekonomika) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4) (commerce f :0.1)) (экономика-nn e x))) 
+
+(B (name ekonomicheskij) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4) (commerce f :0.1)) (экономический-adj e x))) 
+
+(B (name sektor) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4) (commerce f :0.1)) (сектор-nn e x))) 
+
+(B (name perevozka) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4) (commerce f :0.1)) (перевозка-nn e x))) 
+
+(B (name finansovyj) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4) (commerce f :0.1)) (финансовый-adj e x))) 
+
+(B (name biznes) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4) (commerce f :0.1)) (бизнес-nn e x))) 
+
+(B (name komercija) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4) (commerce f :0.1)) (коммерция-nn e x)))
+
+(B (name rynok) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4) (commerce f :0.1)) (рынок-nn e x))) 
+
+(B (name sistema) (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4)) (система-nn e x))) 
+
+(B (name organizacija) (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4) (sharedPlan f x)) (организация-nn e x))) 
+
+(B (name firma) (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4) (sharedPlan f x)) (фирма-nn e x)))
+
+(B (name programma) (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4)) (программа-nn e x))) 
+
+(B (name klass) (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4)) (класс-nn e x))) 
+
+(B (name progress) (=> (^ (dFCompEnt x :0.5)(functionality f x :0.4)) (прогресс-nn e x))) 
+
+(B (name reputacija) (=> (^ (dFCompEnt x :0.4)(functionality f x :0.4) (respectP f y z x :0.1)) (репутация-nn e x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; politics
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(B (name politika)(=> (conflict c x y g h :0.9)(политика-nn e c)))
+
+(B (name politik)(=> (^(conflict c x y g h :0.3)(adversary e1 x y c :0.6
+))(политик-nn e x)))
+
+(B (name politicheskij)(=> (conflict c x y g h :1.2)(политический-adj e c)))
+
+(B (name vyborshhit)  (=> (election x :0.4) (выборщик-nn e y))) 
+
+(B (name izbiratel)  (=> (election x :0.4) (избиратель-nn e y)))
+
+(B (name vybory) (=> (conflict x a b g1 g2 :0.9) (выборы-nn e x)))
+
+(B (name vybirat) (=> (conflict x a b g1 g2 :0.9)  (выбирать-vb e x y g1))) 
+
+(B (name vybrat) (=> (conflict x a b g1 g2 :0.9) (выбрать-vb e x y g1)))
+
+(B (name izbirat) (=> (conflict x a b g1 g2 :0.9) (избирать-vb e x y g1)))
+
+(B (name izbrat) (=> (conflict x a b g1 g2 :0.9) (избрать-vb e x y g1)))
+
+(B (name progolosovat) (=> (^ (conflict e1 a b g1 g2 :0.8)(member x a :0.1)) (проголосовать-vb e x a u))) 
+
+(B (name golosovat) (=> (^ (conflict e1 a b g1 g2 :0.8)(member x a :0.1)) (голосовать-vb e x a u)))
+
+(B (name golosovat) (=> (^ (conflict e1 a b g1 g2 :0.8)(member x a :0.1)) (голос-nn e z)))
+
+(B (name partija) (=> (conflict e x y g1 g2 :0.9) (партия-nn e0 x))) 
+
+(B (name partija2)  (=> (^ (dFCompEnt x :0.4)(functionality f x 0:3)(leadP f x y)) (партия-nn e0 x))) 
+
+(B (name demokraticheskij) (=> (politicalParty x :0.9)(демократический-adj e x))) 
+
+(B (name demokrat)  (=> (politicalParty x :0.9) (демократ-nn e y))) 
+
+(B (name respublikanec) (=> (politicalParty x :0.9) (республиканец-nn e y))) 
+
+(B (name respublikanskij) (=> (politicalParty x :0.9)(республиканский-adj e x))) 
+
+(B (name liberal) (=> (politicalParty x :0.9) (либерал-nn e y)))
+
+(B (name liberalnyj) (=> (politicalParty x :0.9) (либеральный-adj e x)))
+
+(B (name kommunist) (=> (politicalParty x :0.9) (коммунист-nn e y)))
+
+(B (name kommunisticheskij) (=> (politicalParty x :0.9)(коммунистический-adj e x)))
+
+(B (name nazionalist) (=> (politicalParty x :0.9) (националист-nn e y)))
+
+(B (name nazionalisticheskij) (=> (politicalParty x :0.9) (националистический-adj e x)))
+
+(B (name levyj) (=> (politicalParty x :0.9) (левый-adj e x)))
+
+(B (name pravyj) (=> (politicalParty x :0.9) (правый-adj e x)))
+
+(B (name edinaja-rossija) (=> (politicalParty x :0.9) (^(единая-adj e x)(россия-nn e2 x))))
+
+(B (name spravedlivaja-rossija) (=> (politicalParty x :0.9) (^(справедливая-adj e x)(россия-nn e2 x))))
+
+(B (name jabloko) (=> (politicalParty x :0.9) (яблоко-nn e x)))
+
+(B (name parnas) (=> (politicalParty x :0.9) (парнас-nn e x)))
+
+(B (name ldpr) (=> (politicalParty x :0.9) (лдпр-nn e x)))
+
+(B (name zelenyj) (=> (politicalParty x :0.9) (зеленый-adj e x)))
+
+(B (name dvizhenie) (=> (politicalParty x :0.9)(движение-nn e x))) 
+
+(B (name partija) (=> (politicalParty x :1.1)(партия-nn e x)))  
