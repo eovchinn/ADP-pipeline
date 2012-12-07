@@ -221,7 +221,19 @@ class MaltConverter(object):
                 s_count += 1
 
     def word(self, word_id):
-        return self.__words[word_id - 1]
+        try:
+            return self.__words[word_id - 1]
+        except:
+            pass
+#            print word_id, len(self.__words)
+#            print "\n\n\n"
+#            i = 0
+#            for w in self.__words:
+#                print i, w.id, w.lemma
+#                i += 1
+#            print len(self.__words)
+#            print "\n\n\n"
+
 
     def deps(self, word, filt=None):
         deps = []
