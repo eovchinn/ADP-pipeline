@@ -100,25 +100,25 @@ def replace_args(prop_sent,sent_dict):
         predicate = prop[6]
         tag = prop[7]
         propID = prop[8]
-        if lemma in thingProList and head != 0:
+        if lemma in thingProList and realHead(sent_dict,head):
             sent_dict = det_to_pr(head,wordID,sent_dict)       
-        if (rel == "suj") or (rel == "spec") and tag != "NULL":
+        if (rel == "suj") or (rel == "spec") and tag != "NULL" and realHead(sent_dict,head):
             sent_dict = insert_suj(head,wordID,sent_dict)
-        if tag == "vb" and head != 0 and rel in inheritingVbs:
+        if tag == "vb" and realHead(sent_dict,head) and rel in inheritingVbs:
             sent_dict = inherit_args(head,wordID,sent_dict)
             sent_dict = insert_prep_Vcomp(head,wordID,sent_dict)
         #Look for auxiliary verbs (passive)
-        if tag == "vb" and rel == "v" and lemma in passivesList:
+        if tag == "vb" and rel == "v" and lemma in passivesList and realHead(sent_dict,head):
             sent_dict = process_passive(head,wordID,sent_dict)
-        if rel == "v" and lemma not in passivesList:
+        if rel == "v" and lemma not in passivesList and tag != "":
             sent_dict = process_aux(head,wordID,sent_dict)            
         if rel in prepRels and pos == "s":
             sent_dict = insert_prepHead(head,wordID,sent_dict)
-        if (rel == "sn" or rel == "spec") and predicate[-1] != "R" and head != 0: # or rel == "grup.nom" - taken from first if
+        if (rel == "sn" or rel == "spec") and predicate[-1] != "R" and realHead(sent_dict,head): # or rel == "grup.nom" - taken from first if
             sent_dict = insert_sn(head,wordID,sent_dict)
-        if rel == "grup.nom" and predicate[-1] != "R" and head != 0: # 
+        if rel == "grup.nom" and predicate[-1] != "R" and realHead(sent_dict,head): # 
             sent_dict = insert_grup_nom(head,wordID,sent_dict)            
-        if rel in adjectiveRels and (pos == "a") or (lemma in quantifierList) and head !=0:
+        if rel in adjectiveRels and (pos == "a") or (lemma in quantifierList) and realHead(sent_dict,head):
             sent_dict = insert_adjHead(head,wordID,sent_dict)
         if rel == "cc" and pos == "r" and lemma not in whWords:
             sent_dict = insert_cc(head,wordID,sent_dict)
@@ -132,11 +132,11 @@ def replace_args(prop_sent,sent_dict):
         #     sent_dict = insert_cag(head,wordID,sent_dict)
         if rel == "morfema.pronominal" and pos == "p":
             sent_dict = insert_m_p(head,wordID,sent_dict)
-        if tag == "in" and head != 0:
+        if tag == "in" and realHead(sent_dict,head):
             sent_dict = insert_prepHead(head,wordID,sent_dict)
         if tag == "card" and head !=0:
             sent_dict = insert_adjHead(head,wordID,sent_dict)
-        if rel == "cpred" and head != 0:
+        if rel == "cpred" and realHead(sent_dict,head):
             sent_dict = insert_cpred(head,wordID,sent_dict)
         if tag == "rb" and (rel == "spec" or rel == "mod"):
             sent_dict = insert_rb_spec(head,wordID,sent_dict)
@@ -162,9 +162,13 @@ def replace_args(prop_sent,sent_dict):
         if "R" in predicate:
             predicate = []
         if len(predicate) > 0:
-            #print propID
             prop_dict[propID]=[propID,lemma.lower(),tag,predicate,head]
     return prop_dict
+
+def realHead(sent_dict,head):
+    if sent_dict.has_key(head):
+        return True
+    return False
 
 def handle_negation(head,wordID,sent_dict):
     sent_dict[wordID][7] = "not"
@@ -211,7 +215,6 @@ def det_to_pr(head,wordID,sent_dict):
         sent_dict[wordID][7] = "thing"
         sent_dict[wordID][2] = "p"
         last_e = int(find_last_e(sent_dict))
-        #print last_e
         newE = "e"+str(last_e+1)
         newX = "x"+str(last_e+1)        
         sent_dict[wordID][6] = [newE,newX]
@@ -238,7 +241,7 @@ def determine_wh_helper(lemma):
         return "time"
     if lemma ==  "por_qué":
         return "reason"
-    if lemma == "quién":
+    if lemma == "quién" or lemma == "Quién":
         return "person"
     if lemma == "qué":
         return "thing"
@@ -258,8 +261,7 @@ def insert_suj(head,wordID,sent_dict):
 def process_passive(head,wordID,sent_dict):
     """Remove the passive verb, and move the subject to the object place (2nd arg) in the head verb"""
     sent_dict[wordID][6].append("R")
-    if nounArg.search(sent_dict[head][6][1]):
-        #print sent_dict[wordID]
+    if nounArg.search(sent_dict[head][6][1]) and sent_dict[head][7] == "vb":
         replace = sent_dict[head][6][2]
         sent_dict[head][6][2] = sent_dict[head][6][1]
         sent_dict[head][6][1] = replace
@@ -269,7 +271,6 @@ def process_aux(head,wordID,sent_dict):
     """Deal with verbs designated auxiliary by the parser"""
     if sent_dict[head][7] == "vb":
         sent_dict[wordID][6][2] = sent_dict[head][6][0]
-        #sent_dict[wordID][6][1] = sent_dict[head][6][1]
     return sent_dict
 
 
@@ -298,9 +299,6 @@ def inherit_args(head,wordID,sent_dict):
     #             conjHead = values[3]
     #             headHead = sent_dict[conjHead][3]
     #             if headHead != 0 and sent_dict[headHead][7]:
-    #                 #print values[1]
-    #                 #print sent_dict[wordID]
-    #                 #print sent_dict[headHead]                    
     #                 sent_dict = add_new_verb(sent_dict,sent_dict[headHead][1],sent_dict[headHead][7],sent_dict[headHead][6],sent_dict[wordID][6][0],sent_dict[headHead][8],sent_dict[head][8],wordID,head)
     #              #if the conjuction is "o" add an "or" proposition
     #             if (values[1] == "o"):
@@ -484,7 +482,7 @@ def insert_cpred(head,wordID,sent_dict):
     return sent_dict
 
 def insert_adjHead(head,wordID,sent_dict):
-    #when the head is a noun, simply insert the first argument of the head        
+    #when the head is a noun, simply insert the first argument of the head
     if sent_dict[head][7] == "nn":        
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
     if sent_dict[head][7] == "card":
@@ -723,7 +721,7 @@ inheritingVbs = ["S","v"]
 adjectiveRels = ["s.a","cn","grup.a","S"]
 rootList = ["ROOT","sentence"]
 prepRels = ["sp","cn"]
-whWords = ["dónde","cómo","donde","cuando","cuándo","por_qué","quién"]
+whWords = ["dónde","cómo","donde","cuando","cuándo","por_qué","quién","Quién"]
 subConList = ["porque","mientras_que","siempre_que","puesto_que","ya_que","pues"]
 
 passivesList = ["haber","deber","tener","estar"]
