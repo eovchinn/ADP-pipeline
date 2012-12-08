@@ -72,6 +72,8 @@
 
 (B (name boxing-nn) (=> (conflict e x y g h :0.9)(boxing-nn e1 e)))
 
+;todo link to boxing match and then back to conflict
+
 (B (name race-nn) (=> (conflict e x y g h :0.9)(race-nn e1 e)))
 
 (B (name revolt-nn) (=> (conflict e x y g h :0.9) (revolt-nn e1 e)))
@@ -87,7 +89,7 @@
 (B (name conflict-vb) (=> (conflict e x y g h :0.9) (^ (conflict-vb e g u1 u2)(with-in e1 e y))))
 
 ; x struggles
-(B (name struggle-vb) (=> (^ (conflict e x y g h :0.3)(adversary e1 x y e)) (struggle-vb e x u1 u2)))
+(B (name struggle-vb) (=> (^ (conflict e x y g h :0.3)(adversary e1 x y e :0.6)) (struggle-vb e x u1 u2)))
 
 ; x battles 
 (B (name battle-vb) (=> (^ (conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (battle-vb e x y u2)))
@@ -132,6 +134,8 @@
 
 (B (name conflict-over) (=> (goal e1 g x :1.2) (^(conflict e x y u h)(over-in e2 e g))))
 
+(B (name conflict-of) (=> (goal e1 g x :1.2) (^(conflict e x y u h)(of-in e2 e g))))
+
 ; an adversary has a strategy
 ; relationship between the plan and the goals is unclear, but one is evidence for the other
 (B (name plan-nn1) (=> (goal e1 g x :0.9)(plan-nn e u1)))
@@ -172,14 +176,16 @@
 (B (name player-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (player-nn e x)))
 
 ; team x
-(B (name team-nn) (=> (^ (dFCompEnt x)(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (team-nn e x)))
+(B (name team-nn) (=> (^ (dFCompEnt x :0.3)(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (team-nn e x)))
 
 ; band/gang x
-(B (name band-nn) (=> (^ (dFCompEnt x)(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (band-nn e x)))
+(B (name band-nn) (=> (^ (dFCompEnt x :0.3)(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (band-nn e x)))
 
-(B (name gang-nn) (=> (^ (dFCompEnt x)(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (gang-nn e x)))
+(B (name gang-nn) (=> (^ (dFCompEnt x :0.3)(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (gang-nn e x)))
 
 (B (name defection-nn) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6)) (defection-nn e u)))
+
+(B (name flank-nn)(=> (adversary e1 x y e :0.6)(flank-nn e2 x)))
 
 ; ADVERSARY VERBS
 (B (name defect-vb) (=> (^(conflict e x y g h :0.3) (adversary e1 x y e :0.6))(defect-vb e2 x u1 u2)))
@@ -360,6 +366,8 @@
 ; x targets y
 (B (name target-vb) (=> (aim e1 x w y :0.9) (target-vb e1 x y w)))
 
+(B (name crosshairs-nn) (=> (aim e1 x w y :0.9) (crosshairs-nn e1 w)))
+
 ; To train a weapon on a target is to aim at the target.
 
 ; x trains w on y
@@ -407,11 +415,11 @@
 ;;; SPORTS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(B (name heavyweight-adj) (=> (adversary c x y :0.9) (heavyweight-adj e1 x)))
+(B (name heavyweight-adj) (=> (^ (boxing-match c :0.3)(adversary e x y c :0.6)) (heavyweight-adj e1 x)))
 
-(B (name round-nn) (=> (^ (subevent r c)(conflict c x y g h :0.9))(round-nn e1 r)))
+(B (name round-nn) (=> (^ (subevent r c :0.3)(conflict c x y g h :0.6))(round-nn e1 r)))
 
-(B (name stage-nn) (=> (^ (subevent r c)(conflict c x y g h :0.9))(stage-nn e1 r)))
+(B (name stage-nn) (=> (^ (subevent r c :0.3)(conflict c x y g h :0.6))(stage-nn e1 r)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; BUILD-DESTROY
@@ -454,19 +462,19 @@
 ; One way of increasing structure is to forge.
 
 ; y forges x
-(B (name forge-vb1)(=> (increaseStruct x :0.9)(forge-vb e y x u)))
+(B (name forge-vb1)(=> (^ (dFCompEnt x :0.1)(increaseStruct x :0.8))(forge-vb e y x u)))
 
 ; z paralyzes x
-(B (name paralyze1) (=> (decreaseFct x :0.9)(paralyze-vb e z x u)))
+(B (name paralyze1) (=> (^ (dFCompEnt x :0.1)(decreaseFct x :0.8))(paralyze-vb e z x u)))
 
 ; z incapacitates x
-(B (name incapacitate1)(=> (decreaseFct x :0.9)(incapacitate-vb e z x u)))
+(B (name incapacitate1)(=> (^ (dFCompEnt x :0.1)(decreaseFct x :0.8))(incapacitate-vb e z x u)))
 
 ; z facilitates x
-(B (name facilitate-vb1)(=> (increaseFct x :0.9)(faciliitate-vb e z x u)))
+(B (name facilitate-vb1)(=> (^(dFCompEnt y :0.1)(increaseFct y :0.8))(facilitate-vb e z x u)))
 
 ; z assists x
-(B (name assist-vb1)(=> (increaseFct x :0.9)(assist-vb e z x u)))
+(B (name assist-vb1)(=> (^ (dFCompEnt x :0.1)(increaseFct x :0.8))(assist-vb e z x u)))
 
 ; z hums
 (B (name hum-vb1)(=> (^ (dFCompEnt x :0.1)(increaseFct x :0.8))(hum-vb e x u1 u2)))
@@ -474,31 +482,31 @@
 (B (name hum-nn)(=> (^ (dFCompEnt y :0.1)(increaseFct y :0.8))(hum-nn e x)))
 
 ; z rebuilds x
-(B (name rebuild1)(=> (increaseStruct x :0.9)(rebuild-vb e z x u)))
+(B (name rebuild1)(=> (^ (dFCompEnt x :0.1)(increaseStruct x :0.9))(rebuild-vb e z x u)))
 
 ; z detonates x
-(B (name detonate1)(=> (decreaseFct x :0.5)(detonate-vb e z x u)))
+(B (name detonate1)(=> (^ (dFCompEnt x :0.1)(decreaseFct x :0.5))(detonate-vb e z x u)))
 
 ; z injures x
-(B (name injure1)(=> (decreaseFct x :0.9)(injure-vb e z x u)))
+(B (name injure1)(=> (^ (dFCompEnt x :0.1)(decreaseFct x :0.8))(injure-vb e z x u)))
 
 ; x falls apart
-(B (name fall-apart1)(=> (decreaseStruct x :0.9)(^ (fall-vb e x y u)(apart-adv e1 e))))
+(B (name fall-apart1)(=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8))(^ (fall-vb e x y u)(apart-adv e1 e))))
 
 ; z cracks x
-(B (name crack1)(=> (decreaseStruct x :0.9)(crack-vb e z x u)))
+(B (name crack1)(=> ((^ (dFCompEnt x :0.1)decreaseStruct x :0.8))(crack-vb e z x u)))
 
 ; x grows
-(B (name grow1)(=> (increaseStruct x :0.9)(grow-vb e x y u)))
+(B (name grow1)(=> (^ (dFCompEnt x :0.1)(increaseStruct x :0.8))(grow-vb e x y u)))
 
 ; x grows y
-(B (name grow1)(=> (increaseStruct y :0.9)(grow-vb e x y u)))
+(B (name grow1)(=> (^ (dFCompEnt x :0.1)(increaseStruct y :0.8))(grow-vb e x y u)))
 
 ; z strengthens x
-(B (name strengthen1)(=> (increaseStruct x :0.9)(strengthen-vb e z x u)))
+(B (name strengthen1)(=> (^ (dFCompEnt x :0.1)(increaseStruct x :0.8))(strengthen-vb e z x u)))
 
 ; scorched x
-(B (name scorched1)(=> (decreaseStruct x :0.9)(scorched-adj e x)))
+(B (name scorched1)(=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8))(scorched-adj e x)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; GOVERNANCE DFCEs
@@ -564,12 +572,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; POLITICS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name lobby-vb1) (=> (^ (persuade e x y g :0.6)(goal e1 g x :0.3))(lobby-vb e0 x y u1)))
+
+(B (name lobby-nn1) (=> (^ (persuade e x y g :0.6)(goal e1 g x :0.3))(lobbying-nn e0 e)))
+
+(B (name lobby-nn2) (=> (^ (persuade e x y g :0.6)(goal e1 g x :0.3))(lobby-nn e0 x)))
 	   
 (B (name voter-nn1)(=> (voter x :0.9)(voter-nn e y)))
 
-(B (name election-nn1)(=> (conflict x a b g1 g2 :0.9)(election-vb e x)))
+(B (name election-nn1)(=> (conflict x a b g1 g2 :0.9)(election-nn e x)))
 
-(B (name elect-vb1)(=> (conflict x a b g1 g2 :0.9)(elect-vb e x y g1)))
+(B (name elect-vb1)(=> (conflict e x b g1 g2 :0.9)(elect-vb e x y g1)))
 
 ; x votes
 (B (name vote-vb1)(=> (^ (conflict e1 a b g1 g2 :0.9)(members x a :0.4))(vote-vb e x a u)))
@@ -577,9 +591,11 @@
 ; x votes for y
 (B (name vote-vb2)(=> (^ (conflict e1 a b g1 g2 :0.9)(members x a :0.4))(^ (vote-vb e x a u)(for-in e2 e g1))))
 
-(B (name politics-nn1)(=> (conflict c x y g h :0.9)(politics-nn e c)))
+(B (name politics-nn1)(=> (^ (conflict c x y g h :0.9)(leadP g z c :0.3))(politics-nn e c)))
 
-(B (name political-adj)(=> (conflict c x y g h :1.2)(political-adj e c)))
+(B (name politician-nn)(=> (^ (conflict c x y g h :0.9)(leadP g z c :0.3))(politician-nn e x)))
+
+(B (name political-adj)(=> (^ (politics-nn e p)(nn p x))(political-adj e1 x)))
 
 (B (name contributor-nn)(=> (politicalParty x :1.2)(contributor-nn e x)))
 
@@ -616,51 +632,71 @@
 
 (B (name side-nn1)(=> (^ (conflict c x y g1 g2 :1.5)(adversary e1 x y c))(side-nn e x)))
 
-(B (name president-nn1)(=> (lead x y :0.9)(president-nn e x)))
+; LEAD NOUNS
 
-(B (name leader-nn1)(=> (lead x y :0.9)(leader-nn e x)))
+(B (name president-nn1)(=> (lead e6 x y :0.9)(president-nn e x)))
 
-(B (name governor-nn1)(=> (lead x y :0.9)(governor-nn e x)))
+(B (name leader-nn1)(=> (lead e6 x y :0.9)(leader-nn e x)))
 
-(B (name mayor-nn1)(=> (lead x y :0.9)(mayor-nn e x)))
+(B (name governor-nn1)(=> (lead e6 x y :0.9)(governor-nn e x)))
 
-(B (name speaker-nn1)(=> (lead x y :0.9)(speaker-nn e x)))
+(B (name mayor-nn1)(=> (lead e6 x y :0.9)(mayor-nn e x)))
 
-(B (name chairman-nn1)(=> (lead x y :0.9)(chairman-nn e x)))
+(B (name speaker-nn1)(=> (lead e6 x y :0.9)(speaker-nn e x)))
 
-(B (name king-nn1)(=> (lead x y :0.9)(king-nn e x)))
+(B (name chairman-nn1)(=> (lead e6 x y :0.9)(chairman-nn e x)))
 
-(B (name queen-nn1)(=> (lead x y :0.9)(queen-nn e x)))
+(B (name king-nn1)(=> (lead e6 x y :0.9)(king-nn e x)))
 
-(B (name emir-nn1)(=> (lead x y :0.9)(emir-nn e x)))
+(B (name queen-nn1)(=> (lead e6 x y :0.9)(queen-nn e x)))
 
-(B (name prime-minister-nn1)(=> (lead x y :0.9)(^(prime-adj e0 x)(minister-nn e x))))
+(B (name emir-nn1)(=> (lead e6 x y :0.9)(emir-nn e x)))
 
-(B (name minister-nn1)(=> (lead x y :0.9)(minister-nn e x)))
+(B (name prime-minister-nn1)(=> (lead e6 x y :0.9)(^(prime-adj e0 x)(minister-nn e x))))
 
-(B (name cheif-nn1)(=> (lead x y :0.9)(cheif-nn e x)))
+(B (name minister-nn1)(=> (lead e6 x y :0.9)(minister-nn e x)))
 
-(B (name boss-nn1)(=> (lead x y :0.9)(boss-nn e x)))
+(B (name cheif-nn1)(=> (lead e6 x y :0.9)(cheif-nn e x)))
 
-(B (name captain-nn1)(=> (lead x y :0.9)(captain-nn e x)))
+(B (name boss-nn1)(=> (lead e6 x y :0.9)(boss-nn e x)))
 
-(B (name commander-nn1)(=> (lead x y :0.9)(commander-nn e x)))
+(B (name captain-nn1)(=> (lead e6 x y :0.9)(captain-nn e x)))
 
-(B (name general-nn1)(=> (lead x y :0.9)(general-nn e x)))
+(B (name commander-nn1)(=> (lead e6 x y :0.9)(commander-nn e x)))
 
-(B (name ruler-nn1)(=> (lead x y :0.9)(ruler-nn e x)))
+(B (name general-nn1)(=> (lead e6 x y :0.9)(general-nn e x)))
 
-(B (name head-nn1)(=> (lead x y :0.9)(head-nn e x)))
+(B (name ruler-nn1)(=> (lead e6 x y :0.9)(ruler-nn e x)))
 
-(B (name manager-nn1)(=> (lead x y :0.9)(manager-nn e x)))
+(B (name head-nn1)(=> (lead e6 x y :0.9)(head-nn e x)))
 
-(B (name shah-nn1)(=> (lead x y :0.9)(shah-nn e x)))
+(B (name manager-nn1)(=> (lead e6 x y :0.9)(manager-nn e x)))
 
-(B (name sheikh-nn1)(=> (lead x y :0.9)(sheikh-nn e x)))
+(B (name shah-nn1)(=> (lead e6 x y :0.9)(shah-nn e x)))
 
-(B (name principal-nn1)(=> (lead x y :0.9)(principal-nn e x)))
+(B (name sheikh-nn1)(=> (lead e6 x y :0.9)(sheikh-nn e x)))
 
-(B (name ringleader-nn1)(=> (lead x y :0.9)(ringleader-nn e x)))
+(B (name principal-nn1)(=> (lead e6 x y :0.9)(principal-nn e x)))
+
+(B (name ringleader-nn1)(=> (lead e6 x y :0.9)(ringleader-nn e x)))
+
+(B (name lead-of)(=> (lead e6 x y :1.2)(^ (lead e x u)(of-in e1 e y))))
+
+; LEAD VERBS
+
+(B (name lead-vb1)(=> (lead e6 x y :0.9)(lead-vb e x y u2)))
+
+(B (name lead-vb1)(=> (lead e6 x y :0.9)(drive-vb e x y u2)))
+
+(B (name lead-vb1)(=> (lead e6 x y :0.9)(guide-vb e x y u2)))
+
+(B (name lead-vb1)(=> (lead e6 x y :0.9)(manage-vb e x y u2)))
+
+(B (name lead-vb1)(=> (lead e6 x y :0.9)(rule-vb e x y u2)))
+
+(B (name lead-vb1)(=> (lead e6 x y :0.9)(head-vb e x y u2)))
+
+(B (name lead-vb1)(=> (lead e6 x y :0.9)(direct-vb e x y u2)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; OTHER ENGLISH LEXICAL AXIOMS

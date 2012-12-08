@@ -5,6 +5,7 @@
 ;
 ; 12/5/2012 aks - adding governance DFCE axiom
 ;
+; 12/7/2012 aks - commented out conflict0
 ; Questions
 ;
 
@@ -15,13 +16,15 @@
 
 ; Conflict has two adversaries
 
-(B (name conflict0) (=> (conflict c x y g h :0.3) (adversary e x y c)))
+;(B (name conflict0) (=> (conflict c x y g h :0.3) (adversary e x y c)))
 
 ; In conflict, adversaries attack each other.
 
 (B (name conflict3) (=> (^ (conflict c x y g h:1.2)(adversary e1 x y c :0.6)) (attack e1 x y)))
 
 ; Adversaries have contradictory goals.
+
+(B (name goal-conflict) (=> (goal e0 g x :1.2)(conflict c x y g h)))
 
 (B (name adversary1) (=> (^ (adversary e1 x y c :1.2) (goalNot e2 g y :1.2))(goal e3 g x)))
 
@@ -52,11 +55,12 @@
 
 ;A slap is an attack.
 
-;(B (name slap) (=> (^ (attack e x y :0.9) (etc-slap e :0.3)) (slap e1 x y)))
+(B (name slap) (=> (attack e1 x y :1.2) (slap e1 x y)))
 
-; Aiming precedes an attack
+; Aiming is preparation for attack
 
-;(B (name attack1) (=> (aim e x w y :1.2) (attack e1 x y)))
+; x prepares to attack y with w
+(B (name aim-attack1) (=> (^ (prepare e x a :0.9)(attack e x y :0.3))(aim e1 x w y)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; WAR
@@ -103,11 +107,11 @@
 ;;;; BOXING
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;Boxing is a sport.
+;Boxing is a sport. => lexical entry "boxing is conflict"
 
-;Blow is an attack in boxing.
+;Blow is an attack in boxing. => lexical entry
 
-;Low blow is blow against the rules.
+;Low blow is blow against the rules. => lexical entry
 
 ;Adversaries are in same weight class.
 
@@ -153,3 +157,11 @@
 
 (B (name politicalParty2)(=> (^ (dFCompEnt x :0.4)(functionality f x 0:3)(leadP f x y))(politicalParty x)))
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; DFCEs
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name decreaseStruct1)(=> (^ (decreaseFct y :0.4)(functionality f x :0.5))(decreaseStruct x)))
+
+(B (name increaseStruct1)(=> (^ (increaseFct y :0.4)(functionality f x :0.5))(increaseStruct x)))
