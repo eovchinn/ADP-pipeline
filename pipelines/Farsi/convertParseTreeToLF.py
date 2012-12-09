@@ -24,7 +24,6 @@ conditionalList=[]
 becauseList=[]
 negationList=[]
 #whileList=[]
-
 def findProp(props,propId):
     global pronouns
     for prop in props:
@@ -46,9 +45,12 @@ def readPronounList(startLineNumber,lines):
     global pronouns
     for i in range(startLineNumber,len(lines)):
         if re.match("--.*",lines[i]):
+            #for pronoun in pronouns:
+                #print "%s\t%s"%(pronoun,pronouns[pronoun])
             return i+1
         (pronoun,person,animate)=lines[i].split()
-        pronouns[pronoun]=(person,animate)
+        pronoun=pronoun.replace(u'\u200e',"")
+        pronouns[pronoun]=(pronoun,person)
     return i
 
 def readPluralList(startLineNumber,lines):
@@ -129,10 +131,6 @@ def propToString(sentenceId,prop):
     token="%s%s%s(%s)"%(idString,lemma,postfix,",".join(args))
     return token
     
-def getLemma(word):
-    return word
-
-
 def getArgs(POS):
     
     global unknownargCounter
@@ -437,9 +435,9 @@ def createNewPropsForNounsWithPossesivePostfixes(props,rels):
     for prop in props:
         (id,word,lemma,POS,args)=prop 
         if POS!=POSDict["N"]: continue
-        postFix=word.replace(lemma, "")
+        postFix=word.replace(lemma, "") # if lemma==word, then postfix would be ""
         if postFix not in pronouns:
-            continue
+            continue 
         eventualityArgCounter+=1
         entityArgCounter+=1
         pronounArg="x%s"%str(entityArgCounter)
@@ -760,6 +758,7 @@ sentenceId=1
 tokens=[]
 
 while line!="":
+    line=line.replace(u'\u200e',"")
     if line.strip()=="" and len(tokens)!=0:   
         #one sentence read, process it and output it
         

@@ -1,5 +1,4 @@
 
-; reove typlt
 ; conflict and adversary come together if we have adversary words like enemy
 ;(B (name ‎styzh-krd#kn) (=> (^(conflict e1 x y g h)(adversary e1 y x c)) (^ (krd#kn-vb e1 x u1 u2) (‎styzh-nn e3 x1) (NVE e4 x1 e1))))
 
@@ -223,10 +222,10 @@
 ;(goal e1 g x)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (B (name ‎hdf) (=> (goal e1 g x) (‎hdf-nn e2 x)))
-(B (name a‎hdaf) (=> (^(goal e1 g x)(typelt e3 x s1)) (a‎hdaf-nn e2 x)))
+(B (name a‎hdaf) (=> (goal e1 g x) (a‎hdaf-nn e2 x)))
 (B (name ‎mnzvr) (=> (goal e1 g x) (‎mnzvr-nn e2 x)))
 (B (name ‎mghsd) (=> (goal e1 g x) (‎mghsd-nn e2 x)))
-(B (name ‎mghsd) (=> (^(goal e1 g x)(typelt e3 x s1)) (‎mghasd-nn e2 x)))
+(B (name ‎mghsd) (=> (goal e1 g x) (‎mghasd-nn e2 x)))
 (B (name ‎mghsvd) (=> (goal e1 g x) (‎mghsvd-nn e2 x)))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;(gun x)

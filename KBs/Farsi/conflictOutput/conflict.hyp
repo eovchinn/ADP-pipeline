@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<henry-output parameter="-m infer -d 3 -t 4 -O proofgraph,statistics -T 60 -e /Users/niloofar/henry-n700/models/h93.py /Users/niloofar/Metaphor-ADP/KBs/Farsi/farsi-conflict-lexical-axioms-weighted.txt /Users/niloofar/Metaphor-ADP/KBs/Farsi/conflictOutput/conflict.obs">
+<result-inference target="1">
+<observed size="7" domain_size="0">
+ahdaf-nn(e0,x0) ^ ba-in(e1,e5,x1) ^ hm(e2,x1) ^ sr-nn(e3,x2) ^ nasazgary-nn(e4,x3) ^ dasht#dar-vb(e5,x0,x2,u4) ^ nn(e8,x2,x3)
+</observed>
+<hypothesis score="-6.809">
+ahdaf-nn(e0,x0) ^ ba-in(e1,e5,x1) ^ hm(e2,x1) ^ sr-nn(e3,x2) ^ nasazgary-nn(e4,x3) ^ dasht#dar-vb(e5,x0,x2,u4) ^ nn(e8,x2,x3) ^ goal(_0,_1,x0) ^ conflict(x3,_2,_3,_4,_5)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_hm_2":-1.001 "!HYPOTHESIZED_goal_7":-0.901 "!HYPOTHESIZED_nasazgary-nn_4":-1.001 "!HYPOTHESIZED_nn_6":-1.001 "!HYPOTHESIZED_conflict_8":-0.901 "!HYPOTHESIZED_ahdaf-nn_0":-1.001 "!HYPOTHESIZED_sr-nn_3":-1.001 "!EXPLAINED_nasazgary-nn_4":1 "!HYPOTHESIZED_ba-in_1":-1.001 "!EXPLAINED_ahdaf-nn_0":1 "!HYPOTHESIZED_dasht#dar-vb_5":-1.001 
+</vector>
+<statistics>
+<time total="0.048501" prepare="0.047883" ilp="0.000617981" />
+<ilp solution="Optimal" variables="28" constraints="22" />
+<search-space literals="9" axiom="20" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">ahdaf-nn(e0,x0):0:1.00</literal>
+<literal id="1" type="2" active="yes">ba-in(e1,e5,x1):1:1.00</literal>
+<literal id="2" type="2" active="yes">hm(e2,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">sr-nn(e3,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">nasazgary-nn(e4,x3):4:1.00</literal>
+<literal id="5" type="2" active="yes">dasht#dar-vb(e5,x0,x2,u4):5:1.00</literal>
+<literal id="6" type="2" active="yes">nn(e8,x2,x3):6:1.00</literal>
+<literal id="7" type="3" active="yes">goal(_0,_1,x0):7:0.90</literal>
+<literal id="8" type="3" active="yes">conflict(x3,_2,_3,_4,_5):8:0.90</literal>
+<explanation name="ahdaf" active="yes" axiom="">7 => 0</explanation>
+<explanation name="nasazgary" active="yes" axiom="">8 => 4</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="2">
+<observed size="2" domain_size="0">
+av(e0,x0) ^ jngyd#jng-vb(e1,x0,u1,u2)
+</observed>
+<hypothesis score="-1.903">
+av(e0,x0) ^ jngyd#jng-vb(e1,x0,u1,u2) ^ conflict(e1,x0,u2,_6,_7)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_av_0":-1.001 "!HYPOTHESIZED_conflict_2":-0.901 "!HYPOTHESIZED_jngyd#jng-vb_1":-1.001 "!EXPLAINED_jngyd#jng-vb_1":1 
+</vector>
+<statistics>
+<time total="0.0024271" prepare="0.00214601" ilp="0.000281096" />
+<ilp solution="Optimal" variables="10" constraints="8" />
+<search-space literals="3" axiom="1" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">av(e0,x0):0:1.00</literal>
+<literal id="1" type="2" active="yes">jngyd#jng-vb(e1,x0,u1,u2):1:1.00</literal>
+<literal id="2" type="3" active="yes">conflict(e1,x0,u2,_6,_7):2:0.90</literal>
+<explanation name="jngyd#jng" active="yes" axiom="">2 => 1</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="3">
+<observed size="9" domain_size="0">
+av(e0,x0) ^ az-in(e1,x3,x1) ^ aslhh-nn(e2,x1) ^ ay-nn(e3,x2) ^ jdyd-adj(e4,x2) ^ astfadh-nn(e5,x3) ^ knd#kn-vb(e6,x0,u4,u5) ^ NVE(e9,x3,e6) ^ nn(e10,x1,x2)
+</observed>
+<hypothesis score="-8.811">
+av(e0,x0) ^ az-in(e1,x3,x1) ^ aslhh-nn(e2,x1) ^ ay-nn(e3,x2) ^ jdyd-adj(e4,x2) ^ astfadh-nn(e5,x3) ^ knd#kn-vb(e6,x0,u4,u5) ^ NVE(e9,x3,e6) ^ nn(e10,x1,x2) ^ weapon(x1) ^ use(x3,_8,_9)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_aslhh-nn_2":-1.001 "!HYPOTHESIZED_knd#kn-vb_6":-1.001 "!HYPOTHESIZED_astfadh-nn_5":-1.001 "!HYPOTHESIZED_use_11":-0.901 "!HYPOTHESIZED_ay-nn_3":-1.001 "!HYPOTHESIZED_weapon_10":-0.901 "!EXPLAINED_astfadh-nn_5":1 "!HYPOTHESIZED_NVE_7":-1.001 "!HYPOTHESIZED_jdyd-adj_4":-1.001 "!HYPOTHESIZED_az-in_1":-1.001 "!EXPLAINED_aslhh-nn_2":1 "!HYPOTHESIZED_nn_8":-1.001 "!HYPOTHESIZED_av_0":-1.001 
+</vector>
+<statistics>
+<time total="0.00490785" prepare="0.00411296" ilp="0.000794888" />
+<ilp solution="Optimal" variables="38" constraints="31" />
+<search-space literals="12" axiom="3" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">av(e0,x0):0:1.00</literal>
+<literal id="1" type="2" active="yes">az-in(e1,x3,x1):1:1.00</literal>
+<literal id="2" type="2" active="yes">aslhh-nn(e2,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">ay-nn(e3,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">jdyd-adj(e4,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">astfadh-nn(e5,x3):5:1.00</literal>
+<literal id="6" type="2" active="yes">knd#kn-vb(e6,x0,u4,u5):6:1.00</literal>
+<literal id="7" type="2" active="yes">NVE(e9,x3,e6):7:1.00</literal>
+<literal id="8" type="2" active="yes">nn(e10,x1,x2):8:1.00</literal>
+<literal id="9" type="3" active="no">gun(x1):9:0.90</literal>
+<literal id="10" type="3" active="yes">weapon(x1):10:0.90</literal>
+<literal id="11" type="3" active="yes">use(x3,_8,_9):11:0.90</literal>
+<explanation name="aslhh" active="no" axiom="">9 => 2</explanation>
+<explanation name="aslhh" active="yes" axiom="">10 => 2</explanation>
+<explanation name="astfadh" active="yes" axiom="">11 => 5</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="4">
+<observed size="7" domain_size="0">
+av(e0,x0) ^ khvast#khvah-vb(e1,u0,u1,u2) ^ yk(e2,x1) ^ tpanchh-nn(e3,x1) ^ bh-kar-nn(e4,x2) ^ grft#gyr-vb(e5,x1,u5,u6) ^ NVE(e8,x2,e5)
+</observed>
+<hypothesis score="-6.908">
+av(e0,x0) ^ khvast#khvah-vb(e1,u0,u1,u2) ^ yk(e2,x1) ^ tpanchh-nn(e3,x1) ^ bh-kar-nn(e4,x2) ^ grft#gyr-vb(e5,x1,u5,u6) ^ NVE(e8,x2,e5) ^ gun(x1)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_bh-kar-nn_4":-1.001 "!HYPOTHESIZED_yk_2":-1.001 "!HYPOTHESIZED_NVE_6":-1.001 "!HYPOTHESIZED_grft#gyr-vb_5":-1.001 "!HYPOTHESIZED_tpanchh-nn_3":-1.001 "!HYPOTHESIZED_av_0":-1.001 "!EXPLAINED_tpanchh-nn_3":1 "!HYPOTHESIZED_gun_7":-0.901 "!HYPOTHESIZED_khvast#khvah-vb_1":-1.001 
+</vector>
+<statistics>
+<time total="0.00545502" prepare="0.00515199" ilp="0.00030303" />
+<ilp solution="Optimal" variables="25" constraints="18" />
+<search-space literals="8" axiom="5" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">av(e0,x0):0:1.00</literal>
+<literal id="1" type="2" active="yes">khvast#khvah-vb(e1,u0,u1,u2):1:1.00</literal>
+<literal id="2" type="2" active="yes">yk(e2,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">tpanchh-nn(e3,x1):3:1.00</literal>
+<literal id="4" type="2" active="yes">bh-kar-nn(e4,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">grft#gyr-vb(e5,x1,u5,u6):5:1.00</literal>
+<literal id="6" type="2" active="yes">NVE(e8,x2,e5):6:1.00</literal>
+<literal id="7" type="3" active="yes">gun(x1):7:0.90</literal>
+<explanation name="tpanchh" active="yes" axiom="">7 => 3</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="5">
+<observed size="7" domain_size="0">
+astemal-nn(e0,x0) ^ hr(e1,x1) ^ nve-nn(e2,x1) ^ slah-nn(e3,x2) ^ jngy-adj(e4,x2) ^ mmnve-adj(e5,x2) ^ ast-vb(e6,x0,u4,u5)
+</observed>
+<hypothesis score="-6.908">
+astemal-nn(e0,x0) ^ hr(e1,x1) ^ nve-nn(e2,x1) ^ slah-nn(e3,x2) ^ jngy-adj(e4,x2) ^ mmnve-adj(e5,x2) ^ ast-vb(e6,x0,u4,u5) ^ use(x0,_10,_11)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_slah-nn_3":-1.001 "!HYPOTHESIZED_mmnve-adj_5":-1.001 "!HYPOTHESIZED_use_7":-0.901 "!HYPOTHESIZED_ast-vb_6":-1.001 "!HYPOTHESIZED_nve-nn_2":-1.001 "!EXPLAINED_astemal-nn_0":1 "!HYPOTHESIZED_hr_1":-1.001 "!HYPOTHESIZED_astemal-nn_0":-1.001 "!HYPOTHESIZED_jngy-adj_4":-1.001 
+</vector>
+<statistics>
+<time total="0.00399709" prepare="0.00367999" ilp="0.000317097" />
+<ilp solution="Optimal" variables="25" constraints="18" />
+<search-space literals="8" axiom="1" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">astemal-nn(e0,x0):0:1.00</literal>
+<literal id="1" type="2" active="yes">hr(e1,x1):1:1.00</literal>
+<literal id="2" type="2" active="yes">nve-nn(e2,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">slah-nn(e3,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">jngy-adj(e4,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">mmnve-adj(e5,x2):5:1.00</literal>
+<literal id="6" type="2" active="yes">ast-vb(e6,x0,u4,u5):6:1.00</literal>
+<literal id="7" type="3" active="yes">use(x0,_10,_11):7:0.90</literal>
+<explanation name="astemal" active="yes" axiom="">7 => 0</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="6">
+<observed size="11" domain_size="0">
+dshmn-nn(e0,x0) ^ kh(e1,x0,e6) ^ ghlb-nn(e2,x1) ^ nzam-nn(e3,x2) ^ ra(e4,u2) ^ hdf-nn(e5,x3) ^ grft#gyr-vb(e6,u3,x1,u5) ^ mharb-nn(e8,x4) ^ hst#bash-vb(e9,x0,u8,u9) ^ NVE(e12,x3,e6) ^ nn(e13,x1,x2)
+</observed>
+<hypothesis score="-10.613">
+dshmn-nn(e0,x0) ^ kh(e1,x0,e6) ^ ghlb-nn(e2,x1) ^ nzam-nn(e3,x2) ^ ra(e4,u2) ^ hdf-nn(e5,x3) ^ grft#gyr-vb(e6,u3,x1,u5) ^ mharb-nn(e8,x4) ^ hst#bash-vb(e9,x0,u8,u9) ^ NVE(e12,x3,e6) ^ nn(e13,x1,x2) ^ adversary(_12,x0,_13,_14) ^ aim(e6,u3,x1,u5)
+</hypothesis>
+<vector score="0">
+"!EXPLAINED_dshmn-nn_0":1 "!HYPOTHESIZED_mharb-nn_7":-1.001 "!EXPLAINED_NVE_9":1 "!EXPLAINED_grft#gyr-vb_6":1 "!EXPLAINED_hdf-nn_5":1 "!HYPOTHESIZED_hdf-nn_5":-1.001 "!HYPOTHESIZED_NVE_9":-1.001 "!HYPOTHESIZED_nn_10":-1.001 "!HYPOTHESIZED_dshmn-nn_0":-1.001 "!HYPOTHESIZED_ghlb-nn_2":-1.001 "!HYPOTHESIZED_adversary_11":-0.901 "!HYPOTHESIZED_aim_13":-2.701 "!HYPOTHESIZED_grft#gyr-vb_6":-1.001 "!HYPOTHESIZED_hst#bash-vb_8":-1.001 "!HYPOTHESIZED_nzam-nn_3":-1.001 "!HYPOTHESIZED_ra_4":-1.001 "!HYPOTHESIZED_kh_1":-1.001 
+</vector>
+<statistics>
+<time total="0.009161" prepare="0.00855207" ilp="0.000608921" />
+<ilp solution="Optimal" variables="44" constraints="38" />
+<search-space literals="14" axiom="9" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">dshmn-nn(e0,x0):0:1.00</literal>
+<literal id="1" type="2" active="yes">kh(e1,x0,e6):1:1.00</literal>
+<literal id="2" type="2" active="yes">ghlb-nn(e2,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">nzam-nn(e3,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">ra(e4,u2):4:1.00</literal>
+<literal id="5" type="2" active="yes">hdf-nn(e5,x3):5:1.00</literal>
+<literal id="6" type="2" active="yes">grft#gyr-vb(e6,u3,x1,u5):6:1.00</literal>
+<literal id="7" type="2" active="yes">mharb-nn(e8,x4):7:1.00</literal>
+<literal id="8" type="2" active="yes">hst#bash-vb(e9,x0,u8,u9):8:1.00</literal>
+<literal id="9" type="2" active="yes">NVE(e12,x3,e6):9:1.00</literal>
+<literal id="10" type="2" active="yes">nn(e13,x1,x2):10:1.00</literal>
+<literal id="11" type="3" active="yes">adversary(_12,x0,_13,_14):11:0.90</literal>
+<literal id="12" type="3" active="no">goal(_15,_16,x3):12:0.90</literal>
+<literal id="13" type="3" active="yes">aim(e6,u3,x1,u5):13:2.70</literal>
+<explanation name="dshmn" active="yes" axiom="">11 => 0</explanation>
+<explanation name="hdf" active="no" axiom="">12 => 5</explanation>
+<explanation name="hdf-grft#gyr" active="yes" axiom="">13 => 5</explanation>
+<explanation name="hdf-grft#gyr" active="yes" axiom="">13 => 6</explanation>
+<explanation name="hdf-grft#gyr" active="yes" axiom="">13 => 9</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="7">
+<observed size="5" domain_size="0">
+ks-nn(e0,x0) ^ kh(e1,x0,e3) ^ hgh-nn(e2,x1) ^ khvrdh-shdh-ast-vb(e3,u2,u3,u4) ^ NVE(e5,x1,e3)
+</observed>
+<hypothesis score="-5.005">
+ks-nn(e0,x0) ^ kh(e1,x0,e3) ^ hgh-nn(e2,x1) ^ khvrdh-shdh-ast-vb(e3,u2,u3,u4) ^ NVE(e5,x1,e3)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_NVE_4":-1.001 "!HYPOTHESIZED_hgh-nn_2":-1.001 "!HYPOTHESIZED_kh_1":-1.001 "!HYPOTHESIZED_ks-nn_0":-1.001 "!HYPOTHESIZED_khvrdh-shdh-ast-vb_3":-1.001 
+</vector>
+<statistics>
+<time total="0.00252271" prepare="0.00226593" ilp="0.000256777" />
+<ilp solution="Optimal" variables="16" constraints="10" />
+<search-space literals="5" axiom="0" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">ks-nn(e0,x0):0:1.00</literal>
+<literal id="1" type="2" active="yes">kh(e1,x0,e3):1:1.00</literal>
+<literal id="2" type="2" active="yes">hgh-nn(e2,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">khvrdh-shdh-ast-vb(e3,u2,u3,u4):3:1.00</literal>
+<literal id="4" type="2" active="yes">NVE(e5,x1,e3):4:1.00</literal>
+</proofgraph>
+</result-inference>
+</henry-output>

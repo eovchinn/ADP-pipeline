@@ -15,9 +15,11 @@ outputFile=codecs.open(sys.argv[2],encoding='utf-8',mode="w") if len(sys.argv)>2
 
 metaphorDir=os.environ['METAPHOR_DIR']
 lemmaFile=codecs.open("%s/pipelines/Farsi/lemmatizationDict.txt"%metaphorDir, encoding='utf-8')
+testLemmaFile=codecs.open("%s/pipelines/Farsi/testLemmatizationDict.txt"%metaphorDir,encoding='utf-8',mode="w")
 
 pronounList=[u'\u0627\u0634',u'\u062a\u0627\u0646',u'\u0627\u0645',u'\u062a',u'\u0634',u'\u0634\u0627\u0646',u'\u0645\u0627\u0646',u'\u0645',u'\u0627\u062a']
-
+#for pronoun in pronounList:
+#    print (pronoun,"PRO")
 niloo=1
 
 def loadLemmaDict(lemmaFile):
@@ -29,8 +31,10 @@ def loadLemmaDict(lemmaFile):
             line=lemmaFile.readline()
             lineNumber+=1 
             continue
+#        print lineNumber
         (word,POS,lemma)=line.replace(u'\u200e',"").strip().split("\t")
         lemmaDict [(word,POS)]=lemma
+        testLemmaFile.write("%s\t%s\n"%(word,str((word,POS))))
         line=lemmaFile.readline() 
         lineNumber+=1
     
@@ -41,6 +45,8 @@ def addLemmaForWordsWithpossesivePostFix(lemmaDict):
     #if the word ends with a pronoun, then replace the pronoun with "" and check whether the new word is in out lemmatization dict. If so, return the lemma of that new word
     newItems={}
     for (lemma,POS)in lemmaDict:
+        if lemma==u'\u0627\u0647\u062f\u0627\u0641':
+            niloo=1
         for pronoun in pronounList:
             newItems[("%s%s"%(lemma,pronoun.replace(u'\u200e',"")),POS)]=lemma
     for key in newItems:
@@ -48,6 +54,7 @@ def addLemmaForWordsWithpossesivePostFix(lemmaDict):
                 
 def getLemma(word,POS,lemmaDict):
     if (word,POS) not in lemmaDict: 
+#        print "NILOO:%s\t%s"%(word,str((word,POS)))
         return word
     return lemmaDict[(word,POS)]
 
@@ -70,8 +77,8 @@ while line!="":
     for i in range(0,len(words)):
         lemma=getLemma(words[i],POSs[i],lemmaDict)
         items=(str(i+1),words[i],lemma,POSs[i],POSs[i],"_","_","_","_","_")
-        #outputFile.write(("%s\n"%"\t".join(items)).encode('utf-8'))
         outputFile.write(("%s\n"%"\t".join(items)).encode('utf-8'))
+        #outputFile.write(("%s\n"%"\t".join(items)))
 
     
     outputFile.write(("\n"))
@@ -79,6 +86,7 @@ while line!="":
     
 inputFile.close()
 outputFile.close()
+testLemmaFile.close()
     
 
 
