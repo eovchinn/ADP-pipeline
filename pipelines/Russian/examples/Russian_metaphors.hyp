@@ -1,0 +1,2087 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<henry-output parameter="-m infer /home/ovchinnikova/Metaphor-ADP/KBs/Russian/Russian-conflict-lexical.txt /home/ovchinnikova/Metaphor-ADP/KBs/common/metaphor-ontology.txt /home/ovchinnikova/Metaphor-ADP/pipelines/Russian/examples/Russian_metaphors.obs -e /home/ovchinnikova/henry-n700/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T 60">
+<result-inference target="1">
+<observed size="10" domain_size="0">
+более-rb(e1,e10) ^ специалист-nn(e2,x1) ^ прогнозировать-vb(e3,x1,u1,u2) ^ в-in(e4,e3,x2) ^ год-nn(e5,x2) ^ новый-adj(e6,x3) ^ волна-nn(e7,x3) ^ финансовый-adj(e8,x4) ^ кризис-nn(e9,x4) ^ of-in(e11,x3,x4)
+</observed>
+<hypothesis score="-9.913">
+более-rb(e1,e10) ^ специалист-nn(e2,x1) ^ прогнозировать-vb(e3,x1,u1,u2) ^ в-in(e4,e3,x2) ^ год-nn(e5,x2) ^ новый-adj(e6,x3) ^ волна-nn(e7,x3) ^ финансовый-adj(e8,x4) ^ кризис-nn(e9,x4) ^ of-in(e11,x3,x4) ^ dFCompEnt(x4) ^ functionality(_0,x4) ^ commerce(_0)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_commerce_12":-0.101 "!HYPOTHESIZED_functionality_11":-0.401 "!HYPOTHESIZED_волна-nn_6":-1.001 "!HYPOTHESIZED_dFCompEnt_10":-0.401 "!HYPOTHESIZED_of-in_9":-1.001 "!HYPOTHESIZED_прогнозировать-vb_2":-1.001 "!HYPOTHESIZED_год-nn_4":-1.001 "!EXPLAINED_финансовый-adj_7":1 "!HYPOTHESIZED_более-rb_0":-1.001 "!HYPOTHESIZED_специалист-nn_1":-1.001 "!HYPOTHESIZED_кризис-nn_8":-1.001 "!HYPOTHESIZED_новый-adj_5":-1.001 "!HYPOTHESIZED_финансовый-adj_7":-1.001 "!HYPOTHESIZED_в-in_3":-1.001 
+</vector>
+<statistics>
+<time total="0.023006" prepare="0.0225341" ilp="0.00047183" />
+<ilp solution="Optimal" variables="42" constraints="47" />
+<search-space literals="13" axiom="1" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">более-rb(e1,e10):0:1.00</literal>
+<literal id="1" type="2" active="yes">специалист-nn(e2,x1):1:1.00</literal>
+<literal id="2" type="2" active="yes">прогнозировать-vb(e3,x1,u1,u2):2:1.00</literal>
+<literal id="3" type="2" active="yes">в-in(e4,e3,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">год-nn(e5,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">новый-adj(e6,x3):5:1.00</literal>
+<literal id="6" type="2" active="yes">волна-nn(e7,x3):6:1.00</literal>
+<literal id="7" type="2" active="yes">финансовый-adj(e8,x4):7:1.00</literal>
+<literal id="8" type="2" active="yes">кризис-nn(e9,x4):8:1.00</literal>
+<literal id="9" type="2" active="yes">of-in(e11,x3,x4):9:1.00</literal>
+<literal id="10" type="3" active="yes">dFCompEnt(x4):10:0.40</literal>
+<literal id="11" type="3" active="yes">functionality(_0,x4):11:0.40</literal>
+<literal id="12" type="3" active="yes">commerce(_0):12:0.10</literal>
+<explanation name="finansovyj" active="yes" axiom="">10 ^ 11 ^ 12 => 7</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="2">
+<observed size="7" domain_size="0">
+шанс-nn(e1,x1) ^ поймать-vb(e2,u1,u2,u3) ^ китайский-adj(e3,x2) ^ ветер-nn(e4,x2) ^ в-in(e5,x3,x4) ^ парус-nn(e6,x4) ^ экономика-nn(e7,x5)
+</observed>
+<hypothesis score="-6.91">
+шанс-nn(e1,x1) ^ поймать-vb(e2,u1,u2,u3) ^ китайский-adj(e3,x2) ^ ветер-nn(e4,x2) ^ в-in(e5,x3,x4) ^ парус-nn(e6,x4) ^ экономика-nn(e7,x5) ^ dFCompEnt(x5) ^ functionality(_1,x5) ^ commerce(_1)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_шанс-nn_0":-1.001 "!HYPOTHESIZED_парус-nn_5":-1.001 "!HYPOTHESIZED_экономика-nn_6":-1.001 "!HYPOTHESIZED_китайский-adj_2":-1.001 "!HYPOTHESIZED_commerce_9":-0.101 "!HYPOTHESIZED_в-in_4":-1.001 "!HYPOTHESIZED_ветер-nn_3":-1.001 "!HYPOTHESIZED_dFCompEnt_7":-0.401 "!HYPOTHESIZED_functionality_8":-0.401 "!EXPLAINED_экономика-nn_6":1 "!HYPOTHESIZED_поймать-vb_1":-1.001 
+</vector>
+<statistics>
+<time total="0.00498199" prepare="0.00464296" ilp="0.000339031" />
+<ilp solution="Optimal" variables="33" constraints="41" />
+<search-space literals="10" axiom="1" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">шанс-nn(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">поймать-vb(e2,u1,u2,u3):1:1.00</literal>
+<literal id="2" type="2" active="yes">китайский-adj(e3,x2):2:1.00</literal>
+<literal id="3" type="2" active="yes">ветер-nn(e4,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">в-in(e5,x3,x4):4:1.00</literal>
+<literal id="5" type="2" active="yes">парус-nn(e6,x4):5:1.00</literal>
+<literal id="6" type="2" active="yes">экономика-nn(e7,x5):6:1.00</literal>
+<literal id="7" type="3" active="yes">dFCompEnt(x5):7:0.40</literal>
+<literal id="8" type="3" active="yes">functionality(_1,x5):8:0.40</literal>
+<literal id="9" type="3" active="yes">commerce(_1):9:0.10</literal>
+<explanation name="ekonomika" active="yes" axiom="">7 ^ 8 ^ 9 => 6</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="3">
+<observed size="26" domain_size="0">
+невероятный-adj(e1,x1) ^ часто-rb(e2,e4) ^ забываемый-adj(e3,x2) ^ факт-nn(e4,x2) ^ вплоть-rb(e5,e11) ^ до-in(e6,e11,x3) ^ кризис-nn(e7,x3) ^ правительство-nn(e8,x4) ^ испания-nn(e9,x5) ^ успешно-rb(e10,e11) ^ балансировать-vb(e11,u1,x6,u2) ^ государственный-adj(e12,x6) ^ бюджет-nn(e13,x6) ^ т.-vb(e14,u1,u3,u4) ^ е.-vb(e15,u1,e14,u5) ^ за-in(e16,e20,x7) ^ исключение-nn(e17,x7) ^ год-nn(e18,x8) ^ thing(e19,x9) ^ сводить-vb(e20,x9,u6,u7) ^ без-in(e21,e20,x10) ^ дефицит-nn(e22,x10) ^ of-in(e23,x3,x4) ^ of-in(e24,x4,x5) ^ of-in(e25,x7,x8) ^ !=(e23,e24,e25)
+</observed>
+<hypothesis score="-24.845">
+невероятный-adj(e1,x1) ^ часто-rb(e2,e4) ^ забываемый-adj(e3,x2) ^ факт-nn(e4,x2) ^ вплоть-rb(e5,e11) ^ до-in(e6,e11,x3) ^ кризис-nn(e7,x3) ^ правительство-nn(e8,x4) ^ испания-nn(e9,x5) ^ успешно-rb(e10,e11) ^ балансировать-vb(e11,u1,x6,u2) ^ государственный-adj(e12,x6) ^ бюджет-nn(e13,x6) ^ т.-vb(e14,u1,u3,u4) ^ е.-vb(e15,u1,e14,u5) ^ за-in(e16,e20,x7) ^ исключение-nn(e17,x7) ^ год-nn(e18,x8) ^ thing(e19,x9) ^ сводить-vb(e20,x9,u6,u7) ^ без-in(e21,e20,x10) ^ дефицит-nn(e22,x10) ^ of-in(e23,x3,x4) ^ of-in(e24,x4,x5) ^ of-in(e25,x7,x8) ^ !=(e23,e24,e25) ^ dFCompEnt(x4) ^ functionality(_2,x4) ^ thrive(_2,_3) ^ citizens(_3,x4) ^ nation(x5) ^ dFCompEnt(x5) ^ functionality(_4,x5) ^ thrive(_4,_5) ^ citizens(_5,x5) ^ =(_2,_4) ^ =(x4,x5) ^ =(_3,_5)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_без-in_20":-1.001 "!HYPOTHESIZED_успешно-rb_9":-1.001 "!EXPLAINED_thrive_28":0.1 "!HYPOTHESIZED_dFCompEnt_26":-0.401 "!EXPLAINED_правительство-nn_7":1 "!HYPOTHESIZED_бюджет-nn_12":-1.001 "!HYPOTHESIZED_вплоть-rb_4":-1.001 "!HYPOTHESIZED_год-nn_17":-1.001 "!HYPOTHESIZED_сводить-vb_19":-1.001 "!HYPOTHESIZED_thing_18":-1.001 "!EXPLAINED_nation_30":0.9 "!EXPLAINED_испания-nn_8":1 "!HYPOTHESIZED_факт-nn_3":-1.001 "!HYPOTHESIZED_dFCompEnt_31":-0.361 "!HYPOTHESIZED_правительство-nn_7":-1.001 "!HYPOTHESIZED_т.-vb_13":-1.001 "!HYPOTHESIZED_невероятный-adj_0":-1.001 "!HYPOTHESIZED_государственный-adj_11":-1.001 "!HYPOTHESIZED_кризис-nn_6":-1.001 "!HYPOTHESIZED_!=_25":-1.001 "!HYPOTHESIZED_thrive_28":-0.101 "!HYPOTHESIZED_citizens_34":-0.091 "!HYPOTHESIZED_испания-nn_8":-1.001 "!HYPOTHESIZED_е.-vb_14":-1.001 "!HYPOTHESIZED_functionality_32":-0.271 "!HYPOTHESIZED_citizens_29":-0.101 "!HYPOTHESIZED_nation_30":-0.901 "!HYPOTHESIZED_часто-rb_1":-1.001 "!HYPOTHESIZED_thrive_33":-0.091 "!HYPOTHESIZED_functionality_27":-0.301 "!HYPOTHESIZED_дефицит-nn_21":-1.001 "!HYPOTHESIZED_забываемый-adj_2":-1.001 "!HYPOTHESIZED_of-in_23":-1.001 "!HYPOTHESIZED_до-in_5":-1.001 "!HYPOTHESIZED_of-in_22":-1.001 "!HYPOTHESIZED_за-in_15":-1.001 "!EXPLAINED_citizens_29":0.1 "!HYPOTHESIZED_of-in_24":-1.001 "!EXPLAINED_dFCompEnt_26":0.4 "!HYPOTHESIZED_исключение-nn_16":-1.001 "!HYPOTHESIZED_балансировать-vb_10":-1.001 "!EXPLAINED_functionality_27":0.3 
+</vector>
+<statistics>
+<time total="0.0127051" prepare="0.0112481" ilp="0.00145698" />
+<ilp solution="Optimal" variables="139" constraints="205" />
+<search-space literals="35" axiom="3" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">невероятный-adj(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">часто-rb(e2,e4):1:1.00</literal>
+<literal id="2" type="2" active="yes">забываемый-adj(e3,x2):2:1.00</literal>
+<literal id="3" type="2" active="yes">факт-nn(e4,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">вплоть-rb(e5,e11):4:1.00</literal>
+<literal id="5" type="2" active="yes">до-in(e6,e11,x3):5:1.00</literal>
+<literal id="6" type="2" active="yes">кризис-nn(e7,x3):6:1.00</literal>
+<literal id="7" type="2" active="yes">правительство-nn(e8,x4):7:1.00</literal>
+<literal id="8" type="2" active="yes">испания-nn(e9,x5):8:1.00</literal>
+<literal id="9" type="2" active="yes">успешно-rb(e10,e11):9:1.00</literal>
+<literal id="10" type="2" active="yes">балансировать-vb(e11,u1,x6,u2):10:1.00</literal>
+<literal id="11" type="2" active="yes">государственный-adj(e12,x6):11:1.00</literal>
+<literal id="12" type="2" active="yes">бюджет-nn(e13,x6):12:1.00</literal>
+<literal id="13" type="2" active="yes">т.-vb(e14,u1,u3,u4):13:1.00</literal>
+<literal id="14" type="2" active="yes">е.-vb(e15,u1,e14,u5):14:1.00</literal>
+<literal id="15" type="2" active="yes">за-in(e16,e20,x7):15:1.00</literal>
+<literal id="16" type="2" active="yes">исключение-nn(e17,x7):16:1.00</literal>
+<literal id="17" type="2" active="yes">год-nn(e18,x8):17:1.00</literal>
+<literal id="18" type="2" active="yes">thing(e19,x9):18:1.00</literal>
+<literal id="19" type="2" active="yes">сводить-vb(e20,x9,u6,u7):19:1.00</literal>
+<literal id="20" type="2" active="yes">без-in(e21,e20,x10):20:1.00</literal>
+<literal id="21" type="2" active="yes">дефицит-nn(e22,x10):21:1.00</literal>
+<literal id="22" type="2" active="yes">of-in(e23,x3,x4):22:1.00</literal>
+<unification l1="22" l2="23" unifier="x4=x5" active="no" />
+<unification l1="22" l2="24" unifier="" active="no" />
+<literal id="23" type="2" active="yes">of-in(e24,x4,x5):23:1.00</literal>
+<unification l1="23" l2="22" unifier="x4=x5" active="no" />
+<unification l1="23" l2="24" unifier="" active="no" />
+<literal id="24" type="2" active="yes">of-in(e25,x7,x8):24:1.00</literal>
+<unification l1="24" l2="22" unifier="" active="no" />
+<unification l1="24" l2="23" unifier="" active="no" />
+<literal id="25" type="2" active="yes">!=(e23,e24,e25):25:1.00</literal>
+<literal id="26" type="3" active="yes">dFCompEnt(x4):26:0.40</literal>
+<unification l1="26" l2="31" unifier="x4=x5" active="yes" />
+<literal id="27" type="3" active="yes">functionality(_2,x4):27:0.30</literal>
+<unification l1="27" l2="32" unifier="_2=_4, x4=x5" active="yes" />
+<literal id="28" type="3" active="yes">thrive(_2,_3):28:0.10</literal>
+<unification l1="28" l2="33" unifier="_2=_4, _3=_5" active="yes" />
+<literal id="29" type="3" active="yes">citizens(_3,x4):29:0.10</literal>
+<unification l1="29" l2="34" unifier="_3=_5, x4=x5" active="yes" />
+<literal id="30" type="3" active="yes">nation(x5):30:0.90</literal>
+<literal id="31" type="3" active="yes">dFCompEnt(x5):31:0.36</literal>
+<unification l1="31" l2="26" unifier="x4=x5" active="yes" />
+<literal id="32" type="3" active="yes">functionality(_4,x5):32:0.27</literal>
+<unification l1="32" l2="27" unifier="_2=_4, x4=x5" active="yes" />
+<literal id="33" type="3" active="yes">thrive(_4,_5):33:0.09</literal>
+<unification l1="33" l2="28" unifier="_2=_4, _3=_5" active="yes" />
+<literal id="34" type="3" active="yes">citizens(_5,x5):34:0.09</literal>
+<unification l1="34" l2="29" unifier="_3=_5, x4=x5" active="yes" />
+<explanation name="pravitelstvo" active="yes" axiom="">26 ^ 27 ^ 28 ^ 29 => 7</explanation>
+<explanation name="nation1" active="yes" axiom="">31 ^ 32 ^ 33 ^ 34 => 30</explanation>
+<explanation name="ispanija" active="yes" axiom="">30 => 8</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="4">
+<observed size="18" domain_size="0">
+ряд-nn(e1,x1) ^ основной-adj(e2,x2) ^ положение-nn(e3,x2) ^ марксистско-ленинской-adj(e4,x3) ^ политический-adj(e5,x3) ^ экономия-nn(e6,x3) ^ являться-vb(e7,u1,u2,u3) ^ вернейший-adj(e8,x4) ^ противоядий-nn(e9,x4) ^ против-in(e10,x4,x5) ^ буржуазный-adj(e11,x5) ^ мелкобуржуазный-adj(e12,x6) ^ теория-nn(e13,x5) ^ начинать-vb(e14,x1,e15,u4) ^ забываться-vb(e15,x1,u5,u6) ^ of-in(e16,x1,x2) ^ of-in(e17,x2,x3) ^ !=(e16,e17)
+</observed>
+<hypothesis score="-18.018">
+ряд-nn(e1,x1) ^ основной-adj(e2,x2) ^ положение-nn(e3,x2) ^ марксистско-ленинской-adj(e4,x3) ^ политический-adj(e5,x3) ^ экономия-nn(e6,x3) ^ являться-vb(e7,u1,u2,u3) ^ вернейший-adj(e8,x4) ^ противоядий-nn(e9,x4) ^ против-in(e10,x4,x5) ^ буржуазный-adj(e11,x5) ^ мелкобуржуазный-adj(e12,x6) ^ теория-nn(e13,x5) ^ начинать-vb(e14,x1,e15,u4) ^ забываться-vb(e15,x1,u5,u6) ^ of-in(e16,x1,x2) ^ of-in(e17,x2,x3) ^ !=(e16,e17)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_марксистско-ленинской-adj_3":-1.001 "!HYPOTHESIZED_экономия-nn_5":-1.001 "!HYPOTHESIZED_мелкобуржуазный-adj_11":-1.001 "!HYPOTHESIZED_противоядий-nn_8":-1.001 "!HYPOTHESIZED_являться-vb_6":-1.001 "!HYPOTHESIZED_of-in_16":-1.001 "!HYPOTHESIZED_основной-adj_1":-1.001 "!HYPOTHESIZED_политический-adj_4":-1.001 "!HYPOTHESIZED_забываться-vb_14":-1.001 "!HYPOTHESIZED_теория-nn_12":-1.001 "!HYPOTHESIZED_ряд-nn_0":-1.001 "!HYPOTHESIZED_против-in_9":-1.001 "!HYPOTHESIZED_начинать-vb_13":-1.001 "!HYPOTHESIZED_положение-nn_2":-1.001 "!HYPOTHESIZED_буржуазный-adj_10":-1.001 "!HYPOTHESIZED_!=_17":-1.001 "!HYPOTHESIZED_of-in_15":-1.001 "!HYPOTHESIZED_вернейший-adj_7":-1.001 
+</vector>
+<statistics>
+<time total="0.00749207" prepare="0.00692105" ilp="0.000571012" />
+<ilp solution="Optimal" variables="64" constraints="45" />
+<search-space literals="19" axiom="6" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">ряд-nn(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">основной-adj(e2,x2):1:1.00</literal>
+<literal id="2" type="2" active="yes">положение-nn(e3,x2):2:1.00</literal>
+<literal id="3" type="2" active="yes">марксистско-ленинской-adj(e4,x3):3:1.00</literal>
+<literal id="4" type="2" active="yes">политический-adj(e5,x3):4:1.00</literal>
+<literal id="5" type="2" active="yes">экономия-nn(e6,x3):5:1.00</literal>
+<literal id="6" type="2" active="yes">являться-vb(e7,u1,u2,u3):6:1.00</literal>
+<literal id="7" type="2" active="yes">вернейший-adj(e8,x4):7:1.00</literal>
+<literal id="8" type="2" active="yes">противоядий-nn(e9,x4):8:1.00</literal>
+<literal id="9" type="2" active="yes">против-in(e10,x4,x5):9:1.00</literal>
+<literal id="10" type="2" active="yes">буржуазный-adj(e11,x5):10:1.00</literal>
+<literal id="11" type="2" active="yes">мелкобуржуазный-adj(e12,x6):11:1.00</literal>
+<literal id="12" type="2" active="yes">теория-nn(e13,x5):12:1.00</literal>
+<literal id="13" type="2" active="yes">начинать-vb(e14,x1,e15,u4):13:1.00</literal>
+<literal id="14" type="2" active="yes">забываться-vb(e15,x1,u5,u6):14:1.00</literal>
+<literal id="15" type="2" active="yes">of-in(e16,x1,x2):15:1.00</literal>
+<unification l1="15" l2="16" unifier="" active="no" />
+<literal id="16" type="2" active="yes">of-in(e17,x2,x3):16:1.00</literal>
+<unification l1="16" l2="15" unifier="" active="no" />
+<literal id="17" type="2" active="yes">!=(e16,e17):17:1.00</literal>
+<literal id="18" type="3" active="no">conflict(x3,_6,_7,_8,_9):18:1.20</literal>
+<explanation name="politicheskij" active="no" axiom="">18 => 4</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="5">
+<observed size="7" domain_size="0">
+средний-adj(e1,x1) ^ класс-nn(e2,x1) ^ возрасти-vb(e3,x1,u1,u2) ^ окрепнуть-vb(e4,x1,u3,u4) ^ в-in(e5,e4,x2) ^ путинский-adj(e6,x2) ^ время-nn(e7,x2)
+</observed>
+<hypothesis score="-6.909">
+средний-adj(e1,x1) ^ класс-nn(e2,x1) ^ возрасти-vb(e3,x1,u1,u2) ^ окрепнуть-vb(e4,x1,u3,u4) ^ в-in(e5,e4,x2) ^ путинский-adj(e6,x2) ^ время-nn(e7,x2) ^ dFCompEnt(x1) ^ functionality(_10,x1)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_класс-nn_1":-1.001 "!HYPOTHESIZED_возрасти-vb_2":-1.001 "!HYPOTHESIZED_в-in_4":-1.001 "!HYPOTHESIZED_dFCompEnt_7":-0.501 "!HYPOTHESIZED_окрепнуть-vb_3":-1.001 "!EXPLAINED_класс-nn_1":1 "!HYPOTHESIZED_средний-adj_0":-1.001 "!HYPOTHESIZED_functionality_8":-0.401 "!HYPOTHESIZED_путинский-adj_5":-1.001 "!HYPOTHESIZED_время-nn_6":-1.001 
+</vector>
+<statistics>
+<time total="0.00350785" prepare="0.00324392" ilp="0.000263929" />
+<ilp solution="Optimal" variables="30" constraints="27" />
+<search-space literals="9" axiom="1" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">средний-adj(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">класс-nn(e2,x1):1:1.00</literal>
+<literal id="2" type="2" active="yes">возрасти-vb(e3,x1,u1,u2):2:1.00</literal>
+<literal id="3" type="2" active="yes">окрепнуть-vb(e4,x1,u3,u4):3:1.00</literal>
+<literal id="4" type="2" active="yes">в-in(e5,e4,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">путинский-adj(e6,x2):5:1.00</literal>
+<literal id="6" type="2" active="yes">время-nn(e7,x2):6:1.00</literal>
+<literal id="7" type="3" active="yes">dFCompEnt(x1):7:0.50</literal>
+<literal id="8" type="3" active="yes">functionality(_10,x1):8:0.40</literal>
+<explanation name="klass" active="yes" axiom="">7 ^ 8 => 1</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="6">
+<observed size="19" domain_size="0">
+процесс-nn(e1,x1) ^ происходить-vb(e2,u1,u2,u3) ^ в-in(e3,e2,x2) ^ страна-nn(e4,x2) ^ еврозона-nn(e5,x3) ^ америка-nn(e6,x4) ^ отток-nn(e7,x5) ^ капитал-nn(e8,x6) ^ из-in(e9,x6,x7) ^ россия-nn(e10,x7) ^ мочь-vb(e11,x5,e12,u4) ^ вызывать-vb(e12,x5,x8,u5) ^ беспокойство-nn(e13,x8) ^ of-in(e14,x2,x3) ^ of-in(e15,x5,x6) ^ not(e16,e11) ^ not(e17,e12) ^ !=(e14,e15) ^ !=(e16,e17)
+</observed>
+<hypothesis score="-16.839">
+процесс-nn(e1,x1) ^ происходить-vb(e2,u1,u2,u3) ^ в-in(e3,e2,x2) ^ страна-nn(e4,x2) ^ еврозона-nn(e5,x3) ^ америка-nn(e6,x4) ^ отток-nn(e7,x5) ^ капитал-nn(e8,x6) ^ из-in(e9,x6,x7) ^ россия-nn(e10,x7) ^ мочь-vb(e11,x5,e12,u4) ^ вызывать-vb(e12,x5,x8,u5) ^ беспокойство-nn(e13,x8) ^ of-in(e14,x2,x3) ^ of-in(e15,x5,x6) ^ not(e16,e11) ^ not(e17,e12) ^ !=(e14,e15) ^ !=(e16,e17) ^ dFCompEnt(x2) ^ functionality(_11,x2) ^ thrive(_11,_12) ^ citizens(_12,x2) ^ nation(x4) ^ nation(x7) ^ dFCompEnt(x4) ^ functionality(_13,x4) ^ thrive(_13,_14) ^ citizens(_14,x4) ^ =(x4,x2,x7) ^ =(_11,_13) ^ =(_12,_14)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_капитал-nn_7":-1.001 "!HYPOTHESIZED_dFCompEnt_25":-0.361 "!EXPLAINED_citizens_22":0.1 "!EXPLAINED_functionality_20":0.3 "!HYPOTHESIZED_вызывать-vb_11":-1.001 "!HYPOTHESIZED_!=_17":-1.001 "!HYPOTHESIZED_беспокойство-nn_12":-1.001 "!HYPOTHESIZED_of-in_13":-1.001 "!EXPLAINED_thrive_21":0.1 "!HYPOTHESIZED_not_16":-1.001 "!HYPOTHESIZED_of-in_14":-1.001 "!HYPOTHESIZED_not_15":-1.001 "!HYPOTHESIZED_отток-nn_6":-1.001 "!HYPOTHESIZED_dFCompEnt_19":-0.401 "!HYPOTHESIZED_америка-nn_5":-1.001 "!HYPOTHESIZED_происходить-vb_1":-1.001 "!HYPOTHESIZED_!=_18":-1.001 "!EXPLAINED_nation_24":0.9 "!EXPLAINED_nation_23":0.9 "!HYPOTHESIZED_thrive_27":-0.091 "!EXPLAINED_америка-nn_5":1 "!HYPOTHESIZED_citizens_28":-0.091 "!HYPOTHESIZED_thrive_21":-0.101 "!HYPOTHESIZED_еврозона-nn_4":-1.001 "!HYPOTHESIZED_из-in_8":-1.001 "!HYPOTHESIZED_страна-nn_3":-1.001 "!HYPOTHESIZED_functionality_26":-0.271 "!HYPOTHESIZED_nation_24":-0.901 "!EXPLAINED_dFCompEnt_19":0.4 "!HYPOTHESIZED_nation_23":-0.901 "!EXPLAINED_россия-nn_9":1 "!HYPOTHESIZED_functionality_20":-0.301 "!EXPLAINED_страна-nn_3":1 "!HYPOTHESIZED_мочь-vb_10":-1.001 "!HYPOTHESIZED_россия-nn_9":-1.001 "!HYPOTHESIZED_citizens_22":-0.101 "!HYPOTHESIZED_процесс-nn_0":-1.001 "!HYPOTHESIZED_в-in_2":-1.001 
+</vector>
+<statistics>
+<time total="0.0171621" prepare="0.013756" ilp="0.00340605" />
+<ilp solution="Optimal" variables="149" constraints="244" />
+<search-space literals="33" axiom="8" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">процесс-nn(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">происходить-vb(e2,u1,u2,u3):1:1.00</literal>
+<literal id="2" type="2" active="yes">в-in(e3,e2,x2):2:1.00</literal>
+<literal id="3" type="2" active="yes">страна-nn(e4,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">еврозона-nn(e5,x3):4:1.00</literal>
+<literal id="5" type="2" active="yes">америка-nn(e6,x4):5:1.00</literal>
+<literal id="6" type="2" active="yes">отток-nn(e7,x5):6:1.00</literal>
+<literal id="7" type="2" active="yes">капитал-nn(e8,x6):7:1.00</literal>
+<literal id="8" type="2" active="yes">из-in(e9,x6,x7):8:1.00</literal>
+<literal id="9" type="2" active="yes">россия-nn(e10,x7):9:1.00</literal>
+<literal id="10" type="2" active="yes">мочь-vb(e11,x5,e12,u4):10:1.00</literal>
+<literal id="11" type="2" active="yes">вызывать-vb(e12,x5,x8,u5):11:1.00</literal>
+<literal id="12" type="2" active="yes">беспокойство-nn(e13,x8):12:1.00</literal>
+<literal id="13" type="2" active="yes">of-in(e14,x2,x3):13:1.00</literal>
+<unification l1="13" l2="14" unifier="" active="no" />
+<literal id="14" type="2" active="yes">of-in(e15,x5,x6):14:1.00</literal>
+<unification l1="14" l2="13" unifier="" active="no" />
+<literal id="15" type="2" active="yes">not(e16,e11):15:1.00</literal>
+<unification l1="15" l2="16" unifier="" active="no" />
+<literal id="16" type="2" active="yes">not(e17,e12):16:1.00</literal>
+<unification l1="16" l2="15" unifier="" active="no" />
+<literal id="17" type="2" active="yes">!=(e14,e15):17:1.00</literal>
+<literal id="18" type="2" active="yes">!=(e16,e17):18:1.00</literal>
+<literal id="19" type="3" active="yes">dFCompEnt(x2):19:0.40</literal>
+<unification l1="19" l2="25" unifier="x2=x4" active="yes" />
+<unification l1="19" l2="29" unifier="x2=x7" active="no" />
+<literal id="20" type="3" active="yes">functionality(_11,x2):20:0.30</literal>
+<unification l1="20" l2="26" unifier="_11=_13, x2=x4" active="yes" />
+<unification l1="20" l2="30" unifier="x2=x7" active="no" />
+<literal id="21" type="3" active="yes">thrive(_11,_12):21:0.10</literal>
+<unification l1="21" l2="27" unifier="_11=_13, _12=_14" active="yes" />
+<unification l1="21" l2="31" unifier="" active="no" />
+<literal id="22" type="3" active="yes">citizens(_12,x2):22:0.10</literal>
+<unification l1="22" l2="28" unifier="_12=_14, x2=x4" active="yes" />
+<unification l1="22" l2="32" unifier="x2=x7" active="no" />
+<literal id="23" type="3" active="yes">nation(x4):23:0.90</literal>
+<unification l1="23" l2="24" unifier="x4=x7" active="yes" />
+<literal id="24" type="3" active="yes">nation(x7):24:0.90</literal>
+<unification l1="24" l2="23" unifier="x4=x7" active="yes" />
+<literal id="25" type="3" active="yes">dFCompEnt(x4):25:0.36</literal>
+<unification l1="25" l2="19" unifier="x2=x4" active="yes" />
+<unification l1="25" l2="29" unifier="x4=x7" active="no" />
+<literal id="26" type="3" active="yes">functionality(_13,x4):26:0.27</literal>
+<unification l1="26" l2="20" unifier="_11=_13, x2=x4" active="yes" />
+<unification l1="26" l2="30" unifier="x4=x7" active="no" />
+<literal id="27" type="3" active="yes">thrive(_13,_14):27:0.09</literal>
+<unification l1="27" l2="21" unifier="_11=_13, _12=_14" active="yes" />
+<unification l1="27" l2="31" unifier="" active="no" />
+<literal id="28" type="3" active="yes">citizens(_14,x4):28:0.09</literal>
+<unification l1="28" l2="22" unifier="_12=_14, x2=x4" active="yes" />
+<unification l1="28" l2="32" unifier="x4=x7" active="no" />
+<literal id="29" type="3" active="no">dFCompEnt(x7):29:0.36</literal>
+<unification l1="29" l2="19" unifier="x2=x7" active="no" />
+<unification l1="29" l2="25" unifier="x4=x7" active="no" />
+<literal id="30" type="3" active="no">functionality(_15,x7):30:0.27</literal>
+<unification l1="30" l2="20" unifier="x2=x7" active="no" />
+<unification l1="30" l2="26" unifier="x4=x7" active="no" />
+<literal id="31" type="3" active="no">thrive(_15,_16):31:0.09</literal>
+<unification l1="31" l2="21" unifier="" active="no" />
+<unification l1="31" l2="27" unifier="" active="no" />
+<literal id="32" type="3" active="no">citizens(_16,x7):32:0.09</literal>
+<unification l1="32" l2="22" unifier="x2=x7" active="no" />
+<unification l1="32" l2="28" unifier="x4=x7" active="no" />
+<explanation name="nation1" active="yes" axiom="">25 ^ 26 ^ 27 ^ 28 => 23</explanation>
+<explanation name="nation1" active="no" axiom="">29 ^ 30 ^ 31 ^ 32 => 24</explanation>
+<explanation name="strana" active="yes" axiom="">19 ^ 20 ^ 21 ^ 22 => 3</explanation>
+<explanation name="america" active="yes" axiom="">23 => 5</explanation>
+<explanation name="rossija" active="yes" axiom="">24 => 9</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="7">
+<observed size="19" domain_size="0">
+thing(e1,x1) ^ в-in(e2,e4,x2) ^ мера-nn(e3,x2) ^ позволить-vb(e4,x1,e5,u1) ^ снять-vb(e5,x1,u2,u3) ^ напряженность-nn(e6,x3) ^ на-in(e7,x3,x4) ^ рынок-nn(e8,x4) ^ труд-nn(e9,x5) ^ возникнуть-vb(e10,u4,u5,u6) ^ на-in(e11,e10,x6) ^ волна-nn(e12,x6) ^ мировой-adj(e13,x7) ^ финансово-экономического-adj(e14,x7) ^ кризис-nn(e15,x7) ^ of-in(e16,x4,x5) ^ of-in(e17,x6,x7) ^ !=(e16,e17) ^ !=(e7,e11)
+</observed>
+<hypothesis score="-18.922">
+thing(e1,x1) ^ в-in(e2,e4,x2) ^ мера-nn(e3,x2) ^ позволить-vb(e4,x1,e5,u1) ^ снять-vb(e5,x1,u2,u3) ^ напряженность-nn(e6,x3) ^ на-in(e7,x3,x4) ^ рынок-nn(e8,x4) ^ труд-nn(e9,x5) ^ возникнуть-vb(e10,u4,u5,u6) ^ на-in(e11,e10,x6) ^ волна-nn(e12,x6) ^ мировой-adj(e13,x7) ^ финансово-экономического-adj(e14,x7) ^ кризис-nn(e15,x7) ^ of-in(e16,x4,x5) ^ of-in(e17,x6,x7) ^ !=(e16,e17) ^ !=(e7,e11) ^ dFCompEnt(x4) ^ functionality(_17,x4) ^ commerce(_17)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_рынок-nn_7":-1.001 "!HYPOTHESIZED_functionality_20":-0.401 "!HYPOTHESIZED_кризис-nn_14":-1.001 "!HYPOTHESIZED_thing_0":-1.001 "!HYPOTHESIZED_of-in_16":-1.001 "!HYPOTHESIZED_мировой-adj_12":-1.001 "!HYPOTHESIZED_возникнуть-vb_9":-1.001 "!HYPOTHESIZED_мера-nn_2":-1.001 "!HYPOTHESIZED_commerce_21":-0.101 "!HYPOTHESIZED_волна-nn_11":-1.001 "!HYPOTHESIZED_на-in_10":-1.001 "!EXPLAINED_рынок-nn_7":1 "!HYPOTHESIZED_финансово-экономического-adj_13":-1.001 "!HYPOTHESIZED_позволить-vb_3":-1.001 "!HYPOTHESIZED_на-in_6":-1.001 "!HYPOTHESIZED_снять-vb_4":-1.001 "!HYPOTHESIZED_!=_17":-1.001 "!HYPOTHESIZED_в-in_1":-1.001 "!HYPOTHESIZED_of-in_15":-1.001 "!HYPOTHESIZED_dFCompEnt_19":-0.401 "!HYPOTHESIZED_напряженность-nn_5":-1.001 "!HYPOTHESIZED_труд-nn_8":-1.001 "!HYPOTHESIZED_!=_18":-1.001 
+</vector>
+<statistics>
+<time total="0.00621104" prepare="0.00587702" ilp="0.000334024" />
+<ilp solution="Optimal" variables="78" constraints="69" />
+<search-space literals="22" axiom="1" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">thing(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">в-in(e2,e4,x2):1:1.00</literal>
+<literal id="2" type="2" active="yes">мера-nn(e3,x2):2:1.00</literal>
+<literal id="3" type="2" active="yes">позволить-vb(e4,x1,e5,u1):3:1.00</literal>
+<literal id="4" type="2" active="yes">снять-vb(e5,x1,u2,u3):4:1.00</literal>
+<literal id="5" type="2" active="yes">напряженность-nn(e6,x3):5:1.00</literal>
+<literal id="6" type="2" active="yes">на-in(e7,x3,x4):6:1.00</literal>
+<unification l1="6" l2="10" unifier="" active="no" />
+<literal id="7" type="2" active="yes">рынок-nn(e8,x4):7:1.00</literal>
+<literal id="8" type="2" active="yes">труд-nn(e9,x5):8:1.00</literal>
+<literal id="9" type="2" active="yes">возникнуть-vb(e10,u4,u5,u6):9:1.00</literal>
+<literal id="10" type="2" active="yes">на-in(e11,e10,x6):10:1.00</literal>
+<unification l1="10" l2="6" unifier="" active="no" />
+<literal id="11" type="2" active="yes">волна-nn(e12,x6):11:1.00</literal>
+<literal id="12" type="2" active="yes">мировой-adj(e13,x7):12:1.00</literal>
+<literal id="13" type="2" active="yes">финансово-экономического-adj(e14,x7):13:1.00</literal>
+<literal id="14" type="2" active="yes">кризис-nn(e15,x7):14:1.00</literal>
+<literal id="15" type="2" active="yes">of-in(e16,x4,x5):15:1.00</literal>
+<unification l1="15" l2="16" unifier="" active="no" />
+<literal id="16" type="2" active="yes">of-in(e17,x6,x7):16:1.00</literal>
+<unification l1="16" l2="15" unifier="" active="no" />
+<literal id="17" type="2" active="yes">!=(e16,e17):17:1.00</literal>
+<literal id="18" type="2" active="yes">!=(e7,e11):18:1.00</literal>
+<literal id="19" type="3" active="yes">dFCompEnt(x4):19:0.40</literal>
+<literal id="20" type="3" active="yes">functionality(_17,x4):20:0.40</literal>
+<literal id="21" type="3" active="yes">commerce(_17):21:0.10</literal>
+<explanation name="rynok" active="yes" axiom="">19 ^ 20 ^ 21 => 7</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="8">
+<observed size="14" domain_size="0">
+сделать-vb(e1,u1,x1,x2) ^ муниципалитет-nn(e2,x1) ^ привлекательный-adj(e3,x2) ^ для-in(e4,e3,x3) ^ инвестиция-nn(e5,x3) ^ малый-adj(e6,x4) ^ средний-adj(e7,x5) ^ предпринимательство-nn(e8,x2) ^ найти-vb(e9,u1,x6,u2) ^ место-nn(e10,x6) ^ среди-in(e11,x6,x7) ^ акула-nn(e12,x7) ^ бизнес-nn(e13,x8) ^ of-in(e14,x7,x8)
+</observed>
+<hypothesis score="-13.917">
+сделать-vb(e1,u1,x1,x2) ^ муниципалитет-nn(e2,x1) ^ привлекательный-adj(e3,x2) ^ для-in(e4,e3,x3) ^ инвестиция-nn(e5,x3) ^ малый-adj(e6,x4) ^ средний-adj(e7,x5) ^ предпринимательство-nn(e8,x2) ^ найти-vb(e9,u1,x6,u2) ^ место-nn(e10,x6) ^ среди-in(e11,x6,x7) ^ акула-nn(e12,x7) ^ бизнес-nn(e13,x8) ^ of-in(e14,x7,x8) ^ dFCompEnt(x8) ^ functionality(_18,x8) ^ commerce(_18)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_commerce_16":-0.101 "!HYPOTHESIZED_dFCompEnt_14":-0.401 "!HYPOTHESIZED_муниципалитет-nn_1":-1.001 "!HYPOTHESIZED_найти-vb_8":-1.001 "!HYPOTHESIZED_предпринимательство-nn_7":-1.001 "!HYPOTHESIZED_functionality_15":-0.401 "!HYPOTHESIZED_инвестиция-nn_4":-1.001 "!HYPOTHESIZED_место-nn_9":-1.001 "!HYPOTHESIZED_акула-nn_11":-1.001 "!HYPOTHESIZED_привлекательный-adj_2":-1.001 "!HYPOTHESIZED_для-in_3":-1.001 "!EXPLAINED_бизнес-nn_12":1 "!HYPOTHESIZED_малый-adj_5":-1.001 "!HYPOTHESIZED_сделать-vb_0":-1.001 "!HYPOTHESIZED_бизнес-nn_12":-1.001 "!HYPOTHESIZED_средний-adj_6":-1.001 "!HYPOTHESIZED_of-in_13":-1.001 "!HYPOTHESIZED_среди-in_10":-1.001 
+</vector>
+<statistics>
+<time total="0.00510597" prepare="0.00474882" ilp="0.000357151" />
+<ilp solution="Optimal" variables="54" constraints="55" />
+<search-space literals="17" axiom="1" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">сделать-vb(e1,u1,x1,x2):0:1.00</literal>
+<literal id="1" type="2" active="yes">муниципалитет-nn(e2,x1):1:1.00</literal>
+<literal id="2" type="2" active="yes">привлекательный-adj(e3,x2):2:1.00</literal>
+<literal id="3" type="2" active="yes">для-in(e4,e3,x3):3:1.00</literal>
+<literal id="4" type="2" active="yes">инвестиция-nn(e5,x3):4:1.00</literal>
+<literal id="5" type="2" active="yes">малый-adj(e6,x4):5:1.00</literal>
+<literal id="6" type="2" active="yes">средний-adj(e7,x5):6:1.00</literal>
+<literal id="7" type="2" active="yes">предпринимательство-nn(e8,x2):7:1.00</literal>
+<literal id="8" type="2" active="yes">найти-vb(e9,u1,x6,u2):8:1.00</literal>
+<literal id="9" type="2" active="yes">место-nn(e10,x6):9:1.00</literal>
+<literal id="10" type="2" active="yes">среди-in(e11,x6,x7):10:1.00</literal>
+<literal id="11" type="2" active="yes">акула-nn(e12,x7):11:1.00</literal>
+<literal id="12" type="2" active="yes">бизнес-nn(e13,x8):12:1.00</literal>
+<literal id="13" type="2" active="yes">of-in(e14,x7,x8):13:1.00</literal>
+<literal id="14" type="3" active="yes">dFCompEnt(x8):14:0.40</literal>
+<literal id="15" type="3" active="yes">functionality(_18,x8):15:0.40</literal>
+<literal id="16" type="3" active="yes">commerce(_18):16:0.10</literal>
+<explanation name="biznes" active="yes" axiom="">14 ^ 15 ^ 16 => 12</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="9">
+<observed size="29" domain_size="0">
+оэз-nn(e1,x1) ^ должен-adj(e2,x2) ^ восприниматься-vb(e3,u1,u2,u3) ^ отдельный-adj(e4,x3) ^ недосягаемый-adj(e5,x3) ^ остров-nn(e6,x3) ^ с-in(e7,e9,x4) ^ person(e8,x5) ^ иметь-vb(e9,x5,x6,u4) ^ общий-adj(e10,x7) ^ нужно-rb(e11,e9) ^ сотрудничать-vb(e12,u5,x6,u6) ^ развивать-vb(e13,u5,x6,u7) ^ совместный-adj(e14,x6) ^ бизнес-nn(e15,x6) ^ подчеркнуть-vb(e16,x8,u8,u9) ^ руководитель-nn(e17,x8) ^ агентство-nn(e18,x9) ^ инвестиционный-adj(e19,x10) ^ развитие-nn(e20,x10) ^ линар-nn(e21,x11) ^ якупов-nn(e22,x12) ^ not(e23,e9) ^ of-in(e24,x8,x9) ^ of-in(e25,x9,x10) ^ equal(e26,x11,x8) ^ equal(e27,x12,x11) ^ !=(e24,e25) ^ !=(e26,e27)
+</observed>
+<hypothesis score="-27.735">
+оэз-nn(e1,x1) ^ должен-adj(e2,x2) ^ восприниматься-vb(e3,u1,u2,u3) ^ отдельный-adj(e4,x3) ^ недосягаемый-adj(e5,x3) ^ остров-nn(e6,x3) ^ с-in(e7,e9,x4) ^ person(e8,x5) ^ иметь-vb(e9,x5,x6,u4) ^ общий-adj(e10,x7) ^ нужно-rb(e11,e9) ^ сотрудничать-vb(e12,u5,x6,u6) ^ развивать-vb(e13,u5,x6,u7) ^ совместный-adj(e14,x6) ^ бизнес-nn(e15,x6) ^ подчеркнуть-vb(e16,x8,u8,u9) ^ руководитель-nn(e17,x8) ^ агентство-nn(e18,x9) ^ инвестиционный-adj(e19,x10) ^ развитие-nn(e20,x10) ^ линар-nn(e21,x11) ^ якупов-nn(e22,x12) ^ not(e23,e9) ^ of-in(e24,x8,x9) ^ of-in(e25,x9,x10) ^ equal(e26,x11,x8) ^ equal(e27,x12,x11) ^ !=(e24,e25) ^ !=(e26,e27) ^ increaseFct(x6) ^ dFCompEnt(x6) ^ functionality(_19,x6) ^ commerce(_19) ^ lead(_20,x8,_21) ^ increaseFct(_22) ^ =(x6,_22)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_иметь-vb_8":-1.001 "!HYPOTHESIZED_инвестиционный-adj_18":-1.001 "!HYPOTHESIZED_развивать-vb_12":-1.001 "!HYPOTHESIZED_недосягаемый-adj_4":-1.001 "!HYPOTHESIZED_оэз-nn_0":-1.001 "!HYPOTHESIZED_person_7":-1.001 "!EXPLAINED_increaseFct_34":0.9 "!HYPOTHESIZED_increaseFct_29":-0.901 "!HYPOTHESIZED_подчеркнуть-vb_15":-1.001 "!EXPLAINED_развивать-vb_12":1 "!HYPOTHESIZED_equal_26":-1.001 "!HYPOTHESIZED_!=_28":-1.001 "!HYPOTHESIZED_equal_25":-1.001 "!EXPLAINED_развитие-nn_19":1 "!HYPOTHESIZED_совместный-adj_13":-1.001 "!HYPOTHESIZED_dFCompEnt_30":-0.401 "!EXPLAINED_бизнес-nn_14":1 "!HYPOTHESIZED_нужно-rb_10":-1.001 "!HYPOTHESIZED_линар-nn_20":-1.001 "!HYPOTHESIZED_восприниматься-vb_2":-1.001 "!HYPOTHESIZED_должен-adj_1":-1.001 "!HYPOTHESIZED_бизнес-nn_14":-1.001 "!HYPOTHESIZED_!=_27":-1.001 "!HYPOTHESIZED_агентство-nn_17":-1.001 "!HYPOTHESIZED_lead_33":-0.901 "!HYPOTHESIZED_отдельный-adj_3":-1.001 "!HYPOTHESIZED_not_22":-1.001 "!HYPOTHESIZED_развитие-nn_19":-1.001 "!HYPOTHESIZED_остров-nn_5":-1.001 "!HYPOTHESIZED_functionality_31":-0.401 "!HYPOTHESIZED_с-in_6":-1.001 "!HYPOTHESIZED_сотрудничать-vb_11":-1.001 "!EXPLAINED_руководитель-nn_16":1 "!HYPOTHESIZED_of-in_23":-1.001 "!HYPOTHESIZED_руководитель-nn_16":-1.001 "!HYPOTHESIZED_якупов-nn_21":-1.001 "!HYPOTHESIZED_commerce_32":-0.101 "!HYPOTHESIZED_of-in_24":-1.001 "!HYPOTHESIZED_increaseFct_34":-0.901 "!HYPOTHESIZED_общий-adj_9":-1.001 
+</vector>
+<statistics>
+<time total="0.0138707" prepare="0.0129769" ilp="0.000893831" />
+<ilp solution="Optimal" variables="127" constraints="133" />
+<search-space literals="35" axiom="12" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">оэз-nn(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">должен-adj(e2,x2):1:1.00</literal>
+<literal id="2" type="2" active="yes">восприниматься-vb(e3,u1,u2,u3):2:1.00</literal>
+<literal id="3" type="2" active="yes">отдельный-adj(e4,x3):3:1.00</literal>
+<literal id="4" type="2" active="yes">недосягаемый-adj(e5,x3):4:1.00</literal>
+<literal id="5" type="2" active="yes">остров-nn(e6,x3):5:1.00</literal>
+<literal id="6" type="2" active="yes">с-in(e7,e9,x4):6:1.00</literal>
+<literal id="7" type="2" active="yes">person(e8,x5):7:1.00</literal>
+<literal id="8" type="2" active="yes">иметь-vb(e9,x5,x6,u4):8:1.00</literal>
+<literal id="9" type="2" active="yes">общий-adj(e10,x7):9:1.00</literal>
+<literal id="10" type="2" active="yes">нужно-rb(e11,e9):10:1.00</literal>
+<literal id="11" type="2" active="yes">сотрудничать-vb(e12,u5,x6,u6):11:1.00</literal>
+<literal id="12" type="2" active="yes">развивать-vb(e13,u5,x6,u7):12:1.00</literal>
+<literal id="13" type="2" active="yes">совместный-adj(e14,x6):13:1.00</literal>
+<literal id="14" type="2" active="yes">бизнес-nn(e15,x6):14:1.00</literal>
+<literal id="15" type="2" active="yes">подчеркнуть-vb(e16,x8,u8,u9):15:1.00</literal>
+<literal id="16" type="2" active="yes">руководитель-nn(e17,x8):16:1.00</literal>
+<literal id="17" type="2" active="yes">агентство-nn(e18,x9):17:1.00</literal>
+<literal id="18" type="2" active="yes">инвестиционный-adj(e19,x10):18:1.00</literal>
+<literal id="19" type="2" active="yes">развитие-nn(e20,x10):19:1.00</literal>
+<literal id="20" type="2" active="yes">линар-nn(e21,x11):20:1.00</literal>
+<literal id="21" type="2" active="yes">якупов-nn(e22,x12):21:1.00</literal>
+<literal id="22" type="2" active="yes">not(e23,e9):22:1.00</literal>
+<literal id="23" type="2" active="yes">of-in(e24,x8,x9):23:1.00</literal>
+<unification l1="23" l2="24" unifier="" active="no" />
+<literal id="24" type="2" active="yes">of-in(e25,x9,x10):24:1.00</literal>
+<unification l1="24" l2="23" unifier="" active="no" />
+<literal id="25" type="2" active="yes">equal(e26,x11,x8):25:1.00</literal>
+<unification l1="25" l2="26" unifier="" active="no" />
+<literal id="26" type="2" active="yes">equal(e27,x12,x11):26:1.00</literal>
+<unification l1="26" l2="25" unifier="" active="no" />
+<literal id="27" type="2" active="yes">!=(e24,e25):27:1.00</literal>
+<literal id="28" type="2" active="yes">!=(e26,e27):28:1.00</literal>
+<literal id="29" type="3" active="yes">increaseFct(x6):29:0.90</literal>
+<unification l1="29" l2="34" unifier="x6=_22" active="yes" />
+<literal id="30" type="3" active="yes">dFCompEnt(x6):30:0.40</literal>
+<literal id="31" type="3" active="yes">functionality(_19,x6):31:0.40</literal>
+<literal id="32" type="3" active="yes">commerce(_19):32:0.10</literal>
+<literal id="33" type="3" active="yes">lead(_20,x8,_21):33:0.90</literal>
+<literal id="34" type="3" active="yes">increaseFct(_22):34:0.90</literal>
+<unification l1="34" l2="29" unifier="x6=_22" active="yes" />
+<explanation name="razvivat" active="yes" axiom="">29 => 12</explanation>
+<explanation name="biznes" active="yes" axiom="">30 ^ 31 ^ 32 => 14</explanation>
+<explanation name="rukovoditel" active="yes" axiom="">33 => 16</explanation>
+<explanation name="razvitie" active="yes" axiom="">34 => 19</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="10">
+<observed size="24" domain_size="0">
+с-in(e1,e12,x1) ^ высокий-adj(e2,x1) ^ вероятность-nn(e3,x1) ^ после-in(e4,e12,x2) ^ президентский-adj(e5,x2) ^ выборы-nn(e6,x2) ^ значительный-adj(e7,x3) ^ отток-nn(e8,x3) ^ капитал-nn(e9,x4) ^ из-in(e10,x4,x5) ^ россия-nn(e11,x5) ^ продолжиться-vb(e12,x3,e14,u1) ^ автоматически-rb(e13,e14) ^ означать-vb(e14,u2,u3,u4) ^ давление-nn(e15,x6) ^ на-in(e16,x6,x7) ^ рубль-nn(e17,x7) ^ возможно-rb(e18,x8) ^ рост-nn(e19,x9) ^ процентный-adj(e20,x10) ^ ставка-nn(e21,x10) ^ of-in(e22,x3,x4) ^ of-in(e23,x9,x10) ^ !=(e22,e23)
+</observed>
+<hypothesis score="-23.641">
+с-in(e1,e12,x1) ^ высокий-adj(e2,x1) ^ вероятность-nn(e3,x1) ^ после-in(e4,e12,x2) ^ президентский-adj(e5,x2) ^ выборы-nn(e6,x2) ^ значительный-adj(e7,x3) ^ отток-nn(e8,x3) ^ капитал-nn(e9,x4) ^ из-in(e10,x4,x5) ^ россия-nn(e11,x5) ^ продолжиться-vb(e12,x3,e14,u1) ^ автоматически-rb(e13,e14) ^ означать-vb(e14,u2,u3,u4) ^ давление-nn(e15,x6) ^ на-in(e16,x6,x7) ^ рубль-nn(e17,x7) ^ возможно-rb(e18,x8) ^ рост-nn(e19,x9) ^ процентный-adj(e20,x10) ^ ставка-nn(e21,x10) ^ of-in(e22,x3,x4) ^ of-in(e23,x9,x10) ^ !=(e22,e23) ^ conflict(x2,_23,_24,_25,_26) ^ nation(x5) ^ increaseStruct(_27) ^ dFCompEnt(x5) ^ functionality(_28,x5) ^ thrive(_28,_29) ^ citizens(_29,x5)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_на-in_15":-1.001 "!HYPOTHESIZED_россия-nn_10":-1.001 "!HYPOTHESIZED_conflict_24":-0.901 "!HYPOTHESIZED_dFCompEnt_27":-0.361 "!HYPOTHESIZED_автоматически-rb_12":-1.001 "!HYPOTHESIZED_возможно-rb_17":-1.001 "!HYPOTHESIZED_значительный-adj_6":-1.001 "!HYPOTHESIZED_давление-nn_14":-1.001 "!HYPOTHESIZED_ставка-nn_20":-1.001 "!HYPOTHESIZED_отток-nn_7":-1.001 "!HYPOTHESIZED_президентский-adj_4":-1.001 "!HYPOTHESIZED_рост-nn_18":-1.001 "!HYPOTHESIZED_рубль-nn_16":-1.001 "!EXPLAINED_рост-nn_18":1 "!HYPOTHESIZED_!=_23":-1.001 "!EXPLAINED_nation_25":0.9 "!HYPOTHESIZED_citizens_30":-0.091 "!HYPOTHESIZED_процентный-adj_19":-1.001 "!EXPLAINED_россия-nn_10":1 "!HYPOTHESIZED_thrive_29":-0.091 "!HYPOTHESIZED_increaseStruct_26":-0.901 "!HYPOTHESIZED_продолжиться-vb_11":-1.001 "!EXPLAINED_выборы-nn_5":1 "!HYPOTHESIZED_после-in_3":-1.001 "!HYPOTHESIZED_functionality_28":-0.271 "!HYPOTHESIZED_означать-vb_13":-1.001 "!HYPOTHESIZED_с-in_0":-1.001 "!HYPOTHESIZED_из-in_9":-1.001 "!HYPOTHESIZED_вероятность-nn_2":-1.001 "!HYPOTHESIZED_nation_25":-0.901 "!HYPOTHESIZED_of-in_21":-1.001 "!HYPOTHESIZED_выборы-nn_5":-1.001 "!HYPOTHESIZED_капитал-nn_8":-1.001 "!HYPOTHESIZED_высокий-adj_1":-1.001 "!HYPOTHESIZED_of-in_22":-1.001 
+</vector>
+<statistics>
+<time total="0.0119081" prepare="0.0113521" ilp="0.000555992" />
+<ilp solution="Optimal" variables="102" constraints="114" />
+<search-space literals="31" axiom="10" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">с-in(e1,e12,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">высокий-adj(e2,x1):1:1.00</literal>
+<literal id="2" type="2" active="yes">вероятность-nn(e3,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">после-in(e4,e12,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">президентский-adj(e5,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">выборы-nn(e6,x2):5:1.00</literal>
+<literal id="6" type="2" active="yes">значительный-adj(e7,x3):6:1.00</literal>
+<literal id="7" type="2" active="yes">отток-nn(e8,x3):7:1.00</literal>
+<literal id="8" type="2" active="yes">капитал-nn(e9,x4):8:1.00</literal>
+<literal id="9" type="2" active="yes">из-in(e10,x4,x5):9:1.00</literal>
+<literal id="10" type="2" active="yes">россия-nn(e11,x5):10:1.00</literal>
+<literal id="11" type="2" active="yes">продолжиться-vb(e12,x3,e14,u1):11:1.00</literal>
+<literal id="12" type="2" active="yes">автоматически-rb(e13,e14):12:1.00</literal>
+<literal id="13" type="2" active="yes">означать-vb(e14,u2,u3,u4):13:1.00</literal>
+<literal id="14" type="2" active="yes">давление-nn(e15,x6):14:1.00</literal>
+<literal id="15" type="2" active="yes">на-in(e16,x6,x7):15:1.00</literal>
+<literal id="16" type="2" active="yes">рубль-nn(e17,x7):16:1.00</literal>
+<literal id="17" type="2" active="yes">возможно-rb(e18,x8):17:1.00</literal>
+<literal id="18" type="2" active="yes">рост-nn(e19,x9):18:1.00</literal>
+<literal id="19" type="2" active="yes">процентный-adj(e20,x10):19:1.00</literal>
+<literal id="20" type="2" active="yes">ставка-nn(e21,x10):20:1.00</literal>
+<literal id="21" type="2" active="yes">of-in(e22,x3,x4):21:1.00</literal>
+<unification l1="21" l2="22" unifier="" active="no" />
+<literal id="22" type="2" active="yes">of-in(e23,x9,x10):22:1.00</literal>
+<unification l1="22" l2="21" unifier="" active="no" />
+<literal id="23" type="2" active="yes">!=(e22,e23):23:1.00</literal>
+<literal id="24" type="3" active="yes">conflict(x2,_23,_24,_25,_26):24:0.90</literal>
+<literal id="25" type="3" active="yes">nation(x5):25:0.90</literal>
+<literal id="26" type="3" active="yes">increaseStruct(_27):26:0.90</literal>
+<literal id="27" type="3" active="yes">dFCompEnt(x5):27:0.36</literal>
+<literal id="28" type="3" active="yes">functionality(_28,x5):28:0.27</literal>
+<literal id="29" type="3" active="yes">thrive(_28,_29):29:0.09</literal>
+<literal id="30" type="3" active="yes">citizens(_29,x5):30:0.09</literal>
+<explanation name="nation1" active="yes" axiom="">27 ^ 28 ^ 29 ^ 30 => 25</explanation>
+<explanation name="vybory" active="yes" axiom="">24 => 5</explanation>
+<explanation name="rost" active="yes" axiom="">26 => 18</explanation>
+<explanation name="rossija" active="yes" axiom="">25 => 10</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="11">
+<observed size="16" domain_size="0">
+давно-rb(e1,e2) ^ работать-vb(e2,u1,u2,u3) ^ на-in(e3,e2,x1) ^ российский-adj(e4,x1) ^ рынок-nn(e5,x1) ^ у-in(e6,e9,x2) ^ thing(e7,x3) ^ уже-rb(e8,e9) ^ выстроить-vb(e9,x4,e12,u4) ^ система-nn(e10,x4) ^ дилерство-nn(e11,x5) ^ внедриться-vb(e12,x4,u5,u6) ^ в-in(e13,e12,x6) ^ female(e14,x7) ^ нереально-rb(e15,e12) ^ of-in(e16,x4,x5)
+</observed>
+<hypothesis score="-14.822">
+давно-rb(e1,e2) ^ работать-vb(e2,u1,u2,u3) ^ на-in(e3,e2,x1) ^ российский-adj(e4,x1) ^ рынок-nn(e5,x1) ^ у-in(e6,e9,x2) ^ thing(e7,x3) ^ уже-rb(e8,e9) ^ выстроить-vb(e9,x4,e12,u4) ^ система-nn(e10,x4) ^ дилерство-nn(e11,x5) ^ внедриться-vb(e12,x4,u5,u6) ^ в-in(e13,e12,x6) ^ female(e14,x7) ^ нереально-rb(e15,e12) ^ of-in(e16,x4,x5) ^ dFCompEnt(x1) ^ functionality(_30,x1) ^ commerce(_30) ^ increaseStruct(e12) ^ dFCompEnt(x4) ^ functionality(_31,x4) ^ =(_30,_31) ^ =(x1,x4)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_внедриться-vb_11":-1.001 "!HYPOTHESIZED_рынок-nn_4":-1.001 "!HYPOTHESIZED_female_13":-1.001 "!EXPLAINED_dFCompEnt_20":0.5 "!EXPLAINED_рынок-nn_4":1 "!EXPLAINED_functionality_21":0.4 "!HYPOTHESIZED_уже-rb_7":-1.001 "!HYPOTHESIZED_increaseStruct_19":-0.901 "!HYPOTHESIZED_functionality_17":-0.401 "!HYPOTHESIZED_thing_6":-1.001 "!HYPOTHESIZED_в-in_12":-1.001 "!HYPOTHESIZED_система-nn_9":-1.001 "!HYPOTHESIZED_of-in_15":-1.001 "!HYPOTHESIZED_commerce_18":-0.101 "!HYPOTHESIZED_на-in_2":-1.001 "!EXPLAINED_выстроить-vb_8":1 "!HYPOTHESIZED_у-in_5":-1.001 "!HYPOTHESIZED_давно-rb_0":-1.001 "!EXPLAINED_система-nn_9":1 "!HYPOTHESIZED_российский-adj_3":-1.001 "!HYPOTHESIZED_выстроить-vb_8":-1.001 "!HYPOTHESIZED_dFCompEnt_16":-0.401 "!HYPOTHESIZED_работать-vb_1":-1.001 "!HYPOTHESIZED_нереально-rb_14":-1.001 "!HYPOTHESIZED_functionality_21":-0.401 "!HYPOTHESIZED_дилерство-nn_10":-1.001 "!HYPOTHESIZED_dFCompEnt_20":-0.501 
+</vector>
+<statistics>
+<time total="0.00721312" prepare="0.00672102" ilp="0.000492096" />
+<ilp solution="Optimal" variables="77" constraints="80" />
+<search-space literals="22" axiom="4" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">давно-rb(e1,e2):0:1.00</literal>
+<literal id="1" type="2" active="yes">работать-vb(e2,u1,u2,u3):1:1.00</literal>
+<literal id="2" type="2" active="yes">на-in(e3,e2,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">российский-adj(e4,x1):3:1.00</literal>
+<literal id="4" type="2" active="yes">рынок-nn(e5,x1):4:1.00</literal>
+<literal id="5" type="2" active="yes">у-in(e6,e9,x2):5:1.00</literal>
+<literal id="6" type="2" active="yes">thing(e7,x3):6:1.00</literal>
+<literal id="7" type="2" active="yes">уже-rb(e8,e9):7:1.00</literal>
+<literal id="8" type="2" active="yes">выстроить-vb(e9,x4,e12,u4):8:1.00</literal>
+<literal id="9" type="2" active="yes">система-nn(e10,x4):9:1.00</literal>
+<literal id="10" type="2" active="yes">дилерство-nn(e11,x5):10:1.00</literal>
+<literal id="11" type="2" active="yes">внедриться-vb(e12,x4,u5,u6):11:1.00</literal>
+<literal id="12" type="2" active="yes">в-in(e13,e12,x6):12:1.00</literal>
+<literal id="13" type="2" active="yes">female(e14,x7):13:1.00</literal>
+<literal id="14" type="2" active="yes">нереально-rb(e15,e12):14:1.00</literal>
+<literal id="15" type="2" active="yes">of-in(e16,x4,x5):15:1.00</literal>
+<literal id="16" type="3" active="yes">dFCompEnt(x1):16:0.40</literal>
+<unification l1="16" l2="20" unifier="x1=x4" active="yes" />
+<literal id="17" type="3" active="yes">functionality(_30,x1):17:0.40</literal>
+<unification l1="17" l2="21" unifier="_30=_31, x1=x4" active="yes" />
+<literal id="18" type="3" active="yes">commerce(_30):18:0.10</literal>
+<literal id="19" type="3" active="yes">increaseStruct(e12):19:0.90</literal>
+<literal id="20" type="3" active="yes">dFCompEnt(x4):20:0.50</literal>
+<unification l1="20" l2="16" unifier="x1=x4" active="yes" />
+<literal id="21" type="3" active="yes">functionality(_31,x4):21:0.40</literal>
+<unification l1="21" l2="17" unifier="_30=_31, x1=x4" active="yes" />
+<explanation name="rynok" active="yes" axiom="">16 ^ 17 ^ 18 => 4</explanation>
+<explanation name="vystroit" active="yes" axiom="">19 => 8</explanation>
+<explanation name="sistema" active="yes" axiom="">20 ^ 21 => 9</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="12">
+<observed size="21" domain_size="0">
+очевидно-rb(e1,x1) ^ ведущий-adj(e2,x2) ^ страна-nn(e3,x2) ^ мир-nn(e4,x3) ^ должен-adj(e5,x4) ^ видеть-vb(e6,u1,x5,u2) ^ угроза-nn(e7,x5) ^ compl(e8,e5,e6) ^ of-in(e9,x2,x3) ^ соответственно-rb(e1,e2) ^ выстраивать-vb(e2,u1,x1,u2) ^ более-rb(e3,e4) ^ демократический-adj(e4,x1) ^ справедливый-adj(e5,x1) ^ система-nn(e6,x1) ^ экономический-adj(e7,x2) ^ отношение-nn(e8,x2) ^ в-in(e9,x2,x3) ^ мир-nn(e10,x3) ^ of-in(e11,x1,x2) ^ !=(e9,e11)
+</observed>
+<hypothesis score="-17.554">
+очевидно-rb(e1,x1) ^ ведущий-adj(e2,x2) ^ страна-nn(e3,x2) ^ мир-nn(e4,x3) ^ должен-adj(e5,x4) ^ видеть-vb(e6,u1,x5,u2) ^ угроза-nn(e7,x5) ^ compl(e8,e5,e6) ^ of-in(e9,x2,x3) ^ соответственно-rb(e1,e2) ^ выстраивать-vb(e2,u1,x1,u2) ^ более-rb(e3,e4) ^ демократический-adj(e4,x1) ^ справедливый-adj(e5,x1) ^ система-nn(e6,x1) ^ экономический-adj(e7,x2) ^ отношение-nn(e8,x2) ^ в-in(e9,x2,x3) ^ мир-nn(e10,x3) ^ of-in(e11,x1,x2) ^ !=(e9,e11) ^ dFCompEnt(x2) ^ functionality(_32,x2) ^ thrive(_32,_33) ^ citizens(_33,x2) ^ increaseStruct(x1) ^ politicalParty(x1) ^ dFCompEnt(x1) ^ functionality(_34,x1) ^ dFCompEnt(x2) ^ functionality(_35,x2) ^ commerce(_35) ^ increaseStruct(x2) ^ conflict(_36,x1,_37,_38,_39) ^ =(x1,x2) ^ =(e4,e10) ^ =(_32,_34,_35)
+</hypothesis>
+<vector score="0">
+"!EXPLAINED_functionality_30":0.4 "!HYPOTHESIZED_of-in_19":-1.001 "!HYPOTHESIZED_dFCompEnt_27":-0.501 "!HYPOTHESIZED_мир-nn_18":-1.001 "!HYPOTHESIZED_демократический-adj_12":-1.001 "!HYPOTHESIZED_экономический-adj_15":-1.001 "!HYPOTHESIZED_compl_7":-1.001 "!HYPOTHESIZED_dFCompEnt_29":-0.401 "!HYPOTHESIZED_справедливый-adj_13":-1.001 "!HYPOTHESIZED_of-in_8":-1.001 "!EXPLAINED_выстраивать-vb_10":1 "!EXPLAINED_increaseStruct_25":0.9 "!HYPOTHESIZED_угроза-nn_6":-1.001 "!EXPLAINED_politicalParty_26":0.9 "!HYPOTHESIZED_в-in_17":-1.001 "!EXPLAINED_dFCompEnt_29":0.4 "!EXPLAINED_functionality_28":0.4 "!HYPOTHESIZED_должен-adj_4":-1.001 "!EXPLAINED_мир-nn_18":1 "!EXPLAINED_of-in_19":1 "!EXPLAINED_демократический-adj_12":1 "!HYPOTHESIZED_!=_20":-1.001 "!HYPOTHESIZED_increaseStruct_32":-1.711 "!HYPOTHESIZED_мир-nn_3":-1.001 "!HYPOTHESIZED_increaseStruct_25":-0.901 "!HYPOTHESIZED_очевидно-rb_0":-1.001 "!HYPOTHESIZED_politicalParty_26":-0.901 "!HYPOTHESIZED_ведущий-adj_1":-1.001 "!HYPOTHESIZED_conflict_33":-0.811 "!HYPOTHESIZED_видеть-vb_5":-1.001 "!HYPOTHESIZED_отношение-nn_16":-1.001 "!HYPOTHESIZED_functionality_28":-0.401 "!HYPOTHESIZED_functionality_30":-0.401 "!HYPOTHESIZED_страна-nn_2":-1.001 "!HYPOTHESIZED_выстраивать-vb_10":-1.001 "!HYPOTHESIZED_соответственно-rb_9":-1.001 "!HYPOTHESIZED_thrive_23":-0.101 "!HYPOTHESIZED_более-rb_11":-1.001 "!EXPLAINED_экономический-adj_15":1 "!HYPOTHESIZED_citizens_24":-0.101 "!EXPLAINED_страна-nn_2":1 "!HYPOTHESIZED_commerce_31":-0.101 "!HYPOTHESIZED_functionality_22":-0.301 "!HYPOTHESIZED_система-nn_14":-1.001 "!EXPLAINED_система-nn_14":1 "!HYPOTHESIZED_dFCompEnt_21":-0.401 "!EXPLAINED_dFCompEnt_27":0.5 
+</vector>
+<statistics>
+<time total="0.0305448" prepare="0.0219879" ilp="0.00855684" />
+<ilp solution="Optimal" variables="152" constraints="208" />
+<search-space literals="37" axiom="13" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">очевидно-rb(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">ведущий-adj(e2,x2):1:1.00</literal>
+<literal id="2" type="2" active="yes">страна-nn(e3,x2):2:1.00</literal>
+<literal id="3" type="2" active="yes">мир-nn(e4,x3):3:1.00</literal>
+<unification l1="3" l2="18" unifier="e10=e4" active="yes" />
+<literal id="4" type="2" active="yes">должен-adj(e5,x4):4:1.00</literal>
+<literal id="5" type="2" active="yes">видеть-vb(e6,u1,x5,u2):5:1.00</literal>
+<literal id="6" type="2" active="yes">угроза-nn(e7,x5):6:1.00</literal>
+<literal id="7" type="2" active="yes">compl(e8,e5,e6):7:1.00</literal>
+<literal id="8" type="2" active="yes">of-in(e9,x2,x3):8:1.00</literal>
+<unification l1="8" l2="19" unifier="x1=x2" active="no" />
+<literal id="9" type="2" active="yes">соответственно-rb(e1,e2):9:1.00</literal>
+<literal id="10" type="2" active="yes">выстраивать-vb(e2,u1,x1,u2):10:1.00</literal>
+<literal id="11" type="2" active="yes">более-rb(e3,e4):11:1.00</literal>
+<literal id="12" type="2" active="yes">демократический-adj(e4,x1):12:1.00</literal>
+<literal id="13" type="2" active="yes">справедливый-adj(e5,x1):13:1.00</literal>
+<literal id="14" type="2" active="yes">система-nn(e6,x1):14:1.00</literal>
+<literal id="15" type="2" active="yes">экономический-adj(e7,x2):15:1.00</literal>
+<literal id="16" type="2" active="yes">отношение-nn(e8,x2):16:1.00</literal>
+<literal id="17" type="2" active="yes">в-in(e9,x2,x3):17:1.00</literal>
+<literal id="18" type="2" active="yes">мир-nn(e10,x3):18:1.00</literal>
+<unification l1="18" l2="3" unifier="e10=e4" active="yes" />
+<literal id="19" type="2" active="yes">of-in(e11,x1,x2):19:1.00</literal>
+<unification l1="19" l2="8" unifier="x1=x2" active="no" />
+<literal id="20" type="2" active="yes">!=(e9,e11):20:1.00</literal>
+<literal id="21" type="3" active="yes">dFCompEnt(x2):21:0.40</literal>
+<unification l1="21" l2="27" unifier="x1=x2" active="yes" />
+<unification l1="21" l2="29" unifier="" active="yes" />
+<unification l1="21" l2="34" unifier="x1=x2" active="no" />
+<literal id="22" type="3" active="yes">functionality(_32,x2):22:0.30</literal>
+<unification l1="22" l2="28" unifier="_32=_34, x1=x2" active="yes" />
+<unification l1="22" l2="30" unifier="_32=_35" active="yes" />
+<literal id="23" type="3" active="yes">thrive(_32,_33):23:0.10</literal>
+<literal id="24" type="3" active="yes">citizens(_33,x2):24:0.10</literal>
+<literal id="25" type="3" active="yes">increaseStruct(x1):25:0.90</literal>
+<unification l1="25" l2="32" unifier="x1=x2" active="yes" />
+<literal id="26" type="3" active="yes">politicalParty(x1):26:0.90</literal>
+<literal id="27" type="3" active="yes">dFCompEnt(x1):27:0.50</literal>
+<unification l1="27" l2="21" unifier="x1=x2" active="yes" />
+<unification l1="27" l2="29" unifier="x1=x2" active="yes" />
+<unification l1="27" l2="34" unifier="" active="no" />
+<literal id="28" type="3" active="yes">functionality(_34,x1):28:0.40</literal>
+<unification l1="28" l2="22" unifier="_32=_34, x1=x2" active="yes" />
+<unification l1="28" l2="30" unifier="_34=_35, x1=x2" active="yes" />
+<literal id="29" type="3" active="yes">dFCompEnt(x2):29:0.40</literal>
+<unification l1="29" l2="21" unifier="" active="yes" />
+<unification l1="29" l2="27" unifier="x1=x2" active="yes" />
+<unification l1="29" l2="34" unifier="x1=x2" active="no" />
+<literal id="30" type="3" active="yes">functionality(_35,x2):30:0.40</literal>
+<unification l1="30" l2="22" unifier="_32=_35" active="yes" />
+<unification l1="30" l2="28" unifier="_34=_35, x1=x2" active="yes" />
+<literal id="31" type="3" active="yes">commerce(_35):31:0.10</literal>
+<literal id="32" type="3" active="yes">increaseStruct(x2):32:1.71</literal>
+<unification l1="32" l2="25" unifier="x1=x2" active="yes" />
+<literal id="33" type="3" active="yes">conflict(_36,x1,_37,_38,_39):33:0.81</literal>
+<literal id="34" type="3" active="no">dFCompEnt(x1):34:0.36</literal>
+<unification l1="34" l2="21" unifier="x1=x2" active="no" />
+<unification l1="34" l2="27" unifier="" active="no" />
+<unification l1="34" l2="29" unifier="x1=x2" active="no" />
+<literal id="35" type="3" active="no">functionality(_40,x1,_41):35:0.90</literal>
+<literal id="36" type="3" active="no">leadP(_40,x1,_42):36:0.90</literal>
+<explanation name="demokraticheskij" active="yes" axiom="">26 => 12</explanation>
+<explanation name="strana" active="yes" axiom="">21 ^ 22 ^ 23 ^ 24 => 2</explanation>
+<explanation name="increaseStruct-of" active="yes" axiom="">32 => 25</explanation>
+<explanation name="sistema" active="yes" axiom="">27 ^ 28 => 14</explanation>
+<explanation name="politicalParty1" active="yes" axiom="">33 => 26</explanation>
+<explanation name="politicalParty2" active="no" axiom="">34 ^ 35 ^ 36 => 26</explanation>
+<explanation name="ekonomicheskij" active="yes" axiom="">29 ^ 30 ^ 31 => 15</explanation>
+<explanation name="increaseStruct-of" active="yes" axiom="">32 => 19</explanation>
+<explanation name="vystraivat" active="yes" axiom="">25 => 10</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="13">
+<observed size="10" domain_size="0">
+person(e1,x1) ^ повышать-vb(e2,x1,x2,u1) ^ пошлина-nn(e3,x2) ^ person(e4,x3) ^ залезать-vb(e5,x3,u2,u3) ^ в-in(e6,e5,x4) ^ кошелек-nn(e7,x4) ^ гражданин-nn(e8,x5) ^ of-in(e9,x4,x5) ^ !=(e1,e4)
+</observed>
+<hypothesis score="-10.01">
+person(e1,x1) ^ повышать-vb(e2,x1,x2,u1) ^ пошлина-nn(e3,x2) ^ person(e4,x3) ^ залезать-vb(e5,x3,u2,u3) ^ в-in(e6,e5,x4) ^ кошелек-nn(e7,x4) ^ гражданин-nn(e8,x5) ^ of-in(e9,x4,x5) ^ !=(e1,e4)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_кошелек-nn_6":-1.001 "!HYPOTHESIZED_гражданин-nn_7":-1.001 "!HYPOTHESIZED_в-in_5":-1.001 "!HYPOTHESIZED_person_3":-1.001 "!HYPOTHESIZED_!=_9":-1.001 "!HYPOTHESIZED_of-in_8":-1.001 "!HYPOTHESIZED_person_0":-1.001 "!HYPOTHESIZED_пошлина-nn_2":-1.001 "!HYPOTHESIZED_повышать-vb_1":-1.001 "!HYPOTHESIZED_залезать-vb_4":-1.001 
+</vector>
+<statistics>
+<time total="0.00520396" prepare="0.00450897" ilp="0.00069499" />
+<ilp solution="Optimal" variables="35" constraints="22" />
+<search-space literals="10" axiom="0" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">person(e1,x1):0:1.00</literal>
+<unification l1="0" l2="3" unifier="" active="no" />
+<literal id="1" type="2" active="yes">повышать-vb(e2,x1,x2,u1):1:1.00</literal>
+<literal id="2" type="2" active="yes">пошлина-nn(e3,x2):2:1.00</literal>
+<literal id="3" type="2" active="yes">person(e4,x3):3:1.00</literal>
+<unification l1="3" l2="0" unifier="" active="no" />
+<literal id="4" type="2" active="yes">залезать-vb(e5,x3,u2,u3):4:1.00</literal>
+<literal id="5" type="2" active="yes">в-in(e6,e5,x4):5:1.00</literal>
+<literal id="6" type="2" active="yes">кошелек-nn(e7,x4):6:1.00</literal>
+<literal id="7" type="2" active="yes">гражданин-nn(e8,x5):7:1.00</literal>
+<literal id="8" type="2" active="yes">of-in(e9,x4,x5):8:1.00</literal>
+<literal id="9" type="2" active="yes">!=(e1,e4):9:1.00</literal>
+</proofgraph>
+</result-inference>
+<result-inference target="14">
+<observed size="8" domain_size="0">
+главное-nn(e1,x1) ^ влиять-vb(e2,u1,u2,u3) ^ на-in(e3,e2,x2) ^ власть-nn(e4,x2) ^ бороться-vb(e5,u4,u5,u6) ^ за-in(e6,e5,x3) ^ власть-nn(e7,x3) ^ not(e8,e5)
+</observed>
+<hypothesis score="-6.652">
+главное-nn(e1,x1) ^ влиять-vb(e2,u1,u2,u3) ^ на-in(e3,e2,x2) ^ власть-nn(e4,x2) ^ бороться-vb(e5,u4,u5,u6) ^ за-in(e6,e5,x3) ^ власть-nn(e7,x3) ^ not(e8,e5) ^ lead(x2,_43,_44) ^ conflict(e5,u4,_45,_46,_47) ^ adversary(_48,u4,_45,e5) ^ goal(_51,x3,u4) ^ =(e7,e4) ^ =(x2,x3)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_conflict_9":-0.601 "!HYPOTHESIZED_not_7":-1.001 "!EXPLAINED_conflict_9":0.6 "!HYPOTHESIZED_adversary_10":-0.301 "!HYPOTHESIZED_власть-nn_3":-1.001 "!EXPLAINED_власть-nn_3":1 "!HYPOTHESIZED_бороться-vb_4":-1.001 "!HYPOTHESIZED_на-in_2":-1.001 "!HYPOTHESIZED_главное-nn_0":-1.001 "!HYPOTHESIZED_lead_8":-0.901 "!HYPOTHESIZED_goal_12":-1.441 "!HYPOTHESIZED_власть-nn_6":-1.001 "!EXPLAINED_за-in_5":1 "!EXPLAINED_бороться-vb_4":1 "!HYPOTHESIZED_за-in_5":-1.001 "!EXPLAINED_власть-nn_6":1 "!HYPOTHESIZED_влиять-vb_1":-1.001 
+</vector>
+<statistics>
+<time total="0.0259569" prepare="0.021415" ilp="0.00454187" />
+<ilp solution="Optimal" variables="64" constraints="63" />
+<search-space literals="15" axiom="18" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">главное-nn(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">влиять-vb(e2,u1,u2,u3):1:1.00</literal>
+<literal id="2" type="2" active="yes">на-in(e3,e2,x2):2:1.00</literal>
+<literal id="3" type="2" active="yes">власть-nn(e4,x2):3:1.00</literal>
+<unification l1="3" l2="6" unifier="e4=e7, x2=x3" active="yes" />
+<literal id="4" type="2" active="yes">бороться-vb(e5,u4,u5,u6):4:1.00</literal>
+<literal id="5" type="2" active="yes">за-in(e6,e5,x3):5:1.00</literal>
+<literal id="6" type="2" active="yes">власть-nn(e7,x3):6:1.00</literal>
+<unification l1="6" l2="3" unifier="e4=e7, x2=x3" active="yes" />
+<literal id="7" type="2" active="yes">not(e8,e5):7:1.00</literal>
+<literal id="8" type="3" active="yes">lead(x2,_43,_44):8:0.90</literal>
+<unification l1="8" l2="11" unifier="x2=x3" active="no" />
+<literal id="9" type="3" active="yes">conflict(e5,u4,_45,_46,_47):9:0.60</literal>
+<literal id="10" type="3" active="yes">adversary(_48,u4,_45,e5):10:0.30</literal>
+<unification l1="10" l2="13" unifier="" active="no" />
+<literal id="11" type="3" active="no">lead(x3,_49,_50):11:0.90</literal>
+<unification l1="11" l2="8" unifier="x2=x3" active="no" />
+<literal id="12" type="3" active="yes">goal(_51,x3,u4):12:1.44</literal>
+<literal id="13" type="3" active="no">adversary(_52,u4,_53,_54):13:1.73</literal>
+<unification l1="13" l2="10" unifier="" active="no" />
+<literal id="14" type="3" active="no">goalNot(_55,x3,_53):14:1.73</literal>
+<explanation name="adversary1" active="no" axiom="">13 ^ 14 => 12</explanation>
+<explanation name="vlast" active="yes" axiom="">8 => 3</explanation>
+<explanation name="borotsja" active="yes" axiom="">9 ^ 10 => 4</explanation>
+<explanation name="conflict-for1" active="yes" axiom="">12 => 5</explanation>
+<explanation name="vlast" active="no" axiom="">11 => 6</explanation>
+<explanation name="conflict-for1" active="yes" axiom="">12 => 9</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="15">
+<observed size="6" domain_size="0">
+оппозиция-nn(e1,x1) ^ существовать-vb(e2,u1,x1,u2) ^ сегодня-rb(e3,e2) ^ бороться-vb(e4,x1,u3,u4) ^ за-in(e5,e4,x2) ^ власть-nn(e6,x2)
+</observed>
+<hypothesis score="-4.211">
+оппозиция-nn(e1,x1) ^ существовать-vb(e2,u1,x1,u2) ^ сегодня-rb(e3,e2) ^ бороться-vb(e4,x1,u3,u4) ^ за-in(e5,e4,x2) ^ власть-nn(e6,x2) ^ conflict(_56,x1,_57,_58,_59) ^ lead(_60,x1,_61) ^ conflict(e4,x1,_62,_63,_64) ^ adversary(_65,x1,_62,e4) ^ lead(x2,_66,_67) ^ =(_66,x1) ^ =(_57,_62) ^ =(_58,_63) ^ =(_56,e4) ^ =(x2,_60) ^ =(_59,_64) ^ =(_67,_61)
+</hypothesis>
+<vector score="0">
+"!EXPLAINED_lead_10":0.9 "!HYPOTHESIZED_власть-nn_5":-1.001 "!HYPOTHESIZED_сегодня-rb_2":-1.001 "!HYPOTHESIZED_conflict_6":-0.601 "!HYPOTHESIZED_adversary_9":-0.301 "!EXPLAINED_бороться-vb_3":1 "!HYPOTHESIZED_за-in_4":-1.001 "!HYPOTHESIZED_существовать-vb_1":-1.001 "!EXPLAINED_власть-nn_5":1 "!HYPOTHESIZED_conflict_8":-0.601 "!HYPOTHESIZED_оппозиция-nn_0":-1.001 "!EXPLAINED_conflict_8":0.6 "!EXPLAINED_оппозиция-nn_0":1 "!HYPOTHESIZED_lead_7":-0.301 "!HYPOTHESIZED_lead_10":-0.901 "!HYPOTHESIZED_бороться-vb_3":-1.001 
+</vector>
+<statistics>
+<time total="0.0167372" prepare="0.012006" ilp="0.00473118" />
+<ilp solution="Optimal" variables="68" constraints="74" />
+<search-space literals="14" axiom="15" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">оппозиция-nn(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">существовать-vb(e2,u1,x1,u2):1:1.00</literal>
+<literal id="2" type="2" active="yes">сегодня-rb(e3,e2):2:1.00</literal>
+<literal id="3" type="2" active="yes">бороться-vb(e4,x1,u3,u4):3:1.00</literal>
+<literal id="4" type="2" active="yes">за-in(e5,e4,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">власть-nn(e6,x2):5:1.00</literal>
+<literal id="6" type="3" active="yes">conflict(_56,x1,_57,_58,_59):6:0.60</literal>
+<unification l1="6" l2="8" unifier="e4=_56, _57=_62, _58=_63, _59=_64" active="yes" />
+<literal id="7" type="3" active="yes">lead(_60,x1,_61):7:0.30</literal>
+<unification l1="7" l2="10" unifier="x2=_60, x1=_66, _61=_67" active="yes" />
+<literal id="8" type="3" active="yes">conflict(e4,x1,_62,_63,_64):8:0.60</literal>
+<unification l1="8" l2="6" unifier="e4=_56, _57=_62, _58=_63, _59=_64" active="yes" />
+<literal id="9" type="3" active="yes">adversary(_65,x1,_62,e4):9:0.30</literal>
+<unification l1="9" l2="12" unifier="" active="no" />
+<literal id="10" type="3" active="yes">lead(x2,_66,_67):10:0.90</literal>
+<unification l1="10" l2="7" unifier="x2=_60, x1=_66, _61=_67" active="yes" />
+<literal id="11" type="3" active="no">goal(_68,x2,x1):11:1.44</literal>
+<literal id="12" type="3" active="no">adversary(_69,x1,_70,_71):12:1.73</literal>
+<unification l1="12" l2="9" unifier="" active="no" />
+<literal id="13" type="3" active="no">goalNot(_72,x2,_70):13:1.73</literal>
+<explanation name="adversary1" active="no" axiom="">12 ^ 13 => 11</explanation>
+<explanation name="oppozicija" active="yes" axiom="">6 ^ 7 => 0</explanation>
+<explanation name="borotsja" active="yes" axiom="">8 ^ 9 => 3</explanation>
+<explanation name="conflict-for1" active="no" axiom="">11 => 4</explanation>
+<explanation name="vlast" active="yes" axiom="">10 => 5</explanation>
+<explanation name="conflict-for1" active="no" axiom="">11 => 8</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="16">
+<observed size="17" domain_size="0">
+путин-nn(e1,x1) ^ победить-vb(e2,x1,x2,u1) ^ в-in(e3,e2,x3) ^ тур-nn(e4,x3) ^ сахарный-adj(e5,x2) ^ болото-nn(e6,x2) ^ постараться-vb(e7,u2,e8,u3) ^ спровоцировать-vb(e8,u2,x4,u4) ^ массовый-adj(e9,x4) ^ беспорядок-nn(e10,x4) ^ спровоцировать-vb(e11,u2,x5,u5) ^ власть-nn(e12,x5) ^ на-in(e13,e11,x6) ^ применение-nn(e14,x6) ^ сила-nn(e15,x7) ^ imp(e16,e2,e7) ^ of-in(e17,x6,x7)
+</observed>
+<hypothesis score="-15.82">
+путин-nn(e1,x1) ^ победить-vb(e2,x1,x2,u1) ^ в-in(e3,e2,x3) ^ тур-nn(e4,x3) ^ сахарный-adj(e5,x2) ^ болото-nn(e6,x2) ^ постараться-vb(e7,u2,e8,u3) ^ спровоцировать-vb(e8,u2,x4,u4) ^ массовый-adj(e9,x4) ^ беспорядок-nn(e10,x4) ^ спровоцировать-vb(e11,u2,x5,u5) ^ власть-nn(e12,x5) ^ на-in(e13,e11,x6) ^ применение-nn(e14,x6) ^ сила-nn(e15,x7) ^ imp(e16,e2,e7) ^ of-in(e17,x6,x7) ^ conflict(_73,x1,x2,_74,_75) ^ adversary(_76,x1,x2,_73) ^ lead(x5,_77,_78) ^ =(e8,e11) ^ =(x4,x5) ^ =(u5,u4)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_спровоцировать-vb_7":-1.001 "!HYPOTHESIZED_сила-nn_14":-1.001 "!HYPOTHESIZED_тур-nn_3":-1.001 "!HYPOTHESIZED_conflict_17":-0.601 "!HYPOTHESIZED_of-in_16":-1.001 "!HYPOTHESIZED_беспорядок-nn_9":-1.001 "!HYPOTHESIZED_в-in_2":-1.001 "!HYPOTHESIZED_постараться-vb_6":-1.001 "!HYPOTHESIZED_adversary_18":-0.301 "!EXPLAINED_власть-nn_11":1 "!HYPOTHESIZED_власть-nn_11":-1.001 "!HYPOTHESIZED_на-in_12":-1.001 "!HYPOTHESIZED_сахарный-adj_4":-1.001 "!EXPLAINED_победить-vb_1":1 "!HYPOTHESIZED_применение-nn_13":-1.001 "!HYPOTHESIZED_lead_19":-0.901 "!HYPOTHESIZED_путин-nn_0":-1.001 "!HYPOTHESIZED_болото-nn_5":-1.001 "!HYPOTHESIZED_imp_15":-1.001 "!HYPOTHESIZED_спровоцировать-vb_10":-1.001 "!EXPLAINED_спровоцировать-vb_10":1 "!HYPOTHESIZED_победить-vb_1":-1.001 "!HYPOTHESIZED_массовый-adj_8":-1.001 
+</vector>
+<statistics>
+<time total="0.00993323" prepare="0.00938511" ilp="0.000548124" />
+<ilp solution="Optimal" variables="68" constraints="53" />
+<search-space literals="20" axiom="12" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">путин-nn(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">победить-vb(e2,x1,x2,u1):1:1.00</literal>
+<literal id="2" type="2" active="yes">в-in(e3,e2,x3):2:1.00</literal>
+<literal id="3" type="2" active="yes">тур-nn(e4,x3):3:1.00</literal>
+<literal id="4" type="2" active="yes">сахарный-adj(e5,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">болото-nn(e6,x2):5:1.00</literal>
+<literal id="6" type="2" active="yes">постараться-vb(e7,u2,e8,u3):6:1.00</literal>
+<literal id="7" type="2" active="yes">спровоцировать-vb(e8,u2,x4,u4):7:1.00</literal>
+<unification l1="7" l2="10" unifier="e8=e11, x4=x5, u4=u5" active="yes" />
+<literal id="8" type="2" active="yes">массовый-adj(e9,x4):8:1.00</literal>
+<literal id="9" type="2" active="yes">беспорядок-nn(e10,x4):9:1.00</literal>
+<literal id="10" type="2" active="yes">спровоцировать-vb(e11,u2,x5,u5):10:1.00</literal>
+<unification l1="10" l2="7" unifier="e8=e11, x4=x5, u4=u5" active="yes" />
+<literal id="11" type="2" active="yes">власть-nn(e12,x5):11:1.00</literal>
+<literal id="12" type="2" active="yes">на-in(e13,e11,x6):12:1.00</literal>
+<literal id="13" type="2" active="yes">применение-nn(e14,x6):13:1.00</literal>
+<literal id="14" type="2" active="yes">сила-nn(e15,x7):14:1.00</literal>
+<literal id="15" type="2" active="yes">imp(e16,e2,e7):15:1.00</literal>
+<literal id="16" type="2" active="yes">of-in(e17,x6,x7):16:1.00</literal>
+<literal id="17" type="3" active="yes">conflict(_73,x1,x2,_74,_75):17:0.60</literal>
+<literal id="18" type="3" active="yes">adversary(_76,x1,x2,_73):18:0.30</literal>
+<literal id="19" type="3" active="yes">lead(x5,_77,_78):19:0.90</literal>
+<explanation name="vlast" active="yes" axiom="">19 => 11</explanation>
+<explanation name="pobedit" active="yes" axiom="">17 ^ 18 => 1</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="17">
+<observed size="16" domain_size="0">
+главный-adj(e1,x1) ^ пахать-vb(e2,u1,u2,u3) ^ путин-nn(e3,x1) ^ рваться-vb(e4,x1,u4,u5) ^ к-in(e5,e4,x2) ^ власть-nn(e6,x2) ^ хотеть-vb(e7,x1,e14,u6) ^ март-nn(e8,x3) ^ вместе-rb(e9,x4) ^ с-in(e10,x5,x6) ^ жуликом-волшебником-nn(e11,x6) ^ чуров-nn(e12,x7) ^ опять-rb(e13,e14) ^ украсть-vb(e14,x1,x8,u7) ^ голос-nn(e15,x8) ^ equal(e16,x7,x6)
+</observed>
+<hypothesis score="-14.421">
+главный-adj(e1,x1) ^ пахать-vb(e2,u1,u2,u3) ^ путин-nn(e3,x1) ^ рваться-vb(e4,x1,u4,u5) ^ к-in(e5,e4,x2) ^ власть-nn(e6,x2) ^ хотеть-vb(e7,x1,e14,u6) ^ март-nn(e8,x3) ^ вместе-rb(e9,x4) ^ с-in(e10,x5,x6) ^ жуликом-волшебником-nn(e11,x6) ^ чуров-nn(e12,x7) ^ опять-rb(e13,e14) ^ украсть-vb(e14,x1,x8,u7) ^ голос-nn(e15,x8) ^ equal(e16,x7,x6) ^ conflict(e4,x1,_79,x2,_80) ^ adversary(_81,x1,_79,e4) ^ lead(x2,_82,_83) ^ conflict(_84,_85,_86,_87,_88) ^ member(_89,_85) ^ =(e4,_84) ^ =(x2,_87) ^ =(_79,_86) ^ =(_80,_88) ^ =(x1,_85)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_equal_15":-1.001 "!HYPOTHESIZED_хотеть-vb_6":-1.001 "!HYPOTHESIZED_пахать-vb_1":-1.001 "!HYPOTHESIZED_власть-nn_5":-1.001 "!HYPOTHESIZED_member_20":-0.101 "!HYPOTHESIZED_опять-rb_12":-1.001 "!HYPOTHESIZED_чуров-nn_11":-1.001 "!HYPOTHESIZED_к-in_4":-1.001 "!EXPLAINED_рваться-vb_3":1 "!EXPLAINED_власть-nn_5":1 "!HYPOTHESIZED_adversary_17":-0.601 "!HYPOTHESIZED_путин-nn_2":-1.001 "!HYPOTHESIZED_conflict_19":-0.801 "!HYPOTHESIZED_вместе-rb_8":-1.001 "!HYPOTHESIZED_рваться-vb_3":-1.001 "!EXPLAINED_conflict_16":1.2 "!HYPOTHESIZED_главный-adj_0":-1.001 "!EXPLAINED_голос-nn_14":1 "!HYPOTHESIZED_голос-nn_14":-1.001 "!EXPLAINED_к-in_4":1 "!HYPOTHESIZED_conflict_16":-1.201 "!HYPOTHESIZED_март-nn_7":-1.001 "!HYPOTHESIZED_lead_18":-0.901 "!HYPOTHESIZED_с-in_9":-1.001 "!HYPOTHESIZED_украсть-vb_13":-1.001 "!HYPOTHESIZED_жуликом-волшебником-nn_10":-1.001 
+</vector>
+<statistics>
+<time total="0.0125961" prepare="0.0120661" ilp="0.000530005" />
+<ilp solution="Optimal" variables="75" constraints="67" />
+<search-space literals="21" axiom="13" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">главный-adj(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">пахать-vb(e2,u1,u2,u3):1:1.00</literal>
+<literal id="2" type="2" active="yes">путин-nn(e3,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">рваться-vb(e4,x1,u4,u5):3:1.00</literal>
+<literal id="4" type="2" active="yes">к-in(e5,e4,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">власть-nn(e6,x2):5:1.00</literal>
+<literal id="6" type="2" active="yes">хотеть-vb(e7,x1,e14,u6):6:1.00</literal>
+<literal id="7" type="2" active="yes">март-nn(e8,x3):7:1.00</literal>
+<literal id="8" type="2" active="yes">вместе-rb(e9,x4):8:1.00</literal>
+<literal id="9" type="2" active="yes">с-in(e10,x5,x6):9:1.00</literal>
+<literal id="10" type="2" active="yes">жуликом-волшебником-nn(e11,x6):10:1.00</literal>
+<literal id="11" type="2" active="yes">чуров-nn(e12,x7):11:1.00</literal>
+<literal id="12" type="2" active="yes">опять-rb(e13,e14):12:1.00</literal>
+<literal id="13" type="2" active="yes">украсть-vb(e14,x1,x8,u7):13:1.00</literal>
+<literal id="14" type="2" active="yes">голос-nn(e15,x8):14:1.00</literal>
+<literal id="15" type="2" active="yes">equal(e16,x7,x6):15:1.00</literal>
+<literal id="16" type="3" active="yes">conflict(e4,x1,_79,x2,_80):16:1.20</literal>
+<unification l1="16" l2="19" unifier="e4=_84, x1=_85, _79=_86, x2=_87, _80=_88" active="yes" />
+<literal id="17" type="3" active="yes">adversary(_81,x1,_79,e4):17:0.60</literal>
+<literal id="18" type="3" active="yes">lead(x2,_82,_83):18:0.90</literal>
+<literal id="19" type="3" active="yes">conflict(_84,_85,_86,_87,_88):19:0.80</literal>
+<unification l1="19" l2="16" unifier="e4=_84, x1=_85, _79=_86, x2=_87, _80=_88" active="yes" />
+<literal id="20" type="3" active="yes">member(_89,_85):20:0.10</literal>
+<explanation name="golosovat" active="yes" axiom="">19 ^ 20 => 14</explanation>
+<explanation name="rvatsja-k" active="yes" axiom="">16 ^ 17 => 3</explanation>
+<explanation name="rvatsja-k" active="yes" axiom="">16 ^ 17 => 4</explanation>
+<explanation name="vlast" active="yes" axiom="">18 => 5</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="18">
+<observed size="7" domain_size="0">
+заниматься-vb(e1,u1,u2,u3) ^ серьезный-adj(e2,x1) ^ раздуть-vb(e3,u4,u5,u6) ^ политика-nn(e4,x2) ^ compl(e5,e2,e3) ^ not(e6,e3) ^ instr(e7,e3,x2)
+</observed>
+<hypothesis score="-6.908">
+заниматься-vb(e1,u1,u2,u3) ^ серьезный-adj(e2,x1) ^ раздуть-vb(e3,u4,u5,u6) ^ политика-nn(e4,x2) ^ compl(e5,e2,e3) ^ not(e6,e3) ^ instr(e7,e3,x2) ^ conflict(x2,_90,_91,_92,_93)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_серьезный-adj_1":-1.001 "!HYPOTHESIZED_раздуть-vb_2":-1.001 "!HYPOTHESIZED_заниматься-vb_0":-1.001 "!HYPOTHESIZED_instr_6":-1.001 "!HYPOTHESIZED_политика-nn_3":-1.001 "!EXPLAINED_политика-nn_3":1 "!HYPOTHESIZED_conflict_7":-0.901 "!HYPOTHESIZED_not_5":-1.001 "!HYPOTHESIZED_compl_4":-1.001 
+</vector>
+<statistics>
+<time total="0.00650287" prepare="0.00626493" ilp="0.000237942" />
+<ilp solution="Optimal" variables="25" constraints="18" />
+<search-space literals="8" axiom="10" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">заниматься-vb(e1,u1,u2,u3):0:1.00</literal>
+<literal id="1" type="2" active="yes">серьезный-adj(e2,x1):1:1.00</literal>
+<literal id="2" type="2" active="yes">раздуть-vb(e3,u4,u5,u6):2:1.00</literal>
+<literal id="3" type="2" active="yes">политика-nn(e4,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">compl(e5,e2,e3):4:1.00</literal>
+<literal id="5" type="2" active="yes">not(e6,e3):5:1.00</literal>
+<literal id="6" type="2" active="yes">instr(e7,e3,x2):6:1.00</literal>
+<literal id="7" type="3" active="yes">conflict(x2,_90,_91,_92,_93):7:0.90</literal>
+<explanation name="politika" active="yes" axiom="">7 => 3</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="19">
+<observed size="5" domain_size="0">
+политический-adj(e1,x1) ^ реформа-nn(e2,x1) ^ назреть-vb(e3,x1,e5,u1) ^ female(e4,x2) ^ перезреть-vb(e5,u2,u3,u4)
+</observed>
+<hypothesis score="-5.005">
+политический-adj(e1,x1) ^ реформа-nn(e2,x1) ^ назреть-vb(e3,x1,e5,u1) ^ female(e4,x2) ^ перезреть-vb(e5,u2,u3,u4)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_перезреть-vb_4":-1.001 "!HYPOTHESIZED_female_3":-1.001 "!HYPOTHESIZED_назреть-vb_2":-1.001 "!HYPOTHESIZED_реформа-nn_1":-1.001 "!HYPOTHESIZED_политический-adj_0":-1.001 
+</vector>
+<statistics>
+<time total="0.00487304" prepare="0.00466108" ilp="0.000211954" />
+<ilp solution="Optimal" variables="19" constraints="14" />
+<search-space literals="6" axiom="6" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">политический-adj(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">реформа-nn(e2,x1):1:1.00</literal>
+<literal id="2" type="2" active="yes">назреть-vb(e3,x1,e5,u1):2:1.00</literal>
+<literal id="3" type="2" active="yes">female(e4,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">перезреть-vb(e5,u2,u3,u4):4:1.00</literal>
+<literal id="5" type="3" active="no">conflict(x1,_94,_95,_96,_97):5:1.20</literal>
+<explanation name="politicheskij" active="no" axiom="">5 => 0</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="20">
+<observed size="15" domain_size="0">
+ставленник-nn(e1,x1) ^ на-in(e2,e4,x2) ^ место-nn(e3,x2) ^ вытаскивать-vb(e4,u1,x3,u2) ^ из-in(e5,e4,x4) ^ сапог-nn(e6,x4) ^ ножик-nn(e7,x3) ^ готовиться-vb(e8,u1,e10,u3) ^ thing(e9,x5) ^ воткнуть-vb(e10,u1,x5,u4) ^ в-in(e11,e10,x6) ^ спина-nn(e12,x6) ^ политический-adj(e13,x7) ^ благодетелям-nn(e14,x7) ^ instr(e15,e10,x7)
+</observed>
+<hypothesis score="-11.92">
+ставленник-nn(e1,x1) ^ на-in(e2,e4,x2) ^ место-nn(e3,x2) ^ вытаскивать-vb(e4,u1,x3,u2) ^ из-in(e5,e4,x4) ^ сапог-nn(e6,x4) ^ ножик-nn(e7,x3) ^ готовиться-vb(e8,u1,e10,u3) ^ thing(e9,x5) ^ воткнуть-vb(e10,u1,x5,u4) ^ в-in(e11,e10,x6) ^ спина-nn(e12,x6) ^ политический-adj(e13,x7) ^ благодетелям-nn(e14,x7) ^ instr(e15,e10,x7) ^ weapon(x3) ^ use-weapon(e10,u1,x5,x6,_98) ^ use-weapon(e10,u1,x7,x6,_98) ^ use-weapon(e10,u1,x5,x6,_98) ^ use-weapon(e10,u1,x7,x6,_98) ^ =(x5,x7)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_use-weapon_18":-2.521 "!HYPOTHESIZED_из-in_4":-1.001 "!HYPOTHESIZED_use-weapon_16":-1.801 "!HYPOTHESIZED_воткнуть-vb_9":-1.001 "!EXPLAINED_instr_14":1 "!HYPOTHESIZED_в-in_10":-1.001 "!EXPLAINED_воткнуть-vb_9":1 "!EXPLAINED_ножик-nn_6":1 "!HYPOTHESIZED_сапог-nn_5":-1.001 "!HYPOTHESIZED_на-in_1":-1.001 "!EXPLAINED_use-weapon_18":2.52 "!HYPOTHESIZED_место-nn_2":-1.001 "!HYPOTHESIZED_instr_14":-1.001 "!EXPLAINED_use-weapon_16":1.8 "!HYPOTHESIZED_политический-adj_12":-1.001 "!HYPOTHESIZED_благодетелям-nn_13":-1.001 "!HYPOTHESIZED_use-weapon_22":-2.521 "!HYPOTHESIZED_вытаскивать-vb_3":-1.001 "!HYPOTHESIZED_use-weapon_23":-3.169 "!EXPLAINED_в-in_10":1 "!HYPOTHESIZED_weapon_15":-0.901 "!HYPOTHESIZED_готовиться-vb_7":-1.001 "!HYPOTHESIZED_спина-nn_11":-1.001 "!HYPOTHESIZED_ножик-nn_6":-1.001 "!HYPOTHESIZED_thing_8":-1.001 "!EXPLAINED_use-weapon_22":2.52 "!HYPOTHESIZED_ставленник-nn_0":-1.001 "!EXPLAINED_use-weapon_23":3.168 
+</vector>
+<statistics>
+<time total="0.0399618" prepare="0.0209739" ilp="0.0189879" />
+<ilp solution="Optimal" variables="142" constraints="167" />
+<search-space literals="31" axiom="16" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">ставленник-nn(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">на-in(e2,e4,x2):1:1.00</literal>
+<literal id="2" type="2" active="yes">место-nn(e3,x2):2:1.00</literal>
+<literal id="3" type="2" active="yes">вытаскивать-vb(e4,u1,x3,u2):3:1.00</literal>
+<literal id="4" type="2" active="yes">из-in(e5,e4,x4):4:1.00</literal>
+<literal id="5" type="2" active="yes">сапог-nn(e6,x4):5:1.00</literal>
+<literal id="6" type="2" active="yes">ножик-nn(e7,x3):6:1.00</literal>
+<literal id="7" type="2" active="yes">готовиться-vb(e8,u1,e10,u3):7:1.00</literal>
+<literal id="8" type="2" active="yes">thing(e9,x5):8:1.00</literal>
+<literal id="9" type="2" active="yes">воткнуть-vb(e10,u1,x5,u4):9:1.00</literal>
+<literal id="10" type="2" active="yes">в-in(e11,e10,x6):10:1.00</literal>
+<literal id="11" type="2" active="yes">спина-nn(e12,x6):11:1.00</literal>
+<literal id="12" type="2" active="yes">политический-adj(e13,x7):12:1.00</literal>
+<literal id="13" type="2" active="yes">благодетелям-nn(e14,x7):13:1.00</literal>
+<literal id="14" type="2" active="yes">instr(e15,e10,x7):14:1.00</literal>
+<literal id="15" type="3" active="yes">weapon(x3):15:0.90</literal>
+<unification l1="15" l2="21" unifier="" active="no" />
+<unification l1="15" l2="25" unifier="" active="no" />
+<unification l1="15" l2="30" unifier="" active="no" />
+<literal id="16" type="3" active="yes">use-weapon(e10,u1,x5,x6,_98):16:1.80</literal>
+<unification l1="16" l2="18" unifier="x5=x7" active="yes" />
+<unification l1="16" l2="19" unifier="" active="no" />
+<unification l1="16" l2="22" unifier="" active="yes" />
+<unification l1="16" l2="23" unifier="x5=x7" active="yes" />
+<unification l1="16" l2="26" unifier="x5=x7" active="no" />
+<unification l1="16" l2="27" unifier="x5=x7" active="no" />
+<unification l1="16" l2="28" unifier="x5=x7" active="no" />
+<literal id="17" type="3" active="no">conflict(x7,_99,_100,_101,_102):17:1.20</literal>
+<literal id="18" type="3" active="yes">use-weapon(e10,u1,x7,x6,_98):18:2.52</literal>
+<unification l1="18" l2="16" unifier="x5=x7" active="yes" />
+<unification l1="18" l2="19" unifier="x5=x7" active="no" />
+<unification l1="18" l2="22" unifier="x5=x7" active="yes" />
+<unification l1="18" l2="23" unifier="" active="yes" />
+<unification l1="18" l2="26" unifier="" active="no" />
+<unification l1="18" l2="27" unifier="" active="no" />
+<unification l1="18" l2="28" unifier="" active="no" />
+<literal id="19" type="3" active="no">use-weapon(e10,u1,x5,x6,_98):19:2.52</literal>
+<unification l1="19" l2="16" unifier="" active="no" />
+<unification l1="19" l2="18" unifier="x5=x7" active="no" />
+<unification l1="19" l2="22" unifier="" active="no" />
+<unification l1="19" l2="23" unifier="x5=x7" active="no" />
+<unification l1="19" l2="26" unifier="x5=x7" active="no" />
+<unification l1="19" l2="27" unifier="x5=x7" active="no" />
+<unification l1="19" l2="28" unifier="x5=x7" active="no" />
+<literal id="20" type="3" active="no">use(e10,u1,x5,x6,_98):20:1.08</literal>
+<unification l1="20" l2="24" unifier="x5=x7" active="no" />
+<unification l1="20" l2="29" unifier="" active="no" />
+<literal id="21" type="3" active="no">weapon(x5):21:1.08</literal>
+<unification l1="21" l2="15" unifier="" active="no" />
+<unification l1="21" l2="25" unifier="x5=x7" active="no" />
+<unification l1="21" l2="30" unifier="" active="no" />
+<literal id="22" type="3" active="yes">use-weapon(e10,u1,x5,x6,_98):22:2.52</literal>
+<unification l1="22" l2="16" unifier="" active="yes" />
+<unification l1="22" l2="18" unifier="x5=x7" active="yes" />
+<unification l1="22" l2="19" unifier="" active="no" />
+<unification l1="22" l2="23" unifier="x5=x7" active="yes" />
+<unification l1="22" l2="26" unifier="x5=x7" active="no" />
+<unification l1="22" l2="27" unifier="x5=x7" active="no" />
+<unification l1="22" l2="28" unifier="x5=x7" active="no" />
+<literal id="23" type="3" active="yes">use-weapon(e10,u1,x7,x6,_98):23:3.17</literal>
+<unification l1="23" l2="16" unifier="x5=x7" active="yes" />
+<unification l1="23" l2="18" unifier="" active="yes" />
+<unification l1="23" l2="19" unifier="x5=x7" active="no" />
+<unification l1="23" l2="22" unifier="x5=x7" active="yes" />
+<unification l1="23" l2="26" unifier="" active="no" />
+<unification l1="23" l2="27" unifier="" active="no" />
+<unification l1="23" l2="28" unifier="" active="no" />
+<literal id="24" type="3" active="no">use(e10,u1,x7,x6,_98):24:1.51</literal>
+<unification l1="24" l2="20" unifier="x5=x7" active="no" />
+<unification l1="24" l2="29" unifier="x5=x7" active="no" />
+<literal id="25" type="3" active="no">weapon(x7):25:1.51</literal>
+<unification l1="25" l2="15" unifier="" active="no" />
+<unification l1="25" l2="21" unifier="x5=x7" active="no" />
+<unification l1="25" l2="30" unifier="x5=x7" active="no" />
+<literal id="26" type="3" active="no">use-weapon(e10,u1,x7,x6,_98):26:2.52</literal>
+<unification l1="26" l2="16" unifier="x5=x7" active="no" />
+<unification l1="26" l2="18" unifier="" active="no" />
+<unification l1="26" l2="19" unifier="x5=x7" active="no" />
+<unification l1="26" l2="22" unifier="x5=x7" active="no" />
+<unification l1="26" l2="23" unifier="" active="no" />
+<unification l1="26" l2="27" unifier="" active="no" />
+<unification l1="26" l2="28" unifier="" active="no" />
+<literal id="27" type="3" active="no">use-weapon(e10,u1,x7,x6,_98):27:3.17</literal>
+<unification l1="27" l2="16" unifier="x5=x7" active="no" />
+<unification l1="27" l2="18" unifier="" active="no" />
+<unification l1="27" l2="19" unifier="x5=x7" active="no" />
+<unification l1="27" l2="22" unifier="x5=x7" active="no" />
+<unification l1="27" l2="23" unifier="" active="no" />
+<unification l1="27" l2="26" unifier="" active="no" />
+<unification l1="27" l2="28" unifier="" active="no" />
+<literal id="28" type="3" active="no">use-weapon(e10,u1,x7,x6,_98):28:3.75</literal>
+<unification l1="28" l2="16" unifier="x5=x7" active="no" />
+<unification l1="28" l2="18" unifier="" active="no" />
+<unification l1="28" l2="19" unifier="x5=x7" active="no" />
+<unification l1="28" l2="22" unifier="x5=x7" active="no" />
+<unification l1="28" l2="23" unifier="" active="no" />
+<unification l1="28" l2="26" unifier="" active="no" />
+<unification l1="28" l2="27" unifier="" active="no" />
+<literal id="29" type="3" active="no">use(e10,u1,x5,x6,_98):29:1.51</literal>
+<unification l1="29" l2="20" unifier="" active="no" />
+<unification l1="29" l2="24" unifier="x5=x7" active="no" />
+<literal id="30" type="3" active="no">weapon(x5):30:1.51</literal>
+<unification l1="30" l2="15" unifier="" active="no" />
+<unification l1="30" l2="21" unifier="" active="no" />
+<unification l1="30" l2="25" unifier="x5=x7" active="no" />
+<explanation name="use-weapon-instr" active="no" axiom="">27 => 22</explanation>
+<explanation name="use-weapon-instr" active="no" axiom="">28 => 23</explanation>
+<explanation name="politicheskij" active="no" axiom="">17 => 12</explanation>
+<explanation name="use-weapon-instr" active="yes" axiom="">18 => 14</explanation>
+<explanation name="use-weapon-instr" active="no" axiom="">26 => 14</explanation>
+<explanation name="use-weapon-instr" active="no" axiom="">27 => 14</explanation>
+<explanation name="use-weapon-instr" active="no" axiom="">28 => 14</explanation>
+<explanation name="use-weapon-instr" active="yes" axiom="">18 => 16</explanation>
+<explanation name="use-weapon-in1" active="no" axiom="">19 => 16</explanation>
+<explanation name="use-weapon-expand" active="no" axiom="">20 ^ 21 => 16</explanation>
+<explanation name="use-weapon-in1" active="yes" axiom="">22 => 16</explanation>
+<explanation name="use-weapon-instr" active="no" axiom="">26 => 16</explanation>
+<explanation name="nozhik" active="yes" axiom="">15 => 6</explanation>
+<explanation name="use-weapon-in1" active="yes" axiom="">23 => 18</explanation>
+<explanation name="use-weapon-expand" active="no" axiom="">24 ^ 25 => 18</explanation>
+<explanation name="use-weapon-expand" active="no" axiom="">29 ^ 30 => 19</explanation>
+<explanation name="votknut" active="yes" axiom="">16 => 9</explanation>
+<explanation name="votknut" active="yes" axiom="">16 => 10</explanation>
+<explanation name="use-weapon-in1" active="no" axiom="">19 => 10</explanation>
+<explanation name="use-weapon-in1" active="yes" axiom="">22 => 10</explanation>
+<explanation name="use-weapon-in1" active="yes" axiom="">23 => 10</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="21">
+<observed size="3" domain_size="0">
+ковать-vb(e1,u1,x1,u2) ^ новый-adj(e2,x1) ^ горбачев-nn(e3,x1)
+</observed>
+<hypothesis score="-2.904">
+ковать-vb(e1,u1,x1,u2) ^ новый-adj(e2,x1) ^ горбачев-nn(e3,x1) ^ increaseStruct(x1)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_новый-adj_1":-1.001 "!EXPLAINED_ковать-vb_0":1 "!HYPOTHESIZED_горбачев-nn_2":-1.001 "!HYPOTHESIZED_ковать-vb_0":-1.001 "!HYPOTHESIZED_increaseStruct_3":-0.901 
+</vector>
+<statistics>
+<time total="0.00314403" prepare="0.00286007" ilp="0.000283957" />
+<ilp solution="Optimal" variables="13" constraints="10" />
+<search-space literals="4" axiom="2" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">ковать-vb(e1,u1,x1,u2):0:1.00</literal>
+<literal id="1" type="2" active="yes">новый-adj(e2,x1):1:1.00</literal>
+<literal id="2" type="2" active="yes">горбачев-nn(e3,x1):2:1.00</literal>
+<literal id="3" type="3" active="yes">increaseStruct(x1):3:0.90</literal>
+<explanation name="kovat" active="yes" axiom="">3 => 0</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="22">
+<observed size="33" domain_size="0">
+бесконечный-adj(e1,x1) ^ разговор-nn(e2,x1) ^ об-in(e3,x1,x2) ^ особый-adj(e4,x2) ^ путь-nn(e5,x2) ^ person(e6,x3) ^ сбивать-vb(e7,x3,u1,u2) ^ народ-nn(e8,x4) ^ с-in(e9,e7,x5) ^ толк-nn(e10,x5) ^ в-in(e1,e3,x1) ^ результат-nn(e2,x1) ^ получать-vb(e3,u1,x2,u2) ^ политический-adj(e4,x2) ^ неразбериха-nn(e5,x2) ^ доказать-vb(e1,x1,e5,x2) ^ мир-nn(e2,x2) ^ коммунистический-adj(e3,x3) ^ выбор-nn(e4,x3) ^ являться-vb(e5,x3,u1,u2) ^ тупиковый-adj(e6,x3) ^ для-in(e7,e9,x4) ^ народ-nn(e8,x4) ^ губительный-adj(e9,x3) ^ person(e10,x1) ^ продолжать-vb(e11,x1,e1,u3) ^ вздыхать-vb(e12,x1,e15,u4) ^ по-in(e13,e12,x5) ^ ссср-nn(e14,x5) ^ культивировать-vb(e15,x1,u5,x6) ^ личность-nn(e16,x7) ^ товарищ-nn(e17,x6) ^ !=(e6,e10)
+</observed>
+<hypothesis score="-30.846">
+бесконечный-adj(e1,x1) ^ разговор-nn(e2,x1) ^ об-in(e3,x1,x2) ^ особый-adj(e4,x2) ^ путь-nn(e5,x2) ^ person(e6,x3) ^ сбивать-vb(e7,x3,u1,u2) ^ народ-nn(e8,x4) ^ с-in(e9,e7,x5) ^ толк-nn(e10,x5) ^ в-in(e1,e3,x1) ^ результат-nn(e2,x1) ^ получать-vb(e3,u1,x2,u2) ^ политический-adj(e4,x2) ^ неразбериха-nn(e5,x2) ^ доказать-vb(e1,x1,e5,x2) ^ мир-nn(e2,x2) ^ коммунистический-adj(e3,x3) ^ выбор-nn(e4,x3) ^ являться-vb(e5,x3,u1,u2) ^ тупиковый-adj(e6,x3) ^ для-in(e7,e9,x4) ^ народ-nn(e8,x4) ^ губительный-adj(e9,x3) ^ person(e10,x1) ^ продолжать-vb(e11,x1,e1,u3) ^ вздыхать-vb(e12,x1,e15,u4) ^ по-in(e13,e12,x5) ^ ссср-nn(e14,x5) ^ культивировать-vb(e15,x1,u5,x6) ^ личность-nn(e16,x7) ^ товарищ-nn(e17,x6) ^ !=(e6,e10) ^ conflict(x2,_103,_104,_105,_106) ^ politicalParty(x3) ^ conflict(_107,x3,_108,_109,_110) ^ =(_104,_108) ^ =(x2,_107) ^ =(_105,_109) ^ =(_106,_110) ^ =(_103,x3)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_person_5":-1.001 "!HYPOTHESIZED_получать-vb_12":-1.001 "!HYPOTHESIZED_ссср-nn_28":-1.001 "!HYPOTHESIZED_разговор-nn_1":-1.001 "!HYPOTHESIZED_в-in_10":-1.001 "!EXPLAINED_politicalParty_34":0.9 "!HYPOTHESIZED_культивировать-vb_29":-1.001 "!HYPOTHESIZED_коммунистический-adj_17":-1.001 "!HYPOTHESIZED_сбивать-vb_6":-1.001 "!HYPOTHESIZED_person_24":-1.001 "!EXPLAINED_conflict_33":1.2 "!HYPOTHESIZED_бесконечный-adj_0":-1.001 "!HYPOTHESIZED_народ-nn_22":-1.001 "!HYPOTHESIZED_продолжать-vb_25":-1.001 "!HYPOTHESIZED_народ-nn_7":-1.001 "!HYPOTHESIZED_личность-nn_30":-1.001 "!HYPOTHESIZED_политический-adj_13":-1.001 "!HYPOTHESIZED_толк-nn_9":-1.001 "!HYPOTHESIZED_доказать-vb_15":-1.001 "!EXPLAINED_политический-adj_13":1 "!HYPOTHESIZED_politicalParty_34":-0.901 "!HYPOTHESIZED_губительный-adj_23":-1.001 "!HYPOTHESIZED_неразбериха-nn_14":-1.001 "!HYPOTHESIZED_по-in_27":-1.001 "!HYPOTHESIZED_!=_32":-1.001 "!HYPOTHESIZED_conflict_33":-1.201 "!EXPLAINED_народ-nn_22":1 "!HYPOTHESIZED_являться-vb_19":-1.001 "!HYPOTHESIZED_conflict_35":-0.811 "!HYPOTHESIZED_вздыхать-vb_26":-1.001 "!HYPOTHESIZED_путь-nn_4":-1.001 "!HYPOTHESIZED_об-in_2":-1.001 "!HYPOTHESIZED_выбор-nn_18":-1.001 "!HYPOTHESIZED_товарищ-nn_31":-1.001 "!HYPOTHESIZED_для-in_21":-1.001 "!HYPOTHESIZED_тупиковый-adj_20":-1.001 "!EXPLAINED_коммунистический-adj_17":1 "!HYPOTHESIZED_с-in_8":-1.001 "!HYPOTHESIZED_особый-adj_3":-1.001 "!HYPOTHESIZED_мир-nn_16":-1.001 "!HYPOTHESIZED_результат-nn_11":-1.001 
+</vector>
+<statistics>
+<time total="0.0166941" prepare="0.0158212" ilp="0.00087285" />
+<ilp solution="Optimal" variables="135" constraints="115" />
+<search-space literals="39" axiom="9" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">бесконечный-adj(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">разговор-nn(e2,x1):1:1.00</literal>
+<literal id="2" type="2" active="yes">об-in(e3,x1,x2):2:1.00</literal>
+<literal id="3" type="2" active="yes">особый-adj(e4,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">путь-nn(e5,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">person(e6,x3):5:1.00</literal>
+<unification l1="5" l2="24" unifier="" active="no" />
+<literal id="6" type="2" active="yes">сбивать-vb(e7,x3,u1,u2):6:1.00</literal>
+<literal id="7" type="2" active="yes">народ-nn(e8,x4):7:1.00</literal>
+<unification l1="7" l2="22" unifier="" active="yes" />
+<literal id="8" type="2" active="yes">с-in(e9,e7,x5):8:1.00</literal>
+<literal id="9" type="2" active="yes">толк-nn(e10,x5):9:1.00</literal>
+<literal id="10" type="2" active="yes">в-in(e1,e3,x1):10:1.00</literal>
+<literal id="11" type="2" active="yes">результат-nn(e2,x1):11:1.00</literal>
+<literal id="12" type="2" active="yes">получать-vb(e3,u1,x2,u2):12:1.00</literal>
+<literal id="13" type="2" active="yes">политический-adj(e4,x2):13:1.00</literal>
+<literal id="14" type="2" active="yes">неразбериха-nn(e5,x2):14:1.00</literal>
+<literal id="15" type="2" active="yes">доказать-vb(e1,x1,e5,x2):15:1.00</literal>
+<literal id="16" type="2" active="yes">мир-nn(e2,x2):16:1.00</literal>
+<literal id="17" type="2" active="yes">коммунистический-adj(e3,x3):17:1.00</literal>
+<literal id="18" type="2" active="yes">выбор-nn(e4,x3):18:1.00</literal>
+<literal id="19" type="2" active="yes">являться-vb(e5,x3,u1,u2):19:1.00</literal>
+<literal id="20" type="2" active="yes">тупиковый-adj(e6,x3):20:1.00</literal>
+<literal id="21" type="2" active="yes">для-in(e7,e9,x4):21:1.00</literal>
+<literal id="22" type="2" active="yes">народ-nn(e8,x4):22:1.00</literal>
+<unification l1="22" l2="7" unifier="" active="yes" />
+<literal id="23" type="2" active="yes">губительный-adj(e9,x3):23:1.00</literal>
+<literal id="24" type="2" active="yes">person(e10,x1):24:1.00</literal>
+<unification l1="24" l2="5" unifier="" active="no" />
+<literal id="25" type="2" active="yes">продолжать-vb(e11,x1,e1,u3):25:1.00</literal>
+<literal id="26" type="2" active="yes">вздыхать-vb(e12,x1,e15,u4):26:1.00</literal>
+<literal id="27" type="2" active="yes">по-in(e13,e12,x5):27:1.00</literal>
+<literal id="28" type="2" active="yes">ссср-nn(e14,x5):28:1.00</literal>
+<literal id="29" type="2" active="yes">культивировать-vb(e15,x1,u5,x6):29:1.00</literal>
+<literal id="30" type="2" active="yes">личность-nn(e16,x7):30:1.00</literal>
+<literal id="31" type="2" active="yes">товарищ-nn(e17,x6):31:1.00</literal>
+<literal id="32" type="2" active="yes">!=(e6,e10):32:1.00</literal>
+<literal id="33" type="3" active="yes">conflict(x2,_103,_104,_105,_106):33:1.20</literal>
+<unification l1="33" l2="35" unifier="x2=_107, x3=_103, _104=_108, _105=_109, _106=_110" active="yes" />
+<literal id="34" type="3" active="yes">politicalParty(x3):34:0.90</literal>
+<literal id="35" type="3" active="yes">conflict(_107,x3,_108,_109,_110):35:0.81</literal>
+<unification l1="35" l2="33" unifier="x2=_107, x3=_103, _104=_108, _105=_109, _106=_110" active="yes" />
+<literal id="36" type="3" active="no">dFCompEnt(x3):36:0.36</literal>
+<literal id="37" type="3" active="no">functionality(_111,x3,_112):37:0.90</literal>
+<literal id="38" type="3" active="no">leadP(_111,x3,_113):38:0.90</literal>
+<explanation name="politicalParty1" active="yes" axiom="">35 => 34</explanation>
+<explanation name="politicalParty2" active="no" axiom="">36 ^ 37 ^ 38 => 34</explanation>
+<explanation name="politicheskij" active="yes" axiom="">33 => 13</explanation>
+<explanation name="kommunisticheskij" active="yes" axiom="">34 => 17</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="23">
+<observed size="12" domain_size="0">
+еще-rb(e1,e2) ^ понять-vb(e2,u1,u2,u3) ^ person(e3,x1) ^ находиться-vb(e4,x1,u4,u5) ^ в-in(e5,x1,x2) ^ краевой-adj(e6,x2) ^ точка-nn(e7,x2) ^ мировой-adj(e8,x3) ^ история-nn(e9,x3) ^ imp(e10,e2,e4) ^ not(e11,e2) ^ of-in(e12,x2,x3)
+</observed>
+<hypothesis score="-12.012">
+еще-rb(e1,e2) ^ понять-vb(e2,u1,u2,u3) ^ person(e3,x1) ^ находиться-vb(e4,x1,u4,u5) ^ в-in(e5,x1,x2) ^ краевой-adj(e6,x2) ^ точка-nn(e7,x2) ^ мировой-adj(e8,x3) ^ история-nn(e9,x3) ^ imp(e10,e2,e4) ^ not(e11,e2) ^ of-in(e12,x2,x3)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_точка-nn_6":-1.001 "!HYPOTHESIZED_person_2":-1.001 "!HYPOTHESIZED_мировой-adj_7":-1.001 "!HYPOTHESIZED_краевой-adj_5":-1.001 "!HYPOTHESIZED_в-in_4":-1.001 "!HYPOTHESIZED_еще-rb_0":-1.001 "!HYPOTHESIZED_понять-vb_1":-1.001 "!HYPOTHESIZED_not_10":-1.001 "!HYPOTHESIZED_история-nn_8":-1.001 "!HYPOTHESIZED_находиться-vb_3":-1.001 "!HYPOTHESIZED_imp_9":-1.001 "!HYPOTHESIZED_of-in_11":-1.001 
+</vector>
+<statistics>
+<time total="0.00503111" prepare="0.00479293" ilp="0.00023818" />
+<ilp solution="Optimal" variables="37" constraints="24" />
+<search-space literals="12" axiom="4" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">еще-rb(e1,e2):0:1.00</literal>
+<literal id="1" type="2" active="yes">понять-vb(e2,u1,u2,u3):1:1.00</literal>
+<literal id="2" type="2" active="yes">person(e3,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">находиться-vb(e4,x1,u4,u5):3:1.00</literal>
+<literal id="4" type="2" active="yes">в-in(e5,x1,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">краевой-adj(e6,x2):5:1.00</literal>
+<literal id="6" type="2" active="yes">точка-nn(e7,x2):6:1.00</literal>
+<literal id="7" type="2" active="yes">мировой-adj(e8,x3):7:1.00</literal>
+<literal id="8" type="2" active="yes">история-nn(e9,x3):8:1.00</literal>
+<literal id="9" type="2" active="yes">imp(e10,e2,e4):9:1.00</literal>
+<literal id="10" type="2" active="yes">not(e11,e2):10:1.00</literal>
+<literal id="11" type="2" active="yes">of-in(e12,x2,x3):11:1.00</literal>
+</proofgraph>
+</result-inference>
+<result-inference target="24">
+<observed size="38" domain_size="0">
+смысл-nn(e1,x1) ^ происходить-vb(e2,u1,u2,u3) ^ начинать-vb(e3,u4,u5,u6) ^ с-in(e4,e3,x2) ^ декабрьский-adj(e5,x2) ^ выборы-nn(e6,x2) ^ в-in(e1,e3,x1) ^ россия-nn(e2,x1) ^ вступить-vb(e3,x2,u1,u2) ^ в-in(e4,e3,x3) ^ завершать-vb(e5,u3,u4,u5) ^ фаза-nn(e6,x3) ^ операция-nn(e7,x2) ^ по-in(e8,x2,x4) ^ перехват-nn(e9,x4) ^ ядерный-adj(e10,x5) ^ оружие-nn(e11,x5) ^ передача-nn(e12,x6) ^ под-in(e13,x6,x7) ^ контроль-nn(e14,x7) ^ сша-nn(e15,x8) ^ в-in(e16,x9,x10) ^ уже-rb(e17,e18) ^ очевидно-rb(e18,e12) ^ участвовать-vb(e19,x11,u6,u7) ^ значительный-adj(e20,x11) ^ часть-nn(e21,x11) ^ кремль-nn(e22,x12) ^ системный-adj(e23,x13) ^ несистемный-adj(e24,x14) ^ оппозиция-nn(e25,x15) ^ of-in(e26,x4,x5) ^ of-in(e27,x7,x8) ^ of-in(e28,x11,x12) ^ thing(e1,x1) ^ измена-nn(e2,x1) ^ !=(e1,e4,e16) ^ !=(e26,e27,e28)
+</observed>
+<hypothesis score="-35.37">
+смысл-nn(e1,x1) ^ происходить-vb(e2,u1,u2,u3) ^ начинать-vb(e3,u4,u5,u6) ^ с-in(e4,e3,x2) ^ декабрьский-adj(e5,x2) ^ выборы-nn(e6,x2) ^ в-in(e1,e3,x1) ^ россия-nn(e2,x1) ^ вступить-vb(e3,x2,u1,u2) ^ в-in(e4,e3,x3) ^ завершать-vb(e5,u3,u4,u5) ^ фаза-nn(e6,x3) ^ операция-nn(e7,x2) ^ по-in(e8,x2,x4) ^ перехват-nn(e9,x4) ^ ядерный-adj(e10,x5) ^ оружие-nn(e11,x5) ^ передача-nn(e12,x6) ^ под-in(e13,x6,x7) ^ контроль-nn(e14,x7) ^ сша-nn(e15,x8) ^ в-in(e16,x9,x10) ^ уже-rb(e17,e18) ^ очевидно-rb(e18,e12) ^ участвовать-vb(e19,x11,u6,u7) ^ значительный-adj(e20,x11) ^ часть-nn(e21,x11) ^ кремль-nn(e22,x12) ^ системный-adj(e23,x13) ^ несистемный-adj(e24,x14) ^ оппозиция-nn(e25,x15) ^ of-in(e26,x4,x5) ^ of-in(e27,x7,x8) ^ of-in(e28,x11,x12) ^ thing(e1,x1) ^ измена-nn(e2,x1) ^ !=(e1,e4,e16) ^ !=(e26,e27,e28) ^ conflict(x2,_114,_115,_116,_117) ^ nation(x1) ^ weapon(x5) ^ nation(x8) ^ part(x11,_118) ^ conflict(_119,x15,_120,_121,_122) ^ lead(_123,x15,_124) ^ dFCompEnt(x1) ^ functionality(_125,x1) ^ thrive(_125,_126) ^ citizens(_126,x1) ^ part(x11,x12) ^ =(x15,_114) ^ =(x1,x8) ^ =(_120,_115) ^ =(_121,_116) ^ =(_119,x2) ^ =(_122,_117)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_происходить-vb_1":-1.001 "!HYPOTHESIZED_значительный-adj_25":-1.001 "!HYPOTHESIZED_начинать-vb_2":-1.001 "!HYPOTHESIZED_ядерный-adj_15":-1.001 "!EXPLAINED_выборы-nn_5":1 "!HYPOTHESIZED_в-in_9":-1.001 "!HYPOTHESIZED_в-in_6":-1.001 "!HYPOTHESIZED_фаза-nn_11":-1.001 "!HYPOTHESIZED_завершать-vb_10":-1.001 "!EXPLAINED_part_42":0.9 "!HYPOTHESIZED_по-in_13":-1.001 "!HYPOTHESIZED_of-in_31":-1.001 "!HYPOTHESIZED_nation_39":-0.901 "!HYPOTHESIZED_thing_34":-1.001 "!EXPLAINED_россия-nn_7":1 "!HYPOTHESIZED_россия-nn_7":-1.001 "!HYPOTHESIZED_functionality_46":-0.271 "!HYPOTHESIZED_измена-nn_35":-1.001 "!HYPOTHESIZED_в-in_21":-1.001 "!HYPOTHESIZED_часть-nn_26":-1.001 "!HYPOTHESIZED_под-in_18":-1.001 "!EXPLAINED_conflict_38":0.9 "!HYPOTHESIZED_контроль-nn_19":-1.001 "!HYPOTHESIZED_conflict_43":-0.601 "!HYPOTHESIZED_weapon_40":-0.901 "!EXPLAINED_оружие-nn_16":1 "!HYPOTHESIZED_перехват-nn_14":-1.001 "!HYPOTHESIZED_сша-nn_20":-1.001 "!HYPOTHESIZED_thrive_47":-0.091 "!HYPOTHESIZED_вступить-vb_8":-1.001 "!HYPOTHESIZED_of-in_33":-1.001 "!EXPLAINED_of-in_33":1 "!EXPLAINED_сша-nn_20":1 "!EXPLAINED_nation_41":0.9 "!HYPOTHESIZED_lead_44":-0.301 "!HYPOTHESIZED_оппозиция-nn_30":-1.001 "!HYPOTHESIZED_участвовать-vb_24":-1.001 "!HYPOTHESIZED_citizens_48":-0.091 "!HYPOTHESIZED_!=_36":-1.001 "!HYPOTHESIZED_операция-nn_12":-1.001 "!HYPOTHESIZED_с-in_3":-1.001 "!HYPOTHESIZED_of-in_32":-1.001 "!HYPOTHESIZED_кремль-nn_27":-1.001 "!HYPOTHESIZED_conflict_38":-0.901 "!EXPLAINED_nation_39":0.9 "!HYPOTHESIZED_очевидно-rb_23":-1.001 "!HYPOTHESIZED_несистемный-adj_29":-1.001 "!HYPOTHESIZED_передача-nn_17":-1.001 "!HYPOTHESIZED_!=_37":-1.001 "!HYPOTHESIZED_part_53":-1.711 "!HYPOTHESIZED_уже-rb_22":-1.001 "!HYPOTHESIZED_оружие-nn_16":-1.001 "!EXPLAINED_часть-nn_26":1 "!HYPOTHESIZED_декабрьский-adj_4":-1.001 "!HYPOTHESIZED_nation_41":-0.901 "!HYPOTHESIZED_выборы-nn_5":-1.001 "!HYPOTHESIZED_системный-adj_28":-1.001 "!HYPOTHESIZED_смысл-nn_0":-1.001 "!EXPLAINED_оппозиция-nn_30":1 "!HYPOTHESIZED_dFCompEnt_45":-0.361 "!HYPOTHESIZED_part_42":-0.901 
+</vector>
+<statistics>
+<time total="0.0285399" prepare="0.0257399" ilp="0.00279999" />
+<ilp solution="Optimal" variables="225" constraints="310" />
+<search-space literals="54" axiom="16" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">смысл-nn(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">происходить-vb(e2,u1,u2,u3):1:1.00</literal>
+<literal id="2" type="2" active="yes">начинать-vb(e3,u4,u5,u6):2:1.00</literal>
+<literal id="3" type="2" active="yes">с-in(e4,e3,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">декабрьский-adj(e5,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">выборы-nn(e6,x2):5:1.00</literal>
+<literal id="6" type="2" active="yes">в-in(e1,e3,x1):6:1.00</literal>
+<unification l1="6" l2="9" unifier="" active="no" />
+<unification l1="6" l2="21" unifier="" active="no" />
+<literal id="7" type="2" active="yes">россия-nn(e2,x1):7:1.00</literal>
+<literal id="8" type="2" active="yes">вступить-vb(e3,x2,u1,u2):8:1.00</literal>
+<literal id="9" type="2" active="yes">в-in(e4,e3,x3):9:1.00</literal>
+<unification l1="9" l2="6" unifier="" active="no" />
+<unification l1="9" l2="21" unifier="" active="no" />
+<literal id="10" type="2" active="yes">завершать-vb(e5,u3,u4,u5):10:1.00</literal>
+<literal id="11" type="2" active="yes">фаза-nn(e6,x3):11:1.00</literal>
+<literal id="12" type="2" active="yes">операция-nn(e7,x2):12:1.00</literal>
+<literal id="13" type="2" active="yes">по-in(e8,x2,x4):13:1.00</literal>
+<literal id="14" type="2" active="yes">перехват-nn(e9,x4):14:1.00</literal>
+<literal id="15" type="2" active="yes">ядерный-adj(e10,x5):15:1.00</literal>
+<literal id="16" type="2" active="yes">оружие-nn(e11,x5):16:1.00</literal>
+<literal id="17" type="2" active="yes">передача-nn(e12,x6):17:1.00</literal>
+<literal id="18" type="2" active="yes">под-in(e13,x6,x7):18:1.00</literal>
+<literal id="19" type="2" active="yes">контроль-nn(e14,x7):19:1.00</literal>
+<literal id="20" type="2" active="yes">сша-nn(e15,x8):20:1.00</literal>
+<literal id="21" type="2" active="yes">в-in(e16,x9,x10):21:1.00</literal>
+<unification l1="21" l2="6" unifier="" active="no" />
+<unification l1="21" l2="9" unifier="" active="no" />
+<literal id="22" type="2" active="yes">уже-rb(e17,e18):22:1.00</literal>
+<literal id="23" type="2" active="yes">очевидно-rb(e18,e12):23:1.00</literal>
+<literal id="24" type="2" active="yes">участвовать-vb(e19,x11,u6,u7):24:1.00</literal>
+<literal id="25" type="2" active="yes">значительный-adj(e20,x11):25:1.00</literal>
+<literal id="26" type="2" active="yes">часть-nn(e21,x11):26:1.00</literal>
+<literal id="27" type="2" active="yes">кремль-nn(e22,x12):27:1.00</literal>
+<literal id="28" type="2" active="yes">системный-adj(e23,x13):28:1.00</literal>
+<literal id="29" type="2" active="yes">несистемный-adj(e24,x14):29:1.00</literal>
+<literal id="30" type="2" active="yes">оппозиция-nn(e25,x15):30:1.00</literal>
+<literal id="31" type="2" active="yes">of-in(e26,x4,x5):31:1.00</literal>
+<unification l1="31" l2="32" unifier="" active="no" />
+<unification l1="31" l2="33" unifier="" active="no" />
+<literal id="32" type="2" active="yes">of-in(e27,x7,x8):32:1.00</literal>
+<unification l1="32" l2="31" unifier="" active="no" />
+<unification l1="32" l2="33" unifier="" active="no" />
+<literal id="33" type="2" active="yes">of-in(e28,x11,x12):33:1.00</literal>
+<unification l1="33" l2="31" unifier="" active="no" />
+<unification l1="33" l2="32" unifier="" active="no" />
+<literal id="34" type="2" active="yes">thing(e1,x1):34:1.00</literal>
+<literal id="35" type="2" active="yes">измена-nn(e2,x1):35:1.00</literal>
+<literal id="36" type="2" active="yes">!=(e1,e4,e16):36:1.00</literal>
+<literal id="37" type="2" active="yes">!=(e26,e27,e28):37:1.00</literal>
+<literal id="38" type="3" active="yes">conflict(x2,_114,_115,_116,_117):38:0.90</literal>
+<unification l1="38" l2="43" unifier="x2=_119, x15=_114, _115=_120, _116=_121, _117=_122" active="yes" />
+<literal id="39" type="3" active="yes">nation(x1):39:0.90</literal>
+<unification l1="39" l2="41" unifier="x1=x8" active="yes" />
+<literal id="40" type="3" active="yes">weapon(x5):40:0.90</literal>
+<literal id="41" type="3" active="yes">nation(x8):41:0.90</literal>
+<unification l1="41" l2="39" unifier="x1=x8" active="yes" />
+<literal id="42" type="3" active="yes">part(x11,_118):42:0.90</literal>
+<unification l1="42" l2="53" unifier="" active="no" />
+<literal id="43" type="3" active="yes">conflict(_119,x15,_120,_121,_122):43:0.60</literal>
+<unification l1="43" l2="38" unifier="x2=_119, x15=_114, _115=_120, _116=_121, _117=_122" active="yes" />
+<literal id="44" type="3" active="yes">lead(_123,x15,_124):44:0.30</literal>
+<literal id="45" type="3" active="yes">dFCompEnt(x1):45:0.36</literal>
+<unification l1="45" l2="49" unifier="x1=x8" active="no" />
+<literal id="46" type="3" active="yes">functionality(_125,x1):46:0.27</literal>
+<unification l1="46" l2="50" unifier="x1=x8" active="no" />
+<literal id="47" type="3" active="yes">thrive(_125,_126):47:0.09</literal>
+<unification l1="47" l2="51" unifier="" active="no" />
+<literal id="48" type="3" active="yes">citizens(_126,x1):48:0.09</literal>
+<unification l1="48" l2="52" unifier="x1=x8" active="no" />
+<literal id="49" type="3" active="no">dFCompEnt(x8):49:0.36</literal>
+<unification l1="49" l2="45" unifier="x1=x8" active="no" />
+<literal id="50" type="3" active="no">functionality(_127,x8):50:0.27</literal>
+<unification l1="50" l2="46" unifier="x1=x8" active="no" />
+<literal id="51" type="3" active="no">thrive(_127,_128):51:0.09</literal>
+<unification l1="51" l2="47" unifier="" active="no" />
+<literal id="52" type="3" active="no">citizens(_128,x8):52:0.09</literal>
+<unification l1="52" l2="48" unifier="x1=x8" active="no" />
+<literal id="53" type="3" active="yes">part(x11,x12):53:1.71</literal>
+<unification l1="53" l2="42" unifier="" active="no" />
+<explanation name="part-of" active="yes" axiom="">53 => 33</explanation>
+<explanation name="chast" active="yes" axiom="">42 => 26</explanation>
+<explanation name="oruzhie" active="yes" axiom="">40 => 16</explanation>
+<explanation name="vybory" active="yes" axiom="">38 => 5</explanation>
+<explanation name="nation1" active="yes" axiom="">45 ^ 46 ^ 47 ^ 48 => 39</explanation>
+<explanation name="rossija" active="yes" axiom="">39 => 7</explanation>
+<explanation name="nation1" active="no" axiom="">49 ^ 50 ^ 51 ^ 52 => 41</explanation>
+<explanation name="oppozicija" active="yes" axiom="">43 ^ 44 => 30</explanation>
+<explanation name="part-of" active="yes" axiom="">53 => 42</explanation>
+<explanation name="ssha" active="yes" axiom="">41 => 20</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="25">
+<observed size="10" domain_size="0">
+после-in(e1,x1,x2) ^ россия-nn(e2,x3) ^ государство-nn(e3,x4) ^ мир-nn(e4,x5) ^ переставать-vb(e5,u1,e6,u2) ^ существовать-vb(e6,u1,u3,u4) ^ в-in(e7,e6,x6) ^ нынешний-adj(e8,x6) ^ формат-nn(e9,x6) ^ of-in(e10,x4,x5)
+</observed>
+<hypothesis score="-8.829">
+после-in(e1,x1,x2) ^ россия-nn(e2,x3) ^ государство-nn(e3,x4) ^ мир-nn(e4,x5) ^ переставать-vb(e5,u1,e6,u2) ^ существовать-vb(e6,u1,u3,u4) ^ в-in(e7,e6,x6) ^ нынешний-adj(e8,x6) ^ формат-nn(e9,x6) ^ of-in(e10,x4,x5) ^ nation(x3) ^ dFCompEnt(x4) ^ functionality(_129,x4) ^ thrive(_129,_130) ^ citizens(_130,x4) ^ dFCompEnt(x3) ^ functionality(_131,x3) ^ thrive(_131,_132) ^ citizens(_132,x3) ^ =(_130,_132) ^ =(x4,x3) ^ =(_129,_131)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_существовать-vb_5":-1.001 "!EXPLAINED_россия-nn_1":1 "!EXPLAINED_thrive_13":0.1 "!HYPOTHESIZED_переставать-vb_4":-1.001 "!EXPLAINED_государство-nn_2":1 "!HYPOTHESIZED_в-in_6":-1.001 "!HYPOTHESIZED_нынешний-adj_7":-1.001 "!HYPOTHESIZED_россия-nn_1":-1.001 "!HYPOTHESIZED_of-in_9":-1.001 "!HYPOTHESIZED_functionality_16":-0.271 "!HYPOTHESIZED_citizens_14":-0.101 "!EXPLAINED_functionality_12":0.3 "!HYPOTHESIZED_государство-nn_2":-1.001 "!HYPOTHESIZED_functionality_12":-0.301 "!HYPOTHESIZED_nation_10":-0.901 "!HYPOTHESIZED_citizens_18":-0.091 "!HYPOTHESIZED_мир-nn_3":-1.001 "!HYPOTHESIZED_dFCompEnt_11":-0.401 "!HYPOTHESIZED_thrive_17":-0.091 "!HYPOTHESIZED_dFCompEnt_15":-0.361 "!EXPLAINED_citizens_14":0.1 "!EXPLAINED_dFCompEnt_11":0.4 "!HYPOTHESIZED_после-in_0":-1.001 "!HYPOTHESIZED_thrive_13":-0.101 "!HYPOTHESIZED_формат-nn_8":-1.001 "!EXPLAINED_nation_10":0.9 
+</vector>
+<statistics>
+<time total="0.00728679" prepare="0.00625587" ilp="0.00103092" />
+<ilp solution="Optimal" variables="74" constraints="135" />
+<search-space literals="19" axiom="3" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">после-in(e1,x1,x2):0:1.00</literal>
+<literal id="1" type="2" active="yes">россия-nn(e2,x3):1:1.00</literal>
+<literal id="2" type="2" active="yes">государство-nn(e3,x4):2:1.00</literal>
+<literal id="3" type="2" active="yes">мир-nn(e4,x5):3:1.00</literal>
+<literal id="4" type="2" active="yes">переставать-vb(e5,u1,e6,u2):4:1.00</literal>
+<literal id="5" type="2" active="yes">существовать-vb(e6,u1,u3,u4):5:1.00</literal>
+<literal id="6" type="2" active="yes">в-in(e7,e6,x6):6:1.00</literal>
+<literal id="7" type="2" active="yes">нынешний-adj(e8,x6):7:1.00</literal>
+<literal id="8" type="2" active="yes">формат-nn(e9,x6):8:1.00</literal>
+<literal id="9" type="2" active="yes">of-in(e10,x4,x5):9:1.00</literal>
+<literal id="10" type="3" active="yes">nation(x3):10:0.90</literal>
+<literal id="11" type="3" active="yes">dFCompEnt(x4):11:0.40</literal>
+<unification l1="11" l2="15" unifier="x3=x4" active="yes" />
+<literal id="12" type="3" active="yes">functionality(_129,x4):12:0.30</literal>
+<unification l1="12" l2="16" unifier="_129=_131, x3=x4" active="yes" />
+<literal id="13" type="3" active="yes">thrive(_129,_130):13:0.10</literal>
+<unification l1="13" l2="17" unifier="_129=_131, _130=_132" active="yes" />
+<literal id="14" type="3" active="yes">citizens(_130,x4):14:0.10</literal>
+<unification l1="14" l2="18" unifier="_130=_132, x3=x4" active="yes" />
+<literal id="15" type="3" active="yes">dFCompEnt(x3):15:0.36</literal>
+<unification l1="15" l2="11" unifier="x3=x4" active="yes" />
+<literal id="16" type="3" active="yes">functionality(_131,x3):16:0.27</literal>
+<unification l1="16" l2="12" unifier="_129=_131, x3=x4" active="yes" />
+<literal id="17" type="3" active="yes">thrive(_131,_132):17:0.09</literal>
+<unification l1="17" l2="13" unifier="_129=_131, _130=_132" active="yes" />
+<literal id="18" type="3" active="yes">citizens(_132,x3):18:0.09</literal>
+<unification l1="18" l2="14" unifier="_130=_132, x3=x4" active="yes" />
+<explanation name="rossija" active="yes" axiom="">10 => 1</explanation>
+<explanation name="gosudarstvo" active="yes" axiom="">11 ^ 12 ^ 13 ^ 14 => 2</explanation>
+<explanation name="nation1" active="yes" axiom="">15 ^ 16 ^ 17 ^ 18 => 10</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="26">
+<observed size="22" domain_size="0">
+вариант-nn(e1,x1) ^ в-in(e2,e5,x2) ^ настоящий-adj(e3,x2) ^ момент-nn(e4,x2) ^ просматриваться-vb(e5,x1,u1,u2) ^ сила-nn(e6,x3) ^ противодействие-nn(e7,x4) ^ дезорганизовать-vb(e8,x3,u3,u4) ^ слабый-adj(e9,x5) ^ not(e10,e5) ^ of-in(e11,x3,x4) ^ добавить-vb(e1,u1,e4,u2) ^ в-in(e2,e1,x1) ^ скобка-nn(e3,x1) ^ надеяться-vb(e4,u1,u3,u4) ^ на-in(e5,e4,x2) ^ кургинян-nn(e6,x2) ^ движение-nn(e7,x3) ^ в-in(e8,x4,x3) ^ зачаточный-adj(e9,x5) ^ состояние-nn(e10,x5) ^ !=(e2,e8)
+</observed>
+<hypothesis score="-20.834">
+вариант-nn(e1,x1) ^ в-in(e2,e5,x2) ^ настоящий-adj(e3,x2) ^ момент-nn(e4,x2) ^ просматриваться-vb(e5,x1,u1,u2) ^ сила-nn(e6,x3) ^ противодействие-nn(e7,x4) ^ дезорганизовать-vb(e8,x3,u3,u4) ^ слабый-adj(e9,x5) ^ not(e10,e5) ^ of-in(e11,x3,x4) ^ добавить-vb(e1,u1,e4,u2) ^ в-in(e2,e1,x1) ^ скобка-nn(e3,x1) ^ надеяться-vb(e4,u1,u3,u4) ^ на-in(e5,e4,x2) ^ кургинян-nn(e6,x2) ^ движение-nn(e7,x3) ^ в-in(e8,x4,x3) ^ зачаточный-adj(e9,x5) ^ состояние-nn(e10,x5) ^ !=(e2,e8) ^ politicalParty(x3) ^ conflict(_133,x3,_134,_135,_136) ^ =(x1,x2) ^ =(e5,e1)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_на-in_15":-1.001 "!HYPOTHESIZED_в-in_1":-1.001 "!HYPOTHESIZED_сила-nn_5":-1.001 "!HYPOTHESIZED_вариант-nn_0":-1.001 "!HYPOTHESIZED_conflict_23":-0.811 "!HYPOTHESIZED_надеяться-vb_14":-1.001 "!HYPOTHESIZED_of-in_10":-1.001 "!EXPLAINED_politicalParty_22":0.9 "!HYPOTHESIZED_зачаточный-adj_19":-1.001 "!HYPOTHESIZED_дезорганизовать-vb_7":-1.001 "!HYPOTHESIZED_в-in_12":-1.001 "!HYPOTHESIZED_противодействие-nn_6":-1.001 "!HYPOTHESIZED_движение-nn_17":-1.001 "!HYPOTHESIZED_скобка-nn_13":-1.001 "!HYPOTHESIZED_момент-nn_3":-1.001 "!HYPOTHESIZED_настоящий-adj_2":-1.001 "!HYPOTHESIZED_просматриваться-vb_4":-1.001 "!HYPOTHESIZED_!=_21":-1.001 "!HYPOTHESIZED_состояние-nn_20":-1.001 "!HYPOTHESIZED_кургинян-nn_16":-1.001 "!EXPLAINED_в-in_12":1 "!HYPOTHESIZED_добавить-vb_11":-1.001 "!HYPOTHESIZED_politicalParty_22":-0.901 "!HYPOTHESIZED_слабый-adj_8":-1.001 "!EXPLAINED_движение-nn_17":1 "!HYPOTHESIZED_not_9":-1.001 "!HYPOTHESIZED_в-in_18":-1.001 
+</vector>
+<statistics>
+<time total="0.0115619" prepare="0.010834" ilp="0.000727892" />
+<ilp solution="Optimal" variables="97" constraints="91" />
+<search-space literals="27" axiom="12" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">вариант-nn(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">в-in(e2,e5,x2):1:1.00</literal>
+<unification l1="1" l2="12" unifier="e1=e5, x1=x2" active="yes" />
+<unification l1="1" l2="18" unifier="" active="no" />
+<literal id="2" type="2" active="yes">настоящий-adj(e3,x2):2:1.00</literal>
+<literal id="3" type="2" active="yes">момент-nn(e4,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">просматриваться-vb(e5,x1,u1,u2):4:1.00</literal>
+<literal id="5" type="2" active="yes">сила-nn(e6,x3):5:1.00</literal>
+<literal id="6" type="2" active="yes">противодействие-nn(e7,x4):6:1.00</literal>
+<literal id="7" type="2" active="yes">дезорганизовать-vb(e8,x3,u3,u4):7:1.00</literal>
+<literal id="8" type="2" active="yes">слабый-adj(e9,x5):8:1.00</literal>
+<literal id="9" type="2" active="yes">not(e10,e5):9:1.00</literal>
+<literal id="10" type="2" active="yes">of-in(e11,x3,x4):10:1.00</literal>
+<literal id="11" type="2" active="yes">добавить-vb(e1,u1,e4,u2):11:1.00</literal>
+<literal id="12" type="2" active="yes">в-in(e2,e1,x1):12:1.00</literal>
+<unification l1="12" l2="1" unifier="e1=e5, x1=x2" active="yes" />
+<unification l1="12" l2="18" unifier="" active="no" />
+<literal id="13" type="2" active="yes">скобка-nn(e3,x1):13:1.00</literal>
+<literal id="14" type="2" active="yes">надеяться-vb(e4,u1,u3,u4):14:1.00</literal>
+<literal id="15" type="2" active="yes">на-in(e5,e4,x2):15:1.00</literal>
+<literal id="16" type="2" active="yes">кургинян-nn(e6,x2):16:1.00</literal>
+<literal id="17" type="2" active="yes">движение-nn(e7,x3):17:1.00</literal>
+<literal id="18" type="2" active="yes">в-in(e8,x4,x3):18:1.00</literal>
+<unification l1="18" l2="1" unifier="" active="no" />
+<unification l1="18" l2="12" unifier="" active="no" />
+<literal id="19" type="2" active="yes">зачаточный-adj(e9,x5):19:1.00</literal>
+<literal id="20" type="2" active="yes">состояние-nn(e10,x5):20:1.00</literal>
+<literal id="21" type="2" active="yes">!=(e2,e8):21:1.00</literal>
+<literal id="22" type="3" active="yes">politicalParty(x3):22:0.90</literal>
+<literal id="23" type="3" active="yes">conflict(_133,x3,_134,_135,_136):23:0.81</literal>
+<literal id="24" type="3" active="no">dFCompEnt(x3):24:0.36</literal>
+<literal id="25" type="3" active="no">functionality(_137,x3,_138):25:0.90</literal>
+<literal id="26" type="3" active="no">leadP(_137,x3,_139):26:0.90</literal>
+<explanation name="politicalParty1" active="yes" axiom="">23 => 22</explanation>
+<explanation name="politicalParty2" active="no" axiom="">24 ^ 25 ^ 26 => 22</explanation>
+<explanation name="dvizhenie" active="yes" axiom="">22 => 17</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="27">
+<observed size="7" domain_size="0">
+быть-vb(e1,x1,u1,u2) ^ политика-nn(e2,x1) ^ person(e3,x2) ^ опять-rb(e4,e5) ^ поставить-vb(e5,u3,x1,x2) ^ сверху-rb(e6,e5) ^ not(e7,e1)
+</observed>
+<hypothesis score="-6.908">
+быть-vb(e1,x1,u1,u2) ^ политика-nn(e2,x1) ^ person(e3,x2) ^ опять-rb(e4,e5) ^ поставить-vb(e5,u3,x1,x2) ^ сверху-rb(e6,e5) ^ not(e7,e1) ^ conflict(x1,_140,_141,_142,_143)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_поставить-vb_4":-1.001 "!HYPOTHESIZED_not_6":-1.001 "!EXPLAINED_политика-nn_1":1 "!HYPOTHESIZED_сверху-rb_5":-1.001 "!HYPOTHESIZED_политика-nn_1":-1.001 "!HYPOTHESIZED_conflict_7":-0.901 "!HYPOTHESIZED_опять-rb_3":-1.001 "!HYPOTHESIZED_person_2":-1.001 "!HYPOTHESIZED_быть-vb_0":-1.001 
+</vector>
+<statistics>
+<time total="0.00676513" prepare="0.00648403" ilp="0.000281096" />
+<ilp solution="Optimal" variables="25" constraints="18" />
+<search-space literals="8" axiom="10" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">быть-vb(e1,x1,u1,u2):0:1.00</literal>
+<literal id="1" type="2" active="yes">политика-nn(e2,x1):1:1.00</literal>
+<literal id="2" type="2" active="yes">person(e3,x2):2:1.00</literal>
+<literal id="3" type="2" active="yes">опять-rb(e4,e5):3:1.00</literal>
+<literal id="4" type="2" active="yes">поставить-vb(e5,u3,x1,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">сверху-rb(e6,e5):5:1.00</literal>
+<literal id="6" type="2" active="yes">not(e7,e1):6:1.00</literal>
+<literal id="7" type="3" active="yes">conflict(x1,_140,_141,_142,_143):7:0.90</literal>
+<explanation name="politika" active="yes" axiom="">7 => 1</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="28">
+<observed size="7" domain_size="0">
+декабрь-nn(e1,x1) ^ thing(e2,x2) ^ кинуть-vb(e3,x2,u1,u2) ^ украсть-vb(e4,x2,x3,u3) ^ у-in(e5,e4,x4) ^ person(e6,x5) ^ голос-nn(e7,x3)
+</observed>
+<hypothesis score="-6.909">
+декабрь-nn(e1,x1) ^ thing(e2,x2) ^ кинуть-vb(e3,x2,u1,u2) ^ украсть-vb(e4,x2,x3,u3) ^ у-in(e5,e4,x4) ^ person(e6,x5) ^ голос-nn(e7,x3) ^ conflict(_144,_145,_146,_147,_148) ^ member(_149,_145)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_украсть-vb_3":-1.001 "!HYPOTHESIZED_member_8":-0.101 "!HYPOTHESIZED_голос-nn_6":-1.001 "!HYPOTHESIZED_person_5":-1.001 "!HYPOTHESIZED_декабрь-nn_0":-1.001 "!HYPOTHESIZED_thing_1":-1.001 "!EXPLAINED_голос-nn_6":1 "!HYPOTHESIZED_кинуть-vb_2":-1.001 "!HYPOTHESIZED_conflict_7":-0.801 "!HYPOTHESIZED_у-in_4":-1.001 
+</vector>
+<statistics>
+<time total="0.00535083" prepare="0.00503492" ilp="0.000315905" />
+<ilp solution="Optimal" variables="30" constraints="27" />
+<search-space literals="9" axiom="6" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">декабрь-nn(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">thing(e2,x2):1:1.00</literal>
+<literal id="2" type="2" active="yes">кинуть-vb(e3,x2,u1,u2):2:1.00</literal>
+<literal id="3" type="2" active="yes">украсть-vb(e4,x2,x3,u3):3:1.00</literal>
+<literal id="4" type="2" active="yes">у-in(e5,e4,x4):4:1.00</literal>
+<literal id="5" type="2" active="yes">person(e6,x5):5:1.00</literal>
+<literal id="6" type="2" active="yes">голос-nn(e7,x3):6:1.00</literal>
+<literal id="7" type="3" active="yes">conflict(_144,_145,_146,_147,_148):7:0.80</literal>
+<literal id="8" type="3" active="yes">member(_149,_145):8:0.10</literal>
+<explanation name="golosovat" active="yes" axiom="">7 ^ 8 => 6</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="29">
+<observed size="11" domain_size="0">
+у-in(e1,e3,x1) ^ person(e2,x2) ^ украсть-vb(e3,x3,u1,u2) ^ голос-nn(e4,x3) ^ person(e1,x1) ^ прийти-vb(e2,x1,e3,u1) ^ сказать-vb(e3,x1,u2,u3) ^ вернуть-vb(e4,x1,u4,u5) ^ person(e5,x2) ^ принадлежать-vb(e6,u6,u7,x2) ^ !=(e2,e1,e5)
+</observed>
+<hypothesis score="-10.913">
+у-in(e1,e3,x1) ^ person(e2,x2) ^ украсть-vb(e3,x3,u1,u2) ^ голос-nn(e4,x3) ^ person(e1,x1) ^ прийти-vb(e2,x1,e3,u1) ^ сказать-vb(e3,x1,u2,u3) ^ вернуть-vb(e4,x1,u4,u5) ^ person(e5,x2) ^ принадлежать-vb(e6,u6,u7,x2) ^ !=(e2,e1,e5) ^ conflict(_150,_151,_152,_153,_154) ^ member(_155,_151)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_person_8":-1.001 "!HYPOTHESIZED_!=_10":-1.001 "!HYPOTHESIZED_member_12":-0.101 "!HYPOTHESIZED_принадлежать-vb_9":-1.001 "!HYPOTHESIZED_прийти-vb_5":-1.001 "!HYPOTHESIZED_украсть-vb_2":-1.001 "!HYPOTHESIZED_person_4":-1.001 "!HYPOTHESIZED_conflict_11":-0.801 "!HYPOTHESIZED_вернуть-vb_7":-1.001 "!HYPOTHESIZED_голос-nn_3":-1.001 "!EXPLAINED_голос-nn_3":1 "!HYPOTHESIZED_person_1":-1.001 "!HYPOTHESIZED_сказать-vb_6":-1.001 "!HYPOTHESIZED_у-in_0":-1.001 
+</vector>
+<statistics>
+<time total="0.00629783" prepare="0.00593686" ilp="0.000360966" />
+<ilp solution="Optimal" variables="51" constraints="43" />
+<search-space literals="13" axiom="6" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">у-in(e1,e3,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">person(e2,x2):1:1.00</literal>
+<unification l1="1" l2="4" unifier="" active="no" />
+<unification l1="1" l2="8" unifier="" active="no" />
+<literal id="2" type="2" active="yes">украсть-vb(e3,x3,u1,u2):2:1.00</literal>
+<literal id="3" type="2" active="yes">голос-nn(e4,x3):3:1.00</literal>
+<literal id="4" type="2" active="yes">person(e1,x1):4:1.00</literal>
+<unification l1="4" l2="1" unifier="" active="no" />
+<unification l1="4" l2="8" unifier="" active="no" />
+<literal id="5" type="2" active="yes">прийти-vb(e2,x1,e3,u1):5:1.00</literal>
+<literal id="6" type="2" active="yes">сказать-vb(e3,x1,u2,u3):6:1.00</literal>
+<literal id="7" type="2" active="yes">вернуть-vb(e4,x1,u4,u5):7:1.00</literal>
+<literal id="8" type="2" active="yes">person(e5,x2):8:1.00</literal>
+<unification l1="8" l2="1" unifier="" active="no" />
+<unification l1="8" l2="4" unifier="" active="no" />
+<literal id="9" type="2" active="yes">принадлежать-vb(e6,u6,u7,x2):9:1.00</literal>
+<literal id="10" type="2" active="yes">!=(e2,e1,e5):10:1.00</literal>
+<literal id="11" type="3" active="yes">conflict(_150,_151,_152,_153,_154):11:0.80</literal>
+<literal id="12" type="3" active="yes">member(_155,_151):12:0.10</literal>
+<explanation name="golosovat" active="yes" axiom="">11 ^ 12 => 3</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="30">
+<observed size="7" domain_size="0">
+власть-nn(e1,x1) ^ воланчик-nn(e2,x1) ^ можно-rb(e3,e2) ^ перекидывать-vb(e4,u1,u2,u3) ^ между-in(e5,e4,x2) ^ дурак-nn(e6,x2) ^ not(e7,x1)
+</observed>
+<hypothesis score="-6.908">
+власть-nn(e1,x1) ^ воланчик-nn(e2,x1) ^ можно-rb(e3,e2) ^ перекидывать-vb(e4,u1,u2,u3) ^ между-in(e5,e4,x2) ^ дурак-nn(e6,x2) ^ not(e7,x1) ^ lead(x1,_156,_157)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_перекидывать-vb_3":-1.001 "!HYPOTHESIZED_власть-nn_0":-1.001 "!HYPOTHESIZED_lead_7":-0.901 "!HYPOTHESIZED_not_6":-1.001 "!HYPOTHESIZED_между-in_4":-1.001 "!HYPOTHESIZED_дурак-nn_5":-1.001 "!HYPOTHESIZED_воланчик-nn_1":-1.001 "!EXPLAINED_власть-nn_0":1 "!HYPOTHESIZED_можно-rb_2":-1.001 
+</vector>
+<statistics>
+<time total="0.00550699" prepare="0.00522304" ilp="0.000283957" />
+<ilp solution="Optimal" variables="25" constraints="18" />
+<search-space literals="8" axiom="8" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">власть-nn(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">воланчик-nn(e2,x1):1:1.00</literal>
+<literal id="2" type="2" active="yes">можно-rb(e3,e2):2:1.00</literal>
+<literal id="3" type="2" active="yes">перекидывать-vb(e4,u1,u2,u3):3:1.00</literal>
+<literal id="4" type="2" active="yes">между-in(e5,e4,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">дурак-nn(e6,x2):5:1.00</literal>
+<literal id="6" type="2" active="yes">not(e7,x1):6:1.00</literal>
+<literal id="7" type="3" active="yes">lead(x1,_156,_157):7:0.90</literal>
+<explanation name="vlast" active="yes" axiom="">7 => 0</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="31">
+<observed size="22" domain_size="0">
+федеративный-adj(e1,x1) ^ характер-nn(e2,x1) ^ государство-nn(e3,x2) ^ должен-adj(e4,x1) ^ быть-vb(e5,u1,u2,u3) ^ мотор-nn(e6,x3) ^ развитие-nn(e7,x4) ^ огромный-adj(e8,x5) ^ многообразный-adj(e9,x6) ^ страна-nn(e10,x5) ^ работать-vb(e11,u1,u4,u5) ^ на-in(e12,e11,x7) ^ конкурентный-adj(e13,x7) ^ преимущество-nn(e14,x7) ^ compl(e15,e4,e5) ^ of-in(e16,x1,x2) ^ equal(e17,x1,x3) ^ compl(e18,e4,e17) ^ of-in(e19,x3,x4) ^ of-in(e20,x4,x5) ^ !=(e16,e19,e20) ^ !=(e15,e18)
+</observed>
+<hypothesis score="-19.832">
+федеративный-adj(e1,x1) ^ характер-nn(e2,x1) ^ государство-nn(e3,x2) ^ должен-adj(e4,x1) ^ быть-vb(e5,u1,u2,u3) ^ мотор-nn(e6,x3) ^ развитие-nn(e7,x4) ^ огромный-adj(e8,x5) ^ многообразный-adj(e9,x6) ^ страна-nn(e10,x5) ^ работать-vb(e11,u1,u4,u5) ^ на-in(e12,e11,x7) ^ конкурентный-adj(e13,x7) ^ преимущество-nn(e14,x7) ^ compl(e15,e4,e5) ^ of-in(e16,x1,x2) ^ equal(e17,x1,x3) ^ compl(e18,e4,e17) ^ of-in(e19,x3,x4) ^ of-in(e20,x4,x5) ^ !=(e16,e19,e20) ^ !=(e15,e18) ^ dFCompEnt(x2) ^ functionality(_158,x2) ^ thrive(_158,_159) ^ citizens(_159,x2) ^ increaseFct(_160) ^ increaseFct(x5) ^ dFCompEnt(x5) ^ functionality(_161,x5) ^ thrive(_161,_162) ^ citizens(_162,x5) ^ =(_159,_162) ^ =(_160,x5,x2) ^ =(_161,_158)
+</hypothesis>
+<vector score="0">
+"!EXPLAINED_страна-nn_9":1 "!HYPOTHESIZED_equal_16":-1.001 "!HYPOTHESIZED_of-in_19":-1.001 "!HYPOTHESIZED_increaseFct_27":-1.801 "!EXPLAINED_развитие-nn_6":1 "!HYPOTHESIZED_increaseFct_26":-0.901 "!EXPLAINED_государство-nn_2":1 "!HYPOTHESIZED_dFCompEnt_28":-0.401 "!HYPOTHESIZED_огромный-adj_7":-1.001 "!HYPOTHESIZED_быть-vb_4":-1.001 "!HYPOTHESIZED_государство-nn_2":-1.001 "!EXPLAINED_dFCompEnt_28":0.4 "!HYPOTHESIZED_of-in_15":-1.001 "!EXPLAINED_functionality_29":0.3 "!HYPOTHESIZED_мотор-nn_5":-1.001 "!EXPLAINED_of-in_19":1 "!HYPOTHESIZED_!=_20":-1.001 "!HYPOTHESIZED_!=_21":-1.001 "!HYPOTHESIZED_должен-adj_3":-1.001 "!HYPOTHESIZED_работать-vb_10":-1.001 "!HYPOTHESIZED_citizens_31":-0.101 "!HYPOTHESIZED_федеративный-adj_0":-1.001 "!HYPOTHESIZED_многообразный-adj_8":-1.001 "!HYPOTHESIZED_характер-nn_1":-1.001 "!EXPLAINED_thrive_30":0.1 "!HYPOTHESIZED_thrive_24":-0.101 "!HYPOTHESIZED_конкурентный-adj_12":-1.001 "!HYPOTHESIZED_страна-nn_9":-1.001 "!HYPOTHESIZED_functionality_29":-0.301 "!EXPLAINED_citizens_31":0.1 "!EXPLAINED_increaseFct_27":1.8 "!HYPOTHESIZED_compl_17":-1.001 "!HYPOTHESIZED_compl_14":-1.001 "!HYPOTHESIZED_развитие-nn_6":-1.001 "!HYPOTHESIZED_преимущество-nn_13":-1.001 "!HYPOTHESIZED_citizens_25":-0.101 "!HYPOTHESIZED_thrive_30":-0.101 "!HYPOTHESIZED_functionality_23":-0.301 "!HYPOTHESIZED_на-in_11":-1.001 "!HYPOTHESIZED_dFCompEnt_22":-0.401 "!HYPOTHESIZED_of-in_18":-1.001 
+</vector>
+<statistics>
+<time total="0.0116" prepare="0.0103068" ilp="0.00129318" />
+<ilp solution="Optimal" variables="141" constraints="237" />
+<search-space literals="32" axiom="4" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">федеративный-adj(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">характер-nn(e2,x1):1:1.00</literal>
+<literal id="2" type="2" active="yes">государство-nn(e3,x2):2:1.00</literal>
+<literal id="3" type="2" active="yes">должен-adj(e4,x1):3:1.00</literal>
+<literal id="4" type="2" active="yes">быть-vb(e5,u1,u2,u3):4:1.00</literal>
+<literal id="5" type="2" active="yes">мотор-nn(e6,x3):5:1.00</literal>
+<literal id="6" type="2" active="yes">развитие-nn(e7,x4):6:1.00</literal>
+<literal id="7" type="2" active="yes">огромный-adj(e8,x5):7:1.00</literal>
+<literal id="8" type="2" active="yes">многообразный-adj(e9,x6):8:1.00</literal>
+<literal id="9" type="2" active="yes">страна-nn(e10,x5):9:1.00</literal>
+<literal id="10" type="2" active="yes">работать-vb(e11,u1,u4,u5):10:1.00</literal>
+<literal id="11" type="2" active="yes">на-in(e12,e11,x7):11:1.00</literal>
+<literal id="12" type="2" active="yes">конкурентный-adj(e13,x7):12:1.00</literal>
+<literal id="13" type="2" active="yes">преимущество-nn(e14,x7):13:1.00</literal>
+<literal id="14" type="2" active="yes">compl(e15,e4,e5):14:1.00</literal>
+<unification l1="14" l2="17" unifier="" active="no" />
+<literal id="15" type="2" active="yes">of-in(e16,x1,x2):15:1.00</literal>
+<unification l1="15" l2="18" unifier="" active="no" />
+<unification l1="15" l2="19" unifier="x2=x5" active="no" />
+<literal id="16" type="2" active="yes">equal(e17,x1,x3):16:1.00</literal>
+<literal id="17" type="2" active="yes">compl(e18,e4,e17):17:1.00</literal>
+<unification l1="17" l2="14" unifier="" active="no" />
+<literal id="18" type="2" active="yes">of-in(e19,x3,x4):18:1.00</literal>
+<unification l1="18" l2="15" unifier="" active="no" />
+<unification l1="18" l2="19" unifier="" active="no" />
+<literal id="19" type="2" active="yes">of-in(e20,x4,x5):19:1.00</literal>
+<unification l1="19" l2="15" unifier="x2=x5" active="no" />
+<unification l1="19" l2="18" unifier="" active="no" />
+<literal id="20" type="2" active="yes">!=(e16,e19,e20):20:1.00</literal>
+<literal id="21" type="2" active="yes">!=(e15,e18):21:1.00</literal>
+<literal id="22" type="3" active="yes">dFCompEnt(x2):22:0.40</literal>
+<unification l1="22" l2="28" unifier="x2=x5" active="yes" />
+<literal id="23" type="3" active="yes">functionality(_158,x2):23:0.30</literal>
+<unification l1="23" l2="29" unifier="_158=_161, x2=x5" active="yes" />
+<literal id="24" type="3" active="yes">thrive(_158,_159):24:0.10</literal>
+<unification l1="24" l2="30" unifier="_158=_161, _159=_162" active="yes" />
+<literal id="25" type="3" active="yes">citizens(_159,x2):25:0.10</literal>
+<unification l1="25" l2="31" unifier="_159=_162, x2=x5" active="yes" />
+<literal id="26" type="3" active="yes">increaseFct(_160):26:0.90</literal>
+<unification l1="26" l2="27" unifier="x5=_160" active="yes" />
+<literal id="27" type="3" active="yes">increaseFct(x5):27:1.80</literal>
+<unification l1="27" l2="26" unifier="x5=_160" active="yes" />
+<literal id="28" type="3" active="yes">dFCompEnt(x5):28:0.40</literal>
+<unification l1="28" l2="22" unifier="x2=x5" active="yes" />
+<literal id="29" type="3" active="yes">functionality(_161,x5):29:0.30</literal>
+<unification l1="29" l2="23" unifier="_158=_161, x2=x5" active="yes" />
+<literal id="30" type="3" active="yes">thrive(_161,_162):30:0.10</literal>
+<unification l1="30" l2="24" unifier="_158=_161, _159=_162" active="yes" />
+<literal id="31" type="3" active="yes">citizens(_162,x5):31:0.10</literal>
+<unification l1="31" l2="25" unifier="_159=_162, x2=x5" active="yes" />
+<explanation name="gosudarstvo" active="yes" axiom="">22 ^ 23 ^ 24 ^ 25 => 2</explanation>
+<explanation name="razvitie" active="yes" axiom="">26 => 6</explanation>
+<explanation name="razvitie-of" active="yes" axiom="">27 => 6</explanation>
+<explanation name="razvitie-of" active="yes" axiom="">27 => 19</explanation>
+<explanation name="strana" active="yes" axiom="">28 ^ 29 ^ 30 ^ 31 => 9</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="32">
+<observed size="36" domain_size="0">
+person(e1,x1) ^ уверенный-adj(e2,x2) ^ стратегический-adj(e3,x3) ^ цель-nn(e4,x3) ^ person(e5,x4) ^ ставить-vb(e6,x4,x3,u1) ^ перед-in(e7,e6,x5) ^ быть-vb(e8,x3,e9,u2) ^ достигнуть-vb(e9,x3,u3,u4) ^ в-in(e10,x6,x7) ^ thing(e11,x8) ^ сомнение-nn(e12,x9) ^ в-in(e13,x10,x11) ^ основа-nn(e14,x11) ^ уверенность-nn(e15,x12) ^ person(e16,x13) ^ стремиться-vb(e17,x13,u5,u6) ^ к-in(e18,e17,x14) ^ развитие-nn(e19,x14) ^ к-in(e20,e17,x15) ^ новый-adj(e21,x15) ^ качество-nn(e22,x15) ^ жизнь-nn(e23,x16) ^ к-in(e24,e17,x17) ^ победа-nn(e25,x17) ^ над-in(e26,x17,x18) ^ несправедливость-nn(e27,x18) ^ коррупция-nn(e28,x19) ^ be(e29,x9,u7) ^ not(e30,e29) ^ of-in(e31,x11,x12) ^ of-in(e32,x15,x16) ^ !=(e1,e5,e16) ^ !=(e18,e20,e24) ^ !=(e10,e13) ^ !=(e31,e32)
+</observed>
+<hypothesis score="-35.739">
+person(e1,x1) ^ уверенный-adj(e2,x2) ^ стратегический-adj(e3,x3) ^ цель-nn(e4,x3) ^ person(e5,x4) ^ ставить-vb(e6,x4,x3,u1) ^ перед-in(e7,e6,x5) ^ быть-vb(e8,x3,e9,u2) ^ достигнуть-vb(e9,x3,u3,u4) ^ в-in(e10,x6,x7) ^ thing(e11,x8) ^ сомнение-nn(e12,x9) ^ в-in(e13,x10,x11) ^ основа-nn(e14,x11) ^ уверенность-nn(e15,x12) ^ person(e16,x13) ^ стремиться-vb(e17,x13,u5,u6) ^ к-in(e18,e17,x14) ^ развитие-nn(e19,x14) ^ к-in(e20,e17,x15) ^ новый-adj(e21,x15) ^ качество-nn(e22,x15) ^ жизнь-nn(e23,x16) ^ к-in(e24,e17,x17) ^ победа-nn(e25,x17) ^ над-in(e26,x17,x18) ^ несправедливость-nn(e27,x18) ^ коррупция-nn(e28,x19) ^ be(e29,x9,u7) ^ not(e30,e29) ^ of-in(e31,x11,x12) ^ of-in(e32,x15,x16) ^ !=(e1,e5,e16) ^ !=(e18,e20,e24) ^ !=(e10,e13) ^ !=(e31,e32) ^ goal(e4,x3,_163) ^ increaseFct(_164) ^ conflict(_165,_166,_167,_168,_169)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_коррупция-nn_27":-1.001 "!HYPOTHESIZED_качество-nn_21":-1.001 "!HYPOTHESIZED_к-in_23":-1.001 "!HYPOTHESIZED_increaseFct_37":-0.901 "!HYPOTHESIZED_ставить-vb_5":-1.001 "!HYPOTHESIZED_к-in_17":-1.001 "!HYPOTHESIZED_person_4":-1.001 "!HYPOTHESIZED_к-in_19":-1.001 "!HYPOTHESIZED_person_0":-1.001 "!HYPOTHESIZED_goal_36":-0.901 "!HYPOTHESIZED_жизнь-nn_22":-1.001 "!HYPOTHESIZED_новый-adj_20":-1.001 "!HYPOTHESIZED_быть-vb_7":-1.001 "!HYPOTHESIZED_в-in_12":-1.001 "!HYPOTHESIZED_в-in_9":-1.001 "!HYPOTHESIZED_победа-nn_24":-1.001 "!HYPOTHESIZED_над-in_25":-1.001 "!EXPLAINED_развитие-nn_18":1 "!HYPOTHESIZED_достигнуть-vb_8":-1.001 "!HYPOTHESIZED_thing_10":-1.001 "!HYPOTHESIZED_person_15":-1.001 "!HYPOTHESIZED_сомнение-nn_11":-1.001 "!EXPLAINED_цель-nn_3":1 "!EXPLAINED_победа-nn_24":1 "!HYPOTHESIZED_of-in_30":-1.001 "!HYPOTHESIZED_of-in_31":-1.001 "!HYPOTHESIZED_be_28":-1.001 "!HYPOTHESIZED_!=_35":-1.001 "!HYPOTHESIZED_!=_34":-1.001 "!HYPOTHESIZED_стратегический-adj_2":-1.001 "!HYPOTHESIZED_not_29":-1.001 "!HYPOTHESIZED_стремиться-vb_16":-1.001 "!HYPOTHESIZED_!=_33":-1.001 "!HYPOTHESIZED_!=_32":-1.001 "!HYPOTHESIZED_развитие-nn_18":-1.001 "!HYPOTHESIZED_conflict_38":-0.901 "!HYPOTHESIZED_перед-in_6":-1.001 "!HYPOTHESIZED_уверенный-adj_1":-1.001 "!HYPOTHESIZED_цель-nn_3":-1.001 "!HYPOTHESIZED_уверенность-nn_14":-1.001 "!HYPOTHESIZED_несправедливость-nn_26":-1.001 "!HYPOTHESIZED_основа-nn_13":-1.001 
+</vector>
+<statistics>
+<time total="0.0179758" prepare="0.0170648" ilp="0.000910997" />
+<ilp solution="Optimal" variables="164" constraints="151" />
+<search-space literals="41" axiom="17" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">person(e1,x1):0:1.00</literal>
+<unification l1="0" l2="4" unifier="" active="no" />
+<unification l1="0" l2="15" unifier="" active="no" />
+<literal id="1" type="2" active="yes">уверенный-adj(e2,x2):1:1.00</literal>
+<literal id="2" type="2" active="yes">стратегический-adj(e3,x3):2:1.00</literal>
+<literal id="3" type="2" active="yes">цель-nn(e4,x3):3:1.00</literal>
+<literal id="4" type="2" active="yes">person(e5,x4):4:1.00</literal>
+<unification l1="4" l2="0" unifier="" active="no" />
+<unification l1="4" l2="15" unifier="" active="no" />
+<literal id="5" type="2" active="yes">ставить-vb(e6,x4,x3,u1):5:1.00</literal>
+<literal id="6" type="2" active="yes">перед-in(e7,e6,x5):6:1.00</literal>
+<literal id="7" type="2" active="yes">быть-vb(e8,x3,e9,u2):7:1.00</literal>
+<literal id="8" type="2" active="yes">достигнуть-vb(e9,x3,u3,u4):8:1.00</literal>
+<literal id="9" type="2" active="yes">в-in(e10,x6,x7):9:1.00</literal>
+<unification l1="9" l2="12" unifier="" active="no" />
+<literal id="10" type="2" active="yes">thing(e11,x8):10:1.00</literal>
+<literal id="11" type="2" active="yes">сомнение-nn(e12,x9):11:1.00</literal>
+<literal id="12" type="2" active="yes">в-in(e13,x10,x11):12:1.00</literal>
+<unification l1="12" l2="9" unifier="" active="no" />
+<literal id="13" type="2" active="yes">основа-nn(e14,x11):13:1.00</literal>
+<literal id="14" type="2" active="yes">уверенность-nn(e15,x12):14:1.00</literal>
+<literal id="15" type="2" active="yes">person(e16,x13):15:1.00</literal>
+<unification l1="15" l2="0" unifier="" active="no" />
+<unification l1="15" l2="4" unifier="" active="no" />
+<literal id="16" type="2" active="yes">стремиться-vb(e17,x13,u5,u6):16:1.00</literal>
+<literal id="17" type="2" active="yes">к-in(e18,e17,x14):17:1.00</literal>
+<unification l1="17" l2="19" unifier="" active="no" />
+<unification l1="17" l2="23" unifier="" active="no" />
+<literal id="18" type="2" active="yes">развитие-nn(e19,x14):18:1.00</literal>
+<literal id="19" type="2" active="yes">к-in(e20,e17,x15):19:1.00</literal>
+<unification l1="19" l2="17" unifier="" active="no" />
+<unification l1="19" l2="23" unifier="" active="no" />
+<literal id="20" type="2" active="yes">новый-adj(e21,x15):20:1.00</literal>
+<literal id="21" type="2" active="yes">качество-nn(e22,x15):21:1.00</literal>
+<literal id="22" type="2" active="yes">жизнь-nn(e23,x16):22:1.00</literal>
+<literal id="23" type="2" active="yes">к-in(e24,e17,x17):23:1.00</literal>
+<unification l1="23" l2="17" unifier="" active="no" />
+<unification l1="23" l2="19" unifier="" active="no" />
+<literal id="24" type="2" active="yes">победа-nn(e25,x17):24:1.00</literal>
+<literal id="25" type="2" active="yes">над-in(e26,x17,x18):25:1.00</literal>
+<literal id="26" type="2" active="yes">несправедливость-nn(e27,x18):26:1.00</literal>
+<literal id="27" type="2" active="yes">коррупция-nn(e28,x19):27:1.00</literal>
+<literal id="28" type="2" active="yes">be(e29,x9,u7):28:1.00</literal>
+<literal id="29" type="2" active="yes">not(e30,e29):29:1.00</literal>
+<literal id="30" type="2" active="yes">of-in(e31,x11,x12):30:1.00</literal>
+<unification l1="30" l2="31" unifier="" active="no" />
+<literal id="31" type="2" active="yes">of-in(e32,x15,x16):31:1.00</literal>
+<unification l1="31" l2="30" unifier="" active="no" />
+<literal id="32" type="2" active="yes">!=(e1,e5,e16):32:1.00</literal>
+<literal id="33" type="2" active="yes">!=(e18,e20,e24):33:1.00</literal>
+<literal id="34" type="2" active="yes">!=(e10,e13):34:1.00</literal>
+<literal id="35" type="2" active="yes">!=(e31,e32):35:1.00</literal>
+<literal id="36" type="3" active="yes">goal(e4,x3,_163):36:0.90</literal>
+<literal id="37" type="3" active="yes">increaseFct(_164):37:0.90</literal>
+<literal id="38" type="3" active="yes">conflict(_165,_166,_167,_168,_169):38:0.90</literal>
+<literal id="39" type="3" active="no">adversary(_170,_163,_171,_172):39:1.08</literal>
+<literal id="40" type="3" active="no">goalNot(_173,x3,_171):40:1.08</literal>
+<explanation name="pobeda" active="yes" axiom="">38 => 24</explanation>
+<explanation name="adversary1" active="no" axiom="">39 ^ 40 => 36</explanation>
+<explanation name="cel" active="yes" axiom="">36 => 3</explanation>
+<explanation name="razvitie" active="yes" axiom="">37 => 18</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="33">
+<observed size="12" domain_size="0">
+male(e1,x1) ^ недвусмысленно-rb(e2,e3) ^ заявить-vb(e3,x1,x2,u1) ^ реформа-nn(e4,x3) ^ мочь-vb(e5,x3,u2,u3) ^ должен-adj(e6,x4) ^ вызвать-vb(e7,x1,x2,u4) ^ эффект-nn(e8,x2) ^ выжечь-vb(e9,u5,u6,u7) ^ земля-nn(e10,x5) ^ not(e11,e5) ^ of-in(e12,x2,x5)
+</observed>
+<hypothesis score="-12.012">
+male(e1,x1) ^ недвусмысленно-rb(e2,e3) ^ заявить-vb(e3,x1,x2,u1) ^ реформа-nn(e4,x3) ^ мочь-vb(e5,x3,u2,u3) ^ должен-adj(e6,x4) ^ вызвать-vb(e7,x1,x2,u4) ^ эффект-nn(e8,x2) ^ выжечь-vb(e9,u5,u6,u7) ^ земля-nn(e10,x5) ^ not(e11,e5) ^ of-in(e12,x2,x5)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_вызвать-vb_6":-1.001 "!HYPOTHESIZED_эффект-nn_7":-1.001 "!HYPOTHESIZED_должен-adj_5":-1.001 "!HYPOTHESIZED_земля-nn_9":-1.001 "!HYPOTHESIZED_выжечь-vb_8":-1.001 "!HYPOTHESIZED_male_0":-1.001 "!HYPOTHESIZED_not_10":-1.001 "!HYPOTHESIZED_реформа-nn_3":-1.001 "!HYPOTHESIZED_заявить-vb_2":-1.001 "!HYPOTHESIZED_недвусмысленно-rb_1":-1.001 "!HYPOTHESIZED_of-in_11":-1.001 "!HYPOTHESIZED_мочь-vb_4":-1.001 
+</vector>
+<statistics>
+<time total="0.00516391" prepare="0.00488901" ilp="0.000274897" />
+<ilp solution="Optimal" variables="37" constraints="24" />
+<search-space literals="12" axiom="4" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">male(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">недвусмысленно-rb(e2,e3):1:1.00</literal>
+<literal id="2" type="2" active="yes">заявить-vb(e3,x1,x2,u1):2:1.00</literal>
+<literal id="3" type="2" active="yes">реформа-nn(e4,x3):3:1.00</literal>
+<literal id="4" type="2" active="yes">мочь-vb(e5,x3,u2,u3):4:1.00</literal>
+<literal id="5" type="2" active="yes">должен-adj(e6,x4):5:1.00</literal>
+<literal id="6" type="2" active="yes">вызвать-vb(e7,x1,x2,u4):6:1.00</literal>
+<literal id="7" type="2" active="yes">эффект-nn(e8,x2):7:1.00</literal>
+<literal id="8" type="2" active="yes">выжечь-vb(e9,u5,u6,u7):8:1.00</literal>
+<literal id="9" type="2" active="yes">земля-nn(e10,x5):9:1.00</literal>
+<literal id="10" type="2" active="yes">not(e11,e5):10:1.00</literal>
+<literal id="11" type="2" active="yes">of-in(e12,x2,x5):11:1.00</literal>
+</proofgraph>
+</result-inference>
+<result-inference target="34">
+<observed size="73" domain_size="0">
+посягнуть-vb(e1,u1,u2,u3) ^ на-in(e2,e1,x1) ^ свобода-nn(e3,x1) ^ президентский-adj(e4,x2) ^ родственник-nn(e5,x2) ^ многократно-rb(e6,e7) ^ арестовывать-vb(e7,u1,x3,u4) ^ сотрудник-nn(e8,x3) ^ кнб-nn(e9,x4) ^ работать-vb(e10,u5,u6,u7) ^ наркокурьер-nn(e11,x5) ^ генерал-nn(e12,x6) ^ гадоев-nn(e13,x7) ^ наступить-vb(e14,x6,u8,u9) ^ на-in(e15,e14,x8) ^ мина-nn(e16,x8) ^ сразу-rb(e17,e14) ^ of-in(e18,x1,x2) ^ instr(e19,e10,x5) ^ equal(e20,x7,x6) ^ гадоева-nn(e1,x1) ^ поддерживать-vb(e2,x1,u1,u2) ^ лично-rb(e3,e2) ^ министр-nn(e4,x2) ^ внутренний-adj(e5,x3) ^ дело-nn(e6,x3) ^ male(e7,x4) ^ вероятно-rb(e8,e9) ^ смочь-vb(e9,x4,e10,u3) ^ занять-vb(e10,x4,x5,u4) ^ пост-nn(e11,x5) ^ в-in(e12,e10,x6) ^ мвд-nn(e13,x6) ^ ответственный-adj(e14,x7) ^ офицер-nn(e15,x7) ^ подобно-in(e16,e18,x8) ^ male(e17,x9) ^ захотеть-vb(e18,x7,e19,x10) ^ преследовать-vb(e19,x7,u5,x10) ^ высокопоставленный-adj(e20,x10) ^ близкий-adj(e21,x11) ^ президент-nn(e22,x10) ^ наркоторговец-nn(e23,x12) ^ оказаться-vb(e24,x7,u6,u7) ^ на-in(e25,e24,x13) ^ минный-adj(e26,x13) ^ поле-nn(e27,x13) ^ person(e28,x7) ^ of-in(e29,x2,x3) ^ of-in(e30,x10,x12) ^ инцидент-nn(e1,x1) ^ наглядно-rb(e2,e3) ^ демонстрировать-vb(e3,x1,u1,u2) ^ насколько-rb(e4,e5) ^ незащищенный-adj(e5,x2) ^ оказываться-vb(e6,x3,u3,u4) ^ чиновник-nn(e7,x3) ^ ранг-nn(e8,x4) ^ thing(e9,x5) ^ прогневить-vb(e10,x5,x6,u5) ^ президент-nn(e11,x6) ^ встать-vb(e12,x5,u6,u7) ^ на-in(e13,e12,x7) ^ путь-nn(e14,x7) ^ семейный-adj(e15,x8) ^ интерес-nn(e16,x8) ^ of-in(e17,x3,x4) ^ imp(e18,e10,e6) ^ or(e19,e10,e12) ^ of-in(e20,x7,x8) ^ !=(e18,e29,e30,e17,e20) ^ !=(e2,e15,e25,e13) ^ !=(e7,e17)
+</observed>
+<hypothesis score="-70.876">
+посягнуть-vb(e1,u1,u2,u3) ^ на-in(e2,e1,x1) ^ свобода-nn(e3,x1) ^ президентский-adj(e4,x2) ^ родственник-nn(e5,x2) ^ многократно-rb(e6,e7) ^ арестовывать-vb(e7,u1,x3,u4) ^ сотрудник-nn(e8,x3) ^ кнб-nn(e9,x4) ^ работать-vb(e10,u5,u6,u7) ^ наркокурьер-nn(e11,x5) ^ генерал-nn(e12,x6) ^ гадоев-nn(e13,x7) ^ наступить-vb(e14,x6,u8,u9) ^ на-in(e15,e14,x8) ^ мина-nn(e16,x8) ^ сразу-rb(e17,e14) ^ of-in(e18,x1,x2) ^ instr(e19,e10,x5) ^ equal(e20,x7,x6) ^ гадоева-nn(e1,x1) ^ поддерживать-vb(e2,x1,u1,u2) ^ лично-rb(e3,e2) ^ министр-nn(e4,x2) ^ внутренний-adj(e5,x3) ^ дело-nn(e6,x3) ^ male(e7,x4) ^ вероятно-rb(e8,e9) ^ смочь-vb(e9,x4,e10,u3) ^ занять-vb(e10,x4,x5,u4) ^ пост-nn(e11,x5) ^ в-in(e12,e10,x6) ^ мвд-nn(e13,x6) ^ ответственный-adj(e14,x7) ^ офицер-nn(e15,x7) ^ подобно-in(e16,e18,x8) ^ male(e17,x9) ^ захотеть-vb(e18,x7,e19,x10) ^ преследовать-vb(e19,x7,u5,x10) ^ высокопоставленный-adj(e20,x10) ^ близкий-adj(e21,x11) ^ президент-nn(e22,x10) ^ наркоторговец-nn(e23,x12) ^ оказаться-vb(e24,x7,u6,u7) ^ на-in(e25,e24,x13) ^ минный-adj(e26,x13) ^ поле-nn(e27,x13) ^ person(e28,x7) ^ of-in(e29,x2,x3) ^ of-in(e30,x10,x12) ^ инцидент-nn(e1,x1) ^ наглядно-rb(e2,e3) ^ демонстрировать-vb(e3,x1,u1,u2) ^ насколько-rb(e4,e5) ^ незащищенный-adj(e5,x2) ^ оказываться-vb(e6,x3,u3,u4) ^ чиновник-nn(e7,x3) ^ ранг-nn(e8,x4) ^ thing(e9,x5) ^ прогневить-vb(e10,x5,x6,u5) ^ президент-nn(e11,x6) ^ встать-vb(e12,x5,u6,u7) ^ на-in(e13,e12,x7) ^ путь-nn(e14,x7) ^ семейный-adj(e15,x8) ^ интерес-nn(e16,x8) ^ of-in(e17,x3,x4) ^ imp(e18,e10,e6) ^ or(e19,e10,e12) ^ of-in(e20,x7,x8) ^ !=(e18,e29,e30,e17,e20) ^ !=(e2,e15,e25,e13) ^ !=(e7,e17) ^ weapon(x8) ^ president(x10) ^ weapon(_176) ^ =(e11,e22) ^ =(x6,x10) ^ =(_176,x8)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_мвд-nn_32":-1.001 "!HYPOTHESIZED_демонстрировать-vb_52":-1.001 "!HYPOTHESIZED_родственник-nn_4":-1.001 "!EXPLAINED_мина-nn_15":1 "!HYPOTHESIZED_президентский-adj_3":-1.001 "!HYPOTHESIZED_насколько-rb_53":-1.001 "!EXPLAINED_президент-nn_60":1 "!HYPOTHESIZED_weapon_73":-0.901 "!HYPOTHESIZED_дело-nn_25":-1.001 "!HYPOTHESIZED_thing_58":-1.001 "!HYPOTHESIZED_на-in_44":-1.001 "!HYPOTHESIZED_смочь-vb_28":-1.001 "!HYPOTHESIZED_вероятно-rb_27":-1.001 "!HYPOTHESIZED_of-in_17":-1.001 "!HYPOTHESIZED_наркоторговец-nn_42":-1.001 "!HYPOTHESIZED_чиновник-nn_56":-1.001 "!HYPOTHESIZED_захотеть-vb_37":-1.001 "!HYPOTHESIZED_прогневить-vb_59":-1.001 "!EXPLAINED_weapon_76":0.9 "!HYPOTHESIZED_многократно-rb_5":-1.001 "!HYPOTHESIZED_подобно-in_35":-1.001 "!HYPOTHESIZED_president_74":-0.901 "!HYPOTHESIZED_поддерживать-vb_21":-1.001 "!HYPOTHESIZED_ранг-nn_57":-1.001 "!HYPOTHESIZED_арестовывать-vb_6":-1.001 "!HYPOTHESIZED_близкий-adj_40":-1.001 "!HYPOTHESIZED_встать-vb_61":-1.001 "!HYPOTHESIZED_президент-nn_60":-1.001 "!HYPOTHESIZED_оказаться-vb_43":-1.001 "!HYPOTHESIZED_наркокурьер-nn_10":-1.001 "!HYPOTHESIZED_!=_72":-1.001 "!HYPOTHESIZED_на-in_62":-1.001 "!HYPOTHESIZED_ответственный-adj_33":-1.001 "!HYPOTHESIZED_of-in_48":-1.001 "!HYPOTHESIZED_внутренний-adj_24":-1.001 "!HYPOTHESIZED_путь-nn_63":-1.001 "!HYPOTHESIZED_пост-nn_30":-1.001 "!HYPOTHESIZED_свобода-nn_2":-1.001 "!HYPOTHESIZED_семейный-adj_64":-1.001 "!HYPOTHESIZED_оказываться-vb_55":-1.001 "!HYPOTHESIZED_минный-adj_45":-1.001 "!HYPOTHESIZED_наглядно-rb_51":-1.001 "!HYPOTHESIZED_интерес-nn_65":-1.001 "!HYPOTHESIZED_сразу-rb_16":-1.001 "!HYPOTHESIZED_генерал-nn_11":-1.001 "!HYPOTHESIZED_президент-nn_41":-1.001 "!HYPOTHESIZED_офицер-nn_34":-1.001 "!HYPOTHESIZED_of-in_49":-1.001 "!HYPOTHESIZED_male_26":-1.001 "!HYPOTHESIZED_незащищенный-adj_54":-1.001 "!HYPOTHESIZED_weapon_76":-0.901 "!HYPOTHESIZED_сотрудник-nn_7":-1.001 "!HYPOTHESIZED_на-in_1":-1.001 "!HYPOTHESIZED_в-in_31":-1.001 "!HYPOTHESIZED_наступить-vb_13":-1.001 "!HYPOTHESIZED_!=_70":-1.001 "!HYPOTHESIZED_instr_18":-1.001 "!HYPOTHESIZED_лично-rb_22":-1.001 "!EXPLAINED_президент-nn_41":1 "!EXPLAINED_минный-adj_45":1 "!HYPOTHESIZED_посягнуть-vb_0":-1.001 "!HYPOTHESIZED_инцидент-nn_50":-1.001 "!HYPOTHESIZED_кнб-nn_8":-1.001 "!HYPOTHESIZED_!=_71":-1.001 "!HYPOTHESIZED_на-in_14":-1.001 "!HYPOTHESIZED_преследовать-vb_38":-1.001 "!HYPOTHESIZED_гадоева-nn_20":-1.001 "!HYPOTHESIZED_министр-nn_23":-1.001 "!HYPOTHESIZED_equal_19":-1.001 "!HYPOTHESIZED_imp_67":-1.001 "!HYPOTHESIZED_занять-vb_29":-1.001 "!HYPOTHESIZED_of-in_66":-1.001 "!HYPOTHESIZED_male_36":-1.001 "!HYPOTHESIZED_работать-vb_9":-1.001 "!HYPOTHESIZED_of-in_69":-1.001 "!HYPOTHESIZED_or_68":-1.001 "!HYPOTHESIZED_person_47":-1.001 "!HYPOTHESIZED_мина-nn_15":-1.001 "!HYPOTHESIZED_гадоев-nn_12":-1.001 "!HYPOTHESIZED_высокопоставленный-adj_39":-1.001 "!HYPOTHESIZED_поле-nn_46":-1.001 
+</vector>
+<statistics>
+<time total="0.048533" prepare="0.038914" ilp="0.009619" />
+<ilp solution="Optimal" variables="368" constraints="948" />
+<search-space literals="79" axiom="7" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">посягнуть-vb(e1,u1,u2,u3):0:1.00</literal>
+<literal id="1" type="2" active="yes">на-in(e2,e1,x1):1:1.00</literal>
+<unification l1="1" l2="14" unifier="" active="no" />
+<unification l1="1" l2="44" unifier="" active="no" />
+<unification l1="1" l2="62" unifier="" active="no" />
+<literal id="2" type="2" active="yes">свобода-nn(e3,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">президентский-adj(e4,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">родственник-nn(e5,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">многократно-rb(e6,e7):5:1.00</literal>
+<literal id="6" type="2" active="yes">арестовывать-vb(e7,u1,x3,u4):6:1.00</literal>
+<literal id="7" type="2" active="yes">сотрудник-nn(e8,x3):7:1.00</literal>
+<literal id="8" type="2" active="yes">кнб-nn(e9,x4):8:1.00</literal>
+<literal id="9" type="2" active="yes">работать-vb(e10,u5,u6,u7):9:1.00</literal>
+<literal id="10" type="2" active="yes">наркокурьер-nn(e11,x5):10:1.00</literal>
+<literal id="11" type="2" active="yes">генерал-nn(e12,x6):11:1.00</literal>
+<literal id="12" type="2" active="yes">гадоев-nn(e13,x7):12:1.00</literal>
+<literal id="13" type="2" active="yes">наступить-vb(e14,x6,u8,u9):13:1.00</literal>
+<literal id="14" type="2" active="yes">на-in(e15,e14,x8):14:1.00</literal>
+<unification l1="14" l2="1" unifier="" active="no" />
+<unification l1="14" l2="44" unifier="" active="no" />
+<unification l1="14" l2="62" unifier="" active="no" />
+<literal id="15" type="2" active="yes">мина-nn(e16,x8):15:1.00</literal>
+<literal id="16" type="2" active="yes">сразу-rb(e17,e14):16:1.00</literal>
+<literal id="17" type="2" active="yes">of-in(e18,x1,x2):17:1.00</literal>
+<unification l1="17" l2="48" unifier="" active="no" />
+<unification l1="17" l2="49" unifier="" active="no" />
+<unification l1="17" l2="66" unifier="" active="no" />
+<unification l1="17" l2="69" unifier="" active="no" />
+<literal id="18" type="2" active="yes">instr(e19,e10,x5):18:1.00</literal>
+<literal id="19" type="2" active="yes">equal(e20,x7,x6):19:1.00</literal>
+<literal id="20" type="2" active="yes">гадоева-nn(e1,x1):20:1.00</literal>
+<literal id="21" type="2" active="yes">поддерживать-vb(e2,x1,u1,u2):21:1.00</literal>
+<literal id="22" type="2" active="yes">лично-rb(e3,e2):22:1.00</literal>
+<literal id="23" type="2" active="yes">министр-nn(e4,x2):23:1.00</literal>
+<literal id="24" type="2" active="yes">внутренний-adj(e5,x3):24:1.00</literal>
+<literal id="25" type="2" active="yes">дело-nn(e6,x3):25:1.00</literal>
+<literal id="26" type="2" active="yes">male(e7,x4):26:1.00</literal>
+<unification l1="26" l2="36" unifier="" active="no" />
+<literal id="27" type="2" active="yes">вероятно-rb(e8,e9):27:1.00</literal>
+<literal id="28" type="2" active="yes">смочь-vb(e9,x4,e10,u3):28:1.00</literal>
+<literal id="29" type="2" active="yes">занять-vb(e10,x4,x5,u4):29:1.00</literal>
+<literal id="30" type="2" active="yes">пост-nn(e11,x5):30:1.00</literal>
+<literal id="31" type="2" active="yes">в-in(e12,e10,x6):31:1.00</literal>
+<literal id="32" type="2" active="yes">мвд-nn(e13,x6):32:1.00</literal>
+<literal id="33" type="2" active="yes">ответственный-adj(e14,x7):33:1.00</literal>
+<literal id="34" type="2" active="yes">офицер-nn(e15,x7):34:1.00</literal>
+<literal id="35" type="2" active="yes">подобно-in(e16,e18,x8):35:1.00</literal>
+<literal id="36" type="2" active="yes">male(e17,x9):36:1.00</literal>
+<unification l1="36" l2="26" unifier="" active="no" />
+<literal id="37" type="2" active="yes">захотеть-vb(e18,x7,e19,x10):37:1.00</literal>
+<literal id="38" type="2" active="yes">преследовать-vb(e19,x7,u5,x10):38:1.00</literal>
+<literal id="39" type="2" active="yes">высокопоставленный-adj(e20,x10):39:1.00</literal>
+<literal id="40" type="2" active="yes">близкий-adj(e21,x11):40:1.00</literal>
+<literal id="41" type="2" active="yes">президент-nn(e22,x10):41:1.00</literal>
+<unification l1="41" l2="60" unifier="e11=e22, x6=x10" active="yes" />
+<literal id="42" type="2" active="yes">наркоторговец-nn(e23,x12):42:1.00</literal>
+<literal id="43" type="2" active="yes">оказаться-vb(e24,x7,u6,u7):43:1.00</literal>
+<literal id="44" type="2" active="yes">на-in(e25,e24,x13):44:1.00</literal>
+<unification l1="44" l2="1" unifier="" active="no" />
+<unification l1="44" l2="14" unifier="" active="no" />
+<unification l1="44" l2="62" unifier="" active="no" />
+<literal id="45" type="2" active="yes">минный-adj(e26,x13):45:1.00</literal>
+<literal id="46" type="2" active="yes">поле-nn(e27,x13):46:1.00</literal>
+<literal id="47" type="2" active="yes">person(e28,x7):47:1.00</literal>
+<literal id="48" type="2" active="yes">of-in(e29,x2,x3):48:1.00</literal>
+<unification l1="48" l2="17" unifier="" active="no" />
+<unification l1="48" l2="49" unifier="" active="no" />
+<unification l1="48" l2="66" unifier="" active="no" />
+<unification l1="48" l2="69" unifier="" active="no" />
+<literal id="49" type="2" active="yes">of-in(e30,x10,x12):49:1.00</literal>
+<unification l1="49" l2="17" unifier="" active="no" />
+<unification l1="49" l2="48" unifier="" active="no" />
+<unification l1="49" l2="66" unifier="" active="no" />
+<unification l1="49" l2="69" unifier="" active="no" />
+<literal id="50" type="2" active="yes">инцидент-nn(e1,x1):50:1.00</literal>
+<literal id="51" type="2" active="yes">наглядно-rb(e2,e3):51:1.00</literal>
+<literal id="52" type="2" active="yes">демонстрировать-vb(e3,x1,u1,u2):52:1.00</literal>
+<literal id="53" type="2" active="yes">насколько-rb(e4,e5):53:1.00</literal>
+<literal id="54" type="2" active="yes">незащищенный-adj(e5,x2):54:1.00</literal>
+<literal id="55" type="2" active="yes">оказываться-vb(e6,x3,u3,u4):55:1.00</literal>
+<literal id="56" type="2" active="yes">чиновник-nn(e7,x3):56:1.00</literal>
+<literal id="57" type="2" active="yes">ранг-nn(e8,x4):57:1.00</literal>
+<literal id="58" type="2" active="yes">thing(e9,x5):58:1.00</literal>
+<literal id="59" type="2" active="yes">прогневить-vb(e10,x5,x6,u5):59:1.00</literal>
+<literal id="60" type="2" active="yes">президент-nn(e11,x6):60:1.00</literal>
+<unification l1="60" l2="41" unifier="e11=e22, x6=x10" active="yes" />
+<literal id="61" type="2" active="yes">встать-vb(e12,x5,u6,u7):61:1.00</literal>
+<literal id="62" type="2" active="yes">на-in(e13,e12,x7):62:1.00</literal>
+<unification l1="62" l2="1" unifier="" active="no" />
+<unification l1="62" l2="14" unifier="" active="no" />
+<unification l1="62" l2="44" unifier="" active="no" />
+<literal id="63" type="2" active="yes">путь-nn(e14,x7):63:1.00</literal>
+<literal id="64" type="2" active="yes">семейный-adj(e15,x8):64:1.00</literal>
+<literal id="65" type="2" active="yes">интерес-nn(e16,x8):65:1.00</literal>
+<literal id="66" type="2" active="yes">of-in(e17,x3,x4):66:1.00</literal>
+<unification l1="66" l2="17" unifier="" active="no" />
+<unification l1="66" l2="48" unifier="" active="no" />
+<unification l1="66" l2="49" unifier="" active="no" />
+<unification l1="66" l2="69" unifier="" active="no" />
+<literal id="67" type="2" active="yes">imp(e18,e10,e6):67:1.00</literal>
+<literal id="68" type="2" active="yes">or(e19,e10,e12):68:1.00</literal>
+<literal id="69" type="2" active="yes">of-in(e20,x7,x8):69:1.00</literal>
+<unification l1="69" l2="17" unifier="" active="no" />
+<unification l1="69" l2="48" unifier="" active="no" />
+<unification l1="69" l2="49" unifier="" active="no" />
+<unification l1="69" l2="66" unifier="" active="no" />
+<literal id="70" type="2" active="yes">!=(e18,e29,e30,e17,e20):70:1.00</literal>
+<literal id="71" type="2" active="yes">!=(e2,e15,e25,e13):71:1.00</literal>
+<literal id="72" type="2" active="yes">!=(e7,e17):72:1.00</literal>
+<literal id="73" type="3" active="yes">weapon(x8):73:0.90</literal>
+<unification l1="73" l2="76" unifier="x8=_176" active="yes" />
+<literal id="74" type="3" active="yes">president(x10):74:0.90</literal>
+<unification l1="74" l2="77" unifier="x6=x10" active="no" />
+<literal id="75" type="3" active="no">lead(_174,x10,_175):75:0.90</literal>
+<unification l1="75" l2="78" unifier="x6=x10" active="no" />
+<literal id="76" type="3" active="yes">weapon(_176):76:0.90</literal>
+<unification l1="76" l2="73" unifier="x8=_176" active="yes" />
+<literal id="77" type="3" active="no">president(x6):77:0.90</literal>
+<unification l1="77" l2="74" unifier="x6=x10" active="no" />
+<literal id="78" type="3" active="no">lead(_177,x6,_178):78:0.90</literal>
+<unification l1="78" l2="75" unifier="x6=x10" active="no" />
+<explanation name="minnyj" active="yes" axiom="">76 => 45</explanation>
+<explanation name="minna" active="yes" axiom="">73 => 15</explanation>
+<explanation name="prezident" active="no" axiom="">77 => 60</explanation>
+<explanation name="prezident2" active="no" axiom="">78 => 60</explanation>
+<explanation name="prezident" active="yes" axiom="">74 => 41</explanation>
+<explanation name="prezident2" active="no" axiom="">75 => 41</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="35">
+<observed size="25" domain_size="0">
+слово-nn(e1,x1) ^ о-in(e2,x1,x2) ^ коррупция-nn(e3,x3) ^ душить-vb(e4,x3,x4,u1) ^ россия-nn(e5,x4) ^ звучать-vb(e6,x1,u2,u3) ^ постоянно-rb(e7,e6) ^ ответ-nn(e8,x5) ^ очевидный-adj(e9,x6) ^ должен-adj(e10,x7) ^ быть-vb(e11,u4,u5,u6) ^ говориться-vb(e12,u7,u8,u9) ^ симметричный-adj(e13,x8) ^ удавка-nn(e14,x9) ^ на-in(e15,x9,x10) ^ шея-nn(e16,x10) ^ коррупционер-nn(e17,x11) ^ должен-adj(e18,x12) ^ сжиматься-vb(e19,u10,u11,u12) ^ постоянно-rb(e20,e19) ^ неумолимо-rb(e21,e22) ^ compl(e23,e10,e11) ^ compl(e24,e18,e19) ^ of-in(e25,x10,x11) ^ !=(e23,e24)
+</observed>
+<hypothesis score="-22.84">
+слово-nn(e1,x1) ^ о-in(e2,x1,x2) ^ коррупция-nn(e3,x3) ^ душить-vb(e4,x3,x4,u1) ^ россия-nn(e5,x4) ^ звучать-vb(e6,x1,u2,u3) ^ постоянно-rb(e7,e6) ^ ответ-nn(e8,x5) ^ очевидный-adj(e9,x6) ^ должен-adj(e10,x7) ^ быть-vb(e11,u4,u5,u6) ^ говориться-vb(e12,u7,u8,u9) ^ симметричный-adj(e13,x8) ^ удавка-nn(e14,x9) ^ на-in(e15,x9,x10) ^ шея-nn(e16,x10) ^ коррупционер-nn(e17,x11) ^ должен-adj(e18,x12) ^ сжиматься-vb(e19,u10,u11,u12) ^ постоянно-rb(e20,e19) ^ неумолимо-rb(e21,e22) ^ compl(e23,e10,e11) ^ compl(e24,e18,e19) ^ of-in(e25,x10,x11) ^ !=(e23,e24) ^ nation(x4) ^ dFCompEnt(x4) ^ functionality(_179,x4) ^ thrive(_179,_180) ^ citizens(_180,x4) ^ =(e7,e20) ^ =(x7,x12) ^ =(e6,e19) ^ =(e18,e10)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_россия-nn_4":-1.001 "!HYPOTHESIZED_слово-nn_0":-1.001 "!HYPOTHESIZED_очевидный-adj_8":-1.001 "!HYPOTHESIZED_dFCompEnt_26":-0.361 "!HYPOTHESIZED_сжиматься-vb_18":-1.001 "!HYPOTHESIZED_быть-vb_10":-1.001 "!HYPOTHESIZED_шея-nn_15":-1.001 "!HYPOTHESIZED_говориться-vb_11":-1.001 "!HYPOTHESIZED_о-in_1":-1.001 "!HYPOTHESIZED_ответ-nn_7":-1.001 "!EXPLAINED_должен-adj_17":1 "!EXPLAINED_постоянно-rb_19":1 "!HYPOTHESIZED_постоянно-rb_19":-1.001 "!EXPLAINED_nation_25":0.9 "!HYPOTHESIZED_compl_22":-1.001 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_compl_21":-1.001 "!HYPOTHESIZED_неумолимо-rb_20":-1.001 "!HYPOTHESIZED_удавка-nn_13":-1.001 "!HYPOTHESIZED_thrive_28":-0.091 "!HYPOTHESIZED_должен-adj_9":-1.001 "!HYPOTHESIZED_коррупция-nn_2":-1.001 "!HYPOTHESIZED_citizens_29":-0.091 "!HYPOTHESIZED_душить-vb_3":-1.001 "!HYPOTHESIZED_functionality_27":-0.271 "!HYPOTHESIZED_nation_25":-0.901 "!HYPOTHESIZED_of-in_23":-1.001 "!HYPOTHESIZED_должен-adj_17":-1.001 "!EXPLAINED_россия-nn_4":1 "!HYPOTHESIZED_коррупционер-nn_16":-1.001 "!HYPOTHESIZED_постоянно-rb_6":-1.001 "!HYPOTHESIZED_звучать-vb_5":-1.001 "!HYPOTHESIZED_на-in_14":-1.001 "!HYPOTHESIZED_симметричный-adj_12":-1.001 
+</vector>
+<statistics>
+<time total="0.00930285" prepare="0.00854301" ilp="0.00075984" />
+<ilp solution="Optimal" variables="107" constraints="115" />
+<search-space literals="30" axiom="2" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">слово-nn(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">о-in(e2,x1,x2):1:1.00</literal>
+<literal id="2" type="2" active="yes">коррупция-nn(e3,x3):2:1.00</literal>
+<literal id="3" type="2" active="yes">душить-vb(e4,x3,x4,u1):3:1.00</literal>
+<literal id="4" type="2" active="yes">россия-nn(e5,x4):4:1.00</literal>
+<literal id="5" type="2" active="yes">звучать-vb(e6,x1,u2,u3):5:1.00</literal>
+<literal id="6" type="2" active="yes">постоянно-rb(e7,e6):6:1.00</literal>
+<unification l1="6" l2="19" unifier="e7=e20, e6=e19" active="yes" />
+<literal id="7" type="2" active="yes">ответ-nn(e8,x5):7:1.00</literal>
+<literal id="8" type="2" active="yes">очевидный-adj(e9,x6):8:1.00</literal>
+<literal id="9" type="2" active="yes">должен-adj(e10,x7):9:1.00</literal>
+<unification l1="9" l2="17" unifier="e10=e18, x7=x12" active="yes" />
+<literal id="10" type="2" active="yes">быть-vb(e11,u4,u5,u6):10:1.00</literal>
+<literal id="11" type="2" active="yes">говориться-vb(e12,u7,u8,u9):11:1.00</literal>
+<literal id="12" type="2" active="yes">симметричный-adj(e13,x8):12:1.00</literal>
+<literal id="13" type="2" active="yes">удавка-nn(e14,x9):13:1.00</literal>
+<literal id="14" type="2" active="yes">на-in(e15,x9,x10):14:1.00</literal>
+<literal id="15" type="2" active="yes">шея-nn(e16,x10):15:1.00</literal>
+<literal id="16" type="2" active="yes">коррупционер-nn(e17,x11):16:1.00</literal>
+<literal id="17" type="2" active="yes">должен-adj(e18,x12):17:1.00</literal>
+<unification l1="17" l2="9" unifier="e10=e18, x7=x12" active="yes" />
+<literal id="18" type="2" active="yes">сжиматься-vb(e19,u10,u11,u12):18:1.00</literal>
+<literal id="19" type="2" active="yes">постоянно-rb(e20,e19):19:1.00</literal>
+<unification l1="19" l2="6" unifier="e7=e20, e6=e19" active="yes" />
+<literal id="20" type="2" active="yes">неумолимо-rb(e21,e22):20:1.00</literal>
+<literal id="21" type="2" active="yes">compl(e23,e10,e11):21:1.00</literal>
+<unification l1="21" l2="22" unifier="e10=e18" active="no" />
+<literal id="22" type="2" active="yes">compl(e24,e18,e19):22:1.00</literal>
+<unification l1="22" l2="21" unifier="e10=e18" active="no" />
+<literal id="23" type="2" active="yes">of-in(e25,x10,x11):23:1.00</literal>
+<literal id="24" type="2" active="yes">!=(e23,e24):24:1.00</literal>
+<literal id="25" type="3" active="yes">nation(x4):25:0.90</literal>
+<literal id="26" type="3" active="yes">dFCompEnt(x4):26:0.36</literal>
+<literal id="27" type="3" active="yes">functionality(_179,x4):27:0.27</literal>
+<literal id="28" type="3" active="yes">thrive(_179,_180):28:0.09</literal>
+<literal id="29" type="3" active="yes">citizens(_180,x4):29:0.09</literal>
+<explanation name="nation1" active="yes" axiom="">26 ^ 27 ^ 28 ^ 29 => 25</explanation>
+<explanation name="rossija" active="yes" axiom="">25 => 4</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="36">
+<observed size="72" domain_size="0">
+путин-nn(e1,x1) ^ обратить-vb(e2,x2,x3,u1) ^ внимание-nn(e3,x3) ^ на-in(e4,x3,x4) ^ время-nn(e5,x5) ^ чудо-nn(e6,x6) ^ свобода-nn(e7,x7) ^ рынок-nn(e8,x8) ^ регулировать-vb(e9,u2,x9,u3) ^ политический-adj(e10,x9) ^ экономический-adj(e11,x10) ^ процесс-nn(e12,x9) ^ пройти-vb(e13,x5,u4,u5) ^ государство-nn(e14,x11) ^ общество-nn(e15,x12) ^ следовать-vb(e16,x11,e17,u6) ^ строить-vb(e17,x11,u7,u8) ^ сила-nn(e18,x13) ^ народ-nn(e19,x14) ^ быть-vb(e20,x11,u9,u10) ^ подлинный-adj(e21,x15) ^ источник-nn(e22,x15) ^ власть-nn(e23,x16) ^ отмечать-vb(e24,x2,u11,u12) ^ эксперт-nn(e25,x2) ^ следовать-vb(e26,x11,x12,x17) ^ of-in(e27,x5,x6) ^ instr(e28,e17,x13) ^ of-in(e29,x13,x14) ^ equal(e30,x11,x15) ^ of-in(e31,x15,x16) ^ постепенно-rb(e1,e8) ^ оздоровление-nn(e2,x1) ^ государственный-adj(e3,x2) ^ институт-nn(e4,x2) ^ поразить-vb(e5,u1,u2,u3) ^ болезнь-nn(e6,x3) ^ коррупция-nn(e7,x4) ^ примечание-nn(e8,x1) ^ of-in(e9,x1,x2) ^ instr(e10,e5,x3) ^ редакция-nn(e1,x1) ^ предложить-vb(e1,u1,u2,u3) ^ путин-nn(e2,x1) ^ в-in(e3,e1,x2) ^ совокупность-nn(e4,x2) ^ с-in(e5,x2,x3) ^ новый-adj(e6,x3) ^ система-nn(e7,x3) ^ общественный-adj(e8,x4) ^ контроль-nn(e9,x4) ^ подразумевать-vb(e10,u4,x5,u5) ^ коллективный-adj(e11,x5) ^ ответственность-nn(e12,x5) ^ вместе-rb(e13,e17) ^ с-in(e14,x6,x7) ^ оппозиционный-adj(e15,x7) ^ сила-nn(e16,x7) ^ за-in(e17,x5,x8) ^ активизация-nn(e18,x8) ^ антикоррупционный-adj(e19,x9) ^ процесс-nn(e20,x9) ^ безусловно-rb(e21,e23) ^ политический-adj(e22,x10) ^ новация-nn(e23,x10) ^ instr(e24,e1,x1) ^ of-in(e25,x3,x4) ^ of-in(e26,x8,x9) ^ !=(e16,e26) ^ !=(e28,e10,e24) ^ !=(e5,e14) ^ !=(e27,e29,e31,e9,e25,e26)
+</observed>
+<hypothesis score="-64.886">
+путин-nn(e1,x1) ^ обратить-vb(e2,x2,x3,u1) ^ внимание-nn(e3,x3) ^ на-in(e4,x3,x4) ^ время-nn(e5,x5) ^ чудо-nn(e6,x6) ^ свобода-nn(e7,x7) ^ рынок-nn(e8,x8) ^ регулировать-vb(e9,u2,x9,u3) ^ политический-adj(e10,x9) ^ экономический-adj(e11,x10) ^ процесс-nn(e12,x9) ^ пройти-vb(e13,x5,u4,u5) ^ государство-nn(e14,x11) ^ общество-nn(e15,x12) ^ следовать-vb(e16,x11,e17,u6) ^ строить-vb(e17,x11,u7,u8) ^ сила-nn(e18,x13) ^ народ-nn(e19,x14) ^ быть-vb(e20,x11,u9,u10) ^ подлинный-adj(e21,x15) ^ источник-nn(e22,x15) ^ власть-nn(e23,x16) ^ отмечать-vb(e24,x2,u11,u12) ^ эксперт-nn(e25,x2) ^ следовать-vb(e26,x11,x12,x17) ^ of-in(e27,x5,x6) ^ instr(e28,e17,x13) ^ of-in(e29,x13,x14) ^ equal(e30,x11,x15) ^ of-in(e31,x15,x16) ^ постепенно-rb(e1,e8) ^ оздоровление-nn(e2,x1) ^ государственный-adj(e3,x2) ^ институт-nn(e4,x2) ^ поразить-vb(e5,u1,u2,u3) ^ болезнь-nn(e6,x3) ^ коррупция-nn(e7,x4) ^ примечание-nn(e8,x1) ^ of-in(e9,x1,x2) ^ instr(e10,e5,x3) ^ редакция-nn(e1,x1) ^ предложить-vb(e1,u1,u2,u3) ^ путин-nn(e2,x1) ^ в-in(e3,e1,x2) ^ совокупность-nn(e4,x2) ^ с-in(e5,x2,x3) ^ новый-adj(e6,x3) ^ система-nn(e7,x3) ^ общественный-adj(e8,x4) ^ контроль-nn(e9,x4) ^ подразумевать-vb(e10,u4,x5,u5) ^ коллективный-adj(e11,x5) ^ ответственность-nn(e12,x5) ^ вместе-rb(e13,e17) ^ с-in(e14,x6,x7) ^ оппозиционный-adj(e15,x7) ^ сила-nn(e16,x7) ^ за-in(e17,x5,x8) ^ активизация-nn(e18,x8) ^ антикоррупционный-adj(e19,x9) ^ процесс-nn(e20,x9) ^ безусловно-rb(e21,e23) ^ политический-adj(e22,x10) ^ новация-nn(e23,x10) ^ instr(e24,e1,x1) ^ of-in(e25,x3,x4) ^ of-in(e26,x8,x9) ^ !=(e16,e26) ^ !=(e28,e10,e24) ^ !=(e5,e14) ^ !=(e27,e29,e31,e9,e25,e26) ^ dFCompEnt(x8) ^ functionality(_181,x8) ^ commerce(_181) ^ dFCompEnt(x10) ^ functionality(_186,x10) ^ commerce(_186) ^ dFCompEnt(x11) ^ functionality(_187,x11) ^ thrive(_187,_188) ^ citizens(_188,x11) ^ increaseStruct(u7) ^ lead(x16,_189,_190) ^ dFCompEnt(x3) ^ functionality(_191,x3) ^ =(e2,e1) ^ =(_191,_181,_186,_187) ^ =(e20,e12) ^ =(e16,e18) ^ =(e22,e10) ^ =(x13,x7) ^ =(x9,x11,x10,x8,x3)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_commerce_78":-0.101 "!HYPOTHESIZED_на-in_3":-1.001 "!EXPLAINED_рынок-nn_7":1 "!HYPOTHESIZED_of-in_26":-1.001 "!HYPOTHESIZED_путин-nn_43":-1.001 "!HYPOTHESIZED_народ-nn_18":-1.001 "!EXPLAINED_путин-nn_43":1 "!HYPOTHESIZED_сила-nn_17":-1.001 "!HYPOTHESIZED_эксперт-nn_24":-1.001 "!HYPOTHESIZED_государственный-adj_33":-1.001 "!EXPLAINED_система-nn_48":1 "!HYPOTHESIZED_редакция-nn_41":-1.001 "!HYPOTHESIZED_instr_40":-1.001 "!HYPOTHESIZED_безусловно-rb_62":-1.001 "!HYPOTHESIZED_контроль-nn_50":-1.001 "!HYPOTHESIZED_!=_69":-1.001 "!EXPLAINED_commerce_78":0.1 "!HYPOTHESIZED_время-nn_4":-1.001 "!HYPOTHESIZED_система-nn_48":-1.001 "!HYPOTHESIZED_ответственность-nn_53":-1.001 "!HYPOTHESIZED_!=_71":-1.001 "!HYPOTHESIZED_dFCompEnt_79":-0.401 "!HYPOTHESIZED_внимание-nn_2":-1.001 "!HYPOTHESIZED_пройти-vb_12":-1.001 "!EXPLAINED_functionality_86":0.4 "!HYPOTHESIZED_коллективный-adj_52":-1.001 "!HYPOTHESIZED_обратить-vb_1":-1.001 "!HYPOTHESIZED_следовать-vb_25":-1.001 "!HYPOTHESIZED_регулировать-vb_8":-1.001 "!HYPOTHESIZED_свобода-nn_6":-1.001 "!HYPOTHESIZED_dFCompEnt_76":-0.401 "!HYPOTHESIZED_с-in_55":-1.001 "!HYPOTHESIZED_functionality_77":-0.401 "!EXPLAINED_процесс-nn_61":1 "!HYPOTHESIZED_of-in_67":-1.001 "!HYPOTHESIZED_commerce_74":-0.101 "!HYPOTHESIZED_thrive_81":-0.101 "!HYPOTHESIZED_антикоррупционный-adj_60":-1.001 "!HYPOTHESIZED_за-in_58":-1.001 "!HYPOTHESIZED_следовать-vb_15":-1.001 "!HYPOTHESIZED_болезнь-nn_36":-1.001 "!HYPOTHESIZED_с-in_46":-1.001 "!HYPOTHESIZED_власть-nn_22":-1.001 "!HYPOTHESIZED_процесс-nn_61":-1.001 "!HYPOTHESIZED_общественный-adj_49":-1.001 "!EXPLAINED_экономический-adj_10":1 "!HYPOTHESIZED_институт-nn_34":-1.001 "!HYPOTHESIZED_сила-nn_57":-1.001 "!HYPOTHESIZED_of-in_39":-1.001 "!HYPOTHESIZED_новый-adj_47":-1.001 "!HYPOTHESIZED_источник-nn_21":-1.001 "!HYPOTHESIZED_подлинный-adj_20":-1.001 "!HYPOTHESIZED_чудо-nn_5":-1.001 "!HYPOTHESIZED_в-in_44":-1.001 "!HYPOTHESIZED_functionality_86":-0.401 "!HYPOTHESIZED_примечание-nn_38":-1.001 "!HYPOTHESIZED_общество-nn_14":-1.001 "!EXPLAINED_политический-adj_63":1 "!HYPOTHESIZED_equal_29":-1.001 "!HYPOTHESIZED_increaseStruct_83":-0.901 "!EXPLAINED_functionality_73":0.4 "!HYPOTHESIZED_lead_84":-0.901 "!HYPOTHESIZED_!=_70":-1.001 "!HYPOTHESIZED_процесс-nn_11":-1.001 "!HYPOTHESIZED_быть-vb_19":-1.001 "!EXPLAINED_сила-nn_57":1 "!HYPOTHESIZED_рынок-nn_7":-1.001 "!HYPOTHESIZED_отмечать-vb_23":-1.001 "!HYPOTHESIZED_functionality_80":-0.301 "!HYPOTHESIZED_подразумевать-vb_51":-1.001 "!HYPOTHESIZED_постепенно-rb_31":-1.001 "!HYPOTHESIZED_of-in_66":-1.001 "!HYPOTHESIZED_instr_65":-1.001 "!HYPOTHESIZED_предложить-vb_42":-1.001 "!EXPLAINED_dFCompEnt_76":0.4 "!EXPLAINED_dFCompEnt_85":0.5 "!HYPOTHESIZED_политический-adj_63":-1.001 "!HYPOTHESIZED_экономический-adj_10":-1.001 "!HYPOTHESIZED_of-in_28":-1.001 "!HYPOTHESIZED_instr_27":-1.001 "!HYPOTHESIZED_новация-nn_64":-1.001 "!HYPOTHESIZED_поразить-vb_35":-1.001 "!HYPOTHESIZED_dFCompEnt_72":-0.401 "!HYPOTHESIZED_путин-nn_0":-1.001 "!HYPOTHESIZED_functionality_73":-0.401 "!HYPOTHESIZED_совокупность-nn_45":-1.001 "!HYPOTHESIZED_коррупция-nn_37":-1.001 "!HYPOTHESIZED_!=_68":-1.001 "!HYPOTHESIZED_оздоровление-nn_32":-1.001 "!HYPOTHESIZED_государство-nn_13":-1.001 "!HYPOTHESIZED_citizens_82":-0.101 "!HYPOTHESIZED_оппозиционный-adj_56":-1.001 "!HYPOTHESIZED_строить-vb_16":-1.001 "!HYPOTHESIZED_dFCompEnt_85":-0.501 "!HYPOTHESIZED_вместе-rb_54":-1.001 "!EXPLAINED_государство-nn_13":1 "!HYPOTHESIZED_активизация-nn_59":-1.001 "!HYPOTHESIZED_of-in_30":-1.001 "!EXPLAINED_строить-vb_16":1 "!EXPLAINED_dFCompEnt_79":0.4 "!HYPOTHESIZED_политический-adj_9":-1.001 "!EXPLAINED_functionality_77":0.4 "!EXPLAINED_власть-nn_22":1 
+</vector>
+<statistics>
+<time total="0.0897851" prepare="0.054574" ilp="0.0352111" />
+<ilp solution="Optimal" variables="498" constraints="1954" />
+<search-space literals="88" axiom="16" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">путин-nn(e1,x1):0:1.00</literal>
+<unification l1="0" l2="43" unifier="e1=e2" active="yes" />
+<literal id="1" type="2" active="yes">обратить-vb(e2,x2,x3,u1):1:1.00</literal>
+<literal id="2" type="2" active="yes">внимание-nn(e3,x3):2:1.00</literal>
+<literal id="3" type="2" active="yes">на-in(e4,x3,x4):3:1.00</literal>
+<literal id="4" type="2" active="yes">время-nn(e5,x5):4:1.00</literal>
+<literal id="5" type="2" active="yes">чудо-nn(e6,x6):5:1.00</literal>
+<literal id="6" type="2" active="yes">свобода-nn(e7,x7):6:1.00</literal>
+<literal id="7" type="2" active="yes">рынок-nn(e8,x8):7:1.00</literal>
+<literal id="8" type="2" active="yes">регулировать-vb(e9,u2,x9,u3):8:1.00</literal>
+<literal id="9" type="2" active="yes">политический-adj(e10,x9):9:1.00</literal>
+<unification l1="9" l2="63" unifier="e10=e22, x9=x10" active="yes" />
+<literal id="10" type="2" active="yes">экономический-adj(e11,x10):10:1.00</literal>
+<literal id="11" type="2" active="yes">процесс-nn(e12,x9):11:1.00</literal>
+<unification l1="11" l2="61" unifier="e12=e20" active="yes" />
+<literal id="12" type="2" active="yes">пройти-vb(e13,x5,u4,u5):12:1.00</literal>
+<literal id="13" type="2" active="yes">государство-nn(e14,x11):13:1.00</literal>
+<literal id="14" type="2" active="yes">общество-nn(e15,x12):14:1.00</literal>
+<literal id="15" type="2" active="yes">следовать-vb(e16,x11,e17,u6):15:1.00</literal>
+<unification l1="15" l2="25" unifier="" active="no" />
+<literal id="16" type="2" active="yes">строить-vb(e17,x11,u7,u8):16:1.00</literal>
+<literal id="17" type="2" active="yes">сила-nn(e18,x13):17:1.00</literal>
+<unification l1="17" l2="57" unifier="e16=e18, x7=x13" active="yes" />
+<literal id="18" type="2" active="yes">народ-nn(e19,x14):18:1.00</literal>
+<literal id="19" type="2" active="yes">быть-vb(e20,x11,u9,u10):19:1.00</literal>
+<literal id="20" type="2" active="yes">подлинный-adj(e21,x15):20:1.00</literal>
+<literal id="21" type="2" active="yes">источник-nn(e22,x15):21:1.00</literal>
+<literal id="22" type="2" active="yes">власть-nn(e23,x16):22:1.00</literal>
+<literal id="23" type="2" active="yes">отмечать-vb(e24,x2,u11,u12):23:1.00</literal>
+<literal id="24" type="2" active="yes">эксперт-nn(e25,x2):24:1.00</literal>
+<literal id="25" type="2" active="yes">следовать-vb(e26,x11,x12,x17):25:1.00</literal>
+<unification l1="25" l2="15" unifier="" active="no" />
+<literal id="26" type="2" active="yes">of-in(e27,x5,x6):26:1.00</literal>
+<unification l1="26" l2="28" unifier="" active="no" />
+<unification l1="26" l2="30" unifier="" active="no" />
+<unification l1="26" l2="39" unifier="" active="no" />
+<unification l1="26" l2="66" unifier="" active="no" />
+<unification l1="26" l2="67" unifier="" active="no" />
+<literal id="27" type="2" active="yes">instr(e28,e17,x13):27:1.00</literal>
+<unification l1="27" l2="40" unifier="" active="no" />
+<unification l1="27" l2="65" unifier="" active="no" />
+<literal id="28" type="2" active="yes">of-in(e29,x13,x14):28:1.00</literal>
+<unification l1="28" l2="26" unifier="" active="no" />
+<unification l1="28" l2="30" unifier="" active="no" />
+<unification l1="28" l2="39" unifier="" active="no" />
+<unification l1="28" l2="66" unifier="" active="no" />
+<unification l1="28" l2="67" unifier="" active="no" />
+<literal id="29" type="2" active="yes">equal(e30,x11,x15):29:1.00</literal>
+<literal id="30" type="2" active="yes">of-in(e31,x15,x16):30:1.00</literal>
+<unification l1="30" l2="26" unifier="" active="no" />
+<unification l1="30" l2="28" unifier="" active="no" />
+<unification l1="30" l2="39" unifier="" active="no" />
+<unification l1="30" l2="66" unifier="" active="no" />
+<unification l1="30" l2="67" unifier="" active="no" />
+<literal id="31" type="2" active="yes">постепенно-rb(e1,e8):31:1.00</literal>
+<literal id="32" type="2" active="yes">оздоровление-nn(e2,x1):32:1.00</literal>
+<literal id="33" type="2" active="yes">государственный-adj(e3,x2):33:1.00</literal>
+<literal id="34" type="2" active="yes">институт-nn(e4,x2):34:1.00</literal>
+<literal id="35" type="2" active="yes">поразить-vb(e5,u1,u2,u3):35:1.00</literal>
+<literal id="36" type="2" active="yes">болезнь-nn(e6,x3):36:1.00</literal>
+<literal id="37" type="2" active="yes">коррупция-nn(e7,x4):37:1.00</literal>
+<literal id="38" type="2" active="yes">примечание-nn(e8,x1):38:1.00</literal>
+<literal id="39" type="2" active="yes">of-in(e9,x1,x2):39:1.00</literal>
+<unification l1="39" l2="26" unifier="" active="no" />
+<unification l1="39" l2="28" unifier="" active="no" />
+<unification l1="39" l2="30" unifier="" active="no" />
+<unification l1="39" l2="66" unifier="" active="no" />
+<unification l1="39" l2="67" unifier="" active="no" />
+<literal id="40" type="2" active="yes">instr(e10,e5,x3):40:1.00</literal>
+<unification l1="40" l2="27" unifier="" active="no" />
+<unification l1="40" l2="65" unifier="" active="no" />
+<literal id="41" type="2" active="yes">редакция-nn(e1,x1):41:1.00</literal>
+<literal id="42" type="2" active="yes">предложить-vb(e1,u1,u2,u3):42:1.00</literal>
+<literal id="43" type="2" active="yes">путин-nn(e2,x1):43:1.00</literal>
+<unification l1="43" l2="0" unifier="e1=e2" active="yes" />
+<literal id="44" type="2" active="yes">в-in(e3,e1,x2):44:1.00</literal>
+<literal id="45" type="2" active="yes">совокупность-nn(e4,x2):45:1.00</literal>
+<literal id="46" type="2" active="yes">с-in(e5,x2,x3):46:1.00</literal>
+<unification l1="46" l2="55" unifier="" active="no" />
+<literal id="47" type="2" active="yes">новый-adj(e6,x3):47:1.00</literal>
+<literal id="48" type="2" active="yes">система-nn(e7,x3):48:1.00</literal>
+<literal id="49" type="2" active="yes">общественный-adj(e8,x4):49:1.00</literal>
+<literal id="50" type="2" active="yes">контроль-nn(e9,x4):50:1.00</literal>
+<literal id="51" type="2" active="yes">подразумевать-vb(e10,u4,x5,u5):51:1.00</literal>
+<literal id="52" type="2" active="yes">коллективный-adj(e11,x5):52:1.00</literal>
+<literal id="53" type="2" active="yes">ответственность-nn(e12,x5):53:1.00</literal>
+<literal id="54" type="2" active="yes">вместе-rb(e13,e17):54:1.00</literal>
+<literal id="55" type="2" active="yes">с-in(e14,x6,x7):55:1.00</literal>
+<unification l1="55" l2="46" unifier="" active="no" />
+<literal id="56" type="2" active="yes">оппозиционный-adj(e15,x7):56:1.00</literal>
+<literal id="57" type="2" active="yes">сила-nn(e16,x7):57:1.00</literal>
+<unification l1="57" l2="17" unifier="e16=e18, x7=x13" active="yes" />
+<literal id="58" type="2" active="yes">за-in(e17,x5,x8):58:1.00</literal>
+<literal id="59" type="2" active="yes">активизация-nn(e18,x8):59:1.00</literal>
+<literal id="60" type="2" active="yes">антикоррупционный-adj(e19,x9):60:1.00</literal>
+<literal id="61" type="2" active="yes">процесс-nn(e20,x9):61:1.00</literal>
+<unification l1="61" l2="11" unifier="e12=e20" active="yes" />
+<literal id="62" type="2" active="yes">безусловно-rb(e21,e23):62:1.00</literal>
+<literal id="63" type="2" active="yes">политический-adj(e22,x10):63:1.00</literal>
+<unification l1="63" l2="9" unifier="e10=e22, x9=x10" active="yes" />
+<literal id="64" type="2" active="yes">новация-nn(e23,x10):64:1.00</literal>
+<literal id="65" type="2" active="yes">instr(e24,e1,x1):65:1.00</literal>
+<unification l1="65" l2="27" unifier="" active="no" />
+<unification l1="65" l2="40" unifier="" active="no" />
+<literal id="66" type="2" active="yes">of-in(e25,x3,x4):66:1.00</literal>
+<unification l1="66" l2="26" unifier="" active="no" />
+<unification l1="66" l2="28" unifier="" active="no" />
+<unification l1="66" l2="30" unifier="" active="no" />
+<unification l1="66" l2="39" unifier="" active="no" />
+<unification l1="66" l2="67" unifier="x3=x8" active="no" />
+<literal id="67" type="2" active="yes">of-in(e26,x8,x9):67:1.00</literal>
+<unification l1="67" l2="26" unifier="" active="no" />
+<unification l1="67" l2="28" unifier="" active="no" />
+<unification l1="67" l2="30" unifier="" active="no" />
+<unification l1="67" l2="39" unifier="" active="no" />
+<unification l1="67" l2="66" unifier="x3=x8" active="no" />
+<literal id="68" type="2" active="yes">!=(e16,e26):68:1.00</literal>
+<literal id="69" type="2" active="yes">!=(e28,e10,e24):69:1.00</literal>
+<literal id="70" type="2" active="yes">!=(e5,e14):70:1.00</literal>
+<literal id="71" type="2" active="yes">!=(e27,e29,e31,e9,e25,e26):71:1.00</literal>
+<literal id="72" type="3" active="yes">dFCompEnt(x8):72:0.40</literal>
+<unification l1="72" l2="76" unifier="x8=x10" active="yes" />
+<unification l1="72" l2="79" unifier="x8=x11" active="yes" />
+<unification l1="72" l2="85" unifier="x3=x8" active="yes" />
+<literal id="73" type="3" active="yes">functionality(_181,x8):73:0.40</literal>
+<unification l1="73" l2="77" unifier="_181=_186, x8=x10" active="yes" />
+<unification l1="73" l2="80" unifier="_181=_187, x8=x11" active="yes" />
+<unification l1="73" l2="86" unifier="_181=_191, x3=x8" active="yes" />
+<literal id="74" type="3" active="yes">commerce(_181):74:0.10</literal>
+<unification l1="74" l2="78" unifier="_181=_186" active="yes" />
+<literal id="75" type="3" active="no">conflict(x9,_182,_183,_184,_185):75:1.20</literal>
+<unification l1="75" l2="87" unifier="x9=x10" active="no" />
+<literal id="76" type="3" active="yes">dFCompEnt(x10):76:0.40</literal>
+<unification l1="76" l2="72" unifier="x8=x10" active="yes" />
+<unification l1="76" l2="79" unifier="x10=x11" active="yes" />
+<unification l1="76" l2="85" unifier="x3=x10" active="yes" />
+<literal id="77" type="3" active="yes">functionality(_186,x10):77:0.40</literal>
+<unification l1="77" l2="73" unifier="_181=_186, x8=x10" active="yes" />
+<unification l1="77" l2="80" unifier="_186=_187, x10=x11" active="yes" />
+<unification l1="77" l2="86" unifier="_186=_191, x3=x10" active="yes" />
+<literal id="78" type="3" active="yes">commerce(_186):78:0.10</literal>
+<unification l1="78" l2="74" unifier="_181=_186" active="yes" />
+<literal id="79" type="3" active="yes">dFCompEnt(x11):79:0.40</literal>
+<unification l1="79" l2="72" unifier="x8=x11" active="yes" />
+<unification l1="79" l2="76" unifier="x10=x11" active="yes" />
+<unification l1="79" l2="85" unifier="x3=x11" active="yes" />
+<literal id="80" type="3" active="yes">functionality(_187,x11):80:0.30</literal>
+<unification l1="80" l2="73" unifier="_181=_187, x8=x11" active="yes" />
+<unification l1="80" l2="77" unifier="_186=_187, x10=x11" active="yes" />
+<unification l1="80" l2="86" unifier="_187=_191, x3=x11" active="yes" />
+<literal id="81" type="3" active="yes">thrive(_187,_188):81:0.10</literal>
+<literal id="82" type="3" active="yes">citizens(_188,x11):82:0.10</literal>
+<literal id="83" type="3" active="yes">increaseStruct(u7):83:0.90</literal>
+<literal id="84" type="3" active="yes">lead(x16,_189,_190):84:0.90</literal>
+<literal id="85" type="3" active="yes">dFCompEnt(x3):85:0.50</literal>
+<unification l1="85" l2="72" unifier="x3=x8" active="yes" />
+<unification l1="85" l2="76" unifier="x3=x10" active="yes" />
+<unification l1="85" l2="79" unifier="x3=x11" active="yes" />
+<literal id="86" type="3" active="yes">functionality(_191,x3):86:0.40</literal>
+<unification l1="86" l2="73" unifier="_181=_191, x3=x8" active="yes" />
+<unification l1="86" l2="77" unifier="_186=_191, x3=x10" active="yes" />
+<unification l1="86" l2="80" unifier="_187=_191, x3=x11" active="yes" />
+<literal id="87" type="3" active="no">conflict(x10,_192,_193,_194,_195):87:1.20</literal>
+<unification l1="87" l2="75" unifier="x9=x10" active="no" />
+<explanation name="vlast" active="yes" axiom="">84 => 22</explanation>
+<explanation name="gosudarstvo" active="yes" axiom="">79 ^ 80 ^ 81 ^ 82 => 13</explanation>
+<explanation name="sistema" active="yes" axiom="">85 ^ 86 => 48</explanation>
+<explanation name="stroit" active="yes" axiom="">83 => 16</explanation>
+<explanation name="rynok" active="yes" axiom="">72 ^ 73 ^ 74 => 7</explanation>
+<explanation name="politicheskij" active="no" axiom="">87 => 63</explanation>
+<explanation name="politicheskij" active="no" axiom="">75 => 9</explanation>
+<explanation name="ekonomicheskij" active="yes" axiom="">76 ^ 77 ^ 78 => 10</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="37">
+<observed size="14" domain_size="0">
+образ-nn(e1,x1) ^ власть-nn(e2,x2) ^ намерен-adj(e3,x3) ^ решить-vb(e4,u1,x4,u2) ^ проблема-nn(e5,x4) ^ отток-nn(e6,x5) ^ молодежь-nn(e7,x6) ^ из-in(e8,x5,x7) ^ село-nn(e9,x7) ^ compl(e10,e3,e4) ^ of-in(e11,x1,x2) ^ of-in(e12,x4,x5) ^ of-in(e13,x5,x6) ^ !=(e11,e12,e13)
+</observed>
+<hypothesis score="-13.915">
+образ-nn(e1,x1) ^ власть-nn(e2,x2) ^ намерен-adj(e3,x3) ^ решить-vb(e4,u1,x4,u2) ^ проблема-nn(e5,x4) ^ отток-nn(e6,x5) ^ молодежь-nn(e7,x6) ^ из-in(e8,x5,x7) ^ село-nn(e9,x7) ^ compl(e10,e3,e4) ^ of-in(e11,x1,x2) ^ of-in(e12,x4,x5) ^ of-in(e13,x5,x6) ^ !=(e11,e12,e13) ^ lead(x2,_196,_197)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_проблема-nn_4":-1.001 "!HYPOTHESIZED_из-in_7":-1.001 "!HYPOTHESIZED_образ-nn_0":-1.001 "!HYPOTHESIZED_власть-nn_1":-1.001 "!EXPLAINED_власть-nn_1":1 "!HYPOTHESIZED_of-in_12":-1.001 "!HYPOTHESIZED_of-in_10":-1.001 "!HYPOTHESIZED_молодежь-nn_6":-1.001 "!HYPOTHESIZED_compl_9":-1.001 "!HYPOTHESIZED_село-nn_8":-1.001 "!HYPOTHESIZED_решить-vb_3":-1.001 "!HYPOTHESIZED_!=_13":-1.001 "!HYPOTHESIZED_намерен-adj_2":-1.001 "!HYPOTHESIZED_отток-nn_5":-1.001 "!HYPOTHESIZED_lead_14":-0.901 "!HYPOTHESIZED_of-in_11":-1.001 
+</vector>
+<statistics>
+<time total="0.00636482" prepare="0.00570583" ilp="0.000658989" />
+<ilp solution="Optimal" variables="64" constraints="70" />
+<search-space literals="15" axiom="4" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">образ-nn(e1,x1):0:1.00</literal>
+<literal id="1" type="2" active="yes">власть-nn(e2,x2):1:1.00</literal>
+<literal id="2" type="2" active="yes">намерен-adj(e3,x3):2:1.00</literal>
+<literal id="3" type="2" active="yes">решить-vb(e4,u1,x4,u2):3:1.00</literal>
+<literal id="4" type="2" active="yes">проблема-nn(e5,x4):4:1.00</literal>
+<literal id="5" type="2" active="yes">отток-nn(e6,x5):5:1.00</literal>
+<literal id="6" type="2" active="yes">молодежь-nn(e7,x6):6:1.00</literal>
+<literal id="7" type="2" active="yes">из-in(e8,x5,x7):7:1.00</literal>
+<literal id="8" type="2" active="yes">село-nn(e9,x7):8:1.00</literal>
+<literal id="9" type="2" active="yes">compl(e10,e3,e4):9:1.00</literal>
+<literal id="10" type="2" active="yes">of-in(e11,x1,x2):10:1.00</literal>
+<unification l1="10" l2="11" unifier="" active="no" />
+<unification l1="10" l2="12" unifier="" active="no" />
+<literal id="11" type="2" active="yes">of-in(e12,x4,x5):11:1.00</literal>
+<unification l1="11" l2="10" unifier="" active="no" />
+<unification l1="11" l2="12" unifier="" active="no" />
+<literal id="12" type="2" active="yes">of-in(e13,x5,x6):12:1.00</literal>
+<unification l1="12" l2="10" unifier="" active="no" />
+<unification l1="12" l2="11" unifier="" active="no" />
+<literal id="13" type="2" active="yes">!=(e11,e12,e13):13:1.00</literal>
+<literal id="14" type="3" active="yes">lead(x2,_196,_197):14:0.90</literal>
+<explanation name="vlast" active="yes" axiom="">14 => 1</explanation>
+</proofgraph>
+</result-inference>
+</henry-output>

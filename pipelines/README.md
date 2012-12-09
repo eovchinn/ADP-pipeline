@@ -25,7 +25,7 @@ Note that there is no "that" in the logical form above.
 john-nn(e1,x1) & try-vb(e2,x1,e3,u1) & go-vb(e3,x1,u2,u3)
 ```
 
-3) Other args
+3) Other arguments
 
 If in the language you are working with there are more than 3 cases which can be expressed without prepositions (e.g. Russian), then introduce additional predicates expressing these cases is need.
 Use compl if you don't know how to call the additional predicates.

@@ -15,8 +15,8 @@ ABBR_LIST=${LIB}/spanish-abbreviations
 PARFILE=${LIB}/spanish-utf8.par
 MWLFILE=${LIB}/spanish-mwls-utf8
 
-$TOKENIZER -a $ABBR_LIST $* |
+#$TOKENIZER -a $ABBR_LIST $* |
 # recognition of MWLs
-$MWL -f $MWLFILE |
+$MWL -f $MWLFILE $*|
 # tagging
 $TAGGER $OPTIONS $PARFILE
