@@ -5,4 +5,18 @@ outputFileName="${2:-/dev/stdout}"
 
 farsiPipelineDir=$METAPHOR_DIR/pipelines/Farsi
 
-$farsiPipelineDir/tokenize < $inputFile |$farsiPipelineDir/tag |$farsiPipelineDir/parse |$farsiPipelineDir/createLF > $outputFileName
+if [ -d "$2" ]; then
+	$farsiPipelineDir/tokenize < $inputFile | 
+	tee $2/tokenizer_o.txt |
+	$farsiPipelineDir/tag |
+	tee $2/tagger_o.txt |
+	$farsiPipelineDir/parse |
+	tee $2/parser_o.txt |
+	$farsiPipelineDir/createLF > /dev/stdout
+else
+	$farsiPipelineDir/tokenize < $inputFile | 
+	$farsiPipelineDir/tag |
+	$farsiPipelineDir/parse |
+	$farsiPipelineDir/createLF > $outputFileName
+fi
+

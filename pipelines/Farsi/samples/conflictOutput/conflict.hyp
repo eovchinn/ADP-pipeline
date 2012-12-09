@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<henry-output parameter="-m infer /Users/niloofar/Metaphor-ADP/KBs/Farsi/farsi-conflict-lexical-axioms-weighted.txt /Users/niloofar/Metaphor-ADP/pipelines/Farsi/samples/conflictOutput/conflict.obs -e /Users/niloofar/henry-n700/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T 60">
-<result-inference target="1">
