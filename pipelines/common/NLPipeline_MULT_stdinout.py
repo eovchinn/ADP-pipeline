@@ -67,8 +67,6 @@ def main():
 				PARSER_PIPELINE += ' --input ' + pa.input
 			LF2HENRY = 'python ' + BOXER2HENRY + ' --nonmerge sameid freqpred'
 
-		print 'COMMAND: ' + PARSER_PIPELINE
-
 		parser_proc = Popen(PARSER_PIPELINE, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
 		if pa.input:
 			parser_output = parser_proc.communicate()[0]
