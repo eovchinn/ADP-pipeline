@@ -45,7 +45,7 @@
 (B (name conflicto-vb) (=> (conflict w x y g h :0.9)(^ (en-in e2 x w)(conflicto-nn e2 w))))
 
 ; x esta reñido
-(B (name reñido-vb) (=> (conflict e x y g h :0.9)(^ (estar-vb e3 x u u0)(reñido-vb e4 x y u2))))
+(B (name renido-vb) (=> (conflict e x y g h :0.9)(^ (estar-vb e3 x u u0)(reñido-vb e4 x y u2))))
 
 ; x combate
 (B (combatir-vb) (=> (conflict e1 x y g h :0.9)(combatir-vb e1 x y u)))
@@ -242,11 +242,11 @@
 ; VERBS + PREPS
 
 ; y damages x
-(B (name dañar-vb1) (=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8)) (dañar-vb e y x u)))
+(B (name danar-vb1) (=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8)) (dañar-vb e y x u)))
 
-(B (name dañar-vb2) (=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8)) (^ (dañar-vb e y u1 u)(a-in e1 e x))))
+(B (name danar-vb2) (=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8)) (^ (dañar-vb e y u1 u)(a-in e1 e x))))
 
-(B (name dañar-vb3) (=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8)) (^ (dañar-vb e y u1 u)(en-in e1 e x))))
+(B (name danar-vb3) (=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8)) (^ (dañar-vb e y u1 u)(en-in e1 e x))))
 
 (B (name perjudicar-vb1) (=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8)) (perjudicar-vb e y x u)))
 
@@ -260,11 +260,11 @@
 
 (B (name estropear-vb3) (=>  (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8))(^ (estropear-vb e y u1 u)(en-in e1 e x))))
 
-(B (name hacerdaño-vb1) (=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8)) (^ (hacer-vb e w y u2)(daño-nn e0 y))))
+(B (name hacerdano-vb1) (=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8)) (^ (hacer-vb e w y u2)(daño-nn e0 y))))
 
-(B (name hacerdaño-vb2) (=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8)) (^ (hacer-vb e w y u2)(daño-nn e0 y)(a-in e1 e x))))
+(B (name hacerdano-vb2) (=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8)) (^ (hacer-vb e w y u2)(daño-nn e0 y)(a-in e1 e x))))
 
-(B (name hacerdaño-vb3) (=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8)) (^ (hacer-vb e w y u2)(daño-nn e0 y)(en-in e1 e x))))
+(B (name hacerdano-vb3) (=> (^ (dFCompEnt x :0.1)(decreaseStruct x :0.8)) (^ (hacer-vb e w y u2)(daño-nn e0 y)(en-in e1 e x))))
 
 ; y destroys x
 (B (name destruir-vb1)(=> (^ (dFCompEnt x :0.3)(decreaseStruct x :0.5)) (destruir-vb e y x u)))
@@ -446,9 +446,9 @@
 
 (B (name elector-nn1)(=> (voter x :0.9)(elector-nn e y)))
 
-(B (name elección-nn1)(=> (conflict x a b g1 g2 :0.9)(elección-nn e x)))
+(B (name eleccion-nn1)(=> (conflict x a b g1 g2 :0.9)(elección-nn e x)))
 
-(B (name votación-nn1)(=> (conflict x a b g1 g2 :0.9)(votación-nn e x)))
+(B (name votacion-nn1)(=> (conflict x a b g1 g2 :0.9)(votación-nn e x)))
 
 (B (name eleccionario-nn1)(=> (conflict x a b g1 g2 :0.9)(eleccionario-nn e x)))
 
@@ -577,7 +577,7 @@
 
 (B (name presidente-nn) (=> (president x :0.9) (presidente-nn e1 x)))
 
-(B (name unión-nn) (=> (union x :0.9)(unión-nn w x)))
+(B (name union-nn) (=> (union x :0.9)(unión-nn w x)))
 
 (B (name sindicato-nn) (=> (union x :0.9)(sindicato-nn w x)))
 
