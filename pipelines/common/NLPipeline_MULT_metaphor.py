@@ -21,11 +21,14 @@ RUSSIAN_PIPELINE = "%s/pipelines/Russian/run_russian.sh" % METAPHOR_DIR
 BOXER2HENRY = "%s/pipelines/English/Boxer2Henry.py" % METAPHOR_DIR
 PARSER2HENRY = "%s/pipelines/common/IntParser2Henry.py" % METAPHOR_DIR
 
-# Knowledge base
-KBPATH = ''
+# Compiled knowledge bases
+EN_KBPATH = "%s/KBs/English/English_compiled_KB.da" % METAPHOR_DIR
+ES_KBPATH = "%s/KBs/Spanish/Spanish_compiled_KB.da" % METAPHOR_DIR
+RU_KBPATH = "%s/KBs/Russian/Russian_compiled_KB.da" % METAPHOR_DIR
+FA_KBPATH = "%s/KBs/Farsi/Farsi_compiled_KB.da" % METAPHOR_DIR
 
 # switches
-kbcompiled = False
+kbcompiled = True
 
 #unique_id used for proofgraph name (annotation_id may not be enough, as
 #different docs may have same annotation_ids)
@@ -84,16 +87,20 @@ def ADP(input_dict,language,withPDFContent):
 	parser_proc = ''
 	if language == 'FA': 
 		parser_proc = FARSI_PIPELINE  + ' | python ' + PARSER2HENRY + ' --nonmerge sameid freqpred --textid'
+		KBPATH = FA_KBPATH
 	elif language == 'ES': 
 		parser_proc = SPANISH_PIPELINE  + ' | python ' + PARSER2HENRY + ' --nonmerge sameid freqpred --textid'
+		KBPATH = ES_KBPATH
 	elif language == 'RU': 
 		parser_proc = RUSSIAN_PIPELINE  + ' | python ' + PARSER2HENRY + ' --nonmerge sameid freqpred'
+		KBPATH = RU_KBPATH
 	elif language == 'EN':
 		tokenizer = BOXER_DIR + '/bin/tokkie --stdin'
 		candcParser = BOXER_DIR + '/bin/candc --models ' + BOXER_DIR + '/models/boxer --candc-printer boxer'
 		boxer = BOXER_DIR + '/bin/boxer --semantics tacitus --resolve true --stdin'
 		b2h = 'python ' + BOXER2HENRY + ' --nonmerge sameid freqpred'
 		parser_proc = tokenizer + ' | ' + candcParser + ' | ' + boxer + ' | ' + b2h
+		KBPATH = EN_KBPATH
 
 	parser_pipeline = Popen(parser_proc, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
 	parser_output = parser_pipeline.communicate(input=input_str)[0]

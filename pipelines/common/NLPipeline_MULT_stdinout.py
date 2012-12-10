@@ -19,8 +19,11 @@ FARSI_PIPELINE = "%s/pipelines/Farsi/LF_Pipeline" % METAPHOR_DIR
 SPANISH_PIPELINE = "%s/pipelines/Spanish/run_spanish.sh" % METAPHOR_DIR
 RUSSIAN_PIPELINE = "%s/pipelines/Russian/run_russian.sh" % METAPHOR_DIR
 
-# Compiled knowledge base
-KBPATH = ''
+# Compiled knowledge bases
+EN_KBPATH = "%s/KBs/English/English_compiled_KB.da" % METAPHOR_DIR
+ES_KBPATH = "%s/KBs/Spanish/Spanish_compiled_KB.da" % METAPHOR_DIR
+RU_KBPATH = "%s/KBs/Russian/Russian_compiled_KB.da" % METAPHOR_DIR
+FA_KBPATH = "%s/KBs/Farsi/Farsi_compiled_KB.da" % METAPHOR_DIR
 
 def main():
 	parser = argparse.ArgumentParser( description="Multilinguial discource processing pipeline saving intermediate output." )
@@ -49,23 +52,27 @@ def main():
 		if pa.lang == 'FA':
 			PARSER_PIPELINE = FARSI_PIPELINE 	
 			if pa.input: 
-				PARSER_PIPELINE += ' ' + pa.input #+ ' ' + outputdir
+				PARSER_PIPELINE += ' ' + pa.input + ' ' + outputdir
 			LF2HENRY = 'python ' + PARSER2HENRY + ' --nonmerge sameid freqpred'
+			KBPATH = FA_KBPATH
 		elif pa.lang == 'ES': 
 			PARSER_PIPELINE = SPANISH_PIPELINE
 			if pa.input: 
 				PARSER_PIPELINE += ' ' + pa.input + ' ' + outputdir
 			LF2HENRY = 'python ' + PARSER2HENRY + ' --nonmerge sameid freqpred'
+			KBPATH = ES_KBPATH
 		elif pa.lang == 'RU': 
 			PARSER_PIPELINE = RUSSIAN_PIPELINE
 			if pa.input: 
 				PARSER_PIPELINE += ' ' + pa.input + ' ' + outputdir
 			LF2HENRY = 'python ' + PARSER2HENRY + ' --nonmerge sameid freqpred'
+			KBPATH = RU_KBPATH
 		elif pa.lang == 'EN':	
 			PARSER_PIPELINE = 'python ' + ENGLISH_PIPELINE	+ ' --tok ' + '--outputdir ' + outputdir + ' --fname ' + fname
 			if pa.input: 
 				PARSER_PIPELINE += ' --input ' + pa.input
 			LF2HENRY = 'python ' + BOXER2HENRY + ' --nonmerge sameid freqpred'
+			KBPATH = EN_KBPATH
 
 		parser_proc = Popen(PARSER_PIPELINE, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
 		if pa.input:
