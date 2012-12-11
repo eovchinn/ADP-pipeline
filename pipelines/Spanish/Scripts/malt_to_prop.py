@@ -483,14 +483,14 @@ def insert_cpred(head,wordID,sent_dict):
 
 def insert_adjHead(head,wordID,sent_dict):
     #when the head is a noun, simply insert the first argument of the head
-    if sent_dict[head][7] == "nn":        
+    if sent_dict[head][7] == "nn":
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
-    if sent_dict[head][7] == "card":
+    elif sent_dict[head][7] == "card":
         sent_dict[wordID][6][1] = sent_dict[head][6][0]
         #when the head is an adj, insert the first argument of the head of the head
-    if sent_dict[head][2] == "a":
+    elif sent_dict[head][2] == "a":
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
-    if sent_dict[wordID][7] == "card":
+    elif sent_dict[wordID][7] == "card":
         sent_dict[wordID][1] = ""
         sent_dict[wordID][8] = sent_dict[head][8]+"b"
     else:#if sent_dict[head][2] == "v":
