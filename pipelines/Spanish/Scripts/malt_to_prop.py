@@ -159,6 +159,9 @@ def replace_args(prop_sent,sent_dict):
         predicate = prop[6]
         tag = prop[7]
         propID = prop[8]
+        if lemma == "@card@":
+            lemma = ""
+            tag = "card"
         if "R" in predicate:
             predicate = []
         if len(predicate) > 0:
