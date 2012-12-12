@@ -1,0 +1,850 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(conflict e x y g h)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-e
+(B (name jng)(=>(conflict e x y g h :0.9) (jng-nn e2 e)))
+(B (name jdal)(=>(conflict e x y g h :0.9) (jdal-nn e2 e)))
+(B (name pykar)(=>(conflict e x y g h :0.9) (pykar-nn e2 e)))
+(B (name nzae)(=>(conflict e x y g h :0.9) (nzae-nn e2 e)))
+(B (name rzm)(=>(conflict e x y g h :0.9) (rzm-nn e2 e)))
+(B (name mharbh)(=>(conflict e x y g h :0.9) (mharbh-nn e2 e)))
+(B (name mshajrh)(=>(conflict e x y g h :0.9) (mshajrh-nn e2 e)))
+(B (name devy)(=>(conflict e x y g h :0.9) (devy-nn e2 e)))
+(B (name deva)(=>(conflict e x y g h :0.9) (deva-nn e2 e)))
+(B (name prkhash)(=>(conflict e x y g h :0.9) (prkhash-nn e2 e)))
+(B (name mbarzh)(=>(conflict e x y g h :0.9) (mbarzh-nn e2 e)))
+(B (name mbarzh)(=>(conflict e x y g h :0.9) (mbarzh-nn e2 e)))
+(B (name tnaze)(=>(conflict e x y g h :0.9) (tnaze-nn e2 e)))
+(B (name mnazeh)(=>(conflict e x y g h :0.9) (mnazeh-nn e2 e)))
+(B (name mnazeat)(=>(conflict e x y g h :0.9) (mnazeat-nn e2 e)))
+(B (name mearzh)(=>(conflict e x y g h :0.9) (mearzh-nn e2 e)))
+(B (name mearzat)(=>(conflict e x y g h :0.9) (mearzat-nn e2 e)))
+(B (name msaf)(=>(conflict e x y g h :0.9) (msaf-nn e2 e)))
+(B (name zdvkhvrd)(=>(conflict e x y g h :0.9) (zdvkhvrd-nn e2 e)))
+(B (name karzar)(=>(conflict e x y g h :0.9) (karzar-nn e2 e)))
+(B (name hrb)(=>(conflict e x y g h :0.9) (hrb-nn e2 e)))
+(B (name mshajrat)(=>(conflict e x y g h :0.9) (mshajrat-nn e2 e)))
+(B (name edavt)(=>(conflict e x y g h :0.9) (edavt-nn e2 e)))
+(B (name akhtlaf)(=>(conflict e x y g h :0.9) (akhtlaf-nn e2 e)))
+(B (name akhtlaf)(=>(conflict e x y g h :0.9) (akhtlaf-nn e2 e)))
+(B (name msabghh)(=>(conflict e x y g h :0.9) (msabghh-nn e2 e)))
+(B (name msabghh)(=>(conflict e x y g h :0.9) (msabghh-nn e2 e)))
+(B (name hm-aavry)(=>(conflict e x y g h :0.9) (hm-aavry-nn e2 e)))
+(B (name msht-zny)(=>(conflict e x y g h :0.9) (msht-zny-nn e2 e)))
+(B (name bvks)(=>(conflict e x y g h :0.9) (bvks-nn e2 e)))
+(B (name shvrsh)(=>(conflict e x y g h :0.9) (shvrsh-nn e2 e)))
+(B (name anghlab)(=>(conflict e x y g h :0.9) (anghlab-nn e2 e)))
+(B (name tghyan)(=>(conflict e x y g h :0.9) (tghyan-nn e2 e)))
+(B (name shvrydn)(=>(conflict e x y g h :0.9) (shvrydn-nn e2 e)))
+(B (name dr-aftadn)(=>(conflict e x y g h :0.9) (dr-aftadn-nn e2 e)))
+(B (name draftadn)(=>(conflict e x y g h :0.9) (draftadn-nn e2 e)))
+(B (name zdyt)(=>(conflict e x y g h :0.9) (zdyt-nn e2 e)))
+(B (name mkhalft)(=>(conflict e x y g h :0.9) (mkhalft-nn e2 e)))
+(B (name paydary)(=>(conflict e x y g h :0.9) (paydary-nn e2 e)))
+(B (name mghavmt)(=>(conflict e x y g h :0.9) (mghavmt-nn e2 e)))
+(B (name aystadgy)(=>(conflict e x y g h :0.9) (aystadgy-nn e2 e)))
+(B (name astghamt)(=>(conflict e x y g h :0.9) (astghamt-nn e2 e)))
+(B (name thml)(=>(conflict e x y g h :0.9) (thml-nn e2 e)))
+
+
+(B (name akhtlaf-dashtn)(=>(conflict e x y g h :0.9) (^(dashtn-nn e2 e0)(akhtlaf-nn e3 e)(NE e4 e0 e))))
+(B (name edavt-dashtn)(=>(conflict e x y g h :0.9) (^(dashtn-nn e2 e0)(edavt-nn e3 e)(NE e4 e0 e))))
+(B (name edavt-dashtn)(=>(conflict e x y g h :0.9) (^(dashtn-nn e2 e0)(edavt-nn e3 e)(NE e4 e0 e))))
+(B (name zdyt-dashtn)(=>(conflict e x y g h :0.9) (^(dashtn-nn e2 e0)(zdyt-nn e3 e)(NE e4 e0 e))))
+(B (name mkhalft-krdn)(=>(conflict e x y g h :0.9) (^(krdn-nn e2 e0)(mkhalft-nn e3 e)(NE e4 e0 e))))
+(B (name kshaksh-dashtn)(=>(conflict e x y g h :0.9) (^(dashtn-nn e2 e0)(kshaksh-nn e3 e)(NE e4 e0 e))))
+
+(B (name thml-dashtn)(=>(conflict e x y g h :0.9) (^(dashtn-nn e2 e0)(thml-nn e3 e)(NE e4 e0 e))))
+(B (name tab-avrdn)(=>(conflict e x y g h :0.9) (^(avrdn-nn e2 e0)(tab-nn e3 e)(NE e4 e0 e))))
+(B (name sbght-grftn)(=>(conflict e x y g h :0.9) (^(grftn-nn e2 e0)(sbght-nn e3 e)(NE e4 e0 e))))
+(B (name sbght-jvyydn)(=>(conflict e x y g h :0.9) (^(jvyydn-nn e2 e0)(sbght-nn e3 e)(NE e4 e0 e))))
+(B (name astghamt-vrzydn)(=>(conflict e x y g h :0.9) (^(vrzydn-nn e2 e0)(astghamt-nn e3 e)(NE e4 e0 e))))
+
+
+;J
+(B (name rvbrv)(=>(conflict e x y g h :0.9) (rvbrv-adj e2 e)))
+(B (name mvajh)(=>(conflict e x y g h :0.9) (mvajh-adj e2 e)))
+(B (name mane)(=>(conflict e x y g h :0.9) (mane-adj e2 e)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(^(conflict e x y g h) (adversary e1 x y e‫()
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;V
+
+(B (name akhtlaf-dasht#dar)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(dasht#dar-vb e x y u2)(akhtlaf-nn e3 x1)(NVE e4 x1 e))))
+(B (name akhtlaf-dasht#dar)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(dasht#dar-vb e x y u2)(akhtlaf-nn e3 x1)(ENC e4 x1 e))))
+(B (name edavt-dasht#dar)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(dasht#dar-vb e x y u2)(edavt-nn e3 x1)(NVE e4 x1 e))))
+(B (name edavt-dasht#dar)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(dasht#dar-vb e x y u2)(edavt-nn e3 x1)(ENC e4 x1 e))))
+(B (name edavt-dasht#dar)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(dasht#dar-vb e x y u2)(edavt-nn e3 x1)(NVE e4 x1 e))))
+(B (name edavt-dasht#dar)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(dasht#dar-vb e x y u2)(edavt-nn e3 x1)(ENC e4 x1 e))))
+(B (name msabghh-dad#dh)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(dad#dh-vb e x y u2)(msabghh-nn e3 x1)(NVE e4 x1 e))))
+(B (name msabghh-dad#dh)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(dad#dh-vb e x y u2)(msabghh-nn e3 x1)(ENC e4 x1 e))))
+(B (name zdyt-dasht#dar)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(dasht#dar-vb e x y u2)(zdyt-nn e3 x1)(NVE e4 x1 e))))
+(B (name zdyt-dasht#dar)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(dasht#dar-vb e x y u2)(zdyt-nn e3 x1)(ENC e4 x1 e))))
+(B (name kshaksh-dasht#dar)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(dasht#dar-vb e x y u2)(kshaksh-nn e3 x1)(NVE e4 x1 e))))
+(B (name kshaksh-dasht#dar)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(dasht#dar-vb e x y u2)(kshaksh-nn e3 x1)(ENC e4 x1 e))))
+(B (name thml-dasht#dar)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(dasht#dar-vb e x y u2)(thml-nn e3 x1)(NVE e4 x1 e))))
+(B (name thml-dasht#dar)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(dasht#dar-vb e x y u2)(thml-nn e3 x1)(ENC e4 x1 e))))
+(B (name tab-aavrd#aavr)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(aavrd#aavr-vb e x y u2)(tab-nn e3 x1)(NVE e4 x1 e))))
+(B (name tab-aavrd#aavr)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(aavrd#aavr-vb e x y u2)(tab-nn e3 x1)(ENC e4 x1 e))))
+(B (name sbght-grft#gyr)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(grft#gyr-vb e x y u2)(sbght-nn e3 x1)(NVE e4 x1 e))))
+(B (name sbght-grft#gyr)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(grft#gyr-vb e x y u2)(sbght-nn e3 x1)(ENC e4 x1 e))))
+(B (name sbght-jst#jv)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(jst#jv-vb e x y u2)(sbght-nn e3 x1)(NVE e4 x1 e))))
+(B (name sbght-jst#jv)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(jst#jv-vb e x y u2)(sbght-nn e3 x1)(ENC e4 x1 e))))
+(B (name sbght-jst#jv)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(jst#jv-vb e x y u2)(sbght-nn e3 x1)(NVE e4 x1 e))))
+(B (name sbght-jst#jv)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(jst#jv-vb e x y u2)(sbght-nn e3 x1)(ENC e4 x1 e))))
+(B (name sbght-grft#gyr)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(grft#gyr-vb e x y u2)(sbght-nn e3 x1)(NVE e4 x1 e))))
+(B (name sbght-grft#gyr)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(grft#gyr-vb e x y u2)(sbght-nn e3 x1)(ENC e4 x1 e))))
+(B (name astghamt-vrzyd#vrz)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(vrzyd#vrz-vb e x y u2)(astghamt-nn e3 x1)(NVE e4 x1 e))))
+(B (name astghamt-vrzyd#vrz)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (^(vrzyd#vrz-vb e x y u2)(astghamt-nn e3 x1)(ENC e4 x1 e))))
+
+(B (name conflict-krd#kn)(=>(conflict e x y u3 u4 :0.9) (^(krd#kn-vb e x y u2)(conflict e10 u1 u2 u3 u4)(NVE e4 e10 e))))
+(B (name conflict-krd#kn)(=>(conflict e x y u3 u4 :0.9) (^(krd#kn-vb e x y u2)(conflict e10 u1 u2 u3 u4)(ENC e4 x10 e))))
+(B (name conflict-sakht#saz)(=>(conflict e x y u3 u4 :0.9) (^(sakht#saz-vb e x y u2)(conflict e10 u1 u2 u3 u4)(NVE e4 e10 e))))
+(B (name conflict-sakht#saz)(=>(conflict e x y u3 u4 :0.9) (^(sakht#saz-vb e x y u2)(conflict e10 u1 u2 u3 u4)(ENC e4 x10 e))))
+(B (name conflict-nmvd#nma)(=>(conflict e x y u3 u4 :0.9) (^(nmvd#nma-vb e x y u2)(conflict e10 u1 u2 u3 u4)(NVE e4 e10 e))))
+(B (name conflict-nmvd#nma)(=>(conflict e x y u3 u4 :0.9) (^(nmvd#nma-vb e x y u2)(conflict e10 u1 u2 u3 u4)(ENC e4 x10 e))))
+
+(B (name conflict-shd#shv)(=>(conflict e x y u3 u4 :0.9) (^(shd#shv-vb e x y u2)(conflict e10 u1 u2 u3 u4)(NVE e4 e10 e))))
+(B (name conflict-shd#shv)(=>(conflict e x y u3 u4 :0.9) (^(shd#shv-vb e x y u2)(conflict e10 u1 u2 u3 u4)(ENC e4 x10 e))))
+(B (name conflict-gsht#grd)(=>(conflict e x y u3 u4 :0.9) (^(gsht#grd-vb e x m u2)(conflict e10 u1 u2 u3 u4)(NVE e4 e10 e))))
+(B (name conflict-gsht#grd)(=>(conflict e x y u3 u4 :0.9) (^(gsht#grd-vb e x m u2)(conflict e10 u1 u2 u3 u4)(ENC e4 x10 e))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(^(conflict e x y g h) (adversary e1 x y e))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-x
+
+(B (name mdey)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (mdey-nn e2 x)))
+(B (name mbarz)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (mbarz-nn e2 x)))
+(B (name mbarz)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (mbarz-nn e2 x)))
+(B (name azdad)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (azdad-nn e2 x)))
+(B (name zd)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (zd-nn e2 x)))
+(B (name mearz)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (mearz-nn e2 x)))
+(B (name mearzan)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (mearzan-nn e2 x)))
+(B (name mnaze)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (mnaze-nn e2 x)))
+(B (name mnazean)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (mnazean-nn e2 x)))
+(B (name styzh-jv)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (styzh-jv-nn e2 x)))
+(B (name styzh-jv)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (styzh-jv-nn e2 x)))
+(B (name bazykn)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (bazykn-nn e2 x)))
+(B (name bazykn)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (bazykn-nn e2 x)))
+(B (name tym)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (tym-nn e2 x)))
+(B (name dsth)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (dsth-nn e2 x)))
+(B (name grvhk)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (grvhk-nn e2 x)))
+(B (name band)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (band-nn e2 x)))
+(B (name mkhalf)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (mkhalf-nn e2 x)))
+(B (name mkhalf)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (mkhalf-nn e2 x)))
+
+;J
+(B (name mdey)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (mdey-adj e2 x)))
+(B (name mkhalf)(=>(^(conflict e x y g h :0.45)(adversary e1 x y e :0.45)) (mkhalf-adj e2 x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(attack e x y‫(
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-x
+
+(B (name mtjavz)(=>(attack e x y :0.9) (mtjavz-nn e2 x)))
+(B (name ashghalgr)(=>(attack e x y :0.9) (ashghalgr-nn e2 x)))
+(B (name mtjavzan)(=>(attack e x y :0.9) (mtjavzan-nn e2 x)))
+(B (name mhajm)(=>(attack e x y :0.9) (mhajm-nn e2 x)))
+(B (name mhajm)(=>(attack e x y :0.9) (mhajm-nn e2 x)))
+(B (name hmlh-knndh)(=>(attack e x y :0.9) (hmlh-knndh-nn e2 x)))
+(B (name hmlh-knndgan)(=>(attack e x y :0.9) (hmlh-knndgan-nn e2 x)))
+(B (name prkhashgr)(=>(attack e x y :0.9) (prkhashgr-nn e2 x)))
+(B (name prkhashgran)(=>(attack e x y :0.9) (prkhashgran-nn e2 x)))
+(B (name ghasb)(=>(attack e x y :0.9) (ghasb-nn e2 x)))
+(B (name ghasb)(=>(attack e x y :0.9) (ghasb-nn e2 x)))
+(B (name tyrandaz)(=>(attack e x y :0.9) (tyrandaz-nn e2 x)))
+(B (name tyrandaz)(=>(attack e x y :0.9) (tyrandaz-nn e2 x)))
+
+;N-e
+(B (name tjavz)(=>(attack e x y :0.9) (tjavz-nn e2 e)))
+(B (name thajm)(=>(attack e x y :0.9) (thajm-nn e2 e)))
+(B (name hjmh)(=>(attack e x y :0.9) (hjmh-nn e2 e)))
+(B (name ashghal)(=>(attack e x y :0.9) (ashghal-nn e2 e)))
+(B (name hmlh)(=>(attack e x y :0.9) (hmlh-nn e2 e)))
+(B (name ghsb)(=>(attack e x y :0.9) (ghsb-nn e2 e)))
+(B (name prkhash)(=>(attack e x y :0.9) (prkhash-nn e2 e)))
+(B (name tvhyn)(=>(attack e x y :0.9) (tvhyn-nn e2 e)))
+(B (name khvnryzy)(=>(attack e x y :0.9) (khvnryzy-nn e2 e)))
+(B (name zrbt)(=>(attack e x y :0.9) (zrbt-nn e2 e)))
+(B (name zrbh)(=>(attack e x y :0.9) (zrbh-nn e2 e)))
+(B (name atham)(=>(attack e x y :0.9) (atham-nn e2 e)))
+(B (name thmt)(=>(attack e x y :0.9) (thmt-nn e2 e)))
+(B (name glvlh-baran)(=>(attack e x y :0.9) (glvlh-baran-nn e2 e)))
+(B (name pyshrvy)(=>(attack e x y :0.9) (pyshrvy-nn e2 e)))
+(B (name tyrandazy)(=>(attack e x y :0.9) (tyrandazy-nn e2 e)))
+
+; add kardan, shodan, nemoodan
+
+(B (name hjmh-aavrdn)(=>(attack e x y :0.9) (^(aavrdn-nn e2 e0)(hjmh-nn e3 e)(NE e4 e0 e))))
+(B (name aatsh-afrvkhtn)(=>(attack e x y :0.9) (^(afrvkhtn-nn e2 e0)(aatsh-nn e3 e)(NE e4 e0 e))))
+(B (name aatsh-gshvdn)(=>(attack e x y :0.9) (^(gshvdn-nn e2 e0)(aatsh-nn e3 e)(NE e4 e0 e))))
+(B (name atham-zdn)(=>(attack e x y :0.9) (^(zdn-nn e2 e0)(atham-nn e3 e)(NE e4 e0 e))))
+(B (name thmt-zdn)(=>(attack e x y :0.9) (^(zdn-nn e2 e0)(thmt-nn e3 e)(NE e4 e0 e))))
+(B (name mthm-sakhtn)(=>(attack e x y :0.9) (^(sakhtn-nn e2 e0)(mthm-nn e3 e)(NE e4 e0 e))))
+(B (name khvn-rykhtn)(=>(attack e x y :0.9) (^(rykhtn-nn e2 e0)(khvn-nn e3 e)(NE e4 e0 e))))
+(B (name tyrandakhtn)(=>(attack e x y :0.9) (tyrandakhtn-nn e2 e)))
+
+;N-y
+(B (name ghsby)(=>(attack e x y :0.9) (ghsby-nn e2 y)))
+(B (name ashghaly)(=>(attack e x y :0.9) (ashghaly-nn e2 y)))
+
+
+;V
+(B (name hjmh-aavrd#aavr)(=>(attack e x y :0.9) (^(aavrd#aavr-vb e x y u2)(hjmh-nn e3 x1)(NVE e4 x1 e))))
+(B (name hjmh-aavrd#aavr)(=>(attack e x y :0.9) (^(aavrd#aavr-vb e x y u2)(hjmh-nn e3 x1)(ENC e4 x1 e))))
+(B (name hjvm-aavrd#aavr)(=>(attack e x y :0.9) (^(aavrd#aavr-vb e x y u2)(hjvm-nn e3 x1)(NVE e4 x1 e))))
+(B (name hjvm-aavrd#aavr)(=>(attack e x y :0.9) (^(aavrd#aavr-vb e x y u2)(hjvm-nn e3 x1)(ENC e4 x1 e))))
+(B (name zrbt-zd#zn)(=>(attack e x y :0.9) (^(zd#zn-vb e x y u2)(zrbt-nn e3 x1)(NVE e4 x1 e))))
+(B (name zrbt-zd#zn)(=>(attack e x y :0.9) (^(zd#zn-vb e x y u2)(zrbt-nn e3 x1)(ENC e4 x1 e))))
+(B (name aatsh-gshvd#gsha)(=>(attack e x y :0.9) (^(gshvd#gsha-vb e x y u2)(aatsh-nn e3 x1)(NVE e4 x1 e))))
+(B (name aatsh-gshvd#gsha)(=>(attack e x y :0.9) (^(gshvd#gsha-vb e x y u2)(aatsh-nn e3 x1)(ENC e4 x1 e))))
+(B (name atham-zd#zn)(=>(attack e x y :0.9) (^(zd#zn-vb e x y u2)(atham-nn e3 x1)(NVE e4 x1 e))))
+(B (name atham-zd#zn)(=>(attack e x y :0.9) (^(zd#zn-vb e x y u2)(atham-nn e3 x1)(ENC e4 x1 e))))
+(B (name thmt-zd#zn)(=>(attack e x y :0.9) (^(zd#zn-vb e x y u2)(thmt-nn e3 x1)(NVE e4 x1 e))))
+(B (name thmt-zd#zn)(=>(attack e x y :0.9) (^(zd#zn-vb e x y u2)(thmt-nn e3 x1)(ENC e4 x1 e))))
+(B (name mthm-sakht#saz)(=>(attack e x y :0.9) (^(sakht#saz-vb e x y u2)(mthm-nn e3 x1)(NVE e4 x1 e))))
+(B (name mthm-sakht#saz)(=>(attack e x y :0.9) (^(sakht#saz-vb e x y u2)(mthm-nn e3 x1)(ENC e4 x1 e))))
+(B (name khvn-rykht#ryz)(=>(attack e x y :0.9) (^(rykht#ryz-vb e x y u2)(khvn-nn e3 x1)(NVE e4 x1 e))))
+(B (name khvn-rykht#ryz)(=>(attack e x y :0.9) (^(rykht#ryz-vb e x y u2)(khvn-nn e3 x1)(ENC e4 x1 e))))
+
+;J
+(B (name mtjavz)(=>(attack e x y :0.9) (mtjavz-adj e2 y)))
+(B (name mhajm)(=>(attack e x y :0.9) (mhajm-adj e2 y)))
+(B (name hmlh-knndh)(=>(attack e x y :0.9) (hmlh-knndh-adj e2 y)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(use-weapon e x w y z)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-e
+(B (name astfadh)(=>(use-weapon e x w y z :0.9) (astfadh-nn e2 e)))
+(B (name anfjar)(=>(use-weapon e x w y z :0.9) (anfjar-nn e2 e)))
+(B (name tyrandazy)(=>(use-weapon e x w y z :0.9) (tyrandazy-nn e2 e)))
+(B (name trkydn)(=>(use-weapon e x w y z :0.9) (trkydn-nn e2 e)))
+(B (name trkandn)(=>(use-weapon e x w y z :0.9) (trkandn-nn e2 e)))
+(B (name astfadh-krdn)(=>(use-weapon e x w y z :0.9) (^(krdn-nn e2 e0)(astfadh-nn e3 e)(NE e4 e0 e))))
+(B (name bmb-andakhtn)(=>(use-weapon e x w y z :0.9) (^(andakhtn-nn e2 e0)(bmb-nn e3 e)(NE e4 e0 e))))
+(B (name tyrandazy-krdn)(=>(use-weapon e x w y z :0.9) (^(krdn-nn e2 e0)(tyrandazy-nn e3 e)(NE e4 e0 e))))
+(B (name glvlh-zdn)(=>(use-weapon e x w y z :0.9) (^(zdn-nn e2 e0)(glvlh-nn e3 e)(NE e4 e0 e))))
+(B (name glvlh-khvrdn)(=>(use-weapon e x w y z :0.9) (^(khvrdn-nn e2 e0)(glvlh-nn e3 e)(NE e4 e0 e))))
+(B (name nyshtr-zdn)(=>(use-weapon e x w y z :0.9) (^(zdn-nn e2 e0)(nyshtr-nn e3 e)(NE e4 e0 e))))
+(B (name chaghv-zdn)(=>(use-weapon e x w y z :0.9) (^(zdn-nn e2 e0)(chaghv-nn e3 e)(NE e4 e0 e))))
+(B (name chaghv-khvrdn)(=>(use-weapon e x w y z :0.9) (^(khvrdn-nn e2 e0)(chaghv-nn e3 e)(NE e4 e0 e))))
+
+;V
+
+(B (name tyrandazy-krd#kn)(=>(use-weapon e x w y z :0.9) (^(krd#kn-vb e x y u2)(tyrandazy-nn e3 x1)(NVE e4 x1 e))))
+(B (name tyrandazy-krd#kn)(=>(use-weapon e x w y z :0.9) (^(krd#kn-vb e x y u2)(tyrandazy-nn e3 x1)(ENC e4 x1 e))))
+(B (name glvlh-zd#zn)(=>(use-weapon e x w y z :0.9) (^(zd#zn-vb e x y u2)(glvlh-nn e3 x1)(NVE e4 x1 e))))
+(B (name glvlh-zd#zn)(=>(use-weapon e x w y z :0.9) (^(zd#zn-vb e x y u2)(glvlh-nn e3 x1)(ENC e4 x1 e))))
+(B (name glvlh-khvrd#khvr)(=>(use-weapon e x w y z :0.9) (^(khvrd#khvr-vb e x y u2)(glvlh-nn e3 x1)(NVE e4 x1 e))))
+(B (name glvlh-khvrd#khvr)(=>(use-weapon e x w y z :0.9) (^(khvrd#khvr-vb e x y u2)(glvlh-nn e3 x1)(ENC e4 x1 e))))
+(B (name nyshtr-zd#zn)(=>(use-weapon e x w y z :0.9) (^(zd#zn-vb e x y u2)(nyshtr-nn e3 x1)(NVE e4 x1 e))))
+(B (name nyshtr-zd#zn)(=>(use-weapon e x w y z :0.9) (^(zd#zn-vb e x y u2)(nyshtr-nn e3 x1)(ENC e4 x1 e))))
+(B (name chaghv-zd#zn)(=>(use-weapon e x w y z :0.9) (^(zd#zn-vb e x y u2)(chaghv-nn e3 x1)(NVE e4 x1 e))))
+(B (name chaghv-zd#zn)(=>(use-weapon e x w y z :0.9) (^(zd#zn-vb e x y u2)(chaghv-nn e3 x1)(ENC e4 x1 e))))
+(B (name chaghv-khvrd#khvr)(=>(use-weapon e x w y z :0.9) (^(khvrd#khvr-vb e x y u2)(chaghv-nn e3 x1)(NVE e4 x1 e))))
+(B (name chaghv-khvrd#khvr)(=>(use-weapon e x w y z :0.9) (^(khvrd#khvr-vb e x y u2)(chaghv-nn e3 x1)(ENC e4 x1 e))))
+(B (name astfadh-krd#kn)(=>(use-weapon e x w y z :0.9) (^(krd#kn-vb e x y u2)(astfadh-nn e3 x1)(NVE e4 x1 e))))
+(B (name astfadh-krd#kn)(=>(use-weapon e x w y z :0.9) (^(krd#kn-vb e x y u2)(astfadh-nn e3 x1)(ENC e4 x1 e))))
+
+;comes with az
+
+;J
+(B (name mnfjr)(=>(use-weapon e x w y z :0.9) (mnfjr-adj e2 e)))
+(B (name bmbaran)(=>(use-weapon e x w y z :0.9) (bmbaran-adj e2 e)))
+
+(B (name use-weapon-krd#kn)(=>(use-weapon e x w u3 u4 :0.9) (^(krd#kn-vb e x w u2)(use-weapon e10 u1 u2 u3 u4)(NVE e4 e10 e))))
+(B (name use-weapon-krd#kn)(=>(use-weapon e x w u3 u4 :0.9) (^(krd#kn-vb e x w u2)(use-weapon e10 u1 u2 u3 u4)(ENC e4 x10 e))))
+(B (name use-weapon-sakht#saz)(=>(use-weapon e x w u3 u4 :0.9) (^(sakht#saz-vb e x w u2)(use-weapon e10 u1 u2 u3 u4)(NVE e4 e10 e))))
+(B (name use-weapon-sakht#saz)(=>(use-weapon e x w u3 u4 :0.9) (^(sakht#saz-vb e x w u2)(use-weapon e10 u1 u2 u3 u4)(ENC e4 x10 e))))
+(B (name use-weapon-nmvd#nma)(=>(use-weapon e x w u3 u4 :0.9) (^(nmvd#nma-vb e x w u2)(use-weapon e10 u1 u2 u3 u4)(NVE e4 e10 e))))
+(B (name use-weapon-nmvd#nma)(=>(use-weapon e x w u3 u4 :0.9) (^(nmvd#nma-vb e x w u2)(use-weapon e10 u1 u2 u3 u4)(ENC e4 x10 e))))
+
+(B (name use-weapon-shd#shv)(=>(use-weapon e x w u3 u4 :0.9) (^(shd#shv-vb e w y u2)(use-weapon e10 u1 u2 u3 u4)(NVE e4 e10 e))))
+(B (name use-weapon-shd#shv)(=>(use-weapon e x w u3 u4 :0.9) (^(shd#shv-vb e w y u2)(use-weapon e10 u1 u2 u3 u4)(ENC e4 x10 e))))
+(B (name use-weapon-gsht#grd)(=>(use-weapon e x w u3 u4 :0.9) (^(gsht#grd-vb e w y u2)(use-weapon e10 u1 u2 u3 u4)(NVE e4 e10 e))))
+(B (name use-weapon-gsht#grd)(=>(use-weapon e x w u3 u4 :0.9) (^(gsht#grd-vb e w y u2)(use-weapon e10 u1 u2 u3 u4)(ENC e4 x10 e))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(weapon x)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-x
+
+(B (name mvshk)(=>(weapon x :0.9) (mvshk-nn e2 x)))
+(B (name prtabh)(=>(weapon x :0.9) (prtabh-nn e2 x)))
+(B (name shmshyr)(=>(weapon x :0.9) (shmshyr-nn e2 x)))
+(B (name tygh)(=>(weapon x :0.9) (tygh-nn e2 x)))
+(B (name ghdarh)(=>(weapon x :0.9) (ghdarh-nn e2 x)))
+(B (name tvpkhanh)(=>(weapon x :0.9) (tvpkhanh-nn e2 x)))
+(B (name hft-tyr)(=>(weapon x :0.9) (hft-tyr-nn e2 x)))
+(B (name hftyr)(=>(weapon x :0.9) (hftyr-nn e2 x)))
+(B (name tpanchh)(=>(weapon x :0.9) (tpanchh-nn e2 x)))
+(B (name tfng)(=>(weapon x :0.9) (tfng-nn e2 x)))
+(B (name narnjk)(=>(weapon x :0.9) (narnjk-nn e2 x)))
+(B (name chaghv)(=>(weapon x :0.9) (chaghv-nn e2 x)))
+(B (name nyshtr)(=>(weapon x :0.9) (nyshtr-nn e2 x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(increaseStruct y)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-e
+
+(B (name tghvyt)(=>(increaseStructN e2 y :0.9) (tghvyt-nn e2 e)))
+(B (name thkym)(=>(increaseStructN e2 y :0.9) (thkym-nn e2 e)))
+(B (name tshdyd)(=>(increaseStructN e2 y :0.9) (tshdyd-nn e2 e)))
+(B (name bazsazy)(=>(increaseStructN e2 y :0.9) (bazsazy-nn e2 e)))
+(B (name rshd)(=>(increaseStructN e2 y :0.9) (rshd-nn e2 e)))
+(B (name bna)(=>(increaseStructN e2 y :0.9) (bna-nn e2 e)))
+(B (name bna)(=>(increaseStructN e2 y :0.9) (bna-nn e2 e)))
+
+(B (name increaseStructN)(=>(increaseStruct y :0.9) (increaseStructN e2 y)))
+
+
+(B (name increaseStruct-krd#kn)(=>(increaseStruct y :0.9) (^(krd#kn-vb e x y u2)(increaseStructN e10 u)(NVE e4 e10 e))))
+(B (name increaseStruct-krd#kn)(=>(increaseStruct y :0.9) (^(krd#kn-vb e x y u2)(increaseStructN e10 u)(ENC e4 x10 e))))
+(B (name increaseStruct-nmvd#nma)(=>(increaseStruct y :0.9) (^(nmvd#nma-vb e x y u2)(increaseStructN e10 u)(NVE e4 e10 e))))
+(B (name increaseStruct-nmvd#nma)(=>(increaseStruct y :0.9) (^(nmvd#nma-vb e x y u2)(increaseStructN e10 u)(ENC e4 x10 e))))
+(B (name increaseStruct-sakht#saz)(=>(increaseStruct y :0.9) (^(sakht#saz-vb e x y u2)(increaseStructN e10 u)(NVE e4 e10 e))))
+(B (name increaseStruct-sakht#saz)(=>(increaseStruct y :0.9) (^(sakht#saz-vb e x y u2)(increaseStructN e10 u)(ENC e4 x10 e))))
+
+(B (name increaseStruct-shd#shv)(=>(increaseStruct x :0.9) (^(shd#shv-vb e x y u2)(increaseStructN e10 u)(NVE e4 e10 e))))
+(B (name increaseStruct-shd#shv)(=>(increaseStruct x :0.9) (^(shd#shv-vb e x y u2)(increaseStructN e10 u)(ENC e4 x10 e))))
+(B (name increaseStruct-gsht#grd)(=>(increaseStruct x :0.9) (^(gsht#grd-vb e x y u2)(increaseStructN e10 u)(NVE e4 e10 e))))
+(B (name increaseStruct-gsht#grd)(=>(increaseStruct x :0.9) (^(gsht#grd-vb e x y u2)(increaseStructN e10 u)(ENC e4 x10 e))))
+
+
+(B (name sakhtn)(=>(increaseStruct y :0.9) (sakhtn-nn e2 e)))
+(B (name rvyydn)(=>(increaseStruct y :0.9) (rvyydn-nn e2 e)))
+(B (name rvyanydn)(=>(increaseStruct y :0.9) (rvyanydn-nn e2 e)))
+(B (name rvyandn)(=>(increaseStruct y :0.9) (rvyandn-nn e2 e)))
+(B (name saman-grftn)(=>(increaseStruct y :0.9) (^(grftn-nn e2 e0)(saman-nn e3 e)(NE e4 e0 e))))
+(B (name saman-dadn)(=>(increaseStruct y :0.9) (^(dadn-nn e2 e0)(saman-nn e3 e)(NE e4 e0 e))))
+(B (name baz-sakhtn)(=>(increaseStruct y :0.9) (^(sakhtn-nn e2 e0)(baz-nn e3 e)(NE e4 e0 e))))
+(B (name tghvbt-yaftn)(=>(increaseStruct y :0.9) (^(yaftn-nn e2 e0)(tghvbt-nn e3 e)(NE e4 e0 e))))
+(B (name sbz-shdn)(=>(increaseStruct y :0.9) (^(shdn-nn e2 e0)(sbz-nn e3 e)(NE e4 e0 e))))
+
+(B (name drst-krdn)(=>(increaseStruct y :0.9) (^(krdn-nn e2 e0)(drst-adj e3 e)(NE e4 e0 e))))
+(B (name drst-shdn)(=>(increaseStruct y :0.9) (^(shdn-nn e2 e0)(drst-adj e3 e)(NE e4 e0 e))))
+(B (name bzrg-shdn)(=>(increaseStruct y :0.9) (^(shdn-nn e2 e0)(bzrg-adj e3 e)(NE e4 e0 e))))
+(B (name bzrg-krdn)(=>(increaseStruct y :0.9) (^(krdn-nn e2 e0)(bzrg-adj e3 e)(NE e4 e0 e))))
+
+
+
+;V
+
+(B (name saman-dad#dh)(=>(increaseStruct y :0.9) (^(dad#dh-vb e x y u2)(saman-nn e3 x1)(NVE e4 x1 e))))
+(B (name saman-dad#dh)(=>(increaseStruct y :0.9) (^(dad#dh-vb e x y u2)(saman-nn e3 x1)(ENC e4 x1 e))))
+(B (name baz-sakht#saz)(=>(increaseStruct y :0.9) (^(sakht#saz-vb e x y u2)(baz-nn e3 x1)(NVE e4 x1 e))))
+(B (name baz-sakht#saz)(=>(increaseStruct y :0.9) (^(sakht#saz-vb e x y u2)(baz-nn e3 x1)(ENC e4 x1 e))))
+(B (name tghvbt-yaft#yab)(=>(increaseStruct y :0.9) (^(yaft#yab-vb e x y u2)(tghvbt-nn e3 x1)(NVE e4 x1 e))))
+(B (name tghvbt-yaft#yab)(=>(increaseStruct y :0.9) (^(yaft#yab-vb e x y u2)(tghvbt-nn e3 x1)(ENC e4 x1 e))))
+(B (name sbz-krd#kn)(=>(increaseStruct y :0.9) (^(krd#kn-vb e x y u2)(sbz-nn e3 x1)(NVE e4 x1 e))))
+(B (name sbz-krd#kn)(=>(increaseStruct y :0.9) (^(krd#kn-vb e x y u2)(sbz-nn e3 x1)(ENC e4 x1 e))))
+(B (name saman-grft#gyr)(=>(increaseStruct y :0.9) (^(grft#gyr-vb e x y u2)(saman-nn e3 x1)(NVE e4 x1 e))))
+(B (name saman-grft#gyr)(=>(increaseStruct y :0.9) (^(grft#gyr-vb e x y u2)(saman-nn e3 x1)(ENC e4 x1 e))))
+(B (name saman-pzyrft#pzyr)(=>(increaseStruct y :0.9) (^(pzyrft#pzyr-vb e x y u2)(saman-nn e3 x1)(NVE e4 x1 e))))
+(B (name saman-pzyrft#pzyr)(=>(increaseStruct y :0.9) (^(pzyrft#pzyr-vb e x y u2)(saman-nn e3 x1)(ENC e4 x1 e))))
+
+
+(B (name drst-krd#kn)(=>(increaseStruct y :0.9) (^(krd#kn-vb e x y u2)(drst-adj e3 x1)(NVE e4 x1 e))))
+(B (name drst-krd#kn)(=>(increaseStruct y :0.9) (^(krd#kn-vb e x y u2)(drst-adj e3 x1)(ENC e4 x1 e))))
+(B (name bzrg-krd#kn)(=>(increaseStruct y :0.9) (^(krd#kn-vb e x y u2)(bzrg-adj e3 x1)(NVE e4 x1 e))))
+(B (name bzrg-krd#kn)(=>(increaseStruct y :0.9) (^(krd#kn-vb e x y u2)(bzrg-adj e3 x1)(ENC e4 x1 e))))
+
+
+;J-y
+
+(B (name ghvy)(=>(increaseStruct y :0.9) (ghvy-adj e2 y)))
+(B (name mhkm)(=>(increaseStruct y :0.9) (mhkm-adj e2 y)))
+(B (name nyrvmnd)(=>(increaseStruct y :0.9) (nyrvmnd-adj e2 y)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(increaseFct y)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N
+(B (name tshyl)(=>(increaseFctN e2 y :0.9) (tshyl-nn e2 y)))
+(B (name increaseFctN)(=>(increaseFct y :0.9) (increaseFctN e2 y)))
+
+(B (name increaseFct-krd#kn)(=>(increaseFct y :0.9) (^(krd#kn-vb e x y u2)(increaseFctN e10 u)(NVE e4 e10 e))))
+(B (name increaseFct-krd#kn)(=>(increaseFct y :0.9) (^(krd#kn-vb e x y u2)(increaseFctN e10 u)(ENC e4 x10 e))))
+(B (name increaseFct-nmvd#nma)(=>(increaseFct y :0.9) (^(nmvd#nma-vb e x y u2)(increaseFctN e10 u)(NVE e4 e10 e))))
+(B (name increaseFct-nmvd#nma)(=>(increaseFct y :0.9) (^(nmvd#nma-vb e x y u2)(increaseFctN e10 u)(ENC e4 x10 e))))
+(B (name increaseFct-sakht#saz)(=>(increaseFct y :0.9) (^(sakht#saz-vb e x y u2)(increaseFctN e10 u)(NVE e4 e10 e))))
+(B (name increaseFct-sakht#saz)(=>(increaseFct y :0.9) (^(sakht#saz-vb e x y u2)(increaseFctN e10 u)(ENC e4 x10 e))))
+
+(B (name increaseFct-shd#shv)(=>(increaseFct x :0.9) (^(shd#shv-vb e x y u2)(increaseFctN e10 u)(NVE e4 e10 e))))
+(B (name increaseFct-shd#shv)(=>(increaseFct x :0.9) (^(shd#shv-vb e x y u2)(increaseFctN e10 u)(ENC e4 x10 e))))
+(B (name increaseFct-gsht#grd)(=>(increaseFct x :0.9) (^(gsht#grd-vb e x y u2)(increaseFctN e10 u)(NVE e4 e10 e))))
+(B (name increaseFct-gsht#grd)(=>(increaseFct x :0.9) (^(gsht#grd-vb e x y u2)(increaseFctN e10 u)(ENC e4 x10 e))))
+
+
+; these come with bh-in
+(B (name msaedt)(=>(increaseFct y :0.9) (msaedt-nn e2 y)))
+(B (name yary)(=>(increaseFct y :0.9) (yary-nn e2 y)))
+(B (name kmk)(=>(increaseFct y :0.9) (kmk-nn e2 y)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(decreaseStruct y)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;V
+
+(B (name aasyb-zd#zn)(=>(decreaseStruct y :0.9) (^(zd#zn-vb e x y u2)(aasyb-nn e3 x1)(NVE e4 x1 e))))
+(B (name aasyb-zd#zn)(=>(decreaseStruct y :0.9) (^(zd#zn-vb e x y u2)(aasyb-nn e3 x1)(ENC e4 x1 e))))
+(B (name khsart-zd#zn)(=>(decreaseStruct y :0.9) (^(zd#zn-vb e x y u2)(khsart-nn e3 x1)(NVE e4 x1 e))))
+(B (name khsart-zd#zn)(=>(decreaseStruct y :0.9) (^(zd#zn-vb e x y u2)(khsart-nn e3 x1)(ENC e4 x1 e))))
+(B (name khdshh-zd#zn)(=>(decreaseStruct y :0.9) (^(zd#zn-vb e x y u2)(khdshh-nn e3 x1)(NVE e4 x1 e))))
+(B (name khdshh-zd#zn)(=>(decreaseStruct y :0.9) (^(zd#zn-vb e x y u2)(khdshh-nn e3 x1)(ENC e4 x1 e))))
+;bh-in
+
+
+(B (name khsart-br#dasht#dar)(=>(decreaseStruct x :0.9) (^(br#dasht#dar-vb e x y u2)(khsart-nn e3 x1)(NVE e4 x1 e))))
+(B (name khsart-br#dasht#dar)(=>(decreaseStruct x :0.9) (^(br#dasht#dar-vb e x y u2)(khsart-nn e3 x1)(ENC e4 x1 e))))
+(B (name khdshh-khvrd#khvr)(=>(decreaseStruct x :0.9) (^(khvrd#khvr-vb e x y u2)(khdshh-nn e3 x1)(NVE e4 x1 e))))
+(B (name khdshh-khvrd#khvr)(=>(decreaseStruct x :0.9) (^(khvrd#khvr-vb e x y u2)(khdshh-nn e3 x1)(ENC e4 x1 e))))
+(B (name khdshh-dyd#byn)(=>(decreaseStruct x :0.9) (^(dyd#byn-vb e x y u2)(khdshh-nn e3 x1)(NVE e4 x1 e))))
+(B (name khdshh-dyd#byn)(=>(decreaseStruct x :0.9) (^(dyd#byn-vb e x y u2)(khdshh-nn e3 x1)(ENC e4 x1 e))))
+
+
+(B (name br-andakht#andaz)(=>(decreaseStruct y :0.9) (^(andakht#andaz-vb e x y u2)(br-nn e3 x1)(NVE e4 x1 e))))
+(B (name br-andakht#andaz)(=>(decreaseStruct y :0.9) (^(andakht#andaz-vb e x y u2)(br-nn e3 x1)(ENC e4 x1 e))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(decreaseStruct x)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;V
+(B (name khsart-dyd#byn)(=>(decreaseStruct x :0.9) (^(dyd#byn-vb e x y u2)(khsart-nn e3 x1)(NVE e4 x1 e))))
+(B (name khsart-dyd#byn)(=>(decreaseStruct x :0.9) (^(dyd#byn-vb e x y u2)(khsart-nn e3 x1)(ENC e4 x1 e))))
+(B (name aasyb-dyd#byn)(=>(decreaseStruct x :0.9) (^(dyd#byn-vb e x y u2)(aasyb-nn e3 x1)(NVE e4 x1 e))))
+(B (name aasyb-dyd#byn)(=>(decreaseStruct x :0.9) (^(dyd#byn-vb e x y u2)(aasyb-nn e3 x1)(ENC e4 x1 e))))
+(B (name aasyb-khvrd#khvr)(=>(decreaseStruct x :0.9) (^(khvrd#khvr-vb e x y u2)(aasyb-nn e3 x1)(NVE e4 x1 e))))
+(B (name aasyb-khvrd#khvr)(=>(decreaseStruct x :0.9) (^(khvrd#khvr-vb e x y u2)(aasyb-nn e3 x1)(ENC e4 x1 e))))
+(B (name shkaf-br#dasht#dar)(=>(decreaseStruct x :0.9) (^(br#dasht#dar-vb e x y u2)(shkaf-nn e3 x1)(NVE e4 x1 e))))
+(B (name shkaf-br#dasht#dar)(=>(decreaseStruct x :0.9) (^(br#dasht#dar-vb e x y u2)(shkaf-nn e3 x1)(ENC e4 x1 e))))
+(B (name shkaf-khvrd#khvr)(=>(decreaseStruct x :0.9) (^(khvrd#khvr-vb e x y u2)(shkaf-nn e3 x1)(NVE e4 x1 e))))
+(B (name shkaf-khvrd#khvr)(=>(decreaseStruct x :0.9) (^(khvrd#khvr-vb e x y u2)(shkaf-nn e3 x1)(ENC e4 x1 e))))
+
+
+;J
+(B (name zkhmy)(=>(decreaseStructN e2 x :0.9) (zkhmy-adj e2 x)))
+(B (name bhrany)(=>(decreaseStructN e2 x :0.9) (bhrany-adj e2 x)))
+(B (name zaye)(=>(decreaseStructN e2 x :0.9) (zaye-adj e2 x)))
+(B (name nabvd)(=>(decreaseStructN e2 x :0.9) (nabvd-adj e2 x)))
+(B (name vyran)(=>(decreaseStructN e2 x :0.9) (vyran-adj e2 x)))
+(B (name khrab)(=>(decreaseStructN e2 x :0.9) (khrab-adj e2 x)))
+(B (name tbah)(=>(decreaseStructN e2 x :0.9) (tbah-adj e2 x)))
+(B (name khrd)(=>(decreaseStructN e2 x :0.9) (khrd-adj e2 x)))
+(B (name mnfjr)(=>(decreaseStructN e2 x :0.9) (mnfjr-adj e2 x)))
+(B (name decreaseStructN)(=>(decreaseStruct x :0.9) (decreaseStructN e2 x)))
+
+
+(B (name decreaseStruct-krd#kn)(=>(decreaseStruct y :0.9) (^(krd#kn-vb e x y u2)(decreaseStructN e10 u)(NVE e4 e10 e))))
+(B (name decreaseStruct-krd#kn)(=>(decreaseStruct y :0.9) (^(krd#kn-vb e x y u2)(decreaseStructN e10 u)(ENC e4 x10 e))))
+(B (name decreaseStruct-nmvd#nma)(=>(decreaseStruct y :0.9) (^(nmvd#nma-vb e x y u2)(decreaseStructN e10 u)(NVE e4 e10 e))))
+(B (name decreaseStruct-nmvd#nma)(=>(decreaseStruct y :0.9) (^(nmvd#nma-vb e x y u2)(decreaseStructN e10 u)(ENC e4 x10 e))))
+(B (name decreaseStruct-sakht#saz)(=>(decreaseStruct y :0.9) (^(sakht#saz-vb e x y u2)(decreaseStructN e10 u)(NVE e4 e10 e))))
+(B (name decreaseStruct-sakht#saz)(=>(decreaseStruct y :0.9) (^(sakht#saz-vb e x y u2)(decreaseStructN e10 u)(ENC e4 x10 e))))
+
+(B (name decreaseStruct-shd#shv)(=>(decreaseStruct x :0.9) (^(shd#shv-vb e x y u2)(decreaseStructN e10 u)(NVE e4 e10 e))))
+(B (name decreaseStruct-shd#shv)(=>(decreaseStruct x :0.9) (^(shd#shv-vb e x y u2)(decreaseStructN e10 u)(ENC e4 x10 e))))
+(B (name decreaseStruct-gsht#grd)(=>(decreaseStruct x :0.9) (^(gsht#grd-vb e x y u2)(decreaseStructN e10 u)(NVE e4 e10 e))))
+(B (name decreaseStruct-gsht#grd)(=>(decreaseStruct x :0.9) (^(gsht#grd-vb e x y u2)(decreaseStructN e10 u)(ENC e4 x10 e))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(decreaseFct y)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;V
+
+(B (name aasyb-zd#zn)(=>(decreaseFct y :0.9) (^(zd#zn-vb e x y u2)(aasyb-nn e3 x1)(NVE e4 x1 e))))
+(B (name aasyb-zd#zn)(=>(decreaseFct y :0.9) (^(zd#zn-vb e x y u2)(aasyb-nn e3 x1)(ENC e4 x1 e))))
+(B (name khsart-zd#zn)(=>(decreaseFct y :0.9) (^(zd#zn-vb e x y u2)(khsart-nn e3 x1)(NVE e4 x1 e))))
+(B (name khsart-zd#zn)(=>(decreaseFct y :0.9) (^(zd#zn-vb e x y u2)(khsart-nn e3 x1)(ENC e4 x1 e))))
+
+;bh-in
+
+
+;J
+(B (name flj)(=>(decreaseFctN e2 y :0.9) (flj-adj e2 y)))
+(B (name meyvb)(=>(decreaseFctN e2 y :0.9) (meyvb-adj e2 y)))
+(B (name natvan)(=>(decreaseFctN e2 y :0.9) (natvan-adj e2 y)))
+(B (name mhjvr)(=>(decreaseFctN e2 y :0.9) (mhjvr-adj e2 y)))
+(B (name decreaseFctN)(=>(decreaseFct y :0.9) (decreaseFctN e2 y)))
+
+(B (name decreaseFct-krd#kn)(=>(decreaseFct y :0.9) (^(krd#kn-vb e x y u2)(decreaseFctN e10 u)(NVE e4 e10 e))))
+(B (name decreaseFct-krd#kn)(=>(decreaseFct y :0.9) (^(krd#kn-vb e x y u2)(decreaseFctN e10 u)(ENC e4 x10 e))))
+(B (name decreaseFct-nmvd#nma)(=>(decreaseFct y :0.9) (^(nmvd#nma-vb e x y u2)(decreaseFctN e10 u)(NVE e4 e10 e))))
+(B (name decreaseFct-nmvd#nma)(=>(decreaseFct y :0.9) (^(nmvd#nma-vb e x y u2)(decreaseFctN e10 u)(ENC e4 x10 e))))
+(B (name thrive-sakht#saz)(=>(decreaseFct y :0.9) (^(sakht#saz-vb e x y u2)(decreaseFctN e10 u)(NVE e4 e10 e))))
+(B (name thrive-sakht#saz)(=>(decreaseFct y :0.9) (^(sakht#saz-vb e x y u2)(decreaseFctN e10 u)(ENC e4 x10 e))))
+
+(B (name decreaseFct-shd#shv)(=>(decreaseFct x :0.9) (^(shd#shv-vb e x y u2)(decreaseFctN e10 u)(NVE e4 e10 e))))
+(B (name decreaseFct-shd#shv)(=>(decreaseFct x :0.9) (^(shd#shv-vb e x y u2)(decreaseFctN e10 u)(ENC e4 x10 e))))
+(B (name thrive-gsht#grd)(=>(decreaseFct x :0.9) (^(gsht#grd-vb e x m u2)(decreaseFctN e10 u)(NVE e4 e10 e))))
+(B (name thrive-gsht#grd)(=>(decreaseFct x :0.9) (^(gsht#grd-vb e x m u2)(decreaseFctN e10 u)(ENC e4 x10 e))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(decreaseFct x)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;V
+(B (name aasyb-dyd#byn)(=>(decreaseFct x :0.9) (^(dyd#byn-vb e x y u2)(aasyb-nn e3 x1)(NVE e4 x1 e))))
+(B (name aasyb-dyd#byn)(=>(decreaseFct x :0.9) (^(dyd#byn-vb e x y u2)(aasyb-nn e3 x1)(ENC e4 x1 e))))
+(B (name khsart-dyd#byn)(=>(decreaseFct x :0.9) (^(dyd#byn-vb e x y u2)(khsart-nn e3 x1)(NVE e4 x1 e))))
+(B (name khsart-dyd#byn)(=>(decreaseFct x :0.9) (^(dyd#byn-vb e x y u2)(khsart-nn e3 x1)(ENC e4 x1 e))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(^(nation x) (dFCompEnt x)(functionality f x)(thrive f s)(citizens s x))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-x
+(B (name mlt)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (mlt-nn e2 x)))
+(B (name kshvr)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (kshvr-nn e2 x)))
+(B (name amt)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (amt-nn e2 x)))
+(B (name ghvm)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (ghvm-nn e2 x)))
+(B (name ghvm)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (ghvm-nn e2 x)))
+(B (name tayfh)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (tayfh-nn e2 x)))
+(B (name tayfh)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (tayfh-nn e2 x)))
+(B (name mkzyk)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (mkzyk-nn e2 x)))
+(B (name ayran)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (ayran-nn e2 x)))
+(B (name rvsyh)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (rvsyh-nn e2 x)))
+(B (name amryka)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (amryka-nn e2 x)))
+(B (name mmlkt)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (mmlkt-nn e2 x)))
+(B (name mmlkt)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (mmlkt-nn e2 x)))
+(B (name srzmyn)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (srzmyn-nn e2 x)))
+(B (name khak)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (khak-nn e2 x)))
+(B (name ayalt)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (ayalt-nn e2 x)))
+(B (name ayalt)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (ayalt-nn e2 x)))
+(B (name astan)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (astan-nn e2 x)))
+(B (name hkvmt)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (hkvmt-nn e2 x)))
+(B (name frmandary)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (frmandary-nn e2 x)))
+(B (name dyar)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (dyar-nn e2 x)))
+(B (name dvlt)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (dvlt-nn e2 x)))
+(B (name dvlt)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (dvlt-nn e2 x)))
+(B (name bkhsh)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (bkhsh-nn e2 x)))
+(B (name nahyh)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (nahyh-nn e2 x)))
+(B (name nahyh)(=>(^(nation x :0.18)(dFCompEnt x :0.18)(functionality f x :0.18)(thrive f s :0.18)(citizens s x :0.18)) (nahyh-nn e2 x)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(^(dFCompEnt x)(functionality f x)(control f x s)(citizens s z))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;N-x
+(B (name ghanvn)(=>(^(dFCompEnt x :0.225)(functionality f x :0.225)(control f x s :0.225)(citizens s z :0.225)) (ghanvn-nn e2 x)))
+(B (name ghanvn)(=>(^(dFCompEnt x :0.225)(functionality f x :0.225)(control f x s :0.225)(citizens s z :0.225)) (ghanvn-nn e2 x)))
+(B (name zabth)(=>(^(dFCompEnt x :0.225)(functionality f x :0.225)(control f x s :0.225)(citizens s z :0.225)) (zabth-nn e2 x)))
+(B (name zabth)(=>(^(dFCompEnt x :0.225)(functionality f x :0.225)(control f x s :0.225)(citizens s z :0.225)) (zabth-nn e2 x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(^(dFCompEnt x)(functionality f x)(leadP f s x)(citizens s x))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;N-x
+
+(B (name dmkrasy)(=>(^(dFCompEnt x :0.225)(functionality f x :0.225)(leadP f s x :0.225)(citizens s x :0.225)) (dmkrasy-nn e2 x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(^(dFCompEnt x)(functionality f x)(commerce f))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+;N-x
+(B (name aghtsad)(=>(^(dFCompEnt x :0.3)(functionality f x :0.3)(commerce f :0.3)) (aghtsad-nn e2 x)))
+(B (name bkhsh)(=>(^(dFCompEnt x :0.3)(functionality f x :0.3)(commerce f :0.3)) (bkhsh-nn e2 x)))
+(B (name trabry)(=>(^(dFCompEnt x :0.3)(functionality f x :0.3)(commerce f :0.3)) (trabry-nn e2 x)))
+(B (name tjart)(=>(^(dFCompEnt x :0.3)(functionality f x :0.3)(commerce f :0.3)) (tjart-nn e2 x)))
+(B (name bngah)(=>(^(dFCompEnt x :0.3)(functionality f x :0.3)(commerce f :0.3)) (bngah-nn e2 x)))
+(B (name kasby)(=>(^(dFCompEnt x :0.3)(functionality f x :0.3)(commerce f :0.3)) (kasby-nn e2 x)))
+(B (name svdagry)(=>(^(dFCompEnt x :0.3)(functionality f x :0.3)(commerce f :0.3)) (svdagry-nn e2 x)))
+(B (name bazar)(=>(^(dFCompEnt x :0.3)(functionality f x :0.3)(commerce f :0.3)) (bazar-nn e2 x)))
+
+
+;J
+
+(B (name aghtsady)(=>(^(dFCompEnt x :0.3)(functionality f x :0.3)(commerce f :0.3)) (aghtsady-adj e2 x)))
+(B (name mhasbaty)(=>(^(dFCompEnt x :0.3)(functionality f x :0.3)(commerce f :0.3)) (mhasbaty-adj e2 x)))
+(B (name malyaty)(=>(^(dFCompEnt x :0.3)(functionality f x :0.3)(commerce f :0.3)) (malyaty-adj e2 x)))
+(B (name maly)(=>(^(dFCompEnt x :0.3)(functionality f x :0.3)(commerce f :0.3)) (maly-adj e2 x)))
+(B (name tjary)(=>(^(dFCompEnt x :0.3)(functionality f x :0.3)(commerce f :0.3)) (tjary-adj e2 x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(^(dFCompEnt x)(functionality f x))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-x
+(B (name systm)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (systm-nn e2 x)))
+(B (name nzm)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (nzm-nn e2 x)))
+(B (name dstgah)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (dstgah-nn e2 x)))
+(B (name bdn)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (bdn-nn e2 x)))
+(B (name bdnh)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (bdnh-nn e2 x)))
+(B (name pykr)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (pykr-nn e2 x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(^(dFCompEnt x )(functionality f x)(sharedPlan f x))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;N-x
+
+(B (name sazman)(=>(^(dFCompEnt x  :0.3)(functionality f x :0.3)(sharedPlan f x :0.3)) (sazman-nn e2 x)))
+(B (name tshkylat)(=>(^(dFCompEnt x  :0.3)(functionality f x :0.3)(sharedPlan f x :0.3)) (tshkylat-nn e2 x)))
+(B (name pykrh)(=>(^(dFCompEnt x  :0.3)(functionality f x :0.3)(sharedPlan f x :0.3)) (pykrh-nn e2 x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(^(dFCompEnt x)(functionality f x))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-x
+(B (name brnamh)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (brnamh-nn e2 x)))
+(B (name dstvr)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (dstvr-nn e2 x)))
+(B (name dstvr)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (dstvr-nn e2 x)))
+(B (name nghshh)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (nghshh-nn e2 x)))
+(B (name tbghh)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (tbghh-nn e2 x)))
+(B (name tbghh)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (tbghh-nn e2 x)))
+(B (name dsth)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (dsth-nn e2 x)))
+(B (name zmrh)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (zmrh-nn e2 x)))
+(B (name rsth)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (rsth-nn e2 x)))
+(B (name pyshrft)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (pyshrft-nn e2 x)))
+(B (name trghy)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (trghy-nn e2 x)))
+(B (name hrkt)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (hrkt-nn e2 x)))
+(B (name tkaml)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (tkaml-nn e2 x)))
+(B (name pysh-rvy)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (pysh-rvy-nn e2 x)))
+(B (name pyshrvy)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (pyshrvy-nn e2 x)))
+(B (name shhrt)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (shhrt-nn e2 x)))
+(B (name aetbar)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (aetbar-nn e2 x)))
+(B (name aetbar)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (aetbar-nn e2 x)))
+(B (name sabghh)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (sabghh-nn e2 x)))
+(B (name sabghh)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (sabghh-nn e2 x)))
+(B (name aabrv)(=>(^(dFCompEnt x :0.45)(functionality f x :0.45)) (aabrv-nn e2 x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(voter x)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-x
+(B (name ray-dhndh)(=>(voter x :0.9) (ray-dhndh-nn e2 x)))
+(B (name ray-dhndgan)(=>(voter x :0.9) (ray-dhndgan-nn e2 x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(persuade e x y g)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-x
+(B (name thmyl-gr)(=>(persuade e x y g :0.9) (thmyl-gr-nn e2 x)))
+(B (name thmylgr)(=>(persuade e x y g :0.9) (thmylgr-nn e2 x)))
+
+;N-e
+(B (name thmyl-gry)(=>(persuade e x y g :0.9) (thmyl-gry-nn e2 e)))
+(B (name thmyl)(=>(persuade e x y g :0.9) (thmyl-nn e2 e)))
+(B (name thmylgry)(=>(persuade e x y g :0.9) (thmylgry-nn e2 e)))
+
+(B (name persuade-krd#kn)(=>(persuade e x y u3 :0.9) (^(krd#kn-vb e x y u2)(persuade e10 u1 u2 u3)(NVE e4 e10 e))))
+(B (name persuade-krd#kn)(=>(persuade e x y u3 :0.9) (^(krd#kn-vb e x y u2)(persuade e10 u1 u2 u3)(ENC e4 x10 e))))
+(B (name persuade-nmvd#nma)(=>(persuade e x y u3 :0.9) (^(nmvd#nma-vb e x y u2)(persuade e10 u1 u2 u3)(NVE e4 e10 e))))
+(B (name persuade-nmvd#nma)(=>(persuade e x y u3 :0.9) (^(nmvd#nma-vb e x y u2)(persuade e10 u1 u2 u3)(ENC e4 x10 e))))
+(B (name persuade-sakht#saz)(=>(persuade e x y u3 :0.9) (^(sakht#saz-vb e x y u2)(persuade e10 u1 u2 u3)(NVE e4 e10 e))))
+(B (name persuade-sakht#saz)(=>(persuade e x y u3 :0.9) (^(sakht#saz-vb e x y u2)(persuade e10 u1 u2 u3)(ENC e4 x10 e))))
+
+(B (name persuade-shd#shv)(=>(persuade e u1 x u3 :0.9) (^(shd#shv-vb e x y u2)(persuade e10 u1 u2 u3)(NVE e4 e10 e))))
+(B (name persuade-shd#shv)(=>(persuade e u1 x u3 :0.9) (^(shd#shv-vb e x y u2)(persuade e10 u1 u2 u3)(ENC e4 x10 e))))
+(B (name persuade-gsht#grd)(=>(persuade e u1 x u3 :0.9) (^(gsht#grd-vb e x m u2)(persuade e10 u1 u2 u3)(NVE e4 e10 e))))
+(B (name persuade-gsht#grd)(=>(persuade e u1 x u3 :0.9) (^(gsht#grd-vb e x m u2)(persuade e10 u1 u2 u3)(ENC e4 x10 e))))
+
+;J-g
+(B (name thmyly)(=>(persuade e x y g :0.9) (thmyly-adj e2 g)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(lead e6 x y)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-x
+
+(B (name brgzydh)(=>(lead e6 x y :0.9) (brgzydh-nn e2 x)))
+(B (name rhbr)(=>(lead e6 x y :0.9) (rhbr-nn e2 x)))
+(B (name rhbr)(=>(lead e6 x y :0.9) (rhbr-nn e2 x)))
+(B (name frmandh)(=>(lead e6 x y :0.9) (frmandh-nn e2 x)))
+(B (name frmandh)(=>(lead e6 x y :0.9) (frmandh-nn e2 x)))
+(B (name sr-dsth)(=>(lead e6 x y :0.9) (sr-dsth-nn e2 x)))
+(B (name srkrdh)(=>(lead e6 x y :0.9) (srkrdh-nn e2 x)))
+(B (name sr-krdh)(=>(lead e6 x y :0.9) (sr-krdh-nn e2 x)))
+(B (name srkrdh)(=>(lead e6 x y :0.9) (srkrdh-nn e2 x)))
+(B (name sr-krdgan)(=>(lead e6 x y :0.9) (sr-krdgan-nn e2 x)))
+
+(B (name frmandh)(=>(lead e6 x y :0.9) (frmandh-nn e2 x)))
+(B (name frmandar)(=>(lead e6 x y :0.9) (frmandar-nn e2 x)))
+(B (name hakm)(=>(lead e6 x y :0.9) (hakm-nn e2 x)))
+(B (name hakm)(=>(lead e6 x y :0.9) (hakm-nn e2 x)))
+(B (name shhrdar)(=>(lead e6 x y :0.9) (shhrdar-nn e2 x)))
+(B (name skhngv)(=>(lead e6 x y :0.9) (skhngv-nn e2 x)))
+(B (name skhngvban)(=>(lead e6 x y :0.9) (skhngvban-nn e2 x)))
+(B (name padshah)(=>(lead e6 x y :0.9) (padshah-nn e2 x)))
+(B (name padshah)(=>(lead e6 x y :0.9) (padshah-nn e2 x)))
+(B (name shah)(=>(lead e6 x y :0.9) (shah-nn e2 x)))
+(B (name shah)(=>(lead e6 x y :0.9) (shah-nn e2 x)))
+(B (name mlkh)(=>(lead e6 x y :0.9) (mlkh-nn e2 x)))
+(B (name amyr)(=>(lead e6 x y :0.9) (amyr-nn e2 x)))
+(B (name amyr)(=>(lead e6 x y :0.9) (amyr-nn e2 x)))
+(B (name nkhst-vzyr)(=>(lead e6 x y :0.9) (nkhst-vzyr-nn e2 x)))
+(B (name nkhst-vzyran)(=>(lead e6 x y :0.9) (nkhst-vzyran-nn e2 x)))
+(B (name vzyr)(=>(lead e6 x y :0.9) (vzyr-nn e2 x)))
+(B (name vzyr)(=>(lead e6 x y :0.9) (vzyr-nn e2 x)))
+(B (name vzyr)(=>(lead e6 x y :0.9) (vzyr-nn e2 x)))
+(B (name ryys)(=>(lead e6 x y :0.9) (ryys-nn e2 x)))
+(B (name rvysa)(=>(lead e6 x y :0.9) (rvysa-nn e2 x)))
+(B (name rvysa)(=>(lead e6 x y :0.9) (rvysa-nn e2 x)))
+(B (name nakhda)(=>(lead e6 x y :0.9) (nakhda-nn e2 x)))
+(B (name nakhdayan)(=>(lead e6 x y :0.9) (nakhdayan-nn e2 x)))
+(B (name jnral)(=>(lead e6 x y :0.9) (jnral-nn e2 x)))
+(B (name artshbd)(=>(lead e6 x y :0.9) (artshbd-nn e2 x)))
+(B (name artshbdan)(=>(lead e6 x y :0.9) (artshbdan-nn e2 x)))
+(B (name hkmran)(=>(lead e6 x y :0.9) (hkmran-nn e2 x)))
+(B (name hkmranan)(=>(lead e6 x y :0.9) (hkmranan-nn e2 x)))
+(B (name frmanrva)(=>(lead e6 x y :0.9) (frmanrva-nn e2 x)))
+(B (name frmanrva)(=>(lead e6 x y :0.9) (frmanrva-nn e2 x)))
+(B (name shykh)(=>(lead e6 x y :0.9) (shykh-nn e2 x)))
+(B (name shykh)(=>(lead e6 x y :0.9) (shykh-nn e2 x)))
+(B (name mdyr)(=>(lead e6 x y :0.9) (mdyr-nn e2 x)))
+(B (name mdyr)(=>(lead e6 x y :0.9) (mdyr-nn e2 x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(politicalParty x )
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-x
+(B (name jmhvry-khvah)(=>(politicalParty x  :0.9) (jmhvry-khvah-nn e2 x)))
+(B (name dmvkrat)(=>(politicalParty x  :0.9) (dmvkrat-nn e2 x)))
+(B (name rastgra)(=>(politicalParty x  :0.9) (rastgra-nn e2 x)))
+(B (name rast-gra)(=>(politicalParty x  :0.9) (rast-gra-nn e2 x)))
+(B (name chp-gra)(=>(politicalParty x  :0.9) (chp-gra-nn e2 x)))
+(B (name chpgra)(=>(politicalParty x  :0.9) (chpgra-nn e2 x)))
+(B (name jnbsh)(=>(politicalParty x  :0.9) (jnbsh-nn e2 x)))
+(B (name nhzt)(=>(politicalParty x  :0.9) (nhzt-nn e2 x)))
+(B (name tlash)(=>(politicalParty x  :0.9) (tlash-nn e2 x)))
+(B (name hzb)(=>(politicalParty x  :0.9) (hzb-nn e2 x)))
+(B (name jnah)(=>(politicalParty x  :0.9) (jnah-nn e2 x)))
+(B (name hzb)(=>(politicalParty x  :0.9) (hzb-nn e2 x)))
+
+;J
+(B (name dmvkratyk)(=>(politicalParty x  :0.9) (dmvkratyk-adj e2 x)))
+(B (name jmhvry-khvah)(=>(politicalParty x  :0.9) (jmhvry-khvah-adj e2 x)))
+(B (name dmvkrat)(=>(politicalParty x  :0.9) (dmvkrat-adj e2 x)))
+(B (name rastgra)(=>(politicalParty x  :0.9) (rastgra-adj e2 x)))
+(B (name rast-gra)(=>(politicalParty x  :0.9) (rast-gra-adj e2 x)))
+(B (name chp-gra)(=>(politicalParty x  :0.9) (chp-gra-adj e2 x)))
+(B (name chpgra)(=>(politicalParty x  :0.9) (chpgra-adj e2 x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(conflict x a b g1 g2‫(
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-e
+(B (name antkhabat)(=>(conflict x a b g1 g2 :0.9) (antkhabat-nn e2 e)))
+(B (name gzynsh)(=>(conflict x a b g1 g2 :0.9) (gzynsh-nn e2 e)))
+(B (name antkhab)(=>(conflict x a b g1 g2 :0.9) (antkhab-nn e2 e)))
+(B (name brgzydn)(=>(conflict x a b g1 g2 :0.9) (brgzydn-nn e2 e)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(^(conflict c x y g h )(leadP g z c))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-x
+(B (name syast-mdar)(=>(^(conflict c x y g h  :0.45)(leadP g z c :0.45)) (syast-mdar-nn e2 x)))
+(B (name syast-mdar)(=>(^(conflict c x y g h  :0.45)(leadP g z c :0.45)) (syast-mdar-nn e2 x)))
+(B (name syastmdar)(=>(^(conflict c x y g h  :0.45)(leadP g z c :0.45)) (syastmdar-nn e2 x)))
+(B (name syastmdar)(=>(^(conflict c x y g h  :0.45)(leadP g z c :0.45)) (syastmdar-nn e2 x)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(^(conflict e a b g1 g2)(members x a))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-e
+(B (name antkhabat)(=>(^(conflict e a b g1 g2 :0.45)(members x a :0.45)) (antkhabat-nn e2 e)))
+(B (name ray-dadn)(=>(^(conflict e a b g1 g2 :0.45)(members x a :0.45)) (^(dadn-nn e2 e0)(ray-nn e3 e)(NE e4 e0 e))))
+(B (name antkhab-krdn)(=>(^(conflict e a b g1 g2 :0.45)(members x a :0.45)) (^(krdn-nn e2 e0)(antkhab-nn e3 e)(NE e4 e0 e))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(^(conflict c x y g h)(leadP g z c))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-c
+(B (name syast)(=>(^(conflict c x y g h :0.45)(leadP g z c :0.45)) (syast-nn e2 c)))
+(B (name sr-krdgy)(=>(^(conflict c x y g h :0.45)(leadP g z c :0.45)) (sr-krdgy-nn e2 c)))
+(B (name srkrdgy)(=>(^(conflict c x y g h :0.45)(leadP g z c :0.45)) (srkrdgy-nn e2 c)))
+(B (name hkmran)(=>(^(conflict c x y g h :0.45)(leadP g z c :0.45)) (hkmran-nn e2 c)))
+
+
+;J
+
+(B (name syasy)(=>(^(conflict c x y g h :0.45)(leadP g z c :0.45)) (syasy-adj e2 c)))
+(B (name dmvkratyk)(=>(^(conflict c x y g h :0.45)(leadP g z c :0.45)) (dmvkratyk-adj e2 c)))
+(B (name rast)(=>(^(conflict c x y g h :0.45)(leadP g z c :0.45)) (rast-adj e2 c)))
+(B (name chp)(=>(^(conflict c x y g h :0.45)(leadP g z c :0.45)) (chp-adj e2 c)))
+(B (name rast-gra)(=>(^(conflict c x y g h :0.45)(leadP g z c :0.45)) (rast-gra-adj e2 c)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(union x )
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;N-x
+(B (name athadyh)(=>(union x  :0.9) (athadyh-nn e2 x)))
+(B (name anjmn)(=>(union x  :0.9) (anjmn-nn e2 x)))
+(B (name aytlaf)(=>(union x  :0.9) (aytlaf-nn e2 x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(members m g)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-m
+(B (name ezv)(=>(members m g :0.9) (ezv-nn e2 m)))
+(B (name ezv)(=>(members m g :0.9) (ezv-nn e2 m)))
+(B (name ezv)(=>(members m g :0.9) (ezv-nn e2 m)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;(thrive e m )
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;N-e
+
+(B (name pyshrft)(=>(thrive e m  :0.9) (pyshrft-nn e2 e)))
+(B (name rvngh)(=>(thrive e m  :0.9) (rvngh-nn e2 e)))
+(B (name mvfghyt)(=>(thrive e m  :0.9) (mvfghyt-nn e2 e)))
+
+(B (name mvfgh-shdn)(=>(thrive e m  :0.9) (^(shdn-nn e2 e0)(mvfgh-nn e3 e)(NE e4 e0 e))))
+(B (name pyshrft-krdn)(=>(thrive e m  :0.9) (^(krdn-nn e2 e0)(pyshrft-nn e3 e)(NE e4 e0 e))))
+(B (name rvngh-grftn)(=>(thrive e m  :0.9) (^(grftn-nn e2 e0)(rvngh-nn e3 e)(NE e4 e0 e))))
+(B (name rvngh-yaftn)(=>(thrive e m  :0.9) (^(yaftn-nn e2 e0)(rvngh-nn e3 e)(NE e4 e0 e))))
+
+(B (name thrive-krd#kn)(=>(thrive e m  :0.9) (^(krd#kn-vb e m y u2)(thrive e10 u1 )(NVE e4 e10 e))))
+(B (name thrive-krd#kn)(=>(thrive e m  :0.9) (^(krd#kn-vb e m y u2)(thrive e10 u1 )(ENC e4 x10 e))))
+(B (name thrive-nmvd#nma)(=>(thrive e m  :0.9) (^(nmvd#nma-vb e m y u2)(thrive e10 u1 )(NVE e4 e10 e))))
+(B (name thrive-nmvd#nma)(=>(thrive e m  :0.9) (^(nmvd#nma-vb e m y u2)(thrive e10 u1 )(ENC e4 x10 e))))
+(B (name thrive-shd#shv)(=>(thrive e m  :0.9) (^(shd#shv-vb e x m u2)(thrive e10 u1 )(NVE e4 e10 e))))
+(B (name thrive-shd#shv)(=>(thrive e m  :0.9) (^(shd#shv-vb e x m u2)(thrive e10 u1 )(ENC e4 x10 e))))
+(B (name thrive-sakht#saz)(=>(thrive e m  :0.9) (^(sakht#saz-vb e m y u2)(thrive e10 u1 )(NVE e4 e10 e))))
+(B (name thrive-sakht#saz)(=>(thrive e m  :0.9) (^(sakht#saz-vb e m y u2)(thrive e10 u1 )(ENC e4 x10 e))))
+(B (name thrive-gsht#grd)(=>(thrive e m  :0.9) (^(gsht#grd-vb e x m u2)(thrive e10 u1 )(NVE e4 e10 e))))
+(B (name thrive-gsht#grd)(=>(thrive e m  :0.9) (^(gsht#grd-vb e x m u2)(thrive e10 u1 )(ENC e4 x10 e))))
+
