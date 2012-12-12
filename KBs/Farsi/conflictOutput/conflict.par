@@ -1,0 +1,21 @@
+% اهدافشان با هم سر ناسازگاری دارد .
+id(1).
+[1001]:ahdaf-nn(e0,x0) & [1002]:ba-in(e1,e5,x1) & [1003]:hm(e2,x1) & [1005]:nasazgary-nn(e4,x3) & [1006]:dasht#dar-vb(e5,x0,u3,u4)
+% او می-جنگند .
+id(2).
+[2001]:av(e0,x0) & [2002]:jngyd#jng-vb(e1,x0,u1,u2)
+% او از اسلحه ای جدید استفاده می-کند .
+id(3).
+[3001]:av(e0,x0) & [3002]:az-in(e1,x3,x1) & [3003]:aslhh-nn(e2,x1) & [3004]:ay-nn(e3,x2) & [3005]:jdyd-adj(e4,x2) & [3006]:astfadh-nn(e5,x3) & [3007]:krd#kn-vb(e6,x0,u4,u5) & NVE(e9,x3,e6) & nn(e10,x1,x2)
+% او می-خواهد یک تپانچه به-کار بگیرد .
+id(4).
+[4001]:av(e0,x0) & [4002]:khvast#khvah-vb(e1,u0,u1,u2) & [4003]:yk(e2,x1) & [4004]:tpanchh-nn(e3,x1) & [4005]:bh-kar-nn(e4,x2) & [4006]:grft#gyr-vb(e5,x1,u5,u6) & NVE(e8,x2,e5)
+% استعمال هر نوع سلاح جنگی ممنوع است .
+id(5).
+[5001]:astemal-nn(e0,x0) & [5002]:hr(e1,x1) & [5003]:nve-nn(e2,x1) & [5004]:slah-nn(e3,x2) & [5005]:jngy-adj(e4,x2) & [5006]:mmnve-adj(e5,x2)
+% دشمنانی که قلب نظام را هدف گرفته-اند ، محارب هستند .
+id(6).
+[6001]:dshmn-nn(e0,x0) & [6002]:_(e1,x0,e6) & [6003]:ghlb-nn(e2,x1) & [6004]:nzm-nn(e3,x2) & [6005]:ra(e4,u2) & [6006]:hdf-nn(e5,x3) & [6007]:grft#gyr-vb(e6,u3,x1,u5) & [6009]:mharb-nn(e8,x4) & [6010]:hst#bash-vb(e9,x0,u8,u9) & NVE(e12,x3,e6) & nn(e13,x1,x2)
+% کسانی که حقشان خورده-شده-است
+id(7).
+[7001]:ks-nn(e0,x0) & [7002]:_(e1,x0,e3) & [7003]:hghshan-nn(e2,x1) & [7004]:khvrdh-shdh-ast-vb(e3,u2,u3,u4) & NVE(e5,x1,e3)
