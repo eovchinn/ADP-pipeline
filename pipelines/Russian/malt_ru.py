@@ -274,12 +274,13 @@ class MaltConverter(object):
         for p in self.__removed_preds:
             confirm_remove = True
             pw = p.word
-            for w in self.__words:
-                if w.id != pw.id and w.pred:
-                    w_args = [a.resolve_link() for a in w.pred.args]
-                    for a in p.args:
-                        if a in w_args:
-                            confirm_remove = False
+            if pw.cpostag == "vb":
+                for w in self.__words:
+                    if w.id != pw.id and w.pred:
+                        w_args = [a.resolve_link() for a in w.pred.args]
+                        for a in p.args:
+                            if a in w_args:
+                                confirm_remove = False
 #            if confirm_remove:
 #                print "TO REMOVE:", w.lemma
             if confirm_remove:
