@@ -95,6 +95,12 @@ def main():
 
 	# Henry processing
 	if pa.henry:
+		if pa.kbcompiled and not pa.parse:
+			if not pa.lang: KBPATH = EN_KBPATH
+			elif pa.lang == 'FA': KBPATH = FA_KBPATH
+			elif pa.lang == 'ES': KBPATH = ES_KBPATH
+			elif pa.lang == 'EN': KBPATH = EN_KBPATH
+			elif pa.lang == 'RU': KBPATH = RU_KBPATH
 		henry_input = ''
 		if pa.kb: 
 			henry_input += ' ' + pa.kb
