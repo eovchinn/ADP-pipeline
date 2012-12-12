@@ -134,7 +134,7 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = insert_m_p(head,wordID,sent_dict)
         if tag == "in" and realHead(sent_dict,head):
             sent_dict = insert_prepHead(head,wordID,sent_dict)
-        if tag == "card" and head !=0:
+        if tag == "card" and realHead(sent_dict,head):
             sent_dict = insert_adjHead(head,wordID,sent_dict)
         if rel == "cpred" and realHead(sent_dict,head):
             sent_dict = insert_cpred(head,wordID,sent_dict)
@@ -142,11 +142,11 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = insert_rb_spec(head,wordID,sent_dict)
         if tag in proTagList and (rel == "spec"):
             sent_dict = insert_pro_spec(head,wordID,sent_dict)
-        if lemma in subConList and head !=0:
+        if lemma in subConList and realHead(sent_dict,head):
             sent_dict = insert_subCon_head(head,wordID,sent_dict)
-        if lemma == "no" and head !=0:
+        if lemma == "no" and realHead(sent_dict,head):
             sent_dict = handle_negation(head,wordID,sent_dict)
-        if ((tag == "wh") or (tag == "whq")) and head !=0:
+        if ((tag == "wh") or (tag == "whq")) and realHead(sent_dict,head):
             sent_dict = handle_wh(head,wordID,sent_dict)              
     for key,prop in sent_dict.items():
         position +=1
@@ -159,6 +159,9 @@ def replace_args(prop_sent,sent_dict):
         predicate = prop[6]
         tag = prop[7]
         propID = prop[8]
+        if lemma == "@card@":
+            lemma = ""
+            tag = "card"
         if "R" in predicate:
             predicate = []
         if len(predicate) > 0:
