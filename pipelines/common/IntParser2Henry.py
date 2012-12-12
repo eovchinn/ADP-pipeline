@@ -117,9 +117,11 @@ def main():
 						if sameid or freqpred: 
 							args = prop_args.split()
 							if sameid and matchObj.group(2): add_id2prop(matchObj.group(2),args[0])
-							if freqpred and args[0] not in pred2farg[prop_name]:
+							if freqpred:
 								postfixObj = postfix_pattern.match(prop_name)
-								if not postfixObj or postfixObj.group(1)=='in': pred2farg[prop_name].append(args[0])
+								if not postfixObj or postfixObj.group(1)=='in':
+									if args[0] not in pred2farg[prop_name]: 
+										pred2farg[prop_name].append(args[0])
 
 					ofile.write(' ('+prop_name+prop_args+' :'+str(pa.cost)+':'+sent_id+'-'+str(prop_id_counter)+':['+word_id+'])')
 					if samepred: ofile.write(nm)
@@ -131,7 +133,9 @@ def main():
 				if freqpred: ofile.write(generate_freqPred_nm())
 				ofile.write('))\n')
 				prop_id_counter = 0
-				pred2farg.clear()
+				pred2farg.clear() 
+			#if text_id=='6': 
+				#print 'BEFORE: '+json.dumps(pred2farg)
 
 	if text_id != '': 
 		if freqpred: ofile.write(generate_freqPred_nm())
