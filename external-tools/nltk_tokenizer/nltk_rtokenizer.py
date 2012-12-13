@@ -10,7 +10,7 @@ import sys
 import argparse
 import re
 
-textid_re = re.compile("\s*TEXTID\((.+)\)\s*$")
+textid_re = re.compile("\s*"+ re.escape("<META>") +"(.+)+\s*$")
 
 from nltk.tokenize import PunktSentenceTokenizer
 from nltk.tokenize import WordPunctTokenizer
@@ -41,6 +41,8 @@ if __name__ == "__main__":
     
     for line in sys.stdin:
         
+        line = line.decode("utf-8")
+        
         if sentid == 1:
             m = textid_re.search(line)
             if m:
@@ -50,14 +52,14 @@ if __name__ == "__main__":
                 continue
     
         if normquotes == 1:
-            line = line.replace("«", " ' ")
-            line = line.replace("»", " ' ")
-            line = line.replace("“", " ' ")
-            line = line.replace("”", " ' ")
-            line = line.replace("\"", " ' ")
+            line = line.replace(u"«", " ' ")
+            line = line.replace(u"»", " ' ")
+            line = line.replace(u"“", " ' ")
+            line = line.replace(u"”", " ' ")
+            line = line.replace(u"\"", " ' ")
 
 
-        sentences = st.tokenize(line.decode("utf-8"))
+        sentences = st.tokenize(line)
 
         for s in sentences:
             if wptokenizer == 1:
