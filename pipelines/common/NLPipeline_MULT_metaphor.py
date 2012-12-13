@@ -73,8 +73,7 @@ def extract_hypotheses(inputString,unique_id,withPDFContent):
 def generate_text_input(input_dict,language):
 	output_str = ''
 	for id in input_dict.keys():
-		if language == 'EN': output_str += "<META>" + id + "\n\n " + input_dict[id] + "\n\n"
-		elif language == 'RU': output_str += 'TEXTID('+id+')\n\n'+input_dict[id] + "\n\n" 
+		if language == 'EN' or language == 'RU': output_str += "<META>" + id + "\n\n " + input_dict[id] + "\n\n"
 		else: output_str += '.TEXTID('+id+').\n\n'+input_dict[id] + "\n\n" 
 	return output_str	
 
