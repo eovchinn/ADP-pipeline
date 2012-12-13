@@ -218,7 +218,9 @@ def main():
 						if sameid or freqpred: 
 							args = prop_args.split()
 							if sameid and matchObj.group(1): add_id2prop(matchObj.group(1),args[0])
-							if freqpred and pred4nm and args[0] not in pred2farg[pred4nm]: pred2farg[pred4nm].append(args[0])
+							if freqpred and pred4nm:
+								if args[0] not in pred2farg[pred4nm]: 
+									pred2farg[pred4nm].append(args[0])
 					else: prop_args = ''
 	
 					ofile.write(' ('+prop_name+prop_args+' :'+str(pa.cost)+':'+sent_id+'-'+str(prop_id_counter)+':['+word_id+'])')

@@ -1,0 +1,186 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;vaghti saghfe system shekaaf bardaasht, dastkhoshe harjomarj shod
+;When the roof of the system was cracked, [newspapers] were subjected to disorder.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name saghf)(=>(^(functionality e0 s1 :0.45)(protect e0 s1 t :0.45)) (^(saghf-nn e31 s1)(nn e33 s1 t))))
+(B (name shekaaf-bardaashtan-vb)(=>(^(not e50 e0 :0.45)(intact e0 s1 :0.45)) (shekaaf-bardaashtan-vb e1 s1 u1 u2)))
+(B (name intact)(=>(not e10 e1 :0.9) (^(not e10 e0)(intact e0 s1)(functionality e1 s1))))
+(B (name protect)(=>(^(possible e10 e1 :0.45)(harm e1 x t :0.45)) (^(not e10 e0)(protect e0 s1 t))))
+(B (name harjomarj)(=>(harm e0 x t :0.9) (harjomarj-nn e34 e0)))
+(B (name dastkhosh-shodan-vb)(=>(arg t h :0.9) (dastkhosh-shodan-vb e1 t h u3)))
+(B (name harm2)(=>(arg t e1 :0.9) (harm e1 x t)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;momken ast saalha andookhte etebaare khod raa dar chand rooz monfajer konand, shaayad tarkeshi ham be harif va raghib begirad
+;…may detonate their abundant reserved reputation in a few days, so that their competitor gets injured.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name mergecause) (=> (!= e1 e3 :-1)(^ (cause e1 x1 e2) (cause e3 x2 e4) (!= e2 e4))))
+(B (name monfajer-kardan-vb)(=>(^(destroy e x a :0.3)(injure e1 k v :0.3) (tarkesh-nn e41 k :0.3)) (monfajer-kardan-vb e x a u3)))
+(B (name gereftan-vb)(=>(hit e0 k v :0.9) (^(gereftan-vb e0 k u5 u6)(be-in e42 e0 v))))
+(B (name hit)(=>(injure e1 k v :0.9) (^(hit e0 k v)(tarkesh-nn e41 k))))
+(B (name injure)(=>(harm e1 k v :0.9) (injure e1 k v)))
+(B (name destroy)(=>(^(cause e x e0 :0.3)(not e0 e1 :0.3)(function e1 a :0.3)) (destroy e x a)))
+(B (name harm)(=>(^(cause e k e0 :0.3)(reduce e0 e1 :0.3)(functionality e1 v :0.3)) (harm e1 k v)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;va be donbaale rowzaneh i baraaye voroode mojaddad be badane ghodrat [hastand]
+;and they are looking for a little hole to enter into the body of power
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name rowzaneh-nn)(=>(^(possible e31 e0 :0.45)(enter e0 x u :0.45)) (rowzaneh-nn e31 r)))
+(B (name vorood-vb)(=>(enter e0 x b :0.9) (^(vorood-vb e2 x u4 u2)(be-in e32 e2 b))))
+(B (name enter)(=>(^(changeTo e2 e0 :0.45)(in e0 x b :0.45)) (enter e2 x b)))
+(B (name badaneh-nn)(=>(^(compositeEntity b :0.45)(solid b :0.45)) (badaneh-nn e33 b)))
+(B (name solid)(=>(^(difficult e :0.45)(enter e x b :0.45)) (solid b)))
+(B (name badaneh-nn2)(=>(subst b e g e :0.9) (^(badaneh-nn b)(nn b g))))
+(B (name subst)(=>(enter e x g :0.9) (^(subst b e g e)(enter e x b))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;az takaalife mohem va jeddi dar boudje nevisi in [ast ke].
+;Of serious and important homework in writing the General Budget.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name takaalif-nn)(=>(^(obligatory e5 x :0.45)(difficult e6 x :0.45)) (taklif-nn e4 x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;maseer raa baraaye ezhaare nazare barkhi afraad va resaanehaaye vaabasteh be jaryaane enheraafi  neez hamvaar sakhtehand.
+;They made the road unimpeded for anti-regime people and media to express their ideas.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; desired inference: they made it easy for them to express their idea
+
+(B (name ezhaare-nazar-nn)(=>(express e1 v n :0.9) (ezhar-vb e1 v n u20)))
+(B (name express)(=>(progress e1 v :0.9) (express e1 v n)))
+(B (name progress)(=>(move e1 v m :0.9) (progress e1 v)))
+(B (name saakhtan)(=>(^(cause e x e1 :0.3)(changeTo e1 e30 :0.3)) (saakhtan-vb e x m e30)))
+(B (name hamvaar)(=>(^(easy e30 e3 :0.45)(move e3 u m :0.45)) (hamvaar-adj e30 m)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;sherkat dar marhale dovvome entekhaabaat yani panbe kardane aanche dar dore avval reshte im.
+;Taking part in a second round of elections means making cotton wool out of what we have already spun.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Desired inference: "making cotton wool out of what we have already spun" is "transforming a structured entity (that we have made from an unstructured entity) to an unstructured entity again"
+
+(B (name transform) (=> (!= a1 a2 :-1)(^ (transform a1 z1 x1)(transform a2 z2 x2)(!= x1 x2))))
+(B (name kardan-vb)(=>(transform e0 x y :0.9) (kardan-vb e0 x y u)))
+(B (name reshtan-vb)(=>(^(cause x e1 :0.225)(transform e1 y z :0.225)(wool y :0.225)(thread z :0.225)) (reshtan-vb e0 x y u)))
+(B (name thread)(=>(structured e1 r :0.9) (thread r)))
+(B (name wool1)(=>(unstructured e1 p :0.9) (wool p)))
+(B (name panbe-nn)(=>(wool x :0.9) (panbe-nn e x)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;noi maaraatone esteghaamat beyne jonbesh va hokoomat bar gharaar shodeh ast.
+;an endurance marathon has started between movement and the government.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name maaraaton-nn)(=>(^(marathon x :0.3)(participant b x :0.3)(participant c x :0.3)) (^(bar-gharaar-shodan-vb e1 x u1 u2)(maaraaton-nn e20 x)(beyne-in e22 e1 a)(va a b c))))
+(B (name marathon1)(=>(^(goal b g1 :0.128)(goal c g2 :0.128)(cause e10 b g1 :0.128)(cause e11 c g2 :0.128)(need e10 s1 :0.128)(need e11 s1 :0.128)(endurance s1 :0.128)) (^(marathon x)(participant b x)(participant c x))))
+(B (name marathon2)(=>(win b :0.9) (^(marathon x)(participant b x)(participant c x)(cause e10 b g1)(cause e11 c g2)(before e10 e11))))
+(B (name marathon3)(=>(win c :0.9) (^(marathon x)(participant b x)(participant c x)(cause e10 b g1)(cause e11 c g2)(before e11 e10))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;doshman mikhaahad baa tahrim eghtesaad e iran raa falaj-konad.
+;The enemy wants to paralyze Iran by economic sanctions.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(B (name falaj-kardan-vb)(=>(^(cause e0 x e1 :0.3)(not e1 e2 :0.3)(possible e2 e3 :0.3)(agentOf y e3 :0.3)) (falaj-kardan-vb e0 x y u1)))
+(B (name tahrim-nn)(=>(sanction t x y :1.2) (tahrim-nn e6 t)))
+(B (name sanction)(=>(^(cause t x e0 :0.3)(not e0 e1 :0.3)(possible e1 e2 :0.3)(arg y e2 :0.3)) (sanction t x y)))
+(B (name agentOf)(=>(agentOf y e3 :1.2) (arg y e2)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;mahaafarid nakhe tasbihi bood taa daaneh-haye tasbihi ke gharar bood in jaraayem raa anjam dahand be ham mottasel konad.
+;Mah Afarid was a thread of a tasbih [Islamic prayer beads] to join those beads which were supposed to these felonies.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; desired inference: Mahafarid connected individuals
+;Note1: the "beads" axiom is not applied
+;Note2: the subst axiom is not applied
+;no need for substitution
+
+(B (name daneh-ha)(=>(beads d t2 :0.9) (^(daneh-ha-nn e25 d)(tasbih-nn e26 t2)(nn e27 d t2))))
+(B (name tasbih)(=>(^(nakh-nn e21 n :0.9)(functionality n e0 :0.2)(connect e0 n d :0.2)(beads d t :0.2)(bead d1 :0.2)(typelt d1,d :0.2)) (tasbih-nn e22 t)))
+(B (name beads)(=>(^(set d :0.3)(member x d :0.3)(individual x :0.3)) (beads d t)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;jaryaane rahpooyaan ke farmaane jebhe mottahede osoolgarai ra be dast dashtand
+;The Rahpooyan Party had the wheel of the Fundamentalism Union Frontier in its hands.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;Note1: I had to remove (nn e27 j o) and  (nn e22 j r) from the observation to avoid merging them which somehow caused the axioms not to apply.
+;Note2: The "gen" axiom is not applied, probably because the resulting two "possible" axioms cannot merge?
+
+(B (name farmaan-nn)(=>(^(functionality e1 f :0.45)(control e1 z b :0.45)) (^(farmaan-nn e23 f)(nn e25 f b))))
+(B (name be-dast-daashtan)(=>(^(possible e1 e2 :0.45)(use e2 j f e3:0.45)) (be-dast-daashtan-vb e1 j f u1)))
+(B (name use)(=>(^(agentOf j e1 :0.45) (use e2 j f e1 :0.45)) (functionality e1 f)))
+(B (name agentOf2)(=>(agentOf z e1 :0.9) (control e1 z b)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;baanke markazi tavaane moghaabele baa navasaanaate baazaar raa khaahad daasht?
+;Would the Central Bank have enough strength to wrestle with market fluctuations?
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(B (name tavaan-nn)(=>(strength y :0.9) (tavaan-nn e3 y)))
+(B (name moghabele-nn)(=>(fight e0 x w :0.9) (^(moghabele-nn e4 e0)(baa-in e5 e0 w))))
+(B (name navasaanaat-nn)(=>(^(cause e w e0 :0.3)(not e0 e1 :0.3)(stable e1 k :0.3)) (^(navasaanaat-nn e6 w)(nn w k))))
+(B (name baank-nn)(=>(^(goal b g :0.45)(stable g z :0.45)) (baank-nn e2 b)))
+(B (name goal)(=>(cause e0 b g :0.9) (goal b g)))
+(B (name fight)(=>(^(goal x g :0.3)(goal w n :0.3)(not n g :0.3)) (fight e0 x w)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Tedaade kami dar khotoote aslie tarafdaari az solh baaghi mandim.
+;Only a few of us had remained on the frontline of peace advocacy.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name frontline1) (=> (^(conflict e4 :0.45) (adversary x y e4 :0.45))(^ (khat-nn e k) (asli-adj e1 k) (at e4 x k))))
+(B (name advocate1) (=> (advocate r x s :0.9)(^ (tarafdaari-nn e30 r) (az-in e2 r s))))
+(B (name advocate2) (=> (adversary x y e1 :0.9) (advocate e2 x s)))
+(B (name conflict1) (=>  (adversary x y e1 :0.9) (conflict e1)))
+(B (name conflict2) (=> (^ (not e1 e10 :0.3) (changeFrom e10 e11 :0.3) (at e11 x k :0.3)) (^(baaghimaandan-vb e1 x u1 u2) (dar-in e2 e1 k))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Iran bedoone sourieh ham daste bartar ra darad.
+;Iran has the better hand even without Syria.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; card game: conflict, cards: weapons/resources
+
+(B (name daast) (=> (^(cardGame e :0.45)(resource d e :0.45)) (dast-nn e1 d)))
+(B (name cardGame) (=> (conflict e :0.9) (cardGame e)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;bish az chardah maah az sekandaarie nikzad dar bakhshe hamlonaghl migozarad.
+;More than 14 months have passed since Nikzad became the boat captain in the transportation  sector
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(B (name sekandaari-nn) (=> (control e1 x b :0.9)(^ (sekandaari-nn e e1) (nn e1 x) (dar-in e2 e1 b))))
+
+
+(B (name jang-nn) (=> (conflict j :0.9)(jang-nn e j)))
+(B (name jang-nn) (=> (adversary x y j :0.9)(conflict j)))
+(B (name jang-nn) (=> (arg x j :0.9)(^(boodan-vb e2 x u1 u2)(dar-in e2 x j))))
+(B (name jang-nn) (=> (arg x j :0.9)(adversary x y j)))
+
+(O (name RoofOfSystem) (^ (vaghti-in e30 e0 e1) (shekaaf-bardaashtan-vb e1 s1 u1 u2) (saghf-nn e31 s1) (system-nn e32 t) (nn e33 s1 t) (dastkhosh-shodan-vb e1 t h u3) (harjomarj-nn e34 h)))
+(O (name EconomicWar) (^ (Maa e1 x)(dar-in e2 x j)(jang-nn e3 j)(eghtesaadi-adj e4 j)(tamamayar-adj e5 j)(boodan-vb e2 x u1 u2)))
+(O (name captain) (^ (bish-adv e1 e2)(az-in e3 e2 c)(14-nn e4 c)(maah e5 m) (nn c m) (az-in e6 e7 s) (sekandaari-nn e8 s)(nikzad-nn e9 n)(nn s n)(dar-in e10 s b)(bakhsh-nn e11 b)(hamlonaghl-nn e12 h) (nn b h)(gozashtan-vb e7 m u1 u2)(!= c s)(!= c b)(!= s b)))
+(O (name betterHand) (^ (Iran e1 i)(bedoone-in e2 i s)(sourieh-nn e4 s)(ham-adv e10 e7)(dast-nn e5 d) (bartar-adj e6 d) (daashtan-vb e7 i d u1)))
+(O (name FrontLine) (^ (tedaad-nn e1 t)(kami-adj e2 t)(dar-in e3 e1 k)(khat-nn e5 k) (asli-adj e6 k) (tarafdaari-nn e30 r) (az-in e8 r s) (solh-nn e9 s) (baaghimaandan-vb e1 t u1 u2)))
+(O (name Wrestle) (^ (daashtan-vb e10 x y u) (markazi-adj e x) (baank-nn e2 x) (tavaan-nn e3 y) (nn y e0) (moghabele-nn e4 e0) (baa-in e5 e0 w) (navasaanaat-nn e6 w) (nn w k) (baazaar-nn e7 k)))
+(O (name WheelInHand) (^ (jaryaan-nn e20 j) (rahpooyan-nn e21 r) (nn e22 j r) (be-dast-daashtan-vb e1 j f u1) (farmaan-nn e23 f) (jebhe-nn e24 b) (mottahed e2 b) (nn e25 f b) (osoolgarai-nn e26 o) (nn e27 j o) (!= o r) (!= f j)(!= b o)))
+(O (name ThreadOfTasbih) (^ (mahaafarid-nn e20 m) (boodan-vb e m n u1) (nakh-nn e21 n) (tasbih-nn e22 t) (nn e23 n t) (taa-in e24 n e2) (mottasel-kardan e2 n d u2) (daneh-ha-nn e25 d) (tasbih-nn e26 t2) (nn e27 d t2) (ke-in e28 d e3) (gharaar-boodan-vb e48 d e3 u3) (anjaam-daadan-vb e3 k2 j) (in-dt e50 j e5) (jaraayem-nn e5 j)))
+(O (name Paralyze) (^ (khaastan-vb e x e0 u1) (doshman-nn e1 x) (falaj-kardan-vb e0 x y u2) (eghtesaad-nn e2 y) (nn e3 y z) (Iran-nn e4 z) (baa-in e5 e0 e1) (tahrim-nn e6 t)) )
+(O (name Marathon) (^(bar-gharaar-shodan-vb e1 x u1 u2) (maaraaton-nn e20 x) (esteghaamat-nn e21 t) (nn e30 x t) (noi e2 x) (beyne-in e22 e1 a) (va a b c) (jonbesh-nn e23 b) (hokoomat-nn e24 c)))
+(O (name MakingCottonWool) (^ (sherkat-kardan-vb e1 x u u) (dar-in e51 e1 a) (dovvom-adj e5 r) (marhale-nn 52 r) (of-in e53 r a) (entekhaabaat-nn e50 a) (yani-vb e0 e1 e2 u) (panbe-nn e70 w) (kardan-vb e2 z w u1) (aanche-nn e60 u4) (reshtan-vb e3 b c u5) (maa e61 b) (dar-in e54 e3 d) (dor-nn e62 d) (avval-adj e4 d)))
+(O (name MakeRoadUnimpeded) (^ (aanhaa e20 x) (saakhtan-vb e x m e30)(hamvaar-adj e30 m) (maseer-nn e21 m) (baraaye-in e22 e e1) (ezhar-vb e1 v n u20) (nazar-nn e23 n) (barkhi-adj e2 v) (fard-nn e25 a) (va v a r) (resaaneh-nn e26 r) (vabasteh-adj e3 r) (be-in e27 r j) (jaryaan-nn e28 j) (enheraafi-adj e4 j)))
+(O (name Homework) (^ (taklif-nn e4 x) (mohem-adj e1 x) (va e0 e1 e2) (jeddi-adj e2 x) (dar-in e5 x e3) (neveshtan-vb e3 u y u) (boudje-nn e6 y)))
+(O (name HoleToEnterBody) (^ (be-donbaal-boodan-vb’ e1 x r u1) (aanhaa e30 x) (rowzaneh-nn e31 r) (baraaye-in r e2) (vorood-vb e2 x u4 u2) (be-in e32 e2 b) (badaneh-nn e33 b) (ghodrat-nn e34 g) (nn e35 b g) ))
+(O (name DetonateOneSelfToInjureOthers) (^ (momken-boodan-vb e1 e u1 u2) (monfajer-kardan-vb e x a u3) (aanhaa e30 x) (andookhteh-nn e31 a) (saal-nn e32 s) (etebaar-nn e33 t) (nn e34 s a) (nn e35 a t) (nn e36 t k) (khod e37 t) (dar-in e38 e r) (chand e2 r) (rooz-nn e39 r) (shayad-in e40 e e0) (tarkesh-nn e41 k) (gereftan-vb e0 k u5 u6) (be-in e42 e0 v) (va v h g) (harif-nn e43 h) (raghib-nn e44 g) (ham e e0)))
+
