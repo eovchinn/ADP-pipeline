@@ -99,7 +99,7 @@ treeVerb = re.compile("^V.*")
 treeNum = re.compile("CARD|FO|ORD")
 optional_lemma = re.compile(".*\|.*")
 
-sentID = re.compile("{{{.*text}}}!!!")
+sentID = re.compile("{{{.*}}}!!!")
 def main():
     lines = open(options.input, "r") if options.input else sys.stdin
     printable = reform(lines)

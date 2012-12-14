@@ -18,6 +18,7 @@ def to_sents(infile):
     full_sents = []
     all_words = []
     sent_count = 1
+    IDflag = False
     for line in infile:
         line = line.strip().split("\t")
         if len(line) > 1:
@@ -29,6 +30,11 @@ def to_sents(infile):
             wordRel = line[7]
             #wordTPOS = line[10]
             longID = '%0*d' % (3, wordID)
+            outID = wordID
+            if IDflag:
+                newIter +=IDiter
+                outID +=newIter           
+                #longID,IDflag,IDiter = createLongID(outID,wordText)
             if date.match(wordLemma):
                 wordLemma = wordText
             elif wordLemma == "<unknown>":
@@ -45,8 +51,27 @@ def to_sents(infile):
             sentence = []
             new_prop_sent = []
             words = []
+            IDFlag = False
     infile.close()
-    return full_sents,all_words    
+    return full_sents,all_words
+
+def createLongID(wordID,token):
+    #if not re.search("_",token):
+    if token.count("_") == 0:
+        longID = '%0*d' % (3, wordID)
+        IDflag = False
+    else:
+        allIDs = []
+        for word in token.split("_"):
+            singleID = '%0*d' % (3, wordID)
+            wordID+=1
+            allIDs.append(singleID)
+            #longIDa = '%0*d' % (3, wordID)
+            #longIDb = '%0*d' % (3, wordID+1)
+        longID = ",".join(allIDs)
+        #longID = longIDa+","+longIDb
+        IDflag = True
+    return longID,IDflag,token.count("_")
         
 def prop_to_dict(props):
     sent_dict = {}    
@@ -67,7 +92,15 @@ def prop_to_dict(props):
         shortID = prop[6]
         sent_count = prop[7]
         #finePOS = prop[8]
-        propID = str(sent_count)+str(ID)
+        if re.search(",",ID):
+            multiple = ID.split(",")
+            joinedIDs = []
+            for oneID in multiple:
+                singleID = str(sent_count)+str(oneID)
+                joinedIDs.append(singleID)
+            propID = ",".join(joinedIDs)
+        if not re.search(",",ID):
+            propID = str(sent_count)+str(ID)
         # if not propTags.match(pos) and not puncts.match(lemma):            
         #     args = ["R","R"]
         #     tag = ""
@@ -741,10 +774,10 @@ pronounPred = re.compile("p\(e\d*,[ux]\d*\)")
 date = re.compile("\[\?\?\:\?\?\/\?\?\/\d\d\d\d\:\?\?\.\?\?\]")
 puncts = re.compile("[\.,\?\!{}()\[\]:;¿¡\"]")
 
-sentIDre = re.compile("{{{.*text}}}!!!")
+sentIDre = re.compile("{{{.*}}}!!!")
 
-def nextMeta(sentence,nextSentenceW1):
-    if sentence == ['.'] and sentIDre.search(nextSentenceW1):
+def nextMeta(nextSentenceW1):
+    if sentIDre.search(nextSentenceW1):
         return True
     return False
 
@@ -752,22 +785,24 @@ def main():
     lines = open(options.input, "r") if options.input else sys.stdin
     full_sents,all_words = to_sents(lines)
     sent_count = 0
+    parse_count = 0
     metaFound = False
     for sent,word in zip(full_sents,all_words):
-        sent_count += 1
-        if sent_count < len(full_sents):#[sent_count]:
-            nextSentW1 = full_sents[sent_count][0]
-        if nextMeta(sent,nextSentW1):# == ['.'] and sentIDre.search(full_sents[sent_count][0]):#sent+1:
-            metaFound = False
-        elif not sentIDre.search(sent[0]) and not metaFound and sent != ['.']:
+        parse_count+=1
+        if parse_count < len(full_sents):
+            nextSentW1 = full_sents[parse_count][0]
+            #if nextMeta(nextSentW1):
+            #metaFound = False
+        if (not sentIDre.search(sent[0])) and (not metaFound) and (sent != ['.']):
+            #print "LOOK HERE"
+            sent_count += 1            
             print "% "+" ".join(sent)
             print "id("+str(sent_count)+")."
-        elif metaFound:
+        if metaFound and not sentIDre.search(sent[0]) and (sent != ['.']):
             print "% "+" ".join(sent)
             print "id("+str(metastring)+")."
-        elif sentIDre.search(sent[0]):
+        if sentIDre.search(sent[0]):
             metastring = str(re.sub("\W","",sent[0]))
-            #print "id("+metastring+")."
             metaFound = True
         prop_sent,prop_dict = prop_to_dict(word)
         prop_dict = replace_args(prop_sent,prop_dict)
