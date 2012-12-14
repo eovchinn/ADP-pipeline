@@ -787,7 +787,10 @@ def main():
     sent_count = 0
     parse_count = 0
     metaFound = False
+    prevmeta = "prev"
+    metastring = "meta"
     for sent,word in zip(full_sents,all_words):
+        #print " ".join(sent), prevmeta, metastring
         parse_count+=1
         if parse_count < len(full_sents):
             nextSentW1 = full_sents[parse_count][0]
@@ -798,9 +801,12 @@ def main():
             sent_count += 1            
             print "% "+" ".join(sent)
             print "id("+str(sent_count)+")."
-        if metaFound and not sentIDre.search(sent[0]) and (sent != ['.']):
+        if metaFound and not sentIDre.search(sent[0]) and (sent != ['.']) and prevmeta == metastring:
+            print "% "+" ".join(sent)             
+        if metaFound and not sentIDre.search(sent[0]) and (sent != ['.']) and prevmeta != metastring:
             print "% "+" ".join(sent)
             print "id("+str(metastring)+")."
+            prevmeta = metastring                       
         if sentIDre.search(sent[0]):
             metastring = str(re.sub("\W","",sent[0]))
             metaFound = True
