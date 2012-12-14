@@ -39,10 +39,12 @@ def to_sents(infile):
         else:
             full_sents.append(sentence)
             all_words.append(words)
+            sent_count += 1
+            if sentence == ['.'] or sentIDre.search(sentence[0]):
+                sent_count -=1
             sentence = []
             new_prop_sent = []
             words = []
-            sent_count += 1
     infile.close()
     return full_sents,all_words    
         
@@ -462,7 +464,7 @@ def insert_grup_nom(head,wordID,sent_dict):
             if (values[4] == "conj") and (values[3] == sent_dict[wordID][3]):
                 conjHead = values[3]
                 headHead = sent_dict[conjHead][3]
-                if headHead != 0:
+                if realHead(sent_dict,headHead):#headHead != 0:
                     sent_dict = add_new_verb(sent_dict,sent_dict[headHead][1],sent_dict[headHead][7],sent_dict[headHead][6],sent_dict[wordID][6][1],sent_dict[headHead][8],sent_dict[head][8],wordID,head)
                  #if the conjuction is "o" add an "or" proposition
                 if (values[1] == "o"):
@@ -739,14 +741,34 @@ pronounPred = re.compile("p\(e\d*,[ux]\d*\)")
 date = re.compile("\[\?\?\:\?\?\/\?\?\/\d\d\d\d\:\?\?\.\?\?\]")
 puncts = re.compile("[\.,\?\!{}()\[\]:;¿¡\"]")
 
+sentIDre = re.compile("{{{.*text}}}!!!")
+
+def nextMeta(sentence,nextSentenceW1):
+    if sentence == ['.'] and sentIDre.search(nextSentenceW1):
+        return True
+    return False
+
 def main():
     lines = open(options.input, "r") if options.input else sys.stdin
     full_sents,all_words = to_sents(lines)
     sent_count = 0
+    metaFound = False
     for sent,word in zip(full_sents,all_words):
         sent_count += 1
-        print "% "+" ".join(sent)
-        print "id("+str(sent_count)+")."
+        if sent_count < len(full_sents):#[sent_count]:
+            nextSentW1 = full_sents[sent_count][0]
+        if nextMeta(sent,nextSentW1):# == ['.'] and sentIDre.search(full_sents[sent_count][0]):#sent+1:
+            metaFound = False
+        elif not sentIDre.search(sent[0]) and not metaFound and sent != ['.']:
+            print "% "+" ".join(sent)
+            print "id("+str(sent_count)+")."
+        elif metaFound:
+            print "% "+" ".join(sent)
+            print "id("+str(metastring)+")."
+        elif sentIDre.search(sent[0]):
+            metastring = str(re.sub("\W","",sent[0]))
+            #print "id("+metastring+")."
+            metaFound = True
         prop_sent,prop_dict = prop_to_dict(word)
         prop_dict = replace_args(prop_sent,prop_dict)
         prop_count = 0
@@ -765,7 +787,8 @@ def main():
                 sys.stdout.write("["+prop[0]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
             if prop_count < len(prop_dict.items()):
                 sys.stdout.write(" & ")
-        print ""
+        if not sentIDre.search(sent[0]) and sent != ['.']:
+            print ""
 
 if __name__ == "__main__":
     main()

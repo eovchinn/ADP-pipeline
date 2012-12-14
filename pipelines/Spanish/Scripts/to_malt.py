@@ -99,6 +99,7 @@ treeVerb = re.compile("^V.*")
 treeNum = re.compile("CARD|FO|ORD")
 optional_lemma = re.compile(".*\|.*")
 
+sentID = re.compile("{{{.*text}}}!!!")
 def main():
     lines = open(options.input, "r") if options.input else sys.stdin
     printable = reform(lines)
@@ -107,7 +108,7 @@ def main():
         try:
             token = line_list[1]
             pos = line_list[3]              
-            if pos == 'fs' or pos =='FS' and token != "¿":
+            if pos == 'fs' or (pos =='FS' and token != "¿") or sentID.search(token):
                 line_list[3] = "f"
                 line_list[4] = "f"
                 print "\t".join(line_list),'\n'

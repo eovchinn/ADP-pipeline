@@ -47,6 +47,7 @@ OPTIONS="-token -lemma -sgml -quiet"
 TOKENIZER=$TREE_TAGGER_CMD/utf8-tokenize.perl
 NLTK_TOKENIZER_DIR=$METAPHOR_DIR/external-tools/nltk_tokenizer
 TOKENIZER_BIN=$NLTK_TOKENIZER_DIR/nltk_tokenizer.py
+TOKENIZER_BIN=$NLTK_TOKENIZER_DIR/nltk_rtokenizer.py
 
 MWL=$TREE_TAGGER_CMD/mwl-lookup.perl
 TAGGER=$TREE_TAGGER_BIN/tree-tagger
@@ -61,7 +62,7 @@ if [[ $PLATFORM == "linux" ]]; then
  if [ -d "$2" ]; then
 #    $TOKENIZER -a $ABBR_LIST < "${1:-/dev/stdin}" |
 #    tee  $2/tokenizer_o.txt |
-    python $TOKENIZER_BIN < "${1:-/dev/stdin}" |
+    python $TOKENIZER_BIN --sentid 1 --normquotes 1 < "${1:-/dev/stdin}" |
     tee $2/tokenizer_o.txt |
     $MWL -f $MWLFILE |
     $TAGGER $OPTIONS $PARFILE |
@@ -73,7 +74,7 @@ if [[ $PLATFORM == "linux" ]]; then
     $MALT_OFORMAT > /dev/stdout
  else
 #    $TOKENIZER -a $ABBR_LIST  < "${1:-/dev/stdin}" |
-    python $TOKENIZER_BIN < "${1:-/dev/stdin}" |
+    python $TOKENIZER_BIN --sentid 1 --normquotes 1 < "${1:-/dev/stdin}" |
     $MWL -f $MWLFILE |
     $TAGGER $OPTIONS $PARFILE | 
     $MALT_IFORMAT |
@@ -87,7 +88,7 @@ elif [[ $PLATFORM == "darwin" ]]; then
  if [ -d "$2" ]; then
 #    $TOKENIZER -a $ABBR_LIST < "${1:-/dev/stdin}" |
 #    tee  $2/tokenizer_o.txt |
-    python $TOKENIZER_BIN < "${1:-/dev/stdin}" |
+    python $TOKENIZER_BIN --sentid 1 --normquotes 1 < "${1:-/dev/stdin}" |
     tee $2/tokenizer_o.txt |
     $MWL -f $MWLFILE |
     $TAGGER $OPTIONS $PARFILE |
@@ -99,7 +100,7 @@ elif [[ $PLATFORM == "darwin" ]]; then
     $MALT_OFORMAT > /dev/stdout
  else
 #    $TOKENIZER -a $ABBR_LIST  < "${1:-/dev/stdin}" |
-    python $TOKENIZER_BIN < "${1:-/dev/stdin}" |
+    python $TOKENIZER_BIN --sentid 1 --normquotes 1 < "${1:-/dev/stdin}" |
     $MWL -f $MWLFILE |
     $TAGGER $OPTIONS $PARFILE | 
     $MALT_IFORMAT |
