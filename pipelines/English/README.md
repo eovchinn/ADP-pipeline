@@ -22,7 +22,7 @@ optional arguments:
 
 ---
 
-**DEPENDECIES**
+**EXTERNAL TOOLS**
 
 * [Boxer](http://svn.ask.it.usyd.edu.au/trac/candc/wiki/boxer)
 
