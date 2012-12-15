@@ -36,10 +36,10 @@ optional arguments:
 
 **DEPENDECIES**
 
-* [English NLP pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/English)
-* [Spanish NLP pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Spanish)
-* [Russian NLP pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Spanish)
-* [Farsi NLP pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Farsi)
+* [English semantic parsing pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/English)
+* [Spanish semantic parsing pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Spanish)
+* [Russian semantic parsing pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Spanish)
+* [Farsi semantic parsing pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Farsi)
 * [Henry abductive reasoner](https://github.com/naoya-i/henry-n700)
 
 ---
