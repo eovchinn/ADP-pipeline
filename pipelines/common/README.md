@@ -34,7 +34,7 @@ optional arguments:
 
 ---
 
-**DEPENDECIES**
+**EXTERNAL TOOLS**
 
 * [English semantic parsing pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/English)
 * [Spanish semantic parsing pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Spanish)
