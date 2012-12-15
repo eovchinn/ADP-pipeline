@@ -1,8 +1,8 @@
 ===========
-Spanish Discourse Pipeline
+Spanish semantic parsing pipeline
 ===========
 
-This file describes the Spanish discourse pipeline. 
+This file describes the Spanish semantic parsing pipeline. 
 It has directions for running the pipeline, as well 
 as descriptions of the scripts, tools, and resources 
 used within the pipeline.
