@@ -26,6 +26,6 @@ optional arguments:
 
 * [Boxer](http://svn.ask.it.usyd.edu.au/trac/candc/wiki/boxer)
 
-The pipeline runs with the subversion of Boxer, using '--semantics tacitus' option only
+The pipeline runs with the [subversion](http://svn.ask.it.usyd.edu.au/trac/candc/wiki/Subversion) of Boxer, using '--semantics tacitus' option only.
 
 ---
