@@ -1,9 +1,9 @@
-Russian discourse processing pipeline
+Russian semantic parsing pipeline
 ===
 
 **DESCRIPTION**
 
-Processing pipeline for Russian.
+Semantic processing pipeline for Russian.
 
 * `malt_ru.py` – converter for Malt parser output to Logical Form format:
 
