@@ -4,10 +4,15 @@
 # Contributors:
 #   * Ekaterina Ovchinnikova <katya@isi.edu> (2012)
 
-# English LF converter processing Boxer output and returning Henry input logical forms with nonmerge constraints.
+# English LF converter processing Boxer (http://svn.ask.it.usyd.edu.au/trac/candc/wiki/boxer) output 
+# and returning Henry (https://github.com/naoya-i/henry-n700) input logical forms with nonmerge constraints.
 
 # In order to see options, run
 # $ python Boxer2Henry.py -h
+
+# The converter runs on the output produced by
+# the subversion of Boxer (http://svn.ask.it.usyd.edu.au/trac/candc/wiki/Subversion), 
+# using '--semantics tacitus' option only.
 
 import argparse
 import sys
