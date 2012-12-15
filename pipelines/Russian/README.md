@@ -3,7 +3,7 @@ Russian semantic parsing pipeline
 
 **DESCRIPTION**
 
-Semantic processing pipeline for Russian.
+Semantic parsing pipeline for Russian.
 
 * `malt_ru.py` – converter for Malt parser output to Logical Form format:
 
