@@ -1,6 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+# Contributors:
+#   * Ekaterina Ovchinnikova <katya@isi.edu> (2012)
+
+# Converter turning logical forms into Henry input, adding nonmerge contraints.
+
+# In order to see options, run
+# $ python IntParser2Henry.py -h
+
 import argparse
 import sys
 import re
@@ -11,8 +19,6 @@ from collections import defaultdict
 # global vars
 id2prop = defaultdict(list)
 pred2farg = defaultdict(list)
-
-TMP_DIR = os.environ['TMP_DIR']
 
 def add_id2prop(id_str,arg):
 	ids = id_str.split(',')
@@ -41,10 +47,10 @@ def generate_freqPred_nm():
 
 def main():
 
-	parser = argparse.ArgumentParser( description="Parser2Henry converter." )
-	parser.add_argument( "--input", help="Input file", default=None )
-	parser.add_argument( "--output", help="Output file", default=None )
-	parser.add_argument( "--textid", help="Text ids used", action="store_true", default=False )
+	parser = argparse.ArgumentParser( description="Converter turning logical forms into henry input, adding nonmerge contraints." )
+	parser.add_argument( "--input", help="Input file containg logical forms.", default=None )
+	parser.add_argument( "--output", help="Output file containing henry input.", default=None )
+	parser.add_argument( "--textid", help="Text ids used.", action="store_true", default=False )
 	parser.add_argument( "--nonmerge", help="Add nonmerge constraints. Values: samepred (args of a pred cannot be merged), sameid (args of preds with same id cannot be merged), freqpred (args of frequent preds cannot be merged)", nargs='+', default=[] )
 	parser.add_argument( "--cost", help="Input observation costs.", type=int, default=1 )
 
@@ -134,8 +140,6 @@ def main():
 				ofile.write('))\n')
 				prop_id_counter = 0
 				pred2farg.clear() 
-			#if text_id=='6': 
-				#print 'BEFORE: '+json.dumps(pred2farg)
 
 	if text_id != '': 
 		if freqpred: ofile.write(generate_freqPred_nm())
