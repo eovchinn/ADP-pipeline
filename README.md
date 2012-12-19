@@ -37,10 +37,13 @@ and proof graphs in the PDF format.
 **Installation and running**
 
 1. Clone Metaphor-ADP repository
+2. 
 ```
 git clone https://github.com/metaphor-adp/Metaphor-ADP
 ```
+
 2. Install external packages; see instructions [here](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/installation)
+
 3. Run the system; see instructions [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/common/README.md)
 
 ---
