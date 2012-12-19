@@ -9,4 +9,11 @@ our Natural Language Understanding system based on Abductive Reasoning implement
 - Russian
 - Farsi
 
-The system is largely based on ideas summarized in [Hobbs, 93](http://www.isi.edu/~hobbs/interp-abduct-ai.pdf).
+The system is largely based on ideas summarized in [[Hobbs, 93]](http://www.isi.edu/~hobbs/interp-abduct-ai.pdf).
+
+---
+
+**Contact**
+
+- Jerry Hobbs (hobbs-AT-isi.edu)
+- Ekaterina Ovchinnikova (katya-AT-isi.edu)
