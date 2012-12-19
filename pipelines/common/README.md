@@ -1,4 +1,4 @@
-Abductive discource processing pipeline.
+Abductive discource processing pipeline
 ===
 
 **DESCRIPTION**
