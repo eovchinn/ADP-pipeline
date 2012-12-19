@@ -23,6 +23,7 @@ Example:
 
 ```
 (B (name conflict-with) (=> (conflict e x y g h :0.9) (^ (conflict-vb e g u1 u2)(with-in e1 e y))))
+(B (name rvatsja-k) (=>(^ (conflict c x y g h :0.6) (adversary e1 x y c :0.3)) (^(рваться-vb c x u1 u2)(к-in e2 c g))))
 ```
 
 A knowledge base can be compiled by [Henry](https://github.com/naoya-i/henry-n700) using the following command:
