@@ -25,7 +25,7 @@ chmod 755 *.sh
 This requires ROOT permission.
 
 ```
-sudo ./install-prereq-mac.sh
+./install-prereq-mac.sh
 ```
 
 #### Register on GUROBI website and download gurobi package.
