@@ -1,76 +1,77 @@
-Start server: python adpService.py -p 8080 -g
-Send Request (for testing) : python sendRestRequest.py -p 8080 -j testRequest1.json
+ADP Web-Service
+===============
 
-Change timeout: see below
-Change IP address for proofgraphs: see below
+#### Quick Start
 
-What they need to know:
-*port - 8080
-*IP address of machine 
+* Start server: `python adpService.py -p 8080 -g`
+* Send Request (for testing) : `python sendRestRequest.py -p 8080 -j testRequest1.json`
 
-Set environment variable in ~/.bash_profile
-===========================================
+#### Set environment variable in ~/.bash_profile
+```
+export PYTHONPATH=location of ADP pipelines (Metaphor-ADP/pipelines/common:Metaphor-ADP/pipelines/English:Metaphor-ADP/pipelines/Farsi:Metaphor-ADP/pipelines/Spanish:Metaphor-ADP/pipelines/Rusiian)
+```
 
-export PYTHONPATH=location of ADP pipelines (Metaphor-ADP/pipelines/common)
+#### Start web-service 
 
-Start web-service annotateDocument on default port 8000
-=======================================================
+```
+python adpService.py <-p port> <-g> 
+```
+* -p: port number (default 8000)
+* -g: web-service returns proofgraph as base-64 string; if not present only returns URL of proofgraph
 
-*if "-g" argument is present, web-service returns proofgraph as
- base-64 string
-*if not present only returns URL of proofgraph
+Example:
+```
+python adpService.py -p 8080 -g 
+```
 
-python adpService.py -g 
+#### Send a request
 
-OR ... start on another port
-============================
-python adpService.py -p 8080 -g
+```
+ python sendRestRequest.py <-s hostname> <-p port> <-j json_document>
+```
+* -s: hostname (default localhost)
+* -p: port number (default 8000)
+* -j: input json document
+ 
+Example:
 
-Send a request
-==============
+```
+ python sendRestRequest.py -s colo-vm19.isi.edu -p 8080 -j testRequest1.json
+```
 
-1. Server running on localhost & default port
- python sendRestRequest.py -j testRequest1.json
-
-2. Server running on localhost & specific port
- python sendRestRequest.py -p 8080 -j testRequest1.json
-
-3. Server running on remote host (specify hostname)
- python sendRestRequest.py -s colo-vm19.isi.edu -p 8080 -j
- testRequest1.json
-
-Note:
-=====
+#### Troubleshooting
 
 When starting the web-service, if you see an error stating "No socket
 can be created" the process may already be started on that port.
 
-Check with:
-
+* Check with:
+```
 ps -ef | grep adpService
-
-You should see something like:
-
+```
+* You should see something like:
+```
 501 84127 84123 0 ... /.../adpService.py
-
-Kill proces:
-
+```
+* Kill proces:
+```
 kill -9 84127 (make sure you use the currend PID)
+```
 
-Change Timeout
-==============
+#### Change Timeout
+
 * in /server/restServer.py search for response.timeout and change it's value
 (currently set to 15 minutes/default is 10 minutes)
 
-Change IP Address for proofgraph URLs
-=====================================
-* in NLpipeline_MULT_metaphor.py, go to get_webservice_location:
+#### Change IP Address for proofgraph URLs
 
+* in NLpipeline_MULT_metaphor.py, go to get_webservice_location:
+```
 ###currently hostname is used, but during demo you might have to use
 ###the IP address
 	hostname=socket.getfqdn()
 #this gives the IP address; you may want to use this during the demo
 	#hostname=socket.gethostbyname(hostname)
+```
 
-***if the above doesn't return the correct IP address, just add the IP
+* if the above doesn't return the correct IP address, just add the IP
 address instead of using socket functions
