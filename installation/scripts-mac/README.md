@@ -52,7 +52,7 @@ MUC 7" in "gzipped tar" format.
 
 #### Install ADP package.
 
-<"you will be asked for password as GUROBI
+>"You will be asked for password as GUROBI
 installation requires root permissions"
 
 ```
