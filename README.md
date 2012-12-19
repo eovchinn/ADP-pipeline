@@ -48,6 +48,14 @@ git clone https://github.com/metaphor-adp/Metaphor-ADP
 
 ---
 
+**System requirements**
+
+- Linux or Mac
+- at least 4 cores
+- at least 8 RAM
+
+---
+
 **Contact**
 
 - Ekaterina Ovchinnikova (katya-AT-isi.edu)
