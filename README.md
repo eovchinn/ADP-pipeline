@@ -16,9 +16,9 @@ Our abductive Natural Language Understanding pipeline is shown below.
 [[https://github.com/metaphor-adp/Metaphor-ADP/blob/master/docs/pics/pipeline-pic.pdf]]
 
 Text fragments are given as input to the pipeline. The text fragments are parsed. 
-For Russian and Spanish tagging, we use [TreeTagger](www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/). 
-For Farsi tagging, we use the [Stanford NLP tagger](nlp.stanford.edu/software/tagger.shtml). 
-For parsing, we use the dependency parser [Malt](www.maltparser.org) for Spanish, Russian, and Farsi. 
+For Russian and Spanish tagging, we use [TreeTagger](http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/). 
+For Farsi tagging, we use the [Stanford NLP tagger](http://nlp.stanford.edu/software/tagger.shtml). 
+For parsing, we use the dependency parser [Malt](http://www.maltparser.org) for Spanish, Russian, and Farsi. 
 For English, the whole processing is performed by the [Boxer](http://svn.ask.it.usyd.edu.au/trac/candc/wiki/boxer) 
 semantic parser).  
 
