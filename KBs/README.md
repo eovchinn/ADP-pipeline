@@ -15,7 +15,7 @@ Abductive axioms have the following format:
 <proposition> ::= "(" <proposition name> " " <arguments> ")"
 <proposition name> ::= <UTF-8 string>
 <arguments> ::= "" | <argument> | <argument> " " <arguments>
-<argument> ::= ASCII string
+<argument> ::= <ASCII string>
 ```
 
 Example:
