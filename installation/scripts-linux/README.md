@@ -16,7 +16,7 @@ chmod 755 *.sh
 #### Install pre-requisites. This requires ROOT permission.
 
 ```
-sudo ./install-prereq-linux.sh
+./install-prereq-linux.sh
 ```
 
 #### Register on GUROBI website and download gurobi package.
