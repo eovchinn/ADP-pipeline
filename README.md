@@ -28,7 +28,7 @@ showing relationships among the propositions. We use logical representations of 
 described in [[Hobbs, 1995]](http://www.isi.edu/~hobbs/op-acl85.pdf). For Spanish, Russian, and Farsi, we have developed logical form converters. 
 For English, we use the LF converter built in the Boxer semantic parser.
 
-Logical forms and a knowledge base are input to our abductive reasoner based on Integer Linear Programming 
+Logical forms and a knowledge base are input to the [abductive reasoner](http://code.google.com/p/henry-n700/) based on Integer Linear Programming 
 [[Inoue et al., 2012]](http://www.cl.ecei.tohoku.ac.jp/~naoya-i/resources/jelia2012_paper.pdf). The reasoner produces flat first order logic interpretations in the textual format 
 and proof graphs in the PDF format.
 
@@ -42,7 +42,7 @@ and proof graphs in the PDF format.
 git clone https://github.com/metaphor-adp/Metaphor-ADP
 ```
 
-- Install external packages; see instructions [here](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/installation)
+- Install external packages and software; see instructions [here](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/installation)
 
 - Run the system; see instructions [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/common/README.md)
 
