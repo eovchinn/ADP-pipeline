@@ -29,7 +29,7 @@ described in [[Hobbs, 1995]](http://www.isi.edu/~hobbs/op-acl85.pdf). For Spanis
 For English, we use the LF converter built in the Boxer semantic parser.
 
 Logical forms and a knowledge base are input to our abductive reasoner based on Integer Linear Programming 
-[Inoue et al., 2011](http://www.isi.edu/~hobbs/op-acl85.pdf). The reasoner produces flat first order logic interpretations in the textual format 
+[[Inoue et al., 2012]](http://www.cl.ecei.tohoku.ac.jp/~naoya-i/resources/jelia2012_paper.pdf). The reasoner produces flat first order logic interpretations in the textual format 
 and proof graphs in the PDF format.
 
 
