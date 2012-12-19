@@ -51,8 +51,8 @@ git clone https://github.com/metaphor-adp/Metaphor-ADP
 **System requirements**
 
 - Linux or Mac
-- at least 4 cores
-- at least 8 RAM
+- at least 4 cores CPU
+- at least 8GB RAM
 
 ---
 
