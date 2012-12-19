@@ -25,3 +25,8 @@ sudo port install swi-prolog
 echo installing wget
 sudo port install wget
 
+echo updating nltk
+git clone git://github.com/nltk/nltk.git
+cd nltk
+sudo python setup.py install
+
