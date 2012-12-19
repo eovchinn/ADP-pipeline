@@ -13,7 +13,7 @@ The system is largely based on ideas summarized in [[Hobbs, 1993]](http://www.is
 
 Our abductive Natural Language Understanding pipeline is shown below. 
 
-[[https://github.com/metaphor-adp/Metaphor-ADP/blob/master/docs/pics/pipeline-pic.pdf]]
+!(Fig.)[https://github.com/metaphor-adp/Metaphor-ADP/blob/master/docs/pics/pipeline-pic.pdf]
 
 Text fragments are given as input to the pipeline. The text fragments are parsed. 
 For Russian and Spanish tagging, we use [TreeTagger](http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/). 
