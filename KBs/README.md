@@ -6,16 +6,16 @@ Abductive axioms have the following format:
 
 ```
 <axiom> ::= "(B (name " <axiom name> ") (=> " <lhs> <rhs> "))"
-<axiom name> ::= <ASCII string>
+<axiom name> ::= <ASCII stringl, no spaces>
 <lhs> ::= <proposition with weight> | "(^ " <conjunction of propositions with weights> ")"
 <rhs> ::= <proposition> | "(^ " <conjunction of propositions> ")"
 <conjunction of propositions with weights> ::= <proposition with weight> | <proposition with weight> " " <conjunction of propositions with weights>
 <conjunction of propositions> ::= <proposition> | <proposition> " " <conjunction of propositions>
 <proposition with weight> ::= "(" <proposition name> " " <arguments> " :" <weight> ")"
 <proposition> ::= "(" <proposition name> " " <arguments> ")"
-<proposition name> ::= <UTF-8 string>
+<proposition name> ::= <UTF-8 string, no spaces>
 <arguments> ::= "" | <argument> | <argument> " " <arguments>
-<argument> ::= <ASCII string>
+<argument> ::= <ASCII string, no spaces>
 ```
 
 Example:
