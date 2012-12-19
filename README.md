@@ -36,19 +36,20 @@ and proof graphs in the PDF format.
 
 **Installation and running**
 
-- Clone Metaphor-ADP repository
+1. Clone Metaphor-ADP repository
  
 ```
 git clone https://github.com/metaphor-adp/Metaphor-ADP
 ```
 
-- Install external packages; see instructions [here](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/installation)
+2. Install external packages; see instructions [here](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/installation)
 
-- Run the system; see instructions [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/common/README.md)
+3. Run the system; see instructions [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/common/README.md)
 
 ---
 
 **Contact**
 
-- Jerry Hobbs (hobbs-AT-isi.edu)
 - Ekaterina Ovchinnikova (katya-AT-isi.edu)
+- Jerry Hobbs (hobbs-AT-isi.edu)
+
