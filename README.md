@@ -32,6 +32,16 @@ Logical forms and a knowledge base are input to our abductive reasoner based on 
 [[Inoue et al., 2012]](http://www.cl.ecei.tohoku.ac.jp/~naoya-i/resources/jelia2012_paper.pdf). The reasoner produces flat first order logic interpretations in the textual format 
 and proof graphs in the PDF format.
 
+---
+
+**Installation and running**
+
+1. Clone Metaphor-ADP repository
+```
+git clone https://github.com/metaphor-adp/Metaphor-ADP
+```
+2. Install external packages; see instructions [here](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/installation)
+3. Run the system; see instructions [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/common/README.md)
 
 ---
 
