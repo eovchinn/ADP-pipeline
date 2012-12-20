@@ -21,7 +21,7 @@ sudo python setup.py install
 export PYTHONPATH=location of ADP pipelines (Metaphor-ADP/pipelines/common:Metaphor-ADP/pipelines/English:Metaphor-ADP/pipelines/Farsi:Metaphor-ADP/pipelines/Spanish:Metaphor-ADP/pipelines/Russian)
 ```
 
-#### Start web-service 
+#### Start web-service (`cd server`)
 
 ```
 python adpService.py <-p port> <-g> 
@@ -34,7 +34,7 @@ Example:
 python adpService.py -p 8080 -g 
 ```
 
-#### Send a request
+#### Send a request (`cd client`)
 
 ```
  python sendRestRequest.py <-s hostname> <-p port> <-j json_document>
