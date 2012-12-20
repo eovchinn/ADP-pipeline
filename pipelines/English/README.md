@@ -3,7 +3,7 @@ English semantic parsing pipeline
 
 **DESCRIPTION**
 
-English semantic parsing pipeline.
+English semantic parsing pipeline based on [Boxer](http://svn.ask.it.usyd.edu.au/trac/candc/wiki/boxer) semantic parser.
 
 * `Boxer_pipeline.py` – running tokenizer, CCG parser and Boxer sematic parser
 
@@ -19,11 +19,3 @@ optional arguments:
   --tok                 Tokenize input text.
   --fname FNAME         File prefix for intermediate output.
 ```
-
----
-
-**EXTERNAL TOOLS**
-
-* [Boxer](http://svn.ask.it.usyd.edu.au/trac/candc/wiki/boxer)
-
----
