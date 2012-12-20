@@ -41,7 +41,3 @@ optional arguments:
 * [Russian semantic parsing pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Spanish)
 * [Farsi semantic parsing pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Farsi)
 * [Henry abductive reasoner](https://github.com/naoya-i/henry-n700)
-
----
-
-Requires env vars METAPHOR_DIR, HENRY_DIR, TMP_DIR to be set.
