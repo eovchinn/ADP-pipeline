@@ -8,7 +8,7 @@ ADP Web-Service
 
 #### Set environment variable in ~/.bash_profile
 ```
-export PYTHONPATH=location of ADP pipelines (Metaphor-ADP/pipelines/common:Metaphor-ADP/pipelines/English:Metaphor-ADP/pipelines/Farsi:Metaphor-ADP/pipelines/Spanish:Metaphor-ADP/pipelines/Rusiian)
+export PYTHONPATH=location of ADP pipelines (Metaphor-ADP/pipelines/common:Metaphor-ADP/pipelines/English:Metaphor-ADP/pipelines/Farsi:Metaphor-ADP/pipelines/Spanish:Metaphor-ADP/pipelines/Russian)
 ```
 
 #### Start web-service 
@@ -52,7 +52,7 @@ ps -ef | grep adpService
 ```
 501 84127 84123 0 ... /.../adpService.py
 ```
-* Kill proces:
+* Kill process:
 ```
 kill -9 84127 (make sure you use the currend PID)
 ```
