@@ -3,7 +3,7 @@ Abductive discource processing pipeline
 
 **DESCRIPTION**
 
-Multilinguial (English, Spanish, Farsi, Russian) abductive discource processing pipeline.
+Multilingual (English, Spanish, Farsi, Russian) abductive discource processing pipeline.
 
 * `NLPipeline_MULT_stdinout.py` – running tokenizer, lemmatizer, parser, logical form converter, abductive reasoner, proof graph generator
 
