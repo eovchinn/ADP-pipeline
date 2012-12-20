@@ -9,10 +9,10 @@ and scripts for running the whole abduction-based discrourse processing.
 **Semantic parsing pipelines**
 
 Semantic parsing pipelines are implemented for 4 languages:
-- English
-- Spanish
-- Russian
-- Farsi
+- [English](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/English)
+- [Spanish](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Spanish)
+- [Russian](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Russian)
+- [Farsi](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Farsi)
 
 The pipelines take unrelated sentences or coherent text as input.
 
@@ -78,7 +78,7 @@ logical forms of sentences need to be converted into observations.
 
 Observations are generated from logical forms by the following scripts:
 
-- [Boxer2Henry.py][https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/English/Boxer2Henry.py) (for English)
+- [Boxer2Henry.py](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/English/Boxer2Henry.py) (for English)
 - [IntParser2Henry.py](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/common/IntParser2Henry.py)(for other languages)
 
 
@@ -104,3 +104,7 @@ Example:
 ```
 
 ---
+
+**Running abduction-based discrourse processing**
+
+Script running multilinguial abduction-based discourse processing is described [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/common/README.md).
