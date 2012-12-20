@@ -3,6 +3,14 @@ ADP Web-Service
 
 #### Install CherryPy Web-Server
 
+* Download CherryPy Web-Server from: `http://www.cherrypy.org`
+* Install CherryPy:
+
+```
+cd CherryPy-3.2.2
+sudo python setup.py install
+```
+
 #### Quick Start
 
 * Start server: `python adpService.py -p 8080 -g`
