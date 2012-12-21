@@ -32,6 +32,8 @@ Logical forms and a knowledge base are input to the [abductive reasoner](http://
 [[Inoue et al., 2012]](http://www.cl.ecei.tohoku.ac.jp/~naoya-i/resources/jelia2012_paper.pdf). The reasoner produces flat first order logic interpretations in the textual format 
 and proof graphs in the PDF format.
 
+More details about each component can be found [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/README.md).
+
 ---
 
 **Installation and running**
