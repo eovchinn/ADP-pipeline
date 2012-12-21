@@ -133,7 +133,7 @@ for-in(e18,x0,x1) ^ begin-vb(x5,x0,u16,u17) ^ fight-nn(e15,x4) ^ labor-nn(e14,x2
 
 ```
 
-A ![proofgraph](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/docs/pics/proofgraph_example.pdf) 
+A ![proofgraph](https://raw.github.com/metaphor-adp/Metaphor-ADP/master/docs/pics/proofgraph_example.pdf) 
 corresponds to this interpretation.
 
 ---
