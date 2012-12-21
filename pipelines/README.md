@@ -133,6 +133,7 @@ for-in(e18,x0,x1) ^ begin-vb(x5,x0,u16,u17) ^ fight-nn(e15,x4) ^ labor-nn(e14,x2
 
 ```
 
+![Fig.](https://raw.github.com/metaphor-adp/Metaphor-ADP/master/pipelines/English/examples/English_metaphors_2.pdf)
 ![](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/English/examples/English_metaphors_2.pdf)
 
 ---
