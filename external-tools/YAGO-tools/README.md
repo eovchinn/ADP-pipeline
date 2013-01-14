@@ -31,13 +31,16 @@ postgres=# \q
 add this line (this gives access to ISI network):
 # TYPE  DATABASE    USER        CIDR-ADDRESS          METHOD
 host    postgres    all         128.9.0.0/16          md5
-
+```
+```
 in /etc/postgresql/9.1/main/postgresql.conf
 add this:
 listen_addresses='*'
 port=5432
-
+```
+```
 NOTE: Sometimes these files are found in: /var/lib/pgsql/data/
+```
 
 * Restart Database
 ```
@@ -48,17 +51,27 @@ sudo  etc/init.d/postgresql restart
 
 #### Download SIMPLETEX Theme
 
-* Download [yagoSimpleTaxonomy][http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoSimpleTaxonomy.tsv.7z]
-* Download [yagoSimpleTypes][http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoSimpleTypes.tsv.7z]
+* Download yagoSimpleTaxonomy:http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoSimpleTaxonomy.tsv.7z
+* Download yagoSimpleTypes:http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoSimpleTypes.tsv.7z
 
 #### Download Database Importer
 
-* Download [Database Importer][http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/postgres.sql.7z]
+* Download: http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/postgres.sql.7z
 * Import Data
+
 ```
 got to directory of the YAGO TSV files and run:
 psql -a -d <database> -h <hostname> -U <user> -f <thisScript>
 
 example:
 psql -a -d yago -h localhost -U yago -f postgres.sql
+```
+
+#### Test Data Import
+```
+su - yago ( pwd is yago)
+psql -d yago (connect to database yago)
+\dt (list the tables)
+
+Should contain one table "yagofacts"
 ```
