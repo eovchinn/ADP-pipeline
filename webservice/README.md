@@ -85,3 +85,24 @@ kill -9 84127 (make sure you use the currend PID)
 
 * if the above doesn't return the correct IP address, just add the IP
 address instead of using socket functions
+
+#### Start Web-Service on colo-vm19
+
+* Log into colo-vm19 (if you don't have root access ask Richard)
+* Go to /opt/RestWebServer/ADP
+* Check if there is a process running and kill it
+```
+ ps -ef | grep adp
+ root      2555 19952  1 10:07 pts/0    00:00:00 python adpService.py -p 8080 -g
+
+ kill it : sudo kill -9 2555
+```
+
+* Start web-service
+```
+nohup sudo python adpService.py -p 8080 -g &
+```
+* Check it
+```
+python sendRestRequest.py -p 8080 -j testRequest1.json
+```
