@@ -781,6 +781,48 @@ def nextMeta(nextSentenceW1):
         return True
     return False
 
+def printer(prop_dict,sent):
+    prop_count = 0
+    for key,prop in sorted(prop_dict.items()):
+        #print key,prop
+        prop_count+=1
+        if prop[1] == "" and prop[2] in insertList:
+            sys.stdout.write(prop[2]+"("+",".join(prop[3])+")")
+        elif prop[2] in noTokenList:
+            sys.stdout.write("["+prop[0]+"]"+":"+prop[2]+"("+",".join(prop[3])+")")
+        elif prop[2] == "not" or prop[2] =="wh" or prop[2] =="whq":
+            sys.stdout.write("["+prop[0]+"]"+":"+prop[2]+"("+",".join(prop[3])+")")
+        elif re.search("[a-z]",prop[0]):                
+            sys.stdout.write("["+prop[4]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
+        else:
+            sys.stdout.write("["+prop[0]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
+        if prop_count < len(prop_dict.items()):
+            sys.stdout.write(" & ")
+    if not sentIDre.search(sent[0]) and sent != ['.']:
+        print ""
+
+def to_print(prop_dict,sent):
+    prop_count = 0
+    printable = ""
+    for key,prop in sorted(prop_dict.items()):
+        #print key,prop
+        prop_count+=1
+        if prop[1] == "" and prop[2] in insertList:
+            printable += (prop[2]+"("+",".join(prop[3])+")")
+        elif prop[2] in noTokenList:
+            printable += ("["+prop[0]+"]"+":"+prop[2]+"("+",".join(prop[3])+")")
+        elif prop[2] == "not" or prop[2] =="wh" or prop[2] =="whq":
+            printable += ("["+prop[0]+"]"+":"+prop[2]+"("+",".join(prop[3])+")")
+        elif re.search("[a-z]",prop[0]):                
+            printable += ("["+prop[4]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
+        else:
+            printable += ("["+prop[0]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
+        if prop_count < len(prop_dict.items()):
+            printable += (" & ")
+    if not sentIDre.search(sent[0]) and sent != ['.']:
+        printable += "\n"
+    return printable
+
 def main():
     lines = open(options.input, "r") if options.input else sys.stdin
     full_sents,all_words = to_sents(lines)
@@ -789,47 +831,52 @@ def main():
     metaFound = False
     prevmeta = "prev"
     metastring = "meta"
-    for sent,word in zip(full_sents,all_words):
-        #print " ".join(sent), prevmeta, metastring
+    meta_sentences = []
+    meta_props = []
+    for sent,words in zip(full_sents,all_words):
         parse_count+=1
-        if parse_count < len(full_sents):
-            nextSentW1 = full_sents[parse_count][0]
-            #if nextMeta(nextSentW1):
-            #metaFound = False
+        if sentIDre.search(sent[0]):
+            metastring = str(re.sub("\W","",sent[0]))
+            if meta_sentences != []:
+                print "id("+str(prevmetastring)+")."
+                print "% "+" ".join(meta_sentences)
+                print "".join(meta_props)
+            meta_sentences = []
+            meta_props = []
+            metaFound = True
+            prevmetastring = metastring
+        if metastring != "meta" and parse_count == len(full_sents):
+            print "id("+str(prevmetastring)+")."
+            print "% "+" ".join(meta_sentences)
+            print "".join(meta_props)
+        if metaFound and not sentIDre.search(sent[0]) and (sent != ['.']):
+            meta_sentences.append(" ".join(sent))
+            prop_sent,prop_dict = prop_to_dict(words)
+            prop_dict = replace_args(prop_sent,prop_dict)
+            printable_props = to_print(prop_dict,sent)
+            meta_props.append(printable_props)
+            
+            #print printable_props
+            #print parse_count,len(full_sents)            
+            #print sent
+        #print " ".join(sent)#, prevmeta, metastring
+        # parse_count+=1
+        # if parse_count < len(full_sents):
+        #     nextSentW1 = full_sents[parse_count][0]
+        #     #if nextMeta(nextSentW1):
+        #     #metaFound = False
         if (not sentIDre.search(sent[0])) and (not metaFound) and (sent != ['.']):
-            #print "LOOK HERE"
             sent_count += 1            
             print "% "+" ".join(sent)
             print "id("+str(sent_count)+")."
-        if metaFound and not sentIDre.search(sent[0]) and (sent != ['.']) and prevmeta == metastring:
-            print "% "+" ".join(sent)             
-        if metaFound and not sentIDre.search(sent[0]) and (sent != ['.']) and prevmeta != metastring:
-            print "% "+" ".join(sent)
-            print "id("+str(metastring)+")."
-            prevmeta = metastring                       
-        if sentIDre.search(sent[0]):
-            metastring = str(re.sub("\W","",sent[0]))
-            metaFound = True
-        prop_sent,prop_dict = prop_to_dict(word)
-        prop_dict = replace_args(prop_sent,prop_dict)
-        prop_count = 0
-        for key,prop in sorted(prop_dict.items()):
-            #print key,prop
-            prop_count+=1
-            if prop[1] == "" and prop[2] in insertList:
-                sys.stdout.write(prop[2]+"("+",".join(prop[3])+")")
-            elif prop[2] in noTokenList:
-                sys.stdout.write("["+prop[0]+"]"+":"+prop[2]+"("+",".join(prop[3])+")")
-            elif prop[2] == "not" or prop[2] =="wh" or prop[2] =="whq":
-                sys.stdout.write("["+prop[0]+"]"+":"+prop[2]+"("+",".join(prop[3])+")")
-            elif re.search("[a-z]",prop[0]):                
-                sys.stdout.write("["+prop[4]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
-            else:
-                sys.stdout.write("["+prop[0]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
-            if prop_count < len(prop_dict.items()):
-                sys.stdout.write(" & ")
-        if not sentIDre.search(sent[0]) and sent != ['.']:
-            print ""
+            prop_sent,prop_dict = prop_to_dict(words)
+            prop_dict = replace_args(prop_sent,prop_dict)
+            print to_print(prop_dict,sent)
+            #prop_sent,prop_dict = prop_to_dict(words)
+        #print words
+        #prop_dict = replace_args(prop_sent,prop_dict)
+        #printable_props = to_print(prop_dict,sent)
+        #printer(prop_dict,sent)
 
 if __name__ == "__main__":
     main()
