@@ -69,10 +69,9 @@ psql -a -d yago -h localhost -U yago -f postgres.sql
 ```
 
 #### Test Data Import
-```
-su - yago ( pwd is yago)
-psql -d yago (connect to database yago)
-\dt (list the tables)
-```
+`su - yago` ( pwd is yago)
+`psql -d yago` (connect to database yago)
+`\dt` (list the tables)
+
 Should contain one table "yagofacts"
 
