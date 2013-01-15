@@ -25,7 +25,7 @@ postgres=# \q
 
 * Open database port
 
- in /etc/postgresql/9.1/main/pg_hba.conf
+in /etc/postgresql/9.1/main/pg_hba.conf
 add this line (this gives access to ISI network):
 ```
 # TYPE  DATABASE    USER        CIDR-ADDRESS          METHOD
