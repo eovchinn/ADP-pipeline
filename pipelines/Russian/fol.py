@@ -191,8 +191,8 @@ class MaltConverter(object):
         for wid in confirnmed:
             for p in self.__visible_preds:
                 if p.word.id == wid and not p.word.important:
-#                    if p in preds:
-                    preds.remove(p)
+                    if p in preds:
+                        preds.remove(p)
 
 #                    print "REMOVED", p.word.lemma, p.word.important
         self.__visible_preds = preds
@@ -247,7 +247,6 @@ class MaltConverter(object):
                             args[i] = d.pred.args[0]
                             d.important = True
 #                            break
-
 
     def unfold_dep(self, word, until_tag="nn"):
         deps = list(self.deps(word))
@@ -1254,6 +1253,7 @@ def fol_transform(text_block):
         for row in sent:
             mc.add_line(row)
         _, _, pred_text = mc.format_output(index)
+        mc.flush()
         processed.append(pred_text)
     return processed
 
