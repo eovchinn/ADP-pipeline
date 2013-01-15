@@ -23,13 +23,17 @@ postgres=#  GRANT ALL PRIVILEGES ON DATABASE yago to yago;
 postgres=# \q
 ```
 
-* Open database port
+* Open database port 
+
+NOTE: This step is needed if you plan to give outside access to the database. If you plan to use it from localhost this step is not needed.
+
+Example for giving access to ISI network:
 
 in /etc/postgresql/9.1/main/pg_hba.conf
 add this line (this gives access to ISI network):
 ```
 # TYPE  DATABASE    USER        CIDR-ADDRESS          METHOD
-host    postgres    all         128.9.0.0/16          md5
+host    all    all         128.9.0.0/16          md5
 ```
 
 in /etc/postgresql/9.1/main/postgresql.conf
@@ -43,9 +47,13 @@ NOTE: Sometimes these files are found in: /var/lib/pgsql/data/
 
 
 * Restart Database
+
+If at this point you are "postgres" or "yago" user, su to a user that has root access (you can use "exit" command to go back to previous user). Then restart database:
 ```
 sudo  etc/init.d/postgresql restart
 ```
+
+
 
 * Done with database setup
 
@@ -69,11 +77,11 @@ psql -a -d yago -h localhost -U yago -f postgres.sql
 ```
 
 #### Test Data Import
-`su - yago` ( pwd is yago)
+`su - yago`
 
-`psql -d yago` (connect to database yago)
+`psql -d yago`
 
-`\dt` (list the tables)
+`\dt`
 
 Should contain one table "yagofacts"
 
