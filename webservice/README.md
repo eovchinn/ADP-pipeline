@@ -93,9 +93,12 @@ address instead of using socket functions
 * Check if there is a process running and kill it
 ```
  ps -ef | grep adp
+```
  root      2555 19952  1 10:07 pts/0    00:00:00 python adpService.py -p 8080 -g
 
- kill it : sudo kill -9 2555
+ kill it : 
+```
+ sudo kill -9 2555
 ```
 
 * Start web-service
