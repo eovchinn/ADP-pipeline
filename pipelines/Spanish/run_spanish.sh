@@ -46,8 +46,8 @@ OPTIONS="-token -lemma -sgml -quiet"
 
 TOKENIZER=$TREE_TAGGER_CMD/utf8-tokenize.perl
 NLTK_TOKENIZER_DIR=$METAPHOR_DIR/external-tools/nltk_tokenizer
-TOKENIZER_BIN=$NLTK_TOKENIZER_DIR/nltk_tokenizer.py
-TOKENIZER_BIN=$NLTK_TOKENIZER_DIR/nltk_rtokenizer.py
+#TOKENIZER_BIN=$NLTK_TOKENIZER_DIR/nltk_tokenizer.py
+TOKENIZER_BIN=$NLTK_TOKENIZER_DIR/nltk_stokenizer.py
 
 MWL=$TREE_TAGGER_CMD/mwl-lookup.perl
 TAGGER=$TREE_TAGGER_BIN/tree-tagger
