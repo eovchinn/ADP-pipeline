@@ -85,3 +85,36 @@ psql -a -d yago -h localhost -U yago -f postgres.sql
 
 Should contain one table "yagofacts"
 
+### Extract SIMPLETAX categories
+
+* Install psycopg2 library (for connecting to PostgreSQL)
+
+```
+sudo apt-get install python-psycopg2
+```
+* Edit Connect String
+
+In get_categories.py edit CONN_STRING to reflect your database
+settings.
+
+* Run program
+
+```
+python get_categories.py "string" lang<EN|ES|RU|FA>
+```
+
+example:
+```
+python get_categories.py "Barack Obama" EN
+```
+
+returns:
+```
+...
+<wordnet_scholar_110557854>
+<wordnet_person_100007846>
+<wordnet_person_100007846>
+<wordnet_writer_110794014>
+...
+```
+
