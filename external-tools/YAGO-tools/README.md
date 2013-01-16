@@ -109,17 +109,12 @@ python get_categories.py "Barack Obama" EN
 ```
 
 returns:
-
+```
 ...
-
-&lt;wordnet_scholar_110557854&gt;
-
-&lt;wordnet_person_100007846&gt;
-
-&lt;wordnet_person_100007846&gt;
-
-&lt;wordnet_writer_110794014&gt;
-
+<wordnet_scholar_110557854>
+<wordnet_person_100007846>
+<wordnet_person_100007846>
+<wordnet_writer_110794014>
 ...
-
+```
 
