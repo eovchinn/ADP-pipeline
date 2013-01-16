@@ -73,12 +73,9 @@ def createLongID(wordID,token):
         IDflag = True
     return longID,IDflag,token.count("_")
         
-def prop_to_dict(props):
+def prop_to_dict(props,eCount,xCount,uCount):
     sent_dict = {}    
     new_prop_sent = []
-    eCount = 1
-    xCount = 1
-    uCount = 1
     question = False
     #loop over stored list of words and save initial props
     for prop in props:
@@ -101,12 +98,6 @@ def prop_to_dict(props):
             propID = ",".join(joinedIDs)
         if not re.search(",",ID):
             propID = str(sent_count)+str(ID)
-        # if not propTags.match(pos) and not puncts.match(lemma):            
-        #     args = ["R","R"]
-        #     tag = ""
-        #     new_prop.extend([token,lemma,pos,head,rel,shortID,args,tag,propID])
-        #     sent_dict[shortID]=[token,lemma,pos,head,rel,shortID,args,tag,propID]
-        #     new_prop_sent.append(new_prop)
         if propTags.match(pos):
             args,tag,eCount,xCount,uCount,question = build_predicate(pos,eCount,xCount,uCount,lemma,question,token)
             new_prop.extend([token,lemma,pos,head,rel,shortID,args,tag,propID])
@@ -119,7 +110,7 @@ def prop_to_dict(props):
             sent_dict[shortID]=[token,lemma,pos,head,rel,shortID,args,tag,propID]
             new_prop_sent.append(new_prop)
             question = True
-    return new_prop_sent,sent_dict
+    return new_prop_sent,sent_dict,eCount,xCount,uCount
 
 def replace_args(prop_sent,sent_dict):
     prop_dict = {}
@@ -816,11 +807,12 @@ def to_print(prop_dict,sent):
         elif re.search("[a-z]",prop[0]):                
             printable += ("["+prop[4]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
         else:
+
             printable += ("["+prop[0]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
         if prop_count < len(prop_dict.items()):
             printable += (" & ")
-    if not sentIDre.search(sent[0]) and sent != ['.']:
-        printable += "\n"
+            #if not sentIDre.search(sent[0]) and sent != ['.']:
+            #printable += "\n"
     return printable
 
 def main():
@@ -833,45 +825,52 @@ def main():
     metastring = "meta"
     meta_sentences = []
     meta_props = []
+    eCount = 1
+    xCount = 1
+    uCount = 1    
     for sent,words in zip(full_sents,all_words):
         parse_count+=1
         if sentIDre.search(sent[0]):
             metastring = str(re.sub("\W","",sent[0]))
             if meta_sentences != []:
-                print "id("+str(prevmetastring)+")."
                 print "% "+" ".join(meta_sentences)
-                print "".join(meta_props)
+                print "id("+str(prevmetastring)+")."
+                print " & ".join(meta_props)
+                print ""
+                eCount = 1
+                xCount = 1
+                uCount = 1                
             meta_sentences = []
             meta_props = []
             metaFound = True
             prevmetastring = metastring
-        if metastring != "meta" and parse_count == len(full_sents):
-            print "id("+str(prevmetastring)+")."
-            print "% "+" ".join(meta_sentences)
-            print "".join(meta_props)
+         
         if metaFound and not sentIDre.search(sent[0]) and (sent != ['.']):
             meta_sentences.append(" ".join(sent))
-            prop_sent,prop_dict = prop_to_dict(words)
+            prop_sent,prop_dict,eCount,xCount,uCount = prop_to_dict(words,eCount,xCount,uCount)
             prop_dict = replace_args(prop_sent,prop_dict)
             printable_props = to_print(prop_dict,sent)
             meta_props.append(printable_props)
+        if metastring != "meta" and parse_count == len(full_sents):
+            print "% "+" ".join(meta_sentences)            
+            print "id("+str(prevmetastring)+")."
+            print " & ".join(meta_props)
+            print ""
+            eCount = 1
+            xCount = 1
+            uCount = 1               
             
-            #print printable_props
-            #print parse_count,len(full_sents)            
-            #print sent
-        #print " ".join(sent)#, prevmeta, metastring
-        # parse_count+=1
-        # if parse_count < len(full_sents):
-        #     nextSentW1 = full_sents[parse_count][0]
-        #     #if nextMeta(nextSentW1):
-        #     #metaFound = False
         if (not sentIDre.search(sent[0])) and (not metaFound) and (sent != ['.']):
             sent_count += 1            
             print "% "+" ".join(sent)
             print "id("+str(sent_count)+")."
-            prop_sent,prop_dict = prop_to_dict(words)
+            prop_sent,prop_dict,eCount,xCount,uCount = prop_to_dict(words,eCount,xCount,uCount)
             prop_dict = replace_args(prop_sent,prop_dict)
             print to_print(prop_dict,sent)
+            print ""
+            eCount = 1
+            xCount = 1
+            uCount = 1            
             #prop_sent,prop_dict = prop_to_dict(words)
         #print words
         #prop_dict = replace_args(prop_sent,prop_dict)
