@@ -7,6 +7,7 @@ import sys
 import codecs
 
 CONN_STRING =  "host='colo-vm19.isi.edu' dbname='yago' user='yago' password='yago'"
+con = None
 
 def main():
 
