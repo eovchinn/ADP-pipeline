@@ -28,7 +28,7 @@ class WordToken(object):
             self.lemma = word.lemma
             self.cpostag = word.cpostag
             self.feats = word.feats
-            self.head = word.head
+            self.head_id = word.head
             self.deprel = word.deprel
             self.pred = None
             self.important = True
@@ -51,7 +51,7 @@ class WordToken(object):
                                     # vertical bar (|), or an underscore if not
                                     # available. See this for more details:
                                     # corpus.leeds.ac.uk/mocky/msd-ru.html
-        self.head = int(line[6])    # HEAD. language HEAD. Head of the current
+        self.head_id = int(line[6]) # HEAD. language HEAD. Head of the current
                                     # token, which is either a value of ID or
                                     # zero ('0'). Note that depending on the
                                     # original treebank annotation, there may
@@ -93,7 +93,59 @@ class WordToken(object):
         if self.lemma == "<unknown>":
             self.lemma = self.form
 
+        # TODO(zaytsev@usc.edu): deprecated
         self.important = True
+
+        self.__deps = []
+        self.__head = None
+
+    @property
+    def head(self):
+        return self.__head
+
+    def deps(self, filtr=None):
+        """
+        Return deps. <filtr> could be a list of allowed cpostags: ["nn", "vb"]
+        """
+        if not filtr:
+            return self.__deps[:]
+        return filter(lambda d: d.cpostag in filtr, self.__deps)
+
+    def contains(self, lemma):
+        """
+        Do DFS to check if deps contains a given lemma.
+        """
+        new_deps = []
+        deps = self.__deps[:]
+        while deps:
+            for d in deps:
+                if d.lemma == lemma:
+                    return True
+                else:
+                    new_deps.extend(d.deps())
+            deps = new_deps
+        return False
+
+    def unfold_dep(self, until_tag="nn"):
+        if len(self.__deps) != 1:
+            return None
+        if self.__deps[0].cpostag == until_tag:
+            return self.__deps[0]
+        return self.__deps[0].unfold_dep(until_tag)
+
+    def set_head(self, new_head):
+        self.__head = new_head
+
+    @staticmethod
+    def initialize_sentence(words):
+        # Assign head and dependent words for each word
+        # in the given sentence.
+        for w in words:
+            if w.head_id:
+                w._head = words[w.head_id - 1]
+            for ww in words:
+                if ww.head == w.id:
+                    w.deps.append(ww)
 
     def __repr__(self):
         return u"<WordToken(%s)>" \

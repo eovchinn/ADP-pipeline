@@ -62,6 +62,11 @@ sudo  etc/init.d/postgresql restart
 * Download yagoSimpleTaxonomy:http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoSimpleTaxonomy.tsv.7z
 * Download yagoSimpleTypes:http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoSimpleTypes.tsv.7z
 
+#### Download MULTILINGUAL Theme
+
+* Download http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoMultilingualInstanceLabels.tsv.7z
+* Download http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoMultilingualClassLabels.tsv.7z
+
 #### Download Database Importer
 
 * Download: http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/postgres.sql.7z
