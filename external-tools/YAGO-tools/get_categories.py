@@ -11,7 +11,8 @@ con = None
 
 def main():
 
-  query="select distinct subject, object from yagofacts where subject like '%@@@word@@@%'and predicate like 'rdf:type'"
+  query_eng="select distinct object as category from yagofacts where subject like '%@@@word@@@%'and predicate like 'rdf:type'"
+  query_multi="select distinct yf1.object as category from yagofacts yf1, yagofacts yf2 where yf2.predicate like 'rdfs:label' and yf2.object like '%@@@word@@@%' and yf2.subject like yf1.subject and yf1.predicate like 'rdf:type'"
 
   #get inputs
   args=sys.argv
@@ -22,6 +23,10 @@ def main():
 
   inword=args[1]
   lang=args[2]
+
+  query = query_multi
+  if lang=='EN':
+    query=query_eng
 
   #replace spaces with _
   inword = inword.replace(' ','_')
@@ -37,8 +42,7 @@ def main():
     #get result
     rows = cur.fetchall()
     for row in rows:
-    	#print row['subject'],row['object']
-    	print row['object']
+    	print row['category']
 
   except psycopg2.DatabaseError, e:
     print 'Error %s' % e    
