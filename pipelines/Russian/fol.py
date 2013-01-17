@@ -1182,9 +1182,12 @@ class MaltConverter(object):
         self.__extra_preds = []
         self.__visible_preds = []
 
-    def format_output(self, sent_count):
+    def process(self, sent_count):
 
-        # if self.wordid
+        WordToken.initialize_sentence(self.__words)
+
+#        for w in self.__words:
+#            print w.form, w._head.form if w._head else ""
 
         self.preprocess()
 
@@ -1227,11 +1230,9 @@ class MaltConverter(object):
 
         predf = [self.format_pred(p, sent_count) for p in self.__visible_preds]
         epredf = [self.format_epred(ep) for ep in self.__extra_preds]
-        sent_text = u" ".join([w.form for w in self.__words])
-        id_text = u"id(%d)." % sent_count
         pred_text = " & ".join(predf + epredf)
 
-        return sent_text, id_text, pred_text
+        return pred_text
 
     def sentid(self, wt):
         if wt.form[0:3] == "{{{" and\
@@ -1252,27 +1253,10 @@ def fol_transform(text_block):
     for index, sent in sentences:
         for row in sent:
             mc.add_line(row)
-        _, _, pred_text = mc.format_output(index)
+        pred_text = mc.process(index)
         mc.flush()
         processed.append(pred_text)
     return processed
-
-
-#def write_sentences(textid, processed_sentences, ofile):
-#    processed_sentences = filter(lambda s: len(s[2]) > 0, processed_sentences)
-#    if len(processed_sentences) == 0:
-#        return
-#    if not textid:
-#        for psent in processed_sentences:
-#            if psent[2]:
-#                ofile.write(("% " + ("%s\n%s\n%s\n\n" % psent)).encode("utf-8"))
-#    else:
-#        text = " ".join(map(lambda s: s[0], processed_sentences))
-#        preds = " & ".join(map(lambda s: s[2], processed_sentences))
-#        ofile.write(("% " + text + "\n").encode("utf-8"))
-#        ofile.write("id(%s).\n" % textid)
-#        ofile.write((preds + "\n").encode("utf-8"))
-#        ofile.write("\n")
 
 
 class FOLWriter(object):
