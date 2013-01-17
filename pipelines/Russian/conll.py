@@ -93,7 +93,21 @@ class WordToken(object):
         if self.lemma == "<unknown>":
             self.lemma = self.form
 
+        # TODO(zaytsev@usc.edu): deprecated
         self.important = True
+
+        self.deps = []
+        self._head = None
+
+    @staticmethod
+    def initialize_sentence(words):
+        # Assigns head and dependent words for each word
+        # in the given sentence.
+        for w in words:
+            w._head = words[w.head - 1]
+            for ww in words:
+                if ww.head == w.id:
+                    w.deps.append(ww)
 
     def __repr__(self):
         return u"<WordToken(%s)>" \
