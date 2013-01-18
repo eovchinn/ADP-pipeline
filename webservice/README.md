@@ -95,6 +95,11 @@ address instead of using socket functions
 ```
 sudo su root 
 ```
+* Set environment variables
+
+```
+source setenv.sh
+```
 * Check if there is a process running and kill it
 ```
  ps -ef | grep adp
