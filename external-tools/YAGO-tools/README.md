@@ -90,7 +90,7 @@ psql -a -d yago -h localhost -U yago -f postgres.sql
 
 Should contain one table "yagofacts"
 
-### Extract SIMPLETAX categories
+### Extract Categories
 
 * Install psycopg2 library (for connecting to PostgreSQL)
 
@@ -105,12 +105,17 @@ settings.
 * Run program
 
 ```
-python get_categories.py "string" lang<EN|ES|RU|FA>
+python get_categories.py "string" lang<EN|ES|RU|FA> <-s>
 ```
+-s: substring match; default is exact match
 
-example:
+example exact match:
 ```
 python get_categories.py "Barack Obama" EN
+```
+example substring match:
+```
+python get_categories.py "Barack Obama" EN -s
 ```
 
 returns:
