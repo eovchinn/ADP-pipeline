@@ -87,7 +87,6 @@ class EPredicate(object):
 
 
 class MaltConverter(object):
-    line_splitter = re.compile("\s+")
     punct = re.compile("[\.,\?!{}()\[\]:;¿¡]")
 
     def __init__(self, process_vb_tense=False, process_nn_numbers=False):
@@ -105,10 +104,14 @@ class MaltConverter(object):
         self.NN_NUMBER = process_nn_numbers
         self.VB_TENSE = process_vb_tense
 
-    def compute_arg_indexes(self):
+    def process_arguments(self):
+        """
+        Compute and assign correct index for each argument.
+        """
 
         arg_set = set()
         arg_list = []
+
         for pred in self.visible_preds:
             a = pred.args[0].resolve_link()
             if a not in arg_set:
@@ -126,6 +129,7 @@ class MaltConverter(object):
                 if a.resolve_link() not in arg_set:
                     arg_set.add(a.resolve_link())
                     arg_list.append((ep, a.resolve_link()))
+
         for pred, a in arg_list:
             if a.type == "e":
                 a.index = self.e_count
@@ -139,6 +143,144 @@ class MaltConverter(object):
             elif a.type == "s":
                 a.index = self.s_count
                 self.s_count += 1
+
+    def format_pred(self, pred, sent_count=None):
+        argsf = []
+        for a in pred.args:
+            argsf.append("%s%d" %
+                         (a.resolve_link().type, a.resolve_link().index, ))
+        if sent_count is not None and pred.show_index:
+            id_text = "[%d]:" % (1000 * sent_count + pred.word.id)
+        else:
+            id_text = ""
+        if pred.show_postag:
+            cpostag = u"-%s" % pred.word.cpostag
+        else:
+            cpostag = ""
+        return u"%s%s%s(%s)" % (id_text,
+                                pred.prefix,
+                                cpostag,
+                                ",".join(argsf),)
+
+    def format_epred(self, epred):
+        prefix, args = epred
+        argsf = []
+        for a in args:
+            if a.type in ["e", "x", "u", "s", ]:
+                argsf.append("%s%d"
+                             % (a.resolve_link().type,
+                                a.resolve_link().index))
+            else:
+                argsf.append(a.type)
+        return u"%s(%s)" % (prefix, ",".join(argsf), )
+
+    def initialize_words(self):
+        # Assign head and dependent words for each word
+        # in the given sentence.
+        for w in self.words:
+            if w.head_id:
+                w.set_head(self.words[w.head_id - 1])
+            deps = []
+            for ww in self.words:
+                if ww.head_id == w.id:
+                    deps.append(ww)
+            w.set_deps(deps)
+
+    def preprocess(self):
+        words = self.words[:]
+
+        for i in xrange(0, len(self.words) - 1):
+            w1 = self.words[i]
+            w2 = self.words[i + 1]
+
+            if w1.lemma == u"а" and w2.lemma == u"также":
+                w1.set_head(w2.head)
+                w1.lemma = u"и"
+                w1.form = u"и"
+                words.remove(w2)
+
+        for w in words:
+            if w.lemma == u"и":
+                deps = w.deps()
+                if len(deps) == 1 and\
+                   w.deprel[0:4] == u"союз" and\
+                   deps[0].deprel[0:4] == u"союз":
+                    if w.head:
+                        if w.head.deps() == 1:
+                            hhead = w.head.head
+                            w.head.set_head(w)
+                            w.set_head(hhead)
+            elif w.lemma == u"нет" or w.lemma == u"не":
+                w.cpostag = "par"
+
+        self.words = words
+
+    def init_predicate(self, word):
+        args = [Argument("e")]\
+               + [Argument("x") for _ in xrange(1, word.args)]
+        pred = Predicate(word, args)
+        word.pred = pred
+        return pred
+
+    def flush(self):
+        self.words = []
+        self.initial_preds = []
+        self.extra_preds = []
+        self.visible_preds = []
+
+    def flush_arg_indexes(self):
+        self.e_count = 1
+        self.x_count = 1
+        self.u_count = 1
+        self.s_count = 1
+
+    def process(self, sent_count):
+
+        self.initialize_words()
+        self.preprocess()
+
+        for w in self.words:
+
+            if not w.cpostag or self.punct.match(w.lemma):
+                continue
+
+            if w.args != -1:
+                pred = self.init_predicate(w)
+                self.initial_preds.append(pred)
+
+        self.visible_preds = self.initial_preds[:]
+
+        self.subordinate_whnominals()
+        self.subordinate_relatives()
+        self.detect_questions()
+
+        for p in self.initial_preds:
+            if p.word.cpostag == "pr":
+                self.apply_pr_rules(p.word)
+            elif p.word.cpostag == "vb":
+                self.apply_vb_rules(p.word)
+            elif p.word.cpostag == "nn":
+                self.apply_nn_rules(p.word)
+            elif p.word.cpostag == "adj":
+                self.apply_adj_rules(p.word)
+            elif p.word.cpostag == "rb":
+                self.apply_rb_rules(p.word)
+            elif p.word.cpostag == "in":
+                self.apply_in_rules(p.word)
+            elif p.word.cpostag == "cnj":
+                self.apply_cnj_rules(p.word)
+            elif p.word.cpostag == "par":
+                self.apply_par_rules(p.word)
+
+        self.reassign_copulas()
+        self.remove_preds()
+        self.process_arguments()
+
+        predf = [self.format_pred(p, sent_count) for p in self.visible_preds]
+        epredf = [self.format_epred(ep) for ep in self.extra_preds]
+        pred_text = " & ".join(predf + epredf)
+
+        return pred_text
 
     def remove_pred(self, word):
         for p in self.visible_preds:
@@ -216,77 +358,6 @@ class MaltConverter(object):
                         elif d.cpostag == "adj" and d.pred and d.pred.args:
                             args[i] = d.pred.args[0]
                             d.important = True
-
-    def format_pred(self, pred, sent_count=None):
-        argsf = []
-        for a in pred.args:
-            argsf.append("%s%d" %
-                        (a.resolve_link().type, a.resolve_link().index, ))
-        if sent_count is not None and pred.show_index:
-            id_text = "[%d]:" % (1000 * sent_count + pred.word.id)
-        else:
-            id_text = ""
-        if pred.show_postag:
-            cpostag = u"-%s" % pred.word.cpostag
-        else:
-            cpostag = ""
-        return u"%s%s%s(%s)" % (id_text,
-                                pred.prefix,
-                                cpostag,
-                                ",".join(argsf),)
-
-    def format_epred(self, epred):
-        prefix, args = epred
-        argsf = []
-        for a in args:
-            if a.type in ["e", "x", "u", "s", ]:
-                argsf.append("%s%d"
-                             % (a.resolve_link().type,
-                                a.resolve_link().index))
-            else:
-                argsf.append(a.type)
-        return u"%s(%s)" % (prefix, ",".join(argsf), )
-
-    def initialize_words(self):
-        # Assign head and dependent words for each word
-        # in the given sentence.
-        for w in self.words:
-            if w.head_id:
-                w.set_head(self.words[w.head_id - 1])
-            deps = []
-            for ww in self.words:
-                if ww.head_id == w.id:
-                    deps.append(ww)
-            w.set_deps(deps)
-
-    def preprocess(self):
-        words = self.words[:]
-
-        for i in xrange(0, len(self.words) - 1):
-            w1 = self.words[i]
-            w2 = self.words[i + 1]
-
-            if w1.lemma == u"а" and w2.lemma == u"также":
-                w1.set_head(w2.head)
-                w1.lemma = u"и"
-                w1.form = u"и"
-                words.remove(w2)
-
-        for w in words:
-            if w.lemma == u"и":
-                deps = w.deps()
-                if len(deps) == 1 and \
-                   w.deprel[0:4] == u"союз" and \
-                   deps[0].deprel[0:4] == u"союз":
-                    if w.head:
-                        if w.head.deps() == 1:
-                            hhead = w.head.head
-                            w.head.set_head(w)
-                            w.set_head(hhead)
-            elif w.lemma == u"нет" or w.lemma == u"не":
-                w.cpostag = "par"
-
-        self.words = words
 
     person_relative_pr = [
         u"который",
@@ -1081,87 +1152,15 @@ class MaltConverter(object):
                     new_e,
                 ]))
 
-    def init_predicate(self, word):
-        args = [Argument("e")]\
-             + [Argument("x") for _ in xrange(1, word.args)]
-        pred = Predicate(word, args)
-        word.pred = pred
-        return pred
-
-    def flush(self):
-        self.words = []
-        self.initial_preds = []
-        self.extra_preds = []
-        self.visible_preds = []
-        self.e_count = 1
-        self.x_count = 1
-        self.u_count = 1
-        self.s_count = 1
-
-    def process(self, sent_count):
-
-        self.initialize_words()
-        self.preprocess()
-
-        for w in self.words:
-
-            if not w.cpostag or self.punct.match(w.lemma):
-                continue
-
-            if w.args != -1:
-                pred = self.init_predicate(w)
-                self.initial_preds.append(pred)
-
-        self.visible_preds = self.initial_preds[:]
-
-        self.subordinate_whnominals()
-        self.subordinate_relatives()
-        self.detect_questions()
-
-        for p in self.initial_preds:
-            if p.word.cpostag == "pr":
-                self.apply_pr_rules(p.word)
-            elif p.word.cpostag == "vb":
-                self.apply_vb_rules(p.word)
-            elif p.word.cpostag == "nn":
-                self.apply_nn_rules(p.word)
-            elif p.word.cpostag == "adj":
-                self.apply_adj_rules(p.word)
-            elif p.word.cpostag == "rb":
-                self.apply_rb_rules(p.word)
-            elif p.word.cpostag == "in":
-                self.apply_in_rules(p.word)
-            elif p.word.cpostag == "cnj":
-                self.apply_cnj_rules(p.word)
-            elif p.word.cpostag == "par":
-                self.apply_par_rules(p.word)
-
-        self.reassign_copulas()
-        self.remove_preds()
-        self.compute_arg_indexes()
-
-        predf = [self.format_pred(p, sent_count) for p in self.visible_preds]
-        epredf = [self.format_epred(ep) for ep in self.extra_preds]
-        pred_text = " & ".join(predf + epredf)
-
-        return pred_text
-
-    def sentid(self, wt):
-        if wt.form[0:3] == "{{{" and\
-           wt.form[len(wt.form) - 6:6] == "}}}!!!":
-            return True, wt.form[3:len(wt.form) - 9]
-        else:
-            return False, None
-
     def add_line(self, malt_row):
         wt = WordToken(malt_row)
         self.words.append(wt)
 
 
-def fol_transform(text_block):
+def fol_transform(mc, text_block):
+    mc.flush_arg_indexes()
     __textid, sentences = text_block
     processed = []
-    mc = MaltConverter()
     for index, sent in sentences:
         for row in sent:
             mc.add_line(row)

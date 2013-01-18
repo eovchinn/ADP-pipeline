@@ -18,7 +18,7 @@ import sys
 import argparse
 
 from conll import CoNLLReader
-from fol import FOLWriter, fol_transform
+from fol import FOLWriter, MaltConverter, fol_transform
 
 
 global NN_NUMBER
@@ -56,12 +56,13 @@ def main():
 
     ifile = open(pa.input, "r") if pa.input else sys.stdin
     ofile = open(pa.output, "w") if pa.output else sys.stdout
+    mc = MaltConverter(VB_TENSE, NN_NUMBER)
 
     conll_file = CoNLLReader(ifile)
     writer = FOLWriter(ofile)
 
     for text_block in conll_file:
-        fol_sentence = fol_transform(text_block)
+        fol_sentence = fol_transform(mc, text_block)
         writer.write(text_block, fol_sentence)
 
     ifile.close()
