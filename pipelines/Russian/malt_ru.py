@@ -21,14 +21,7 @@ from conll import CoNLLReader
 from fol import FOLWriter, MaltConverter, fol_transform
 
 
-global NN_NUMBER
-global VB_TENSE
-
-
 def main():
-
-    global NN_NUMBER
-    global VB_TENSE
 
     parser = argparse.ArgumentParser(
         description="MaltParser output processing pipeline for Russian.")
@@ -51,12 +44,12 @@ def main():
 
     pa = parser.parse_args()
 
-    NN_NUMBER = bool(pa.nnnumber)
-    VB_TENSE = bool(pa.vbtense)
+    nn_number = bool(pa.nnnumber)
+    vb_tense = bool(pa.vbtense)
 
     ifile = open(pa.input, "r") if pa.input else sys.stdin
     ofile = open(pa.output, "w") if pa.output else sys.stdout
-    mc = MaltConverter(VB_TENSE, NN_NUMBER)
+    mc = MaltConverter(vb_tense, nn_number)
 
     conll_file = CoNLLReader(ifile)
     writer = FOLWriter(ofile)

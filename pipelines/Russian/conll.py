@@ -124,6 +124,7 @@ class WordToken(object):
         new_deps = []
         deps = self.__deps[:]
         while deps:
+            new_deps = []
             for d in deps:
                 if d.lemma == lemma:
                     return True
