@@ -788,7 +788,7 @@ class MaltConverter(object):
 
             # number of dependents is equal to one
             # try to find use dependents of the head
-            if len(nouns) + len(adjs) + len(preps) == 1:
+            if head and len(nouns) + len(adjs) + len(preps) == 1:
                 for dep in head.deps(filtr=["nn", "adj", "in"]):
                     if dep.cpostag == "nn":
                         nouns.append(dep)
@@ -1089,7 +1089,7 @@ class MaltConverter(object):
                 for dep in word.deps():
                     if dep.cpostag == "nn":
                         hhead = head.head
-                        if hhead.cpostag == "vb":
+                        if hhead and hhead.cpostag == "vb":
                             new_word = WordToken(word=hhead)
                             vb_pred = Predicate(new_word, [
                                     Argument("e"),
@@ -1181,8 +1181,9 @@ class FOLWriter(object):
         for _, tokens in sents:
             for t in tokens:
                 all_tokens.append(t[1])
-        self.ofile.write(" ".join(all_tokens))
-        self.ofile.write("\n")
-        self.ofile.write("id(%s).\n" % textid)
-        self.ofile.write(" & ".join(fol_sent).encode("utf-8"))
-        self.ofile.write("\n\n")
+        self.ofile.write(u"% ")
+        self.ofile.write(u" ".join(all_tokens).encode("utf-8"))
+        self.ofile.write(u"\n")
+        self.ofile.write(u"id(%s).\n" % textid)
+        self.ofile.write(u" & ".join(fol_sent).encode("utf-8"))
+        self.ofile.write(u"\n\n")
