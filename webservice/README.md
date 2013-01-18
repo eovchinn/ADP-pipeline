@@ -90,7 +90,7 @@ address instead of using socket functions
 
 * Log into colo-vm19 (if you don't have root access ask Richard)
 * Go to /opt/RestWebServer/ADP
-* become root
+* become root (files are owned by mariam, but you can make any changes by becoming root)
 
 ```
 sudo su root 
