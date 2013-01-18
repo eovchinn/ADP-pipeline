@@ -90,6 +90,11 @@ address instead of using socket functions
 
 * Log into colo-vm19 (if you don't have root access ask Richard)
 * Go to /opt/RestWebServer/ADP
+* become root
+
+```
+sudo su root 
+```
 * Check if there is a process running and kill it
 ```
  ps -ef | grep adp
@@ -98,12 +103,12 @@ address instead of using socket functions
 
  kill it : 
 ```
- sudo kill -9 2555
+ kill -9 2555
 ```
 
 * Start web-service
 ```
-nohup sudo python adpService.py -p 8080 -g &
+nohup python adpService.py -p 8080 -g &
 ```
 * Check it
 ```
