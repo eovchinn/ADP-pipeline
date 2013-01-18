@@ -7,7 +7,7 @@ import os
 if __name__ == "__main__":
 	lang = sys.argv[1]	
 
-	en_string = 'Barak Obama'
+	en_string = 'Barack Obama'
 
 	es_string = 'Juan Carlos I de España'
 	
