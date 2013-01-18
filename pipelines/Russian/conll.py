@@ -96,12 +96,15 @@ class WordToken(object):
         # TODO(zaytsev@usc.edu): deprecated
         self.important = True
 
-        self.__deps = []
+        self.__deps = None
         self.__head = None
 
     @property
     def head(self):
         return self.__head
+
+    def set_head(self, new_head):
+        self.__head = new_head
 
     def deps(self, filtr=None):
         """
@@ -110,6 +113,9 @@ class WordToken(object):
         if not filtr:
             return self.__deps[:]
         return filter(lambda d: d.cpostag in filtr, self.__deps)
+
+    def set_deps(self, new_deps):
+        self.__deps = new_deps
 
     def contains(self, lemma):
         """
@@ -132,20 +138,6 @@ class WordToken(object):
         if self.__deps[0].cpostag == until_tag:
             return self.__deps[0]
         return self.__deps[0].unfold_dep(until_tag)
-
-    def set_head(self, new_head):
-        self.__head = new_head
-
-    @staticmethod
-    def initialize_sentence(words):
-        # Assign head and dependent words for each word
-        # in the given sentence.
-        for w in words:
-            if w.head_id:
-                w._head = words[w.head_id - 1]
-            for ww in words:
-                if ww.head == w.id:
-                    w.deps.append(ww)
 
     def __repr__(self):
         return u"<WordToken(%s)>" \
