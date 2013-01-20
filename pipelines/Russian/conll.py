@@ -207,6 +207,11 @@ class CoNLLReader(object):
         self.__init_sents__()
         return textid, sents
 
+    def filter_empties(self, snts):
+        textid = snts[0]
+        snts = snts[1]
+        return textid, filter(lambda s: len(s[1]) > 1, snts)
+
     def __iter__(self):
         for row in self.conll_tab:
             if row:
@@ -216,6 +221,7 @@ class CoNLLReader(object):
                     if self.textid_found:
                         snts = self.flush_sents()
                         self.last_textid = self.conll_tab.last_id
+                        snts = self.filter_empties(snts)
                         if len(snts[1]) > 0:
                             yield snts
                     else:
@@ -225,9 +231,9 @@ class CoNLLReader(object):
                     if self.textid_found:
                         self.__add_empty_sent__()
                     else:
-                        snts = self.flush_sents()
+                        snts = self.filter_empties(self.flush_sents())
                         if len(snts[1]) > 0:
                             yield snts
-        snts = self.flush_sents()
+        snts = self.filter_empties(self.flush_sents())
         if len(snts[1]) > 0:
             yield snts
