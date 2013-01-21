@@ -5,7 +5,13 @@ import sys
 import os
 
 if __name__ == "__main__":
-	lang = sys.argv[1]	
+	lang = sys.argv[1]
+
+	# default is exact match
+	substring = ''
+	if len(sys.argv)==3:
+		#substring match
+		if sys.argv[2]=='-s': substring=" -s"
 
 	en_string = 'Barack Obama'
 
@@ -13,7 +19,7 @@ if __name__ == "__main__":
 	
 	ru_string = 'Путин'
 
-	fa_string = ''
+	fa_string = 'محمود احمدی‌نژاد'
 
 	if lang == 'EN': input = en_string 
 	elif lang == 'ES': input = es_string
@@ -21,6 +27,6 @@ if __name__ == "__main__":
 	elif lang == 'FA': input = fa_string 
 	else: print 'Unknown language: '+lang+'\n'
 
-	cmd = 'python get_categories.py "' + input + '" ' + lang
+	cmd = 'python get_categories.py "' + input + '" ' + lang + substring
 	os.system(cmd)
 
