@@ -593,7 +593,8 @@ class MaltConverter(object):
             # 7. I know when you come.
             # 8. I know why you go.
             lemma = w.lemma
-            if (lemma == u"как" or lemma == u"когда" or lemma == u"зачем") \
+            if (lemma == u"как" or lemma == u"когда" or lemma == u"зачем"
+                or lemma == u"почему") \
                and w.cpostag == "cnj" and head and head.cpostag == "vb" and \
                len(deps) == 1 and deps[0].cpostag == "vb" and \
                deps[0].deprel == u"подч-союзн":
@@ -753,6 +754,7 @@ class MaltConverter(object):
         i_object = None
 
         deps = reversed(sorted(word.deps(), key=lambda d: d.deprel))
+
         for dep in deps:
             ddeps = list(dep.deps())
 
@@ -852,7 +854,7 @@ class MaltConverter(object):
                 if len(nouns) + len(adjs) + len(preps) > 1:
                     head_was_used = True
 
-            # a) Noun + Noun
+            # a) Noun + noun
             if len(adjs) == 0 and len(nouns) == 2:
                 if nouns[1].feats[4] == "i":
                     ep1 = EPredicate("equal", args=(
