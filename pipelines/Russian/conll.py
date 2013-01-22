@@ -6,21 +6,88 @@
 
 import re
 
+class POSHelper(object):
+
+    def __init__(self, word):
+        self.word = word
+
+    def __nonzero__(self):
+        return True
+
+class VBHelper(POSHelper):
+    
+    @property
+    def subj(self):
+        return self.word.pred.args[1]
+
+    @subj.setter
+    def subj(self, value):
+        self.word.pred.args[1] = value
+
+    @property
+    def d_obj(self):
+        return self.word.pred.args[2]
+
+    @d_obj.setter
+    def d_obj(self, value):
+        self.word.pred.args[2] = value
+
+    @property
+    def i_obj(self):
+        return self.word.pred.args[3]
+
+    @d_obj.setter
+    def iobj(self, value):
+        self.word.pred.args[3] = value
+
+
+class ADJHelper(POSHelper):
+    pass
+
+class NNHelper(POSHelper):
+    pass
+
+class RBHelper(POSHelper):
+    pass
+
+class INHelper(POSHelper):
+    pass
+
+class PRHelper(POSHelper):
+    pass
+
+class NUMHelper(POSHelper):
+    pass
+
+class CNJHelper(POSHelper):
+    pass
+
+class PARHelper(POSHelper):
+    pass
 
 class WordToken(object):
     postag_map = {
-        "V": ("vb", 4),     # verb - vb/4
-        "A": ("adj", 2),    # adjective - adj/2
-        "N": ("nn", 2),     # noun - nn/2
-        "R": ("rb", 2),     # adverb - rb/2
-        "S": ("in", 3),     # preposition - in/3
-        "P": ("pr", 2),     # pronoun
-        "M": ("num", -1),   # numeral
-        "C": ("cnj", 2),    # conjunction
-        "Q": ("par", 2),    # particle
+        "V": ("vb",     4,  VBHelper),     # verb - vb/4
+        "A": ("adj",    2,  ADJHelper),    # adjective - adj/2
+        "N": ("nn",     2,  NNHelper),     # noun - nn/2
+        "R": ("rb",     2,  RBHelper),     # adverb - rb/2
+        "S": ("in",     3,  INHelper),     # preposition - in/3
+        "P": ("pr",     2,  PRHelper),     # pronoun
+        "M": ("num",    -1, NUMHelper),    # numeral
+        "C": ("cnj",    2,  CNJHelper),    # conjunction
+        "Q": ("par",    2,  PARHelper),    # particle
     }
 
     def __init__(self, line=None, word=None):
+
+        self.vb = False
+        self.nn = False
+        self.rb = False
+        self.prep = False
+        self.pr = False
+        self.num = False
+        self.cnj = False
+        self.par = False
 
         if not line and word:
             self.id = word.id
@@ -86,7 +153,11 @@ class WordToken(object):
         #    preposition as head and a noun as dependent.
 
         if cpostag in self.postag_map:
-            self.cpostag, self.args = self.postag_map.get(cpostag)
+            self.cpostag, self.args, helper_cls = self.postag_map.get(cpostag)
+            if self.cpostag != "in":
+                setattr(self, self.cpostag, helper_cls(self))
+            else:
+                setattr(self, "prep", helper_cls(self))
         else:
             self.cpostag, self.args = None, -1
 
