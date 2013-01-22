@@ -4,6 +4,7 @@
 	
 	1. There is an issue with recognising indirect object when pipeline cannot retrieve information about its case (it should be *accusative* or *genitive*) from MALT (usually it happens with foreign words such as *"Мери"*):
 	
+
 		```	
 		% Джон дает Мери книгу .
 		id(1).
