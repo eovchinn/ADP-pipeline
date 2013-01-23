@@ -70,21 +70,41 @@ def main():
     cur.execute(query)
     #get result
     rows = cur.fetchall()
+    """
+    print 'subject,','category,','supercategory'
     for row in rows:
     	print row['subject'],row['category'],row['supercategory']
+    """
 
-    #key=supercategory; value=list of subcategories
+    #parse database output and get a first set of categories and their direct supercategories
+    #key=category; value=list of supercategories
     supercategories = {}
     for row in rows:
-      category_list = supercategories.get(row['supercategory'])
-      if category_list is None:
-        #first category for this supercategory
-        category_list = set()
-        supercategories[row['supercategory']] = category_list
+      supercategory_list = supercategories.get(row['category'])
+      if supercategory_list is None:
+        #first supercategory for this category
+        supercategory_list = set()
+        supercategories[row['category']] = supercategory_list
 
-      category_list.add(row['category'])
+      if row['category']!=row['supercategory']:
+        #add only supercategories that are different that the category
+        supercategory_list.add(row['supercategory'])
 
-    print supercategories
+    #one more pass to get all parent supercategories(recursively)
+    supercategories_final = {}
+    # for each category
+    for key in supercategories.keys():
+      supercategory_list = supercategories[key]
+      # I will add all other supercategories (recursively) to this list
+      all_supercategories = supercategory_list.copy()
+      for superc in supercategory_list:
+        #add all supercategories of superc
+        add_superc(superc, supercategories, all_supercategories)
+
+      #the final list of supercategories for this category
+      supercategories_final[key] = all_supercategories
+
+    print supercategories_final
 
   except psycopg2.DatabaseError, e:
     print 'Error %s' % e    
@@ -93,6 +113,18 @@ def main():
   finally:
     if con:
         con.close()
+
+#add to all_supercategories, all supercategories of category
+#supercategories: key=category; value = list of DIRECT supercategories
+def add_superc(category, supercategories, all_supercategories):
+  direct_superc = supercategories.get(category)
+  if direct_superc is None:
+    #I am done with this category
+    return
+  for superc in direct_superc:
+    all_supercategories.add(superc)
+    add_superc(superc, supercategories, all_supercategories)
+
 
 if __name__ == "__main__":
 	main()
