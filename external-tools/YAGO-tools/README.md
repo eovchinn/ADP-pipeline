@@ -156,27 +156,15 @@ example substring match:
 python get_supercategories.py "Barack Obama" EN -s
 ```
 
-returns:
-```
-{'<wordnet_person_100007846>': 
-set(['<wordnet_economist_110043643>', '<wordnet_alumnus_109786338>', '<wordnet_narrator_110345804>', 
-'<wordnet_writer_110794014>', '<wordnet_laureate_110249011>', '<wordnet_statesman_110650162>', 
-'<wordnet_atheist_109820044>', '<wordnet_person_100007846>', '<wordnet_academician_109759069>', 
-'<wordnet_president_110467179>', '<wordnet_lawyer_110249950>', '<wordnet_senator_110578471>', 
-'<wordnet_organizer_110383237>', '<wordnet_politician_110451263>', '<wordnet_scholar_110557854>', 
-'<wordnet_state_senator_110650076>', '<wordnet_officeholder_110371450>']), 
-'<yagoGeoEntity>': 
-set(['<wordnet_position_108621598>']), 
-'<wordnet_abstraction_100002137>': 
-set(['<wordnet_meme_105985126>', '<wordnet_controversy_107183151>', '<wordnet_address_107238694>', 
-'<wordnet_theory_105989479>', '<wordnet_inauguration_100239910>', '<wordnet_attempt_100786195>', 
-'<wordnet_tenure_115291498>', '<wordnet_image_105928118>']), 
-'<wordnet_organization_108008335>': 
-set(['<wordnet_secondary_school_108284481>', '<wordnet_organization_108008335>', '<wordnet_school_108276720>', 
-'<wordnet_senior_high_school_108409617>']), 
-'owl:Thing': 
-set(['<wordnet_organization_108008335>', '<wordnet_person_100007846>']), 
-'<wordnet_artifact_100021939>': 
-set(['<wordnet_oeuvre_103841417>', '<wordnet_book_106410904>'])}
+Returns a dictionary where key = category and value = list of supercategories.
 
+example:
+```
+{'<wordnet_state_108654360>': set(['<yagoGeoEntity>']), 
+'<wordnet_dish_103206908>': set(['<wordnet_artifact_100021939>']), 
+'<wordnet_minister_110320863>': set(['<wordnet_person_100007846>', 'owl:Thing']), 
+'<wordnet_city_108524735>': set(['<yagoGeoEntity>']), 
+'<wordnet_military_officer_110317007>': set(['<wordnet_person_100007846>', 'owl:Thing']), 
+'<wordnet_vodka_107906111>': set(['<wordnet_abstraction_100002137>']),
+...}
 ```
