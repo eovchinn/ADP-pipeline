@@ -1,6 +1,6 @@
-###VERBS
+##VERBS
 
-##1) Correctly inserts subjects and  direct objects. The direct object can be a noun or a clause.
+###1) Correctly inserts subjects and  direct objects. The direct object can be a noun or a clause.
 
 ```
 % Los mexicanos queremos construir un país mejor para nuestros hijos . 
@@ -11,7 +11,7 @@ OBJ: [11003]:querer-vb(e2,x1,**e3**,u3) & **[11004]:construir-vb(e3,x1,x2,u6)**
 Indirect object nouns are expressed via prepositions. Pronouns can occur as indirect objects, especially with reflexives. These are inserted as the 4th argument of verbs, but we may want to take a closer look at some examples.
 
 
-##2) Argument control is handled correctly.
+###2) Argument control is handled correctly.
 
 ```
 % Los mexicanos queremos construir un país mejor para nuestros hijos . 
@@ -19,19 +19,19 @@ SBJ: **[11002]:mexicano-nn(e1,x1)** & [11003]:querer-vb(e2,**x1**,e3,u3)
 OBJ: [11003]:querer-vb(e2,**x1**,e3,u3) & [11004]:construir-vb(e3,**x1**,x2,u6)
 ```
 
-##3) No other arguments are added to verbs
+###3) No other arguments are added to verbs
 
-##4) Tense information is not added
+###4) Tense information is not added
 
-##5) Copulas are handled correctly.
-#a) Noun+adj
+###5) Copulas are handled correctly.
+####a) Noun+adj
 
 ```
 % el libro es rojo .
 [15002]:libro-nn(e1,x1) & [15004]:rojo-adj(e3,x1)
 ```
 
-#b) Noun+noun
+####b) Noun+noun
 
 ```
 % **México** ya no **es** un **país** de una sola voz .
@@ -39,7 +39,7 @@ OBJ: [11003]:querer-vb(e2,**x1**,e3,u3) & [11004]:construir-vb(e3,**x1**,x2,u6)
 **[17001]:méxico-nn(e1,x1)** & [17002]:ya-rb(e2,e9) & [17003]:not(e3,e9) & **[17006]:país-nn(e5,x2)** & **equal(e9,x1,x2)** & [17007]:de-in(e6,x2,x3) & [17009]:solo-adj(e7,x3) & [17010]:voz-nn(e8,x3)
 ```
 
-#c) Noun+prep
+####c) Noun+prep
 
 ```
 % Juan está en la habitación .
