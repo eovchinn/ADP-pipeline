@@ -1,6 +1,6 @@
 ###VERBS
 
-##1) Correctly inserts subjects and  direct objects. The direct bbject can be a noun or a clause.
+##1) Correctly inserts subjects and  direct objects. The direct object can be a noun or a clause.
 
 ```
 % Los mexicanos queremos construir un país mejor para nuestros hijos . 
