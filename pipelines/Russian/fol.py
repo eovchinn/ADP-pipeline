@@ -285,23 +285,29 @@ class MaltConverter(object):
         self.detect_questions()
 
         for p in self.initial_preds:
-            if p.word.cpostag == "pr":
+            if p.word.pr:
                 self.apply_pr_rules(p.word)
-            elif p.word.cpostag == "vb":
+        for p in self.initial_preds:
+            if p.word.vb:
                 self.apply_vb_rules(p.word)
-            elif p.word.cpostag == "nn":
+        for p in self.initial_preds:
+            if p.word.nn:
                 self.apply_nn_rules(p.word)
-            elif p.word.cpostag == "adj":
+        for p in self.initial_preds:
+            if p.word.adj:
                 self.apply_adj_rules(p.word)
-            elif p.word.cpostag == "rb":
+        for p in self.initial_preds:
+            if p.word.rb:
                 self.apply_rb_rules(p.word)
-            elif p.word.cpostag == "in":
+        for p in self.initial_preds:
+            if p.word.prep:
                 self.apply_in_rules(p.word)
-            elif p.word.cpostag == "cnj":
+        for p in self.initial_preds:
+            if p.word.cnj:
                 self.apply_cnj_rules(p.word)
-            elif p.word.cpostag == "par":
+        for p in self.initial_preds:
+            if p.word.par:
                 self.apply_par_rules(p.word)
-
 
         self.reassign_copulas()
         self.remove_preds()
@@ -516,6 +522,7 @@ class MaltConverter(object):
                         Argument.link(deps[0].pred.e),
                     ))
                     self.extra_preds.append(ep)
+                    
 
     def subordinate_whnominals(self):
 
@@ -569,55 +576,60 @@ class MaltConverter(object):
                         break
 
             # 5. I know where you live.
-            if w.lemma == u"где" and head and hhead and \
-               head.cpostag == "vb" and hhead.cpostag == "vb":
+            if w.lemma == u"где" and head and hhead and head.vb and hhead.vb:
                 for d in head.deps(filtr=["pr"]):
                     if d.deprel == u"предик":
                         new_x = Argument.X()
+                        new_e = Argument.E()
                         ep1 = EPredicate("loc", args=(
                             Argument.E(),
                             new_x,
                             head.pred.e,
                         ))
-                        wh_e = Argument.E()
                         ep2 = EPredicate("wh", args=(
-                            wh_e,
+                            new_e,
                             Argument.link(new_x),
                         ))
                         self.extra_preds.extend((ep1, ep2, ))
-                        hhead.pred.args[2].link_to(wh_e)
+                        hhead.pred.args[2].link_to(new_e)
                         head.pred.args[1].link_to(d.pred.args[1])
                         break
 
             # 6. I know how you live.
             # 7. I know when you come.
-            # 8. I know why you go.
-            lemma = w.lemma
-            if (lemma == u"как" or lemma == u"когда" or lemma == u"зачем"
-                or lemma == u"почему") \
-               and w.cpostag == "cnj" and head and head.cpostag == "vb" and \
-               len(deps) == 1 and deps[0].cpostag == "vb" and \
-               deps[0].deprel == u"подч-союзн":
+            deps = w.deps()
+            if (w.lemma == u"как" or w.lemma == u"когда") \
+               and (w.cnj or w.pr) and head and head.vb \
+               and len(deps) == 1 and deps[0].vb:
                 for d in deps[0].deps():
                     if d.cpostag == "pr" and d.deprel == u"предик":
+                        # 6 or 7 depends on the conjunction lemma
+                        literal = "manner" if w.lemma == u"как" else "time"
                         new_x = Argument.X()
-                        wh_e = Argument.E()
-                        ep = EPredicate("wh", args=(wh_e, new_x, ))
-                        self.extra_preds.append(ep)
-                        # 6, 7 or 8 depends on conjunction lemma
-                        if w.lemma == u"как":
-                            literal = "manner"
-                        elif w.lemma == u"когда":
-                            literal = "time"
-                        else:
-                            literal = "reason"
-                        ep = EPredicate(literal, args=(
+                        new_e = Argument.E()
+                        ep1 = EPredicate("wh", args=(new_e, new_x, ))
+                        ep2 = EPredicate(literal, args=(
                             Argument.E(),
                             Argument.link(new_x),
                             Argument.link(deps[0].pred.e),
                         ))
-                        self.extra_preds.append(ep)
-                        head.pred.args[2].link_to(wh_e)
+                        self.extra_preds.extend([ep1, ep2, ])
+                        head.pred.args[2].link_to(new_e)
+
+            # 8. I know why you go.
+            if w.lemma == u"зачем" or w.lemma == u"почему" and \
+               head and head.vb and hhead and hhead.vb:
+                new_x = Argument.X()
+                new_e = Argument.E()
+                ep1 = EPredicate("wh", args=(new_e, new_x))
+                ep2 = EPredicate("reason", args=(
+                    Argument.E(),
+                    Argument.link(new_x),
+                    Argument.link(head.pred.e),
+                ))
+                hhead.pred.args[2].link_to(new_e)
+                self.extra_preds.extend([ep1, ep2, ])
+
 
     def detect_questions(self):
 
@@ -880,7 +892,7 @@ class MaltConverter(object):
                         Argument.link(nouns[0].pred.args[1]),
                     ))
                     self.extra_preds.append(ep1)
-                    
+
                     if head_was_used and head.cpostag == "adj":
                         head.pred.args[1].link_to(nouns[1].pred.args[1])
                         ep2 = EPredicate("compl", args=(
@@ -1056,20 +1068,21 @@ class MaltConverter(object):
         head = word.head
 
         # 1. Verb + noun.
-        if head and head.cpostag == "vb":
+        if head and head.vb:
             word.pred.args[1].link_to(head.pred.e)
 
         # 2. Noun + noun.
-        elif head and head.cpostag == "nn":
+        elif head and head.nn:
             word.pred.args[1].link_to(head.pred.args[1])
 
         # 5. Adj + noun
-        elif head and head.cpostag == "adj":
+        elif head and head.adj:
             word.pred.args[1].link_to(head.pred.e)
 
-        for dep in word.deps(filtr=["nn"]):
+        for dep in word.deps(filtr=["nn", "pr"]):
             if word.pred and dep.pred:
                 word.pred.args[2].link_to(dep.pred.args[1])
+                dep.important = True
                 break
 
         # 3. Second arg is a prep

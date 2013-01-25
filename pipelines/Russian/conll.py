@@ -15,7 +15,7 @@ class POSHelper(object):
         return True
 
 class VBHelper(POSHelper):
-    
+
     @property
     def subj(self):
         return self.word.pred.args[1]
@@ -44,43 +44,45 @@ class VBHelper(POSHelper):
 class ADJHelper(POSHelper):
     pass
 
+
 class NNHelper(POSHelper):
     pass
+
 
 class RBHelper(POSHelper):
     pass
 
+
 class INHelper(POSHelper):
     pass
+
 
 class PRHelper(POSHelper):
     pass
 
+
 class NUMHelper(POSHelper):
     pass
 
+
 class CNJHelper(POSHelper):
     pass
+
 
 class PARHelper(POSHelper):
     pass
 
 class WordToken(object):
-    postag_map = {
-        "V": ("vb",     4,  VBHelper),     # verb - vb/4
-        "A": ("adj",    2,  ADJHelper),    # adjective - adj/2
-        "N": ("nn",     2,  NNHelper),     # noun - nn/2
-        "R": ("rb",     2,  RBHelper),     # adverb - rb/2
-        "S": ("in",     3,  INHelper),     # preposition - in/3
-        "P": ("pr",     2,  PRHelper),     # pronoun
-        "M": ("num",    -1, NUMHelper),    # numeral
-        "C": ("cnj",    2,  CNJHelper),    # conjunction
-        "Q": ("par",    2,  PARHelper),    # particle
-    }
+    postag_map = dict(V=("vb", 4, VBHelper), A=("adj", 2, ADJHelper),
+                      N=("nn", 2, NNHelper), R=("rb", 2, RBHelper),
+                      S=("in", 3, INHelper), P=("pr", 2, PRHelper),
+                      M=("num", -1, NUMHelper), C=("cnj", 2, CNJHelper),
+                      Q=("par", 2, PARHelper))
 
     def __init__(self, line=None, word=None):
 
         self.vb = False
+        self.adj = False
         self.nn = False
         self.rb = False
         self.prep = False
