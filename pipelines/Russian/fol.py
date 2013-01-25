@@ -346,7 +346,6 @@ class MaltConverter(object):
             for p in self.visible_preds:
                 if p.word.id == wid and not p.word.important:
                     if p in preds:
-                        print p.word.lemma.encode("utf-8"), p.word.important
                         preds.remove(p)
         self.visible_preds = preds
         self.removed_preds = []
