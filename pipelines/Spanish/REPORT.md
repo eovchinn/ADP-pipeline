@@ -24,14 +24,14 @@ OBJ: [11003]:querer-vb(e2,**x1**,e3,u3) & [11004]:construir-vb(e3,**x1**,x2,u6)
 ###4) Tense information is not added
 
 ###5) Copulas are handled correctly.
-####a) Noun+adj
+######a) Noun+adj
 
 ```
 % el libro es rojo .
 [15002]:libro-nn(e1,x1) & [15004]:rojo-adj(e3,x1)
 ```
 
-####b) Noun+noun
+######b) Noun+noun
 
 ```
 % **México** ya no **es** un **país** de una sola voz .
@@ -39,7 +39,7 @@ OBJ: [11003]:querer-vb(e2,**x1**,e3,u3) & [11004]:construir-vb(e3,**x1**,x2,u6)
 **[17001]:méxico-nn(e1,x1)** & [17002]:ya-rb(e2,e9) & [17003]:not(e3,e9) & **[17006]:país-nn(e5,x2)** & **equal(e9,x1,x2)** & [17007]:de-in(e6,x2,x3) & [17009]:solo-adj(e7,x3) & [17010]:voz-nn(e8,x3)
 ```
 
-####c) Noun+prep
+######c) Noun+prep
 
 ```
 % Juan está en la habitación .
@@ -47,7 +47,7 @@ OBJ: [11003]:querer-vb(e2,**x1**,e3,u3) & [11004]:construir-vb(e3,**x1**,x2,u6)
 [17001]:Juan-nn(e1,x1) & [17003]:en-in(e3,x1,x2) & [17005]:habitación-nn(e4,x2)
 ```
 
-####d) Noun+VP
+######d) Noun+VP
 
 ```
 % Este **personaje es doblado** por David Gallagher en la versión americana y europea , y por Mamoru Miyano en la versión japonesa .
@@ -55,9 +55,9 @@ __This character is voiced by David Gallagher in the American and European versi
 **[43002]:personaje-nn(e1,x1)** & **[43004]:doblar-vb(e3,x1,u5,u6)** & **be(e17,x1,e3)** & [43005]:por-in(e4,e3,x2) & [43006]:David-nn(e5,x2) & [43007]:Gallagher-nn(e6,x2) & [43008]:en-in(e7,e3,x4) & [43010]:versión-nn(e8,x4) & [43016]:por-in(e11,e2,x5) & [43017]:Mamoru-nn(e12,x5) & [43018]:Miyano-nn(e13,x5) & [43019]:en-in(e14,u15,x7) & [43021]:versión-nn(e15,x7)
 ```
 
-####6) Passives are handled correctly
+###6) Passives are handled correctly
 
-####7) Participles are treated like other verbs
+###7) Participles are treated like other verbs
 
 
 ##NOUNS
