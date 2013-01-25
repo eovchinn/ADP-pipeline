@@ -285,23 +285,29 @@ class MaltConverter(object):
         self.detect_questions()
 
         for p in self.initial_preds:
-            if p.word.cpostag == "pr":
+            if p.word.pr:
                 self.apply_pr_rules(p.word)
-            elif p.word.cpostag == "vb":
+        for p in self.initial_preds:
+            if p.word.vb:
                 self.apply_vb_rules(p.word)
-            elif p.word.cpostag == "nn":
+        for p in self.initial_preds:
+            if p.word.nn:
                 self.apply_nn_rules(p.word)
-            elif p.word.cpostag == "adj":
+        for p in self.initial_preds:
+            if p.word.adj:
                 self.apply_adj_rules(p.word)
-            elif p.word.cpostag == "rb":
+        for p in self.initial_preds:
+            if p.word.rb:
                 self.apply_rb_rules(p.word)
-            elif p.word.cpostag == "in":
+        for p in self.initial_preds:
+            if p.word.prep:
                 self.apply_in_rules(p.word)
-            elif p.word.cpostag == "cnj":
+        for p in self.initial_preds:
+            if p.word.cnj:
                 self.apply_cnj_rules(p.word)
-            elif p.word.cpostag == "par":
+        for p in self.initial_preds:
+            if p.word.par:
                 self.apply_par_rules(p.word)
-
 
         self.reassign_copulas()
         self.remove_preds()
@@ -340,6 +346,7 @@ class MaltConverter(object):
             for p in self.visible_preds:
                 if p.word.id == wid and not p.word.important:
                     if p in preds:
+                        print p.word.lemma.encode("utf-8"), p.word.important
                         preds.remove(p)
         self.visible_preds = preds
         self.removed_preds = []
@@ -886,7 +893,7 @@ class MaltConverter(object):
                         Argument.link(nouns[0].pred.args[1]),
                     ))
                     self.extra_preds.append(ep1)
-                    
+
                     if head_was_used and head.cpostag == "adj":
                         head.pred.args[1].link_to(nouns[1].pred.args[1])
                         ep2 = EPredicate("compl", args=(
@@ -1062,20 +1069,21 @@ class MaltConverter(object):
         head = word.head
 
         # 1. Verb + noun.
-        if head and head.cpostag == "vb":
+        if head and head.vb:
             word.pred.args[1].link_to(head.pred.e)
 
         # 2. Noun + noun.
-        elif head and head.cpostag == "nn":
+        elif head and head.nn:
             word.pred.args[1].link_to(head.pred.args[1])
 
         # 5. Adj + noun
-        elif head and head.cpostag == "adj":
+        elif head and head.adj:
             word.pred.args[1].link_to(head.pred.e)
 
-        for dep in word.deps(filtr=["nn"]):
+        for dep in word.deps(filtr=["nn", "pr"]):
             if word.pred and dep.pred:
                 word.pred.args[2].link_to(dep.pred.args[1])
+                dep.important = True
                 break
 
         # 3. Second arg is a prep
