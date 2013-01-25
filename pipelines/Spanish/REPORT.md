@@ -47,7 +47,7 @@ OBJ: [11003]:querer-vb(e2,**x1**,e3,u3) & [11004]:construir-vb(e3,**x1**,x2,u6)
 [17001]:Juan-nn(e1,x1) & [17003]:en-in(e3,x1,x2) & [17005]:habitación-nn(e4,x2)
 ```
 
-#d) Noun+VP
+####d) Noun+VP
 
 ```
 % Este **personaje es doblado** por David Gallagher en la versión americana y europea , y por Mamoru Miyano en la versión japonesa .
@@ -55,14 +55,14 @@ __This character is voiced by David Gallagher in the American and European versi
 **[43002]:personaje-nn(e1,x1)** & **[43004]:doblar-vb(e3,x1,u5,u6)** & **be(e17,x1,e3)** & [43005]:por-in(e4,e3,x2) & [43006]:David-nn(e5,x2) & [43007]:Gallagher-nn(e6,x2) & [43008]:en-in(e7,e3,x4) & [43010]:versión-nn(e8,x4) & [43016]:por-in(e11,e2,x5) & [43017]:Mamoru-nn(e12,x5) & [43018]:Miyano-nn(e13,x5) & [43019]:en-in(e14,u15,x7) & [43021]:versión-nn(e15,x7)
 ```
 
-##6) Passives are handled correctly
+####6) Passives are handled correctly
 
-##7) Participles are treated like other verbs
+####7) Participles are treated like other verbs
 
 
-###NOUNS
+##NOUNS
 
-##1) Compound nouns are often expressed as two nouns joined by the preposition "de".
+###1) Compound nouns are often expressed as two nouns joined by the preposition "de".
 
 ```
 % el piso de concreto 
@@ -70,25 +70,30 @@ __the concrete floor__
 [3002]:piso-nn(e1,x1) & [3003]:de-in(e2,x1,e3) & [3004]:concreto-adj(e3,u3)
 ```
 
-##2) Genetive: Possessives in Spanish are either expressed with pronouns or the preposition "de".
+###2) Genetive: Possessives in Spanish are either expressed with pronouns or the preposition "de".
 
-##3) The pipeline doesn't currently provide number information.
+###3) The pipeline doesn't currently provide number information.
 
-##4) There is no additional information from the parser.
+###4) There is no additional information from the parser.
 
-##5) Coreference is not handled.
+###5) Coreference is not handled.
 
-###Adjectives are handled correctly.
+##ADJECTIVES
+These handled correctly.
 
-###Adverbs are handled correctly.
+##ADVERBS
+These are handled correctly.
 
-##1) Verb+noun
+##PREPOSITIONS
 
-```% México no ha logrado **avanzar** a la velocidad necesaria **en** el **combate** a la desigualdad .
+###1) Verb+noun
+
+```
+% México no ha logrado **avanzar** a la velocidad necesaria **en** el **combate** a la desigualdad .
 [25001]:méxico-nn(e1,x1) & [25002]:not(e2,e4) & [25004]:lograr-vb(e4,u6,x1,u7) & **[25005]:avanzar-vb(e5,u8,u9,u10)** & [25006]:a-in(e6,e5,x2) & [25008]:velocidad-nn(e7,x2) & [25009]:necesario-adj(e8,x2) & **[25010]:en-in(e9,e5,x3)** & **[25012]:combate-nn(e10,x3)** & [25013]:a-in(e11,x3,x4) & [25015]:desigualdad-nn(e12,x4)
 ```
 
-##2) Noun+noun
+###2) Noun+noun
 
 ```
 % el sector financiero ya no es un **flanco** vulnerable **de** nuestra **economía** .
@@ -96,9 +101,9 @@ __the financial sector is no longer a vulnerable flank of our economy__
 [4002]:sector-nn(e1,x1) & [4003]:financiero-adj(e2,x1) & [4004]:ya-rb(e3,e11) & [4005]:not(e4,e11) & **[4008]:flanco-nn(e6,x2)** & equal(e11,x1,x2) & [4009]:vulnerable-adj(e7,x2) & **[4010]:de-in(e8,x2,x3)** & [4011]:nuestra-adj(e9,x3) &** [4012]:economía-nn(e10,x3)**
 ```
 
-##3) Second arg is a prep
+###3) Second arg is a prep
 
-##4) Verb+Verb
+###4) Verb+Verb
 
 ```
 % Seguiremos **combatiendo** la inflación **para lograr** un crecimiento económico sostenido en provecho de todos .
@@ -106,17 +111,18 @@ __We continue to fight inflation to achieve sustained economic growth for the be
 [6001]:seguir-vb(e1,u4,e2,u3) & **[6002]:combatir-vb(e2,e8,x1,u6)** & [6004]:inflación-nn(e3,x1) & **[6005]:para-in(e4,e2,e5)** & **[6006]:lograr-vb(e5,u9,x2,u11)** & [6008]:crecimiento-nn(e6,x2) & [6009]:económico-adj(e7,x2) & [6010]:sostener-vb(e8,u13,u14,u15) & [6011]:en-in(e9,e8,x3) & [6012]:provecho-nn(e10,x3) & [6013]:de-in(e11,e8,u19) & [6014]:todo-adj(e12,u20)
 ```
 
-##5) Adj+noun
+###5) Adj+noun
 
-##6) Adj+verb
+###6) Adj+verb
+```
 % Su decisión podría ser muy **importante para determinar** quién gana el estado de Virginia y la Casa Blanca .
 __His decision could be very important in determining who wins the state of Virginia and the White House.__
 [11001]:thing(e1,x1) & [11002]:decisión-nn(e2,x2) & [11003]:poder-vb(e3,x2,e4,u3) & [11005]:muy-rb(e5,e6) & **[11006]:importante-adj(e6,x2)** & **[11007]:para-in(e7,e6,e10)** & **[11008]:determinar-vb(e8,u11,u12,u13)** & [11009]:wh(e9,x3) & person(e16,x3) & [11010]:ganar-vb(e10,x3,x4,u16) & [11012]:estado-nn(e11,x4) & [11010]:ganar-vb(e16,x3,x6,u16) & [11013]:de-in(e12,x4,x5) & [11014]:virginia-nn(e13,x5) & [11017]:casa-nn(e14,x6) & [11018]:blanco-adj(e15,x6)
-
-### Pronouns
+```
+## Pronouns
 Pronouns are handled correctly for the most part. Possessives are tricky due to their connections to reflexives and passives.
 
-### Numerals
+## Numerals
 Numbers 0-9 are changed into digits, otherwise, lemmas are used.
 
 ```
@@ -127,7 +133,7 @@ Numbers 0-9 are changed into digits, otherwise, lemmas are used.
 ochenta-card(e11,u15,ochenta)
 ```
 
-### COORDINATIONS
+## COORDINATIONS
 Dependent heads are correctly duplicated. Commas are not processed as coordinating conjunctions
 
 ```
@@ -144,12 +150,12 @@ __Proceed with wisdom and courage__
 [12001]:procedamos-vb(e1,u1,u2,u3) & **[12002]:con-in(e2,e1,x1)** & [12003]:sensatez-nn(e3,x1) & **[12002]:con-in(e15,e1,x2)** & [12005]:valentía-nn(e4,x2)
 ```
 
-### SUBORDINATE CLAUSES
+## SUBORDINATE CLAUSES
 
-##1) Relative Clauses
+###1) Relative Clauses
 Relative clauses with "que" are not currently supported.
 
-##2) Wh-nominals
+###2) Wh-nominals
 
 ```
 % En este punto no sé por quién voy a votar .
@@ -161,9 +167,9 @@ __The most exciting this is **when** couples come to compromise.__
 [12003]:más-rb(e1,e2) & [12004]:emocionante-adj(e2,u2) & **[12006]:wh(e4,x1)** & **time(e11,x1,e6)** & [12008]:pareja-nn(e5,x2) & [12009]:venir-vb(e6,x2,u7,u8) & be(e12,u14,e6) & [12010]:a-in(e7,e6,e8) & [12011]:comprometer-vb(e8,u11,u12,u13)
 ```
 
-##3) because, while, when, after, since, ...
+###3) because, while, when, after, since, ...
 
-### NEGATION
+## NEGATION
 
 ```
 % Juan no
@@ -175,7 +181,7 @@ __Mexico does not want__
 [33001]:méxico-nn(e1,x1) & [33002]:ya-rb(e2,e4) & **[33003]:not(e3,e4)** & [33004]:querer-vb(e4,x1,e5,u5) 
 ```
 
-### QUESTIONS
+## QUESTIONS
 
 ```
 % **¿ Cómo** puedes saber si estás usando HTTPS o HTTP **?**
