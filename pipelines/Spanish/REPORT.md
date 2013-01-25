@@ -126,7 +126,19 @@ These are handled correctly.
 & [11006]:importante-adj(e6,x2) & [11007]:para-in(e7,e6,e10) & [11008]:determinar-vb(e8,u11,u12,u13)... 
 ```
 ## Pronouns
-Pronouns are handled correctly for the most part. Possessives are tricky due to their connections to reflexives and passives.
+Pronouns are handled correctly for the most part. 
+Possessives are tricky due to their connections to reflexives and passives.
+
+```
+% Estoy aquí porque , desde que asumí mi tarea en el Sindicato de Actores .
+"I'm here because I took my job at the Screen Actors Guild
+[625001]:estar-vb(e1,u1,e14,u3) & [625002]:aquí-rb(e2,e1) & [625003]:porque-in(e3,e1,e14) 
+& [625005]:desde-in(e4,e14,e5) & [625007]:asumí-vb(e5,x2,u10,u11) & [625008]:person(e6,x1) & of-in(e28,x2,x1) 
+& [625009]:tarea-nn(e7,x2) & [625010]:en-in(e8,e5,x3) & [625012]:sindicato-nn(e9,x3) & [625013]:de-in(e10,x3,x4) 
+& [625014]:actor-nn(e11,x4) 
+```
+This case (_mi_/_my_) is handled well. There is no passive voice or reflexive in the sentence.
+
 
 ## Numerals
 Numbers 0-9 are changed into digits, otherwise, lemmas are used.
@@ -166,7 +178,12 @@ Dependent heads are correctly duplicated. Commas are not processed as coordinati
 ## SUBORDINATE CLAUSES
 
 ###1) Relative Clauses
-Relative clauses with "que" are not currently supported.
+Relative clauses with "que" are not currently supported. 
+The main reason that "que" is difficult to process is that it has a variety of functions. 
+It can be translated as, at least, "that, which, who, what, whether, because, and why."
+The current pipeline does not do a good job of distinguishing which use is which, so any rule that can be written to handle one of the phenomena, will be wrong more often that it is right.
+If more than one rule is written, they would overlap and cancel each other out.
+The only use currently supported is when "que" means "what" in a question, as the punctuation disambiguates the usage (see section on Questions below).
 
 ###2) Wh-nominals
 
@@ -184,6 +201,13 @@ At this point I do not know who I will vote for.
 
 ###3) because, while, when, after, since, ...
 
+```
+% Juan lee , porque tiene tiempo .
+"John reads, because he has time."
+[30001]:Juan-nn(e1,x1) & [30002]:leer-vb(e2,x1,e5,u3) & [30004]:porque-in(e3,e2,e4) 
+& [30005]:tener-vb(e4,x1,x2,u9) & [30006]:tiempo-nn(e5,x2)
+```
+
 ## NEGATION
 
 ```
@@ -199,19 +223,19 @@ At this point I do not know who I will vote for.
 ## QUESTIONS
 
 ```
-% ¿ Qué es el RFC ?
+% ¿ *Qué* es el RFC ?
 "What is RFC?"
 [126002]:whq(e1,x1) & [126002b]:thing(e4,x1,e2) & [126003]:ser-vb(e2,x2,e1,u3) & [126005]:RFC-nn(e3,x2)
 
-% ¿ A quién ves ?
+% ¿ A *quién* ves ?
 "Whom did you see?"
 [53002]:a-in(e1,e3,e2) & [53003]:whq(e2,x1) & person(e4,x1) & [53004]:ver-vb(e3,u3,e2,u5)
 
-% ¿ Cuándo llegaste ?
+% ¿ *Cuándo* llegaste ?
 "When did you come?"
 [54002]:whq(e1,x1) & time(e3,x1,e2) & [54003]:llegar-vb(e2,u1,e1,u3)
 
-% ¿ Por qué has venido ?
+% ¿ Por *qué* has venido ?
 "Why did you come?"
 [55002]:por-in(e1,e4,e2) & [55003]:whq(e2,x1) & [55003b]:thing(e5,x1,e1) & [55005]:venir-vb(e4,u6,e2,u8)
 % ¿ Cómo qué has venido ?
@@ -222,7 +246,7 @@ At this point I do not know who I will vote for.
 & [14005]:si-in(e4,e6,u8) & [14007]:usar-vb(e6,u4,x2,u14) & [14008]:https-nn(e7,x2) 
 & [14007]:usar-vb(e10,u4,x3,u14) & [14010]:http-nn(e8,x3) & or(e10,e7,e8)
 
-% ¿ De dónde vienes ?
+% ¿ De *dónde* vienes ?
 "Where did you come?"
 [57002]:de-in(e1,e3,u2) & [57003]:whq(e2,x1) & loc(e4,x1,e1) & [57004]:venir-vb(e3,u3,e2,u5)
 
