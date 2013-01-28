@@ -31,9 +31,12 @@ class Argument(object):
         If <force> is True, than link argument to another even in case it's
         already linked.
         """
-        if not self.link or force:
-            if self != another_arg:
-                self.link = another_arg
+        # another_arg = another_arg.resolve_link()
+        # print "%s -> %s" % (self.type, another_arg.type)
+        # if another_arg.type == "u":
+        #     print "\n\n\n!!!!!\n\n\n"
+        if (not self.link or force) and self != another_arg:
+            self.link = another_arg
 
     def resolve_link(self):
         """
@@ -328,25 +331,31 @@ class MaltConverter(object):
 
     def remove_preds(self):
         confirnmed = []
-        for p in self.removed_preds:
+        for pred_to_remove in self.removed_preds:
             confirm_remove = True
-            pw = p.word
-            if pw.vb:
-                for w in self.words:
-                    if w.id != pw.id and w.pred:
-                        w_args = [a.resolve_link() for a in w.pred.args]
-                        for a in p.args:
-                            if a in w_args:
-                                confirm_remove = False
+            word_to_remove = pred_to_remove.word
+            word_to_remove_args = pred_to_remove.args
+            if word_to_remove.vb:
+                for another_word in self.words:
+                    if another_word.id != word_to_remove.id and \
+                       another_word.pred:
+                        another_word_args = another_word.pred.args
+                        for a1 in word_to_remove_args:
+                            for a2 in another_word_args:
+                                if a2 != a2.resolve_link() and \
+                                   a2.resolve_link() == a1 and \
+                                   a1.type != "u":
+                                    confirm_remove = False
+                                    break
             if confirm_remove:
-                confirnmed.append(p.word.id)
+                confirnmed.append(pred_to_remove.word.id)
                 continue
         preds = self.visible_preds[:]
         for wid in confirnmed:
-            for p in self.visible_preds:
-                if p.word.id == wid and not p.word.important:
-                    if p in preds:
-                        preds.remove(p)
+            for pred_to_remove in self.visible_preds:
+                if pred_to_remove.word.id == wid and not pred_to_remove.word.important:
+                    if pred_to_remove in preds:
+                        preds.remove(pred_to_remove)
         self.visible_preds = preds
         self.removed_preds = []
 
@@ -433,8 +442,7 @@ class MaltConverter(object):
             if w.pr:
                 if not hhead:
                     continue
-                if w.lemma in self.person_relative_pr and \
-                   head.vb and hhead.nn:
+                if w.lemma in self.person_relative_pr and head.vb and hhead.nn:
                     if hhead.feats[5] == "y":  # if animate
                         # 1. Person
                         ep = EPredicate("person", args=(
@@ -830,9 +838,7 @@ class MaltConverter(object):
         # 5. Copula expressed with a verb
 
         if word.lemma in self.copula_verbs:
-            # TODO(vladimir@zvm.me): fix this
             self.remove_pred(word)
-            # self.__visible_preds.remove(word.pred)
             nouns = []
             adjs = []
             preps = []
