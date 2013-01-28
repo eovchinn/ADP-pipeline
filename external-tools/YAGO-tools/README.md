@@ -104,18 +104,23 @@ settings.
 
 * Run program
 
-```
-python get_categories.py "string" lang<EN|ES|RU|FA> <-s>
-```
--s: substring match; default is exact match
+Usage: get_categories.py [options]
+
+* Options:
+
+  * -h, --help (show this help message and exit)
+  * -i INWORD, --input=INWORD (input string; example:"Barak Obama")
+  * -l LANG, --lang=LANG  (language; one of EN|RU|ES|FA)
+  * -s, --substring (match input string as substring; default is exact match)
+
 
 example exact match:
 ```
-python get_categories.py "Barack Obama" EN
+python get_categories.py -i "Barack Obama" -l EN
 ```
 example substring match:
 ```
-python get_categories.py "Barack Obama" EN -s
+python get_categories.py -i "Barack Obama" -l EN -s
 ```
 
 returns:
