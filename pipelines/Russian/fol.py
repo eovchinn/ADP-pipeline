@@ -31,10 +31,6 @@ class Argument(object):
         If <force> is True, than link argument to another even in case it's
         already linked.
         """
-        # another_arg = another_arg.resolve_link()
-        # print "%s -> %s" % (self.type, another_arg.type)
-        # if another_arg.type == "u":
-        #     print "\n\n\n!!!!!\n\n\n"
         if (not self.link or force) and self != another_arg:
             self.link = another_arg
 
