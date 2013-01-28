@@ -19,6 +19,14 @@ MALT output:
 
 ```
 
-Here the word *Мери* has a nominative case (Npfs***n***y).
+Here the word *Мери* has a nominative case (Npfs ***n*** y).
 	
-**2)** 
+**2)** Implemented. No issues found.
+
+**3)** Implemented handling `instr` predicate rule and handling genetives. No issues found.
+
+**4)** Implemented. Reuires option `--vbtense 1` to be speicied. No issues found.
+
+**5)** Recognises copulas in the following cases:
+	
+    * `NN+NN`
