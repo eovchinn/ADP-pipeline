@@ -109,7 +109,7 @@ Usage: get_categories.py [options]
 * Options:
 
   * -h, --help (show this help message and exit)
-  * -i INWORD, --input=INWORD (input string; example:"Barak Obama")
+  * -i INSTRING, --input=INSTRING (input string; example:"Barak Obama")
   * -l LANG, --lang=LANG  (language; one of EN|RU|ES|FA)
   * -s, --substring (match input string as substring; default is exact match)
 
@@ -147,18 +147,22 @@ settings.
 
 * Run program
 
-```
-python get_supercategories.py "string" lang<EN|ES|RU|FA> <-s>
-```
--s: substring match; default is exact match
+Usage: get_supercategories.py [options]
+
+* Options:
+
+  * -h, --help (show this help message and exit)
+  * -i INSTRING, --input=INSTRING (input string; example:"Barak Obama")
+  * -l LANG, --lang=LANG  (language; one of EN|RU|ES|FA)
+  * -s, --substring (match input string as substring; default is exact match)
 
 example exact match:
 ```
-python get_supercategories.py "Barack Obama" EN
+python get_supercategories.py -i "Barack Obama" -l EN
 ```
 example substring match:
 ```
-python get_supercategories.py "Barack Obama" EN -s
+python get_supercategories.py -i "Barack Obama" -l EN -s
 ```
 
 Returns a dictionary where key = category and value = list of supercategories.
