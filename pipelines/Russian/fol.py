@@ -6,7 +6,7 @@
 
 import re
 
-from conll import WordToken
+from conll import WordToken, NNHelper
 
 
 class Argument(object):
@@ -1107,7 +1107,9 @@ class MaltConverter(object):
         if word.lemma not in self.pronouns_map and word.pr:
             self.remove_pred(word)
         elif word.pr:
-            word.cpostag = "nn"  # handle assumming that it's a noun
+            word.pe = False
+            word.nn = NNHelper(word)
+            word.cpostag = "nn"
             word.pred.prefix = self.pronouns_map[word.lemma]
             word.pred.show_index = False
             word.pred.show_postag = False
