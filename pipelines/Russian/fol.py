@@ -360,9 +360,6 @@ class MaltConverter(object):
         self.removed_preds = []
 
     def reassign_copulas(self):
-        """
-        TODO(zaytsev@usc.edu): deprecated
-        """
 
         copulas = dict()
         other_w = []

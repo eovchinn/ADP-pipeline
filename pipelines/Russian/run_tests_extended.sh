@@ -134,46 +134,4 @@ else
     echo "Unsupported platform $OSTYPE"
 fi
 
-# IFILE=$RU_PIPELINE_DIR/test_data/special_cases/big_text.txt
-# OMALT=$RU_PIPELINE_DIR/test_data/special_cases/omalt_big_text.txta
-# OLF=$RU_PIPELINE_DIR/test_data/special_cases/olf_big_text.txt
-
-# if [[ $PLATFORM == "linux" ]]; then
-#     python $TOKENIZER_BIN --treebank 0 < $IFILE |
-#     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
-#     $LEMMATIZER_BIN -l $MALT_RU_DIR/msd-ru-lemma.lex.gz -p $MALT_RU_DIR/wform2011.ptn1 -c $MALT_RU_DIR/cstlemma |
-#     $MALT_IFORMAT | 
-#     java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off >/dev/stdout | tee > $OMALT
-#     python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
-# elif [[ $PLATFORM == "darwin" ]]; then
-#     python $TOKENIZER_BIN --treebank 0 < $IFILE |
-#     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
-#     $MALT_IFORMAT | 
-#     java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off | tee > $OMALT
-#     python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
-# else
-#     echo "Unsupported platform $OSTYPE"
-# fi
-
-# IFILE=$RU_PIPELINE_DIR/test_data/special_cases/broken_encoding.txt
-# OMALT=$RU_PIPELINE_DIR/test_data/special_cases/omalt_broken_encoding.txt
-# OLF=$RU_PIPELINE_DIR/test_data/special_cases/olf_broken_encoding.txt
-
-# if [[ $PLATFORM == "linux" ]]; then
-#     python $TOKENIZER_BIN --treebank 0 < $IFILE |
-#     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
-#     $LEMMATIZER_BIN -l $MALT_RU_DIR/msd-ru-lemma.lex.gz -p $MALT_RU_DIR/wform2011.ptn1 -c $MALT_RU_DIR/cstlemma |
-#     $MALT_IFORMAT | 
-#     java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off >/dev/stdout | tee > $OMALT
-#     python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
-# elif [[ $PLATFORM == "darwin" ]]; then
-#     python $TOKENIZER_BIN --treebank 0 < $IFILE |
-#     $TAGGER_BIN $TREE_TAGGER_OPT $TAGGER_PAR |
-#     $MALT_IFORMAT | 
-#     java -Xmx16g -jar $MALT_BIN -c $MALT_MODEL -m parse -v off | tee > $OMALT
-#     python $RU_PIPELINE_DIR/malt_ru.py < $OMALT > $OLF
-# else
-#     echo "Unsupported platform $OSTYPE"
-# fi
-
 cd $CURRENT_DIR
