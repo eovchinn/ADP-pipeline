@@ -6,6 +6,7 @@
 
 import re
 
+
 class POSHelper(object):
 
     def __init__(self, word):
@@ -13,6 +14,7 @@ class POSHelper(object):
 
     def __nonzero__(self):
         return True
+
 
 class VBHelper(POSHelper):
 

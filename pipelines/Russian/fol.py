@@ -657,7 +657,7 @@ class MaltConverter(object):
                         ep = EPredicate("whq", args=(
                             Argument.E(),
                             Argument.link(new_x),
-                        ))                        
+                        ))
                         self.extra_preds.append(ep)
                         head.pred.args[2].link_to(new_x)
 
@@ -741,7 +741,6 @@ class MaltConverter(object):
                 for d in hdeps:
                     if d.deprel == u"предик":
                         new_x = Argument.X()
-                        
                         ep1 = EPredicate("loc", args=(
                             Argument.E(),
                             new_x,
