@@ -29,3 +29,12 @@ Here the word *Мери* has a nominative case (Npfs ***n*** y).
   
   * If `NN+NN`, no copula verb and cases of the both nouns are the same then produces predicate `equal`.
   * If `NN+[NN | PREP | ADJ]` and copula verb presents then removes copula verb and produces predicate `equal`, `compl` or makes the second argument same for both predicates (depending on dependecy relation type and tree structure).
+ 
+  **NOTE:** pipeline doesn't remove copula verb (and any other predicate) in cases when at least one another predicate is pointing on it. For example:
+  
+  ```prolog
+  причина-nn(e1,x1) & по-in(e2,e5,x2) & который-pr(e3,x2) & person(e4,x3) & покинуть-vb(e5,x1,x4,u1) …
+  ```
+  
+  
+  
