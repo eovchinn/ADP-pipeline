@@ -6,7 +6,7 @@
 
 *Джон дает Мери книгу.*
 
-```	
+```prolog
 джон-nn(e1,x1) & давать-vb(e2,x1,x2,u1) & мери-nn(e3,x3) & книга-nn(e4,x2)				
 ```
 
@@ -15,7 +15,6 @@ MALT output:
 
 ```
 3	Мери	мери	N	N	Npfsny	2	1-компл	_	_
-
 ```
 
 Here the word *Мери* has a nominative case (Npfs ***n*** y).
