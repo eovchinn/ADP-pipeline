@@ -1001,6 +1001,7 @@ class MaltConverter(object):
         # 3. Add number information if available from the parser (if plural).
 
         if self.NN_NUMBER:
+
             if word.feats[3] == "p":  # if plural
                 ep = EPredicate("typelt", args=(
                     Argument.E(),
