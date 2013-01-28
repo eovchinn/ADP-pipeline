@@ -5,32 +5,36 @@ import psycopg2
 import psycopg2.extras
 import sys
 import codecs
+from optparse import OptionParser
 
 CONN_STRING =  "host='localhost' dbname='yago' user='yago' password='yago'"
 con = None
+
+#options
+usage = "usage: %prog [options]"
+parser = OptionParser(usage=usage)
+parser.add_option("-i", "--input", dest="inword", 
+                help="input string(example:\"Barak Obama\")")
+parser.add_option("-l", "--lang",dest="lang",
+                help="language (one of EN|RU|ES|FA)")
+parser.add_option("-s", "--substring", dest="substring", action="store_true",
+                  help="match input string as substring (default is exact match)",
+                  default=False)
+(options, args) = parser.parse_args()
 
 def main():
 
   query_eng="select distinct subject as subject, object as category from yagofacts where subject like '@@@word@@@'and predicate like 'rdf:type'"
   query_multi="select distinct yf2.object as subject, yf1.object as category from yagofacts yf1, yagofacts yf2 where yf2.predicate like 'rdfs:label' and yf2.object like '@@@word@@@' and yf2.subject like yf1.subject and yf1.predicate like 'rdf:type'"
 
-  #get inputs
-  args=sys.argv
-  if len(args)<3:
-	print "Usage:" , args[0],  "\"word\" lang<EN|RU|FA|ES> <-s(optional)>"
-	print "Example:" , args[0],  "\"Barack Obama\" EN (exact match)"
-	print "Example:" , args[0],  "\"Barack Obama\" EN -s (substring match)"
-	sys.exit(0)
+  if not options.inword:
+    parser.error("Must supply input string. (Example: -i \"Barack Obama\")")
+  if not options.lang:
+    parser.error("Must supply language. (Examplae: -l EN ; allowed languages: EN|ES|RU|FA)")
 
-  # default is exact match
-  substring=False
-  if len(args)==4:
-    #substring match
-    if args[3]=='-s':
-      substring=True
-
-  inword=args[1]
-  lang=args[2]
+  inword=options.inword
+  lang=options.lang
+  substring=options.substring
 
   #prepare language
   qlang=None
