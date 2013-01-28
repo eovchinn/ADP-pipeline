@@ -32,8 +32,10 @@ Here the word *Мери* has a nominative case (Npfs ***n*** y).
  
   **NOTE:** pipeline doesn't remove copula verb (and any other predicate) in cases when at least one another predicate is pointing on it. For example:
   
+  *Все было очень обыкновенно.*
+  
   ```prolog
-  причина-nn(e1,x1) & по-in(e2,e5,x2) & который-pr(e3,x2) & person(e4,x3) & покинуть-vb(e5,x1,x4,u1) …
+быть-vb(e1,u1,u2,u3) & очень-rb(e2,e3) & обыкновенно-rb(e3,e1)
   ```
   
   
