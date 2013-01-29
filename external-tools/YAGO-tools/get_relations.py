@@ -98,17 +98,25 @@ def main():
     cur.execute(query)
     #get result
     rows = cur.fetchall()
-    """
+    """    
     print 'instring','subject,','relation,','object'
     for row in rows:
     	print row['instring'],row['subject'],row['relation'],row['object']
     """
 
     #key=relation; value=list of objects
-    relations = {}
+    #relations = {}
+    #key=subject; value=relations dictionary
+    subjects = {}
     for row in rows:
       if  not row['relation'].startswith("<"): 
          continue;
+      #key=relation; value=list of objects
+      relations = subjects.get(row['subject'])
+      if relations is None:
+        #first relation for this subject
+        relations = {}
+        subjects[row['subject']] = relations
       objects = relations.get(row['relation'])
       if objects is None:
         #first object for this relation
@@ -117,7 +125,7 @@ def main():
 
       objects.add(row['object'])
 
-    print relations
+    print subjects
 
   except psycopg2.DatabaseError, e:
     print 'Error %s' % e    
