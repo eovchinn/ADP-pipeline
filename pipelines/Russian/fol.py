@@ -335,7 +335,7 @@ class MaltConverter(object):
                 for another_word in self.words:
                     if another_word.id != word_to_remove.id and \
                        another_word.pred:
-                        another_word_args = [another_word.pred.e]
+                        another_word_args = another_word.pred.args
                         for a1 in word_to_remove_args:
                             for a2 in another_word_args:
                                 if a2 != a2.resolve_link() and \
@@ -346,9 +346,8 @@ class MaltConverter(object):
             if confirm_remove:
                 confirnmed.append(pred_to_remove.word.id)
                 continue
-        preds = filter(lambda p: p.word.id not in confirnmed,
-                       self.visible_preds)
-        self.visible_preds = preds
+        self.visible_preds = filter(lambda p: p.word.id not in confirnmed,
+                                    self.visible_preds[:])
         self.removed_preds = []
 
     def reassign_copulas(self):
