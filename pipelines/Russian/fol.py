@@ -330,12 +330,12 @@ class MaltConverter(object):
         for pred_to_remove in self.removed_preds:
             confirm_remove = True
             word_to_remove = pred_to_remove.word
-            word_to_remove_args = pred_to_remove.args
+            word_to_remove_args = [pred_to_remove.e]
             if word_to_remove.vb:
                 for another_word in self.words:
                     if another_word.id != word_to_remove.id and \
                        another_word.pred:
-                        another_word_args = another_word.pred.args
+                        another_word_args = [another_word.pred.e]
                         for a1 in word_to_remove_args:
                             for a2 in another_word_args:
                                 if a2 != a2.resolve_link() and \
@@ -346,12 +346,8 @@ class MaltConverter(object):
             if confirm_remove:
                 confirnmed.append(pred_to_remove.word.id)
                 continue
-        preds = self.visible_preds[:]
-        for wid in confirnmed:
-            for pred_to_remove in self.visible_preds:
-                if pred_to_remove.word.id == wid and not pred_to_remove.word.important:
-                    if pred_to_remove in preds:
-                        preds.remove(pred_to_remove)
+        preds = filter(lambda p: p.word.id not in confirnmed,
+                       self.visible_preds)
         self.visible_preds = preds
         self.removed_preds = []
 
@@ -938,8 +934,6 @@ class MaltConverter(object):
             word.pred.args[3].link_to(i_object)
         elif not word.pred.args[3].link:
             word.pred.args[3] = Argument.U()
-
-        # return
 
     numeric_map = {
         u"ноль": 0,
