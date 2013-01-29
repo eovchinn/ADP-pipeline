@@ -116,13 +116,17 @@ Usage: get_categories.py [options]
   * -p, --preferredmeaning (return preferred meaning of category; default is NOT preferred, match on rdfs:label)
 
 
-example exact match:
+example exact match, case insensitive:
 ```
 python get_categories.py -i "Barack Obama" -l EN
 ```
-example substring match:
+example substring match, case insensitive:
 ```
 python get_categories.py -i "Barack Obama" -l EN -s
+```
+example exact match, case sensitive:
+```
+python get_categories.py -i "Barack Obama" -l EN -c
 ```
 
 returns:
@@ -158,6 +162,8 @@ Usage: get_supercategories.py [options]
   * -i INSTRING, --input=INSTRING (input string; example:"Barak Obama")
   * -l LANG, --lang=LANG  (language; one of EN|RU|ES|FA)
   * -s, --substring (match input string as substring; default is exact match)
+  * -c, --casesensitive (match input string as case-sensitive;default is case-insensitive)
+  * -p, --preferredmeaning (return preferred meaning of category; default is NOT preferred, match on rdfs:label)
 
 example exact match:
 ```
@@ -203,6 +209,8 @@ Usage: get_relations.py [options]
   * -i INSTRING, --input=INSTRING (input string; example:"Barak Obama")
   * -l LANG, --lang=LANG  (language; one of EN|RU|ES|FA)
   * -s, --substring (match input string as substring; default is exact match)
+  * -c, --casesensitive (match input string as case-sensitive;default is case-insensitive)
+  * -p, --preferredmeaning (return preferred meaning of category; default is NOT preferred, match on rdfs:label)
   * -r RELATIONS, --relations=RELATIONS (list of relations; example:"<hasName>,<hasGender>,..."; default is
                         "allRelations")
 
