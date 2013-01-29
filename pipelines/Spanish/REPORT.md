@@ -56,6 +56,12 @@ Indirect object nouns are expressed via prepositions. Pronouns can occur as indi
 
 ###6) Passives are handled correctly
 
+```
+% La canción está divida en partes .
+"The song is divided in parts."
+[1247002]:canción-nn(e1,x1) & [1247004]:dividir-vb(e3,u5,x1,u6) & [1247005]:en-in(e4,u7,x2) & [1247006]:parte-nn(e5,x2) 
+```
+
 ###7) Participles are treated like other verbs
 
 
