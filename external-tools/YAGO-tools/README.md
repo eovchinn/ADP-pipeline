@@ -104,18 +104,23 @@ settings.
 
 * Run program
 
-```
-python get_categories.py "string" lang<EN|ES|RU|FA> <-s>
-```
--s: substring match; default is exact match
+Usage: get_categories.py [options]
+
+* Options:
+
+  * -h, --help (show this help message and exit)
+  * -i INSTRING, --input=INSTRING (input string; example:"Barak Obama")
+  * -l LANG, --lang=LANG  (language; one of EN|RU|ES|FA)
+  * -s, --substring (match input string as substring; default is exact match)
+
 
 example exact match:
 ```
-python get_categories.py "Barack Obama" EN
+python get_categories.py -i "Barack Obama" -l EN
 ```
 example substring match:
 ```
-python get_categories.py "Barack Obama" EN -s
+python get_categories.py -i "Barack Obama" -l EN -s
 ```
 
 returns:
@@ -127,6 +132,7 @@ returns:
 <wordnet_writer_110794014>
 ...
 ```
+
 
 ### Extract SuperCategories
 
@@ -142,18 +148,22 @@ settings.
 
 * Run program
 
-```
-python get_supercategories.py "string" lang<EN|ES|RU|FA> <-s>
-```
--s: substring match; default is exact match
+Usage: get_supercategories.py [options]
+
+* Options:
+
+  * -h, --help (show this help message and exit)
+  * -i INSTRING, --input=INSTRING (input string; example:"Barak Obama")
+  * -l LANG, --lang=LANG  (language; one of EN|RU|ES|FA)
+  * -s, --substring (match input string as substring; default is exact match)
 
 example exact match:
 ```
-python get_supercategories.py "Barack Obama" EN
+python get_supercategories.py -i "Barack Obama" -l EN
 ```
 example substring match:
 ```
-python get_supercategories.py "Barack Obama" EN -s
+python get_supercategories.py -i "Barack Obama" -l EN -s
 ```
 
 Returns a dictionary where key = category and value = list of supercategories.
@@ -166,5 +176,50 @@ example:
 '<wordnet_city_108524735>': set(['<yagoGeoEntity>']), 
 '<wordnet_military_officer_110317007>': set(['<wordnet_person_100007846>', 'owl:Thing']), 
 '<wordnet_vodka_107906111>': set(['<wordnet_abstraction_100002137>']),
+...}
+```
+
+### Extract Relations
+
+* Install psycopg2 library (for connecting to PostgreSQL)
+
+```
+sudo apt-get install python-psycopg2
+```
+* Edit Connect String
+
+In get_relations.py edit CONN_STRING to reflect your database
+settings.
+
+* Run program
+
+Usage: get_relations.py [options]
+
+* Options:
+
+  * -h, --help (show this help message and exit)
+  * -i INSTRING, --input=INSTRING (input string; example:"Barak Obama")
+  * -l LANG, --lang=LANG  (language; one of EN|RU|ES|FA)
+  * -s, --substring (match input string as substring; default is exact match)
+  * -r RELATIONS, --relations=RELATIONS (list of relations; example:"<hasName>,<hasGender>,..."; default is
+                        "allRelations")
+
+example get all relations:
+```
+python get_relations.py -i "Barack Obama" -l EN -s
+```
+example get specific relations:
+```
+python get_relations.py -i "Barack Obama" -l EN -s -r "<isMarriedTo>,<hasWebsite>,<isLocatedIn>"
+```
+
+Returns a dictionary where key = relation and value = list of values.
+
+example:
+```
+{'<isMarriedTo>': set(['<Michelle_Obama>', '<Ann_Dunham>']), 
+'<hasWebsite>': set(['<http://www.barackobama.com/>', '<http://www.whitehouse.gov/>', 
+                     '<http://obama.senate.gov>', '<http://change.gov/>']), 
+'<isLocatedIn>': set(['<Washington,_D.C.>', '<United_States_Capitol>'])}
 ...}
 ```

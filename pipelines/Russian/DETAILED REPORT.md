@@ -40,7 +40,7 @@ Here the word *"Мери"* has a nominative case (Npfs ***n*** y).
 
 **6)** Implemented. Finds passive voices constructed with the verb *был*. No issues found.
   
-**7)** Not implemented.
+**7)** Implemented. No issues found.
 
 ##NOUNS
 	
