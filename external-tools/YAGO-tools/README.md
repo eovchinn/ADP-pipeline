@@ -112,6 +112,8 @@ Usage: get_categories.py [options]
   * -i INSTRING, --input=INSTRING (input string; example:"Barak Obama")
   * -l LANG, --lang=LANG  (language; one of EN|RU|ES|FA)
   * -s, --substring (match input string as substring; default is exact match)
+  * -c, --casesensitive (match input string as case-sensitive;default is case-insensitive)
+  * -p, --preferredmeaning (return preferred meaning of category; default is NOT preferred, match on rdfs:label)
 
 
 example exact match:
