@@ -227,9 +227,14 @@ Returns a dictionary where key = relation and value = list of values.
 
 example:
 ```
-{'<isMarriedTo>': set(['<Michelle_Obama>', '<Ann_Dunham>']), 
-'<hasWebsite>': set(['<http://www.barackobama.com/>', '<http://www.whitehouse.gov/>', 
-                     '<http://obama.senate.gov>', '<http://change.gov/>']), 
-'<isLocatedIn>': set(['<Washington,_D.C.>', '<United_States_Capitol>'])}
-...}
+{'<Barack_Obama,_Sr.>': 
+  {'<diedIn>': set(['<Nairobi>']),
+   '<isMarriedTo>': set(['<Ann_Dunham>']), 
+   '<hasChild>': set(['<George_Obama>', '<Barack_Obama>']), 
+   '<graduatedFrom>': set(['<University_of_Hawaii>']), 
+   '<hasGender>': set(['<male>']),...}, 
+ '<Barack_Obama>': 
+   {'<hasWebsite>': set(['<http://www.barackobama.com/>']), 
+    '<isMarriedTo>': set(['<Michelle_Obama>']), 
+    '<isAffiliatedTo>': set(['<Democratic_Party_(United_States)>'])...}}
 ```
