@@ -143,7 +143,7 @@ Possessives are tricky due to their connections to reflexives and passives.
 & [625009]:tarea-nn(e7,x2) & [625010]:en-in(e8,e5,x3) & [625012]:sindicato-nn(e9,x3) & [625013]:de-in(e10,x3,x4) 
 & [625014]:actor-nn(e11,x4) 
 ```
-This case (_mi_/_my_) is handled well. There is no passive voice or reflexive in the sentence.
+This case ( _mi_ / _my_ ) is handled well. There is no passive voice or reflexive in the sentence.
 
 
 ## Numerals
