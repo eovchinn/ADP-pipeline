@@ -20,12 +20,17 @@ parser.add_option("-l", "--lang",dest="lang",
 parser.add_option("-s", "--substring", dest="substring", action="store_true",
                   help="match input string as substring (default is exact match)",
                   default=False)
+parser.add_option("-c", "--casesensitive", dest="case_sensitive", action="store_true",
+                  help="match input string as case-sensitive (default is case-insensitive)",
+                  default=False)
+parser.add_option("-p", "--preferredmeaning", dest="preferred_meaning", action="store_true",
+                  help="return preferred meaning of category (default is NOT preferred)",
+                  default=False)
 (options, args) = parser.parse_args()
 
 def main():
 
-  query_eng="select distinct yf1.subject as subject, yf1.object as category, yf2.object as supercategory from yagofacts yf1, yagofacts yf2 where yf1.subject like '@@@word@@@'and yf1.predicate='rdf:type' and yf1.object=yf2.subject and yf2.predicate='rdfs:subClassOf'"
-  query_multi="select distinct yf2.object as subject, yf1.object as category, yf3.object as supercategory from yagofacts yf1, yagofacts yf2, yagofacts yf3 where yf2.predicate='rdfs:label' and yf2.object like '@@@word@@@' and yf2.subject=yf1.subject and yf1.predicate='rdf:type' and yf1.object=yf3.subject and yf3.predicate='rdfs:subClassOf'"
+  query="(select distinct yf2.object as subject, yf1.object as category, yf3.object as supercategory from yagofacts yf1, yagofacts yf2, yagofacts yf3 where yf2.predicate='rdfs:label' and yf2.object ilike '@@@word@@@' and yf2.subject=yf1.subject and yf1.predicate='rdf:type' and yf1.object=yf3.subject and yf3.predicate='rdfs:subClassOf') UNION (select distinct yf2.object as subject, yf2.subject as category, yf3.object as supercategory from yagofacts yf2, yagofacts yf3 where yf2.object ilike '@@@word@@@' and yf2.predicate='rdfs:label' and yf2.subject=yf3.subject and yf3.predicate='rdfs:subClassOf')"
 
   if not options.inword:
     parser.error("Must supply input string. (Example: -i \"Barack Obama\")")
@@ -35,6 +40,8 @@ def main():
   inword=options.inword
   lang=options.lang
   substring=options.substring
+  case_sensitive=options.case_sensitive
+  preferred_meaning=options.preferred_meaning
 
   #prepare language
   qlang=None
@@ -44,26 +51,22 @@ def main():
     qlang='@spa'
   elif lang=='FA':
     qlang='@fas'
+  elif lang=='EN':
+    qlang='@eng'
 
   #prepare search word
-  if lang=='EN':
-    query=query_eng
-    #replace spaces with _ only for EN
-    inword = inword.replace(' ','\_')
-    if substring:
-      inword = '%'+inword+'%'
-    else:
-      #exact match
-      inword = '<'+inword+'>'
+  query = query
+  if substring:
+    inword = '%'+inword+'%'+qlang
   else:
-    query = query_multi
-    if substring:
-      inword = '%'+inword+'%'+qlang
-    else:
-      #exact match
-      inword = '"'+inword+'"'+qlang
+    #exact match
+    inword = '"'+inword+'"'+qlang
 
   #build query
+  if case_sensitive:
+    query = query.replace('ilike','like')
+  if preferred_meaning:
+    query = query.replace("yf2.predicate='rdfs:label'","yf2.predicate='<isPreferredMeaningOf>'")
   query = query.replace('@@@word@@@',inword)
   print "Query:",query
 

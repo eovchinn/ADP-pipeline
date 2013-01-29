@@ -20,6 +20,12 @@ parser.add_option("-l", "--lang",dest="lang",
 parser.add_option("-s", "--substring", dest="substring", action="store_true",
                   help="match input string as substring (default is exact match)",
                   default=False)
+parser.add_option("-c", "--casesensitive", dest="case_sensitive", action="store_true",
+                  help="match input string as case-sensitive (default is case-insensitive)",
+                  default=False)
+parser.add_option("-p", "--preferredmeaning", dest="preferred_meaning", action="store_true",
+                  help="return preferred meaning of category (default is NOT preferred)",
+                  default=False)
 parser.add_option("-r", "--relations",dest="relations",
                   default="allRelations",
                 help="list of relations (example:\"<hasName>,<hasGender>,...\"; default is \"allRelations\")")
@@ -27,10 +33,8 @@ parser.add_option("-r", "--relations",dest="relations",
 
 def main():
 
-  query_eng="select distinct yf1.subject, yf1.object, yf1.predicate as relation from yagofacts yf1 where yf1.subject like '@@@word@@@' and @@@relation_list@@@"
-  query_eng_all_relations="select distinct yf1.subject, yf1.object, yf1.predicate as relation from yagofacts yf1 where yf1.subject like '@@@word@@@' and yf1.predicate not like 'rdf:type' and yf1.predicate not like 'rdfs:label'"
-  query_multi="select distinct yf2.object as subject, yf1.object as object, yf1.predicate as relation from yagofacts yf1, yagofacts yf2 where yf2.predicate='rdfs:label' and yf2.object like '@@@word@@@' and yf2.subject=yf1.subject and @@@relation_list@@@"
-  query_multi_all_relations="select distinct yf2.object as subject, yf1.object as object, yf1.predicate as relation from yagofacts yf1, yagofacts yf2 where yf2.predicate='rdfs:label' and yf2.object like '@@@word@@@' and yf2.subject=yf1.subject and yf1.predicate not like 'rdf:type' and yf1.predicate not like 'rdfs:label'"
+  query="select distinct yf2.object as instring, yf2.object as subject, yf1.object as object, yf1.predicate as relation from yagofacts yf1, yagofacts yf2 where yf2.predicate='rdfs:label' and yf2.object ilike '@@@word@@@' and yf2.subject=yf1.subject and @@@relation_list@@@"
+  query_all_relations="select distinct yf2.object as instring, yf2.subject as subject, yf1.object as object, yf1.predicate as relation from yagofacts yf1, yagofacts yf2 where yf2.predicate='rdfs:label' and yf2.object ilike '@@@word@@@' and yf2.subject=yf1.subject and yf1.predicate not like 'rdf:type' and yf1.predicate not like 'rdfs:label'"
 
   if not options.inword:
     parser.error("Must supply input string. (Example: -i \"Barack Obama\")")
@@ -41,6 +45,8 @@ def main():
   lang=options.lang
   substring=options.substring
   relations=options.relations
+  case_sensitive=options.case_sensitive
+  preferred_meaning=options.preferred_meaning
 
   #prepare language
   qlang=None
@@ -50,34 +56,20 @@ def main():
     qlang='@spa'
   elif lang=='FA':
     qlang='@fas'
+  elif lang=='EN':
+    qlang='@eng'
 
-  #set query
-  if lang=='EN':
-   if relations=='allRelations':
-    query=query_eng_all_relations
-   else:
-    query=query_eng
-  else:
-   if relations=='allRelations':
-    query=query_multi_all_relations
-   else:
-    query=query_multi
+  query = query
+  if relations=='allRelations':
+    query=query_all_relations
 
   #prepare search word
-  if lang=='EN':
-    #replace spaces with _ only for EN
-    inword = inword.replace(' ','\_')
-    if substring:
-      inword = '%'+inword+'%'
-    else:
-      #exact match
-      inword = '<'+inword+'>'
+  if substring:
+    inword = '%'+inword+'%'+qlang
   else:
-    if substring:
-      inword = '%'+inword+'%'+qlang
-    else:
-      #exact match
-      inword = '"'+inword+'"'+qlang
+    #exact match
+    inword = '"'+inword+'"'+qlang
+
 
   #prepare relation list
   relation_names=[s.strip() for s in relations.split(',')]
@@ -91,6 +83,10 @@ def main():
   relation_list += ")"
 
   #build query
+  if case_sensitive:
+    query = query.replace('ilike','like')
+  if preferred_meaning:
+    query = query.replace("yf2.predicate='rdfs:label'","yf2.predicate='<isPreferredMeaningOf>'")
   query = query.replace('@@@word@@@',inword)
   query = query.replace('@@@relation_list@@@',relation_list)
   print "Query:",query
@@ -103,9 +99,9 @@ def main():
     #get result
     rows = cur.fetchall()
     """
-    print 'subject,','relation,','object'
+    print 'instring','subject,','relation,','object'
     for row in rows:
-    	print row['subject'],row['relation'],row['object']
+    	print row['instring'],row['subject'],row['relation'],row['object']
     """
 
     #key=relation; value=list of objects
