@@ -1015,7 +1015,7 @@ class MaltConverter(object):
                         except ValueError:
                             num = self.numeric_map.get(dep.form)
                             if num is not None:
-                                epred = EPredicate("card", args=(
+                                ep = EPredicate("card", args=(
                                     Argument.E(),
                                     Argument.link(word.pred.args[1]),
                                     Argument(str(num)),
