@@ -48,9 +48,7 @@ Here the word *"Мери"* has a nominative case (Npfs ***n*** y).
 
 **2)** Implemented. Adds `of-in` predicate when noun has genetive case. Doesn't work when noun is foreign word (e.g. words *"Джон"*, *"Мери"* etc.) and parser is not able to classify case correctly.
 
-**3)** Implemented. If option `--nnnumber 1` is speccified then produces predicate `typelt` if noun has plural form. Produces predicate `card` if numerical information is presented, parses numericals from `0` to `10`.
-    
-  * **BUG:** sometimes produces dublicates (`typelt(e, x, s) & typelt(e, x, s)`).
+**3)** Implemented. If option `--nnnumber 1` is speccified then produces predicate `typelt` if noun has plural form. Produces predicate `card` if numerical information is presented, maps numericals from `ноль`/ `нулевой` to `десять` / `десятый` into numerical form, otherwise leaves them as is.
   
 **4)** Not implemented. There is no such information from the current parser.
 
@@ -59,3 +57,17 @@ Here the word *"Мери"* has a nominative case (Npfs ***n*** y).
 ##ADVERBS
 	
 **1)** Implemented. No issues found.
+
+##PREPOSITIONS
+
+**1)** Implemented. No issues found.
+
+**2)** Implemented. No issues found.
+
+**3)** Not implemented. No such constructions in the Russian language.
+
+**4)** Not implemented. No such constructions in the Russian language.
+
+**5)** Implemented. No issues found.
+
+##PRONOUNS
