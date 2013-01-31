@@ -86,8 +86,27 @@ Indirect object nouns are expressed via prepositions. Pronouns can occur as indi
 ##ADJECTIVES
 These handled correctly.
 
+```
+una gran Nació
+"a great nation"
+[13007]:grande-adj(e6,x1) & [13008]:nación-nn(e7,x1)
+
+recursos naturales 
+"natural resources"
+[22013]:recurso-nn(e9,x5) & [22014]:natural-adj(e10,x5)
+```
+
 ##ADVERBS
 These are handled correctly.
+```
+% Definitivamente no .
+"Definitely not.
+[9002]:definitivamente-rb(e1,e2) & [9003]:no-rb(e2,u2)
+
+% más amó
+"most loved"
+[278010]:más-rb(e7,e8) & [278011]:amar-vb(e8,u7,u8,u9)
+```
 
 ##PREPOSITIONS
 
