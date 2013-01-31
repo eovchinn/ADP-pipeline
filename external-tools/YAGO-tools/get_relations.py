@@ -33,7 +33,7 @@ parser.add_option("-r", "--relations",dest="relations",
 
 def main():
 
-  query="select distinct yf2.object as instring, yf2.object as subject, yf1.object as object, yf1.predicate as relation from yagofacts yf1, yagofacts yf2 where yf2.predicate='rdfs:label' and yf2.object ilike '@@@word@@@' and yf2.subject=yf1.subject and @@@relation_list@@@"
+  query="select distinct yf2.object as instring, yf2.subject as subject, yf1.object as object, yf1.predicate as relation from yagofacts yf1, yagofacts yf2 where yf2.predicate='rdfs:label' and yf2.object ilike '@@@word@@@' and yf2.subject=yf1.subject and @@@relation_list@@@"
   query_all_relations="select distinct yf2.object as instring, yf2.subject as subject, yf1.object as object, yf1.predicate as relation from yagofacts yf1, yagofacts yf2 where yf2.predicate='rdfs:label' and yf2.object ilike '@@@word@@@' and yf2.subject=yf1.subject and yf1.predicate not like 'rdf:type' and yf1.predicate not like 'rdfs:label'"
 
   if not options.inword:
