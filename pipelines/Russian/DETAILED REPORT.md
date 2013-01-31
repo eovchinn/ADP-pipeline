@@ -48,7 +48,7 @@ Here the word *"Мери"* has a nominative case (Npfs ***n*** y).
 
 **2)** Implemented. (pipeline) Adds `of-in` predicate when noun has genetive case. Doesn't work when noun is foreign word (e.g. words *"Джон"*, *"Мери"* etc.) and parser is not able to classify case correctly.
 
-**3)** Implemented. If option `--nnnumber 1` is speccified then produces predicate `typelt` if noun has plural form. Produces predicate `card` if numerical information is presented, maps numericals from `ноль`/ `нулевой` to `десять` / `десятый` into numerical form, otherwise leaves them as is.
+**3)** Implemented. Treats numerals. If option `--nnnumber 1` is speccified then produces predicate `typelt` if noun has plural form. Produces predicate `card` if numerical information is presented, maps numericals from `ноль`/ `нулевой` to `десять` / `десятый` into numerical form, otherwise leaves them as is.
   
 **4)** Not implemented. There is no such information from the current parser.
 
@@ -75,8 +75,7 @@ Here the word *"Мери"* has a nominative case (Npfs ***n*** y).
 **1)** Maps pronuouns *"он"*, *"она"*, *"оно"*, *"я"*, *"мы"*, *"ты"*, *"вы"*, *"они"*, *"это"*, *"эти"* into according predicates such as `male`, `female`, `person` etc., then handles them as nouns. Treats other predicates, such as *"который"*, or does not treats them if any other predicate shares at least one argument with them, for example:
 
 ```prolog
-% Я его оставил под открытым небом на палубе , возле скамейки , на которой
-рассчитывал сидеть во время плавания , присматривая за сохранностью багажа .
+% Я его оставил под открытым небом на палубе , возле скамейки , на которой рассчитывал сидеть во время плавания , присматривая за сохранностью багажа .
 id(193).
 person(e1,x1) & male(e2,x2) & [193003]:оставить-vb(e3,x1,x2,u1) &
 [193004]:под-in(e4,e3,x3) & [193005]:открытый-adj(e5,x3) &
@@ -94,5 +93,8 @@ of-in(e22,x7,x8) & of-in(e23,x9,x10)
 
 **3)** Not implemented.
 
+##NUMERALS
 
-**2**)
+Implemented. See **NOUNS#3** for more details.
+
+##COORDINATIONS
