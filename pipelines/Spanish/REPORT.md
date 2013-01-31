@@ -133,17 +133,43 @@ These are handled correctly.
 ```
 ## Pronouns
 Pronouns are handled correctly for the most part. 
-Possessives are tricky due to their connections to reflexives and passives.
+It should be noted that Spanish is pro-drop, so a lot of pronouns, especially subjects, are dropped.
+```
+% *Yo* veo un México con hambre y con sed de justicia .
+"I see a Mexico with a hunger and thirst for justice."
+[18001]:person(e1,x1) & [18002]:ver-vb(e2,x1,x2,u3) & [18004]:méxico-nn(e3,x2) ...
+
+% Según el realismo progresivo el avance de la ciencia nos permite un mejor conocimiento de la realidad .
+"According to progressive realism the advancement of science allows us a better understanding of reality."
+[1451001]:según-rb(e1,e8) & [1451003]:realismo-nn(e2,x1) & [1451006]:avance-nn(e4,x1) & [1451007]:de-in(e5,x1,x3) 
+& [1451009]:ciencia-nn(e6,x3) & [1451010]:person(e7,x4) & [1451011]:permitir-vb(e8,x1,x5,x4) 
+& [1451014]:conocimiento-nn(e10,x5) & [1451015]:de-in(e11,x5,x6) & [1451017]:realidad-nn(e12,x6)
+```
+The reflexive "se" is not handled as the preprocessing did not provide consistent output.
+```
+% Se le considera uno de los más grandes conocedores taurinos .
+"He is considered one of the greatest bullfighting connoisseurs."
+[123002]:thing(e16,x16) & [123003]:considerar-vb(e2,e7,u4,x16) & card(e3,u6,1) & [123005]:de-in(e4,u7,e6) 
+& [123007]:más-rb(e5,e6) & [123008]:grande-adj(e6,u10) & [123009]:conocedores-vb(e7,u11,x2,u13) 
+& [123010]:taurinos-nn(e8,x2) 
+```
+
+Possessives are handled well for the most part.
 
 ```
 % Estoy aquí porque , desde que asumí mi tarea en el Sindicato de Actores .
 "I'm here because I took my job at the Screen Actors Guild
 [625001]:estar-vb(e1,u1,e14,u3) & [625002]:aquí-rb(e2,e1) & [625003]:porque-in(e3,e1,e14) 
 & [625005]:desde-in(e4,e14,e5) & [625007]:asumí-vb(e5,x2,u10,u11) & [625008]:person(e6,x1) & of-in(e28,x2,x1) 
-& [625009]:tarea-nn(e7,x2) & [625010]:en-in(e8,e5,x3) & [625012]:sindicato-nn(e9,x3) & [625013]:de-in(e10,x3,x4) 
-& [625014]:actor-nn(e11,x4) 
+& [625009]:tarea-nn(e7,x2) ...
+
+% Mira en la parte superior de tu ventana del navegador  .
+"Look at the top of your browser window."
+[15001]:mirar-vb(e1,u1,e10,u3) & [15002]:en-in(e2,e1,x1) & [15004]:parte-nn(e3,x1) & [15005]:superior-adj(e4,x1) 
+& [15006]:de-in(e5,x1,x3) & [15007]:person(e6,x2) & of-in(e15,x3,x2) & [15008]:ventana-nn(e7,x3) 
+& [15009]:del-in(e8,x3,x4) & [15010]:navegador-nn(e9,x4)
 ```
-This case ( _mi_ / _my_ ) is handled well. There is no passive voice or reflexive in the sentence.
+These cases ( _mi_ / _my_ ) ( _tu_ / _your_) are handled well. Most failures have to do with faulty POS tagging and/or parsing.
 
 
 ## Numerals
