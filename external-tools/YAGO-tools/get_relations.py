@@ -33,8 +33,8 @@ parser.add_option("-r", "--relations",dest="relations",
 
 def main():
 
-  query="select distinct yf2.object as instring, yf2.subject as subject, yf1.object as object, yf1.predicate as relation from yagofacts yf1, yagofacts yf2 where yf2.predicate='rdfs:label' and yf2.object ilike '@@@word@@@' and yf2.subject=yf1.subject and @@@relation_list@@@"
-  query_all_relations="select distinct yf2.object as instring, yf2.subject as subject, yf1.object as object, yf1.predicate as relation from yagofacts yf1, yagofacts yf2 where yf2.predicate='rdfs:label' and yf2.object ilike '@@@word@@@' and yf2.subject=yf1.subject and yf1.predicate not like 'rdf:type' and yf1.predicate not like 'rdfs:label'"
+  query="select distinct yf2.object as instring, trim(trailing '@@@lang@@@' from yf2.subject) as subject, trim(trailing '@@@lang@@@' from yf1.object) as object, yf1.predicate as relation from yagofacts yf1, yagofacts yf2 where yf2.predicate='rdfs:label' and yf2.object ilike '@@@word@@@' and yf2.subject=yf1.subject and @@@relation_list@@@"
+  query_all_relations="select distinct yf2.object as instring, trim(trailing '@@@lang@@@' from yf2.subject) as subject, trim(trailing '@@@lang@@@' from yf1.object) as object, yf1.predicate as relation from yagofacts yf1, yagofacts yf2 where yf2.predicate='rdfs:label' and yf2.object ilike '@@@word@@@' and yf2.subject=yf1.subject and yf1.predicate not like 'rdf:type' and yf1.predicate not like 'rdfs:label'"
 
   if not options.inword:
     parser.error("Must supply input string. (Example: -i \"Barack Obama\")")
@@ -88,6 +88,7 @@ def main():
   if preferred_meaning:
     query = query.replace("yf2.predicate='rdfs:label'","yf2.predicate='<isPreferredMeaningOf>'")
   query = query.replace('@@@word@@@',inword)
+  query = query.replace('@@@lang@@@',qlang)
   query = query.replace('@@@relation_list@@@',relation_list)
   print "Query:",query
 
