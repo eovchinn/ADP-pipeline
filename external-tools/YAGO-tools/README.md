@@ -238,3 +238,53 @@ example:
     '<isMarriedTo>': set(['<Michelle_Obama>']), 
     '<isAffiliatedTo>': set(['<Democratic_Party_(United_States)>'])...}}
 ```
+
+### Extract Glosses
+
+* Install psycopg2 library (for connecting to PostgreSQL)
+
+```
+sudo apt-get install python-psycopg2
+```
+* Edit Connect String
+
+In get_glosses.py edit CONN_STRING to reflect your database
+settings.
+
+* Run program
+
+Usage: get_glosses.py [options]
+
+* Options:
+
+  * -h, --help (show this help message and exit)
+  * -i INSTRING, --input=INSTRING (input string; example:"Barak Obama")
+  * -l LANG, --lang=LANG  (language; one of EN|RU|ES|FA)
+  * -s, --substring (match input string as substring; default is exact match)
+  * -c, --casesensitive (match input string as case-sensitive;default is case-insensitive)
+  * -p, --preferredmeaning (return preferred meaning of category; default is NOT preferred, match on rdfs:label)
+
+
+example exact match, case insensitive:
+```
+python get_glosses.py -i "Barack Obama" -l EN
+```
+example substring match, case insensitive:
+```
+python get_glosses.py -i "Barack Obama" -l EN -s
+```
+example exact match, case sensitive:
+```
+python get_glosses.py -i "Barack Obama" -l EN -c
+```
+
+returns:
+```
+{'<Barack_Obama,_Sr.>': 
+  {'<wordnet_person_100007846>': '"a human being; \'there was too much for one person to do\'"', 
+  '<wordnet_economist_110043643>': '"an expert in the science of economics"', ...},
+'<Barack_Obama>': 
+  {'<wordnet_alumnus_109786338>': '"a person who has received a degree from a school (high school or college or university)"', 
+  '<wordnet_narrator_110345804>': '"someone who tells a story"', ...}
+}
+```
