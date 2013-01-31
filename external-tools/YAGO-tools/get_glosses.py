@@ -31,7 +31,7 @@ parser.add_option("-p", "--preferredmeaning", dest="preferred_meaning", action="
 def main():
 
   #using distinct and only the category as output will not give duplicates
-  query="(select distinct yf1.subject as subject, yf1.object as category, yf3.object as gloss from yagofacts yf1, yagofacts yf2, yagofacts yf3 where yf2.predicate='rdfs:label' and yf2.object ilike '@@@word@@@' and yf2.subject=yf1.subject and yf1.predicate='rdf:type' and yf1.object=yf3.subject and yf3.predicate='<hasGloss>') UNION (select distinct yf2.object as subject, yf2.subject as category, yf3.object as gloss from yagofacts yf2, yagofacts yf3 where yf2.object ilike '@@@word@@@' and yf2.predicate='rdfs:label' and yf2.subject=yf3.subject and yf3.predicate='<hasGloss>')"
+  query="(select distinct trim(trailing '@@@lang@@@' from yf1.subject) as subject, yf1.object as category, trim(trailing '@eng' from yf3.object) as gloss from yagofacts yf1, yagofacts yf2, yagofacts yf3 where yf2.predicate='rdfs:label' and yf2.object ilike '@@@word@@@' and yf2.subject=yf1.subject and yf1.predicate='rdf:type' and yf1.object=yf3.subject and yf3.predicate='<hasGloss>') UNION (select distinct trim(trailing '@@@lang@@@' from yf2.object) as subject, yf2.subject as category, trim(trailing '@eng' from yf3.object) as gloss from yagofacts yf2, yagofacts yf3 where yf2.object ilike '@@@word@@@' and yf2.predicate='rdfs:label' and yf2.subject=yf3.subject and yf3.predicate='<hasGloss>')"
   #with lang info; glosses seem to be only in english so I removed the lang info from the query
   #query="(select distinct yf1.subject as subject, yf1.object as category, yf3.object as gloss from yagofacts yf1, yagofacts yf2, yagofacts yf3 where yf2.predicate='rdfs:label' and yf2.object ilike '@@@word@@@' and yf2.subject=yf1.subject and yf1.predicate='rdf:type' and yf1.object=yf3.subject and yf3.predicate='<hasGloss>' and yf3.object like '%@@@lang@@@') UNION (select distinct yf2.object as subject, yf2.subject as category, yf3.object as gloss from yagofacts yf2, yagofacts yf3 where yf2.object ilike '@@@word@@@' and yf2.predicate='rdfs:label' and yf2.subject=yf3.subject and yf3.predicate='<hasGloss>' and yf3.object like '%@@@lang@@@')"
 
@@ -82,16 +82,19 @@ def main():
     cur.execute(query)
     #get result
     rows = cur.fetchall()
+    #key=subject; value=dict with category:gloss
     glosses={}
     for row in rows:
         #print row['subject'],row['category'],row['gloss']
+        #disct with key=category; value=gloss; I believe that there is only one gloss/category
+        #if that is not the case we have to change
         gloss_list = glosses.get(row['subject'])
         if gloss_list is None:
           #first gloss for this subject
-          gloss_list = set()
+          gloss_list = {}
           glosses[row['subject']] = gloss_list
 
-        gloss_list.add(row['gloss'])
+        gloss_list[row['category']]=row['gloss']
 
     print glosses
 
