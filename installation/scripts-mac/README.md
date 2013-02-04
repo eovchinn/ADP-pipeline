@@ -34,7 +34,7 @@ This requires ROOT permission.
 http://www.gurobi.com
 ```
 
-*  Go to Download/Gurobi Optimizer and download package appropriate for
+*  Go to Download/Gurobi Optimizer and download package 5.1.0 appropriate for
 you environment.
 
 * Go to Download/License and get a Gurobi license key. SAVE THE KEY IN A
