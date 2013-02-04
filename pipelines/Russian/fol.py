@@ -309,6 +309,10 @@ class MaltConverter(object):
                 self.apply_par_rules(p.word)
 
         self.reassign_copulas()
+
+        if self.VB_TENSE:
+            self.handle_tense()
+
         self.remove_preds()
         self.process_arguments()
 
@@ -326,7 +330,6 @@ class MaltConverter(object):
                 break
 
     def remove_preds(self):
-        confirnmed = []
         for pred_to_remove in self.removed_preds:
             confirm_remove = True
             word_to_remove = pred_to_remove.word
@@ -344,13 +347,120 @@ class MaltConverter(object):
                                     confirm_remove = False
                                     break
             if confirm_remove:
-                confirnmed.append(pred_to_remove.word.id)
+                pred_to_remove.word.confirm_remove = True
                 continue
-        self.visible_preds = filter(lambda p: p.word.id not in confirnmed,
+
+        self.visible_preds = filter(lambda p: not p.word.confirm_remove,
                                     self.visible_preds[:])
         self.removed_preds = []
 
     def reassign_copulas(self):
+        for w in self.words:
+
+            if w.lemma in self.copula_verbs:
+                # remove copula
+                w.confirm_remove = True
+
+            if w.vb and w.lemma in self.copula_verbs and \
+               w.pred and w.pred.args and w.pred.args[1].type != "u":
+
+                # Replace visible copulas by "exist" predicate:
+                #
+                # % У меня к нему отеческое чувство.
+                #
+                #   у-in(e1,x1,x2) & person(e2,x2) & к-in(e3,x1,x3) &
+                #   male(e4,x3) & отеческий-adj(e5,x1) & чувство-nn(e6,x1) &
+                #   exist(e7,x1)
+
+                e_arg = w.pred.args[0]
+                x_arg = w.pred.args[1]
+                new_e = Argument.E()
+
+                # if some another word has an arg pointing to copula then
+                # redirect it to copula's 2nd arg (nn, adj or pr)
+
+                for ww in  self.words:
+                    if ww.id != w.id and ww.pred and ww.pred.args:
+                        for i, a in enumerate(ww.pred.args):
+                            if a.resolve_link() == e_arg.resolve_link():
+                                ww.pred.args[i] = Argument.link(x_arg)
+
+                # do the same for the extra predicates
+
+                for ep in self.extra_preds:
+                    if ep.args:
+                        for i, a in enumerate(ep.args):
+                            if a.resolve_link() == e_arg:
+                                if ep.prefix == "past":
+                                    ep.args[i] = Argument.link(new_e)
+                                else:
+                                    ep.args[i] = Argument.link(x_arg)
+
+                # finally, add "exist" predicate
+                ep = EPredicate("exist", args=[
+                    new_e,
+                    Argument.link(x_arg),
+                ])
+                self.extra_preds.append(ep)
+
+                # handle tense
+
+                if w.feats[3] == "s":
+                    ep = EPredicate("past", args=(
+                        Argument.E(),
+                        Argument.link(new_e),
+                    ))
+                    self.extra_preds.append(ep)
+
+                elif w.feats[3] == "f":
+                    ep = EPredicate("future", args=(
+                        Argument.E(),
+                        Argument.link(new_e),
+                    ))
+                    self.extra_preds.append(ep)
+
+        # case with implicit copula verb
+        # for w1 in self.words:
+        #     if w1.nn:
+        #         # check if noun has a verb
+        #         has_a_verb = False
+        #         x_arg = w1.pred.args[1].resolve_link()
+        #         for w2 in self.words:
+        #             if w2.vb and w2.pred and w2.pred.args:
+        #                 v_args = [a.resolve_link() for a in w2.pred.args]
+        #                 if x_arg in v_args:
+        #                    has_a_verb = True
+        #                    break
+        #         if not has_a_verb:
+        #             ep = EPredicate("exist", args=[
+        #                 Argument.E(),
+        #                 Argument.link(w1.pred.args[1]),
+        #             ])
+        #             print "implicit copula:", w1.lemma.encode("utf-8")
+        #             self.extra_preds.append(ep)
+
+    def handle_tense(self):
+
+        for w in self.words:
+            if w.vb and not w.confirm_remove:
+
+                if w.feats[3] == "s":  # if past
+                    ep = EPredicate("past", args=(
+                        Argument.E(),
+                        Argument.link(w.pred.e),
+                    ))
+                    self.extra_preds.append(ep)
+
+                elif w.feats[3] == "f":  # if furure
+                    ep = EPredicate("future", args=(
+                        Argument.E(),
+                        Argument.link(w.pred.e),
+                    ))
+                    self.extra_preds.append(ep)
+
+
+    # TODO(zaytsev@usc.edu): deprecated
+    def __reassign_copulas(self):
 
         copulas = dict()
         other_w = []
@@ -546,7 +656,7 @@ class MaltConverter(object):
                     Argument.E(),
                     Argument.link(w.pred.e),
                     Argument.link(deps[0].pred.e),
-                ))                
+                ))
                 self.extra_preds.append(ep)
 
             # 4. I know whom you saw.
@@ -808,20 +918,7 @@ class MaltConverter(object):
 
         # 4. Add tense information if available from the parser.
 
-        if self.VB_TENSE:
-            if word.feats[3] == "s":  # if past
-                ep = EPredicate("past", args=(
-                    Argument.E(),
-                    Argument.link(word.pred.e),
-                ))
-                self.extra_preds.append(ep)
-
-            if word.feats[3] == "f":  # if furure
-                ep = EPredicate("future", args=(
-                    Argument.E(),
-                    Argument.link(word.pred.e),
-                ))
-                self.extra_preds.append(ep)
+        # See <handle_tense> method
 
         # 5. Copula expressed with a verb
 

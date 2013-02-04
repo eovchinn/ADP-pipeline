@@ -93,6 +93,12 @@ class WordToken(object):
         self.cnj = False
         self.par = False
 
+        self.pred = None
+        self.important = True
+        self.confirm_remove = False
+        self.__deps = None
+        self.__head = None
+
         if not line and word:
             self.id = word.id
             self.form = word.form
@@ -134,8 +140,6 @@ class WordToken(object):
                                     # annotation, the dependency relation may
                                     # be meaningful or simply 'ROOT'.
 
-        self.pred = None
-
         # Deprel types are defined in the following article:
         # http://www.aclweb.org/anthology-new/C/C08/C08-1081.pdf
         #
@@ -167,12 +171,6 @@ class WordToken(object):
 
         if self.lemma == "<unknown>":
             self.lemma = self.form
-
-        # TODO(zaytsev@usc.edu): deprecated
-        self.important = True
-
-        self.__deps = None
-        self.__head = None
 
     @property
     def head(self):
