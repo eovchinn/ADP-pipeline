@@ -1016,12 +1016,14 @@ class MaltConverter(object):
                        dep.pred.args[1].resolve_link():
                         w_subject = None
 
-        # word.feats[7] == "p" => passive
-        if d_object is None and word.deprel == u"опред" and \
-           word.feats[7] == "p" and \
-           head and head.nn and head.pred and head.pred.args:
-            d_object = Argument.link(head.pred.args[1])
-            # print word.lemma.encode("utf-8")
+        if word.deprel == u"опред" and head and head.nn and head.pred and \
+           head.pred.args:
+            # word.feats[7] == "p" => passive
+            if d_object is None and word.feats[7] == "p":
+                d_object = Argument.link(head.pred.args[1])
+            # word.feats[7] == "a" => active
+            elif w_subject is None and word.feats[7] == "a":
+                w_subject = Argument.link(head.pred.args[1])
 
         if w_subject:
             word.pred.args[1].link_to(w_subject)
