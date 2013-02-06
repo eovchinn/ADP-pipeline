@@ -1078,7 +1078,6 @@ class MaltConverter(object):
     }
 
     def apply_num_rules(self, word):
-        print word.lemma.encode("utf-8")
         head = word.head
         if head and (head.nn or head.adj or head.pr) and head.pred and \
            head.pred.args:
@@ -1086,12 +1085,12 @@ class MaltConverter(object):
         else:
             x_arg = Argument.U()
         try:
-            num_arg = int(word.form)
+            num_arg = int(word.lemma)
         except ValueError:
             num_arg = self.numeric_map.get(word.lemma)
             if num_arg is None:
                 num_arg = word.lemma
-    
+
         ep = EPredicate("card", args=(
             Argument.E(),
             x_arg,
