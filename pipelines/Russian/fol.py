@@ -988,12 +988,12 @@ class MaltConverter(object):
                         self.extra_preds.append(ep2)
 
                 else:
-                    ep1 = EPredicate("equal", args=(
-                        Argument.E(),
-                        Argument.link(nouns[1].pred.args[1]),
-                        Argument.link(nouns[0].pred.args[1]),
-                    ))
-                    self.extra_preds.append(ep1)
+                    # ep1 = EPredicate("equal", args=(
+                    #     Argument.E(),
+                    #     Argument.link(nouns[1].pred.args[1]),
+                    #     Argument.link(nouns[0].pred.args[1]),
+                    # ))
+                    # self.extra_preds.append(ep1)
 
                     if head_was_used and head.adj:
                         head.pred.args[1].link_to(nouns[1].pred.args[1])
