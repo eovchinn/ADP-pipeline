@@ -987,7 +987,7 @@ class MaltConverter(object):
                         ))
                         self.extra_preds.append(ep2)
 
-                else:
+                # else:
                     # ep1 = EPredicate("equal", args=(
                     #     Argument.E(),
                     #     Argument.link(nouns[1].pred.args[1]),
@@ -995,14 +995,14 @@ class MaltConverter(object):
                     # ))
                     # self.extra_preds.append(ep1)
 
-                    if head_was_used and head.adj:
-                        head.pred.args[1].link_to(nouns[1].pred.args[1])
-                        ep2 = EPredicate("compl", args=(
-                            Argument.E(),
-                            Argument.link(head.pred.e),
-                            Argument.link(ep1.e),
-                        ))
-                        self.extra_preds.append(ep2)
+                    # if head_was_used and head.adj:
+                    #     head.pred.args[1].link_to(nouns[1].pred.args[1])
+                    #     ep2 = EPredicate("compl", args=(
+                    #         Argument.E(),
+                    #         Argument.link(head.pred.e),
+                    #         Argument.link(ep1.e),
+                    #     ))
+                    #     self.extra_preds.append(ep2)
 
             # b) Noun + Adj
             elif len(adjs) >= 1 and len(nouns) == 1:
@@ -1035,6 +1035,9 @@ class MaltConverter(object):
                 d_object = Argument.link(head.pred.args[1])
             # word.feats[7] == "a" => active
             elif w_subject is None and word.feats[7] == "a":
+                w_subject = Argument.link(head.pred.args[1])
+            # word.feats[7] == "m" => medial but systematicly it's active
+            elif w_subject is None and word.feats[7] == "m":
                 w_subject = Argument.link(head.pred.args[1])
 
         if w_subject:
