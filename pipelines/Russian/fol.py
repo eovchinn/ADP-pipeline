@@ -356,7 +356,7 @@ class MaltConverter(object):
                         another_word_args = another_word.pred.args
                         for a1 in word_to_remove_args:
                             for a2 in another_word_args:
-                                if a2.resolve_link() != a1.resolve_link():
+                                if a2.resolve_link() == a1.resolve_link():
                                     confirm_remove = False
             if confirm_remove:
                 pred_to_remove.word.confirm_remove = True
@@ -391,7 +391,7 @@ class MaltConverter(object):
                 # if some another word has an arg pointing to copula then
                 # redirect it to copula's 2nd arg (nn, adj or pr)
 
-                for ww in  self.words:
+                for ww in self.words:
                     if ww.id != w.id and ww.pred and ww.pred.args:
                         for i, a in enumerate(ww.pred.args):
                             if a.resolve_link() == e_arg.resolve_link():
@@ -1248,7 +1248,7 @@ class MaltConverter(object):
                 "?",            # 6 Case2
             ))
 
-            self.apply_nn_rules(word)
+            # self.apply_nn_rules(word)
 
             # if self.NN_NUMBER:
             #     if word.feats[3] == "p":
