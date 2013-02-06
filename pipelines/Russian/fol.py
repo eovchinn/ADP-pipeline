@@ -349,7 +349,15 @@ class MaltConverter(object):
                                    a2.resolve_link() == a1 and \
                                    a1.type != "u":
                                     confirm_remove = False
-                                    break
+            else:
+                for another_word in self.words:
+                    if another_word.id != word_to_remove.id and \
+                       another_word.pred:
+                        another_word_args = another_word.pred.args
+                        for a1 in word_to_remove_args:
+                            for a2 in another_word_args:
+                                if a2.resolve_link() != a1.resolve_link():
+                                    confirm_remove = False
             if confirm_remove:
                 pred_to_remove.word.confirm_remove = True
                 continue
@@ -1070,6 +1078,7 @@ class MaltConverter(object):
     }
 
     def apply_num_rules(self, word):
+        print word.lemma.encode("utf-8")
         head = word.head
         if head and (head.nn or head.adj or head.pr) and head.pred and \
            head.pred.args:
@@ -1079,16 +1088,25 @@ class MaltConverter(object):
         try:
             num_arg = int(word.form)
         except ValueError:
-            num_arg = self.numeric_map.get(word.form)
+            num_arg = self.numeric_map.get(word.lemma)
             if num_arg is None:
-                num_arg = word.form
-
+                num_arg = word.lemma
+    
         ep = EPredicate("card", args=(
             Argument.E(),
             x_arg,
             Argument(unicode(num_arg)),
         ))
         self.extra_preds.append(ep)
+
+    genitive_indicators = (
+        u"мой",
+        u"твой",
+        u"ее",
+        u"её",
+        u"его",
+        u"их",
+    )
 
     def apply_nn_rules(self, word):
 
@@ -1104,8 +1122,6 @@ class MaltConverter(object):
 
         if head and head.nn:
 
-        #  Copula. Without a verb.
-
             if head.feats[4] == word.feats[4] and word.deprel == u"аппоз":
                 ep = EPredicate("equal", args=(
                     Argument.E(),
@@ -1113,14 +1129,20 @@ class MaltConverter(object):
                     Argument.link(head.pred.args[1]),
                 ))
                 self.extra_preds.append(ep)
-
-            elif word.feats[4] == "g":  # if genetive case
+            elif word.feats[4] == "g":  # if genitive case
                 ep = EPredicate("of-in", args=(
                     Argument.E(),
                     Argument.link(head.pred.args[1]),
                     Argument.link(word.pred.args[1]),
                 ))
                 self.extra_preds.append(ep)
+            # elif word.lemma in self.genitive_indicators and head.nn:
+            #     ep = EPredicate("of-in", args=(
+            #         Argument.E(),
+            #         Argument.link(word.pred.args[1]),
+            #         Argument.link(head.pred.args[1]),
+            #     ))
+            #     self.extra_preds.append(ep)
 
         # 3. Add number information if available from the parser (if plural).
 

@@ -86,29 +86,33 @@ Depending on the parser's output can sometimes misrecognize numericals:
 
 ##PRONOUNS
 
-**1)** Maps pronuouns *"он"*, *"она"*, *"оно"*, *"я"*, *"мы"*, *"ты"*, *"вы"*, *"они"*, *"это"*, *"эти"* into according predicates such as `male`, `female`, `person` etc., then handles them as nouns. Treats other predicates, such as *"который"*, or does not treats them if any other predicate shares at least one argument with them, for example:
+**1)** Maps pronuouns *"он"*, *"она"*, *"оно"*, *"я"*, *"мы"*, *"ты"*, *"вы"*, *"они"*, *"это"*, *"эти"* into according predicates such as `male`, `female`, `person` etc., then handles them as nouns. Treats any other pronoun, such as *"который"*, *"там"*, *"тут"*, etc. Or does not treats them if any other predicate shares at least one argument with them, for example:
 
-```prolog
+```
 % Я его оставил под открытым небом на палубе , возле скамейки , на которой рассчитывал сидеть во время плавания , присматривая за сохранностью багажа .
-id(193).
-person(e1,x1) & male(e2,x2) & [193003]:оставить-vb(e3,x1,x2,u1) &
-[193004]:под-in(e4,e3,x3) & [193005]:открытый-adj(e5,x3) &
-[193006]:небо-nn(e6,x3) & [193007]:на-in(e7,e3,x4) &
-[193008]:палуба-nn(e8,x4) & [193010]:возле-in(e9,e3,x5) &
-[193011]:скамейка-nn(e10,x5) & [193013]:на-in(e11,e13,x6) &
-[193014]:который-pr(e12,x6) & [193015]:рассчитывать-vb(e13,x1,e14,u2) &
-[193016]:сидеть-vb(e14,x1,e18,u3) & [193017]:во-in(e15,e14,x7) &
-[193018]:время-nn(e16,x7) & [193019]:плавание-nn(e17,x8) &
-[193021]:присматривать-vb(e18,x1,u4,u5) & [193022]:за-in(e19,e18,x9) &
-[193023]:сохранность-nn(e20,x9) & [193024]:багаж-nn(e21,x10) &
+
+person(e1,x1) & male(e2,x2) & оставить-vb(e3,x1,x2,u1) &
+под-in(e4,e3,x3) & открытый-adj(e5,x3) &
+небо-nn(e6,x3) & на-in(e7,e3,x4) &
+палуба-nn(e8,x4) & возле-in(e9,e3,x5) &
+скамейка-nn(e10,x5) & на-in(e11,e13,x6) &
+который-pr(e12,x6) & рассчитывать-vb(e13,x1,e14,u2) &
+сидеть-vb(e14,x1,e18,u3) & во-in(e15,e14,x7) &
+время-nn(e16,x7) & плавание-nn(e17,x8) &
+присматривать-vb(e18,x1,u4,u5) & за-in(e19,e18,x9) &
+сохранность-nn(e20,x9) & багаж-nn(e21,x10) &
 of-in(e22,x7,x8) & of-in(e23,x9,x10)
 ```
+
+It's impossible to determine that the word *"которой"* is pointing to *"скамейка"* due to incorrect parser's output, so the pronoun has not been treated.
+
+
 **2)** Does not handle reflexies. There is no such information from the current parser.
 
 **3)** Not implemented.
 
 ##NUMERALS
 
-Implemented. See **NOUNS#3** for more details.
+Implemented. See **NOUNS#3** for details.
 
 ##COORDINATIONS
