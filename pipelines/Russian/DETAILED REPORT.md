@@ -124,3 +124,15 @@ Implemented. See **NOUNS#3** for details.
 Not implemented.
 
 ##SUBORDINATE CLAUSES
+
+**1.** Implemented finding relative clauses and WH-nominals for persons, non-animate objects, locations, reasons, times and manner.
+
+**2.** No implemented handling constructions such as: because, while, when, as, after, since.
+
+##NEGATION
+
+Implemented.
+
+##QUESTIONS
+
+Implemented handling constructions such as: что (what/thing), кто (whom/person), когда (when/time), зачем (why/reason), как (how/manner), where (где/loc).
