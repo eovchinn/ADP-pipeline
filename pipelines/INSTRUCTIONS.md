@@ -384,6 +384,13 @@ The same treatment for: whoever, whenever, however
 read-vb(e1,x1,u1,u2) & have-vb(e2,x2,u3,u4) & because-in(e3,e1,e2) & male(e4,x2)
 ```
 
+4) if ... then
+
+```
+% If John comes then I meet him .
+john-nn(e1,x1) & come-vb(e2,x1,u1,u1) & person(e3,x2) & meet-vb(e4,x2,x3,u3) & male(e5,x3) & imp(e6,e2,e4)
+```
+
 =====================
 NEGATION
 =====================
