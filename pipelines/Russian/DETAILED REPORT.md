@@ -49,6 +49,20 @@ Here the word *"Мери"* has a nominative case (Npfs ***n*** y).
 **2)** Implemented. (pipeline) Adds `of-in` predicate when noun has genetive case. Doesn't work when noun is foreign word (e.g. words *"Джон"*, *"Мери"* etc.) and parser is not able to classify case correctly.
 
 **3)** Implemented. Treats numerals. If option `--nnnumber 1` is speccified then produces predicate `typelt` if noun has plural form. Produces predicate `card` if numerical information is presented, maps numericals from `ноль`/ `нулевой` to `десять` / `десятый` into numerical form, otherwise leaves them as is.
+
+Known issues:
+
+Depending on the parser's output can sometimes misrecognize numericals:
+
+```
+% Одна на свете , как она управится со столькими миллионами ?
+миллион-nn(e6,x5) & card(e7,x5,столькими) & typelt(e8,x5,s1)
+```
+
+```
+9	столькими	столько	M	M	Mc--i	10	количест	_	_
+10	миллионами	миллион	N	N	Ncmpin	8	предл	_	_
+```
   
 **4)** Not implemented. There is no such information from the current parser.
 

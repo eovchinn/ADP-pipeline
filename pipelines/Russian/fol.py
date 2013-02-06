@@ -283,6 +283,10 @@ class MaltConverter(object):
         self.subordinate_relatives()
         self.detect_questions()
 
+        if self.NN_NUMBER:
+            for word in self.words:
+                if word.num:
+                    self.apply_num_rules(word)
         for p in self.initial_preds:
             if p.word.pr:
                 self.apply_pr_rules(p.word)
@@ -1065,6 +1069,27 @@ class MaltConverter(object):
         u"десятый": 10,
     }
 
+    def apply_num_rules(self, word):
+        head = word.head
+        if head and (head.nn or head.adj or head.pr) and head.pred and \
+           head.pred.args:
+            x_arg = Argument.link(head.pred.args[1])
+        else:
+            x_arg = Argument.U()
+        try:
+            num_arg = int(word.form)
+        except ValueError:
+            num_arg = self.numeric_map.get(word.form)
+            if num_arg is None:
+                num_arg = word.form
+
+        ep = EPredicate("card", args=(
+            Argument.E(),
+            x_arg,
+            Argument(unicode(num_arg)),
+        ))
+        self.extra_preds.append(ep)
+
     def apply_nn_rules(self, word):
 
         # 1. Noun compounds: if there are noun compounds in the language you are
@@ -1108,31 +1133,6 @@ class MaltConverter(object):
                     Argument("s"),
                 ))
                 self.extra_preds.append(ep)
-                for dep in word.deps():
-                    if dep.num:
-                        try:
-                            num = int(dep.form)
-                            ep = EPredicate("card", args=(
-                                Argument.E(),
-                                Argument.link(word.pred.args[1]),
-                                Argument(str(num)),
-                            ))
-                            self.extra_preds.append(ep)
-                        except ValueError:
-                            num = self.numeric_map.get(dep.form)
-                            if num is not None:
-                                ep = EPredicate("card", args=(
-                                    Argument.E(),
-                                    Argument.link(word.pred.args[1]),
-                                    Argument(str(num)),
-                                ))
-                            else:
-                                ep = EPredicate("card", args=(
-                                    Argument.E(),
-                                    Argument.link(word.pred.args[1]),
-                                    Argument(dep.form),
-                                ))
-                            self.extra_preds.append(ep)
 
         # 4. If there is other information available from the parser (e.g. type
         #    of the named entity), please add it.
@@ -1226,14 +1226,14 @@ class MaltConverter(object):
 
             self.apply_nn_rules(word)
 
-            if self.NN_NUMBER:
-                if word.feats[4] == "p":
-                    ep = EPredicate("typelt", args=(
-                        Argument.E(),
-                        Argument.link(word.pred.args[1]),
-                        Argument("s"),
-                    ))
-                    self.extra_preds.append(ep)
+            # if self.NN_NUMBER:
+            #     if word.feats[3] == "p":
+            #         ep = EPredicate("typelt", args=(
+            #             Argument.E(),
+            #             Argument.link(word.pred.args[1]),
+            #             Argument("s"),
+            #         ))
+            #         self.extra_preds.append(ep)
 
         # 2. Handle reflexives
 
