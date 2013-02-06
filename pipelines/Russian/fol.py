@@ -1266,44 +1266,45 @@ class MaltConverter(object):
 
         head = word.head
 
-        # 1. and, or
+        # # 1. and, or
+        #
+        # if word.lemma == u"и" or word.lemma == u"или":
+        #     if head and head.vb:
+        #         for dep in word.deps():
+        #             if dep.vb:
+        #                 dep.pred.args[1].link_to(head.pred.args[1])
+        #                 if word.lemma == u"или":
+        #                     ep = EPredicate("or", args=(
+        #                         Argument.E(),
+        #                         Argument.link(head.pred.e),
+        #                         Argument.link(dep.pred.e),
+        #                     ))
+        #                     self.extra_preds.append(ep)
+        #
+        #     elif head and head.nn:
+        #         for dep in word.deps():
+        #             if dep.nn:
+        #                 hhead = head.head
+        #                 if hhead and hhead.vb:
+        #                     new_word = WordToken(word=hhead)
+        #                     vb_pred = Predicate(new_word, (
+        #                         Argument.E(),
+        #                         Argument.link(hhead.pred.args[1]),
+        #                         Argument.link(dep.pred.args[1]),
+        #                         Argument.link(hhead.pred.args[3]),
+        #                     ))
+        #                     self.visible_preds.append(vb_pred)
+        #                     if word.lemma == u"или":
+        #                         ep = EPredicate("or", args=(
+        #                             Argument.E(),
+        #                             Argument.link(hhead.pred.e),
+        #                             Argument.link(dep.pred.e),
+        #                         ))
+        #                         self.extra_preds.append(ep)
 
-        if word.lemma == u"и" or word.lemma == u"или":
-            if head and head.vb:
-                for dep in word.deps():
-                    if dep.vb:
-                        dep.pred.args[1].link_to(head.pred.args[1])
-                        if word.lemma == u"или":
-                            ep = EPredicate("or", args=(
-                                Argument.E(),
-                                Argument.link(head.pred.e),
-                                Argument.link(dep.pred.e),
-                            ))
-                            self.extra_preds.append(ep)
-
-            elif head and head.nn:
-                for dep in word.deps():
-                    if dep.nn:
-                        hhead = head.head
-                        if hhead and hhead.vb:
-                            new_word = WordToken(word=hhead)
-                            vb_pred = Predicate(new_word, (
-                                Argument.E(),
-                                Argument.link(hhead.pred.args[1]),
-                                Argument.link(dep.pred.args[1]),
-                                Argument.link(hhead.pred.args[3]),
-                            ))
-                            self.visible_preds.append(vb_pred)
-                            if word.lemma == u"или":
-                                ep = EPredicate("or", args=(
-                                    Argument.E(),
-                                    Argument.link(hhead.pred.e),
-                                    Argument.link(dep.pred.e),
-                                ))
-                                self.extra_preds.append(ep)
         # 2. if
 
-        elif word.lemma == u"если":
+        if word.lemma == u"если":
             if head and head.vb:
                 for dep in word.deps():
                     if dep.vb:

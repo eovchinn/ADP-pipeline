@@ -120,3 +120,7 @@ It's impossible to determine that the word *"которой"* is pointing to *"�
 Implemented. See **NOUNS#3** for details.
 
 ##COORDINATIONS
+
+Not implemented.
+
+##SUBORDINATE CLAUSES
