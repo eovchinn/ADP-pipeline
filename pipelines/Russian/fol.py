@@ -420,14 +420,14 @@ class MaltConverter(object):
                 if w.feats[3] == "s":
                     ep = EPredicate("past", args=(
                         Argument.E(),
-                        Argument.link(new_x),
+                        Argument.link(x_arg),
                     ))
                     self.extra_preds.append(ep)
 
                 elif w.feats[3] == "f":
                     ep = EPredicate("future", args=(
                         Argument.E(),
-                        Argument.link(new_x),
+                        Argument.link(x_arg),
                     ))
                     self.extra_preds.append(ep)
 
