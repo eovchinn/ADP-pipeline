@@ -404,30 +404,30 @@ class MaltConverter(object):
                         for i, a in enumerate(ep.args):
                             if a.resolve_link() == e_arg:
                                 if ep.prefix == "past":
-                                    ep.args[i] = Argument.link(new_e)
-                                else:
-                                    ep.args[i] = Argument.link(x_arg)
+                                #     ep.args[i] = Argument.link(new_e)
+                                # else:
+                                        ep.args[i] = Argument.link(x_arg)
 
-                # finally, add "exist" predicate
-                ep = EPredicate("exist", args=[
-                    new_e,
-                    Argument.link(x_arg),
-                ])
-                self.extra_preds.append(ep)
+                # # finally, add "exist" predicate
+                # ep = EPredicate("exist", args=[
+                #     new_e,
+                #     Argument.link(x_arg),
+                # ])
+                # self.extra_preds.append(ep)
 
                 # handle tense
 
                 if w.feats[3] == "s":
                     ep = EPredicate("past", args=(
                         Argument.E(),
-                        Argument.link(new_e),
+                        Argument.link(new_x),
                     ))
                     self.extra_preds.append(ep)
 
                 elif w.feats[3] == "f":
                     ep = EPredicate("future", args=(
                         Argument.E(),
-                        Argument.link(new_e),
+                        Argument.link(new_x),
                     ))
                     self.extra_preds.append(ep)
 
@@ -1370,9 +1370,9 @@ class MaltConverter(object):
                         self.extra_preds.append(ep)
 
         # Special case: как should be handled as a pronoun
-        if word.lemma == u"как":
+        if word.lemma == u"как" and head:
             deps = word.deps()
-            if len(deps) == 1:
+            if len(deps) == 1 and deps[0].pred and head.pred:
                 ep = EPredicate(u"in-как", args=(
                     Argument.E(),
                     Argument.link(head.pred.e),
