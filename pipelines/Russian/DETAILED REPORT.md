@@ -136,3 +136,48 @@ Implemented.
 ##QUESTIONS
 
 Implemented handling constructions such as: что (what/thing), кто (whom/person), когда (when/time), зачем (why/reason), как (how/manner), where (где/loc).
+
+#FOREIGN WORDS
+
+The pipline usually misspredict POS tag of non-russian words which may cause diffirect mistakes in the output:
+
+1)
+
+```prolog
+% ... телеканал Russia Today выложил впечатляющее ...
+телеканал-nn(e2,x2) & today-nn(e3,x3) & выложить-vb(e4,x3,u1,x4) & впечатляющий-adj(e5,x5) …
+```
+
+Here the word "Russia" was treated because the POS tag was mispredicted:
+
+
+```
+1	Давеча	давеча	R	R	R	0	ROOT	_	_
+2	телеканал	телеканал	N	N	Ncmsnn	0	ROOT	_	_
+3	Russia	russia	-	-	-	2	аппоз	_	_
+4	Today	today	N	N	Ncmsnn	5	предик	_	_
+5	выложил	выложить	V	V	Vmis-sma-p	2	релят	_	_
+6	впечатляющее	впечатляющий	A	A	Afpnsaf	7	опред	_	_
+...
+```
+
+2) 
+
+```prolog
+% ... рассказал анонимный сотрудник ГИБДД из Ставрополья в ролике на YouTube .
+анонимный-adj(e7,x4) & сотрудник-nn(e8,x4) & гибдд-nn(e9,x5) & из-in(e10,x4,x6) & ставрополье-nn(e11,x6) & в-in(e12,x6,x7) & ролик-nn(e13,x7) & на-in(e14,e6,x8) & card(e15,u4,youtube) & of-in(e17,x4,x5)
+```
+
+Again, the POS tag for the "Youtube" is incorrect:
+
+```
+...
+12	из	из	S	S	Sp-g	10	атриб	_	_
+13	Ставрополья	ставрополье	N	N	Ncnsgn	12	предл	_	_
+14	в	в	S	S	Sp-l	13	атриб	_	_
+15	ролике	ролик	N	N	Ncmsln	14	предл	_	_
+16	на	на	S	S	Sp-l	8	обст	_	_
+17	YouTube	youtube	M	M	Mc	16	предл	_	_
+18	.	.	S	S	SENT	17	PUNC	_	_
+...
+```

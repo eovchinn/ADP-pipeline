@@ -432,6 +432,7 @@ class MaltConverter(object):
                     self.extra_preds.append(ep)
 
         # case with implicit copula verb
+
         # for w1 in self.words:
         #     if w1.nn:
         #         # check if noun has a verb
@@ -448,7 +449,6 @@ class MaltConverter(object):
         #                 Argument.E(),
         #                 Argument.link(w1.pred.args[1]),
         #             ])
-        #             print "implicit copula:", w1.lemma.encode("utf-8")
         #             self.extra_preds.append(ep)
 
     def handle_tense(self):
@@ -748,7 +748,6 @@ class MaltConverter(object):
                 hhead.pred.args[2].link_to(new_e)
                 self.extra_preds.extend([ep1, ep2, ])
 
-
     def detect_questions(self):
 
         for w in self.words:
@@ -888,10 +887,10 @@ class MaltConverter(object):
             ddeps = list(dep.deps())
 
             if dep.pr and len(ddeps) > 0:
-                dep = ddeps[0]
-                if dep.vb:
-                    d_object = dep.pred.e
-            elif dep.cpostag != "nn":
+                d_object = dep.pred.e
+            elif dep.rb:
+                d_object = dep.pred.e
+            elif not dep.nn:
                 new_dep = dep.unfold_dep(until_tag="nn")
                 if new_dep:
                     dep = new_dep
@@ -909,8 +908,8 @@ class MaltConverter(object):
 
         head = word.head
         if head and head.vb and not w_subject \
-                and word.deprel != u"обств":
-            # Use VERB#1 rule to find subject of the head
+                and word.deprel != u"обств" and \
+                (word.deprel == u"1-компл" or word.deprel == u"2-компл"):
             w_subject = head.pred.args[1]
             head.pred.args[2].link_to(word.pred.e)
 
@@ -1110,6 +1109,14 @@ class MaltConverter(object):
         u"их",
     )
 
+    coference_deprels_1 = [
+        u"ROOT",
+        u"соч-союзн",
+        u"подч-союзн",
+        u"предик",
+        u"предл",
+    ]
+
     def apply_nn_rules(self, word):
 
         # 1. Noun compounds: if there are noun compounds in the language you are
@@ -1165,7 +1172,10 @@ class MaltConverter(object):
 
         # 5. Coreferent Nouns
 
-        if head and head.nn and  word.deprel == u"предик":
+        if head and head.nn and word.feats[4] == head.feats[4] and (
+           (word.deprel == u"предик" and
+           head.deprel in self.coference_deprels_1) or
+           word.deprel == u"аппоз"):
             word.pred.args[1].link_to(head.pred.args[1])
 
     def apply_adj_rules(self, word):
@@ -1174,7 +1184,7 @@ class MaltConverter(object):
         #    modifying
 
         head = word.head
-        if head and head.nn and word.pred and head.pred:
+        if head and (head.nn or head.adj) and word.pred:
             word.pred.args[1].link_to(head.pred.args[1])
 
     def apply_rb_rules(self, word):
@@ -1221,19 +1231,52 @@ class MaltConverter(object):
         u"они": "thing",
         u"это": "thing",
         u"эти": "thing",
+        u"один": "thing",
+        u"другой": "thinkg",
+        u"что-то": "thing",
+        u"кто-то": "person",
+    }
+
+    possessives_map = {
+        u"твой": "person",
+        u"твоя": "person",
+        u"твое": "person",
+        u"твоё": "person",
+        u"мой": "person",
+        u"моя": "person",
+        u"мое": "person",
+        u"моё": "person",
+        u"его": "male",
+        u"ее": "female",
+        u"её": "female",
+        u"их": "thing",
+        u"наш": "thing",
+        u"наша": "thing",
+        u"наше": "thing",
+        u"наши": "thing",
+        u"ваш": "thing",
+        u"ваша": "thing",
+        u"ваше": "thing",
+        u"ваши": "thing",
     }
 
     def apply_pr_rules(self, word):
 
         # 1. Handle personal
 
-        if word.lemma not in self.pronouns_map and word.pr:
+        if word.lemma not in self.pronouns_map and word.pr and \
+           word.lemma not in self.possessives_map.keys():
             self.remove_pred(word)
         elif word.pr:
+
+            prefix = self.pronouns_map.get(word.lemma)
+            if not prefix:
+                prefix = self.possessives_map[word.lemma]
+
             word.pe = False
             word.nn = NNHelper(word)
             word.cpostag = "nn"
-            word.pred.prefix = self.pronouns_map[word.lemma]
+            word.pred.prefix = prefix
             word.pred.show_index = False
             word.pred.show_postag = False
 
@@ -1260,6 +1303,17 @@ class MaltConverter(object):
             #         self.extra_preds.append(ep)
 
         # 2. Handle reflexives
+
+        # 3. Possessive pronouns
+
+        if word.pr and word.lemma in self.possessives_map.keys() and \
+           (word.head.nn or word.head.adj or word.head.pr):
+            ep = EPredicate("of-in", args=(
+                Argument.E(),
+                Argument.link(word.head.pred.args[1]),
+                Argument.link(word.pred.args[1]),
+            ))
+            self.extra_preds.append(ep)
 
     def apply_cnj_rules(self, word):
         self.remove_pred(word)
@@ -1315,6 +1369,18 @@ class MaltConverter(object):
                         ))
                         self.extra_preds.append(ep)
 
+        # Special case: как should be handled as a pronoun
+        if word.lemma == u"как":
+            deps = word.deps()
+            if len(deps) == 1:
+                ep = EPredicate(u"in-как", args=(
+                    Argument.E(),
+                    Argument.link(head.pred.e),
+                    Argument.link(deps[0].pred.args[1]),
+                ))
+                self.extra_preds.append(ep)
+
+
         # 3. because, while, when
 
         # TODO(zaytsev@udc.edu): implement this
@@ -1323,16 +1389,16 @@ class MaltConverter(object):
         self.remove_pred(word)
         head = word.head
 
-        # 1. not
+        # 1.
 
         if word.lemma == u"не":
-            if head and head.vb:
+            if head and (head.vb or head.rb):
                 ep = EPredicate("not", args=(
                     Argument.E(),
                     Argument.link(head.pred.e),
                 ))
                 self.extra_preds.append(ep)
-            elif head and head.nn:
+            elif head and (head.nn or head.adj):
                 ep = EPredicate("not", args=(
                     Argument.E(),
                     Argument.link(head.pred.args[1]),
