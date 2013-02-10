@@ -36,11 +36,11 @@ def main():
     parser.add_argument(
         "--vbtense",
         help="Output file. Default is stdout.",
-        default=False)
+        default=True)
     parser.add_argument(
         "--nnnumber",
         help="Output file. Default is stdout.",
-        default=False)
+        default=True)
 
     pa = parser.parse_args()
 
