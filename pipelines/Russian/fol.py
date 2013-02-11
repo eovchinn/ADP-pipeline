@@ -1398,7 +1398,7 @@ class MaltConverter(object):
                     Argument.link(head.pred.e),
                 ))
                 self.extra_preds.append(ep)
-            elif head and (head.nn or head.adj):
+            elif head and (head.nn or head.adj or head.pr):
                 ep = EPredicate("not", args=(
                     Argument.E(),
                     Argument.link(head.pred.args[1]),
@@ -1406,18 +1406,18 @@ class MaltConverter(object):
                 self.extra_preds.append(ep)
 
         if word.lemma == u"нет":
-            deps = word.deps(filtr=["nn", "pr"])
-            for d in deps:
-                ep1 = EPredicate("be", args=(
-                    Argument.E(),
-                    Argument.link(d.pred.args[1]),
-                    Argument.U(),
-                ))
-                ep2 = EPredicate("not", args=(
-                    Argument.E(),
-                    ep1.e,
-                ))
-                self.extra_preds.extend((ep1, ep2, ))
+            for d in word.deps():
+                if dep.nn or dep.adj or dep.pr:
+                    ep1 = EPredicate("be", args=(
+                        Argument.E(),
+                        Argument.link(d.pred.args[1]),
+                        Argument.U(),
+                    ))
+                    ep2 = EPredicate("not", args=(
+                        Argument.E(),
+                        ep1.e,
+                    ))
+                    self.extra_preds.extend((ep1, ep2, ))
 
     def add_line(self, malt_row):
         wt = WordToken(malt_row)
