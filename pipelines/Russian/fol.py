@@ -1406,7 +1406,7 @@ class MaltConverter(object):
                 self.extra_preds.append(ep)
 
         if word.lemma == u"нет":
-            for d in word.deps():
+            for dep in word.deps():
                 if dep.nn or dep.adj or dep.pr:
                     ep1 = EPredicate("be", args=(
                         Argument.E(),
