@@ -287,12 +287,19 @@ Convert numbers from 0 to 9 into digits, otherwise use lemmas as third args of c
 COORDINATIONS
 =====================
 
-If a dependent of a head (it can be any POS, although examples below include verbs only) is a coordination, then this head needs to be duplicated; both duplicates should be assigned the same word ID. Note that there can be more than two coordinated elements and sometimes "and" and "or" can be expressed by a comma. 
+Coordinative conjuctions (except for "and") are 3-place predicates.
 
 ```
 % John sits and reads.
 john-nn(e1,x1) & sit-vb(e2,x1,u1,u2) & read-vb(e3,x1,u1,u2)
 
+% House as a Mirror of Self
+house-nn(e1,x1) & as(e2,x1,x2) & mirror-nn(e3,x2)
+```
+
+If a dependent of a head (it can be any POS, although examples below include verbs only) is a coordination, then this head needs to be duplicated; both duplicates should be assigned the same word ID. Note that there can be more than two coordinated elements and sometimes "and" and "or" can be expressed by a comma. 
+
+```
 % John sits or runs.
 john-nn(e1,x1) & sit-vb(e2,x1,u1,u2) & run-vb(e3,x1,u1,u2) & or(e4,e2,e3)
 
