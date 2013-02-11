@@ -1132,12 +1132,7 @@ class MaltConverter(object):
         if head and head.nn:
 
             if head.feats[4] == word.feats[4] and word.deprel == u"аппоз":
-                ep = EPredicate("equal", args=(
-                    Argument.E(),
-                    Argument.link(word.pred.args[1]),
-                    Argument.link(head.pred.args[1]),
-                ))
-                self.extra_preds.append(ep)
+                pass
             elif word.feats[4] == "g":  # if genitive case
                 ep = EPredicate("of-in", args=(
                     Argument.E(),
@@ -1172,11 +1167,19 @@ class MaltConverter(object):
 
         # 5. Coreferent Nouns
 
-        if head and head.nn and word.feats[4] == head.feats[4] and (
-           (word.deprel == u"предик" and
-           head.deprel in self.coference_deprels_1) or
-           word.deprel == u"аппоз"):
-            word.pred.args[1].link_to(head.pred.args[1])
+        if head and head.nn and word.feats[4] == head.feats[4]:
+            if word.deprel == u"предик" and \
+               head.deprel in self.coference_deprels_1:
+                # print "EQUAL", word.lemma.encode("utf-8"), head.lemma.encode("utf-8")
+                ep = EPredicate("equal", args=(
+                    Argument.E(),
+                    Argument.link(word.pred.args[1]),
+                    Argument.link(head.pred.args[1]),
+                ))
+                self.extra_preds.append(ep)
+            elif word.deprel == u"аппоз":
+                # print "COREF", word.lemma.encode("utf-8"), head.lemma.encode("utf-8")
+                word.pred.args[1].link_to(head.pred.args[1])
 
     def apply_adj_rules(self, word):
 
