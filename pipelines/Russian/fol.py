@@ -1307,7 +1307,7 @@ class MaltConverter(object):
         # 3. Possessive pronouns
 
         if word.pr and word.lemma in self.possessives_map.keys() and \
-           (word.head.nn or word.head.adj or word.head.pr):
+           word.head and (word.head.nn or word.head.adj or word.head.pr):
             ep = EPredicate("of-in", args=(
                 Argument.E(),
                 Argument.link(word.head.pred.args[1]),
@@ -1410,7 +1410,7 @@ class MaltConverter(object):
                 if dep.nn or dep.adj or dep.pr:
                     ep1 = EPredicate("be", args=(
                         Argument.E(),
-                        Argument.link(d.pred.args[1]),
+                        Argument.link(dep.pred.args[1]),
                         Argument.U(),
                     ))
                     ep2 = EPredicate("not", args=(
