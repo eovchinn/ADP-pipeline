@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+ 
 import json, logging
 from optparse import OptionParser
 from restServer import start_server 
