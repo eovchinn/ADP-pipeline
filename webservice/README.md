@@ -15,6 +15,7 @@ sudo python setup.py install
 
 * Start server: `python adpService.py -p 8080 -g`
 * Send Request (for testing) : `python sendRestRequest.py -p 8080 -j testRequest1.json`
+* Stop server: CTRL+C in the window where adpService.py is running
 
 #### Set environment variable in ~/.bash_profile
 ```
