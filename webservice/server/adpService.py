@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 import os
 import json
@@ -17,18 +18,19 @@ def annotate_document(annotate_document_request_body):
     ro = json.loads(annotate_document_request_body)
 
     # We retrieve some of the fields from the document
-    document = ro["document"]
+    # document = ro["document"]
+    request_body_dict = json.loads(annotate_document_request_body)
 
     #document language
     try:
-        language = document["language"]
+        language = request_body_dict["language"]
     except KeyError:
         logging.info("No language information available.")
         return json.dumps([])
 
     # These are the annotations that were given in the web service call
     try:
-        annotations = ro["annotations"]
+        annotations = request_body_dict["metaphorAnnotationRecords"]
     except KeyError:
         logging.info("No annotations available.")
         return json.dumps([])
@@ -40,7 +42,7 @@ def annotate_document(annotate_document_request_body):
     for annotation in annotations:
 
         try:
-            annotation_id = annotation["annotation_id"]
+            annotation_id = annotation["id"]
 
         except KeyError:
             logging.info("No annotation_id.Set one.")
@@ -48,7 +50,7 @@ def annotate_document(annotate_document_request_body):
             annotation_id = annotation_id_index
 
         try:
-            metaphor = annotation["metaphor"]
+            metaphor = annotation["linguisticMetaphor"]
             if language == "EN":
 
                 #replacing single quote, double quote (start/end), dash
@@ -70,20 +72,25 @@ def annotate_document(annotate_document_request_body):
         except KeyError:
             logging.info("No metaphor. Skip it.")
 
-    logging.info("Input metaphors: %s" % input_metaphors)
-    logging.info("Processing %s ..." % language)
+    # logging.info("Input metaphors: %s" % input_metaphors)
+    # logging.info("Processing %s ..." % language)
 
     # if no metaphors
     if not input_metaphors:
-        return json.dumps([])
+        return json.dumps(request_body_dict)
 
     # TODO(zaytsev@usc.edu): remove this line
-    print "OPTIONS:" + str(options.graph)
+    # print "OPTIONS:" + str(options.graph)
 
     # options.graph is either True (return graph as base-64 str) or false
-    adp_result = ADP(input_metaphors, language, options.graph)
+    adp_result = ADP(request_body_dict,
+                     input_metaphors,
+                     language,
+                     options.graph)
 
-    return adp_result
+    # merge adp_result and input json document
+
+    return json.dumps(adp_result)
 
 
 if __name__ == "__main__":
