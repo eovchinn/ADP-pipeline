@@ -41,7 +41,8 @@ DESCRIPTION = "Abductive engine output; abductive_hypothesis: metaphor " \
 # different docs may have same annotation_ids)
 # withPDFContent=true; generate graphs and include PDF content
 # as base-64 in output
-def extract_hypotheses(inputString, unique_id, withPDFContent):
+
+def extract_hypotheses(inputString, unique_id, with_pdf_content):
     output_struct = []
     hypothesis_found = False
     p = re.compile('<result-inference target="(.+)"')
@@ -50,7 +51,7 @@ def extract_hypotheses(inputString, unique_id, withPDFContent):
     unification = False
     explanation = False
 
-    #for generating proofgraph URIs
+    # for generating proofgraph URIs
     webservice = get_webservice_location()
 
     for line in inputString.splitlines():
@@ -86,7 +87,7 @@ def extract_hypotheses(inputString, unique_id, withPDFContent):
                 "http://%s/proofgraphs/%s_%s.pdf" % \
                 (webservice, unique_id, target, )
 
-            if withPDFContent:
+            if with_pdf_content:
                 base_64_str = get_base64("%s/proofgraphs/%s_%s.pdf" %
                                          (webservice, unique_id, target, ))
                 output_struct_item["isiAbductiveProofgraphStr"] = base_64_str
@@ -185,23 +186,26 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
 
     henry_output = henry_pipeline.communicate(input=parser_output)[0]
 
-    #unique id used for proofgraph name
+    # unique id used for proofgraph name
     unique_id = get_unique_id()
 
     if with_pdf_content:
-        #generate graphs so we can return them with output
+        # generate graphs so we can return them with output
         generate_graph(input_metaphors, henry_output, unique_id)
     else:
-        #start graphical generation in thread; don't wait for it to finish
+        # start graphical generation in thread; don't wait for it to finish
         thread.start_new_thread(generate_graph,
                                 (input_metaphors, henry_output, unique_id))
 
 
     hypotheses = extract_hypotheses(henry_output, unique_id, with_pdf_content)
 
+    # print hypotheses
+
+    # merge ADB result and input json document
     for hyp in hypotheses:
         for ann in request_body_dict["metaphorAnnotationRecords"]:
-            if ann["id"] == hyp["id"]:
+            if int(ann["id"]) == int(hyp["id"]):
                 for key, value in hyp.items():
                     ann[key] = value
 
@@ -253,11 +257,12 @@ def generate_graph(input_dict, henry_output, unique_id):
 
 
 # returns contents of PDF file in base-64
-def get_base64(pdf_file):
-    f = open(pdf_file, "rb")
-    binaryS = f.read()
-    encodeS = binaryS.encode("base64")
-    return encodeS
+def get_base64(pdf_file_path):
+    f = open(pdf_file_path, "rb")
+    binary_str = f.read()
+    f.close()
+    encoded_str = binary_str.encode("base64")
+    return encoded_str
 
 
 # if "__main__" == __name__:
