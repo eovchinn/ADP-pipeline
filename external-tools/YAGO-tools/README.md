@@ -66,6 +66,11 @@ sudo  etc/init.d/postgresql restart
 
 * Download http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoMultilingualInstanceLabels.tsv.7z
 * Download http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoMultilingualClassLabels.tsv.7z
+* 
+#### Download CORE Theme
+
+* Download http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoFacts.tsv.7z
+* Download http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoLabels.tsv.7z
 
 #### Download Database Importer
 
