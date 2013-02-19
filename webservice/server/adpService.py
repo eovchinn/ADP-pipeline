@@ -72,15 +72,15 @@ def annotate_document(annotate_document_request_body):
         except KeyError:
             logging.info("No metaphor. Skip it.")
 
-    # logging.info("Input metaphors: %s" % input_metaphors)
-    # logging.info("Processing %s ..." % language)
+    logging.info("Input metaphors: %s" % input_metaphors)
+    logging.info("Processing %s ..." % language)
 
     # if no metaphors
     if not input_metaphors:
         return json.dumps(request_body_dict)
 
     # TODO(zaytsev@usc.edu): remove this line
-    # print "OPTIONS:" + str(options.graph)
+    logging.info("Options: %s" % str(options.graph))
 
     # options.graph is either True (return graph as base-64 str) or false
     adp_result = ADP(request_body_dict,
@@ -88,7 +88,9 @@ def annotate_document(annotate_document_request_body):
                      language,
                      options.graph)
 
-    # merge adp_result and input json document
+    # print "DUMB"
+    # open("test.response.json", "w").write(json.dumps(adp_result)
+    #     .encode("utf-8"))
 
     return json.dumps(adp_result)
 
