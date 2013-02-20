@@ -3,7 +3,6 @@
 
 import os
 import re
-import json
 import time
 import thread
 import socket
