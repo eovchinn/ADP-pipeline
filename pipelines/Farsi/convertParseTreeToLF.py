@@ -45,8 +45,8 @@ def readPronounList(startLineNumber,lines):
     global pronouns
     for i in range(startLineNumber,len(lines)):
         if re.match("--.*",lines[i]):
-            #for pronoun in pronouns:
-                #print "%s\t%s"%(pronoun,pronouns[pronoun])
+#            for pronoun in pronouns:
+#                print "%s\t%s"%(pronoun,pronouns[pronoun])
             return i+1
         (pronoun,person,animate)=lines[i].split()
         pronoun=pronoun.replace(u'\u200e',"")
@@ -680,7 +680,7 @@ def createLF(tokens,sentenceId):
     LF2=resolveArgs(LF)
     return LF2
 
-def lfToString(lf):
+def getSentenceAndLFString(lf):
     (sentenceId,sentence,props,rels)=lf
     words=[]
     PropStrings=[]
@@ -689,10 +689,9 @@ def lfToString(lf):
         words+=[word]
         PropStrings+=[propToString(sentenceId,prop)]
     lfLine=" & ".join(PropStrings)
-    returnString= "%s\nid(%s).\n%s\n"%(sentence,str(sentenceId),lfLine)
-    returnString="% "+returnString
     
-    return returnString
+    return (sentence,sentenceId,lfLine)
+
 def addToEqualArgSet(equalArgSets,newEqualArgSets):
     for argSet in newEqualArgSets:
         found=0
@@ -753,25 +752,59 @@ eventualityArgCounter=0
 loadFarsiWordsForLFFile(farsiWordsForLFFile)
 
 
-line=inputFile.readline()
+paragraphId="NILOO"
 sentenceId=1
 tokens=[]
 
+paragraph=""
+paragraphLFString=""
+
+line=inputFile.readline()
+
 while line!="":
     line=line.replace(u'\u200e',"")
-    if line.strip()=="" and len(tokens)!=0:   
-        #one sentence read, process it and output it
+    if line.strip()=="" and len(tokens)!=0: #one sentence read, process it 
+        lf=createLF(tokens,sentenceId) #create logical form
+        (sentence,sentenceId,LFString)=getSentenceAndLFString(lf) # get sentence and string representation of the logical form
         
-        lf=createLF(tokens,sentenceId)
-        outputFile.write(lfToString(lf).encode('utf-8'))
-#        sys.stdout.write(lfToString(lf).encode("utf-8"))
-        tokens=[]
+        if "META" in sentence: #this was not a real sentence, it was just a marker for a new paragraph -> get the paragraph id , reset everything and don't print anything in the output file 
+            if paragraphId != "NILOO":
+                
+                paragraphString="% " + "%s\nid(%s).\n%s\n"%(paragraph,str(paragraphId),paragraphLFString[3:])
+                paragraphString=paragraphString.encode('utf-8')
+                outputFile.write(paragraphString)
+    #        sys.stdout.write(lfToString(lf).encode("utf-8"))
+            
+            #get new paragraph id and reset everything
+            paragraphId=sentence.replace("<META>","").replace("%","").replace(".","").strip()
+            paragraph=""
+            paragraphLF=""
+            paragraphString=""
+            paragraphLFString=""
+            tokens=[] 
+            unknownargCounter=0 
+            entityArgCounter=0
+            eventualityArgCounter=0
+            
+            line=inputFile.readline()
+            continue
+        
+           
+        if paragraphId=="NILOO": # still no <META> found: the sentence and LF are printed and all arg counters are reset
+            sentenceString="% "+"%s\nid(%s).\n%s\n"%(sentence,str(sentenceId),LFString)
+            sentenceString=sentenceString.encode('utf-8')
+            outputFile.write(sentenceString)
+    #        sys.stdout.write(lfToString(lf).encode("utf-8"))
+            unknownargCounter=0 
+            entityArgCounter=0
+            eventualityArgCounter=0
+        else:
+            paragraph+=sentence
+            paragraphLFString="%s & %s"%(paragraphLFString,LFString)
+            
         sentenceId+=1
-        
-        unknownargCounter=0
-        entityArgCounter=0
-        eventualityArgCounter=0
-        
+        tokens=[] # in any case, token list should be emptied for the next sentence.
+                
     else:
         a=line.split("\t")
         if len(a)!=10:
@@ -790,10 +823,28 @@ while line!="":
         tokens+=[(id,word,lemma,CoarsePOS,relName,dep)]
         
     line=inputFile.readline()
-    
+
 if len(tokens)!=0:
-    lf=createLF(tokens,sentenceId)
-    outputFile.write(lfToString(lf).encode('utf-8'))
+    lf=createLF(tokens,sentenceId) #create logical form
+    (sentence,sentenceId,LFString)=getSentenceAndLFString(lf) # get sentence and string representation of the logical form
+
+    if paragraphId=="NILOO":
+        sentenceString="% "+"%s\nid(%s).\n%s\n"%(sentence,str(sentenceId),LFString)
+        sentenceString=sentenceString.encode('utf-8')
+        outputFile.write(sentenceString)
+        
+    else:
+        paragraph+=sentence
+        paragraphLFString="%s & %s"%(paragraphLFString,LFString)
+        paragraphString="% "+"%s\nid(%s).\n%s\n"%(paragraph,str(paragraphId),paragraphLFString[3:])
+        paragraphString=paragraphString.encode('utf-8')
+        outputFile.write(paragraphString)
+
+if paragraphId!="NILOO":  
+    paragraphString="% " + "%s\nid(%s).\n%s\n"%(paragraph,str(paragraphId),paragraphLFString[3:])
+    paragraphString=paragraphString.encode('utf-8')
+    outputFile.write(paragraphString)                  
+
 inputFile.close()
 outputFile.close()
 

@@ -13,6 +13,8 @@ outputFile=codecs.open(sys.argv[2], encoding='utf-8',mode="w") if len(sys.argv)>
 
 line=inputFile.readline()
 while line!="":
+    if "<META>" in line:
+        line="%s."%line
     newLine=line.replace(semiSpace,"-").strip()
     outputFile.write(("%s\n"%newLine).encode('utf-8'))
     line=inputFile.readline()
