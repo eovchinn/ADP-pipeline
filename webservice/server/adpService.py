@@ -92,7 +92,7 @@ def annotate_document(annotate_document_request_body):
     # open("test.response.json", "w").write(json.dumps(adp_result)
     #     .encode("utf-8"))
 
-    return json.dumps(adp_result, ensure_ascii=False)
+    return json.dumps(adp_result, ensure_ascii=False, encoding="utf-8")
 
 
 if __name__ == "__main__":
