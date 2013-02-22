@@ -653,6 +653,7 @@ def refineRels(props,rels):
     return newRels    
 
 def hasAlphabet(word):
+    if word.strip()=="_": return 0
     if re.match("\w+", word):
         return 1        
     return 0
@@ -762,6 +763,8 @@ paragraphLFString=""
 line=inputFile.readline()
 
 while line!="":
+    if sentenceId==8:
+        niloo=1
     line=line.replace(u'\u200e',"")
     if line.strip()=="" and len(tokens)!=0: #one sentence read, process it 
         lf=createLF(tokens,sentenceId) #create logical form
