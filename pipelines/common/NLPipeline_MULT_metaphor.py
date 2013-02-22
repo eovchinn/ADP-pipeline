@@ -88,7 +88,7 @@ def extract_hypotheses(inputString, unique_id, with_pdf_content):
 
             if with_pdf_content:
                 base_64_str = get_base64("%s/proofgraphs/%s_%s.pdf" %
-                                         (webservice, unique_id, target, ))
+                                         (TMP_DIR, unique_id, target, ))
                 output_struct_item["isiAbductiveProofgraphStr"] = base_64_str
 
             output_struct_item["isiDescription"] = DESCRIPTION
