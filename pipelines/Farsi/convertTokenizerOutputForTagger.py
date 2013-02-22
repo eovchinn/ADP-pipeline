@@ -5,7 +5,6 @@ inputFile=codecs.open(sys.argv[1],encoding="utf-8") if len(sys.argv)>1 else code
 outputFile=codecs.open(sys.argv[2],encoding="utf-8",mode="w") if len(sys.argv)>2 else codecs.getwriter("utf-8")(sys.stdout)
 
 tokens=[]
-
 line=inputFile.readline()
 while(line!="" and line.strip()==""):
     line=inputFile.readline()
@@ -25,4 +24,3 @@ outputFile.write(("%s"%" ".join(tokens)).encode('utf-8'))
 
 inputFile.close()
 outputFile.close()
-

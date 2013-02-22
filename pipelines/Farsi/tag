@@ -11,6 +11,5 @@ taggerDir=$METAPHOR_DIR/external-tools/farsiTools/POSTagger/stanford-postagger
 taggerModelFile=$METAPHOR_DIR/models/farsiModels/farsiPOSModel/StanfordTagger/farsi.tagger.model.treebank
 
 #POS tag the input file
-
 cd $taggerDir
 java -mx2G  -classpath stanford-postagger.jar edu.stanford.nlp.tagger.maxent.MaxentTagger -prop models/farsiPropsFile.prop -model $taggerModelFile -textFile $inputFile  > $taggedFileName 2>/dev/null

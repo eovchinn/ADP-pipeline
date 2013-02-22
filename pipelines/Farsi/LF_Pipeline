@@ -15,6 +15,7 @@ if [ -d "$2" ]; then
 	$farsiPipelineDir/createLF > /dev/stdout
 else
 	$farsiPipelineDir/tokenize < $inputFile | 
+	$farsiPipelineDir/addDot.py |
 	$farsiPipelineDir/tag |
 	$farsiPipelineDir/parse |
 	$farsiPipelineDir/createLF > $outputFileName
