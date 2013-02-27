@@ -1,0 +1,14 @@
+مقام-های_N مصر_N می-گویند_V که_SUBR محمد_N مرسی_N ،_PUNC رییس_N جمهور_N این_PREM کشور_N در_PREP پی_N اعتراض-های_N شدید_ADJ مخالفان_N ،_PUNC فرمانی_N را_POSTP که_SUBR اختیارات_N گسترده-ای_ADJ به_PREP او_PR می-داد_N پس_PREP گرفته_N است_V ._PUNC ._PUNC
+فرمان_N آقای_N مرسی_N خشم_N بسیاری_N از_PREP مصری-ها_N را_POSTP برانگیخت_V و_CONJ عده_N زیادی_ADJ از_PREP آنها_PR در_PREP طی_N روزهای_N اخیر_ADJ به_PREP خیابان-ها_N آمده_V و_CONJ علیه_PREP آن_PR اعتراض_N کردند_V ._PUNC ._PUNC
+<META>_N text1_N ._PUNC ._PUNC
+با_PREP این_PREM حال_N ،_PUNC در_PREP یک_PRENUM کنفرانس_N مطبوعاتی_ADJ در_PREP قاهره_N ،_PUNC گفته_N شده_V همه_PREM پرسی_N برای_PREP پیش_N نویس_N قانون_N اساسی_ADJ طبق_PREP برنامه-های_N پیشین_ADJ ،_PUNC روز_N ۱۵_PRENUM دسامبر_N ،_PUNC ۷_PRENUM روز_N دیگر_ADJ به_PREP اجرا_N در_PREP خواهد_N آمد_V ._PUNC ._PUNC
+خبرنگار_N بی-بی-سی_ADJ در_PREP قاهره_N می-گوید_V این_PREM تصمیم_N آقای_N مرسی_N عقب_N نشینی_N جدی_ADJ به_PREP شمار_N می-رود_V ،_PUNC اما_CONJ باید_V دید_V که_SUBR آیا_PART با_PREP این_PREM کار_N خشونت_N -_PUNC در_PREP خیابان-ها_N پایان_N خواهد_V یافت_N یا_CONJ خیر_N ._PUNC ._PUNC
+پیشتر_N ،_PUNC روز_N شنبه_N ،_PUNC ارتش_N مصر_N با_PREP صدور_N بیانیه_N ای_ADR نسبت_PREP به_PREP عواقب_N درگیری-های_N اخیر_ADJ میان_PREP هواداران_N و_CONJ مخالفان_N محمد_N مرسی_N هشدار_N داده_N بود_V ._PUNC ._PUNC
+<META>_N text2_N ._PUNC ._PUNC
+محمد_N مرسی_N ،_PUNC وابسته_ADJ به_PREP گروه_N اسلامگرای_N اخوان_N المسلمین_N ،_PUNC در_PREP انتخاباتی_ADJ که_SUBR بعد_PREP از_PREP پایان_N حکومت_N حسنی_N مبارک_ADJ ،_PUNC رییس_N جمهوری_N پیشین_ADJ مصر_N برگزار_ADJ شد_V ،_PUNC به_PREP ریاست_N جمهوری_N رسید_V ._PUNC ._PUNC
+وی_PR در_PREP آن_PREM زمان_N وعده_N داد_V برای_PREP برقراری_N آرامش_N و_CONJ دموکراسی_N تلاش_N خواهد_N کرد_V ._PUNC ._PUNC
+اما_CONJ زمانی_N که_SUBR در_PREP ۲۲_PRENUM اکتبر_N در_PREP فرمان_N جدید_ADJ خود_PR دادستان_N کل_N را_POSTP از_PREP قوه_N قضاییه_ADJ کنار_N گذاشت_V ،_PUNC مخالفان_N گفتند_V وی_PR درصدد_N خنثی_ADJ کردن_N قوه_N قضاییه_ADJ است_V ._PUNC ._PUNC
+محمد_N البرادعی_N ،_PUNC مدیر_N کل_N سابق_ADJ آژانس_N بین_PREP المللی_N انرژی_N اتمی_ADJ یک_PRENUM از_PREP مخالفان_N بوده_V و_CONJ از_PREP وی_PR در_PREP این_PREM زمینه_N انتقاد_N کرده_V بود_V ._PUNC
+<META>_N text3_N ._PUNC ._PUNC
+او_PR این_PREM کار_N آقای_N مرسی_N را_POSTP باعث_ADJ ''_N قطب_N بندی_N و_CONJ ایجاد_N تفرقه_N ''_N در_PREP مصر_N دانسته_ADJ بود_V ._PUNC ._PUNC
+گزارش_N شده_ADJ است_V از_PREP زمان_N آغاز_N درگیری-ها_N درباره_PREP فرمان_N جدید_ADJ ،_PUNC دست_N کم_ADJ ۵_PRENUM نفر_N کشته_V و_CONJ صدها_PREM نفر_N دیگر_ADJ زخمی_ADJ شدند_V ._PUNC ._PUNC
