@@ -8,7 +8,8 @@ farsiPipelineDir=$METAPHOR_DIR/pipelines/Farsi
 replaceSemiSpaceWithDashInInputCommand= $farsiPipelineDir/replaceSemiSpaceWithDashInInput.py
 convertTokenizerOutputForTaggerCommand= $farsiPipelineDir/convertTokenizerOutputForTagger.py
 
+
 TOKENIZER_BIN=$METAPHOR_DIR/external-tools/farsiTools/Tokenizer/utf8-tokenize.perl
 
-$replaceSemiSpaceWithDashInInputCommand < $inputFile | $TOKENIZER_BIN | $convertTokenizerOutputForTaggerCommand >$outputFile
+$replaceSemiSpaceWithDashInInputCommand < $inputFile | $TOKENIZER_BIN | $convertTokenizerOutputForTaggerCommand  >$outputFile
 
