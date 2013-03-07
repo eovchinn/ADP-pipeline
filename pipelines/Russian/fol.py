@@ -208,7 +208,10 @@ class MaltConverter(object):
         # in the given sentence.
         for w in self.words:
             if w.head_id:
-                w.set_head(self.words[w.head_id - 1])
+                try:
+                    w.set_head(self.words[w.head_id - 1])
+                except Exception:
+                    pass
             deps = []
             for ww in self.words:
                 if ww.head_id == w.id:
@@ -454,7 +457,7 @@ class MaltConverter(object):
     def handle_tense(self):
 
         for w in self.words:
-            if w.vb and not w.confirm_remove:
+            if w.vb and w.pred and not w.confirm_remove:
 
                 if w.feats[3] == "s":  # if past
                     ep = EPredicate("past", args=(
@@ -463,7 +466,7 @@ class MaltConverter(object):
                     ))
                     self.extra_preds.append(ep)
 
-                elif w.feats[3] == "f":  # if furure
+                elif w.feats[3] == "f" and w.pred:  # if furure
                     ep = EPredicate("future", args=(
                         Argument.E(),
                         Argument.link(w.pred.e),
@@ -653,8 +656,8 @@ class MaltConverter(object):
             # 1. I know that he comes.
             deps2 = w.deps()
             if w.lemma == u"что" and w.cnj and \
-               head and head.vb and \
-               len(deps2) == 1 and \
+               head and head.vb and head.pred and \
+               len(deps2) == 1 and deps2[0].pred and \
                deps2[0].deprel == u"подч-союзн":
                 if deps2[0].nn:
                     head.pred.args[2].link_to(deps2[0].pred.args[1])
@@ -662,8 +665,8 @@ class MaltConverter(object):
                     head.pred.args[2].link_to(deps2[0].pred.e)
 
             # 2. I'm sure (that) he comes.
-            if w.adj and \
-               len(deps) == 1 and deps[0].vb:
+            if w.adj and w.pred and \
+               len(deps) == 1 and deps[0].vb and deps[0].pred:
                 ep = EPredicate("compl", args=(
                     Argument.E(),
                     Argument.link(w.pred.e),
@@ -717,7 +720,7 @@ class MaltConverter(object):
             # 7. I know when you come.
             deps = w.deps()
             if (w.lemma == u"как" or w.lemma == u"когда") \
-               and (w.cnj or w.pr) and head and head.vb \
+               and (w.cnj or w.pr) and head and head.vb and head.pred \
                and len(deps) == 1 and deps[0].vb:
                 for d in deps[0].deps():
                     if d.pr and d.deprel == u"предик":
@@ -884,30 +887,33 @@ class MaltConverter(object):
         deps = reversed(sorted(word.deps(), key=lambda d: d.deprel))
 
         for dep in deps:
-            ddeps = list(dep.deps())
+            
+            if dep.pred:
+            
+                ddeps = list(dep.deps())
 
-            if dep.pr and len(ddeps) > 0:
-                d_object = dep.pred.e
-            elif dep.rb:
-                d_object = dep.pred.e
-            elif not dep.nn:
-                new_dep = dep.unfold_dep(until_tag="nn")
-                if new_dep:
-                    dep = new_dep
+                if dep.pr and len(ddeps) > 0:
+                    d_object = dep.pred.e
+                elif dep.rb and dep.pred: # TODO(zaytsev@usc.edu): check when it does not have pred
+                    d_object = dep.pred.e
+                elif not dep.nn:
+                    new_dep = dep.unfold_dep(until_tag="nn")
+                    if new_dep:
+                        dep = new_dep
 
-            if dep.nn:
-                if dep.deprel == u"предик":
-                    w_subject = dep.pred.args[1]
-                elif dep.deprel == u"1-компл" or dep.deprel == u"2-компл":
-                    if dep.feats[4] in ["a", "g"]:  # not d_object and
-                        d_object = dep.pred.args[1]
-                    elif dep.feats[4] == "d":  # not i_object and
-                        i_object = dep.pred.args[1]
+                if dep.nn and dep.pred:
+                    if dep.deprel == u"предик" and dep.pred and dep.pred.args:
+                        w_subject = dep.pred.args[1]
+                    elif dep.deprel == u"1-компл" or dep.deprel == u"2-компл":
+                        if dep.feats[4] in ["a", "g"]:  # not d_object and
+                            d_object = dep.pred.args[1]
+                        elif dep.feats[4] == "d":  # not i_object and
+                            i_object = dep.pred.args[1]
 
         # 2. Argument control: first arguments of both verbs are the same.
 
         head = word.head
-        if head and head.vb and not w_subject \
+        if head and head.vb and head.pred and not w_subject \
                 and word.deprel != u"обств" and \
                 (word.deprel == u"1-компл" or word.deprel == u"2-компл"):
             w_subject = head.pred.args[1]
@@ -919,7 +925,7 @@ class MaltConverter(object):
 
         if word.lemma not in self.copula_verbs:
             for dep in word.deps(filtr=["nn"]):
-                if dep.feats[4] == "i":  # instrumental
+                if dep.feats[4] == "i" and dep.pred:  # instrumental
                     ep = EPredicate("instr", args=(
                         Argument.E(),
                         Argument.link(word.pred.e),
@@ -968,7 +974,8 @@ class MaltConverter(object):
                     head_was_used = True
 
             # a) Noun + noun
-            if len(adjs) == 0 and len(nouns) == 2:
+            if len(adjs) == 0 and len(nouns) == 2 and \
+               nouns[1].pred and nouns[0].pred:
                 if nouns[1].feats[4] == "i":
                     ep1 = EPredicate("equal", args=(
                         Argument.E(),
@@ -1006,12 +1013,14 @@ class MaltConverter(object):
             # b) Noun + Adj
             elif len(adjs) >= 1 and len(nouns) == 1:
                 for adj in adjs:
-                    adj.pred.args[1].link_to(nouns[0].pred.args[1])
+                    if nouns[0].pred and adj.pred:
+                        adj.pred.args[1].link_to(nouns[0].pred.args[1])
 
             # c) Nount + Prep
             elif len(nouns) == 1 and len(preps) == 1:
                 ddeps = list(preps[0].deps())
-                if len(ddeps) == 1 and ddeps[0].nn:
+                if len(ddeps) == 1 and ddeps[0].nn and \
+                   nouns[0].pred and ddeps[0].pred and preps[0].pred:
                     preps[0].pred.args[1].link_to(nouns[0].pred.args[1],
                         force=True)
                     preps[0].pred.args[2].link_to(ddeps[0].pred.args[1],
@@ -1021,7 +1030,7 @@ class MaltConverter(object):
         if head and head.vb and \
             head.lemma == u"быть" and head.feats[3] == "s":
             for dep in head.deps(filtr=["nn"]):
-                if dep.deprel == u"предик":
+                if dep.deprel == u"предик" and dep.pred:
                     word.pred.args[2].link_to(dep.pred.args[1])
                     if w_subject and w_subject.resolve_link() == \
                        dep.pred.args[1].resolve_link():
@@ -1133,7 +1142,7 @@ class MaltConverter(object):
 
             if head.feats[4] == word.feats[4] and word.deprel == u"аппоз":
                 pass
-            elif word.feats[4] == "g":  # if genitive case
+            elif word.feats[4] == "g" and head.pred and head.pred.args:  # if genitive case
                 ep = EPredicate("of-in", args=(
                     Argument.E(),
                     Argument.link(head.pred.args[1]),
@@ -1167,18 +1176,16 @@ class MaltConverter(object):
 
         # 5. Coreferent Nouns
 
-        if head and head.nn and word.feats[4] == head.feats[4]:
+        if head and head.nn and head.pred and word.feats[4] == head.feats[4]:
             if word.deprel == u"предик" and \
                head.deprel in self.coference_deprels_1:
-                # print "EQUAL", word.lemma.encode("utf-8"), head.lemma.encode("utf-8")
                 ep = EPredicate("equal", args=(
                     Argument.E(),
                     Argument.link(word.pred.args[1]),
                     Argument.link(head.pred.args[1]),
                 ))
                 self.extra_preds.append(ep)
-            elif word.deprel == u"аппоз":
-                # print "COREF", word.lemma.encode("utf-8"), head.lemma.encode("utf-8")
+            elif word.deprel == u"аппоз" and head.pred:
                 word.pred.args[1].link_to(head.pred.args[1])
 
     def apply_adj_rules(self, word):
@@ -1187,7 +1194,7 @@ class MaltConverter(object):
         #    modifying
 
         head = word.head
-        if head and (head.nn or head.adj) and word.pred:
+        if head and (head.nn or head.adj) and word.pred and head.pred:
             word.pred.args[1].link_to(head.pred.args[1])
 
     def apply_rb_rules(self, word):
@@ -1203,15 +1210,15 @@ class MaltConverter(object):
         head = word.head
 
         # 1. Verb + noun.
-        if head and head.vb:
+        if head and head.vb and head.pred:
             word.pred.args[1].link_to(head.pred.e)
 
         # 2. Noun + noun.
-        elif head and head.nn:
+        elif head and head.nn and head.pred and word.pred:
             word.pred.args[1].link_to(head.pred.args[1])
 
         # 5. Adj + noun
-        elif head and head.adj:
+        elif head and head.adj and head.pred:
             word.pred.args[1].link_to(head.pred.e)
 
         for dep in word.deps(filtr=["nn", "pr"]):
@@ -1410,7 +1417,7 @@ class MaltConverter(object):
 
         if word.lemma == u"нет":
             for dep in word.deps():
-                if dep.nn or dep.adj or dep.pr:
+                if (dep.nn or dep.adj or dep.pr) and dep.pred:
                     ep1 = EPredicate("be", args=(
                         Argument.E(),
                         Argument.link(dep.pred.args[1]),
