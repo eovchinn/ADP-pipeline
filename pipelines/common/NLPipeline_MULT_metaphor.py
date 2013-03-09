@@ -106,10 +106,11 @@ def generate_text_input(input_metaphors, language):
     output_str = ""
 
     for key in input_metaphors.keys():
-        if language == "EN" or language == "RU":
-            output_str += "<META>" + key + "\n\n " + input_metaphors[key] + "\n\n"
-        else:
-            output_str += ".TEXTID(" + key + ").\n\n" + input_metaphors[key] + "\n\n"
+        #if language == "EN" or language == "RU":
+        #    output_str += "<META>" + key + "\n\n " + input_metaphors[key] + "\n\n"
+        #else:
+        #    output_str += ".TEXTID(" + key + ").\n\n" + input_metaphors[key] + "\n\n"
+        output_str += "<META>" + key + "\n\n " + input_metaphors[key] + "\n\n"
 
     return output_str
 
@@ -126,11 +127,11 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
     # Parser pipeline
     parser_proc = ""
     if language == "FA":
-        parser_proc = FARSI_PIPELINE + " | python " + PARSER2HENRY + " --nonmerge sameid freqpred --textid"
+        parser_proc = FARSI_PIPELINE + " | python " + PARSER2HENRY + " --nonmerge sameid freqpred"
         KBPATH = FA_KBPATH
 
     elif language == "ES":
-        parser_proc = SPANISH_PIPELINE + " | python " + PARSER2HENRY + " --nonmerge sameid freqpred --textid"
+        parser_proc = SPANISH_PIPELINE + " | python " + PARSER2HENRY + " --nonmerge sameid freqpred"
         KBPATH = ES_KBPATH
 
     elif language == "RU":
@@ -240,6 +241,7 @@ def generate_graph(input_dict, henry_output, unique_id):
         os.makedirs(graph_dir)
 
     for key in input_dict.keys():
+        print "Generating a proofgraph for " + key
         graph_output = os.path.join(graph_dir, unique_id + "_" + key + ".pdf")
 
         viz = "python " + HENRY_DIR + "/tools/proofgraph.py --graph " + key + \
