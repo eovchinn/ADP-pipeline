@@ -8,6 +8,8 @@ farsiPipelineDir=$METAPHOR_DIR/pipelines/Farsi
 if [ -d "$2" ]; then
 	$farsiPipelineDir/tokenize < $inputFile | 
 	tee $2/tokenizer_o.txt |
+	$farsiPipelineDir/addDot.py |
+	tee $2/dot_o.txt |
 	$farsiPipelineDir/tag |
 	tee $2/tagger_o.txt |
 	$farsiPipelineDir/parse |
@@ -20,4 +22,3 @@ else
 	$farsiPipelineDir/parse |
 	$farsiPipelineDir/createLF > $outputFileName
 fi
-
