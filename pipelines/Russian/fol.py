@@ -548,7 +548,7 @@ class MaltConverter(object):
         for w in self.words:
 
             head = w.head
-            if not w.head:
+            if not w.head or not head.pred:
                 continue
             hhead = head.head
 
@@ -577,7 +577,7 @@ class MaltConverter(object):
                                     d.pred.args[2].link_to(
                                         hhead.pred.args[1]
                                     )
-                        else:
+                        elif head.pred and hhead.pred:
                             head.pred.args[2].link_to(
                                 hhead.pred.args[1]
                             )
@@ -976,6 +976,7 @@ class MaltConverter(object):
             # a) Noun + noun
             if len(adjs) == 0 and len(nouns) == 2 and \
                nouns[1].pred and nouns[0].pred:
+                # TODO: check this
                 if nouns[1].feats[4] == "i":
                     ep1 = EPredicate("equal", args=(
                         Argument.E(),
@@ -1402,7 +1403,7 @@ class MaltConverter(object):
         # 1.
 
         if word.lemma == u"не":
-            if head and (head.vb or head.rb):
+            if head and head.pred and (head.vb or head.rb):
                 ep = EPredicate("not", args=(
                     Argument.E(),
                     Argument.link(head.pred.e),
