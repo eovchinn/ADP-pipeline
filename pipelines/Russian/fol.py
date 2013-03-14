@@ -36,10 +36,10 @@ class Argument(object):
 
     def resolve_link(self):
         """
-        Return argument which this argument pointing to, otherwise
+        Return argument which this argument is pointing to, otherwise
         return itself.
         """
-        if not self.link:
+        if not self.link or self.link == self:
             return self
         else:
             return self.link.resolve_link()
@@ -100,6 +100,9 @@ class Predicate(AbsPredicate):
         self.args = list(args) # TODO(zaytsev@usc.edu): remove list call
         self.show_index = True
         self.show_postag = True
+        
+    def __int__(self):
+        return 0 if self.pred is None else 1
 
     def __repr__(self):
         return u"<Predicate(prefix=%s, args=%r)>" % (self.prefix, self.args, )
@@ -555,8 +558,8 @@ class MaltConverter(object):
             if w.pr:
                 if not hhead:
                     continue
-                if w.lemma in self.person_relative_pr and head.vb and hhead.nn:
-                    if hhead.feats[5] == "y":  # if animate
+                if w.lemma in self.person_relative_pr and head.vb and hhead.nn and head.pred:
+                    if hhead.feats[5] == "y" and hhead.pred:  # if animate
                         # 1. Person
                         ep = EPredicate("person", args=(
                             Argument.E(),
@@ -584,7 +587,7 @@ class MaltConverter(object):
 
                 # 4. Location
                 elif w.lemma in self.location_relative_pr and \
-                   head.vb and hhead.nn:
+                   head.vb and hhead.nn and head.pred and hhead.pred:
                     ep = EPredicate("loc", args=(
                         Argument.E(),
                         Argument.link(hhead.pred.args[1]),
@@ -676,7 +679,7 @@ class MaltConverter(object):
 
             # 4. I know whom you saw.
             if (w.lemma == u"кто" or w.lemma == u"что") and \
-               w.pr and head and head.vb and\
+               w.pr and head and head.pred and head.vb and\
                hhead and hhead.vb and \
                (head.deprel == u"1-компл" or head.deprel == u"2-компл"):
                 new_x = Argument.X()
@@ -697,7 +700,7 @@ class MaltConverter(object):
                         break
 
             # 5. I know where you live.
-            if w.lemma == u"где" and head and hhead and head.vb and hhead.vb:
+            if w.lemma == u"где" and head and hhead and head.pred and head.vb and hhead.vb:
                 for d in head.deps(filtr=["pr"]):
                     if d.deprel == u"предик":
                         new_x = Argument.X()
@@ -739,7 +742,7 @@ class MaltConverter(object):
 
             # 8. I know why you go.
             if (w.lemma == u"зачем" or w.lemma == u"почему") and \
-               head and head.vb and hhead and hhead.vb:
+               head and head.vb and head.pred and hhead.pred and hhead.vb:
                 new_x = Argument.X()
                 new_e = Argument.E()
                 ep1 = EPredicate("wh", args=(new_e, new_x))
@@ -760,7 +763,7 @@ class MaltConverter(object):
 
             # 1. What did you do?
             if w.lemma == u"что" and head and head.vb and\
-               head.contains("?"):
+               head.contains("?") and head.pred:
                 hdeps = head.deps(filtr=["pr", "nn"])
                 for d in hdeps:
                     if d.deprel == u"предик":
@@ -772,7 +775,7 @@ class MaltConverter(object):
                                 new_x,
                             ))
                             self.extra_preds.append(ep)
-                        else:
+                        elif w.pred is not None:
                             new_x = w.pred.args[1]
                         ep = EPredicate("whq", args=(
                             Argument.E(),
@@ -1318,7 +1321,8 @@ class MaltConverter(object):
         # 3. Possessive pronouns
 
         if word.pr and word.lemma in self.possessives_map.keys() and \
-           word.head and (word.head.nn or word.head.adj or word.head.pr):
+           word.head and (word.head.nn or word.head.adj or word.head.pr) \
+           and word.head.pred and word.pred:
             ep = EPredicate("of-in", args=(
                 Argument.E(),
                 Argument.link(word.head.pred.args[1]),
@@ -1372,7 +1376,7 @@ class MaltConverter(object):
         if word.lemma == u"если":
             if head and head.vb:
                 for dep in word.deps():
-                    if dep.vb:
+                    if dep.vb and dep.pred and head.pred:
                         ep = EPredicate("imp", args=(
                             Argument.E(),
                             Argument.link(dep.pred.e),
