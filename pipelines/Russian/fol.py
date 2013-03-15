@@ -742,7 +742,7 @@ class MaltConverter(object):
 
             # 8. I know why you go.
             if (w.lemma == u"зачем" or w.lemma == u"почему") and \
-               head and head.vb and head.pred and hhead.pred and hhead.vb:
+               head and head.vb and head.pred and hhead and hhead.pred and hhead.vb:
                 new_x = Argument.X()
                 new_e = Argument.E()
                 ep1 = EPredicate("wh", args=(new_e, new_x))
