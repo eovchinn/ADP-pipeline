@@ -3,10 +3,11 @@
 # -*- coding: utf-8 -*-
 
 import psycopg2
+import global_setting
 
 def buildIndex():
     
-    CONN_STRING= "host='localhost' dbname='wiki' user='wiki' password='wiki'"
+    CONN_STRING= global_setting.get_CONN()
     con = None
     try:
         con = psycopg2.connect(CONN_STRING)

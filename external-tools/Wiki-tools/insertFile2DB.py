@@ -4,7 +4,7 @@
 import sys
 import psycopg2
 import urllib
-
+import global_setting
 # function to insert records
 
 def insert_records(con,records,table_name):
@@ -25,7 +25,7 @@ def insert_records(con,records,table_name):
 
 def create_table(table_name):
     # CONN_STRING: you need to change it 
-    CONN_STRING= "host='localhost' dbname='wiki' user='wiki' password='wiki'"
+    CONN_STRING= global_setting.get_CONN()
 
     try:
 
@@ -119,7 +119,7 @@ def main():
         ll=line.split(" ",2)
 
         #for title
-        title = ll[0].split("/")[-1][:-1]
+        title = ll[0].split("dbpedia.org/resource/")[-1][:-1]
         title = urllib.unquote(title)
         #for url
         url=urlpre+title

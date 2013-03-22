@@ -40,14 +40,13 @@ sudo  etc/init.d/postgresql restart
 
 * Download long_abstracts_en.nt.bz2:http://downloads.dbpedia.org/3.8/en/long_abstracts_en.nt.bz2
 
-* Download long_abstracts_en_uris_es.nt.bz2:http://downloads.dbpedia.org/3.8/es/long_abstracts_en_uris_es.nt.bz2
 * Download long_abstracts_es.nt.bz2:http://downloads.dbpedia.org/3.8/es/long_abstracts_es.nt.bz2
 
-* Download long_abstracts_en_uris_ru.nt.bz2:http://downloads.dbpedia.org/3.8/ru/long_abstracts_en_uris_ru.nt.bz2
 * Download long_abstracts_ru.nt.bz2:http://downloads.dbpedia.org/3.8/ru/long_abstracts_ru.nt.bz2
 
-* Download long_abstracts_en_uris_fa.nt.bz2:http://downloads.dbpedia.org/3.8/fa/long_abstracts_en_uris_fa.nt.bz2
 * Download long_abstracts_fa.nt.bz2:http://downloads.dbpedia.org/3.8/fa/long_abstracts_fa.nt.bz2
+
+* Download Bijective Inter-Language Links:http://downloads.dbpedia.org/3.8/en/interlanguage_links_same_as_en.nt.bz2
 
 * Uncompress the *.bz2 files
 
@@ -55,7 +54,7 @@ sudo  etc/init.d/postgresql restart
 bzip2 -d long_abstracts_*.bz2 
 ```
 
-#### Import Dataset into Database
+#### Import DBpedia Dataset into Database
 
 * Install psycopg2 library (for connecting to PostgreSQL)
 
@@ -65,7 +64,7 @@ sudo apt-get install python-psycopg2
 
 * Edit Connect String
 
-In insertFile2DB.py and buildIndex.py edit CONN_STRING to reflect your database
+In global_setting.py edit CONN_STRING to reflect your database
 settings.
 
 * Insert the data into PostgreSQL database
@@ -81,19 +80,43 @@ where the DIR_PATH is the directory path where those *.nt files located in.
 python buildIndex.py
 ```
 
-* Test data imported
+* process the Bijective Inter-Language Link:
 ```
-psql -d wiki
+python process_bijective_link.py -d DIR_PATH
+```
+
+### Download the Yago Database
+
+* Download yagoLabels:http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoLabels.tsv.7z
+
+* Download yagoMultilingualInstanceLabels:http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoMultilingualInstanceLabels.tsv.7z
+
+* Download yagoMultilingualClassLabels:http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoMultilingualClassLabels.tsv.7z
+
+* Download yagoWikipediaInfo: http://www.mpi-inf.mpg.de/yago-naga/yago/download/yago/yagoWikipediaInfo.tsv.7z
+
+
+
+
+* import tsv files into database 
+```
+psql -a -d 'wiki' -h 'localhost' -U 'wiki' -f importYago.sql
+```
+
+### Test data imported
+```
+psql -d yago
 \dt 
 \di
 ```
-should contains 4 tables and 12 indexes.
+should contains 6 relevent tables and 20 relevant indexes.
+
 
 ### Extract the first paragraph of wiki: get_paragraph.py
 
 * Edit Connect String
 
-In get_paragraph.py edit CONN_STRING to reflect your database
+In global_setting.py edit CONN_STRING to reflect your database
 settings.
 
 * Run program
@@ -132,3 +155,6 @@ returns:
 ...
 In foreign policy, he ended the war in Iraq, increased troop levels in Afghanistan, signed the New START arms control treaty with Russia, ordered U.S. involvement in the 2011 Libya military intervention, and ordered the military operation that resulted in the death of Osama bin Laden."@en...
 ```
+
+
+
