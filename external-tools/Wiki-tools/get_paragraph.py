@@ -4,11 +4,24 @@ import sys
 import psycopg2
 import codecs
 import psycopg2.extras
+import get_paragraph_prefer
+import global_setting
 
+class setting:
+    inword=''
+    substring = False
+    case_sensitive = False
+    preferred_meaning = False
+    qlang = ''
+    wlang = ''
+    table_name=''
+    lang = ''
+    CONN_STRING = ''
+    debug = False
 
 def main():
     # database settings
-    CONN_STRING= "host='localhost' dbname='wiki' user='wiki' password='wiki'"
+    CONN_STRING= global_setting.get_CONN()
     con=None
 
     from optparse import OptionParser
@@ -29,6 +42,8 @@ def main():
     parser.add_option("-p", "--preferredmeaning", dest="preferred_meaning", action="store_true",
                   help="return preferred meaning of category (default is NOT preferred)",
                   default=False)
+    parser.add_option("-d","--debug",dest = "debug" , action = "store_true",
+                  help="output debug info, default is false", default = False)
     (options, args) = parser.parse_args()
     
     if not options.inword:
@@ -37,14 +52,11 @@ def main():
         parser.error("Must supply language. (Examplae: -l EN ; allowed languages: EN|ES|RU|FA)")
 
     inword=options.inword
-    inword=inword.replace(" ","_")
     lang=options.lang
     substring=options.substring
     case_sensitive=options.case_sensitive
     preferred_meaning=options.preferred_meaning
-    # currently, implement the preferred_meaning as exact search.
-    if preferred_meaning:
-        substring = False
+    debug = options.debug
     
     #prepare language suffix for yago and yago
     langIndex={"EN":0,"ES":1,"RU":2,"FA":3}
@@ -56,7 +68,23 @@ def main():
     wlang=wlangs[lindex]
     table_name=tables[lindex]
     
-       
+    if preferred_meaning: 
+        myset = setting()
+        myset.inword= inword
+        myset.substring = substring
+        myset.case_sensitive = case_sensitive
+        myset.preferred_meaning = preferred_meaning
+        myset.qlang = qlang
+        myset.wlang = wlang
+        myset.table_name= table_name
+        myset.lang = lang
+        myset.CONN_STRING = CONN_STRING
+        myset.debug = debug
+        goon = get_paragraph_prefer.prefer_search(myset)
+        if goon == 0:
+            return 0
+    
+    inword=inword.replace(" ","_")
     query = "select title,abstract from TABLE_NAME where title ilike '@@@word@@@'"
     query = query.replace('TABLE_NAME',table_name)
 
@@ -68,14 +96,11 @@ def main():
         inword = inword
             
     #build query
-    if ( not case_sensitive ) and ( not substring ): #exact match
+    if case_sensitive and ( not substring ): #exact match
         query = query.replace("ilike","=")
     if case_sensitive:
         query = query.replace('ilike','like')
-       
-    if preferred_meaning: # still do not know how to deal with?
-        query = query.replace("yf2.predicate='rdfs:label'","yf2.predicate='<isPreferredMeaningOf>'")
-    
+        
     query = query.replace('@@@word@@@',inword)
     print "Query:",query
 

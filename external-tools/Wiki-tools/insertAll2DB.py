@@ -21,16 +21,16 @@ def main():
     dirPath=options.dirPath
         
     files=['long_abstracts_en.nt'\
-    ,'long_abstracts_en_uris_es.nt'\
+    #,'long_abstracts_en_uris_es.nt'\
     ,'long_abstracts_es.nt'\
-    ,'long_abstracts_en_uris_ru.nt'\
+    #,'long_abstracts_en_uris_ru.nt'\
     ,'long_abstracts_ru.nt'\
-    ,'long_abstracts_en_uris_fa.nt'\
+    #,'long_abstracts_en_uris_fa.nt'\
     ,'long_abstracts_fa.nt']
     
-    langs=["EN","ES","ES","RU","RU","FA","FA"]
-    suffixes=["E","E","N","E","N","E","N"]
-    langdict={"EN":[0],"ES":[1,2],"RU":[3,4],"FA":[5,6]}
+    langs=["EN","ES","RU","FA"]
+    suffixes=["E","E","E","E"]
+    langdict={"EN":[0],"ES":[1],"RU":[2],"FA":[3]}
     commands=[]
     errorlangs={}
 
