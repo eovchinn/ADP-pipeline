@@ -7,22 +7,31 @@ import mydb
 def calculate(type_name,lang):
     result = {}
     indexs={"EN":0,"ES":1,"RU":2,"FA":3}
-    type_table_names=["type_en","type_es","type_ru","type_fa"]
-    property_table_names=["property_en","property_es","property_ru","property_fa"]
-    index = indexs[lang]
-    type_table_name = type_table_names[index]
-    property_table_name = property_table_names[index]
-    type_name = '<'+type_name+'>'
-    
+    type_table_names=["type_en","type_es","type_ru"]
+    property_table_names=["property_en","property_es","property_ru"]
     CONN_STRING = mydb.get_CONN()
     con = mydb.getCon(CONN_STRING)
+    rows=[]
+    property_table_name=''
+    type_table_name = ''
+    if lang !='FA':
+        index = indexs[lang]
+        type_table_name = type_table_names[index]
+        property_table_name = property_table_names[index]
+        type_name = '<'+type_name+'>'
+        query = "select entity from __type_table__ where type = '__type_name__'"
+        query = query.replace('__type_table__',type_table_name)
+        query = query.replace('__type_name__',type_name)
+        rows = mydb.executeQueryResult(con,query,True)
+        result['__total__']=len(rows)
+    else:
+        property_table_name = 'property_fa'
+        
+        query = "select distinct entity from property_fa where property = '<http://fa.dbpedia.org/property/type>' and value ='__type_name__' "
+        query = query.replace('__type_name__',type_name)
+        rows = mydb.executeQueryResult(con,query,True)
+        result['__total__']=len(rows)
 
-    query = "select entity from __type_table__ where type = '__type_name__'"
-    query = query.replace('__type_table__',type_table_name)
-    query = query.replace('__type_name__',type_name)
-    rows = mydb.executeQueryResult(con,query,True)
-    result['__total__']=len(rows)
-    
     temp_result={}
     print len(rows)
     i=0
@@ -46,6 +55,7 @@ def calculate(type_name,lang):
             print i
     #print result
     return result
+
 
 
     
