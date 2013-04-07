@@ -1,0 +1,3 @@
+[submodule "external-tools/mokujin"]
+	path = external-tools/mokujin
+	url = https://github.com/zaycev/mokujin
