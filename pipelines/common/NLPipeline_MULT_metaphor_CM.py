@@ -78,12 +78,14 @@ def extract_hypotheses(inputString):
         elif line.startswith("</result-inference>"):
 
             output_struct_item = extract_CM_mapping(target,hypothesis)
+            #print hypothesis
+            #print json.dumps(output_struct_item, ensure_ascii=False)
 
             output_struct_item["isiDescription"] = DESCRIPTION
             output_struct.append(output_struct_item)
             target = ""
 
-    print json.dumps(output_struct, ensure_ascii=False)
+    #print json.dumps(output_struct, ensure_ascii=False)
     return output_struct
 
 

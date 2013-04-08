@@ -132,7 +132,7 @@ def extract_CM_mapping(id,inputString):
 	output_struct_item["isiSourceDomainEnglish"] = wordStr2print(sourcesE,word_props,equalities)
 	output_struct_item["isiSourceSubdomainEnglish"] = wordStr2print(subsourcesE,word_props,equalities)
 
-	if len(targetsN)>0 and len(sourcesN)>0:
+	if len(targetsE)>0 and len(sourcesE)>0:
 		output_struct_item["isiMetaphorConfirmed"] = 'YES'
 		output_struct_item["isiTargetSourceMapping"] = wordStr2print(mappings,word_props,equalities)
 	else:
