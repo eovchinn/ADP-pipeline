@@ -1,0 +1,36 @@
+; DISEASE INTERNATIONAL
+(B (name disease)(=> (^(M#cause x e0 :0.3)(M#not e0 e1 :0.3)(M#function e1 y :0.3))(^ (SE#DISEASE x)(R#SICK  y x))))
+(B (name disease2)(=> (^(M#cause x e0 :0.3)( M#not e0 e1 :0.3)( M#function e1 y :0.3)) (SE#DISEASE x)))
+(B (name cure)(=> (^(M#cause y e1 :0.3)( M#not e1 e2 :0.3)( M#exist e2 x :0.3))(^ (SSE#CURE e0 x)(R#CURE-AGENT y e0))))
+
+; BASE INTERNATIONAL
+(B (name base)(=> (M#support x y :0.8) (^(SE#BASE x)(R#BASE-STRUCTURE y x))))
+(B (name base2)(=> (M#support x y :0.9) (SE#BASE x)))
+(B (name strengthen)(=> (^(M#cause e1 :0.45)(M#strong y :0.45)) (^(SSE#STRENGTHEN e0 x)(R#BASE-STRUCTURE y x))))
+
+; WAR INTERNATIONAL
+(B (name fight)(=> (^(M#cause z e1 :0.3)(M#not e1 e2 :0.3)(M#exist e2 y :0.3)) (^(SSE#FIGHT x)(R#WAR-ENEMY y x )(R#WAR-AGENT z x))))
+(B (name enemy)(=> (^(M#cause x e0 :0.3)(M#not e0 e1 :0.3)(M#function e1 z :0.3)) (^ (SSE#ENEMY x e0)(R#WAR-AGENT z e0))))
+
+; WATER RUSSIAN
+(B (name water)(=> (M#move-quickly y :0.9) (^(SN#ВОДА x)(R#MATTER  y x))))
+(B (name water2)(=> (M#move-quickly y :0.9) (^(SN#ВОДА x)(R#MATTER  y x))))
+(B (name water3)(=> (M#move-quickly x :0.9) (SN#ВОДА x)))
+(B (name water4)(=> (M#move-quickly x :0.9) (SN#ВОДА x)))
+
+; WATER INTERNATIONAL
+(B (name body_of_water)(=> (M#large-amount-of z :0.9) (^(SSE#BODY-OF-WATER y x)(R#MATTER  z y))))
+(B (name water5)(=> (M#satisfy-needs x :0.9) (SE#WATER x)))
+(B (name drought)(=> (^(M#not e0 e1 :0.45)(M#exist e1 x :0.45)) (SSE#DROUGHT x)))
+(B (name shoal)(=> (^(M#not e0 e1 :0.45)(M#exist e1 x :0.45)) (SSE#SHOAL x)))
+
+; SCHOOL INTERNATIONAL
+
+(B (name school)(=> (^(M#cause x e0 :0.35)(M#understand e0 z y :.35)) (^(SE#SCHOOL x)(R#SCHOOL-SUBJECT  y x)(R#SCHOOL-STUDENT z x))))
+
+(B (name school2)(=> (^(M#cause x e0 :0.4)(M#understand e0 z y :.4)) (^(SE#SCHOOL x)(R#SCHOOL-SUBJECT  y x))))
+
+(B (name school)(=> (^(M#cause x e0 :0.4)(M#understand e0 z y :.4)) (^(SE#SCHOOL x)(R#SCHOOL-STUDENT z x))))
+
+(B (name school)(=> (^(M#cause x e0 :0.45)(M#understand e0 z y :.45))(SE#SCHOOL x)))
+
