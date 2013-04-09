@@ -5,11 +5,13 @@ import sys
 import psycopg2
 import urllib
 import global_setting
+import os
+import subprocess
 # function to insert records
 
 def insert_records(con,records,table_name):
     try:
-        query = "INSERT INTO "+table_name+" (id, lang, title, wiki_url,abstract)  VALUES( %s, %s, %s, %s, %s)"
+        query = "INSERT INTO "+table_name+" (id, lang, title, wiki_url,abstract,parse_result)  VALUES( %s, %s, %s, %s, %s, %s)"
         # query = "INSERT INTO "+table_name+" (id, lang, title, wiki_url,abstract)  select %s, %s, %s, %s, %s where not exists (select id from "+table_name+" where id = %s)"
         cur=con.cursor()
         cur.executemany(query,records)
@@ -41,7 +43,7 @@ def create_table(table_name):
 
         if len(rows) == 0 : #table doesn't exist
             cur = con.cursor()
-            query='create table '+table_name+'(id char(12) PRIMARY KEY,lang char(2),title text,wiki_url text, abstract text)'
+            query='create table '+table_name+'(id char(12) PRIMARY KEY,lang char(2),title text,wiki_url text, abstract text, parse_result text)'
             cur.execute(query)
             con.commit()
         
@@ -50,7 +52,49 @@ def create_table(table_name):
         print 'Error %s' % e
         sys.exit(-1)
 
+def parse(abstract,commonDir,tempFile,lang):
+    abstract = abstract[1:-4]
+    obsFile = tempFile+'.obs'
+    sentFile = tempFile+'.sent'
+    sf = open(tempFile,'w')
+    sf.write(abstract.encode('utf8'))
+    sf.close()
+    command = "python nltk_tokenizer.py -l __lang__ --input __path__"
+    command = command.replace('__lang__',lang)
+    command = command.replace('__path__',tempFile)
+    subprocess.call(command.split())
+    sf = open(sentFile,'r')
+    i = 0
+    sents = []
+    while True:
+        line = sf.readline()
+        if not line:
+            break
+        sents.append(line)
+        i+=1
+        if i == 5:
+            break
+    sf.close()
+    sf = open(sentFile,'w')
+    for line in sents:
+        sf.write(line)
+    sf.close()
+    command = 'python __commonDir__/NLPipeline_MULT_stdinout.py --lang __lang__ --input __path__ --parse'
+    command = command.replace('__commonDir__',commonDir)
+    command = command.replace('__lang__',lang)
+    command = command.replace('__path__',sentFile)
+    subprocess.call(command.split())
     
+    obsf = open(obsFile,'r')
+    obss = []
+    while True:
+        line = obsf.readline()
+        if not line:
+            break
+        obss.append(line)
+    obss = ''.join(obss)
+    sents = ''.join(sents)
+    return (sents,obss)
 
 def main():
 
@@ -63,10 +107,12 @@ def main():
     parser.add_option("-l","--lang", dest='lang',help="language:EN,ES,RU,FA")
     parser.add_option("-s","--startline",dest='startline',help="start line number [n]. This means the first n lines of the file will not be processed!")
     parser.add_option("-x",'--suffixID',dest='suffixID',help="the ID suffix: E(have relavant English pages, N(no relevant english pages.")
+    parser.add_option("--common",dest='commonDir',help='the NLPipeline_MULT_stdinout.py folder path')
+    parser.add_option("--temp",dest = 'tempFile',help='the temp File path')
     parser.set_defaults(startline='1')
     parser.set_defaults(suffixID='')
     (options,args) = parser.parse_args()
-
+    
     if not options.filePath:
         parser.error("Please input the file path")
     if not options.lang:
@@ -77,12 +123,11 @@ def main():
     except ValueError, e:
         parser.error("Please input a number for -s")
         
-
     filePath=options.filePath
     lang=options.lang
     startline=int(options.startline)
     suffixID=options.suffixID
-        
+    
     indexs={"EN":0,"ES":1,"RU":2,"FA":3}
     urlpres=["http://en.wikipedia.org/wiki/","http://es.wikipedia.org/wiki/","http://ru.wikipedia.org/wiki/","http://fa.wikipedia.org/wiki/"]
     table_names=["wiki_en","wiki_es","wiki_ru","wiki_fa"]
@@ -91,6 +136,9 @@ def main():
     urlpre=urlpres[index]
     table_name=table_names[index]
     
+    commonDir = options.commonDir
+    tempFile = os.path.abspath(options.tempFile)
+
 
     #Database setting and create table
 
@@ -117,7 +165,7 @@ def main():
         line=line.decode('raw_unicode_escape')
         line=line[:-3]
         ll=line.split(" ",2)
-
+        
         #for title
         title = ll[0].split("dbpedia.org/resource/")[-1][:-1]
         title = urllib.unquote(title)
@@ -125,9 +173,12 @@ def main():
         url=urlpre+title
         #for abstraction
         abstract=ll[-1]
+        result = parse(abstract,commonDir,tempFile,lang)
+        abstract = result[0]
+        parse_result = result[1]
         #for id
         ID=lang+suffixID+str(i)
-        record=(ID,lang,title,url,abstract)
+        record=(ID,lang,title,url,abstract,parse_result)
         # print title
         # print url
         # print abstract

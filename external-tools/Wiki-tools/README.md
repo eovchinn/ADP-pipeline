@@ -69,11 +69,11 @@ settings.
 
 * Insert the data into PostgreSQL database
 
+* Edit the DOWNLOAD_DIR in insertAll2DB.sh to where you download all the *.nt files
 ```
-python insertAll2DB.py -d DIR_PATH
+bash insertAll2DB.sh
 ```
 
-where the DIR_PATH is the directory path where those *.nt files located in.
 
 * Build the Index
 ```
