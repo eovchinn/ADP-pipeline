@@ -1,0 +1,297 @@
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+; TARGET WORDS;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; POVERTY
+
+(B (name poverty) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(poverty-nn e0 x)))
+(B (name poorness) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (poorness-nn e0 x)))
+(B (name indigence) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (indigence-nn e0 x)))
+(B (name penury) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (penury-nn e0 x)))
+(B (name beggary) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (beggary-nn e0 x)))
+(B (name misery) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (misery-nn e0 x)))
+(B (name bareness) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (bareness-nn e0 x)))
+(B (name need) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (need-nn e0 x)))
+(B (name necessity) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (necessity-nn e0 x)))
+
+; POOR
+(B (name poor) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (poor-adj e0 y)))
+(B (name impoverished) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (impoverished-adj e0 y)))
+(B (name lean) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (lean-adj e0 y)))
+(B (name needy) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (needy-adj e0 y)))
+(B (name shabby) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (shabby-adj e0 y)))
+(B (name indigent) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (indigent-adj e0 y)))
+
+
+; POOR PERSON
+(B (name pauper) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (pauper-nn e0 y)))
+(B (name mendicant) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (mendicant-nn e0 y)))
+(B (name beggar) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (beggar-nn e0 y)))
+
+; BECOME POOR
+
+(B (name become-poor) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (^(become-vb(e1,x,e0,u))(poor-adj e0 y))))
+(B (name grow-poor) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (^(grow-vb(e1,x,e0,u))(poor-adj e0 y))))
+
+
+; OF - POOR
+(B (name of-poor) (=>(R#POOR y x :0.9)(^(TS#POVERTY x)(of-in e1 x y))))
+
+; WEALTH
+(B (name wealth) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (wealth-nn e0 x)))
+(B (name richness) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (richness-nn e0 x)))
+(B (name resplendence) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (resplendence-nn e0 x)))
+(B (name gorgeousness) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (gorgeousness-nn e0 x)))
+(B (name luxury) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (luxury-nn e0 x)))
+(B (name treasure) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (treasure-nn e0 x)))
+(B (name profusion) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (profusion-nn e0 x)))
+(B (name means) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (means-nn e0 x)))
+(B (name affluence) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (affluence-nn e0 x)))
+(B (name money) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (money-nn e0 x)))
+(B (name property) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (property-nn e0 x)))
+
+; RICH PERSON
+(B (name money-bags) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (money-bags-nn e0 y)))
+(B (name multi-millionaire) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (multi-millionaire-nn e0 y)))
+(B (name billionaire) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (billionaire-nn e0 y)))
+(B (name millionaire) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (millionaire-nn e0 y)))
+
+; OF - WEALTH
+(B (name of-rich) (=>(R#RICH  y x :0.9)(^(TS#WEALTH x)(of-in e1 x y))))
+
+
+; SOCIAL CLASS
+(B (name social_class) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(social-adj e0 x)(class-nn e1 x))))
+(B (name middle_class) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(middle-adj e0 x)(class-nn e1 x))))
+(B (name economy_class) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(economy-adj e0 x)(class-nn e1 x))))
+
+
+; TAX
+(B (name tax) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (tax-nn e0 x)))
+(B (name taxation) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (taxation-nn e0 x)))
+(B (name impost) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (impost-nn e0 x)))
+(B (name tribute) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (tribute-nn e0 x)))
+(B (name contribution) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (contribution-nn e0 x)))
+(B (name duty) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (duty-nn e0 x)))
+(B (name toll) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (toll-nn e0 x)))
+(B (name assessment) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (assessment-nn e0 x)))
+(B (name custom) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (custom-nn e0 x)))
+(B (name levy) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (levy-nn e0 x)))
+(B (name fiscal) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (fiscal-adj e0 x)))
+
+(B (name taxpayer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3))(taxpayer-nn e0 y)))
+(B (name ratepayer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3)) (ratepayer-nn e0 y)))
+(B (name tax-payer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3)) (tax-payer-nn e0 y)))
+(B (name tax-payer) (=>(^(TS#TAXATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y x :0.3)) (^(tax-nn e0 x)(payer-nn e1 y)(nn e2 y x))))
+
+; ACCESS TO EDUCATION
+
+(B (name access-to-education) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)) (^(access-nn e0 x)(to-in e1 x y)(education-nn e2 y))))
+(B (name access- education) (=>(^(TS#ACCESS-TO-EDUCATION e2 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)(R#EDUCATED x e0)) (^(access-vb e0 x y u)(education-nn e2 y))))
+(B (name get-education) (=>(^(TS#ACCESS-TO-EDUCATION e2 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)(R#EDUCATED x e0)) (^(get-vb e0 x y u)(education-nn e2 y))))
+
+(B (name education) (=>(^(TS#ACCESS-TO-EDUCATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)(R#EDUCATION x x)) (education-nn e0 x)))
+
+(B (name education) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)(R#EDUCATED x e0)) (educate-vb e0 u1 x u2)))
+
+(B (name education) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)(R#EDUCATED x e0)) (educated-adj e0 x)))
+(B (name education) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)(R#EDUCATED x e0)) (well-educated-adj e0 x)))
+
+
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; SOURCE WORDS;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; DISEASE
+(B (name disease) (=>(S#DISEASE x :0.9) (disease-nn e0 x)))
+(B (name illness) (=>(S#DISEASE x :0.9) (illness-nn e0 x)))
+(B (name disorder) (=>(S#DISEASE x :0.9) (disorder-nn e0 x)))
+(B (name sickness) (=>(S#DISEASE x :0.9) (sickness-nn e0 x)))
+(B (name malum) (=>(S#DISEASE x :0.9) (malum-nn e0 x)))
+(B (name morbus) (=>(S#DISEASE x :0.9) (morbus-nn e0 x)))
+(B (name malady) (=>(S#DISEASE x :0.9) (malady-nn e0 x)))
+(B (name medical-condition) (=>(S#DISEASE x :0.9) (^(condition-nn e0 x)(medical-adj e1 x))))
+(B (name plague) (=>(S#DISEASE x :0.9) (plague-nn e0 x)))
+ (B (name cancer) (=>(S#DISEASE x :0.9) (cancer-nn e0 x)))
+
+
+; SICK
+(B (name sick) (=>(^(S#DISEASE e0 :0.45)(R#SICK y e0 :0.3)) (sick-adj e0 y)))
+(B (name ill) (=>(^(S#DISEASE e0 :0.45)(R#SICK y e0 :0.3)) (ill-adj e0 y)))
+(B (name sore) (=>(^(S#DISEASE e0 :0.45)(R#SICK y e0 :0.3)) (sore-adj e0 y)))
+(B (name diseased) (=>(^(S#DISEASE e0 :0.45)(R#SICK y e0 :0.3)) (diseased-adj e0 y)))
+(B (name handicapped) (=>(^(S#DISEASE e0 :0.45)(R#SICK y e0 :0.3)) (handicapped-adj e0 y)))
+(B (name disabled) (=>(^(S#DISEASE e0 :0.45)(R#SICK y e0 :0.3)) (disabled-adj e0 y)))
+
+(B (name invalid) (=>(^(S#DISEASE e0 :0.45)(R#SICK y e0 :0.3)) (invalid-nn e0 y)))
+(B (name patient) (=>(^(S#DISEASE e0 :0.45)(R#SICK y e0 :0.3)) (patient-nn e0 y)))
+
+; OF - DISEASE
+(B (name of-disease) (=>(R#SICK  y x :0.9)(^(S#DISEASE x)(of-in e1 x y))))
+
+; BE SICK
+(B (name hurt) (=>(^(S#DISEASE e0 :0.3)(R#SICK y x :0.3))(hurt-vb e0 y u1 u2)))
+(B (name ache) (=>(^(S#DISEASE e0 :0.3)(R#SICK y x :0.3)) (ache-vb e0 y u1 u2)))
+(B (name suffer-from) (=>(^(S#DISEASE e0 :0.3)(R#SICK y x :0.3)) (^(suffer-vb e0 y u1 u2)(from-in e1 e0 x))))
+
+; CURE
+
+(B (name cure) (=>(^(S#DISEASE x :0.45)(SS#CURE e0 x  :0.45))(cure-nn e1 e0)))
+(B (name therapy) (=>(^(S#DISEASE x :0.45)(SS#CURE e0 x  :0.45))(therapy-nn e1 e0)))
+(B (name treatment) (=>(^(S#DISEASE x :0.45)(SS#CURE e0 x  :0.45))(treatment-nn e1 e0)))
+
+(B (name cure) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (cure-vb e0 y x u2)))
+(B (name treat) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (treat-vb e0 y x u2)))
+(B (name heal) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (heal-vb e0 y x u2)))
+
+
+(B (name unrecoverable) (=>(^(S# DISEASE x :0.2)(SS#CURE e1 x  :0.2)(R#SICK y e1 :0.1))(unrecoverable-adj e1 y)))
+(B (name incurable) (=>(^(S#DISEASE x :0.2)(SS#CURE e1 x  :0.2)(R#SICK y e1 :0.1)) (incurable -adj e1 y)))
+
+(B (name doctor) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x  :0.3)(R#CURE-AGENT y e0 :0.3))(doctor-nn e0 y)))
+(B (name physician) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x  :0.3)(R#CURE-AGENT y e0 :0.3))(physician-nn e0 y)))
+(B (name medicament) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x  :0.3)(R#CURE-AGENT y e0 :0.3))(medicament-nn e0 y)))
+
+
+; OF - CURE
+(B (name of-disease) (=>(S#DISEASE y :0.9)(^(S#CURE x)(of-in e1 x y))))
+
+; FROM/AGAINST - CURE
+(B (name from-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE e0)(from-in e1 e0 y))))
+(B (name against-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE e0)(against-in e1 e0 y))))
+
+; RECOVER
+
+(B (name recover) (=>(^(S#DISEASE x :0.3)(SS#RECOVER e0 x :0.3)(R#RECOVER-AGENT y e0 :0.3)) (recover-vb e0 y u1 u2)))
+(B (name recuperate) (=>(^(S#DISEASE x :0.3)(SS#RECOVER e0 x :0.3)(R#RECOVER-AGENT y e0 :0.3)) (recuperate-vb e0 y u1 u2)))
+(B (name convalesce) (=>(^(S#DISEASE x :0.3)(SS#RECOVER e0 x :0.3)(R#RECOVER-AGENT y e0 :0.3)) (convalesce-vb e0 y u1 u2)))
+
+(B (name recovery) (=>(^(S#DISEASE x :0.3)(SS#RECOVER e0 x :0.3)) (recovery-nn e1)))
+(B (name recuperation) (=>(^(S#DISEASE x :0.3)(SS#RECOVER e0 x :0.3)) (recuperation-nn e1)))
+(B (name convalescence) (=>(^(S#DISEASE x :0.3)(SS#RECOVER e0 x :0.3)) (convalescence-nn e1)))
+
+; OF - RECOVER
+(B (name of-cure) (=>(R#RECOVER-AGENT y :0.9)(^(SS#RECOVER x)(of-in e1 x y))))
+
+; FROM - RECOVER
+(B (name from-cure) (=>(S#DISEASE y :0.9)(^(SS#RECOVER e0)(from-in e1 e0 y))))
+
+
+; EPIDEMIC
+(B (name epidemic) (=>(^(S#DISEASE x :0.45)(SS#EPIDEMIC y x  :0.45)) (epidemic-nn e0 y)))
+(B (name epidemic2) (=>(^(S#DISEASE x :0.45)(SS#EPIDEMIC e0 x  :0.45)) (epidemic-adj e0 y)))
+(B (name pandemia) (=>(^(S#DISEASE x :0.45)(SS#EPIDEMIC y x  :0.45)) (pandemia-nn e0 y)))
+(B (name pandemic) (=>(^(S#DISEASE x :0.45)(SS#EPIDEMIC e0 x  :0.45)) (pandemic-adj e0 y)))
+(B (name virus) (=>(^(S#DISEASE x :0.45)(SS#EPIDEMIC y x  :0.45)) (virus-nn e0 y)))
+
+
+; SYMPTOM
+(B (name symptom) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOM y x  :0.45)) (symptom-nn e0 y)))
+(B (name symptomatic) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOM e0 x  :0.45)) (symptomatic-adj e0 y)))
+
+(B (name bleeding) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOM y x  :0.45))(bleeding-nn e0 y)))
+(B (name wound) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOM y x  :0.45)) (wound-nn e0 y)))
+(B (name pain) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOM y x  :0.45)) (pain-nn e0 y)))
+
+(B (name dismap)(=>(I#DISEASE x :0.9)(S#DISEASE x)))
+(B (name curemap)(=>(I#CURE e0 x :0.9)(SS#CURE e0 x)))
+
+; CRIME
+
+(B (name crime) (=>(S#CRIME x :0.9)(crime-nn e0 x)))
+(B (name offence) (=>(S#CRIME x :0.9)(offence-nn e0 x)))
+(B (name felony) (=>(S#CRIME x :0.9)(felony-nn e0 x)))
+(B (name delinquency) (=>(S#CRIME x :0.9)(delinquency-nn e0 x)))
+
+(B (name misdeed) (=>(S#CRIME x :0.9)(misdeed-nn e0 x)))
+(B (name malefaction) (=>(S#CRIME x :0.9)(malefaction-nn e0 x)))
+(B (name violation) (=>(S#CRIME x :0.9)(violation-nn e0 x)))
+(B (name guilty-conduct) (=>(S#CRIME x :0.9)(^(guilty-adj e1 x)(conduct-nn e0 x))))
+(B (name criminal-conduct) (=>(S#CRIME x :0.9)(^(criminal-adj e1 x)(conduct-nn e0 x))))
+(B (name public-wrong) (=>(S#CRIME x :0.9)(^(public-adj e1 x)(wrong-nn e0 x))))
+(B (name criminal-wrong) (=>(S#CRIME x :0.9)(^(criminal-adj e1 x)(wrong-nn e0 x))))
+(B (name criminal-act) (=>(S#CRIME e1 :0.9)(^(criminal-adj e1 x)(act-nn e0 x))))
+
+(B (name criminal) (=>(^(S#CRIME e0 :0.45)(R#CRIME-AGENT x e0 :0.45)) (criminal-adj e0 x)))
+(B (name criminal1) (=>(^(S#CRIME e0 :0.45)(R#CRIME-AGENT x e0 :0.45)) (criminal-nn e0 x)))
+(B (name delinquent) (=>(^(S#CRIME e0 :0.45)(R#CRIME-AGENT x e0 :0.45)) (delinquent-nn e0 x)))
+(B (name offender) (=>(^(S#CRIME e0 :0.45)(R#CRIME-AGENT x e0 :0.45)) (offender-nn e0 x)))
+(B (name outlaw) (=>(^(S#CRIME e0 :0.45)(R#CRIME-AGENT x e0 :0.45)) (outlaw-nn e0 x)))
+(B (name culprit) (=>(^(S#CRIME e0 :0.45)(R#CRIME-AGENT x e0 :0.45)) (culprit-nn e0 x)))
+(B (name malefactor) (=>(^(S#CRIME e0 :0.45)(R#CRIME-AGENT x e0 :0.45)) (malefactor-nn e0 x)))
+
+(B (name prostitute) (=>(S#CRIME x :0.9)(prostitute-nn e0 x)))
+
+; ROBBERY
+(B (name robbery) (=>(^(S#CRIME x :0.45)(SS#ROBBERY x x :0.45))(robbery-nn e0 x)))
+(B (name pillage) (=>(^(S#CRIME x :0.45)(SS#ROBBERY x x :0.45))(pillage-nn e0 x)))
+(B (name plundering) (=>(^(S#CRIME x :0.45)(SS#ROBBERY x x :0.45))( plundering-nn e0 x)))
+(B (name booty) (=>(^(S#CRIME x :0.45)(SS#ROBBERY x x :0.45))(booty-nn e0 x)))
+(B (name plunder) (=>(^(S#CRIME x :0.45)(SS#ROBBERY x x :0.45))(plunder-nn e0 x)))
+
+(B (name robber) (=>(^(S#CRIME e0 :0.3)(SS#ROBBERY e0 e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (robber-nn e0 x)))
+(B (name burglar) (=>(^(S#CRIME e0 :0.3)(SS#ROBBERY e0 e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (burglar-nn e0 x)))
+(B (name plunderer) (=>(^(S#CRIME e0 :0.3)(SS#ROBBERY e0 e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (plunderer-nn e0 x)))
+(B (name plurdetor) (=>(^(S#CRIME e0 :0.3)(SS#ROBBERY e0 e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (plurdetor-nn e0 x)))
+
+
+; THEFT
+(B (name larceny) (=>(^(S#CRIME x :0.45)(SS#THEFT x x :0.45)) (larceny-nn e0 x)))
+(B (name stealage) (=>(^(S#CRIME x :0.45)(SS#THEFT x x :0.45)) (stealage-nn e0 x)))
+(B (name stealing) (=>(^(S#CRIME x :0.45)(SS#THEFT x x :0.45)) (stealing-nn e0 x)))
+(B (name thievery) (=>(^(S#CRIME x :0.45)(SS#THEFT x x :0.45)) (thievery-nn e0 x)))
+
+(B (name steal) (=>(^(S#CRIME e0 :0.2)(SS#THEFT e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#THEFT-THEME z e0 :0.2)) (steal-vb e0 x z u2)))
+(B (name pilfer) (=>(^(S#CRIME e0 :0.2)(SS#THEFT e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2) (R#THEFT-THEME z e0 :0.2)) (pilfer-vb e0 x z u2)))
+(B (name filch) (=>(^(S#CRIME e0 :0.2)(SS#THEFT e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2) (R#THEFT-THEME z e0 :0.2)) (filch-vb e0 x z u2)))
+(B (name pinch) (=>(^(S#CRIME e0 :0.2)(SS#THEFT e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2) (R#THEFT-THEME z e0 :0.2)) (pinch-vb e0 x z u2)))
+(B (name plunder) (=>(^(S#CRIME e0 :0.2)(SS#THEFT e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2) (R#THEFT-THEME z e0 :0.2)) (plunder-vb e0 x z u2)))
+
+(B (name theft) (=>(^(S#CRIME x :0.3)(SS#THEFT x x :0.3) (R#CRIME-AGENT x e0 :0.3)) (theft-nn e0 x)))
+
+; FROM - CRIME
+(B (name from-theft) (=>(R#CRIME-VICTIM y :0.9)(^(SS#THEFT e0)(from-in e1 e0 y))))
+(B (name from-robbery) (=>(R#CRIME-VICTIM y :0.9)(^(SS#ROBBERY e0)(from-in e1 e0 y))))
+
+(B (name violence) (=>(^(S#CRIME x :0.45)(SS#VIOLENCE x x :0.45))(violence-nn e0 x)))
+
+(B (name crimemap)(=>(I#CRIME x :0.9)(S#CRIME x)))
+
+; PUNISHMENT
+(B (name punishment) (=>(S#PUNISHMENT x :0.9)(punishment-nn e0 x)))
+(B (name penalty) (=>(S#PUNISHMENT x :0.9)(penalty-nn e0 x)))
+(B (name sentence) (=>(S#PUNISHMENT x :0.9)(sentence-nn e0 x)))
+(B (name mulct) (=>(S#PUNISHMENT x :0.9)(mulct-nn e0 x)))
+(B (name fine) (=>(S#PUNISHMENT x :0.9)(fine-nn e0 x)))
+
+(B (name punish) (=>(^(S#PUNISHMENT e0 :0.3)(R#PUNISHMENT-AGENT x e0 :0.3)(R#PUNISHMENT-VICTIM y e0 :0.3))(punish-vb e0 x y u)))
+
+(B (name punishmentmap)(=>(I#PUNISHMENT x :0.9)(S#PUNISHMENT x)))
+
+; LIMITATION
+
+(B (name trap) (=>(^(S#LIMITATION x :0.45)(SS#TRAP x x :0.45))(trap-nn e0 x)))
+
+(B (name prison) (=>(^(S#LIMITATION x :0.45)(SS#PRISON x x :0.45))(prison-nn e0 x)))
+(B (name jail) (=>(^(S#LIMITATION x :0.45)(SS#PRISON x x :0.45))(jail-nn e0 x)))
+
+(B (name jail) (=>(^(S#LIMITATION e0 :0.2)(SS#PRISON e0 e0 :0.2)(R#LIMITATION-AGENT x e0 :0.2)(R#LIMITATION-PATIENT y e0 :0.2))(imprison-vb e0 x y u)))
+
+(B (name slavery) (=>(^(S#LIMITATION x :0.45)(SS#SLAVERY x x :0.45))( slavery-nn e0 x)))
+(B (name servitude) (=>(^(S#LIMITATION x :0.45)(SS#SLAVERY x x :0.45))( servitude-nn e0 x)))
+(B (name bondage) (=>(^(S#LIMITATION x :0.45)(SS#SLAVERY x x :0.45))( bondage-nn e0 x)))
+(B (name thraldom) (=>(^(S#LIMITATION x :0.45)(SS#SLAVERY x x :0.45))( thraldom-nn e0 x)))
+
+(B (name slave) (=>(^(S#LIMITATION u :0.3)(SS#SLAVERY e0 u :0.3)(R#LIMITATION-PATIENT x e0 :0.3))(slave-nn e0 x)))
+(B (name bondslave) (=>(^(S#LIMITATION u :0.3)(SS#SLAVERY e0 u :0.3)(R#LIMITATION-PATIENT x e0 :0.3))(bondslave-nn e0 x)))
+
+(B (name fishing-net) (=>(S#LIMITATION x :0.9)(^(fishing-adj e1 x)(net-nn e0 x))))
+
+(B (name limitationmap)(=>(I#LIMITATION x :0.9)(S#LIMITATION x)))
+
+; WATER
+
+(B (name water) (=>(S#WATER x :0.9) (water-nn e0 x)))
+
+(B (name watermap)(=>(I#WATER x :0.9)(S#WATER x)))
+

@@ -6,6 +6,7 @@ import re
 import time
 import thread
 import socket
+import json
 
 import extract_CMs_from_hypotheses
 from extract_CMs_from_hypotheses import *
@@ -26,7 +27,7 @@ BOXER2HENRY = "%s/pipelines/English/Boxer2Henry.py" % METAPHOR_DIR
 PARSER2HENRY = "%s/pipelines/common/IntParser2Henry.py" % METAPHOR_DIR
 
 # Compiled knowledge bases
-EN_KBPATH = "%s/KBs/English/English_compiled_KB.da" % METAPHOR_DIR
+EN_KBPATH = "%s/KBs/English/English_compiled_KB_2.da" % METAPHOR_DIR
 ES_KBPATH = "%s/KBs/Spanish/Spanish_compiled_KB.da" % METAPHOR_DIR
 RU_KBPATH = "%s/KBs/Russian/Russian_compiled_KB_2.da" % METAPHOR_DIR
 FA_KBPATH = "%s/KBs/Farsi/Farsi_compiled_KB.da" % METAPHOR_DIR
@@ -34,16 +35,22 @@ FA_KBPATH = "%s/KBs/Farsi/Farsi_compiled_KB.da" % METAPHOR_DIR
 # switches
 kbcompiled = True
 
-DESCRIPTION = "Abductive engine output; isiMetaphorConfirmed: abduction confirmes metaphor;" \
-              "isiTargetDomainNativeLanguage: Target domain defined by abduction (in native language); " \
-              "isiTargetSubdomainNativeLanguage: Target subdomain defined by abduction (in native language); "\
-		"isiTargetDomainEnglish: Target domain defined by abduction (in English); " \
-              "isiTargetSubdomainEnglish: Target subdomain defined by abduction (in English); "\
-		"isiSourceDomainNativeLanguage: Source domain defined by abduction (in native language); " \
-              "isiSourceSubdomainNativeLanguage: Source subdomain defined by abduction (in native language); "\
-		"isiSourceDomainEnglish: Source domain defined by abduction (in English); " \
-              "isiSourceSubdomainEnglish: Source subdomain defined by abduction (in English); "\
-		"isiTargetSourceMapping: Target-Source mapping (metaphor interpretation) in form of logical form found by abduction. "
+# Katya: this should be the new output, when LCC updates their repository and accepts new fields.
+#DESCRIPTION = "Abductive engine output; " \
+#		"isiMetaphorConfirmed: Abduction confirmes linguistic metaphor;" \
+#              "isiTargetDomain: Target domain defined by abduction; " \
+#              "isiTargetSubdomain: Target subdomain defined by abduction ; "\
+#		"isiSourceDomain: Source domain defined by abduction ; " \
+#              "isiSourceSubdomain: Source subdomain defined by abduction ; "\
+#		"isiTargetWords: Words from target domain found by abduction ; " \
+#              "isiSourceWords: Words from source domain found by abduction ; "\
+#		"isiTargetSourceMapping: Target-Source mapping (metaphor interpretation) as logical form found by abduction. "
+
+DESCRIPTION = "Abductive engine output; " \
+		"isiAbductiveHypothesis: Abduction detects target and source domains/subdomains" \
+              "and words referring to the domains; " \
+		"isiTargetSourceMapping: Target-Source mapping as logical form found by abduction " \
+		"that explains the methaphor and motivates the domains."
 
 def extract_hypotheses(inputString):
     output_struct = []
@@ -51,6 +58,8 @@ def extract_hypotheses(inputString):
     p = re.compile('<result-inference target="(.+)"')
     target = ""
     hypothesis = ""
+    unification = False
+    explanation = False
 
     for line in inputString.splitlines():
 
@@ -76,12 +85,23 @@ def extract_hypotheses(inputString):
             explanation = True
 
         elif line.startswith("</result-inference>"):
+		
+            # Katya: new_output_struct_item should be the new output, when LCC updates their repository and accepts new fields.
+            new_output_struct_item = extract_CM_mapping(target,hypothesis)
 
-            output_struct_item = extract_CM_mapping(target,hypothesis)
-            #print hypothesis
-            #print json.dumps(output_struct_item, ensure_ascii=False)
+            output_struct_item["isiAbductiveExplanation"] = new_output_struct_item["isiTargetSourceMapping"]	
+            output_struct_item["isiAbductiveHypothesis"] = "TARGET DOMAIN AND SUBDOMAIN[" + new_output_struct_item["isiTargetDomain"] + \
+                                                            " " + new_output_struct_item["isiTargetSubdomain"] + "] " + \
+                                                            "TARGET WORDS[" +  new_output_struct_item["isiTargetWords"] + "] " + \
+                                                            "SOURCE DOMAIN AND SUBDOMAIN[" + new_output_struct_item["isiSourceDomain"] + \
+                                                            " " + new_output_struct_item["isiSourceSubdomain"] + "] " + \
+                                                            "SOURCE WORDS[" +  new_output_struct_item["isiSourceWords"] + "]"
 
+            output_struct_item["id"] = target
             output_struct_item["isiDescription"] = DESCRIPTION
+            output_struct_item["isiAbductiveUnification"] = ''
+            output_struct_item["isiAbductiveProofgraph"] = ''
+
             output_struct.append(output_struct_item)
             target = ""
 

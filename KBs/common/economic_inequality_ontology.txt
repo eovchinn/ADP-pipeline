@@ -1,34 +1,95 @@
 ; DISEASE INTERNATIONAL
-(B (name disease)(=> (^(M#CAUSE x e0 :0.2)(M#NOT e0 e1 :0.2)(M#FUNCTION  e1 :0.2)(FUNCTION-AGENT y e1 :0.2))(^ (SE#DISEASE x)(R#SICK  y x))))
-(B (name disease2)(=> (^(M#CAUSE x e0 :0.3)(M#NOT e0 e1 :0.3)(M#FUNCTION e1 :0.3)) (SE#DISEASE x)))
-(B (name cure)(=> (^(M#CAUSE y e1 :0.2)( M#NOT e1 e2 :0.2)( M#EXIST e2 :0.2) (M#EXISTING-THING x e2 :0.2))(^ (SSE#CURE e0 x)(R#CURE-AGENT y e0))))
+
+(B (name disease)(=> (^(M#CAUSE-NOT-FUNCTION e0 :0.3)(M#CAUSING-THING_F x e0 :0.3)(M#FUNCTION-AGENT y e0 :0.3)) (^ (I#DISEASE x)(R#SICK y x))))
+
+(B (name disease2) (=> (^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#CAUSING-THING_F x e0 :0.45)) (I#DISEASE x)))
+
+(B (name cure)(=> (^(M#CAUSE-NOT-EXIST e1 :0.3)(M#CAUSING-THING_E y e1 :0.3)(M#EXISTING-THING x e1 :0.3)) (^ (I#CURE e0 d)(R#CURE-AGENT y e0)(R#SICK x d))))
+
+(B (name cure2)(=> (^(M#CAUSE-NOT-EXIST e1 :0.46)(M#CAUSING-THING_E y e1 :0.46)) (^ (I#CURE e0 x)(R#CURE-AGENT y e0))))
+
+(B (name cure3)(=> (M#CAUSE-NOT-EXIST e1 :0.95) (I#CURE e0 d)))
 
 ; BASE INTERNATIONAL
-(B (name base)(=> (^(M#SUPPORT e1 :0.3)(M#SUPPORTER x e1 :0.3) (M#SUPPORTED y e1 :0.3)) (^(SE#BASE x)(R#BASE-STRUCTURE y x))))
-(B (name base2)(=> (^(M#SUPPORT e1 :0.45)(M#SUPPORTER x e1 :0.45)) (SE#BASE x)))
-; (B (name strengthen)(=> (^(M#cause e1 :0.45)(M#strong y :0.45)) (^(SSE#STRENGTHEN e0 x)(R#BASE-STRUCTURE y x))))
+
+(B (name base)(=> (^(M#SUPPORT e1 :0.3)(M#SUPPORTER z e1 :0.3) (M#SUPPORTED y e1 :0.3)) (^(I#BASE x)(R#BASE-AGENT z x)(R#BASE-STRUCTURE y x))))
+
+(B (name base1)(=> (^(M#SUPPORT e1 :0.33)(M#SUPPORTER x e1 :0.33) (M#SUPPORTED y e1 :0.33)) (^(I#BASE x)(R#BASE-STRUCTURE y x))))
+
+(B (name base2)(=> (^(M#SUPPORT e1 :0.45)(M#SUPPORTER x e1 :0.45)) (I#BASE x))) 
 
 ; WAR INTERNATIONAL
-(B (name fight)(=> (^(M#CAUSE z e1 :0.2)(M#NOT e1 e2 :0.2)(M#EXIST e2 :0.2)(M#EXISTING-THING y e2 :0.2)) (^(SSE#FIGHT x)(R#WAR-ENEMY y x )(R#WAR-AGENT z x))))
-(B (name enemy)(=> (^(M#CAUSE x e0 :0.2)(M#NOT e0 e1 :0.2)(M#FUCTION e1 :0.2)(M#FUNCTION-AGENT z e1 :0.2)) (^ (SSE#ENEMY x e0)(R#WAR-AGENT z e0))))
+
+(B (name fight)(=> (^(M#CAUSE-NOT-EXIST e1 :0.3)(M#CAUSING-THING_E z e1 :0.3)(M#EXISTING-THING y e1 :0.3)) (^(I#FIGHT x e0)(R#WAR-ENEMY y x)(R#WAR-AGENT z x))))
+
+(B (name fight2)(=> (^(M#CAUSE-NOT-EXIST e1 :0.46)(M#EXISTING-THING y e1 :0.46)) (^(I#FIGHT x e0)(R#WAR-ENEMY y x))))
+
+(B (name fight3)(=> (^(M#CAUSE-NOT-EXIST e1 :0.46)(M#CAUSING-THING_E z e1 :0.46)) (^(I#FIGHT x e0)(R#WAR-AGENT z x))))
+
+(B (name fight4)(=> (M#CAUSE-NOT-EXIST e1 :0.95) (I#FIGHT x e0)))
+
+
+(B (name enemy)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING_F x e1 :0.3)(M#FUNCTION-AGENT z e1 :0.3)) (^ (I#ENEMY x e0)(R#WAR-AGENT z e0))))
+
+(B (name enemy2)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#CAUSING-THING_F x e1 :0.45)) (I#ENEMY x e0)))
+
 
 ; WATER RUSSIAN
-(B (name water)(=> (M#MOVE-QUICKLY y :0.8) (^(SN#ВОДА x)(R#MATTER  y x))))
- (B (name water3)(=> (M#MOVE-QUICKLY x :0.9) (SN#ВОДА x)))
+
+(B (name stream)(=> (M#MOVE-QUICKLY x :0.8) (^(SS#ПОТОК/STREAM e0 y)(R#STREAMING x e0))))
+
+(B (name water)(=> (M#MOVE-QUICKLY y :0.8) (^(S#ВОДА/WATER x)(R#MATTER y x))))
+(B (name water2)(=> (M#MOVE-QUICKLY x :0.95) (S#ВОДА/WATER x)))
+
+
+
+; WATER ENGLISH
+
+(B (name water3)(=> (M#SATISFY-NEEDS x :0.9) (S#WATER x)))
 
 ; WATER INTERNATIONAL
-(B (name body_of_water)(=> (M#LARGE-AMOUNT-OF z :0.9) (^(SSE#BODY-OF-WATER y x)(R#MATTER  z y))))
-(B (name water5)(=> (M#SATISFY-NEEDS x :0.9) (SE#WATER x)))
-(B (name drought)(=> (^(M#NOT e0 e1 :0.3)(M#EXIST e1 :0.3)(M#EXISTING-THING x e1 :0.3)) (SSE#DROUGHT x)))
-(B (name shoal)(=> (^(M#NOT e0 e1 :0.3)(M#EXIST e1 :0.3)(M#EXISTING-THING x e1 :0.3)) (SSE#SHOAL x)))
+
+(B (name body_of_water)(=> (M#LARGE-AMOUNT-OF z :0.9) (^(I#BODY-OF-WATER y x)(R#MATTER  z y))))
+
+(B (name drought)(=> (^(M#NOT-EXIST e0 :0.45)(M#EXISTING-THING x e0 :0.45)) (^(I#DROUGHT e2 u)(R#STREAMING x e2))))
+
+(B (name drought2)(=> (M#NOT-EXIST e0 :0.9) (I#DROUGHT e2 u)))
+
+(B (name shoal) (=> (^(M#NOT-EXIST e0 :0.45)(M#EXISTING-THING x e0 :0.45)) (^(I#SHOAL e2 u)(R#STREAMING x e2))))
+
+(B (name shoal2)(=> (M#NOT-EXIST e0 :0.9) (I#SHOAL e2 u)))
+
 
 ; SCHOOL INTERNATIONAL
 
-(B (name school)(=> (^(M#CAUSE x e0 :0.2)(M#UNDERSTAND e0 :0.2)(M#UNDERSTAND-AGENT z e0 :0.2) (M#UNDERSTAND-THEME y e0 :0.2)) (^(SE#SCHOOL x)(R#SCHOOL-SUBJECT  y x)(R#SCHOOL-STUDENT z x))))
+(B (name school1)(=> (^(M#CAUSE-UNDERSTAND e0 :0.2)(M#CAUSING-THING_U t e0 :0.2)(M#UNDERSTAND-AGENT z e0 :0.2) (M#UNDERSTAND-THEME y e0 :0.2)) (^(R#SCHOOL-TEACHER t x)(R#SCHOOL-SUBJECT  y x)(R#SCHOOL-STUDENT z x))))
 
-(B (name school2)(=> (^(M#CAUSE x e0 :0.3)(M#UNDERSTAND e0 :.3)(M#UNDERSTAND-THEME y e0 :0.3)) (^(SE#SCHOOL x)(R#SCHOOL-SUBJECT  y x))))
+(B (name school2) (=> (^(M#CAUSE-UNDERSTAND e0 :0.3)(M#CAUSING-THING_U t e0 :0.3) (M#UNDERSTAND-THEME y e0 :0.3)) (^(R#SCHOOL-TEACHER t x)(R#SCHOOL-SUBJECT y x))))
 
-(B (name school)(=> (^(M#CAUSE x e0 :0.3)(M#UNDERSTAND e0 z y :0.3)(M#UNDERSTAND-AGENT z e0 :0.3)) (^(SE#SCHOOL x)(R#SCHOOL-STUDENT z x))))
+(B (name school3) (=> (^(M#CAUSE-UNDERSTAND e0 :0.3)(M#CAUSING-THING_U t e0 :0.3)(M#UNDERSTAND-AGENT z e0 :0.3)) (^(R#SCHOOL-TEACHER t x)(R#SCHOOL-STUDENT z x))))
 
-(B (name school)(=> (^(M#CAUSE x e0 :0.45)(M#UNDERSTAND e0 :.45))(SE#SCHOOL x)))
+(B (name school4) (=> (^(M#CAUSE-UNDERSTAND e0 :0.46)(M#CAUSING-THING_U t e0 :0.46))(R#SCHOOL-TEACHER t x)))
+
+(B (name school5) (=> (M#CAUSE-UNDERSTAND e0 :0.95)(I#SCHOOL x)))
+
+
+; CRIME INTERNATIONAL
+
+(B (name crime)(=> (^(M#AGAINST-SOCIETY-ACTION e0 :0.3)(M#AGAINST-SOCIETY-ACTOR x e0 :0.3)(M#AGAINST-SOCIETY-ACTION-VICTIM y e0 :0.3)) (^(I#CRIME e0)(R#CRIME-AGENT x e0)(R#CRIME-VICTIM y e0))))
+
+(B (name crime2)(=> (^(M#AGAINST-SOCIETY-ACTION e0 :0.45)(M#AGAINST-SOCIETY-ACTOR x e0 :0.45)) (^(I#CRIME e0)(R#CRIME-AGENT x e0))))
+
+(B (name crime3)(=> (^(M#AGAINST-SOCIETY-ACTION e0 :0.45)(M#AGAINST-SOCIETY-ACTION-VICTIM y e0 :0.45)) (^(I#CRIME e0)(R#CRIME-VICTIM y e0))))
+
+(B (name crime4)(=> (M#AGAINST-SOCIETY-ACTION e0 :0.91) (I#CRIME e0)))
+
+; LIMITATION INTERNATIONAL
+
+(B (name limitation) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING_F x e1 :0.3)(M#FUNCTION-AGENT y e1 :0.3)) (^(I#LIMITATION e0)(R#LIMITATION-AGENT x e0)(R#LIMITATION-PATIENT y e0))))
+
+(B (name limitation2) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#CAUSING-THING_F x e1 :0.45)) (^(I#LIMITATION e0)(R#LIMITATION-AGENT x e0))))
+
+(B (name limitation3) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.31)(M#CAUSING-THING_F e0 e1 :0.31)(M#FUNCTION-AGENT y e1 :0.31)) (^(I#LIMITATION e0)(R#LIMITATION-PATIENT y e0))))
+
+(B (name limitation4) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.47)(M#CAUSING-THING_F e0 e1 :0.47)) (I#LIMITATION e0)))
 
