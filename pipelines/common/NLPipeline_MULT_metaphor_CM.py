@@ -197,9 +197,12 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
     # merge ADB result and input json document
     for hyp in hypotheses:
         for ann in request_body_dict["metaphorAnnotationRecords"]:
-            if int(ann["id"]) == int(hyp["id"]):
-                for key, value in hyp.items():
-                    ann[key] = value
+            try:
+                if int(ann["id"]) == int(hyp["id"]):
+                    for key, value in hyp.items():
+                        ann[key] = value
+            except Exception:
+                pass
 
     return request_body_dict
 
