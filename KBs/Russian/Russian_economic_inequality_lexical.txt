@@ -2,226 +2,422 @@
 ; TARGET WORDS;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; POVERTY
-(B (name bednost) (=>(^(TSN#БЕДНОСТЬ x :0.45)(TSE#POVERTY x :0.45)(TE#ECONOMIC-INEQUALITY u :0))(бедность-nn e0 x)))
-(B (name bezdenezhje) (=>(^(TSN#БЕДНОСТЬ x :0.45)(TSE#POVERTY x :0.45) (TE#ECONOMIC-INEQUALITY u :0))(безденежье-nn e0 x)))
-(B (name stesnennost) (=>(^(TSN#БЕДНОСТЬ x :0.45)(TSE#POVERTY x :0.45) (TE#ECONOMIC-INEQUALITY u :0))( стеснённость-nn e0 x)))
-(B (name stesnennost2) (=>(^(TSN#БЕДНОСТЬ x :0.45)(TSE#POVERTY x :0.45) (TE#ECONOMIC-INEQUALITY u :0))( стесненность-nn e0 x)))
-(B (name nishheta) (=>(^(TSN#БЕДНОСТЬ x :0.45)(TSE#POVERTY x :0.45) (TE#ECONOMIC-INEQUALITY u :0))(нищета-nn e0 x)))
-(B (name nuzhda) (=>(^(TSN#БЕДНОСТЬ x :0.45)(TSE#POVERTY x :0.45) (TE#ECONOMIC-INEQUALITY u :0))(нужда-nn e0 x)))
+(B (name bednost) (=>(^(TS#БЕДНОСТЬ/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(бедность-nn e0 x)))
+(B (name bezdenezhje) (=>(^(TS#БЕДНОСТЬ/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(безденежье-nn e0 x)))
+(B (name stesnennost) (=>(^(TS#БЕДНОСТЬ/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) ( стеснённость-nn e0 x)))
+(B (name stesnennost2) (=>(^(TS#БЕДНОСТЬ/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) ( стесненность-nn e0 x)))
+(B (name nishheta) (=>(^(TS#БЕДНОСТЬ/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (нищета-nn e0 x)))
+(B (name nuzhda) (=>(^(TS#БЕДНОСТЬ/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (нужда-nn e0 x)))
 
 ; POOR
-(B (name bednyj) (=>(^(TN#БЕДНОСТЬ x :0.3)(TE#POVERTY x :0.3)(R#POOR y x :0.3))(бедный-adj e0 y)))
-(B (name nishhij) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(нищий-adj e0 y)))
-(B (name neimushhij) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(неимущий-adj e0 y)))
-(B (name maloimushhij) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(малоимущий-adj e0 y)))
-(B (name nebogatyj) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(небогатый-adj e0 y)))
-(B (name nuzhdajushhijsja) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x  :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(нуждающийся-adj e0 y)))
-(B (name meloobespechennyj) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x  :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(малообеспеченный-adj e0 y)))
-(B (name neobespechennyj) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x  :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(необеспеченный-adj e0 y)))
+(B (name bednyj) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3))(бедный-adj e0 y)))
+(B (name nishhij) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (нищий-adj e0 y)))
+(B (name neimushhij) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (неимущий-adj e0 y)))
+(B (name maloimushhij) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (малоимущий-adj e0 y)))
+(B (name nebogatyj) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (небогатый-adj e0 y)))
+(B (name nuzhdajushhijsja) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (нуждающийся-adj e0 y)))
+(B (name meloobespechennyj) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (малообеспеченный-adj e0 y)))
+(B (name neobespechennyj) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (необеспеченный-adj e0 y)))
 
 ; POOR PERSON
-(B (name bednjak) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x  :0.3) (TE#ECONOMIC-INEQUALITY u :0))(бедняк-nn e0 y)))
-(B (name bosjak) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(босяк-nn e0 y)))
-(B (name oborvanec) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x  :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(оборванец-nn e0 y)))
-(B (name bomzh) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(бомж-nn e0 y)))
-(B (name bednyjn) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(бедный-nn e0 y)))
-(B (name nishhijn) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(нищий-nn e0 y)))
-(B (name neimushhijn) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(неимущий-nn e0 y)))
-(B (name maloimushhijn) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(малоимущий-nn e0 y)))
+(B (name bednjak) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (бедняк-nn e0 y)))
+(B (name bosjak) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (босяк-nn e0 y)))
+(B (name oborvanec) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (оборванец-nn e0 y)))
+(B (name bomzh) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (бомж-nn e0 y)))
+(B (name bednyjn) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (бедный-nn e0 y)))
+(B (name nishhijn) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (нищий-nn e0 y)))
+(B (name neimushhijn) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (неимущий-nn e0 y)))
+(B (name maloimushhijn) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (малоимущий-nn e0 y)))
 
 ; BECOME POOR
-(B (name obednet) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(обеднеть-vb e0 y u1 u2)))
-(B (name bednet) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(беднеть-vb e0 y u1 u2)))
-(B (name obnishhat) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(обнищать-vb e0 y u1 u2)))
-(B (name nishhat) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(нищать-vb e0 y u1 u2)))
-(B (name razoritsja) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(разориться-vb e0 y u1 u2)))
-(B (name razorjatsja) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(разоряться-vb e0 y u1 u2)))
-(B (name progorat) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(прогорать-vb e0 y u1 u2)))
-(B (name progoret) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(прогореть-vb e0 y u1 u2)))
-(B (name lishitsja_imushhestva) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(^(лишиться-vb e0 y z u2)(имущество-nn e1 z))))
-(B (name lishatsja_imushhestva) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(^(лишаться-vb e0 y z u2)(имущество-nn e1 z))))
-(B (name lishitsja_dostatka) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(^(лишиться-vb e0 y z u2)(достаток-nn e1 z))))
-(B (name lishatsja_dostatka) (=>(^(TSN#БЕДНОСТЬ x :0.3)(TSE#POVERTY x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(^(лишаться-vb e0 y z u2)(достаток -nn e1 z))))
+(B (name obednet) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3))(обеднеть-vb e0 y u1 u2)))
+(B (name bednet) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (беднеть-vb e0 y u1 u2)))
+(B (name obnishhat) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (обнищать-vb e0 y u1 u2)))
+(B (name nishhat) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (нищать-vb e0 y u1 u2)))
+(B (name razoritsja) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (разориться-vb e0 y u1 u2)))
+(B (name razorjatsja) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (разоряться-vb e0 y u1 u2)))
+(B (name progorat) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (прогорать-vb e0 y u1 u2)))
+(B (name progoret) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (прогореть-vb e0 y u1 u2)))
+(B (name lishitsja_imushhestva) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (^(лишиться-vb e0 y z u2)(имущество-nn e1 z))))
+(B (name lishatsja_imushhestva) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (^(лишаться-vb e0 y z u2)(имущество-nn e1 z))))
+(B (name lishitsja_dostatka) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (^(лишиться-vb e0 y z u2)(достаток-nn e1 z))))
+(B (name lishatsja_dostatka) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (^(лишаться-vb e0 y z u2)(достаток -nn e1 z))))
 
 ; OF - POOR
-(B (name of-poor) (=>(R#POOR y x :0.9)(^(TN#БЕДНОСТЬ x)(of-in e1 x y))))
+(B (name of-poor) (=>(R#POOR y x :0.9)(^(TS#БЕДНОСТЬ/POVERTY x)(of-in e1 x y))))
 
 ; WEALTH
-(B (name bogatstvo) (=>(^(TSN#БОГАТСТВО x :0.45)(TSE#WEALTH x :0.45) (TE#ECONOMIC-INEQUALITY u :0))(богатство-nn e0 x)))
-(B (name blagosostojanie) (=>(^(TSN#БОГАТСТВО x :0.45)(TSE#WEALTH x :0.45) (TE#ECONOMIC-INEQUALITY u :0))(благосостояние-nn e0 x)))
-(B (name procvetanie) (=>(^(TSN#БОГАТСТВО x :0.45)(TSE#WEALTH x :0.45) (TE#ECONOMIC-INEQUALITY u :0))(процветание-nn e0 x)))
-(B (name izobilie) (=>(^(TSN#БОГАТСТВО x :0.45)(TSE#WEALTH x :0.45) (TE#ECONOMIC-INEQUALITY u :0))(изобилие-nn e0 x)))
-(B (name obilie) (=>(^(TSN#БОГАТСТВО x :0.45)(TSE#WEALTH x :0.45) (TE#ECONOMIC-INEQUALITY u :0))(обилие-nn e0 x)))
-(B (name roskosh) (=>(^(TSN#БОГАТСТВО x :0.45)(TSE#WEALTH x :0.45) (TE#ECONOMIC-INEQUALITY u :0))(роскошь-nn e0 x)))
-(B (name imushhestvo) (=>(^(TSN#БОГАТСТВО x :0.45)(TSE#WEALTH x :0.45) (TE#ECONOMIC-INEQUALITY u :0))(имущество-nn e0 x)))
-(B (name dengi) (=>(^(TSN#БОГАТСТВО x :0.45)(TSE#WEALTH x :0.45) (TE#ECONOMIC-INEQUALITY u :0))(деньги-nn e0 x)))
-(B (name denezhnyj) (=>(^(TSN#БОГАТСТВО x :0.45)(TSE#WEALTH x :0.45) (TE#ECONOMIC-INEQUALITY u :0))(денежный-nn e0 x)))
+(B (name bogatstvo) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(богатство-nn e0 x)))
+(B (name blagosostojanie) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (благосостояние-nn e0 x)))
+(B (name procvetanie) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (процветание-nn e0 x)))
+(B (name izobilie) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (изобилие-nn e0 x)))
+(B (name obilie) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (обилие-nn e0 x)))
+(B (name roskosh) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (роскошь-nn e0 x)))
+(B (name imushhestvo) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (имущество-nn e0 x)))
+(B (name dengi) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (деньги-nn e0 x)))
+(B (name denezhnyj) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (денежный-nn e0 x)))
 
 ; RICH PERSON
-(B (name bogach) (=>(^(TSN#БОГАТСТВО x :0.3)(TSE#WEALTH x :0.3)(R#RICH y x) (TE#ECONOMIC-INEQUALITY u :0))(богач-nn e0 y)))
-(B (name bogatej) (=>(^(TSN#БОГАТСТВО x :0.3)(TSE#WEALTH x :0.3)(R#RICH y x) (TE#ECONOMIC-INEQUALITY u :0))( богатей-nn e0 y)))
-(B (name tolstosum) (=>(^(TSN#БОГАТСТВО x :0.3)(TSE#WEALTH x :0.3)(R#RICH y x) (TE#ECONOMIC-INEQUALITY u :0))( толстосум-nn e0 y)))
-(B (name milliarder) (=>(^(TSN#БОГАТСТВО x :0.3)(TSE#WEALTH x :0.3)(R#RICH y x) (TE#ECONOMIC-INEQUALITY u :0))( миллиардер-nn e0 y)))
-(B (name millioner) (=>(^(TSN#БОГАТСТВО x :0.3)(TSE#WEALTH x :0.3)(R#RICH y x) (TE#ECONOMIC-INEQUALITY u :0))( миллионер-nn e0 y)))
-(B (name nuvorish) (=>(^(TSN#БОГАТСТВО x :0.3)(TSE#WEALTH x :0.3)(R#RICH y x) (TE#ECONOMIC-INEQUALITY u :0))( нувориш-nn e0 y)))
-(B (name bogatyj) (=>(^(TSN#БОГАТСТВО x :0.3)(TSE#WEALTH x :0.3)(R#RICH y x) (TE#ECONOMIC-INEQUALITY u :0))( богатый-adj e0 y)))
-(B (name bogatyjn) (=>(^(TSN#БОГАТСТВО x :0.3)(TSE#WEALTH x :0.3)(R#RICH y x) (TE#ECONOMIC-INEQUALITY u :0))( богатый-nn e0 y)))
-(B (name obespechennyj) (=>(^(TSN#БОГАТСТВО x :0.3)(TSE#WEALTH x :0.3)(R#RICH y x) (TE#ECONOMIC-INEQUALITY u :0))(обеспеченный-adj e0 y)))
+(B (name bogach) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3))(богач-nn e0 y)))
+(B (name bogatej) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) ( богатей-nn e0 y)))
+(B (name tolstosum) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) ( толстосум-nn e0 y)))
+(B (name milliarder) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) ( миллиардер-nn e0 y)))
+(B (name millioner) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) ( миллионер-nn e0 y)))
+(B (name nuvorish) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (нувориш-nn e0 y)))
+(B (name bogatyj) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (богатый-adj e0 y)))
+(B (name bogatyjn) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (богатый-nn e0 y)))
+(B (name obespechennyj) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (обеспеченный-adj e0 y)))
 
 ; BECOME RICH
-(B (name razbogatet) (=>(^(TSN#БОГАТСТВО x :0.3)(TSE#WEALTH x :0.3)(R#RICH y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(разбогатеть-vb e0 y u1 u2)))
-(B (name bogatet) (=>(^(TSN#БОГАТСТВО x :0.3)(TSE#WEALTH x :0.3)(R#RICH y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(богатеть-vb e0 y u1 u2)))
-(B (name priobresti_imushhestvo) (=>(^(TSN#БОГАТСТВО x :0.3)(TSE#WEALTH x :0.3)(R#POOR y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(^(приобрести-vb e0 y z u2)(имущество-nn e1 z))))
-(B (name priobretat_imushhestvo) (=>(^(TSN#БОГАТСТВО x :0.3)(TSE#WEALTH x :0.3)(R#RICH y x :0.3) (TE#ECONOMIC-INEQUALITY u :0))(^(приобретать-vb e0 y z u2)(имущество-nn e1 z))))
+(B (name razbogatet) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3))(разбогатеть-vb e0 y u1 u2)))
+(B (name bogatet) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (богатеть-vb e0 y u1 u2)))
 
 ; OF - RICH
-(B (name of-rich) (=>(R#RICH  y x :0.9)(^(TN#БОГАТСТВО x)(of-in e1 x y))))
+(B (name of-rich) (=>(R#RICH  y x :0.9)(^(T#БОГАТСТВО x)(of-in e1 x y))))
 
 ; MIDDLE CLASS
-(B (name srednij_class) (=>(^(TSN#СОЦИАЛЬНЫЙ-КЛАСС x :0.45)(TSE#SOCIAL-CLASS x :0.45) (TE#ECONOMIC-INEQUALITY u :0))(^(средний-adj e0 x)(класс-nn e1 x))))
+(B (name srednij_class) (=>(^(TS#СОЦИАЛЬНЫЙ-КЛАСС/SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(^(средний-adj e0 x)(класс-nn e1 x))))
+(B (name elita) (=>(^(TS#СОЦИАЛЬНЫЙ-КЛАСС/SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(элита-nn e1 x)))
+
 
 ; TAX
-(B (name nalog) (=>(^(TSN#НАЛОГИ x :0.45)(TSE#TAXATION x :0.45) (TE#ECONOMIC-INEQUALITY u :0))(налог-nn e0 x)))
-(B (name nalogovyj) (=>(^(TSN#НАЛОГИ x :0.45)(TSE#TAXATION x :0.45) (TE#ECONOMIC-INEQUALITY u :0))( налоговый-adj e0 x)))
-(B (name nalogooblazhenie) (=>(^(TSN#НАЛОГИ x :0.45)(TSE#TAXATION x :0.45) (TE#ECONOMIC-INEQUALITY u :0))( налогообложение-nn e0 x)))
-(B (name nalogovik) (=>(^(TSN#НАЛОГИ x :0.45)(TSE#TAXATION x :0.45) (TE#ECONOMIC-INEQUALITY u :0))( налоговик-nn e0 x)))
-(B (name nalogoplatelshhik) (=>(^(TSN#НАЛОГИ x :0.45)(TSE#TAXATION x :0.45) (TE#ECONOMIC-INEQUALITY u :0))( налогоплательщик-nn e0 x)))
+(B (name nalog) (=>(^(TS#НАЛОГИ/TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(налог-nn e0 x)))
+(B (name nalogovyj) (=>(^(TS#НАЛОГИ/TAXATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (налоговый-adj e0 x)))
+(B (name nalogooblazhenie) (=>(^(TS#НАЛОГИ/TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (налогообложение-nn e0 x)))
+(B (name nalogovik) (=>(^(TS#НАЛОГИ/TAXATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (налоговик-nn e0 y)))
+(B (name nalogoplatelshhik) (=>(^(TS#НАЛОГИ/TAXATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) ( налогоплательщик-nn e0 y)))
+
+; ACCESS TO EDUCATION
+
+(B (name dostup-k-obrazovaniju) (=>(^(TS#ДОСТУП-К-ОБРАЗОВАНИЮ/ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)) (^(доступ-nn e0 x)(к-in e1 x y)(образование-nn e2 y))))
+(B (name poluchat-education) (=>(^(TS#ДОСТУП-К-ОБРАЗОВАНИЮ/ACCESS-TO-EDUCATION e2 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)(R#EDUCATED x e0)) (^(получать-vb e0 x y u)(образование-nn e2 y))))
+
+(B (name obrazovanie) (=>(^(TS#ДОСТУП-К-ОБРАЗОВАНИЮ/ACCESS-TO-EDUCATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)(R#EDUCATION x x)) (образование-nn e0 x)))
+
+(B (name obrazovyvat) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)(R#EDUCATED x e0)) (образовывать-vb e0 u1 x u2)))
+(B (name obrazovat) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)(R#EDUCATED x e0)) (образовать-vb e0 u1 x u2)))
+
+(B (name obrazovannyj) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)(R#EDUCATED x e0)) (образованный-adj e0 x)))
+
+
 ; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; SOURCE WORDS;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ; DISEASE
-(B (name bolezn) (=>(^(SN#БОЛЕЗНЬ x :0.45)(SE#DISEASE x :0.45))(болезнь-nn e0 x)))
-(B (name zabolevanie) (=>(^(SN#БОЛЕЗНЬ x :0.45)(SE#DISEASE x :0.45))(заболевание-nn e0 x)))
-(B (name nedug) (=>(^(SN#БОЛЕЗНЬ x :0.45)(SE#DISEASE x :0.45))(недуг-nn e0 x)))
-(B (name nedrorovje) (=>(^(SN#БОЛЕЗНЬ x :0.45)(SE#DISEASE x :0.45))(нездоровье-nn e0 x)))
-(B (name nasmork) (=>(^(SN#БОЛЕЗНЬ x :0.45)(SE#DISEASE x :0.45))(насморк-nn e0 x)))
-(B (name rak) (=>(^(SN#БОЛЕЗНЬ x :0.45)(SE#DISEASE x :0.45))(рак-nn e0 x)))
-(B (name chuma) (=>(^(SN#БОЛЕЗНЬ x :0.45)(SE#DISEASE x :0.45))(чума-nn e0 x)))
-(B (name paralich) (=>(^(SN#БОЛЕЗНЬ x :0.45)(SE#DISEASE x :0.45))(паралич-nn e0 x)))
-(B (name prokaza) (=>(^(SN#БОЛЕЗНЬ x :0.45)(SE#DISEASE x :0.45))(проказа-nn e0 x)))
-(B (name jazva) (=>(^(SN#БОЛЕЗНЬ x :0.45)(SE#DISEASE x :0.45))(язва-nn e0 x)))
+(B (name bolezn) (=>(S#БОЛЕЗНЬ/DISEASE x :0.9)(болезнь-nn e0 x)))
+(B (name zabolevanie) (=>(S#БОЛЕЗНЬ/DISEASE x :0.9) (заболевание-nn e0 x)))
+(B (name nedug) (=>(S#БОЛЕЗНЬ/DISEASE x :0.9) (недуг-nn e0 x)))
+(B (name nedrorovje) (=>(S#БОЛЕЗНЬ/DISEASE x :0.9) (нездоровье-nn e0 x)))
+(B (name nasmork) (=>(S#БОЛЕЗНЬ/DISEASE x :0.9) (насморк-nn e0 x)))
+(B (name rak) (=>(S#БОЛЕЗНЬ/DISEASE x :0.9) (рак-nn e0 x)))
+(B (name chuma) (=>(S#БОЛЕЗНЬ/DISEASE x :0.9) (чума-nn e0 x)))
+(B (name paralich) (=>(S#БОЛЕЗНЬ/DISEASE x :0.9) (паралич-nn e0 x)))
+(B (name prokaza) (=>(S#БОЛЕЗНЬ/DISEASE x :0.9) (проказа-nn e0 x)))
+(B (name jazva) (=>(S#БОЛЕЗНЬ/DISEASE x :0.9) (язва-nn e0 x)))
+
 
 ; SICK
-(B (name bolnoj) (=>(^(SN#БОЛЕЗНЬ x :0.3)(SE#DISEASE x :0.3)(R#SICK y x :0.3))(больной-adj e0 y)))
-(B (name bolnojn) (=>(^(SN#БОЛЕЗНЬ x :0.3)(SE#DISEASE x :0.3)(R#SICK y x :0.3))(больной-nn e0 y)))
-(B (name nezdorovyj) (=>(^(SN#БОЛЕЗНЬ x :0.3)(SE#DISEASE x :0.3)(R#SICK y x :0.3))(нездоровый-adj e0 y)))
+(B (name bolnoj) (=>(^(S#БОЛЕЗНЬ/DISEASE e0 :0.45)(R#SICK y e0 :0.3))(больной-adj e0 y)))
+(B (name bolnojn) (=>(^(S#БОЛЕЗНЬ/DISEASE e0 :0.45)(R#SICK y e0 :0.3)) (больной-nn e0 y)))
+(B (name nezdorovyj) (=>(^(S#БОЛЕЗНЬ/DISEASE e0 :0.45)(R#SICK y e0 :0.3)) (нездоровый-adj e0 y)))
+
+(B (name invalid) (=>(^(S#БОЛЕЗНЬ/DISEASE e0 :0.45)(R#SICK y e0 :0.3)) (инвалид-nn e0 y)))
+(B (name pacient) (=>(^(S#БОЛЕЗНЬ/DISEASE e0 :0.45)(R#SICK y e0 :0.3)) (пациент-nn e0 y)))
 
 ; OF - DISEASE
-(B (name of-disease) (=>(R#SICK  y x :0.9)(^(SN#БОЛЕЗНЬ x)(of-in e1 x y))))
+(B (name of-disease) (=>(R#SICK  y x :0.9)(^(S#БОЛЕЗНЬ/DISEASE x)(of-in e1 x y))))
 
 ; BECOME SICK
-(B (name bolet) (=>(^(SN#БОЛЕЗНЬ x :0.3)(SE#DISEASE x :0.3)(R#SICK y x :0.3))(болеть-vb e0 y u1 u2)))
-(B (name zabolet) (=>(^(SN#БОЛЕЗНЬ x :0.3)(SE#DISEASE x :0.3)(R#SICK y x :0.3))(заболеть-vb e0 y u1 u2)))
-(B (name razboletsja) (=>(^(SN#БОЛЕЗНЬ x :0.3)(SE#DISEASE x :0.3)(R#SICK y x :0.3))(разболеться-vb e0 y u1 u2)))
-(B (name pribolet) (=>(^(SN#БОЛЕЗНЬ x :0.3)(SE#DISEASE x :0.3)(R#SICK y x :0.3))(приболеть-vb e0 y u1 u2)))
-(B (name zaneduzhit) (=>(^(SN#БОЛЕЗНЬ x :0.3)(SE#DISEASE x :0.3)(R#SICK y x :0.3))(занедужить-vb e0 y u1 u2)))
-(B (name neduzhit) (=>(^(SN#БОЛЕЗНЬ x :0.3)(SE#DISEASE x :0.3)(R#SICK y x :0.3))(недужить-vb e0 y u1 u2)))
-(R#CURE-AGENT y e0 :0.1)
+(B (name bolet) (=>(^(S#БОЛЕЗНЬ/DISEASE e0 :0.45)(R#SICK y x :0.45))(болеть-vb e0 y u1 u2)))
+(B (name zabolet) (=>(^(S#БОЛЕЗНЬ/DISEASE e0 :0.45)(R#SICK y x :0.45)) (заболеть-vb e0 y u1 u2)))
+(B (name razboletsja) (=>(^(S#БОЛЕЗНЬ/DISEASE e0 :0.45)(R#SICK y x :0.45)) (разболеться-vb e0 y u1 u2)))
+(B (name pribolet) (=>(^(S#БОЛЕЗНЬ/DISEASE e0 :0.45)(R#SICK y x :0.45)) (приболеть-vb e0 y u1 u2)))
+(B (name zaneduzhit) (=>(^(S#БОЛЕЗНЬ/DISEASE e0 :0.45)(R#SICK y x :0.45)) (занедужить-vb e0 y u1 u2)))
+(B (name neduzhit) (=>(^(S#БОЛЕЗНЬ/DISEASE e0 :0.45)(R#SICK y x :0.45)) (недужить-vb e0 y u1 u2)))
+
+
 ; CURE
-(B (name lechenie) (=>(^(SN#БОЛЕЗНЬ x :0.2)(SE#DISEASE x :0.2)(SSN#ЛЕЧИТЬ e0 x  :0.2)(SSE#CURE e0 x :0.2))(лечение-nn e1 e0)))
-(B (name lechit) (=>(^(SN#БОЛЕЗНЬ x :0.2)(SE#DISEASE x :0.2)(SSN#ЛЕЧИТЬ e0 x  :0.2)(SSE#CURE e0 x :0.2)(R#CURE-AGENT y e0 :0.1))(лечить-vb e0 y x u2)))
-(B (name vylechit) (=>(^(SN#БОЛЕЗНЬ x :0.2)(SE#DISEASE x :0.2)(SSN#ЛЕЧИТЬ e0 x  :0.2)(SSE#CURE e0 x :0.2) (R#CURE-AGENT y e0 :0.1))(вылечить-vb e0 y x u2)))
-(B (name vylechivat) (=>(^(SN#БОЛЕЗНЬ x :0.2)(SE#DISEASE x :0.2)(SSN#ЛЕЧИТЬ e0 x  :0.2)(SSE#CURE e0 x :0.2) (R#CURE-AGENT y e0 :0.1))(вылечивать-vb e0 y x u2)))
-(B (name zalechit) (=>(^(SN#БОЛЕЗНЬ x :0.2)(SE#DISEASE x :0.2)(SSN#ЛЕЧИТЬ e0 x  :0.2)(SSE#CURE e0 x :0.2) (R#CURE-AGENT y e0 :0.1))(залечить-vb e0 y x u2)))
-(B (name vrachevat) (=>(^(SN#БОЛЕЗНЬ x :0.2)(SE#DISEASE x :0.2)(SSN#ЛЕЧИТЬ e0 x  :0.2)(SSE#CURE e0 x :0.2) (R#CURE-AGENT y e0 :0.1))(врачевать-vb e0 y x u2)))
-(B (name zalechivat) (=>(^(SN#БОЛЕЗНЬ x :0.2)(SE#DISEASE x :0.2)(SSN#ЛЕЧИТЬ e0 x  :0.2)(SSE#CURE e0 x :0.2) (R#CURE-AGENT y e0 :0.1))(залечивать-vb e0 y x u2)))
-(B (name lechit) (=>(^(SN#БОЛЕЗНЬ x :0.2)(SE#DISEASE x :0.2)(SSN#ЛЕЧИТЬ e0 x  :0.2)(SSE#CURE e0 x :0.2))(лечиться-vb e0 x u1 u2)))
-(B (name neizlechimyj) (=>(^(SN#БОЛЕЗНЬ x :0.2)(SE#DISEASE x :0.2) (SSN#ЛЕЧИТЬ e0 x  :0.2)(SSE#CURE e0 x :0.2) (R#SICK y x :0.1))(неизлечимый-adj e1 y)))
-(B (name izlechimyj) (=>(^(SN#БОЛЕЗНЬ x :0.2)(SE#DISEASE x :0.2) (SSN#ЛЕЧИТЬ e0 x  :0.2)(SSE#CURE e0 x :0.2) (R#SICK y x :0.1))(излечимый-adj e1 y)))
+(B (name lechenie) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.45)(SS#ЛЕЧИТЬ/CURE e0 x  :0.45))(лечение-nn e1 e0)))
+(B (name terapija) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.45)(SS#ЛЕЧИТЬ/CURE e0 x  :0.45))(терапия-nn e1 e0)))
+
+
+(B (name lechit) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ЛЕЧИТЬ/CURE e0 x  :0.3)(R#CURE-AGENT y e0 :0.3))(лечить-vb e0 y x u2)))
+(B (name vylechit) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ЛЕЧИТЬ/CURE e0 x  :0.3)(R#CURE-AGENT y e0 :0.3)) (вылечить-vb e0 y x u2)))
+(B (name vylechivat) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ЛЕЧИТЬ/CURE e0 x  :0.3)(R#CURE-AGENT y e0 :0.3)) (вылечивать-vb e0 y x u2)))
+(B (name zalechit) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ЛЕЧИТЬ/CURE e0 x  :0.3)(R#CURE-AGENT y e0 :0.3)) (залечить-vb e0 y x u2)))
+(B (name vrachevat) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ЛЕЧИТЬ/CURE e0 x  :0.3)(R#CURE-AGENT y e0 :0.3)) (врачевать-vb e0 y x u2)))
+(B (name zalechivat) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ЛЕЧИТЬ/CURE e0 x  :0.3)(R#CURE-AGENT y e0 :0.3)) (залечивать-vb e0 y x u2)))
+
+(B (name lechitsja) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.45)(SS#ЛЕЧИТЬ/CURE e0 x  :0.45)) (лечиться-vb e0 x u1 u2)))
+(B (name izlechitsja) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.45)(SS#ЛЕЧИТЬ/CURE e0 x  :0.45)) (излечиться-vb e0 x u1 u2)))
+(B (name izlechivatsja) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.45)(SS#ЛЕЧИТЬ/CURE e0 x  :0.45)) (излечиваться-vb e0 x u1 u2)))
+(B (name vylechivatsja) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.45)(SS#ЛЕЧИТЬ/CURE e0 x  :0.45)) (вылечиваться-vb e0 x u1 u2)))
+
+
+(B (name neizlechimyj) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.2)(SS#ЛЕЧИТЬ/CURE e1 x  :0.2)(R#SICK y e1 :0.1))(неизлечимый-adj e1 y)))
+(B (name izlechimyj) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.2)(SS#ЛЕЧИТЬ/CURE e1 x  :0.2)(R#SICK y e1 :0.1)) (излечимый-adj e1 y)))
+
+(B (name doktor) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ЛЕЧИТЬ/CURE e0 x  :0.3)(R#CURE-AGENT y e0 :0.3))(доктор-nn e0 y)))
+(B (name vrach) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ЛЕЧИТЬ/CURE e0 x  :0.3)(R#CURE-AGENT y e0 :0.3))(врач-nn e0 y)))
+(B (name lekarstvo) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ЛЕЧИТЬ/CURE e0 x  :0.3)(R#CURE-AGENT y e0 :0.3))(лекарство-nn e0 y)))
+
+
+; OF - CURE
+(B (name of-cure) (=>(S#БОЛЕЗНЬ/DISEASE y :0.9)(^(SS#ЛЕЧИТЬ/CURE x)(of-in e1 x y))))
+
+; FROM - CURE
+(B (name from-cure) (=>(S#БОЛЕЗНЬ/DISEASE y :0.9)(^(SS#ЛЕЧИТЬ/CURE e0)(от-in e1 e0 y))))
+ 
+
+; RECOVER
+(B (name vyzdoravlivat) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ВЫЗДОРОВЛЕНИЕ/RECOVER e0 x :0.3)(R#RECOVER-AGENT y e0 :0.3)) (выздоравливать-vb e0 y u1 u2)))
+(B (name vyzdorovet) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ВЫЗДОРОВЛЕНИЕ/RECOVER e0 x :0.3)(R#RECOVER-AGENT y e0 :0.3)) (выздороветь-vb e0 y u1 u2)))
+(B (name popravitsja) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ВЫЗДОРОВЛЕНИЕ/RECOVER e0 x :0.3)(R#RECOVER-AGENT y e0 :0.3)) (поправиться-vb e0 y u1 u2)))
+
+(B (name idti-na-popravku) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ВЫЗДОРОВЛЕНИЕ/RECOVER e0 x :0.3)(R#RECOVER-AGENT y e0 :0.3)) (^(идти-vb e1 y u1 u2)(на-in e2 e1 e0)(поправка-nn e3 e0))))
+
+(B (name vyzdorovlenie) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ВЫЗДОРОВЛЕНИЕ/RECOVER e0 x :0.3)) (выздоровление-nn e1)))
+(B (name vyzdorovlenie) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.3)(SS#ВЫЗДОРОВЛЕНИЕ/RECOVER e0 x :0.3)) (поправка-nn e1)))
+
+; OF - RECOVER
+(B (name of-cure) (=>(R#RECOVER-AGENT y :0.9)(^(SS#ВЫЗДОРОВЛЕНИЕ/RECOVER x)(of-in e1 x y))))
+
+; FROM - RECOVER
+(B (name from-cure) (=>(S#БОЛЕЗНЬ/DISEASE y :0.9)(^(SS#ВЫЗДОРОВЛЕНИЕ/RECOVER e0)(от-in e1 e0 y))))
 
 ; EPIDEMIC
-(B (name epidemija) (=>(^(SN#БОЛЕЗНЬ x :0.2)(SE#DISEASE x :0.2)(SSN#ЭПИДЕМИЯ y x  :0.2)(SSE#EPIDEMIC y x :0.2))(эпидемия-nn e0 y)))
-(B (name pandemija) (=>(^(SN#БОЛЕЗНЬ x :0.2)(SE#DISEASE x :0.2)(SSN#ЭПИДЕМИЯ y x  :0.2)(SSE#EPIDEMIC y x :0.2))(пандемия-nn e0 y)))
-(B (name virus) (=>(^(SN#БОЛЕЗНЬ x :0.2)(SE#DISEASE x :0.2)(SSN#ЭПИДЕМИЯ y x  :0.2)(SSE#EPIDEMIC y x :0.2))(вирус-nn e0 y)))
+(B (name epidemija) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.45)(SS#ЭПИДЕМИЯ/EPIDEMIC y x  :0.45))(эпидемия-nn e0 y)))
+(B (name pandemija) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.45)(SS#ЭПИДЕМИЯ/EPIDEMIC y x  :0.45)) (пандемия-nn e0 y)))
+(B (name virus) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.45)(SS#ЭПИДЕМИЯ/EPIDEMIC y x  :0.45)) (вирус-nn e0 y)))
+(B (name virus) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.45)(SS#ЭПИДЕМИЯ/EPIDEMIC e0 x  :0.45)) (эпидемический-adj e0 y)))
+
+; SYMPTOM
+(B (name symptom) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOM y x  :0.45)) (симптом-nn e0 y)))
+(B (name symptomatic) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOM e0 x  :0.45)) (симптоматически	-adj e0 y)))
+
+(B (name krovotechenie) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOM y x  :0.45))(кровотечение-nn e0 y)))
+(B (name rana) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOM y x  :0.45)) (рана-nn e0 y)))
+(B (name bol) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOM y x  :0.45)) (боль-nn e0 y)))
+
+
+(B (name dismap)(=>(I#DISEASE x :0.9)(S#БОЛЕЗНЬ/DISEASE x)))
+(B (name curemap)(=>(I#CURE e0 x :0.9)(SS#ЛЕЧИТЬ/CURE e0 x)))
+
 
 ; BASE
-(B (name fundament) (=>(^(SN#ОСНОВА x :0.2)(SE#BASE x :0.2)(SSN#ФУНДАМЕНТ x  :0.2)(SSE#FUNDAMENT x :0.2))(фундамент-nn e0 x)))
-(B (name osnova) (=>(^(SN#ОСНОВА x :0.2)(SE#BASE x :0.2)(SSN#ФУНДАМЕНТ x  :0.2)(SSE#FUNDAMENT x :0.2))(основа-nn e0 x)))
-(B (name opora) (=>(^(SN#ОСНОВА x :0.2)(SE#BASE x :0.2)(SSN#ФУНДАМЕНТ x  :0.2)(SSE#FUNDAMENT x :0.2))(опора-nn e0 x)))
-(B (name osnova) (=>(^(SN#ОСНОВА x :0.2)(SE#BASE x :0.2)(SSN#ФУНДАМЕНТ x  :0.2)(SSE#FUNDAMENT x :0.2))(^(краеугольный-adj e1 x)(камень-nn e0 x))))
-(B (name skelet) (=>(^(SN#ОСНОВА x :0.2)(SE#BASE x :0.2)(SSN#СКЕЛЕТ x  :0.2)(SSE#SKELETON x :0.2)) (скелет-nn e0 x)))
-(B (name hrebet) (=>(^(SN#ОСНОВА x :0.2)(SE#BASE x :0.2)(SSN#СКЕЛЕТ x  :0.2)(SSE#SKELETON x :0.2)) (хребет-nn e0 x)))
- (B (name ukrepit) (=>(^(SN#ОСНОВА x :0.2)(SE#BASE x :0.2)(SSN#УКРЕПЛЯТЬ e0 :0.2)(SSE#STRENGTHEN e0 x :0.2)(R#BASE-STRUCTURE  y x :0.1)) (укрепить-vb e0 x y u)))
+(B (name fundament) (=>(^(S#ОСНОВА/BASE x :0.45)(SS#ФУНДАМЕНТ/FUNDAMENT x  :0.45))(фундамент-nn e0 x)))
+(B (name osnova) (=>(^(S#ОСНОВА/BASE x :0.45)(SS#ФУНДАМЕНТ/FUNDAMENT x  :0.45)) (основа-nn e0 x)))
+(B (name opora) (=>(^(S#ОСНОВА/BASE x :0.45)(SS#ФУНДАМЕНТ/FUNDAMENT x  :0.45)) (опора-nn e0 x)))
+(B (name osnova) (=>(^(S#ОСНОВА/BASE x :0.45)(SS#ФУНДАМЕНТ/FUNDAMENT x  :0.45)) (^(краеугольный-adj e1 x)(камень-nn e0 x))))
+(B (name skelet) (=>(^(S#ОСНОВА/BASE x :0.45)(SS#СКЕЛЕТ/SKELETON x  :0.45)) (скелет-nn e0 x)))
+(B (name hrebet) (=>(^(S#ОСНОВА/BASE x :0.45)(SS#СКЕЛЕТ/SKELETON x  :0.45)) (хребет-nn e0 x)))
 
-(B (name ukrepljat) (=>(^(SN#ОСНОВА x :0.2)(SE#BASE x :0.2)(SSN#УКРЕПЛЯТЬ e0 :0.2)(SSE#STRENGTHEN e0 x :0.2)(R#BASE-STRUCTURE  y x :0.1)) (укреплять-vb e0 x y u)))
-
+(B (name ukrepit) (=>(^(S#ОСНОВА/BASE u :0.2)(SS#УКРЕПЛЯТЬ/STRENGTHEN e0 u :0.2)(R#BASE-STRUCTURE  y u :0.2)(R#BASE-AGENT x u :0.2)) (укрепить-vb e0 x y u)))
+(B (name ukrepljat) (=>(^(S#ОСНОВА/BASE u :0.2)(SS#УКРЕПЛЯТЬ/STRENGTHEN e0 u :0.2)(R#BASE-STRUCTURE  y u :0.2)(R#BASE-AGENT x u :0.2)) (укреплять-vb e0 x y u)))
 
 
 ; OF - BASE
-(B (name of-base) (=>(R#BASE-STRUCTURE  y x :0.9)(^(SN#ОСНОВА x)(of-in e1 x y))))
+(B (name of-base) (=>(R#BASE-STRUCTURE  y x :0.9)(^(S#ОСНОВА/BASE x)(of-in e1 x y))))
+
+
+(B (name basemap)(=>(I#BASE x :0.9)(S#ОСНОВА/BASE x)))
+
 
 ; WATER
-(B (name voda) (=>(^(SN#ВОДА x :0.45)(SE#WATER x :0.45))(вода-nn e0 x)))
+(B (name voda) (=>(S#ВОДА/WATER x :0.9)(вода-nn e0 x)))
 
 ; BODY OF WATER
-(B (name more) (=>(^(SN#ВОДА x :0.2)(SE#WATER x :0.2) (SSN#ВОДНОЕ-ПРОСТРАНСТВО y x  :0.2)(SSE#BODY-OF-WATER y x :0.2))(море-nn e0 y)))
-(B (name okean) (=>(^(SN#ВОДА x :0.2)(SE#WATER x :0.2) (SSN#ВОДНОЕ-ПРОСТРАНСТВО y x  :0.2)(SSE#BODY-OF-WATER y x :0.2))(океан-nn e0 y)))
-(B (name okean) (=>(^(SN#ВОДА x :0.2)(SE#WATER x :0.2) (SSN#ВОДНОЕ-ПРОСТРАНСТВО y x  :0.2)(SSE#BODY-OF-WATER y x :0.2))(река-nn e0 y)))
+(B (name more) (=>(^(S#ВОДА/WATER x :0.45)(SS#ВОДНОЕ-ПРОСТРАНСТВО/BODY-OF-WATER y x  :0.45))(море-nn e0 y)))
+(B (name okean) (=>(^(S#ВОДА/WATER x :0.45)(SS#ВОДНОЕ-ПРОСТРАНСТВО/BODY-OF-WATER y x  :0.45)) (океан-nn e0 y)))
+(B (name reka) (=>(^(S#ВОДА/WATER x :0.45)(SS#ВОДНОЕ-ПРОСТРАНСТВО/BODY-OF-WATER y x  :0.45)) (река-nn e0 y)))
 
 ; OF - BODY-OF-WATER
-(B (name of-body-of-water) (=>(R#MATTER  x y :0.9)(^(SN#ВОДНОЕ-ПРОСТРАНСТВО y z)(of-in e1 x y))))
+(B (name of-body-of-water) (=>(R#MATTER  x y :0.9)(^(SS#ВОДНОЕ-ПРОСТРАНСТВО/BODY-OF-WATER y z)(of-in e1 y x))))
+
+(B (name body-of-water-map)(=>(I#BODY-OF-WATER x y :0.9)( SS#ВОДНОЕ-ПРОСТРАНСТВО/BODY-OF-WATER x y)))
+(B (name drought-map)(=>(I#DROUGHT x y :0.9) (SS#ЗАСУХА/DROUGHT x y)))
+(B (name shoal-map)(=>(I#SHOAL x y :0.9) (SS#МЕЛЬ/SHOAL x y)))
 
 ; STREAM
-(B (name potok) (=>(^(SN#ВОДА x :0.2)(SE#WATER x :0.2) (SSN#ПОТОК y  :0.2)(SSE#STREAM x :0.2))(поток-nn e0 y)))
-(B (name istochnik) (=>(^(SN#ВОДА x :0.2)(SE#WATER x :0.2) (SSN#ПОТОК y  :0.2)(SSE#STREAM x :0.2))(источник-nn e0 y)))
-(B (name tech) (=>(^(SN#ВОДА x :0.2)(SE#WATER x :0.2) (SSN#ПОТОК y  :0.2)(SSE#STREAM x :0.2))(течь-nn e0 y)))
-(B (name utechka) (=>(^(SN#ВОДА x :0.2)(SE#WATER x :0.2) (SSN#ПОТОК y  :0.2)(SSE#STREAM x :0.2))(утечка-nn e0 y)))
-(B (name techvb) (=>(^(SN#ВОДА y :0.2)(SE#WATER y :0.2) (SSN#ПОТОК e0 :0.2)(SSE#STREAM e0 :0.2)(R#STREAMING x e0 :0))(течь-vb e0 x u1 u2)))
-(B (name utech) (=>(^(SN#ВОДА y :0.2)(SE#WATER y :0.2) (SSN#ПОТОК e0  :0.2)(SSE#STREAM e0 :0.2)(R#STREAMING x e0 :0))(утечь-vb e0 x u1 u2)))
-(B (name utekat) (=>(^(SN#ВОДА y :0.2)(SE#WATER y :0.2) (SSN#ПОТОК e0  :0.2)(SSE#STREAM e0 :0.2)(R#STREAMING x e0 :0))(утекать-vb e0 x u1 u2)))
+(B (name potok) (=>(^(S#ВОДА/WATER x :0.45)(SS#ПОТОК/STREAM y x  :0.45))(поток-nn e0 y)))
+(B (name istochnik) (=>(^(S#ВОДА/WATER x :0.45)(SS#ПОТОК/STREAM y x  :0.45)) (источник-nn e0 y)))
+(B (name tech) (=>(^(S#ВОДА/WATER x :0.45)(SS#ПОТОК/STREAM y x  :0.45)) (течь-nn e0 y)))
+(B (name utechka) (=>(^(S#ВОДА/WATER x :0.45)(SS#ПОТОК/STREAM y x  :0.45)) (утечка-nn e0 y)))
+(B (name techvb) (=>(^(S#ВОДА/WATER y :0.3)(SS#ПОТОК/STREAM e0 y :0.3)(R#STREAMING x e0 :0.3))(течь-vb e0 x u1 u2)))
+(B (name utech) (=>(^(S#ВОДА/WATER y :0.3)(SS#ПОТОК/STREAM e0 y :0.3)(R#STREAMING x e0 :0.3)) (утечь-vb e0 x u1 u2)))
+(B (name utekat) (=>(^(S#ВОДА/WATER y :0.3)(SS#ПОТОК/STREAM e0 y :0.3)(R#STREAMING x e0 :0.3)) (утекать-vb e0 x u1 u2)))
 
 ; OF - STREAM
-(B (name of-stream) (=>(R#STREAMING y x :0.9)(^(SSN#ПОТОК x)(of-in e1 x y))))
+(B (name of-stream) (=>(R#STREAMING y x :0.9)(^(SS#ПОТОК/STREAMING x)(of-in e1 x y))))
 
 ; SHOAL
-(B (name mel) (=>(^(SN#ВОДА x :0.2)(SE#WATER x :0.2) (SSN#МЕЛЬ y  :0.2)(SSE#SHOAL y :0.2))(мель-nn e0 y)))
-(B (name melkovodje) (=>(^(SN#ВОДА x :0.2)(SE#WATER x :0.2) (SSN#МЕЛЬ y  :0.2)(SSE#SHOAL y :0.2))(мелководье-nn e0 y)))
-(B (name obmelchat) (=>(^(SN#ВОДА y :0.2)(SE#WATER y :0.2) (SSN#МЕЛЬ e0  :0.2)(SSE#SHOAL e0 :0.2)(R#STREAMING x e0 :0))(обмельчать-vb e0 x u1 u2)))
-(B (name melchat) (=>(^(SN#ВОДА y :0.2)(SE#WATER y :0.2) (SSN#МЕЛЬ e0  :0.2)(SSE#SHOAL e0 :0.2)(R#STREAMING x e0 :0))(мельчать-vb e0 x u1 u2)))
+(B (name mel) (=>(^(S#ВОДА/WATER x :0.45)(SS#МЕЛЬ/SHOAL y x :0.45))(мель-nn e0 y)))
+(B (name melkovodje) (=>(^(S#ВОДА/WATER x :0.45)(SS#МЕЛЬ/SHOAL y x :0.45)) (мелководье-nn e0 y)))
+(B (name obmelchat) (=>(^(S#ВОДА/WATER y :0.3)(SS#МЕЛЬ/SHOAL e0 y :0.3)(R#STREAMING x e0 :0.3))(обмельчать-vb e0 x u1 u2)))
+(B (name melchat) (=>(^(S#ВОДА/WATER y :0.3)(SS#МЕЛЬ/SHOAL e0 y :0.3)(R#STREAMING x e0 :0.3)) (мельчать-vb e0 x u1 u2)))
 
 ; DROUGHT
- (B (name vysohnut) (=>(^(SN#ВОДА y :0.2)(SE#WATER y :0.2) (SSN#ЗАСУХА e0 :0.2)(SSE#DROUGHT e0 :0.2)(R#STREAMING x e0 :0))(высохнуть-vb e0 x u1 u2)))
-(B (name vysyhat) (=>(^(SN#ВОДА y :0.2)(SE#WATER y :0.2) (SSN#ЗАСУХА e0 :0.2)(SSE#DROUGHT e0 :0.2)(R#STREAMING x e0 :0))(высыхать-vb e0 x u1 u2)))
-(B (name peresohnut) (=>(^(SN#ВОДА y :0.2)(SE#WATER y :0.2) (SSN#ЗАСУХА e0  :0.2)(SSE#DROUGHT x :0.2)(R#STREAMING x e0 :0))(пересохнуть-vb e0 x u1 u2)))
-(B (name peresyhat) (=>(^(SN#ВОДА y :0.2)(SE#WATER y :0.2) (SSN#ЗАСУХА e0  :0.2)(SSE#DROUGHT x :0.2)(R#STREAMING x e0 :0))(пересыхать-vb e0 x u1 u2)))
-(B (name zaesohnut) (=>(^(SN#ВОДА y :0.2)(SE#WATER y :0.2) (SSN#ЗАСУХА e0  :0.2)(SSE#DROUGHT x :0.2)(R#STREAMING x e0 :0))(засохнуть-vb e0 x u1 u2)))
-(B (name zaresyhat) (=>(^(SN#ВОДА y :0.2)(SE#WATER y :0.2) (SSN#ЗАСУХА e0  :0.2)(SSE#DROUGHT x :0.2)(R#STREAMING x e0 :0))(засыхать-vb e0 x u1 u2)))
+ (B (name vysohnut) (=>(^(S#ВОДА/WATER y :0.3) (SS#ЗАСУХА/DROUGHT e0 y :0.3)(R#STREAMING x e0 :0.3))(высохнуть-vb e0 x u1 u2)))
+(B (name vysyhat) (=>(^(S#ВОДА/WATER y :0.3) (SS#ЗАСУХА/DROUGHT e0 y :0.3)(R#STREAMING x e0 :0.3)) (высыхать-vb e0 x u1 u2)))
+(B (name peresohnut) (=>(^(S#ВОДА/WATER y :0.3) (SS#ЗАСУХА/DROUGHT e0 y :0.3)(R#STREAMING x e0 :0.3)) (пересохнуть-vb e0 x u1 u2)))
+(B (name peresyhat) (=>(^(S#ВОДА/WATER y :0.3) (SS#ЗАСУХА/DROUGHT e0 y :0.3)(R#STREAMING x e0 :0.3)) (пересыхать-vb e0 x u1 u2)))
+(B (name zaesohnut) (=>(^(S#ВОДА/WATER y :0.3) (SS#ЗАСУХА/DROUGHT e0 y :0.3)(R#STREAMING x e0 :0.3)) (засохнуть-vb e0 x u1 u2)))
+(B (name zaresyhat) (=>(^(S#ВОДА/WATER y :0.3) (SS#ЗАСУХА/DROUGHT e0 y :0.3)(R#STREAMING x e0 :0.3)) (засыхать-vb e0 x u1 u2)))
 
 ; WAR
-(B (name vojna) (=>(^(SN#ВОЙНА x :0.2)(SE#WAR x :0.2) (SSN#БОРЬБА x  :0.2)(SSE#FIGHT x :0.2))(война-nn e0 x)))
-(B (name borba) (=>(^(SN#ВОЙНА x :0.2)(SE#WAR x :0.2) (SSN#БОРЬБА x  :0.2)(SSE#FIGHT x :0.2))(борьба-nn e0 x)))
-(B (name bitva) (=>(^(SN#ВОЙНА x :0.2)(SE#WAR x :0.2) (SSN#БОРЬБА x  :0.2)(SSE#FIGHT x :0.2))(битва-nn e0 x)))
-(B (name srazhenie) (=>(^(SN#ВОЙНА x :0.2)(SE#WAR x :0.2) (SSN#БОРЬБА x  :0.2)(SSE#FIGHT x :0.2))(сражение-nn e0 x)))
-(B (name pobeda) (=>(^(SN#ВОЙНА x :0.2)(SE#WAR x :0.2) (SSN#БОРЬБА x  :0.2)(SSE#FIGHT x :0.2))(^(победа-nn e0 x)(над-in e1 x y))))
-(B (name preodolenie) (=>(^(SN#ВОЙНА x :0.2)(SE#WAR x :0.2) (SSN#БОРЬБА x  :0.2)(SSE#FIGHT x :0.2))(^(преодоление-nn e0 x)(of-in e1 x y))))
-(B (name voevat) (=>(^(SN#ВОЙНА e0 :0.2)(SE#WAR e0 :0.2) (SSN#БОРЬБА e0  :0.2)(SSE#FIGHT e0 :0.2)(R#WAR-AGENT x e0 :0.1))(воевать-vb e0 x u1 u2)))
-(B (name borotsja) (=>(^(SN#ВОЙНА e0 :0.2)(SE#WAR e0 :0.2) (SSN#БОРЬБА e0  :0.2)(SSE#FIGHT e0 :0.2)(R#WAR-AGENT x e0 :0.1))(бороться-vb e0 x u1 u2)))
-(B (name bitsja) (=>(^(SN#ВОЙНА e0 :0.2)(SE#WAR e0 :0.2) (SSN#БОРЬБА e0  :0.2)(SSE#FIGHT e0 :0.2)(R#WAR-AGENT x e0 :0.1))(биться-vb e0 x u1 u2)))
-(B (name srazhatsja) (=>(^(SN#ВОЙНА e0 :0.2)(SE#WAR e0 :0.2) (SSN#БОРЬБА e0  :0.2)(SSE#FIGHT e0 :0.2)(R#WAR-AGENT x e0 :0.1))(сражаться-vb e0 x u1 u2)))
-(B (name pobedit) (=>(^(SN#ВОЙНА e0 :0.1)(SE#WAR e0 :0.1) (SSN#БОРЬБА e0  :0.1)(SSE#FIGHT e0 :0.1)(R#WAR-AGENT x e0 :0.1) (R#WAR-ENEMY y e0 :0.1))(победить-vb e0 x y u2)))
-(B (name pobezhdat) (=>(^(SN#ВОЙНА e0 :0.1)(SE#WAR e0 :0.1) (SSN#БОРЬБА e0  :0.1)(SSE#FIGHT e0 :0.1)(R#WAR-AGENT x e0 :0.1) (R#WAR-ENEMY y e0 :0.1))(побеждать-vb e0 x y u2)))
-(B (name preodolet) (=>(^(SN#ВОЙНА e0 :0.1)(SE#WAR e0 :0.1) (SSN#БОРЬБА e0  :0.1)(SSE#FIGHT e0 :0.1)(R#WAR-AGENT x e0 :0.1) (R#WAR-ENEMY y e0 :0.1))(преодолеть-vb e0 x y u2)))
-(B (name front) (=>(^(SN#ВОЙНА x :0.2)(SE#WAR x :0.2) (SSN#БОРЬБА x  :0.2)(SSE#FIGHT x :0.2))(фронт-nn e0 y)))
-(B (name vrag) (=>(^(SN#ВОЙНА e0 :0.2)(SE#WAR e0 :0.2) (SSN#ВРАГ x  :0.2)(SSE#ENEMY x :0.2)(R#WAR-ENEMY x e0 :0.1))(враг-nn e1 x)))
-(B (name vrazheskij) (=>(^(SN#ВОЙНА e0 :0.2)(SE#WAR e0 :0.2) (SSN#ВРАГ x  :0.2)(SSE#ENEMY x :0.2)(R#WAR-ENEMY x e0 :0.1))(вражеский-adj e1 x)))
-(B (name vrazhdebnyj) (=>(^(SN#ВОЙНА e0 :0.2)(SE#WAR e0 :0.2) (SSN#ВРАГ x  :0.2)(SSE#ENEMY x :0.2)(R#WAR-ENEMY x e0 :0.1))(враждебный-adj e1 x)))
+(B (name vojna) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x :0.45))(война-nn e0 x)))
+(B (name borba) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x:0.45)) (борьба-nn e0 x)))
+(B (name bitva) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x :0.45)) (битва-nn e0 x)))
+(B (name srazhenie) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x :0.45)) (сражение-nn e0 x)))
 
-(B (name borba-s) (=> (R#WAR-ENEMY y x :0.90)(^(SSN#БОРЬБА x)(с-in x y))))
-(B (name borba-protiv) (=> (R#WAR-ENEMY y x :0.90)(^(SSN#БОРЬБА x)(против-in x y))))
-(B (name vrag-of) (=> (R#WAR-AGENT y e0 :0.90)(^( R#WAR-ENEMY x e0)(of-in e1 x y))))
+(B (name ataka) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x :0.45)) (атака-nn e0 x)))
+(B (name napadenie) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x :0.45)) (нападение-nn e0 x)))
 
-; SCHOOL
+(B (name pobeda) (=>(^(S#ВОЙНА/WAR x :0.3) (SS#БОРЬБА/FIGHT x :0.3)(R#WAR-ENEMY y x :0.3))(^(победа-nn e0 x)(над-in e1 x y))))
+(B (name preodolenie) (=>(^(S#ВОЙНА/WAR x :0.3) (SS#БОРЬБА/FIGHT x :0.3)(R#WAR-ENEMY y x :0.3)) (^(преодоление-nn e0 x)(of-in e1 x y))))
 
-(B (name shkola) (=>(^(SN#ШКОЛА x :0.45)(SE#SCHOOL x :0.45))(школа-nn e0 x)))
-(B (name nauchit) (=>(^(SN#ШКОЛА x :0.2)(SE#SCHOOL x :0.2)(SSN#УЧИТЬ e0 :0.2)(SSE#TEACH e0 :0.1)(R#SCHOOL-STUDENT y x :0.1)(R#SCHOOL-SUBJECT z x :0.1))(научить-vb e0 x y z)))
-(B (name uchit) (=>(^(SN#ШКОЛА x :0.2)(SE#SCHOOL x :0.2)(SSN#УЧИТЬ e0 :0.2)(SSE#TEACH e0 :0.1)(R#SCHOOL-STUDENT y x :0.1)(R#SCHOOL-SUBJECT z x :0.1))(учить-vb e0 x y z)))
-(B (name uchitel) (=>(^(SN#ШКОЛА x :0.2)(SE#SCHOOL x :0.2)(SSN#УЧИТЬ x :0.2)( SSE#TEACH x :0.2))(учитель-nn e0 x)))
+(B (name voevat) (=>(^(S#ВОЙНА/WAR e0 :0.3) (SS#БОРЬБА/FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3))(воевать-vb e0 x u1 u2)))
+(B (name borotsja) (=>(^(S#ВОЙНА/WAR e0 :0.3) (SS#БОРЬБА/FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3)) (бороться-vb e0 x u1 u2)))
+(B (name bitsja) (=>(^(S#ВОЙНА/WAR e0 :0.3) (SS#БОРЬБА/FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3)) (биться-vb e0 x u1 u2)))
+(B (name srazhatsja) (=>(^(S#ВОЙНА/WAR e0 :0.3) (SS#БОРЬБА/FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3)) (сражаться-vb e0 x u1 u2)))
+(B (name dratsja) (=>(^(S#ВОЙНА/WAR e0 :0.3) (SS#БОРЬБА/FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3)) (драться-vb e0 x u1 u2)))
+
+(B (name atakovat) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#БОРЬБА/FIGHT e0 u :0.1)(R#WAR-AGENT x e0 :0.3) (R#WAR-ENEMY y e0 :0.3)) (атаковать-vb e0 x y u2)))
+(B (name napadat-na) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#БОРЬБА/FIGHT e0 u :0.3)(R#WAR-AGENT x e0 :0.3)) (нападать-vb e0 x u1 u2)))
+(B (name napast-na) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#БОРЬБА/FIGHT e0 u :0.3)(R#WAR-AGENT x e0 :0.3)) (напасть-vb e0 x u1 u2)))
+
+
+(B (name pobedit) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#БОРЬБА/FIGHT e0 u :0.1)(R#WAR-AGENT x e0 :0.3) (R#WAR-ENEMY y e0 :0.3))(победить-vb e0 x y u2)))
+(B (name pobezhdat) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#БОРЬБА/FIGHT e0 u :0.1)(R#WAR-AGENT x e0 :0.3) (R#WAR-ENEMY y e0 :0.3)) (побеждать-vb e0 x y u2)))
+(B (name preodolet) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#БОРЬБА/FIGHT e0 u :0.1)(R#WAR-AGENT x e0 :0.3) (R#WAR-ENEMY y e0 :0.3)) (преодолеть-vb e0 x y u2)))
+
+(B (name front) (=>(^(S#ВОЙНА/WAR x :0.2)(SS#БОРЬБА/FIGHT y x  :0.2))(фронт-nn e0 y)))
+(B (name soldat) (=>(^(S#ВОЙНА/WAR x :0.2)(SS#БОРЬБА/FIGHT y x  :0.2))(солдат-nn e0 y)))
+
+(B (name vrag) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#ВРАГ/ENEMY x u :0.3)(R#WAR-ENEMY x u :0.3))(враг-nn e1 x)))
+(B (name vrazheskij) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#ВРАГ/ENEMY e1 u :0.3)) (вражеский-adj e1 x)))
+(B (name vrazhdebnyj) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#ВРАГ/ENEMY e1 u :0.3)(R#WAR-ENEMY x u :0.3))(враждебный-adj e1 x)))
+
+(B (name borba-s) (=> (R#WAR-ENEMY y x :0.90)(^(SS#БОРЬБА/FIGHT x u)(с-in x y))))
+(B (name borba-protiv) (=> (R#WAR-ENEMY y x :0.90)(^(SS#БОРЬБА/FIGHT x u)(против-in x y))))
+(B (name borba-na) (=> (R#WAR-ENEMY y x :0.90)(^(SS#БОРЬБА/FIGHT x u)(на-in x y))))
+(B (name vrag-of) (=> (R#WAR-AGENT y e0 :0.90)(^(R#WAR-ENEMY x e0)(of-in e1 x y))))
+
+
+(B (name fightmap)(=>(I#FIGHT x y :0.9)(SS#БОРЬБА/FIGHT x y)))
+(B (name enemymap)(=>(I#ENEMY x y :0.9)(SS#ВРАГ/ENEMY x y)))
+
+
+; SCHOOL 
+
+(B (name shkola) (=>(^(S#ШКОЛА/SCHOOL x :0.45)(R#SCHOOL-TEACHER x x :0.45))(школа-nn e0 x)))
+(B (name nauchit) (=>(^(S#ШКОЛА/SCHOOL u :0.2)(SS#УЧИТЬ/TEACH e0 u :0.2)(R#SCHOOL-STUDENT y e0 :0.2)(R#SCHOOL-SUBJECT z e0 :0.1) (R#SCHOOL-TEACHER x e0 :0.1))(научить-vb e0 x y z)))
+(B (name uchit) (=>(^(S#ШКОЛА/SCHOOL u :0.2)(SS#УЧИТЬ/TEACH e0 u :0.2)(R#SCHOOL-STUDENT y e0 :0.2)(R#SCHOOL-SUBJECT z e0 :0.1) (R#SCHOOL-TEACHER x e0 :0.1)) (учить-vb e0 x y z)))
+(B (name obuchit) (=>(^(S#ШКОЛА/SCHOOL u :0.2)(SS#УЧИТЬ/TEACH e0 u :0.2)(R#SCHOOL-STUDENT y e0 :0.2)(R#SCHOOL-SUBJECT z e0 :0.1) (R#SCHOOL-TEACHER x e0 :0.1)) (обучить-vb e0 x y z)))
+(B (name obuchat) (=>(^(S#ШКОЛА/SCHOOL u :0.2)(SS#УЧИТЬ/TEACH e0 u :0.2)(R#SCHOOL-STUDENT y e0 :0.2)(R#SCHOOL-SUBJECT z e0 :0.1) (R#SCHOOL-TEACHER x e0 :0.1)) (обучать-vb e0 x y z)))
+(B (name uchitel) (=>(^(S#ШКОЛА/SCHOOL u :0.45)(SS#УЧИТЬ/TEACH e0 u :0.45)(R#SCHOOL-TEACHER x e0))(учитель-nn e0 x)))
+
 ; OF - SCHOOL
-(B (name of-school) (=>(R#SCHOOL-SUBJECT  y x :0.9)(^(SN#ШКОЛА x)(of-in e1 x y))))
+(B (name of-school) (=>(R#SCHOOL-SUBJECT  y x :0.9)(^(S#ШКОЛА/SCHOOL x)(of-in e1 x y))))
+
+(B (name schoolmap)(=>(I#SCHOOL x :0.9)(S#ШКОЛА/SCHOOL x)))
+
+
 ; EXAM
 
-(B (name ekzamen) (=>(^(SN#ШКОЛА x :0.45)(SE#SCHOOL x :0.45)(SSN#ЭКЗАМЕН y x :0.2)( SSE#EXAMINATION y x :0.2))(экзамен-nn e0 y)))
-(B (name test) (=>(^(SN#ШКОЛА x :0.45)(SE#SCHOOL x :0.45)(SSN#ЭКЗАМЕН y x :0.2)( SSE#EXAMINATION y x :0.2))(тест-nn e0 y)))
-(B (name proverka) (=>(^(SN#ШКОЛА x :0.45)(SE#SCHOOL x :0.45)(SSN#ЭКЗАМЕН y x :0.2)( SSE#EXAMINATION y x :0.2))(проверка-nn e0 y)))
-(B (name ekzamen-na) (=>(R#SCHOOL-SUBJECT  y x :0.9)(^(SSN#ЭКЗАМЕН z x)(на-in e1 x y))))
+(B (name ekzamen) (=>(^(S#ШКОЛА/SCHOOL x :0.45)(SS#ЭКЗАМЕН/EXAMINATION y x :0.45))(экзамен-nn e0 y)))
+(B (name test) (=>(^(S#ШКОЛА/SCHOOL x :0.45)(SS#ЭКЗАМЕН/EXAMINATION y x :0.45)) (тест-nn e0 y)))
+(B (name proverka) (=>(^(S#ШКОЛА/SCHOOL x :0.45)(SS#ЭКЗАМЕН/EXAMINATION y x :0.45)) (проверка-nn e0 y)))
+(B (name ekzamen-na) (=>(R#SCHOOL-SUBJECT  y z :0.9)(^(SS#ЭКЗАМЕН/EXAMINATION x z)(на-in e1 x y))))
 
+
+
+; CRIME
+
+(B (name prestuplenie) (=>(S#ПРЕСТУПЛЕНИЕ/CRIME x :0.9)(преступление-nn e0 x)))
+(B (name prestuplenie) (=>(S#ПРЕСТУПЛЕНИЕ/CRIME x :0.9) (правонарушение-nn e0 x)))
+(B (name prestuplenie) (=>(S#ПРЕСТУПЛЕНИЕ/CRIME x :0.9) (^(нарушение-nn e0 x)(право-nn e1 y)(of-in e2 x y))))
+
+(B (name prestuplenie) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME e0 :0.45)(R#CRIME-AGENT x e0 :0.45))(преступный-adj e0 x)))
+(B (name prestupnik) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME e0 :0.45)(R#CRIME-AGENT x e0 :0.45))(преступник-nn e0 x)))
+(B (name bandit) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME e0 :0.45)(R#CRIME-AGENT x e0 :0.45))(бандит-nn e0 x)))
+
+
+(B (name grabezh) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME x :0.45)(SS#ГРАБЕЖ/ROBBERY x x :0.45))(грабеж-nn e0 x)))
+(B (name grabezh) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME x :0.45)(SS#ГРАБЕЖ/ROBBERY x x :0.45)) (грабёж-nn e0 x)))
+(B (name ograblenie) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME x :0.45)(SS#ГРАБЕЖ/ROBBERY x x :0.45)) (ограбление-nn e0 x)))
+
+(B (name grabitelskij) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME y :0.45)(SS#ГРАБЕЖ/ROBBERY e0 y :0.45))(грабительский-adj e0 x)))
+
+(B (name grabit) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME e0 :0.2)(SS#ГРАБЕЖ/ROBBERY e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-VICTIM z e0 :0.2))(грабить-vb e0 x z u2)))
+(B (name ograbit) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME e0 :0.2)(SS#ГРАБЕЖ/ROBBERY e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-VICTIM z e0 :0.2)) (ограбить-vb e0 x z u2)))
+
+(B (name grabitel) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME e0 :0.3)(SS#ГРАБЕЖ/ROBBERY e0 e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (грабитель-nn e0 x)))
+
+
+(B (name krazha) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME x :0.45)(SS#КРАЖА/THEFT x x :0.45)) (кража-nn e0 x)))
+(B (name vorovstvo) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME x :0.45)(SS#КРАЖА/THEFT x x :0.45)) (воровство-nn e0 x)))
+
+
+(B (name krast-u) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME e0 :0.2)(SS#КРАЖА/THEFT e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-VICTIM z e0 :0.2)(R#THEFT-THEME z e0 :0.1)) (^(красть-vb e0 x z u2)(у-in e0 z))))
+(B (name krast) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME e0 :0.3)(SS#КРАЖА/THEFT e0 e0 :0.3)(R#CRIME-AGENT x e0 :0.3) (R#THEFT-THEME z e0 :0.1)) (красть-vb e0 x z u2)))
+(B (name obokrast) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME e0 :0.2)(SS#КРАЖА/THEFT e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-VICTIM z e0 :0.2)) (обокрасть-vb e0 x z u2)))
+
+(B (name vorovat) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME e0 :0.2)(SS#КРАЖА/THEFT e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#THEFT-THEME z e0 :0.2)) (воровать-vb e0 x z u2)))
+(B (name obvorovat) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME e0 :0.2)(SS#КРАЖА/THEFT e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-VICTIM z e0 :0.2)) (об воровать-vb e0 x z u2)))
+
+; FROM - THEFT
+(B (name vorovat-u) (=>(R#CRIME-VICTIM y e0 :0.9)(^(S#КРАЖА/THEFT x e0)(у-in e1 x y))))
+
+
+(B (name vor) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME e0 :0.3)(SS#КРАЖА/THEFT e0 e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (вор-nn e0 x)))
+
+(B (name nasilie-nad) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME x :0.3)(SS#НАСИЛИЕ/VIOLENCE x x :0.3)(R#CRIME-VICTIM y x :0.2))(^(насилие-nn e0 x)(над-in e1 x y))))
+
+(B (name nasilie) (=>(^(S#ПРЕСТУПЛЕНИЕ/CRIME x :0.45)(SS#НАСИЛИЕ/VIOLENCE x x :0.45))(насилие-nn e0 x)))
+
+(B (name crimemap)(=>(I#CRIME x :0.9)(S#ПРЕСТУПЛЕНИЕ/CRIME x)))
+
+
+; PUNISHMENT
+
+(B (name nakazanie) (=>(S#НАКАЗАНИЕ/PUNISHMENT x :0.9)( наказание-nn e0 x)))
+(B (name kara) (=>(S#НАКАЗАНИЕ/PUNISHMENT x :0.9) (кара-nn e0 x)))
+
+
+(B (name nakazat) (=>(^(S#НАКАЗАНИЕ/PUNISHMENT e0 :0.3)(R#PUNISHMENT-AGENT x e0 :0.3)(R#PUNISHMENT-VICTIM y e0 :0.3))(наказать-vb e0 x y u)))
+(B (name nakazyvat) (=>(^(S#НАКАЗАНИЕ/PUNISHMENT e0 :0.3)(R#PUNISHMENT-AGENT x e0 :0.3)(R#PUNISHMENT-VICTIM y e0 :0.3)) (наказывать-vb e0 x y u)))
+(B (name karat) (=>(^(S#НАКАЗАНИЕ/PUNISHMENT e0 :0.3)(R#PUNISHMENT-AGENT x e0 :0.3)(R#PUNISHMENT-VICTIM y e0 :0.3)) (карать-vb e0 x y u)))
+(B (name pokarat) (=>(^(S#НАКАЗАНИЕ/PUNISHMENT e0 :0.3)(R#PUNISHMENT-AGENT x e0 :0.3)(R#PUNISHMENT-VICTIM y e0 :0.3)) (покарать-vb e0 x y u)))
+
+
+(B (name nakazannyj) (=>(^(S#НАКАЗАНИЕ/PUNISHMENT e0 :0.45)(R#PUNISHMENT-VICTIM x e0 :0.45))(наказанный-adj e0 x)))
+
+; LIMITATION
+
+(B (name zatochenie) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45)( SS#ЗАТОЧЕНИЕ/CAPTIVITY x x :0.45))(заточение-nn e0 x)))
+(B (name turma) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45)( SS#ЗАТОЧЕНИЕ/CAPTIVITY x x :0.45))(тюрьма-nn e0 x)))
+
+(B (name lovushka) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45)(SS#ЛОВУШКА/TRAP x x :0.45))(ловушка-nn e0 x)))
+(B (name zapadnja) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45)(SS#ЛОВУШКА/TRAP x x :0.45))(западня-nn e0 x)))
+(B (name kapkan) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45)(SS#ЛОВУШКА/TRAP x x :0.45))(капкан-nn e0 x)))
+(B (name silok) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45)(SS#ЛОВУШКА/TRAP x x :0.45))(силок-nn e0 x)))
+
+(B (name zagnat) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION e0 :0.2)(SS#ЛОВУШКА/TRAP e0 e0 :0.2)(R#LIMITATION-AGENT x e0 :0.2)(R#LIMITATION-PATIENT y e0 :0.2))(загнать-vb e0 x y u)))
+(B (name pojmat) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION e0 :0.2)(SS#ЛОВУШКА/TRAP e0 e0 :0.2)(R#LIMITATION-AGENT x e0 :0.2)(R#LIMITATION-PATIENT y e0 :0.2))(поймать-vb e0 x y u)))
+(B (name lovit) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION e0 :0.2)(SS#ЛОВУШКА/TRAP e0 e0 :0.2)(R#LIMITATION-AGENT x e0 :0.2)(R#LIMITATION-PATIENT y e0 :0.2))(ловить-vb e0 x y u)))
+
+(B (name rabstvo) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45)(SS#РАБСТВО/SLAVERY x x :0.45))(рабство-nn e0 x)))
+(B (name rab) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION u :0.3)(SS#РАБСТВО/SLAVERY e0 u :0.3)(R#LIMITATION-PATIENT x e0 :0.3))(раб-nn e0 x)))
+(B (name rabskij) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION u :0.45)(SS#РАБСТВО/SLAVERY e0 u :0.45))(рабский-adj e0 x)))
+
+
+(B (name puty) (=>(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45) (путы-nn e0 x)))
+(B (name boloto) (=>(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45)(болото-nn e0 x)))
+(B (name jama) (=>(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45)(яма-nn e0 x)))
+(B (name udavka) (=>(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45)(удавка-nn e0 x)))
+(B (name dushit) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.3)(R#LIMITATION-AGENT x e0 :0.3)(R#LIMITATION-PATIENT y e0 :0.3))(душить-vb e0 x y u)))
+(B (name zadushit) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.3)(R#LIMITATION-AGENT x e0 :0.3)(R#LIMITATION-PATIENT y e0 :0.3))(задушить-vb e0 x y u)))
+
+(B (name limitationmap)(=>(I#LIMITATION x :0.9)(S#ОГРАНИЧЕНИЕ/LIMITATION x)))
