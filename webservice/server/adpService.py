@@ -7,7 +7,7 @@ import logging
 
 from optparse import OptionParser
 from restServer import start_server
-from NLPipeline_MULT_metaphor import ADP
+from NLPipeline_MULT_metaphor_CM import ADP
 
 
 def annotate_document(annotate_document_request_body):
