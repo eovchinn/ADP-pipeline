@@ -156,5 +156,16 @@ returns:
 In foreign policy, he ended the war in Iraq, increased troop levels in Afghanistan, signed the New START arms control treaty with Russia, ordered U.S. involvement in the 2011 Libya military intervention, and ordered the military operation that resulted in the death of Osama bin Laden."@en...
 ```
 
+### Similarity Tools
 
+* First, use the get_paragraph.py to find the paragraph which you are interested in, and parse it.
+```
+python get_paragraph.py -i 'Nation' -l EN --stdout| python parse.py -l --common commonDIR --temp temp/temp.txt EN >temp/nation.txt
+```
+where commonDIR = $METAPHOR_DIR/pipelines/common
 
+* Use similarity.py to compute similarty:
+```
+python similarity.py -w nation -p nn < temp/nation.txt >temp/nation.rank.txt
+```
+-w options should follows the target word, and -p options should follow the target word's POS tag, which should be compatible with LF form's suffix, i.e. nn,rb,vb,adj.
