@@ -44,6 +44,7 @@ def main():
                   default=False)
     parser.add_option("-d","--debug",dest = "debug" , action = "store_true",
                   help="output debug info, default is false", default = False)
+    parser.add_option("--stdout",dest = 'stdout', action = 'store_true',help='direct write the output to stdout',default = False)
     (options, args) = parser.parse_args()
     
     if not options.inword:
@@ -57,7 +58,7 @@ def main():
     case_sensitive=options.case_sensitive
     preferred_meaning=options.preferred_meaning
     debug = options.debug
-    
+    stdout = options.stdout
     #prepare language suffix for yago and yago
     langIndex={"EN":0,"ES":1,"RU":2,"FA":3}
     qlangs=['@eng','@spa','@rus','@fas']
@@ -102,7 +103,8 @@ def main():
         query = query.replace('ilike','like')
         
     query = query.replace('@@@word@@@',inword)
-    print "Query:",query
+    if debug:
+        print "Query:",query
 
     try:
         # change CONN_STRING accordingly.
@@ -113,11 +115,13 @@ def main():
         #get result
         rows = cur.fetchall()
         i=0
-        for row in rows:
-            i+=1
-            print '#'+str(i)+" TITLE: "+row['title']
-            print '#'+str(i)+" ABSTRACT: "+row['abstract']
-        
+        if not stdout:
+            for row in rows:
+                i+=1
+                print '#'+str(i)+" TITLE: "+row['title']
+                print '#'+str(i)+" ABSTRACT: "+row['abstract']
+        else:
+            print rows[0]['abstract']
     except psycopg2.DatabaseError, e:
         print 'Error %s' % e    
         sys.exit(1)

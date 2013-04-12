@@ -7,6 +7,7 @@ import urllib
 import global_setting
 import os
 import subprocess
+import parse
 # function to insert records
 
 def insert_records(con,records,table_name):
@@ -52,50 +53,6 @@ def create_table(table_name):
         print 'Error %s' % e
         sys.exit(-1)
 
-def parse(abstract,commonDir,tempFile,lang):
-    abstract = abstract[1:-4]
-    obsFile = tempFile+'.obs'
-    sentFile = tempFile+'.sent'
-    sf = open(tempFile,'w')
-    sf.write(abstract.encode('utf8'))
-    sf.close()
-    command = "python nltk_tokenizer.py -l __lang__ --input __path__"
-    command = command.replace('__lang__',lang)
-    command = command.replace('__path__',tempFile)
-    subprocess.call(command.split())
-    sf = open(sentFile,'r')
-    i = 0
-    sents = []
-    while True:
-        line = sf.readline()
-        if not line:
-            break
-        sents.append(line)
-        i+=1
-        if i == 5:
-            break
-    sf.close()
-    sf = open(sentFile,'w')
-    for line in sents:
-        sf.write(line)
-    sf.close()
-    command = 'python __commonDir__/NLPipeline_MULT_stdinout.py --lang __lang__ --input __path__ --parse'
-    command = command.replace('__commonDir__',commonDir)
-    command = command.replace('__lang__',lang)
-    command = command.replace('__path__',sentFile)
-    subprocess.call(command.split())
-    
-    obsf = open(obsFile,'r')
-    obss = []
-    while True:
-        line = obsf.readline()
-        if not line:
-            break
-        obss.append(line)
-    obss = ''.join(obss)
-    sents = ''.join(sents)
-    return (sents,obss)
-
 def main():
 
     from optparse import OptionParser
@@ -137,7 +94,7 @@ def main():
     table_name=table_names[index]
     
     commonDir = options.commonDir
-    tempFile = os.path.abspath(options.tempFile)
+    tempFile = options.tempFile
 
 
     #Database setting and create table
@@ -151,7 +108,7 @@ def main():
     records=[]
     while True:
         line=file.readline()
-        if not line :
+        if not line or i==2:
             insert_records(con,records,table_name)
             records=[]
             break
@@ -173,7 +130,7 @@ def main():
         url=urlpre+title
         #for abstraction
         abstract=ll[-1]
-        result = parse(abstract,commonDir,tempFile,lang)
+        result = parse.parse(abstract,commonDir,tempFile,lang,False)
         abstract = result[0]
         parse_result = result[1]
         #for id
