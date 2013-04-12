@@ -595,7 +595,7 @@
 
 (B (name politician-nn)(=> (^ (conflict c x y g h :0.9)(leadP g z c :0.3))(politician-nn e x)))
 
-(B (name political-adj)(=> (^ (politics-nn e p)(nn p x))(political-adj e1 x)))
+(B (name political-adj)(=> (^ (politics-nn e p :0.45)(nn p x :0.45))(political-adj e1 x)))
 
 (B (name contributor-nn)(=> (politicalParty x :1.2)(contributor-nn e x)))
 

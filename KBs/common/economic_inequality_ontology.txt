@@ -1,4 +1,4 @@
-; DISEASE INTERNATIONAL
+; DISEASE 
 
 (B (name disease)(=> (^(M#CAUSE-NOT-FUNCTION e0 :0.3)(M#CAUSING-THING_F x e0 :0.3)(M#FUNCTION-AGENT y e0 :0.3)) (^ (I#DISEASE x)(R#SICK y x))))
 
@@ -10,7 +10,7 @@
 
 (B (name cure3)(=> (M#CAUSE-NOT-EXIST e1 :0.95) (I#CURE e0 d)))
 
-; BASE INTERNATIONAL
+; BASE 
 
 (B (name base)(=> (^(M#SUPPORT e1 :0.3)(M#SUPPORTER z e1 :0.3) (M#SUPPORTED y e1 :0.3)) (^(I#BASE x)(R#BASE-AGENT z x)(R#BASE-STRUCTURE y x))))
 
@@ -18,7 +18,7 @@
 
 (B (name base2)(=> (^(M#SUPPORT e1 :0.45)(M#SUPPORTER x e1 :0.45)) (I#BASE x))) 
 
-; WAR INTERNATIONAL
+; WAR 
 
 (B (name fight)(=> (^(M#CAUSE-NOT-EXIST e1 :0.3)(M#CAUSING-THING_E z e1 :0.3)(M#EXISTING-THING y e1 :0.3)) (^(I#FIGHT x e0)(R#WAR-ENEMY y x)(R#WAR-AGENT z x))))
 
@@ -34,22 +34,31 @@
 (B (name enemy2)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#CAUSING-THING_F x e1 :0.45)) (I#ENEMY x e0)))
 
 
-; WATER RUSSIAN
+; WATER 
 
-(B (name stream)(=> (M#MOVE-QUICKLY x :0.8) (^(SS#ПОТОК/STREAM e0 y)(R#STREAMING x e0))))
-
-(B (name water)(=> (M#MOVE-QUICKLY y :0.8) (^(S#ВОДА/WATER x)(R#MATTER y x))))
-(B (name water2)(=> (M#MOVE-QUICKLY x :0.95) (S#ВОДА/WATER x)))
+(B (name stream)(=> (M#MOVE-QUICKLY x :0.8) (^(I#STREAM e0 y)(R#STREAMING x e0))))
+(B (name stream2)(=> (M#MOVE-QUICKLY x :0.9) (I#STREAM e0 y)))
 
 
+(B (name body_of_water)(=> (M#LARGE-AMOUNT-OF z :0.8) (^(I#BODY-OF-WATER y x)(R#MATTER  z y))))
 
-; WATER ENGLISH
 
-(B (name water3)(=> (M#SATISFY-NEEDS x :0.9) (S#WATER x)))
 
-; WATER INTERNATIONAL
+(B (name drink)(=> (^(M#SATISFY-NEED e0 :0.3) (M#SATISFY-AGENT m e0 :0.3) (M#SATISFY-OBJECT d e0 :0.3)) (^(I#DRINK e0 w)(R#DRINKER d e0)(R#MATTER m w))))
 
-(B (name body_of_water)(=> (M#LARGE-AMOUNT-OF z :0.9) (^(I#BODY-OF-WATER y x)(R#MATTER  z y))))
+(B (name drink2)(=> (^(M#SATISFY-NEED e0 :0.31) (M#SATISFY-AGENT w e0 :0.31) (M#SATISFY-OBJECT d e0 :0.31)) (^(I#DRINK e0 w)(R#DRINKER d e0))))
+
+(B (name drink3)(=> (^(M#SATISFY-NEED e0 :0.46) (M#SATISFY-AGENT m e0 :0.46)) (^(I#DRINK e0 w)(R#MATTER m w))))
+
+(B (name drink4)(=> (^(M#SATISFY-NEED e0 :0.47) (M#SATISFY-AGENT w e0 :0.47)) (I#DRINK e0 w)))
+
+(B (name satisfy-need)(=> (^(M#HAVE-NEED e1 :0.3)(M#NEEDY n e1 :0.3)(M#NEED x :0.3)) (^(M#SATISFY-NEED e0)(M#SATISFY-OBJECT n e0))))
+
+(B (name satisfy-need2)(=> (^(M#HAVE-NEED e1 :0.46)(M#NEED x :0.46)) (M#SATISFY-NEED e0)))
+
+
+(B (name thirst)(=> (M#NEED x :0.9) (I#THIRST x y)))
+
 
 (B (name drought)(=> (^(M#NOT-EXIST e0 :0.45)(M#EXISTING-THING x e0 :0.45)) (^(I#DROUGHT e2 u)(R#STREAMING x e2))))
 
@@ -60,7 +69,7 @@
 (B (name shoal2)(=> (M#NOT-EXIST e0 :0.9) (I#SHOAL e2 u)))
 
 
-; SCHOOL INTERNATIONAL
+; SCHOOL 
 
 (B (name school1)(=> (^(M#CAUSE-UNDERSTAND e0 :0.2)(M#CAUSING-THING_U t e0 :0.2)(M#UNDERSTAND-AGENT z e0 :0.2) (M#UNDERSTAND-THEME y e0 :0.2)) (^(R#SCHOOL-TEACHER t x)(R#SCHOOL-SUBJECT  y x)(R#SCHOOL-STUDENT z x))))
 
@@ -73,7 +82,7 @@
 (B (name school5) (=> (M#CAUSE-UNDERSTAND e0 :0.95)(I#SCHOOL x)))
 
 
-; CRIME INTERNATIONAL
+; CRIME 
 
 (B (name crime)(=> (^(M#AGAINST-SOCIETY-ACTION e0 :0.3)(M#AGAINST-SOCIETY-ACTOR x e0 :0.3)(M#AGAINST-SOCIETY-ACTION-VICTIM y e0 :0.3)) (^(I#CRIME e0)(R#CRIME-AGENT x e0)(R#CRIME-VICTIM y e0))))
 
@@ -83,7 +92,7 @@
 
 (B (name crime4)(=> (M#AGAINST-SOCIETY-ACTION e0 :0.91) (I#CRIME e0)))
 
-; LIMITATION INTERNATIONAL
+; LIMITATION 
 
 (B (name limitation) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING_F x e1 :0.3)(M#FUNCTION-AGENT y e1 :0.3)) (^(I#LIMITATION e0)(R#LIMITATION-AGENT x e0)(R#LIMITATION-PATIENT y e0))))
 
