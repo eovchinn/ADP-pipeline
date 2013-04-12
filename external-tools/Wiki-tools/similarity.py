@@ -42,7 +42,7 @@ def similarity(results, tword,tpos ,method):
             similarity = tsynset.wup_similarity(results[i][2])
         if not similarity:
             similarity = 0.0
-        results[i] = results[i] + (similarity,)
+        results[i] = results[i][0:3] + (similarity,)
     rset = {x for x in results}
     results = [x for x in rset]
     results = reversed( sorted(results, key = lambda result: result[3]))
