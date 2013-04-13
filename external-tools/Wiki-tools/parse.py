@@ -8,10 +8,13 @@ import sys
 def parse(abstract,commonDir,tempFile,lang,std):
     tempFile = os.path.abspath(tempFile)
     abstract = abstract[1:-4]
+    abstract = abstract.replace(r"\"",'"')
+    abstract = abstract.replace(r"\'","'")
+
     obsFile = tempFile+'.obs'
     sentFile = tempFile+'.sent'
     sf = open(tempFile,'w')
-    sf.write(abstract.encode('utf8'))
+    sf.write(abstract)
     sf.close()
     command = "python nltk_tokenizer.py -l __lang__ --input __path__"
     command = command.replace('__lang__',lang)
