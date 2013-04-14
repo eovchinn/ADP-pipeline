@@ -3,15 +3,25 @@
 
 import os
 import re
+import json
 import time
 import thread
 import socket
-import json
-
+import logging
 import extract_CMs_from_hypotheses
+
+from logging.handlers import TimedRotatingFileHandler
 from extract_CMs_from_hypotheses import *
 
 from subprocess import Popen, PIPE
+
+
+logHandler = TimedRotatingFileHandler("logfile", when="midnight")
+logFormatter = logging.Formatter("%(asctime)s %(message)s")
+logHandler.setFormatter(logFormatter)
+logger = logging.getLogger("my_logger")
+logger.addHandler(logHandler)
+logger.setLevel(logging.INFO)
 
 
 METAPHOR_DIR = os.environ["METAPHOR_DIR"]
@@ -194,6 +204,8 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
 
     # print hypotheses
 
+    processed, failed, empty = 0, 0, 0
+
     # merge ADB result and input json document
     for hyp in hypotheses:
         for ann in request_body_dict["metaphorAnnotationRecords"]:
@@ -201,8 +213,23 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
                 if int(ann["id"]) == int(hyp["id"]):
                     for key, value in hyp.items():
                         ann[key] = value
+                        processed += 1
+                    if not hyp["isiAbductiveProofgraph"]:
+                        print "proofgraph not found (%d)" % int(ann["id"])
+                        fl.write("EMPTY PROOFGRAPH\n")
+                        fl = open("/lfs1/vzaytsev/misc/fails/context.%d.txt" % int(ann["id"]), "w")
+                        fl.write(ann["context"].encode("utf-8"))
+                        fl.close()
+                        empty += 1
             except Exception:
-                pass
+                print "proofgraph not found (%d)" % int(ann["id"])
+                fl = open("/lfs1/vzaytsev/misc/fails/context.%d.txt" % int(ann["id"]), "w")
+                fl.write("FAIL\n")
+                fl.write(ann["context"].encode("utf-8"))
+                fl.close()
+                failed += 1
+
+    logger.info("STAT: {'processed':%d,'failed':%d,'empty':%d}" %  (processed, failed, empty))
 
     return request_body_dict
 
