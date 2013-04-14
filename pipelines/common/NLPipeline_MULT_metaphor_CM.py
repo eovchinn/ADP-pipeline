@@ -16,7 +16,7 @@ from extract_CMs_from_hypotheses import *
 from subprocess import Popen, PIPE
 
 
-logHandler = TimedRotatingFileHandler("logfile", when="midnight")
+logHandler = TimedRotatingFileHandler("/lfs1/vzaytsev/misc/log/access.log", when="midnight")
 logFormatter = logging.Formatter("%(asctime)s %(message)s")
 logHandler.setFormatter(logFormatter)
 logger = logging.getLogger("my_logger")
