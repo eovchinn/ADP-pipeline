@@ -220,14 +220,14 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
                         print "proofgraph not found (%d)" % int(ann["id"])
                         fl.write("EMPTY PROOFGRAPH\n")
                         fl = open("/lfs1/vzaytsev/misc/fails/context.%d.txt" % int(ann["id"]), "w")
-                        fl.write(ann["context"].encode("utf-8"))
+                        fl.write(ann["linguisticMetaphor"].encode("utf-8"))
                         fl.close()
                         empty += 1
             except Exception:
                 print "proofgraph not found (%d)" % int(ann["id"])
                 fl = open("/lfs1/vzaytsev/misc/fails/context.%d.txt" % int(ann["id"]), "w")
                 fl.write("FAIL\n")
-                fl.write(ann["context"].encode("utf-8"))
+                fl.write(ann["linguisticMetaphor"].encode("utf-8"))
                 fl.close()
                 failed += 1
 
