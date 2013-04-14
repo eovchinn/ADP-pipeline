@@ -38,7 +38,7 @@ PARSER2HENRY = "%s/pipelines/common/IntParser2Henry.py" % METAPHOR_DIR
 
 # Compiled knowledge bases
 EN_KBPATH = "%s/KBs/English/English_compiled_KB_2.da" % METAPHOR_DIR
-ES_KBPATH = "%s/KBs/Spanish/Spanish_compiled_KB.da" % METAPHOR_DIR
+ES_KBPATH = "%s/KBs/Spanish/Spanish_compiled_KB_2.da" % METAPHOR_DIR
 RU_KBPATH = "%s/KBs/Russian/Russian_compiled_KB_2.da" % METAPHOR_DIR
 FA_KBPATH = "%s/KBs/Farsi/Farsi_compiled_KB.da" % METAPHOR_DIR
 
@@ -98,6 +98,8 @@ def extract_hypotheses(inputString):
 		
             # Katya: new_output_struct_item should be the new output, when LCC updates their repository and accepts new fields.
             new_output_struct_item = extract_CM_mapping(target,hypothesis)
+            #print json.dumps(hypothesis, ensure_ascii=False)
+            #print json.dumps(new_output_struct_item, ensure_ascii=False)
 
             output_struct_item["isiAbductiveExplanation"] = new_output_struct_item["isiTargetSourceMapping"]	
             output_struct_item["isiAbductiveHypothesis"] = "TARGET DOMAIN AND SUBDOMAIN[" + new_output_struct_item["isiTargetDomain"] + \

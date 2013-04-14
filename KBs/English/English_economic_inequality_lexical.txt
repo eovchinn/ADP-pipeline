@@ -30,8 +30,8 @@
 
 ; BECOME POOR
 
-(B (name become-poor) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (^(become-vb(e1,x,e0,u))(poor-adj e0 y))))
-(B (name grow-poor) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (^(grow-vb(e1,x,e0,u))(poor-adj e0 y))))
+(B (name become-poor) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (^(become-vb e1 x e0 u)(poor-adj e0 y))))
+(B (name grow-poor) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (^(grow-vb e1 x e0 u)(poor-adj e0 y))))
 
 
 ; OF - POOR
@@ -51,10 +51,16 @@
 (B (name property) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (property-nn e0 x)))
 
 ; RICH PERSON
+(B (name rich) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (rich-adj e0 y)))
+(B (name prosperous) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (prosperous-adj e0 y)))
 (B (name money-bags) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (money-bags-nn e0 y)))
 (B (name multi-millionaire) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (multi-millionaire-nn e0 y)))
 (B (name billionaire) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (billionaire-nn e0 y)))
 (B (name millionaire) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (millionaire-nn e0 y)))
+
+; BE RICH
+(B (name prosper) (=>(^(TS#WEALTH e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#RICH x e0 :0.3)) (prosper-vb e0 x u1 u2)))
+(B (name thrive) (=>(^(TS#WEALTH e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#RICH x e0 :0.3)) (thrive-vb e0 x u1 u2)))
 
 ; OF - WEALTH
 (B (name of-rich) (=>(R#RICH  y x :0.9)(^(TS#WEALTH x)(of-in e1 x y))))
@@ -87,7 +93,7 @@
 ; ACCESS TO EDUCATION
 
 (B (name access-to-education) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)) (^(access-nn e0 x)(to-in e1 x y)(education-nn e2 y))))
-(B (name access- education) (=>(^(TS#ACCESS-TO-EDUCATION e2 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)(R#EDUCATED x e0)) (^(access-vb e0 x y u)(education-nn e2 y))))
+(B (name access-education) (=>(^(TS#ACCESS-TO-EDUCATION e2 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)(R#EDUCATED x e0)) (^(access-vb e0 x y u)(education-nn e2 y))))
 (B (name get-education) (=>(^(TS#ACCESS-TO-EDUCATION e2 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)(R#EDUCATED x e0)) (^(get-vb e0 x y u)(education-nn e2 y))))
 
 (B (name education) (=>(^(TS#ACCESS-TO-EDUCATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)(R#EDUCATION x x)) (education-nn e0 x)))
@@ -145,7 +151,7 @@
 (B (name heal) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (heal-vb e0 y x u2)))
 
 
-(B (name unrecoverable) (=>(^(S# DISEASE x :0.2)(SS#CURE e1 x  :0.2)(R#SICK y e1 :0.1))(unrecoverable-adj e1 y)))
+(B (name unrecoverable) (=>(^(S#DISEASE x :0.2)(SS#CURE e1 x  :0.2)(R#SICK y e1 :0.1))(unrecoverable-adj e1 y)))
 (B (name incurable) (=>(^(S#DISEASE x :0.2)(SS#CURE e1 x  :0.2)(R#SICK y e1 :0.1)) (incurable -adj e1 y)))
 
 (B (name doctor) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x  :0.3)(R#CURE-AGENT y e0 :0.3))(doctor-nn e0 y)))
@@ -154,7 +160,7 @@
 
 
 ; OF - CURE
-(B (name of-disease) (=>(S#DISEASE y :0.9)(^(S#CURE x)(of-in e1 x y))))
+(B (name of-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE x)(of-in e1 x y))))
 
 ; FROM/AGAINST - CURE
 (B (name from-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE e0)(from-in e1 e0 y))))
@@ -184,6 +190,8 @@
 (B (name pandemic) (=>(^(S#DISEASE x :0.45)(SS#EPIDEMIC e0 x  :0.45)) (pandemic-adj e0 y)))
 (B (name virus) (=>(^(S#DISEASE x :0.45)(SS#EPIDEMIC y x  :0.45)) (virus-nn e0 y)))
 
+; OF - EPIDEMIC
+(B (name of-epidemic) (=>(S#DISEASE y :0.9)(^(SS#EPIDEMIC x u)(of-in e1 x y))))
 
 ; SYMPTOM
 (B (name symptom) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOM y x  :0.45)) (symptom-nn e0 y)))
@@ -192,6 +200,9 @@
 (B (name bleeding) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOM y x  :0.45))(bleeding-nn e0 y)))
 (B (name wound) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOM y x  :0.45)) (wound-nn e0 y)))
 (B (name pain) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOM y x  :0.45)) (pain-nn e0 y)))
+
+; OF - SYMPTOM
+(B (name of-symptom) (=>(S#DISEASE y :0.9)(^(SS#SYMPTOM y u)(of-in e1 x y))))
 
 (B (name dismap)(=>(I#DISEASE x :0.9)(S#DISEASE x)))
 (B (name curemap)(=>(I#CURE e0 x :0.9)(SS#CURE e0 x)))
@@ -292,6 +303,53 @@
 ; WATER
 
 (B (name water) (=>(S#WATER x :0.9) (water-nn e0 x)))
+(B (name sea-water) (=>(S#WATER x :0.9) (sea-water-nn e0 x)))
+
+; BODY OF WATER
+(B (name sea) (=>(^(S#WATER x :0.45)(SS#BODY-OF-WATER y x  :0.45))(sea-nn e0 y)))
+(B (name ocean) (=>(^(S#WATER x :0.45)(SS#BODY-OF-WATER y x  :0.45)) (ocean-nn e0 y)))
+(B (name river) (=>(^(S#WATER x :0.45)(SS#BODY-OF-WATER y x  :0.45)) (river-nn e0 y)))
+
+; OF - BODY-OF-WATER
+(B (name of-body-of-water) (=>(R#MATTER x y :0.9)(^(SS#BODY-OF-WATER y z)(of-in e1 y x))))
+
+
+; DRINK
+(B (name drink) (=>(^(S#WATER u :0.2)(SS#DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2)) (drink-vb e0 x y u2)))
+(B (name gulp) (=>(^(S#WATER u :0.2)(SS#DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2))  (gulp-vb e0 x y u2)))
+(B (name imbibe) (=>(^(S#WATER u :0.2)(SS#DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2))  (imbibe-vb e0 x y u2)))
+(B (name quaff) (=>(^(S#WATER u :0.2)(SS#DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2))  (quaff-vb e0 x y u2)))
+(B (name sip) (=>(^(S#WATER u :0.2)(SS#DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2))  (sip-vb e0 x y u2)))
+
+(B (name drink2) (=>(^(S#WATER y :0.45) (SS#DRINK x y :0.45))(drink-nn e0 x)))
+(B (name gulp) (=>(^(S#WATER y :0.45) (SS#DRINK x y :0.45))(gulp-nn e0 x)))
+(B (name sip) (=>(^(S#WATER y :0.45) (SS#DRINK x y :0.45))(sip-nn e0 x)))
+(B (name swig) (=>(^(S#WATER y :0.45) (SS#DRINK x y :0.45))(swig-nn e0 x)))
+
+; THIRST
+(B (name thirst) (=>(^(S#WATER y :0.3) (SS#THIRST x y :0.3)(R#DRINKER x e0 :0.3))(thirst-nn e0 x)))
+(B (name thirsty) (=>(^(S#WATER y :0.3) (SS#THIRST e0 y :0.3)(R#DRINKER x e0 :0.3))(thirsty-adj e0 x)))
+(B (name thirstier) (=>(^(S#WATER y :0.3) (SS#THIRST e0 y :0.3)(R#DRINKER x e0 :0.3))(thirstier-adj e0 x)))
+
+; OF - THIRST
+(B (name of-thirst) (=>(R#THIRST-OBJECT y x :0.9)(^(SS#THIRST x e)(of-in e1 x y))))
+
+
+; STREAM
+(B (name flow) (=>(^(S#WATER y :0.3)(SS#STREAM e0 y :0.3)(R#STREAMING x e0 :0.3))(flow-vb e0 x u1 u2)))
+(B (name leak) (=>(^(S#WATER y :0.3)(SS#STREAM e0 y :0.3)(R#STREAMING x e0 :0.3))(leak-vb e0 x u1 u2)))
+(B (name stream) (=>(^(S#WATER y :0.3)(SS#STREAM e0 y :0.3)(R#STREAMING x e0 :0.3))(stream-vb e0 x u1 u2)))
+
+(B (name stream2) (=>(^(S#WATER x :0.45)(SS#STREAM y x  :0.45))(stream-nn e0 y)))
+(B (name flow2) (=>(^(S#WATER x :0.45)(SS#STREAM y x  :0.45))(flow-nn e0 y)))
+(B (name leak2) (=>(^(S#WATER x :0.45)(SS#STREAM y x  :0.45))(leak-nn e0 y)))
+
+; OF - STREAM
+(B (name of-stream) (=>(R#STREAMING y x :0.9)(^(SS#STREAM x e)(of-in e1 x y))))
 
 (B (name watermap)(=>(I#WATER x :0.9)(S#WATER x)))
+(B (name drinkmap)(=>(I#DRINK x y :0.9)(SS#DRINK x y)))
+(B (name thirstmap)(=>(I#THIRST x y :0.9)(SS#THIRST x y)))
+(B (name streammap)(=>(I#STREAM x y :0.9)(SS#STREAM x y)))
+
 

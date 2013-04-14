@@ -160,7 +160,7 @@ In foreign policy, he ended the war in Iraq, increased troop levels in Afghanist
 
 * First, use the get_paragraph.py to find the paragraph which you are interested in, and parse it.
 ```
-python get_paragraph.py -i 'Nation' -l EN --stdout| python parse.py -l --common commonDIR --temp temp/temp.txt EN >temp/nation.txt
+python get_paragraph.py -i 'Nation' -l EN --stdout| python parse.py -l EN --common commonDIR --temp temp/temp.txt >temp/nation.txt
 ```
 where commonDIR = $METAPHOR_DIR/pipelines/common
 
