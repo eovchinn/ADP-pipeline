@@ -93,15 +93,15 @@
 ; ACCESS TO EDUCATION
 
 (B (name access-to-education) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)) (^(access-nn e0 x)(to-in e1 x y)(education-nn e2 y))))
-(B (name access-education) (=>(^(TS#ACCESS-TO-EDUCATION e2 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)(R#EDUCATED x e0)) (^(access-vb e0 x y u)(education-nn e2 y))))
-(B (name get-education) (=>(^(TS#ACCESS-TO-EDUCATION e2 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)(R#EDUCATED x e0)) (^(get-vb e0 x y u)(education-nn e2 y))))
+(B (name access-education) (=>(^(TS#ACCESS-TO-EDUCATION e2 :0.2)(T#ECONOMIC-INEQUALITY u :0.2)(R#EDUCATION y x :0.2)(R#EDUCATED x e0 :0.2)) (^(access-vb e0 x y u)(education-nn e2 y))))
+(B (name get-education) (=>(^(TS#ACCESS-TO-EDUCATION e2 :0.2)(T#ECONOMIC-INEQUALITY u :0.2)(R#EDUCATION y x :0.2)(R#EDUCATED x e0 :0.2)) (^(get-vb e0 x y u)(education-nn e2 y))))
 
-(B (name education) (=>(^(TS#ACCESS-TO-EDUCATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)(R#EDUCATION x x)) (education-nn e0 x)))
+(B (name education) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (education-nn e0 x)))
 
-(B (name education) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)(R#EDUCATED x e0)) (educate-vb e0 u1 x u2)))
+(B (name education) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educate-vb e0 u1 x u2)))
 
-(B (name education) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)(R#EDUCATED x e0)) (educated-adj e0 x)))
-(B (name education) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)(R#EDUCATED x e0)) (well-educated-adj e0 x)))
+(B (name education) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educated-adj e0 x)))
+(B (name education) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (well-educated-adj e0 x)))
 
 
 ; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -352,4 +352,83 @@
 (B (name thirstmap)(=>(I#THIRST x y :0.9)(SS#THIRST x y)))
 (B (name streammap)(=>(I#STREAM x y :0.9)(SS#STREAM x y)))
 
+; MATERIAL
+
+; CUT
+(B (name cut) (=>(^(S#MATERIAL y :0.3)(SS#CUT e0 y :0.3)(R#CUT-AGENT x e0 :0.3))(cut-vb e0 x y u2)))
+(B (name cut2) (=>(^(S#MATERIAL y :0.45)(SS#CUT e0 y :0.45))(^(nn e1 x y)(cut-nn e0 x))))
+(B (name cut3) (=>(^(S#MATERIAL y :0.45)(SS#CUT e0 y :0.45))(^(of-in e1 x y)(cut-nn e0 x))))
+;(B (name cut4) (=>(^(S#MATERIAL y :0.48)(SS#CUT e0 y :0.48))(cut-nn e0 x)))
+
+(B (name materialmap)(=>(I#MATERIAL x :0.9)(S#MATERIAL x)))
+(B (name cutmap)(=>(I#CUT x y :0.9)(SS#CUT x y)))
+
+; ORGANISM
+
+; GROWTH
+(B (name grow) (=>(^(S#ORGANISM x :0.45)(SS#GROW e0 x :0.45))(grow-vb e0 x u1 u2)))
+(B (name cut2) (=>(^(S#ORGANISM y :0.45)(SS#GROW e0 y :0.45))(^(nn e1 x y)(growth-nn e0 x))))
+(B (name cut3) (=>(^(S#ORGANISM y :0.45)(SS#GROW e0 y :0.45))(^(of-in e1 x y)(growth-nn e0 x))))
+(B (name cut4) (=>(^(S#ORGANISM y :0.47)(SS#GROW e0 y :0.47))(growth-nn e0 x)))
+
+(B (name organismmap)(=>(I#ORGANISM x :0.9)(S#ORGANISM x)))
+(B (name growmap)(=>(I#GROW x y :0.9)(SS#GROW x y)))
+
+; WAR
+
+(B (name war) (=>(^(S#WAR x :0.45)(SS#FIGHT x x :0.45))(war-nn e0 x)))
+(B (name fight) (=>(^(S#WAR x :0.45)(SS#FIGHT x x :0.45))(fight-nn e0 x)))
+(B (name struggle) (=>(^(S#WAR x :0.45)(SS#FIGHT x x :0.45))(struggle-nn e0 x)))
+(B (name combat) (=>(^(S#WAR x :0.45)(SS#FIGHT x x :0.45))(combat-nn e0 x)))
+(B (name battle) (=>(^(S#WAR x :0.45)(SS#FIGHT x x :0.45))(battle-nn e0 x)))
+
+(B (name attack) (=>(^(S#WAR x :0.45)(SS#FIGHT x x :0.45)) (attack-nn e0 x)))
+(B (name assault) (=>(^(S#WAR x :0.45)(SS#FIGHT x x :0.45)) (assault-nn e0 x)))
+(B (name blitz) (=>(^(S#WAR x :0.45)(SS#FIGHT x x :0.45)) (blitz-nn e0 x)))
+(B (name barrage) (=>(^(S#WAR x :0.45)(SS#FIGHT x x :0.45)) (barrage-nn e0 x)))
+(B (name insult) (=>(^(S#WAR x :0.45)(SS#FIGHT x x :0.45)) (insult-nn e0 x)))
+(B (name invasion) (=>(^(S#WAR x :0.45)(SS#FIGHT x x :0.45)) (invasion-nn e0 x)))
+
+(B (name combat) (=>(^(S#WAR e0 :0.3) (SS#FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3))(combat-vb e0 x u1 u2)))
+(B (name struggle) (=>(^(S#WAR e0 :0.3) (SS#FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3))(struggle-vb e0 x u1 u2)))
+(B (name battle) (=>(^(S#WAR e0 :0.3) (SS#FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3))(battle-vb e0 x u1 u2)))
+(B (name fight) (=>(^(S#WAR e0 :0.3) (SS#FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3))(fight-vb e0 x u1 u2)))
+(B (name combat) (=>(^(S#WAR e0 :0.3) (SS#FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3))(combat-vb e0 x u1 u2)))
+
+(B (name attack) (=>(^(S#WAR u :0.2) (SS#FIGHT e0 u :0.2)(R#WAR-AGENT x e0 :0.2) (R#WAR-ENEMY y e0 :0.2)) (attack-vb e0 x y u2)))
+(B (name assail) (=>(^(S#WAR u :0.2) (SS#FIGHT e0 u :0.2)(R#WAR-AGENT x e0 :0.2) (R#WAR-ENEMY y e0 :0.2)) (assail-vb e0 x y u2)))
+(B (name insult) (=>(^(S#WAR u :0.2) (SS#FIGHT e0 u :0.2)(R#WAR-AGENT x e0 :0.2) (R#WAR-ENEMY y e0 :0.2)) (insult-vb e0 x y u2)))
+(B (name charge) (=>(^(S#WAR u :0.2) (SS#FIGHT e0 u :0.2)(R#WAR-AGENT x e0 :0.2) (R#WAR-ENEMY y e0 :0.2)) (charge-vb e0 x y u2)))
+(B (name invade) (=>(^(S#WAR u :0.2) (SS#FIGHT e0 u :0.2)(R#WAR-AGENT x e0 :0.2) (R#WAR-ENEMY y e0 :0.2)) (invade-vb e0 x y u2)))
+
+(B (name fight-with) (=> (R#WAR-ENEMY y x :0.90)(^(SS#FIGHT x u)(with-in x y))))
+(B (name fight-against) (=> (R#WAR-ENEMY y x :0.90)(^(SS#FIGHT x u)(against-in x y))))
+(B (name fight-of) (=> (R#WAR-AGENT y x :0.90)(^(SS#FIGHT x u)(of-in x y))))
+(B (name fight-on) (=> (R#WAR-AGENT y x :0.90)(^(SS#FIGHT x u)(on-in x y))))
+(B (name fight-at) (=> (R#WAR-AGENT y x :0.90)(^(SS#FIGHT x u)(at-in x y))))
+
+(B (name enemy) (=>(^(S#WAR u :0.3) (SS#ENEMY x u :0.3)(R#WAR-ENEMY x u :0.3))(enemy-nn e1 x)))
+(B (name adversary) (=>(^(S#WAR u :0.3) (SS#ENEMY x u :0.3)(R#WAR-ENEMY x u :0.3))(adversary-nn e1 x)))
+(B (name rival) (=>(^(S#WAR u :0.3) (SS#ENEMY x u :0.3)(R#WAR-ENEMY x u :0.3))(rival-nn e1 x)))
+(B (name opponent) (=>(^(S#WAR u :0.3) (SS#ENEMY x u :0.3)(R#WAR-ENEMY x u :0.3))(opponent-nn e1 x)))
+
+(B (name enemy-of) (=> (R#WAR-AGENT y e0 :0.90)(^(R#WAR-ENEMY x e0)(of-in e1 x y))))
+
+
+(B (name soldier) (=>(^(S#WAR x :0.45)(SS#FIGHT y x  :0.45))(soldier-nn e0 y)))
+
+(B (name weapon) (=>(^(S#WAR x :0.45)(SS#WEAPON y x  :0.45))(weapon-nn e0 y)))
+(B (name gun) (=>(^(S#WAR x :0.45)(SS#WEAPON y x  :0.45))(gun-nn e0 y)))
+(B (name knife) (=>(^(S#WAR x :0.45)(SS#WEAPON y x  :0.45))(knife-nn e0 y)))
+(B (name bomb) (=>(^(S#WAR x :0.45)(SS#WEAPON y x  :0.45))(bomb-nn e0 y)))
+(B (name shotgun) (=>(^(S#WAR x :0.45)(SS#WEAPON y x  :0.45))(shotgun-nn e0 y)))
+(B (name firearm) (=>(^(S#WAR x :0.45)(SS#WEAPON y x  :0.45))(firearm-nn e0 y)))
+(B (name artillery) (=>(^(S#WAR x :0.45)(SS#WEAPON y x  :0.45))(artillery-nn e0 y)))
+(B (name revolver) (=>(^(S#WAR x :0.45)(SS#WEAPON y x  :0.45))(revolver-nn e0 y)))
+(B (name sword) (=>(^(S#WAR x :0.45)(SS#WEAPON y x  :0.45))(sword-nn e0 y)))
+
+
+(B (name fightmap)(=>(I#FIGHT x y :0.9)(SS#FIGHT x y)))
+(B (name enemymap)(=>(I#ENEMY x y :0.9)(SS#ENEMY x y)))
+(B (name weaponmap)(=>(I#WEAPON x y :0.9)(SS#WEAPON x y)))
 

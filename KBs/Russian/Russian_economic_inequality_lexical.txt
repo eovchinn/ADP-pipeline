@@ -310,10 +310,17 @@
 (B (name vojna) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x :0.45))(война-nn e0 x)))
 (B (name borba) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x:0.45)) (борьба-nn e0 x)))
 (B (name bitva) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x :0.45)) (битва-nn e0 x)))
+(B (name boj) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x :0.45)) (бой-nn e0 x)))
 (B (name srazhenie) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x :0.45)) (сражение-nn e0 x)))
+(B (name razgrom) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x :0.45)) (разгром-nn e0 x)))
+
 
 (B (name ataka) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x :0.45)) (атака-nn e0 x)))
 (B (name napadenie) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x :0.45)) (нападение-nn e0 x)))
+(B (name nastuplenie) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x :0.45)) (нападение-nn e0 x)))
+(B (name shturm) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT x x :0.45)) (штурм-nn e0 x)))
+(B (name udar-po) (=>(^(S#ВОЙНА/WAR x :0.3)(SS#БОРЬБА/FIGHT x x :0.3)(R#WAR-ENEMY y x :0.3)) (^(удар-nn e0 x)(по-in e1 x y))))
+
 
 (B (name pobeda) (=>(^(S#ВОЙНА/WAR x :0.3) (SS#БОРЬБА/FIGHT x :0.3)(R#WAR-ENEMY y x :0.3))(^(победа-nn e0 x)(над-in e1 x y))))
 (B (name preodolenie) (=>(^(S#ВОЙНА/WAR x :0.3) (SS#БОРЬБА/FIGHT x :0.3)(R#WAR-ENEMY y x :0.3)) (^(преодоление-nn e0 x)(of-in e1 x y))))
@@ -324,7 +331,7 @@
 (B (name srazhatsja) (=>(^(S#ВОЙНА/WAR e0 :0.3) (SS#БОРЬБА/FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3)) (сражаться-vb e0 x u1 u2)))
 (B (name dratsja) (=>(^(S#ВОЙНА/WAR e0 :0.3) (SS#БОРЬБА/FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3)) (драться-vb e0 x u1 u2)))
 
-(B (name atakovat) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#БОРЬБА/FIGHT e0 u :0.1)(R#WAR-AGENT x e0 :0.3) (R#WAR-ENEMY y e0 :0.3)) (атаковать-vb e0 x y u2)))
+(B (name atakovat) (=>(^(S#ВОЙНА/WAR u :0.2) (SS#БОРЬБА/FIGHT e0 u :0.2)(R#WAR-AGENT x e0 :0.2) (R#WAR-ENEMY y e0 :0.2)) (атаковать-vb e0 x y u2)))
 (B (name napadat-na) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#БОРЬБА/FIGHT e0 u :0.3)(R#WAR-AGENT x e0 :0.3)) (нападать-vb e0 x u1 u2)))
 (B (name napast-na) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#БОРЬБА/FIGHT e0 u :0.3)(R#WAR-AGENT x e0 :0.3)) (напасть-vb e0 x u1 u2)))
 
@@ -333,21 +340,42 @@
 (B (name pobezhdat) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#БОРЬБА/FIGHT e0 u :0.1)(R#WAR-AGENT x e0 :0.3) (R#WAR-ENEMY y e0 :0.3)) (побеждать-vb e0 x y u2)))
 (B (name preodolet) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#БОРЬБА/FIGHT e0 u :0.1)(R#WAR-AGENT x e0 :0.3) (R#WAR-ENEMY y e0 :0.3)) (преодолеть-vb e0 x y u2)))
 
-(B (name front) (=>(^(S#ВОЙНА/WAR x :0.2)(SS#БОРЬБА/FIGHT y x  :0.2))(фронт-nn e0 y)))
-(B (name soldat) (=>(^(S#ВОЙНА/WAR x :0.2)(SS#БОРЬБА/FIGHT y x  :0.2))(солдат-nn e0 y)))
+(B (name borba-s) (=> (R#WAR-ENEMY y x :0.9)(^(SS#БОРЬБА/FIGHT x u)(с-in x y))))
+(B (name borba-protiv) (=> (R#WAR-ENEMY y x :0.9)(^(SS#БОРЬБА/FIGHT x u)(против-in x y))))
+(B (name borba-na) (=> (R#WAR-ENEMY y x :0.9)(^(SS#БОРЬБА/FIGHT x u)(на-in x y))))
+
 
 (B (name vrag) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#ВРАГ/ENEMY x u :0.3)(R#WAR-ENEMY x u :0.3))(враг-nn e1 x)))
+(B (name protivnik) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#ВРАГ/ENEMY x u :0.3)(R#WAR-ENEMY x u :0.3))(противник-nn e1 x)))
+(B (name nedrug) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#ВРАГ/ENEMY x u :0.3)(R#WAR-ENEMY x u :0.3))(недруг-nn e1 x)))
 (B (name vrazheskij) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#ВРАГ/ENEMY e1 u :0.3)) (вражеский-adj e1 x)))
 (B (name vrazhdebnyj) (=>(^(S#ВОЙНА/WAR u :0.3) (SS#ВРАГ/ENEMY e1 u :0.3)(R#WAR-ENEMY x u :0.3))(враждебный-adj e1 x)))
 
-(B (name borba-s) (=> (R#WAR-ENEMY y x :0.90)(^(SS#БОРЬБА/FIGHT x u)(с-in x y))))
-(B (name borba-protiv) (=> (R#WAR-ENEMY y x :0.90)(^(SS#БОРЬБА/FIGHT x u)(против-in x y))))
-(B (name borba-na) (=> (R#WAR-ENEMY y x :0.90)(^(SS#БОРЬБА/FIGHT x u)(на-in x y))))
-(B (name vrag-of) (=> (R#WAR-AGENT y e0 :0.90)(^(R#WAR-ENEMY x e0)(of-in e1 x y))))
+(B (name vrag-of) (=> (R#WAR-AGENT y e0 :0.9)(^(R#WAR-ENEMY x e0)(of-in e1 x y))))
+
+(B (name front) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT y x  :0.45))(фронт-nn e0 y)))
+(B (name soldat) (=>(^(S#ВОЙНА/WAR x :0.45)(SS#БОРЬБА/FIGHT y x  :0.45))(солдат-nn e0 y)))
+
+
+(B (name oruzhie) (=>(^(S#WAR x :0.45)(SS#ОРУЖИЕ/WEAPON y x  :0.45))(оружие-nn e0 y)))
+(B (name orudie) (=>(^(S#WAR x :0.45)(SS#ОРУЖИЕ/WEAPON y x  :0.45))(орудие-nn e0 y)))
+(B (name pushka) (=>(^(S#WAR x :0.45)(SS#ОРУЖИЕ/WEAPON y x  :0.45))(пушка-nn e0 y)))
+(B (name ruzhje) (=>(^(S#WAR x :0.45)(SS#ОРУЖИЕ/WEAPON y x  :0.45))(ружье-nn e0 y)))
+(B (name ruzhje2) (=>(^(S#WAR x :0.45)(SS#ОРУЖИЕ/WEAPON y x  :0.45))(ружьё-nn e0 y)))
+(B (name revolver) (=>(^(S#WAR x :0.45)(SS#ОРУЖИЕ/WEAPON y x  :0.45))(револьвер-nn e0 y)))
+(B (name pistolet) (=>(^(S#WAR x :0.45)(SS#ОРУЖИЕ/WEAPON y x  :0.45))(пистолет-nn e0 y)))
+(B (name bomba) (=>(^(S#WAR x :0.45)(SS#ОРУЖИЕ/WEAPON y x  :0.45))(бомба-nn e0 y)))
+(B (name mina) (=>(^(S#WAR x :0.45)(SS#ОРУЖИЕ/WEAPON y x  :0.45))(мина-nn e0 y)))
+(B (name nozh) (=>(^(S#WAR x :0.45)(SS#ОРУЖИЕ/WEAPON y x  :0.45))(нож-nn e0 y)))
+(B (name nozhik) (=>(^(S#WAR x :0.45)(SS#ОРУЖИЕ/WEAPON y x  :0.45))(ножик-nn e0 y)))
+(B (name pulemet) (=>(^(S#WAR x :0.45)(SS#ОРУЖИЕ/WEAPON y x  :0.45))(пулемет-nn e0 y)))
+(B (name pulemet2) (=>(^(S#WAR x :0.45)(SS#ОРУЖИЕ/WEAPON y x  :0.45))(пулемёт-nn e0 y)))
+
 
 
 (B (name fightmap)(=>(I#FIGHT x y :0.9)(SS#БОРЬБА/FIGHT x y)))
 (B (name enemymap)(=>(I#ENEMY x y :0.9)(SS#ВРАГ/ENEMY x y)))
+(B (name weaponmap)(=>(I#WEAPON x y :0.9)(SS#ОРУЖИЕ/WEAPON x y)))
 
 
 ; SCHOOL 
@@ -460,7 +488,36 @@
 (B (name boloto) (=>(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45)(болото-nn e0 x)))
 (B (name jama) (=>(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45)(яма-nn e0 x)))
 (B (name udavka) (=>(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45)(удавка-nn e0 x)))
+(B (name barjer) (=>(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.45)(барьер-nn e0 x)))
 (B (name dushit) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.3)(R#LIMITATION-AGENT x e0 :0.3)(R#LIMITATION-PATIENT y e0 :0.3))(душить-vb e0 x y u)))
 (B (name zadushit) (=>(^(S#ОГРАНИЧЕНИЕ/LIMITATION x :0.3)(R#LIMITATION-AGENT x e0 :0.3)(R#LIMITATION-PATIENT y e0 :0.3))(задушить-vb e0 x y u)))
 
 (B (name limitationmap)(=>(I#LIMITATION x :0.9)(S#ОГРАНИЧЕНИЕ/LIMITATION x)))
+
+; ORGANISM
+
+; GROWTH
+(B (name rasti) (=>(^(S#ОРГАНИЗМ/ORGANISM x :0.45)(SS#РОСТ/GROW e0 x :0.45))(расти-vb e0 x u1 u2)))
+(B (name vyrasti) (=>(^(S#ОРГАНИЗМ/ORGANISM x :0.45)(SS#РОСТ/GROW e0 x :0.45))(вырасти-vb e0 x u1 u2)))
+(B (name vyrastat) (=>(^(S#ОРГАНИЗМ/ORGANISM x :0.45)(SS#РОСТ/GROW e0 x :0.45))(вырастать-vb e0 x u1 u2)))
+
+(B (name rost) (=>(^(S#ORGANISM y :0.45)(SS#GROW e0 y :0.45))(^(of-in e1 x y)(рост-nn e0 x))))
+(B (name rost2) (=>(^(S#ORGANISM y :0.47)(SS#GROW e0 y :0.47))(рост-nn e0 x)))
+(B (name prirost) (=>(^(S#ORGANISM y :0.45)(SS#GROW e0 y :0.45))(^(of-in e1 x y)(прирост-nn e0 x))))
+(B (name prirost2) (=>(^(S#ORGANISM y :0.47)(SS#GROW e0 y :0.47))(прирост-nn e0 x)))
+
+
+(B (name organismmap)(=>(I#ORGANISM x :0.9)(S#ОРГАНИЗМ/ORGANISM x)))
+(B (name growmap)(=>(I#GROW x y :0.9)(SS#РОСТ/GROW x y)))
+
+
+; ENABLING
+
+(B (name instrument-of) (=>(^(S#ПОЗВОЛЯЮЩИЙ/ENABLING x :0.45)(R#ENABLED y x :0.45))(^(инструмент-nn e0 x)(of-in e1 x y))))
+(B (name instrument-dlja) (=>(^(S#ПОЗВОЛЯЮЩИЙ/ENABLING x :0.45)(R#ENABLED y x :0.45))(^(инструмент-nn e0 x)(для-in e1 x y))))
+
+(B (name dver-в) (=>(^(S#ПОЗВОЛЯЮЩИЙ/ENABLING x :0.45)(R#ENABLED y x :0.45))(^(дверь-nn e0 x)(в-in e1 x y))))
+(B (name dvigatel-of) (=>(^(S#ПОЗВОЛЯЮЩИЙ/ENABLING x :0.45)(R#ENABLED y x :0.45))(^(двигатель-nn e0 x)(of-in e1 x y))))
+
+(B (name enablingmap)(=>(I#ENABLING x :0.9)(S#ПОЗВОЛЯЮЩИЙ/ENABLING x)))
+
