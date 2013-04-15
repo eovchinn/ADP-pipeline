@@ -102,3 +102,21 @@
 
 (B (name limitation4) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.47)(M#CAUSING-THING_F e0 e1 :0.47)) (I#LIMITATION e0)))
 
+; ENABLING 
+
+(B (name enabling) (=> (^(M#CAUSE-FUNCTION e1 :0.3)(M#CAUSING-THING_F x e1 :0.3)(M#FUNCTION y :0.3)) (^(I#ENABLING e0)(R#ENABLING-AGENT x e0)(R#ENABLED y e0))))
+
+(B (name enabling2) (=> (^(M#CAUSE-FUNCTION e1 :0.45)(M#CAUSING-THING_F x e1 :0.45)) (^(I#ENABLING e0)(R#ENABLING-AGENT x e0))))
+
+(B (name enabling3) (=> (^(M#CAUSE-FUNCTION e1 :0.31)(M#CAUSING-THING_F e0 e1 :0.31)(M#FUNCTION y :0.31)) (^(I#ENABLING e0)(R#ENABLED y e0))))
+
+(B (name enabling4) (=> (^(M#CAUSE-FUNCTION e1 :0.47)(M#CAUSING-THING_F e0 e1 :0.47)) (I#ENABLING e0)))
+
+; MATERIAL
+
+(B (name cut) (=> (^(M#CAUSE-REDUCE e0 :0.3)(M#CAUSING-THING_R y e0 :0.3)(M#REDUCED x e0 :0.3)) (^(I#CUT e0 x)(I#MATERIAL x)(R#CUT-AGENT y e0))))
+(B (name cut2) (=> (^(M#CAUSE-REDUCE e0 :0.46)(M#REDUCED x e0 :0.46)) (^(I#CUT e0 x)(I#MATERIAL x))))
+
+; ORGANISM
+
+(B (name grow) (=> (M#INCREASED x :0.9) (^(I#GROW e0 x)(I#ORGANISM x))))

@@ -248,6 +248,20 @@
 
 (B (name limitationmap)(=>(I#LIMITATION x :0.9)(S#LIMITACION/LIMITATION x)))
 
+; ENABLING
+
+(B (name instrumento) (=>(^(S#PERMITIR/ENABLING x :0.45)(R#ENABLED y x :0.45))(^(instrumento-nn e0 x)(para-in e1 x y))))
+(B (name puerta) (=>(^(S#PERMITIR/ENABLING x :0.45)(R#ENABLED y x :0.45))(^(puerta-nn e0 x)(para-in e1 x y))))
+(B (name motor) (=>(^(S#PERMITIR/ENABLING x :0.45)(R#ENABLED y x :0.45))(^(motor-nn e0 x)(del-in e1 x y))))
+
+(B (name instrumento) (=>(S#PERMITIR/ENABLING x :0.95)(instrumento-nn e0 x)))
+(B (name puerta) (=>(S#PERMITIR/ENABLING x :0.95)(puerta-nn e0 x)))
+(B (name motor) (=>(S#PERMITIR/ENABLING x :0.95)(motor-nn e0 x)))
+
+
+(B (name enablingmap)(=>(I#ENABLING x :0.9)(S#PERMITIR/ENABLING x)))
+
+
 ; WATER
 
 (B (name agua) (=>(S#AGUA/WATER x :0.9) (agua-nn e0 x)))
@@ -288,4 +302,57 @@
 (B (name drinkmap)(=>(I#DRINK x y :0.9)(SS#BEBER/DRINK x y)))
 (B (name thirstmap)(=>(I#THIRST x y :0.9)(SS#SED/THIRST x y)))
 (B (name streammap)(=>(I#STREAM x y :0.9)(SS#FLUJO/STREAM x y)))
+
+; WAR
+
+(B (name guerra) (=>(^(S#GUERRA/WAR x :0.45)(SS#BATALLA/FIGHT x x :0.45))(guerra-nn e0 x)))
+(B (name batalla) (=>(^(S#GUERRA/WAR x :0.45)(SS#BATALLA/FIGHT x x :0.45))(batalla-nn e0 x)))
+(B (name lucha) (=>(^(S#GUERRA/WAR x :0.45)(SS#BATALLA/FIGHT x x :0.45))(lucha-nn e0 x)))
+
+(B (name ataque) (=>(^(S#GUERRA/WAR x :0.45)(SS#BATALLA/FIGHT x x :0.45))(ataque-nn e0 x)))
+(B (name asalto) (=>(^(S#GUERRA/WAR x :0.45)(SS#BATALLA/FIGHT x x :0.45))(asalto-nn e0 x)))
+
+(B (name combatir) (=>(^(S#GUERRA/WAR e0 :0.3) (SS#BATALLA/FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3))(combatir-vb e0 x u1 u2)))
+(B (name batallar) (=>(^(S#GUERRA/WAR e0 :0.3) (SS#BATALLA/FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3))(batallar-vb e0 x u1 u2)))
+(B (name lidiar) (=>(^(S#GUERRA/WAR e0 :0.3) (SS#BATALLA/FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3))(lidiar-vb e0 x u1 u2)))
+(B (name guerrear) (=>(^(S#GUERRA/WAR e0 :0.3) (SS#BATALLA/FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3))(guerrear-vb e0 x u1 u2)))
+(B (name lidiar) (=>(^(S#GUERRA/WAR e0 :0.3) (SS#BATALLA/FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3))(lidiar-vb e0 x u1 u2)))
+(B (name luchar) (=>(^(S#GUERRA/WAR e0 :0.3) (SS#BATALLA/FIGHT e0 e0 :0.3)(R#WAR-AGENT x e0 :0.3))(luchar-vb e0 x u1 u2)))
+
+(B (name atacar) (=>(^(S#GUERRA/WAR u :0.2) (SS#BATALLA/FIGHT e0 u :0.2)(R#WAR-AGENT x e0 :0.2) (R#WAR-ENEMY y e0 :0.2)) (atacar-vb e0 x y u2)))
+
+(B (name fight-con) (=> (R#WAR-ENEMY y x :0.90)(^(SS#BATALLA/FIGHT x u)(con-in x y))))
+(B (name fight-contra) (=> (R#WAR-ENEMY y x :0.90)(^(SS#BATALLA/FIGHT x u)(contra-in x y))))
+(B (name fight-a) (=> (R#WAR-ENEMY y x :0.90)(^(SS#BATALLA/FIGHT x u)(a-in x y))))
+(B (name fight-de) (=> (R#WAR-AGENT y x :0.90)(^(SS#BATALLA/FIGHT x u)(de-in x y))))
+(B (name fight-of) (=> (R#WAR-AGENT y x :0.90)(^(SS#BATALLA/FIGHT x u)(of-in x y))))
+
+
+(B (name enemigo) (=>(^(S#GUERRA/WAR u :0.3) (SS#ENEMIGO/ENEMY x u :0.3)(R#WAR-ENEMY x u :0.3))(enemigo-nn e1 x)))
+(B (name rival) (=>(^(S#GUERRA/WAR u :0.3) (SS#ENEMIGO/ENEMY x u :0.3)(R#WAR-ENEMY x u :0.3))( rival-nn e1 x)))
+
+(B (name enemy-of) (=> (R#WAR-AGENT y e0 :0.90)(^(R#WAR-ENEMY x e0)(of-in e1 x y))))
+(B (name enemy-de) (=> (R#WAR-AGENT y e0 :0.90)(^(R#WAR-ENEMY x e0)(de-in e1 x y))))
+
+
+(B (name arma) (=>(^(S#GUERRA/WAR x :0.45)(SS#ARMA/WEAPON y x  :0.45))(arma-nn e0 y)))
+(B (name bala) (=>(^(S#GUERRA/WAR x :0.45)(SS#ARMA/WEAPON y x  :0.45))(bala-nn e0 y)))
+(B (name mira) (=>(^(S#GUERRA/WAR x :0.45)(SS#ARMA/WEAPON y x  :0.45))(mira-nn e0 y)))
+
+(B (name fightmap)(=>(I#FIGHT x y :0.9)(SS#BATALLA/FIGHT x y)))
+(B (name enemymap)(=>(I#ENEMY x y :0.9)(SS#ENEMIGO/ENEMY x y)))
+(B (name weaponmap)(=>(I#WEAPON x y :0.9)(SS#ARMA/WEAPON x y)))
+
+; BASE
+
+(B (name base) (=>(^(S#BASE/BASE x :0.45)(SS#FUNDAMENTO/FUNDAMENT x  :0.45)) (base-nn e0 x)))
+(B (name fundamento) (=>(^(S#BASE/BASE x :0.45)(SS#FUNDAMENTO/FUNDAMENT x  :0.45)) (fundamento-nn e0 x)))
+
+; OF - BASE
+(B (name of-base) (=>(R#BASE-STRUCTURE y x :0.9)(^(S#BASE/BASE x)(of-in e1 x y))))
+(B (name de-base) (=>(R#BASE-STRUCTURE y x :0.9)(^(S#BASE/BASE x)(de-in e1 x y))))
+
+(B (name basemap)(=>(I#BASE x :0.9)(S#BASE/BASE x)))
+
+
 
