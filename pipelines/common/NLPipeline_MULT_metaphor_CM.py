@@ -216,15 +216,15 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
                     for key, value in hyp.items():
                         ann[key] = value
                         processed += 1
-                    if not hyp["isiAbductiveProofgraph"]:
-                        print "proofgraph not found (%d)" % int(ann["id"])
-                        fl.write("EMPTY PROOFGRAPH\n")
+                    if not hyp["isiAbductiveExplanation"]:
+                        print "explanation not found (%d)" % int(ann["id"])
+                        fl.write("EMPTY EXPLANATION\n")
                         fl = open("/lfs1/vzaytsev/misc/fails/context.%d.txt" % int(ann["id"]), "w")
                         fl.write(ann["linguisticMetaphor"].encode("utf-8"))
                         fl.close()
                         empty += 1
             except Exception:
-                print "proofgraph not found (%d)" % int(ann["id"])
+                print "hypothesis not found (%d)" % int(ann["id"])
                 fl = open("/lfs1/vzaytsev/misc/fails/context.%d.txt" % int(ann["id"]), "w")
                 fl.write("FAIL\n")
                 fl.write(ann["linguisticMetaphor"].encode("utf-8"))
