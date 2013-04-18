@@ -45,22 +45,17 @@ FA_KBPATH = "%s/KBs/Farsi/Farsi_compiled_KB.da" % METAPHOR_DIR
 # switches
 kbcompiled = True
 
-# Katya: this should be the new output, when LCC updates their repository and accepts new fields.
-#DESCRIPTION = "Abductive engine output; " \
-#		"isiMetaphorConfirmed: Abduction confirmes linguistic metaphor;" \
-#              "isiTargetDomain: Target domain defined by abduction; " \
-#              "isiTargetSubdomain: Target subdomain defined by abduction ; "\
-#		"isiSourceDomain: Source domain defined by abduction ; " \
-#              "isiSourceSubdomain: Source subdomain defined by abduction ; "\
-#		"isiTargetWords: Words from target domain found by abduction ; " \
-#              "isiSourceWords: Words from source domain found by abduction ; "\
-#		"isiTargetSourceMapping: Target-Source mapping (metaphor interpretation) as logical form found by abduction. "
-
 DESCRIPTION = "Abductive engine output; " \
-		"isiAbductiveHypothesis: Abduction detects target and source domains/subdomains" \
-              "and words referring to the domains; " \
-		"isiTargetSourceMapping: Target-Source mapping as logical form found by abduction " \
-		"that explains the methaphor and motivates the domains."
+		"targetFrame: Is currently equal to targetConceptSubDomain;" \
+              "targetConceptDomain: Target concept domain defined by abduction; " \
+              "targetConceptSubDomain: Target concept subdomain defined by abduction ; "\
+		"sourceFrame: Source frame proposed by abduction ; " \
+              "sourceConceptSubDomain: Source subdomain proposed by abduction ; "\
+		"targetFrameElementsSentence: List of words denoting the target found by abduction; " \
+              "sourceFrameElementsSentence: List of words denoting the source found by abduction; "\
+		"annotationMappings: Target-Source mapping structures. "\
+		"isiAbductiveExplanation: Target-Source mapping (metaphor interpretation) as logical form found by abduction."
+
 
 def extract_hypotheses(inputString):
     output_struct = []
@@ -96,23 +91,9 @@ def extract_hypotheses(inputString):
 
         elif line.startswith("</result-inference>"):
 		
-            # Katya: new_output_struct_item should be the new output, when LCC updates their repository and accepts new fields.
-            new_output_struct_item = extract_CM_mapping(target,hypothesis)
+            output_struct_item = extract_CM_mapping(target,hypothesis,DESCRIPTION)
             #print json.dumps(hypothesis, ensure_ascii=False)
-            #print json.dumps(new_output_struct_item, ensure_ascii=False)
-
-            output_struct_item["isiAbductiveExplanation"] = new_output_struct_item["isiTargetSourceMapping"]	
-            output_struct_item["isiAbductiveHypothesis"] = "TARGET DOMAIN AND SUBDOMAIN[" + new_output_struct_item["isiTargetDomain"] + \
-                                                            " " + new_output_struct_item["isiTargetSubdomain"] + "] " + \
-                                                            "TARGET WORDS[" +  new_output_struct_item["isiTargetWords"] + "] " + \
-                                                            "SOURCE DOMAIN AND SUBDOMAIN[" + new_output_struct_item["isiSourceDomain"] + \
-                                                            " " + new_output_struct_item["isiSourceSubdomain"] + "] " + \
-                                                            "SOURCE WORDS[" +  new_output_struct_item["isiSourceWords"] + "]"
-
-            output_struct_item["id"] = target
-            output_struct_item["isiDescription"] = DESCRIPTION
-            output_struct_item["isiAbductiveUnification"] = ''
-            output_struct_item["isiAbductiveProofgraph"] = ''
+            #print json.dumps(output_struct_item, ensure_ascii=False, indent=4)
 
             output_struct.append(output_struct_item)
             target = ""
@@ -203,8 +184,6 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
     
 
     hypotheses = extract_hypotheses(henry_output)
-
-    # print hypotheses
 
     processed, failed, empty = 0, 0, 0
 
