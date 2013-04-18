@@ -4,11 +4,11 @@
 
 (B (name disease2) (=> (^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#CAUSING-THING_F x e0 :0.45)) (I#DISEASE x)))
 
-(B (name cure)(=> (^(M#CAUSE-NOT-EXIST e1 :0.3)(M#CAUSING-THING_E y e1 :0.3)(M#EXISTING-THING x e1 :0.3)) (^ (I#CURE e0 d)(R#CURE-AGENT y e0)(R#SICK x d))))
+(B (name cure)(=> (^(M#CAUSE-NOT-EXIST e1 :0.3)(M#CAUSING-THING_E y e1 :0.3)(M#EXISTING-THING x e1 :0.3)) (^ (I#CURE e0)(R#CURE-AGENT y e0)(R#SICK x d)(S#DISEASE d))))
 
-(B (name cure2)(=> (^(M#CAUSE-NOT-EXIST e1 :0.46)(M#CAUSING-THING_E y e1 :0.46)) (^ (I#CURE e0 x)(R#CURE-AGENT y e0))))
+(B (name cure2)(=> (^(M#CAUSE-NOT-EXIST e1 :0.46)(M#CAUSING-THING_E y e1 :0.46)) (^ (I#CURE e0)(R#CURE-AGENT y e0))))
 
-(B (name cure3)(=> (M#CAUSE-NOT-EXIST e1 :0.95) (I#CURE e0 d)))
+(B (name cure3)(=> (^(M#CAUSE-NOT-EXIST e1 :0.48)(M#CAUSING-THING_E e0 e1 :0.48)) (I#CURE e0)))
 
 ; BASE 
 
@@ -20,13 +20,13 @@
 
 ; WAR 
 
-(B (name fight)(=> (^(M#CAUSE-NOT-EXIST e1 :0.3)(M#CAUSING-THING_E z e1 :0.3)(M#EXISTING-THING y e1 :0.3)) (^(I#FIGHT x e0)(R#WAR-ENEMY y x)(R#WAR-AGENT z x))))
+(B (name fight)(=> (^(M#CAUSE-NOT-EXIST e1 :0.3)(M#CAUSING-THING_E z e1 :0.3)(M#EXISTING-THING y e1 :0.3)) (^(I#FIGHT x)(R#WAR-ENEMY y x)(R#WAR-AGENT z x))))
 
-(B (name fight2)(=> (^(M#CAUSE-NOT-EXIST e1 :0.46)(M#EXISTING-THING y e1 :0.46)) (^(I#FIGHT x e0)(R#WAR-ENEMY y x))))
+(B (name fight2)(=> (^(M#CAUSE-NOT-EXIST e1 :0.32)(M#EXISTING-THING y e1 :0.32)(M#CAUSING-THING_E x e1 :0.32)) (^(I#FIGHT x)(R#WAR-ENEMY y x))))
 
-(B (name fight3)(=> (^(M#CAUSE-NOT-EXIST e1 :0.46)(M#CAUSING-THING_E z e1 :0.46)) (^(I#FIGHT x e0)(R#WAR-AGENT z x))))
+(B (name fight3)(=> (^(M#CAUSE-NOT-EXIST e1 :0.46)(M#CAUSING-THING_E z e1 :0.46)) (^(I#FIGHT x)(R#WAR-AGENT z x))))
 
-(B (name fight4)(=> (M#CAUSE-NOT-EXIST e1 :0.95) (I#FIGHT x e0)))
+(B (name fight4)(=> (^(M#CAUSE-NOT-EXIST e1 :0.48)(M#CAUSING-THING_E x e1 :0.48)) (I#FIGHT x)))
 
 
 (B (name enemy)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING_F x e1 :0.3)(M#FUNCTION-AGENT z e1 :0.3)) (^ (I#ENEMY x e0)(R#WAR-AGENT z e0))))
@@ -34,15 +34,10 @@
 (B (name enemy2)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#CAUSING-THING_F x e1 :0.45)) (I#ENEMY x e0)))
 
 
-; WATER 
-
-(B (name stream)(=> (M#MOVE-QUICKLY x :0.8) (^(I#STREAM e0 y)(R#STREAMING x e0))))
-(B (name stream2)(=> (M#MOVE-QUICKLY x :0.9) (I#STREAM e0 y)))
+; BODY OF WATER 
 
 
-(B (name body_of_water)(=> (M#LARGE-AMOUNT-OF z :0.8) (^(I#BODY-OF-WATER y x)(R#MATTER  z y))))
-
-
+(B (name body_of_water-type)(=> (M#LARGE-AMOUNT-OF y :0.8) (^(I#BODY-OF-WATER-TYPE x)(R#MATTER y x))))
 
 (B (name drink)(=> (^(M#SATISFY-NEED e0 :0.3) (M#SATISFY-AGENT m e0 :0.3) (M#SATISFY-OBJECT d e0 :0.3)) (^(I#DRINK e0 w)(R#DRINKER d e0)(R#MATTER m w))))
 
@@ -92,15 +87,15 @@
 
 (B (name crime4)(=> (M#AGAINST-SOCIETY-ACTION e0 :0.91) (I#CRIME e0)))
 
-; LIMITATION 
+; CONFINEMENT 
 
-(B (name limitation) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING_F x e1 :0.3)(M#FUNCTION-AGENT y e1 :0.3)) (^(I#LIMITATION e0)(R#LIMITATION-AGENT x e0)(R#LIMITATION-PATIENT y e0))))
+(B (name confinement) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING_F x e1 :0.3)(M#FUNCTION-AGENT y e1 :0.3)) (^(I#CONFINEMENT e0)(R#CONFINEMENT-AGENT x e0)(R#CONFINEMENT-PATIENT y e0))))
 
-(B (name limitation2) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#CAUSING-THING_F x e1 :0.45)) (^(I#LIMITATION e0)(R#LIMITATION-AGENT x e0))))
+(B (name confinement2) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#CAUSING-THING_F x e1 :0.45)) (^(I#CONFINEMENT e0)(R#CONFINEMENT-AGENT x e0))))
 
-(B (name limitation3) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.31)(M#CAUSING-THING_F e0 e1 :0.31)(M#FUNCTION-AGENT y e1 :0.31)) (^(I#LIMITATION e0)(R#LIMITATION-PATIENT y e0))))
+(B (name confinement3) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.31)(M#CAUSING-THING_F e0 e1 :0.31)(M#FUNCTION-AGENT y e1 :0.31)) (^(I#CONFINEMENT e0)(R#CONFINEMENT-PATIENT y e0))))
 
-(B (name limitation4) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.47)(M#CAUSING-THING_F e0 e1 :0.47)) (I#LIMITATION e0)))
+(B (name confinement4) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.47)(M#CAUSING-THING_F e0 e1 :0.47)) (I#CONFINEMENT e0)))
 
 ; ENABLING 
 
@@ -120,3 +115,17 @@
 ; ORGANISM
 
 (B (name grow) (=> (M#INCREASED x :0.9) (^(I#GROW e0 x)(I#ORGANISM x))))
+
+; PHYSICAL HARM
+
+(B (name physical-harm) (=>(^(M#CAUSE-HARM e0 :0.3)(M#CAUSING-THING_H x e0 :0.3)(M#HARM-VICTIM y e0 :0.3)) (^(I#PHYSICAL-HARM e0)(R#HARM-AGENT x e0)(R#HARM-VICTIM y e0))))
+
+(B (name physical-harm2) (=>(^(M#CAUSE-HARM e0 :0.46)(M#CAUSING-THING_H x e0 :0.46)) (^(I#PHYSICAL-HARM e0)(R#HARM-AGENT x e0))))
+
+(B (name physical-harm3) (=>(^(M#CAUSE-HARM e0 :0.46)(M#HARM-VICTIM y e0 :0.46)) (^(I#PHYSICAL-HARM e0)(R#HARM-VICTIM y e0))))
+
+(B (name physical-harm4) (=>(M#CAUSE-HARM e0 :0.95) (I#PHYSICAL-HARM e0)))
+
+; ASYSS
+
+

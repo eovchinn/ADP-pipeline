@@ -1,0 +1,103 @@
+; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+; TARGET WORDS;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; POVERTY
+(B (name bednost) (=>(^(TS#БЕДНОСТЬ/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(бедность-nn e0 x)))
+(B (name bezdenezhje) (=>(^(TS#БЕДНОСТЬ/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(безденежье-nn e0 x)))
+(B (name stesnennost) (=>(^(TS#БЕДНОСТЬ/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) ( стеснённость-nn e0 x)))
+(B (name stesnennost2) (=>(^(TS#БЕДНОСТЬ/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) ( стесненность-nn e0 x)))
+(B (name nishheta) (=>(^(TS#БЕДНОСТЬ/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (нищета-nn e0 x)))
+(B (name nuzhda) (=>(^(TS#БЕДНОСТЬ/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (нужда-nn e0 x)))
+
+; POOR
+(B (name bednyj) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3))(бедный-adj e0 y)))
+(B (name nishhij) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (нищий-adj e0 y)))
+(B (name neimushhij) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (неимущий-adj e0 y)))
+(B (name maloimushhij) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (малоимущий-adj e0 y)))
+(B (name nebogatyj) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (небогатый-adj e0 y)))
+(B (name nuzhdajushhijsja) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (нуждающийся-adj e0 y)))
+(B (name meloobespechennyj) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (малообеспеченный-adj e0 y)))
+(B (name neobespechennyj) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (необеспеченный-adj e0 y)))
+
+; POOR PERSON
+(B (name bednjak) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (бедняк-nn e0 y)))
+(B (name bosjak) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (босяк-nn e0 y)))
+(B (name oborvanec) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (оборванец-nn e0 y)))
+(B (name bomzh) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (бомж-nn e0 y)))
+(B (name bednyjn) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (бедный-nn e0 y)))
+(B (name nishhijn) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (нищий-nn e0 y)))
+(B (name neimushhijn) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (неимущий-nn e0 y)))
+(B (name maloimushhijn) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (малоимущий-nn e0 y)))
+
+; BECOME POOR
+(B (name obednet) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3))(обеднеть-vb e0 y u1 u2)))
+(B (name bednet) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (беднеть-vb e0 y u1 u2)))
+(B (name obnishhat) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (обнищать-vb e0 y u1 u2)))
+(B (name nishhat) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (нищать-vb e0 y u1 u2)))
+(B (name razoritsja) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (разориться-vb e0 y u1 u2)))
+(B (name razorjatsja) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (разоряться-vb e0 y u1 u2)))
+(B (name progorat) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (прогорать-vb e0 y u1 u2)))
+(B (name progoret) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (прогореть-vb e0 y u1 u2)))
+(B (name lishitsja_imushhestva) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (^(лишиться-vb e0 y z u2)(имущество-nn e1 z))))
+(B (name lishatsja_imushhestva) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (^(лишаться-vb e0 y z u2)(имущество-nn e1 z))))
+(B (name lishitsja_dostatka) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (^(лишиться-vb e0 y z u2)(достаток-nn e1 z))))
+(B (name lishatsja_dostatka) (=>(^(TS#БЕДНОСТЬ/POVERTY e0 :0.3)(R#POOR y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (^(лишаться-vb e0 y z u2)(достаток -nn e1 z))))
+
+; OF - POOR
+(B (name of-poor) (=>(R#POOR y x :0.9)(^(TS#БЕДНОСТЬ/POVERTY x)(of-in e1 x y))))
+
+; WEALTH
+(B (name bogatstvo) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(богатство-nn e0 x)))
+(B (name blagosostojanie) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (благосостояние-nn e0 x)))
+(B (name procvetanie) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (процветание-nn e0 x)))
+(B (name izobilie) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (изобилие-nn e0 x)))
+(B (name obilie) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (обилие-nn e0 x)))
+(B (name roskosh) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (роскошь-nn e0 x)))
+(B (name imushhestvo) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (имущество-nn e0 x)))
+(B (name dengi) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (деньги-nn e0 x)))
+(B (name denezhnyj) (=>(^(TS#БОГАТСТВО/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (денежный-nn e0 x)))
+
+; RICH PERSON
+(B (name bogach) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3))(богач-nn e0 y)))
+(B (name bogatej) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) ( богатей-nn e0 y)))
+(B (name tolstosum) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) ( толстосум-nn e0 y)))
+(B (name milliarder) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) ( миллиардер-nn e0 y)))
+(B (name millioner) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) ( миллионер-nn e0 y)))
+(B (name nuvorish) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (нувориш-nn e0 y)))
+(B (name bogatyj) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (богатый-adj e0 y)))
+(B (name bogatyjn) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (богатый-nn e0 y)))
+(B (name obespechennyj) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (обеспеченный-adj e0 y)))
+
+; BECOME RICH
+(B (name razbogatet) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3))(разбогатеть-vb e0 y u1 u2)))
+(B (name bogatet) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (богатеть-vb e0 y u1 u2)))
+(B (name procvetat) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (процветать-vb e0 y u1 u2)))
+(B (name blagodenstvovat) (=>(^(TS#БОГАТСТВО/WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (благоденствовать-vb e0 y u1 u2)))
+
+
+; OF - RICH
+(B (name of-rich) (=>(R#RICH  y x :0.9)(^(T#БОГАТСТВО x)(of-in e1 x y))))
+
+; MIDDLE CLASS
+(B (name srednij_class) (=>(^(TS#СОЦИАЛЬНЫЙ-КЛАСС/SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(^(средний-adj e0 x)(класс-nn e1 x))))
+(B (name elita) (=>(^(TS#СОЦИАЛЬНЫЙ-КЛАСС/SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(элита-nn e1 x)))
+
+
+; TAX
+(B (name nalog) (=>(^(TS#НАЛОГИ/TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(налог-nn e0 x)))
+(B (name nalogovyj) (=>(^(TS#НАЛОГИ/TAXATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (налоговый-adj e0 x)))
+(B (name nalogooblazhenie) (=>(^(TS#НАЛОГИ/TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (налогообложение-nn e0 x)))
+(B (name nalogovik) (=>(^(TS#НАЛОГИ/TAXATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (налоговик-nn e0 y)))
+(B (name nalogoplatelshhik) (=>(^(TS#НАЛОГИ/TAXATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) ( налогоплательщик-nn e0 y)))
+
+; ACCESS TO EDUCATION
+
+(B (name dostup-k-obrazovaniju) (=>(^(TS#ДОСТУП-К-ОБРАЗОВАНИЮ/ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)) (^(доступ-nn e0 x)(к-in e1 x y)(образование-nn e2 y))))
+(B (name poluchat-education) (=>(^(TS#ДОСТУП-К-ОБРАЗОВАНИЮ/ACCESS-TO-EDUCATION e2 :0.2)(T#ECONOMIC-INEQUALITY u :0.2)(R#EDUCATION y x :0.2)(R#EDUCATED x e0 :0.2)) (^(получать-vb e0 x y u)(образование-nn e2 y))))
+
+(B (name obrazovanie) (=>(^(TS#ДОСТУП-К-ОБРАЗОВАНИЮ/ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (образование-nn e0 x)))
+
+(B (name obrazovyvat) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (образовывать-vb e0 u1 x u2)))
+(B (name obrazovat) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (образовать-vb e0 u1 x u2)))
+
+(B (name obrazovannyj) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (образованный-adj e0 x)))
