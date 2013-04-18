@@ -195,9 +195,9 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
                     for key, value in hyp.items():
                         ann[key] = value
                         processed += 1
-                    if not hyp["isiAbductiveExplanation"]:
-                        print "explanation not found (%d)" % int(ann["id"])
-                        fl.write("EMPTY EXPLANATION\n")
+                    if not hyp["sourceFrame"]:
+                        print "source not found (%d)" % int(ann["id"])
+                        fl.write("EMPTY SOURCE\n")
                         fl = open("/lfs1/vzaytsev/misc/fails/context.%d.txt" % int(ann["id"]), "w")
                         fl.write(ann["linguisticMetaphor"].encode("utf-8"))
                         fl.close()
