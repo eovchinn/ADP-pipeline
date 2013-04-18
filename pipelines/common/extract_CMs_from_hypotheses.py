@@ -35,13 +35,13 @@ def wordStr2print(labeledProps,WordProps,Equalities):
 			words_str = findWords(args[0],WordProps,Equalities,False)
 		if len(words_str)>0:
 			if not domain2words.has_key(propName): domain2words[propName] = words_str
-			else: domain2words[propName] += ', ' + words_str
+			else: domain2words[propName] += ',' + words_str
 	
 	output_str = ''		
 	for propName in domain2words.keys():
-		output_str += ', ' + propName + '[' + domain2words[propName] + ']'
+		output_str += ',' + propName + '[' + domain2words[propName] + ']'
 	
-	return output_str[2:]
+	return output_str[1:]
 
 def wordStr2print_Mapping(labeledProps,WordProps,Equalities):
 	output_str = ''
@@ -72,13 +72,13 @@ def findWords(ARG,WordProps,Equalities,isMapping):
 			for (propName,args) in WordProps:
 
 				if arg == args[0] and (propName.endswith('-vb') or propName.endswith('-rb') or propName.endswith('-adj') or propName.endswith('-nn')):
-					if propName.endswith('-adj'): output_str += ', ' + propName[:-4]
-					else: output_str += ', ' + propName[:-3]
+					if propName.endswith('-adj'): output_str += ',' + propName[:-4]
+					else: output_str += ',' + propName[:-3]
 				elif len(args)>1 and arg ==args[1] and propName.endswith('-nn'):
-					if propName.endswith('-adj'): output_str += ', ' + propName[:-4]
-					else: output_str += ', ' + propName[:-3]
+					if propName.endswith('-adj'): output_str += ',' + propName[:-4]
+					else: output_str += ',' + propName[:-3]
 	if len(output_str)>0:
-		return output_str[2:]
+		return output_str[1:]
 
 	if isMapping:	return ARG		
 	return ''
@@ -93,7 +93,7 @@ def printPropNames(Props):
 			been[propName] = 1
 	return output_str[2:]
 
-def extract_CM_mapping(id,inputString):
+def extract_CM_mapping(id,inputString,DESCRIPTION):
 	#print inputString
 	targets = []	
 	subtargets = []
@@ -154,29 +154,47 @@ def extract_CM_mapping(id,inputString):
 
 	output_struct_item = {}
 	output_struct_item["id"] = id
+	output_struct_item["isiDescription"] = DESCRIPTION
 
-	output_struct_item["isiTargetDomain"] = printPropNames(targets)
-	output_struct_item["isiTargetSubdomain"] = printPropNames(subtargets)
-	output_struct_item["isiSourceDomain"] = printPropNames(sources)
-	output_struct_item["isiSourceSubdomain"] = printPropNames(subsources)
+	output_struct_item["targetConceptDomain"] = printPropNames(targets)
+	output_struct_item["targetConceptSubDomain"] = printPropNames(subtargets)
+
+	output_struct_item["sourceFrame"] = printPropNames(sources)
+	output_struct_item["sourceConceptSubDomain"] = printPropNames(subsources)#
+
+	output_struct_item["targetFrame"] = output_struct_item["targetConceptSubDomain"]
 	
 	targetWords = wordStr2print(targets,word_props,equalities)
 	subtargetWords = wordStr2print(subtargets,word_props,equalities)
-	if len(subtargetWords)>0: targetWords += ', ' + subtargetWords
+	if len(targetWords)>0 and len(subtargetWords)>0: targetWords += ',' + subtargetWords
+	else: targetWords += subtargetWords
 
 	sourceWords = wordStr2print(sources,word_props,equalities)
 	subsourceWords = wordStr2print(subsources,word_props,equalities)
-	if len(subsourceWords)>0: sourceWords += ', ' + subsourceWords
+	if len(sourceWords)>0 and len(subsourceWords)>0: sourceWords += ',' + subsourceWords
+	else: sourceWords += subsourceWords
 
-	output_struct_item["isiTargetWords"] = targetWords
-	output_struct_item["isiSourceWords"] = sourceWords
+	mapping_str = wordStr2print_Mapping(mappings,word_props,equalities)
 
-	if len(targets)>0 and len(sources)>0:
-		output_struct_item["isiMetaphorConfirmed"] = 'YES'
-		output_struct_item["isiTargetSourceMapping"] = wordStr2print_Mapping(mappings,word_props,equalities)
-	else:
-		output_struct_item["isiMetaphorConfirmed"] = 'NO'
-		output_struct_item["isiTargetSourceMapping"] = ''
+	output_struct_item["targetFrameElementsSentence"] = targetWords
+	output_struct_item["sourceFrameElementsSentence"] = sourceWords
+
+	annotationMappings_struc = dict()
+	annotationMappings_struc['explanation'] = mapping_str
+	annotationMappings_struc['target'] = targetWords
+	annotationMappings_struc['source'] = sourceWords
+	annotationMappings_struc['targetInLm'] = False
+	annotationMappings_struc['sourceInLm'] = False
+
+	output_struct_item['annotationMappings'] = [annotationMappings_struc]
+	output_struct_item['isiAbductiveExplanation'] = mapping_str
+
+	#if len(targets)>0 and len(sources)>0:
+	#	output_struct_item["isiMetaphorConfirmed"] = 'YES'
+	#	output_struct_item["isiTargetSourceMapping"] = wordStr2print_Mapping(mappings,word_props,equalities)
+	#else:
+	#	output_struct_item["isiMetaphorConfirmed"] = 'NO'
+	#	output_struct_item["isiTargetSourceMapping"] = ''
 
 	#print json.dumps(output_struct_item, ensure_ascii=False)
 	return output_struct_item
