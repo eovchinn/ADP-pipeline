@@ -188,8 +188,8 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
     processed, failed, empty = 0, 0, 0
 
     # merge ADB result and input json document
-    for ann in request_body_dict["metaphorAnnotationRecords"]:
-        for hyp in hypotheses:        
+    for hyp in hypotheses:
+        for ann in request_body_dict["metaphorAnnotationRecords"]:           
             try:
                 if int(ann["id"]) == int(hyp["id"]):
                     for key, value in hyp.items():
@@ -213,7 +213,6 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
     logger.info("STAT: {'processed':%d,'failed':%d,'empty':%d}" %  (processed, failed, empty))
 
     return request_body_dict
-
 
 def get_webservice_location():
 
