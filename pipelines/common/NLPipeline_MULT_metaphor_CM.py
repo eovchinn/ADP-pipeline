@@ -115,7 +115,6 @@ def generate_text_input(input_metaphors, language):
 
 def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
 
-
     start_time = time.time()
     input_str = generate_text_input(input_metaphors, language)
 
@@ -141,10 +140,11 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
         parser_proc = tokenizer + " | " + candcParser + " | " + boxer + " | " + b2h
         KBPATH = EN_KBPATH
 
-
-    parser_pipeline = Popen(parser_proc, shell=True, stdin=PIPE, stdout=PIPE,
+    # Katya: condition should be removed when Farsi starts to work
+    if language != "FA":
+        parser_pipeline = Popen(parser_proc, shell=True, stdin=PIPE, stdout=PIPE,
                             stderr=None, close_fds=True)
-    parser_output = parser_pipeline.communicate(input=input_str)[0]
+        parser_output = parser_pipeline.communicate(input=input_str)[0]
 
     # Parser processing time in seconds
     parser_time = (time.time() - start_time) * 0.001
@@ -172,24 +172,24 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
                      "/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T " + \
                      time_unit_henry
 
-    henry_pipeline = Popen(henry_proc,
+    # Katya: condition should be removed when Farsi starts to work
+    if language != "FA":
+        henry_pipeline = Popen(henry_proc,
                            shell=True,
                            stdin=PIPE,
                            stdout=PIPE,
                            stderr=None,
                            close_fds=True)
 
-    henry_output = henry_pipeline.communicate(input=parser_output)[0]
-
-    
-
-    hypotheses = extract_hypotheses(henry_output)
+        henry_output = henry_pipeline.communicate(input=parser_output)[0]
+        hypotheses = extract_hypotheses(henry_output)
+    else: hypotheses = []
 
     processed, failed, empty = 0, 0, 0
 
     # merge ADB result and input json document
-    for hyp in hypotheses:
-        for ann in request_body_dict["metaphorAnnotationRecords"]:
+    for ann in request_body_dict["metaphorAnnotationRecords"]:
+        for hyp in hypotheses:        
             try:
                 if int(ann["id"]) == int(hyp["id"]):
                     for key, value in hyp.items():
