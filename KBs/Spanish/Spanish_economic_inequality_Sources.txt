@@ -12,6 +12,8 @@
 (B (name gordura) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (gordura-nn e0 x)))
 (B (name peste) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (peste-nn e0 x)))
 (B (name plaga) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (plaga-nn e0 x)))
+(B (name llaga) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (llaga-nn e0 x)))
+(B (name fiebre) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (fiebre-nn e0 x)))
 
 
 ; SICK
@@ -222,6 +224,7 @@
 (B (name guerra) (=>(^(S#GUERRA/WAR x :0.45)(SS#BATALLA/FIGHT x :0.45))(guerra-nn e0 x)))
 (B (name batalla) (=>(^(S#GUERRA/WAR x :0.45)(SS#BATALLA/FIGHT x :0.45))(batalla-nn e0 x)))
 (B (name lucha) (=>(^(S#GUERRA/WAR x :0.45)(SS#BATALLA/FIGHT x :0.45))(lucha-nn e0 x)))
+(B (name combate) (=>(^(S#GUERRA/WAR x :0.45)(SS#BATALLA/FIGHT x :0.45))(combate-nn e0 x)))
 
 (B (name ataque) (=>(^(S#GUERRA/WAR x :0.45)(SS#BATALLA/FIGHT x :0.45))(ataque-nn e0 x)))
 (B (name asalto) (=>(^(S#GUERRA/WAR x :0.45)(SS#BATALLA/FIGHT x :0.45))(asalto-nn e0 x)))
