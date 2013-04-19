@@ -14,6 +14,8 @@
 (B (name paralich) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.45)(SS#ЗАБОЛЕВАНИЕ/PhysicalAffliction x :0.45)) (паралич-nn e0 x)))
 (B (name prokaza) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.45)(SS#ЗАБОЛЕВАНИЕ/PhysicalAffliction x :0.45)) (проказа-nn e0 x)))
 (B (name jazva) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.45)(SS#ЗАБОЛЕВАНИЕ/PhysicalAffliction x :0.45)) (язва-nn e0 x)))
+(B (name opuhol) (=>(^(S#БОЛЕЗНЬ/DISEASE x :0.45)(SS#ЗАБОЛЕВАНИЕ/PhysicalAffliction x :0.45)) (опухоль-nn e0 x)))
+
 
 
 ; SICK
@@ -154,6 +156,8 @@
 (B (name istochnik) (=>(^(S#ВОДНОЕ-ПРОСТРАНСТВО/BODY-OF-WATER x :0.45)(SS#ВОДА-ДВИЖЕНИЕ/BODY-OF-WATER-MOVEMENT y :0.45)) (источник-nn e0 y)))
 (B (name tech) (=>(^(S#ВОДНОЕ-ПРОСТРАНСТВО/BODY-OF-WATER x :0.45)(SS#ВОДА-ДВИЖЕНИЕ/BODY-OF-WATER-MOVEMENT y :0.45)) (течь-nn e0 y)))
 (B (name utechka) (=>(^(S#ВОДНОЕ-ПРОСТРАНСТВО/BODY-OF-WATER x :0.45)(SS#ВОДА-ДВИЖЕНИЕ/BODY-OF-WATER-MOVEMENT y :0.45)) (утечка-nn e0 y)))
+(B (name volna) (=>(^(S#ВОДНОЕ-ПРОСТРАНСТВО/BODY-OF-WATER x :0.45)(SS#ВОДА-ДВИЖЕНИЕ/BODY-OF-WATER-MOVEMENT y :0.45)) (волна-nn e0 y)))
+
 
 (B (name techvb) (=>(^(S#ВОДНОЕ-ПРОСТРАНСТВО/BODY-OF-WATER y :0.3)(SS#ВОДА-ДВИЖЕНИЕ/BODY-OF-WATER-MOVEMENT e0 :0.3)(R#STREAMING x e0 :0.3))(течь-vb e0 x u1 u2)))
 (B (name utech) (=>(^(S#ВОДНОЕ-ПРОСТРАНСТВО/BODY-OF-WATER y :0.3)(SS#ВОДА-ДВИЖЕНИЕ/BODY-OF-WATER-MOVEMENT e0 :0.3)(R#STREAMING x e0 :0.3)) (утечь-vb e0 x u1 u2)))

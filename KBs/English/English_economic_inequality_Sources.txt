@@ -10,6 +10,7 @@
 (B (name malum) (=>(^(S#DISEASE x :0.45)(SS#PhysicalAffliction x :0.45)) (malum-nn e0 x)))
 (B (name morbus) (=>(^(S#DISEASE x :0.45)(SS#PhysicalAffliction x :0.45)) (morbus-nn e0 x)))
 (B (name malady) (=>(^(S#DISEASE x :0.45)(SS#PhysicalAffliction x :0.45)) (malady-nn e0 x)))
+(B (name malaise) (=>(^(S#DISEASE x :0.45)(SS#PhysicalAffliction x :0.45)) (malaise-nn e0 x)))
 (B (name ailment) (=>(^(S#DISEASE x :0.45)(SS#PhysicalAffliction x :0.45)) (ailment-nn e0 x)))
 (B (name affliction) (=>(^(S#DISEASE x :0.45)(SS#PhysicalAffliction x :0.45)) (affliction-nn e0 x)))
 (B (name medical-condition) (=>(^(S#DISEASE x :0.45)(SS#PhysicalAffliction x :0.45)) (^(condition-nn e0 x)(medical-adj e1 x))))
@@ -125,6 +126,8 @@
 (B (name felony) (=>(S#CRIME x :0.9)(felony-nn e0 x)))
 (B (name delinquency) (=>(S#CRIME x :0.9)(delinquency-nn e0 x)))
 
+(B (name bandit) (=>(^(S#CRIME e0 :0.45)(R#CRIME-AGENT x e0 :0.45))(bandit-nn e0 x)))
+
 (B (name misdeed) (=>(S#CRIME x :0.9)(misdeed-nn e0 x)))
 (B (name malefaction) (=>(S#CRIME x :0.9)(malefaction-nn e0 x)))
 (B (name violation) (=>(S#CRIME x :0.9)(violation-nn e0 x)))
@@ -143,6 +146,9 @@
 (B (name malefactor) (=>(^(S#CRIME e0 :0.45)(R#CRIME-AGENT x e0 :0.45)) (malefactor-nn e0 x)))
 
 (B (name prostitute) (=>(S#CRIME x :0.9)(prostitute-nn e0 x)))
+(B (name rape) (=>(S#CRIME x :0.9)(rape-nn e0 x)))
+
+(B (name rapev) (=>(^(S#CRIME e0 :0.3)(R#CRIME-AGENT x e0 :0.3)(R#CRIME-VICTIM y e0 :0.3)) (rape-vb e0 x y u)))
 
 ; THEFT
 (B (name steal) (=>(^(S#CRIME e0 :0.2)(SS#THEFT e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#THEFT-THEME z e0 :0.2)) (steal-vb e0 x z u2)))
@@ -164,13 +170,16 @@
 (B (name plunder) (=>(^(S#CRIME x :0.45)(SS#THEFT x :0.45))(plunder-nn e0 x)))
 
 (B (name thief) (=>(^(S#CRIME e0 :0.3)(SS#THEFT e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (thief-nn e0 x)))
-(B (name pilferer) (=>(^(S#CRIME e0 :0.3)(SS#THEFT e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (thief-nn e0 x)))
+(B (name pilferer) (=>(^(S#CRIME e0 :0.3)(SS#THEFT e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (pilferer-nn e0 x)))
+(B (name mugger) (=>(^(S#CRIME e0 :0.3)(SS#THEFT e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (mugger-nn e0 x)))
 
 (B (name robber) (=>(^(S#CRIME e0 :0.3)(SS#THEFT e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (robber-nn e0 x)))
 (B (name burglar) (=>(^(S#CRIME e0 :0.3)(SS#THEFT e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (burglar-nn e0 x)))
 (B (name plunderer) (=>(^(S#CRIME e0 :0.3)(SS#THEFT e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (plunderer-nn e0 x)))
 (B (name plurdetor) (=>(^(S#CRIME e0 :0.3)(SS#THEFT e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (plurdetor-nn e0 x)))
 
+(B (name rob) (=>(^(S#CRIME e0 :0.2)(SS#THEFT e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-VICTIM y e0 :0.2)) (rob-vb e0 x y u)))
+(B (name mug) (=>(^(S#CRIME e0 :0.2)(SS#THEFT e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-VICTIM y e0 :0.2)) (mug-vb e0 x y u)))
 
 ; FROM - CRIME
 (B (name from-theft) (=>(R#CRIME-VICTIM y :0.9)(^(SS#THEFT e0)(from-in e1 e0 y))))
@@ -198,8 +207,11 @@
 (B (name cage) (=>(^(S#CONFINEMENT x :0.45)(SS#ConfinedSpace x :0.45)) (cage-nn e0 x)))
 (B (name dungeon) (=>(^(S#CONFINEMENT x :0.45)(SS#ConfinedSpace x :0.45)) (dungeon-nn e0 x)))
 (B (name penitentiary) (=>(^(S#CONFINEMENT x :0.45)(SS#ConfinedSpace x :0.45)) (penitentiary-nn e0 x)))
+(B (name dead-end) (=>(^(S#CONFINEMENT x :0.45)(SS#ConfinedSpace x :0.45)) (dead-end-nn e0 x)))
 
-(B (name jail) (=>(^(S#CONFINEMENT e0 :0.2)(SS#ConfinedSpace e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(imprison-vb e0 x y u)))
+(B (name imprison) (=>(^(S#CONFINEMENT e0 :0.2)(SS#ConfinedSpace e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(imprison-vb e0 x y u)))
+(B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#ConfinedSpace e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(confine-vb e0 x y u)))
+(B (name incarcerate) (=>(^(S#CONFINEMENT e0 :0.2)(SS#ConfinedSpace e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(incarcerate-vb e0 x y u)))
 
 (B (name trap) (=>(^(S#CONFINEMENT x :0.45)(SS#RESTRAINTS x :0.45)) (trap-nn e0 x)))
 (B (name net) (=>(^(S#CONFINEMENT x :0.45)(SS#RESTRAINTS x :0.45))(net-nn e0 x)))
@@ -207,7 +219,11 @@
 (B (name chain) (=>(^(S#CONFINEMENT x :0.45)(SS#RESTRAINTS x :0.45))(chain-nn e0 x)))
 (B (name bondage) (=>(^(S#CONFINEMENT x :0.45)(SS#RESTRAINTS x :0.45))(bondage-nn e0 x)))
 
-(B (name jail) (=>(^(S#CONFINEMENT e0 :0.2)(SS#RESTRAINTS e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(catch-vb e0 x y u)))
+(B (name catch) (=>(^(S#CONFINEMENT e0 :0.2)(SS#RESTRAINTS e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(catch-vb e0 x y u)))
+
+(B (name slavery) (=>(^(S#CONFINEMENT x :0.45)(SS#SLAVERY x :0.45))(slavery-nn e0 x)))
+(B (name slave) (=>(^(S#CONFINEMENT e0 :0.3)(SS#SLAVERY e0 :0.3)(R#CONFINEMENT-PATIENT x e0 :0.3))(slave-nn e0 x)))
+(B (name enslave) (=>(^(S#CONFINEMENT e0 :0.2)(SS#SLAVERY e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2))(enslave-nn e0 x y u)))
 
 (B (name limitationmap)(=>(I#CONFINEMENT x :0.9)(S#CONFINEMENT x)))
 
@@ -267,7 +283,7 @@
 (B (name watertypemap)(=>(I#BODY-OF-WATER-TYPE x :0.9)(S#BODY-OF-WATER-TYPE x)))
 (B (name drinkmap)(=>(I#DRINK x y :0.9)(SS#DRINK x y)))
 (B (name thirstmap)(=>(I#THIRST x y :0.9)(SS#THIRST x y)))
-(B (name streammap)(=>(I#BODY-OF-WATER-MOVEMENT x y :0.9)(SS#BODY-OF-WATER-MOVEMENT x y)))
+(B (name streammap)(=>(I#BODY-OF-WATER-MOVEMENT x :0.9)(SS#BODY-OF-WATER-MOVEMENT x)))
 
 ; MATERIAL
 
@@ -389,6 +405,7 @@
 (B (name pull-out-of) (=>(^(S#ABBYS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABBYSS-EXIT-CAUSE x e0 :0.2)) (^(pull-vb e0 x y u2)(of-in e2 e1 z))))
 (B (name lift-out-of) (=>(^(S#ABBYS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABBYSS-EXIT-CAUSE x e0 :0.2)) (^(lift-vb e0 x y u2)(of-in e2 e1 z))))
 (B (name yank-out-of) (=>(^(S#ABBYS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABBYSS-EXIT-CAUSE x e0 :0.2)) (^(yank-vb e0 x y u2)(of-in e2 e1 z))))
+(B (name dig-out-of) (=>(^(S#ABBYS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABBYSS-EXIT-CAUSE x e0 :0.2)) (^(dig-vb e0 x y u2)(of-in e2 e1 z))))
 
 ; BURDEN
 
@@ -419,6 +436,7 @@
 (B (name hurt) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(hurt-vb e0 x y u2)))
 (B (name crush) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(crush-vb e0 x y u2)))
 (B (name harm) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(harm-vb e0 x y u2)))
+(B (name screw) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(screw-vb e0 x y u2)))
 (B (name torture) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(torture-vb e0 x y u2)))
 (B (name maim) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(maim-vb e0 x y u2)))
 (B (name traumatize) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(traumatize-vb e0 x y u2)))
@@ -432,5 +450,6 @@
 (B (name maimn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(maim-nn e0 x)))
 (B (name trauman) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(trauma-nn e0 x)))
 (B (name injuryn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(injury-nn e0 x)))
+(B (name screwn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(screw-nn e0 x)))
 
 (B (name physical-harm-map) (=>(I#PHYSICAL-HARM  x :0.9) (S#PHYSICAL-HARM x)))

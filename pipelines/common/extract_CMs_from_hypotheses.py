@@ -187,7 +187,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION):
 	annotationMappings_struc['sourceInLm'] = False
 
 	output_struct_item['annotationMappings'] = [annotationMappings_struc]
-	output_struct_item['isiAbductiveExplanation'] = mapping_str
+	output_struct_item['isiAbductiveExplanation'] = inputString
 
 	#if len(targets)>0 and len(sources)>0:
 	#	output_struct_item["isiMetaphorConfirmed"] = 'YES'
