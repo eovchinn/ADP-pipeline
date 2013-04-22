@@ -23,7 +23,6 @@ logger = logging.getLogger("my_logger")
 logger.addHandler(logHandler)
 logger.setLevel(logging.INFO)
 
-
 METAPHOR_DIR = os.environ["METAPHOR_DIR"]
 HENRY_DIR = os.environ["HENRY_DIR"]
 BOXER_DIR = os.environ["BOXER_DIR"]
@@ -46,15 +45,15 @@ FA_KBPATH = "%s/KBs/Farsi/Farsi_compiled_KB.da" % METAPHOR_DIR
 kbcompiled = True
 
 DESCRIPTION = "Abductive engine output; " \
-		"targetFrame: Is currently equal to targetConceptSubDomain;" \
+              "targetFrame: Is currently equal to targetConceptSubDomain;" \
               "targetConceptDomain: Target concept domain defined by abduction; " \
-              "targetConceptSubDomain: Target concept subdomain defined by abduction ; "\
-		"sourceFrame: Source frame proposed by abduction ; " \
-              "sourceConceptSubDomain: Source subdomain proposed by abduction ; "\
-		"targetFrameElementsSentence: List of words denoting the target found by abduction; " \
-              "sourceFrameElementsSentence: List of words denoting the source found by abduction; "\
-		"annotationMappings: Target-Source mapping structures. "\
-		"isiAbductiveExplanation: Target-Source mapping (metaphor interpretation) as logical form found by abduction."
+              "targetConceptSubDomain: Target concept subdomain defined by abduction ; " \
+              "sourceFrame: Source frame proposed by abduction ; " \
+              "sourceConceptSubDomain: Source subdomain proposed by abduction ; " \
+              "targetFrameElementsSentence: List of words denoting the target found by abduction; " \
+              "sourceFrameElementsSentence: List of words denoting the source found by abduction; " \
+              "annotationMappings: Target-Source mapping structures. " \
+              "isiAbductiveExplanation: Target-Source mapping (metaphor interpretation) as logical form found by abduction."
 
 
 def extract_hypotheses(inputString):
@@ -90,8 +89,8 @@ def extract_hypotheses(inputString):
             explanation = True
 
         elif line.startswith("</result-inference>"):
-		
-            output_struct_item = extract_CM_mapping(target,hypothesis,DESCRIPTION)
+
+            output_struct_item = extract_CM_mapping(target, hypothesis, DESCRIPTION)
             #print json.dumps(hypothesis, ensure_ascii=False)
             #print json.dumps(output_struct_item, ensure_ascii=False, indent=4)
 
@@ -102,7 +101,7 @@ def extract_hypotheses(inputString):
     return output_struct
 
 
-def generate_text_input(input_metaphors, language):    
+def generate_text_input(input_metaphors, language):
     output_str = ""
     for key in input_metaphors.keys():
         output_str += "<META>" + key + "\n\n " + input_metaphors[key] + "\n\n"
@@ -114,7 +113,6 @@ def generate_text_input(input_metaphors, language):
 # as base-64 in output
 
 def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
-
     start_time = time.time()
     input_str = generate_text_input(input_metaphors, language)
 
@@ -143,7 +141,7 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
     # Katya: condition should be removed when Farsi starts to work
     if language != "FA":
         parser_pipeline = Popen(parser_proc, shell=True, stdin=PIPE, stdout=PIPE,
-                            stderr=None, close_fds=True)
+                                stderr=None, close_fds=True)
         parser_output = parser_pipeline.communicate(input=input_str)[0]
 
     # Parser processing time in seconds
@@ -175,21 +173,22 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
     # Katya: condition should be removed when Farsi starts to work
     if language != "FA":
         henry_pipeline = Popen(henry_proc,
-                           shell=True,
-                           stdin=PIPE,
-                           stdout=PIPE,
-                           stderr=None,
-                           close_fds=True)
+                               shell=True,
+                               stdin=PIPE,
+                               stdout=PIPE,
+                               stderr=None,
+                               close_fds=True)
 
         henry_output = henry_pipeline.communicate(input=parser_output)[0]
         hypotheses = extract_hypotheses(henry_output)
-    else: hypotheses = []
+    else:
+        hypotheses = []
 
     processed, failed, empty = 0, 0, 0
 
     # merge ADB result and input json document
     for hyp in hypotheses:
-        for ann in request_body_dict["metaphorAnnotationRecords"]:           
+        for ann in request_body_dict["metaphorAnnotationRecords"]:
             try:
                 if int(ann["id"]) == int(hyp["id"]):
                     for key, value in hyp.items():
@@ -203,19 +202,22 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
                         fl.close()
                         empty += 1
             except Exception:
-                print "hypothesis not found (%d)" % int(ann["id"])
-                fl = open("/lfs1/vzaytsev/misc/fails/context.%d.txt" % int(ann["id"]), "w")
-                fl.write("FAIL\n")
-                fl.write(ann["linguisticMetaphor"].encode("utf-8"))
-                fl.close()
-                failed += 1
+                try:
+                    print "hypothesis not found (%d)" % int(ann["id"])
+                    fl = open("/lfs1/vzaytsev/misc/fails/context.%d.txt" % int(ann["id"]), "w")
+                    fl.write("FAIL\n")
+                    fl.write(ann["linguisticMetaphor"].encode("utf-8"))
+                    fl.close()
+                    failed += 1
+                except Exception:
+                    pass
 
-    logger.info("STAT: {'processed':%d,'failed':%d,'empty':%d}" %  (processed, failed, empty))
+    logger.info("STAT: {'processed':%d,'failed':%d,'empty':%d}" % (processed, failed, empty))
 
     return request_body_dict
 
-def get_webservice_location():
 
+def get_webservice_location():
     # this gives the IP address; you may want to use this during the demo
     # hostname=socket.gethostbyname(hostname)
 
