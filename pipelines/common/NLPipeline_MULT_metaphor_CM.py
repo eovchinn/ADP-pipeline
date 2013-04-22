@@ -187,33 +187,36 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
     processed, failed, empty = 0, 0, 0
 
     # merge ADB result and input json document
-    for ann in request_body_dict["metaphorAnnotationRecords"]:
-        for hyp in hypotheses:
-            try:
-                if int(ann["sentenceId"]) == int(hyp["id"]):
-                    for key, value in hyp.items():
-                        ann[key] = value
-                        processed += 1
-                    if not hyp["sourceFrame"]:
-                        fl = open("/lfs1/vzaytsev/misc/fails/context.%d.txt" % int(ann["id"]), "w")
-                        fl.write("EMPTY SOURCE\n")
-                        fl.write(ann["linguisticMetaphor"].encode("utf-8"))
-                        fl.close()
-                        empty += 1
-            except Exception:
+    input_annotations = request_body_dict["metaphorAnnotationRecords"]
+    for annotation in input_annotations:
+        for hypothesis in hypotheses:
+
+            if "sentenceId" in annotation and "id" in hypothesis and \
+            int(annotation["sentenceId"]) == int(hypothesis["id"]):
                 try:
-                    fl = open("/lfs1/vzaytsev/misc/recent_fail.txt", "w")
-                    json.dump(hyp, fl)
-                    fl.close()
-                    print "hypothesis not found (%d)" % int(ann["id"])
-                    fl = open("/lfs1/vzaytsev/misc/fails/context.%d.txt" % int(ann["id"]), "w")
-                    fl.write("FAIL\n")
-                    fl.write(ann["linguisticMetaphor"].encode("utf-8"))
-                    fl.close()
-                    failed += 1
+                    for annot_propery in hypothesis.keys():
+                        if hypothesis[annot_propery]:
+                            annotation[annot_propery] = hypothesis[annot_propery]
+                    if "sourceFrame" in annotation and annotation["sourceFrame"]:
+                        processed += 1
+                    else:
+                        empty += 1
+                        try:
+                            fl = open("/lfs1/vzaytsev/misc/fails/empty_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
+                            fl.write("REASON: EMPTY sourceFrame\n")
+                            fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
+                            fl.close()
+                        except:
+                            pass
                 except Exception:
                     failed += 1
-
+                    try:
+                        fl = open("/lfs1/vzaytsev/misc/fails/failed_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
+                        fl.write("REASON: PROCESSING FAILED\n")
+                        fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
+                        fl.close()
+                    except:
+                        pass
     logger.info("STAT: {'processed':%d,'failed':%d,'empty':%d}" % (processed, failed, empty))
 
     return request_body_dict
