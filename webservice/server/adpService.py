@@ -42,7 +42,7 @@ def annotate_document(annotate_document_request_body):
     for annotation in annotations:
 
         try:
-            annotation_id = annotation["id"]
+            annotation_id = annotation["sentenceId"]
 
         except KeyError:
             logging.info("No annotation_id.Set one.")
