@@ -202,6 +202,9 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
                         empty += 1
             except Exception:
                 try:
+                    fl = open("/lfs1/vzaytsev/misc/recent_fail.txt", "w")
+                    json.dump(hyp, fl)
+                    fl.close()
                     print "hypothesis not found (%d)" % int(ann["id"])
                     fl = open("/lfs1/vzaytsev/misc/fails/context.%d.txt" % int(ann["id"]), "w")
                     fl.write("FAIL\n")
