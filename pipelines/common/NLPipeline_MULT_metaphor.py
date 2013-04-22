@@ -42,6 +42,7 @@ DESCRIPTION = "Abductive engine output; abductive_hypothesis: metaphor " \
 # as base-64 in output
 
 def extract_hypotheses(inputString, unique_id, with_pdf_content):
+    print unique_id
     output_struct = []
     hypothesis_found = False
     p = re.compile('<result-inference target="(.+)"')
