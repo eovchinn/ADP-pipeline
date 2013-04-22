@@ -190,33 +190,35 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
     input_annotations = request_body_dict["metaphorAnnotationRecords"]
     for annotation in input_annotations:
         for hypothesis in hypotheses:
-
-            if "sentenceId" in annotation and "id" in hypothesis and \
-            int(annotation["sentenceId"]) == int(hypothesis["id"]):
-                try:
-                    for annot_propery in hypothesis.keys():
-                        if hypothesis[annot_propery]:
-                            annotation[annot_propery] = hypothesis[annot_propery]
-                    if "sourceFrame" in annotation and annotation["sourceFrame"]:
-                        processed += 1
-                    else:
-                        empty += 1
+            try:
+                if "sentenceId" in annotation and "id" in hypothesis and \
+                int(annotation["sentenceId"]) == int(hypothesis["id"]):
+                    try:
+                        for annot_propery in hypothesis.keys():
+                            if hypothesis[annot_propery]:
+                                annotation[annot_propery] = hypothesis[annot_propery]
+                        if "sourceFrame" in annotation and annotation["sourceFrame"]:
+                            processed += 1
+                        else:
+                            empty += 1
+                            try:
+                                fl = open("/lfs1/vzaytsev/misc/fails/empty_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
+                                fl.write("REASON: EMPTY sourceFrame\n")
+                                fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
+                                fl.close()
+                            except:
+                                pass
+                    except Exception:
+                        failed += 1
                         try:
-                            fl = open("/lfs1/vzaytsev/misc/fails/empty_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
-                            fl.write("REASON: EMPTY sourceFrame\n")
+                            fl = open("/lfs1/vzaytsev/misc/fails/failed_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
+                            fl.write("REASON: PROCESSING FAILED\n")
                             fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
                             fl.close()
                         except:
                             pass
-                except Exception:
-                    failed += 1
-                    try:
-                        fl = open("/lfs1/vzaytsev/misc/fails/failed_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
-                        fl.write("REASON: PROCESSING FAILED\n")
-                        fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
-                        fl.close()
-                    except:
-                        pass
+            except Exception:
+                failed += 1
     logger.info("STAT: {'processed':%d,'failed':%d,'empty':%d}" % (processed, failed, empty))
 
     return request_body_dict
