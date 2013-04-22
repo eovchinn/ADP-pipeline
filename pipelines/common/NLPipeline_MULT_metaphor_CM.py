@@ -190,7 +190,7 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
     for ann in request_body_dict["metaphorAnnotationRecords"]:
         for hyp in hypotheses:
             try:
-                if int(ann["id"]) == int(hyp["id"]):
+                if int(ann["sentenceId"]) == int(hyp["id"]):
                     for key, value in hyp.items():
                         ann[key] = value
                         processed += 1
@@ -212,7 +212,7 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
                     fl.close()
                     failed += 1
                 except Exception:
-                    pass
+                    failed += 1
 
     logger.info("STAT: {'processed':%d,'failed':%d,'empty':%d}" % (processed, failed, empty))
 
