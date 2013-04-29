@@ -11,88 +11,91 @@ from NLPipeline_MULT_metaphor_CM import ADP
 
 
 def annotate_document(annotate_document_request_body):
-
-    logging.info("Processing annotateDocument...")
-
-    # The annotate_document_request_body object is a JSON string
-    ro = json.loads(annotate_document_request_body)
-
-    # We retrieve some of the fields from the document
-    # document = ro["document"]
-    request_body_dict = json.loads(annotate_document_request_body)
-
-    #document language
     try:
-        language = request_body_dict["language"]
-    except KeyError:
-        logging.info("No language information available.")
-        return json.dumps([])
+        logging.info("Processing annotateDocument...")
 
-    # These are the annotations that were given in the web service call
-    try:
-        annotations = request_body_dict["metaphorAnnotationRecords"]
-    except KeyError:
-        logging.info("No annotations available.")
-        return json.dumps([])
+        # The annotate_document_request_body object is a JSON string
+        ro = json.loads(annotate_document_request_body)
 
-    #dict that contains metaphors&annotation_id
-    input_metaphors = {}
+        # We retrieve some of the fields from the document
+        # document = ro["document"]
+        request_body_dict = json.loads(annotate_document_request_body)
 
-    annotation_id_index = 0
-    for annotation in annotations:
-
+        #document language
         try:
-            annotation_id = annotation["sentenceId"]
-
+            language = request_body_dict["language"]
         except KeyError:
-            logging.info("No annotation_id.Set one.")
-            annotation_id_index += 1
-            annotation_id = annotation_id_index
+            logging.info("No language information available.")
+            return json.dumps([])
 
+        # These are the annotations that were given in the web service call
         try:
-            metaphor = annotation["linguisticMetaphor"]
-            if language == "EN":
-
-                #replacing single quote, double quote (start/end), dash
-                ascii_metaphor = metaphor.replace(u"\u2019", u"\u0027").replace(
-                    u"\u201c", u"\u0022").replace(u"\u201d", u"\u0022").replace(
-                    u"\u2014", u"\u002d")
-
-                #see unicode chars
-                #input_metaphors[str(annotation_id)]=metaphor
-                #input_metaphors[str(annotation_id)]= \
-                # metaphor.encode("ascii","ignore")
-
-                input_metaphors[str(annotation_id)] = \
-                    ascii_metaphor.encode("utf-8")
-
-            else:
-                input_metaphors[str(annotation_id)] = metaphor.encode("utf-8")
-
+            annotations = request_body_dict["metaphorAnnotationRecords"]
         except KeyError:
-            logging.info("No metaphor. Skip it.")
+            logging.info("No annotations available.")
+            return json.dumps([])
 
-    logging.info("Input metaphors: %s" % input_metaphors)
-    logging.info("Processing %s ..." % language)
+        #dict that contains metaphors&annotation_id
+        input_metaphors = {}
 
-    # if no metaphors
-    if not input_metaphors:
-        return json.dumps(request_body_dict)
+        annotation_id_index = 0
+        for annotation in annotations:
 
-    # TODO(zaytsev@usc.edu): remove this line
-    logging.info("Options: %s" % str(options.graph))
+            try:
+                annotation_id = annotation["sentenceId"]
 
-    # options.graph is either True (return graph as base-64 str) or false
-    adp_result = ADP(request_body_dict,
-                     input_metaphors,
-                     language,
-                     options.graph)
+            except KeyError:
+                logging.info("No annotation_id.Set one.")
+                annotation_id_index += 1
+                annotation_id = annotation_id_index
 
-    # print "DUMB"
-    # open("test.response.json", "w").write(json.dumps(adp_result)
-    #     .encode("utf-8"))
+            try:
+                metaphor = annotation["linguisticMetaphor"]
+                if language == "EN":
 
-    return json.dumps(adp_result, encoding="utf-8")
+                    #replacing single quote, double quote (start/end), dash
+                    ascii_metaphor = metaphor.replace(u"\u2019", u"\u0027").replace(
+                        u"\u201c", u"\u0022").replace(u"\u201d", u"\u0022").replace(
+                        u"\u2014", u"\u002d")
+
+                    #see unicode chars
+                    #input_metaphors[str(annotation_id)]=metaphor
+                    #input_metaphors[str(annotation_id)]= \
+                    # metaphor.encode("ascii","ignore")
+
+                    input_metaphors[str(annotation_id)] = \
+                        ascii_metaphor.encode("utf-8")
+
+                else:
+                    input_metaphors[str(annotation_id)] = metaphor.encode("utf-8")
+
+            except KeyError:
+                logging.info("No metaphor. Skip it.")
+
+        logging.info("Input metaphors: %s" % input_metaphors)
+        logging.info("Processing %s ..." % language)
+
+        # if no metaphors
+        if not input_metaphors:
+            return json.dumps(request_body_dict)
+
+        # TODO(zaytsev@usc.edu): remove this line
+        logging.info("Options: %s" % str(options.graph))
+
+        # options.graph is either True (return graph as base-64 str) or false
+        adp_result = ADP(request_body_dict,
+                         input_metaphors,
+                         language,
+                         options.graph)
+
+        # print "DUMB"
+        # open("test.response.json", "w").write(json.dumps(adp_result)
+        #     .encode("utf-8"))
+
+        return json.dumps(adp_result, encoding="utf-8")
+
+    except Exception:
+        return annotate_document_request_body
 
 
 if __name__ == "__main__":
