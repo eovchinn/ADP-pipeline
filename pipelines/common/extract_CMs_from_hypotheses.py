@@ -176,8 +176,8 @@ def extract_CM_mapping(id,inputString,DESCRIPTION):
 
 	mapping_str = wordStr2print_Mapping(mappings,word_props,equalities)
 
-	output_struct_item["targetFrameElementsSentence"] = targetWords
-	output_struct_item["sourceFrameElementsSentence"] = sourceWords
+	output_struct_item["targetFrameElementSentence"] = targetWords
+	output_struct_item["sourceFrameElementSentence"] = sourceWords
 
 	annotationMappings_struc = dict()
 	annotationMappings_struc['explanation'] = mapping_str
