@@ -192,11 +192,11 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
     for annotation in input_annotations:
         for hypothesis in hypotheses:
             try:
-                if "sentenceId" in annotation and "id" in hypothesis and \
+                if "sentenceId" in annotation and \
                 int(annotation["sentenceId"]) == int(hypothesis["id"]):
                     try:
                         for annot_propery in hypothesis.keys():
-                            if hypothesis[annot_propery]:
+                            if annot_propery != "id" and hypothesis.get(annot_propery):
                                 annotation[annot_propery] = hypothesis[annot_propery]
                         if "sourceFrame" in annotation and annotation["sourceFrame"]:
                             processed += 1
