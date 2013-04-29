@@ -50,8 +50,8 @@ DESCRIPTION = "Abductive engine output; " \
               "targetConceptSubDomain: Target concept subdomain defined by abduction ; " \
               "sourceFrame: Source frame proposed by abduction ; " \
               "sourceConceptSubDomain: Source subdomain proposed by abduction ; " \
-              "targetFrameElementsSentence: List of words denoting the target found by abduction; " \
-              "sourceFrameElementsSentence: List of words denoting the source found by abduction; " \
+              "targetFrameElementSentence: List of words denoting the target found by abduction; " \
+              "sourceFrameElementSentence: List of words denoting the source found by abduction; " \
               "annotationMappings: Target-Source mapping structures. " \
               "isiAbductiveExplanation: Target-Source mapping (metaphor interpretation) as logical form found by abduction."
 
@@ -188,6 +188,7 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
 
     # merge ADB result and input json document
     input_annotations = request_body_dict["metaphorAnnotationRecords"]
+    total = len(input_annotations)
     for annotation in input_annotations:
         for hypothesis in hypotheses:
             try:
@@ -219,7 +220,10 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
                             pass
             except Exception:
                 failed += 1
-    logger.info("STAT: {'processed':%d,'failed':%d,'empty':%d}" % (processed, failed, empty))
+    logger.info("STAT: {'processed':%d,'failed':%d,'empty':%d,'unknown':%d}" % (processed,
+                                                                                failed,
+                                                                                empty,
+                                                                                total - processed))
 
     return request_body_dict
 
