@@ -5,10 +5,10 @@ Abductive discource processing pipeline
 
 Multilingual (English, Spanish, Farsi, Russian) abductive discource processing pipeline.
 
-* `NLPipeline_MULT_stdinout_CM.py` – running tokenizer, lemmatizer, parser, logical form converter, abductive reasoner, proof graph generator
+* `NLPipeline_MULT_stdinout_CM.py` – running tokenizer, lemmatizer, parser, logical form converter, abductive reasoner, proof graph generator, CM output
 
 ```
-usage: NLPipeline_MULT_stdinout.py [-h] [--lang LANG] [--input INPUT]
+usage: NLPipeline_MULT_stdinout_CM.py [-h] [--lang LANG] [--input INPUT]
                                    [--outputdir OUTPUTDIR] [--parse] [--henry]
                                    [--kb KB] [--kbcompiled KBCOMPILED]
                                    [--graph GRAPH] [--CMoutput]
