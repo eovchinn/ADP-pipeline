@@ -25,7 +25,6 @@ from subprocess import Popen, PIPE, STDOUT
 import extract_CMs_from_hypotheses
 from extract_CMs_from_hypotheses import *
 
-
 METAPHOR_DIR = os.environ['METAPHOR_DIR']
 HENRY_DIR = os.environ['HENRY_DIR']
 TMP_DIR = os.environ['TMP_DIR']
