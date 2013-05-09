@@ -81,26 +81,30 @@ Total weight of these axioms should be <1.
 ---
 **MAPPING AXIOMS FORMAT**
 
-Mapping axioms operate on international or language specific concepts. The make the inference important for metaphor interpretation explicit.
+Mapping axioms operate on international or language specific concept labels. They make inferences important for 
+metaphor interpretation explicit.
 
-A DISEASE causes a SICK entity not to function.
+* `M#` – prefix indicating mapping concepts that will appear in the output
+
+A S#DISEASE causes a R#SICK entity not to function.
 
 ```
 (B (name disease)(=> (^(M#CAUSE-NOT-FUNCTION e0 :0.3)(M#CAUSING-THING_F x e0 :0.3)(M#FUNCTION-AGENT y e0 :0.3)) (^ (I#DISEASE x)(R#SICK y x))))
 ```
 
 
-If a CURE-AGENT cures a DISEASE, then it causes the DISEASE not to exist.
+If a R#CURE-AGENT cures a S#DISEASE, then it causes the S#DISEASE not to exist.
 
 ```
 (B (name cure)(=> (^(M#CAUSE-NOT-EXIST e1 :0.3)(M#CAUSING-THING_E y e1 :0.3)(M#EXISTING-THING x e1 :0.3)) (^ (I#CURE e0)(R#CURE-AGENT y e0)(R#SICK x d)(S#DISEASE d))))
 ```
 
-NOTE: don’t use general predicates like CAUSE, NOT, because they can be unexpectedly unified during abductive inference.
+NOTE: don’t use general predicates like CAUSE, NOT in isolation (use more complex predicates like CAUSE-NOT-EXIST instead), 
+because they can be unexpectedly unified during abductive inference.
 
 Total weight of these axioms should be <1. The more predicates there are on the right-hand-side, the lower should be total weight of the axiom be.
 
-Current mapping axioms can be found [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/KBs/common/economic_inequality_ontology.txt) 
+Current mapping axioms can be found [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/KBs/common/economic_inequality_ontology.txt).
 
 
 --
@@ -118,4 +122,14 @@ PATH_TO_HENRY/henry -m compile_kb KB_PATH -o KB_COMPILED_PATH
 
 **RUNNING PIPELINE**
 
-To check how the axioms work, one should run the pipeline. Instructions can be found [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/common/README.md)
+To check how the axioms work, one should run the pipeline. Instructions can be found [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/common/README.md).
+
+--
+
+**CM OUTPUT FORMAT**
+
+If you run the pipeline using "--CMoutput" flag, then you will see conceptual metaphors detected by our pipeline 
+in the input_filename.cm file. This file contains a json object with relevant fields. 
+
+
+
