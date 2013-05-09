@@ -5,13 +5,13 @@ Abductive discource processing pipeline
 
 Multilingual (English, Spanish, Farsi, Russian) abductive discource processing pipeline.
 
-* `NLPipeline_MULT_stdinout.py` – running tokenizer, lemmatizer, parser, logical form converter, abductive reasoner, proof graph generator
+* `NLPipeline_MULT_stdinout_CM.py` – running tokenizer, lemmatizer, parser, logical form converter, abductive reasoner, proof graph generator
 
 ```
 usage: NLPipeline_MULT_stdinout.py [-h] [--lang LANG] [--input INPUT]
                                    [--outputdir OUTPUTDIR] [--parse] [--henry]
                                    [--kb KB] [--kbcompiled KBCOMPILED]
-                                   [--graph GRAPH] [--textid]
+                                   [--graph GRAPH] [--CMoutput]
 optional arguments:
   -h, --help            show this help message and exit
   --lang LANG           Input language: EN, ES, RU, FA.
@@ -28,7 +28,7 @@ optional arguments:
                         Path to compiled knowledge base.
   --graph GRAPH         ID of text/sentence to vizualize. Possible value:
                         allN, where N is number of sentences to vizualize.
-  --textid              Meta text ids.
+  --CMoutput            Conceptual metaphor output.
 
 ```
 
