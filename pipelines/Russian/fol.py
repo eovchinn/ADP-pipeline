@@ -317,6 +317,9 @@ class MaltConverter(object):
         for p in self.initial_preds:
             if p.word.par:
                 self.apply_par_rules(p.word)
+        for p in self.initial_preds:
+            if p.word.lemma == u"как":
+                self.apply_in2_rules(p.word)
 
         self.reassign_copulas()
 
@@ -1433,6 +1436,48 @@ class MaltConverter(object):
                         ep1.e,
                     ))
                     self.extra_preds.extend((ep1, ep2, ))
+
+    def apply_in2_rules(self, word):
+        if word.deprel != u"сравнит":
+            return
+        if not word.pred:
+            return
+        arg_1 = None
+        for dep in word.deps():
+            if dep.nn:
+                arg_1 = dep
+        if not arg_1:
+            return
+        if not word.head or not (word.head.pr or word.head.vb):
+            return
+        if not word.head.pred:
+            return
+        arg_2 = None
+        if word.head.vb:
+            if len(word.head.pred.args) > 1:
+                target = word.head.pred.args[1].resolve_link()
+                for dep in word.head.deps():
+                    if dep.pred and dep.pred.args[1].resolve_link() == target:
+                        arg_2 = dep
+                        break
+            if not arg_2:
+                for p in self.initial_preds:
+                    if p != word.head.pred and p.word.vb and p.word.pred.args[2].resolve_link() == \
+                            word.head.pred.args[0].resolve_link():
+                        target = p.args[1].resolve_link()
+                        for dep in p.word.deps():
+                            if dep.pred and dep.nn and dep.pred.args[1].resolve_link() == target:
+                                arg_2 = dep
+                                break
+        elif word.head.pr:
+            if word.head.head and word.head.head.nn and word.head.pred:
+                arg_2 = word.head.head
+
+        if arg_1 and arg_2:
+            self.extra_preds.append(EPredicate("new_equal", args=(
+                Argument.link(arg_1.pred.args[1]),
+                Argument.link(arg_2.pred.args[1]),
+            )))
 
     def add_line(self, malt_row):
         wt = WordToken(malt_row)
