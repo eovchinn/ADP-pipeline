@@ -3,37 +3,37 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; DISEASE
-(B (name enfermedad) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (enfermedad-nn e0 x)))
-(B (name mal) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (mal-nn e0 x)))
-(B (name afeccion) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (afección-nn e0 x)))
-(B (name morbo) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (morbo-nn e0 x)))
+(B (name enfermedad) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#AfflictionFisica/PhysicalAffliction x :0.45)) (enfermedad-nn e0 x)))
+(B (name mal) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#AfflictionFisica/PhysicalAffliction x :0.45)) (mal-nn e0 x)))
+(B (name afeccion) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#AfflictionFisica/PhysicalAffliction x :0.45)) (afección-nn e0 x)))
+(B (name morbo) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#AfflictionFisica/PhysicalAffliction x :0.45)) (morbo-nn e0 x)))
 
-(B (name cancer) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (cáncer-nn e0 x)))
-(B (name gordura) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (gordura-nn e0 x)))
-(B (name peste) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (peste-nn e0 x)))
-(B (name plaga) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (plaga-nn e0 x)))
-(B (name llaga) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (llaga-nn e0 x)))
-(B (name fiebre) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#Affliction Fisica/PhysicalAffliction x :0.45)) (fiebre-nn e0 x)))
+(B (name cancer) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#AfflictionFisica/PhysicalAffliction x :0.45)) (cáncer-nn e0 x)))
+(B (name gordura) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#AfflictionFisica/PhysicalAffliction x :0.45)) (gordura-nn e0 x)))
+(B (name peste) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#AfflictionFisica/PhysicalAffliction x :0.45)) (peste-nn e0 x)))
+(B (name plaga) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#AfflictionFisica/PhysicalAffliction x :0.45)) (plaga-nn e0 x)))
+(B (name llaga) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#AfflictionFisica/PhysicalAffliction x :0.45)) (llaga-nn e0 x)))
+(B (name fiebre) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#AfflictionFisica/PhysicalAffliction x :0.45)) (fiebre-nn e0 x)))
 
 
 ; SICK
-(B (name enfermo) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#Affliction Fisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3)) (enfermo-adj e0 y)))
-(B (name malo) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#Affliction Fisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3))(malo-adj e0 y)))
+(B (name enfermo) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#AfflictionFisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3)) (enfermo-adj e0 y)))
+(B (name malo) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#AfflictionFisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3))(malo-adj e0 y)))
 
-(B (name enfermo) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#Affliction Fisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3)) (enfermo-nn e0 y)))
-(B (name paciente) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#Affliction Fisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3)) (paciente-adj e0 y)))
+(B (name enfermo) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#AfflictionFisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3)) (enfermo-nn e0 y)))
+(B (name paciente) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#AfflictionFisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3)) (paciente-adj e0 y)))
 
-(B (name minusvalido) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#Affliction Fisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3))  (minusválido-nn e0 y)))
-(B (name invalido) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#Affliction Fisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3))  (inválido-nn e0 y)))
+(B (name minusvalido) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#AfflictionFisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3))  (minusválido-nn e0 y)))
+(B (name invalido) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#AfflictionFisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3))  (inválido-nn e0 y)))
 
 ; OF - DISEASE
 (B (name of-disease) (=>(R#SICK  y x :0.9)(^(S#ENFERMEDAD/DISEASE x)(of-in e1 x y))))
 (B (name of-disease) (=>(R#SICK  y x :0.9)(^(S#ENFERMEDAD/DISEASE x)(de-in e1 x y))))
 
 ; BE SICK
-(B (name enfermar) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#Affliction Fisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3)) (enfermar-vb e0 y u1 u2)))
-(B (name ponerse-male) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#Affliction Fisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3)) (^(ponerse-vb e0 y z u2)(malo-nn e2 z))))
-(B (name caer-male) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#Affliction Fisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3)) (^(caer-vb e0 y z u2)(malo-nn e2 z))))
+(B (name enfermar) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#AfflictionFisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3)) (enfermar-vb e0 y u1 u2)))
+(B (name ponerse-male) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#AfflictionFisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3)) (^(ponerse-vb e0 y z u2)(malo-nn e2 z))))
+(B (name caer-male) (=>(^(S#ENFERMEDAD/DISEASE e0 :0.3)(SS#AfflictionFisica/PhysicalAffliction e0 :0.3)(R#SICK y e0 :0.3)) (^(caer-vb e0 y z u2)(malo-nn e2 z))))
 
 ; TREATMENT
 
