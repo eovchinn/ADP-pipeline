@@ -33,7 +33,7 @@ Each source lexeme evokes a source domain and (possibly) subdomain. Total weight
 
 Source axioms are stored under ./KBs/LANG/LANG_economic_inequality_Sources.txt
 
-List of current sources can be found [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/KBs/common/Current_Sources.xlsx) 
+List of current sources can be found [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/KBs/common/Current_Sources.xlsx).
 
 ---
 
@@ -43,7 +43,7 @@ Sometimes it might be useful to indicate roles in the axioms (if the roles are u
 
 * `R#` – prefix indicating roles
 
-If somebody is sick, then he fills the R#SICK role in S#DISEASE frame.
+If somebody is sick, then he fills the R#SICK role in the S#DISEASE frame.
 
 ```
 (B (name sick) (=>(^(S#DISEASE e0 :0.3)(SS#PhysicalAffliction x :0.3)(R#SICK y e0 :0.3)) (sick-adj e0 y)))
@@ -60,7 +60,7 @@ If somebody cures a disease, then he fills the R#CURE-AGENT role in the S#DISEAS
 
 Sometimes syntactic dependencies introduce new roles. Total weight of these axioms should be <1.
 
-If there is an epidemic of y, then y is a disease.
+If there is an SS#EPIDEMIC of y, then y is a S#DISEASE.
 
 ```
 (B (name de-epidemia) (=>(S#ENFERMEDAD/DISEASE y :0.9)(^(SS#EPIDEMIA/EPIDEMIC x)(de-in e1 x y))))
@@ -70,11 +70,12 @@ If there is an epidemic of y, then y is a disease.
 
 **INTERNATIONAL AXIOMS FORMAT**
 
-Some concepts are more or less equivalent across languages, therefore language specific labels should be mapped to international labels. Total weight of these axioms should be <1.
+Some concepts are more or less equivalent across languages, therefore their language specific labels should be mapped to 
+international labels and these international labels should be used  in the mapping axioms. 
+Total weight of these axioms should be <1. 
 
 ```
 (B (name dismap)(=>(I#DISEASE x :0.9)(S#ENFERMEDAD/DISEASE x)))
-
 ```
 
 ---
