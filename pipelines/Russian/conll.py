@@ -194,7 +194,6 @@ class WordToken(object):
         """
         Do DFS to check if deps contains a given lemma.
         """
-        new_deps = []
         deps = self.__deps[:]
         while deps:
             new_deps = []
