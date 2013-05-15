@@ -200,14 +200,6 @@ bash build_conceptnet.sh
 
 Please refer to http://nltk.googlecode.com/svn/trunk/doc/howto/wordnet.html
 
-* Calculate similarity incorporated with direvationally related form:
-
-Please refer to similarity_all.py demo()
-
-#### similarity method
-
-* similarity.py: the script to call different similarity measure methods
-
 * similarity_wordnet.py: using wordnet's relations: hypernym, hyponym, derivationlly related form, antonyms and similary meanings. Only support for English.
 
 * similarity_conceptnet.py: Using conceptnet's graph to calculate the shortest path between two words. The similarity is 1/ length of the path. Only support for FA,ES,RU. The only issue is that the graph is too sparse and amount of nodes is small, so it often doesn't work.
