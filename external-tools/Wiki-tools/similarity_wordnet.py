@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# similarity_all.py
+# similarity_wordnet.py
 # similarity measurement tool using wordnet incorporated with Derivationally-Related-Form (DRF)
 # support language: EN,FA,ES,RU
 #
@@ -37,6 +37,7 @@ def extract_pos_offset(fileName):
 
 
 def loadAll():
+    global loaded
     if loaded:
         return
     index = wn._lemma_pos_offset_map
@@ -242,6 +243,7 @@ def min_path_words(word1,pos1,word2,pos2,max):
 def path_similarity(word1,pos1,word2,pos2):
     if loaded == False:
         loadAll()
+        loaded = True
 
     r = min_path_words(word1,pos1,word2,pos2,1000)
     if r==None or r[0]==-1:
