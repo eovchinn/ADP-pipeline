@@ -15,17 +15,15 @@ TOKENIZER_OPT="--stdin"
 CANDC_OPT="--models $BOXER_DIR/models/boxer --candc-printer boxer"
 BOXER_OPT="--semantics tacitus --resolve true --stdin"
 
-inputFile="${1:-/dev/stdin}"
-outputFileName="${2:-/dev/stdout}"
 
 if [ -d "$2" ]; then
-	$TOKENIZER_BIN $TOKENIZER_OPT < $inputFile |
+	$TOKENIZER_BIN $TOKENIZER_OPT < "${1:-/dev/stdin}" |
 	tee $2/tmp.tok |
 	$CANDC_BIN $CANDC_OPT |
 	tee $2/tmp.candc |
 	$BOXER_BIN $BOXER_OPT > /dev/stdout
 else
-	$TOKENIZER_BIN $TOKENIZER_OPT < $inputFile |
+	$TOKENIZER_BIN $TOKENIZER_OPT < "${1:-/dev/stdin}"|
 	$CANDC_BIN $CANDC_OPT |
-	$BOXER_BIN $BOXER_OPT > $outputFileName
+	$BOXER_BIN $BOXER_OPT > "${2:-/dev/stdout}"
 fi
