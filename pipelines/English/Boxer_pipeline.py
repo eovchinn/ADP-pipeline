@@ -49,7 +49,7 @@ def main():
 		else:
 			candcParser = BOXER_DIR + '/bin/candc --models ' + BOXER_DIR + '/models/boxer --candc-printer boxer'	
 			candc_proc = Popen(candcParser, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)	
-			candc_output = candc_proc.communicate(input=sys.stdin.readline())[0]
+			candc_output = candc_proc.communicate(input=sys.stdin.read())[0]
 	
 	if outputdir:
 		f_candc = open(os.path.join(outputdir,fname+".ccg"), "w")
