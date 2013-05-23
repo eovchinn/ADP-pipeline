@@ -31,5 +31,13 @@ A knowledge base can be compiled by [Henry](https://github.com/naoya-i/henry-n70
 ```
 henry -m compile_kb KB_PATH -o KB_COMPILED_PATH
 ```
+where KB_PATH can contain several space-separated paths to different files.
+
+
+Note that for Mac users, the output path must come before the KB_PATH:
+
+```
+henry -m compile_kb -o KB_COMPILED_PATH KB_PATH
+```
 
 

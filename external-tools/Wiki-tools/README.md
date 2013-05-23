@@ -156,16 +156,80 @@ returns:
 In foreign policy, he ended the war in Iraq, increased troop levels in Afghanistan, signed the New START arms control treaty with Russia, ordered U.S. involvement in the 2011 Libya military intervention, and ordered the military operation that resulted in the death of Osama bin Laden."@en...
 ```
 
-### Similarity Tools
+### Similarity Tools using Wordnet
+
+#### Setup NLTK tools
+
+* Download and install nltk on your machine. Here is the guide : http://nltk.org/install.html
+
+* Download NLTK Data: wordnet corpus.
+```
+python
+import nltk
+nltk.download()
+```
+In the new window, find corpus->wordnet, and click Download.
+
+#### set up ConceptNet tools
+
+* Create conceptnet database and user
+
+```
+sudo su root
+su - postgres
+psql
+postgres=# create database wiki;
+postgres=#  GRANT ALL PRIVILEGES ON DATABASE wiki to wiki;
+postgres=# \q
+```
+
+* Download the conceptnet database: http://conceptnet5.media.mit.edu/downloads/current/conceptnet5.1.2-20121212-csv.tar.bz2
+
+* Extract all files to a Directory, let's call this directory $cnDIR.
+
+* In build_conceptnet.sh, change CONCEPTNET_DIR to $cnDIR.
+
+* build the conceptnet tables and translation tables.
+```
+bash build_conceptnet.sh
+```
+
+#### Compute Similarity between two words
+
+* Using wordnet's own similarity package
+
+Please refer to http://nltk.googlecode.com/svn/trunk/doc/howto/wordnet.html
+
+* similarity_wordnet.py: using wordnet's relations: hypernym, hyponym, derivationlly related form, antonyms and similary meanings. Only support for English.
+
+* similarity_conceptnet.py: Using conceptnet's graph to calculate the shortest path between two words. The similarity is 1/ length of the path. Only support for FA,ES,RU. The only issue is that the graph is too sparse and amount of nodes is small, so it often doesn't work.
+
+* similarity_translation.py: Using wiktionary.org' translation information, first translate two words into English, and then call similarity_wordnet.py to calculate similarity between the two English words. Support for ES,FA,RU.
+
+#### Get similarity results for a wiki paragraph
 
 * First, use the get_paragraph.py to find the paragraph which you are interested in, and parse it.
 ```
-python get_paragraph.py -i 'Nation' -l EN --stdout| python parse.py -l EN --common commonDIR --temp temp/temp.txt >temp/nation.txt
+python get_paragraph.py -i 'Nation' -l EN --stdout| python parse.py -l --common commonDIR --temp temp/temp.txt EN >temp/nation.txt
 ```
 where commonDIR = $METAPHOR_DIR/pipelines/common
 
 * Use similarity.py to compute similarty:
 ```
-python similarity.py -w nation -p nn < temp/nation.txt >temp/nation.rank.txt
+python similarity.py -w nation -p nn -i temp/nation.txt -o temp/nation.rank.txt
 ```
 -w options should follows the target word, and -p options should follow the target word's POS tag, which should be compatible with LF form's suffix, i.e. nn,rb,vb,adj.
+
+
+```
+psql
+create database conceptnet;
+grant all privileges on database conceptnet to wiki;
+```
+
+### known bugs
+
+1. get_paragraph.py: We can not support Russian caseinsensetive option due to 'ilike' in Postgresql is not support with Russian. So please initalized the first letter when you deal with Russian.
+
+2. similarity.py: Can not support Farsi, for we need to read .obs file to get the predicate. However, these predicate is not native Farsi, but some English-letters, so can not calculate similarity.
+
