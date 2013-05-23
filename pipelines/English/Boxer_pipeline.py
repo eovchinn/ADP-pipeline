@@ -29,12 +29,13 @@ def main():
 		else : 
 			tokenizer = BOXER_DIR + '/bin/tokkie --stdin'
 			tokenizer_proc = Popen(tokenizer, shell=True, stdin=PIPE, stdout=PIPE, stderr=None, close_fds=True)
-			tok_output = tokenizer_proc.communicate(input=sys.stdin.readline())[0]			
+			tok_output = tokenizer_proc.communicate(input=sys.stdin.read())[0]		
 		
 		if outputdir:	
 			f_tok = open(os.path.join(outputdir,fname+".tok"), "w")
 			f_tok.write(tok_output)
 			f_tok.close()
+
 	# parse
 	if pa.tok:
 		candcParser = BOXER_DIR + '/bin/candc --models ' + BOXER_DIR + '/models/boxer --candc-printer boxer'
