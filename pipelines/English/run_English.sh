@@ -23,7 +23,7 @@ if [ -d "$2" ]; then
 	tee $2/tmp.candc |
 	$BOXER_BIN $BOXER_OPT > /dev/stdout
 else
-	$TOKENIZER_BIN $TOKENIZER_OPT < "${1:-/dev/stdin}"|
+	$TOKENIZER_BIN $TOKENIZER_OPT < "${1:-/dev/stdin}" |
 	$CANDC_BIN $CANDC_OPT |
 	$BOXER_BIN $BOXER_OPT > "${2:-/dev/stdout}"
 fi
