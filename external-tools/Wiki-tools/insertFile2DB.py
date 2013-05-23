@@ -23,7 +23,6 @@ def insert_records(con,records,table_name):
         print 'Error %s' % e
         sys.exit(-1)
 
-
 # function to create the table
 
 def create_table(table_name):

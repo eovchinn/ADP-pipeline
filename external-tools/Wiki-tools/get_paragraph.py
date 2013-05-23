@@ -121,7 +121,10 @@ def main():
                 print '#'+str(i)+" TITLE: "+row['title']
                 print '#'+str(i)+" ABSTRACT: "+row['abstract']
         else:
-            print rows[0]['abstract']
+            if len(rows)>0:
+                print rows[0]['abstract']
+            else:
+                print 'no result!'
     except psycopg2.DatabaseError, e:
         print 'Error %s' % e    
         sys.exit(1)
