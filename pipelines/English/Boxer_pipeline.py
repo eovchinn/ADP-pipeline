@@ -11,7 +11,7 @@ BOXER_DIR = os.environ['BOXER_DIR']
 def main():
 	parser = argparse.ArgumentParser( description="Boxer pipeline." )
 	parser.add_argument( "--input", help="The input file to be processed.", default=None )
-	parser.add_argument( "--outputdir", help="The output directory. Default is the dir of the input file.", default=None )
+	parser.add_argument( "--outputdir", help="The output directory.", default=None )
 	parser.add_argument( "--tok", help="Tokenize input text.", action="store_true", default=False)
 	parser.add_argument( "--fname", help="File prefix for intermediate output.", default=None)
 	pa = parser.parse_args()
