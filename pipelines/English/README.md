@@ -10,12 +10,20 @@ English semantic parsing pipeline based on [Boxer](http://svn.ask.it.usyd.edu.au
 ```
 usage: Boxer_pipeline.py [-h] [--input INPUT] [--outputdir OUTPUTDIR] [--tok]
                          [--fname FNAME]
+
+Boxer pipeline.
+
 optional arguments:
   -h, --help            show this help message and exit
-  --input INPUT         Input file to be processed.
-  --outputdir OUTPUTDIR
-                        Output directory. Default is the dir of the input
-                        file.
+  --input INPUT         The input file to be processed.
+  --outputdir OUTPUTDIR The output directory.
   --tok                 Tokenize input text.
   --fname FNAME         File prefix for intermediate output.
+
+```
+
+Alternative: `run_English.sh` runs the full processing pipline for parsing tokenizing and parsing English:
+
+```
+./run_russian.sh [<path to input file> [<path to output dir]]
 ```
