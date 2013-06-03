@@ -11,6 +11,8 @@ parser.add_option("-i", "--input", dest="input",
 
 def malter(LINE_OBJECT):
     """formats lines for maltparser in conll format"""
+    if len(LINE_OBJECT) == 1:
+        return  "0"+"\t"+LINE_OBJECT[0]+"\t"+LINE_OBJECT[0]+"\t"+"f"+"\t"+"f"+"\t"+"0"+"\t"+"0"+"\t"+"ROOT"+"\t"+"-"
     #Lemma
     Token = LINE_OBJECT[0].strip().split()
     tokenString = "_".join(Token)
@@ -34,20 +36,14 @@ def reform(infile):
     for line in infile:
         line = line.rstrip()
         listed = line.split("\t")
-        #print line
         try:
             if re.search ("%%",line):
                 pass
             else:
-                #print line
-                #print listed
                 malt = malter(listed)
-                #print malt
                 malt_lines.append(malt)
-                #print malt_lines
         except IndexError:
             malt_lines.append(line)
-            #pass
     return malt_lines
     file_object.close()
 
@@ -99,7 +95,7 @@ treeVerb = re.compile("^V.*")
 treeNum = re.compile("CARD|FO|ORD")
 optional_lemma = re.compile(".*\|.*")
 
-sentID = re.compile("{{{.*}}}!!!")
+sentID = re.compile("<{{{.*}}}!!!>")
 def main():
     lines = open(options.input, "r") if options.input else sys.stdin
     printable = reform(lines)

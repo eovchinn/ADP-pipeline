@@ -1,15 +1,15 @@
-0	"	"	f	f	0	0	ROOT	-
+0	'	'	f	f	0	0	ROOT	-
 0	Voté	votar	v	v	0	0	ROOT	-
 0	por	por	s	s	0	0	ROOT	-
 0	el	el	d	d	0	0	ROOT	-
 0	señor	señor	n	n	0	0	ROOT	-
 0	Obama	Obama	n	n	0	0	ROOT	-
-0	"	"	f	f	0	0	ROOT	-
+0	'	'	f	f	0	0	ROOT	-
 0	,	,	f	f	0	0	ROOT	-
 0	dijo	decir	v	v	0	0	ROOT	-
 0	.	.	f	f	0	0	ROOT	- 
 
-0	"	"	f	f	0	0	ROOT	-
+0	'	'	f	f	0	0	ROOT	-
 0	Fue	ir	v	v	0	0	ROOT	-
 0	algo	algo	d	d	0	0	ROOT	-
 0	nuevo	nuevo	a	a	0	0	ROOT	-
@@ -82,7 +82,7 @@
 0	predijo	predecir	v	v	0	0	ROOT	-
 0	que	que	c	c	0	0	ROOT	-
 0	sería	ser	v	v	0	0	ROOT	-
-0	"	"	f	f	0	0	ROOT	-
+0	'	'	f	f	0	0	ROOT	-
 0	.	.	f	f	0	0	ROOT	- 
 
 0	Sin_embargo	sin_embargo	r	r	0	0	ROOT	-
@@ -98,7 +98,7 @@
 0	Romney	Romney	n	n	0	0	ROOT	-
 0	.	.	f	f	0	0	ROOT	- 
 
-0	"	"	f	f	0	0	ROOT	-
+0	'	'	f	f	0	0	ROOT	-
 0	Definitivamente	definitivamente	r	r	0	0	ROOT	-
 0	no	no	r	r	0	0	ROOT	-
 0	.	.	f	f	0	0	ROOT	- 
@@ -113,7 +113,7 @@
 0	voy	ir	v	v	0	0	ROOT	-
 0	a	a	s	s	0	0	ROOT	-
 0	votar	votar	v	v	0	0	ROOT	-
-0	"	"	f	f	0	0	ROOT	-
+0	'	'	f	f	0	0	ROOT	-
 0	.	.	f	f	0	0	ROOT	- 
 
 0	Su	suyo	p	p	0	0	ROOT	-
@@ -136,7 +136,7 @@
 0	Blanca	blanco	a	a	0	0	ROOT	-
 0	.	.	f	f	0	0	ROOT	- 
 
-0	"	"	f	f	0	0	ROOT	-
+0	'	'	f	f	0	0	ROOT	-
 0	Lo	el	d	d	0	0	ROOT	-
 0	más	más	r	r	0	0	ROOT	-
 0	emocionante	emocionante	a	a	0	0	ROOT	-
@@ -147,7 +147,7 @@
 0	vienen	venir	v	v	0	0	ROOT	-
 0	a	a	s	s	0	0	ROOT	-
 0	comprometerse	comprometer	v	v	0	0	ROOT	-
-0	"	"	f	f	0	0	ROOT	-
+0	'	'	f	f	0	0	ROOT	-
 0	,	,	f	f	0	0	ROOT	-
 0	dice	decir	v	v	0	0	ROOT	-
 0	Chen	Chen	n	n	0	0	ROOT	-
@@ -173,7 +173,7 @@
 0	aún	aún	r	r	0	0	ROOT	-
 0	la	él	p	p	0	0	ROOT	-
 0	disfrutan	disfrutar	v	v	0	0	ROOT	-
-0	"	"	f	f	0	0	ROOT	-
+0	'	'	f	f	0	0	ROOT	-
 0	,	,	f	f	0	0	ROOT	-
 0	dice	decir	v	v	0	0	ROOT	-
 0	.	.	f	f	0	0	ROOT	- 
@@ -242,7 +242,7 @@
 0	hablan	hablar	v	v	0	0	ROOT	-
 0	.	.	f	f	0	0	ROOT	- 
 
-0	“	“	n	n	0	0	ROOT	-
+0	'	'	f	f	0	0	ROOT	-
 0	Tenía	tener	v	v	0	0	ROOT	-
 0	la	el	d	d	0	0	ROOT	-
 0	opción	opción	n	n	0	0	ROOT	-
@@ -263,7 +263,7 @@
 0	parece	parecer	v	v	0	0	ROOT	-
 0	realmente	realmente	r	r	0	0	ROOT	-
 0	interesante	interesante	a	a	0	0	ROOT	-
-0	”	”	n	n	0	0	ROOT	-
+0	'	'	f	f	0	0	ROOT	-
 0	,	,	f	f	0	0	ROOT	-
 0	explica	explicar	v	v	0	0	ROOT	-
 0	.	.	f	f	0	0	ROOT	- 
@@ -295,104 +295,5 @@
 0	y	y	c	c	0	0	ROOT	-
 0	35	@card@	z	z	0	0	ROOT	-
 0	años	año	n	n	0	0	ROOT	-
-0	.	.	f	f	0	0	ROOT	- 
-
-0	<Tenía	<Tenía	v	v	0	0	ROOT	-
-0	la	el	d	d	0	0	ROOT	-
-0	opción	opción	n	n	0	0	ROOT	-
-0	de	de	s	s	0	0	ROOT	-
-0	trabajar	trabajar	v	v	0	0	ROOT	-
-0	en	en	s	s	0	0	ROOT	-
-0	otros	otro	d	d	0	0	ROOT	-
-0	lugares	lugar	n	n	0	0	ROOT	-
-0	,	,	f	f	0	0	ROOT	-
-0	pero	pero	c	c	0	0	ROOT	-
-0	elegí	elegir	v	v	0	0	ROOT	-
-0	este	este	d	d	0	0	ROOT	-
-0	empleo	empleo	n	n	0	0	ROOT	-
-0	porque	porque	c	c	0	0	ROOT	-
-0	Hello	Hello	n	n	0	0	ROOT	-
-0	Kitty	Kitty	n	n	0	0	ROOT	-
-0	me	yo	p	p	0	0	ROOT	-
-0	parece	parecer	v	v	0	0	ROOT	-
-0	realmente	realmente	r	r	0	0	ROOT	-
-0	interesante	interesante	a	a	0	0	ROOT	-
-0	}	}	f	f	0	0	ROOT	-
-0	,	,	f	f	0	0	ROOT	-
-0	explica	explicar	v	v	0	0	ROOT	-
-0	.	.	f	f	0	0	ROOT	- 
-
-0	[	[	f	f	0	0	ROOT	-
-0	Tenía	Tenía	v	v	0	0	ROOT	-
-0	la	el	d	d	0	0	ROOT	-
-0	opción	opción	n	n	0	0	ROOT	-
-0	de	de	s	s	0	0	ROOT	-
-0	trabajar	trabajar	v	v	0	0	ROOT	-
-0	en	en	s	s	0	0	ROOT	-
-0	otros	otro	d	d	0	0	ROOT	-
-0	lugares	lugar	n	n	0	0	ROOT	-
-0	,	,	f	f	0	0	ROOT	-
-0	pero	pero	c	c	0	0	ROOT	-
-0	elegí	elegir	v	v	0	0	ROOT	-
-0	este	este	d	d	0	0	ROOT	-
-0	empleo	empleo	n	n	0	0	ROOT	-
-0	porque	porque	c	c	0	0	ROOT	-
-0	Hello	Hello	n	n	0	0	ROOT	-
-0	Kitty	Kitty	n	n	0	0	ROOT	-
-0	me	yo	p	p	0	0	ROOT	-
-0	parece	parecer	v	v	0	0	ROOT	-
-0	realmente	realmente	r	r	0	0	ROOT	-
-0	interesante^	interesante^	n	n	0	0	ROOT	-
-0	,	,	f	f	0	0	ROOT	-
-0	explica	explicar	v	v	0	0	ROOT	-
-0	.	.	f	f	0	0	ROOT	- 
-
-0	@Tenía	@Tenía	v	v	0	0	ROOT	-
-0	la	el	d	d	0	0	ROOT	-
-0	opción	opción	n	n	0	0	ROOT	-
-0	de	de	s	s	0	0	ROOT	-
-0	trabajar	trabajar	v	v	0	0	ROOT	-
-0	en	en	s	s	0	0	ROOT	-
-0	otros	otro	d	d	0	0	ROOT	-
-0	lugares	lugar	n	n	0	0	ROOT	-
-0	,	,	f	f	0	0	ROOT	-
-0	pero	pero	c	c	0	0	ROOT	-
-0	elegí	elegir	v	v	0	0	ROOT	-
-0	este	este	d	d	0	0	ROOT	-
-0	empleo	empleo	n	n	0	0	ROOT	-
-0	porque	porque	c	c	0	0	ROOT	-
-0	Hello	Hello	n	n	0	0	ROOT	-
-0	Kitty	Kitty	n	n	0	0	ROOT	-
-0	me	yo	p	p	0	0	ROOT	-
-0	parece	parecer	v	v	0	0	ROOT	-
-0	realmente	realmente	r	r	0	0	ROOT	-
-0	interesante#	interesante#	n	n	0	0	ROOT	-
-0	,	,	f	f	0	0	ROOT	-
-0	explica	explicar	v	v	0	0	ROOT	-
-0	.	.	f	f	0	0	ROOT	- 
-
-0	'Tenía	'Tenía	v	v	0	0	ROOT	-
-0	la	el	d	d	0	0	ROOT	-
-0	opción	opción	n	n	0	0	ROOT	-
-0	de	de	s	s	0	0	ROOT	-
-0	trabajar	trabajar	v	v	0	0	ROOT	-
-0	en	en	s	s	0	0	ROOT	-
-0	otros	otro	d	d	0	0	ROOT	-
-0	lugares	lugar	n	n	0	0	ROOT	-
-0	,	,	f	f	0	0	ROOT	-
-0	pero	pero	c	c	0	0	ROOT	-
-0	elegí	elegir	v	v	0	0	ROOT	-
-0	este	este	d	d	0	0	ROOT	-
-0	empleo	empleo	n	n	0	0	ROOT	-
-0	porque	porque	c	c	0	0	ROOT	-
-0	Hello	Hello	n	n	0	0	ROOT	-
-0	Kitty	Kitty	n	n	0	0	ROOT	-
-0	me	yo	p	p	0	0	ROOT	-
-0	parece	parecer	v	v	0	0	ROOT	-
-0	realmente	realmente	r	r	0	0	ROOT	-
-0	interesante	interesante	a	a	0	0	ROOT	-
-0	'	'	f	f	0	0	ROOT	-
-0	,	,	f	f	0	0	ROOT	-
-0	explica	explicar	v	v	0	0	ROOT	-
 0	.	.	f	f	0	0	ROOT	- 
 
