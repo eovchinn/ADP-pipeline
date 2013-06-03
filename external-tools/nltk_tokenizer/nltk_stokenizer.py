@@ -46,7 +46,7 @@ if __name__ == "__main__":
         if sentid == 1:
             m = textid_re.search(line)
             if m:
-                sys.stdout.write(u"<{{{%s}}}!!!>\n" % m.group(1))
+                sys.stdout.write(u".\n<{{{%s}}}!!!>\n" % m.group(1))
                 continue
             if line == "\n":
                 continue
