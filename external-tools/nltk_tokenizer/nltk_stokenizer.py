@@ -46,7 +46,7 @@ if __name__ == "__main__":
         if sentid == 1:
             m = textid_re.search(line)
             if m:
-                sys.stdout.write(u"{{{%s}}}!!!\n" % m.group(1))
+                sys.stdout.write(u"<{{{%s}}}!!!>\n" % m.group(1))
                 continue
             if line == "\n":
                 continue
@@ -71,5 +71,6 @@ if __name__ == "__main__":
                 for w in wtt.tokenize(s):
                     sys.stdout.write(w.encode("utf-8"))
                     sys.stdout.write("\n")
-            sys.stdout.write(".\n")
+#            sys.stdout.write(".\n")
+            sys.stdout.write("\n")
     sys.stdout.write("\n")
