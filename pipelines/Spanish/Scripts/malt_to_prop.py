@@ -144,8 +144,8 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = insert_sn(head,wordID,sent_dict)
         if rel == "grup.nom" and predicate[-1] != "R" and realHead(sent_dict,head): # 
             sent_dict = insert_grup_nom(head,wordID,sent_dict)            
-        if rel in adjectiveRels and (pos == "a") or (lemma in quantifierList) and realHead(sent_dict,head):
-            sent_dict = insert_adjHead(head,wordID,sent_dict)
+        if (rel in adjectiveRels and (pos == "a")) or ((lemma in quantifierList) and realHead(sent_dict,head)):
+            sent_dict = insert_adjHead(head,wordID,sent_dict)          
         if rel == "cc" and pos == "r" and lemma not in whWords:
             sent_dict = insert_cc(head,wordID,sent_dict)
         if rel == "cd" and predicate[-1] != "R":
@@ -240,7 +240,7 @@ def handle_wh(head,wordID,sent_dict):
 
 def det_to_pr(head,wordID,sent_dict):
     headHead = sent_dict[head][3]
-    if sent_dict[wordID][1] in thingProList and sent_dict[head][7] != "nn":
+    if sent_dict[wordID][1] in thingProList and sent_dict[head][7] != "nn" and sent_dict[wordID][2] != "p":
         sent_dict[wordID][7] = "thing"
         sent_dict[wordID][2] = "p"
         last_e = int(find_last_e(sent_dict))
@@ -427,6 +427,8 @@ def insert_prepHead(head,wordID,sent_dict):
         sent_dict[wordID][6][2] = sent_dict[head][6][1]        
     if sent_dict[head][7] == "rb" or sent_dict[head][7] == "adj":
         sent_dict[wordID][6][1] = sent_dict[head][6][0]
+    if sent_dict[head][7] == "in":
+        sent_dict[wordID][6][1] = sent_dict[head][6][0]
     return sent_dict
 
 def insert_subCon_head(head,wordID,sent_dict):
@@ -455,7 +457,7 @@ def insert_sn(head,wordID,sent_dict):
         sent_dict[head][6][2] = sent_dict[wordID][6][0]        
     elif sent_dict[head][7] == "vb":
         sent_dict[head][6][2] = sent_dict[wordID][6][1]
-    elif sent_dict[head][7] == "nn" and sent_dict[wordID][7] == "nn":
+    elif sent_dict[head][7] == "nn" and sent_dict[wordID][7] == "nn" and int(sent_dict[wordID][8]) == int(sent_dict[wordID][8])+1:
         if int(sent_dict[head][6][1].split("x")[1]) == int(sent_dict[wordID][6][1].split("x")[1])-1:
             sent_dict[wordID][6][1] = sent_dict[head][6][1]
             #sent_dict,newKey = add_new_entry(sent_dict,"equal",sent_dict[head][6][1],sent_dict[wordID][6][1],sent_dict[wordID][8])
@@ -522,7 +524,9 @@ def insert_adjHead(head,wordID,sent_dict):
     elif sent_dict[wordID][7] == "card":
         sent_dict[wordID][1] = ""
         sent_dict[wordID][8] = sent_dict[head][8]+"b"
-    else:#if sent_dict[head][2] == "v":
+    elif sent_dict[head][7] == "in":
+        sent_dict[head][6][2] = sent_dict[wordID][6][0]
+    else:
         sent_dict[wordID][6].append("R")
     return sent_dict
 
@@ -532,7 +536,6 @@ def insert_atr(head,wordID,sent_dict):
     return sent_dict
 
 def insert_rb_spec(head,wordID,sent_dict):
-    #if sent_dict[head][7] == "adj":
     sent_dict[wordID][6][1] = sent_dict[head][6][0]    
     return sent_dict
 
@@ -734,7 +737,7 @@ card_dict["diez"] = "10"
 
 heProList = ["el","lo"]
 sheProList = ["ella","la"]
-personProList = ["yo","me","nos","nosotros","usted","ustedes","mi","mis","su","sus","nuestro","nuestros","nuestra","nuestras","quién","tu","tú","quien","tus","mío"]
+personProList = ["yo","me","nos","nosotros","usted","ustedes","mi","mis","su","sus","suyo","nuestro","nuestros","nuestra","nuestras","quién","tu","tú","quien","tus","mío"]
 thingProList = ["ellos","ellas","él","este","ese","suyo","aquel"]
 reflexProList = ["se"]
 possessiveProList = ["mi","mis","tu","tus","su","sus","nuestro","nuestros","nuestra","nuestras","suyo","mío"]
@@ -772,31 +775,10 @@ def nextMeta(nextSentenceW1):
         return True
     return False
 
-def printer(prop_dict,sent):
-    prop_count = 0
-    for key,prop in sorted(prop_dict.items()):
-        #print key,prop
-        prop_count+=1
-        if prop[1] == "" and prop[2] in insertList:
-            sys.stdout.write(prop[2]+"("+",".join(prop[3])+")")
-        elif prop[2] in noTokenList:
-            sys.stdout.write("["+prop[0]+"]"+":"+prop[2]+"("+",".join(prop[3])+")")
-        elif prop[2] == "not" or prop[2] =="wh" or prop[2] =="whq":
-            sys.stdout.write("["+prop[0]+"]"+":"+prop[2]+"("+",".join(prop[3])+")")
-        elif re.search("[a-z]",prop[0]):                
-            sys.stdout.write("["+prop[4]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
-        else:
-            sys.stdout.write("["+prop[0]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
-        if prop_count < len(prop_dict.items()):
-            sys.stdout.write(" & ")
-    if not sentIDre.search(sent[0]) and sent != ['.']:
-        print ""
-
 def to_print(prop_dict,sent):
     prop_count = 0
     printable = ""
     for key,prop in sorted(prop_dict.items()):
-        #print key,prop
         prop_count+=1
         if prop[1] == "" and prop[2] in insertList:
             printable += (prop[2]+"("+",".join(prop[3])+")")
@@ -807,12 +789,9 @@ def to_print(prop_dict,sent):
         elif re.search("[a-z]",prop[0]):                
             printable += ("["+prop[4]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
         else:
-
             printable += ("["+prop[0]+"]"+":"+prop[1]+"-"+prop[2]+"("+",".join(prop[3])+")")
         if prop_count < len(prop_dict.items()):
             printable += (" & ")
-            #if not sentIDre.search(sent[0]) and sent != ['.']:
-            #printable += "\n"
     return printable
 
 def main():
@@ -851,6 +830,7 @@ def main():
             prop_dict = replace_args(prop_sent,prop_dict)
             printable_props = to_print(prop_dict,sent)
             meta_props.append(printable_props)
+
         if metastring != "meta" and parse_count == len(full_sents):
             print "% "+" ".join(meta_sentences)            
             print "id("+str(prevmetastring)+")."
@@ -871,11 +851,6 @@ def main():
             eCount = 1
             xCount = 1
             uCount = 1            
-            #prop_sent,prop_dict = prop_to_dict(words)
-        #print words
-        #prop_dict = replace_args(prop_sent,prop_dict)
-        #printable_props = to_print(prop_dict,sent)
-        #printer(prop_dict,sent)
 
 if __name__ == "__main__":
     main()
