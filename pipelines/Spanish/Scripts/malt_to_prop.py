@@ -126,6 +126,7 @@ def replace_args(prop_sent,sent_dict):
         predicate = prop[6]
         tag = prop[7]
         propID = prop[8]
+        #try:
         if lemma in thingProList and realHead(sent_dict,head):
             sent_dict = det_to_pr(head,wordID,sent_dict)       
         if (rel == "suj") or (rel == "spec") and tag != "NULL" and realHead(sent_dict,head):
@@ -173,7 +174,12 @@ def replace_args(prop_sent,sent_dict):
         if lemma == "no" and realHead(sent_dict,head):
             sent_dict = handle_negation(head,wordID,sent_dict)
         if ((tag == "wh") or (tag == "whq")) and realHead(sent_dict,head):
-            sent_dict = handle_wh(head,wordID,sent_dict)              
+            sent_dict = handle_wh(head,wordID,sent_dict)
+        # except Exception,err:
+        #     sys.stderr.write('ERROR: %s\n' % str(err))
+        #     for prop in prop_sent:
+        #         sys.stderr.write(prop[0]+" ")
+        #     sys.stderr.write("\n")
     for key,prop in sent_dict.items():
         position +=1
         token = prop[0]
@@ -825,11 +831,16 @@ def main():
             prevmetastring = metastring
          
         if metaFound and not sentIDre.search(sent[0]) and (sent != ['.']):
-            meta_sentences.append(" ".join(sent))
-            prop_sent,prop_dict,eCount,xCount,uCount = prop_to_dict(words,eCount,xCount,uCount)
-            prop_dict = replace_args(prop_sent,prop_dict)
-            printable_props = to_print(prop_dict,sent)
-            meta_props.append(printable_props)
+            try:
+                meta_sentences.append(" ".join(sent))
+                prop_sent,prop_dict,eCount,xCount,uCount = prop_to_dict(words,eCount,xCount,uCount)
+                prop_dict = replace_args(prop_sent,prop_dict)
+                printable_props = to_print(prop_dict,sent)
+                meta_props.append(printable_props)
+	    except Exception,err:
+		sys.stderr.write('ERROR: %s\n' % str(err))
+		sys.stderr.write("% "+" ".join(sent))
+		sys.stderr.write("\n\n")            
 
         if metastring != "meta" and parse_count == len(full_sents):
             print "% "+" ".join(meta_sentences)            
@@ -841,13 +852,18 @@ def main():
             uCount = 1               
             
         if (not sentIDre.search(sent[0])) and (not metaFound) and (sent != ['.']):
-            sent_count += 1            
-            print "% "+" ".join(sent)
-            print "id("+str(sent_count)+")."
-            prop_sent,prop_dict,eCount,xCount,uCount = prop_to_dict(words,eCount,xCount,uCount)
-            prop_dict = replace_args(prop_sent,prop_dict)
-            print to_print(prop_dict,sent)
-            print ""
+            sent_count += 1
+	    try:
+		print "% "+" ".join(sent)
+		print "id("+str(sent_count)+")."
+		prop_sent,prop_dict,eCount,xCount,uCount = prop_to_dict(words,eCount,xCount,uCount)
+		prop_dict = replace_args(prop_sent,prop_dict)
+		print to_print(prop_dict,sent)
+		print ""
+	    except Exception,err:
+		sys.stderr.write('ERROR: %s\n' % str(err))
+		sys.stderr.write("% "+" ".join(sent))
+		sys.stderr.write("\n\n")
             eCount = 1
             xCount = 1
             uCount = 1            
