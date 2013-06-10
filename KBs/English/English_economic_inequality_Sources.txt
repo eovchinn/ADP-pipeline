@@ -375,9 +375,9 @@
 
 ; GROWTH
 (B (name grow) (=>(^(S#ORGANISM x :0.45)(SS#GROW e0 x :0.45))(grow-vb e0 x u1 u2)))
-(B (name cut2) (=>(^(S#ORGANISM y :0.45)(SS#GROW e0 y :0.45))(^(nn e1 x y)(growth-nn e0 x))))
-(B (name cut3) (=>(^(S#ORGANISM y :0.45)(SS#GROW e0 y :0.45))(^(of-in e1 x y)(growth-nn e0 x))))
-(B (name cut4) (=>(^(S#ORGANISM y :0.47)(SS#GROW e0 y :0.47))(growth-nn e0 x)))
+(B (name growth2) (=>(^(S#ORGANISM y :0.45)(SS#GROW e0 y :0.45))(^(nn e1 x y)(growth-nn e0 x))))
+(B (name of-growth) (=>(^(S#ORGANISM y :0.45)(SS#GROW e0 y :0.45))(^(of-in e1 x y)(growth-nn e0 x))))
+(B (name growth) (=>(^(S#ORGANISM y :0.47)(SS#GROW e0 y :0.47))(growth-nn e0 x)))
 
 (B (name organismmap)(=>(I#ORGANISM x :0.9)(S#ORGANISM x)))
 (B (name growmap)(=>(I#GROW x y :0.9)(SS#GROW x y)))
@@ -538,3 +538,46 @@
 (B (name hobble)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (hobble-vb e0 x y u)))
 (B (name overwhelmed)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (overwhelm-vb e0 x y u)))
 (B (name held-back)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(hold-vb e0 x y u)(back-rb e1 e0))))
+(B (name bring-to-knees)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(bring-vb e0 x y u)(to-in e1 e0 z) (knees-nn e2 z))))
+
+
+; MAZE
+; Katya and Ross decided to change these based on illogical output
+(B (name maze)(=>(S#MAZE x :0.9) (maze-nn e0 x)))
+(B (name labyrinth)(=>(S#MAZE x :0.9) (labyrinth-nn e0 x)))
+
+; NAVIGATION
+
+; (B (name maze)(=>(^(S#MAZE x :0.45)(SS#NAVIGATION x :0.45)) (maze-nn e0 x)))
+; (B (name labyrinth)(=>(^(S#MAZE x :0.45)(SS#NAVIGATION x :0.45)) (labyrinth-nn e0 x)))
+
+(B (name navigate) (=>(^(S#MAZE z :0.3) (SS#NAVIGATION e0 :0.3)(R#NAVIGATION-AGENT x e0 :0.3))(navigate-vb e0 x y u)))
+
+(B (name mazemap)(=>(I#MAZE x :0.9)(S#MAZE x)))
+(B (name navigatemap)(=>(I#NAVIGATION x :0.9)(SS#NAVIGATION x)))
+
+; OBSTRUCTION
+(B (name tangle)(=>(^(S#MAZE e0 :0.45)(SS#OBSTRUCTION x :0.45)) (tangle-nn e0 x)))
+(B (name snarl)(=>(^(S#MAZE e0 :0.45)(SS#OBSTRUCTION x :0.45)) (snarl-nn e0 x)))
+(B (name catch)(=>(^(S#MAZE e0 :0.45)(SS#OBSTRUCTION x :0.45)) (catch-nn e0 x)))
+
+(B (name catchvb)(=>(^(S#MAZE z :0.23)(SS#OBSTRUCTION e0 :0.23)(R#OBSTRUCTION-AGENT x e0 :0.23)(R#OBSTRUCTION-PATIENT y e0 :0.23)) (catch-vb e0 x y u)))
+(B (name tanglevb)(=>(^(S#MAZE z :0.3)(SS#OBSTRUCTION e0 :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3)) (tangle-vb e0 u y u1)))
+(B (name snarlvb)(=>(^(S#MAZE z :0.3)(SS#OBSTRUCTION e0 :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3)) (snarl-vb e0 u y u1)))
+
+; CONFUSING PATHWAYS
+(B (name web)(=>(^(S#MAZE e0 :0.45)(SS#CONFUSING-PATHWAYS x :0.45)) (web-nn e0 x)))
+(B (name knot)(=>(^(S#MAZE e0 :0.45)(SS#CONFUSING-PATHWAYS x :0.45)) (knot-nn e0 x)))
+
+; LOW POINT 
+
+;MOVEMENT DOWNWARD
+(B (name slide) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(slide-vb e0 x u u1)))
+(B (name slip) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(slip-vb e0 x u u1)))
+(B (name fall) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(fall-vb e0 x u u1)))
+(B (name tumble) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(tumble-vb e0 x u u1)))
+(B (name plummet) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(plummet-vb e0 x u u1)))
+(B (name sink) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(sink-vb e0 x u u1)))
+(B (name plunge) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(plunge-vb e0 x u u1)))
+
+(B (name movement-downwardmap)(=>(I#MOVEMENT-DOWNWARD x :0.9)(SS#MOVEMENT-DOWNWARD x)))
