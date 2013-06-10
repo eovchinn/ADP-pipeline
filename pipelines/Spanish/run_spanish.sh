@@ -30,15 +30,15 @@ TREE_TAGGER_CMD=$METAPHOR_DIR/external-tools/tree-tagger-3.2/$PLATFORM/cmd
 TREE_TAGGER_LIB=$METAPHOR_DIR/external-tools/tree-tagger-3.2/$PLATFORM/lib
 TREE_TAGGER_OPT="-lemma -token -sgml"
 
-MALT_DIR=$METAPHOR_DIR/external-tools/malt-1.5
-#MALT_ES_DIR=$METAPHOR_DIR/external-tools/malt-es
+#MALT_DIR=$METAPHOR_DIR/external-tools/malt-1.5
+MALT_DIR=$METAPHOR_DIR/external-tools/maltparser-1.7.2
 
 ES_PIPELINE_DIR=$METAPHOR_DIR/pipelines/Spanish
 
 SPANISH_TT=ES_PIPELINE_DIR/tree-tagger-spanish-utf8
 
-MALT_BIN=malt.jar
-MALT_MODEL=ancora_model.mco
+MALT_BIN=maltparser-1.7.2.jar
+MALT_MODEL=ancora_under40.mco
 MALT_IFORMAT=$ES_PIPELINE_DIR/Scripts/to_malt.py
 MALT_OFORMAT=$ES_PIPELINE_DIR/Scripts/malt_to_prop.py
 
@@ -46,7 +46,6 @@ OPTIONS="-token -lemma -sgml -quiet"
 
 TOKENIZER=$TREE_TAGGER_CMD/utf8-tokenize.perl
 NLTK_TOKENIZER_DIR=$METAPHOR_DIR/external-tools/nltk_tokenizer
-#TOKENIZER_BIN=$NLTK_TOKENIZER_DIR/nltk_tokenizer.py
 TOKENIZER_BIN=$NLTK_TOKENIZER_DIR/nltk_stokenizer.py
 
 MWL=$TREE_TAGGER_CMD/mwl-lookup.perl
