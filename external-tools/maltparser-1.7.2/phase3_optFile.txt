@@ -1,0 +1,6 @@
+1. root_label (-grl):sentence
+2. covered_root (-pcr):none
+3. parsing_algorithm (-a):nivreeager
+7. allow_root (-nr):false
+8. allow_reduce (-ne):true
+8. feature_model (-F):addMergPOSTAGI0FORMStack0.xml
