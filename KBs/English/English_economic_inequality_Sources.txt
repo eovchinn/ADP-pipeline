@@ -51,6 +51,7 @@
 (B (name medicament) (=>(^(S#DISEASE x :0.3)(SS#TREATMENT e0 :0.3)(R#CURE-AGENT y e0 :0.3))(medicament-nn e0 y)))
 (B (name remedy) (=>(^(S#DISEASE x :0.3)(SS#TREATMENT e0 :0.3)(R#CURE-AGENT y e0 :0.3))(remedy-nn e0 y)))
 (B (name bandage) (=>(^(S#DISEASE x :0.3)(SS#TREATMENT e0 :0.3)(R#CURE-AGENT y e0 :0.3))(bandage-nn e0 y)))
+(B (name band-aid) (=>(^(S#DISEASE x :0.3)(SS#TREATMENT e0 :0.3)(R#CURE-AGENT y e0 :0.3))(band-aid-nn e0 y)))
 
 (B (name treat) (=>(^(S#DISEASE x :0.3)(SS#TREATMENT e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (treat-vb e0 y x u2)))
 (B (name prescribe) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (prescribe-vb e0 y u1 u2)))
@@ -63,9 +64,10 @@
 
 ; CURE
 
-(B (name cure) (=>(^(S#DISEASE x :0.45)(SS#CURE e0  :0.45))(cure-nn e1 e0)))
+(B (name cure) (=>(^(S#DISEASE u :0.45)(SS#CURE x  :0.45))(cure-nn e0 x)))
+(B (name panacea) (=>(^(S#DISEASE u :0.45)(SS#CURE x  :0.45))(panacea-nn e0 x)))
 
-(B (name cure) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (cure-vb e0 y x u2)))
+(B (name curevb) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (cure-vb e0 y x u2)))
 (B (name heal) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (heal-vb e0 y x u2)))
 
 (B (name unrecoverable) (=>(^(S#DISEASE x :0.2)(SS#CURE e1  :0.2)(R#SICK y e1 :0.1))(unrecoverable-adj e1 y)))
@@ -91,14 +93,14 @@
 
 
 ; EPIDEMIC
-(B (name epidemic) (=>(^(S#DISEASE x :0.45)(SS#TYPE y :0.45)) (epidemic-nn e0 y)))
-(B (name epidemic2) (=>(^(S#DISEASE x :0.45)(SS#TYPE e0 :0.45)) (epidemic-adj e0 y)))
-(B (name pandemia) (=>(^(S#DISEASE x :0.45)(SS#TYPE y :0.45)) (pandemia-nn e0 y)))
-(B (name pandemic) (=>(^(S#DISEASE x :0.45)(SS#TYPE e0 :0.45)) (pandemic-adj e0 y)))
-(B (name virus) (=>(^(S#DISEASE x :0.45)(SS#TYPE y :0.45)) (virus-nn e0 y)))
+(B (name epidemic) (=>(^(S#DISEASE x :0.45)(SS#DISEASE-TYPE y :0.45)) (epidemic-nn e0 y)))
+(B (name epidemic2) (=>(^(S#DISEASE x :0.45)(SS#DISEASE-TYPE e0 :0.45)) (epidemic-adj e0 y)))
+(B (name pandemia) (=>(^(S#DISEASE x :0.45)(SS#DISEASE-TYPE y :0.45)) (pandemia-nn e0 y)))
+(B (name pandemic) (=>(^(S#DISEASE x :0.45)(SS#DISEASE-TYPE e0 :0.45)) (pandemic-adj e0 y)))
+(B (name virus) (=>(^(S#DISEASE x :0.45)(SS#DISEASE-TYPE y :0.45)) (virus-nn e0 y)))
 
 ; OF - EPIDEMIC
-(B (name of-epidemic) (=>(S#DISEASE y :0.9)(^(SS#TYPE x u)(of-in e1 x y))))
+(B (name of-epidemic) (=>(S#DISEASE y :0.9)(^(SS#DISEASE-TYPE x u)(of-in e1 x y))))
 
 ; SYMPTOM
 (B (name symptom) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y :0.45)) (symptom-nn e0 y)))
@@ -108,6 +110,7 @@
 (B (name wound) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y :0.45)) (wound-nn e0 y)))
 (B (name pain) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y :0.45)) (pain-nn e0 y)))
 (B (name scar) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y :0.45)) (scar-nn e0 y)))
+(B (name fever) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y :0.45)) (fever-nn e0 y)))
 
 (B (name ache) (=>(^(S#DISEASE e0 :0.3)(SS#SYMPTOMS e0 :0.3)(R#SICK y e0 :0.3))(ache-vb e0 y u1 u2)))
 (B (name bleed) (=>(^(S#DISEASE e0 :0.3)(SS#SYMPTOMS e0 :0.3)(R#SICK y e0 :0.3))(bleed-vb e0 y u1 u2)))
@@ -116,6 +119,7 @@
 (B (name of-symptom) (=>(S#DISEASE y :0.9)(^(SS#SYMPTOMS x)(of-in e1 x y))))
 
 (B (name dismap)(=>(I#DISEASE x :0.9)(S#DISEASE x)))
+(B (name dis-typemap)(=>(I#DISEASE-TYPE x :0.9)(S#DISEASE-TYPE x)))
 (B (name curemap)(=>(I#CURE x :0.9)(SS#CURE x)))
 (B (name treatmentmap)(=>(I#CURE x :0.9)(SS#TREATMENT x)))
 
@@ -237,8 +241,8 @@
 ; (B (name violence) (=>(^(S#CRIME x :0.45)(SS#VIOLENCE x :0.45))(violence-nn e0 x)))
 (B (name violence) (=>(^(S#CRIME x :0.45)(SS#CRIME-TYPE x :0.45))(violence-nn e0 x)))
 
-; (B (name crimemap)(=>(I#CRIME x :0.9)(S#CRIME x)))
-(B (name crimemap)(=>(I#CRIME x :0.9)(SS#CRIME x)))
+(B (name crimemap)(=>(I#CRIME x :0.9)(S#CRIME x)))
+(B (name crime-typemap)(=>(I#CRIME-TYPE x :0.9)(SS#CRIME-TYPE x)))
 
 ; PUNISHMENT
 ;(B (name punishment) (=>(S#PUNISHMENT x :0.9)(punishment-nn e0 x)))
@@ -251,6 +255,10 @@
 (B (name sentence)(=>(^(S#CRIME x :0.45)(SS#PUNISHMENT x :0.45)) (sentence-nn e0 x)))
 (B (name mulct)(=>(^(S#CRIME x :0.45)(SS#PUNISHMENT x :0.45)) (mulct-nn e0 x)))
 (B (name fine)(=>(^(S#CRIME x :0.45)(SS#PUNISHMENT x :0.45)) (fine-nn e0 x)))
+(B (name scourge)(=>(^(S#CRIME x :0.45)(SS#PUNISHMENT x :0.45)) (scourge-nn e0 x)))
+
+(B (name prison-sentence)(=>(^(S#CRIME x :0.45)(SS#PUNISHMENT x :0.45)) (^(prison-nn e0 x)(of-in e1 y x)(sentence-nn e2 y))))
+(B (name life-sentence)(=>(^(S#CRIME x :0.45)(SS#PUNISHMENT x :0.45)) (^(life-nn e0 x)(of-in e1 y x)(sentence-nn e2 y))))
 
 ; (B (name punish) (=>(^(S#PUNISHMENT e0 :0.3)(R#PUNISHMENT-AGENT x e0 :0.3)(R#PUNISHMENT-VICTIM y e0 :0.3))(punish-vb e0 x y u)))
 (B (name punish) (=>(^(S#CRIME e0 :0.2)(SS#PUNISHMENT e0 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2))(punish-vb e0 x y u)))
@@ -488,14 +496,17 @@
 (B (name dig-out-of) (=>(^(S#ABBYS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABBYSS-EXIT-CAUSE x e0 :0.2)) (^(dig-vb e0 x y u2)(of-in e2 e1 z))))
 
 ; BURDEN
-
+; WEIGHT
 (B (name burden) (=>(^(S#BURDEN x :0.45)(SS#WEIGHT x :0.45)) (burden-nn e0 x)))
 (B (name weight) (=>(^(S#BURDEN x :0.45)(SS#WEIGHT x :0.45)) (weight-nn e0 x)))
 (B (name load) (=>(^(S#BURDEN x :0.45)(SS#WEIGHT x :0.45)) (load-nn e0 x)))
 (B (name loading) (=>(^(S#BURDEN x :0.45)(SS#WEIGHT x :0.45)) (loading-nn e0 x)))
+(B (name millstone) (=>(^(S#BURDEN x :0.45)(SS#WEIGHT x :0.45)) (millstone-nn e0 x)))
+(B (name encumbrance) (=>(^(S#BURDEN x :0.45)(SS#WEIGHT x :0.45)) (encumbrance-nn e0 x)))
 
 (B (name heavy) (=>(^(S#BURDEN e0 :0.45)(SS#WEIGHT e0 :0.45)) (heavy-adj e0 x)))
-(B (name heavy-weight) (=>(^(S#BURDEN e0 :0.45)(SS#WEIGHT e0 :0.45)) (heavy-weight-adj e0 x)))
+(B (name heavy-weight) (=>(^(S#BURDEN y :0.45)(SS#WEIGHT y :0.45)) (^(heavy-adj e0 x)(weight-nn e1 y))))
+(B (name heavy-load) (=>(^(S#BURDEN y :0.45)(SS#WEIGHT y :0.45)) (^(heavy-adj e0 x)(load-nn e1 y))))
 
 (B (name loadvb) (=>(^(S#BURDEN e0 :0.2)(SS#WEIGHT e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (load-vb e0 x y u)))
 (B (name burthen) (=>(^(S#BURDEN e0 :0.2)(SS#WEIGHT e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (burthen-vb e0 x y u)))
@@ -503,6 +514,7 @@
 
 (B (name weightvb) (=>(^(S#BURDEN e0 :0.45)(SS#WEIGHT e0 :0.45)) (weight-vb e0 x y u)))
 
+;RELIEF
 (B (name relief) (=>(^(S#BURDEN x :0.45)(SS#RELIEF x :0.45)) (relief-nn e0 x)))
 (B (name ease) (=>(^(S#BURDEN x :0.45)(SS#RELIEF x :0.45)) (ease-nn e0 x)))
 (B (name easing) (=>(^(S#BURDEN x :0.45)(SS#RELIEF x :0.45)) (easing-nn e0 x)))
@@ -510,6 +522,20 @@
 
 (B (name lighten) (=>(^(S#BURDEN x :0.2)(SS#RELIEF x :0.2)(R#CAUSE-RELIEF x e0)(R#BURDEN-VICTIM y e0 :0.2)) (lighten-vb e0 x y u)))
 (B (name easevb) (=>(^(S#BURDEN x :0.2)(SS#RELIEF x :0.2)(R#CAUSE-RELIEF x e0)(R#BURDEN-VICTIM y e0 :0.2)) (ease-vb e0 x y u)))
+
+(B (name evasion) (=>(^(S#BURDEN x :0.45)(SS#RELIEF x :0.45)) (evasion-nn e0 x)))
+(B (name tax-evasion) (=>(^(S#BURDEN x :0.45)(SS#RELIEF x :0.45)) (^(tax-nn e0 x)(of-in e1 y x)(evasion-nn e2 y))))
+
+(B (name evade) (=>(^(S#BURDEN x :0.3)(SS#RELIEF x :0.3)(R#EVADE-AGENT x e0 :0.3)) (evade-vb e0 x y u)))
+
+:PHYSICAL DISTRESS
+(B (name unsustainable)(=>(^(S#BURDEN x :0.45)(SS#PHYISCAL-DISTRESS e0 :0.45)) (unsustainable-adj e0 y)))
+
+(B (name overwhelm)(=>(^(S#BURDEN e0 :0.3)(SS#PHYISCAL-DISTRESS e0 :0.3)(R#BURDEN-CAUSE x e0 :0.3)) (overwhelm-vb e0 x y u)))
+
+(B (name burdenmap) (=>(I#BURDEN  x :0.9) (S#BURDEN x)))
+(B (name weightmap) (=>(I#WEIGHT  x :0.9) (SS#WEIGHT x)))
+(B (name reliefmap) (=>(I#RELIEF  x :0.9) (SS#RELIEF x)))
 
 ; PHYSICAL HARM
 ; TYPE

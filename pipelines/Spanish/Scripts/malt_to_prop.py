@@ -135,29 +135,29 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = inherit_args(head,wordID,sent_dict)
             sent_dict = insert_prep_Vcomp(head,wordID,sent_dict)
         #Look for auxiliary verbs (passive)
-        if tag == "vb" and rel == "v" and lemma in passivesList and realHead(sent_dict,head):
+        if (tag == "vb" and rel == "v" and lemma in passivesList) and realHead(sent_dict,head):
             sent_dict = process_passive(head,wordID,sent_dict)
         if rel == "v" and lemma not in passivesList and tag != "":
             sent_dict = process_aux(head,wordID,sent_dict)            
-        if rel in prepRels and pos == "s":
+        if rel in prepRels and pos == "s" and realHead(sent_dict,head):
             sent_dict = insert_prepHead(head,wordID,sent_dict)
         if (rel == "sn" or rel == "spec") and predicate[-1] != "R" and realHead(sent_dict,head): # or rel == "grup.nom" - taken from first if
             sent_dict = insert_sn(head,wordID,sent_dict)
         if rel == "grup.nom" and predicate[-1] != "R" and realHead(sent_dict,head): # 
             sent_dict = insert_grup_nom(head,wordID,sent_dict)            
-        if (rel in adjectiveRels and (pos == "a")) or ((lemma in quantifierList) and realHead(sent_dict,head)):
+        if (rel in adjectiveRels and (pos == "a")) or (lemma in quantifierList) and realHead(sent_dict,head):
             sent_dict = insert_adjHead(head,wordID,sent_dict)          
-        if rel == "cc" and pos == "r" and lemma not in whWords:
+        if rel == "cc" and pos == "r" and lemma not in whWords and realHead(sent_dict,head):
             sent_dict = insert_cc(head,wordID,sent_dict)
-        if rel == "cd" and predicate[-1] != "R":
+        if rel == "cd" and predicate[-1] != "R" and realHead(sent_dict,head):
             sent_dict = insert_cd(head,wordID,sent_dict)
-        if rel == "ci" and predicate[-1] != "R":
+        if rel == "ci" and predicate[-1] != "R" and realHead(sent_dict,head):
             sent_dict = insert_ci(head,wordID,sent_dict)            
-        if rel == "atr":
+        if rel == "atr" and realHead(sent_dict,head):
             sent_dict = inherit_atr(head,wordID,sent_dict)
         # if rel == "cag" and pos == "s":
         #     sent_dict = insert_cag(head,wordID,sent_dict)
-        if rel == "morfema.pronominal" and pos == "p":
+        if rel == "morfema.pronominal" and pos == "p" and realHead(sent_dict,head):
             sent_dict = insert_m_p(head,wordID,sent_dict)
         if tag == "in" and realHead(sent_dict,head):
             sent_dict = insert_prepHead(head,wordID,sent_dict)
@@ -167,9 +167,9 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = insert_cpred(head,wordID,sent_dict)
         if tag == "rb" and (rel == "spec" or rel == "mod"):
             sent_dict = insert_rb_spec(head,wordID,sent_dict)
-        if tag in proTagList and (rel == "spec"):
+        if tag in proTagList and (rel == "spec") and realHead(sent_dict,head):
             sent_dict = insert_pro_spec(head,wordID,sent_dict)
-        if lemma in subConList and realHead(sent_dict,head):
+        if lemma in subConList and realHead(sent_dict,head) and len(predicate) > 2 :
             sent_dict = insert_subCon_head(head,wordID,sent_dict)
         if lemma == "no" and realHead(sent_dict,head):
             sent_dict = handle_negation(head,wordID,sent_dict)
@@ -233,14 +233,15 @@ def handle_wh(head,wordID,sent_dict):
                     return sent_dict
             sent_dict,newKey = add_new_entry(sent_dict,extra,sent_dict[wordID][6][1],sent_dict[head][6][0],sent_dict[wordID][8])
             return sent_dict
-        elif sent_dict[headHead][7] == "vb" or sent_dict[headHead][7] == "in":
-            sent_dict[headHead][6][2] = sent_dict[wordID][6][0]
-            sent_dict,newKey = add_new_entry(sent_dict,extra,sent_dict[wordID][6][1],sent_dict[head][6][0],sent_dict[wordID][8])
-            return sent_dict
-        elif sent_dict[headHead][7] == "nn":
-            sent_dict[wordID][6].append("R")
-            sent_dict,NewKey = add_new_entry(sent_dict,extra,sent_dict[headHead][6][1],sent_dict[head][6][0],sent_dict[wordID][8])
-            return sent_dict
+        elif realHead(sent_dict,headHead):
+            if (sent_dict[headHead][7] == "vb" or sent_dict[headHead][7] == "in"):
+                sent_dict[headHead][6][2] = sent_dict[wordID][6][0]
+                sent_dict,newKey = add_new_entry(sent_dict,extra,sent_dict[wordID][6][1],sent_dict[head][6][0],sent_dict[wordID][8])
+                return sent_dict
+            elif sent_dict[headHead][7] == "nn" and realHead(sent_dict,headhead):
+                sent_dict[wordID][6].append("R")
+                sent_dict,NewKey = add_new_entry(sent_dict,extra,sent_dict[headHead][6][1],sent_dict[head][6][0],sent_dict[wordID][8])
+                return sent_dict
     return sent_dict
 
 
@@ -304,7 +305,7 @@ def process_passive(head,wordID,sent_dict):
 
 def process_aux(head,wordID,sent_dict):
     """Deal with verbs designated auxiliary by the parser"""
-    if sent_dict[head][7] == "vb":
+    if sent_dict[head][7] == "vb" and sent_dict[wordID][7] == "vb":
         sent_dict[wordID][6][2] = sent_dict[head][6][0]
     return sent_dict
 
@@ -444,6 +445,7 @@ def insert_subCon_head(head,wordID,sent_dict):
             sent_dict[wordID][6][2] = sent_dict[head][6][1]
             sent_dict[head][6][3] = "R"
         else:
+            #print sent_dict[wordID][0],sent_dict[wordID][6], sent_dict[head][6]
             sent_dict[wordID][6][2] = sent_dict[head][6][0]
         headHead = sent_dict[head][3]
         if sent_dict[headHead][7] == "vb":
@@ -853,17 +855,12 @@ def main():
             
         if (not sentIDre.search(sent[0])) and (not metaFound) and (sent != ['.']):
             sent_count += 1
-	    try:
-		print "% "+" ".join(sent)
-		print "id("+str(sent_count)+")."
-		prop_sent,prop_dict,eCount,xCount,uCount = prop_to_dict(words,eCount,xCount,uCount)
-		prop_dict = replace_args(prop_sent,prop_dict)
-		print to_print(prop_dict,sent)
-		print ""
-	    except Exception,err:
-		sys.stderr.write('ERROR: %s\n' % str(err))
-		sys.stderr.write("% "+" ".join(sent))
-		sys.stderr.write("\n\n")
+            print "% "+" ".join(sent)
+            print "id("+str(sent_count)+")."
+            prop_sent,prop_dict,eCount,xCount,uCount = prop_to_dict(words,eCount,xCount,uCount)
+            prop_dict = replace_args(prop_sent,prop_dict)
+            print to_print(prop_dict,sent)
+            print ""
             eCount = 1
             xCount = 1
             uCount = 1            

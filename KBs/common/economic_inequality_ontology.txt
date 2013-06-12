@@ -139,3 +139,10 @@
 ; MOVEMENT DOWNWARD
 
 (B (name movement-downward) (=>(^(M#MOVE-DOWN e0 :0.45)(M#MOVE-D-PATIENT x e0 :0.45)) (^(I#MOVEMENT-DOWNWARD e0)(R#MOVE-D-PATIENT x e0))))i
+
+; BURDEN
+; WEIGHT
+(B (name weight) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#CAUSING-THING-F x :0.45)) (I#WEIGHT x)))
+
+; RELIEF
+(B(name relief) (=>(^(M#CAUSE-RESUME-FUNCTION e0 :0.45)(M#CAUSING-R-THING x :0.45)) (I#RELIEF)))
