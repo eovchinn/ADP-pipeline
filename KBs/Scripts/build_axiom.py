@@ -59,6 +59,8 @@ class Template(object):
             return "nn"
         if text.lower() == "verb":
             return "vb"
+        if text.lower() == "adjective":
+            return "adj"
 
     def build_right_side(self):
         tag = self.assign_posTag(self.pos)
@@ -66,6 +68,8 @@ class Template(object):
             return "("+self.name+"-"+tag+" e0 x)"
         if tag == "vb":
             return "("+self.name+"-"+tag+" e0 x y u)"
+        if tag == "adj":
+            return "("+self.name+"-"+tag+" e0 y)"
 
     def build_full_axiom(self):
         outname = self.build_name()

@@ -107,14 +107,14 @@ def main():
             if pos == 'fs' or (pos =='FS' and token != "¿") or sentID.search(token):
                 line_list[3] = "f"
                 line_list[4] = "f"
-                print "\t".join(line_list),'\n'
+                sys.stdout.write("\t".join(line_list)+'\n\n')
             else:
                 if token == "¿":
                     line_list[3] = "f"
                     line_list[4] = "f"                 
-                print "\t".join(line_list)
+                sys.stdout.write("\t".join(line_list)+'\n')
         except IndexError:
-            print line
+            sys.stdout.write(line)
 
 if __name__ == "__main__":
     main()
