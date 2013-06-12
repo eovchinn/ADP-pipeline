@@ -1,0 +1,2022 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<henry-output parameter="-m infer -d 3 -t 2 -O proofgraph,statistics -T 60 -e /Users/raisrael/ISI/adp_home/henry-n700//models/h93.py -b /Users/raisrael/ISI/Axiom_playground/English_economic_inequality_lexical.KB">
+<result-inference target="1">
+<observed size="23" domain_size="0">
+imp(e12,e15,x3) ^ doughnut-nn(e34,x11) ^ wealthy-adj(e33,x10) ^ suburb-nn(e32,x10) ^ black-adj(e31,x9) ^ hole-nn(e30,x9) ^ poverty-nn(e29,x8) ^ of-in(e28,x9,x8) ^ relieve-vb(x7,u26,x9,u27) ^ skyscraper-nn(e25,x5) ^ of-in(e24,x6,x5) ^ island-nn(e23,x6) ^ mock-vb(x4,x9,x6,u22) ^ by-in(e21,x7,x4) ^ surround-vb(x3,x10,x9,u20) ^ with-in(e19,x11,x10) ^ equal(e18,x0,x11) ^ today-nn(e17,x1) ^ on-in(e16,x3,x1) ^ major-adj(e15,x0) ^ american-adj(e14,x0) ^ city-nn(e13,x0) ^ !=(e28,e24)
+</observed>
+<hypothesis score="-22.727">
+imp(e12,e15,x3) ^ doughnut-nn(e34,x11) ^ wealthy-adj(e33,x10) ^ suburb-nn(e32,x10) ^ black-adj(e31,x9) ^ hole-nn(e30,x9) ^ poverty-nn(e29,x8) ^ of-in(e28,x9,x8) ^ relieve-vb(x7,u26,x9,u27) ^ skyscraper-nn(e25,x5) ^ of-in(e24,x6,x5) ^ island-nn(e23,x6) ^ mock-vb(x4,x9,x6,u22) ^ by-in(e21,x7,x4) ^ surround-vb(x3,x10,x9,u20) ^ with-in(e19,x11,x10) ^ equal(e18,x0,x11) ^ today-nn(e17,x1) ^ on-in(e16,x3,x1) ^ major-adj(e15,x0) ^ american-adj(e14,x0) ^ city-nn(e13,x0) ^ !=(e28,e24) ^ S#ABYSS(x9) ^ SS#ABYSS-TYPE(x9) ^ TS#POVERTY(x8) ^ T#ECONOMIC-INEQUALITY(_0)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_on-in_18":-1.001 "!HYPOTHESIZED_equal_16":-1.001 "!HYPOTHESIZED_S#ABYSS_23":-0.901 "!HYPOTHESIZED_american-adj_20":-1.001 "!HYPOTHESIZED_major-adj_19":-1.001 "!EXPLAINED_poverty-nn_6":1 "!HYPOTHESIZED_mock-vb_12":-1.001 "!HYPOTHESIZED_of-in_10":-1.001 "!HYPOTHESIZED_suburb-nn_3":-1.001 "!HYPOTHESIZED_by-in_13":-1.001 "!HYPOTHESIZED_wealthy-adj_2":-1.001 "!HYPOTHESIZED_imp_0":-1.001 "!HYPOTHESIZED_with-in_15":-1.001 "!HYPOTHESIZED_doughnut-nn_1":-1.001 "!HYPOTHESIZED_!=_22":-1.001 "!HYPOTHESIZED_surround-vb_14":-1.001 "!HYPOTHESIZED_of-in_7":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_26":-0.451 "!HYPOTHESIZED_city-nn_21":-1.001 "!HYPOTHESIZED_relieve-vb_8":-1.001 "!HYPOTHESIZED_SS#ABYSS-TYPE_24":-0.901 "!HYPOTHESIZED_island-nn_11":-1.001 "!EXPLAINED_hole-nn_5":1 "!HYPOTHESIZED_today-nn_17":-1.001 "!HYPOTHESIZED_hole-nn_5":-1.001 "!HYPOTHESIZED_TS#POVERTY_25":-0.451 "!HYPOTHESIZED_poverty-nn_6":-1.001 "!HYPOTHESIZED_black-adj_4":-1.001 "!EXPLAINED_black-adj_4":1 "!HYPOTHESIZED_skyscraper-nn_9":-1.001 
+</vector>
+<statistics>
+<time total="0.0988638" prepare="0.092104" ilp="0.00675988" />
+<ilp solution="Optimal" variables="91" constraints="77" />
+<search-space literals="27" axiom="5" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">imp(e12,e15,x3):0:1.00</literal>
+<literal id="1" type="2" active="yes">doughnut-nn(e34,x11):1:1.00</literal>
+<literal id="2" type="2" active="yes">wealthy-adj(e33,x10):2:1.00</literal>
+<literal id="3" type="2" active="yes">suburb-nn(e32,x10):3:1.00</literal>
+<literal id="4" type="2" active="yes">black-adj(e31,x9):4:1.00</literal>
+<literal id="5" type="2" active="yes">hole-nn(e30,x9):5:1.00</literal>
+<literal id="6" type="2" active="yes">poverty-nn(e29,x8):6:1.00</literal>
+<literal id="7" type="2" active="yes">of-in(e28,x9,x8):7:1.00</literal>
+<unification l1="7" l2="10" unifier="" active="no" />
+<literal id="8" type="2" active="yes">relieve-vb(x7,u26,x9,u27):8:1.00</literal>
+<literal id="9" type="2" active="yes">skyscraper-nn(e25,x5):9:1.00</literal>
+<literal id="10" type="2" active="yes">of-in(e24,x6,x5):10:1.00</literal>
+<unification l1="10" l2="7" unifier="" active="no" />
+<literal id="11" type="2" active="yes">island-nn(e23,x6):11:1.00</literal>
+<literal id="12" type="2" active="yes">mock-vb(x4,x9,x6,u22):12:1.00</literal>
+<literal id="13" type="2" active="yes">by-in(e21,x7,x4):13:1.00</literal>
+<literal id="14" type="2" active="yes">surround-vb(x3,x10,x9,u20):14:1.00</literal>
+<literal id="15" type="2" active="yes">with-in(e19,x11,x10):15:1.00</literal>
+<literal id="16" type="2" active="yes">equal(e18,x0,x11):16:1.00</literal>
+<literal id="17" type="2" active="yes">today-nn(e17,x1):17:1.00</literal>
+<literal id="18" type="2" active="yes">on-in(e16,x3,x1):18:1.00</literal>
+<literal id="19" type="2" active="yes">major-adj(e15,x0):19:1.00</literal>
+<literal id="20" type="2" active="yes">american-adj(e14,x0):20:1.00</literal>
+<literal id="21" type="2" active="yes">city-nn(e13,x0):21:1.00</literal>
+<literal id="22" type="2" active="yes">!=(e28,e24):22:1.00</literal>
+<literal id="23" type="3" active="yes">S#ABYSS(x9):23:0.90</literal>
+<literal id="24" type="3" active="yes">SS#ABYSS-TYPE(x9):24:0.90</literal>
+<literal id="25" type="3" active="yes">TS#POVERTY(x8):25:0.45</literal>
+<literal id="26" type="3" active="yes">T#ECONOMIC-INEQUALITY(_0):26:0.45</literal>
+<explanation name="black-hole" active="yes" axiom="">23 ^ 24 => 4</explanation>
+<explanation name="black-hole" active="yes" axiom="">23 ^ 24 => 5</explanation>
+<explanation name="poverty" active="yes" axiom="">25 ^ 26 => 6</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="2">
+<observed size="35" domain_size="0">
+in-in(e51,x3,x2) ^ rel(e50,x4,x3) ^ yet-rb(e49,x10) ^ card(e48,x10,1) ^ card(e47,x6,4) ^ child-nn(e46,x6) ^ in-in(e45,x10,x6) ^ –-vb(x9,x10,x11,u44) ^ person(e43,x6) ^ stress-nn(e42,x13) ^ enough-adj(e41,x18) ^ –-nn(e40,x18) ^ find-vb(x17,x18,x1,u39) ^ descend-vb(x16,x18,u37,u38) ^ poverty-nn(e36,x15) ^ of-in(e35,x0,x15) ^ into-in(e34,x16,x0) ^ n’t-vb(x11,x6,x13,u33) ^ rel(e32,x9,x3) ^ ’re-vb(x7,x6,x4,u31) ^ supposedly-rb(e30,x7) ^ imp(e26,e27,e29) ^ wealthiest-adj(e29,x4,x5) ^ not(e27,e28) ^ equal(e28,x5,x4) ^ most-rb(e25,x3) ^ influential-adj(e24,x3) ^ country-nn(e23,x3) ^ world-nn(e22,x2) ^ group(e21,x1) ^ black-adj(e20,x0) ^ hole-nn(e19,x0) ^ !=(e51,e45) ^ !=(e50,e32) ^ !=(e48,e47)
+</observed>
+<hypothesis score="-34.739">
+in-in(e51,x3,x2) ^ rel(e50,x4,x3) ^ yet-rb(e49,x10) ^ card(e48,x10,1) ^ card(e47,x6,4) ^ child-nn(e46,x6) ^ in-in(e45,x10,x6) ^ –-vb(x9,x10,x11,u44) ^ person(e43,x6) ^ stress-nn(e42,x13) ^ enough-adj(e41,x18) ^ –-nn(e40,x18) ^ find-vb(x17,x18,x1,u39) ^ descend-vb(x16,x18,u37,u38) ^ poverty-nn(e36,x15) ^ of-in(e35,x0,x15) ^ into-in(e34,x16,x0) ^ n’t-vb(x11,x6,x13,u33) ^ rel(e32,x9,x3) ^ ’re-vb(x7,x6,x4,u31) ^ supposedly-rb(e30,x7) ^ imp(e26,e27,e29) ^ wealthiest-adj(e29,x4,x5) ^ not(e27,e28) ^ equal(e28,x5,x4) ^ most-rb(e25,x3) ^ influential-adj(e24,x3) ^ country-nn(e23,x3) ^ world-nn(e22,x2) ^ group(e21,x1) ^ black-adj(e20,x0) ^ hole-nn(e19,x0) ^ !=(e51,e45) ^ !=(e50,e32) ^ !=(e48,e47) ^ TS#POVERTY(x15) ^ T#ECONOMIC-INEQUALITY(_1) ^ S#ABYSS(x0) ^ SS#ABYSS-TYPE(x0)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_country-nn_27":-1.001 "!HYPOTHESIZED_hole-nn_31":-1.001 "!HYPOTHESIZED_in-in_6":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_36":-0.451 "!HYPOTHESIZED_rel_1":-1.001 "!HYPOTHESIZED_card_3":-1.001 "!HYPOTHESIZED_card_4":-1.001 "!HYPOTHESIZED_child-nn_5":-1.001 "!EXPLAINED_hole-nn_31":1 "!HYPOTHESIZED_in-in_0":-1.001 "!HYPOTHESIZED_into-in_16":-1.001 "!HYPOTHESIZED_of-in_15":-1.001 "!HYPOTHESIZED_equal_24":-1.001 "!HYPOTHESIZED_influential-adj_26":-1.001 "!EXPLAINED_black-adj_30":1 "!HYPOTHESIZED_–-nn_11":-1.001 "!HYPOTHESIZED_person_8":-1.001 "!EXPLAINED_poverty-nn_14":1 "!HYPOTHESIZED_rel_18":-1.001 "!HYPOTHESIZED_!=_34":-1.001 "!HYPOTHESIZED_stress-nn_9":-1.001 "!HYPOTHESIZED_group_29":-1.001 "!HYPOTHESIZED_!=_33":-1.001 "!HYPOTHESIZED_imp_21":-1.001 "!HYPOTHESIZED_find-vb_12":-1.001 "!HYPOTHESIZED_!=_32":-1.001 "!HYPOTHESIZED_enough-adj_10":-1.001 "!HYPOTHESIZED_not_23":-1.001 "!HYPOTHESIZED_yet-rb_2":-1.001 "!HYPOTHESIZED_’re-vb_19":-1.001 "!HYPOTHESIZED_poverty-nn_14":-1.001 "!HYPOTHESIZED_black-adj_30":-1.001 "!HYPOTHESIZED_TS#POVERTY_35":-0.451 "!HYPOTHESIZED_descend-vb_13":-1.001 "!HYPOTHESIZED_n’t-vb_17":-1.001 "!HYPOTHESIZED_SS#ABYSS-TYPE_38":-0.901 "!HYPOTHESIZED_world-nn_28":-1.001 "!HYPOTHESIZED_wealthiest-adj_22":-1.001 "!HYPOTHESIZED_S#ABYSS_37":-0.901 "!HYPOTHESIZED_–-vb_7":-1.001 "!HYPOTHESIZED_supposedly-rb_20":-1.001 "!HYPOTHESIZED_most-rb_25":-1.001 
+</vector>
+<statistics>
+<time total="0.040401" prepare="0.0353489" ilp="0.00505209" />
+<ilp solution="Optimal" variables="139" constraints="117" />
+<search-space literals="39" axiom="5" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">in-in(e51,x3,x2):0:1.00</literal>
+<unification l1="0" l2="6" unifier="" active="no" />
+<literal id="1" type="2" active="yes">rel(e50,x4,x3):1:1.00</literal>
+<unification l1="1" l2="18" unifier="" active="no" />
+<literal id="2" type="2" active="yes">yet-rb(e49,x10):2:1.00</literal>
+<literal id="3" type="2" active="yes">card(e48,x10,1):3:1.00</literal>
+<unification l1="3" l2="4" unifier="" active="no" />
+<literal id="4" type="2" active="yes">card(e47,x6,4):4:1.00</literal>
+<unification l1="4" l2="3" unifier="" active="no" />
+<literal id="5" type="2" active="yes">child-nn(e46,x6):5:1.00</literal>
+<literal id="6" type="2" active="yes">in-in(e45,x10,x6):6:1.00</literal>
+<unification l1="6" l2="0" unifier="" active="no" />
+<literal id="7" type="2" active="yes">–-vb(x9,x10,x11,u44):7:1.00</literal>
+<literal id="8" type="2" active="yes">person(e43,x6):8:1.00</literal>
+<literal id="9" type="2" active="yes">stress-nn(e42,x13):9:1.00</literal>
+<literal id="10" type="2" active="yes">enough-adj(e41,x18):10:1.00</literal>
+<literal id="11" type="2" active="yes">–-nn(e40,x18):11:1.00</literal>
+<literal id="12" type="2" active="yes">find-vb(x17,x18,x1,u39):12:1.00</literal>
+<literal id="13" type="2" active="yes">descend-vb(x16,x18,u37,u38):13:1.00</literal>
+<literal id="14" type="2" active="yes">poverty-nn(e36,x15):14:1.00</literal>
+<literal id="15" type="2" active="yes">of-in(e35,x0,x15):15:1.00</literal>
+<literal id="16" type="2" active="yes">into-in(e34,x16,x0):16:1.00</literal>
+<literal id="17" type="2" active="yes">n’t-vb(x11,x6,x13,u33):17:1.00</literal>
+<literal id="18" type="2" active="yes">rel(e32,x9,x3):18:1.00</literal>
+<unification l1="18" l2="1" unifier="" active="no" />
+<literal id="19" type="2" active="yes">’re-vb(x7,x6,x4,u31):19:1.00</literal>
+<literal id="20" type="2" active="yes">supposedly-rb(e30,x7):20:1.00</literal>
+<literal id="21" type="2" active="yes">imp(e26,e27,e29):21:1.00</literal>
+<literal id="22" type="2" active="yes">wealthiest-adj(e29,x4,x5):22:1.00</literal>
+<literal id="23" type="2" active="yes">not(e27,e28):23:1.00</literal>
+<literal id="24" type="2" active="yes">equal(e28,x5,x4):24:1.00</literal>
+<literal id="25" type="2" active="yes">most-rb(e25,x3):25:1.00</literal>
+<literal id="26" type="2" active="yes">influential-adj(e24,x3):26:1.00</literal>
+<literal id="27" type="2" active="yes">country-nn(e23,x3):27:1.00</literal>
+<literal id="28" type="2" active="yes">world-nn(e22,x2):28:1.00</literal>
+<literal id="29" type="2" active="yes">group(e21,x1):29:1.00</literal>
+<literal id="30" type="2" active="yes">black-adj(e20,x0):30:1.00</literal>
+<literal id="31" type="2" active="yes">hole-nn(e19,x0):31:1.00</literal>
+<literal id="32" type="2" active="yes">!=(e51,e45):32:1.00</literal>
+<literal id="33" type="2" active="yes">!=(e50,e32):33:1.00</literal>
+<literal id="34" type="2" active="yes">!=(e48,e47):34:1.00</literal>
+<literal id="35" type="3" active="yes">TS#POVERTY(x15):35:0.45</literal>
+<literal id="36" type="3" active="yes">T#ECONOMIC-INEQUALITY(_1):36:0.45</literal>
+<literal id="37" type="3" active="yes">S#ABYSS(x0):37:0.90</literal>
+<literal id="38" type="3" active="yes">SS#ABYSS-TYPE(x0):38:0.90</literal>
+<explanation name="poverty" active="yes" axiom="">35 ^ 36 => 14</explanation>
+<explanation name="black-hole" active="yes" axiom="">37 ^ 38 => 30</explanation>
+<explanation name="black-hole" active="yes" axiom="">37 ^ 38 => 31</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="3">
+<observed size="33" domain_size="0">
+critic-nn(e46,x5) ^ free-adj(e45,x16) ^ subset_of(e44,x15,x16) ^ subset_of(e43,x14,x16) ^ market-nn(e42,x13) ^ of-in(e41,x15,x13) ^ ideology-nn(e40,x15) ^ neoliberal-adj(e39,x14) ^ policy-nn(e38,x14) ^ enrich-vb(x12,x16,x1,u37) ^ sink-vb(x11,x16,x0,u36) ^ ever-deepening-adj(e35,x9) ^ black-adj(e34,x9) ^ hole-nn(e33,x9) ^ poverty-nn(e32,x8) ^ hunger-nn(e31,x7) ^ rel(e30,x8,x7) ^ of-in(e29,x9,x8) ^ subset_of(e28,x9,x10) ^ degradation-nn(e27,x6) ^ subset_of(e26,x6,x10) ^ into-in(e25,x11,x10) ^ while-in(e24,x12,x11) ^ argue-vb(x3,x5,x12,u23) ^ in-in(e22,x3,x2) ^ élites-nn(e21,x1) ^ poor-nn(e20,x0) ^ philippines-nn(e18,x2) ^ loc(e19,x2) ^ context-nn(e17,x2) ^ !=(e18,e19) ^ !=(e41,e29) ^ !=(e44,e43,e28,e26)
+</observed>
+<hypothesis score="-32.556">
+critic-nn(e46,x5) ^ free-adj(e45,x16) ^ subset_of(e44,x15,x16) ^ subset_of(e43,x14,x16) ^ market-nn(e42,x13) ^ of-in(e41,x15,x13) ^ ideology-nn(e40,x15) ^ neoliberal-adj(e39,x14) ^ policy-nn(e38,x14) ^ enrich-vb(x12,x16,x1,u37) ^ sink-vb(x11,x16,x0,u36) ^ ever-deepening-adj(e35,x9) ^ black-adj(e34,x9) ^ hole-nn(e33,x9) ^ poverty-nn(e32,x8) ^ hunger-nn(e31,x7) ^ rel(e30,x8,x7) ^ of-in(e29,x9,x8) ^ subset_of(e28,x9,x10) ^ degradation-nn(e27,x6) ^ subset_of(e26,x6,x10) ^ into-in(e25,x11,x10) ^ while-in(e24,x12,x11) ^ argue-vb(x3,x5,x12,u23) ^ in-in(e22,x3,x2) ^ élites-nn(e21,x1) ^ poor-nn(e20,x0) ^ philippines-nn(e18,x2) ^ loc(e19,x2) ^ context-nn(e17,x2) ^ !=(e18,e19) ^ !=(e41,e29) ^ !=(e44,e43,e28,e26) ^ S#LOW-POINT(x0) ^ SS#MOVEMENT-DOWNWARD(x11) ^ R#MOVE-D-PATIENT(x16,x11) ^ S#ABYSS(x9) ^ SS#ABYSS-TYPE(x9) ^ TS#POVERTY(x8) ^ T#ECONOMIC-INEQUALITY(_2) ^ I#MOVEMENT-DOWNWARD(x11) ^ M#MOVE-DOWN(x11) ^ M#MOVE-D-PATIENT(x16,x11)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_!=_32":-1.001 "!HYPOTHESIZED_hole-nn_13":-1.001 "!HYPOTHESIZED_market-nn_4":-1.001 "!HYPOTHESIZED_poor-nn_26":-1.001 "!EXPLAINED_I#MOVEMENT-DOWNWARD_40":0.27 "!HYPOTHESIZED_enrich-vb_9":-1.001 "!HYPOTHESIZED_sink-vb_10":-1.001 "!HYPOTHESIZED_subset_of_2":-1.001 "!HYPOTHESIZED_critic-nn_0":-1.001 "!HYPOTHESIZED_ideology-nn_6":-1.001 "!HYPOTHESIZED_in-in_24":-1.001 "!EXPLAINED_SS#MOVEMENT-DOWNWARD_34":0.3 "!HYPOTHESIZED_hunger-nn_15":-1.001 "!HYPOTHESIZED_poverty-nn_14":-1.001 "!HYPOTHESIZED_neoliberal-adj_7":-1.001 "!HYPOTHESIZED_of-in_17":-1.001 "!HYPOTHESIZED_argue-vb_23":-1.001 "!EXPLAINED_black-adj_12":1 "!HYPOTHESIZED_!=_30":-1.001 "!EXPLAINED_sink-vb_10":1 "!HYPOTHESIZED_black-adj_12":-1.001 "!HYPOTHESIZED_S#LOW-POINT_33":-0.301 "!HYPOTHESIZED_subset_of_20":-1.001 "!HYPOTHESIZED_M#MOVE-DOWN_41":-0.2575 "!EXPLAINED_hole-nn_13":1 "!HYPOTHESIZED_of-in_5":-1.001 "!HYPOTHESIZED_subset_of_18":-1.001 "!HYPOTHESIZED_philippines-nn_27":-1.001 "!HYPOTHESIZED_élites-nn_25":-1.001 "!HYPOTHESIZED_!=_31":-1.001 "!HYPOTHESIZED_M#MOVE-D-PATIENT_42":-0.2575 "!EXPLAINED_R#MOVE-D-PATIENT_35":0.3 "!HYPOTHESIZED_policy-nn_8":-1.001 "!HYPOTHESIZED_loc_28":-1.001 "!HYPOTHESIZED_SS#MOVEMENT-DOWNWARD_34":-0.301 "!HYPOTHESIZED_S#ABYSS_36":-0.901 "!HYPOTHESIZED_TS#POVERTY_38":-0.451 "!HYPOTHESIZED_into-in_21":-1.001 "!HYPOTHESIZED_R#MOVE-D-PATIENT_35":-0.301 "!HYPOTHESIZED_while-in_22":-1.001 "!HYPOTHESIZED_degradation-nn_19":-1.001 "!HYPOTHESIZED_SS#ABYSS-TYPE_37":-0.901 "!HYPOTHESIZED_rel_16":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_39":-0.451 "!HYPOTHESIZED_I#MOVEMENT-DOWNWARD_40":-0.271 "!HYPOTHESIZED_free-adj_1":-1.001 "!HYPOTHESIZED_context-nn_29":-1.001 "!HYPOTHESIZED_subset_of_3":-1.001 "!EXPLAINED_poverty-nn_14":1 "!HYPOTHESIZED_ever-deepening-adj_11":-1.001 
+</vector>
+<statistics>
+<time total="0.046277" prepare="0.0417631" ilp="0.00451398" />
+<ilp solution="Optimal" variables="166" constraints="178" />
+<search-space literals="43" axiom="8" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">critic-nn(e46,x5):0:1.00</literal>
+<literal id="1" type="2" active="yes">free-adj(e45,x16):1:1.00</literal>
+<literal id="2" type="2" active="yes">subset_of(e44,x15,x16):2:1.00</literal>
+<unification l1="2" l2="3" unifier="" active="no" />
+<unification l1="2" l2="18" unifier="" active="no" />
+<unification l1="2" l2="20" unifier="" active="no" />
+<literal id="3" type="2" active="yes">subset_of(e43,x14,x16):3:1.00</literal>
+<unification l1="3" l2="2" unifier="" active="no" />
+<unification l1="3" l2="18" unifier="" active="no" />
+<unification l1="3" l2="20" unifier="" active="no" />
+<literal id="4" type="2" active="yes">market-nn(e42,x13):4:1.00</literal>
+<literal id="5" type="2" active="yes">of-in(e41,x15,x13):5:1.00</literal>
+<unification l1="5" l2="17" unifier="" active="no" />
+<literal id="6" type="2" active="yes">ideology-nn(e40,x15):6:1.00</literal>
+<literal id="7" type="2" active="yes">neoliberal-adj(e39,x14):7:1.00</literal>
+<literal id="8" type="2" active="yes">policy-nn(e38,x14):8:1.00</literal>
+<literal id="9" type="2" active="yes">enrich-vb(x12,x16,x1,u37):9:1.00</literal>
+<literal id="10" type="2" active="yes">sink-vb(x11,x16,x0,u36):10:1.00</literal>
+<literal id="11" type="2" active="yes">ever-deepening-adj(e35,x9):11:1.00</literal>
+<literal id="12" type="2" active="yes">black-adj(e34,x9):12:1.00</literal>
+<literal id="13" type="2" active="yes">hole-nn(e33,x9):13:1.00</literal>
+<literal id="14" type="2" active="yes">poverty-nn(e32,x8):14:1.00</literal>
+<literal id="15" type="2" active="yes">hunger-nn(e31,x7):15:1.00</literal>
+<literal id="16" type="2" active="yes">rel(e30,x8,x7):16:1.00</literal>
+<literal id="17" type="2" active="yes">of-in(e29,x9,x8):17:1.00</literal>
+<unification l1="17" l2="5" unifier="" active="no" />
+<literal id="18" type="2" active="yes">subset_of(e28,x9,x10):18:1.00</literal>
+<unification l1="18" l2="2" unifier="" active="no" />
+<unification l1="18" l2="3" unifier="" active="no" />
+<unification l1="18" l2="20" unifier="" active="no" />
+<literal id="19" type="2" active="yes">degradation-nn(e27,x6):19:1.00</literal>
+<literal id="20" type="2" active="yes">subset_of(e26,x6,x10):20:1.00</literal>
+<unification l1="20" l2="2" unifier="" active="no" />
+<unification l1="20" l2="3" unifier="" active="no" />
+<unification l1="20" l2="18" unifier="" active="no" />
+<literal id="21" type="2" active="yes">into-in(e25,x11,x10):21:1.00</literal>
+<literal id="22" type="2" active="yes">while-in(e24,x12,x11):22:1.00</literal>
+<literal id="23" type="2" active="yes">argue-vb(x3,x5,x12,u23):23:1.00</literal>
+<literal id="24" type="2" active="yes">in-in(e22,x3,x2):24:1.00</literal>
+<literal id="25" type="2" active="yes">élites-nn(e21,x1):25:1.00</literal>
+<literal id="26" type="2" active="yes">poor-nn(e20,x0):26:1.00</literal>
+<literal id="27" type="2" active="yes">philippines-nn(e18,x2):27:1.00</literal>
+<literal id="28" type="2" active="yes">loc(e19,x2):28:1.00</literal>
+<literal id="29" type="2" active="yes">context-nn(e17,x2):29:1.00</literal>
+<literal id="30" type="2" active="yes">!=(e18,e19):30:1.00</literal>
+<literal id="31" type="2" active="yes">!=(e41,e29):31:1.00</literal>
+<literal id="32" type="2" active="yes">!=(e44,e43,e28,e26):32:1.00</literal>
+<literal id="33" type="3" active="yes">S#LOW-POINT(x0):33:0.30</literal>
+<literal id="34" type="3" active="yes">SS#MOVEMENT-DOWNWARD(x11):34:0.30</literal>
+<literal id="35" type="3" active="yes">R#MOVE-D-PATIENT(x16,x11):35:0.30</literal>
+<literal id="36" type="3" active="yes">S#ABYSS(x9):36:0.90</literal>
+<literal id="37" type="3" active="yes">SS#ABYSS-TYPE(x9):37:0.90</literal>
+<literal id="38" type="3" active="yes">TS#POVERTY(x8):38:0.45</literal>
+<literal id="39" type="3" active="yes">T#ECONOMIC-INEQUALITY(_2):39:0.45</literal>
+<literal id="40" type="3" active="yes">I#MOVEMENT-DOWNWARD(x11):40:0.27</literal>
+<literal id="41" type="3" active="yes">M#MOVE-DOWN(x11):41:0.26</literal>
+<literal id="42" type="3" active="yes">M#MOVE-D-PATIENT(x16,x11):42:0.26</literal>
+<explanation name="movement-downwardmap" active="yes" axiom="">40 => 34</explanation>
+<explanation name="black-hole" active="yes" axiom="">36 ^ 37 => 12</explanation>
+<explanation name="movement-downward" active="yes" axiom="">41 ^ 42 => 35</explanation>
+<explanation name="black-hole" active="yes" axiom="">36 ^ 37 => 13</explanation>
+<explanation name="poverty" active="yes" axiom="">38 ^ 39 => 14</explanation>
+<explanation name="movement-downward" active="yes" axiom="">41 ^ 42 => 40</explanation>
+<explanation name="sink" active="yes" axiom="">33 ^ 34 ^ 35 => 10</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="4">
+<observed size="26" domain_size="0">
+imp(e20,x3,x10) ^ person(e39,x11) ^ equal(e38,x1,x16) ^ plunge-vb(x15,x16,x0,u37) ^ black-adj(e36,x14) ^ hole-nn(e35,x14) ^ poverty-nn(e34,x12) ^ subset_of(e33,x12,x13) ^ destitution-nn(e32,x11) ^ subset_of(e31,x11,x13) ^ of-in(e30,x14,x13) ^ into-in(e29,x15,x14) ^ run-vb(x10,x11,x1,u28) ^ old-adj(e27,x9) ^ debt-nn(e26,x8) ^ of-in(e25,x9,x8) ^ obligation-nn(e24,x9) ^ fulfill-vb(x7,x2,x9,u23) ^ strive-vb(x5,x2,x7,u22) ^ continue-vb(x3,x2,x5,u21) ^ person(e19,x2) ^ risk-nn(e18,x1) ^ globe-nn(e17,x0) ^ !=(e39,e19) ^ !=(e30,e25) ^ !=(e33,e31)
+</observed>
+<hypothesis score="-25.549">
+imp(e20,x3,x10) ^ person(e39,x11) ^ equal(e38,x1,x16) ^ plunge-vb(x15,x16,x0,u37) ^ black-adj(e36,x14) ^ hole-nn(e35,x14) ^ poverty-nn(e34,x12) ^ subset_of(e33,x12,x13) ^ destitution-nn(e32,x11) ^ subset_of(e31,x11,x13) ^ of-in(e30,x14,x13) ^ into-in(e29,x15,x14) ^ run-vb(x10,x11,x1,u28) ^ old-adj(e27,x9) ^ debt-nn(e26,x8) ^ of-in(e25,x9,x8) ^ obligation-nn(e24,x9) ^ fulfill-vb(x7,x2,x9,u23) ^ strive-vb(x5,x2,x7,u22) ^ continue-vb(x3,x2,x5,u21) ^ person(e19,x2) ^ risk-nn(e18,x1) ^ globe-nn(e17,x0) ^ !=(e39,e19) ^ !=(e30,e25) ^ !=(e33,e31) ^ S#LOW-POINT(x0) ^ SS#MOVEMENT-DOWNWARD(x15) ^ R#MOVE-D-PATIENT(x16,x15) ^ S#ABYSS(x14) ^ SS#ABYSS-TYPE(x14) ^ TS#POVERTY(x12) ^ T#ECONOMIC-INEQUALITY(_3) ^ I#MOVEMENT-DOWNWARD(x15) ^ M#MOVE-DOWN(x15) ^ M#MOVE-D-PATIENT(x16,x15)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_run-vb_12":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_32":-0.451 "!EXPLAINED_I#MOVEMENT-DOWNWARD_33":0.27 "!EXPLAINED_poverty-nn_6":1 "!HYPOTHESIZED_person_1":-1.001 "!HYPOTHESIZED_of-in_10":-1.001 "!HYPOTHESIZED_of-in_15":-1.001 "!HYPOTHESIZED_into-in_11":-1.001 "!HYPOTHESIZED_subset_of_7":-1.001 "!HYPOTHESIZED_imp_0":-1.001 "!HYPOTHESIZED_SS#MOVEMENT-DOWNWARD_27":-0.301 "!HYPOTHESIZED_person_20":-1.001 "!EXPLAINED_R#MOVE-D-PATIENT_28":0.3 "!HYPOTHESIZED_!=_23":-1.001 "!HYPOTHESIZED_globe-nn_22":-1.001 "!HYPOTHESIZED_strive-vb_18":-1.001 "!HYPOTHESIZED_M#MOVE-D-PATIENT_35":-0.2575 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_continue-vb_19":-1.001 "!HYPOTHESIZED_S#LOW-POINT_26":-0.301 "!HYPOTHESIZED_!=_25":-1.001 "!HYPOTHESIZED_equal_2":-1.001 "!HYPOTHESIZED_subset_of_9":-1.001 "!HYPOTHESIZED_R#MOVE-D-PATIENT_28":-0.301 "!HYPOTHESIZED_old-adj_13":-1.001 "!HYPOTHESIZED_destitution-nn_8":-1.001 "!HYPOTHESIZED_SS#ABYSS-TYPE_30":-0.901 "!EXPLAINED_plunge-vb_3":1 "!EXPLAINED_hole-nn_5":1 "!HYPOTHESIZED_debt-nn_14":-1.001 "!HYPOTHESIZED_obligation-nn_16":-1.001 "!HYPOTHESIZED_risk-nn_21":-1.001 "!HYPOTHESIZED_S#ABYSS_29":-0.901 "!HYPOTHESIZED_hole-nn_5":-1.001 "!HYPOTHESIZED_M#MOVE-DOWN_34":-0.2575 "!HYPOTHESIZED_TS#POVERTY_31":-0.451 "!EXPLAINED_SS#MOVEMENT-DOWNWARD_27":0.3 "!HYPOTHESIZED_poverty-nn_6":-1.001 "!HYPOTHESIZED_plunge-vb_3":-1.001 "!HYPOTHESIZED_I#MOVEMENT-DOWNWARD_33":-0.271 "!HYPOTHESIZED_black-adj_4":-1.001 "!HYPOTHESIZED_fulfill-vb_17":-1.001 "!EXPLAINED_black-adj_4":1 
+</vector>
+<statistics>
+<time total="0.045773" prepare="0.0434051" ilp="0.00236797" />
+<ilp solution="Optimal" variables="132" constraints="138" />
+<search-space literals="36" axiom="8" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">imp(e20,x3,x10):0:1.00</literal>
+<literal id="1" type="2" active="yes">person(e39,x11):1:1.00</literal>
+<unification l1="1" l2="20" unifier="" active="no" />
+<literal id="2" type="2" active="yes">equal(e38,x1,x16):2:1.00</literal>
+<literal id="3" type="2" active="yes">plunge-vb(x15,x16,x0,u37):3:1.00</literal>
+<literal id="4" type="2" active="yes">black-adj(e36,x14):4:1.00</literal>
+<literal id="5" type="2" active="yes">hole-nn(e35,x14):5:1.00</literal>
+<literal id="6" type="2" active="yes">poverty-nn(e34,x12):6:1.00</literal>
+<literal id="7" type="2" active="yes">subset_of(e33,x12,x13):7:1.00</literal>
+<unification l1="7" l2="9" unifier="" active="no" />
+<literal id="8" type="2" active="yes">destitution-nn(e32,x11):8:1.00</literal>
+<literal id="9" type="2" active="yes">subset_of(e31,x11,x13):9:1.00</literal>
+<unification l1="9" l2="7" unifier="" active="no" />
+<literal id="10" type="2" active="yes">of-in(e30,x14,x13):10:1.00</literal>
+<unification l1="10" l2="15" unifier="" active="no" />
+<literal id="11" type="2" active="yes">into-in(e29,x15,x14):11:1.00</literal>
+<literal id="12" type="2" active="yes">run-vb(x10,x11,x1,u28):12:1.00</literal>
+<literal id="13" type="2" active="yes">old-adj(e27,x9):13:1.00</literal>
+<literal id="14" type="2" active="yes">debt-nn(e26,x8):14:1.00</literal>
+<literal id="15" type="2" active="yes">of-in(e25,x9,x8):15:1.00</literal>
+<unification l1="15" l2="10" unifier="" active="no" />
+<literal id="16" type="2" active="yes">obligation-nn(e24,x9):16:1.00</literal>
+<literal id="17" type="2" active="yes">fulfill-vb(x7,x2,x9,u23):17:1.00</literal>
+<literal id="18" type="2" active="yes">strive-vb(x5,x2,x7,u22):18:1.00</literal>
+<literal id="19" type="2" active="yes">continue-vb(x3,x2,x5,u21):19:1.00</literal>
+<literal id="20" type="2" active="yes">person(e19,x2):20:1.00</literal>
+<unification l1="20" l2="1" unifier="" active="no" />
+<literal id="21" type="2" active="yes">risk-nn(e18,x1):21:1.00</literal>
+<literal id="22" type="2" active="yes">globe-nn(e17,x0):22:1.00</literal>
+<literal id="23" type="2" active="yes">!=(e39,e19):23:1.00</literal>
+<literal id="24" type="2" active="yes">!=(e30,e25):24:1.00</literal>
+<literal id="25" type="2" active="yes">!=(e33,e31):25:1.00</literal>
+<literal id="26" type="3" active="yes">S#LOW-POINT(x0):26:0.30</literal>
+<literal id="27" type="3" active="yes">SS#MOVEMENT-DOWNWARD(x15):27:0.30</literal>
+<literal id="28" type="3" active="yes">R#MOVE-D-PATIENT(x16,x15):28:0.30</literal>
+<literal id="29" type="3" active="yes">S#ABYSS(x14):29:0.90</literal>
+<literal id="30" type="3" active="yes">SS#ABYSS-TYPE(x14):30:0.90</literal>
+<literal id="31" type="3" active="yes">TS#POVERTY(x12):31:0.45</literal>
+<literal id="32" type="3" active="yes">T#ECONOMIC-INEQUALITY(_3):32:0.45</literal>
+<literal id="33" type="3" active="yes">I#MOVEMENT-DOWNWARD(x15):33:0.27</literal>
+<literal id="34" type="3" active="yes">M#MOVE-DOWN(x15):34:0.26</literal>
+<literal id="35" type="3" active="yes">M#MOVE-D-PATIENT(x16,x15):35:0.26</literal>
+<explanation name="movement-downward" active="yes" axiom="">34 ^ 35 => 33</explanation>
+<explanation name="plunge" active="yes" axiom="">26 ^ 27 ^ 28 => 3</explanation>
+<explanation name="black-hole" active="yes" axiom="">29 ^ 30 => 4</explanation>
+<explanation name="movement-downwardmap" active="yes" axiom="">33 => 27</explanation>
+<explanation name="black-hole" active="yes" axiom="">29 ^ 30 => 5</explanation>
+<explanation name="movement-downward" active="yes" axiom="">34 ^ 35 => 28</explanation>
+<explanation name="poverty" active="yes" axiom="">31 ^ 32 => 6</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="5">
+<observed size="28" domain_size="0">
+person(e39,x4) ^ of-in(e38,x2,x4) ^ swirl-vb(x8,x2,u36,u37) ^ meanwhile-rb(e35,x8) ^ poverty-nn(e34,x7) ^ of-in(e33,x1,x7) ^ around-in(e32,x8,x1) ^ become-vb(x6,x0,u30,u31) ^ irresistible-adj(e29,x0) ^ more-rb(e28,x0,x5) ^ more-adj(e27,x4) ^ people-nn(e26,x4) ^ for-in(e25,x6,x4) ^ as-in(e24,x6,x10) ^ thing(e23,x9) ^ draw-vb(x10,u21,x9,u22) ^ closer-rb(e20,x10) ^ economic-adj(e19,x9) ^ oblivion-nn(e18,x9) ^ to-in(e17,x10,x9) ^ meanwhile-rb(e16,x6) ^ rest-nn(e15,x2) ^ huge-adj(e14,x1) ^ black-adj(e13,x1) ^ hole-nn(e12,x1) ^ momentum-nn(e11,x0) ^ !=(e35,e16) ^ !=(e38,e33)
+</observed>
+<hypothesis score="-27.732">
+person(e39,x4) ^ of-in(e38,x2,x4) ^ swirl-vb(x8,x2,u36,u37) ^ meanwhile-rb(e35,x8) ^ poverty-nn(e34,x7) ^ of-in(e33,x1,x7) ^ around-in(e32,x8,x1) ^ become-vb(x6,x0,u30,u31) ^ irresistible-adj(e29,x0) ^ more-rb(e28,x0,x5) ^ more-adj(e27,x4) ^ people-nn(e26,x4) ^ for-in(e25,x6,x4) ^ as-in(e24,x6,x10) ^ thing(e23,x9) ^ draw-vb(x10,u21,x9,u22) ^ closer-rb(e20,x10) ^ economic-adj(e19,x9) ^ oblivion-nn(e18,x9) ^ to-in(e17,x10,x9) ^ meanwhile-rb(e16,x6) ^ rest-nn(e15,x2) ^ huge-adj(e14,x1) ^ black-adj(e13,x1) ^ hole-nn(e12,x1) ^ momentum-nn(e11,x0) ^ !=(e35,e16) ^ !=(e38,e33) ^ TS#POVERTY(x7) ^ T#ECONOMIC-INEQUALITY(_4) ^ S#ABYSS(x1) ^ SS#ABYSS-TYPE(x1)
+</hypothesis>
+<vector score="0">
+"!EXPLAINED_poverty-nn_4":1 "!HYPOTHESIZED_S#ABYSS_30":-0.901 "!HYPOTHESIZED_rest-nn_21":-1.001 "!HYPOTHESIZED_person_0":-1.001 "!HYPOTHESIZED_oblivion-nn_18":-1.001 "!HYPOTHESIZED_for-in_12":-1.001 "!HYPOTHESIZED_hole-nn_24":-1.001 "!HYPOTHESIZED_huge-adj_22":-1.001 "!HYPOTHESIZED_to-in_19":-1.001 "!HYPOTHESIZED_swirl-vb_2":-1.001 "!HYPOTHESIZED_of-in_1":-1.001 "!HYPOTHESIZED_economic-adj_17":-1.001 "!EXPLAINED_black-adj_23":1 "!HYPOTHESIZED_thing_14":-1.001 "!HYPOTHESIZED_of-in_5":-1.001 "!HYPOTHESIZED_become-vb_7":-1.001 "!HYPOTHESIZED_!=_26":-1.001 "!EXPLAINED_hole-nn_24":1 "!HYPOTHESIZED_!=_27":-1.001 "!HYPOTHESIZED_around-in_6":-1.001 "!HYPOTHESIZED_SS#ABYSS-TYPE_31":-0.901 "!HYPOTHESIZED_more-rb_9":-1.001 "!HYPOTHESIZED_closer-rb_16":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_29":-0.451 "!HYPOTHESIZED_TS#POVERTY_28":-0.451 "!HYPOTHESIZED_irresistible-adj_8":-1.001 "!HYPOTHESIZED_momentum-nn_25":-1.001 "!HYPOTHESIZED_more-adj_10":-1.001 "!HYPOTHESIZED_as-in_13":-1.001 "!HYPOTHESIZED_black-adj_23":-1.001 "!HYPOTHESIZED_people-nn_11":-1.001 "!HYPOTHESIZED_draw-vb_15":-1.001 "!HYPOTHESIZED_poverty-nn_4":-1.001 "!HYPOTHESIZED_meanwhile-rb_20":-1.001 "!HYPOTHESIZED_meanwhile-rb_3":-1.001 
+</vector>
+<statistics>
+<time total="0.0303891" prepare="0.028939" ilp="0.00145006" />
+<ilp solution="Optimal" variables="110" constraints="89" />
+<search-space literals="32" axiom="6" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">person(e39,x4):0:1.00</literal>
+<literal id="1" type="2" active="yes">of-in(e38,x2,x4):1:1.00</literal>
+<unification l1="1" l2="5" unifier="" active="no" />
+<literal id="2" type="2" active="yes">swirl-vb(x8,x2,u36,u37):2:1.00</literal>
+<literal id="3" type="2" active="yes">meanwhile-rb(e35,x8):3:1.00</literal>
+<unification l1="3" l2="20" unifier="" active="no" />
+<literal id="4" type="2" active="yes">poverty-nn(e34,x7):4:1.00</literal>
+<literal id="5" type="2" active="yes">of-in(e33,x1,x7):5:1.00</literal>
+<unification l1="5" l2="1" unifier="" active="no" />
+<literal id="6" type="2" active="yes">around-in(e32,x8,x1):6:1.00</literal>
+<literal id="7" type="2" active="yes">become-vb(x6,x0,u30,u31):7:1.00</literal>
+<literal id="8" type="2" active="yes">irresistible-adj(e29,x0):8:1.00</literal>
+<literal id="9" type="2" active="yes">more-rb(e28,x0,x5):9:1.00</literal>
+<literal id="10" type="2" active="yes">more-adj(e27,x4):10:1.00</literal>
+<literal id="11" type="2" active="yes">people-nn(e26,x4):11:1.00</literal>
+<literal id="12" type="2" active="yes">for-in(e25,x6,x4):12:1.00</literal>
+<literal id="13" type="2" active="yes">as-in(e24,x6,x10):13:1.00</literal>
+<literal id="14" type="2" active="yes">thing(e23,x9):14:1.00</literal>
+<literal id="15" type="2" active="yes">draw-vb(x10,u21,x9,u22):15:1.00</literal>
+<literal id="16" type="2" active="yes">closer-rb(e20,x10):16:1.00</literal>
+<literal id="17" type="2" active="yes">economic-adj(e19,x9):17:1.00</literal>
+<literal id="18" type="2" active="yes">oblivion-nn(e18,x9):18:1.00</literal>
+<literal id="19" type="2" active="yes">to-in(e17,x10,x9):19:1.00</literal>
+<literal id="20" type="2" active="yes">meanwhile-rb(e16,x6):20:1.00</literal>
+<unification l1="20" l2="3" unifier="" active="no" />
+<literal id="21" type="2" active="yes">rest-nn(e15,x2):21:1.00</literal>
+<literal id="22" type="2" active="yes">huge-adj(e14,x1):22:1.00</literal>
+<literal id="23" type="2" active="yes">black-adj(e13,x1):23:1.00</literal>
+<literal id="24" type="2" active="yes">hole-nn(e12,x1):24:1.00</literal>
+<literal id="25" type="2" active="yes">momentum-nn(e11,x0):25:1.00</literal>
+<literal id="26" type="2" active="yes">!=(e35,e16):26:1.00</literal>
+<literal id="27" type="2" active="yes">!=(e38,e33):27:1.00</literal>
+<literal id="28" type="3" active="yes">TS#POVERTY(x7):28:0.45</literal>
+<literal id="29" type="3" active="yes">T#ECONOMIC-INEQUALITY(_4):29:0.45</literal>
+<literal id="30" type="3" active="yes">S#ABYSS(x1):30:0.90</literal>
+<literal id="31" type="3" active="yes">SS#ABYSS-TYPE(x1):31:0.90</literal>
+<explanation name="black-hole" active="yes" axiom="">30 ^ 31 => 23</explanation>
+<explanation name="black-hole" active="yes" axiom="">30 ^ 31 => 24</explanation>
+<explanation name="poverty" active="yes" axiom="">28 ^ 29 => 4</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="6">
+<observed size="33" domain_size="0">
+person(e41,x6) ^ over-in(e40,x9) ^ card(e39,x9,5) ^ card(e38,x9,1000000000000) ^ dollar-nn(e37,x9) ^ pour-vb(x8,x6,x9,u36) ^ poverty-nn(e35,x6) ^ of-in(e34,x7,x6) ^ program-nn(e33,x7) ^ not(e29,x10) ^ equal(e32,x7,x11) ^ work-vb(x10,x11,u30,u31) ^ of-in(e28,x5,x7) ^ down-in(e27,x8,x5) ^ in-in(e26,x3,x0) ^ of-in(e25,x4,x3) ^ since-in(e24,x8,x4) ^ black-adj(e23,x5) ^ hole-nn(e22,x5) ^ advent-nn(e21,x4) ^ great-nn(e19,x3) ^ org(e20,x3) ^ fuck-vb(x2,x3,u17,u18) ^ society-nn(e15,x3) ^ org(e16,x3) ^ card(e14,x1,60) ^ of-in(e13,x0,x1) ^ s(e12,x0) ^ !=(e19,e20) ^ !=(e15,e16) ^ !=(e34,e28,e25,e13) ^ !=(e20,e16) ^ !=(e39,e38,e14)
+</observed>
+<hypothesis score="-32.737">
+person(e41,x6) ^ over-in(e40,x9) ^ card(e39,x9,5) ^ card(e38,x9,1000000000000) ^ dollar-nn(e37,x9) ^ pour-vb(x8,x6,x9,u36) ^ poverty-nn(e35,x6) ^ of-in(e34,x7,x6) ^ program-nn(e33,x7) ^ not(e29,x10) ^ equal(e32,x7,x11) ^ work-vb(x10,x11,u30,u31) ^ of-in(e28,x5,x7) ^ down-in(e27,x8,x5) ^ in-in(e26,x3,x0) ^ of-in(e25,x4,x3) ^ since-in(e24,x8,x4) ^ black-adj(e23,x5) ^ hole-nn(e22,x5) ^ advent-nn(e21,x4) ^ great-nn(e19,x3) ^ org(e20,x3) ^ fuck-vb(x2,x3,u17,u18) ^ society-nn(e15,x3) ^ org(e16,x3) ^ card(e14,x1,60) ^ of-in(e13,x0,x1) ^ s(e12,x0) ^ !=(e19,e20) ^ !=(e15,e16) ^ !=(e34,e28,e25,e13) ^ !=(e20,e16) ^ !=(e39,e38,e14) ^ TS#POVERTY(x6) ^ T#ECONOMIC-INEQUALITY(_5) ^ S#ABYSS(x5) ^ SS#ABYSS-TYPE(x5)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_since-in_16":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_34":-0.451 "!EXPLAINED_poverty-nn_6":1 "!EXPLAINED_hole-nn_18":1 "!HYPOTHESIZED_pour-vb_5":-1.001 "!HYPOTHESIZED_card_2":-1.001 "!HYPOTHESIZED_hole-nn_18":-1.001 "!HYPOTHESIZED_card_3":-1.001 "!HYPOTHESIZED_person_0":-1.001 "!HYPOTHESIZED_work-vb_11":-1.001 "!HYPOTHESIZED_of-in_12":-1.001 "!HYPOTHESIZED_of-in_15":-1.001 "!HYPOTHESIZED_!=_28":-1.001 "!HYPOTHESIZED_!=_29":-1.001 "!HYPOTHESIZED_card_25":-1.001 "!HYPOTHESIZED_over-in_1":-1.001 "!HYPOTHESIZED_s_27":-1.001 "!HYPOTHESIZED_down-in_13":-1.001 "!HYPOTHESIZED_of-in_7":-1.001 "!HYPOTHESIZED_in-in_14":-1.001 "!HYPOTHESIZED_!=_31":-1.001 "!HYPOTHESIZED_org_21":-1.001 "!HYPOTHESIZED_!=_30":-1.001 "!HYPOTHESIZED_program-nn_8":-1.001 "!HYPOTHESIZED_!=_32":-1.001 "!HYPOTHESIZED_org_24":-1.001 "!HYPOTHESIZED_great-nn_20":-1.001 "!HYPOTHESIZED_black-adj_17":-1.001 "!HYPOTHESIZED_SS#ABYSS-TYPE_36":-0.901 "!EXPLAINED_black-adj_17":1 "!HYPOTHESIZED_society-nn_23":-1.001 "!HYPOTHESIZED_advent-nn_19":-1.001 "!HYPOTHESIZED_TS#POVERTY_33":-0.451 "!HYPOTHESIZED_poverty-nn_6":-1.001 "!HYPOTHESIZED_fuck-vb_22":-1.001 "!HYPOTHESIZED_not_9":-1.001 "!HYPOTHESIZED_dollar-nn_4":-1.001 "!HYPOTHESIZED_equal_10":-1.001 "!HYPOTHESIZED_S#ABYSS_35":-0.901 "!HYPOTHESIZED_of-in_26":-1.001 
+</vector>
+<statistics>
+<time total="0.0536771" prepare="0.04989" ilp="0.00378704" />
+<ilp solution="Optimal" variables="178" constraints="309" />
+<search-space literals="37" axiom="5" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">person(e41,x6):0:1.00</literal>
+<literal id="1" type="2" active="yes">over-in(e40,x9):1:1.00</literal>
+<literal id="2" type="2" active="yes">card(e39,x9,5):2:1.00</literal>
+<unification l1="2" l2="3" unifier="" active="no" />
+<unification l1="2" l2="25" unifier="" active="no" />
+<literal id="3" type="2" active="yes">card(e38,x9,1000000000000):3:1.00</literal>
+<unification l1="3" l2="2" unifier="" active="no" />
+<unification l1="3" l2="25" unifier="" active="no" />
+<literal id="4" type="2" active="yes">dollar-nn(e37,x9):4:1.00</literal>
+<literal id="5" type="2" active="yes">pour-vb(x8,x6,x9,u36):5:1.00</literal>
+<literal id="6" type="2" active="yes">poverty-nn(e35,x6):6:1.00</literal>
+<literal id="7" type="2" active="yes">of-in(e34,x7,x6):7:1.00</literal>
+<unification l1="7" l2="12" unifier="" active="no" />
+<unification l1="7" l2="15" unifier="" active="no" />
+<unification l1="7" l2="26" unifier="" active="no" />
+<literal id="8" type="2" active="yes">program-nn(e33,x7):8:1.00</literal>
+<literal id="9" type="2" active="yes">not(e29,x10):9:1.00</literal>
+<literal id="10" type="2" active="yes">equal(e32,x7,x11):10:1.00</literal>
+<literal id="11" type="2" active="yes">work-vb(x10,x11,u30,u31):11:1.00</literal>
+<literal id="12" type="2" active="yes">of-in(e28,x5,x7):12:1.00</literal>
+<unification l1="12" l2="7" unifier="" active="no" />
+<unification l1="12" l2="15" unifier="" active="no" />
+<unification l1="12" l2="26" unifier="" active="no" />
+<literal id="13" type="2" active="yes">down-in(e27,x8,x5):13:1.00</literal>
+<literal id="14" type="2" active="yes">in-in(e26,x3,x0):14:1.00</literal>
+<literal id="15" type="2" active="yes">of-in(e25,x4,x3):15:1.00</literal>
+<unification l1="15" l2="7" unifier="" active="no" />
+<unification l1="15" l2="12" unifier="" active="no" />
+<unification l1="15" l2="26" unifier="" active="no" />
+<literal id="16" type="2" active="yes">since-in(e24,x8,x4):16:1.00</literal>
+<literal id="17" type="2" active="yes">black-adj(e23,x5):17:1.00</literal>
+<literal id="18" type="2" active="yes">hole-nn(e22,x5):18:1.00</literal>
+<literal id="19" type="2" active="yes">advent-nn(e21,x4):19:1.00</literal>
+<literal id="20" type="2" active="yes">great-nn(e19,x3):20:1.00</literal>
+<literal id="21" type="2" active="yes">org(e20,x3):21:1.00</literal>
+<unification l1="21" l2="24" unifier="" active="no" />
+<literal id="22" type="2" active="yes">fuck-vb(x2,x3,u17,u18):22:1.00</literal>
+<literal id="23" type="2" active="yes">society-nn(e15,x3):23:1.00</literal>
+<literal id="24" type="2" active="yes">org(e16,x3):24:1.00</literal>
+<unification l1="24" l2="21" unifier="" active="no" />
+<literal id="25" type="2" active="yes">card(e14,x1,60):25:1.00</literal>
+<unification l1="25" l2="2" unifier="" active="no" />
+<unification l1="25" l2="3" unifier="" active="no" />
+<literal id="26" type="2" active="yes">of-in(e13,x0,x1):26:1.00</literal>
+<unification l1="26" l2="7" unifier="" active="no" />
+<unification l1="26" l2="12" unifier="" active="no" />
+<unification l1="26" l2="15" unifier="" active="no" />
+<literal id="27" type="2" active="yes">s(e12,x0):27:1.00</literal>
+<literal id="28" type="2" active="yes">!=(e19,e20):28:1.00</literal>
+<literal id="29" type="2" active="yes">!=(e15,e16):29:1.00</literal>
+<literal id="30" type="2" active="yes">!=(e34,e28,e25,e13):30:1.00</literal>
+<literal id="31" type="2" active="yes">!=(e20,e16):31:1.00</literal>
+<literal id="32" type="2" active="yes">!=(e39,e38,e14):32:1.00</literal>
+<literal id="33" type="3" active="yes">TS#POVERTY(x6):33:0.45</literal>
+<literal id="34" type="3" active="yes">T#ECONOMIC-INEQUALITY(_5):34:0.45</literal>
+<literal id="35" type="3" active="yes">S#ABYSS(x5):35:0.90</literal>
+<literal id="36" type="3" active="yes">SS#ABYSS-TYPE(x5):36:0.90</literal>
+<explanation name="black-hole" active="yes" axiom="">35 ^ 36 => 17</explanation>
+<explanation name="poverty" active="yes" axiom="">33 ^ 34 => 6</explanation>
+<explanation name="black-hole" active="yes" axiom="">35 ^ 36 => 18</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="7">
+<observed size="23" domain_size="0">
+people-nn(e36,x10) ^ get-vb(x13,x1,x14,u35) ^ work-vb(x14,x10,u33,u34) ^ go-vb(x11,x1,u31,u32) ^ to-in(e30,x11,x10) ^ thing(e29,x10) ^ empower-vb(x9,x1,x10,u28) ^ be-vb(x2,x1,x13,u27) ^ so-in(e26,x2) ^ not(e18,x4) ^ money-nn(e25,x8) ^ pump-vb(x7,x1,x8,u24) ^ poverty-nn(e23,x6) ^ of-in(e22,x0,x6) ^ into-in(e21,x7,x0) ^ be-vb(x4,x1,x7,u20) ^ so-in(e19,x4) ^ goal-nn(e17,x1) ^ black-adj(e16,x0) ^ hole-nn(e15,x0) ^ !=(e26,e19) ^ !=(x2,x4) ^ !=(e26,e19)
+</observed>
+<hypothesis score="-22.179">
+people-nn(e36,x10) ^ get-vb(x13,x1,x14,u35) ^ work-vb(x14,x10,u33,u34) ^ go-vb(x11,x1,u31,u32) ^ to-in(e30,x11,x10) ^ thing(e29,x10) ^ empower-vb(x9,x1,x10,u28) ^ be-vb(x2,x1,x13,u27) ^ so-in(e26,x2) ^ not(e18,x4) ^ money-nn(e25,x8) ^ pump-vb(x7,x1,x8,u24) ^ poverty-nn(e23,x6) ^ of-in(e22,x0,x6) ^ into-in(e21,x7,x0) ^ be-vb(x4,x1,x7,u20) ^ so-in(e19,x4) ^ goal-nn(e17,x1) ^ black-adj(e16,x0) ^ hole-nn(e15,x0) ^ !=(e26,e19) ^ !=(x2,x4) ^ !=(e26,e19) ^ TS#WEALTH(x8) ^ T#ECONOMIC-INEQUALITY(_6) ^ TS#POVERTY(x6) ^ T#ECONOMIC-INEQUALITY(_7) ^ S#ABYSS(x0) ^ SS#ABYSS-TYPE(x0) ^ =(_6,_7)
+</hypothesis>
+<vector score="0">
+"!EXPLAINED_hole-nn_19":1 "!HYPOTHESIZED_hole-nn_19":-1.001 "!HYPOTHESIZED_get-vb_1":-1.001 "!HYPOTHESIZED_to-in_4":-1.001 "!HYPOTHESIZED_thing_5":-1.001 "!HYPOTHESIZED_empower-vb_6":-1.001 "!HYPOTHESIZED_into-in_14":-1.001 "!HYPOTHESIZED_of-in_13":-1.001 "!EXPLAINED_poverty-nn_12":1 "!HYPOTHESIZED_so-in_16":-1.001 "!HYPOTHESIZED_!=_22":-1.001 "!EXPLAINED_black-adj_18":1 "!HYPOTHESIZED_!=_20":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_26":-0.451 "!HYPOTHESIZED_!=_21":-1.001 "!HYPOTHESIZED_money-nn_10":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_24":-0.451 "!EXPLAINED_money-nn_10":1 "!HYPOTHESIZED_work-vb_2":-1.001 "!HYPOTHESIZED_TS#WEALTH_23":-0.451 "!HYPOTHESIZED_black-adj_18":-1.001 "!HYPOTHESIZED_poverty-nn_12":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_26":0.45 "!HYPOTHESIZED_so-in_8":-1.001 "!HYPOTHESIZED_SS#ABYSS-TYPE_28":-0.901 "!HYPOTHESIZED_people-nn_0":-1.001 "!HYPOTHESIZED_be-vb_7":-1.001 "!HYPOTHESIZED_pump-vb_11":-1.001 "!HYPOTHESIZED_go-vb_3":-1.001 "!HYPOTHESIZED_TS#POVERTY_25":-0.451 "!HYPOTHESIZED_goal-nn_17":-1.001 "!HYPOTHESIZED_S#ABYSS_27":-0.901 "!HYPOTHESIZED_not_9":-1.001 "!HYPOTHESIZED_be-vb_15":-1.001 
+</vector>
+<statistics>
+<time total="0.0284529" prepare="0.0272839" ilp="0.00116897" />
+<ilp solution="Optimal" variables="105" constraints="94" />
+<search-space literals="29" axiom="9" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">people-nn(e36,x10):0:1.00</literal>
+<literal id="1" type="2" active="yes">get-vb(x13,x1,x14,u35):1:1.00</literal>
+<literal id="2" type="2" active="yes">work-vb(x14,x10,u33,u34):2:1.00</literal>
+<literal id="3" type="2" active="yes">go-vb(x11,x1,u31,u32):3:1.00</literal>
+<literal id="4" type="2" active="yes">to-in(e30,x11,x10):4:1.00</literal>
+<literal id="5" type="2" active="yes">thing(e29,x10):5:1.00</literal>
+<literal id="6" type="2" active="yes">empower-vb(x9,x1,x10,u28):6:1.00</literal>
+<literal id="7" type="2" active="yes">be-vb(x2,x1,x13,u27):7:1.00</literal>
+<unification l1="7" l2="15" unifier="" active="no" />
+<literal id="8" type="2" active="yes">so-in(e26,x2):8:1.00</literal>
+<unification l1="8" l2="16" unifier="" active="no" />
+<literal id="9" type="2" active="yes">not(e18,x4):9:1.00</literal>
+<literal id="10" type="2" active="yes">money-nn(e25,x8):10:1.00</literal>
+<literal id="11" type="2" active="yes">pump-vb(x7,x1,x8,u24):11:1.00</literal>
+<literal id="12" type="2" active="yes">poverty-nn(e23,x6):12:1.00</literal>
+<literal id="13" type="2" active="yes">of-in(e22,x0,x6):13:1.00</literal>
+<literal id="14" type="2" active="yes">into-in(e21,x7,x0):14:1.00</literal>
+<literal id="15" type="2" active="yes">be-vb(x4,x1,x7,u20):15:1.00</literal>
+<unification l1="15" l2="7" unifier="" active="no" />
+<literal id="16" type="2" active="yes">so-in(e19,x4):16:1.00</literal>
+<unification l1="16" l2="8" unifier="" active="no" />
+<literal id="17" type="2" active="yes">goal-nn(e17,x1):17:1.00</literal>
+<literal id="18" type="2" active="yes">black-adj(e16,x0):18:1.00</literal>
+<literal id="19" type="2" active="yes">hole-nn(e15,x0):19:1.00</literal>
+<literal id="20" type="2" active="yes">!=(e26,e19):20:1.00</literal>
+<literal id="21" type="2" active="yes">!=(x2,x4):21:1.00</literal>
+<literal id="22" type="2" active="yes">!=(e26,e19):22:1.00</literal>
+<literal id="23" type="3" active="yes">TS#WEALTH(x8):23:0.45</literal>
+<literal id="24" type="3" active="yes">T#ECONOMIC-INEQUALITY(_6):24:0.45</literal>
+<unification l1="24" l2="26" unifier="_6=_7" active="yes" />
+<literal id="25" type="3" active="yes">TS#POVERTY(x6):25:0.45</literal>
+<literal id="26" type="3" active="yes">T#ECONOMIC-INEQUALITY(_7):26:0.45</literal>
+<unification l1="26" l2="24" unifier="_6=_7" active="yes" />
+<literal id="27" type="3" active="yes">S#ABYSS(x0):27:0.90</literal>
+<literal id="28" type="3" active="yes">SS#ABYSS-TYPE(x0):28:0.90</literal>
+<explanation name="poverty" active="yes" axiom="">25 ^ 26 => 12</explanation>
+<explanation name="black-hole" active="yes" axiom="">27 ^ 28 => 18</explanation>
+<explanation name="black-hole" active="yes" axiom="">27 ^ 28 => 19</explanation>
+<explanation name="money" active="yes" axiom="">23 ^ 24 => 10</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="8">
+<observed size="22" domain_size="0">
+subset_of(e29,x1,x9) ^ tired-adj(e28,x8) ^ equal(e27,x8,x7) ^ good-adj(e26,x6) ^ money-nn(e25,x6) ^ watch-vb(x5,x7,x6,u24) ^ subset_of(e23,x8,x9) ^ throw-vb(x4,u21,x9,u22) ^ after-in(e20,x4) ^ poverty-nn(e19,x2) ^ of-in(e18,x3,x2) ^ remediation-nn(e17,x3) ^ of-in(e16,x0,x3) ^ into-in(e15,x4,x0) ^ bad-adj(e14,x9) ^ sick-nn(e12,x1) ^ nam(e13,x1) ^ black-adj(e11,x0) ^ hole-nn(e10,x0) ^ !=(e12,e13) ^ !=(e18,e16) ^ !=(e29,e23)
+</observed>
+<hypothesis score="-21.178">
+subset_of(e29,x1,x9) ^ tired-adj(e28,x8) ^ equal(e27,x8,x7) ^ good-adj(e26,x6) ^ money-nn(e25,x6) ^ watch-vb(x5,x7,x6,u24) ^ subset_of(e23,x8,x9) ^ throw-vb(x4,u21,x9,u22) ^ after-in(e20,x4) ^ poverty-nn(e19,x2) ^ of-in(e18,x3,x2) ^ remediation-nn(e17,x3) ^ of-in(e16,x0,x3) ^ into-in(e15,x4,x0) ^ bad-adj(e14,x9) ^ sick-nn(e12,x1) ^ nam(e13,x1) ^ black-adj(e11,x0) ^ hole-nn(e10,x0) ^ !=(e12,e13) ^ !=(e18,e16) ^ !=(e29,e23) ^ TS#WEALTH(x6) ^ T#ECONOMIC-INEQUALITY(_8) ^ TS#POVERTY(x2) ^ T#ECONOMIC-INEQUALITY(_9) ^ S#ABYSS(x0) ^ SS#ABYSS-TYPE(x0) ^ =(_8,_9)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_remediation-nn_11":-1.001 "!HYPOTHESIZED_poverty-nn_9":-1.001 "!EXPLAINED_hole-nn_18":1 "!HYPOTHESIZED_after-in_8":-1.001 "!HYPOTHESIZED_hole-nn_18":-1.001 "!HYPOTHESIZED_of-in_10":-1.001 "!HYPOTHESIZED_nam_16":-1.001 "!HYPOTHESIZED_watch-vb_5":-1.001 "!EXPLAINED_money-nn_4":1 "!HYPOTHESIZED_bad-adj_14":-1.001 "!HYPOTHESIZED_of-in_12":-1.001 "!HYPOTHESIZED_throw-vb_7":-1.001 "!HYPOTHESIZED_subset_of_6":-1.001 "!HYPOTHESIZED_into-in_13":-1.001 "!HYPOTHESIZED_subset_of_0":-1.001 "!HYPOTHESIZED_money-nn_4":-1.001 "!HYPOTHESIZED_good-adj_3":-1.001 "!HYPOTHESIZED_!=_20":-1.001 "!HYPOTHESIZED_!=_21":-1.001 "!HYPOTHESIZED_!=_19":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_25":-0.451 "!HYPOTHESIZED_equal_2":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_23":-0.451 "!HYPOTHESIZED_SS#ABYSS-TYPE_27":-0.901 "!HYPOTHESIZED_black-adj_17":-1.001 "!HYPOTHESIZED_TS#WEALTH_22":-0.451 "!EXPLAINED_black-adj_17":1 "!EXPLAINED_T#ECONOMIC-INEQUALITY_25":0.45 "!EXPLAINED_poverty-nn_9":1 "!HYPOTHESIZED_tired-adj_1":-1.001 "!HYPOTHESIZED_TS#POVERTY_24":-0.451 "!HYPOTHESIZED_S#ABYSS_26":-0.901 "!HYPOTHESIZED_sick-nn_15":-1.001 
+</vector>
+<statistics>
+<time total="0.0291519" prepare="0.0274029" ilp="0.00174904" />
+<ilp solution="Optimal" variables="105" constraints="95" />
+<search-space literals="28" axiom="7" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">subset_of(e29,x1,x9):0:1.00</literal>
+<unification l1="0" l2="6" unifier="" active="no" />
+<literal id="1" type="2" active="yes">tired-adj(e28,x8):1:1.00</literal>
+<literal id="2" type="2" active="yes">equal(e27,x8,x7):2:1.00</literal>
+<literal id="3" type="2" active="yes">good-adj(e26,x6):3:1.00</literal>
+<literal id="4" type="2" active="yes">money-nn(e25,x6):4:1.00</literal>
+<literal id="5" type="2" active="yes">watch-vb(x5,x7,x6,u24):5:1.00</literal>
+<literal id="6" type="2" active="yes">subset_of(e23,x8,x9):6:1.00</literal>
+<unification l1="6" l2="0" unifier="" active="no" />
+<literal id="7" type="2" active="yes">throw-vb(x4,u21,x9,u22):7:1.00</literal>
+<literal id="8" type="2" active="yes">after-in(e20,x4):8:1.00</literal>
+<literal id="9" type="2" active="yes">poverty-nn(e19,x2):9:1.00</literal>
+<literal id="10" type="2" active="yes">of-in(e18,x3,x2):10:1.00</literal>
+<unification l1="10" l2="12" unifier="" active="no" />
+<literal id="11" type="2" active="yes">remediation-nn(e17,x3):11:1.00</literal>
+<literal id="12" type="2" active="yes">of-in(e16,x0,x3):12:1.00</literal>
+<unification l1="12" l2="10" unifier="" active="no" />
+<literal id="13" type="2" active="yes">into-in(e15,x4,x0):13:1.00</literal>
+<literal id="14" type="2" active="yes">bad-adj(e14,x9):14:1.00</literal>
+<literal id="15" type="2" active="yes">sick-nn(e12,x1):15:1.00</literal>
+<literal id="16" type="2" active="yes">nam(e13,x1):16:1.00</literal>
+<literal id="17" type="2" active="yes">black-adj(e11,x0):17:1.00</literal>
+<literal id="18" type="2" active="yes">hole-nn(e10,x0):18:1.00</literal>
+<literal id="19" type="2" active="yes">!=(e12,e13):19:1.00</literal>
+<literal id="20" type="2" active="yes">!=(e18,e16):20:1.00</literal>
+<literal id="21" type="2" active="yes">!=(e29,e23):21:1.00</literal>
+<literal id="22" type="3" active="yes">TS#WEALTH(x6):22:0.45</literal>
+<literal id="23" type="3" active="yes">T#ECONOMIC-INEQUALITY(_8):23:0.45</literal>
+<unification l1="23" l2="25" unifier="_8=_9" active="yes" />
+<literal id="24" type="3" active="yes">TS#POVERTY(x2):24:0.45</literal>
+<literal id="25" type="3" active="yes">T#ECONOMIC-INEQUALITY(_9):25:0.45</literal>
+<unification l1="25" l2="23" unifier="_8=_9" active="yes" />
+<literal id="26" type="3" active="yes">S#ABYSS(x0):26:0.90</literal>
+<literal id="27" type="3" active="yes">SS#ABYSS-TYPE(x0):27:0.90</literal>
+<explanation name="money" active="yes" axiom="">22 ^ 23 => 4</explanation>
+<explanation name="black-hole" active="yes" axiom="">26 ^ 27 => 17</explanation>
+<explanation name="black-hole" active="yes" axiom="">26 ^ 27 => 18</explanation>
+<explanation name="poverty" active="yes" axiom="">24 ^ 25 => 9</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="9">
+<observed size="33" domain_size="0">
+billion-nn(e48,x10) ^ spend-vb(x9,u46,x10,u47) ^ while-in(e45,x9,x14) ^ of-in(e44,x2,x11) ^ fellow-nn(e43,x1) ^ of-in(e42,x2,x1) ^ human-nn(e41,x2) ^ more-adj(e40,x15) ^ more-adj(e39,x15) ^ person(e38,x11) ^ of-in(e37,x15,x2) ^ sink-vb(x14,x15,u35,u36) ^ deeper-adj(e34,x15) ^ ever-rb(e33,x15) ^ poverty-nn(e32,x12) ^ subset_of(e31,x12,x13) ^ despair-nn(e30,x11) ^ subset_of(e29,x11,x13) ^ of-in(e28,x0,x13) ^ into-in(e27,x14,x0) ^ surveillance-nn(e26,x7) ^ law-nn(e25,x4) ^ of-in(e24,x5,x4) ^ enforcement-nn(e23,x5) ^ subset_of(e22,x5,x6) ^ war-nn(e21,x3) ^ subset_of(e20,x3,x6) ^ rel(e19,x7,x6) ^ on-in(e18,x9,x7) ^ black-adj(e17,x0) ^ hole-nn(e16,x0) ^ !=(e44,e42,e37,e28,e24) ^ !=(e31,e29,e22,e20)
+</observed>
+<hypothesis score="-31.3998">
+billion-nn(e48,x10) ^ spend-vb(x9,u46,x10,u47) ^ while-in(e45,x9,x14) ^ of-in(e44,x2,x11) ^ fellow-nn(e43,x1) ^ of-in(e42,x2,x1) ^ human-nn(e41,x2) ^ more-adj(e40,x15) ^ more-adj(e39,x15) ^ person(e38,x11) ^ of-in(e37,x15,x2) ^ sink-vb(x14,x15,u35,u36) ^ deeper-adj(e34,x15) ^ ever-rb(e33,x15) ^ poverty-nn(e32,x12) ^ subset_of(e31,x12,x13) ^ despair-nn(e30,x11) ^ subset_of(e29,x11,x13) ^ of-in(e28,x0,x13) ^ into-in(e27,x14,x0) ^ surveillance-nn(e26,x7) ^ law-nn(e25,x4) ^ of-in(e24,x5,x4) ^ enforcement-nn(e23,x5) ^ subset_of(e22,x5,x6) ^ war-nn(e21,x3) ^ subset_of(e20,x3,x6) ^ rel(e19,x7,x6) ^ on-in(e18,x9,x7) ^ black-adj(e17,x0) ^ hole-nn(e16,x0) ^ !=(e44,e42,e37,e28,e24) ^ !=(e31,e29,e22,e20) ^ S#LOW-POINT(u35) ^ SS#MOVEMENT-DOWNWARD(x14) ^ R#MOVE-D-PATIENT(x15,x14) ^ TS#POVERTY(x12) ^ T#ECONOMIC-INEQUALITY(_10) ^ S#BATTLE(x3) ^ SS#FIGHT(x3) ^ S#ABYSS(x0) ^ SS#ABYSS-TYPE(x0) ^ I#MOVEMENT-DOWNWARD(x14) ^ I#FIGHT(x3) ^ M#MOVE-DOWN(x14) ^ M#MOVE-D-PATIENT(x15,x14) ^ M#CAUSE-NOT-EXIST(_11) ^ M#CAUSING-THING_E(x3,_11) ^ =(e40,e39)
+</hypothesis>
+<vector score="0">
+"!EXPLAINED_more-adj_8":1 "!HYPOTHESIZED_!=_32":-1.001 "!EXPLAINED_war-nn_25":1 "!HYPOTHESIZED_black-adj_29":-1.001 "!HYPOTHESIZED_on-in_28":-1.001 "!HYPOTHESIZED_more-adj_8":-1.001 "!HYPOTHESIZED_deeper-adj_12":-1.001 "!HYPOTHESIZED_I#MOVEMENT-DOWNWARD_42":-0.271 "!HYPOTHESIZED_rel_27":-1.001 "!EXPLAINED_SS#FIGHT_39":0.45 "!EXPLAINED_SS#MOVEMENT-DOWNWARD_34":0.3 "!HYPOTHESIZED_sink-vb_11":-1.001 "!EXPLAINED_I#FIGHT_43":0.405 "!HYPOTHESIZED_poverty-nn_14":-1.001 "!HYPOTHESIZED_fellow-nn_4":-1.001 "!HYPOTHESIZED_of-in_10":-1.001 "!HYPOTHESIZED_subset_of_15":-1.001 "!HYPOTHESIZED_law-nn_21":-1.001 "!HYPOTHESIZED_despair-nn_16":-1.001 "!HYPOTHESIZED_S#BATTLE_38":-0.451 "!HYPOTHESIZED_surveillance-nn_20":-1.001 "!HYPOTHESIZED_S#LOW-POINT_33":-0.301 "!HYPOTHESIZED_more-adj_7":-1.001 "!HYPOTHESIZED_M#CAUSING-THING_E_47":-0.1954 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_46":-0.1954 "!HYPOTHESIZED_of-in_5":-1.001 "!HYPOTHESIZED_of-in_18":-1.001 "!HYPOTHESIZED_!=_31":-1.001 "!EXPLAINED_sink-vb_11":1 "!HYPOTHESIZED_spend-vb_1":-1.001 "!HYPOTHESIZED_war-nn_25":-1.001 "!EXPLAINED_R#MOVE-D-PATIENT_35":0.3 "!HYPOTHESIZED_enforcement-nn_23":-1.001 "!HYPOTHESIZED_into-in_19":-1.001 "!HYPOTHESIZED_SS#MOVEMENT-DOWNWARD_34":-0.301 "!HYPOTHESIZED_M#MOVE-D-PATIENT_45":-0.2575 "!HYPOTHESIZED_SS#FIGHT_39":-0.451 "!HYPOTHESIZED_subset_of_26":-1.001 "!HYPOTHESIZED_S#ABYSS_40":-0.901 "!HYPOTHESIZED_of-in_3":-1.001 "!HYPOTHESIZED_of-in_22":-1.001 "!HYPOTHESIZED_R#MOVE-D-PATIENT_35":-0.301 "!HYPOTHESIZED_I#FIGHT_43":-0.406 "!EXPLAINED_I#MOVEMENT-DOWNWARD_42":0.27 "!HYPOTHESIZED_hole-nn_30":-1.001 "!HYPOTHESIZED_SS#ABYSS-TYPE_41":-0.901 "!HYPOTHESIZED_human-nn_6":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_37":-0.451 "!HYPOTHESIZED_TS#POVERTY_36":-0.451 "!HYPOTHESIZED_person_9":-1.001 "!HYPOTHESIZED_ever-rb_13":-1.001 "!EXPLAINED_hole-nn_30":1 "!HYPOTHESIZED_subset_of_24":-1.001 "!HYPOTHESIZED_billion-nn_0":-1.001 "!HYPOTHESIZED_M#MOVE-DOWN_44":-0.2575 "!EXPLAINED_black-adj_29":1 "!EXPLAINED_poverty-nn_14":1 "!HYPOTHESIZED_subset_of_17":-1.001 "!HYPOTHESIZED_while-in_2":-1.001 
+</vector>
+<statistics>
+<time total="0.135986" prepare="0.12772" ilp="0.00826597" />
+<ilp solution="Optimal" variables="256" constraints="736" />
+<search-space literals="48" axiom="19" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">billion-nn(e48,x10):0:1.00</literal>
+<literal id="1" type="2" active="yes">spend-vb(x9,u46,x10,u47):1:1.00</literal>
+<literal id="2" type="2" active="yes">while-in(e45,x9,x14):2:1.00</literal>
+<literal id="3" type="2" active="yes">of-in(e44,x2,x11):3:1.00</literal>
+<unification l1="3" l2="5" unifier="" active="no" />
+<unification l1="3" l2="10" unifier="" active="no" />
+<unification l1="3" l2="18" unifier="" active="no" />
+<unification l1="3" l2="22" unifier="" active="no" />
+<literal id="4" type="2" active="yes">fellow-nn(e43,x1):4:1.00</literal>
+<literal id="5" type="2" active="yes">of-in(e42,x2,x1):5:1.00</literal>
+<unification l1="5" l2="3" unifier="" active="no" />
+<unification l1="5" l2="10" unifier="" active="no" />
+<unification l1="5" l2="18" unifier="" active="no" />
+<unification l1="5" l2="22" unifier="" active="no" />
+<literal id="6" type="2" active="yes">human-nn(e41,x2):6:1.00</literal>
+<literal id="7" type="2" active="yes">more-adj(e40,x15):7:1.00</literal>
+<unification l1="7" l2="8" unifier="e40=e39" active="yes" />
+<literal id="8" type="2" active="yes">more-adj(e39,x15):8:1.00</literal>
+<unification l1="8" l2="7" unifier="e40=e39" active="yes" />
+<literal id="9" type="2" active="yes">person(e38,x11):9:1.00</literal>
+<literal id="10" type="2" active="yes">of-in(e37,x15,x2):10:1.00</literal>
+<unification l1="10" l2="3" unifier="" active="no" />
+<unification l1="10" l2="5" unifier="" active="no" />
+<unification l1="10" l2="18" unifier="" active="no" />
+<unification l1="10" l2="22" unifier="" active="no" />
+<literal id="11" type="2" active="yes">sink-vb(x14,x15,u35,u36):11:1.00</literal>
+<literal id="12" type="2" active="yes">deeper-adj(e34,x15):12:1.00</literal>
+<literal id="13" type="2" active="yes">ever-rb(e33,x15):13:1.00</literal>
+<literal id="14" type="2" active="yes">poverty-nn(e32,x12):14:1.00</literal>
+<literal id="15" type="2" active="yes">subset_of(e31,x12,x13):15:1.00</literal>
+<unification l1="15" l2="17" unifier="" active="no" />
+<unification l1="15" l2="24" unifier="" active="no" />
+<unification l1="15" l2="26" unifier="" active="no" />
+<literal id="16" type="2" active="yes">despair-nn(e30,x11):16:1.00</literal>
+<literal id="17" type="2" active="yes">subset_of(e29,x11,x13):17:1.00</literal>
+<unification l1="17" l2="15" unifier="" active="no" />
+<unification l1="17" l2="24" unifier="" active="no" />
+<unification l1="17" l2="26" unifier="" active="no" />
+<literal id="18" type="2" active="yes">of-in(e28,x0,x13):18:1.00</literal>
+<unification l1="18" l2="3" unifier="" active="no" />
+<unification l1="18" l2="5" unifier="" active="no" />
+<unification l1="18" l2="10" unifier="" active="no" />
+<unification l1="18" l2="22" unifier="" active="no" />
+<literal id="19" type="2" active="yes">into-in(e27,x14,x0):19:1.00</literal>
+<literal id="20" type="2" active="yes">surveillance-nn(e26,x7):20:1.00</literal>
+<literal id="21" type="2" active="yes">law-nn(e25,x4):21:1.00</literal>
+<literal id="22" type="2" active="yes">of-in(e24,x5,x4):22:1.00</literal>
+<unification l1="22" l2="3" unifier="" active="no" />
+<unification l1="22" l2="5" unifier="" active="no" />
+<unification l1="22" l2="10" unifier="" active="no" />
+<unification l1="22" l2="18" unifier="" active="no" />
+<literal id="23" type="2" active="yes">enforcement-nn(e23,x5):23:1.00</literal>
+<literal id="24" type="2" active="yes">subset_of(e22,x5,x6):24:1.00</literal>
+<unification l1="24" l2="15" unifier="" active="no" />
+<unification l1="24" l2="17" unifier="" active="no" />
+<unification l1="24" l2="26" unifier="" active="no" />
+<literal id="25" type="2" active="yes">war-nn(e21,x3):25:1.00</literal>
+<literal id="26" type="2" active="yes">subset_of(e20,x3,x6):26:1.00</literal>
+<unification l1="26" l2="15" unifier="" active="no" />
+<unification l1="26" l2="17" unifier="" active="no" />
+<unification l1="26" l2="24" unifier="" active="no" />
+<literal id="27" type="2" active="yes">rel(e19,x7,x6):27:1.00</literal>
+<literal id="28" type="2" active="yes">on-in(e18,x9,x7):28:1.00</literal>
+<literal id="29" type="2" active="yes">black-adj(e17,x0):29:1.00</literal>
+<literal id="30" type="2" active="yes">hole-nn(e16,x0):30:1.00</literal>
+<literal id="31" type="2" active="yes">!=(e44,e42,e37,e28,e24):31:1.00</literal>
+<literal id="32" type="2" active="yes">!=(e31,e29,e22,e20):32:1.00</literal>
+<literal id="33" type="3" active="yes">S#LOW-POINT(u35):33:0.30</literal>
+<literal id="34" type="3" active="yes">SS#MOVEMENT-DOWNWARD(x14):34:0.30</literal>
+<literal id="35" type="3" active="yes">R#MOVE-D-PATIENT(x15,x14):35:0.30</literal>
+<literal id="36" type="3" active="yes">TS#POVERTY(x12):36:0.45</literal>
+<literal id="37" type="3" active="yes">T#ECONOMIC-INEQUALITY(_10):37:0.45</literal>
+<literal id="38" type="3" active="yes">S#BATTLE(x3):38:0.45</literal>
+<literal id="39" type="3" active="yes">SS#FIGHT(x3):39:0.45</literal>
+<literal id="40" type="3" active="yes">S#ABYSS(x0):40:0.90</literal>
+<literal id="41" type="3" active="yes">SS#ABYSS-TYPE(x0):41:0.90</literal>
+<literal id="42" type="3" active="yes">I#MOVEMENT-DOWNWARD(x14):42:0.27</literal>
+<literal id="43" type="3" active="yes">I#FIGHT(x3):43:0.41</literal>
+<literal id="44" type="3" active="yes">M#MOVE-DOWN(x14):44:0.26</literal>
+<literal id="45" type="3" active="yes">M#MOVE-D-PATIENT(x15,x14):45:0.26</literal>
+<literal id="46" type="3" active="yes">M#CAUSE-NOT-EXIST(_11):46:0.19</literal>
+<literal id="47" type="3" active="yes">M#CAUSING-THING_E(x3,_11):47:0.19</literal>
+<explanation name="sink" active="yes" axiom="">33 ^ 34 ^ 35 => 11</explanation>
+<explanation name="movement-downwardmap" active="yes" axiom="">42 => 34</explanation>
+<explanation name="movement-downward" active="yes" axiom="">44 ^ 45 => 35</explanation>
+<explanation name="war" active="yes" axiom="">38 ^ 39 => 25</explanation>
+<explanation name="poverty" active="yes" axiom="">36 ^ 37 => 14</explanation>
+<explanation name="fightmap" active="yes" axiom="">43 => 39</explanation>
+<explanation name="black-hole" active="yes" axiom="">40 ^ 41 => 29</explanation>
+<explanation name="black-hole" active="yes" axiom="">40 ^ 41 => 30</explanation>
+<explanation name="movement-downward" active="yes" axiom="">44 ^ 45 => 42</explanation>
+<explanation name="fight4" active="yes" axiom="">46 ^ 47 => 43</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="10">
+<observed size="44" domain_size="0">
+imp(e24,e25,x6) ^ thing(e56,x4) ^ care-vb(x6,x4,u54,u55) ^ about-rb(e53,x6,x1) ^ put-vb(x5,x1,x0,u52) ^ of-in(e51,x5,x0) ^ deep-adj(e50,x2) ^ dark-nn(e49,x4) ^ of-in(e48,x2,x4) ^ in-in(e47,x5,x2) ^ so-in(e46,x5,x7) ^ black-adj(e45,x2) ^ hole-nn(e44,x2) ^ see-vb(x10,x1,x11,u43) ^ or(e29,e36,e42) ^ poverty-nn(e42,x19) ^ subset_of(e41,x19,x20) ^ marginalization-nn(e40,x18) ^ subset_of(e39,x18,x20) ^ of-in(e38,x2,x20) ^ equal(e37,x2,x2) ^ grave-nn(e36,x17) ^ poverty-nn(e35,x15) ^ subset_of(e34,x15,x16) ^ marginalization-nn(e33,x14) ^ subset_of(e32,x14,x16) ^ of-in(e31,x17,x16) ^ equal(e30,x2,x17) ^ —-vb(x11,x0,e29,u28) ^ have-vb(x7,x1,x10,u27) ^ n’t-rb(e26,x7) ^ thing(e25,x1) ^ all-nn(e22,x0) ^ nam(e23,x0) ^ person(e21,x0) ^ !=(e22,e23) ^ !=(e37,e30) ^ !=(e40,e33) ^ !=(e38,e31) ^ !=(e42,e35) ^ !=(e51,e48,e38,e31) ^ !=(e37,e30) ^ !=(e41,e39,e34,e32) ^ !=(e56,e25)
+</observed>
+<hypothesis score="-41.753">
+imp(e24,e25,x6) ^ thing(e56,x4) ^ care-vb(x6,x4,u54,u55) ^ about-rb(e53,x6,x1) ^ put-vb(x5,x1,x0,u52) ^ of-in(e51,x5,x0) ^ deep-adj(e50,x2) ^ dark-nn(e49,x4) ^ of-in(e48,x2,x4) ^ in-in(e47,x5,x2) ^ so-in(e46,x5,x7) ^ black-adj(e45,x2) ^ hole-nn(e44,x2) ^ see-vb(x10,x1,x11,u43) ^ or(e29,e36,e42) ^ poverty-nn(e42,x19) ^ subset_of(e41,x19,x20) ^ marginalization-nn(e40,x18) ^ subset_of(e39,x18,x20) ^ of-in(e38,x2,x20) ^ equal(e37,x2,x2) ^ grave-nn(e36,x17) ^ poverty-nn(e35,x15) ^ subset_of(e34,x15,x16) ^ marginalization-nn(e33,x14) ^ subset_of(e32,x14,x16) ^ of-in(e31,x17,x16) ^ equal(e30,x2,x17) ^ —-vb(x11,x0,e29,u28) ^ have-vb(x7,x1,x10,u27) ^ n’t-rb(e26,x7) ^ thing(e25,x1) ^ all-nn(e22,x0) ^ nam(e23,x0) ^ person(e21,x0) ^ !=(e22,e23) ^ !=(e37,e30) ^ !=(e40,e33) ^ !=(e38,e31) ^ !=(e42,e35) ^ !=(e51,e48,e38,e31) ^ !=(e37,e30) ^ !=(e41,e39,e34,e32) ^ !=(e56,e25) ^ S#ABYSS(x2) ^ SS#ABYSS-DEPTH(e50) ^ R#ABYSS-THEME(x2,e50) ^ S#ABYSS(x2) ^ SS#ABYSS-TYPE(x2) ^ TS#POVERTY(x19) ^ T#ECONOMIC-INEQUALITY(_12) ^ TS#POVERTY(x15) ^ T#ECONOMIC-INEQUALITY(_13) ^ =(_12,_13) ^ =(x19,x15)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_so-in_10":-1.001 "!HYPOTHESIZED_marginalization-nn_17":-1.001 "!HYPOTHESIZED_!=_35":-1.001 "!HYPOTHESIZED_marginalization-nn_24":-1.001 "!HYPOTHESIZED_in-in_9":-1.001 "!HYPOTHESIZED_equal_20":-1.001 "!EXPLAINED_poverty-nn_15":1 "!HYPOTHESIZED_of-in_26":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_52":0.45 "!HYPOTHESIZED_—-vb_28":-1.001 "!HYPOTHESIZED_hole-nn_12":-1.001 "!HYPOTHESIZED_thing_1":-1.001 "!HYPOTHESIZED_S#ABYSS_44":-0.301 "!HYPOTHESIZED_of-in_19":-1.001 "!EXPLAINED_TS#POVERTY_51":0.45 "!HYPOTHESIZED_put-vb_4":-1.001 "!HYPOTHESIZED_dark-nn_7":-1.001 "!HYPOTHESIZED_TS#POVERTY_51":-0.451 "!HYPOTHESIZED_nam_33":-1.001 "!HYPOTHESIZED_poverty-nn_15":-1.001 "!HYPOTHESIZED_S#ABYSS_47":-0.901 "!HYPOTHESIZED_of-in_5":-1.001 "!HYPOTHESIZED_poverty-nn_22":-1.001 "!HYPOTHESIZED_subset_of_18":-1.001 "!EXPLAINED_deep-adj_6":1 "!HYPOTHESIZED_about-rb_3":-1.001 "!HYPOTHESIZED_!=_38":-1.001 "!HYPOTHESIZED_black-adj_11":-1.001 "!HYPOTHESIZED_!=_43":-1.001 "!EXPLAINED_hole-nn_12":1 "!HYPOTHESIZED_care-vb_2":-1.001 "!HYPOTHESIZED_have-vb_29":-1.001 "!HYPOTHESIZED_!=_36":-1.001 "!HYPOTHESIZED_SS#ABYSS-DEPTH_45":-0.301 "!HYPOTHESIZED_!=_39":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_50":-0.451 "!HYPOTHESIZED_!=_42":-1.001 "!HYPOTHESIZED_deep-adj_6":-1.001 "!EXPLAINED_S#ABYSS_47":0.9 "!HYPOTHESIZED_grave-nn_21":-1.001 "!HYPOTHESIZED_n’t-rb_30":-1.001 "!HYPOTHESIZED_!=_37":-1.001 "!HYPOTHESIZED_subset_of_25":-1.001 "!HYPOTHESIZED_!=_41":-1.001 "!HYPOTHESIZED_equal_27":-1.001 "!HYPOTHESIZED_TS#POVERTY_49":-0.451 "!HYPOTHESIZED_SS#ABYSS-TYPE_48":-0.901 "!HYPOTHESIZED_person_34":-1.001 "!HYPOTHESIZED_or_14":-1.001 "!HYPOTHESIZED_subset_of_16":-1.001 "!EXPLAINED_black-adj_11":1 "!HYPOTHESIZED_all-nn_32":-1.001 "!EXPLAINED_poverty-nn_22":1 "!HYPOTHESIZED_subset_of_23":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_52":-0.451 "!HYPOTHESIZED_R#ABYSS-THEME_46":-0.301 "!HYPOTHESIZED_see-vb_13":-1.001 "!HYPOTHESIZED_!=_40":-1.001 "!HYPOTHESIZED_thing_31":-1.001 "!HYPOTHESIZED_imp_0":-1.001 "!HYPOTHESIZED_of-in_8":-1.001 
+</vector>
+<statistics>
+<time total="0.0606251" prepare="0.0539811" ilp="0.00664401" />
+<ilp solution="Optimal" variables="236" constraints="257" />
+<search-space literals="53" axiom="7" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">imp(e24,e25,x6):0:1.00</literal>
+<literal id="1" type="2" active="yes">thing(e56,x4):1:1.00</literal>
+<unification l1="1" l2="31" unifier="" active="no" />
+<literal id="2" type="2" active="yes">care-vb(x6,x4,u54,u55):2:1.00</literal>
+<literal id="3" type="2" active="yes">about-rb(e53,x6,x1):3:1.00</literal>
+<literal id="4" type="2" active="yes">put-vb(x5,x1,x0,u52):4:1.00</literal>
+<literal id="5" type="2" active="yes">of-in(e51,x5,x0):5:1.00</literal>
+<unification l1="5" l2="8" unifier="" active="no" />
+<unification l1="5" l2="19" unifier="" active="no" />
+<unification l1="5" l2="26" unifier="" active="no" />
+<literal id="6" type="2" active="yes">deep-adj(e50,x2):6:1.00</literal>
+<literal id="7" type="2" active="yes">dark-nn(e49,x4):7:1.00</literal>
+<literal id="8" type="2" active="yes">of-in(e48,x2,x4):8:1.00</literal>
+<unification l1="8" l2="5" unifier="" active="no" />
+<unification l1="8" l2="19" unifier="" active="no" />
+<unification l1="8" l2="26" unifier="" active="no" />
+<literal id="9" type="2" active="yes">in-in(e47,x5,x2):9:1.00</literal>
+<literal id="10" type="2" active="yes">so-in(e46,x5,x7):10:1.00</literal>
+<literal id="11" type="2" active="yes">black-adj(e45,x2):11:1.00</literal>
+<literal id="12" type="2" active="yes">hole-nn(e44,x2):12:1.00</literal>
+<literal id="13" type="2" active="yes">see-vb(x10,x1,x11,u43):13:1.00</literal>
+<literal id="14" type="2" active="yes">or(e29,e36,e42):14:1.00</literal>
+<literal id="15" type="2" active="yes">poverty-nn(e42,x19):15:1.00</literal>
+<unification l1="15" l2="22" unifier="x15=x19" active="no" />
+<literal id="16" type="2" active="yes">subset_of(e41,x19,x20):16:1.00</literal>
+<unification l1="16" l2="18" unifier="" active="no" />
+<unification l1="16" l2="23" unifier="x15=x19" active="no" />
+<unification l1="16" l2="25" unifier="" active="no" />
+<literal id="17" type="2" active="yes">marginalization-nn(e40,x18):17:1.00</literal>
+<unification l1="17" l2="24" unifier="" active="no" />
+<literal id="18" type="2" active="yes">subset_of(e39,x18,x20):18:1.00</literal>
+<unification l1="18" l2="16" unifier="" active="no" />
+<unification l1="18" l2="23" unifier="" active="no" />
+<unification l1="18" l2="25" unifier="" active="no" />
+<literal id="19" type="2" active="yes">of-in(e38,x2,x20):19:1.00</literal>
+<unification l1="19" l2="5" unifier="" active="no" />
+<unification l1="19" l2="8" unifier="" active="no" />
+<unification l1="19" l2="26" unifier="" active="no" />
+<literal id="20" type="2" active="yes">equal(e37,x2,x2):20:1.00</literal>
+<unification l1="20" l2="27" unifier="" active="no" />
+<literal id="21" type="2" active="yes">grave-nn(e36,x17):21:1.00</literal>
+<literal id="22" type="2" active="yes">poverty-nn(e35,x15):22:1.00</literal>
+<unification l1="22" l2="15" unifier="x15=x19" active="no" />
+<literal id="23" type="2" active="yes">subset_of(e34,x15,x16):23:1.00</literal>
+<unification l1="23" l2="16" unifier="x15=x19" active="no" />
+<unification l1="23" l2="18" unifier="" active="no" />
+<unification l1="23" l2="25" unifier="" active="no" />
+<literal id="24" type="2" active="yes">marginalization-nn(e33,x14):24:1.00</literal>
+<unification l1="24" l2="17" unifier="" active="no" />
+<literal id="25" type="2" active="yes">subset_of(e32,x14,x16):25:1.00</literal>
+<unification l1="25" l2="16" unifier="" active="no" />
+<unification l1="25" l2="18" unifier="" active="no" />
+<unification l1="25" l2="23" unifier="" active="no" />
+<literal id="26" type="2" active="yes">of-in(e31,x17,x16):26:1.00</literal>
+<unification l1="26" l2="5" unifier="" active="no" />
+<unification l1="26" l2="8" unifier="" active="no" />
+<unification l1="26" l2="19" unifier="" active="no" />
+<literal id="27" type="2" active="yes">equal(e30,x2,x17):27:1.00</literal>
+<unification l1="27" l2="20" unifier="" active="no" />
+<literal id="28" type="2" active="yes">—-vb(x11,x0,e29,u28):28:1.00</literal>
+<literal id="29" type="2" active="yes">have-vb(x7,x1,x10,u27):29:1.00</literal>
+<literal id="30" type="2" active="yes">n’t-rb(e26,x7):30:1.00</literal>
+<literal id="31" type="2" active="yes">thing(e25,x1):31:1.00</literal>
+<unification l1="31" l2="1" unifier="" active="no" />
+<literal id="32" type="2" active="yes">all-nn(e22,x0):32:1.00</literal>
+<literal id="33" type="2" active="yes">nam(e23,x0):33:1.00</literal>
+<literal id="34" type="2" active="yes">person(e21,x0):34:1.00</literal>
+<literal id="35" type="2" active="yes">!=(e22,e23):35:1.00</literal>
+<literal id="36" type="2" active="yes">!=(e37,e30):36:1.00</literal>
+<literal id="37" type="2" active="yes">!=(e40,e33):37:1.00</literal>
+<literal id="38" type="2" active="yes">!=(e38,e31):38:1.00</literal>
+<literal id="39" type="2" active="yes">!=(e42,e35):39:1.00</literal>
+<literal id="40" type="2" active="yes">!=(e51,e48,e38,e31):40:1.00</literal>
+<literal id="41" type="2" active="yes">!=(e37,e30):41:1.00</literal>
+<literal id="42" type="2" active="yes">!=(e41,e39,e34,e32):42:1.00</literal>
+<literal id="43" type="2" active="yes">!=(e56,e25):43:1.00</literal>
+<literal id="44" type="3" active="yes">S#ABYSS(x2):44:0.30</literal>
+<unification l1="44" l2="47" unifier="" active="yes" />
+<literal id="45" type="3" active="yes">SS#ABYSS-DEPTH(e50):45:0.30</literal>
+<literal id="46" type="3" active="yes">R#ABYSS-THEME(x2,e50):46:0.30</literal>
+<literal id="47" type="3" active="yes">S#ABYSS(x2):47:0.90</literal>
+<unification l1="47" l2="44" unifier="" active="yes" />
+<literal id="48" type="3" active="yes">SS#ABYSS-TYPE(x2):48:0.90</literal>
+<literal id="49" type="3" active="yes">TS#POVERTY(x19):49:0.45</literal>
+<unification l1="49" l2="51" unifier="x15=x19" active="yes" />
+<literal id="50" type="3" active="yes">T#ECONOMIC-INEQUALITY(_12):50:0.45</literal>
+<unification l1="50" l2="52" unifier="_12=_13" active="yes" />
+<literal id="51" type="3" active="yes">TS#POVERTY(x15):51:0.45</literal>
+<unification l1="51" l2="49" unifier="x15=x19" active="yes" />
+<literal id="52" type="3" active="yes">T#ECONOMIC-INEQUALITY(_13):52:0.45</literal>
+<unification l1="52" l2="50" unifier="_12=_13" active="yes" />
+<explanation name="poverty" active="yes" axiom="">51 ^ 52 => 22</explanation>
+<explanation name="black-hole" active="yes" axiom="">47 ^ 48 => 11</explanation>
+<explanation name="black-hole" active="yes" axiom="">47 ^ 48 => 12</explanation>
+<explanation name="poverty" active="yes" axiom="">49 ^ 50 => 15</explanation>
+<explanation name="deep2" active="yes" axiom="">44 ^ 45 ^ 46 => 6</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="11">
+<observed size="33" domain_size="0">
+person(e43,x4) ^ in-in(e42,x3,x2) ^ couple-vb(x9,u40,x3,u41) ^ increase-vb(x7,x8,u38,u39) ^ cost-nn(e37,x8) ^ gasoline-nn(e36,x6) ^ imp(e33,e34,e35) ^ from-in(e35,x12,x6) ^ thing(e34,x12) ^ imp(e27,e28,e32) ^ bread-nn(e32,x11) ^ to-in(e31,x10,x11) ^ for-in(e30,x8,x10) ^ with-in(e29,x9,x8) ^ thing(e28,x10) ^ push-vb(x5,x3,x1,u26) ^ deeper-rb(e25,x5) ^ even-rb(e24,x5) ^ poverty-nn(e23,x4) ^ of-in(e22,x0,x4) ^ into-in(e21,x5,x0) ^ and(e20,x5) ^ recent-adj(e19,x3) ^ setback-nn(e18,x3) ^ of-in(e17,x2,x4) ^ economy-nn(e16,x2) ^ people-nn(e15,x1) ^ black-adj(e14,x0) ^ hole-nn(e13,x0) ^ !=(e34,e28) ^ !=(e34,e28) ^ !=(e22,e17) ^ !=(e33,e27)
+</observed>
+<hypothesis score="-31.441">
+person(e43,x4) ^ in-in(e42,x3,x2) ^ couple-vb(x9,u40,x3,u41) ^ increase-vb(x7,x8,u38,u39) ^ cost-nn(e37,x8) ^ gasoline-nn(e36,x6) ^ imp(e33,e34,e35) ^ from-in(e35,x12,x6) ^ thing(e34,x12) ^ imp(e27,e28,e32) ^ bread-nn(e32,x11) ^ to-in(e31,x10,x11) ^ for-in(e30,x8,x10) ^ with-in(e29,x9,x8) ^ thing(e28,x10) ^ push-vb(x5,x3,x1,u26) ^ deeper-rb(e25,x5) ^ even-rb(e24,x5) ^ poverty-nn(e23,x4) ^ of-in(e22,x0,x4) ^ into-in(e21,x5,x0) ^ and(e20,x5) ^ recent-adj(e19,x3) ^ setback-nn(e18,x3) ^ of-in(e17,x2,x4) ^ economy-nn(e16,x2) ^ people-nn(e15,x1) ^ black-adj(e14,x0) ^ hole-nn(e13,x0) ^ !=(e34,e28) ^ !=(e34,e28) ^ !=(e22,e17) ^ !=(e33,e27) ^ S#ABYSS(x0) ^ SS#ABYSS-ENTRANCE(x5) ^ R#ABYSS-THEME(x1,x5) ^ R#ABBYSS-CAUSE(x3,x5) ^ TS#POVERTY(x4) ^ T#ECONOMIC-INEQUALITY(_14) ^ S#ABYSS(x0) ^ SS#ABYSS-TYPE(x0)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_hole-nn_28":-1.001 "!HYPOTHESIZED_of-in_19":-1.001 "!HYPOTHESIZED_S#ABYSS_33":-0.401 "!EXPLAINED_S#ABYSS_39":0.9 "!HYPOTHESIZED_SS#ABYSS-ENTRANCE_34":-0.401 "!HYPOTHESIZED_setback-nn_23":-1.001 "!HYPOTHESIZED_cost-nn_4":-1.001 "!EXPLAINED_poverty-nn_18":1 "!HYPOTHESIZED_to-in_11":-1.001 "!HYPOTHESIZED_person_0":-1.001 "!HYPOTHESIZED_in-in_1":-1.001 "!HYPOTHESIZED_SS#ABYSS-TYPE_40":-0.901 "!HYPOTHESIZED_for-in_12":-1.001 "!HYPOTHESIZED_from-in_7":-1.001 "!HYPOTHESIZED_!=_29":-1.001 "!EXPLAINED_black-adj_27":1 "!HYPOTHESIZED_economy-nn_25":-1.001 "!HYPOTHESIZED_and_21":-1.001 "!HYPOTHESIZED_gasoline-nn_5":-1.001 "!HYPOTHESIZED_recent-adj_22":-1.001 "!HYPOTHESIZED_people-nn_26":-1.001 "!HYPOTHESIZED_imp_6":-1.001 "!HYPOTHESIZED_with-in_13":-1.001 "!HYPOTHESIZED_thing_14":-1.001 "!EXPLAINED_hole-nn_28":1 "!HYPOTHESIZED_bread-nn_10":-1.001 "!HYPOTHESIZED_poverty-nn_18":-1.001 "!EXPLAINED_push-vb_15":1 "!HYPOTHESIZED_even-rb_17":-1.001 "!HYPOTHESIZED_increase-vb_3":-1.001 "!HYPOTHESIZED_imp_9":-1.001 "!HYPOTHESIZED_!=_31":-1.001 "!HYPOTHESIZED_R#ABYSS-THEME_35":-0.401 "!HYPOTHESIZED_!=_30":-1.001 "!HYPOTHESIZED_push-vb_15":-1.001 "!HYPOTHESIZED_into-in_20":-1.001 "!HYPOTHESIZED_!=_32":-1.001 "!HYPOTHESIZED_deeper-rb_16":-1.001 "!EXPLAINED_into-in_20":1 "!HYPOTHESIZED_TS#POVERTY_37":-0.451 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_38":-0.451 "!HYPOTHESIZED_S#ABYSS_39":-0.901 "!HYPOTHESIZED_thing_8":-1.001 "!HYPOTHESIZED_of-in_24":-1.001 "!HYPOTHESIZED_black-adj_27":-1.001 "!HYPOTHESIZED_couple-vb_2":-1.001 "!HYPOTHESIZED_R#ABBYSS-CAUSE_36":-0.401 
+</vector>
+<statistics>
+<time total="0.0399692" prepare="0.037008" ilp="0.00296116" />
+<ilp solution="Optimal" variables="144" constraints="159" />
+<search-space literals="41" axiom="6" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">person(e43,x4):0:1.00</literal>
+<literal id="1" type="2" active="yes">in-in(e42,x3,x2):1:1.00</literal>
+<literal id="2" type="2" active="yes">couple-vb(x9,u40,x3,u41):2:1.00</literal>
+<literal id="3" type="2" active="yes">increase-vb(x7,x8,u38,u39):3:1.00</literal>
+<literal id="4" type="2" active="yes">cost-nn(e37,x8):4:1.00</literal>
+<literal id="5" type="2" active="yes">gasoline-nn(e36,x6):5:1.00</literal>
+<literal id="6" type="2" active="yes">imp(e33,e34,e35):6:1.00</literal>
+<unification l1="6" l2="9" unifier="" active="no" />
+<literal id="7" type="2" active="yes">from-in(e35,x12,x6):7:1.00</literal>
+<literal id="8" type="2" active="yes">thing(e34,x12):8:1.00</literal>
+<unification l1="8" l2="14" unifier="" active="no" />
+<literal id="9" type="2" active="yes">imp(e27,e28,e32):9:1.00</literal>
+<unification l1="9" l2="6" unifier="" active="no" />
+<literal id="10" type="2" active="yes">bread-nn(e32,x11):10:1.00</literal>
+<literal id="11" type="2" active="yes">to-in(e31,x10,x11):11:1.00</literal>
+<literal id="12" type="2" active="yes">for-in(e30,x8,x10):12:1.00</literal>
+<literal id="13" type="2" active="yes">with-in(e29,x9,x8):13:1.00</literal>
+<literal id="14" type="2" active="yes">thing(e28,x10):14:1.00</literal>
+<unification l1="14" l2="8" unifier="" active="no" />
+<literal id="15" type="2" active="yes">push-vb(x5,x3,x1,u26):15:1.00</literal>
+<literal id="16" type="2" active="yes">deeper-rb(e25,x5):16:1.00</literal>
+<literal id="17" type="2" active="yes">even-rb(e24,x5):17:1.00</literal>
+<literal id="18" type="2" active="yes">poverty-nn(e23,x4):18:1.00</literal>
+<literal id="19" type="2" active="yes">of-in(e22,x0,x4):19:1.00</literal>
+<unification l1="19" l2="24" unifier="" active="no" />
+<literal id="20" type="2" active="yes">into-in(e21,x5,x0):20:1.00</literal>
+<literal id="21" type="2" active="yes">and(e20,x5):21:1.00</literal>
+<literal id="22" type="2" active="yes">recent-adj(e19,x3):22:1.00</literal>
+<literal id="23" type="2" active="yes">setback-nn(e18,x3):23:1.00</literal>
+<literal id="24" type="2" active="yes">of-in(e17,x2,x4):24:1.00</literal>
+<unification l1="24" l2="19" unifier="" active="no" />
+<literal id="25" type="2" active="yes">economy-nn(e16,x2):25:1.00</literal>
+<literal id="26" type="2" active="yes">people-nn(e15,x1):26:1.00</literal>
+<literal id="27" type="2" active="yes">black-adj(e14,x0):27:1.00</literal>
+<literal id="28" type="2" active="yes">hole-nn(e13,x0):28:1.00</literal>
+<literal id="29" type="2" active="yes">!=(e34,e28):29:1.00</literal>
+<literal id="30" type="2" active="yes">!=(e34,e28):30:1.00</literal>
+<literal id="31" type="2" active="yes">!=(e22,e17):31:1.00</literal>
+<literal id="32" type="2" active="yes">!=(e33,e27):32:1.00</literal>
+<literal id="33" type="3" active="yes">S#ABYSS(x0):33:0.40</literal>
+<unification l1="33" l2="39" unifier="" active="yes" />
+<literal id="34" type="3" active="yes">SS#ABYSS-ENTRANCE(x5):34:0.40</literal>
+<literal id="35" type="3" active="yes">R#ABYSS-THEME(x1,x5):35:0.40</literal>
+<literal id="36" type="3" active="yes">R#ABBYSS-CAUSE(x3,x5):36:0.40</literal>
+<literal id="37" type="3" active="yes">TS#POVERTY(x4):37:0.45</literal>
+<literal id="38" type="3" active="yes">T#ECONOMIC-INEQUALITY(_14):38:0.45</literal>
+<literal id="39" type="3" active="yes">S#ABYSS(x0):39:0.90</literal>
+<unification l1="39" l2="33" unifier="" active="yes" />
+<literal id="40" type="3" active="yes">SS#ABYSS-TYPE(x0):40:0.90</literal>
+<explanation name="push-into" active="yes" axiom="">33 ^ 34 ^ 35 ^ 36 => 15</explanation>
+<explanation name="black-hole" active="yes" axiom="">39 ^ 40 => 27</explanation>
+<explanation name="black-hole" active="yes" axiom="">39 ^ 40 => 28</explanation>
+<explanation name="poverty" active="yes" axiom="">37 ^ 38 => 18</explanation>
+<explanation name="push-into" active="yes" axiom="">33 ^ 34 ^ 35 ^ 36 => 20</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="12">
+<observed size="22" domain_size="0">
+fall-vb(x7,x2,u26,u27) ^ poverty-nn(e25,x6) ^ into-in(e24,x7,x6) ^ t_2011XXXX(e23,x5) ^ in-in(e22,x7,x5) ^ thanks-nn(e21,x4) ^ subset_of(e20,x1,x9) ^ subset_of(e19,x0,x9) ^ barack-vb(x8,x4,x9,u18) ^ rel(e17,x7,x4) ^ card(e16,x2,712000) ^ americans-nn(e14,x2) ^ nam(e15,x2) ^ obama-nn(e12,x1) ^ org(e13,x1) ^ democrats-nn(e10,x0) ^ org(e11,x0) ^ !=(e14,e15) ^ !=(e10,e11) ^ !=(e12,e13) ^ !=(e20,e19) ^ !=(e13,e11)
+</observed>
+<hypothesis score="-21.743">
+fall-vb(x7,x2,u26,u27) ^ poverty-nn(e25,x6) ^ into-in(e24,x7,x6) ^ t_2011XXXX(e23,x5) ^ in-in(e22,x7,x5) ^ thanks-nn(e21,x4) ^ subset_of(e20,x1,x9) ^ subset_of(e19,x0,x9) ^ barack-vb(x8,x4,x9,u18) ^ rel(e17,x7,x4) ^ card(e16,x2,712000) ^ americans-nn(e14,x2) ^ nam(e15,x2) ^ obama-nn(e12,x1) ^ org(e13,x1) ^ democrats-nn(e10,x0) ^ org(e11,x0) ^ !=(e14,e15) ^ !=(e10,e11) ^ !=(e12,e13) ^ !=(e20,e19) ^ !=(e13,e11) ^ S#LOW-POINT(u26) ^ SS#MOVEMENT-DOWNWARD(x7) ^ R#MOVE-D-PATIENT(x2,x7) ^ TS#POVERTY(x6) ^ T#ECONOMIC-INEQUALITY(_15) ^ I#MOVEMENT-DOWNWARD(x7) ^ M#MOVE-DOWN(x7) ^ M#MOVE-D-PATIENT(x2,x7)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_fall-vb_0":-1.001 "!HYPOTHESIZED_I#MOVEMENT-DOWNWARD_27":-0.271 "!HYPOTHESIZED_nam_12":-1.001 "!HYPOTHESIZED_in-in_4":-1.001 "!HYPOTHESIZED_obama-nn_13":-1.001 "!HYPOTHESIZED_!=_17":-1.001 "!HYPOTHESIZED_card_10":-1.001 "!HYPOTHESIZED_americans-nn_11":-1.001 "!HYPOTHESIZED_SS#MOVEMENT-DOWNWARD_23":-0.301 "!HYPOTHESIZED_subset_of_6":-1.001 "!HYPOTHESIZED_subset_of_7":-1.001 "!HYPOTHESIZED_into-in_2":-1.001 "!HYPOTHESIZED_thanks-nn_5":-1.001 "!HYPOTHESIZED_R#MOVE-D-PATIENT_24":-0.301 "!HYPOTHESIZED_!=_20":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_26":-0.451 "!EXPLAINED_R#MOVE-D-PATIENT_24":0.3 "!HYPOTHESIZED_S#LOW-POINT_22":-0.301 "!HYPOTHESIZED_!=_21":-1.001 "!HYPOTHESIZED_!=_19":-1.001 "!HYPOTHESIZED_!=_18":-1.001 "!EXPLAINED_fall-vb_0":1 "!HYPOTHESIZED_org_14":-1.001 "!HYPOTHESIZED_M#MOVE-DOWN_28":-0.2575 "!HYPOTHESIZED_org_16":-1.001 "!HYPOTHESIZED_t_2011XXXX_3":-1.001 "!HYPOTHESIZED_M#MOVE-D-PATIENT_29":-0.2575 "!EXPLAINED_I#MOVEMENT-DOWNWARD_27":0.27 "!EXPLAINED_SS#MOVEMENT-DOWNWARD_23":0.3 "!HYPOTHESIZED_democrats-nn_15":-1.001 "!HYPOTHESIZED_TS#POVERTY_25":-0.451 "!HYPOTHESIZED_poverty-nn_1":-1.001 "!HYPOTHESIZED_barack-vb_8":-1.001 "!HYPOTHESIZED_rel_9":-1.001 "!EXPLAINED_poverty-nn_1":1 
+</vector>
+<statistics>
+<time total="0.0241718" prepare="0.0223968" ilp="0.00177503" />
+<ilp solution="Optimal" variables="111" constraints="121" />
+<search-space literals="30" axiom="5" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">fall-vb(x7,x2,u26,u27):0:1.00</literal>
+<literal id="1" type="2" active="yes">poverty-nn(e25,x6):1:1.00</literal>
+<literal id="2" type="2" active="yes">into-in(e24,x7,x6):2:1.00</literal>
+<literal id="3" type="2" active="yes">t_2011XXXX(e23,x5):3:1.00</literal>
+<literal id="4" type="2" active="yes">in-in(e22,x7,x5):4:1.00</literal>
+<literal id="5" type="2" active="yes">thanks-nn(e21,x4):5:1.00</literal>
+<literal id="6" type="2" active="yes">subset_of(e20,x1,x9):6:1.00</literal>
+<unification l1="6" l2="7" unifier="" active="no" />
+<literal id="7" type="2" active="yes">subset_of(e19,x0,x9):7:1.00</literal>
+<unification l1="7" l2="6" unifier="" active="no" />
+<literal id="8" type="2" active="yes">barack-vb(x8,x4,x9,u18):8:1.00</literal>
+<literal id="9" type="2" active="yes">rel(e17,x7,x4):9:1.00</literal>
+<literal id="10" type="2" active="yes">card(e16,x2,712000):10:1.00</literal>
+<literal id="11" type="2" active="yes">americans-nn(e14,x2):11:1.00</literal>
+<literal id="12" type="2" active="yes">nam(e15,x2):12:1.00</literal>
+<literal id="13" type="2" active="yes">obama-nn(e12,x1):13:1.00</literal>
+<literal id="14" type="2" active="yes">org(e13,x1):14:1.00</literal>
+<unification l1="14" l2="16" unifier="" active="no" />
+<literal id="15" type="2" active="yes">democrats-nn(e10,x0):15:1.00</literal>
+<literal id="16" type="2" active="yes">org(e11,x0):16:1.00</literal>
+<unification l1="16" l2="14" unifier="" active="no" />
+<literal id="17" type="2" active="yes">!=(e14,e15):17:1.00</literal>
+<literal id="18" type="2" active="yes">!=(e10,e11):18:1.00</literal>
+<literal id="19" type="2" active="yes">!=(e12,e13):19:1.00</literal>
+<literal id="20" type="2" active="yes">!=(e20,e19):20:1.00</literal>
+<literal id="21" type="2" active="yes">!=(e13,e11):21:1.00</literal>
+<literal id="22" type="3" active="yes">S#LOW-POINT(u26):22:0.30</literal>
+<literal id="23" type="3" active="yes">SS#MOVEMENT-DOWNWARD(x7):23:0.30</literal>
+<literal id="24" type="3" active="yes">R#MOVE-D-PATIENT(x2,x7):24:0.30</literal>
+<literal id="25" type="3" active="yes">TS#POVERTY(x6):25:0.45</literal>
+<literal id="26" type="3" active="yes">T#ECONOMIC-INEQUALITY(_15):26:0.45</literal>
+<literal id="27" type="3" active="yes">I#MOVEMENT-DOWNWARD(x7):27:0.27</literal>
+<literal id="28" type="3" active="yes">M#MOVE-DOWN(x7):28:0.26</literal>
+<literal id="29" type="3" active="yes">M#MOVE-D-PATIENT(x2,x7):29:0.26</literal>
+<explanation name="fall" active="yes" axiom="">22 ^ 23 ^ 24 => 0</explanation>
+<explanation name="movement-downwardmap" active="yes" axiom="">27 => 23</explanation>
+<explanation name="poverty" active="yes" axiom="">25 ^ 26 => 1</explanation>
+<explanation name="movement-downward" active="yes" axiom="">28 ^ 29 => 24</explanation>
+<explanation name="movement-downward" active="yes" axiom="">28 ^ 29 => 27</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="13">
+<observed size="14" domain_size="0">
+fiscal-adj(e21,x6) ^ cliff-nn(e20,x6) ^ :-in(e19,x6,x1) ^ go-vb(x5,x6,u17,u18) ^ to-in(e16,x5,x0) ^ million-nn(e15,x4) ^ fall-vb(x3,x4,u13,u14) ^ poverty-nn(e12,x2) ^ into-in(e11,x3,x2) ^ already-rb(e10,x3) ^ america-nn(e8,x1) ^ loc(e9,x1) ^ brink-nn(e7,x0) ^ !=(e8,e9)
+</observed>
+<hypothesis score="-13.187">
+fiscal-adj(e21,x6) ^ cliff-nn(e20,x6) ^ :-in(e19,x6,x1) ^ go-vb(x5,x6,u17,u18) ^ to-in(e16,x5,x0) ^ million-nn(e15,x4) ^ fall-vb(x3,x4,u13,u14) ^ poverty-nn(e12,x2) ^ into-in(e11,x3,x2) ^ already-rb(e10,x3) ^ america-nn(e8,x1) ^ loc(e9,x1) ^ brink-nn(e7,x0) ^ !=(e8,e9) ^ TS#TAXATION(x6) ^ T#ECONOMIC-INEQUALITY(_16) ^ S#LOW-POINT(u13) ^ SS#MOVEMENT-DOWNWARD(x3) ^ R#MOVE-D-PATIENT(x4,x3) ^ TS#POVERTY(x2) ^ T#ECONOMIC-INEQUALITY(_17) ^ I#MOVEMENT-DOWNWARD(x3) ^ M#MOVE-DOWN(x3) ^ M#MOVE-D-PATIENT(x4,x3) ^ =(_16,_17)
+</hypothesis>
+<vector score="0">
+"!EXPLAINED_R#MOVE-D-PATIENT_18":0.3 "!EXPLAINED_poverty-nn_7":1 "!HYPOTHESIZED_TS#TAXATION_14":-0.451 "!HYPOTHESIZED_to-in_4":-1.001 "!HYPOTHESIZED_:-in_2":-1.001 "!HYPOTHESIZED_loc_11":-1.001 "!HYPOTHESIZED_america-nn_10":-1.001 "!HYPOTHESIZED_!=_13":-1.001 "!HYPOTHESIZED_brink-nn_12":-1.001 "!HYPOTHESIZED_SS#MOVEMENT-DOWNWARD_17":-0.301 "!EXPLAINED_fall-vb_6":1 "!HYPOTHESIZED_already-rb_9":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_15":-0.451 "!HYPOTHESIZED_into-in_8":-1.001 "!HYPOTHESIZED_M#MOVE-D-PATIENT_23":-0.2575 "!EXPLAINED_T#ECONOMIC-INEQUALITY_20":0.45 "!HYPOTHESIZED_million-nn_5":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_20":-0.451 "!HYPOTHESIZED_TS#POVERTY_19":-0.451 "!EXPLAINED_I#MOVEMENT-DOWNWARD_21":0.27 "!EXPLAINED_fiscal-adj_0":1 "!HYPOTHESIZED_fiscal-adj_0":-1.001 "!HYPOTHESIZED_R#MOVE-D-PATIENT_18":-0.301 "!HYPOTHESIZED_M#MOVE-DOWN_22":-0.2575 "!HYPOTHESIZED_go-vb_3":-1.001 "!HYPOTHESIZED_I#MOVEMENT-DOWNWARD_21":-0.271 "!HYPOTHESIZED_S#LOW-POINT_16":-0.301 "!HYPOTHESIZED_cliff-nn_1":-1.001 "!HYPOTHESIZED_poverty-nn_7":-1.001 "!EXPLAINED_SS#MOVEMENT-DOWNWARD_17":0.3 "!HYPOTHESIZED_fall-vb_6":-1.001 
+</vector>
+<statistics>
+<time total="0.022903" prepare="0.021184" ilp="0.001719" />
+<ilp solution="Optimal" variables="86" constraints="104" />
+<search-space literals="24" axiom="6" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">fiscal-adj(e21,x6):0:1.00</literal>
+<literal id="1" type="2" active="yes">cliff-nn(e20,x6):1:1.00</literal>
+<literal id="2" type="2" active="yes">:-in(e19,x6,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">go-vb(x5,x6,u17,u18):3:1.00</literal>
+<literal id="4" type="2" active="yes">to-in(e16,x5,x0):4:1.00</literal>
+<literal id="5" type="2" active="yes">million-nn(e15,x4):5:1.00</literal>
+<literal id="6" type="2" active="yes">fall-vb(x3,x4,u13,u14):6:1.00</literal>
+<literal id="7" type="2" active="yes">poverty-nn(e12,x2):7:1.00</literal>
+<literal id="8" type="2" active="yes">into-in(e11,x3,x2):8:1.00</literal>
+<literal id="9" type="2" active="yes">already-rb(e10,x3):9:1.00</literal>
+<literal id="10" type="2" active="yes">america-nn(e8,x1):10:1.00</literal>
+<literal id="11" type="2" active="yes">loc(e9,x1):11:1.00</literal>
+<literal id="12" type="2" active="yes">brink-nn(e7,x0):12:1.00</literal>
+<literal id="13" type="2" active="yes">!=(e8,e9):13:1.00</literal>
+<literal id="14" type="3" active="yes">TS#TAXATION(x6):14:0.45</literal>
+<literal id="15" type="3" active="yes">T#ECONOMIC-INEQUALITY(_16):15:0.45</literal>
+<unification l1="15" l2="20" unifier="_16=_17" active="yes" />
+<literal id="16" type="3" active="yes">S#LOW-POINT(u13):16:0.30</literal>
+<literal id="17" type="3" active="yes">SS#MOVEMENT-DOWNWARD(x3):17:0.30</literal>
+<literal id="18" type="3" active="yes">R#MOVE-D-PATIENT(x4,x3):18:0.30</literal>
+<literal id="19" type="3" active="yes">TS#POVERTY(x2):19:0.45</literal>
+<literal id="20" type="3" active="yes">T#ECONOMIC-INEQUALITY(_17):20:0.45</literal>
+<unification l1="20" l2="15" unifier="_16=_17" active="yes" />
+<literal id="21" type="3" active="yes">I#MOVEMENT-DOWNWARD(x3):21:0.27</literal>
+<literal id="22" type="3" active="yes">M#MOVE-DOWN(x3):22:0.26</literal>
+<literal id="23" type="3" active="yes">M#MOVE-D-PATIENT(x4,x3):23:0.26</literal>
+<explanation name="fiscal" active="yes" axiom="">14 ^ 15 => 0</explanation>
+<explanation name="movement-downwardmap" active="yes" axiom="">21 => 17</explanation>
+<explanation name="fall" active="yes" axiom="">16 ^ 17 ^ 18 => 6</explanation>
+<explanation name="movement-downward" active="yes" axiom="">22 ^ 23 => 18</explanation>
+<explanation name="poverty" active="yes" axiom="">19 ^ 20 => 7</explanation>
+<explanation name="movement-downward" active="yes" axiom="">22 ^ 23 => 21</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="14">
+<observed size="51" domain_size="0">
+say-vb(x8,x2,x18,u65) ^ of-in(e64,x4,x3) ^ line-nn(e63,x4) ^ not(e61,e62) ^ equal(e62,x19,x19) ^ card(e60,x19,1.1) ^ card(e59,x19,1000000) ^ americans-nn(e57,x19) ^ nam(e58,x19) ^ fall-vb(x18,x19,u55,u56) ^ poverty-nn(e54,x17) ^ into-in(e53,x18,x17) ^ year-nn(e52,x16) ^ on-in(e51,x18,x16) ^ last-adj(e50,x18) ^ bring-vb(x15,x19,x0,u49) ^ card(e48,x14,37) ^ card(e47,x14,1000000) ^ people-nn(e46,x14) ^ live-vb(x13,x14,u44,u45) ^ define-vb(x12,u42,x4,u43) ^ family-nn(e41,x11) ^ card(e40,x10,4) ^ of-in(e39,x11,x10) ^ for-in(e38,x12,x11) ^ dollar(e37,x9) ^ card(e36,x9,19307) ^ as-in(e35,x12,x9) ^ below-in(e34,x13,x4) ^ to-in(e33,x15,x14) ^ subset_of(e32,x1,x6) ^ poverty-nn(e31,x3) ^ of-in(e30,x5,x3) ^ report-nn(e29,x5) ^ subset_of(e28,x5,x6) ^ in-in(e27,x8,x6) ^ census_bureau-nn(e25,x2) ^ org(e26,x2) ^ total-nn(e24,x0) ^ neuter(e23,x2) ^ of-in(e22,x1,x2) ^ t_2004XXXX(e21,x1) ^ income-nn(e20,x1) ^ !=(e25,e26) ^ !=(e60,e60) ^ !=(e59,e59) ^ !=(e57,e57,e58,e58) ^ !=(e25,e26) ^ !=(e64,e39,e30,e22) ^ !=(e32,e28) ^ !=(e60,e59,e48,e47,e40,e36)
+</observed>
+<hypothesis score="-49.772">
+say-vb(x8,x2,x18,u65) ^ of-in(e64,x4,x3) ^ line-nn(e63,x4) ^ not(e61,e62) ^ equal(e62,x19,x19) ^ card(e60,x19,1.1) ^ card(e59,x19,1000000) ^ americans-nn(e57,x19) ^ nam(e58,x19) ^ fall-vb(x18,x19,u55,u56) ^ poverty-nn(e54,x17) ^ into-in(e53,x18,x17) ^ year-nn(e52,x16) ^ on-in(e51,x18,x16) ^ last-adj(e50,x18) ^ bring-vb(x15,x19,x0,u49) ^ card(e48,x14,37) ^ card(e47,x14,1000000) ^ people-nn(e46,x14) ^ live-vb(x13,x14,u44,u45) ^ define-vb(x12,u42,x4,u43) ^ family-nn(e41,x11) ^ card(e40,x10,4) ^ of-in(e39,x11,x10) ^ for-in(e38,x12,x11) ^ dollar(e37,x9) ^ card(e36,x9,19307) ^ as-in(e35,x12,x9) ^ below-in(e34,x13,x4) ^ to-in(e33,x15,x14) ^ subset_of(e32,x1,x6) ^ poverty-nn(e31,x3) ^ of-in(e30,x5,x3) ^ report-nn(e29,x5) ^ subset_of(e28,x5,x6) ^ in-in(e27,x8,x6) ^ census_bureau-nn(e25,x2) ^ org(e26,x2) ^ total-nn(e24,x0) ^ neuter(e23,x2) ^ of-in(e22,x1,x2) ^ t_2004XXXX(e21,x1) ^ income-nn(e20,x1) ^ !=(e25,e26) ^ !=(e60,e60) ^ !=(e59,e59) ^ !=(e57,e57,e58,e58) ^ !=(e25,e26) ^ !=(e64,e39,e30,e22) ^ !=(e32,e28) ^ !=(e60,e59,e48,e47,e40,e36) ^ S#LOW-POINT(u55) ^ SS#MOVEMENT-DOWNWARD(x18) ^ R#MOVE-D-PATIENT(x19,x18) ^ TS#POVERTY(x17) ^ T#ECONOMIC-INEQUALITY(_18) ^ I#MOVEMENT-DOWNWARD(x18) ^ M#MOVE-DOWN(x18) ^ M#MOVE-D-PATIENT(x19,x18) ^ =(x17,x3) ^ =(e31,e54)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_americans-nn_7":-1.001 "!HYPOTHESIZED_t_2004XXXX_41":-1.001 "!HYPOTHESIZED_in-in_35":-1.001 "!HYPOTHESIZED_org_37":-1.001 "!HYPOTHESIZED_I#MOVEMENT-DOWNWARD_58":-0.271 "!HYPOTHESIZED_TS#POVERTY_54":-0.451 "!EXPLAINED_SS#MOVEMENT-DOWNWARD_52":0.3 "!HYPOTHESIZED_!=_46":-1.001 "!HYPOTHESIZED_!=_48":-1.001 "!HYPOTHESIZED_people-nn_18":-1.001 "!HYPOTHESIZED_M#MOVE-D-PATIENT_60":-0.2575 "!HYPOTHESIZED_card_5":-1.001 "!HYPOTHESIZED_S#LOW-POINT_51":-0.301 "!HYPOTHESIZED_neuter_39":-1.001 "!HYPOTHESIZED_!=_45":-1.001 "!EXPLAINED_I#MOVEMENT-DOWNWARD_58":0.27 "!HYPOTHESIZED_card_22":-1.001 "!HYPOTHESIZED_income-nn_42":-1.001 "!HYPOTHESIZED_year-nn_12":-1.001 "!HYPOTHESIZED_dollar_25":-1.001 "!HYPOTHESIZED_!=_44":-1.001 "!HYPOTHESIZED_line-nn_2":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_55":-0.451 "!HYPOTHESIZED_for-in_24":-1.001 "!EXPLAINED_poverty-nn_31":1 "!HYPOTHESIZED_define-vb_20":-1.001 "!HYPOTHESIZED_equal_4":-1.001 "!HYPOTHESIZED_say-vb_0":-1.001 "!HYPOTHESIZED_fall-vb_9":-1.001 "!HYPOTHESIZED_subset_of_34":-1.001 "!EXPLAINED_R#MOVE-D-PATIENT_53":0.3 "!HYPOTHESIZED_!=_43":-1.001 "!HYPOTHESIZED_of-in_40":-1.001 "!EXPLAINED_poverty-nn_10":1 "!HYPOTHESIZED_nam_8":-1.001 "!HYPOTHESIZED_of-in_32":-1.001 "!HYPOTHESIZED_last-adj_14":-1.001 "!HYPOTHESIZED_card_16":-1.001 "!HYPOTHESIZED_R#MOVE-D-PATIENT_53":-0.301 "!HYPOTHESIZED_into-in_11":-1.001 "!HYPOTHESIZED_total-nn_38":-1.001 "!EXPLAINED_fall-vb_9":1 "!HYPOTHESIZED_SS#MOVEMENT-DOWNWARD_52":-0.301 "!HYPOTHESIZED_card_17":-1.001 "!HYPOTHESIZED_poverty-nn_10":-1.001 "!HYPOTHESIZED_of-in_23":-1.001 "!HYPOTHESIZED_M#MOVE-DOWN_59":-0.2575 "!HYPOTHESIZED_to-in_29":-1.001 "!HYPOTHESIZED_subset_of_30":-1.001 "!HYPOTHESIZED_card_26":-1.001 "!HYPOTHESIZED_on-in_13":-1.001 "!HYPOTHESIZED_report-nn_33":-1.001 "!HYPOTHESIZED_not_3":-1.001 "!HYPOTHESIZED_poverty-nn_31":-1.001 "!HYPOTHESIZED_family-nn_21":-1.001 "!HYPOTHESIZED_below-in_28":-1.001 "!HYPOTHESIZED_!=_47":-1.001 "!HYPOTHESIZED_!=_49":-1.001 "!HYPOTHESIZED_bring-vb_15":-1.001 "!HYPOTHESIZED_census_bureau-nn_36":-1.001 "!HYPOTHESIZED_!=_50":-1.001 "!HYPOTHESIZED_live-vb_19":-1.001 "!HYPOTHESIZED_of-in_1":-1.001 "!HYPOTHESIZED_card_6":-1.001 "!HYPOTHESIZED_as-in_27":-1.001 
+</vector>
+<statistics>
+<time total="0.0816631" prepare="0.0681181" ilp="0.013545" />
+<ilp solution="Optimal" variables="292" constraints="431" />
+<search-space literals="61" axiom="7" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">say-vb(x8,x2,x18,u65):0:1.00</literal>
+<literal id="1" type="2" active="yes">of-in(e64,x4,x3):1:1.00</literal>
+<unification l1="1" l2="23" unifier="" active="no" />
+<unification l1="1" l2="32" unifier="" active="no" />
+<unification l1="1" l2="40" unifier="" active="no" />
+<literal id="2" type="2" active="yes">line-nn(e63,x4):2:1.00</literal>
+<literal id="3" type="2" active="yes">not(e61,e62):3:1.00</literal>
+<literal id="4" type="2" active="yes">equal(e62,x19,x19):4:1.00</literal>
+<literal id="5" type="2" active="yes">card(e60,x19,1.1):5:1.00</literal>
+<unification l1="5" l2="6" unifier="" active="no" />
+<unification l1="5" l2="16" unifier="" active="no" />
+<unification l1="5" l2="17" unifier="" active="no" />
+<unification l1="5" l2="22" unifier="" active="no" />
+<unification l1="5" l2="26" unifier="" active="no" />
+<literal id="6" type="2" active="yes">card(e59,x19,1000000):6:1.00</literal>
+<unification l1="6" l2="5" unifier="" active="no" />
+<unification l1="6" l2="16" unifier="" active="no" />
+<unification l1="6" l2="17" unifier="" active="no" />
+<unification l1="6" l2="22" unifier="" active="no" />
+<unification l1="6" l2="26" unifier="" active="no" />
+<literal id="7" type="2" active="yes">americans-nn(e57,x19):7:1.00</literal>
+<literal id="8" type="2" active="yes">nam(e58,x19):8:1.00</literal>
+<literal id="9" type="2" active="yes">fall-vb(x18,x19,u55,u56):9:1.00</literal>
+<literal id="10" type="2" active="yes">poverty-nn(e54,x17):10:1.00</literal>
+<unification l1="10" l2="31" unifier="e31=e54, x3=x17" active="yes" />
+<literal id="11" type="2" active="yes">into-in(e53,x18,x17):11:1.00</literal>
+<literal id="12" type="2" active="yes">year-nn(e52,x16):12:1.00</literal>
+<literal id="13" type="2" active="yes">on-in(e51,x18,x16):13:1.00</literal>
+<literal id="14" type="2" active="yes">last-adj(e50,x18):14:1.00</literal>
+<literal id="15" type="2" active="yes">bring-vb(x15,x19,x0,u49):15:1.00</literal>
+<literal id="16" type="2" active="yes">card(e48,x14,37):16:1.00</literal>
+<unification l1="16" l2="5" unifier="" active="no" />
+<unification l1="16" l2="6" unifier="" active="no" />
+<unification l1="16" l2="17" unifier="" active="no" />
+<unification l1="16" l2="22" unifier="" active="no" />
+<unification l1="16" l2="26" unifier="" active="no" />
+<literal id="17" type="2" active="yes">card(e47,x14,1000000):17:1.00</literal>
+<unification l1="17" l2="5" unifier="" active="no" />
+<unification l1="17" l2="6" unifier="" active="no" />
+<unification l1="17" l2="16" unifier="" active="no" />
+<unification l1="17" l2="22" unifier="" active="no" />
+<unification l1="17" l2="26" unifier="" active="no" />
+<literal id="18" type="2" active="yes">people-nn(e46,x14):18:1.00</literal>
+<literal id="19" type="2" active="yes">live-vb(x13,x14,u44,u45):19:1.00</literal>
+<literal id="20" type="2" active="yes">define-vb(x12,u42,x4,u43):20:1.00</literal>
+<literal id="21" type="2" active="yes">family-nn(e41,x11):21:1.00</literal>
+<literal id="22" type="2" active="yes">card(e40,x10,4):22:1.00</literal>
+<unification l1="22" l2="5" unifier="" active="no" />
+<unification l1="22" l2="6" unifier="" active="no" />
+<unification l1="22" l2="16" unifier="" active="no" />
+<unification l1="22" l2="17" unifier="" active="no" />
+<unification l1="22" l2="26" unifier="" active="no" />
+<literal id="23" type="2" active="yes">of-in(e39,x11,x10):23:1.00</literal>
+<unification l1="23" l2="1" unifier="" active="no" />
+<unification l1="23" l2="32" unifier="" active="no" />
+<unification l1="23" l2="40" unifier="" active="no" />
+<literal id="24" type="2" active="yes">for-in(e38,x12,x11):24:1.00</literal>
+<literal id="25" type="2" active="yes">dollar(e37,x9):25:1.00</literal>
+<literal id="26" type="2" active="yes">card(e36,x9,19307):26:1.00</literal>
+<unification l1="26" l2="5" unifier="" active="no" />
+<unification l1="26" l2="6" unifier="" active="no" />
+<unification l1="26" l2="16" unifier="" active="no" />
+<unification l1="26" l2="17" unifier="" active="no" />
+<unification l1="26" l2="22" unifier="" active="no" />
+<literal id="27" type="2" active="yes">as-in(e35,x12,x9):27:1.00</literal>
+<literal id="28" type="2" active="yes">below-in(e34,x13,x4):28:1.00</literal>
+<literal id="29" type="2" active="yes">to-in(e33,x15,x14):29:1.00</literal>
+<literal id="30" type="2" active="yes">subset_of(e32,x1,x6):30:1.00</literal>
+<unification l1="30" l2="34" unifier="" active="no" />
+<literal id="31" type="2" active="yes">poverty-nn(e31,x3):31:1.00</literal>
+<unification l1="31" l2="10" unifier="e31=e54, x3=x17" active="yes" />
+<literal id="32" type="2" active="yes">of-in(e30,x5,x3):32:1.00</literal>
+<unification l1="32" l2="1" unifier="" active="no" />
+<unification l1="32" l2="23" unifier="" active="no" />
+<unification l1="32" l2="40" unifier="" active="no" />
+<literal id="33" type="2" active="yes">report-nn(e29,x5):33:1.00</literal>
+<literal id="34" type="2" active="yes">subset_of(e28,x5,x6):34:1.00</literal>
+<unification l1="34" l2="30" unifier="" active="no" />
+<literal id="35" type="2" active="yes">in-in(e27,x8,x6):35:1.00</literal>
+<literal id="36" type="2" active="yes">census_bureau-nn(e25,x2):36:1.00</literal>
+<literal id="37" type="2" active="yes">org(e26,x2):37:1.00</literal>
+<literal id="38" type="2" active="yes">total-nn(e24,x0):38:1.00</literal>
+<literal id="39" type="2" active="yes">neuter(e23,x2):39:1.00</literal>
+<literal id="40" type="2" active="yes">of-in(e22,x1,x2):40:1.00</literal>
+<unification l1="40" l2="1" unifier="" active="no" />
+<unification l1="40" l2="23" unifier="" active="no" />
+<unification l1="40" l2="32" unifier="" active="no" />
+<literal id="41" type="2" active="yes">t_2004XXXX(e21,x1):41:1.00</literal>
+<literal id="42" type="2" active="yes">income-nn(e20,x1):42:1.00</literal>
+<literal id="43" type="2" active="yes">!=(e25,e26):43:1.00</literal>
+<literal id="44" type="2" active="yes">!=(e60,e60):44:1.00</literal>
+<literal id="45" type="2" active="yes">!=(e59,e59):45:1.00</literal>
+<literal id="46" type="2" active="yes">!=(e57,e57,e58,e58):46:1.00</literal>
+<literal id="47" type="2" active="yes">!=(e25,e26):47:1.00</literal>
+<literal id="48" type="2" active="yes">!=(e64,e39,e30,e22):48:1.00</literal>
+<literal id="49" type="2" active="yes">!=(e32,e28):49:1.00</literal>
+<literal id="50" type="2" active="yes">!=(e60,e59,e48,e47,e40,e36):50:1.00</literal>
+<literal id="51" type="3" active="yes">S#LOW-POINT(u55):51:0.30</literal>
+<literal id="52" type="3" active="yes">SS#MOVEMENT-DOWNWARD(x18):52:0.30</literal>
+<literal id="53" type="3" active="yes">R#MOVE-D-PATIENT(x19,x18):53:0.30</literal>
+<literal id="54" type="3" active="yes">TS#POVERTY(x17):54:0.45</literal>
+<unification l1="54" l2="56" unifier="x3=x17" active="no" />
+<literal id="55" type="3" active="yes">T#ECONOMIC-INEQUALITY(_18):55:0.45</literal>
+<unification l1="55" l2="57" unifier="" active="no" />
+<literal id="56" type="3" active="no">TS#POVERTY(x3):56:0.45</literal>
+<unification l1="56" l2="54" unifier="x3=x17" active="no" />
+<literal id="57" type="3" active="no">T#ECONOMIC-INEQUALITY(_19):57:0.45</literal>
+<unification l1="57" l2="55" unifier="" active="no" />
+<literal id="58" type="3" active="yes">I#MOVEMENT-DOWNWARD(x18):58:0.27</literal>
+<literal id="59" type="3" active="yes">M#MOVE-DOWN(x18):59:0.26</literal>
+<literal id="60" type="3" active="yes">M#MOVE-D-PATIENT(x19,x18):60:0.26</literal>
+<explanation name="movement-downward" active="yes" axiom="">59 ^ 60 => 58</explanation>
+<explanation name="movement-downwardmap" active="yes" axiom="">58 => 52</explanation>
+<explanation name="movement-downward" active="yes" axiom="">59 ^ 60 => 53</explanation>
+<explanation name="poverty" active="no" axiom="">56 ^ 57 => 31</explanation>
+<explanation name="fall" active="yes" axiom="">51 ^ 52 ^ 53 => 9</explanation>
+<explanation name="poverty" active="yes" axiom="">54 ^ 55 => 10</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="15">
+<observed size="23" domain_size="0">
+whq(e19,e20,x8) ^ climb-vb(x9,x4,u34,u35) ^ out-in(e33,x9) ^ of-in(e32,x9,x5) ^ neuter(e31,x5) ^ look-vb(x8,x5,u29,u30) ^ also-rb(e28,x8) ^ many-adj(e27,x7) ^ fall-vb(x6,x7,u25,u26) ^ poverty-nn(e24,x5) ^ into-in(e23,x6,x5) ^ at-in(e22,x8,x7) ^ rel(e21,x9,x5) ^ many-adj(e20,x4) ^ whq(e11,e12,x2) ^ many-adj(e18,x3) ^ stay-vb(x2,x3,u16,u17) ^ poor-adj(e15,x3) ^ during-in(e14,x2,x0) ^ manner_rel(e13,x2,x1) ^ manner(e12,x1) ^ period-nn(e10,x0) ^ !=(e19,e11)
+</observed>
+<hypothesis score="-19.55">
+whq(e19,e20,x8) ^ climb-vb(x9,x4,u34,u35) ^ out-in(e33,x9) ^ of-in(e32,x9,x5) ^ neuter(e31,x5) ^ look-vb(x8,x5,u29,u30) ^ also-rb(e28,x8) ^ many-adj(e27,x7) ^ fall-vb(x6,x7,u25,u26) ^ poverty-nn(e24,x5) ^ into-in(e23,x6,x5) ^ at-in(e22,x8,x7) ^ rel(e21,x9,x5) ^ many-adj(e20,x4) ^ whq(e11,e12,x2) ^ many-adj(e18,x3) ^ stay-vb(x2,x3,u16,u17) ^ poor-adj(e15,x3) ^ during-in(e14,x2,x0) ^ manner_rel(e13,x2,x1) ^ manner(e12,x1) ^ period-nn(e10,x0) ^ !=(e19,e11) ^ S#ABBYS(x5) ^ SS#ABYSS-EXIT(x9) ^ R#ABYSS-THEME(x4,x9) ^ S#LOW-POINT(u25) ^ SS#MOVEMENT-DOWNWARD(x6) ^ R#MOVE-D-PATIENT(x7,x6) ^ TS#POVERTY(x5) ^ T#ECONOMIC-INEQUALITY(_20) ^ TS#POVERTY(e15) ^ T#ECONOMIC-INEQUALITY(_21) ^ R#POOR(x3,e15) ^ I#MOVEMENT-DOWNWARD(x6) ^ M#MOVE-DOWN(x6) ^ M#MOVE-D-PATIENT(x7,x6) ^ =(_20,_21) ^ =(x4,x7,x3) ^ =(e15,x5) ^ =(e20,e27,e18)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_look-vb_5":-1.001 "!HYPOTHESIZED_S#ABBYS_23":-0.601 "!HYPOTHESIZED_manner_rel_19":-1.001 "!HYPOTHESIZED_whq_14":-1.001 "!HYPOTHESIZED_SS#MOVEMENT-DOWNWARD_27":-0.301 "!EXPLAINED_T#ECONOMIC-INEQUALITY_30":0.45 "!HYPOTHESIZED_poor-adj_17":-1.001 "!EXPLAINED_many-adj_15":1 "!HYPOTHESIZED_R#MOVE-D-PATIENT_28":-0.301 "!HYPOTHESIZED_many-adj_13":-1.001 "!HYPOTHESIZED_neuter_4":-1.001 "!EXPLAINED_climb-vb_1":1 "!HYPOTHESIZED_M#MOVE-D-PATIENT_36":-0.2575 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_32":-0.301 "!EXPLAINED_TS#POVERTY_29":0.45 "!EXPLAINED_many-adj_13":1 "!HYPOTHESIZED_period-nn_21":-1.001 "!HYPOTHESIZED_S#LOW-POINT_26":-0.301 "!EXPLAINED_poverty-nn_9":1 "!HYPOTHESIZED_R#ABYSS-THEME_25":-0.601 "!HYPOTHESIZED_SS#ABYSS-EXIT_24":-0.601 "!HYPOTHESIZED_rel_12":-1.001 "!HYPOTHESIZED_climb-vb_1":-1.001 "!HYPOTHESIZED_TS#POVERTY_31":-0.301 "!HYPOTHESIZED_during-in_18":-1.001 "!HYPOTHESIZED_poverty-nn_9":-1.001 "!HYPOTHESIZED_many-adj_15":-1.001 "!EXPLAINED_I#MOVEMENT-DOWNWARD_34":0.27 "!HYPOTHESIZED_manner_20":-1.001 "!HYPOTHESIZED_!=_22":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_30":-0.451 "!EXPLAINED_SS#MOVEMENT-DOWNWARD_27":0.3 "!HYPOTHESIZED_fall-vb_8":-1.001 "!HYPOTHESIZED_into-in_10":-1.001 "!HYPOTHESIZED_out-in_2":-1.001 "!HYPOTHESIZED_M#MOVE-DOWN_35":-0.2575 "!HYPOTHESIZED_whq_0":-1.001 "!HYPOTHESIZED_of-in_3":-1.001 "!HYPOTHESIZED_stay-vb_16":-1.001 "!HYPOTHESIZED_many-adj_7":-1.001 "!HYPOTHESIZED_also-rb_6":-1.001 "!EXPLAINED_of-in_3":1 "!EXPLAINED_poor-adj_17":1 "!HYPOTHESIZED_TS#POVERTY_29":-0.451 "!EXPLAINED_R#MOVE-D-PATIENT_28":0.3 "!HYPOTHESIZED_R#POOR_33":-0.301 "!EXPLAINED_fall-vb_8":1 "!HYPOTHESIZED_at-in_11":-1.001 "!HYPOTHESIZED_I#MOVEMENT-DOWNWARD_34":-0.271 
+</vector>
+<statistics>
+<time total="0.0401411" prepare="0.0363631" ilp="0.00377798" />
+<ilp solution="Optimal" variables="147" constraints="191" />
+<search-space literals="37" axiom="9" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">whq(e19,e20,x8):0:1.00</literal>
+<unification l1="0" l2="14" unifier="" active="no" />
+<literal id="1" type="2" active="yes">climb-vb(x9,x4,u34,u35):1:1.00</literal>
+<literal id="2" type="2" active="yes">out-in(e33,x9):2:1.00</literal>
+<literal id="3" type="2" active="yes">of-in(e32,x9,x5):3:1.00</literal>
+<literal id="4" type="2" active="yes">neuter(e31,x5):4:1.00</literal>
+<literal id="5" type="2" active="yes">look-vb(x8,x5,u29,u30):5:1.00</literal>
+<literal id="6" type="2" active="yes">also-rb(e28,x8):6:1.00</literal>
+<literal id="7" type="2" active="yes">many-adj(e27,x7):7:1.00</literal>
+<unification l1="7" l2="13" unifier="e27=e20, x7=x4" active="yes" />
+<unification l1="7" l2="15" unifier="e18=e27, x3=x7" active="yes" />
+<literal id="8" type="2" active="yes">fall-vb(x6,x7,u25,u26):8:1.00</literal>
+<literal id="9" type="2" active="yes">poverty-nn(e24,x5):9:1.00</literal>
+<literal id="10" type="2" active="yes">into-in(e23,x6,x5):10:1.00</literal>
+<literal id="11" type="2" active="yes">at-in(e22,x8,x7):11:1.00</literal>
+<literal id="12" type="2" active="yes">rel(e21,x9,x5):12:1.00</literal>
+<literal id="13" type="2" active="yes">many-adj(e20,x4):13:1.00</literal>
+<unification l1="13" l2="7" unifier="e27=e20, x7=x4" active="yes" />
+<unification l1="13" l2="15" unifier="e18=e20, x3=x4" active="yes" />
+<literal id="14" type="2" active="yes">whq(e11,e12,x2):14:1.00</literal>
+<unification l1="14" l2="0" unifier="" active="no" />
+<literal id="15" type="2" active="yes">many-adj(e18,x3):15:1.00</literal>
+<unification l1="15" l2="7" unifier="e18=e27, x3=x7" active="yes" />
+<unification l1="15" l2="13" unifier="e18=e20, x3=x4" active="yes" />
+<literal id="16" type="2" active="yes">stay-vb(x2,x3,u16,u17):16:1.00</literal>
+<literal id="17" type="2" active="yes">poor-adj(e15,x3):17:1.00</literal>
+<literal id="18" type="2" active="yes">during-in(e14,x2,x0):18:1.00</literal>
+<literal id="19" type="2" active="yes">manner_rel(e13,x2,x1):19:1.00</literal>
+<literal id="20" type="2" active="yes">manner(e12,x1):20:1.00</literal>
+<literal id="21" type="2" active="yes">period-nn(e10,x0):21:1.00</literal>
+<literal id="22" type="2" active="yes">!=(e19,e11):22:1.00</literal>
+<literal id="23" type="3" active="yes">S#ABBYS(x5):23:0.60</literal>
+<literal id="24" type="3" active="yes">SS#ABYSS-EXIT(x9):24:0.60</literal>
+<literal id="25" type="3" active="yes">R#ABYSS-THEME(x4,x9):25:0.60</literal>
+<literal id="26" type="3" active="yes">S#LOW-POINT(u25):26:0.30</literal>
+<literal id="27" type="3" active="yes">SS#MOVEMENT-DOWNWARD(x6):27:0.30</literal>
+<literal id="28" type="3" active="yes">R#MOVE-D-PATIENT(x7,x6):28:0.30</literal>
+<literal id="29" type="3" active="yes">TS#POVERTY(x5):29:0.45</literal>
+<unification l1="29" l2="31" unifier="e15=x5" active="yes" />
+<literal id="30" type="3" active="yes">T#ECONOMIC-INEQUALITY(_20):30:0.45</literal>
+<unification l1="30" l2="32" unifier="_20=_21" active="yes" />
+<literal id="31" type="3" active="yes">TS#POVERTY(e15):31:0.30</literal>
+<unification l1="31" l2="29" unifier="e15=x5" active="yes" />
+<literal id="32" type="3" active="yes">T#ECONOMIC-INEQUALITY(_21):32:0.30</literal>
+<unification l1="32" l2="30" unifier="_20=_21" active="yes" />
+<literal id="33" type="3" active="yes">R#POOR(x3,e15):33:0.30</literal>
+<literal id="34" type="3" active="yes">I#MOVEMENT-DOWNWARD(x6):34:0.27</literal>
+<literal id="35" type="3" active="yes">M#MOVE-DOWN(x6):35:0.26</literal>
+<literal id="36" type="3" active="yes">M#MOVE-D-PATIENT(x7,x6):36:0.26</literal>
+<explanation name="movement-downward" active="yes" axiom="">35 ^ 36 => 34</explanation>
+<explanation name="climb-out-of" active="yes" axiom="">23 ^ 24 ^ 25 => 1</explanation>
+<explanation name="climb-out-of" active="yes" axiom="">23 ^ 24 ^ 25 => 3</explanation>
+<explanation name="movement-downwardmap" active="yes" axiom="">34 => 27</explanation>
+<explanation name="movement-downward" active="yes" axiom="">35 ^ 36 => 28</explanation>
+<explanation name="poor" active="yes" axiom="">31 ^ 32 ^ 33 => 17</explanation>
+<explanation name="fall" active="yes" axiom="">26 ^ 27 ^ 28 => 8</explanation>
+<explanation name="poverty" active="yes" axiom="">29 ^ 30 => 9</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="16">
+<observed size="25" domain_size="0">
+push-vb(x6,x0,u42,u43) ^ poverty-nn(e41,x5) ^ recession-nn(e40,x4) ^ by-in(e39,x5,x4) ^ into-in(e38,x6,x5) ^ say-vb(x3,x1,x10,u37) ^ poor-adj(e36,x0) ^ themselves(e35,e36) ^ likely-adj(e34,x0,e36) ^ more-rb(e33,x0,x13) ^ thing(e32,x9) ^ equal(e31,x9,x12) ^ stay-vb(x16,x12,u29,u30) ^ affluent-adj(e28,x12) ^ more-rb(e27,x12,x15) ^ manage-vb(x10,x12,x16,u26) ^ than-in(e25,x0,x9) ^ time-nn(e24,x9) ^ on-in(e23,x0,x9) ^ card(e22,x8,3) ^ in-in(e21,x0,x8) ^ report-nn(e20,x1) ^ children-nn(e18,x0) ^ nam(e19,x0) ^ !=(e18,e18,e19,e19)
+</observed>
+<hypothesis score="-22.534">
+push-vb(x6,x0,u42,u43) ^ poverty-nn(e41,x5) ^ recession-nn(e40,x4) ^ by-in(e39,x5,x4) ^ into-in(e38,x6,x5) ^ say-vb(x3,x1,x10,u37) ^ poor-adj(e36,x0) ^ themselves(e35,e36) ^ likely-adj(e34,x0,e36) ^ more-rb(e33,x0,x13) ^ thing(e32,x9) ^ equal(e31,x9,x12) ^ stay-vb(x16,x12,u29,u30) ^ affluent-adj(e28,x12) ^ more-rb(e27,x12,x15) ^ manage-vb(x10,x12,x16,u26) ^ than-in(e25,x0,x9) ^ time-nn(e24,x9) ^ on-in(e23,x0,x9) ^ card(e22,x8,3) ^ in-in(e21,x0,x8) ^ report-nn(e20,x1) ^ children-nn(e18,x0) ^ nam(e19,x0) ^ !=(e18,e18,e19,e19) ^ S#ABYSS(x5) ^ SS#ABYSS-ENTRANCE(x6) ^ R#ABYSS-THEME(u42,x6) ^ R#ABBYSS-CAUSE(x0,x6) ^ TS#POVERTY(x5) ^ T#ECONOMIC-INEQUALITY(_22) ^ TS#POVERTY(e36) ^ T#ECONOMIC-INEQUALITY(_23) ^ R#POOR(x0,e36) ^ =(_22,_23) ^ =(x0,x12) ^ =(x5,e36) ^ =(x13,x15) ^ =(e27,e33)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_30":-0.451 "!HYPOTHESIZED_on-in_18":-1.001 "!HYPOTHESIZED_SS#ABYSS-ENTRANCE_26":-0.401 "!HYPOTHESIZED_stay-vb_12":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_32":-0.301 "!HYPOTHESIZED_R#ABBYSS-CAUSE_28":-0.401 "!HYPOTHESIZED_card_19":-1.001 "!HYPOTHESIZED_R#POOR_33":-0.301 "!HYPOTHESIZED_more-rb_14":-1.001 "!HYPOTHESIZED_say-vb_5":-1.001 "!HYPOTHESIZED_manage-vb_15":-1.001 "!HYPOTHESIZED_poor-adj_6":-1.001 "!HYPOTHESIZED_time-nn_17":-1.001 "!HYPOTHESIZED_into-in_4":-1.001 "!HYPOTHESIZED_thing_10":-1.001 "!HYPOTHESIZED_than-in_16":-1.001 "!EXPLAINED_more-rb_14":1 "!EXPLAINED_into-in_4":1 "!EXPLAINED_TS#POVERTY_29":0.45 "!HYPOTHESIZED_themselves_7":-1.001 "!HYPOTHESIZED_nam_23":-1.001 "!HYPOTHESIZED_!=_24":-1.001 "!EXPLAINED_poor-adj_6":1 "!HYPOTHESIZED_R#ABYSS-THEME_27":-0.401 "!HYPOTHESIZED_affluent-adj_13":-1.001 "!HYPOTHESIZED_more-rb_9":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_30":0.45 "!EXPLAINED_push-vb_0":1 "!HYPOTHESIZED_push-vb_0":-1.001 "!HYPOTHESIZED_likely-adj_8":-1.001 "!HYPOTHESIZED_TS#POVERTY_29":-0.451 "!HYPOTHESIZED_recession-nn_2":-1.001 "!HYPOTHESIZED_TS#POVERTY_31":-0.301 "!HYPOTHESIZED_children-nn_22":-1.001 "!HYPOTHESIZED_poverty-nn_1":-1.001 "!HYPOTHESIZED_by-in_3":-1.001 "!HYPOTHESIZED_S#ABYSS_25":-0.401 "!HYPOTHESIZED_report-nn_21":-1.001 "!HYPOTHESIZED_in-in_20":-1.001 "!HYPOTHESIZED_equal_11":-1.001 "!EXPLAINED_poverty-nn_1":1 
+</vector>
+<statistics>
+<time total="0.0321779" prepare="0.030015" ilp="0.00216293" />
+<ilp solution="Optimal" variables="121" constraints="152" />
+<search-space literals="34" axiom="4" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">push-vb(x6,x0,u42,u43):0:1.00</literal>
+<literal id="1" type="2" active="yes">poverty-nn(e41,x5):1:1.00</literal>
+<literal id="2" type="2" active="yes">recession-nn(e40,x4):2:1.00</literal>
+<literal id="3" type="2" active="yes">by-in(e39,x5,x4):3:1.00</literal>
+<literal id="4" type="2" active="yes">into-in(e38,x6,x5):4:1.00</literal>
+<literal id="5" type="2" active="yes">say-vb(x3,x1,x10,u37):5:1.00</literal>
+<literal id="6" type="2" active="yes">poor-adj(e36,x0):6:1.00</literal>
+<literal id="7" type="2" active="yes">themselves(e35,e36):7:1.00</literal>
+<literal id="8" type="2" active="yes">likely-adj(e34,x0,e36):8:1.00</literal>
+<literal id="9" type="2" active="yes">more-rb(e33,x0,x13):9:1.00</literal>
+<unification l1="9" l2="14" unifier="e33=e27, x0=x12, x13=x15" active="yes" />
+<literal id="10" type="2" active="yes">thing(e32,x9):10:1.00</literal>
+<literal id="11" type="2" active="yes">equal(e31,x9,x12):11:1.00</literal>
+<literal id="12" type="2" active="yes">stay-vb(x16,x12,u29,u30):12:1.00</literal>
+<literal id="13" type="2" active="yes">affluent-adj(e28,x12):13:1.00</literal>
+<literal id="14" type="2" active="yes">more-rb(e27,x12,x15):14:1.00</literal>
+<unification l1="14" l2="9" unifier="e33=e27, x0=x12, x13=x15" active="yes" />
+<literal id="15" type="2" active="yes">manage-vb(x10,x12,x16,u26):15:1.00</literal>
+<literal id="16" type="2" active="yes">than-in(e25,x0,x9):16:1.00</literal>
+<literal id="17" type="2" active="yes">time-nn(e24,x9):17:1.00</literal>
+<literal id="18" type="2" active="yes">on-in(e23,x0,x9):18:1.00</literal>
+<literal id="19" type="2" active="yes">card(e22,x8,3):19:1.00</literal>
+<literal id="20" type="2" active="yes">in-in(e21,x0,x8):20:1.00</literal>
+<literal id="21" type="2" active="yes">report-nn(e20,x1):21:1.00</literal>
+<literal id="22" type="2" active="yes">children-nn(e18,x0):22:1.00</literal>
+<literal id="23" type="2" active="yes">nam(e19,x0):23:1.00</literal>
+<literal id="24" type="2" active="yes">!=(e18,e18,e19,e19):24:1.00</literal>
+<literal id="25" type="3" active="yes">S#ABYSS(x5):25:0.40</literal>
+<literal id="26" type="3" active="yes">SS#ABYSS-ENTRANCE(x6):26:0.40</literal>
+<literal id="27" type="3" active="yes">R#ABYSS-THEME(u42,x6):27:0.40</literal>
+<literal id="28" type="3" active="yes">R#ABBYSS-CAUSE(x0,x6):28:0.40</literal>
+<literal id="29" type="3" active="yes">TS#POVERTY(x5):29:0.45</literal>
+<unification l1="29" l2="31" unifier="x5=e36" active="yes" />
+<literal id="30" type="3" active="yes">T#ECONOMIC-INEQUALITY(_22):30:0.45</literal>
+<unification l1="30" l2="32" unifier="_22=_23" active="yes" />
+<literal id="31" type="3" active="yes">TS#POVERTY(e36):31:0.30</literal>
+<unification l1="31" l2="29" unifier="x5=e36" active="yes" />
+<literal id="32" type="3" active="yes">T#ECONOMIC-INEQUALITY(_23):32:0.30</literal>
+<unification l1="32" l2="30" unifier="_22=_23" active="yes" />
+<literal id="33" type="3" active="yes">R#POOR(x0,e36):33:0.30</literal>
+<explanation name="push-into" active="yes" axiom="">25 ^ 26 ^ 27 ^ 28 => 0</explanation>
+<explanation name="poverty" active="yes" axiom="">29 ^ 30 => 1</explanation>
+<explanation name="push-into" active="yes" axiom="">25 ^ 26 ^ 27 ^ 28 => 4</explanation>
+<explanation name="poor" active="yes" axiom="">31 ^ 32 ^ 33 => 6</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="17">
+<observed size="29" domain_size="0">
+thing(e48,x14) ^ equal(e47,x14,x13) ^ fall-vb(x12,x13,u45,u46) ^ poverty-nn(e44,x11) ^ into-in(e43,x12,x11) ^ bounce-vb(x16,x14,u41,u42) ^ back-rb(e40,x16) ^ able-adj(e39,x14,x16) ^ thing(e38,x2) ^ be-vb(x9,x2,u36,u37) ^ poverty-nn(e35,x8) ^ into-in(e34,x0,x8) ^ get-vb(x7,x0,u32,u33) ^ reversed-adj(e31,x0) ^ case-nn(e30,x6) ^ in-in(e29,x7,x6) ^ quantity-adj(e28,x5) ^ household-nn(e27,x5) ^ equal(e26,x5,x4) ^ fall-vb(x3,x4,u24,u25) ^ poverty-nn(e23,x2) ^ into-in(e22,x3,x2) ^ remain-vb(x1,x5,u20,u21) ^ poor-adj(e19,x5) ^ persistently-rb(e18,x5) ^ flow-nn(e17,x0) ^ !=(e48,e38) ^ !=(e47,e26) ^ !=(e43,e34,e22)
+</observed>
+<hypothesis score="-24.567">
+thing(e48,x14) ^ equal(e47,x14,x13) ^ fall-vb(x12,x13,u45,u46) ^ poverty-nn(e44,x11) ^ into-in(e43,x12,x11) ^ bounce-vb(x16,x14,u41,u42) ^ back-rb(e40,x16) ^ able-adj(e39,x14,x16) ^ thing(e38,x2) ^ be-vb(x9,x2,u36,u37) ^ poverty-nn(e35,x8) ^ into-in(e34,x0,x8) ^ get-vb(x7,x0,u32,u33) ^ reversed-adj(e31,x0) ^ case-nn(e30,x6) ^ in-in(e29,x7,x6) ^ quantity-adj(e28,x5) ^ household-nn(e27,x5) ^ equal(e26,x5,x4) ^ fall-vb(x3,x4,u24,u25) ^ poverty-nn(e23,x2) ^ into-in(e22,x3,x2) ^ remain-vb(x1,x5,u20,u21) ^ poor-adj(e19,x5) ^ persistently-rb(e18,x5) ^ flow-nn(e17,x0) ^ !=(e48,e38) ^ !=(e47,e26) ^ !=(e43,e34,e22) ^ S#LOW-POINT(u45) ^ SS#MOVEMENT-DOWNWARD(x12) ^ R#MOVE-D-PATIENT(x13,x12) ^ TS#POVERTY(x11) ^ T#ECONOMIC-INEQUALITY(_24) ^ TS#POVERTY(e19) ^ T#ECONOMIC-INEQUALITY(_27) ^ R#POOR(x5,e19) ^ S#BODY-OF-WATER(_28) ^ SS#BODY-OF-WATER-MOVEMENT(x0) ^ I#MOVEMENT-DOWNWARD(x12) ^ I#BODY-OF-WATER(_28) ^ I#BODY-OF-WATER-MOVEMENT(x0) ^ M#MOVE-DOWN(x12) ^ M#MOVE-D-PATIENT(x13,x12) ^ =(x11,x8,e19,x2) ^ =(e44,e35,e23) ^ =(u25,u46) ^ =(x4,x13) ^ =(_24,_27) ^ =(u45,u24) ^ =(x3,x12)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_remain-vb_22":-1.001 "!EXPLAINED_TS#POVERTY_32":0.45 "!HYPOTHESIZED_able-adj_7":-1.001 "!EXPLAINED_S#BODY-OF-WATER_44":0.45 "!EXPLAINED_fall-vb_2":1 "!HYPOTHESIZED_S#BODY-OF-WATER_44":-0.451 "!EXPLAINED_R#MOVE-D-PATIENT_31":0.3 "!EXPLAINED_poor-adj_23":1 "!HYPOTHESIZED_fall-vb_2":-1.001 "!HYPOTHESIZED_bounce-vb_5":-1.001 "!HYPOTHESIZED_R#MOVE-D-PATIENT_31":-0.301 "!HYPOTHESIZED_R#POOR_43":-0.301 "!HYPOTHESIZED_SS#MOVEMENT-DOWNWARD_30":-0.301 "!EXPLAINED_I#MOVEMENT-DOWNWARD_46":0.27 "!HYPOTHESIZED_TS#POVERTY_32":-0.451 "!HYPOTHESIZED_get-vb_12":-1.001 "!HYPOTHESIZED_I#BODY-OF-WATER-MOVEMENT_49":-0.406 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_42":-0.301 "!HYPOTHESIZED_thing_0":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_33":-0.451 "!HYPOTHESIZED_!=_28":-1.001 "!HYPOTHESIZED_persistently-rb_24":-1.001 "!HYPOTHESIZED_quantity-adj_16":-1.001 "!EXPLAINED_SS#BODY-OF-WATER-MOVEMENT_45":0.45 "!HYPOTHESIZED_thing_8":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_33":0.45 "!HYPOTHESIZED_S#LOW-POINT_29":-0.301 "!EXPLAINED_flow-nn_25":1 "!HYPOTHESIZED_back-rb_6":-1.001 "!EXPLAINED_poverty-nn_10":1 "!HYPOTHESIZED_M#MOVE-DOWN_50":-0.2575 "!HYPOTHESIZED_I#MOVEMENT-DOWNWARD_46":-0.271 "!HYPOTHESIZED_in-in_15":-1.001 "!EXPLAINED_poverty-nn_20":1 "!HYPOTHESIZED_be-vb_9":-1.001 "!HYPOTHESIZED_flow-nn_25":-1.001 "!HYPOTHESIZED_into-in_4":-1.001 "!EXPLAINED_SS#MOVEMENT-DOWNWARD_30":0.3 "!HYPOTHESIZED_TS#POVERTY_41":-0.301 "!HYPOTHESIZED_poor-adj_23":-1.001 "!HYPOTHESIZED_poverty-nn_20":-1.001 "!HYPOTHESIZED_equal_18":-1.001 "!HYPOTHESIZED_into-in_21":-1.001 "!HYPOTHESIZED_into-in_11":-1.001 "!HYPOTHESIZED_SS#BODY-OF-WATER-MOVEMENT_45":-0.451 "!EXPLAINED_fall-vb_19":1 "!HYPOTHESIZED_reversed-adj_13":-1.001 "!HYPOTHESIZED_poverty-nn_10":-1.001 "!HYPOTHESIZED_!=_27":-1.001 "!HYPOTHESIZED_household-nn_17":-1.001 "!HYPOTHESIZED_equal_1":-1.001 "!HYPOTHESIZED_case-nn_14":-1.001 "!HYPOTHESIZED_poverty-nn_3":-1.001 "!EXPLAINED_poverty-nn_3":1 "!HYPOTHESIZED_fall-vb_19":-1.001 "!HYPOTHESIZED_I#BODY-OF-WATER_48":-0.406 "!HYPOTHESIZED_!=_26":-1.001 "!HYPOTHESIZED_M#MOVE-D-PATIENT_51":-0.2575 
+</vector>
+<statistics>
+<time total="0.0955229" prepare="0.06479" ilp="0.0307329" />
+<ilp solution="Optimal" variables="259" constraints="365" />
+<search-space literals="54" axiom="11" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">thing(e48,x14):0:1.00</literal>
+<unification l1="0" l2="8" unifier="" active="no" />
+<literal id="1" type="2" active="yes">equal(e47,x14,x13):1:1.00</literal>
+<unification l1="1" l2="18" unifier="x4=x13" active="no" />
+<literal id="2" type="2" active="yes">fall-vb(x12,x13,u45,u46):2:1.00</literal>
+<unification l1="2" l2="19" unifier="x3=x12, x4=x13, u24=u45, u46=u25" active="yes" />
+<literal id="3" type="2" active="yes">poverty-nn(e44,x11):3:1.00</literal>
+<unification l1="3" l2="10" unifier="e35=e44, x11=x8" active="yes" />
+<unification l1="3" l2="20" unifier="e23=e44, x11=x2" active="yes" />
+<literal id="4" type="2" active="yes">into-in(e43,x12,x11):4:1.00</literal>
+<unification l1="4" l2="11" unifier="x11=x8" active="no" />
+<unification l1="4" l2="21" unifier="x3=x12, x11=x2" active="no" />
+<literal id="5" type="2" active="yes">bounce-vb(x16,x14,u41,u42):5:1.00</literal>
+<literal id="6" type="2" active="yes">back-rb(e40,x16):6:1.00</literal>
+<literal id="7" type="2" active="yes">able-adj(e39,x14,x16):7:1.00</literal>
+<literal id="8" type="2" active="yes">thing(e38,x2):8:1.00</literal>
+<unification l1="8" l2="0" unifier="" active="no" />
+<literal id="9" type="2" active="yes">be-vb(x9,x2,u36,u37):9:1.00</literal>
+<literal id="10" type="2" active="yes">poverty-nn(e35,x8):10:1.00</literal>
+<unification l1="10" l2="3" unifier="e35=e44, x11=x8" active="yes" />
+<unification l1="10" l2="20" unifier="e23=e35, x8=x2" active="yes" />
+<literal id="11" type="2" active="yes">into-in(e34,x0,x8):11:1.00</literal>
+<unification l1="11" l2="4" unifier="x11=x8" active="no" />
+<unification l1="11" l2="21" unifier="x8=x2" active="no" />
+<literal id="12" type="2" active="yes">get-vb(x7,x0,u32,u33):12:1.00</literal>
+<literal id="13" type="2" active="yes">reversed-adj(e31,x0):13:1.00</literal>
+<literal id="14" type="2" active="yes">case-nn(e30,x6):14:1.00</literal>
+<literal id="15" type="2" active="yes">in-in(e29,x7,x6):15:1.00</literal>
+<literal id="16" type="2" active="yes">quantity-adj(e28,x5):16:1.00</literal>
+<literal id="17" type="2" active="yes">household-nn(e27,x5):17:1.00</literal>
+<literal id="18" type="2" active="yes">equal(e26,x5,x4):18:1.00</literal>
+<unification l1="18" l2="1" unifier="x4=x13" active="no" />
+<literal id="19" type="2" active="yes">fall-vb(x3,x4,u24,u25):19:1.00</literal>
+<unification l1="19" l2="2" unifier="x3=x12, x4=x13, u24=u45, u46=u25" active="yes" />
+<literal id="20" type="2" active="yes">poverty-nn(e23,x2):20:1.00</literal>
+<unification l1="20" l2="3" unifier="e23=e44, x11=x2" active="yes" />
+<unification l1="20" l2="10" unifier="e23=e35, x8=x2" active="yes" />
+<literal id="21" type="2" active="yes">into-in(e22,x3,x2):21:1.00</literal>
+<unification l1="21" l2="4" unifier="x3=x12, x11=x2" active="no" />
+<unification l1="21" l2="11" unifier="x8=x2" active="no" />
+<literal id="22" type="2" active="yes">remain-vb(x1,x5,u20,u21):22:1.00</literal>
+<literal id="23" type="2" active="yes">poor-adj(e19,x5):23:1.00</literal>
+<literal id="24" type="2" active="yes">persistently-rb(e18,x5):24:1.00</literal>
+<literal id="25" type="2" active="yes">flow-nn(e17,x0):25:1.00</literal>
+<literal id="26" type="2" active="yes">!=(e48,e38):26:1.00</literal>
+<literal id="27" type="2" active="yes">!=(e47,e26):27:1.00</literal>
+<literal id="28" type="2" active="yes">!=(e43,e34,e22):28:1.00</literal>
+<literal id="29" type="3" active="yes">S#LOW-POINT(u45):29:0.30</literal>
+<unification l1="29" l2="36" unifier="u24=u45" active="no" />
+<literal id="30" type="3" active="yes">SS#MOVEMENT-DOWNWARD(x12):30:0.30</literal>
+<unification l1="30" l2="37" unifier="x3=x12" active="no" />
+<literal id="31" type="3" active="yes">R#MOVE-D-PATIENT(x13,x12):31:0.30</literal>
+<unification l1="31" l2="38" unifier="x4=x13, x3=x12" active="no" />
+<literal id="32" type="3" active="yes">TS#POVERTY(x11):32:0.45</literal>
+<unification l1="32" l2="34" unifier="x11=x8" active="no" />
+<unification l1="32" l2="39" unifier="x11=x2" active="no" />
+<unification l1="32" l2="41" unifier="x11=e19" active="yes" />
+<literal id="33" type="3" active="yes">T#ECONOMIC-INEQUALITY(_24):33:0.45</literal>
+<unification l1="33" l2="35" unifier="" active="no" />
+<unification l1="33" l2="40" unifier="" active="no" />
+<unification l1="33" l2="42" unifier="_24=_27" active="yes" />
+<literal id="34" type="3" active="no">TS#POVERTY(x8):34:0.45</literal>
+<unification l1="34" l2="32" unifier="x11=x8" active="no" />
+<unification l1="34" l2="39" unifier="x8=x2" active="no" />
+<unification l1="34" l2="41" unifier="x8=e19" active="no" />
+<literal id="35" type="3" active="no">T#ECONOMIC-INEQUALITY(_25):35:0.45</literal>
+<unification l1="35" l2="33" unifier="" active="no" />
+<unification l1="35" l2="40" unifier="" active="no" />
+<unification l1="35" l2="42" unifier="" active="no" />
+<literal id="36" type="3" active="no">S#LOW-POINT(u24):36:0.30</literal>
+<unification l1="36" l2="29" unifier="u24=u45" active="no" />
+<literal id="37" type="3" active="no">SS#MOVEMENT-DOWNWARD(x3):37:0.30</literal>
+<unification l1="37" l2="30" unifier="x3=x12" active="no" />
+<literal id="38" type="3" active="no">R#MOVE-D-PATIENT(x4,x3):38:0.30</literal>
+<unification l1="38" l2="31" unifier="x4=x13, x3=x12" active="no" />
+<literal id="39" type="3" active="no">TS#POVERTY(x2):39:0.45</literal>
+<unification l1="39" l2="32" unifier="x11=x2" active="no" />
+<unification l1="39" l2="34" unifier="x8=x2" active="no" />
+<unification l1="39" l2="41" unifier="e19=x2" active="no" />
+<literal id="40" type="3" active="no">T#ECONOMIC-INEQUALITY(_26):40:0.45</literal>
+<unification l1="40" l2="33" unifier="" active="no" />
+<unification l1="40" l2="35" unifier="" active="no" />
+<unification l1="40" l2="42" unifier="" active="no" />
+<literal id="41" type="3" active="yes">TS#POVERTY(e19):41:0.30</literal>
+<unification l1="41" l2="32" unifier="x11=e19" active="yes" />
+<unification l1="41" l2="34" unifier="x8=e19" active="no" />
+<unification l1="41" l2="39" unifier="e19=x2" active="no" />
+<literal id="42" type="3" active="yes">T#ECONOMIC-INEQUALITY(_27):42:0.30</literal>
+<unification l1="42" l2="33" unifier="_24=_27" active="yes" />
+<unification l1="42" l2="35" unifier="" active="no" />
+<unification l1="42" l2="40" unifier="" active="no" />
+<literal id="43" type="3" active="yes">R#POOR(x5,e19):43:0.30</literal>
+<literal id="44" type="3" active="yes">S#BODY-OF-WATER(_28):44:0.45</literal>
+<literal id="45" type="3" active="yes">SS#BODY-OF-WATER-MOVEMENT(x0):45:0.45</literal>
+<literal id="46" type="3" active="yes">I#MOVEMENT-DOWNWARD(x12):46:0.27</literal>
+<unification l1="46" l2="47" unifier="x3=x12" active="no" />
+<literal id="47" type="3" active="no">I#MOVEMENT-DOWNWARD(x3):47:0.27</literal>
+<unification l1="47" l2="46" unifier="x3=x12" active="no" />
+<literal id="48" type="3" active="yes">I#BODY-OF-WATER(_28):48:0.41</literal>
+<literal id="49" type="3" active="yes">I#BODY-OF-WATER-MOVEMENT(x0):49:0.41</literal>
+<literal id="50" type="3" active="yes">M#MOVE-DOWN(x12):50:0.26</literal>
+<unification l1="50" l2="52" unifier="" active="no" />
+<literal id="51" type="3" active="yes">M#MOVE-D-PATIENT(x13,x12):51:0.26</literal>
+<unification l1="51" l2="53" unifier="" active="no" />
+<literal id="52" type="3" active="no">M#MOVE-DOWN(x12):52:0.51</literal>
+<unification l1="52" l2="50" unifier="" active="no" />
+<literal id="53" type="3" active="no">M#MOVE-D-PATIENT(x13,x12):53:0.51</literal>
+<unification l1="53" l2="51" unifier="" active="no" />
+<explanation name="movement-downward" active="yes" axiom="">50 ^ 51 => 46</explanation>
+<explanation name="movement-downward" active="no" axiom="">52 ^ 53 => 46</explanation>
+<explanation name="poor" active="yes" axiom="">41 ^ 42 ^ 43 => 23</explanation>
+<explanation name="movement-downward" active="no" axiom="">52 ^ 53 => 47</explanation>
+<explanation name="flow2" active="yes" axiom="">44 ^ 45 => 25</explanation>
+<explanation name="fall" active="yes" axiom="">29 ^ 30 ^ 31 => 2</explanation>
+<explanation name="poverty" active="yes" axiom="">32 ^ 33 => 3</explanation>
+<explanation name="movement-downwardmap" active="yes" axiom="">46 => 30</explanation>
+<explanation name="movement-downward" active="yes" axiom="">50 ^ 51 => 31</explanation>
+<explanation name="movement-downward" active="no" axiom="">52 ^ 53 => 31</explanation>
+<explanation name="poverty" active="no" axiom="">34 ^ 35 => 10</explanation>
+<explanation name="movement-downwardmap" active="no" axiom="">47 => 37</explanation>
+<explanation name="movement-downward" active="no" axiom="">52 ^ 53 => 38</explanation>
+<explanation name="fall" active="no" axiom="">36 ^ 37 ^ 38 => 19</explanation>
+<explanation name="poverty" active="no" axiom="">39 ^ 40 => 20</explanation>
+<explanation name="watermap" active="yes" axiom="">48 => 44</explanation>
+<explanation name="streammap" active="yes" axiom="">49 => 45</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="18">
+<observed size="31" domain_size="0">
+not(e39,e40) ^ equal(e40,x10,x10) ^ important-adj(e38,x10) ^ element-nn(e37,x10) ^ support-nn(e36,x9) ^ whites-nn(e35,x8) ^ for-in(e34,x9,x8) ^ of-in(e33,x10,x9) ^ come-vb(x7,x10,u31,u32) ^ equal(e30,x0,x6) ^ quantity-adj(e29,x5) ^ family-nn(e28,x5) ^ jump-vb(x4,x5,u26,u27) ^ out-in(e25,x4) ^ poverty-nn(e24,x3) ^ for-in(e23,x3,x12) ^ generation-nn(e22,x13) ^ come-vb(x12,x13,u20,u21) ^ of-in(e19,x4,x3) ^ help-vb(x1,x6,x5,u18) ^ effectively-rb(e17,x1) ^ in-in(e16,x7,x0) ^ gi_bill-nn(e14,x0) ^ nam(e15,x0) ^ !=(e14,e15) ^ !=(e14,e15) ^ !=(e38,e38) ^ !=(e37,e37) ^ !=(e34,e23) ^ !=(e33,e19) ^ !=(e40,e30)
+</observed>
+<hypothesis score="-29.736">
+not(e39,e40) ^ equal(e40,x10,x10) ^ important-adj(e38,x10) ^ element-nn(e37,x10) ^ support-nn(e36,x9) ^ whites-nn(e35,x8) ^ for-in(e34,x9,x8) ^ of-in(e33,x10,x9) ^ come-vb(x7,x10,u31,u32) ^ equal(e30,x0,x6) ^ quantity-adj(e29,x5) ^ family-nn(e28,x5) ^ jump-vb(x4,x5,u26,u27) ^ out-in(e25,x4) ^ poverty-nn(e24,x3) ^ for-in(e23,x3,x12) ^ generation-nn(e22,x13) ^ come-vb(x12,x13,u20,u21) ^ of-in(e19,x4,x3) ^ help-vb(x1,x6,x5,u18) ^ effectively-rb(e17,x1) ^ in-in(e16,x7,x0) ^ gi_bill-nn(e14,x0) ^ nam(e15,x0) ^ !=(e14,e15) ^ !=(e14,e15) ^ !=(e38,e38) ^ !=(e37,e37) ^ !=(e34,e23) ^ !=(e33,e19) ^ !=(e40,e30) ^ S#ABBYS(x3) ^ SS#ABYSS-EXIT(x4) ^ R#ABYSS-THEME(x5,x4) ^ TS#POVERTY(x3) ^ T#ECONOMIC-INEQUALITY(_29) ^ =(x7,x12) ^ =(x13,x10) ^ =(u32,u21) ^ =(u31,u20)
+</hypothesis>
+<vector score="0">
+"!EXPLAINED_jump-vb_12":1 "!HYPOTHESIZED_come-vb_17":-1.001 "!HYPOTHESIZED_help-vb_19":-1.001 "!HYPOTHESIZED_family-nn_11":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_35":-0.451 "!HYPOTHESIZED_gi_bill-nn_22":-1.001 "!HYPOTHESIZED_effectively-rb_20":-1.001 "!HYPOTHESIZED_whites-nn_5":-1.001 "!HYPOTHESIZED_important-adj_2":-1.001 "!HYPOTHESIZED_!=_28":-1.001 "!HYPOTHESIZED_jump-vb_12":-1.001 "!HYPOTHESIZED_!=_29":-1.001 "!HYPOTHESIZED_for-in_15":-1.001 "!HYPOTHESIZED_equal_9":-1.001 "!EXPLAINED_poverty-nn_14":1 "!EXPLAINED_of-in_18":1 "!HYPOTHESIZED_of-in_7":-1.001 "!HYPOTHESIZED_!=_26":-1.001 "!HYPOTHESIZED_!=_27":-1.001 "!HYPOTHESIZED_nam_23":-1.001 "!HYPOTHESIZED_R#ABYSS-THEME_33":-0.601 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_equal_1":-1.001 "!HYPOTHESIZED_!=_25":-1.001 "!HYPOTHESIZED_!=_30":-1.001 "!HYPOTHESIZED_support-nn_4":-1.001 "!HYPOTHESIZED_for-in_6":-1.001 "!EXPLAINED_come-vb_17":1 "!HYPOTHESIZED_quantity-adj_10":-1.001 "!HYPOTHESIZED_poverty-nn_14":-1.001 "!HYPOTHESIZED_S#ABBYS_31":-0.601 "!HYPOTHESIZED_TS#POVERTY_34":-0.451 "!HYPOTHESIZED_SS#ABYSS-EXIT_32":-0.601 "!HYPOTHESIZED_not_0":-1.001 "!HYPOTHESIZED_element-nn_3":-1.001 "!HYPOTHESIZED_generation-nn_16":-1.001 "!HYPOTHESIZED_out-in_13":-1.001 "!HYPOTHESIZED_in-in_21":-1.001 "!HYPOTHESIZED_come-vb_8":-1.001 "!HYPOTHESIZED_of-in_18":-1.001 
+</vector>
+<statistics>
+<time total="0.030792" prepare="0.028662" ilp="0.00213003" />
+<ilp solution="Optimal" variables="141" constraints="147" />
+<search-space literals="36" axiom="5" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">not(e39,e40):0:1.00</literal>
+<literal id="1" type="2" active="yes">equal(e40,x10,x10):1:1.00</literal>
+<unification l1="1" l2="9" unifier="" active="no" />
+<literal id="2" type="2" active="yes">important-adj(e38,x10):2:1.00</literal>
+<literal id="3" type="2" active="yes">element-nn(e37,x10):3:1.00</literal>
+<literal id="4" type="2" active="yes">support-nn(e36,x9):4:1.00</literal>
+<literal id="5" type="2" active="yes">whites-nn(e35,x8):5:1.00</literal>
+<literal id="6" type="2" active="yes">for-in(e34,x9,x8):6:1.00</literal>
+<unification l1="6" l2="15" unifier="" active="no" />
+<literal id="7" type="2" active="yes">of-in(e33,x10,x9):7:1.00</literal>
+<unification l1="7" l2="18" unifier="" active="no" />
+<literal id="8" type="2" active="yes">come-vb(x7,x10,u31,u32):8:1.00</literal>
+<unification l1="8" l2="17" unifier="x7=x12, x10=x13, u20=u31, u21=u32" active="yes" />
+<literal id="9" type="2" active="yes">equal(e30,x0,x6):9:1.00</literal>
+<unification l1="9" l2="1" unifier="" active="no" />
+<literal id="10" type="2" active="yes">quantity-adj(e29,x5):10:1.00</literal>
+<literal id="11" type="2" active="yes">family-nn(e28,x5):11:1.00</literal>
+<literal id="12" type="2" active="yes">jump-vb(x4,x5,u26,u27):12:1.00</literal>
+<literal id="13" type="2" active="yes">out-in(e25,x4):13:1.00</literal>
+<literal id="14" type="2" active="yes">poverty-nn(e24,x3):14:1.00</literal>
+<literal id="15" type="2" active="yes">for-in(e23,x3,x12):15:1.00</literal>
+<unification l1="15" l2="6" unifier="" active="no" />
+<literal id="16" type="2" active="yes">generation-nn(e22,x13):16:1.00</literal>
+<literal id="17" type="2" active="yes">come-vb(x12,x13,u20,u21):17:1.00</literal>
+<unification l1="17" l2="8" unifier="x7=x12, x10=x13, u20=u31, u21=u32" active="yes" />
+<literal id="18" type="2" active="yes">of-in(e19,x4,x3):18:1.00</literal>
+<unification l1="18" l2="7" unifier="" active="no" />
+<literal id="19" type="2" active="yes">help-vb(x1,x6,x5,u18):19:1.00</literal>
+<literal id="20" type="2" active="yes">effectively-rb(e17,x1):20:1.00</literal>
+<literal id="21" type="2" active="yes">in-in(e16,x7,x0):21:1.00</literal>
+<literal id="22" type="2" active="yes">gi_bill-nn(e14,x0):22:1.00</literal>
+<literal id="23" type="2" active="yes">nam(e15,x0):23:1.00</literal>
+<literal id="24" type="2" active="yes">!=(e14,e15):24:1.00</literal>
+<literal id="25" type="2" active="yes">!=(e14,e15):25:1.00</literal>
+<literal id="26" type="2" active="yes">!=(e38,e38):26:1.00</literal>
+<literal id="27" type="2" active="yes">!=(e37,e37):27:1.00</literal>
+<literal id="28" type="2" active="yes">!=(e34,e23):28:1.00</literal>
+<literal id="29" type="2" active="yes">!=(e33,e19):29:1.00</literal>
+<literal id="30" type="2" active="yes">!=(e40,e30):30:1.00</literal>
+<literal id="31" type="3" active="yes">S#ABBYS(x3):31:0.60</literal>
+<literal id="32" type="3" active="yes">SS#ABYSS-EXIT(x4):32:0.60</literal>
+<literal id="33" type="3" active="yes">R#ABYSS-THEME(x5,x4):33:0.60</literal>
+<literal id="34" type="3" active="yes">TS#POVERTY(x3):34:0.45</literal>
+<literal id="35" type="3" active="yes">T#ECONOMIC-INEQUALITY(_29):35:0.45</literal>
+<explanation name="jump-out-of" active="yes" axiom="">31 ^ 32 ^ 33 => 12</explanation>
+<explanation name="poverty" active="yes" axiom="">34 ^ 35 => 14</explanation>
+<explanation name="jump-out-of" active="yes" axiom="">31 ^ 32 ^ 33 => 18</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="19">
+<observed size="26" domain_size="0">
+about-in(e30,x8) ^ card(e29,x8,44) ^ card(e28,x8,1000000) ^ people-nn(e27,x8) ^ drag-vb(x7,u25,x8,u26) ^ poverty-nn(e24,x6) ^ into-in(e23,x7,x6) ^ in-in(e22,x7,x0) ^ because-in(e21,x7) ^ higher-adj(e20,x5) ^ food-nn(e19,x4) ^ of-in(e18,x5,x4) ^ price-nn(e17,x5) ^ of-in(e16,x7,x5) ^ talk-vb(x3,x1,x8,u15) ^ fact-nn(e14,x2) ^ in-in(e13,x3,x2) ^ world_bank-nn(e11,x1) ^ org(e12,x1) ^ past-adj(e10,x0) ^ year-nn(e9,x0) ^ !=(e11,e12) ^ !=(e11,e12) ^ !=(e18,e16) ^ !=(e22,e13) ^ !=(e29,e28)
+</observed>
+<hypothesis score="-25.532">
+about-in(e30,x8) ^ card(e29,x8,44) ^ card(e28,x8,1000000) ^ people-nn(e27,x8) ^ drag-vb(x7,u25,x8,u26) ^ poverty-nn(e24,x6) ^ into-in(e23,x7,x6) ^ in-in(e22,x7,x0) ^ because-in(e21,x7) ^ higher-adj(e20,x5) ^ food-nn(e19,x4) ^ of-in(e18,x5,x4) ^ price-nn(e17,x5) ^ of-in(e16,x7,x5) ^ talk-vb(x3,x1,x8,u15) ^ fact-nn(e14,x2) ^ in-in(e13,x3,x2) ^ world_bank-nn(e11,x1) ^ org(e12,x1) ^ past-adj(e10,x0) ^ year-nn(e9,x0) ^ !=(e11,e12) ^ !=(e11,e12) ^ !=(e18,e16) ^ !=(e22,e13) ^ !=(e29,e28) ^ S#ABYSS(x6) ^ SS#ABYSS-ENTRANCE(x7) ^ R#ABYSS-THEME(x8,x7) ^ R#ABBYSS-CAUSE(u25,x7) ^ TS#POVERTY(x6) ^ T#ECONOMIC-INEQUALITY(_30)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_about-in_0":-1.001 "!HYPOTHESIZED_R#ABBYSS-CAUSE_29":-0.401 "!HYPOTHESIZED_SS#ABYSS-ENTRANCE_27":-0.401 "!HYPOTHESIZED_in-in_7":-1.001 "!EXPLAINED_poverty-nn_5":1 "!HYPOTHESIZED_card_1":-1.001 "!HYPOTHESIZED_card_2":-1.001 "!HYPOTHESIZED_food-nn_10":-1.001 "!HYPOTHESIZED_of-in_11":-1.001 "!HYPOTHESIZED_talk-vb_14":-1.001 "!HYPOTHESIZED_of-in_13":-1.001 "!HYPOTHESIZED_into-in_6":-1.001 "!HYPOTHESIZED_drag-vb_4":-1.001 "!HYPOTHESIZED_fact-nn_15":-1.001 "!HYPOTHESIZED_!=_22":-1.001 "!HYPOTHESIZED_!=_23":-1.001 "!HYPOTHESIZED_in-in_16":-1.001 "!HYPOTHESIZED_price-nn_12":-1.001 "!HYPOTHESIZED_!=_21":-1.001 "!EXPLAINED_into-in_6":1 "!HYPOTHESIZED_world_bank-nn_17":-1.001 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_!=_25":-1.001 "!HYPOTHESIZED_year-nn_20":-1.001 "!HYPOTHESIZED_past-adj_19":-1.001 "!EXPLAINED_drag-vb_4":1 "!HYPOTHESIZED_org_18":-1.001 "!HYPOTHESIZED_people-nn_3":-1.001 "!HYPOTHESIZED_R#ABYSS-THEME_28":-0.401 "!HYPOTHESIZED_TS#POVERTY_30":-0.451 "!HYPOTHESIZED_because-in_8":-1.001 "!HYPOTHESIZED_S#ABYSS_26":-0.401 "!HYPOTHESIZED_poverty-nn_5":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_31":-0.451 "!HYPOTHESIZED_higher-adj_9":-1.001 
+</vector>
+<statistics>
+<time total="0.0288301" prepare="0.027308" ilp="0.00152206" />
+<ilp solution="Optimal" variables="119" constraints="139" />
+<search-space literals="32" axiom="5" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">about-in(e30,x8):0:1.00</literal>
+<literal id="1" type="2" active="yes">card(e29,x8,44):1:1.00</literal>
+<unification l1="1" l2="2" unifier="" active="no" />
+<literal id="2" type="2" active="yes">card(e28,x8,1000000):2:1.00</literal>
+<unification l1="2" l2="1" unifier="" active="no" />
+<literal id="3" type="2" active="yes">people-nn(e27,x8):3:1.00</literal>
+<literal id="4" type="2" active="yes">drag-vb(x7,u25,x8,u26):4:1.00</literal>
+<literal id="5" type="2" active="yes">poverty-nn(e24,x6):5:1.00</literal>
+<literal id="6" type="2" active="yes">into-in(e23,x7,x6):6:1.00</literal>
+<literal id="7" type="2" active="yes">in-in(e22,x7,x0):7:1.00</literal>
+<unification l1="7" l2="16" unifier="" active="no" />
+<literal id="8" type="2" active="yes">because-in(e21,x7):8:1.00</literal>
+<literal id="9" type="2" active="yes">higher-adj(e20,x5):9:1.00</literal>
+<literal id="10" type="2" active="yes">food-nn(e19,x4):10:1.00</literal>
+<literal id="11" type="2" active="yes">of-in(e18,x5,x4):11:1.00</literal>
+<unification l1="11" l2="13" unifier="" active="no" />
+<literal id="12" type="2" active="yes">price-nn(e17,x5):12:1.00</literal>
+<literal id="13" type="2" active="yes">of-in(e16,x7,x5):13:1.00</literal>
+<unification l1="13" l2="11" unifier="" active="no" />
+<literal id="14" type="2" active="yes">talk-vb(x3,x1,x8,u15):14:1.00</literal>
+<literal id="15" type="2" active="yes">fact-nn(e14,x2):15:1.00</literal>
+<literal id="16" type="2" active="yes">in-in(e13,x3,x2):16:1.00</literal>
+<unification l1="16" l2="7" unifier="" active="no" />
+<literal id="17" type="2" active="yes">world_bank-nn(e11,x1):17:1.00</literal>
+<literal id="18" type="2" active="yes">org(e12,x1):18:1.00</literal>
+<literal id="19" type="2" active="yes">past-adj(e10,x0):19:1.00</literal>
+<literal id="20" type="2" active="yes">year-nn(e9,x0):20:1.00</literal>
+<literal id="21" type="2" active="yes">!=(e11,e12):21:1.00</literal>
+<literal id="22" type="2" active="yes">!=(e11,e12):22:1.00</literal>
+<literal id="23" type="2" active="yes">!=(e18,e16):23:1.00</literal>
+<literal id="24" type="2" active="yes">!=(e22,e13):24:1.00</literal>
+<literal id="25" type="2" active="yes">!=(e29,e28):25:1.00</literal>
+<literal id="26" type="3" active="yes">S#ABYSS(x6):26:0.40</literal>
+<literal id="27" type="3" active="yes">SS#ABYSS-ENTRANCE(x7):27:0.40</literal>
+<literal id="28" type="3" active="yes">R#ABYSS-THEME(x8,x7):28:0.40</literal>
+<literal id="29" type="3" active="yes">R#ABBYSS-CAUSE(u25,x7):29:0.40</literal>
+<literal id="30" type="3" active="yes">TS#POVERTY(x6):30:0.45</literal>
+<literal id="31" type="3" active="yes">T#ECONOMIC-INEQUALITY(_30):31:0.45</literal>
+<explanation name="drag-into" active="yes" axiom="">26 ^ 27 ^ 28 ^ 29 => 4</explanation>
+<explanation name="poverty" active="yes" axiom="">30 ^ 31 => 5</explanation>
+<explanation name="drag-into" active="yes" axiom="">26 ^ 27 ^ 28 ^ 29 => 6</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="20">
+<observed size="51" domain_size="0">
+add-vb(x6,x4,x10,u60) ^ not(e48,e59) ^ quote-in(e59,x20) ^ person(e58,x0) ^ make-vb(x22,x20,x0,u57) ^ up-rb(e56,x22) ^ able-adj(e55,x20,x22) ^ simply-rb(e54,x22) ^ case-nn(e53,x18) ^ people-nn(e52,x17) ^ rel(e51,x18,x17) ^ of-in(e50,x1,x18) ^ in-in(e49,x22,x1) ^ quote-in(e47,x11) ^ end-vb(x10,x11,x16,u46) ^ suck-vb(x16,u44,x11,u45) ^ poverty-nn(e43,x15) ^ into-in(e42,x16,x15) ^ level-nn(e41,x14) ^ debt-nn(e40,x13) ^ of-in(e39,x14,x13) ^ spiral-vb(x12,x11,x14,u38) ^ up-rb(e37,x10) ^ case-nn(e36,x8) ^ people-nn(e35,x7) ^ rel(e34,x8,x7) ^ of-in(e33,x2,x8) ^ in-in(e32,x10,x2) ^ topic(e31,x3) ^ mr_orr-nn(e29,x4) ^ per(e30,x4) ^ shortfall-nn(e28,x0) ^ vast-adj(e27,x1) ^ majority-nn(e26,x1) ^ vast-adj(e25,x2) ^ majority-nn(e24,x2) ^ of-in(e23,x3,x4) ^ !=(e50,e33) ^ !=(e53,e36) ^ !=(e51,e34) ^ !=(e52,e35) ^ !=(e49,e32) ^ !=(e59,e47) ^ !=(e29,e30) ^ !=(e29,e30) ^ !=(e26,e24) ^ !=(e27,e25) ^ !=(e51,e34) ^ !=(e59,e47) ^ !=(e50,e39,e33,e23) ^ !=(e49,e32)
+</observed>
+<hypothesis score="-49.557">
+add-vb(x6,x4,x10,u60) ^ not(e48,e59) ^ quote-in(e59,x20) ^ person(e58,x0) ^ make-vb(x22,x20,x0,u57) ^ up-rb(e56,x22) ^ able-adj(e55,x20,x22) ^ simply-rb(e54,x22) ^ case-nn(e53,x18) ^ people-nn(e52,x17) ^ rel(e51,x18,x17) ^ of-in(e50,x1,x18) ^ in-in(e49,x22,x1) ^ quote-in(e47,x11) ^ end-vb(x10,x11,x16,u46) ^ suck-vb(x16,u44,x11,u45) ^ poverty-nn(e43,x15) ^ into-in(e42,x16,x15) ^ level-nn(e41,x14) ^ debt-nn(e40,x13) ^ of-in(e39,x14,x13) ^ spiral-vb(x12,x11,x14,u38) ^ up-rb(e37,x10) ^ case-nn(e36,x8) ^ people-nn(e35,x7) ^ rel(e34,x8,x7) ^ of-in(e33,x2,x8) ^ in-in(e32,x10,x2) ^ topic(e31,x3) ^ mr_orr-nn(e29,x4) ^ per(e30,x4) ^ shortfall-nn(e28,x0) ^ vast-adj(e27,x1) ^ majority-nn(e26,x1) ^ vast-adj(e25,x2) ^ majority-nn(e24,x2) ^ of-in(e23,x3,x4) ^ !=(e50,e33) ^ !=(e53,e36) ^ !=(e51,e34) ^ !=(e52,e35) ^ !=(e49,e32) ^ !=(e59,e47) ^ !=(e29,e30) ^ !=(e29,e30) ^ !=(e26,e24) ^ !=(e27,e25) ^ !=(e51,e34) ^ !=(e59,e47) ^ !=(e50,e39,e33,e23) ^ !=(e49,e32) ^ S#ABYSS(x15) ^ SS#ABYSS-ENTRANCE(x16) ^ R#ABYSS-THEME(x11,x16) ^ R#ABBYSS-CAUSE(u44,x16) ^ TS#POVERTY(x15) ^ T#ECONOMIC-INEQUALITY(_31) ^ =(e56,e37) ^ =(x22,x10)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_into-in_17":-1.001 "!HYPOTHESIZED_majority-nn_35":-1.001 "!HYPOTHESIZED_!=_46":-1.001 "!HYPOTHESIZED_add-vb_0":-1.001 "!HYPOTHESIZED_!=_48":-1.001 "!HYPOTHESIZED_simply-rb_7":-1.001 "!HYPOTHESIZED_of-in_11":-1.001 "!HYPOTHESIZED_of-in_26":-1.001 "!HYPOTHESIZED_SS#ABYSS-ENTRANCE_52":-0.401 "!HYPOTHESIZED_suck-vb_15":-1.001 "!HYPOTHESIZED_!=_45":-1.001 "!HYPOTHESIZED_of-in_36":-1.001 "!HYPOTHESIZED_able-adj_6":-1.001 "!HYPOTHESIZED_vast-adj_34":-1.001 "!HYPOTHESIZED_up-rb_5":-1.001 "!EXPLAINED_up-rb_22":1 "!HYPOTHESIZED_quote-in_2":-1.001 "!HYPOTHESIZED_R#ABYSS-THEME_53":-0.401 "!EXPLAINED_poverty-nn_16":1 "!HYPOTHESIZED_per_30":-1.001 "!HYPOTHESIZED_people-nn_9":-1.001 "!HYPOTHESIZED_!=_44":-1.001 "!HYPOTHESIZED_vast-adj_32":-1.001 "!HYPOTHESIZED_quote-in_13":-1.001 "!HYPOTHESIZED_shortfall-nn_31":-1.001 "!HYPOTHESIZED_debt-nn_19":-1.001 "!EXPLAINED_into-in_17":1 "!HYPOTHESIZED_end-vb_14":-1.001 "!HYPOTHESIZED_!=_38":-1.001 "!HYPOTHESIZED_rel_25":-1.001 "!EXPLAINED_suck-vb_15":1 "!HYPOTHESIZED_!=_43":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_56":-0.451 "!HYPOTHESIZED_mr_orr-nn_29":-1.001 "!HYPOTHESIZED_in-in_12":-1.001 "!HYPOTHESIZED_not_1":-1.001 "!HYPOTHESIZED_R#ABBYSS-CAUSE_54":-0.401 "!HYPOTHESIZED_!=_39":-1.001 "!HYPOTHESIZED_!=_42":-1.001 "!HYPOTHESIZED_in-in_27":-1.001 "!HYPOTHESIZED_rel_10":-1.001 "!HYPOTHESIZED_up-rb_22":-1.001 "!HYPOTHESIZED_case-nn_8":-1.001 "!HYPOTHESIZED_make-vb_4":-1.001 "!HYPOTHESIZED_!=_37":-1.001 "!HYPOTHESIZED_people-nn_24":-1.001 "!HYPOTHESIZED_majority-nn_33":-1.001 "!HYPOTHESIZED_person_3":-1.001 "!HYPOTHESIZED_spiral-vb_21":-1.001 "!HYPOTHESIZED_!=_41":-1.001 "!HYPOTHESIZED_S#ABYSS_51":-0.401 "!HYPOTHESIZED_case-nn_23":-1.001 "!HYPOTHESIZED_level-nn_18":-1.001 "!HYPOTHESIZED_TS#POVERTY_55":-0.451 "!HYPOTHESIZED_!=_47":-1.001 "!HYPOTHESIZED_!=_40":-1.001 "!HYPOTHESIZED_!=_49":-1.001 "!HYPOTHESIZED_poverty-nn_16":-1.001 "!HYPOTHESIZED_!=_50":-1.001 "!HYPOTHESIZED_topic_28":-1.001 "!HYPOTHESIZED_of-in_20":-1.001 
+</vector>
+<statistics>
+<time total="0.0572102" prepare="0.0548811" ilp="0.00232911" />
+<ilp solution="Optimal" variables="231" constraints="232" />
+<search-space literals="57" axiom="5" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">add-vb(x6,x4,x10,u60):0:1.00</literal>
+<literal id="1" type="2" active="yes">not(e48,e59):1:1.00</literal>
+<literal id="2" type="2" active="yes">quote-in(e59,x20):2:1.00</literal>
+<unification l1="2" l2="13" unifier="" active="no" />
+<literal id="3" type="2" active="yes">person(e58,x0):3:1.00</literal>
+<literal id="4" type="2" active="yes">make-vb(x22,x20,x0,u57):4:1.00</literal>
+<literal id="5" type="2" active="yes">up-rb(e56,x22):5:1.00</literal>
+<unification l1="5" l2="22" unifier="e37=e56, x10=x22" active="yes" />
+<literal id="6" type="2" active="yes">able-adj(e55,x20,x22):6:1.00</literal>
+<literal id="7" type="2" active="yes">simply-rb(e54,x22):7:1.00</literal>
+<literal id="8" type="2" active="yes">case-nn(e53,x18):8:1.00</literal>
+<unification l1="8" l2="23" unifier="" active="no" />
+<literal id="9" type="2" active="yes">people-nn(e52,x17):9:1.00</literal>
+<unification l1="9" l2="24" unifier="" active="no" />
+<literal id="10" type="2" active="yes">rel(e51,x18,x17):10:1.00</literal>
+<unification l1="10" l2="25" unifier="" active="no" />
+<literal id="11" type="2" active="yes">of-in(e50,x1,x18):11:1.00</literal>
+<unification l1="11" l2="20" unifier="" active="no" />
+<unification l1="11" l2="26" unifier="" active="no" />
+<unification l1="11" l2="36" unifier="" active="no" />
+<literal id="12" type="2" active="yes">in-in(e49,x22,x1):12:1.00</literal>
+<unification l1="12" l2="27" unifier="x10=x22" active="no" />
+<literal id="13" type="2" active="yes">quote-in(e47,x11):13:1.00</literal>
+<unification l1="13" l2="2" unifier="" active="no" />
+<literal id="14" type="2" active="yes">end-vb(x10,x11,x16,u46):14:1.00</literal>
+<literal id="15" type="2" active="yes">suck-vb(x16,u44,x11,u45):15:1.00</literal>
+<literal id="16" type="2" active="yes">poverty-nn(e43,x15):16:1.00</literal>
+<literal id="17" type="2" active="yes">into-in(e42,x16,x15):17:1.00</literal>
+<literal id="18" type="2" active="yes">level-nn(e41,x14):18:1.00</literal>
+<literal id="19" type="2" active="yes">debt-nn(e40,x13):19:1.00</literal>
+<literal id="20" type="2" active="yes">of-in(e39,x14,x13):20:1.00</literal>
+<unification l1="20" l2="11" unifier="" active="no" />
+<unification l1="20" l2="26" unifier="" active="no" />
+<unification l1="20" l2="36" unifier="" active="no" />
+<literal id="21" type="2" active="yes">spiral-vb(x12,x11,x14,u38):21:1.00</literal>
+<literal id="22" type="2" active="yes">up-rb(e37,x10):22:1.00</literal>
+<unification l1="22" l2="5" unifier="e37=e56, x10=x22" active="yes" />
+<literal id="23" type="2" active="yes">case-nn(e36,x8):23:1.00</literal>
+<unification l1="23" l2="8" unifier="" active="no" />
+<literal id="24" type="2" active="yes">people-nn(e35,x7):24:1.00</literal>
+<unification l1="24" l2="9" unifier="" active="no" />
+<literal id="25" type="2" active="yes">rel(e34,x8,x7):25:1.00</literal>
+<unification l1="25" l2="10" unifier="" active="no" />
+<literal id="26" type="2" active="yes">of-in(e33,x2,x8):26:1.00</literal>
+<unification l1="26" l2="11" unifier="" active="no" />
+<unification l1="26" l2="20" unifier="" active="no" />
+<unification l1="26" l2="36" unifier="" active="no" />
+<literal id="27" type="2" active="yes">in-in(e32,x10,x2):27:1.00</literal>
+<unification l1="27" l2="12" unifier="x10=x22" active="no" />
+<literal id="28" type="2" active="yes">topic(e31,x3):28:1.00</literal>
+<literal id="29" type="2" active="yes">mr_orr-nn(e29,x4):29:1.00</literal>
+<literal id="30" type="2" active="yes">per(e30,x4):30:1.00</literal>
+<literal id="31" type="2" active="yes">shortfall-nn(e28,x0):31:1.00</literal>
+<literal id="32" type="2" active="yes">vast-adj(e27,x1):32:1.00</literal>
+<unification l1="32" l2="34" unifier="" active="no" />
+<literal id="33" type="2" active="yes">majority-nn(e26,x1):33:1.00</literal>
+<unification l1="33" l2="35" unifier="" active="no" />
+<literal id="34" type="2" active="yes">vast-adj(e25,x2):34:1.00</literal>
+<unification l1="34" l2="32" unifier="" active="no" />
+<literal id="35" type="2" active="yes">majority-nn(e24,x2):35:1.00</literal>
+<unification l1="35" l2="33" unifier="" active="no" />
+<literal id="36" type="2" active="yes">of-in(e23,x3,x4):36:1.00</literal>
+<unification l1="36" l2="11" unifier="" active="no" />
+<unification l1="36" l2="20" unifier="" active="no" />
+<unification l1="36" l2="26" unifier="" active="no" />
+<literal id="37" type="2" active="yes">!=(e50,e33):37:1.00</literal>
+<literal id="38" type="2" active="yes">!=(e53,e36):38:1.00</literal>
+<literal id="39" type="2" active="yes">!=(e51,e34):39:1.00</literal>
+<literal id="40" type="2" active="yes">!=(e52,e35):40:1.00</literal>
+<literal id="41" type="2" active="yes">!=(e49,e32):41:1.00</literal>
+<literal id="42" type="2" active="yes">!=(e59,e47):42:1.00</literal>
+<literal id="43" type="2" active="yes">!=(e29,e30):43:1.00</literal>
+<literal id="44" type="2" active="yes">!=(e29,e30):44:1.00</literal>
+<literal id="45" type="2" active="yes">!=(e26,e24):45:1.00</literal>
+<literal id="46" type="2" active="yes">!=(e27,e25):46:1.00</literal>
+<literal id="47" type="2" active="yes">!=(e51,e34):47:1.00</literal>
+<literal id="48" type="2" active="yes">!=(e59,e47):48:1.00</literal>
+<literal id="49" type="2" active="yes">!=(e50,e39,e33,e23):49:1.00</literal>
+<literal id="50" type="2" active="yes">!=(e49,e32):50:1.00</literal>
+<literal id="51" type="3" active="yes">S#ABYSS(x15):51:0.40</literal>
+<literal id="52" type="3" active="yes">SS#ABYSS-ENTRANCE(x16):52:0.40</literal>
+<literal id="53" type="3" active="yes">R#ABYSS-THEME(x11,x16):53:0.40</literal>
+<literal id="54" type="3" active="yes">R#ABBYSS-CAUSE(u44,x16):54:0.40</literal>
+<literal id="55" type="3" active="yes">TS#POVERTY(x15):55:0.45</literal>
+<literal id="56" type="3" active="yes">T#ECONOMIC-INEQUALITY(_31):56:0.45</literal>
+<explanation name="suck-into" active="yes" axiom="">51 ^ 52 ^ 53 ^ 54 => 15</explanation>
+<explanation name="poverty" active="yes" axiom="">55 ^ 56 => 16</explanation>
+<explanation name="suck-into" active="yes" axiom="">51 ^ 52 ^ 53 ^ 54 => 17</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="21">
+<observed size="23" domain_size="0">
+whq(e19,e20,x8) ^ climb-vb(x9,x4,u34,u35) ^ out-in(e33,x9) ^ of-in(e32,x9,x5) ^ neuter(e31,x5) ^ look-vb(x8,x5,u29,u30) ^ also-rb(e28,x8) ^ many-adj(e27,x7) ^ fall-vb(x6,x7,u25,u26) ^ poverty-nn(e24,x5) ^ into-in(e23,x6,x5) ^ at-in(e22,x8,x7) ^ rel(e21,x9,x5) ^ many-adj(e20,x4) ^ whq(e11,e12,x2) ^ many-adj(e18,x3) ^ stay-vb(x2,x3,u16,u17) ^ poor-adj(e15,x3) ^ during-in(e14,x2,x0) ^ manner_rel(e13,x2,x1) ^ manner(e12,x1) ^ period-nn(e10,x0) ^ !=(e19,e11)
+</observed>
+<hypothesis score="-19.55">
+whq(e19,e20,x8) ^ climb-vb(x9,x4,u34,u35) ^ out-in(e33,x9) ^ of-in(e32,x9,x5) ^ neuter(e31,x5) ^ look-vb(x8,x5,u29,u30) ^ also-rb(e28,x8) ^ many-adj(e27,x7) ^ fall-vb(x6,x7,u25,u26) ^ poverty-nn(e24,x5) ^ into-in(e23,x6,x5) ^ at-in(e22,x8,x7) ^ rel(e21,x9,x5) ^ many-adj(e20,x4) ^ whq(e11,e12,x2) ^ many-adj(e18,x3) ^ stay-vb(x2,x3,u16,u17) ^ poor-adj(e15,x3) ^ during-in(e14,x2,x0) ^ manner_rel(e13,x2,x1) ^ manner(e12,x1) ^ period-nn(e10,x0) ^ !=(e19,e11) ^ S#ABBYS(x5) ^ SS#ABYSS-EXIT(x9) ^ R#ABYSS-THEME(x4,x9) ^ S#LOW-POINT(u25) ^ SS#MOVEMENT-DOWNWARD(x6) ^ R#MOVE-D-PATIENT(x7,x6) ^ TS#POVERTY(x5) ^ T#ECONOMIC-INEQUALITY(_32) ^ TS#POVERTY(e15) ^ T#ECONOMIC-INEQUALITY(_33) ^ R#POOR(x3,e15) ^ I#MOVEMENT-DOWNWARD(x6) ^ M#MOVE-DOWN(x6) ^ M#MOVE-D-PATIENT(x7,x6) ^ =(x4,x7,x3) ^ =(e15,x5) ^ =(e20,e27,e18) ^ =(_33,_32)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_look-vb_5":-1.001 "!HYPOTHESIZED_S#ABBYS_23":-0.601 "!HYPOTHESIZED_manner_rel_19":-1.001 "!HYPOTHESIZED_whq_14":-1.001 "!HYPOTHESIZED_SS#MOVEMENT-DOWNWARD_27":-0.301 "!EXPLAINED_T#ECONOMIC-INEQUALITY_30":0.45 "!HYPOTHESIZED_poor-adj_17":-1.001 "!EXPLAINED_many-adj_15":1 "!HYPOTHESIZED_R#MOVE-D-PATIENT_28":-0.301 "!HYPOTHESIZED_many-adj_13":-1.001 "!HYPOTHESIZED_neuter_4":-1.001 "!EXPLAINED_climb-vb_1":1 "!HYPOTHESIZED_M#MOVE-D-PATIENT_36":-0.2575 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_32":-0.301 "!EXPLAINED_TS#POVERTY_29":0.45 "!EXPLAINED_many-adj_13":1 "!HYPOTHESIZED_period-nn_21":-1.001 "!HYPOTHESIZED_S#LOW-POINT_26":-0.301 "!EXPLAINED_poverty-nn_9":1 "!HYPOTHESIZED_R#ABYSS-THEME_25":-0.601 "!HYPOTHESIZED_SS#ABYSS-EXIT_24":-0.601 "!HYPOTHESIZED_rel_12":-1.001 "!HYPOTHESIZED_climb-vb_1":-1.001 "!HYPOTHESIZED_TS#POVERTY_31":-0.301 "!HYPOTHESIZED_during-in_18":-1.001 "!HYPOTHESIZED_poverty-nn_9":-1.001 "!HYPOTHESIZED_many-adj_15":-1.001 "!EXPLAINED_I#MOVEMENT-DOWNWARD_34":0.27 "!HYPOTHESIZED_manner_20":-1.001 "!HYPOTHESIZED_!=_22":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_30":-0.451 "!EXPLAINED_SS#MOVEMENT-DOWNWARD_27":0.3 "!HYPOTHESIZED_fall-vb_8":-1.001 "!HYPOTHESIZED_into-in_10":-1.001 "!HYPOTHESIZED_out-in_2":-1.001 "!HYPOTHESIZED_M#MOVE-DOWN_35":-0.2575 "!HYPOTHESIZED_whq_0":-1.001 "!HYPOTHESIZED_of-in_3":-1.001 "!HYPOTHESIZED_stay-vb_16":-1.001 "!HYPOTHESIZED_many-adj_7":-1.001 "!HYPOTHESIZED_also-rb_6":-1.001 "!EXPLAINED_of-in_3":1 "!EXPLAINED_poor-adj_17":1 "!HYPOTHESIZED_TS#POVERTY_29":-0.451 "!EXPLAINED_R#MOVE-D-PATIENT_28":0.3 "!HYPOTHESIZED_R#POOR_33":-0.301 "!EXPLAINED_fall-vb_8":1 "!HYPOTHESIZED_at-in_11":-1.001 "!HYPOTHESIZED_I#MOVEMENT-DOWNWARD_34":-0.271 
+</vector>
+<statistics>
+<time total="0.0403032" prepare="0.0364392" ilp="0.00386405" />
+<ilp solution="Optimal" variables="147" constraints="191" />
+<search-space literals="37" axiom="9" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">whq(e19,e20,x8):0:1.00</literal>
+<unification l1="0" l2="14" unifier="" active="no" />
+<literal id="1" type="2" active="yes">climb-vb(x9,x4,u34,u35):1:1.00</literal>
+<literal id="2" type="2" active="yes">out-in(e33,x9):2:1.00</literal>
+<literal id="3" type="2" active="yes">of-in(e32,x9,x5):3:1.00</literal>
+<literal id="4" type="2" active="yes">neuter(e31,x5):4:1.00</literal>
+<literal id="5" type="2" active="yes">look-vb(x8,x5,u29,u30):5:1.00</literal>
+<literal id="6" type="2" active="yes">also-rb(e28,x8):6:1.00</literal>
+<literal id="7" type="2" active="yes">many-adj(e27,x7):7:1.00</literal>
+<unification l1="7" l2="13" unifier="e27=e20, x7=x4" active="yes" />
+<unification l1="7" l2="15" unifier="e18=e27, x3=x7" active="yes" />
+<literal id="8" type="2" active="yes">fall-vb(x6,x7,u25,u26):8:1.00</literal>
+<literal id="9" type="2" active="yes">poverty-nn(e24,x5):9:1.00</literal>
+<literal id="10" type="2" active="yes">into-in(e23,x6,x5):10:1.00</literal>
+<literal id="11" type="2" active="yes">at-in(e22,x8,x7):11:1.00</literal>
+<literal id="12" type="2" active="yes">rel(e21,x9,x5):12:1.00</literal>
+<literal id="13" type="2" active="yes">many-adj(e20,x4):13:1.00</literal>
+<unification l1="13" l2="7" unifier="e27=e20, x7=x4" active="yes" />
+<unification l1="13" l2="15" unifier="e18=e20, x3=x4" active="yes" />
+<literal id="14" type="2" active="yes">whq(e11,e12,x2):14:1.00</literal>
+<unification l1="14" l2="0" unifier="" active="no" />
+<literal id="15" type="2" active="yes">many-adj(e18,x3):15:1.00</literal>
+<unification l1="15" l2="7" unifier="e18=e27, x3=x7" active="yes" />
+<unification l1="15" l2="13" unifier="e18=e20, x3=x4" active="yes" />
+<literal id="16" type="2" active="yes">stay-vb(x2,x3,u16,u17):16:1.00</literal>
+<literal id="17" type="2" active="yes">poor-adj(e15,x3):17:1.00</literal>
+<literal id="18" type="2" active="yes">during-in(e14,x2,x0):18:1.00</literal>
+<literal id="19" type="2" active="yes">manner_rel(e13,x2,x1):19:1.00</literal>
+<literal id="20" type="2" active="yes">manner(e12,x1):20:1.00</literal>
+<literal id="21" type="2" active="yes">period-nn(e10,x0):21:1.00</literal>
+<literal id="22" type="2" active="yes">!=(e19,e11):22:1.00</literal>
+<literal id="23" type="3" active="yes">S#ABBYS(x5):23:0.60</literal>
+<literal id="24" type="3" active="yes">SS#ABYSS-EXIT(x9):24:0.60</literal>
+<literal id="25" type="3" active="yes">R#ABYSS-THEME(x4,x9):25:0.60</literal>
+<literal id="26" type="3" active="yes">S#LOW-POINT(u25):26:0.30</literal>
+<literal id="27" type="3" active="yes">SS#MOVEMENT-DOWNWARD(x6):27:0.30</literal>
+<literal id="28" type="3" active="yes">R#MOVE-D-PATIENT(x7,x6):28:0.30</literal>
+<literal id="29" type="3" active="yes">TS#POVERTY(x5):29:0.45</literal>
+<unification l1="29" l2="31" unifier="e15=x5" active="yes" />
+<literal id="30" type="3" active="yes">T#ECONOMIC-INEQUALITY(_32):30:0.45</literal>
+<unification l1="30" l2="32" unifier="_32=_33" active="yes" />
+<literal id="31" type="3" active="yes">TS#POVERTY(e15):31:0.30</literal>
+<unification l1="31" l2="29" unifier="e15=x5" active="yes" />
+<literal id="32" type="3" active="yes">T#ECONOMIC-INEQUALITY(_33):32:0.30</literal>
+<unification l1="32" l2="30" unifier="_32=_33" active="yes" />
+<literal id="33" type="3" active="yes">R#POOR(x3,e15):33:0.30</literal>
+<literal id="34" type="3" active="yes">I#MOVEMENT-DOWNWARD(x6):34:0.27</literal>
+<literal id="35" type="3" active="yes">M#MOVE-DOWN(x6):35:0.26</literal>
+<literal id="36" type="3" active="yes">M#MOVE-D-PATIENT(x7,x6):36:0.26</literal>
+<explanation name="movement-downward" active="yes" axiom="">35 ^ 36 => 34</explanation>
+<explanation name="climb-out-of" active="yes" axiom="">23 ^ 24 ^ 25 => 1</explanation>
+<explanation name="climb-out-of" active="yes" axiom="">23 ^ 24 ^ 25 => 3</explanation>
+<explanation name="movement-downwardmap" active="yes" axiom="">34 => 27</explanation>
+<explanation name="movement-downward" active="yes" axiom="">35 ^ 36 => 28</explanation>
+<explanation name="poor" active="yes" axiom="">31 ^ 32 ^ 33 => 17</explanation>
+<explanation name="fall" active="yes" axiom="">26 ^ 27 ^ 28 => 8</explanation>
+<explanation name="poverty" active="yes" axiom="">29 ^ 30 => 9</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="22">
+<observed size="22" domain_size="0">
+examine-nn(e35,x14) ^ know-vb(x13,x11,x14,u34) ^ need-vb(x9,x11,x13,u33) ^ successful-adj(e32,x8) ^ experimental-adj(e31,x8) ^ program-nn(e30,x8) ^ rel(e29,x3,x2) ^ in-in(e28,x8,x3) ^ help-vb(x12,x8,x1,u27) ^ design-vb(x6,x8,x12,u26) ^ emerge-vb(x5,x8,u24,u25) ^ poverty-nn(e23,x4) ^ from-in(e22,x5,x4) ^ oakland-nn(e20,x3) ^ loc(e21,x3) ^ calif.-nn(e18,x2) ^ loc(e19,x2) ^ work-vb(x0,x1,u16,u17) ^ poor-nn(e15,x1) ^ !=(e18,e19) ^ !=(e20,e21) ^ !=(e21,e19)
+</observed>
+<hypothesis score="-21.924">
+examine-nn(e35,x14) ^ know-vb(x13,x11,x14,u34) ^ need-vb(x9,x11,x13,u33) ^ successful-adj(e32,x8) ^ experimental-adj(e31,x8) ^ program-nn(e30,x8) ^ rel(e29,x3,x2) ^ in-in(e28,x8,x3) ^ help-vb(x12,x8,x1,u27) ^ design-vb(x6,x8,x12,u26) ^ emerge-vb(x5,x8,u24,u25) ^ poverty-nn(e23,x4) ^ from-in(e22,x5,x4) ^ oakland-nn(e20,x3) ^ loc(e21,x3) ^ calif.-nn(e18,x2) ^ loc(e19,x2) ^ work-vb(x0,x1,u16,u17) ^ poor-nn(e15,x1) ^ !=(e18,e19) ^ !=(e20,e21) ^ !=(e21,e19) ^ TS#POVERTY(x4) ^ T#ECONOMIC-INEQUALITY(_34)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_experimental-adj_4":-1.001 "!HYPOTHESIZED_need-vb_2":-1.001 "!HYPOTHESIZED_work-vb_17":-1.001 "!HYPOTHESIZED_in-in_7":-1.001 "!HYPOTHESIZED_loc_14":-1.001 "!HYPOTHESIZED_calif.-nn_15":-1.001 "!HYPOTHESIZED_loc_16":-1.001 "!HYPOTHESIZED_rel_6":-1.001 "!EXPLAINED_poverty-nn_11":1 "!HYPOTHESIZED_!=_20":-1.001 "!HYPOTHESIZED_!=_21":-1.001 "!HYPOTHESIZED_!=_19":-1.001 "!HYPOTHESIZED_from-in_12":-1.001 "!HYPOTHESIZED_successful-adj_3":-1.001 "!HYPOTHESIZED_oakland-nn_13":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_23":-0.451 "!HYPOTHESIZED_emerge-vb_10":-1.001 "!HYPOTHESIZED_poor-nn_18":-1.001 "!HYPOTHESIZED_poverty-nn_11":-1.001 "!HYPOTHESIZED_examine-nn_0":-1.001 "!HYPOTHESIZED_know-vb_1":-1.001 "!HYPOTHESIZED_help-vb_8":-1.001 "!HYPOTHESIZED_program-nn_5":-1.001 "!HYPOTHESIZED_design-vb_9":-1.001 "!HYPOTHESIZED_TS#POVERTY_22":-0.451 
+</vector>
+<statistics>
+<time total="0.0167489" prepare="0.015837" ilp="0.000911951" />
+<ilp solution="Optimal" variables="84" constraints="71" />
+<search-space literals="24" axiom="2" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">examine-nn(e35,x14):0:1.00</literal>
+<literal id="1" type="2" active="yes">know-vb(x13,x11,x14,u34):1:1.00</literal>
+<literal id="2" type="2" active="yes">need-vb(x9,x11,x13,u33):2:1.00</literal>
+<literal id="3" type="2" active="yes">successful-adj(e32,x8):3:1.00</literal>
+<literal id="4" type="2" active="yes">experimental-adj(e31,x8):4:1.00</literal>
+<literal id="5" type="2" active="yes">program-nn(e30,x8):5:1.00</literal>
+<literal id="6" type="2" active="yes">rel(e29,x3,x2):6:1.00</literal>
+<literal id="7" type="2" active="yes">in-in(e28,x8,x3):7:1.00</literal>
+<literal id="8" type="2" active="yes">help-vb(x12,x8,x1,u27):8:1.00</literal>
+<literal id="9" type="2" active="yes">design-vb(x6,x8,x12,u26):9:1.00</literal>
+<literal id="10" type="2" active="yes">emerge-vb(x5,x8,u24,u25):10:1.00</literal>
+<literal id="11" type="2" active="yes">poverty-nn(e23,x4):11:1.00</literal>
+<literal id="12" type="2" active="yes">from-in(e22,x5,x4):12:1.00</literal>
+<literal id="13" type="2" active="yes">oakland-nn(e20,x3):13:1.00</literal>
+<literal id="14" type="2" active="yes">loc(e21,x3):14:1.00</literal>
+<unification l1="14" l2="16" unifier="" active="no" />
+<literal id="15" type="2" active="yes">calif.-nn(e18,x2):15:1.00</literal>
+<literal id="16" type="2" active="yes">loc(e19,x2):16:1.00</literal>
+<unification l1="16" l2="14" unifier="" active="no" />
+<literal id="17" type="2" active="yes">work-vb(x0,x1,u16,u17):17:1.00</literal>
+<literal id="18" type="2" active="yes">poor-nn(e15,x1):18:1.00</literal>
+<literal id="19" type="2" active="yes">!=(e18,e19):19:1.00</literal>
+<literal id="20" type="2" active="yes">!=(e20,e21):20:1.00</literal>
+<literal id="21" type="2" active="yes">!=(e21,e19):21:1.00</literal>
+<literal id="22" type="3" active="yes">TS#POVERTY(x4):22:0.45</literal>
+<literal id="23" type="3" active="yes">T#ECONOMIC-INEQUALITY(_34):23:0.45</literal>
+<explanation name="poverty" active="yes" axiom="">22 ^ 23 => 11</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="23">
+<observed size="30" domain_size="0">
+intractable-adj(e43,x13) ^ situation-nn(e42,x13) ^ most-adj(e41,x12) ^ of-in(e40,x12,x3) ^ for-in(e39,x13,x12) ^ remain-vb(x11,x5,x13,u38) ^ cycle-nn(e37,x16) ^ repeat-vb(x15,u35,x16,u36) ^ generation-nn(e34,x14) ^ through-in(e33,x15,x14) ^ equal(e32,x1,x16) ^ crawl-vb(x9,x5,u30,u31) ^ out-in(e29,x9) ^ poverty-nn(e28,x8) ^ of-in(e27,x9,x8) ^ ability-nn(e26,x5) ^ work-vb(x2,x3,u24,u25) ^ poor-nn(e23,x3) ^ crawl-vb(x7,x1,u21,u22) ^ out-in(e20,x7) ^ poverty-nn(e19,x6) ^ of-in(e18,x7,x6) ^ ability-nn(e17,x1) ^ !=(e26,e17) ^ !=(e27,e18) ^ !=(x9,x7) ^ !=(e29,e20) ^ !=(e28,e19) ^ !=(e40,e27,e18) ^ !=(e29,e20)
+</observed>
+<hypothesis score="-28.934">
+intractable-adj(e43,x13) ^ situation-nn(e42,x13) ^ most-adj(e41,x12) ^ of-in(e40,x12,x3) ^ for-in(e39,x13,x12) ^ remain-vb(x11,x5,x13,u38) ^ cycle-nn(e37,x16) ^ repeat-vb(x15,u35,x16,u36) ^ generation-nn(e34,x14) ^ through-in(e33,x15,x14) ^ equal(e32,x1,x16) ^ crawl-vb(x9,x5,u30,u31) ^ out-in(e29,x9) ^ poverty-nn(e28,x8) ^ of-in(e27,x9,x8) ^ ability-nn(e26,x5) ^ work-vb(x2,x3,u24,u25) ^ poor-nn(e23,x3) ^ crawl-vb(x7,x1,u21,u22) ^ out-in(e20,x7) ^ poverty-nn(e19,x6) ^ of-in(e18,x7,x6) ^ ability-nn(e17,x1) ^ !=(e26,e17) ^ !=(e27,e18) ^ !=(x9,x7) ^ !=(e29,e20) ^ !=(e28,e19) ^ !=(e40,e27,e18) ^ !=(e29,e20) ^ TS#POVERTY(x8) ^ T#ECONOMIC-INEQUALITY(_35) ^ TS#POVERTY(x6) ^ T#ECONOMIC-INEQUALITY(_36) ^ =(x6,x8) ^ =(_35,_36)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_out-in_19":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_33":-0.451 "!HYPOTHESIZED_work-vb_16":-1.001 "!HYPOTHESIZED_repeat-vb_7":-1.001 "!HYPOTHESIZED_situation-nn_1":-1.001 "!HYPOTHESIZED_through-in_9":-1.001 "!HYPOTHESIZED_crawl-vb_11":-1.001 "!HYPOTHESIZED_poverty-nn_20":-1.001 "!EXPLAINED_poverty-nn_13":1 "!HYPOTHESIZED_of-in_14":-1.001 "!HYPOTHESIZED_most-adj_2":-1.001 "!HYPOTHESIZED_!=_28":-1.001 "!HYPOTHESIZED_!=_29":-1.001 "!HYPOTHESIZED_ability-nn_15":-1.001 "!HYPOTHESIZED_generation-nn_8":-1.001 "!HYPOTHESIZED_crawl-vb_18":-1.001 "!HYPOTHESIZED_of-in_3":-1.001 "!HYPOTHESIZED_ability-nn_22":-1.001 "!HYPOTHESIZED_intractable-adj_0":-1.001 "!HYPOTHESIZED_!=_23":-1.001 "!EXPLAINED_poverty-nn_20":1 "!HYPOTHESIZED_!=_26":-1.001 "!HYPOTHESIZED_!=_27":-1.001 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_!=_25":-1.001 "!HYPOTHESIZED_poor-nn_17":-1.001 "!HYPOTHESIZED_remain-vb_5":-1.001 "!HYPOTHESIZED_for-in_4":-1.001 "!HYPOTHESIZED_cycle-nn_6":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_33":0.45 "!HYPOTHESIZED_poverty-nn_13":-1.001 "!HYPOTHESIZED_TS#POVERTY_30":-0.451 "!HYPOTHESIZED_of-in_21":-1.001 "!EXPLAINED_TS#POVERTY_32":0.45 "!HYPOTHESIZED_TS#POVERTY_32":-0.451 "!HYPOTHESIZED_out-in_12":-1.001 "!HYPOTHESIZED_equal_10":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_31":-0.451 
+</vector>
+<statistics>
+<time total="0.0323439" prepare="0.03057" ilp="0.00177383" />
+<ilp solution="Optimal" variables="139" constraints="111" />
+<search-space literals="34" axiom="4" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">intractable-adj(e43,x13):0:1.00</literal>
+<literal id="1" type="2" active="yes">situation-nn(e42,x13):1:1.00</literal>
+<literal id="2" type="2" active="yes">most-adj(e41,x12):2:1.00</literal>
+<literal id="3" type="2" active="yes">of-in(e40,x12,x3):3:1.00</literal>
+<unification l1="3" l2="14" unifier="" active="no" />
+<unification l1="3" l2="21" unifier="" active="no" />
+<literal id="4" type="2" active="yes">for-in(e39,x13,x12):4:1.00</literal>
+<literal id="5" type="2" active="yes">remain-vb(x11,x5,x13,u38):5:1.00</literal>
+<literal id="6" type="2" active="yes">cycle-nn(e37,x16):6:1.00</literal>
+<literal id="7" type="2" active="yes">repeat-vb(x15,u35,x16,u36):7:1.00</literal>
+<literal id="8" type="2" active="yes">generation-nn(e34,x14):8:1.00</literal>
+<literal id="9" type="2" active="yes">through-in(e33,x15,x14):9:1.00</literal>
+<literal id="10" type="2" active="yes">equal(e32,x1,x16):10:1.00</literal>
+<literal id="11" type="2" active="yes">crawl-vb(x9,x5,u30,u31):11:1.00</literal>
+<unification l1="11" l2="18" unifier="" active="no" />
+<literal id="12" type="2" active="yes">out-in(e29,x9):12:1.00</literal>
+<unification l1="12" l2="19" unifier="" active="no" />
+<literal id="13" type="2" active="yes">poverty-nn(e28,x8):13:1.00</literal>
+<unification l1="13" l2="20" unifier="x8=x6" active="no" />
+<literal id="14" type="2" active="yes">of-in(e27,x9,x8):14:1.00</literal>
+<unification l1="14" l2="3" unifier="" active="no" />
+<unification l1="14" l2="21" unifier="x8=x6" active="no" />
+<literal id="15" type="2" active="yes">ability-nn(e26,x5):15:1.00</literal>
+<unification l1="15" l2="22" unifier="" active="no" />
+<literal id="16" type="2" active="yes">work-vb(x2,x3,u24,u25):16:1.00</literal>
+<literal id="17" type="2" active="yes">poor-nn(e23,x3):17:1.00</literal>
+<literal id="18" type="2" active="yes">crawl-vb(x7,x1,u21,u22):18:1.00</literal>
+<unification l1="18" l2="11" unifier="" active="no" />
+<literal id="19" type="2" active="yes">out-in(e20,x7):19:1.00</literal>
+<unification l1="19" l2="12" unifier="" active="no" />
+<literal id="20" type="2" active="yes">poverty-nn(e19,x6):20:1.00</literal>
+<unification l1="20" l2="13" unifier="x8=x6" active="no" />
+<literal id="21" type="2" active="yes">of-in(e18,x7,x6):21:1.00</literal>
+<unification l1="21" l2="3" unifier="" active="no" />
+<unification l1="21" l2="14" unifier="x8=x6" active="no" />
+<literal id="22" type="2" active="yes">ability-nn(e17,x1):22:1.00</literal>
+<unification l1="22" l2="15" unifier="" active="no" />
+<literal id="23" type="2" active="yes">!=(e26,e17):23:1.00</literal>
+<literal id="24" type="2" active="yes">!=(e27,e18):24:1.00</literal>
+<literal id="25" type="2" active="yes">!=(x9,x7):25:1.00</literal>
+<literal id="26" type="2" active="yes">!=(e29,e20):26:1.00</literal>
+<literal id="27" type="2" active="yes">!=(e28,e19):27:1.00</literal>
+<literal id="28" type="2" active="yes">!=(e40,e27,e18):28:1.00</literal>
+<literal id="29" type="2" active="yes">!=(e29,e20):29:1.00</literal>
+<literal id="30" type="3" active="yes">TS#POVERTY(x8):30:0.45</literal>
+<unification l1="30" l2="32" unifier="x8=x6" active="yes" />
+<literal id="31" type="3" active="yes">T#ECONOMIC-INEQUALITY(_35):31:0.45</literal>
+<unification l1="31" l2="33" unifier="_35=_36" active="yes" />
+<literal id="32" type="3" active="yes">TS#POVERTY(x6):32:0.45</literal>
+<unification l1="32" l2="30" unifier="x8=x6" active="yes" />
+<literal id="33" type="3" active="yes">T#ECONOMIC-INEQUALITY(_36):33:0.45</literal>
+<unification l1="33" l2="31" unifier="_35=_36" active="yes" />
+<explanation name="poverty" active="yes" axiom="">30 ^ 31 => 13</explanation>
+<explanation name="poverty" active="yes" axiom="">32 ^ 33 => 20</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="24">
+<observed size="21" domain_size="0">
+show-vb(x10,x0,x1,u28) ^ go-vb(x4,x0,x10,u27) ^ just-rb(e26,x4) ^ person(e25,x8) ^ pull-vb(x9,x0,x8,u24) ^ out-in(e23,x9) ^ poverty-nn(e22,x7) ^ of-in(e21,x8,x7) ^ without-nn(e19,x8) ^ nam(e20,x8) ^ government-nn(e18,x6) ^ of-in(e17,x8,x6) ^ assistance-nn(e16,x8) ^ of-in(e15,x9,x8) ^ possible-adj(e14,x2) ^ be-vb(e13,x9,x2) ^ person(e12,x1) ^ neuter(e11,x0) ^ !=(e19,e20) ^ !=(e25,e12) ^ !=(e21,e17,e15)
+</observed>
+<hypothesis score="-19.531">
+show-vb(x10,x0,x1,u28) ^ go-vb(x4,x0,x10,u27) ^ just-rb(e26,x4) ^ person(e25,x8) ^ pull-vb(x9,x0,x8,u24) ^ out-in(e23,x9) ^ poverty-nn(e22,x7) ^ of-in(e21,x8,x7) ^ without-nn(e19,x8) ^ nam(e20,x8) ^ government-nn(e18,x6) ^ of-in(e17,x8,x6) ^ assistance-nn(e16,x8) ^ of-in(e15,x9,x8) ^ possible-adj(e14,x2) ^ be-vb(e13,x9,x2) ^ person(e12,x1) ^ neuter(e11,x0) ^ !=(e19,e20) ^ !=(e25,e12) ^ !=(e21,e17,e15) ^ S#ABBYS(x8) ^ SS#ABYSS-EXIT(x9) ^ R#ABYSS-THEME(x8,x9) ^ R#ABBYSS-EXIT-CAUSE(x0,x9) ^ S#ABBYS(x7) ^ SS#ABYSS-EXIT(x9) ^ R#ABYSS-THEME(x8,x9) ^ R#ABBYSS-EXIT-CAUSE(x0,x9) ^ TS#POVERTY(x7) ^ T#ECONOMIC-INEQUALITY(_37) ^ =(x7,x8)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_30":-0.451 "!HYPOTHESIZED_government-nn_10":-1.001 "!EXPLAINED_poverty-nn_6":1 "!HYPOTHESIZED_show-vb_0":-1.001 "!HYPOTHESIZED_of-in_11":-1.001 "!HYPOTHESIZED_person_3":-1.001 "!EXPLAINED_of-in_13":1 "!HYPOTHESIZED_of-in_13":-1.001 "!HYPOTHESIZED_neuter_17":-1.001 "!EXPLAINED_R#ABBYSS-EXIT-CAUSE_28":0.4 "!HYPOTHESIZED_person_16":-1.001 "!EXPLAINED_S#ABBYS_25":0.4 "!HYPOTHESIZED_possible-adj_14":-1.001 "!EXPLAINED_pull-vb_4":1 "!HYPOTHESIZED_!=_20":-1.001 "!HYPOTHESIZED_of-in_7":-1.001 "!EXPLAINED_of-in_7":1 "!HYPOTHESIZED_!=_19":-1.001 "!HYPOTHESIZED_!=_18":-1.001 "!HYPOTHESIZED_out-in_5":-1.001 "!HYPOTHESIZED_R#ABYSS-THEME_23":-0.401 "!HYPOTHESIZED_SS#ABYSS-EXIT_22":-0.401 "!HYPOTHESIZED_R#ABYSS-THEME_27":-0.401 "!HYPOTHESIZED_pull-vb_4":-1.001 "!HYPOTHESIZED_SS#ABYSS-EXIT_26":-0.401 "!HYPOTHESIZED_nam_9":-1.001 "!HYPOTHESIZED_without-nn_8":-1.001 "!HYPOTHESIZED_TS#POVERTY_29":-0.451 "!HYPOTHESIZED_S#ABBYS_21":-0.401 "!HYPOTHESIZED_R#ABBYSS-EXIT-CAUSE_28":-0.401 "!HYPOTHESIZED_go-vb_1":-1.001 "!HYPOTHESIZED_just-rb_2":-1.001 "!EXPLAINED_R#ABYSS-THEME_27":0.4 "!HYPOTHESIZED_S#ABBYS_25":-0.401 "!HYPOTHESIZED_poverty-nn_6":-1.001 "!HYPOTHESIZED_R#ABBYSS-EXIT-CAUSE_24":-0.401 "!EXPLAINED_SS#ABYSS-EXIT_26":0.4 "!HYPOTHESIZED_be-vb_15":-1.001 "!HYPOTHESIZED_assistance-nn_12":-1.001 
+</vector>
+<statistics>
+<time total="0.0332818" prepare="0.030566" ilp="0.00271583" />
+<ilp solution="Optimal" variables="130" constraints="215" />
+<search-space literals="31" axiom="5" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">show-vb(x10,x0,x1,u28):0:1.00</literal>
+<literal id="1" type="2" active="yes">go-vb(x4,x0,x10,u27):1:1.00</literal>
+<literal id="2" type="2" active="yes">just-rb(e26,x4):2:1.00</literal>
+<literal id="3" type="2" active="yes">person(e25,x8):3:1.00</literal>
+<unification l1="3" l2="16" unifier="" active="no" />
+<literal id="4" type="2" active="yes">pull-vb(x9,x0,x8,u24):4:1.00</literal>
+<literal id="5" type="2" active="yes">out-in(e23,x9):5:1.00</literal>
+<literal id="6" type="2" active="yes">poverty-nn(e22,x7):6:1.00</literal>
+<literal id="7" type="2" active="yes">of-in(e21,x8,x7):7:1.00</literal>
+<unification l1="7" l2="11" unifier="" active="no" />
+<unification l1="7" l2="13" unifier="x8=x7" active="no" />
+<literal id="8" type="2" active="yes">without-nn(e19,x8):8:1.00</literal>
+<literal id="9" type="2" active="yes">nam(e20,x8):9:1.00</literal>
+<literal id="10" type="2" active="yes">government-nn(e18,x6):10:1.00</literal>
+<literal id="11" type="2" active="yes">of-in(e17,x8,x6):11:1.00</literal>
+<unification l1="11" l2="7" unifier="" active="no" />
+<unification l1="11" l2="13" unifier="" active="no" />
+<literal id="12" type="2" active="yes">assistance-nn(e16,x8):12:1.00</literal>
+<literal id="13" type="2" active="yes">of-in(e15,x9,x8):13:1.00</literal>
+<unification l1="13" l2="7" unifier="x8=x7" active="no" />
+<unification l1="13" l2="11" unifier="" active="no" />
+<literal id="14" type="2" active="yes">possible-adj(e14,x2):14:1.00</literal>
+<literal id="15" type="2" active="yes">be-vb(e13,x9,x2):15:1.00</literal>
+<literal id="16" type="2" active="yes">person(e12,x1):16:1.00</literal>
+<unification l1="16" l2="3" unifier="" active="no" />
+<literal id="17" type="2" active="yes">neuter(e11,x0):17:1.00</literal>
+<literal id="18" type="2" active="yes">!=(e19,e20):18:1.00</literal>
+<literal id="19" type="2" active="yes">!=(e25,e12):19:1.00</literal>
+<literal id="20" type="2" active="yes">!=(e21,e17,e15):20:1.00</literal>
+<literal id="21" type="3" active="yes">S#ABBYS(x8):21:0.40</literal>
+<unification l1="21" l2="25" unifier="x8=x7" active="yes" />
+<literal id="22" type="3" active="yes">SS#ABYSS-EXIT(x9):22:0.40</literal>
+<unification l1="22" l2="26" unifier="" active="yes" />
+<literal id="23" type="3" active="yes">R#ABYSS-THEME(x8,x9):23:0.40</literal>
+<unification l1="23" l2="27" unifier="" active="yes" />
+<literal id="24" type="3" active="yes">R#ABBYSS-EXIT-CAUSE(x0,x9):24:0.40</literal>
+<unification l1="24" l2="28" unifier="" active="yes" />
+<literal id="25" type="3" active="yes">S#ABBYS(x7):25:0.40</literal>
+<unification l1="25" l2="21" unifier="x8=x7" active="yes" />
+<literal id="26" type="3" active="yes">SS#ABYSS-EXIT(x9):26:0.40</literal>
+<unification l1="26" l2="22" unifier="" active="yes" />
+<literal id="27" type="3" active="yes">R#ABYSS-THEME(x8,x9):27:0.40</literal>
+<unification l1="27" l2="23" unifier="" active="yes" />
+<literal id="28" type="3" active="yes">R#ABBYSS-EXIT-CAUSE(x0,x9):28:0.40</literal>
+<unification l1="28" l2="24" unifier="" active="yes" />
+<literal id="29" type="3" active="yes">TS#POVERTY(x7):29:0.45</literal>
+<literal id="30" type="3" active="yes">T#ECONOMIC-INEQUALITY(_37):30:0.45</literal>
+<explanation name="pull-out-of" active="yes" axiom="">21 ^ 22 ^ 23 ^ 24 => 13</explanation>
+<explanation name="pull-out-of" active="yes" axiom="">21 ^ 22 ^ 23 ^ 24 => 4</explanation>
+<explanation name="pull-out-of" active="yes" axiom="">25 ^ 26 ^ 27 ^ 28 => 4</explanation>
+<explanation name="poverty" active="yes" axiom="">29 ^ 30 => 6</explanation>
+<explanation name="pull-out-of" active="yes" axiom="">25 ^ 26 ^ 27 ^ 28 => 7</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="25">
+<observed size="23" domain_size="0">
+imp(e19,x7,e25) ^ not(e25,x8) ^ of-in(e31,x11,x6) ^ socialist-adj(e30,x11) ^ agenda-nn(e29,x11) ^ support-vb(x10,x6,x11,u28) ^ leave-vb(x8,x6,x10,u27) ^ else-rb(e26,x8) ^ help-vb(x7,x6,x0,u24) ^ out-in(e23,x7) ^ poverty-nn(e22,x6) ^ of-in(e21,x7,x6) ^ thing(e20,x6) ^ believe-vb(x3,x1,e19,u18) ^ easy-nn(e17,x5) ^ equal(e16,x1,x5) ^ dem-nn(e15,x1) ^ poor-nn(e13,x0) ^ nam(e14,x0) ^ thing(e12,x1) ^ !=(e13,e14) ^ !=(e20,e12) ^ !=(e31,e21)
+</observed>
+<hypothesis score="-22.925">
+imp(e19,x7,e25) ^ not(e25,x8) ^ of-in(e31,x11,x6) ^ socialist-adj(e30,x11) ^ agenda-nn(e29,x11) ^ support-vb(x10,x6,x11,u28) ^ leave-vb(x8,x6,x10,u27) ^ else-rb(e26,x8) ^ help-vb(x7,x6,x0,u24) ^ out-in(e23,x7) ^ poverty-nn(e22,x6) ^ of-in(e21,x7,x6) ^ thing(e20,x6) ^ believe-vb(x3,x1,e19,u18) ^ easy-nn(e17,x5) ^ equal(e16,x1,x5) ^ dem-nn(e15,x1) ^ poor-nn(e13,x0) ^ nam(e14,x0) ^ thing(e12,x1) ^ !=(e13,e14) ^ !=(e20,e12) ^ !=(e31,e21) ^ TS#POVERTY(x6) ^ T#ECONOMIC-INEQUALITY(_38)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_equal_15":-1.001 "!HYPOTHESIZED_easy-nn_14":-1.001 "!HYPOTHESIZED_support-vb_5":-1.001 "!HYPOTHESIZED_thing_19":-1.001 "!HYPOTHESIZED_of-in_11":-1.001 "!HYPOTHESIZED_else-rb_7":-1.001 "!HYPOTHESIZED_out-in_9":-1.001 "!HYPOTHESIZED_thing_12":-1.001 "!EXPLAINED_poverty-nn_10":1 "!HYPOTHESIZED_nam_18":-1.001 "!HYPOTHESIZED_leave-vb_6":-1.001 "!HYPOTHESIZED_imp_0":-1.001 "!HYPOTHESIZED_believe-vb_13":-1.001 "!HYPOTHESIZED_of-in_2":-1.001 "!HYPOTHESIZED_!=_22":-1.001 "!HYPOTHESIZED_!=_20":-1.001 "!HYPOTHESIZED_!=_21":-1.001 "!HYPOTHESIZED_socialist-adj_3":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_24":-0.451 "!HYPOTHESIZED_agenda-nn_4":-1.001 "!HYPOTHESIZED_poor-nn_17":-1.001 "!HYPOTHESIZED_poverty-nn_10":-1.001 "!HYPOTHESIZED_dem-nn_16":-1.001 "!HYPOTHESIZED_not_1":-1.001 "!HYPOTHESIZED_help-vb_8":-1.001 "!HYPOTHESIZED_TS#POVERTY_23":-0.451 
+</vector>
+<statistics>
+<time total="0.0273089" prepare="0.026381" ilp="0.000927925" />
+<ilp solution="Optimal" variables="87" constraints="63" />
+<search-space literals="25" axiom="4" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">imp(e19,x7,e25):0:1.00</literal>
+<literal id="1" type="2" active="yes">not(e25,x8):1:1.00</literal>
+<literal id="2" type="2" active="yes">of-in(e31,x11,x6):2:1.00</literal>
+<unification l1="2" l2="11" unifier="" active="no" />
+<literal id="3" type="2" active="yes">socialist-adj(e30,x11):3:1.00</literal>
+<literal id="4" type="2" active="yes">agenda-nn(e29,x11):4:1.00</literal>
+<literal id="5" type="2" active="yes">support-vb(x10,x6,x11,u28):5:1.00</literal>
+<literal id="6" type="2" active="yes">leave-vb(x8,x6,x10,u27):6:1.00</literal>
+<literal id="7" type="2" active="yes">else-rb(e26,x8):7:1.00</literal>
+<literal id="8" type="2" active="yes">help-vb(x7,x6,x0,u24):8:1.00</literal>
+<literal id="9" type="2" active="yes">out-in(e23,x7):9:1.00</literal>
+<literal id="10" type="2" active="yes">poverty-nn(e22,x6):10:1.00</literal>
+<literal id="11" type="2" active="yes">of-in(e21,x7,x6):11:1.00</literal>
+<unification l1="11" l2="2" unifier="" active="no" />
+<literal id="12" type="2" active="yes">thing(e20,x6):12:1.00</literal>
+<unification l1="12" l2="19" unifier="" active="no" />
+<literal id="13" type="2" active="yes">believe-vb(x3,x1,e19,u18):13:1.00</literal>
+<literal id="14" type="2" active="yes">easy-nn(e17,x5):14:1.00</literal>
+<literal id="15" type="2" active="yes">equal(e16,x1,x5):15:1.00</literal>
+<literal id="16" type="2" active="yes">dem-nn(e15,x1):16:1.00</literal>
+<literal id="17" type="2" active="yes">poor-nn(e13,x0):17:1.00</literal>
+<literal id="18" type="2" active="yes">nam(e14,x0):18:1.00</literal>
+<literal id="19" type="2" active="yes">thing(e12,x1):19:1.00</literal>
+<unification l1="19" l2="12" unifier="" active="no" />
+<literal id="20" type="2" active="yes">!=(e13,e14):20:1.00</literal>
+<literal id="21" type="2" active="yes">!=(e20,e12):21:1.00</literal>
+<literal id="22" type="2" active="yes">!=(e31,e21):22:1.00</literal>
+<literal id="23" type="3" active="yes">TS#POVERTY(x6):23:0.45</literal>
+<literal id="24" type="3" active="yes">T#ECONOMIC-INEQUALITY(_38):24:0.45</literal>
+<explanation name="poverty" active="yes" axiom="">23 ^ 24 => 10</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="26">
+<observed size="17" domain_size="0">
+’m-vb(x3,x0,x8,u26) ^ pray-vb(x8,x0,u24,u25) ^ thing(e23,x5) ^ jump-vb(x7,x5,u21,u22) ^ out-in(e20,x7) ^ poverty-nn(e19,x6) ^ sustainable-adj(e18,x5) ^ future-nn(e17,x5) ^ into-in(e16,x6,x5) ^ of-in(e15,x7,x6) ^ have-vb(x4,x0,x1,u14) ^ now-rb(e13,x4) ^ with-in(e12,x8,x1) ^ person(e11,x0) ^ skill-nn(e10,x1) ^ thing(e9,x0) ^ !=(e23,e9)
+</observed>
+<hypothesis score="-16.722">
+’m-vb(x3,x0,x8,u26) ^ pray-vb(x8,x0,u24,u25) ^ thing(e23,x5) ^ jump-vb(x7,x5,u21,u22) ^ out-in(e20,x7) ^ poverty-nn(e19,x6) ^ sustainable-adj(e18,x5) ^ future-nn(e17,x5) ^ into-in(e16,x6,x5) ^ of-in(e15,x7,x6) ^ have-vb(x4,x0,x1,u14) ^ now-rb(e13,x4) ^ with-in(e12,x8,x1) ^ person(e11,x0) ^ skill-nn(e10,x1) ^ thing(e9,x0) ^ !=(e23,e9) ^ S#ABBYS(x6) ^ SS#ABYSS-EXIT(x7) ^ R#ABYSS-THEME(x5,x7) ^ TS#POVERTY(x6) ^ T#ECONOMIC-INEQUALITY(_39)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_skill-nn_14":-1.001 "!EXPLAINED_poverty-nn_5":1 "!HYPOTHESIZED_have-vb_10":-1.001 "!HYPOTHESIZED_thing_2":-1.001 "!HYPOTHESIZED_S#ABBYS_17":-0.601 "!HYPOTHESIZED_of-in_9":-1.001 "!EXPLAINED_jump-vb_3":1 "!HYPOTHESIZED_R#ABYSS-THEME_19":-0.601 "!HYPOTHESIZED_!=_16":-1.001 "!HYPOTHESIZED_thing_15":-1.001 "!HYPOTHESIZED_with-in_12":-1.001 "!HYPOTHESIZED_person_13":-1.001 "!HYPOTHESIZED_out-in_4":-1.001 "!HYPOTHESIZED_now-rb_11":-1.001 "!HYPOTHESIZED_into-in_8":-1.001 "!EXPLAINED_of-in_9":1 "!HYPOTHESIZED_’m-vb_0":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_21":-0.451 "!HYPOTHESIZED_SS#ABYSS-EXIT_18":-0.601 "!HYPOTHESIZED_future-nn_7":-1.001 "!HYPOTHESIZED_jump-vb_3":-1.001 "!HYPOTHESIZED_sustainable-adj_6":-1.001 "!HYPOTHESIZED_pray-vb_1":-1.001 "!HYPOTHESIZED_TS#POVERTY_20":-0.451 "!HYPOTHESIZED_poverty-nn_5":-1.001 
+</vector>
+<statistics>
+<time total="0.019738" prepare="0.018203" ilp="0.00153494" />
+<ilp solution="Optimal" variables="75" constraints="80" />
+<search-space literals="22" axiom="5" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">’m-vb(x3,x0,x8,u26):0:1.00</literal>
+<literal id="1" type="2" active="yes">pray-vb(x8,x0,u24,u25):1:1.00</literal>
+<literal id="2" type="2" active="yes">thing(e23,x5):2:1.00</literal>
+<unification l1="2" l2="15" unifier="" active="no" />
+<literal id="3" type="2" active="yes">jump-vb(x7,x5,u21,u22):3:1.00</literal>
+<literal id="4" type="2" active="yes">out-in(e20,x7):4:1.00</literal>
+<literal id="5" type="2" active="yes">poverty-nn(e19,x6):5:1.00</literal>
+<literal id="6" type="2" active="yes">sustainable-adj(e18,x5):6:1.00</literal>
+<literal id="7" type="2" active="yes">future-nn(e17,x5):7:1.00</literal>
+<literal id="8" type="2" active="yes">into-in(e16,x6,x5):8:1.00</literal>
+<literal id="9" type="2" active="yes">of-in(e15,x7,x6):9:1.00</literal>
+<literal id="10" type="2" active="yes">have-vb(x4,x0,x1,u14):10:1.00</literal>
+<literal id="11" type="2" active="yes">now-rb(e13,x4):11:1.00</literal>
+<literal id="12" type="2" active="yes">with-in(e12,x8,x1):12:1.00</literal>
+<literal id="13" type="2" active="yes">person(e11,x0):13:1.00</literal>
+<literal id="14" type="2" active="yes">skill-nn(e10,x1):14:1.00</literal>
+<literal id="15" type="2" active="yes">thing(e9,x0):15:1.00</literal>
+<unification l1="15" l2="2" unifier="" active="no" />
+<literal id="16" type="2" active="yes">!=(e23,e9):16:1.00</literal>
+<literal id="17" type="3" active="yes">S#ABBYS(x6):17:0.60</literal>
+<literal id="18" type="3" active="yes">SS#ABYSS-EXIT(x7):18:0.60</literal>
+<literal id="19" type="3" active="yes">R#ABYSS-THEME(x5,x7):19:0.60</literal>
+<literal id="20" type="3" active="yes">TS#POVERTY(x6):20:0.45</literal>
+<literal id="21" type="3" active="yes">T#ECONOMIC-INEQUALITY(_39):21:0.45</literal>
+<explanation name="jump-out-of" active="yes" axiom="">17 ^ 18 ^ 19 => 3</explanation>
+<explanation name="poverty" active="yes" axiom="">20 ^ 21 => 5</explanation>
+<explanation name="jump-out-of" active="yes" axiom="">17 ^ 18 ^ 19 => 9</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="27">
+<observed size="46" domain_size="0">
+when(e71,x28,x9) ^ elect-vb(x28,u69,x0,u70) ^ t_1974XXXX(e68,x27) ^ in-in(e67,x28,x27) ^ lifetime-nn(e66,x14) ^ equal(e65,x14,x13) ^ subset_of(e64,x11,x12) ^ subset_of(e63,x10,x12) ^ racism-nn(e62,x11) ^ discrimination-nn(e61,x10) ^ experience-vb(x9,x13,x12,u60) ^ firsthand-rb(e59,x9) ^ not(e40,x18) ^ poverty-nn(e58,x19) ^ of-in(e57,x2,x19) ^ mention-vb(x18,x13,x2,u56) ^ pull-vb(x21,x1,x23,u55) ^ out-rb(e54,x0) ^ as-in(e53,x25) ^ card(e52,x25,1) ^ card(e51,x24,12) ^ child-nn(e50,x24) ^ bear-vb(x23,u48,x24,u49) ^ mexican-adj(e47,x22) ^ immigrant-nn(e46,x22) ^ to-in(e45,x23,x22) ^ of-in(e44,x25,x24) ^ of-in(e43,e54,x25) ^ have-vb(x16,x1,x21,u42) ^ rel(e41,x16,x2) ^ over-in(e39,x3,x14) ^ equal(e38,x4,x3) ^ and(e37,e71) ^ neuter(e36,x4) ^ ultimate-adj(e35,x3) ^ triumph-nn(e34,x3) ^ black-adj(e33,x2) ^ hole-nn(e32,x2) ^ castro-nn(e30,x1) ^ per(e31,x1) ^ male(e29,x0) ^ !=(e30,e31) ^ !=(e57,e44,e43) ^ !=(e65,e38) ^ !=(e64,e63) ^ !=(e52,e51)
+</observed>
+<hypothesis score="-44.358">
+when(e71,x28,x9) ^ elect-vb(x28,u69,x0,u70) ^ t_1974XXXX(e68,x27) ^ in-in(e67,x28,x27) ^ lifetime-nn(e66,x14) ^ equal(e65,x14,x13) ^ subset_of(e64,x11,x12) ^ subset_of(e63,x10,x12) ^ racism-nn(e62,x11) ^ discrimination-nn(e61,x10) ^ experience-vb(x9,x13,x12,u60) ^ firsthand-rb(e59,x9) ^ not(e40,x18) ^ poverty-nn(e58,x19) ^ of-in(e57,x2,x19) ^ mention-vb(x18,x13,x2,u56) ^ pull-vb(x21,x1,x23,u55) ^ out-rb(e54,x0) ^ as-in(e53,x25) ^ card(e52,x25,1) ^ card(e51,x24,12) ^ child-nn(e50,x24) ^ bear-vb(x23,u48,x24,u49) ^ mexican-adj(e47,x22) ^ immigrant-nn(e46,x22) ^ to-in(e45,x23,x22) ^ of-in(e44,x25,x24) ^ of-in(e43,e54,x25) ^ have-vb(x16,x1,x21,u42) ^ rel(e41,x16,x2) ^ over-in(e39,x3,x14) ^ equal(e38,x4,x3) ^ and(e37,e71) ^ neuter(e36,x4) ^ ultimate-adj(e35,x3) ^ triumph-nn(e34,x3) ^ black-adj(e33,x2) ^ hole-nn(e32,x2) ^ castro-nn(e30,x1) ^ per(e31,x1) ^ male(e29,x0) ^ !=(e30,e31) ^ !=(e57,e44,e43) ^ !=(e65,e38) ^ !=(e64,e63) ^ !=(e52,e51) ^ TS#POVERTY(x19) ^ T#ECONOMIC-INEQUALITY(_40) ^ S#ABBYS(x25) ^ SS#ABYSS-EXIT(x21) ^ R#ABYSS-THEME(x23,x21) ^ R#ABBYSS-EXIT-CAUSE(x1,x21) ^ S#ABBYS(x19) ^ SS#ABYSS-EXIT(x21) ^ R#ABYSS-THEME(x23,x21) ^ R#ABBYSS-EXIT-CAUSE(x1,x21) ^ S#ABYSS(x2) ^ SS#ABYSS-TYPE(x2) ^ =(x25,x19)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_triumph-nn_35":-1.001 "!HYPOTHESIZED_ultimate-adj_34":-1.001 "!EXPLAINED_of-in_14":1 "!HYPOTHESIZED_discrimination-nn_9":-1.001 "!HYPOTHESIZED_SS#ABYSS-EXIT_53":-0.401 "!HYPOTHESIZED_R#ABYSS-THEME_50":-0.401 "!HYPOTHESIZED_of-in_26":-1.001 "!HYPOTHESIZED_R#ABBYSS-EXIT-CAUSE_51":-0.401 "!HYPOTHESIZED_mention-vb_15":-1.001 "!HYPOTHESIZED_lifetime-nn_4":-1.001 "!EXPLAINED_S#ABBYS_52":0.4 "!HYPOTHESIZED_S#ABBYS_52":-0.401 "!HYPOTHESIZED_out-rb_17":-1.001 "!HYPOTHESIZED_!=_45":-1.001 "!EXPLAINED_pull-vb_16":1 "!EXPLAINED_black-adj_36":1 "!HYPOTHESIZED_when_0":-1.001 "!HYPOTHESIZED_card_19":-1.001 "!HYPOTHESIZED_of-in_27":-1.001 "!HYPOTHESIZED_immigrant-nn_24":-1.001 "!HYPOTHESIZED_to-in_25":-1.001 "!HYPOTHESIZED_equal_5":-1.001 "!HYPOTHESIZED_per_39":-1.001 "!EXPLAINED_of-in_27":1 "!HYPOTHESIZED_!=_44":-1.001 "!HYPOTHESIZED_as-in_18":-1.001 "!HYPOTHESIZED_have-vb_28":-1.001 "!EXPLAINED_R#ABYSS-THEME_54":0.4 "!EXPLAINED_hole-nn_37":1 "!HYPOTHESIZED_!=_43":-1.001 "!HYPOTHESIZED_elect-vb_1":-1.001 "!HYPOTHESIZED_child-nn_21":-1.001 "!EXPLAINED_R#ABBYSS-EXIT-CAUSE_55":0.4 "!HYPOTHESIZED_in-in_3":-1.001 "!HYPOTHESIZED_R#ABYSS-THEME_54":-0.401 "!HYPOTHESIZED_subset_of_7":-1.001 "!HYPOTHESIZED_S#ABBYS_48":-0.401 "!HYPOTHESIZED_black-adj_36":-1.001 "!HYPOTHESIZED_!=_42":-1.001 "!HYPOTHESIZED_SS#ABYSS-EXIT_49":-0.401 "!HYPOTHESIZED_TS#POVERTY_46":-0.451 "!HYPOTHESIZED_poverty-nn_13":-1.001 "!HYPOTHESIZED_of-in_14":-1.001 "!HYPOTHESIZED_neuter_33":-1.001 "!HYPOTHESIZED_subset_of_6":-1.001 "!HYPOTHESIZED_R#ABBYSS-EXIT-CAUSE_55":-0.401 "!HYPOTHESIZED_mexican-adj_23":-1.001 "!HYPOTHESIZED_over-in_30":-1.001 "!HYPOTHESIZED_not_12":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_47":-0.451 "!HYPOTHESIZED_!=_41":-1.001 "!HYPOTHESIZED_hole-nn_37":-1.001 "!HYPOTHESIZED_castro-nn_38":-1.001 "!HYPOTHESIZED_S#ABYSS_56":-0.901 "!HYPOTHESIZED_t_1974XXXX_2":-1.001 "!HYPOTHESIZED_SS#ABYSS-TYPE_57":-0.901 "!HYPOTHESIZED_equal_31":-1.001 "!HYPOTHESIZED_bear-vb_22":-1.001 "!HYPOTHESIZED_rel_29":-1.001 "!HYPOTHESIZED_and_32":-1.001 "!HYPOTHESIZED_male_40":-1.001 "!HYPOTHESIZED_racism-nn_8":-1.001 "!HYPOTHESIZED_firsthand-rb_11":-1.001 "!HYPOTHESIZED_pull-vb_16":-1.001 "!EXPLAINED_SS#ABYSS-EXIT_53":0.4 "!HYPOTHESIZED_experience-vb_10":-1.001 "!EXPLAINED_poverty-nn_13":1 "!HYPOTHESIZED_card_20":-1.001 
+</vector>
+<statistics>
+<time total="0.0673959" prepare="0.0641601" ilp="0.00323582" />
+<ilp solution="Optimal" variables="223" constraints="285" />
+<search-space literals="58" axiom="6" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">when(e71,x28,x9):0:1.00</literal>
+<literal id="1" type="2" active="yes">elect-vb(x28,u69,x0,u70):1:1.00</literal>
+<literal id="2" type="2" active="yes">t_1974XXXX(e68,x27):2:1.00</literal>
+<literal id="3" type="2" active="yes">in-in(e67,x28,x27):3:1.00</literal>
+<literal id="4" type="2" active="yes">lifetime-nn(e66,x14):4:1.00</literal>
+<literal id="5" type="2" active="yes">equal(e65,x14,x13):5:1.00</literal>
+<unification l1="5" l2="31" unifier="" active="no" />
+<literal id="6" type="2" active="yes">subset_of(e64,x11,x12):6:1.00</literal>
+<unification l1="6" l2="7" unifier="" active="no" />
+<literal id="7" type="2" active="yes">subset_of(e63,x10,x12):7:1.00</literal>
+<unification l1="7" l2="6" unifier="" active="no" />
+<literal id="8" type="2" active="yes">racism-nn(e62,x11):8:1.00</literal>
+<literal id="9" type="2" active="yes">discrimination-nn(e61,x10):9:1.00</literal>
+<literal id="10" type="2" active="yes">experience-vb(x9,x13,x12,u60):10:1.00</literal>
+<literal id="11" type="2" active="yes">firsthand-rb(e59,x9):11:1.00</literal>
+<literal id="12" type="2" active="yes">not(e40,x18):12:1.00</literal>
+<literal id="13" type="2" active="yes">poverty-nn(e58,x19):13:1.00</literal>
+<literal id="14" type="2" active="yes">of-in(e57,x2,x19):14:1.00</literal>
+<unification l1="14" l2="26" unifier="" active="no" />
+<unification l1="14" l2="27" unifier="x19=x25" active="no" />
+<literal id="15" type="2" active="yes">mention-vb(x18,x13,x2,u56):15:1.00</literal>
+<literal id="16" type="2" active="yes">pull-vb(x21,x1,x23,u55):16:1.00</literal>
+<literal id="17" type="2" active="yes">out-rb(e54,x0):17:1.00</literal>
+<literal id="18" type="2" active="yes">as-in(e53,x25):18:1.00</literal>
+<literal id="19" type="2" active="yes">card(e52,x25,1):19:1.00</literal>
+<unification l1="19" l2="20" unifier="" active="no" />
+<literal id="20" type="2" active="yes">card(e51,x24,12):20:1.00</literal>
+<unification l1="20" l2="19" unifier="" active="no" />
+<literal id="21" type="2" active="yes">child-nn(e50,x24):21:1.00</literal>
+<literal id="22" type="2" active="yes">bear-vb(x23,u48,x24,u49):22:1.00</literal>
+<literal id="23" type="2" active="yes">mexican-adj(e47,x22):23:1.00</literal>
+<literal id="24" type="2" active="yes">immigrant-nn(e46,x22):24:1.00</literal>
+<literal id="25" type="2" active="yes">to-in(e45,x23,x22):25:1.00</literal>
+<literal id="26" type="2" active="yes">of-in(e44,x25,x24):26:1.00</literal>
+<unification l1="26" l2="14" unifier="" active="no" />
+<unification l1="26" l2="27" unifier="" active="no" />
+<literal id="27" type="2" active="yes">of-in(e43,e54,x25):27:1.00</literal>
+<unification l1="27" l2="14" unifier="x19=x25" active="no" />
+<unification l1="27" l2="26" unifier="" active="no" />
+<literal id="28" type="2" active="yes">have-vb(x16,x1,x21,u42):28:1.00</literal>
+<literal id="29" type="2" active="yes">rel(e41,x16,x2):29:1.00</literal>
+<literal id="30" type="2" active="yes">over-in(e39,x3,x14):30:1.00</literal>
+<literal id="31" type="2" active="yes">equal(e38,x4,x3):31:1.00</literal>
+<unification l1="31" l2="5" unifier="" active="no" />
+<literal id="32" type="2" active="yes">and(e37,e71):32:1.00</literal>
+<literal id="33" type="2" active="yes">neuter(e36,x4):33:1.00</literal>
+<literal id="34" type="2" active="yes">ultimate-adj(e35,x3):34:1.00</literal>
+<literal id="35" type="2" active="yes">triumph-nn(e34,x3):35:1.00</literal>
+<literal id="36" type="2" active="yes">black-adj(e33,x2):36:1.00</literal>
+<literal id="37" type="2" active="yes">hole-nn(e32,x2):37:1.00</literal>
+<literal id="38" type="2" active="yes">castro-nn(e30,x1):38:1.00</literal>
+<literal id="39" type="2" active="yes">per(e31,x1):39:1.00</literal>
+<literal id="40" type="2" active="yes">male(e29,x0):40:1.00</literal>
+<literal id="41" type="2" active="yes">!=(e30,e31):41:1.00</literal>
+<literal id="42" type="2" active="yes">!=(e57,e44,e43):42:1.00</literal>
+<literal id="43" type="2" active="yes">!=(e65,e38):43:1.00</literal>
+<literal id="44" type="2" active="yes">!=(e64,e63):44:1.00</literal>
+<literal id="45" type="2" active="yes">!=(e52,e51):45:1.00</literal>
+<literal id="46" type="3" active="yes">TS#POVERTY(x19):46:0.45</literal>
+<literal id="47" type="3" active="yes">T#ECONOMIC-INEQUALITY(_40):47:0.45</literal>
+<literal id="48" type="3" active="yes">S#ABBYS(x25):48:0.40</literal>
+<unification l1="48" l2="52" unifier="x19=x25" active="yes" />
+<literal id="49" type="3" active="yes">SS#ABYSS-EXIT(x21):49:0.40</literal>
+<unification l1="49" l2="53" unifier="" active="yes" />
+<literal id="50" type="3" active="yes">R#ABYSS-THEME(x23,x21):50:0.40</literal>
+<unification l1="50" l2="54" unifier="" active="yes" />
+<literal id="51" type="3" active="yes">R#ABBYSS-EXIT-CAUSE(x1,x21):51:0.40</literal>
+<unification l1="51" l2="55" unifier="" active="yes" />
+<literal id="52" type="3" active="yes">S#ABBYS(x19):52:0.40</literal>
+<unification l1="52" l2="48" unifier="x19=x25" active="yes" />
+<literal id="53" type="3" active="yes">SS#ABYSS-EXIT(x21):53:0.40</literal>
+<unification l1="53" l2="49" unifier="" active="yes" />
+<literal id="54" type="3" active="yes">R#ABYSS-THEME(x23,x21):54:0.40</literal>
+<unification l1="54" l2="50" unifier="" active="yes" />
+<literal id="55" type="3" active="yes">R#ABBYSS-EXIT-CAUSE(x1,x21):55:0.40</literal>
+<unification l1="55" l2="51" unifier="" active="yes" />
+<literal id="56" type="3" active="yes">S#ABYSS(x2):56:0.90</literal>
+<literal id="57" type="3" active="yes">SS#ABYSS-TYPE(x2):57:0.90</literal>
+<explanation name="poverty" active="yes" axiom="">46 ^ 47 => 13</explanation>
+<explanation name="black-hole" active="yes" axiom="">56 ^ 57 => 36</explanation>
+<explanation name="pull-out-of" active="yes" axiom="">52 ^ 53 ^ 54 ^ 55 => 14</explanation>
+<explanation name="black-hole" active="yes" axiom="">56 ^ 57 => 37</explanation>
+<explanation name="pull-out-of" active="yes" axiom="">48 ^ 49 ^ 50 ^ 51 => 27</explanation>
+<explanation name="pull-out-of" active="yes" axiom="">48 ^ 49 ^ 50 ^ 51 => 16</explanation>
+<explanation name="pull-out-of" active="yes" axiom="">52 ^ 53 ^ 54 ^ 55 => 16</explanation>
+</proofgraph>
+</result-inference>
+</henry-output>
