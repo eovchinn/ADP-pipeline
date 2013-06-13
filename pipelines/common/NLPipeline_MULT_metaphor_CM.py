@@ -138,11 +138,9 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
         parser_proc = tokenizer + " | " + candcParser + " | " + boxer + " | " + b2h
         KBPATH = EN_KBPATH
 
-    # Katya: condition should be removed when Farsi starts to work
-    if language != "FA":
-        parser_pipeline = Popen(parser_proc, shell=True, stdin=PIPE, stdout=PIPE,
+    parser_pipeline = Popen(parser_proc, shell=True, stdin=PIPE, stdout=PIPE,
                                 stderr=None, close_fds=True)
-        parser_output = parser_pipeline.communicate(input=input_str)[0]
+    parser_output = parser_pipeline.communicate(input=input_str)[0]
 
     # Parser processing time in seconds
     parser_time = (time.time() - start_time) * 0.001
@@ -170,19 +168,15 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
                      "/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T " + \
                      time_unit_henry
 
-    # Katya: condition should be removed when Farsi starts to work
-    if language != "FA":
-        henry_pipeline = Popen(henry_proc,
+    henry_pipeline = Popen(henry_proc,
                                shell=True,
                                stdin=PIPE,
                                stdout=PIPE,
                                stderr=None,
                                close_fds=True)
 
-        henry_output = henry_pipeline.communicate(input=parser_output)[0]
-        hypotheses = extract_hypotheses(henry_output)
-    else:
-        hypotheses = []
+    henry_output = henry_pipeline.communicate(input=parser_output)[0]
+    hypotheses = extract_hypotheses(henry_output)
 
     processed, failed, empty = 0, 0, 0
 
