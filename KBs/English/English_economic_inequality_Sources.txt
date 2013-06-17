@@ -480,20 +480,20 @@
 
 ; ENTRANCE
 
-(B (name push-into) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABBYSS-CAUSE x e0 :0.2)) (^(push-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name drive-into)(=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABBYSS-CAUSE x e0 :0.2)) (^(drive-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name suck-into) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABBYSS-CAUSE x e0 :0.2)) (^(suck-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name drag-into) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABBYSS-CAUSE x e0 :0.2)) (^(drag-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name push-into) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(push-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name drive-into)(=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(drive-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name suck-into) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(suck-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name drag-into) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(drag-vb e0 x y u2)(into-in e1 e0 z))))
 
 ; EXIT
 
-(B (name climb-out-of) (=>(^(S#ABBYS z :0.3)(SS#ABYSS-EXIT e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(climb-vb e0 x u1 u2)(of-in e2 e1 z))))
-(B (name jump-out-of) (=>(^(S#ABBYS z :0.3)(SS#ABYSS-EXIT e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(jump-vb e0 x u1 u2)(of-in e2 e1 z))))
+(B (name climb-out-of) (=>(^(S#ABYSS z :0.3)(SS#ABYSS-EXIT e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(climb-vb e0 x u1 u2)(of-in e2 e1 z))))
+(B (name jump-out-of) (=>(^(S#ABYSS z :0.3)(SS#ABYSS-EXIT e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(jump-vb e0 x u1 u2)(of-in e2 e1 z))))
 
-(B (name pull-out-of) (=>(^(S#ABBYS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABBYSS-EXIT-CAUSE x e0 :0.2)) (^(pull-vb e0 x y u2)(of-in e2 e1 z))))
-(B (name lift-out-of) (=>(^(S#ABBYS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABBYSS-EXIT-CAUSE x e0 :0.2)) (^(lift-vb e0 x y u2)(of-in e2 e1 z))))
-(B (name yank-out-of) (=>(^(S#ABBYS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABBYSS-EXIT-CAUSE x e0 :0.2)) (^(yank-vb e0 x y u2)(of-in e2 e1 z))))
-(B (name dig-out-of) (=>(^(S#ABBYS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABBYSS-EXIT-CAUSE x e0 :0.2)) (^(dig-vb e0 x y u2)(of-in e2 e1 z))))
+(B (name pull-out-of) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(pull-vb e0 x y u2)(of-in e2 e1 z))))
+(B (name lift-out-of) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(lift-vb e0 x y u2)(of-in e2 e1 z))))
+(B (name yank-out-of) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(yank-vb e0 x y u2)(of-in e2 e1 z))))
+(B (name dig-out-of) (=>(^(S#ABYSSan  z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(dig-vb e0 x y u2)(of-in e2 e1 z))))
 
 ; BURDEN
 ; WEIGHT

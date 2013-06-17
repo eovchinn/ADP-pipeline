@@ -238,7 +238,7 @@ def handle_wh(head,wordID,sent_dict):
                 sent_dict[headHead][6][2] = sent_dict[wordID][6][0]
                 sent_dict,newKey = add_new_entry(sent_dict,extra,sent_dict[wordID][6][1],sent_dict[head][6][0],sent_dict[wordID][8])
                 return sent_dict
-            elif sent_dict[headHead][7] == "nn" and realHead(sent_dict,headhead):
+            elif sent_dict[headHead][7] == "nn" and realHead(sent_dict,headHead):
                 sent_dict[wordID][6].append("R")
                 sent_dict,NewKey = add_new_entry(sent_dict,extra,sent_dict[headHead][6][1],sent_dict[head][6][0],sent_dict[wordID][8])
                 return sent_dict
