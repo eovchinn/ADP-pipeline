@@ -2,15 +2,10 @@
 # -*- coding: utf-8 -*-
 from re import split as re_split
 import re,sys,optparse
+from signal import signal, SIGPIPE, SIG_DFL
+signal(SIGPIPE, SIG_DFL)
 
-##################### I/O ##################################
-usage = "usage: %prog [options] <input_file>"
-parser = optparse.OptionParser(usage=usage)
-parser.add_option("-i", "--inFile", dest="input",
-                  action="store", help="read from FILE", metavar="FILE")
-parser.add_option("-t","--tagset",action="store",
-                  help="tagset in input file",default="ancora")
-(options, args) = parser.parse_args()
+
 
 def to_sents(infile):
     words = []
@@ -803,6 +798,15 @@ def to_print(prop_dict,sent):
     return printable
 
 def main():
+    ##################### I/O ##################################
+    usage = "usage: %prog [options] <input_file>"
+    parser = optparse.OptionParser(usage=usage)
+    parser.add_option("-i", "--inFile", dest="input",
+                      action="store", help="read from FILE", metavar="FILE")
+    parser.add_option("-t","--tagset",action="store",
+                      help="tagset in input file",default="ancora")
+    (options, args) = parser.parse_args()
+    
     lines = open(options.input, "r") if options.input else sys.stdin
     full_sents,all_words = to_sents(lines)
     sent_count = 0
