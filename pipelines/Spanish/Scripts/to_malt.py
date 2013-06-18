@@ -25,11 +25,14 @@ def malter(LINE_OBJECT):
 
 def determineLemma(original,token):
     if original == "<unknown>":
-        return token
+        lemma = token
     elif optional_lemma.search(original):
-        return original.split("|")[0]
+        lemma = original.split("|")[0]
     else:
-        return original.replace("~", "_");
+        lemma = original.replace("~", "_");
+    if lemma == "":
+        lemma = token
+    return lemma
 
 def reform(infile):
     malt_lines = []

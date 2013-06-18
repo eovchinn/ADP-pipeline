@@ -141,7 +141,7 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = insert_sn(head,wordID,sent_dict)
         if rel == "grup.nom" and predicate[-1] != "R" and realHead(sent_dict,head): # 
             sent_dict = insert_grup_nom(head,wordID,sent_dict)            
-        if (rel in adjectiveRels and (pos == "a")) or (lemma in quantifierList) and realHead(sent_dict,head):
+        if ((rel in adjectiveRels and (pos == "a")) or (lemma in quantifierList)) and realHead(sent_dict,head):
             sent_dict = insert_adjHead(head,wordID,sent_dict)          
         if rel == "cc" and pos == "r" and lemma not in whWords and realHead(sent_dict,head):
             sent_dict = insert_cc(head,wordID,sent_dict)
