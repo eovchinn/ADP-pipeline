@@ -126,7 +126,7 @@
 
 (B (name physical-harm4) (=>(M#CAUSE-HARM e0 :0.95) (I#PHYSICAL-HARM e0)))
 
-; ASYSS
+; ABYSS
 (B (name abyss) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#CAUSING-THING-F x :0.45)) (I#ABYSS x)))
 
 ; MAZE

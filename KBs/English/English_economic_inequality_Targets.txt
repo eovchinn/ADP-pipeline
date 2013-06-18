@@ -58,6 +58,8 @@
 (B (name billionaire) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (billionaire-nn e0 y)))
 (B (name millionaire) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (millionaire-nn e0 y)))
 
+(B (name wealthy) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (wealthy-adj e0 y)))
+
 ; BE RICH
 (B (name prosper) (=>(^(TS#WEALTH e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#RICH x e0 :0.3)) (prosper-vb e0 x u1 u2)))
 (B (name thrive) (=>(^(TS#WEALTH e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#RICH x e0 :0.3)) (thrive-vb e0 x u1 u2)))

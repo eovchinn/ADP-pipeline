@@ -461,6 +461,7 @@
 (B (name trench) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (trench-nn e0 x)))
 (B (name black-hole) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (^(black-adj e0 x)(hole-nn e1 x))))
 (B (name gaping-maw) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (^(gap-vb e0 x u1 u2)(maw-nn e1 x))))
+(B (name dark-hole) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (^(dark-adj e0 x)(hole-nn e1 x))))
 
 (B (name abyssal) (=>(^(S#ABYSS e0 :0.45)(SS#ABYSS-TYPE e0 e0 :0.45)) (abyssal-adj e0 x)))
 (B (name abysmal) (=>(^(S#ABYSS e0 :0.45)(SS#ABYSS-TYPE e0 e0 :0.45)) (abysmal-adj e0 x)))
@@ -473,8 +474,10 @@
 (B (name depth) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-DEPTH x :0.45)) (depth-nn e0 x)))
 (B (name deep) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-DEPTH x :0.45)) (deep-nn e0 x)))
 (B (name deep2) (=>(^(S#ABYSS x :0.3)(SS#ABYSS-DEPTH e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (deep-adj e0 x)))
+(B (name deeper) (=>(^(S#ABYSS x :0.3)(SS#ABYSS-DEPTH e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (deeper-adj e0 x)))
+(B (name deepest) (=>(^(S#ABYSS x :0.3)(SS#ABYSS-DEPTH e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (deepest-adj e0 x)))
 (B (name deep3) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-DEPTH e0 :0.45)) (deeply-rb e0 x)))
-
+(B (name ever-deepening) (=>(^(S#ABYSS x :0.3)(SS#ABYSS-DEPTH e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (ever-deepening-adj e0 x)))
 
 (B (name depth-of) (=> (R#ABYSS-THEME y x :0.90)(^(SS#ABYSS-DEPTH x)(of-in e1 x y))))
 
@@ -484,6 +487,12 @@
 (B (name drive-into)(=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(drive-vb e0 x y u2)(into-in e1 e0 z))))
 (B (name suck-into) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(suck-vb e0 x y u2)(into-in e1 e0 z))))
 (B (name drag-into) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(drag-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name descend-into) (=>(^(S#ABYSS z :0.3)(SS#ABYSS-ENTRANCE e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(descend-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name sink-into) (=>(^(S#ABYSS z :0.3)(SS#ABYSS-ENTRANCE e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(sink-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name plunge-into) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(plunge-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name plunge-into2) (=>(^(S#ABYSS z :0.3)(SS#ABYSS-ENTRANCE e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(plunge-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name throw-into) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(throw-vb e0 x y u2)(into-in e1 e0 z))))
+
 
 ; EXIT
 
@@ -494,6 +503,11 @@
 (B (name lift-out-of) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(lift-vb e0 x y u2)(of-in e2 e1 z))))
 (B (name yank-out-of) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(yank-vb e0 x y u2)(of-in e2 e1 z))))
 (B (name dig-out-of) (=>(^(S#ABYSSan  z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(dig-vb e0 x y u2)(of-in e2 e1 z))))
+(B (name emerge-from) (=>(^(S#ABYSS z :0.3)(SS#ABYSS-EXIT e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(emerge-vb e0 x u1 u2)(from-in e2 e1 z))))
+(B (name help-out-of) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(help-vb e0 x y u2)(of-in e2 e1 z))))
+
+(B (name abyssmap)(=>(I#ABYSS x :0.9)(S#ABYSS x)))
+(B (name abyssmap)(=>(I#ABYSS-TYPE x :0.9)(S#ABYSS-TYPE x)))
 
 ; BURDEN
 ; WEIGHT
