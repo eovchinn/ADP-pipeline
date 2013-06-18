@@ -161,7 +161,7 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = insert_adjHead(head,wordID,sent_dict)
         if rel == "cpred" and realHead(sent_dict,head):
             sent_dict = insert_cpred(head,wordID,sent_dict)
-        if tag == "rb" and (rel == "spec" or rel == "mod"):
+        if tag == "rb" and (rel == "spec" or rel == "mod") and realHead(sent_dict,head):
             sent_dict = insert_rb_spec(head,wordID,sent_dict)
         if tag in proTagList and (rel == "spec") and realHead(sent_dict,head):
             sent_dict = insert_pro_spec(head,wordID,sent_dict)
