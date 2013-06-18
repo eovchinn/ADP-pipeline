@@ -125,7 +125,7 @@ def replace_args(prop_sent,sent_dict):
         #try:
         if lemma in thingProList and realHead(sent_dict,head):
             sent_dict = det_to_pr(head,wordID,sent_dict)       
-        if (rel == "suj") or (rel == "spec") and tag != "NULL" and realHead(sent_dict,head):
+        if ((rel == "suj") or (rel == "spec")) and (tag != "NULL") and (realHead(sent_dict,head)):
             sent_dict = insert_suj(head,wordID,sent_dict)
         if tag == "vb" and realHead(sent_dict,head) and rel in inheritingVbs:
             sent_dict = inherit_args(head,wordID,sent_dict)
@@ -866,9 +866,13 @@ def main():
                 print to_print(prop_dict,sent)
                 print ""
             except Exception,err:
-		sys.stderr.write('ERROR: %s\n' % str(err))
-		sys.stderr.write("% "+" ".join(sent))
-		sys.stderr.write("\n\n")                 
+	        sys.stderr.write('ERROR: %s\n' % str(err))
+	        sys.stderr.write("% "+" ".join(sent))
+	        sys.stderr.write("\n\n")
+            # prop_sent,prop_dict,eCount,xCount,uCount = prop_to_dict(words,eCount,xCount,uCount)
+            # prop_dict = replace_args(prop_sent,prop_dict)
+            # print to_print(prop_dict,sent)
+            # print ""
             eCount = 1
             xCount = 1
             uCount = 1            
