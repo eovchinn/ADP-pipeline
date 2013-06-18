@@ -1,8 +1,9 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
 from re import split as re_split
-import re,sys,optparse
 from signal import signal, SIGPIPE, SIG_DFL
+import re,sys,optparse
+
 signal(SIGPIPE, SIG_DFL)
 
 
@@ -704,17 +705,17 @@ def pronoun_tag(lemma):
     else:
         return "NULL"
 
-if opt_tagset == "ancora":
-    nounTag = re.compile("^n$")
-    verbTag = re.compile("^v$")
-    adjectiveTag = re.compile("^a$")
-    adverbTag = re.compile("^r$")
-    prepositionTag = re.compile("^s$")
-    pronounTag = re.compile("^p$")
-    cardTag = re.compile("^z$")
-    detTag = re.compile("^d$")
-    conjTag = re.compile("^c$")    
-    propTags = re.compile("^(n|v|a|r|s|p|z|c|d)$")
+    #if tagset == "ancora":
+nounTag = re.compile("^n$")
+verbTag = re.compile("^v$")
+adjectiveTag = re.compile("^a$")
+adverbTag = re.compile("^r$")
+prepositionTag = re.compile("^s$")
+pronounTag = re.compile("^p$")
+cardTag = re.compile("^z$")
+detTag = re.compile("^d$")
+conjTag = re.compile("^c$")    
+propTags = re.compile("^(n|v|a|r|s|p|z|c|d)$")
 
 card_dict={}
 card_dict["uno"] = "1"
@@ -797,19 +798,15 @@ def to_print(prop_dict,sent):
             printable += (" & ")
     return printable
 
+
 def main():
     ##################### I/O ##################################
     usage = "usage: %prog [options] <input_file>"
     parser = optparse.OptionParser(usage=usage)
     parser.add_option("-i", "--inFile", dest="input",
                       action="store", help="read from FILE", metavar="FILE")
-    parser.add_option("-t","--tagset",action="store",
-                      help="tagset in input file",default="ancora")
     (options, args) = parser.parse_args()
-    
     lines = open(options.input, "r") if options.input else sys.stdin
-    global opt_tagset
-    opt_tagset = options.tagset
     full_sents,all_words = to_sents(lines)
     sent_count = 0
     parse_count = 0
