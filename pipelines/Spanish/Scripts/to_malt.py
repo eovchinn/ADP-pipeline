@@ -93,7 +93,7 @@ treePrep = re.compile("PREP|CSUBI|PAL|PDEL|PREP/DEL")
 treeVerb = re.compile("^V.*")
 #treeDate = re.compile("")
 treeNum = re.compile("CARD|FO|ORD")
-optional_lemma = re.compile("\w*\|\w*")
+optional_lemma = re.compile("\w\|\w")
 
 sentID = re.compile("<{{{.*}}}!!!>")
 def main():
