@@ -14,6 +14,7 @@
 (B (name ailment) (=>(^(S#DISEASE x :0.45)(SS#DISEASE-TYPE x :0.45)) (ailment-nn e0 x)))
 (B (name affliction) (=>(^(S#DISEASE x :0.45)(SS#DISEASE-TYPE x :0.45)) (affliction-nn e0 x)))
 (B (name medical-condition) (=>(^(S#DISEASE x :0.45)(SS#DISEASE-TYPE x :0.45)) (^(condition-nn e0 x)(medical-adj e1 x))))
+(B (name health-problem) (=>(^(S#DISEASE x :0.45)(SS#DISEASE-TYPE x :0.45)) (^(health-nn e0 x)(problem-nn e1 y))))
 
 (B (name plague) (=>(^(S#DISEASE x :0.45)(SS#DISEASE-TYPE x :0.45)) (plague-nn e0 x)))
 (B (name cancer) (=>(^(S#DISEASE x :0.45)(SS#DISEASE-TYPE x :0.45)) (cancer-nn e0 x)))
