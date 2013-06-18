@@ -704,7 +704,7 @@ def pronoun_tag(lemma):
     else:
         return "NULL"
 
-if options.tagset == "ancora":
+if opt_tagset == "ancora":
     nounTag = re.compile("^n$")
     verbTag = re.compile("^v$")
     adjectiveTag = re.compile("^a$")
@@ -808,6 +808,8 @@ def main():
     (options, args) = parser.parse_args()
     
     lines = open(options.input, "r") if options.input else sys.stdin
+    global opt_tagset
+    opt_tagset = options.tagset
     full_sents,all_words = to_sents(lines)
     sent_count = 0
     parse_count = 0
