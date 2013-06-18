@@ -137,7 +137,7 @@ def replace_args(prop_sent,sent_dict):
         #Look for auxiliary verbs (passive)
         if (tag == "vb" and rel == "v" and lemma in passivesList) and realHead(sent_dict,head):
             sent_dict = process_passive(head,wordID,sent_dict)
-        if rel == "v" and lemma not in passivesList and tag != "":
+        if rel == "v" and lemma not in passivesList and tag != "" and realHead(sent_dict,head):
             sent_dict = process_aux(head,wordID,sent_dict)            
         if rel in prepRels and pos == "s" and realHead(sent_dict,head):
             sent_dict = insert_prepHead(head,wordID,sent_dict)
