@@ -214,7 +214,7 @@ def handle_wh(head,wordID,sent_dict):
     extra = determine_wh_helper(sent_dict[wordID][1])
     sent_dict[wordID][1] = ""
     first_key = int(re.split("[a-z]",str(sorted(sent_dict.items())[0][0]))[0])
-    if sent_dict[head][7] == "vb" or sent_dict[head][7] == "adj" or sent_dict[head][7] == "in":  
+    if sent_dict[head][7] == "vb" or sent_dict[head][7] == "in":  
         headHead = sent_dict[head][3]
         if headHead == 0:
             sent_dict[head][6][2] = sent_dict[wordID][6][0]
@@ -860,10 +860,15 @@ def main():
             sent_count += 1
             print "% "+" ".join(sent)
             print "id("+str(sent_count)+")."
-            prop_sent,prop_dict,eCount,xCount,uCount = prop_to_dict(words,eCount,xCount,uCount)
-            prop_dict = replace_args(prop_sent,prop_dict)
-            print to_print(prop_dict,sent)
-            print ""
+            try:
+                prop_sent,prop_dict,eCount,xCount,uCount = prop_to_dict(words,eCount,xCount,uCount)
+                prop_dict = replace_args(prop_sent,prop_dict)
+                print to_print(prop_dict,sent)
+                print ""
+            except Exception,err:
+		sys.stderr.write('ERROR: %s\n' % str(err))
+		sys.stderr.write("% "+" ".join(sent))
+		sys.stderr.write("\n\n")                 
             eCount = 1
             xCount = 1
             uCount = 1            
