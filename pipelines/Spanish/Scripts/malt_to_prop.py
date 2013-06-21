@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from re import split as re_split
 import re,sys,optparse
+import logging
 
 def to_sents(infile):
     words = []
@@ -180,10 +181,10 @@ def replace_args(prop_sent,sent_dict):
             prop_dict[propID]=[propID,lemma.lower(),tag,predicate,head]
     return prop_dict
 
-def realHead(sent_dict,head):
-    if sent_dict.has_key(head):
-        return True
-    return False
+# def realHead(sent_dict,head):
+#     if sent_dict.has_key(head):
+#         return True
+#     return False
 
 def handle_negation(head,wordID,sent_dict):
     sent_dict[wordID][7] = "not"
@@ -791,7 +792,13 @@ def main():
     parser.add_option("-i", "--inFile", dest="input",
                       action="store", help="read from FILE", metavar="FILE")
     (options, args) = parser.parse_args()
+
     lines = open(options.input, "r") if options.input else sys.stdin
+    
+    logfile = '/tmp/malt_to_prop_log.txt'
+    logging.basicConfig(filename=logfile,level=logging.DEBUG)
+    #logging.error("this is an error message")
+    
     full_sents,all_words = to_sents(lines)
     sent_count = 0
     parse_count = 0
@@ -827,10 +834,11 @@ def main():
                 prop_dict = replace_args(prop_sent,prop_dict)
                 printable_props = to_print(prop_dict,sent)
                 meta_props.append(printable_props)
-	    except Exception,err:
-		sys.stderr.write('ERROR: %s\n' % str(err))
-		sys.stderr.write("% "+" ".join(sent))
-		sys.stderr.write("\n\n")            
+            except Exception,err:
+                logging.exception(" ".join(sent))
+                logging.exception(str(err))
+
+         
 
         if metastring != "meta" and parse_count == len(full_sents):
             print "% "+" ".join(meta_sentences)            
@@ -851,9 +859,8 @@ def main():
                 print to_print(prop_dict,sent)
                 print ""
             except Exception,err:
-	        sys.stderr.write('ERROR: %s\n' % str(err))
-	        sys.stderr.write("% "+" ".join(sent))
-	        sys.stderr.write("\n\n")
+                logging.exception(" ".join(sent))                
+                logging.exception(str(err))
             # prop_sent,prop_dict,eCount,xCount,uCount = prop_to_dict(words,eCount,xCount,uCount)
             # prop_dict = replace_args(prop_sent,prop_dict)
             # print to_print(prop_dict,sent)
