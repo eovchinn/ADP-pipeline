@@ -127,10 +127,11 @@
 (B (name physical-harm4) (=>(M#CAUSE-HARM e0 :0.95) (I#PHYSICAL-HARM e0)))
 
 ; ABYSS
-(B (name abyss) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#CAUSING-THING-F x :0.45)) (I#ABYSS x)))
+(B (name abyss) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.33)(M#CAUSING-THING-F x :0.33)(M#CAUSE-CONFINEMENT e0 :0.33)) (I#ABYSS x)))
 
 ; MAZE
-(B (name maze) (=>(^(M#CAUSE-CONFUSION e0 :0.45)(M#CONFUSING-THING x :0.45)) (I#MAZE x)))
+(B (name maze) (=>(^(M#CAUSE-CONFUSION e0 :0.23)(M#CONFUSING-THING x :0.23)(M#CAUSE-CONFINEMENT e0 :0.23)(M#CAUSE-NOT-FUNCTION e0 :0.23)) (I#MAZE x)))
+;(B (name maze) (=>(^(M#CAUSE-CONFUSION e0 :0.45)(M#CONFUSING-THING x :0.45)) (I#MAZE x)))
 
 ; NAVIGATION
 

@@ -620,5 +620,6 @@
 (B (name plummet) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(plummet-vb e0 x u u1)))
 (B (name sink) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(sink-vb e0 x u u1)))
 (B (name plunge) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(plunge-vb e0 x u u1)))
+(B (name deg-self-deeper) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(dig-vb e0 x u u1)(deeper-adj e1 y))))
 
 (B (name movement-downwardmap)(=>(I#MOVEMENT-DOWNWARD x :0.9)(SS#MOVEMENT-DOWNWARD x)))

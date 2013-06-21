@@ -86,8 +86,8 @@
 (B (name sintoma) (=>(^(S#ENFERMEDAD/DISEASE x :0.45) (SS#SINTOMA/SYMPTOMS y :0.45)) (síntoma-nn e0 y)))
 (B (name sintomatico) (=>(^(S#ENFERMEDAD/DISEASE x :0.45) (SS#SINTOMA/SYMPTOMS e0 :0.45)) (sintomático-adj e0 y)))
 
-(B (name herida) (=>(^(S#DISEASE x :0.45) (SS#SINTOMA/SYMPTOMS y :0.45)) (herida =-nn e0 y)))
-(B (name dolor) (=>(^(S#DISEASE x :0.45) (SS#SINTOMA/SYMPTOMS y :0.45)) (dolor-nn e0 y)))
+(B (name herida) (=>(^(S#ENFERMEDAD/DISEASE x :0.45) (SS#SINTOMA/SYMPTOMS y :0.45)) (herida-nn e0 y)))
+(B (name dolor) (=>(^(S#ENFERMEDAD/DISEASE x :0.45) (SS#SINTOMA/SYMPTOMS y :0.45)) (dolor-nn e0 y)))
 
 ; OF - SYMPTOM 
 (B (name of-epidemia) (=>(S#ENFERMEDAD/DISEASE y :0.9)(^( SS#SINTOMA/SYMPTOMS x)(of-in e1 x y))))
