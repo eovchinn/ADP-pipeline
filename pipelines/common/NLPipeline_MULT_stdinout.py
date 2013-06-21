@@ -113,7 +113,7 @@ def main():
 			parser_output = parser_proc.communicate()[0]
 		# If there is no input file, parsing pipeline reads from the stdin
 		else: 
-			parser_output = parser_proc.communicate(input=sys.stdin.readline())[0]
+			parser_output = parser_proc.communicate(input=sys.stdin.read())[0]
 
 		# Save logical forms output by the parsing pipeline
 		f_par = open(os.path.join(outputdir,fname+".par"), "w")
