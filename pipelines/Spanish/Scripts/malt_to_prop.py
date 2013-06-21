@@ -1,12 +1,7 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
 from re import split as re_split
-from signal import signal, SIGPIPE, SIG_DFL
 import re,sys,optparse
-
-signal(SIGPIPE, SIG_DFL)
-
-
 
 def to_sents(infile):
     words = []
@@ -24,18 +19,16 @@ def to_sents(infile):
             wordPOS = line[3]
             wordHead = int(line[6])
             wordRel = line[7]
-            #wordTPOS = line[10]
             longID = '%0*d' % (3, wordID)
             outID = wordID
             if IDflag:
                 newIter +=IDiter
                 outID +=newIter           
-                #longID,IDflag,IDiter = createLongID(outID,wordText)
             if date.match(wordLemma):
                 wordLemma = wordText
             elif wordLemma == "<unknown>":
                 wordLemma = wordText
-            info = [longID,wordText,wordLemma,wordPOS,wordHead,wordRel,wordID,sent_count]#,wordTPOS]
+            info = [longID,wordText,wordLemma,wordPOS,wordHead,wordRel,wordID,sent_count]
             sentence.append(wordText)
             words.append(info)
         else:
@@ -52,7 +45,6 @@ def to_sents(infile):
     return full_sents,all_words
 
 def createLongID(wordID,token):
-    #if not re.search("_",token):
     if token.count("_") == 0:
         longID = '%0*d' % (3, wordID)
         IDflag = False
@@ -62,10 +54,7 @@ def createLongID(wordID,token):
             singleID = '%0*d' % (3, wordID)
             wordID+=1
             allIDs.append(singleID)
-            #longIDa = '%0*d' % (3, wordID)
-            #longIDb = '%0*d' % (3, wordID+1)
         longID = ",".join(allIDs)
-        #longID = longIDa+","+longIDb
         IDflag = True
     return longID,IDflag,token.count("_")
         
@@ -84,7 +73,6 @@ def prop_to_dict(props,eCount,xCount,uCount):
         rel = prop[5]
         shortID = prop[6]
         sent_count = prop[7]
-        #finePOS = prop[8]
         if re.search(",",ID):
             multiple = ID.split(",")
             joinedIDs = []
@@ -123,6 +111,7 @@ def replace_args(prop_sent,sent_dict):
         tag = prop[7]
         propID = prop[8]
         #try:
+        #print token,predicate
         if lemma in thingProList and realHead(sent_dict,head):
             sent_dict = det_to_pr(head,wordID,sent_dict)       
         if ((rel == "suj") or (rel == "spec")) and (tag != "NULL") and (realHead(sent_dict,head)):
@@ -131,7 +120,7 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = inherit_args(head,wordID,sent_dict)
             sent_dict = insert_prep_Vcomp(head,wordID,sent_dict)
         #Look for auxiliary verbs (passive)
-        if (tag == "vb" and rel == "v" and lemma in passivesList) and realHead(sent_dict,head):
+        if (tag == "vb" and rel == "v" and lemma in passivesList) and realHead(sent_dict,head) and int(sent_dict[head][8]) == int(sent_dict[wordID][8])+1:
             sent_dict = process_passive(head,wordID,sent_dict)
         if rel == "v" and lemma not in passivesList and tag != "" and realHead(sent_dict,head):
             sent_dict = process_aux(head,wordID,sent_dict)            
@@ -171,11 +160,6 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = handle_negation(head,wordID,sent_dict)
         if ((tag == "wh") or (tag == "whq")) and realHead(sent_dict,head):
             sent_dict = handle_wh(head,wordID,sent_dict)
-        # except Exception,err:
-        #     sys.stderr.write('ERROR: %s\n' % str(err))
-        #     for prop in prop_sent:
-        #         sys.stderr.write(prop[0]+" ")
-        #     sys.stderr.write("\n")
     for key,prop in sent_dict.items():
         position +=1
         token = prop[0]
@@ -279,6 +263,7 @@ def determine_wh_helper(lemma):
         return "thing"
 
 def insert_suj(head,wordID,sent_dict):
+    #print sent_dict[wordID][2],sent_dict[wordID][7]
     """Insert the subject of a verb as its first argument"""
     if sent_dict[wordID][4] == "spec" and sent_dict[wordID][1] not in thingProList:
         return sent_dict
@@ -337,10 +322,10 @@ def inherit_args(head,wordID,sent_dict):
     #                 sent_dict,newKey = add_new_entry(sent_dict,"or",sent_dict[head][6][0],sent_dict[wordID][6][0],sent_dict[wordID][8])
     return sent_dict
 
-def inherit_atr(head,wordID,sent_dict,):
+def inherit_atr(head,wordID,sent_dict):
     if sent_dict[head][7] == "vb" and not nounArg.search(sent_dict[wordID][6][1]):
         sent_dict[wordID][6][1] = sent_dict[head][6][1]
-    if sent_dict[head][1] in copulaList:# "ser": #change all "ser" to list of copula (estar, ser)
+    if sent_dict[head][1] in copulaList:
         headHead = sent_dict[head][3]
         if sent_dict[wordID][7] == "adj":
             sent_dict[head][6].append("R")
@@ -402,7 +387,7 @@ def insert_cd(head,wordID,sent_dict):
     """Insert the direct object as the head verb's second argument"""
     if sent_dict[wordID][2] in nominalList and sent_dict[head][7] == "vb":
         sent_dict[head][6][2] = sent_dict[wordID][6][1]
-    if sent_dict[wordID][2] == "v" and sent_dict[head][7] == "vb" and not nounArg.search(sent_dict[head][6][2]):
+    if sent_dict[wordID][2] == "v" and sent_dict[head][7] == "vb" and not nounArg.search(sent_dict[head][6][2]) and not nounArg.search(sent_dict[wordID][6][1]):
         if not entityArg.search(sent_dict[head][6][2]):
             sent_dict[head][6][2] = sent_dict[wordID][6][0]
         sent_dict[wordID][6][1] = sent_dict[head][6][1]    
@@ -461,7 +446,7 @@ def insert_sn(head,wordID,sent_dict):
         sent_dict[head][6][2] = sent_dict[wordID][6][0]        
     elif sent_dict[head][7] == "vb":
         sent_dict[head][6][2] = sent_dict[wordID][6][1]
-    elif sent_dict[head][7] == "nn" and sent_dict[wordID][7] == "nn" and int(sent_dict[wordID][8]) == int(sent_dict[wordID][8])+1:
+    elif (sent_dict[head][7] == "nn" and sent_dict[wordID][7] == "nn") and (int(sent_dict[head][8]) == int(sent_dict[wordID][8])+1):
         if int(sent_dict[head][6][1].split("x")[1]) == int(sent_dict[wordID][6][1].split("x")[1])-1:
             sent_dict[wordID][6][1] = sent_dict[head][6][1]
             #sent_dict,newKey = add_new_entry(sent_dict,"equal",sent_dict[head][6][1],sent_dict[wordID][6][1],sent_dict[wordID][8])
