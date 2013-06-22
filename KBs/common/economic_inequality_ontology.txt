@@ -138,9 +138,12 @@
 (B (name navigate) (=>(^(M#CAUSE-REDUCE-CONFUSION e0 :0.3)(M#CONFUSING-THING y :0.3))  (^(I#NAVIGATION e0)(R#NAVIGATION-AGENT x e0))))
 
 ; LOW POINT
+(B (name low-point) (=>(^(M#CAUSE-HAVE-BAD-QUALITY e0 :0.45)(M#CAUSING-THING-Q x :0.45)) (I#LOW-POINT e0)))
+
 ; MOVEMENT DOWNWARD
 
-(B (name movement-downward) (=>(^(M#MOVE-DOWN e0 :0.45)(M#MOVE-D-PATIENT x e0 :0.45)) (^(I#MOVEMENT-DOWNWARD e0)(R#MOVE-D-PATIENT x e0))))i
+(B (name movement-downward) (=>(^(M#CAUSE-LOSE-QUALITY e0 :0.45)(M#LOSE-Q-PATIENT x e0 :0.45)) (^(I#MOVEMENT-DOWNWARD e0)(R#MOVE-D-PATIENT x e0))))
+(B (name movement-upward) (=>(^(M#CAUSE-GAIN-QUALITY e0 :0.45)(M#GAIN-Q-PATIENT x e0 :0.45)) (^(I#MOVEMENT-UPWARD e0)(R#MOVE-U-PATIENT x e0))))
 
 ; BURDEN
 ; WEIGHT

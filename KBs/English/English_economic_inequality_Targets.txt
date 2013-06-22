@@ -24,6 +24,7 @@
 
 
 ; POOR PERSON
+(B (name poor2) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (poor-nn e0 x)))
 (B (name pauper) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (pauper-nn e0 y)))
 (B (name mendicant) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (mendicant-nn e0 y)))
 (B (name beggar) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (beggar-nn e0 y)))
