@@ -268,16 +268,16 @@
 
 ; CONFINEMENT
 ; CONFINED-SPACE
-(B (name prison) (=>(^(S#CONFINEMENT x :0.45)(SS#ConfinedSpace x :0.45)) (prison-nn e0 x)))
-(B (name jail) (=>(^(S#CONFINEMENT x :0.45)(SS#ConfinedSpace x :0.45)) (jail-nn e0 x)))
-(B (name cage) (=>(^(S#CONFINEMENT x :0.45)(SS#ConfinedSpace x :0.45)) (cage-nn e0 x)))
-(B (name dungeon) (=>(^(S#CONFINEMENT x :0.45)(SS#ConfinedSpace x :0.45)) (dungeon-nn e0 x)))
-(B (name penitentiary) (=>(^(S#CONFINEMENT x :0.45)(SS#ConfinedSpace x :0.45)) (penitentiary-nn e0 x)))
-(B (name dead-end) (=>(^(S#CONFINEMENT x :0.45)(SS#ConfinedSpace x :0.45)) (dead-end-nn e0 x)))
+(B (name prison) (=>(^(S#CONFINEMENT x :0.45)(SS#CONFINED-SPACE x :0.45)) (prison-nn e0 x)))
+(B (name jail) (=>(^(S#CONFINEMENT x :0.45)(SS#CONFINED-SPACE x :0.45)) (jail-nn e0 x)))
+(B (name cage) (=>(^(S#CONFINEMENT x :0.45)(SS#CONFINED-SPACE x :0.45)) (cage-nn e0 x)))
+(B (name dungeon) (=>(^(S#CONFINEMENT x :0.45)(SS#CONFINED-SPACE x :0.45)) (dungeon-nn e0 x)))
+(B (name penitentiary) (=>(^(S#CONFINEMENT x :0.45)(SS#CONFINED-SPACE x :0.45)) (penitentiary-nn e0 x)))
+(B (name dead-end) (=>(^(S#CONFINEMENT x :0.45)(SS#CONFINED-SPACE x :0.45)) (dead-end-nn e0 x)))
 
-(B (name imprison) (=>(^(S#CONFINEMENT e0 :0.2)(SS#ConfinedSpace e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(imprison-vb e0 x y u)))
-(B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#ConfinedSpace e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(confine-vb e0 x y u)))
-(B (name incarcerate) (=>(^(S#CONFINEMENT e0 :0.2)(SS#ConfinedSpace e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(incarcerate-vb e0 x y u)))
+(B (name imprison) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED-SPACE e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(imprison-vb e0 x y u)))
+(B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED-SPACE e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(confine-vb e0 x y u)))
+(B (name incarcerate) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED-SPACE e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(incarcerate-vb e0 x y u)))
 
 ; RESTRAINTS
 (B (name trap) (=>(^(S#CONFINEMENT x :0.45)(SS#RESTRAINTS x :0.45)) (trap-nn e0 x)))
@@ -287,11 +287,6 @@
 (B (name bondage) (=>(^(S#CONFINEMENT x :0.45)(SS#RESTRAINTS x :0.45))(bondage-nn e0 x)))
 
 (B (name catch) (=>(^(S#CONFINEMENT e0 :0.2)(SS#RESTRAINTS e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(catch-vb e0 x y u)))
-
-; SLAVERY is not a current subdimension 
-(B (name slavery) (=>(^(S#CONFINEMENT x :0.45)(SS#SLAVERY x :0.45))(slavery-nn e0 x)))
-(B (name slave) (=>(^(S#CONFINEMENT e0 :0.3)(SS#SLAVERY e0 :0.3)(R#CONFINEMENT-PATIENT x e0 :0.3))(slave-nn e0 x)))
-(B (name enslave) (=>(^(S#CONFINEMENT e0 :0.2)(SS#SLAVERY e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2))(enslave-nn e0 x y u)))
 
 (B (name limitationmap)(=>(I#CONFINEMENT x :0.9)(S#CONFINEMENT x)))
 
@@ -306,8 +301,17 @@
 
 (B (name escape)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (escape-vb e0 x y u)))
 (B (name get-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(get-vb e0 x y u)(out-in e1 e0 z)(of-in e2 e1 w))))
+(B (name liberate)(=>(^(S#CONFINEMENT u1 :0.3)(SS#EXIT e0 :0.3)(R#EXIT-AGENT x e0 :0.3) (R#EXIT-PATIENT y e0 :0.3)) (liberate-vb e0 x y u)))
 
 (B (name exitmap)(=>(I#EXIT x :0.9)(SS#EXIT x)))
+
+(B (name slavery) (=>(^(S#SLAVERY x :0.45)(SS#SLAVERY-TYPE x :0.45))(slavery-nn e0 x)))
+(B (name enslavement) (=>(^(S#SLAVERY x :0.45)(SS#SLAVERY-TYPE x :0.45))(enslavement-nn e0 x)))
+(B (name slave) (=>(^(S#SLAVERY e0 :0.3)(SS#SLAVERY-TYPE e0 :0.3)(R#SLAVERY-PATIENT x e0 :0.3))(slave-nn e0 x)))
+(B (name enslave) (=>(^(S#SLAVERY e0 :0.2)(SS#SLAVERY-TYPE e0 :0.2)(R#SLAVERY-PATIENT y e0 :0.2)(R#SLAVERY-AGENT x e0 :0.2))(enslave-nn e0 x y u)))
+
+(B (name slaverymap)(=>(I#SLAVERY x :0.9)(S#SLAVERY x)))
+(B (name slaverytypemap)(=>(I#SLAVERY-TYPE x :0.9)(S#SLAVERY-TYPE x)))
 
 ; BODY-OF-WATER
 
@@ -355,6 +359,8 @@
 (B (name leak2) (=>(^(S#BODY-OF-WATER x :0.45)(SS#BODY-OF-WATER-MOVEMENT y  :0.45))(leak-nn e0 y)))
 (B (name wave) (=>(^(S#BODY-OF-WATER x :0.45)(SS#BODY-OF-WATER-MOVEMENT y  :0.45))(wave-nn e0 y)))
 (B (name tide) (=>(^(S#BODY-OF-WATER x :0.45)(SS#BODY-OF-WATER-MOVEMENT y  :0.45))(tide-nn e0 y)))
+(B (name rising-tide) (=>(^(S#BODY-OF-WATER y :0.45)(SS#BODY-OF-WATER-MOVEMENT x  :0.45)) (^(rising-adj e0 x)(tide-nn e1 x))))
+(B (name flood) (=>(^(S#BODY-OF-WATER x :0.45)(SS#BODY-OF-WATER-MOVEMENT y  :0.45))(flood-nn e0 y)))
 
 ; OF - MOVEMENT
 (B (name of-stream) (=>(R#STREAMING y x :0.9)(^(SS#BODY-OF-WATER-MOVEMENT x e)(of-in e1 x y))))
@@ -362,6 +368,8 @@
 ; DANGER
 (B (name tsunami) (=>(^(S#BODY-OF-WATER x :0.45)(SS#BODY-OF-WATER-DANGER y :0.45))(tsunami-nn e0 y)))
 (B (name underwater) (=>(^(S#BODY-OF-WATER x :0.45)(SS#BODY-OF-WATER-DANGER y :0.45))(underwater-nn e0 y)))
+
+(B (name drown) (=>(^(S#BODY-OF-WATER y :0.3)(SS#BODY-OF-WATER-DANGER e0 :0.3)(R#DROWN-PATIENT x e0 :0.3))(drown-vb e0 x u1 u2)))
 
 (B (name watermap)(=>(I#BODY-OF-WATER x :0.9)(S#BODY-OF-WATER x)))
 (B (name watertypemap)(=>(I#BODY-OF-WATER-TYPE x :0.9)(S#BODY-OF-WATER-TYPE x)))
@@ -455,6 +463,7 @@
 (B (name abyss) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (abyss-nn e0 x)))
 (B (name hell) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (hell-nn e0 x)))
 (B (name sinkhole) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (sinkhole-nn e0 x)))
+(B (name hole) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (hole-nn e0 x)))
 (B (name chasm) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (chasm-nn e0 x)))
 (B (name pit) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (pit-nn e0 x)))
 (B (name cave) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (cave-nn e0 x)))
@@ -463,6 +472,7 @@
 (B (name black-hole) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (^(black-adj e0 x)(hole-nn e1 x))))
 (B (name gaping-maw) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (^(gap-vb e0 x u1 u2)(maw-nn e1 x))))
 (B (name dark-hole) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (^(dark-adj e0 x)(hole-nn e1 x))))
+(B (name bottomless-pit) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (^(bottomless-adj e0 x)(pit-nn e1 x))))
 
 (B (name abyssal) (=>(^(S#ABYSS e0 :0.45)(SS#ABYSS-TYPE e0 e0 :0.45)) (abyssal-adj e0 x)))
 (B (name abysmal) (=>(^(S#ABYSS e0 :0.45)(SS#ABYSS-TYPE e0 e0 :0.45)) (abysmal-adj e0 x)))
@@ -555,6 +565,7 @@
 ; PHYSICAL HARM
 ; TYPE
 (B (name hurt) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(hurt-vb e0 x y u2)))
+(B (name beat) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(beat-vb e0 x y u2)))
 (B (name crush) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(crush-vb e0 x y u2)))
 (B (name harm) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(harm-vb e0 x y u2)))
 (B (name screw) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(screw-vb e0 x y u2)))
@@ -573,14 +584,27 @@
 (B (name injuryn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(injury-nn e0 x)))
 (B (name screwn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(screw-nn e0 x)))
 
+(B (name crippling)(=>(^(S#PHYSICAL-HARM e0 :0.45)(SS#PHYSICAL-HARM-TYPE e0 :0.45)) (crippling-adj e0 x)))
+(B (name soul-crushing)(=>(^(S#PHYSICAL-HARM e0 :0.45)(SS#PHYSICAL-HARM-TYPE e0 :0.45)) (soul-crushing-adj e0 x)))
+
 (B (name physical-harm-map) (=>(I#PHYSICAL-HARM  x :0.9) (S#PHYSICAL-HARM x)))
 
 ;RESTRAINT
 (B (name hobble)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (hobble-vb e0 x y u)))
 (B (name overwhelmed)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (overwhelm-vb e0 x y u)))
+(B (name hamstring)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (hamstring-vb e0 x y u)))
 (B (name held-back)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(hold-vb e0 x y u)(back-rb e1 e0))))
 (B (name bring-to-knees)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(bring-vb e0 x y u)(to-in e1 e0 z) (knees-nn e2 z))))
 
+(B (name restraint-map) (=>(I#RESTRAINT x :0.9) (SS#RESTRAINT x)))
+
+;PROTECTION
+(B (name shield) (=>(^(S#PHYSICAL-HARM u :0.45)(SS#PHYSICAL-PROTECTION x :0.45))(shield-nn e0 x)))
+(B (name shelter) (=>(^(S#PHYSICAL-HARM u :0.45)(SS#PHYSICAL-PROTECTION x :0.45))(shelter-nn e0 x)))
+
+(B (name shieldvb) (=>(^(S#PHYSICAL-HARM u :0.2)(SS#PHYSICAL-PROTECTION e0 :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(shield-vb e0 x y u2)))
+
+(B (name restraint-map) (=>(I#PHYSICAL-PROTECTION x :0.9) (SS#PHYSICAL-PROTECTION x)))
 
 ; MAZE
 ; Katya and Ross decided to change these based on illogical output
@@ -613,12 +637,14 @@
 ; LOW POINT 
 ; BOTTOM OF ECONOMIC SCALE
 (B (name the-pits) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECON-SCALE x :0.45))(pits-nn e0 x)))
+(B (name low) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECON-SCALE x :0.45))(low-nn e0 x)))
 (B (name rock-bottom) (=>(^(S#LOW-POINT e2 :0.45)(SS#BOTTOM-OF-ECON-SCALE y :0.45))(^(rock-nn e0 x)(of-in e1 y x)(bottom-nn e2 y))))
 (B (name bottom-of-the-heap) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECON-SCALE x :0.45))(^(bottom-nn e0 x)(of-in e1 x y)(heap-nn e2 y))))
 (B (name bottom-of-the-totem-pole) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECON-SCALE x :0.45))(^(bottom-nn e0 x)(of-in e1 x z)(totem-nn e2 y)(pole-nn e3 z))))
 
 ;MOVEMENT DOWNWARD
 (B (name slide) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(slide-vb e0 x u u1)))
+(B (name drop) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(drop-vb e0 x u u1)))
 (B (name slip) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(slip-vb e0 x u u1)))
 (B (name fall) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(fall-vb e0 x u u1)))
 (B (name tumble) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(tumble-vb e0 x u u1)))
@@ -628,12 +654,63 @@
 (B (name deg-self-deeper) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-DOWNWARD e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(dig-vb e0 x u u1)(deeper-adj e1 y))))
 
 ;MOVEMENT UPWARD
-(B (name hover-above) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-UPWARD e0 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(hover-vb e0 x u u1)(above-in e1 e0 y))))
-(B (name rise-above) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-UPWARD e0 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(rise-vb e0 x u u1)(above-in e1 e0 y))))
-(B (name rise-from) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-UPWARD e0 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(rise-vb e0 x u u1)(from-in e1 e0 y))))
-(B (name rise-up-from) (=>(^(S#LOW-POINT u :0.3)(SS#MOVEMENT-UPWARD e0 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(rise-vb e0 x u u1)(up-in e1 e0 e2)(from-in e2 e1 y))))
+(B (name hover-above) (=>(^(S#LOW-POINT a :0.3)(SS#MOVEMENT-UPWARD e0 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(hover-vb e0 x u u1)(above-in e1 e0 y))))
+(B (name rise-above) (=>(^(S#LOW-POINT a :0.3)(SS#MOVEMENT-UPWARD e0 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(rise-vb e0 x u u1)(above-in e1 e0 y))))
+(B (name rise-from) (=>(^(S#LOW-POINT a :0.3)(SS#MOVEMENT-UPWARD e0 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(rise-vb e0 x u u1)(from-in e1 e0 y))))
+(B (name rise-up-from) (=>(^(S#LOW-POINT a :0.3)(SS#MOVEMENT-UPWARD e0 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(rise-vb e0 x u u1)(up-in e1 e0 e2)(from-in e2 e1 y))))
+(B (name rise) (=>(^(S#LOW-POINT a :0.3)(SS#MOVEMENT-UPWARD e0 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(rise-vb e0 x u u1)))
+(B (name leap) (=>(^(S#LOW-POINT a :0.3)(SS#MOVEMENT-UPWARD e0 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(leap-vb e0 x u u1)))
+(B (name skyrocket) (=>(^(S#LOW-POINT a :0.3)(SS#MOVEMENT-UPWARD e0 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(skyrocket-vb e0 x u u1)))
+(B (name jump) (=>(^(S#LOW-POINT a :0.3)(SS#MOVEMENT-UPWARD e0 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(jump-vb e0 x u u1)))
 
 (B (name lowpointmap)(=>(I#LOW-POINT x :0.9)(S#LOW-POINT x)))
 (B (name bottom-of-econ-scale-map)(=>(I#BOTTOM-OF-ECON-SCALE x :0.9)(SS#BOTTOM-OF-ECON-SCALE x)))
 (B (name movement-downwardmap)(=>(I#MOVEMENT-DOWNWARD x :0.9)(SS#MOVEMENT-DOWNWARD x)))
 (B (name movement-upwardmap)(=>(I#MOVEMENT-UPWARD x :0.9)(SS#MOVEMENT-UPWARD x)))
+
+: RESOURCE
+; SUBSTANCE
+
+;QUANTITY
+
+;DEVELOP RESOURCES
+(B (name invest)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x :0.3)(R#DEVELOPER x e0 :0.3)) (invest-vb e0 x y u)))
+
+;DISTRIBUTION
+(B (name transfer)(=>(^(S#RESOURCE e0 :0.45)(SS#DISTRIBUTION x :0.45)) (transfer-vb e0 x y u)))
+
+(B (name distributionmap)(=>(I#DISTRIBUTION x :0.9)(SS#DISTRIBUTION x)))
+(B (name develop-resourcesmap)(=>(I#DEVELOP-RESOURCES x :0.9)(SS#DEVELOP-RESOURCES x)))
+(B (name resourcemap)(=>(I#RESOURCE x :0.9)(SS#RESOURCE x)))
+
+;HUMAN-BODY
+;DEATH
+(B (name dying)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#DEATH x :0.3)(R#DEATH-PATIENT x e0 :0.3)) (dying-vb e0 x y u)))
+
+;LIVING
+(B (name living)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#LIVING x :0.3)(R#LIVING-PATIENT x e0 :0.3)) (living-vb e0 x y u)))
+(B (name thriving)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#LIVING x :0.3)(R#LIVING-PATIENT x e0 :0.3)) (thriving-vb e0 x y u)))
+
+;HEALTH
+(B (name reviving)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HEALTH x :0.3)(R#HEALTH-PATIENT x e0 :0.3)) (reviving-vb e0 x y u)))
+
+(B (name human-bodymap)(=>(I#HUMAN-BODY x :0.9)(S#HUMAN-BODY x)))
+(B (name deathmap)(=>(I#DEATH x :0.9)(SS#DEATH x)))
+(B (name livingmap)(=>(I#LIVING x :0.9)(SS#LIVING x)))
+(B (name healthmap)(=>(I#HEALTH x :0.9)(SS#HEALTH x)))
+
+;VICTIM
+;SUFFERER
+(B (name threatened)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER e0 :0.3)(R#VICTIM-PATIENT x e0 :0.3)) (threatened-adj e0 x)))
+(B (name victim)(=>(^(S#VICTIM x :0.3)(SS#SUFFERER x :0.3)(R#VICTIM-PATIENT x e0 :0.3)) (victim-nn e0 x)))
+
+;VICTIMIZER
+(B (name vampire)(=>(^(S#VICTIM x :0.3)(SS#VICTIMIZER x :0.3)(R#VICTIMIZE-AGENT y e0 :0.3)) (vampire-nn e0 x)))
+
+;CHAMPION
+(B (name champion)(=>(^(S#VICTIM x :0.3)(SS#CHAMPION x :0.3)(R#CHAMPION y e0 :0.3)) (champion-nn e0 x)))
+
+(B (name victimmap)(=>(I#VICTIM x :0.9)(S#VICTIM x)))
+(B (name sufferermap)(=>(I#SUFFERER x :0.9)(S#SUFFERER x)))
+(B (name victimizermap)(=>(I#VICTIMIZER x :0.9)(S#VICTIMIZER x)))
+(B (name championmap)(=>(I#CHAMPION x :0.9)(S#CHAMPION x)))

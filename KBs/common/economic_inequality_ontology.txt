@@ -63,6 +63,9 @@
 
 (B (name shoal2)(=> (M#NOT-EXIST e0 :0.9) (I#SHOAL e2 u)))
 
+; MOVEMENT
+(B (name water-movement) (=>(^(M#LIQUID-MOVE-FREELY e0 :0.3)(M#LIQUID-THING y :0.3))  (^(I#BODY-OF-WATER-MOVEMENT e0)(R#STREAMING x e0))))
+
 
 ; SCHOOL 
 
@@ -97,6 +100,9 @@
 
 (B (name confinement4) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.47)(M#CAUSING-THING_F e0 e1 :0.47)) (I#CONFINEMENT e0)))
 
+; EXIT
+(B (name exit) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.47)(M#CAUSING-THING_RF e0 :0.47)) (I#EXIT e0)))
+
 ; ENABLING 
 
 (B (name enabling) (=> (^(M#CAUSE-FUNCTION e1 :0.3)(M#CAUSING-THING_F x e1 :0.3)(M#FUNCTION y :0.3)) (^(I#ENABLING e0)(R#ENABLING-AGENT x e0)(R#ENABLED y e0))))
@@ -126,6 +132,8 @@
 
 (B (name physical-harm4) (=>(M#CAUSE-HARM e0 :0.95) (I#PHYSICAL-HARM e0)))
 
+(B (name physical-protection) (=>(^(M#CAUSE-REDUCE-HARM e0 :0.3)(M#CAUSING-THING_RH x :0.3)) (I#PHYSICAL-PROTECTION e0)))
+
 ; ABYSS
 (B (name abyss) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.33)(M#CAUSING-THING-F x :0.33)(M#CAUSE-CONFINEMENT e0 :0.33)) (I#ABYSS x)))
 
@@ -135,14 +143,15 @@
 
 ; NAVIGATION
 
-(B (name navigate) (=>(^(M#CAUSE-REDUCE-CONFUSION e0 :0.3)(M#CONFUSING-THING y :0.3))  (^(I#NAVIGATION e0)(R#NAVIGATION-AGENT x e0))))
+(B (name navigate) (=>(^(M#CAUSE-REDUCE-CONFUSION e0 :0.23)(M#CONFUSING-THING y :0.23)(M#CAUSE-ESCAPE-CONFINEMENT e0 :0.23)(M#CAUSE-RESUME-FUNCTION e0 :0.23))(^(I#NAVIGATION e0)(R#NAVIGATION-AGENT x e0))))
 
 ; LOW POINT
-(B (name low-point) (=>(^(M#CAUSE-HAVE-BAD-QUALITY e0 :0.45)(M#CAUSING-THING-Q x :0.45)) (I#LOW-POINT e0)))
+(B (name low-point) (=>(^(M#CAUSE-BAD-QUALITY e0 :0.45)(M#CAUSING-THING-Q x :0.45)) (I#LOW-POINT e0)))
 
 ; MOVEMENT DOWNWARD
-
 (B (name movement-downward) (=>(^(M#CAUSE-LOSE-QUALITY e0 :0.45)(M#LOSE-Q-PATIENT x e0 :0.45)) (^(I#MOVEMENT-DOWNWARD e0)(R#MOVE-D-PATIENT x e0))))
+
+; MOVEMENT UPWARD
 (B (name movement-upward) (=>(^(M#CAUSE-GAIN-QUALITY e0 :0.45)(M#GAIN-Q-PATIENT x e0 :0.45)) (^(I#MOVEMENT-UPWARD e0)(R#MOVE-U-PATIENT x e0))))
 
 ; BURDEN
@@ -151,3 +160,13 @@
 
 ; RELIEF
 (B(name relief) (=>(^(M#CAUSE-RESUME-FUNCTION e0 :0.45)(M#CAUSING-R-THING x :0.45)) (I#RELIEF)))
+
+;HUMAN-BODY
+;DEATH
+(B (name death) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#CAUSING-THING-NF x :0.45)) (I#DEATH x)))
+
+;LIVING
+(B (name living) (=>(^(M#CAUSE-ABLE-TO-FUNCTION e0 :0.45)(M#CAUSING-THING-AF x :0.45)) (I#LIVING x)))
+
+;HEALTH
+(B (name health) (=>(^(M#CAUSE-IMPROVE-FUNCTIONALITY e0 :0.45)(M#CAUSING-THING-IF x :0.45)) (I#HEALTH x)))
