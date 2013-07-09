@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<henry-output parameter="-m infer -d 3 -t 2 -O proofgraph,statistics -T 60 -e /Users/raisrael/ISI/adp_home/henry-n700/models/h93.py -b /Users/raisrael/ISI/Axiom_playground/English_compiled_KB.da">
+<henry-output parameter="-m infer -d 3 -t 2 -O proofgraph,statistics -T 60 -e /Users/raisrael/ISI/adp_home/henry-n700/models/h93.py -b /Users/raisrael/ISI/Metaphor-ADP/KBs/English/English_compiled_KB.da">
 <result-inference target="1">
 <observed size="43" domain_size="0">
 not(e25,e52) ^ person(e52,x5) ^ of-in(e51,x4,x7) ^ enhancement-nn(e50,x4) ^ equal(e49,x2,x10) ^ of-in(e48,x7,x11) ^ cities_(quote/counties-nn,e46,x7) ^ org(e47,x7) ^ public-adj(e45,x16) ^ safety-nn(e44,x16) ^ use-vb(x15,u42,x16,u43) ^ back-seat-adj(e41,x14) ^ excuse-nn(e40,x14) ^ person(e39,x11) ^ traffic-nn(e38,x12) ^ of-in(e37,x13,x12) ^ citation-nn(e36,x11) ^ of-in(e35,x13,x11) ^ revenue-nn(e34,x13) ^ as-in(e33,x13,x1) ^ of-in(e32,x4,x13) ^ for-in(e31,x14,x4) ^ as-in(e30,x15,x14) ^ believe-vb(x8,x10,x15,u29) ^ equal(e28,x5,x2) ^ p.s.-nn(e27,x5) ^ in-in(e26,x8,x5) ^ card(e24,x2,1) ^ imp(e21,e22,e23) ^ equal(e23,x3,x2) ^ card(e22,x3,1) ^ new-adj(e20,x1) ^ tax-nn(e19,x0) ^ of-in(e18,x1,x0) ^ panacea-nn(e17,x1) ^ !=(e46,e47) ^ !=(e46,e47) ^ !=(e24,e22) ^ !=(e33,e30) ^ !=(e51,e48,e37,e35,e32,e18) ^ !=(e49,e28,e23) ^ !=(e52,e39) ^ !=(e24,e22)
@@ -11,7 +11,7 @@ not(e25,e52) ^ person(e52,x5) ^ of-in(e51,x4,x7) ^ enhancement-nn(e50,x4) ^ equa
 "!HYPOTHESIZED_!=_35":-1.001 "!HYPOTHESIZED_person_1":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_50":-0.18325 "!EXPLAINED_panacea-nn_34":1 "!HYPOTHESIZED_org_7":-1.001 "!HYPOTHESIZED_equal_29":-1.001 "!HYPOTHESIZED_for-in_21":-1.001 "!HYPOTHESIZED_back-seat-adj_11":-1.001 "!HYPOTHESIZED_excuse-nn_12":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_44":-0.451 "!HYPOTHESIZED_SS#CURE_46":-0.451 "!HYPOTHESIZED_of-in_17":-1.001 "!HYPOTHESIZED_p.s.-nn_25":-1.001 "!HYPOTHESIZED_S#DISEASE_48":-1.306 "!HYPOTHESIZED_revenue-nn_18":-1.001 "!HYPOTHESIZED_M#CAUSING-THING_F_51":-0.18325 "!HYPOTHESIZED_of-in_5":-1.001 "!HYPOTHESIZED_panacea-nn_34":-1.001 "!HYPOTHESIZED_I#DISEASE_47":-0.406 "!HYPOTHESIZED_new-adj_31":-1.001 "!HYPOTHESIZED_equal_4":-1.001 "!HYPOTHESIZED_not_0":-1.001 "!EXPLAINED_S#DISEASE_45":0.45 "!HYPOTHESIZED_!=_38":-1.001 "!HYPOTHESIZED_of-in_33":-1.001 "!EXPLAINED_of-in_33":1 "!HYPOTHESIZED_in-in_26":-1.001 "!HYPOTHESIZED_as-in_19":-1.001 "!HYPOTHESIZED_of-in_15":-1.001 "!HYPOTHESIZED_public-adj_8":-1.001 "!HYPOTHESIZED_of-in_2":-1.001 "!EXPLAINED_SS#CURE_46":0.45 "!HYPOTHESIZED_as-in_22":-1.001 "!HYPOTHESIZED_citation-nn_16":-1.001 "!HYPOTHESIZED_believe-vb_23":-1.001 "!HYPOTHESIZED_!=_36":-1.001 "!HYPOTHESIZED_!=_39":-1.001 "!HYPOTHESIZED_!=_42":-1.001 "!HYPOTHESIZED_safety-nn_9":-1.001 "!HYPOTHESIZED_card_30":-1.001 "!HYPOTHESIZED_equal_24":-1.001 "!HYPOTHESIZED_TS#TAXATION_43":-0.451 "!HYPOTHESIZED_traffic-nn_14":-1.001 "!HYPOTHESIZED_card_27":-1.001 "!HYPOTHESIZED_!=_37":-1.001 "!HYPOTHESIZED_enhancement-nn_3":-1.001 "!HYPOTHESIZED_!=_41":-1.001 "!HYPOTHESIZED_person_13":-1.001 "!HYPOTHESIZED_tax-nn_32":-1.001 "!EXPLAINED_S#DISEASE_48":1.305 "!HYPOTHESIZED_S#DISEASE_45":-0.451 "!HYPOTHESIZED_use-vb_10":-1.001 "!HYPOTHESIZED_!=_40":-1.001 "!EXPLAINED_I#DISEASE_47":0.405 "!HYPOTHESIZED_imp_28":-1.001 "!EXPLAINED_tax-nn_32":1 "!HYPOTHESIZED_of-in_20":-1.001 "!HYPOTHESIZED_cities__6":-1.001 
 </vector>
 <statistics>
-<time total="0.205327" prepare="0.165494" ilp="0.0398328" />
+<time total="6.55149" prepare="5.37686" ilp="1.17463" />
 <ilp solution="Optimal" variables="324" constraints="1348" />
 <search-space literals="55" axiom="18" />
 </statistics>
@@ -139,7 +139,7 @@ person(e35,x4) ^ screw-vb(x3,x1,e33,u34) ^ bad-adj(e33,x4) ^ subset_of(e32,x0,x5
 "!HYPOTHESIZED_SS#CURE_34":-0.451 "!HYPOTHESIZED_not_4":-1.001 "!HYPOTHESIZED_R#HARM-VICTIM_31":-0.201 "!HYPOTHESIZED_M#CAUSING-THING_F_48":-0.18325 "!HYPOTHESIZED_worse-adj_8":-1.001 "!HYPOTHESIZED_M#CAUSING-THING_H_40":-0.175 "!EXPLAINED_R#HARM-VICTIM_31":0.2 "!HYPOTHESIZED_with-in_17":-1.001 "!EXPLAINED_of-in_14":1 "!HYPOTHESIZED_I#PHYSICAL-HARM_35":-0.181 "!HYPOTHESIZED_S#PHYSICAL-HARM_29":-0.201 "!EXPLAINED_S#DISEASE_37":1.305 "!HYPOTHESIZED_bad-adj_2":-1.001 "!HYPOTHESIZED_make-vb_7":-1.001 "!HYPOTHESIZED_anti-tax-adj_11":-1.001 "!HYPOTHESIZED_M#CAUSE-HARM_46":-0.172 "!HYPOTHESIZED_SS#PHYSICAL-HARM-TYPE_30":-0.201 "!HYPOTHESIZED_S#DISEASE_37":-1.306 "!EXPLAINED_panacea-nn_12":1 "!HYPOTHESIZED_person_19":-1.001 "!HYPOTHESIZED_screw-vb_1":-1.001 "!HYPOTHESIZED_thing-nn_6":-1.001 "!HYPOTHESIZED_enough-rb_18":-1.001 "!HYPOTHESIZED_doom-nn_13":-1.001 "!HYPOTHESIZED_!=_23":-1.001 "!EXPLAINED_I#DISEASE_36":0.405 "!HYPOTHESIZED_!=_28":-1.001 "!HYPOTHESIZED_not_9":-1.001 "!EXPLAINED_M#CAUSE-HARM_39":0.174 "!HYPOTHESIZED_M#CAUSE-HARM_39":-0.175 "!HYPOTHESIZED_M#HARM-VICTIM_41":-0.175 "!HYPOTHESIZED_!=_25":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_47":-0.18325 "!HYPOTHESIZED_!=_22":-1.001 "!HYPOTHESIZED_equal_10":-1.001 "!HYPOTHESIZED_loc_21":-1.001 "!EXPLAINED_S#PHYSICAL-HARM_29":0.2 "!EXPLAINED_S#DISEASE_33":0.45 "!HYPOTHESIZED_sense-nn_5":-1.001 "!EXPLAINED_SS#CURE_34":0.45 "!HYPOTHESIZED_R#HARM-AGENT_32":-0.201 "!HYPOTHESIZED_of-in_14":-1.001 "!EXPLAINED_screw-vb_1":1 "!HYPOTHESIZED_I#DISEASE_36":-0.406 "!HYPOTHESIZED_!=_24":-1.001 "!EXPLAINED_I#PHYSICAL-HARM_35":0.18 "!EXPLAINED_R#HARM-AGENT_32":0.2 "!HYPOTHESIZED_with-in_15":-1.001 "!HYPOTHESIZED_panacea-nn_12":-1.001 "!HYPOTHESIZED_S#DISEASE_33":-0.451 "!HYPOTHESIZED_!=_27":-1.001 "!HYPOTHESIZED_subset_of_16":-1.001 "!HYPOTHESIZED_person_0":-1.001 "!HYPOTHESIZED_m5-nn_20":-1.001 "!HYPOTHESIZED_!=_26":-1.001 "!HYPOTHESIZED_subset_of_3":-1.001 
 </vector>
 <statistics>
-<time total="0.223261" prepare="0.119044" ilp="0.104217" />
+<time total="1.89258" prepare="1.36572" ilp="0.526854" />
 <ilp solution="Optimal" variables="211" constraints="267" />
 <search-space literals="52" axiom="20" />
 </statistics>
@@ -255,7 +255,7 @@ person(e60,x5) ^ number-nn(e59,x11) ^ visitor-nn(e58,x10) ^ from-in(e57,x10,x3) 
 "!HYPOTHESIZED_equal_9":-1.001 "!HYPOTHESIZED_org_37":-1.001 "!HYPOTHESIZED_!=_46":-1.001 "!HYPOTHESIZED_number-nn_1":-1.001 "!HYPOTHESIZED_various-adj_23":-1.001 "!HYPOTHESIZED_in-in_7":-1.001 "!HYPOTHESIZED_new_river_valley-nn_32":-1.001 "!HYPOTHESIZED_have-vb_5":-1.001 "!HYPOTHESIZED_!=_45":-1.001 "!HYPOTHESIZED_threaten-vb_13":-1.001 "!HYPOTHESIZED_lobby-vb_8":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_51":-0.18325 "!HYPOTHESIZED_wake-nn_38":-1.001 "!HYPOTHESIZED_of-in_4":-1.001 "!HYPOTHESIZED_serious-adj_14":-1.001 "!HYPOTHESIZED_S#DISEASE_48":-0.451 "!HYPOTHESIZED_!=_44":-1.001 "!HYPOTHESIZED_note-nn_29":-1.001 "!HYPOTHESIZED_reduction-nn_17":-1.001 "!HYPOTHESIZED_with-in_22":-1.001 "!HYPOTHESIZED_of-in_16":-1.001 "!HYPOTHESIZED_week-nn_31":-1.001 "!HYPOTHESIZED_cause-nn_24":-1.001 "!HYPOTHESIZED_SS#SYMPTOMS_49":-0.451 "!HYPOTHESIZED_fever-nn_19":-1.001 "!HYPOTHESIZED_loc_35":-1.001 "!HYPOTHESIZED_!=_43":-1.001 "!HYPOTHESIZED_please-vb_26":-1.001 "!HYPOTHESIZED_richmond-nn_34":-1.001 "!HYPOTHESIZED_M#CAUSING-THING_F_52":-0.18325 "!HYPOTHESIZED_for-in_25":-1.001 "!HYPOTHESIZED_org_33":-1.001 "!HYPOTHESIZED_!=_39":-1.001 "!HYPOTHESIZED_car-tax-adj_18":-1.001 "!HYPOTHESIZED_from-in_3":-1.001 "!HYPOTHESIZED_!=_42":-1.001 "!HYPOTHESIZED_in-in_27":-1.001 "!HYPOTHESIZED_quantity-nn_11":-1.001 "!HYPOTHESIZED_I#DISEASE_50":-0.406 "!HYPOTHESIZED_general_assembly-nn_36":-1.001 "!EXPLAINED_fever-nn_19":1 "!HYPOTHESIZED_in-in_21":-1.001 "!HYPOTHESIZED_before-in_10":-1.001 "!HYPOTHESIZED_!=_41":-1.001 "!HYPOTHESIZED_visitor-nn_2":-1.001 "!EXPLAINED_I#DISEASE_50":0.405 "!HYPOTHESIZED_on-in_30":-1.001 "!EXPLAINED_S#DISEASE_48":0.45 "!HYPOTHESIZED_budget-nn_15":-1.001 "!HYPOTHESIZED_related-adj_28":-1.001 "!HYPOTHESIZED_person_0":-1.001 "!HYPOTHESIZED_!=_47":-1.001 "!HYPOTHESIZED_!=_40":-1.001 "!HYPOTHESIZED_of-in_12":-1.001 "!HYPOTHESIZED_here-rb_6":-1.001 "!HYPOTHESIZED_of-in_20":-1.001 
 </vector>
 <statistics>
-<time total="0.071403" prepare="0.0675602" ilp="0.00384283" />
+<time total="2.58067" prepare="2.09291" ilp="0.487757" />
 <ilp solution="Optimal" variables="232" constraints="350" />
 <search-space literals="53" axiom="8" />
 </statistics>
@@ -349,8 +349,8 @@ imp(e41,e42,x12) ^ card(e73,x13,2) ^ decade-nn(e72,x13) ^ in-in(e71,x4,x13) ^ gr
 "!HYPOTHESIZED_SS#CUT_74":-1.801 "!EXPLAINED_I#MATERIAL_78":0.81 "!HYPOTHESIZED_of-in_44":-1.001 "!EXPLAINED_I#GROW_76":0.405 "!HYPOTHESIZED_of-in_38":-1.001 "!HYPOTHESIZED_remove-vb_15":-1.001 "!HYPOTHESIZED_decade-nn_2":-1.001 "!HYPOTHESIZED_M#CAUSING-THING_F_88":-0.18325 "!EXPLAINED_grow-vb_4":1 "!HYPOTHESIZED_SS#CUT_66":-0.901 "!EXPLAINED_cut-nn_39":1 "!HYPOTHESIZED_cut-nn_32":-1.001 "!EXPLAINED_S#DISEASE_61":0.45 "!HYPOTHESIZED_from-in_20":-1.001 "!HYPOTHESIZED_equal_36":-1.001 "!HYPOTHESIZED_grow-vb_4":-1.001 "!HYPOTHESIZED_!=_53":-1.001 "!HYPOTHESIZED_month-nn_6":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_64":-0.451 "!EXPLAINED_of-in_38":1 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_70":-0.451 "!EXPLAINED_I#CUT_79":0.81 "!HYPOTHESIZED_far-rb_16":-1.001 "!HYPOTHESIZED_TS#TAXATION_69":-0.451 "!HYPOTHESIZED_over-in_7":-1.001 "!HYPOTHESIZED_on-in_22":-1.001 "!HYPOTHESIZED_careful-adj_27":-1.001 "!HYPOTHESIZED_by-in_12":-1.001 "!HYPOTHESIZED_!=_49":-1.001 "!HYPOTHESIZED_M#REDUCED_90":-0.7462 "!HYPOTHESIZED_!=_50":-1.001 "!HYPOTHESIZED_white_house-nn_28":-1.001 "!HYPOTHESIZED_not_26":-1.001 "!HYPOTHESIZED_card_1":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_87":-0.18325 "!HYPOTHESIZED_tax-nn_30":-1.001 "!HYPOTHESIZED_!=_55":-1.001 "!HYPOTHESIZED_of-in_31":-1.001 "!HYPOTHESIZED_to-in_25":-1.001 "!HYPOTHESIZED_!=_58":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_70":0.45 "!EXPLAINED_S#MATERIAL_65":0.9 "!HYPOTHESIZED_as-in_9":-1.001 "!HYPOTHESIZED_S#MATERIAL_65":-0.901 "!HYPOTHESIZED_TS#TAXATION_63":-0.451 "!HYPOTHESIZED_SS#GROW_60":-0.451 "!EXPLAINED_S#MATERIAL_73":1.8 "!EXPLAINED_I#ORGANISM_75":0.405 "!EXPLAINED_fever-nn_24":1 "!HYPOTHESIZED_!=_52":-1.001 "!HYPOTHESIZED_single-adj_46":-1.001 "!HYPOTHESIZED_mom-nn_47":-1.001 "!EXPLAINED_SS#CUT_66":0.9 "!HYPOTHESIZED_M#INCREASED_86":-0.73 "!HYPOTHESIZED_break-nn_13":-1.001 "!HYPOTHESIZED_S#ORGANISM_59":-0.451 "!HYPOTHESIZED_I#CUT_79":-0.811 "!HYPOTHESIZED_significantly-rb_8":-1.001 "!HYPOTHESIZED_for-in_21":-1.001 "!HYPOTHESIZED_imp_0":-1.001 "!HYPOTHESIZED_fever-nn_24":-1.001 "!HYPOTHESIZED_!=_57":-1.001 "!EXPLAINED_of-in_31":1 "!HYPOTHESIZED_cut-nn_39":-1.001 "!HYPOTHESIZED_group-nn_14":-1.001 "!HYPOTHESIZED_org_41":-1.001 "!EXPLAINED_TS#TAXATION_69":0.45 "!HYPOTHESIZED_biggest-adj_34":-1.001 "!HYPOTHESIZED_I#DISEASE_77":-0.406 "!HYPOTHESIZED_!=_54":-1.001 "!HYPOTHESIZED_with-in_19":-1.001 "!HYPOTHESIZED_bush-nn_42":-1.001 "!HYPOTHESIZED_M#CAUSE-REDUCE_89":-0.7462 "!HYPOTHESIZED_come-vb_5":-1.001 "!EXPLAINED_tax-nn_37":1 "!HYPOTHESIZED_tax-cut-adj_23":-1.001 "!HYPOTHESIZED_tax-nn_37":-1.001 "!EXPLAINED_SS#CUT_74":1.8 "!EXPLAINED_I#DISEASE_77":0.405 "!HYPOTHESIZED_I#GROW_76":-0.406 "!HYPOTHESIZED_kid-nn_18":-1.001 "!HYPOTHESIZED_org_29":-1.001 "!HYPOTHESIZED_S#DISEASE_61":-0.451 "!HYPOTHESIZED_react-vb_10":-1.001 "!HYPOTHESIZED_I#ORGANISM_75":-0.406 "!HYPOTHESIZED_card_17":-1.001 "!HYPOTHESIZED_pile-vb_11":-1.001 "!HYPOTHESIZED_not_35":-1.001 "!HYPOTHESIZED_in-in_3":-1.001 "!EXPLAINED_S#ORGANISM_59":0.45 "!HYPOTHESIZED_!=_48":-1.001 "!HYPOTHESIZED_!=_51":-1.001 "!HYPOTHESIZED_loc_43":-1.001 "!HYPOTHESIZED_S#MATERIAL_73":-1.801 "!HYPOTHESIZED_emblematic-adj_45":-1.001 "!HYPOTHESIZED_SS#SYMPTOMS_62":-0.451 "!EXPLAINED_cut-nn_32":1 "!EXPLAINED_tax-nn_30":1 "!HYPOTHESIZED_imp_33":-1.001 "!HYPOTHESIZED_!=_56":-1.001 "!EXPLAINED_SS#GROW_60":0.45 "!HYPOTHESIZED_I#MATERIAL_78":-0.811 "!HYPOTHESIZED_congress-nn_40":-1.001 
 </vector>
 <statistics>
-<time total="8.52579" prepare="0.405854" ilp="8.11993" />
-<ilp solution="Optimal" variables="1136" constraints="1338" />
+<time total="71.4212" prepare="10.3465" ilp="61.0747" />
+<ilp solution="SubOptimal" variables="1136" constraints="1338" />
 <search-space literals="137" axiom="20" />
 </statistics>
 <proofgraph>
@@ -1756,7 +1756,7 @@ chairman-nn(e44,x14) ^ of-in(e43,x14,x5) ^ rel(e42,x6,x14) ^ advertiser-nn(e41,x
 "!HYPOTHESIZED_whip-vb_9":-1.001 "!HYPOTHESIZED_!=_32":-1.001 "!HYPOTHESIZED_!=_35":-1.001 "!HYPOTHESIZED_speak-vb_16":-1.001 "!HYPOTHESIZED_!=_33":-1.001 "!HYPOTHESIZED_SS#SYMPTOMS_40":-0.451 "!EXPLAINED_fever-nn_7":1 "!HYPOTHESIZED_corporation-nn_25":-1.001 "!HYPOTHESIZED_appropriations_committee-nn_20":-1.001 "!HYPOTHESIZED_florida-nn_29":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_42":-0.18325 "!HYPOTHESIZED_of-in_27":-1.001 "!HYPOTHESIZED_equal_5":-1.001 "!EXPLAINED_of-in_27":1 "!HYPOTHESIZED_democratic-controlled-adj_19":-1.001 "!HYPOTHESIZED_up-rb_10":-1.001 "!HYPOTHESIZED_chairman-nn_0":-1.001 "!HYPOTHESIZED_rel_12":-1.001 "!HYPOTHESIZED_subset_of_4":-1.001 "!HYPOTHESIZED_advertiser-nn_3":-1.001 "!HYPOTHESIZED_news-nn_26":-1.001 "!EXPLAINED_S#DISEASE_39":0.45 "!HYPOTHESIZED_!=_31":-1.001 "!HYPOTHESIZED_!=_38":-1.001 "!HYPOTHESIZED_national-adj_24":-1.001 "!HYPOTHESIZED_of-in_15":-1.001 "!HYPOTHESIZED_I#DISEASE_41":-0.406 "!HYPOTHESIZED_!=_36":-1.001 "!HYPOTHESIZED_rel_2":-1.001 "!EXPLAINED_I#DISEASE_41":0.405 "!HYPOTHESIZED_subset_of_11":-1.001 "!HYPOTHESIZED_!=_37":-1.001 "!HYPOTHESIZED_loc_30":-1.001 "!HYPOTHESIZED_M#CAUSING-THING_F_43":-0.18325 "!HYPOTHESIZED_selfish-adj_22":-1.001 "!HYPOTHESIZED_anti-tax-adj_6":-1.001 "!HYPOTHESIZED_interest-nn_23":-1.001 "!HYPOTHESIZED_of-in_13":-1.001 "!HYPOTHESIZED_per_18":-1.001 "!HYPOTHESIZED_!=_34":-1.001 "!HYPOTHESIZED_fever-nn_7":-1.001 "!EXPLAINED_of-in_15":1 "!HYPOTHESIZED_in-in_8":-1.001 "!HYPOTHESIZED_sam_bell-nn_17":-1.001 "!HYPOTHESIZED_bitterly-rb_14":-1.001 "!HYPOTHESIZED_S#DISEASE_39":-0.451 "!HYPOTHESIZED_media-nn_28":-1.001 "!HYPOTHESIZED_of-in_1":-1.001 "!HYPOTHESIZED_org_21":-1.001 
 </vector>
 <statistics>
-<time total="0.0531001" prepare="0.0500262" ilp="0.00307393" />
+<time total="0.143172" prepare="0.139047" ilp="0.00412512" />
 <ilp solution="Optimal" variables="178" constraints="176" />
 <search-space literals="44" axiom="8" />
 </statistics>
@@ -1828,12 +1828,12 @@ equal(e55,x11,x16) ^ pioneer-vb(x15,x9,x16,u54) ^ in-in(e53,x3,x2) ^ for-in(e52,
 equal(e55,x11,x16) ^ pioneer-vb(x15,x9,x16,u54) ^ in-in(e53,x3,x2) ^ for-in(e52,x5,x3) ^ in-in(e51,x15,x5) ^ losing-nn(e50,x13) ^ of-in(e49,x14,x13) ^ proposition-nn(e48,x14) ^ as-in(e47,x15,x14) ^ catch-vb(x12,x6,x11,u46) ^ also-rb(e45,x12) ^ texas_gov._rick_perry-nn(e43,x6) ^ per(e44,x6) ^ flat-adj(e42,x11) ^ tax-nn(e41,x10) ^ of-in(e40,x11,x10) ^ fever-nn(e39,x11) ^ media-nn(e38,x8) ^ of-in(e37,x9,x8) ^ mogul-nn(e36,x7) ^ of-in(e35,x9,x7) ^ steve_forbes-nn(e33,x9) ^ per(e34,x9) ^ male(e32,x6) ^ of-in(e31,x5,x6) ^ lose-vb(x4,x5,u29,u30) ^ bid-nn(e28,x5) ^ republican-adj(e27,x3) ^ presidential-adj(e26,x3) ^ nomination-nn(e25,x3) ^ subset_of(e24,x1,x2) ^ subset_of(e23,x0,x2) ^ t_1996XXXX(e22,x1) ^ primary-adj(e21,x1) ^ race-nn(e20,x1) ^ t_2000XXXX(e19,x0) ^ primary-adj(e18,x0) ^ race-nn(e17,x0) ^ !=(e43,e44) ^ !=(e43,e44) ^ !=(e43,e44) ^ !=(e43,e44) ^ !=(e33,e34) ^ !=(e33,e34) ^ !=(e20,e17) ^ !=(e21,e18) ^ !=(e49,e40,e37,e35,e31) ^ !=(e44,e34) ^ !=(e53,e51) ^ !=(e24,e23) ^ S#CONFINEMENT(x12) ^ SS#RESTRAINTS(x12) ^ R#CONFINEMENT-AGENT(x6,x12) ^ R#CONFINEMENT-PATIENT(x11,x12) ^ TS#TAXATION(x10) ^ T#ECONOMIC-INEQUALITY(_16) ^ S#DISEASE(_17) ^ SS#SYMPTOMS(x11) ^ I#CONFINEMENT(x12) ^ I#DISEASE(_17) ^ S#DISEASE(x10) ^ M#CAUSE-NOT-FUNCTION(_19) ^ M#CAUSING-THING_F(x6,_19) ^ M#CAUSE-NOT-FUNCTION(_20) ^ M#CAUSING-THING_F(x12,_20) ^ M#FUNCTION-AGENT(x11,_20) ^ M#CAUSE-NOT-FUNCTION(_21) ^ M#CAUSING-THING_F(x12,_21) ^ M#CAUSE-NOT-FUNCTION(_23) ^ M#CAUSING-THING_F(_17,_23) ^ =(x10,_17,x12,x6) ^ =(_23,_19,_20,_21)
 </hypothesis>
 <vector score="0">
-"!HYPOTHESIZED_equal_0":-1.001 "!HYPOTHESIZED_subset_of_31":-1.001 "!HYPOTHESIZED_SS#SYMPTOMS_61":-0.451 "!HYPOTHESIZED_M#CAUSING-THING_F_72":-0.1188 "!HYPOTHESIZED_pioneer-vb_1":-1.001 "!HYPOTHESIZED_M#CAUSING-THING_F_75":-0.0856 "!EXPLAINED_M#CAUSE-NOT-FUNCTION_78":0.18225 "!HYPOTHESIZED_presidential-adj_28":-1.001 "!HYPOTHESIZED_nomination-nn_29":-1.001 "!HYPOTHESIZED_!=_46":-1.001 "!HYPOTHESIZED_republican-adj_27":-1.001 "!HYPOTHESIZED_!=_48":-1.001 "!HYPOTHESIZED_race-nn_34":-1.001 "!EXPLAINED_tax-nn_14":1 "!HYPOTHESIZED_male_23":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_69":-0.172 "!HYPOTHESIZED_primary-adj_33":-1.001 "!EXPLAINED_I#CONFINEMENT_62":0.18 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_74":-0.0856 "!HYPOTHESIZED_!=_45":-1.001 "!EXPLAINED_SS#SYMPTOMS_61":0.45 "!HYPOTHESIZED_proposition-nn_7":-1.001 "!HYPOTHESIZED_tax-nn_14":-1.001 "!EXPLAINED_R#CONFINEMENT-AGENT_52":0.2 "!EXPLAINED_I#DISEASE_64":0.405 "!HYPOTHESIZED_R#CONFINEMENT-PATIENT_53":-0.201 "!HYPOTHESIZED_M#CAUSING-THING_F_70":-0.172 "!EXPLAINED_M#CAUSE-NOT-FUNCTION_71":0.1178 "!HYPOTHESIZED_!=_44":-1.001 "!EXPLAINED_R#CONFINEMENT-PATIENT_53":0.2 "!HYPOTHESIZED_lose-vb_25":-1.001 "!HYPOTHESIZED_t_1996XXXX_32":-1.001 "!HYPOTHESIZED_in-in_2":-1.001 "!HYPOTHESIZED_of-in_18":-1.001 "!EXPLAINED_catch-vb_9":1 "!HYPOTHESIZED_of-in_24":-1.001 "!HYPOTHESIZED_primary-adj_36":-1.001 "!HYPOTHESIZED_per_12":-1.001 "!HYPOTHESIZED_!=_38":-1.001 "!EXPLAINED_S#DISEASE_60":0.45 "!HYPOTHESIZED_!=_43":-1.001 "!EXPLAINED_M#CAUSING-THING_F_70":0.171 "!HYPOTHESIZED_as-in_8":-1.001 "!HYPOTHESIZED_of-in_15":-1.001 "!HYPOTHESIZED_S#DISEASE_60":-0.451 "!HYPOTHESIZED_S#CONFINEMENT_50":-0.201 "!HYPOTHESIZED_I#DISEASE_64":-0.406 "!HYPOTHESIZED_mogul-nn_19":-1.001 "!HYPOTHESIZED_flat-adj_13":-1.001 "!HYPOTHESIZED_!=_39":-1.001 "!HYPOTHESIZED_M#CAUSING-THING_F_79":-0.18325 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_78":-0.18325 "!HYPOTHESIZED_also-rb_10":-1.001 "!HYPOTHESIZED_!=_42":-1.001 "!HYPOTHESIZED_per_22":-1.001 "!HYPOTHESIZED_I#CONFINEMENT_62":-0.181 "!HYPOTHESIZED_in-in_4":-1.001 "!HYPOTHESIZED_SS#RESTRAINTS_51":-0.201 "!HYPOTHESIZED_texas_gov._rick_perry-nn_11":-1.001 "!HYPOTHESIZED_for-in_3":-1.001 "!EXPLAINED_S#DISEASE_65":1.305 "!HYPOTHESIZED_fever-nn_16":-1.001 "!HYPOTHESIZED_bid-nn_26":-1.001 "!HYPOTHESIZED_!=_41":-1.001 "!HYPOTHESIZED_M#FUNCTION-AGENT_73":-0.1188 "!EXPLAINED_M#CAUSING-THING_F_72":0.1178 "!EXPLAINED_M#CAUSING-THING_F_79":0.18225 "!HYPOTHESIZED_S#DISEASE_65":-1.306 "!HYPOTHESIZED_steve_forbes-nn_21":-1.001 "!EXPLAINED_M#CAUSE-NOT-FUNCTION_69":0.171 "!HYPOTHESIZED_subset_of_30":-1.001 "!HYPOTHESIZED_t_2000XXXX_35":-1.001 "!HYPOTHESIZED_media-nn_17":-1.001 "!HYPOTHESIZED_!=_47":-1.001 "!EXPLAINED_of-in_15":1 "!HYPOTHESIZED_catch-vb_9":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_71":-0.1188 "!HYPOTHESIZED_!=_40":-1.001 "!EXPLAINED_fever-nn_16":1 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_59":-0.451 "!HYPOTHESIZED_!=_49":-1.001 "!HYPOTHESIZED_losing-nn_5":-1.001 "!HYPOTHESIZED_R#CONFINEMENT-AGENT_52":-0.201 "!HYPOTHESIZED_race-nn_37":-1.001 "!HYPOTHESIZED_of-in_6":-1.001 "!EXPLAINED_S#CONFINEMENT_50":0.2 "!HYPOTHESIZED_TS#TAXATION_58":-0.451 "!HYPOTHESIZED_of-in_20":-1.001 
+"!HYPOTHESIZED_equal_0":-1.001 "!HYPOTHESIZED_subset_of_31":-1.001 "!HYPOTHESIZED_SS#SYMPTOMS_61":-0.451 "!HYPOTHESIZED_M#CAUSING-THING_F_72":-0.1188 "!HYPOTHESIZED_pioneer-vb_1":-1.001 "!HYPOTHESIZED_M#CAUSING-THING_F_75":-0.0856 "!HYPOTHESIZED_presidential-adj_28":-1.001 "!HYPOTHESIZED_nomination-nn_29":-1.001 "!HYPOTHESIZED_!=_46":-1.001 "!HYPOTHESIZED_republican-adj_27":-1.001 "!HYPOTHESIZED_!=_48":-1.001 "!HYPOTHESIZED_race-nn_34":-1.001 "!EXPLAINED_tax-nn_14":1 "!HYPOTHESIZED_male_23":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_69":-0.172 "!HYPOTHESIZED_primary-adj_33":-1.001 "!EXPLAINED_I#CONFINEMENT_62":0.18 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_74":-0.0856 "!HYPOTHESIZED_!=_45":-1.001 "!EXPLAINED_SS#SYMPTOMS_61":0.45 "!HYPOTHESIZED_proposition-nn_7":-1.001 "!HYPOTHESIZED_tax-nn_14":-1.001 "!EXPLAINED_R#CONFINEMENT-AGENT_52":0.2 "!EXPLAINED_I#DISEASE_64":0.405 "!HYPOTHESIZED_R#CONFINEMENT-PATIENT_53":-0.201 "!HYPOTHESIZED_M#CAUSING-THING_F_70":-0.172 "!EXPLAINED_M#CAUSE-NOT-FUNCTION_71":0.1178 "!HYPOTHESIZED_!=_44":-1.001 "!EXPLAINED_R#CONFINEMENT-PATIENT_53":0.2 "!HYPOTHESIZED_lose-vb_25":-1.001 "!HYPOTHESIZED_t_1996XXXX_32":-1.001 "!HYPOTHESIZED_in-in_2":-1.001 "!EXPLAINED_M#CAUSE-NOT-FUNCTION_80":0.18225 "!HYPOTHESIZED_of-in_18":-1.001 "!EXPLAINED_catch-vb_9":1 "!HYPOTHESIZED_of-in_24":-1.001 "!HYPOTHESIZED_primary-adj_36":-1.001 "!HYPOTHESIZED_per_12":-1.001 "!HYPOTHESIZED_!=_38":-1.001 "!EXPLAINED_S#DISEASE_60":0.45 "!HYPOTHESIZED_!=_43":-1.001 "!EXPLAINED_M#CAUSING-THING_F_70":0.171 "!HYPOTHESIZED_as-in_8":-1.001 "!HYPOTHESIZED_of-in_15":-1.001 "!HYPOTHESIZED_S#DISEASE_60":-0.451 "!HYPOTHESIZED_S#CONFINEMENT_50":-0.201 "!HYPOTHESIZED_I#DISEASE_64":-0.406 "!HYPOTHESIZED_mogul-nn_19":-1.001 "!HYPOTHESIZED_flat-adj_13":-1.001 "!HYPOTHESIZED_!=_39":-1.001 "!HYPOTHESIZED_also-rb_10":-1.001 "!HYPOTHESIZED_!=_42":-1.001 "!HYPOTHESIZED_per_22":-1.001 "!HYPOTHESIZED_I#CONFINEMENT_62":-0.181 "!HYPOTHESIZED_in-in_4":-1.001 "!EXPLAINED_M#CAUSING-THING_F_81":0.18225 "!HYPOTHESIZED_SS#RESTRAINTS_51":-0.201 "!HYPOTHESIZED_texas_gov._rick_perry-nn_11":-1.001 "!HYPOTHESIZED_for-in_3":-1.001 "!EXPLAINED_S#DISEASE_65":1.305 "!HYPOTHESIZED_fever-nn_16":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_80":-0.18325 "!HYPOTHESIZED_bid-nn_26":-1.001 "!HYPOTHESIZED_!=_41":-1.001 "!HYPOTHESIZED_M#FUNCTION-AGENT_73":-0.1188 "!EXPLAINED_M#CAUSING-THING_F_72":0.1178 "!HYPOTHESIZED_S#DISEASE_65":-1.306 "!HYPOTHESIZED_steve_forbes-nn_21":-1.001 "!EXPLAINED_M#CAUSE-NOT-FUNCTION_69":0.171 "!HYPOTHESIZED_subset_of_30":-1.001 "!HYPOTHESIZED_t_2000XXXX_35":-1.001 "!HYPOTHESIZED_M#CAUSING-THING_F_81":-0.18325 "!HYPOTHESIZED_media-nn_17":-1.001 "!HYPOTHESIZED_!=_47":-1.001 "!EXPLAINED_of-in_15":1 "!HYPOTHESIZED_catch-vb_9":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_71":-0.1188 "!HYPOTHESIZED_!=_40":-1.001 "!EXPLAINED_fever-nn_16":1 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_59":-0.451 "!HYPOTHESIZED_!=_49":-1.001 "!HYPOTHESIZED_losing-nn_5":-1.001 "!HYPOTHESIZED_R#CONFINEMENT-AGENT_52":-0.201 "!HYPOTHESIZED_race-nn_37":-1.001 "!HYPOTHESIZED_of-in_6":-1.001 "!EXPLAINED_S#CONFINEMENT_50":0.2 "!HYPOTHESIZED_TS#TAXATION_58":-0.451 "!HYPOTHESIZED_of-in_20":-1.001 
 </vector>
 <statistics>
-<time total="0.412598" prepare="0.148329" ilp="0.264269" />
-<ilp solution="Optimal" variables="422" constraints="1160" />
-<search-space literals="81" axiom="20" />
+<time total="0.777358" prepare="0.3231" ilp="0.454258" />
+<ilp solution="Optimal" variables="439" constraints="1234" />
+<search-space literals="83" axiom="20" />
 </statistics>
 <proofgraph>
 <literal id="0" type="2" active="yes">equal(e55,x11,x16):0:1.00</literal>
@@ -1932,67 +1932,79 @@ equal(e55,x11,x16) ^ pioneer-vb(x15,x9,x16,u54) ^ in-in(e53,x3,x2) ^ for-in(e52,
 <literal id="62" type="3" active="yes">I#CONFINEMENT(x12):62:0.18</literal>
 <literal id="63" type="3" active="no">I#MAZE(_15):63:0.21</literal>
 <literal id="64" type="3" active="yes">I#DISEASE(_17):64:0.41</literal>
-<unification l1="64" l2="80" unifier="x10=_17" active="no" />
+<unification l1="64" l2="82" unifier="x10=_17" active="no" />
 <literal id="65" type="3" active="yes">S#DISEASE(x10):65:1.30</literal>
 <unification l1="65" l2="60" unifier="x10=_17" active="yes" />
 <literal id="66" type="3" active="no">M#CAUSE-NOT-FUNCTION(_18):66:0.17</literal>
 <unification l1="66" l2="69" unifier="" active="no" />
 <unification l1="66" l2="71" unifier="" active="no" />
 <unification l1="66" l2="74" unifier="" active="no" />
-<unification l1="66" l2="78" unifier="" active="no" />
+<unification l1="66" l2="79" unifier="" active="no" />
+<unification l1="66" l2="80" unifier="" active="no" />
 <literal id="67" type="3" active="no">M#CAUSING-THING_F(x6,_18):67:0.17</literal>
 <unification l1="67" l2="70" unifier="" active="no" />
 <unification l1="67" l2="72" unifier="x12=x6" active="no" />
 <unification l1="67" l2="75" unifier="x12=x6" active="no" />
-<unification l1="67" l2="79" unifier="x6=_17" active="no" />
+<unification l1="67" l2="81" unifier="x6=_17" active="no" />
 <literal id="68" type="3" active="no">M#FUNCTION-AGENT(x11,_18):68:0.17</literal>
 <unification l1="68" l2="73" unifier="" active="no" />
 <literal id="69" type="3" active="yes">M#CAUSE-NOT-FUNCTION(_19):69:0.17</literal>
 <unification l1="69" l2="66" unifier="" active="no" />
 <unification l1="69" l2="71" unifier="_19=_20" active="yes" />
 <unification l1="69" l2="74" unifier="_19=_21" active="yes" />
-<unification l1="69" l2="78" unifier="_19=_23" active="yes" />
+<unification l1="69" l2="79" unifier="" active="no" />
+<unification l1="69" l2="80" unifier="_19=_23" active="yes" />
 <literal id="70" type="3" active="yes">M#CAUSING-THING_F(x6,_19):70:0.17</literal>
 <unification l1="70" l2="67" unifier="" active="no" />
 <unification l1="70" l2="72" unifier="x12=x6, _19=_20" active="yes" />
 <unification l1="70" l2="75" unifier="x12=x6, _19=_21" active="yes" />
-<unification l1="70" l2="79" unifier="x6=_17, _19=_23" active="yes" />
+<unification l1="70" l2="81" unifier="x6=_17, _19=_23" active="yes" />
 <literal id="71" type="3" active="yes">M#CAUSE-NOT-FUNCTION(_20):71:0.12</literal>
 <unification l1="71" l2="66" unifier="" active="no" />
 <unification l1="71" l2="69" unifier="_19=_20" active="yes" />
 <unification l1="71" l2="74" unifier="_20=_21" active="yes" />
-<unification l1="71" l2="78" unifier="_20=_23" active="yes" />
+<unification l1="71" l2="79" unifier="" active="no" />
+<unification l1="71" l2="80" unifier="_20=_23" active="yes" />
 <literal id="72" type="3" active="yes">M#CAUSING-THING_F(x12,_20):72:0.12</literal>
 <unification l1="72" l2="67" unifier="x12=x6" active="no" />
 <unification l1="72" l2="70" unifier="x12=x6, _19=_20" active="yes" />
 <unification l1="72" l2="75" unifier="_20=_21" active="yes" />
-<unification l1="72" l2="79" unifier="x12=_17, _20=_23" active="yes" />
+<unification l1="72" l2="81" unifier="x12=_17, _20=_23" active="yes" />
 <literal id="73" type="3" active="yes">M#FUNCTION-AGENT(x11,_20):73:0.12</literal>
 <unification l1="73" l2="68" unifier="" active="no" />
 <literal id="74" type="3" active="yes">M#CAUSE-NOT-FUNCTION(_21):74:0.08</literal>
 <unification l1="74" l2="66" unifier="" active="no" />
 <unification l1="74" l2="69" unifier="_19=_21" active="yes" />
 <unification l1="74" l2="71" unifier="_20=_21" active="yes" />
-<unification l1="74" l2="78" unifier="_21=_23" active="yes" />
+<unification l1="74" l2="79" unifier="" active="no" />
+<unification l1="74" l2="80" unifier="_21=_23" active="yes" />
 <literal id="75" type="3" active="yes">M#CAUSING-THING_F(x12,_21):75:0.08</literal>
 <unification l1="75" l2="67" unifier="x12=x6" active="no" />
 <unification l1="75" l2="70" unifier="x12=x6, _19=_21" active="yes" />
 <unification l1="75" l2="72" unifier="_20=_21" active="yes" />
-<unification l1="75" l2="79" unifier="x12=_17, _21=_23" active="yes" />
-<literal id="76" type="3" active="no">M#CAUSE-CONFUSION(_22):76:0.09</literal>
-<literal id="77" type="3" active="no">M#CONFUSING-THING(_15):77:0.09</literal>
-<literal id="78" type="3" active="yes">M#CAUSE-NOT-FUNCTION(_23):78:0.18</literal>
-<unification l1="78" l2="66" unifier="" active="no" />
-<unification l1="78" l2="69" unifier="_19=_23" active="yes" />
-<unification l1="78" l2="71" unifier="_20=_23" active="yes" />
-<unification l1="78" l2="74" unifier="_21=_23" active="yes" />
-<literal id="79" type="3" active="yes">M#CAUSING-THING_F(_17,_23):79:0.18</literal>
-<unification l1="79" l2="67" unifier="x6=_17" active="no" />
-<unification l1="79" l2="70" unifier="x6=_17, _19=_23" active="yes" />
-<unification l1="79" l2="72" unifier="x12=_17, _20=_23" active="yes" />
-<unification l1="79" l2="75" unifier="x12=_17, _21=_23" active="yes" />
-<literal id="80" type="3" active="no">I#DISEASE(x10):80:1.17</literal>
-<unification l1="80" l2="64" unifier="x10=_17" active="no" />
+<unification l1="75" l2="81" unifier="x12=_17, _21=_23" active="yes" />
+<literal id="76" type="3" active="no">M#CAUSE-CONFUSION(_22):76:0.05</literal>
+<literal id="77" type="3" active="no">M#CONFUSING-THING(_15):77:0.05</literal>
+<literal id="78" type="3" active="no">M#CAUSE-CONFINEMENT(_22):78:0.05</literal>
+<literal id="79" type="3" active="no">M#CAUSE-NOT-FUNCTION(_22):79:0.05</literal>
+<unification l1="79" l2="66" unifier="" active="no" />
+<unification l1="79" l2="69" unifier="" active="no" />
+<unification l1="79" l2="71" unifier="" active="no" />
+<unification l1="79" l2="74" unifier="" active="no" />
+<unification l1="79" l2="80" unifier="" active="no" />
+<literal id="80" type="3" active="yes">M#CAUSE-NOT-FUNCTION(_23):80:0.18</literal>
+<unification l1="80" l2="66" unifier="" active="no" />
+<unification l1="80" l2="69" unifier="_19=_23" active="yes" />
+<unification l1="80" l2="71" unifier="_20=_23" active="yes" />
+<unification l1="80" l2="74" unifier="_21=_23" active="yes" />
+<unification l1="80" l2="79" unifier="" active="no" />
+<literal id="81" type="3" active="yes">M#CAUSING-THING_F(_17,_23):81:0.18</literal>
+<unification l1="81" l2="67" unifier="x6=_17" active="no" />
+<unification l1="81" l2="70" unifier="x6=_17, _19=_23" active="yes" />
+<unification l1="81" l2="72" unifier="x12=_17, _20=_23" active="yes" />
+<unification l1="81" l2="75" unifier="x12=_17, _21=_23" active="yes" />
+<literal id="82" type="3" active="no">I#DISEASE(x10):82:1.17</literal>
+<unification l1="82" l2="64" unifier="x10=_17" active="no" />
 <explanation name="limitationmap" active="yes" axiom="">62 => 50</explanation>
 <explanation name="confinement" active="no" axiom="">66 ^ 67 ^ 68 => 52</explanation>
 <explanation name="confinement2" active="yes" axiom="">69 ^ 70 => 52</explanation>
@@ -2010,9 +2022,9 @@ equal(e55,x11,x16) ^ pioneer-vb(x15,x9,x16,u54) ^ in-in(e53,x3,x2) ^ for-in(e52,
 <explanation name="confinement3" active="yes" axiom="">71 ^ 72 ^ 73 => 62</explanation>
 <explanation name="confinement4" active="yes" axiom="">74 ^ 75 => 62</explanation>
 <explanation name="fever" active="yes" axiom="">60 ^ 61 => 16</explanation>
-<explanation name="maze" active="no" axiom="">76 ^ 77 => 63</explanation>
-<explanation name="disease2" active="yes" axiom="">78 ^ 79 => 64</explanation>
-<explanation name="dismap" active="no" axiom="">80 => 65</explanation>
+<explanation name="maze" active="no" axiom="">76 ^ 77 ^ 78 ^ 79 => 63</explanation>
+<explanation name="disease2" active="yes" axiom="">80 ^ 81 => 64</explanation>
+<explanation name="dismap" active="no" axiom="">82 => 65</explanation>
 </proofgraph>
 </result-inference>
 <result-inference target="7">
@@ -2020,13 +2032,13 @@ equal(e55,x11,x16) ^ pioneer-vb(x15,x9,x16,u54) ^ in-in(e53,x3,x2) ^ for-in(e52,
 :-in(e92,x1,x0) ^ whq(e41,e42,x5) ^ or(e61,e62,x29) ^ part-time-adj(e91,x31) ^ work-nn(e90,x31) ^ in-in(e89,x0,x31) ^ manner_rel(e88,e91,x4) ^ understand-vb(x29,x1,e91,u87) ^ under-employed-adj(e86,x0) ^ or(e62,x17,x24) ^ stop-vb(x26,x0,x28,u85) ^ look-vb(x28,x0,u83,u84) ^ work-nn(e82,x27) ^ for-in(e81,x28,x27) ^ manner_rel(e80,x26,x4) ^ understand-vb(x24,x1,x26,u79) ^ president-nn(e78,x23) ^ have-vb(x22,x0,x23,u77) ^ office-nn(e76,x21) ^ in-in(e75,x22,x21) ^ card(e74,x20,3) ^ year-nn(e73,x20) ^ for-in(e72,x22,x20) ^ card(e71,x19,26) ^ card(e70,x19,1000000) ^ people-nn(e69,x19) ^ with-in(e68,x22,x19) ^ out-in(e67,x22) ^ work-nn(e66,x18) ^ of-in(e65,x22,x18) ^ manner_rel(e64,x22,x4) ^ understand-vb(x17,x1,x22,u63) ^ president-nn(e60,x8) ^ that-in(e59,x8,e46) ^ imp(e46,e47,x14) ^ male(e58,x10) ^ do-vb(x16,x10,x9,u57) ^ want-vb(x14,x10,x16,u56) ^ talk-vb(x13,x9,u54,u55) ^ payroll-nn(e53,x11) ^ of-in(e52,x12,x11) ^ tax-nn(e51,x10) ^ of-in(e50,x12,x10) ^ band-aid-nn(e49,x12) ^ about-in(e48,x13,x12) ^ thing(e47,x9) ^ have-vb(x6,x0,x8,u45) ^ manner_rel(e44,x6,x4) ^ understand-vb(x5,x1,x6,u43) ^ manner(e42,x4) ^ n’t-nn(e40,x3) ^ do-vb(x2,x0,x3,u39) ^ just-rb(e38,x2) ^ rel(e37,x2,x1) ^ romney-nn(e35,x1) ^ loc(e36,x1) ^ “-nn(e33,x0) ^ loc(e34,x0) ^ person(e32,x0) ^ !=(e33,e34) ^ !=(e32,e32,e32) ^ !=(e35,e36) ^ !=(x29,x24,x17,x5) ^ !=(e36,e34) ^ !=(e81,e72) ^ !=(e88,e80,e64,e44) ^ !=(e65,e52,e50) ^ !=(e89,e75) ^ !=(e61,e62) ^ !=(e74,e71,e70)
 </observed>
 <hypothesis score="-64.4852">
-:-in(e92,x1,x0) ^ whq(e41,e42,x5) ^ or(e61,e62,x29) ^ part-time-adj(e91,x31) ^ work-nn(e90,x31) ^ in-in(e89,x0,x31) ^ manner_rel(e88,e91,x4) ^ understand-vb(x29,x1,e91,u87) ^ under-employed-adj(e86,x0) ^ or(e62,x17,x24) ^ stop-vb(x26,x0,x28,u85) ^ look-vb(x28,x0,u83,u84) ^ work-nn(e82,x27) ^ for-in(e81,x28,x27) ^ manner_rel(e80,x26,x4) ^ understand-vb(x24,x1,x26,u79) ^ president-nn(e78,x23) ^ have-vb(x22,x0,x23,u77) ^ office-nn(e76,x21) ^ in-in(e75,x22,x21) ^ card(e74,x20,3) ^ year-nn(e73,x20) ^ for-in(e72,x22,x20) ^ card(e71,x19,26) ^ card(e70,x19,1000000) ^ people-nn(e69,x19) ^ with-in(e68,x22,x19) ^ out-in(e67,x22) ^ work-nn(e66,x18) ^ of-in(e65,x22,x18) ^ manner_rel(e64,x22,x4) ^ understand-vb(x17,x1,x22,u63) ^ president-nn(e60,x8) ^ that-in(e59,x8,e46) ^ imp(e46,e47,x14) ^ male(e58,x10) ^ do-vb(x16,x10,x9,u57) ^ want-vb(x14,x10,x16,u56) ^ talk-vb(x13,x9,u54,u55) ^ payroll-nn(e53,x11) ^ of-in(e52,x12,x11) ^ tax-nn(e51,x10) ^ of-in(e50,x12,x10) ^ band-aid-nn(e49,x12) ^ about-in(e48,x13,x12) ^ thing(e47,x9) ^ have-vb(x6,x0,x8,u45) ^ manner_rel(e44,x6,x4) ^ understand-vb(x5,x1,x6,u43) ^ manner(e42,x4) ^ n’t-nn(e40,x3) ^ do-vb(x2,x0,x3,u39) ^ just-rb(e38,x2) ^ rel(e37,x2,x1) ^ romney-nn(e35,x1) ^ loc(e36,x1) ^ “-nn(e33,x0) ^ loc(e34,x0) ^ person(e32,x0) ^ !=(e33,e34) ^ !=(e32,e32,e32) ^ !=(e35,e36) ^ !=(x29,x24,x17,x5) ^ !=(e36,e34) ^ !=(e81,e72) ^ !=(e88,e80,e64,e44) ^ !=(e65,e52,e50) ^ !=(e89,e75) ^ !=(e61,e62) ^ !=(e74,e71,e70) ^ TS#TAXATION(x10) ^ T#ECONOMIC-INEQUALITY(_24) ^ S#DISEASE(_25) ^ SS#TREATMENT(e49) ^ R#CURE-AGENT(x12,e49) ^ I#DISEASE(_25) ^ I#CURE(e49) ^ M#CAUSE-NOT-FUNCTION(_26) ^ M#CAUSING-THING_F(_25,_26) ^ M#CAUSE-NOT-EXIST(_27) ^ M#CAUSING-THING_E(x12,_27) ^ M#CAUSE-NOT-EXIST(_28) ^ M#CAUSING-THING_E(e49,_28) ^ =(u39,u57) ^ =(x31,x18,x27) ^ =(e66,e90,e82) ^ =(x8,x23) ^ =(e49,x12) ^ =(e78,e60) ^ =(x16,x2) ^ =(x10,x0) ^ =(_27,_28) ^ =(x3,x9) ^ =(u77,u45) ^ =(x22,x6)
+:-in(e92,x1,x0) ^ whq(e41,e42,x5) ^ or(e61,e62,x29) ^ part-time-adj(e91,x31) ^ work-nn(e90,x31) ^ in-in(e89,x0,x31) ^ manner_rel(e88,e91,x4) ^ understand-vb(x29,x1,e91,u87) ^ under-employed-adj(e86,x0) ^ or(e62,x17,x24) ^ stop-vb(x26,x0,x28,u85) ^ look-vb(x28,x0,u83,u84) ^ work-nn(e82,x27) ^ for-in(e81,x28,x27) ^ manner_rel(e80,x26,x4) ^ understand-vb(x24,x1,x26,u79) ^ president-nn(e78,x23) ^ have-vb(x22,x0,x23,u77) ^ office-nn(e76,x21) ^ in-in(e75,x22,x21) ^ card(e74,x20,3) ^ year-nn(e73,x20) ^ for-in(e72,x22,x20) ^ card(e71,x19,26) ^ card(e70,x19,1000000) ^ people-nn(e69,x19) ^ with-in(e68,x22,x19) ^ out-in(e67,x22) ^ work-nn(e66,x18) ^ of-in(e65,x22,x18) ^ manner_rel(e64,x22,x4) ^ understand-vb(x17,x1,x22,u63) ^ president-nn(e60,x8) ^ that-in(e59,x8,e46) ^ imp(e46,e47,x14) ^ male(e58,x10) ^ do-vb(x16,x10,x9,u57) ^ want-vb(x14,x10,x16,u56) ^ talk-vb(x13,x9,u54,u55) ^ payroll-nn(e53,x11) ^ of-in(e52,x12,x11) ^ tax-nn(e51,x10) ^ of-in(e50,x12,x10) ^ band-aid-nn(e49,x12) ^ about-in(e48,x13,x12) ^ thing(e47,x9) ^ have-vb(x6,x0,x8,u45) ^ manner_rel(e44,x6,x4) ^ understand-vb(x5,x1,x6,u43) ^ manner(e42,x4) ^ n’t-nn(e40,x3) ^ do-vb(x2,x0,x3,u39) ^ just-rb(e38,x2) ^ rel(e37,x2,x1) ^ romney-nn(e35,x1) ^ loc(e36,x1) ^ “-nn(e33,x0) ^ loc(e34,x0) ^ person(e32,x0) ^ !=(e33,e34) ^ !=(e32,e32,e32) ^ !=(e35,e36) ^ !=(x29,x24,x17,x5) ^ !=(e36,e34) ^ !=(e81,e72) ^ !=(e88,e80,e64,e44) ^ !=(e65,e52,e50) ^ !=(e89,e75) ^ !=(e61,e62) ^ !=(e74,e71,e70) ^ TS#TAXATION(x10) ^ T#ECONOMIC-INEQUALITY(_24) ^ S#DISEASE(_25) ^ SS#TREATMENT(e49) ^ R#CURE-AGENT(x12,e49) ^ I#DISEASE(_25) ^ I#CURE(e49) ^ M#CAUSE-NOT-FUNCTION(_26) ^ M#CAUSING-THING_F(_25,_26) ^ M#CAUSE-NOT-EXIST(_27) ^ M#CAUSING-THING_E(x12,_27) ^ M#CAUSE-NOT-EXIST(_28) ^ M#CAUSING-THING_E(e49,_28) ^ =(u39,u57) ^ =(x27,x31,x18) ^ =(e66,e90,e82) ^ =(x8,x23) ^ =(e49,x12) ^ =(e78,e60) ^ =(x16,x2) ^ =(x10,x0) ^ =(_27,_28) ^ =(x3,x9) ^ =(u77,u45) ^ =(x22,x6)
 </hypothesis>
 <vector score="0">
 "!HYPOTHESIZED_!=_60":-1.001 "!HYPOTHESIZED_!=_69":-1.001 "!HYPOTHESIZED_payroll-nn_39":-1.001 "!HYPOTHESIZED_president-nn_32":-1.001 "!HYPOTHESIZED_imp_34":-1.001 "!HYPOTHESIZED_understand-vb_31":-1.001 "!HYPOTHESIZED_manner_rel_47":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_77":-0.1225 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_81":-0.1306 "!EXPLAINED_tax-nn_41":1 "!HYPOTHESIZED_card_23":-1.001 "!HYPOTHESIZED_!=_63":-1.001 "!HYPOTHESIZED_manner_49":-1.001 "!HYPOTHESIZED_!=_68":-1.001 "!HYPOTHESIZED_office-nn_18":-1.001 "!HYPOTHESIZED_just-rb_52":-1.001 "!HYPOTHESIZED_work-nn_4":-1.001 "!HYPOTHESIZED_tax-nn_41":-1.001 "!HYPOTHESIZED_stop-vb_10":-1.001 "!HYPOTHESIZED_or_2":-1.001 "!HYPOTHESIZED_loc_55":-1.001 "!EXPLAINED_SS#TREATMENT_73":0.3 "!HYPOTHESIZED_!=_59":-1.001 "!EXPLAINED_do-vb_51":1 "!HYPOTHESIZED_manner_rel_6":-1.001 "!HYPOTHESIZED_thing_45":-1.001 "!HYPOTHESIZED_about-in_44":-1.001 "!EXPLAINED_work-nn_12":1 "!HYPOTHESIZED_S#DISEASE_72":-0.301 "!HYPOTHESIZED_!=_62":-1.001 "!HYPOTHESIZED_“-nn_56":-1.001 "!HYPOTHESIZED_understand-vb_48":-1.001 "!HYPOTHESIZED_R#CURE-AGENT_74":-0.301 "!HYPOTHESIZED_have-vb_46":-1.001 "!EXPLAINED_band-aid-nn_43":1 "!HYPOTHESIZED_out-in_27":-1.001 "!HYPOTHESIZED_I#CURE_76":-0.271 "!HYPOTHESIZED_!=_65":-1.001 "!HYPOTHESIZED_person_58":-1.001 "!HYPOTHESIZED_manner_rel_30":-1.001 "!HYPOTHESIZED_under-employed-adj_8":-1.001 "!HYPOTHESIZED_M#CAUSING-THING_F_78":-0.1225 "!HYPOTHESIZED_band-aid-nn_43":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_71":-0.451 "!HYPOTHESIZED_male_35":-1.001 "!HYPOTHESIZED_part-time-adj_3":-1.001 "!HYPOTHESIZED_have-vb_17":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_79":-0.2632 "!HYPOTHESIZED_whq_1":-1.001 "!HYPOTHESIZED_rel_53":-1.001 "!HYPOTHESIZED_year-nn_21":-1.001 "!EXPLAINED_R#CURE-AGENT_74":0.3 "!EXPLAINED_have-vb_46":1 "!HYPOTHESIZED_understand-vb_7":-1.001 "!HYPOTHESIZED_M#CAUSING-THING_E_82":-0.1306 "!HYPOTHESIZED_of-in_40":-1.001 "!EXPLAINED_president-nn_32":1 "!HYPOTHESIZED_card_24":-1.001 "!HYPOTHESIZED_!=_64":-1.001 "!HYPOTHESIZED_president-nn_16":-1.001 "!HYPOTHESIZED_people-nn_25":-1.001 "!EXPLAINED_I#DISEASE_75":0.27 "!HYPOTHESIZED_understand-vb_15":-1.001 "!HYPOTHESIZED_n’t-nn_50":-1.001 "!HYPOTHESIZED_SS#TREATMENT_73":-0.301 "!HYPOTHESIZED_for-in_22":-1.001 "!HYPOTHESIZED_TS#TAXATION_70":-0.451 "!HYPOTHESIZED_!=_67":-1.001 "!HYPOTHESIZED_romney-nn_54":-1.001 "!HYPOTHESIZED_talk-vb_38":-1.001 "!HYPOTHESIZED_I#DISEASE_75":-0.271 "!HYPOTHESIZED_do-vb_36":-1.001 "!HYPOTHESIZED_work-nn_28":-1.001 "!HYPOTHESIZED_manner_rel_14":-1.001 "!HYPOTHESIZED_want-vb_37":-1.001 "!EXPLAINED_S#DISEASE_72":0.3 "!HYPOTHESIZED_with-in_26":-1.001 "!HYPOTHESIZED_in-in_5":-1.001 "!EXPLAINED_work-nn_28":1 "!HYPOTHESIZED_or_9":-1.001 "!HYPOTHESIZED_look-vb_11":-1.001 "!HYPOTHESIZED_M#CAUSING-THING_E_80":-0.2632 "!HYPOTHESIZED_do-vb_51":-1.001 "!HYPOTHESIZED_of-in_42":-1.001 "!HYPOTHESIZED_!=_61":-1.001 "!HYPOTHESIZED_work-nn_12":-1.001 "!HYPOTHESIZED_!=_66":-1.001 "!HYPOTHESIZED_that-in_33":-1.001 "!EXPLAINED_M#CAUSE-NOT-EXIST_79":0.2622 "!EXPLAINED_M#CAUSING-THING_E_80":0.2622 "!HYPOTHESIZED_for-in_13":-1.001 "!HYPOTHESIZED_:-in_0":-1.001 "!HYPOTHESIZED_loc_57":-1.001 "!EXPLAINED_I#CURE_76":0.27 "!HYPOTHESIZED_of-in_29":-1.001 "!HYPOTHESIZED_in-in_19":-1.001 "!HYPOTHESIZED_card_20":-1.001 
 </vector>
 <statistics>
-<time total="0.234953" prepare="0.15973" ilp="0.075223" />
+<time total="0.679704" prepare="0.464408" ilp="0.215296" />
 <ilp solution="Optimal" variables="503" constraints="2431" />
 <search-space literals="83" axiom="15" />
 </statistics>

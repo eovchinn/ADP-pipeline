@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<henry-output parameter="-m infer -d 3 -t 2 -O proofgraph,statistics -T 60 -e /Users/raisrael/ISI/adp_home/henry-n700/models/h93.py -b /Users/raisrael/ISI/Axiom_playground/English_compiled_KB.da">
+<henry-output parameter="-m infer -d 3 -t 2 -O proofgraph,statistics -T 60 -e /Users/raisrael/ISI/adp_home/henry-n700/models/h93.py -b /Users/raisrael/ISI/Metaphor-ADP/KBs/English/English_compiled_KB.da">
 <result-inference target="2">
 <observed size="50" domain_size="0">
 person(e69,x4) ^ need-vb(x5,x4,u67,u68) ^ therefore-rb(e66,x5) ^ closing-nn(e65,x4) ^ in-in(e64,x5,x4) ^ quantity-adj(e63,x6) ^ that-in(e62,x6,x11) ^ people-nn(e61,x6) ^ future-adj(e60,x12) ^ pdc_government-nn(e58,x12) ^ org(e59,x12) ^ abolish-vb(x11,x12,x23,u57) ^ in-in(e56,x11,x10) ^ thing(e55,x22) ^ subset_of(e54,x22,x25) ^ other-nn(e53,x24) ^ subset_of(e52,x24,x25) ^ liberate-vb(x23,x12,x25,u51) ^ taxation-nn(e50,x22) ^ of-in(e49,x1,x22) ^ from-in(e48,x23,x1) ^ greater-adj(e47,x21) ^ subset_of(e46,x20,x21) ^ subset_of(e45,x19,x21) ^ freedom-nn(e44,x20) ^ subset_of(e43,x18,x19) ^ subset_of(e42,x17,x19) ^ democracy-nn(e41,x18) ^ development-nn(e40,x17) ^ bring-vb(x16,x12,x21,u39) ^ of-in(e38,x6,x0) ^ to-in(e37,x16,x6) ^ therefore-rb(e36,x16) ^ order-nn(e35,x13) ^ in-in(e34,x16,x13) ^ order-nn(e33,x10) ^ remind-vb(x7,x4,x6,u32) ^ properly-rb(e31,x7) ^ all_taxation-nn(e29,x2) ^ nam(e30,x2) ^ evil-adj(e28,x1) ^ scourge-nn(e27,x1) ^ country-nn(e26,x0) ^ !=(e58,e59) ^ !=(e58,e59) ^ !=(e29,e30) ^ !=(e29,e30) ^ !=(e49,e38) ^ !=(e64,e56,e34) ^ !=(e54,e52,e46,e45,e43,e42)
 </observed>
-<hypothesis score="-47.81">
-person(e69,x4) ^ need-vb(x5,x4,u67,u68) ^ therefore-rb(e66,x5) ^ closing-nn(e65,x4) ^ in-in(e64,x5,x4) ^ quantity-adj(e63,x6) ^ that-in(e62,x6,x11) ^ people-nn(e61,x6) ^ future-adj(e60,x12) ^ pdc_government-nn(e58,x12) ^ org(e59,x12) ^ abolish-vb(x11,x12,x23,u57) ^ in-in(e56,x11,x10) ^ thing(e55,x22) ^ subset_of(e54,x22,x25) ^ other-nn(e53,x24) ^ subset_of(e52,x24,x25) ^ liberate-vb(x23,x12,x25,u51) ^ taxation-nn(e50,x22) ^ of-in(e49,x1,x22) ^ from-in(e48,x23,x1) ^ greater-adj(e47,x21) ^ subset_of(e46,x20,x21) ^ subset_of(e45,x19,x21) ^ freedom-nn(e44,x20) ^ subset_of(e43,x18,x19) ^ subset_of(e42,x17,x19) ^ democracy-nn(e41,x18) ^ development-nn(e40,x17) ^ bring-vb(x16,x12,x21,u39) ^ of-in(e38,x6,x0) ^ to-in(e37,x16,x6) ^ therefore-rb(e36,x16) ^ order-nn(e35,x13) ^ in-in(e34,x16,x13) ^ order-nn(e33,x10) ^ remind-vb(x7,x4,x6,u32) ^ properly-rb(e31,x7) ^ all_taxation-nn(e29,x2) ^ nam(e30,x2) ^ evil-adj(e28,x1) ^ scourge-nn(e27,x1) ^ country-nn(e26,x0) ^ !=(e58,e59) ^ !=(e58,e59) ^ !=(e29,e30) ^ !=(e29,e30) ^ !=(e49,e38) ^ !=(e64,e56,e34) ^ !=(e54,e52,e46,e45,e43,e42) ^ TS#TAXATION(x22) ^ T#ECONOMIC-INEQUALITY(_0) ^ S#CRIME(x1) ^ SS#PUNISHMENT(x1) ^ I#PUNISHMENT(x1) ^ =(x16,x5) ^ =(e66,e36) ^ =(e35,e33) ^ =(x13,x10)
+<hypothesis score="-47.7305">
+person(e69,x4) ^ need-vb(x5,x4,u67,u68) ^ therefore-rb(e66,x5) ^ closing-nn(e65,x4) ^ in-in(e64,x5,x4) ^ quantity-adj(e63,x6) ^ that-in(e62,x6,x11) ^ people-nn(e61,x6) ^ future-adj(e60,x12) ^ pdc_government-nn(e58,x12) ^ org(e59,x12) ^ abolish-vb(x11,x12,x23,u57) ^ in-in(e56,x11,x10) ^ thing(e55,x22) ^ subset_of(e54,x22,x25) ^ other-nn(e53,x24) ^ subset_of(e52,x24,x25) ^ liberate-vb(x23,x12,x25,u51) ^ taxation-nn(e50,x22) ^ of-in(e49,x1,x22) ^ from-in(e48,x23,x1) ^ greater-adj(e47,x21) ^ subset_of(e46,x20,x21) ^ subset_of(e45,x19,x21) ^ freedom-nn(e44,x20) ^ subset_of(e43,x18,x19) ^ subset_of(e42,x17,x19) ^ democracy-nn(e41,x18) ^ development-nn(e40,x17) ^ bring-vb(x16,x12,x21,u39) ^ of-in(e38,x6,x0) ^ to-in(e37,x16,x6) ^ therefore-rb(e36,x16) ^ order-nn(e35,x13) ^ in-in(e34,x16,x13) ^ order-nn(e33,x10) ^ remind-vb(x7,x4,x6,u32) ^ properly-rb(e31,x7) ^ all_taxation-nn(e29,x2) ^ nam(e30,x2) ^ evil-adj(e28,x1) ^ scourge-nn(e27,x1) ^ country-nn(e26,x0) ^ !=(e58,e59) ^ !=(e58,e59) ^ !=(e29,e30) ^ !=(e29,e30) ^ !=(e49,e38) ^ !=(e64,e56,e34) ^ !=(e54,e52,e46,e45,e43,e42) ^ TS#TAXATION(x22) ^ T#ECONOMIC-INEQUALITY(_1) ^ S#CRIME(x1) ^ SS#PUNISHMENT(x1) ^ I#CRIME(x1) ^ I#PUNISHMENT(x1) ^ M#AGAINST-SOCIETY-ACTION(x1) ^ =(x16,x5) ^ =(e66,e36) ^ =(e35,e33) ^ =(x13,x10)
 </hypothesis>
 <vector score="0">
-"!HYPOTHESIZED_evil-adj_40":-1.001 "!EXPLAINED_therefore-rb_32":1 "!HYPOTHESIZED_that-in_6":-1.001 "!HYPOTHESIZED_!=_46":-1.001 "!HYPOTHESIZED_other-nn_15":-1.001 "!EXPLAINED_taxation-nn_18":1 "!HYPOTHESIZED_subset_of_22":-1.001 "!HYPOTHESIZED_!=_48":-1.001 "!EXPLAINED_scourge-nn_41":1 "!HYPOTHESIZED_subset_of_14":-1.001 "!HYPOTHESIZED_therefore-rb_2":-1.001 "!HYPOTHESIZED_TS#TAXATION_50":-0.451 "!EXPLAINED_order-nn_35":1 "!HYPOTHESIZED_therefore-rb_32":-1.001 "!HYPOTHESIZED_remind-vb_36":-1.001 "!HYPOTHESIZED_in-in_34":-1.001 "!HYPOTHESIZED_!=_45":-1.001 "!HYPOTHESIZED_people-nn_7":-1.001 "!HYPOTHESIZED_properly-rb_37":-1.001 "!HYPOTHESIZED_pdc_government-nn_9":-1.001 "!HYPOTHESIZED_liberate-vb_17":-1.001 "!HYPOTHESIZED_of-in_19":-1.001 "!HYPOTHESIZED_bring-vb_29":-1.001 "!HYPOTHESIZED_of-in_30":-1.001 "!HYPOTHESIZED_I#PUNISHMENT_54":-0.406 "!HYPOTHESIZED_!=_44":-1.001 "!HYPOTHESIZED_org_10":-1.001 "!HYPOTHESIZED_S#CRIME_52":-0.451 "!HYPOTHESIZED_order-nn_35":-1.001 "!HYPOTHESIZED_need-vb_1":-1.001 "!EXPLAINED_SS#PUNISHMENT_53":0.45 "!HYPOTHESIZED_!=_43":-1.001 "!HYPOTHESIZED_democracy-nn_27":-1.001 "!HYPOTHESIZED_from-in_20":-1.001 "!HYPOTHESIZED_thing_13":-1.001 "!HYPOTHESIZED_development-nn_28":-1.001 "!HYPOTHESIZED_order-nn_33":-1.001 "!HYPOTHESIZED_country-nn_42":-1.001 "!HYPOTHESIZED_in-in_12":-1.001 "!HYPOTHESIZED_subset_of_26":-1.001 "!HYPOTHESIZED_in-in_4":-1.001 "!HYPOTHESIZED_abolish-vb_11":-1.001 "!HYPOTHESIZED_freedom-nn_24":-1.001 "!HYPOTHESIZED_SS#PUNISHMENT_53":-0.451 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_51":-0.451 "!HYPOTHESIZED_subset_of_25":-1.001 "!HYPOTHESIZED_nam_39":-1.001 "!HYPOTHESIZED_subset_of_16":-1.001 "!HYPOTHESIZED_scourge-nn_41":-1.001 "!HYPOTHESIZED_closing-nn_3":-1.001 "!HYPOTHESIZED_to-in_31":-1.001 "!HYPOTHESIZED_future-adj_8":-1.001 "!HYPOTHESIZED_person_0":-1.001 "!HYPOTHESIZED_!=_47":-1.001 "!HYPOTHESIZED_subset_of_23":-1.001 "!HYPOTHESIZED_quantity-adj_5":-1.001 "!HYPOTHESIZED_!=_49":-1.001 "!HYPOTHESIZED_all_taxation-nn_38":-1.001 "!HYPOTHESIZED_greater-adj_21":-1.001 "!HYPOTHESIZED_taxation-nn_18":-1.001 
+"!HYPOTHESIZED_evil-adj_40":-1.001 "!EXPLAINED_therefore-rb_32":1 "!HYPOTHESIZED_that-in_6":-1.001 "!HYPOTHESIZED_!=_46":-1.001 "!HYPOTHESIZED_other-nn_15":-1.001 "!EXPLAINED_taxation-nn_18":1 "!HYPOTHESIZED_subset_of_22":-1.001 "!HYPOTHESIZED_!=_48":-1.001 "!EXPLAINED_scourge-nn_41":1 "!HYPOTHESIZED_subset_of_14":-1.001 "!HYPOTHESIZED_therefore-rb_2":-1.001 "!EXPLAINED_order-nn_35":1 "!HYPOTHESIZED_therefore-rb_32":-1.001 "!HYPOTHESIZED_remind-vb_36":-1.001 "!HYPOTHESIZED_in-in_34":-1.001 "!HYPOTHESIZED_SS#PUNISHMENT_57":-0.451 "!HYPOTHESIZED_!=_45":-1.001 "!HYPOTHESIZED_people-nn_7":-1.001 "!HYPOTHESIZED_properly-rb_37":-1.001 "!HYPOTHESIZED_pdc_government-nn_9":-1.001 "!HYPOTHESIZED_liberate-vb_17":-1.001 "!HYPOTHESIZED_of-in_19":-1.001 "!HYPOTHESIZED_bring-vb_29":-1.001 "!EXPLAINED_S#CRIME_56":0.45 "!HYPOTHESIZED_of-in_30":-1.001 "!HYPOTHESIZED_!=_44":-1.001 "!HYPOTHESIZED_org_10":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_55":-0.451 "!HYPOTHESIZED_order-nn_35":-1.001 "!HYPOTHESIZED_need-vb_1":-1.001 "!HYPOTHESIZED_!=_43":-1.001 "!HYPOTHESIZED_democracy-nn_27":-1.001 "!HYPOTHESIZED_I#PUNISHMENT_61":-0.406 "!HYPOTHESIZED_from-in_20":-1.001 "!EXPLAINED_I#CRIME_60":0.405 "!HYPOTHESIZED_thing_13":-1.001 "!HYPOTHESIZED_development-nn_28":-1.001 "!HYPOTHESIZED_order-nn_33":-1.001 "!HYPOTHESIZED_country-nn_42":-1.001 "!HYPOTHESIZED_in-in_12":-1.001 "!HYPOTHESIZED_subset_of_26":-1.001 "!HYPOTHESIZED_in-in_4":-1.001 "!HYPOTHESIZED_I#CRIME_60":-0.406 "!HYPOTHESIZED_abolish-vb_11":-1.001 "!HYPOTHESIZED_TS#TAXATION_54":-0.451 "!HYPOTHESIZED_freedom-nn_24":-1.001 "!HYPOTHESIZED_subset_of_25":-1.001 "!HYPOTHESIZED_nam_39":-1.001 "!HYPOTHESIZED_subset_of_16":-1.001 "!HYPOTHESIZED_scourge-nn_41":-1.001 "!EXPLAINED_SS#PUNISHMENT_57":0.45 "!HYPOTHESIZED_closing-nn_3":-1.001 "!HYPOTHESIZED_to-in_31":-1.001 "!HYPOTHESIZED_future-adj_8":-1.001 "!HYPOTHESIZED_person_0":-1.001 "!HYPOTHESIZED_!=_47":-1.001 "!HYPOTHESIZED_subset_of_23":-1.001 "!HYPOTHESIZED_quantity-adj_5":-1.001 "!HYPOTHESIZED_!=_49":-1.001 "!HYPOTHESIZED_all_taxation-nn_38":-1.001 "!HYPOTHESIZED_S#CRIME_56":-0.451 "!HYPOTHESIZED_greater-adj_21":-1.001 "!HYPOTHESIZED_taxation-nn_18":-1.001 "!HYPOTHESIZED_M#AGAINST-SOCIETY-ACTION_66":-0.36955 
 </vector>
 <statistics>
-<time total="0.141779" prepare="0.122538" ilp="0.0192411" />
-<ilp solution="Optimal" variables="267" constraints="482" />
-<search-space literals="55" axiom="6" />
+<time total="0.913407" prepare="0.870577" ilp="0.04283" />
+<ilp solution="Optimal" variables="312" constraints="578" />
+<search-space literals="67" axiom="19" />
 </statistics>
 <proofgraph>
 <literal id="0" type="2" active="yes">person(e69,x4):0:1.00</literal>
@@ -108,14 +108,33 @@ person(e69,x4) ^ need-vb(x5,x4,u67,u68) ^ therefore-rb(e66,x5) ^ closing-nn(e65,
 <literal id="47" type="2" active="yes">!=(e49,e38):47:1.00</literal>
 <literal id="48" type="2" active="yes">!=(e64,e56,e34):48:1.00</literal>
 <literal id="49" type="2" active="yes">!=(e54,e52,e46,e45,e43,e42):49:1.00</literal>
-<literal id="50" type="3" active="yes">TS#TAXATION(x22):50:0.45</literal>
-<literal id="51" type="3" active="yes">T#ECONOMIC-INEQUALITY(_0):51:0.45</literal>
-<literal id="52" type="3" active="yes">S#CRIME(x1):52:0.45</literal>
-<literal id="53" type="3" active="yes">SS#PUNISHMENT(x1):53:0.45</literal>
-<literal id="54" type="3" active="yes">I#PUNISHMENT(x1):54:0.41</literal>
-<explanation name="taxation" active="yes" axiom="">50 ^ 51 => 18</explanation>
-<explanation name="scourge" active="yes" axiom="">52 ^ 53 => 41</explanation>
-<explanation name="punishmentmap" active="yes" axiom="">54 => 53</explanation>
+<literal id="50" type="3" active="no">S#CONFINEMENT(_0):50:0.30</literal>
+<literal id="51" type="3" active="no">SS#EXIT(x23):51:0.30</literal>
+<literal id="52" type="3" active="no">R#EXIT-AGENT(x12,x23):52:0.30</literal>
+<literal id="53" type="3" active="no">R#EXIT-PATIENT(x25,x23):53:0.30</literal>
+<literal id="54" type="3" active="yes">TS#TAXATION(x22):54:0.45</literal>
+<literal id="55" type="3" active="yes">T#ECONOMIC-INEQUALITY(_1):55:0.45</literal>
+<literal id="56" type="3" active="yes">S#CRIME(x1):56:0.45</literal>
+<literal id="57" type="3" active="yes">SS#PUNISHMENT(x1):57:0.45</literal>
+<literal id="58" type="3" active="no">I#CONFINEMENT(_0):58:0.27</literal>
+<literal id="59" type="3" active="no">I#EXIT(x23):59:0.27</literal>
+<literal id="60" type="3" active="yes">I#CRIME(x1):60:0.41</literal>
+<literal id="61" type="3" active="yes">I#PUNISHMENT(x1):61:0.41</literal>
+<literal id="62" type="3" active="no">M#CAUSE-NOT-FUNCTION(_2):62:0.13</literal>
+<literal id="63" type="3" active="no">M#CAUSING-THING_F(_0,_2):63:0.13</literal>
+<literal id="64" type="3" active="no">M#CAUSE-RESUME-FUNCTION(x23):64:0.13</literal>
+<literal id="65" type="3" active="no">M#CAUSING-THING_RF(x23):65:0.13</literal>
+<literal id="66" type="3" active="yes">M#AGAINST-SOCIETY-ACTION(x1):66:0.37</literal>
+<explanation name="crimemap" active="yes" axiom="">60 => 56</explanation>
+<explanation name="punishmentmap" active="yes" axiom="">61 => 57</explanation>
+<explanation name="confinement4" active="no" axiom="">62 ^ 63 => 58</explanation>
+<explanation name="exit" active="no" axiom="">64 ^ 65 => 59</explanation>
+<explanation name="crime4" active="yes" axiom="">66 => 60</explanation>
+<explanation name="limitationmap" active="no" axiom="">58 => 50</explanation>
+<explanation name="liberate" active="no" axiom="">50 ^ 51 ^ 52 ^ 53 => 17</explanation>
+<explanation name="exitmap" active="no" axiom="">59 => 51</explanation>
+<explanation name="taxation" active="yes" axiom="">54 ^ 55 => 18</explanation>
+<explanation name="scourge" active="yes" axiom="">56 ^ 57 => 41</explanation>
 </proofgraph>
 </result-inference>
 </henry-output>

@@ -86,11 +86,11 @@
 
 
 ; OF - CURE
-(B (name of-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE x)(of-in e1 x y))))
+(B (name for-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE x)(for-in e1 x y))))
 
 ; FROM/AGAINST - CURE
-(B (name from-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE e0)(from-in e1 e0 y))))
-(B (name against-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE e0)(against-in e1 e0 y))))
+; (B (name from-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE e0)(from-in e1 e0 y))))
+; (B (name against-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE e0)(against-in e1 e0 y))))
 
 
 ; EPIDEMIC
