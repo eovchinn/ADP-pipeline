@@ -291,7 +291,7 @@
 (B (name limitationmap)(=>(I#CONFINEMENT x :0.9)(S#CONFINEMENT x)))
 
 ; EXIT
-(B (name door)(=>(^(S#CONFINEMENT x :0.45)(SS#EXIT x :0.45)) (door-nn e0 x)))
+(B (name door)(=>(^(S#CONFINEMENT x :0.45)(SS#CONFINEMENT-EXIT x :0.45)) (door-nn e0 x)))
 (B (name education)(=>(^(S#CONFINEMENT x :0.45)(SS#EXIT x :0.45)) (education-nn e0 x)))
 (B (name ladder)(=>(^(S#CONFINEMENT x :0.45)(SS#EXIT x :0.45)) (ladder-nn e0 x)))
 (B (name rope)(=>(^(S#CONFINEMENT x :0.45)(SS#EXIT x :0.45)) (rope-nn e0 x)))
@@ -515,7 +515,7 @@
 (B (name yank-out-of) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(yank-vb e0 x y u2)(of-in e2 e1 z))))
 (B (name dig-out-of) (=>(^(S#ABYSSan  z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(dig-vb e0 x y u2)(of-in e2 e1 z))))
 (B (name emerge-from) (=>(^(S#ABYSS z :0.3)(SS#ABYSS-EXIT e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(emerge-vb e0 x u1 u2)(from-in e2 e1 z))))
-(B (name help-out-of) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(help-vb e0 x y u2)(of-in e2 e1 z))))
+(B (name help-out-of) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(help-vb e0 x y u2)(FIX THIS)(of-in e2 e1 z))))
 
 (B (name abyssmap)(=>(I#ABYSS x :0.9)(S#ABYSS x)))
 (B (name abyssmap)(=>(I#ABYSS-TYPE x :0.9)(S#ABYSS-TYPE x)))
