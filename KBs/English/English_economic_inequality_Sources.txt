@@ -117,12 +117,12 @@
 (B (name bleed) (=>(^(S#DISEASE e0 :0.3)(SS#SYMPTOMS e0 :0.3)(R#SICK y e0 :0.3))(bleed-vb e0 y u1 u2)))
 
 ; OF - SYMPTOM
-(B (name of-symptom) (=>(S#DISEASE y :0.9)(^(SS#SYMPTOMS x)(of-in e1 x y))))
+;(B (name of-symptom) (=>(S#DISEASE y :0.9)(^(SS#SYMPTOMS x)(of-in e1 x y))))
 
 (B (name dismap)(=>(I#DISEASE x :0.9)(S#DISEASE x)))
 (B (name dis-typemap)(=>(I#DISEASE-TYPE x :0.9)(S#DISEASE-TYPE x)))
 (B (name curemap)(=>(I#CURE x :0.9)(SS#CURE x)))
-(B (name treatmentmap)(=>(I#CURE x :0.9)(SS#TREATMENT x)))
+(B (name treatmentmap)(=>(I#TREATMENT x :0.9)(SS#TREATMENT x)))
 
 ; CRIME
 
