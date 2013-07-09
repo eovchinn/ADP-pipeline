@@ -163,10 +163,10 @@
 
 ;HUMAN-BODY
 ;DEATH
-(B (name death) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#CAUSING-THING-NF x :0.45)) (I#DEATH x)))
+(B (name death) (=>(^(M#DECREASE-SIZE e0 :0.45)(M#DECREASING-THING x :0.45)) (I#DEATH x)))
 
 ;LIVING
-(B (name living) (=>(^(M#CAUSE-ABLE-TO-FUNCTION e0 :0.45)(M#CAUSING-THING-AF x :0.45)) (I#LIVING x)))
+;(B (name living) (=>(^(M#CAUSE-ABLE-TO-FUNCTION e0 :0.45)(M#CAUSING-THING-AF x :0.45)) (I#LIVING x)))
 
 ;HEALTH
-(B (name health) (=>(^(M#CAUSE-IMPROVE-FUNCTIONALITY e0 :0.45)(M#CAUSING-THING-IF x :0.45)) (I#HEALTH x)))
+;(B (name health) (=>(^(M#CAUSE-IMPROVE-FUNCTIONALITY e0 :0.45)(M#CAUSING-THING-IF x :0.45)) (I#HEALTH x)))

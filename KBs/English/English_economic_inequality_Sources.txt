@@ -685,14 +685,14 @@
 
 ;HUMAN-BODY
 ;DEATH
-(B (name dying)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#DEATH x :0.3)(R#DEATH-PATIENT x e0 :0.3)) (dying-vb e0 x y u)))
+(B (name dying)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (die-vb e0 x y u)))
 
 ;LIVING
 (B (name living)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#LIVING x :0.3)(R#LIVING-PATIENT x e0 :0.3)) (living-vb e0 x y u)))
 (B (name thriving)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#LIVING x :0.3)(R#LIVING-PATIENT x e0 :0.3)) (thriving-vb e0 x y u)))
 
 ;HEALTH
-(B (name reviving)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HEALTH x :0.3)(R#HEALTH-PATIENT x e0 :0.3)) (reviving-vb e0 x y u)))
+(B (name reviving)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HEALTH x :0.3)(R#DEATH-PATIENT x e0 :0.3)) (reviving-vb e0 x y u)))
 
 (B (name human-bodymap)(=>(I#HUMAN-BODY x :0.9)(S#HUMAN-BODY x)))
 (B (name deathmap)(=>(I#DEATH x :0.9)(SS#DEATH x)))
