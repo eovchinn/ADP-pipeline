@@ -181,10 +181,10 @@ def replace_args(prop_sent,sent_dict):
             prop_dict[propID]=[propID,lemma.lower(),tag,predicate,head]
     return prop_dict
 
-# def realHead(sent_dict,head):
-#     if sent_dict.has_key(head):
-#         return True
-#     return False
+def realHead(sent_dict,head):
+    if sent_dict.has_key(head):
+        return True
+    return False
 
 def handle_negation(head,wordID,sent_dict):
     sent_dict[wordID][7] = "not"

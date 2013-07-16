@@ -1,8 +1,8 @@
 ; DISEASE 
 
-(B (name disease)(=> (^(M#CAUSE-NOT-FUNCTION e0 :0.3)(M#CAUSING-THING_F x e0 :0.3)(M#FUNCTION-AGENT y e0 :0.3)) (^ (I#DISEASE x)(R#SICK y x))))
+(B (name disease)(=> (^(M#CAUSE-NOT-FUNCTION e0 :0.3)(M#CAUSING-THING-F x e0 :0.3)(M#FUNCTION-AGENT y e0 :0.3)) (^ (I#DISEASE x)(R#SICK y x))))
 
-(B (name disease2) (=> (^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#CAUSING-THING_F x e0 :0.45)) (I#DISEASE x)))
+(B (name disease2) (=> (^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#CAUSING-THING-F x e0 :0.45)) (I#DISEASE x)))
 
 (B (name cure)(=> (^(M#CAUSE-NOT-EXIST e1 :0.3)(M#CAUSING-THING_E y e1 :0.3)(M#EXISTING-THING x e1 :0.3)) (^ (I#CURE e0)(R#CURE-AGENT y e0)(R#SICK x d)(S#DISEASE d))))
 
@@ -29,9 +29,9 @@
 (B (name fight4)(=> (^(M#CAUSE-NOT-EXIST e1 :0.48)(M#CAUSING-THING_E x e1 :0.48)) (I#FIGHT x)))
 
 
-(B (name enemy)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING_F x e1 :0.3)(M#FUNCTION-AGENT z e1 :0.3)) (^ (I#ENEMY x e0)(R#WAR-AGENT z e0))))
+(B (name enemy)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING-F x e1 :0.3)(M#FUNCTION-AGENT z e1 :0.3)) (^ (I#ENEMY x e0)(R#WAR-AGENT z e0))))
 
-(B (name enemy2)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#CAUSING-THING_F x e1 :0.45)) (I#ENEMY x e0)))
+(B (name enemy2)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#CAUSING-THING-F x e1 :0.45)) (I#ENEMY x e0)))
 
 
 ; BODY OF WATER 
@@ -92,30 +92,30 @@
 
 ; CONFINEMENT 
 
-(B (name confinement) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING_F x e1 :0.3)(M#FUNCTION-AGENT y e1 :0.3)) (^(I#CONFINEMENT e0)(R#CONFINEMENT-AGENT x e0)(R#CONFINEMENT-PATIENT y e0))))
+(B (name confinement) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING-F x e1 :0.3)(M#FUNCTION-AGENT y e1 :0.3)) (^(I#CONFINEMENT e0)(R#CONFINEMENT-AGENT x e0)(R#CONFINEMENT-PATIENT y e0))))
 
-(B (name confinement2) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#CAUSING-THING_F x e1 :0.45)) (^(I#CONFINEMENT e0)(R#CONFINEMENT-AGENT x e0))))
+(B (name confinement2) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#CAUSING-THING-F x e1 :0.45)) (^(I#CONFINEMENT e0)(R#CONFINEMENT-AGENT x e0))))
 
-(B (name confinement3) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.31)(M#CAUSING-THING_F e0 e1 :0.31)(M#FUNCTION-AGENT y e1 :0.31)) (^(I#CONFINEMENT e0)(R#CONFINEMENT-PATIENT y e0))))
+(B (name confinement3) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.31)(M#CAUSING-THING-F e0 e1 :0.31)(M#FUNCTION-AGENT y e1 :0.31)) (^(I#CONFINEMENT e0)(R#CONFINEMENT-PATIENT y e0))))
 
-(B (name confinement4) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.47)(M#CAUSING-THING_F e0 e1 :0.47)) (I#CONFINEMENT e0)))
+(B (name confinement4) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.47)(M#CAUSING-THING-F e0 e1 :0.47)) (I#CONFINEMENT e0)))
 
 ; EXIT
-(B (name exit) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.47)(M#CAUSING-THING_RF e0 :0.47)) (I#EXIT e0)))
+(B (name exit) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.47)(M#CAUSING-THING-RF e0 :0.47)) (I#EXIT e0)))
 
 ; ENABLING 
 
-(B (name enabling) (=> (^(M#CAUSE-FUNCTION e1 :0.3)(M#CAUSING-THING_F x e1 :0.3)(M#FUNCTION y :0.3)) (^(I#ENABLING e0)(R#ENABLING-AGENT x e0)(R#ENABLED y e0))))
+(B (name enabling) (=> (^(M#CAUSE-FUNCTION e1 :0.3)(M#CAUSING-THING-F x e1 :0.3)(M#FUNCTION y :0.3)) (^(I#ENABLING e0)(R#ENABLING-AGENT x e0)(R#ENABLED y e0))))
 
-(B (name enabling2) (=> (^(M#CAUSE-FUNCTION e1 :0.45)(M#CAUSING-THING_F x e1 :0.45)) (^(I#ENABLING e0)(R#ENABLING-AGENT x e0))))
+(B (name enabling2) (=> (^(M#CAUSE-FUNCTION e1 :0.45)(M#CAUSING-THING-F x e1 :0.45)) (^(I#ENABLING e0)(R#ENABLING-AGENT x e0))))
 
-(B (name enabling3) (=> (^(M#CAUSE-FUNCTION e1 :0.31)(M#CAUSING-THING_F e0 e1 :0.31)(M#FUNCTION y :0.31)) (^(I#ENABLING e0)(R#ENABLED y e0))))
+(B (name enabling3) (=> (^(M#CAUSE-FUNCTION e1 :0.31)(M#CAUSING-THING-F e0 e1 :0.31)(M#FUNCTION y :0.31)) (^(I#ENABLING e0)(R#ENABLED y e0))))
 
-(B (name enabling4) (=> (^(M#CAUSE-FUNCTION e1 :0.47)(M#CAUSING-THING_F e0 e1 :0.47)) (I#ENABLING e0)))
+(B (name enabling4) (=> (^(M#CAUSE-FUNCTION e1 :0.47)(M#CAUSING-THING-F e0 e1 :0.47)) (I#ENABLING e0)))
 
 ; MATERIAL
 
-(B (name cut) (=> (^(M#CAUSE-REDUCE e0 :0.3)(M#CAUSING-THING_R y e0 :0.3)(M#REDUCED x e0 :0.3)) (^(I#CUT e0 x)(I#MATERIAL x)(R#CUT-AGENT y e0))))
+(B (name cut) (=> (^(M#CAUSE-REDUCE e0 :0.3)(M#CAUSING-THING-R y e0 :0.3)(M#REDUCED x e0 :0.3)) (^(I#CUT e0 x)(I#MATERIAL x)(R#CUT-AGENT y e0))))
 (B (name cut2) (=> (^(M#CAUSE-REDUCE e0 :0.46)(M#REDUCED x e0 :0.46)) (^(I#CUT e0 x)(I#MATERIAL x))))
 
 ; ORGANISM
@@ -124,18 +124,18 @@
 
 ; PHYSICAL HARM
 
-(B (name physical-harm) (=>(^(M#CAUSE-HARM e0 :0.3)(M#CAUSING-THING_H x e0 :0.3)(M#HARM-VICTIM y e0 :0.3)) (^(I#PHYSICAL-HARM e0)(R#HARM-AGENT x e0)(R#HARM-VICTIM y e0))))
+(B (name physical-harm) (=>(^(M#CAUSE-HARM e0 :0.3)(M#CAUSING-THING-H x e0 :0.3)(M#HARM-VICTIM y e0 :0.3)) (^(I#PHYSICAL-HARM e0)(R#HARM-AGENT x e0)(R#HARM-VICTIM y e0))))
 
-(B (name physical-harm2) (=>(^(M#CAUSE-HARM e0 :0.46)(M#CAUSING-THING_H x e0 :0.46)) (^(I#PHYSICAL-HARM e0)(R#HARM-AGENT x e0))))
+(B (name physical-harm2) (=>(^(M#CAUSE-HARM e0 :0.46)(M#CAUSING-THING-H x e0 :0.46)) (^(I#PHYSICAL-HARM e0)(R#HARM-AGENT x e0))))
 
 (B (name physical-harm3) (=>(^(M#CAUSE-HARM e0 :0.46)(M#HARM-VICTIM y e0 :0.46)) (^(I#PHYSICAL-HARM e0)(R#HARM-VICTIM y e0))))
 
 (B (name physical-harm4) (=>(M#CAUSE-HARM e0 :0.95) (I#PHYSICAL-HARM e0)))
 
-(B (name physical-protection) (=>(^(M#CAUSE-REDUCE-HARM e0 :0.3)(M#CAUSING-THING_RH x :0.3)) (I#PHYSICAL-PROTECTION e0)))
+(B (name physical-protection) (=>(^(M#CAUSE-REDUCE-HARM e0 :0.3)(M#CAUSING-THING-RH x :0.3)) (I#PHYSICAL-PROTECTION e0)))
 
 ; ABYSS
-(B (name abyss) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.33)(M#CAUSING-THING-F x :0.33)(M#CAUSE-CONFINEMENT e0 :0.33)) (I#ABYSS x)))
+(B (name abyss) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.33)(M#CAUSING-THING-F x e0 :0.33)(M#CAUSE-CONFINEMENT e0 :0.33)) (I#ABYSS x)))
 
 ; MAZE
 (B (name maze) (=>(^(M#CAUSE-CONFUSION e0 :0.23)(M#CONFUSING-THING x :0.23)(M#CAUSE-CONFINEMENT e0 :0.23)(M#CAUSE-NOT-FUNCTION e0 :0.23)) (I#MAZE x)))
@@ -156,7 +156,7 @@
 
 ; BURDEN
 ; WEIGHT
-(B (name weight) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#CAUSING-THING-F x :0.45)) (I#WEIGHT x)))
+(B (name weight) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#CAUSING-THING-F x e0 :0.45)) (I#WEIGHT x)))
 
 ; RELIEF
 (B(name relief) (=>(^(M#CAUSE-RESUME-FUNCTION e0 :0.45)(M#CAUSING-R-THING x :0.45)) (I#RELIEF)))

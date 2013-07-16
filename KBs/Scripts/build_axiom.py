@@ -37,7 +37,7 @@ class Template(object):
     def build_role(self,role):
         if role:
             #if self.pos == "noun":
-            arg = "y e0"
+            arg = "x e0"
             return "(R#"+role.upper()+" "+arg+" :"+self.weight+")"
         else:
             return ""
@@ -148,11 +148,6 @@ def main():
     axRole4 = str(pa.role4) if pa.role4 else None 
     weight = determine_weight(axDomain,axSubdomain,axRole,axRole2,axRole3,axRole4)
     template = Template(axPOS,axName,axDomain,axSubdomain,axRole,axRole2,axRole3,axRole4,weight)
-    #print template.build_name()
-    #print template.build_domain()
-    #print template.build_subdomain()    
-    #print template.build_left_side()
-    #print template.build_right_side()
     print template.build_full_axiom()
     
 if __name__ == "__main__":
