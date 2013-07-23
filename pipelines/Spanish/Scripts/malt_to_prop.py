@@ -1,7 +1,8 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
-from re import split as re_split
-import re,sys,optparse
+import re
+import sys
+import optparse
 import logging
 
 def to_sents(infile):
@@ -111,8 +112,6 @@ def replace_args(prop_sent,sent_dict):
         predicate = prop[6]
         tag = prop[7]
         propID = prop[8]
-        #try:
-        #print token,predicate
         if lemma in thingProList and realHead(sent_dict,head):
             sent_dict = det_to_pr(head,wordID,sent_dict)       
         if ((rel == "suj") or (rel == "spec")) and (tag != "NULL") and (realHead(sent_dict,head)):
@@ -141,8 +140,6 @@ def replace_args(prop_sent,sent_dict):
             sent_dict = insert_ci(head,wordID,sent_dict)            
         if rel == "atr" and realHead(sent_dict,head):
             sent_dict = inherit_atr(head,wordID,sent_dict)
-        # if rel == "cag" and pos == "s":
-        #     sent_dict = insert_cag(head,wordID,sent_dict)
         if rel == "morfema.pronominal" and pos == "p" and realHead(sent_dict,head):
             sent_dict = insert_m_p(head,wordID,sent_dict)
         if tag == "in" and realHead(sent_dict,head):
@@ -203,7 +200,6 @@ def handle_wh(head,wordID,sent_dict):
         headHead = sent_dict[head][3]
         if headHead == 0:
             sent_dict[head][6][2] = sent_dict[wordID][6][0]
-            #sent_dict = add_new_entry(sent_dict,"loc",sent_dict[wordID][6][1],sent_dict[head][6][0],sent_dict[wordID][8])          
             for key, values in sent_dict.items():
             #look for the direct object with the same head as the current word
                 if (values[4] == "cd") and (values[3] == sent_dict[wordID][3]):
@@ -264,13 +260,12 @@ def determine_wh_helper(lemma):
         return "thing"
 
 def insert_suj(head,wordID,sent_dict):
-    #print sent_dict[wordID][2],sent_dict[wordID][7]
     """Insert the subject of a verb as its first argument"""
     if sent_dict[wordID][4] == "spec" and sent_dict[wordID][1] not in thingProList:
         return sent_dict
     if sent_dict[wordID][4] == "spec" and sent_dict[head][7] != "vb":
         return sent_dict
-    if sent_dict[head][7] == "vb" and sent_dict[wordID][2] in nominalList:#== "nn":
+    if sent_dict[head][7] == "vb" and sent_dict[wordID][2] in nominalList:
         sent_dict[head][6][1] = sent_dict[wordID][6][1]
     elif sent_dict[head][7] == "vb" and sent_dict[wordID][7] != "nn" and sent_dict[wordID][6][0] != "R":
         sent_dict[head][6][1] = sent_dict[wordID][6][0]
@@ -351,7 +346,7 @@ def replace_old_args(sent_dict,headE,newKey):
 def add_new_entry(sent_dict,tag,arg1,arg2,currID):
     """Add a new entry to the sentence dictionary for items that aren't explicit in the surface form"""
     last_key = int(re.split("[a-z]",str(sorted(sent_dict.items())[-1][0]))[0])
-    last_e = int(find_last_e(sent_dict))#int(sorted(sent_dict.items())[-1][1][6][0].split("e")[1])
+    last_e = int(find_last_e(sent_dict))
     newE = "e"+str(last_e+1)
     if tag == "person":
         args = [newE,arg1]
@@ -427,12 +422,11 @@ def insert_subCon_head(head,wordID,sent_dict):
             sent_dict[wordID][6][2] = sent_dict[head][6][1]
             sent_dict[head][6][3] = "R"
         else:
-            #print sent_dict[wordID][0],sent_dict[wordID][6], sent_dict[head][6]
             sent_dict[wordID][6][2] = sent_dict[head][6][0]
         headHead = sent_dict[head][3] 
         if realHead(sent_dict,headHead) and sent_dict[headHead][7] == "vb":
             sent_dict[wordID][6][1] = sent_dict[headHead][6][0]
-        if (sent_dict[head][7] == "vb") and sent_dict[head][4] in rootList:# (sent_dict[head][4] == "ROOT" or sent_dict[head][4] == "sentence"):
+        if (sent_dict[head][7] == "vb") and sent_dict[head][4] in rootList:
             sent_dict[wordID][6][1] = sent_dict[head][6][0]
     return sent_dict
 
@@ -450,13 +444,12 @@ def insert_sn(head,wordID,sent_dict):
     elif (sent_dict[head][7] == "nn" and sent_dict[wordID][7] == "nn") and (int(sent_dict[head][8]) == int(sent_dict[wordID][8])+1):
         if int(sent_dict[head][6][1].split("x")[1]) == int(sent_dict[wordID][6][1].split("x")[1])-1:
             sent_dict[wordID][6][1] = sent_dict[head][6][1]
-            #sent_dict,newKey = add_new_entry(sent_dict,"equal",sent_dict[head][6][1],sent_dict[wordID][6][1],sent_dict[wordID][8])
         for key, values in sent_dict.items():
             #look for a conjunction with the same head as the current word
             if (values[4] == "conj") and (values[3] == sent_dict[wordID][3]):
                 conjHead = values[3]
                 headHead = sent_dict[conjHead][3]
-                if headHead != 0:
+                if realHead(sent_dict,headHead):# != 0:
                     sent_dict = add_new_verb(sent_dict,sent_dict[headHead][1],sent_dict[headHead][7],sent_dict[headHead][6],sent_dict[wordID][6][1],sent_dict[headHead][8],sent_dict[head][8],wordID,head)
                  #if the conjuction is "o" add an "or" proposition
                 if (values[1] == "o"):

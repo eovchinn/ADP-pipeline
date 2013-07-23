@@ -63,7 +63,7 @@
 
 ; BE RICH
 (B (name prosper) (=>(^(TS#WEALTH e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#RICH x e0 :0.3)) (prosper-vb e0 x u1 u2)))
-(B (name thrive) (=>(^(TS#WEALTH e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#RICH x e0 :0.3)) (thrive-vb e0 x u1 u2)))
+; (B (name thrive) (=>(^(TS#WEALTH e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#RICH x e0 :0.3)) (thrive-vb e0 x u1 u2)))
 
 ; OF - WEALTH
 (B (name of-rich) (=>(R#RICH  y x :0.9)(^(TS#WEALTH x)(of-in e1 x y))))
