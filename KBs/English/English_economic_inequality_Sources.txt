@@ -289,6 +289,10 @@
 (B (name dungeon) (=>(^(S#CONFINEMENT x :0.45)(SS#CONFINED-SPACE x :0.45)) (dungeon-nn e0 x)))
 (B (name penitentiary) (=>(^(S#CONFINEMENT x :0.45)(SS#CONFINED-SPACE x :0.45)) (penitentiary-nn e0 x)))
 (B (name dead-end) (=>(^(S#CONFINEMENT x :0.45)(SS#CONFINED-SPACE x :0.45)) (dead-end-nn e0 x)))
+(B (name alcatraz)(=>(^(S#CONFINEMENT x :0.45)(SS#CONFINED-SPACE x :0.45)) (alcatraz-nn e0 x)))
+(B (name cell)(=>(^(S#CONFINEMENT x :0.45)(SS#CONFINED-SPACE x :0.45)) (cell-nn e0 x)))
+(B (name closet)(=>(^(S#CONFINEMENT x :0.45)(SS#CONFINED-SPACE x :0.45)) (closet-nn e0 x)))
+;add prison cell, jail cell
 
 (B (name imprison) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED-SPACE e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(imprison-vb e0 x y u)))
 (B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED-SPACE e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(confine-vb e0 x y u)))
@@ -727,7 +731,7 @@
 ;QUANTITY
 
 ;DEVELOP RESOURCES
-(B (name invest)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x :0.3)(R#DEVELOPER x e0 :0.3)) (invest-vb e0 x y u)))
+(B (name invest)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP-RESOURCES x :0.3)(R#DEVELOPER x e0 :0.3)) (invest-vb e0 x y u)))
 
 ;DISTRIBUTION
 (B (name transfer)(=>(^(S#RESOURCE e0 :0.45)(SS#DISTRIBUTION x :0.45)) (transfer-vb e0 x y u)))
@@ -739,13 +743,34 @@
 ;HUMAN-BODY
 ;DEATH
 (B (name dying)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (die-vb e0 x y u)))
+(B (name breathe-last-breath)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(breathe-vb e0 x y u)(last-adj e1 y)(breath-nn e2 y))))
+(B (name buy-the-farm)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(buy-vb e0 x y u)(farm-nn e1 y))))
+(B (name croak)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (croak-vb e0 x y u)))
+(B (name decay)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (decay-vb e0 x y u)))
+(B (name expire)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (expire-vb e0 x y u)))
+(B (name pass-away)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(pass-vb e0 x y u)(away-rb e1 e0))))
+(B (name perish)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (perish-vb e0 x y u)))
+(B (name rot)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (rot-vb e0 x y u)))
+(B (name rot-away)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(rot-vb e0 x y u)(away-rb e1 e0))))
+(B (name take-last-breath)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(take-vb e0 x y u)(last-adj e1 y)(breath-nn e2 y))))
+(B (name wither)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (wither-vb e0 x y u)))
+
+(B (name dead)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (dead-adj e0 x)))
+(B (name deceased)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (deceased-adj e0 x)))
+
+(B (name death)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH x :0.3)(R#DEATH-PATIENT x e0 :0.3)) (death-nn e0 x)))
+(B (name deceasedn)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (deceased-nn e0 x)))
+(B (name fatality)(=>(^(S#HUMAN-BODY x :0.3)(SS#DEATH x :0.3)(R#DEATH-PATIENT x e0 :0.3)) (fatality-nn e0 x)))
 
 ;LIVING
-(B (name living)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#LIVING x :0.3)(R#LIVING-PATIENT x e0 :0.3)) (living-vb e0 x y u)))
-(B (name thriving)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#LIVING x :0.3)(R#LIVING-PATIENT x e0 :0.3)) (thriving-vb e0 x y u)))
+(B (name live)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#LIVING x :0.3)(R#LIVING-PATIENT x e0 :0.3)) (live-vb e0 x y u)))
+(B (name thrive)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#LIVING x :0.3)(R#LIVING-PATIENT x e0 :0.3)) (thrive-vb e0 x y u)))
+(B (name flourish)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#LIVING x :0.3)(R#LIVING-PATIENT x e0 :0.3)) (flourish-vb e0 x y u)))
+
+(B (name alive)(=>(^(S#HUMAN-BODY x :0.3)(SS#LIVING e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (alive-adj e0 y)))
 
 ;HEALTH
-(B (name reviving)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HEALTH x :0.3)(R#DEATH-PATIENT x e0 :0.3)) (reviving-vb e0 x y u)))
+(B (name reviving)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HEALTH x :0.3)(R#DEATH-PATIENT x e0 :0.3)) (revive-vb e0 x y u)))
 
 (B (name human-bodymap)(=>(I#HUMAN-BODY x :0.9)(S#HUMAN-BODY x)))
 (B (name deathmap)(=>(I#DEATH x :0.9)(SS#DEATH x)))
@@ -754,14 +779,24 @@
 
 ;VICTIM
 ;SUFFERER
-(B (name threatened)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER e0 :0.3)(R#VICTIM-PATIENT x e0 :0.3)) (threatened-adj e0 x)))
-(B (name victim)(=>(^(S#VICTIM x :0.3)(SS#SUFFERER x :0.3)(R#VICTIM-PATIENT x e0 :0.3)) (victim-nn e0 x)))
+(B (name threatened)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (threatened-adj e0 x)))
+(B (name victim)(=>(^(S#VICTIM x :0.3)(SS#SUFFERER x:0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (victim-nn e0 x)))
+(B (name prey)(=>(^(S#VICTIM x :0.3)(SS#SUFFERER x :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (prey-nn e0 x)))
+; (B (name target)(=>(^(S#VICTIM x :0.3)(SS#SUFFERER x :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (target-nn e0 x)))
+(B (name sufferer)(=>(^(S#VICTIM x :0.3)(SS#SUFFERER x:0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (sufferer-nn e0 x)))
 
 ;VICTIMIZER
-(B (name vampire)(=>(^(S#VICTIM x :0.3)(SS#VICTIMIZER x :0.3)(R#VICTIMIZE-AGENT y e0 :0.3)) (vampire-nn e0 x)))
+(B (name vampire)(=>(^(S#VICTIM z :0.3)(SS#VICTIMIZER x :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (vampire-nn e0 x)))
+(B (name victimizer)(=>(^(S#VICTIM z :0.3)(SS#VICTIMIZER x :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (victimizer-nn e0 x)))
+(B (name dracula)(=>(^(S#VICTIM z :0.3)(SS#VICTIMIZER x :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (dracula-nn e0 x)))
+
+(B (name victimize)(=>(^(S#VICTIM x :0.3)(SS#VICTIMIZER e0 :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (victimize-vb e0 x y u)))
 
 ;CHAMPION
 (B (name champion)(=>(^(S#VICTIM x :0.3)(SS#CHAMPION x :0.3)(R#CHAMPION y e0 :0.3)) (champion-nn e0 x)))
+(B (name knight)(=>(^(S#VICTIM x :0.3)(SS#CHAMPION x :0.3)(R#CHAMPION y e0 :0.3)) (knight-nn e0 x)))
+(B (name superman)(=>(^(S#VICTIM x :0.3)(SS#CHAMPION x :0.3)(R#CHAMPION y e0 :0.3)) (superman-nn e0 x)))
+(B (name superhero)(=>(^(S#VICTIM x :0.3)(SS#CHAMPION x :0.3)(R#CHAMPION y e0 :0.3)) (superhero-nn e0 x)))
 
 (B (name victimmap)(=>(I#VICTIM x :0.9)(S#VICTIM x)))
 (B (name sufferermap)(=>(I#SUFFERER x :0.9)(S#SUFFERER x)))

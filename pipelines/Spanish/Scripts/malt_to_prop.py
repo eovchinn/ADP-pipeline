@@ -429,8 +429,8 @@ def insert_subCon_head(head,wordID,sent_dict):
         else:
             #print sent_dict[wordID][0],sent_dict[wordID][6], sent_dict[head][6]
             sent_dict[wordID][6][2] = sent_dict[head][6][0]
-        headHead = sent_dict[head][3]
-        if sent_dict[headHead][7] == "vb":
+        headHead = sent_dict[head][3] 
+        if realHead(sent_dict,headHead) and sent_dict[headHead][7] == "vb":
             sent_dict[wordID][6][1] = sent_dict[headHead][6][0]
         if (sent_dict[head][7] == "vb") and sent_dict[head][4] in rootList:# (sent_dict[head][4] == "ROOT" or sent_dict[head][4] == "sentence"):
             sent_dict[wordID][6][1] = sent_dict[head][6][0]

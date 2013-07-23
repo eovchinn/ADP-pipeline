@@ -101,7 +101,7 @@
 (B (name confinement4) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.47)(M#CAUSING-THING-F e0 e1 :0.47)) (I#CONFINEMENT e0)))
 
 ; EXIT
-(B (name exit) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.47)(M#CAUSING-THING-RF e0 :0.47)) (I#EXIT e0)))
+(B (name exit) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.9)) (I#EXIT e0)))
 
 ; ENABLING 
 
