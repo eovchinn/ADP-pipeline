@@ -75,10 +75,9 @@ def findWords(ARG,WordProps,Equalities,isMapping):
 				elif len(args)>1 and arg ==args[1] :
 					if propName.endswith('-nn'): output_str += ',' + propName[:-3]
 					elif propName=='person': output_str += ',person'
-				#TODO: enable when Boxer starts working correctly
-				#elif propName=='subset-of' and arg==args[2] :
-				#	output_str += ',' + findWords(args[1],WordProps,Equalities,isMapping)
-	
+				elif propName=='subset-of' and arg==args[2] :
+					output_str += ',' + findWords(args[1],WordProps,Equalities,isMapping)
+					print arg + ' ' + args[1] + ' ' + findWords(args[1],WordProps,Equalities,isMapping)
 	if len(output_str)>0: 
 		return output_str[1:]
 

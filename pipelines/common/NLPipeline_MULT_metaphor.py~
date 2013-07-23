@@ -3,26 +3,12 @@
 
 import os
 import re
-import json
 import time
 import thread
 import socket
-import logging
-import extract_CMs_from_hypotheses
-
-from logging.handlers import TimedRotatingFileHandler
-from extract_CMs_from_hypotheses import *
 
 from subprocess import Popen, PIPE
 
-'''
-logHandler = TimedRotatingFileHandler("/lfs1/vzaytsev/misc/log/access.log", when="midnight")
-logFormatter = logging.Formatter("%(asctime)s %(message)s")
-logHandler.setFormatter(logFormatter)
-logger = logging.getLogger("my_logger")
-logger.addHandler(logHandler)
-logger.setLevel(logging.INFO)
-'''
 
 METAPHOR_DIR = os.environ["METAPHOR_DIR"]
 HENRY_DIR = os.environ["HENRY_DIR"]
@@ -38,26 +24,25 @@ PARSER2HENRY = "%s/pipelines/common/IntParser2Henry.py" % METAPHOR_DIR
 
 # Compiled knowledge bases
 EN_KBPATH = "%s/KBs/English/English_compiled_KB.da" % METAPHOR_DIR
-ES_KBPATH = "%s/KBs/Spanish/Spanish_compiled_KB_2.da" % METAPHOR_DIR
+ES_KBPATH = "%s/KBs/Spanish/Spanish_compiled_KB.da" % METAPHOR_DIR
 RU_KBPATH = "%s/KBs/Russian/Russian_compiled_KB.da" % METAPHOR_DIR
 FA_KBPATH = "%s/KBs/Farsi/Farsi_compiled_KB.da" % METAPHOR_DIR
 
 # switches
 kbcompiled = True
 
-DESCRIPTION = "Abductive engine output; " \
-              "targetFrame: Is currently equal to targetConceptSubDomain;" \
-              "targetConceptDomain: Target concept domain defined by abduction; " \
-              "targetConceptSubDomain: Target concept subdomain defined by abduction ; " \
-              "sourceFrame: Source frame proposed by abduction ; " \
-              "sourceConceptSubDomain: Source subdomain proposed by abduction ; " \
-              "targetFrameElementSentence: List of words denoting the target found by abduction; " \
-              "sourceFrameElementSentence: List of words denoting the source found by abduction; " \
-              "annotationMappings: Target-Source mapping structures. " \
-              "isiAbductiveExplanation: Target-Source mapping (metaphor interpretation) as logical form found by abduction."
+DESCRIPTION = "Abductive engine output; abductive_hypothesis: metaphor " \
+              "interpretation; abductive_unification: unifications " \
+              "happened or not; abductive_explanation: axioms applied or not"
 
 
-def extract_hypotheses(inputString):
+# unique_id used for proofgraph name (annotation_id may not be enough, as
+# different docs may have same annotation_ids)
+# withPDFContent=true; generate graphs and include PDF content
+# as base-64 in output
+
+def extract_hypotheses(inputString, unique_id, with_pdf_content):
+    print unique_id
     output_struct = []
     hypothesis_found = False
     p = re.compile('<result-inference target="(.+)"')
@@ -65,6 +50,9 @@ def extract_hypotheses(inputString):
     hypothesis = ""
     unification = False
     explanation = False
+
+    # for generating proofgraph URIs
+    webservice = get_webservice_location()
 
     for line in inputString.splitlines():
 
@@ -91,20 +79,38 @@ def extract_hypotheses(inputString):
 
         elif line.startswith("</result-inference>"):
 
-            output_struct_item = extract_CM_mapping(target, hypothesis, DESCRIPTION)
-            #print json.dumps(hypothesis, ensure_ascii=False)
-            #print json.dumps(output_struct_item, ensure_ascii=False, indent=4)
+            output_struct_item["id"] = target
+            output_struct_item["isiAbductiveHypothesis"] = hypothesis
+            output_struct_item["isiAbductiveUnification"] = unification
+            output_struct_item["isiAbductiveExplanation"] = explanation
+            output_struct_item["isiAbductiveProofgraph"] = \
+                "http://%s/proofgraphs/%s_%s.pdf" % \
+                (webservice, unique_id, target, )
 
+            if with_pdf_content:
+                base_64_str = get_base64("%s/proofgraphs/%s_%s.pdf" %
+                                         (TMP_DIR, unique_id, target, ))
+                output_struct_item["isiAbductiveProofgraphStr"] = base_64_str
+
+            output_struct_item["isiDescription"] = DESCRIPTION
             output_struct.append(output_struct_item)
             target = ""
+            unification = False
+            explanation = False
 
-    #print json.dumps(output_struct, ensure_ascii=False)
+    # return json.dumps(output_struct, ensure_ascii=False)
     return output_struct
 
 
 def generate_text_input(input_metaphors, language):
+    
     output_str = ""
+
     for key in input_metaphors.keys():
+        #if language == "EN" or language == "RU":
+        #    output_str += "<META>" + key + "\n\n " + input_metaphors[key] + "\n\n"
+        #else:
+        #    output_str += ".TEXTID(" + key + ").\n\n" + input_metaphors[key] + "\n\n"
         output_str += "<META>" + key + "\n\n " + input_metaphors[key] + "\n\n"
 
     return output_str
@@ -114,6 +120,8 @@ def generate_text_input(input_metaphors, language):
 # as base-64 in output
 
 def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
+
+
     start_time = time.time()
     input_str = generate_text_input(input_metaphors, language)
 
@@ -139,8 +147,9 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
         parser_proc = tokenizer + " | " + candcParser + " | " + boxer + " | " + b2h
         KBPATH = EN_KBPATH
 
+
     parser_pipeline = Popen(parser_proc, shell=True, stdin=PIPE, stdout=PIPE,
-                                stderr=None, close_fds=True)
+                            stderr=None, close_fds=True)
     parser_output = parser_pipeline.communicate(input=input_str)[0]
 
     # Parser processing time in seconds
@@ -170,60 +179,45 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
                      time_unit_henry
 
     henry_pipeline = Popen(henry_proc,
-                               shell=True,
-                               stdin=PIPE,
-                               stdout=PIPE,
-                               stderr=None,
-                               close_fds=True)
+                           shell=True,
+                           stdin=PIPE,
+                           stdout=PIPE,
+                           stderr=None,
+                           close_fds=True)
 
     henry_output = henry_pipeline.communicate(input=parser_output)[0]
-    hypotheses = extract_hypotheses(henry_output)
 
-    processed, failed, empty = 0, 0, 0
+    # unique id used for proofgraph name
+    unique_id = get_unique_id()
+
+    if with_pdf_content:
+        # generate graphs so we can return them with output
+        generate_graph(input_metaphors, henry_output, unique_id)
+    else:
+        # start graphical generation in thread; don't wait for it to finish
+        thread.start_new_thread(generate_graph,
+                                (input_metaphors, henry_output, unique_id))
+
+
+    hypotheses = extract_hypotheses(henry_output, unique_id, with_pdf_content)
+
+    # print hypotheses
 
     # merge ADB result and input json document
-    input_annotations = request_body_dict["metaphorAnnotationRecords"]
-    total = len(input_annotations)
-    for annotation in input_annotations:
-        for hypothesis in hypotheses:
+    for hyp in hypotheses:
+        for ann in request_body_dict["metaphorAnnotationRecords"]:
             try:
-                if "sentenceId" in annotation and \
-                int(annotation["sentenceId"]) == int(hypothesis["id"]):
-                    try:
-                        for annot_propery in hypothesis.keys():
-                            if annot_propery != "id" and hypothesis.get(annot_propery):
-                                annotation[annot_propery] = hypothesis[annot_propery]
-                        if "sourceFrame" in annotation and annotation["sourceFrame"]:
-                            processed += 1
-                        else:
-                            empty += 1
-                            try:
-                                fl = open("/lfs1/vzaytsev/misc/fails/empty_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
-                                fl.write("REASON: EMPTY sourceFrame\n")
-                                fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
-                                fl.close()
-                            except:
-                                pass
-                    except Exception:
-                        failed += 1
-                        try:
-                            fl = open("/lfs1/vzaytsev/misc/fails/failed_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
-                            fl.write("REASON: PROCESSING FAILED\n")
-                            fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
-                            fl.close()
-                        except:
-                            pass
+                if int(ann["id"]) == int(hyp["id"]):
+                    for key, value in hyp.items():
+                        ann[key] = value
             except Exception:
-                failed += 1
-    #logger.info("STAT: {'processed':%d,'failed':%d,'empty':%d,'unknown':%d}" % (processed,
-    #                                                                            failed,
-    #                                                                            empty,
-    #                                                                            total - processed))
+                pass
 
     return request_body_dict
 
 
 def get_webservice_location():
+
     # this gives the IP address; you may want to use this during the demo
     # hostname=socket.gethostbyname(hostname)
 
@@ -236,4 +230,45 @@ def get_webservice_location():
     return hostname + ":" + port
 
 
+def get_unique_id():
+    current_time = int(time.time())
+    unique_id = str(current_time)[5:]
+    return unique_id
 
+
+def generate_graph(input_dict, henry_output, unique_id):
+
+    # create proofgraphs directory if it doesn't exist
+    graph_dir = TMP_DIR + "/proofgraphs"
+    
+    if not os.path.exists(graph_dir):
+        os.makedirs(graph_dir)
+
+    for key in input_dict.keys():
+        print "Generating a proofgraph for " + key
+        graph_output = os.path.join(graph_dir, unique_id + "_" + key + ".pdf")
+
+        viz = "python " + HENRY_DIR + "/tools/proofgraph.py --graph " + key + \
+              " | dot -T pdf > " + graph_output
+
+        graphical_processing = Popen(viz, shell=True, stdin=PIPE, stdout=PIPE,
+                                     stderr=None, close_fds=True)
+
+        graphical_processing.communicate(input=henry_output)
+        #print "sleep"
+        #time.sleep(3)
+
+    print "Done generating proof graphs."
+
+
+# returns contents of PDF file in base-64
+def get_base64(pdf_file_path):
+    f = open(pdf_file_path, "rb")
+    binary_str = f.read()
+    f.close()
+    encoded_str = binary_str.encode("base64")
+    return encoded_str
+
+
+# if "__main__" == __name__:
+#     main()
