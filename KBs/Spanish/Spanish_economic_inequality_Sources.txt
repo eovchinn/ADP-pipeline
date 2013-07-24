@@ -4,7 +4,7 @@
 
 ; DISEASE
 (B (name enfermedad) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#TIPO-DE_ENFERMEDAD/DISEASE-TYPE x :0.45)) (enfermedad-nn e0 x)))
-(B (name mal) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#TIPO-DE_ENFERMEDAD/DISEASE-TYPE x :0.45)) (mal-nn e0 x)))
+;(B (name mal) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#TIPO-DE_ENFERMEDAD/DISEASE-TYPE x :0.45)) (mal-nn e0 x)))
 (B (name náusea) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#TIPO-DE_ENFERMEDAD/DISEASE-TYPE x :0.45)) (náusea-nn e0 x)))
 (B (name afeccion) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#TIPO-DE_ENFERMEDAD/DISEASE-TYPE x :0.45)) (afeccion-nn e0 x)))
 (B (name morbo) (=>(^(S#ENFERMEDAD/DISEASE x :0.45)(SS#TIPO-DE_ENFERMEDAD/DISEASE-TYPE x :0.45)) (morbo-nn e0 x)))
@@ -244,8 +244,8 @@
 (B (name línea-de-vida)(=>(^(S#CONFINAMIENTO/CONFINEMENT u :0.45)(SS#CONFINAMIENTO-SALIDA/CONFINEMENT-EXIT x :0.45)) (^(línea-nn e0 x)(de-in e1 x y)(vida-nn e2 y))))
 (B (name escape)(=>(^(S#CONFINAMIENTO/CONFINEMENT u :0.45)(SS#CONFINAMIENTO-SALIDA/CONFINEMENT-EXIT x :0.45)) (escape-nn e0 x)))
 
-(B (name escapar)(=>(^(S#CONFINAMIENTO/CONFINEMENT e0 :0.3)(SS#CONFINAMIENTO-SALIDA/CONFINEMENT-EXIT e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (escapar-vb e0 x y u)))
-(B (name salir-de)(=>(^(S#CONFINAMIENTO/CONFINEMENT e0 :0.3)(SS#CONFINAMIENTO-SALIDA/CONFINEMENT-EXIT e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(salir-vb e0 x y u)(de-in e1 e0 z))))
+(B (name escapar)(=>(^(S#CONFINAMIENTO/CONFINEMENT u1 :0.3)(SS#CONFINAMIENTO-SALIDA/CONFINEMENT-EXIT e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (escapar-vb e0 x y u)))
+(B (name salir-de)(=>(^(S#CONFINAMIENTO/CONFINEMENT u1 :0.3)(SS#CONFINAMIENTO-SALIDA/CONFINEMENT-EXIT e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(salir-vb e0 x y u)(de-in e1 e0 z))))
 (B (name liberar)(=>(^(S#CONFINAMIENTO/CONFINEMENT u1 :0.3)(SS#CONFINAMIENTO-SALIDA/CONFINEMENT-EXIT e0 :0.3)(R#EXIT-AGENT x e0 :0.3) (R#EXIT-PATIENT y e0 :0.3)) (liberar-vb e0 x y u)))
 
 (B (name confinamientomap)(=>(I#CONFINAMIENTO/CONFINEMENT x :0.9)(S#CONFINAMIENTO/CONFINEMENT x)))
@@ -444,10 +444,11 @@
 ; EXIT
 ; Not sure about the translations of these for Spanish
 ; (B (name salir) (=>(^(S#ABISMO/ABYSS z :0.3)(SS#ABISMO-SALIDA/ABYSS-EXIT e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (salir-vb e0 x u1 u2)))
+(B (name salir-de)(=>(^(S##ABISMO/ABYSS u1 :0.3)(SS#ABISMO-SALIDA/ABYSS-EXIT e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(salir-vb e0 x y u)(de-in e1 e0 z))))
 ; (B (name jump-out-of) (=>(^(S#ABISMO/ABYSS z :0.3)(SS#ABISMO-SALIDA/ABYSS-EXIT e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(jump-vb e0 x u1 u2)(of-in e2 e1 z))))
 
 ; (B (name pull-out-of) (=>(^(S#ABISMO/ABYSS z :0.2)(SS#ABISMO-SALIDA/ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(pull-vb e0 x y u2)(of-in e2 e1 z))))
-; (B (name lift-out-of) (=>(^(S#ABISMO/ABYSS z :0.2)(SS#ABISMO-SALIDA/ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(lift-vb e0 x y u2)(of-in e2 e1 z))))
+(B (name sacar-a) (=>(^(S#ABISMO/ABYSS z :0.2)(SS#ABISMO-SALIDA/ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(sacar-vb e0 x y u)(a-in e1 e0 z))))
 ; (B (name yank-out-of) (=>(^(S#ABISMO/ABYSS z :0.2)(SS#ABISMO-SALIDA/ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(yank-vb e0 x y u2)(of-in e2 e1 z))))
 ; (B (name dig-out-of) (=>(^(S#ABISMO/ABYSSan  z :0.2)(SS#ABISMO-SALIDA/ABYSS-EXIT e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(dig-vb e0 x y u2)(of-in e2 e1 z))))
 ; (B (name emerge-from) (=>(^(S#ABISMO/ABYSS z :0.3)(SS#ABISMO-SALIDA/ABYSS-EXIT e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(emerge-vb e0 x u1 u2)(from-in e2 e1 z))))

@@ -305,8 +305,10 @@
 (B (name chain) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x :0.45))(chain-nn e0 x)))
 (B (name bondage) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x :0.45))(bondage-nn e0 x)))
 (B (name bond) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x :0.45))(bond-nn e0 x)))
+(B (name grip) (=>(^(S#CONFINEMENT e0 :0.45)(SS#RESTRAINTS x :0.45))(grip-nn e0 x)))
 
 (B (name catch) (=>(^(S#CONFINEMENT e0 :0.2)(SS#RESTRAINTS e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(catch-vb e0 x y u)))
+(B (name grip) (=>(^(S#CONFINEMENT e0 :0.2)(SS#RESTRAINTS e0 :0.2)(R#CONFINEMENT-AGENT x e0 :0.2)(R#CONFINEMENT-PATIENT y e0 :0.2))(grip-vb e0 x y u)))
 
 (B (name confinementmap)(=>(I#CONFINEMENT x :0.9)(S#CONFINEMENT x)))
 (B (name confinedspacemap)(=>(I#CONFINEDSPACE x :0.9)(SS#CONFINEDSPACE x)))
@@ -647,13 +649,14 @@
 (B (name physical-harm-map) (=>(I#PHYSICAL-HARM  x :0.9) (S#PHYSICAL-HARM x)))
 
 ;RESTRAINT
-(B (name hobble)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (hobble-vb e0 x y u)))
-(B (name overwhelmed)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (overwhelm-vb e0 x y u)))
-(B (name hamstring)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (hamstring-vb e0 x y u)))
-(B (name held-back)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(hold-vb e0 x y u)(back-rb e1 e0))))
-(B (name bring-to-knees)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(bring-vb e0 x y u)(to-in e1 e0 z) (knees-nn e2 z))))
+(B (name hobble)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#PHYSICAL-HARM-RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (hobble-vb e0 x y u)))
+(B (name overwhelmed)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#PHYSICAL-HARM-RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (overwhelm-vb e0 x y u)))
+(B (name hamstring)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#PHYSICAL-HARM-RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (hamstring-vb e0 x y u)))
+(B (name held-back)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#PHYSICAL-HARM-RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(hold-vb e0 x y u)(back-rb e1 e0))))
+(B (name bring-to-knees)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#PHYSICAL-HARM-RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(bring-vb e0 x y u)(to-in e1 e0 z) (knees-nn e2 z))))
+(B (name bury)(=>(^(S#PHYSICAL-HARM z :0.23)(SS#PHYSICAL-HARM-RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (bury-vb e0 x y u)))
 
-(B (name restraint-map) (=>(I#RESTRAINT x :0.9) (SS#RESTRAINT x)))
+(B (name restraint-map) (=>(I#PHYSICAL-HARM-RESTRAINT x :0.9) (SS#PHYSICAL-HARM-RESTRAINT x)))
 
 ;PROTECTION
 (B (name shield) (=>(^(S#PHYSICAL-HARM u :0.45)(SS#PHYSICAL-PROTECTION x :0.45))(shield-nn e0 x)))

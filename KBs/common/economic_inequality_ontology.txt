@@ -130,12 +130,18 @@
 
 (B (name physical-harm3) (=>(^(M#CAUSE-HARM e0 :0.46)(M#HARM-VICTIM y e0 :0.46)) (^(I#PHYSICAL-HARM e0)(R#HARM-VICTIM y e0))))
 
-(B (name physical-harm4) (=>(M#CAUSE-HARM e0 :0.95) (I#PHYSICAL-HARM e0)))
+(B (name physical-harm4) (=>(M#CAUSE-HARM e0 :0.9) (I#PHYSICAL-HARM e0)))
+
+(B (name physical-restraint) (=>(^(M#CAUSE-HARM e0 :0.23)(M#CAUSING-THING-H x e0 :0.23)(M#HARM-VICTIM y e0 :0.23)(CAUSE-NOT-FUNCTION e0 :0.23)) (^(I#PHYSICAL-HARM-RESTRAINT e0)(R#HARM-AGENT x e0)(R#HARM-VICTIM y e0))))
 
 (B (name physical-protection) (=>(^(M#CAUSE-REDUCE-HARM e0 :0.3)(M#CAUSING-THING-RH x :0.3)) (I#PHYSICAL-PROTECTION e0)))
 
 ; ABYSS
 (B (name abyss) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.33)(M#CAUSING-THING-F x e0 :0.33)(M#CAUSE-CONFINEMENT e0 :0.33)) (I#ABYSS x)))
+
+; ABYSS-EXIT
+(B (name abyss-exit) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-EXIT-CONFINEMENT e0 :0.45)) (I#ABYSS-EXIT e0)))
+(B (name abyss-exit2) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-EXIT-CONFINEMENT e0 :0.45)(M#CAUSING-THING-RF x e0 :0.45)) (^(I#ABYSS-EXIT e0)(R#ABYSS-EXIT-CAUSE x e0))))
 
 ; MAZE
 (B (name maze) (=>(^(M#CAUSE-CONFUSION e0 :0.23)(M#CONFUSING-THING x :0.23)(M#CAUSE-CONFINEMENT e0 :0.23)(M#CAUSE-NOT-FUNCTION e0 :0.23)) (I#MAZE x)))
@@ -146,13 +152,13 @@
 (B (name navigate) (=>(^(M#CAUSE-REDUCE-CONFUSION e0 :0.23)(M#CONFUSING-THING y :0.23)(M#CAUSE-ESCAPE-CONFINEMENT e0 :0.23)(M#CAUSE-RESUME-FUNCTION e0 :0.23))(^(I#NAVIGATION e0)(R#NAVIGATION-AGENT x e0))))
 
 ; LOW POINT
-(B (name low-point) (=>(^(M#CAUSE-BAD-QUALITY e0 :0.45)(M#CAUSING-THING-Q x :0.45)) (I#LOW-POINT e0)))
+; (B (name low-point) (=>(^(M#BOTTOM-OF-SCALE e0 :0.45)(M#PLACE-ON-SCALE x :0.45)) (I#LOW-POINT e0)))
 
 ; MOVEMENT DOWNWARD
-(B (name movement-downward) (=>(^(M#CAUSE-LOSE-QUALITY e0 :0.45)(M#LOSE-Q-PATIENT x e0 :0.45)) (^(I#MOVEMENT-DOWNWARD e0)(R#MOVE-D-PATIENT x e0))))
+; (B (name movement-downward) (=>(^(M#DESCEND-ON-SCALE e0 :0.45)(M#DESCEND-PATIENT x e0 :0.45)) (^(I#MOVEMENT-DOWNWARD e0)(R#MOVE-D-PATIENT x e0))))
 
 ; MOVEMENT UPWARD
-(B (name movement-upward) (=>(^(M#CAUSE-GAIN-QUALITY e0 :0.45)(M#GAIN-Q-PATIENT x e0 :0.45)) (^(I#MOVEMENT-UPWARD e0)(R#MOVE-U-PATIENT x e0))))
+; (B (name movement-upward) (=>(^(M#ASCEND-ON-SCALE e0 :0.45)(M#ASCEND-PATIENT x e0 :0.45)) (^(I#MOVEMENT-UPWARD e0)(R#MOVE-U-PATIENT x e0))))
 
 ; BURDEN
 ; WEIGHT
