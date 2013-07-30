@@ -105,3 +105,7 @@
 
 (B (name educated) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educated-adj e0 x)))
 (B (name well-educated) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (well-educated-adj e0 x)))
+
+(B (name school) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (school-nn e0 x)))
+(B (name college) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (college-nn e0 x)))
+(B (name university) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (university-nn e0 x)))
