@@ -116,9 +116,9 @@
 
 ; SYMPTOM
 (B (name symptom) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y :0.45)) (symptom-nn e0 y)))
-(B (name symptomatic) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS e0 x :0.45)) (symptomatic-adj e0 y)))
+(B (name symptomatic) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS e0 :0.45)) (symptomatic-adj e0 y)))
 
-(B (name bleeding) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y :0.45))(bleeding-adj e0 y)))
+(B (name bleeding) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS e0 :0.45))(bleeding-adj e0 y)))
 (B (name wound) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y :0.45)) (wound-nn e0 y)))
 (B (name pain) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y :0.45)) (pain-nn e0 y)))
 (B (name scar) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y :0.45)) (scar-nn e0 y)))
@@ -308,12 +308,12 @@
 (B (name swig) (=>(^(S#BODY-OF-WATER y :0.45) (SS#DRINK x y :0.45))(swig-nn e0 x)))
 
 ; THIRST
-(B (name thirst) (=>(^(S#BODY-OF-WATER y :0.3) (SS#THIRST x y :0.3)(R#DRINKER x e0 :0.3))(thirst-nn e0 x)))
-(B (name thirsty) (=>(^(S#BODY-OF-WATER y :0.3) (SS#THIRST e0 y :0.3)(R#DRINKER x e0 :0.3))(thirsty-adj e0 x)))
-(B (name thirstier) (=>(^(S#BODY-OF-WATER y :0.3) (SS#THIRST e0 y :0.3)(R#DRINKER x e0 :0.3))(thirstier-adj e0 x)))
+(B (name thirst) (=>(^(S#BODY-OF-WATER y :0.3) (SS#THIRST x :0.3)(R#DRINKER x e0 :0.3))(thirst-nn e0 x)))
+(B (name thirsty) (=>(^(S#BODY-OF-WATER y :0.3) (SS#THIRST e0 :0.3)(R#DRINKER x e0 :0.3))(thirsty-adj e0 x)))
+(B (name thirstier) (=>(^(S#BODY-OF-WATER y :0.3) (SS#THIRST e0 :0.3)(R#DRINKER x e0 :0.3))(thirstier-adj e0 x)))
 
 ; OF - THIRST
-(B (name of-thirst) (=>(R#THIRST-OBJECT y x :0.9)(^(SS#THIRST x e)(of-in e1 x y))))
+(B (name of-thirst) (=>(R#THIRST-OBJECT y x :0.9)(^(SS#THIRST x)(of-in e1 x y))))
 
 
 ; MOVEMENT
@@ -397,18 +397,18 @@
 (B (name charge) (=>(^(S#BATTLE u :0.2) (SS#FIGHT e0 :0.2)(R#BATTLE-AGENT x e0 :0.2) (R#BATTLE-ENEMY y e0 :0.2)) (charge-vb e0 x y u2)))
 (B (name invade) (=>(^(S#BATTLE u :0.2) (SS#FIGHT e0 :0.2)(R#BATTLE-AGENT x e0 :0.2) (R#BATTLE-ENEMY y e0 :0.2)) (invade-vb e0 x y u2)))
 
-(B (name fight-with) (=> (R#BATTLE-ENEMY y x :0.90)(^(SS#FIGHT x)(with-in x y))))
-(B (name fight-against) (=> (R#BATTLE-ENEMY y x :0.90)(^(SS#FIGHT x)(against-in x y))))
+(B (name fight-with) (=> (S#BATTLE y x :0.90)(^(SS#FIGHT x)(with-in x y))))
+(B (name fight-against) (=> (S#BATTLE y x :0.90)(^(SS#FIGHT x)(against-in x y))))
 (B (name fight-of) (=> (R#BATTLE-AGENT y x :0.90)(^(SS#FIGHT x)(of-in x y))))
 (B (name fight-on) (=> (R#BATTLE-AGENT y x :0.90)(^(SS#FIGHT x)(on-in x y))))
 (B (name fight-at) (=> (R#BATTLE-AGENT y x :0.90)(^(SS#FIGHT x)(at-in x y))))
 
-(B (name enemy) (=>(^(S#BATTLE u :0.3) (SS#ENEMY x u :0.3)(R#BATTLE-ENEMY x u :0.3))(enemy-nn e1 x)))
-(B (name adversary) (=>(^(S#BATTLE u :0.3) (SS#ENEMY x u :0.3)(R#BATTLE-ENEMY x u :0.3))(adversary-nn e1 x)))
-(B (name rival) (=>(^(S#BATTLE u :0.3) (SS#ENEMY x u :0.3)(R#BATTLE-ENEMY x u :0.3))(rival-nn e1 x)))
-(B (name opponent) (=>(^(S#BATTLE u :0.3) (SS#ENEMY x u :0.3)(R#BATTLE-ENEMY x u :0.3))(opponent-nn e1 x)))
+(B (name enemy) (=>(^(S#BATTLE u :0.3) (SS#ENEMY x u :0.3))(enemy-nn e1 x)))
+(B (name adversary) (=>(^(S#BATTLE u :0.3) (SS#ENEMY x u :0.3))(adversary-nn e1 x)))
+(B (name rival) (=>(^(S#BATTLE u :0.3) (SS#ENEMY x u :0.3))(rival-nn e1 x)))
+(B (name opponent) (=>(^(S#BATTLE u :0.3) (SS#ENEMY x u :0.3))(opponent-nn e1 x)))
 
-(B (name enemy-of) (=> (R#BATTLE-AGENT y e0 :0.90)(^(R#BATTLE-ENEMY x e0)(of-in e1 x y))))
+(B (name enemy-of) (=> (R#BATTLE-AGENT y e0 :0.90)(^(SS#ENEMY x e0)(of-in e1 x y))))
 
 
 (B (name soldier) (=>(^(S#BATTLE x :0.45)(SS#FIGHT y :0.45))(soldier-nn e0 y)))
@@ -720,10 +720,9 @@
 
 ;VICTIM
 ;SUFFERER
-(B (name threatened)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (threatened-adj e0 x)))
-(B (name victim)(=>(^(S#VICTIM x :0.3)(SS#SUFFERER x:0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (victim-nn e0 x)))
+(B (name threatened)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (threatened-adj e0 x)))
+(B (name victim)(=>(^(S#VICTIM x :0.3)(SS#SUFFERER x :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (victim-nn e0 x)))
 (B (name prey)(=>(^(S#VICTIM x :0.3)(SS#SUFFERER x :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (prey-nn e0 x)))
-; (B (name target)(=>(^(S#VICTIM x :0.3)(SS#SUFFERER x :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (target-nn e0 x)))
 (B (name sufferer)(=>(^(S#VICTIM x :0.3)(SS#SUFFERER x:0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (sufferer-nn e0 x)))
 
 ;VICTIMIZER
