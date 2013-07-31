@@ -282,8 +282,6 @@
 
 ; BODY-OF-WATER
 
-; (B (name water) (=>(S#BODY-OF-WATER x :0.9) (water-nn e0 x)))
-; (B (name sea-water) (=> (S#BODY-OF-WATER x :0.9) (sea-water-nn e0 x)))
 (B (name water) (=> (^(S#BODY-OF-WATER x :0.45)(SS#BODY-OF-WATER-TYPE x :0.45))(water-nn e0 x)))
 (B (name sea-water) (=> (^(S#BODY-OF-WATER x :0.45)(SS#BODY-OF-WATER-TYPE x :0.45)) (sea-water-nn e0 x)))
 
@@ -776,3 +774,22 @@
 (B (name structuremap)(=>(I#STRUCTURE x :0.9)(SS#STRUCTURE x)))
 (B (name creationmap)(=>(I#CREATION x :0.9)(SS#CREATION x)))
 (B (name componentsmap)(=>(I#COMPONENTS x :0.9)(SS#COMPONENTS x)))
+
+; PATHWAY
+; TYPE
+(B (name pathway)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (pathway-nn e0 x)))
+(B (name road-to)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (^(road-nn e0 x)(to-in e1 x z))))
+(B (name path)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (path-nn e0 x)))
+(B (name bridge)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (bridge-nn e0 x)))
+(B (name passage)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (passage-nn e0 x)))
+(B (name route)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (route-nn e0 x)))
+(B (name street)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (street-nn e0 x)))
+(B (name trail)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (trail-nn e0 x)))
+(B (name way-out) (=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (^(way-nn e0 x)(out-in e1 x u))))
+
+;OPEN PATH
+(B (name clear-path) (=>(^(S#PATHWAY u :0.45)(SS#OPEN-PATH e0 :0.45)) (^(clear-adj e0 x)(SS#PATHWAY-TYPE x))))
+
+(B (name pathwaymap)(=>(I#PATHWAY x :0.9)(S#PATHWAY x)))
+(B (name pathway-typemap)(=>(I#PATHWAY-TYPE x :0.9)(SS#PATHWAY-TYPE x)))
+(B (name open-pathmap)(=>(I#OPEN-PATH x :0.9)(SS#OPEN-PATH x)))

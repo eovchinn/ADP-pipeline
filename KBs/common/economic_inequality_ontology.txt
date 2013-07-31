@@ -176,3 +176,16 @@
 
 ;HEALTH
 ;(B (name health) (=>(^(M#CAUSE-IMPROVE-FUNCTIONALITY e0 :0.45)(M#CAUSING-THING-IF x :0.45)) (I#HEALTH x)))
+
+;BUILDING
+;STRUCTURE
+(B (name structure) (=>(^(M#PROVIDE-SUPPORT e0 :0.45)(M#SUPPORTING-THING x :0.45)) (I#STRUCTURE x)))
+
+
+; PATHWAY
+;PATHWAY-TYPE
+(B (name pathway-type) (=>(^(M#PROVIDE-ACCESS e0 :0.45)(M#PROVIDING-THING x :0.45)) (I#PATHWAY-TYPE x)))
+;OPEN-PATH
+(B (name open-path) (=>(^(M#EASE-ACCESS e0 :0.9)) (I#OPEN-PATH x)))
+;OBSTRUCTED-PATH
+(B (name obstructed-path) (=>(^(M#BLOCK-ACCESS e0 :0.9)) (I#OBSTRUCTED-PATH x)))
