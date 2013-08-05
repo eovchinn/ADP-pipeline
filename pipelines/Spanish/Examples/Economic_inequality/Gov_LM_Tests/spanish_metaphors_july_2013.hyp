@@ -11,7 +11,7 @@ artículo-nn(e1,x1) ^ en-in(e2,x1,x2) ^ país-nn(e3,x2) ^ decir-vb(e4,x1,e8,u5) 
 "!EXPLAINED_ser-vb_17":1 "!HYPOTHESIZED_país-nn_12":-1.001 "!HYPOTHESIZED_de-in_5":-1.001 "!HYPOTHESIZED_como-in_11":-1.001 "!HYPOTHESIZED_thing_6":-1.001 "!HYPOTHESIZED_imponer-vb_8":-1.001 "!HYPOTHESIZED_ser-vb_17":-1.001 "!HYPOTHESIZED_artículo-nn_0":-1.001 "!HYPOTHESIZED_ser-vb_15":-1.001 "!HYPOTHESIZED_decir-vb_3":-1.001 "!EXPLAINED_país-nn_12":1 "!HYPOTHESIZED_debatir-vb_7":-1.001 "!HYPOTHESIZED_querer-vb_16":-1.001 "!HYPOTHESIZED_en-in_1":-1.001 "!HYPOTHESIZED_definir-vb_10":-1.001 "!HYPOTHESIZED_a_propósito-rb_4":-1.001 "!HYPOTHESIZED_person_9":-1.001 "!HYPOTHESIZED_como-rb_13":-1.001 "!HYPOTHESIZED_país-nn_2":-1.001 "!HYPOTHESIZED_persona-nn_14":-1.001 
 </vector>
 <statistics>
-<time total="0.0948949" prepare="0.0778029" ilp="0.017092" />
+<time total="0.0816371" prepare="0.0773301" ilp="0.00430703" />
 <ilp solution="Optimal" variables="65" constraints="40" />
 <search-space literals="18" axiom="0" />
 </statistics>
@@ -51,7 +51,7 @@ funcionario-nn(e1,x1) ^ lamentar-vb(e2,x1,u2,u3) ^ desigualdad-nn(e4,x2) ^ equal
 "!HYPOTHESIZED_equal_3":-1.001 "!HYPOTHESIZED_lamentar-vb_1":-1.001 "!HYPOTHESIZED_a_través_de-in_11":-1.001 "!HYPOTHESIZED_funcionario-nn_0":-1.001 "!HYPOTHESIZED_person_12":-1.001 "!HYPOTHESIZED_económico-adj_4":-1.001 "!HYPOTHESIZED_acompañar-vb_8":-1.001 "!HYPOTHESIZED_social-adj_5":-1.001 "!HYPOTHESIZED_conductor-nn_7":-1.001 "!HYPOTHESIZED_desigualdad-nn_2":-1.001 "!HYPOTHESIZED_a-in_9":-1.001 "!HYPOTHESIZED_méxico-nn_10":-1.001 "!HYPOTHESIZED_hilo-nn_6":-1.001 "!HYPOTHESIZED_historia-nn_13":-1.001 
 </vector>
 <statistics>
-<time total="0.0116508" prepare="0.010973" ilp="0.000677824" />
+<time total="0.0105231" prepare="0.00983" ilp="0.000693083" />
 <ilp solution="Optimal" variables="43" constraints="28" />
 <search-space literals="14" axiom="1" />
 </statistics>
@@ -83,7 +83,7 @@ educacion-vb(e1,u1,u2,u3) ^ apuesta-nn(e3,x1) ^ equal(e12,e1,x1) ^ podar-vb(e4,u
 "!HYPOTHESIZED_mexicano-adj_6":-1.001 "!HYPOTHESIZED_apuesta-nn_1":-1.001 "!HYPOTHESIZED_equal_2":-1.001 "!HYPOTHESIZED_casi-rb_9":-1.001 "!HYPOTHESIZED_como-in_5":-1.001 "!HYPOTHESIZED_podar-vb_3":-1.001 "!HYPOTHESIZED_educacion-vb_0":-1.001 "!HYPOTHESIZED_hacer-vb_4":-1.001 "!HYPOTHESIZED_para-in_7":-1.001 "!HYPOTHESIZED_solucionar-vb_8":-1.001 
 </vector>
 <statistics>
-<time total="0.00752592" prepare="0.00693202" ilp="0.000593901" />
+<time total="0.00764799" prepare="0.0069921" ilp="0.00065589" />
 <ilp solution="Optimal" variables="31" constraints="20" />
 <search-space literals="10" axiom="0" />
 </statistics>
@@ -111,7 +111,7 @@ clase-nn(e1,x1) ^ medio-adj(e2,x1) ^ motor-nn(e4,x2) ^ equal(e11,x1,x2) ^ impuls
 "!HYPOTHESIZED_equal_3":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_11":-0.471 "!HYPOTHESIZED_impulsar-vb_4":-1.001 "!HYPOTHESIZED_de-in_7":-1.001 "!HYPOTHESIZED_aparato-nn_5":-1.001 "!HYPOTHESIZED_medio-adj_1":-1.001 "!HYPOTHESIZED_economía-nn_8":-1.001 "!HYPOTHESIZED_motor-nn_2":-1.001 "!HYPOTHESIZED_clase-nn_0":-1.001 "!HYPOTHESIZED_mundial-adj_9":-1.001 "!HYPOTHESIZED_TS#SOCIAL-CLASS_10":-0.471 "!HYPOTHESIZED_productivo-adj_6":-1.001 "!EXPLAINED_clase-nn_0":1 
 </vector>
 <statistics>
-<time total="0.00932312" prepare="0.0085721" ilp="0.000751019" />
+<time total="0.00982594" prepare="0.00910807" ilp="0.000717878" />
 <ilp solution="Optimal" variables="39" constraints="33" />
 <search-space literals="12" axiom="1" />
 </statistics>
