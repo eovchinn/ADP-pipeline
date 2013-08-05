@@ -790,6 +790,9 @@
 ;OPEN PATH
 (B (name clear-path) (=>(^(S#PATHWAY u :0.45)(SS#OPEN-PATH e0 :0.45)) (^(clear-adj e0 x)(SS#PATHWAY-TYPE x))))
 
+;OBSTRUCTED PATH
+
 (B (name pathwaymap)(=>(I#PATHWAY x :0.9)(S#PATHWAY x)))
 (B (name pathway-typemap)(=>(I#PATHWAY-TYPE x :0.9)(SS#PATHWAY-TYPE x)))
 (B (name open-pathmap)(=>(I#OPEN-PATH x :0.9)(SS#OPEN-PATH x)))
+(B (name obstructed-pathmap)(=>(I#OBSTRUCTED-PATH x :0.9)(SS#OBSTRUCTED-PATH x)))
