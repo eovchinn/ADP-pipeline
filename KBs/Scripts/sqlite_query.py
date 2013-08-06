@@ -26,7 +26,9 @@ def collect_word_info(word):
     return pos,roles
 
 def determine_utility(word):
-    answer = raw_input("Do you want to build an axiom for "+str(word).encode("utf-8")+"? ")
+    if type(word) == int:
+        word = unicode(word)
+    answer = raw_input("Do you want to build an axiom for "+word.encode("utf-8")+"? ")
     if answer == "yes" or answer == "y":
         return True
     return False

@@ -180,6 +180,7 @@
 ;BUILDING
 ;STRUCTURE
 (B (name structure) (=>(^(M#PROVIDE-SUPPORT e0 :0.45)(M#SUPPORTING-THING x :0.45)) (I#STRUCTURE x)))
+(B (name components) (=>(^(M#PROVIDE-SUPPORT e0 :0.45)(M#SUPPORTING-THING x :0.45)) (I#COMPONENTS x)))
 
 
 ; PATHWAY
@@ -189,3 +190,19 @@
 (B (name open-path) (=>(^(M#EASE-ACCESS e0 :0.9)) (I#OPEN-PATH x)))
 ;OBSTRUCTED-PATH
 (B (name obstructed-path) (=>(^(M#BLOCK-ACCESS e0 :0.9)) (I#OBSTRUCTED-PATH x)))
+
+; PORTAL
+;MEANS OF ENTRY
+(B (name means-of-entry) (=>(^(M#ALLOW-ACCESS e0 :0.45)(M#ALLOWING-A-THING x :0.45)) (I#MEANS-OF-ENTRY x)))
+
+;OBSTACLES
+(B (name obstacles) (=>(^(M#BLOCK-ACCESS e0 :0.9)) (I#OBSTACLES x)))
+
+;PHYSICAL-OBJECT
+;PHYSICAL-OBJECT-TYPE
+
+;POSSESSION
+(B (name possession) (=>(^(M#ALLOW-UTILIZATION e0 :0.45)(M#ALLOWING-U-THING x :0.45)) (I#POSSESSION x)))
+
+
+

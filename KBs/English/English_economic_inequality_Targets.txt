@@ -104,7 +104,8 @@
 (B (name access-education) (=>(^(TS#ACCESS-TO-EDUCATION e2 :0.2)(T#ECONOMIC-INEQUALITY u :0.2)(R#EDUCATION y x :0.2)(R#EDUCATED x e0 :0.2)) (^(access-vb e0 x y u)(education-nn e2 y))))
 (B (name get-education) (=>(^(TS#ACCESS-TO-EDUCATION e2 :0.2)(T#ECONOMIC-INEQUALITY u :0.2)(R#EDUCATION y x :0.2)(R#EDUCATED x e0 :0.2)) (^(get-vb e0 x y u)(education-nn e2 y))))
 
-(B (name education) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (education-nn e0 x)))
+(B (name education) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x e0 :0.3)) (education-nn e0 x)))
+(B (name higher-learning) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x e0 :0.3)) (^(higher-adj e1 x )(learning-nn e0 x))))
 
 (B (name educate) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educate-vb e0 u1 x u2)))
 
@@ -113,5 +114,9 @@
 (B (name well-educated) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (well-educated-adj e0 x)))
 
 (B (name school) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (school-nn e0 x)))
+(B (name academy) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (academy-nn e0 x)))
+(B (name institute) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (institute-nn e0 x)))
+(B (name classroom) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (classroom-nn e0 x)))
 (B (name college) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (college-nn e0 x)))
+(B (name student) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (student-nn e0 x)))
 (B (name university) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (university-nn e0 x)))

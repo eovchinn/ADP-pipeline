@@ -603,6 +603,9 @@
 
 (B (name shieldvb) (=>(^(S#PHYSICAL-HARM u :0.2)(SS#PHYSICAL-PROTECTION e0 :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(shield-vb e0 x y u2)))
 
+(B (name from-theft) (=>(R#HARM-VICTIM y :0.9)(^(S#PHYSICAL-HARM e0)(from-in e1 e0 y))))
+
+
 (B (name restraint-map) (=>(I#PHYSICAL-PROTECTION x :0.9) (SS#PHYSICAL-PROTECTION x)))
 
 ; MAZE
@@ -768,6 +771,7 @@
 (B (name mortar)(=>(^(S#BUILDING x :0.45)(SS#COMPONENTS x :0.45)) (mortar-nn e0 x)))
 (B (name sand)(=>(^(S#BUILDING x :0.45)(SS#COMPONENTS x :0.45)) (sand-nn e0 x)))
 (B (name stone)(=>(^(S#BUILDING x :0.45)(SS#COMPONENTS x :0.45)) (stone-nn e0 x)))
+(B (name keystone)(=>(^(S#BUILDING x :0.45)(SS#COMPONENTS x :0.45)) (keystone-nn e0 x)))
 (B (name wall)(=>(^(S#BUILDING x :0.45)(SS#COMPONENTS x :0.45)) (wall-nn e0 x)))
 
 (B (name buildingmap)(=>(I#BUILDING x :0.9)(S#BUILDING x)))
@@ -779,20 +783,54 @@
 ; TYPE
 (B (name pathway)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (pathway-nn e0 x)))
 (B (name road-to)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (^(road-nn e0 x)(to-in e1 x z))))
+(B (name road)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (road-nn e0 x)))
 (B (name path)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (path-nn e0 x)))
 (B (name bridge)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (bridge-nn e0 x)))
 (B (name passage)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (passage-nn e0 x)))
 (B (name route)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (route-nn e0 x)))
 (B (name street)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (street-nn e0 x)))
 (B (name trail)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (trail-nn e0 x)))
+(B (name corridor)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (corridor-nn e0 x)))
+(B (name walkway)(=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (walkway-nn e0 x)))
 (B (name way-out) (=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (^(way-nn e0 x)(out-in e1 x u))))
 
 ;OPEN PATH
 (B (name clear-path) (=>(SS#OPEN-PATH e0 :0.90) (^(clear-adj e0 x)(SS#PATHWAY-TYPE x))))
 
 ;OBSTRUCTED PATH
+;(B (name obstructed-path) (=>(SS#OBSTRUCTED-PATH e0 :0.90) (^(obstructed-adj e0 x)(SS#PATHWAY-TYPE x))))
 
 (B (name pathwaymap)(=>(I#PATHWAY x :0.9)(S#PATHWAY x)))
 (B (name pathway-typemap)(=>(I#PATHWAY-TYPE x :0.9)(SS#PATHWAY-TYPE x)))
 (B (name open-pathmap)(=>(I#OPEN-PATH x :0.9)(SS#OPEN-PATH x)))
 (B (name obstructed-pathmap)(=>(I#OBSTRUCTED-PATH x :0.9)(SS#OBSTRUCTED-PATH x)))
+
+
+;PORTAL
+;MEANS OF ENTRY
+(B (name gateway)(=>(^(S#PORTAL x :0.45)(SS#MEANS-OF-ENTRY x :0.45)) (gateway-nn e0 x)))
+(B (name door)(=>(^(S#PORTAL x :0.45)(SS#MEANS-OF-ENTRY x :0.45)) (door-nn e0 x)))
+(B (name threshold)(=>(^(S#PORTAL x :0.45)(SS#MEANS-OF-ENTRY x :0.45)) (threshold-nn e0 x)))
+(B (name doorway)(=>(^(S#PORTAL x :0.45)(SS#MEANS-OF-ENTRY x :0.45)) (doorway-nn e0 x)))
+(B (name entrance)(=>(^(S#PORTAL x :0.45)(SS#MEANS-OF-ENTRY x :0.45)) (entrance-nn e0 x)))
+(B (name entry)(=>(^(S#PORTAL x :0.45)(SS#MEANS-OF-ENTRY x :0.45)) (entry-nn e0 x)))
+(B (name entryway)(=>(^(S#PORTAL x :0.45)(SS#MEANS-OF-ENTRY x :0.45)) (entryway-nn e0 x)))
+(B (name gate)(=>(^(S#PORTAL x :0.45)(SS#MEANS-OF-ENTRY x :0.45)) (gate-nn e0 x)))
+(B (name portal)(=>(^(S#PORTAL x :0.45)(SS#MEANS-OF-ENTRY x :0.45)) (portal-nn e0 x)))
+(B (name turnstile)(=>(^(S#PORTAL x :0.45)(SS#MEANS-OF-ENTRY x :0.45)) (turnstile-nn e0 x)))
+
+;OBSTACLES
+;(B (name narrow) (=>(SS#OBSTACLES e0 :0.90) (^(obstructed-adj e0 x)(SS#MEANS-OF-ENTRY x))))
+
+(B (name portalmap)(=>(I#PORTAL x :0.9)(S#PORTAL x)))
+(B (name meansofentrymap)(=>(I#MEANS-OF-ENTRY x :0.9)(SS#MEANS-OF-ENTRY x)))
+(B (name obstaclesmap)(=>(I#OBSTACLES x :0.9)(SS#OBSTACLES x)))
+
+;PHYSICAL OBJECT
+; PHYSICAL OBJECT TYPE
+(B (name mass)(=>(^(S#PHYSICAL-OBJECT x :0.45)(SS#PHYSTICAL-OBJECT-TYPE x :0.45)) (mass-nn e0 x)))
+
+:POSSESSION
+(B (name have)(=>(^(S#PHYSICAL-OBJECT y :0.33)(SS#POSSESSION e0 :0.33)(R#POSSESSOR x :0.33)) (have-vb e0 x y u)))
+(B (name possess)(=>(^(S#PHYSICAL-OBJECT y :0.33)(SS#POSSESSION e0 :0.33)(R#POSSESSOR x :0.33)) (possess-vb e0 x y u)))
+(B (name own)(=>(^(S#PHYSICAL-OBJECT y :0.33)(SS#POSSESSION e0 :0.33)(R#POSSESSOR x :0.33)) (own-vb e0 x y u)))
