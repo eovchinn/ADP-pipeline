@@ -497,63 +497,63 @@
 
 ; PHYSICAL HARM
 ; TYPE
-(B (name lastimar) (=>(^(S#DAÑO-FÍSICA e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(lastimar-vb e0 x 
+(B (name lastimar) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(lastimar-vb e0 x 
 y u2)))
-(B (name herir) (=>(^(S#DAÑO-FÍSICA e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(herir-vb e0 x 
+(B (name herir) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(herir-vb e0 x 
 y u2)))
-(B (name dañar) (=>(^(S#DAÑO-FÍSICA e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(dañar-vb e0 x 
+(B (name dañar) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(dañar-vb e0 x 
 y u2)))
-(B (name aplastar) (=>(^(S#DAÑO-FÍSICA e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(aplastar-vb e0 x y u2)))
-(B (name perjudicar) (=>(^(S#DAÑO-FÍSICA e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(perjudicar-vb e0 x y u2)))
-(B (name atornillar) (=>(^(S#DAÑO-FÍSICA e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(atornillar-vb e0 x y u2)))
-(B (name torturar) (=>(^(S#DAÑO-FÍSICA e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(torturar-vb e0 x y u2)))
-(B (name mutilar) (=>(^(S#DAÑO-FÍSICA e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(mutilar-vb e0 x y u2)))
-(B (name traumatizar) (=>(^(S#DAÑO-FÍSICA e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(traumatizar-vb e0 x y u2)))
-(B (name lesionar) (=>(^(S#DAÑO-FÍSICA e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(lesionar-vb e0 x y u2)))
-(B (name cojear) (=>(^(S#DAÑO-FÍSICA e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(cojear-vb e0 x y u2)))
-(B (name doler) (=>(^(S#DAÑO-FÍSICA e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(doler-vb e0 x y u2)))
+(B (name aplastar) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(aplastar-vb e0 x y u2)))
+(B (name perjudicar) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(perjudicar-vb e0 x y u2)))
+(B (name atornillar) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(atornillar-vb e0 x y u2)))
+(B (name torturar) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(torturar-vb e0 x y u2)))
+(B (name mutilar) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(mutilar-vb e0 x y u2)))
+(B (name traumatizar) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(traumatizar-vb e0 x y u2)))
+(B (name lesionar) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(lesionar-vb e0 x y u2)))
+(B (name cojear) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(cojear-vb e0 x y u2)))
+(B (name doler) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM e0 :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(doler-vb e0 x y u2)))
 
-(B (name daño) (=>(^(S#DAÑO-FÍSICA x :0.2)(SS#TIPO-DE-DAÑO-FÍSICA x :0.2))(daño-nn e0 x)))
-(B (name aglomeración) (=>(^(S#DAÑO-FÍSICA x :0.2)(SS#TIPO-DE-DAÑO-FÍSICA x :0.2))(aglomeración-nn e0 x)))
-(B (name perjuicio) (=>(^(S#DAÑO-FÍSICA x :0.2)(SS#TIPO-DE-DAÑO-FÍSICA x :0.2))(perjucio-nn e0 x)))
-(B (name tortura) (=>(^(S#DAÑO-FÍSICA x :0.2)(SS#TIPO-DE-DAÑO-FÍSICA x :0.2))(tortura-nn e0 x)))
-(B (name trauma) (=>(^(S#DAÑO-FÍSICA x :0.2)(SS#TIPO-DE-DAÑO-FÍSICA x :0.2))(trauma-nn e0 x)))
-(B (name lesión) (=>(^(S#DAÑO-FÍSICA x :0.2)(SS#TIPO-DE-DAÑO-FÍSICA x :0.2))(lesión-nn e0 x)))
-(B (name tornillo) (=>(^(S#DAÑO-FÍSICA x :0.2)(SS#TIPO-DE-DAÑO-FÍSICA x :0.2))(tornillo-nn e0 x)))
+(B (name daño) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM x :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE x :0.2))(daño-nn e0 x)))
+(B (name aglomeración) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM x :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE x :0.2))(aglomeración-nn e0 x)))
+(B (name perjuicio) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM x :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE x :0.2))(perjucio-nn e0 x)))
+(B (name tortura) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM x :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE x :0.2))(tortura-nn e0 x)))
+(B (name trauma) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM x :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE x :0.2))(trauma-nn e0 x)))
+(B (name lesión) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM x :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE x :0.2))(lesión-nn e0 x)))
+(B (name tornillo) (=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM x :0.2)(SS#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE x :0.2))(tornillo-nn e0 x)))
 
-(B (name physical-harm-map) (=>(I#PHYSICAL-HARM  x :0.9) (S#DAÑO-FÍSICA x)))
-(B (name physical-harm-map) (=>(I#PHYSICAL-HARM-TYPE  x :0.9) (S#TIPO-DE-DAÑO-FÍSICA x)))
+(B (name physical-harm-map) (=>(I#PHYSICAL-HARM  x :0.9) (S#DAÑO-FÍSICA/PHYSICAL-HARM x)))
+(B (name physical-harm-map) (=>(I#PHYSICAL-HARM-TYPE  x :0.9) (S#TIPO-DE-DAÑO-FÍSICA/PHYSICAL-HARM-TYPE x)))
 
 ;RESTRAINT
-(B (name cojear)(=>(^(S#DAÑO-FÍSICA e0 :0.23)(SS#RESTRICCIÓN e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (cojear-vb e0 x y u)))
-(B (name abrumared)(=>(^(S#DAÑO-FÍSICA e0 :0.23)(SS#RESTRICCIÓN e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (abrumar-vb e0 x y u)))
+(B (name cojear)(=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM e0 :0.23)(SS#RESTRICCIÓN/RESTRICTION e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (cojear-vb e0 x y u)))
+(B (name abrumared)(=>(^(S#DAÑO-FÍSICA/PHYSICAL-HARM e0 :0.23)(SS#RESTRICCIÓN/RESTRICTION e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (abrumar-vb e0 x y u)))
 
-(B (name restraint-map) (=>(I#RESTRAINT  x :0.9) (S#RESTRICCIÓN x)))
+(B (name restraint-map) (=>(I#RESTRAINT  x :0.9) (S#RESTRICCIÓN/RESTRICTION x)))
 
 ; MAZE
 ; CONFUSING PATHWAYS
-(B (name telaraña)(=>(^(S#LABERINTO e0 :0.45)(SS#CAMINOS-CONFUSOS x :0.45)) (telaraña-nn e0 x)))
-(B (name nudo)(=>(^(S#LABERINTO e0 :0.45)(SS#CAMINOS-CONFUSOS x :0.45)) (nudo-nn e0 x)))
-(B (name laberinto)(=>(^(S#LABERINTO e0 :0.45)(SS#CAMINOS-CONFUSOS x :0.45))(laberinto-nn e0 x)))
+(B (name telaraña)(=>(^(S#LABERINTO/MAZE e0 :0.45)(SS#CAMINOS-CONFUSOS/CONFUSING-PATHWAYS x :0.45)) (telaraña-nn e0 x)))
+(B (name nudo)(=>(^(S#LABERINTO/MAZE e0 :0.45)(SS#CAMINOS-CONFUSOS/CONFUSING-PATHWAYS x :0.45)) (nudo-nn e0 x)))
+(B (name laberinto)(=>(^(S#LABERINTO/MAZE e0 :0.45)(SS#CAMINOS-CONFUSOS/CONFUSING-PATHWAYS x :0.45))(laberinto-nn e0 x)))
 
 ; NAVIGATION
-(B (name navegar-por) (=>(^(S#LABERINTO z :0.3) (SS#NAVIGATION e0 :0.3)(R#NAVIGATION-AGENT x e0 :0.3))(^(navegar-vb e0 x y u)(por-in e1 e0 z))))
+(B (name navegar-por) (=>(^(S#LABERINTO/MAZE z :0.3) (SS#NAVEGACIÓN/NAVIGATION e0 :0.3)(R#NAVIGATION-AGENT x e0 :0.3))(^(navegar-vb e0 x y u)(por-in e1 e0 z))))
 
 ; OBSTRUCTION
-(B (name enredo)(=>(^(S#LABERINTO e0 :0.45)(SS#OBSTRUCTION x :0.45)) (enredo-nn e0 x)))
-(B (name captura)(=>(^(S#LABERINTO e0 :0.45)(SS#OBSTRUCTION x :0.45)) (captura-nn e0 x)))
+(B (name enredo)(=>(^(S#LABERINTO/MAZE e0 :0.45)(SS#OBSTRUCTION x :0.45)) (enredo-nn e0 x)))
+(B (name captura)(=>(^(S#LABERINTO/MAZE e0 :0.45)(SS#OBSTRUCTION x :0.45)) (captura-nn e0 x)))
 
-(B (name coger)(=>(^(S#LABERINTO z :0.23)(SS#OBSTRUCTION e0 :0.23)(R#OBSTRUCTION-AGENT x e0 :0.23)(R#OBSTRUCTION-PATIENT y e0 :0.23)) (coger-vb e0 x y u)))
-(B (name enredo)(=>(^(S#LABERINTO z :0.3)(SS#OBSTRUCTION e0 :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3)) (enredo-vb e0 u y u1)))
+(B (name coger)(=>(^(S#LABERINTO/MAZE z :0.23)(SS#OBSTRUCTION e0 :0.23)(R#OBSTRUCTION-AGENT x e0 :0.23)(R#OBSTRUCTION-PATIENT y e0 :0.23)) (coger-vb e0 x y u)))
+(B (name enredo)(=>(^(S#LABERINTO/MAZE z :0.3)(SS#OBSTRUCTION e0 :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3)) (enredo-vb e0 u y u1)))
 
-(B (name mazemap)(=>(I#MAZE x :0.9)(S#LABERINTO x)))
-(B (name confusing-pathwaysmap)(=>(I#MAZE x :0.9)(S#CAMINOS-CONFUSOS x)))
-(B (name navigatemap)(=>(I#NAVIGATION x :0.9)(SS#NAVIGATION x)))
+(B (name mazemap)(=>(I#MAZE x :0.9)(S#LABERINTO/MAZE x)))
+(B (name confusing-pathwaysmap)(=>(I#MAZE x :0.9)(S#CAMINOS-CONFUSOS/CONFUSING-PATHWAYS x)))
+(B (name navigatemap)(=>(I#NAVIGATION x :0.9)(SS#NAVEGACIÓN/NAVIGATION x)))
 
 ; LOW POINT 
 ; BOTTOM OF ECONOMIC SCALE
 ;(B (name the-pits) (=>(^(S#BAJO-PUNTO e0 :0.45)(SS#PARTE-INFERIOR-ECON-SCALE x :0.45))(pits-nn e0 x)))
-(B (name bajo) (=>(^(S#BAJO-PUNTO e0 :0.45)(SS#PARTE-INFERIOR-ECON-SCALE x :0.45))(bajo-nn e0 x)))
+;(B (name bajo) (=>(^(S#BAJO-PUNTO e0 :0.45)(SS#PARTE-INFERIOR-ECON-SCALE x :0.45))(bajo-nn e0 x)))
 (B (name bajo-la-linea) (=>(^(S#BAJO-PUNTO e0 :0.45)(SS#PARTE-INFERIOR-ECON-SCALE x :0.45))(^(bajo-nn e0 x)(la-in e1 x y)(linea-nn e2 y))))
 ;(B (name rock-bottom) (=>(^(S#BAJO-PUNTO e2 :0.45)(SS#PARTE-INFERIOR-ECON-SCALE y :0.45))(^(rock-nn e0 x)(of-in e1 y x)(bottom-nn e2 y))))
 ;(B (name bottom-of-the-totem-pole) (=>(^(S#BAJO-PUNTO e0 :0.45)(SS#PARTE-INFERIOR-ECON-SCALE x :0.45))(^(bottom-nn e0 x)(of-in e1 x z)(totem-nn e2 y)(pole-nn e3 z))))

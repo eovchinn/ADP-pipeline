@@ -636,7 +636,7 @@
 ; LOW POINT 
 ; BOTTOM OF ECONOMIC SCALE
 (B (name the-pits) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECON-SCALE x :0.45))(pits-nn e0 x)))
-(B (name low) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECON-SCALE x :0.45))(low-nn e0 x)))
+;(B (name low) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECON-SCALE x :0.45))(low-nn e0 x)))
 (B (name rock-bottom) (=>(^(S#LOW-POINT e2 :0.45)(SS#BOTTOM-OF-ECON-SCALE y :0.45))(^(rock-nn e0 x)(of-in e1 y x)(bottom-nn e2 y))))
 (B (name bottom-of-the-heap) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECON-SCALE x :0.45))(^(bottom-nn e0 x)(of-in e1 x y)(heap-nn e2 y))))
 (B (name bottom-of-the-totem-pole) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECON-SCALE x :0.45))(^(bottom-nn e0 x)(of-in e1 x z)(totem-nn e2 y)(pole-nn e3 z))))
