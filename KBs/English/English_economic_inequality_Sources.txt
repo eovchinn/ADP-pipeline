@@ -671,12 +671,15 @@
 ; SUBSTANCE
 
 ;QUANTITY
+(B (name fortune)(=>(^(S#RESOURCE x :0.45)(SS#QUANTITY x :0.45)) (fortune-nn e0 x)))
 
 ;DEVELOP RESOURCES
 (B (name invest)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP-RESOURCES x :0.3)(R#DEVELOPER x e0 :0.3)) (invest-vb e0 x y u)))
 
+(B (name bank)(=>(^(S#RESOURCE x :0.45)(SS#DEVELOP-RESOURCES x :0.45)) (bank-nn e0 x)))
+
 ;DISTRIBUTION
-(B (name transfer)(=>(^(S#RESOURCE e0 :0.45)(SS#DISTRIBUTION x :0.45)) (transfer-vb e0 x y u)))
+(B (name transfer)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x :0.33) (R#DEVELOPER x e0 :0.33)) (transfer-vb e0 x y u)))
 
 (B (name distributionmap)(=>(I#DISTRIBUTION x :0.9)(SS#DISTRIBUTION x)))
 (B (name develop-resourcesmap)(=>(I#DEVELOP-RESOURCES x :0.9)(SS#DEVELOP-RESOURCES x)))
@@ -834,3 +837,8 @@
 (B (name have)(=>(^(S#PHYSICAL-OBJECT y :0.33)(SS#POSSESSION e0 :0.33)(R#POSSESSOR x :0.33)) (have-vb e0 x y u)))
 (B (name possess)(=>(^(S#PHYSICAL-OBJECT y :0.33)(SS#POSSESSION e0 :0.33)(R#POSSESSOR x :0.33)) (possess-vb e0 x y u)))
 (B (name own)(=>(^(S#PHYSICAL-OBJECT y :0.33)(SS#POSSESSION e0 :0.33)(R#POSSESSOR x :0.33)) (own-vb e0 x y u)))
+
+(B (name physical-objectmap)(=>(I#PHYSICAL-OBJECT x :0.9)(S#PHYSICAL-OBJECT x)))
+(B (name possessionmap)(=>(I#POSSESSION x :0.9)(SS#POSSESSION x)))
+
+;DARKNESS

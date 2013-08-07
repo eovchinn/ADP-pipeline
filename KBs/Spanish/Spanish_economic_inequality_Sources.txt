@@ -554,8 +554,8 @@ y u2)))
 ; BOTTOM OF ECONOMIC SCALE
 ;(B (name the-pits) (=>(^(S#BAJO-PUNTO e0 :0.45)(SS#PARTE-INFERIOR-ECON-SCALE x :0.45))(pits-nn e0 x)))
 (B (name bajo) (=>(^(S#BAJO-PUNTO e0 :0.45)(SS#PARTE-INFERIOR-ECON-SCALE x :0.45))(bajo-nn e0 x)))
+(B (name bajo-la-linea) (=>(^(S#BAJO-PUNTO e0 :0.45)(SS#PARTE-INFERIOR-ECON-SCALE x :0.45))(^(bajo-nn e0 x)(la-in e1 x y)(linea-nn e2 y))))
 ;(B (name rock-bottom) (=>(^(S#BAJO-PUNTO e2 :0.45)(SS#PARTE-INFERIOR-ECON-SCALE y :0.45))(^(rock-nn e0 x)(of-in e1 y x)(bottom-nn e2 y))))
-;(B (name bottom-of-the-heap) (=>(^(S#BAJO-PUNTO e0 :0.45)(SS#PARTE-INFERIOR-ECON-SCALE x :0.45))(^(bottom-nn e0 x)(of-in e1 x y)(heap-nn e2 y))))
 ;(B (name bottom-of-the-totem-pole) (=>(^(S#BAJO-PUNTO e0 :0.45)(SS#PARTE-INFERIOR-ECON-SCALE x :0.45))(^(bottom-nn e0 x)(of-in e1 x z)(totem-nn e2 y)(pole-nn e3 z))))
 
 ;MOVEMENT DOWNWARD
@@ -578,7 +578,7 @@ y u2)))
 (B (name saltar) (=>(^(S#BAJO-PUNTO a :0.3)(SS#MOVIMIENTO-ASCENDENTE e0 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(saltar-vb e0 x u u1)))
 (B (name brincar) (=>(^(S#BAJO-PUNTO a :0.3)(SS#MOVIMIENTO-ASCENDENTE e0 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(brincar-vb e0 x u u1)))
 
-(B (name lowpointmap)(=>(I#LOW-POINT x :0.9)(S#BAJO-PUNTO x)))
+(B (name bajo-puntomap)(=>(I#LOW-POINT x :0.9)(S#BAJO-PUNTO x)))
 (B (name parte-inferior-econ-scale-map)(=>(I#PARTE-INFERIOR-ECON-SCALE x :0.9)(SS#PARTE-INFERIOR-ECON-SCALE x)))
 (B (name movimiento-hacia-abajomap)(=>(I#MOVIMIENTO-HACIA-ABAJO x :0.9)(SS#MOVIMIENTO-HACIA-ABAJO x)))
 (B (name movimiento-ascendentemap)(=>(I#MOVIMIENTO-ASCENDENTE x :0.9)(SS#MOVIMIENTO-ASCENDENTE x)))
@@ -600,19 +600,22 @@ y u2)))
 
 ;HUMAN-BODY
 ;DEATH
-(B (name dying)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (die-vb e0 x y u)))
+(B (name morir)(=>(^(S#CUERPO-HUMANO e0 :0.3)(SS#MUERTE e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (morir-vb e0 x y u)))
+(B (name fallecer)(=>(^(S#CUERPO-HUMANO e0 :0.3)(SS#MUERTE e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (fallecer-vb e0 x y u)))
+(B (name extinguir)(=>(^(S#CUERPO-HUMANO e0 :0.3)(SS#MUERTE e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (extinguir-vb e0 x y u)))
 
 ;LIVING
-(B (name living)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#LIVING x :0.3)(R#LIVING-PATIENT x e0 :0.3)) (living-vb e0 x y u)))
-(B (name thriving)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#LIVING x :0.3)(R#LIVING-PATIENT x e0 :0.3)) (thriving-vb e0 x y u)))
+(B (name vivir)(=>(^(S#CUERPO-HUMANO e0 :0.3)(SS#VIVIR x :0.3)(R#LIVING-PATIENT x e0 :0.3)) (vivir-vb e0 x y u)))
+(B (name prosperar)(=>(^(S#CUERPO-HUMANO e0 :0.3)(SS#VIVIR x :0.3)(R#LIVING-PATIENT x e0 :0.3)) (prosperar-vb e0 x y u)))
+(B (name florecer)(=>(^(S#CUERPO-HUMANO e0 :0.3)(SS#VIVIR x :0.3)(R#LIVING-PATIENT x e0 :0.3)) (florecer-vb e0 x y u)))
 
 ;HEALTH
-(B (name reviving)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HEALTH x :0.3)(R#DEATH-PATIENT x e0 :0.3)) (reviving-vb e0 x y u)))
+(B (name restablecer)(=>(^(S#CUERPO-HUMANO e0 :0.3)(SS#SALUD x :0.3)(R#DEATH-PATIENT x e0 :0.3)) (restablecer-vb e0 x y u)))
 
-(B (name human-bodymap)(=>(I#HUMAN-BODY x :0.9)(S#HUMAN-BODY x)))
-(B (name deathmap)(=>(I#DEATH x :0.9)(SS#DEATH x)))
-(B (name livingmap)(=>(I#LIVING x :0.9)(SS#LIVING x)))
-(B (name healthmap)(=>(I#HEALTH x :0.9)(SS#HEALTH x)))
+(B (name human-bodymap)(=>(I#CUERPO-HUMANO x :0.9)(S#CUERPO-HUMANO x)))
+(B (name deathmap)(=>(I#MUERTE x :0.9)(SS#MUERTE x)))
+(B (name vivirmap)(=>(I#VIVIR x :0.9)(SS#VIVIR x)))
+(B (name saludmap)(=>(I#SALUD x :0.9)(SS#SALUD x)))
 
 ;VICTIM
 ;SUFFERER

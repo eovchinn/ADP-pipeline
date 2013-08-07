@@ -66,11 +66,17 @@ def main():
         help="The subdomain of the lexical entry.",
         required=True,
         )    
+    parser.add_argument(
+        "-c",
+        "--conceptnet",
+        help="conceptnet database (sql) to use",
+        default="concept_net.db",
+        )
     pa = parser.parse_args()
     axDomain = str(pa.domain)
     axSubdomain = str(pa.subdomain)
     #sqlite will look for a database with three columns (relation, arg1, arg2)
-    con = sqlite3.connect("concept_net.db")
+    con = sqlite3.connect(pa.conceptnet)
     to_find = "'"+pa.word.lower()+"'"
     query1 = "SELECT * FROM concepts where arg1="+to_find+";"
     query2 = "SELECT * FROM concepts where arg2="+to_find+";"
