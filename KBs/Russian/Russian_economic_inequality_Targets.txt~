@@ -111,8 +111,6 @@
 (B (name universitet) (=>(^(TS#EDUCATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (университет-nn e0 x)))
 (B (name shkola) (=>(^(TS#EDUCATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (школа-nn e0 x)))
 (B (name vuz) (=>(^(TS#EDUCATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (вуз-nn e0 x)))
-(B (name gimnazija) (=>(^(TS#EDUCATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (гимназия-nn e0 x)))
-(B (name licej) (=>(^(TS#EDUCATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (лицей-nn e0 x)))
 
 ; INEQUALITY
 

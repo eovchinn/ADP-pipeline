@@ -117,23 +117,24 @@
 (B (name treatmentmap)(=>(I#TREATMENT x :0.9)(SS#TREATMENT x)))
 
 
-; BASE
-(B (name fundament) (=>(^(S#ОСНОВА/BASE x :0.45)(SS#ФУНДАМЕНТ/FUNDAMENT x  :0.45))(фундамент-nn e0 x)))
-(B (name osnova) (=>(^(S#ОСНОВА/BASE x :0.45)(SS#ФУНДАМЕНТ/FUNDAMENT x  :0.45)) (основа-nn e0 x)))
-(B (name opora) (=>(^(S#ОСНОВА/BASE x :0.45)(SS#ФУНДАМЕНТ/FUNDAMENT x  :0.45)) (опора-nn e0 x)))
-(B (name osnova) (=>(^(S#ОСНОВА/BASE x :0.45)(SS#ФУНДАМЕНТ/FUNDAMENT x  :0.45)) (^(краеугольный-adj e1 x)(камень-nn e0 x))))
-(B (name skelet) (=>(^(S#ОСНОВА/BASE x :0.45)(SS#СКЕЛЕТ/SKELETON x  :0.45)) (скелет-nn e0 x)))
-(B (name hrebet) (=>(^(S#ОСНОВА/BASE x :0.45)(SS#СКЕЛЕТ/SKELETON x  :0.45)) (хребет-nn e0 x)))
+; BUILDING
+(B (name fundament) (=>(^(S#BUILDING y :0.45)(SS#STRUCTURE x  :0.45))(фундамент-nn e0 x)))
+(B (name osnova) (=>(^(S#BUILDING y :0.45)(SS#STRUCTURE x  :0.45)) (основа-nn e0 x)))
+(B (name opora) (=>(^(S#BUILDING y :0.45)(SS#STRUCTURE x  :0.45)) (опора-nn e0 x)))
+(B (name osnova) (=>(^(S#BUILDING y :0.45)(SS#STRUCTURE x  :0.45)) (^(краеугольный-adj e1 x)(камень-nn e0 x))))
 
-(B (name ukrepit) (=>(^(S#ОСНОВА/BASE u :0.2)(SS#УКРЕПЛЯТЬ/STRENGTHEN e0 :0.2)(R#BASE-STRUCTURE y u :0.2)(R#BASE-AGENT x u :0.2)) (укрепить-vb e0 x y u)))
-(B (name ukrepljat) (=>(^(S#ОСНОВА/BASE u :0.2)(SS#УКРЕПЛЯТЬ/STRENGTHEN e0 :0.2)(R#BASE-STRUCTURE  y u :0.2)(R#BASE-AGENT x u :0.2)) (укреплять-vb e0 x y u)))
+;(B (name skelet) (=>(^(S#BUILDING x :0.45)(SS#СКЕЛЕТ/SKELETON x  :0.45)) (скелет-nn e0 x)))
+;(B (name hrebet) (=>(^(S#BUILDING x :0.45)(SS#СКЕЛЕТ/SKELETON x  :0.45)) (хребет-nn e0 x)))
 
-
-; OF - BASE
-(B (name of-base) (=>(R#BASE-STRUCTURE  y x :0.9)(^(S#ОСНОВА/BASE x)(of-in e1 x y))))
+;(B (name ukrepit) (=>(^(S#BUILDING u :0.2)(SS#УКРЕПЛЯТЬ/STRENGTHEN e0 :0.2)(R#BASE-STRUCTURE y u :0.2)(R#BASE-AGENT x u :0.2)) (укрепить-vb e0 x y u)))
+;(B (name ukrepljat) (=>(^(S#BUILDING u :0.2)(SS#УКРЕПЛЯТЬ/STRENGTHEN e0 :0.2)(R#BASE-STRUCTURE  y u :0.2)(R#BASE-AGENT x u :0.2)) (укреплять-vb e0 x y u)))
 
 
-(B (name basemap)(=>(I#BASE x :0.9)(S#ОСНОВА/BASE x)))
+; OF - STRUCTURE
+(B (name of-structure) (=>(S#BUILDING y :0.9)(^(SS#STRUCTURE x)(of-in e1 x y))))
+
+
+(B (name buildingmap)(=>(I#BUILDING x :0.9)(S#BUILDING x)))
 
 
 ; BODY-OF-WATER 
@@ -209,7 +210,7 @@
 (B (name materialmap)(=>(I#MATERIAL x :0.9)(S#MATERIAL x)))
 (B (name cutmap)(=>(I#CUT x y :0.9)(SS#CUT x y)))
 
-; BATTLE
+; STRUGGLE
 
 (B (name vojna) (=>(^(S#BATTLE x :0.45)(SS#FIGHT x :0.45)) (война-nn e0 x)))
 (B (name borba) (=>(^(S#BATTLE x :0.45)(SS#FIGHT x :0.45)) (борьба-nn e0 x)))
@@ -282,25 +283,25 @@
 
 ; SCHOOL 
 
-(B (name shkola) (=>(^(S#ШКОЛА/SCHOOL x :0.45)(R#SCHOOL-TEACHER x x :0.45))(школа-nn e0 x)))
-(B (name nauchit) (=>(^(S#ШКОЛА/SCHOOL u :0.2)(SS#УЧИТЬ/TEACH e0 u :0.2)(R#SCHOOL-STUDENT y e0 :0.2)(R#SCHOOL-SUBJECT z e0 :0.1) (R#SCHOOL-TEACHER x e0 :0.1))(научить-vb e0 x y z)))
-(B (name uchit) (=>(^(S#ШКОЛА/SCHOOL u :0.2)(SS#УЧИТЬ/TEACH e0 u :0.2)(R#SCHOOL-STUDENT y e0 :0.2)(R#SCHOOL-SUBJECT z e0 :0.1) (R#SCHOOL-TEACHER x e0 :0.1)) (учить-vb e0 x y z)))
-(B (name obuchit) (=>(^(S#ШКОЛА/SCHOOL u :0.2)(SS#УЧИТЬ/TEACH e0 u :0.2)(R#SCHOOL-STUDENT y e0 :0.2)(R#SCHOOL-SUBJECT z e0 :0.1) (R#SCHOOL-TEACHER x e0 :0.1)) (обучить-vb e0 x y z)))
-(B (name obuchat) (=>(^(S#ШКОЛА/SCHOOL u :0.2)(SS#УЧИТЬ/TEACH e0 u :0.2)(R#SCHOOL-STUDENT y e0 :0.2)(R#SCHOOL-SUBJECT z e0 :0.1) (R#SCHOOL-TEACHER x e0 :0.1)) (обучать-vb e0 x y z)))
-(B (name uchitel) (=>(^(S#ШКОЛА/SCHOOL u :0.45)(SS#УЧИТЬ/TEACH e0 u :0.45)(R#SCHOOL-TEACHER x e0))(учитель-nn e0 x)))
+;(B (name shkola) (=>(^(S#ШКОЛА/SCHOOL x :0.45)(R#SCHOOL-TEACHER x x :0.45))(школа-nn e0 x)))
+;(B (name nauchit) (=>(^(S#ШКОЛА/SCHOOL u :0.2)(SS#УЧИТЬ/TEACH e0 u :0.2)(R#SCHOOL-STUDENT y e0 :0.2)(R#SCHOOL-SUBJECT z e0 :0.1) (R#SCHOOL-TEACHER x e0 :0.1))(научить-vb e0 x y z)))
+;(B (name uchit) (=>(^(S#ШКОЛА/SCHOOL u :0.2)(SS#УЧИТЬ/TEACH e0 u :0.2)(R#SCHOOL-STUDENT y e0 :0.2)(R#SCHOOL-SUBJECT z e0 :0.1) (R#SCHOOL-TEACHER x e0 :0.1)) (учить-vb e0 x y z)))
+;(B (name obuchit) (=>(^(S#ШКОЛА/SCHOOL u :0.2)(SS#УЧИТЬ/TEACH e0 u :0.2)(R#SCHOOL-STUDENT y e0 :0.2)(R#SCHOOL-SUBJECT z e0 :0.1) (R#SCHOOL-TEACHER x e0 :0.1)) (обучить-vb e0 x y z)))
+;(B (name obuchat) (=>(^(S#ШКОЛА/SCHOOL u :0.2)(SS#УЧИТЬ/TEACH e0 u :0.2)(R#SCHOOL-STUDENT y e0 :0.2)(R#SCHOOL-SUBJECT z e0 :0.1) (R#SCHOOL-TEACHER x e0 :0.1)) (обучать-vb e0 x y z)))
+;(B (name uchitel) (=>(^(S#ШКОЛА/SCHOOL u :0.45)(SS#УЧИТЬ/TEACH e0 u :0.45)(R#SCHOOL-TEACHER x e0))(учитель-nn e0 x)))
 
 ; OF - SCHOOL
-(B (name of-school) (=>(R#SCHOOL-SUBJECT  y x :0.9)(^(S#ШКОЛА/SCHOOL x)(of-in e1 x y))))
+;(B (name of-school) (=>(R#SCHOOL-SUBJECT  y x :0.9)(^(S#ШКОЛА/SCHOOL x)(of-in e1 x y))))
 
-(B (name schoolmap)(=>(I#SCHOOL x :0.9)(S#ШКОЛА/SCHOOL x)))
+;(B (name schoolmap)(=>(I#SCHOOL x :0.9)(S#ШКОЛА/SCHOOL x)))
 
 
 ; EXAM
 
-(B (name ekzamen) (=>(^(S#ШКОЛА/SCHOOL x :0.45)(SS#ЭКЗАМЕН/EXAMINATION y x :0.45))(экзамен-nn e0 y)))
-(B (name test) (=>(^(S#ШКОЛА/SCHOOL x :0.45)(SS#ЭКЗАМЕН/EXAMINATION y x :0.45)) (тест-nn e0 y)))
-(B (name proverka) (=>(^(S#ШКОЛА/SCHOOL x :0.45)(SS#ЭКЗАМЕН/EXAMINATION y x :0.45)) (проверка-nn e0 y)))
-(B (name ekzamen-na) (=>(R#SCHOOL-SUBJECT  y z :0.9)(^(SS#ЭКЗАМЕН/EXAMINATION x z)(на-in e1 x y))))
+;(B (name ekzamen) (=>(^(S#ШКОЛА/SCHOOL x :0.45)(SS#ЭКЗАМЕН/EXAMINATION y x :0.45))(экзамен-nn e0 y)))
+;(B (name test) (=>(^(S#ШКОЛА/SCHOOL x :0.45)(SS#ЭКЗАМЕН/EXAMINATION y x :0.45)) (тест-nn e0 y)))
+;(B (name proverka) (=>(^(S#ШКОЛА/SCHOOL x :0.45)(SS#ЭКЗАМЕН/EXAMINATION y x :0.45)) (проверка-nn e0 y)))
+;(B (name ekzamen-na) (=>(R#SCHOOL-SUBJECT  y z :0.9)(^(SS#ЭКЗАМЕН/EXAMINATION x z)(на-in e1 x y))))
 
 
 ; CRIME
@@ -437,19 +438,26 @@
 (B (name chernaya-dyra2) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-TYPE x :0.45)) (^(чёрный-adj e0 x)(дыра-nn e1 x))))
 
 ; DEPTH
-(B (name glubina) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-DEPTH x :0.45)) (глубина-nn e0 x)))
-(B (name glubokij) (=>(^(S#ABYSS x :0.3)(SS#ABYSS-DEPTH e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (глубокий-adj e0 x)))
-(B (name bezdonnyj) (=>(^(S#ABYSS x :0.3)(SS#ABYSS-DEPTH e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (бездонный-adj e0 x)))
+(B (name glubina) (=>(^(S#ABYSS u :0.45)(SS#ABYSS-DEPTH x :0.45)) (глубина-nn e0 x)))
+(B (name glubokij) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-DEPTH e0 :0.3)) (глубокий-adj e0 x)))
+(B (name bezdonnyj) (=>(^(S#ABYSS u :0.3)(SS#ABYSS-DEPTH e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (бездонный-adj e0 x)))
+(B (name uglublenie) (=>(^(S#ABYSS x :0.45)(SS#ABYSS-DEPTH e0 :0.45)) (^(углубление-nn e0 y)(of-in e1 y x))))
 
 ; ENTRANCE
 
 (B (name pogruzitsja-v) (=>(^(S#ABYSS z :0.3)(SS#ABYSS-ENTRANCE e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(погрузиться-vb e0 x y u) (в-in e1 e0 z))))
 (B (name pogruzhatsja-v) (=>(^(S#ABYSS z :0.3)(SS#ABYSS-ENTRANCE e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(погружаться-vb e0 x y u) (в-in e1 e0 z))))
+(B (name provalitsja-v) (=>(^(S#ABYSS z :0.3)(SS#ABYSS-ENTRANCE e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(провалиться-vb e0 x y u) (в-in e1 e0 z))))
 
 ; EXIT
 
 (B (name vybratsja-iz) (=>(^(S#ABYSS z :0.3)(SS#ABYSS-EXIT e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(выбраться-vb e0 x y u) (из-in e1 e0 z))))
 (B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#ABYSS-EXIT e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(выкарабкаться-vb e0 x y u) (из-in e1 e0 z))))
+
+(B (name abyssmap)(=>(I#ABYSS x :0.9)(S#ABYSS x)))
+(B (name abysstypemap)(=>(I#ABYSS-TYPE x :0.9)(SS#ABYSS-TYPE x)))
+(B (name abyssentrancemap)(=>(I#ABYSS-ENTRANCE x :0.9)(SS#ABYSS-ENTRANCE x)))
+(B (name abyssexitmap)(=>(I#ABYSS-EXIT x :0.9)(SS#ABYSS-EXIT x)))
 
 ; BURDEN
 ; WEIGHT
