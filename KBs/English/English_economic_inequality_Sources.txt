@@ -798,10 +798,12 @@
 (B (name way-out) (=>(^(S#PATHWAY x :0.45)(SS#PATHWAY-TYPE x :0.45)) (^(way-nn e0 x)(out-in e1 x u))))
 
 ;OPEN PATH
-(B (name clear-path) (=>(SS#OPEN-PATH e0 :0.9) (^(clear-adj e0 x)(SS#PATHWAY-TYPE x))))
+;(B (name clear-path) (=>(SS#OPEN-PATH e0 :0.9) (^(clear-adj e0 x)(SS#PATHWAY-TYPE x))))
+(B (name clear-path) (=>(SS#OPEN-PATH e0 :0.9) (^(SS#PATHWAY-TYPE x)(clear-adj e0 x))))
+(B (name open-path) (=>(SS#OPEN-PATH e0 :0.9) (^(SS#PATHWAY-TYPE x)(open-adj e0 x))))
 
 ;OBSTRUCTED PATH
-;(B (name obstructed-path) (=>(SS#OBSTRUCTED-PATH e0 :0.90) (^(obstructed-adj e0 x)(SS#PATHWAY-TYPE x))))
+(B (name obstructed-path) (=>(SS#OBSTRUCTED-PATH e0 :0.90) (^(SS#PATHWAY-TYPE x)(obstructed-adj e0 x))))
 
 (B (name pathwaymap)(=>(I#PATHWAY x :0.9)(S#PATHWAY x)))
 (B (name pathway-typemap)(=>(I#PATHWAY-TYPE x :0.9)(SS#PATHWAY-TYPE x)))
@@ -842,3 +844,42 @@
 (B (name possessionmap)(=>(I#POSSESSION x :0.9)(SS#POSSESSION x)))
 
 ;DARKNESS
+(B (name darkness)(=>(^(S#DARKNESS x :0.45)(SS#DARK-END-OF-RANGE x :0.45)) (darkness-nn e0 x)))
+(B (name blackness)(=>(^(S#DARKNESS x :0.45)(SS#DARK-END-OF-RANGE x :0.45)) (blackness-nn e0 x)))
+(B (name cave)(=>(^(S#DARKNESS x :0.45)(SS#DARK-END-OF-RANGE x :0.45)) (cave-nn e0 x)))
+(B (name dark-days)(=>(^(S#DARKNESS x :0.3)(SS#DARK-END-OF-RANGE e0 :0.3)(R#DARK x e0 :0.3)) (^(dark-adj e0 x)(day-nn e1 x))))
+(B (name dark-cloud)(=>(^(S#DARKNESS x :0.3)(SS#DARK-END-OF-RANGE e0 :0.3)(R#DARK x e0 :0.3)) (^(dark-adj e0 x)(cloud-nn e1 x))))
+
+
+(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK-END-OF-RANGE x :0.3)(R#DARK x :0.3)) (dark-adj e0 x)))
+
+;MOVEMENT
+; (B (name darken)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK-END-OF-RANGE x :0.3)(R#DARK y :0.3)) (darken-vb e0 x y u)))
+; (B (name enlighten)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK-END-OF-RANGE x :0.3)(R#DARK y :0.3)) (enlighten-vb e0 x y u)))
+
+
+(B (name darknessmap)(=>(I#DARKNESS x :0.9)(S#DARKNESS x)))
+(B (name dark-end-of-rangemap)(=>(I#DARK-END-OF-RANGE x :0.9)(SS#DARK-END-OF-RANGE x)))
+
+; BODY WEIGHT
+;EXCESS BODY WEIGHT
+(B (name bloated)(=>(^(S#BODY-WEIGHT e0 :0.3)(SS#EXCESS-BODY-WEIGHT x :0.3)(R#OVERWEIGHT x e0 :0.3)) (bloated-adj e0 x)))
+(B (name engorged)(=>(^(S#BODY-WEIGHT e0 :0.3)(SS#EXCESS-BODY-WEIGHT x :0.3)(R#OVERWEIGHT x e0 :0.3)) (engorged-adj e0 x)))
+(B (name fatter)(=>(^(S#BODY-WEIGHT e0 :0.3)(SS#EXCESS-BODY-WEIGHT x :0.3)(R#OVERWEIGHT x e0 :0.3)) (fatter-adj e0 x)))
+
+(B (name girth)(=>(^(S#BODY-WEIGHT x :0.45)(SS#EXCESS-BODY-WEIGHT x :0.45)) (girth-nn e0 x)))
+(B (name fat-cat)(=>(^(S#BODY-WEIGHT x :0.3)(SS#EXCESS-BODY-WEIGHT x :0.3)(R#OVERWEIGHT x e0 :0.3)) (^(fat-adj e0 x)(cat-nn e1 x))))
+
+;EXCESS CONSUMPTION
+(B (name gluttony)(=>(^(S#BODY-WEIGHT x :0.45)(SS#EXCESS-CONSUMPTION x :0.45)) (gluttony-nn e0 x)))
+(B (name hogs-at-trough)(=>(^(S#BODY-WEIGHT x :0.45)(SS#EXCESS-CONSUMPTION x :0.45)) (^(hogs-nn e0 x)(at-in e1 x y)(trough-nn e2 y))))
+
+(B (name gobble)(=>(^(S#BODY-WEIGHT e0 :0.3)(SS#EXCESS-CONSUMPTION x :0.3)(R#OVERWEIGHT x e0 :0.3)) (^(gobble-vb e0 x y u)(up-in e1 e0 z))))
+(B (name eat)(=>(^(S#BODY-WEIGHT e0 :0.3)(SS#EXCESS-CONSUMPTION x :0.3)(R#OVERWEIGHT x e0 :0.3)) (^(eat-vb e0 x y u)(up-in e1 e0 z))))
+(B (name feast)(=>(^(S#BODY-WEIGHT e0 :0.3)(SS#EXCESS-CONSUMPTION x :0.3)(R#OVERWEIGHT x e0 :0.3)) (feast-vb e0 x y u)))
+
+(B (name ravenous)(=>(^(S#BODY-WEIGHT e0 :0.3)(SS#EXCESS-CONSUMPTION x :0.3)(R#OVERWEIGHT x e0 :0.3)) (ravenous-adj e0 x)))
+
+(B (name body-weightmap)(=>(I#BODY-WEIGHT x :0.9)(S#BODY-WEIGHT x)))
+(B (name excess-body-weightmap)(=>(I#EXCESS-BODY-WEIGHT x :0.9)(SS#EXCESS-BODY-WEIGHT x)))
+(B (name excess-consumptionmap)(=>(I#EXCESS-CONSUMPTION x :0.9)(SS#EXCESS-CONSUMPTION x)))

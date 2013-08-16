@@ -11,7 +11,7 @@ clear-adj(e10,x3) ^ path-nn(e9,x3) ^ success-nn(e8,x2) ^ to-in(e7,x3,x2) ^ equal
 "!HYPOTHESIZED_success-nn_2":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_11":-0.301 "!HYPOTHESIZED_R#EDUCATION_12":-0.301 "!EXPLAINED_path-nn_1":1 "!EXPLAINED_education-nn_5":1 "!EXPLAINED_SS#PATHWAY-TYPE_9":0.45 "!HYPOTHESIZED_clear-adj_0":-1.001 "!HYPOTHESIZED_SS#PATHWAY-TYPE_9":-0.451 "!HYPOTHESIZED_S#PATHWAY_8":-0.451 "!HYPOTHESIZED_education-nn_5":-1.001 "!HYPOTHESIZED_TS#ACCESS-TO-EDUCATION_10":-0.301 "!HYPOTHESIZED_M#PROVIDE-ACCESS_15":-0.18325 "!HYPOTHESIZED_nam_6":-1.001 "!HYPOTHESIZED_!=_7":-1.001 "!HYPOTHESIZED_equal_4":-1.001 "!EXPLAINED_I#PATHWAY-TYPE_14":0.405 "!HYPOTHESIZED_M#PROVIDING-THING-A_16":-0.18325 "!HYPOTHESIZED_I#PATHWAY-TYPE_14":-0.406 "!EXPLAINED_S#PATHWAY_8":0.45 "!HYPOTHESIZED_I#PATHWAY_13":-0.406 "!HYPOTHESIZED_path-nn_1":-1.001 "!HYPOTHESIZED_to-in_3":-1.001 
 </vector>
 <statistics>
-<time total="0.091717" prepare="0.08044" ilp="0.011277" />
+<time total="0.0957851" prepare="0.08146" ilp="0.0143251" />
 <ilp solution="Optimal" variables="60" constraints="78" />
 <search-space literals="17" axiom="6" />
 </statistics>

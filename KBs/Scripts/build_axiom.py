@@ -23,12 +23,14 @@ class Template(object):
         return "(name "+self.name+")"
 
     def build_domain(self):
-        #if self.pos == "noun":
-        arg = "x"
+        if self.pos == "noun":
+            arg = "x"
+        else:
+            arg = "e0"
         return "(S#"+self.domain.upper()+" "+arg+" :"+self.weight+")"
 
     def build_subdomain(self):
-        if self.pos == "noun":
+        if self.pos == "noun" or self.pos == "adjective":
             arg = "x"
         else:
             arg = "e0"
@@ -69,7 +71,7 @@ class Template(object):
         if tag == "vb":
             return "("+self.name+"-"+tag+" e0 x y u)"
         if tag == "adj":
-            return "("+self.name+"-"+tag+" e0 y)"
+            return "("+self.name+"-"+tag+" e0 x)"
 
     def build_full_axiom(self):
         outname = self.build_name()
