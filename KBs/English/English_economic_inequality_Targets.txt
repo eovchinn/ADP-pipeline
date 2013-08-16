@@ -42,6 +42,7 @@
 
 ; WEALTH
 (B (name wealth) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (wealth-nn e0 x)))
+(B (name wealthynn) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (wealthy-nn e0 x)))
 (B (name richness) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (richness-nn e0 x)))
 (B (name rich) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (rich-nn e0 x)))
 (B (name resplendence) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (resplendence-nn e0 x)))

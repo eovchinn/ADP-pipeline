@@ -570,6 +570,7 @@
 ; TYPE
 (B (name hurt) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(hurt-vb e0 x y u2)))
 (B (name beat) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(beat-vb e0 x y u2)))
+(B (name bite) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(bite-vb e0 x y u2)))
 (B (name crush) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(crush-vb e0 x y u2)))
 (B (name harm) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(harm-vb e0 x y u2)))
 (B (name screw) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(screw-vb e0 x y u2)))
@@ -580,6 +581,7 @@
 ; (B (name hobble) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(hobble-vb e0 x y u2)))
 
 (B (name hurtn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(hurt-nn e0 x)))
+(B (name biten) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(bite-nn e0 x)))
 (B (name crushn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(crush-nn e0 x)))
 (B (name harmn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(harm-nn e0 x)))
 (B (name torturen) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(torture-nn e0 x)))
@@ -675,21 +677,35 @@
 
 : RESOURCE
 ; SUBSTANCE
+(B (name mass)(=>(^(S#RESOURCE x :0.45)(SS#SUBSTANCE x :0.45)) (mass-nn e0 x)))
+(B (name material)(=>(^(S#RESOURCE x :0.45)(SS#SUBSTANCE x :0.45)) (material-nn e0 x)))
+(B (name concentration)(=>(^(S#RESOURCE x :0.45)(SS#SUBSTANCE x :0.45)) (concentration-nn e0 x)))
+(B (name concentrate)(=>(^(S#RESOURCE x :0.45)(SS#SUBSTANCE x :0.45)) (concentrate-nn e0 x)))
 
 ;QUANTITY
-(B (name fortune)(=>(^(S#RESOURCE x :0.45)(SS#QUANTITY x :0.45)) (fortune-nn e0 x)))
+(B (name fortune)(=>(^(S#RESOURCE x :0.45)(SS#QUANTITY/SIZE x :0.45)) (fortune-nn e0 x)))
+
+(B (name deplete)(=>(^(S#RESOURCE e0 :0.45)(SS#QUANTITY/SIZE y :0.45)) (deplete-vb e0 x y u)))
 
 ;DEVELOP RESOURCES
 (B (name invest)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP-RESOURCES x :0.3)(R#DEVELOPER x e0 :0.3)) (invest-vb e0 x y u)))
+(B (name deposit)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP-RESOURCES x :0.3)(R#DEVELOPER x e0 :0.3)) (deposit-vb e0 x y u)))
+(B (name grow)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP-RESOURCES x :0.3)(R#DEVELOPER x e0 :0.3)) (grow-vb e0 x y u)))
+(B (name accumulate)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP-RESOURCES x :0.3)(R#DEVELOPER x e0 :0.3)) (accumulate-vb e0 x y u)))
+(B (name bankvb)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP-RESOURCES x :0.3)(R#DEVELOPER x e0 :0.3)) (bank-vb e0 x y u)))
 
 (B (name bank)(=>(^(S#RESOURCE x :0.45)(SS#DEVELOP-RESOURCES x :0.45)) (bank-nn e0 x)))
+(B (name investment)(=>(^(S#RESOURCE x :0.45)(SS#DEVELOP-RESOURCES x :0.45)) (investment-nn e0 x)))
 
 ;DISTRIBUTION
 (B (name transfer)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x :0.33) (R#DEVELOPER x e0 :0.33)) (transfer-vb e0 x y u)))
 
+(B (name resourcemap)(=>(I#RESOURCE x :0.9)(S#RESOURCE x)))
+(B (name substancemap)(=>(I#SUBSTANCE x :0.9)(SS#SUBSTANCE x)))
+(B (name quantitymap)(=>(I#QUANTITY/SIZE x :0.9)(SS#QUANTITY/SIZE x)))
 (B (name distributionmap)(=>(I#DISTRIBUTION x :0.9)(SS#DISTRIBUTION x)))
 (B (name develop-resourcesmap)(=>(I#DEVELOP-RESOURCES x :0.9)(SS#DEVELOP-RESOURCES x)))
-(B (name resourcemap)(=>(I#RESOURCE x :0.9)(SS#RESOURCE x)))
+
 
 ;HUMAN-BODY
 ;DEATH
@@ -722,6 +738,9 @@
 
 ;HEALTH
 (B (name reviving)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HEALTH x :0.3)(R#DEATH-PATIENT x e0 :0.3)) (revive-vb e0 x y u)))
+
+;COMPONENT
+(B (name backbone)(=>(^(S#HUMAN-BODY x :0.45)(SS#COMPONENT x :0.45)) (backbone-nn e0 x)))
 
 (B (name human-bodymap)(=>(I#HUMAN-BODY x :0.9)(S#HUMAN-BODY x)))
 (B (name deathmap)(=>(I#DEATH x :0.9)(SS#DEATH x)))
@@ -869,23 +888,54 @@
 
 ; BODY WEIGHT
 ;EXCESS BODY WEIGHT
-(B (name bloated)(=>(^(S#BODY-WEIGHT e0 :0.3)(SS#EXCESS-BODY-WEIGHT x :0.3)(R#OVERWEIGHT x e0 :0.3)) (bloated-adj e0 x)))
-(B (name engorged)(=>(^(S#BODY-WEIGHT e0 :0.3)(SS#EXCESS-BODY-WEIGHT x :0.3)(R#OVERWEIGHT x e0 :0.3)) (engorged-adj e0 x)))
-(B (name fatter)(=>(^(S#BODY-WEIGHT e0 :0.3)(SS#EXCESS-BODY-WEIGHT x :0.3)(R#OVERWEIGHT x e0 :0.3)) (fatter-adj e0 x)))
+(B (name bloated)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS-BODY-WEIGHT x :0.3)(R#OVERWEIGHT x e0 :0.3)) (bloated-adj e0 x)))
+(B (name engorged)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS-BODY-WEIGHT x :0.3)(R#OVERWEIGHT x e0 :0.3)) (engorged-adj e0 x)))
+(B (name fatter)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS-BODY-WEIGHT x :0.3)(R#OVERWEIGHT x e0 :0.3)) (fatter-adj e0 x)))
 
-(B (name girth)(=>(^(S#BODY-WEIGHT x :0.45)(SS#EXCESS-BODY-WEIGHT x :0.45)) (girth-nn e0 x)))
-(B (name fat-cat)(=>(^(S#BODY-WEIGHT x :0.3)(SS#EXCESS-BODY-WEIGHT x :0.3)(R#OVERWEIGHT x e0 :0.3)) (^(fat-adj e0 x)(cat-nn e1 x))))
+(B (name girth)(=>(^(S#OBESITY x :0.45)(SS#EXCESS-BODY-WEIGHT x :0.45)) (girth-nn e0 x)))
+(B (name fat-cat)(=>(^(S#OBESITY x :0.3)(SS#EXCESS-BODY-WEIGHT x :0.3)(R#OVERWEIGHT x e0 :0.3)) (^(fat-adj e0 x)(cat-nn e1 x))))
 
 ;EXCESS CONSUMPTION
-(B (name gluttony)(=>(^(S#BODY-WEIGHT x :0.45)(SS#EXCESS-CONSUMPTION x :0.45)) (gluttony-nn e0 x)))
-(B (name hogs-at-trough)(=>(^(S#BODY-WEIGHT x :0.45)(SS#EXCESS-CONSUMPTION x :0.45)) (^(hogs-nn e0 x)(at-in e1 x y)(trough-nn e2 y))))
+(B (name gluttony)(=>(^(S#OBESITY x :0.45)(SS#EXCESS-CONSUMPTION x :0.45)) (gluttony-nn e0 x)))
+(B (name hogs-at-trough)(=>(^(S#OBESITY x :0.45)(SS#EXCESS-CONSUMPTION x :0.45)) (^(hogs-nn e0 x)(at-in e1 x y)(trough-nn e2 y))))
 
-(B (name gobble)(=>(^(S#BODY-WEIGHT e0 :0.3)(SS#EXCESS-CONSUMPTION x :0.3)(R#OVERWEIGHT x e0 :0.3)) (^(gobble-vb e0 x y u)(up-in e1 e0 z))))
-(B (name eat)(=>(^(S#BODY-WEIGHT e0 :0.3)(SS#EXCESS-CONSUMPTION x :0.3)(R#OVERWEIGHT x e0 :0.3)) (^(eat-vb e0 x y u)(up-in e1 e0 z))))
-(B (name feast)(=>(^(S#BODY-WEIGHT e0 :0.3)(SS#EXCESS-CONSUMPTION x :0.3)(R#OVERWEIGHT x e0 :0.3)) (feast-vb e0 x y u)))
+(B (name gobble)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS-CONSUMPTION x :0.3)(R#OVERWEIGHT x e0 :0.3)) (^(gobble-vb e0 x y u)(up-in e1 e0 z))))
+(B (name eat)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS-CONSUMPTION x :0.3)(R#OVERWEIGHT x e0 :0.3)) (^(eat-vb e0 x y u)(up-in e1 e0 z))))
+(B (name feast)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS-CONSUMPTION x :0.3)(R#OVERWEIGHT x e0 :0.3)) (feast-vb e0 x y u)))
 
-(B (name ravenous)(=>(^(S#BODY-WEIGHT e0 :0.3)(SS#EXCESS-CONSUMPTION x :0.3)(R#OVERWEIGHT x e0 :0.3)) (ravenous-adj e0 x)))
+(B (name ravenous)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS-CONSUMPTION x :0.3)(R#OVERWEIGHT x e0 :0.3)) (ravenous-adj e0 x)))
 
-(B (name body-weightmap)(=>(I#BODY-WEIGHT x :0.9)(S#BODY-WEIGHT x)))
+(B (name obesitymap)(=>(I#OBESITY x :0.9)(S#OBESITY x)))
 (B (name excess-body-weightmap)(=>(I#EXCESS-BODY-WEIGHT x :0.9)(SS#EXCESS-BODY-WEIGHT x)))
 (B (name excess-consumptionmap)(=>(I#EXCESS-CONSUMPTION x :0.9)(SS#EXCESS-CONSUMPTION x)))
+
+; PARASITE
+; DESTRUCTIVE BEING
+(B (name leech)(=>(^(S#PARASITE x :0.45)(SS#DESTRUCTIVE-BEING x :0.45)) (leech-nn e0 x)))
+(B (name parasite)(=>(^(S#PARASITE x :0.45)(SS#DESTRUCTIVE-BEING x :0.45)) (parasite-nn e0 x)))
+(B (name louse)(=>(^(S#PARASITE x :0.45)(SS#DESTRUCTIVE-BEING x :0.45)) (louse-nn e0 x)))
+(B (name mosquito)(=>(^(S#PARASITE x :0.45)(SS#DESTRUCTIVE-BEING x :0.45)) (mosquito-nn e0 x)))
+(B (name bloodsucker)(=>(^(S#PARASITE x :0.45)(SS#DESTRUCTIVE-BEING x :0.45)) (bloodsucker-nn e0 x)))
+
+(B (name drain-the-lifeblood)(=>(^(S#PARASITE e0 :0.33)(SS#DESTRUCTIVE-BEING e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(drain-vb e0 x y u)(lifeblood-nn e1 y))))
+(B (name suck-the-lifeblood)(=>(^(S#PARASITE e0 :0.33)(SS#DESTRUCTIVE-BEING e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(drain-vb e0 x y u)(lifeblood-nn e1 y))))
+(B (name drain-the-blood)(=>(^(S#PARASITE e0 :0.33)(SS#DESTRUCTIVE-BEING e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(drain-vb e0 x y u)(blood-nn e1 y))))
+(B (name suck-the-blood)(=>(^(S#PARASITE e0 :0.33)(SS#DESTRUCTIVE-BEING e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(drain-vb e0 x y u)(blood-nn e1 y))))
+(B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#DESTRUCTIVE-BEING e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (leech-vb e0 x y u)))
+
+(B (name parasitemap)(=>(I#PARASITE x :0.9)(S#PARASITE x)))
+(B (name destructive-beingmap)(=>(I#DESTRUCTIVE-BEING x :0.9)(SS#DESTRUCTIVE-BEING x)))
+
+;VISION
+;BLINDNESS
+(B (name blind)(=>(^(S#VISION e0 :0.3)(SS#BLINDESS x e0 :0.3)(R#BLIND x e0 :0.3)) (blind-adj e0 x)))
+
+(B (name blindness)(=>(^(S#VISION x :0.45)(SS#BLINDESS x :0.45)) (blindness-nn e0 x)))
+
+(B (name blindvb)(=>(^(S#VISION e0 :0.3)(SS#BLINDESS x e0 :0.3)(R#BLIND y :0.3)) (blind-vb e0 x y z)))
+
+;SEEING
+
+(B (name visionmap)(=>(I#VISION x :0.9)(S#VISION x)))
+(B (name blindnessmap)(=>(I#BLINDNESS x :0.9)(SS#BLINDNESS x)))
+(B (name seeingmap)(=>(I#SEEING x :0.9)(SS#SEEING x)))
