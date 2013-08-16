@@ -272,13 +272,19 @@
 
 (B (name exitmap)(=>(I#CONFINEMENT-EXIT x :0.9)(SS#CONFINEMENT-EXIT x)))
 
-(B (name slavery) (=>(^(S#SLAVERY x :0.45)(SS#SLAVERY-TYPE x :0.45))(slavery-nn e0 x)))
-(B (name enslavement) (=>(^(S#SLAVERY x :0.45)(SS#SLAVERY-TYPE x :0.45))(enslavement-nn e0 x)))
-(B (name slave) (=>(^(S#SLAVERY e0 :0.3)(SS#SLAVERY-TYPE e0 :0.3)(R#SLAVERY-PATIENT x e0 :0.3))(slave-nn e0 x)))
-(B (name enslave) (=>(^(S#SLAVERY e0 :0.2)(SS#SLAVERY-TYPE e0 :0.2)(R#SLAVERY-PATIENT y e0 :0.2)(R#SLAVERY-AGENT x e0 :0.2))(enslave-nn e0 x y u)))
+; ENSLAVEMENT
+;SERVANT
+(B (name slave) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(slave-nn e0 x)))
 
-(B (name slaverymap)(=>(I#SLAVERY x :0.9)(S#SLAVERY x)))
-(B (name slaverytypemap)(=>(I#SLAVERY-TYPE x :0.9)(S#SLAVERY-TYPE x)))
+;OPPRESSION
+(B (name slavery) (=>(^(S#ENSLAVEMENT x :0.45)(SS#OPPRESSION x :0.45))(slavery-nn e0 x)))
+(B (name enslavement) (=>(^(S#ENSLAVEMENT x :0.45)(SS# OPPRESSIONx :0.45))(enslavement-nn e0 x)))
+(B (name enslave) (=>(^(S#ENSLAVEMENT e0 :0.2)(SS#OPPRESSION e0 :0.2)(R#ENSLAVEMENT-PATIENT y e0 :0.2)(R#ENSLAVEMENT-AGENT x e0 :0.2))(enslave-nn e0 x y u)))
+
+(B (name enslavementmap)(=>(I#ENSLAVEMENT x :0.9)(S#ENSLAVEMENT x)))
+(B (name servantmap)(=>(I#SERVANT x :0.9)(S#SERVANT x)))
+(B (name oppressionmap)(=>(I#OPPRESSION x :0.9)(S#OPPRESSION x)))
+(B (name mastermap)(=>(I#MASTER x :0.9)(S#MASTER x)))
 
 ; BODY-OF-WATER
 
@@ -520,43 +526,43 @@
 
 ; BURDEN
 ; WEIGHT
-(B (name burden) (=>(^(S#BURDEN x :0.45)(SS#WEIGHT x :0.45)) (burden-nn e0 x)))
-(B (name weight) (=>(^(S#BURDEN x :0.45)(SS#WEIGHT x :0.45)) (weight-nn e0 x)))
-(B (name load) (=>(^(S#BURDEN x :0.45)(SS#WEIGHT x :0.45)) (load-nn e0 x)))
-(B (name loading) (=>(^(S#BURDEN x :0.45)(SS#WEIGHT x :0.45)) (loading-nn e0 x)))
-(B (name millstone) (=>(^(S#BURDEN x :0.45)(SS#WEIGHT x :0.45)) (millstone-nn e0 x)))
-(B (name encumbrance) (=>(^(S#BURDEN x :0.45)(SS#WEIGHT x :0.45)) (encumbrance-nn e0 x)))
+(B (name burden) (=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#WEIGHT x :0.45)) (burden-nn e0 x)))
+(B (name weight) (=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#WEIGHT x :0.45)) (weight-nn e0 x)))
+(B (name load) (=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#WEIGHT x :0.45)) (load-nn e0 x)))
+(B (name loading) (=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#WEIGHT x :0.45)) (loading-nn e0 x)))
+(B (name millstone) (=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#WEIGHT x :0.45)) (millstone-nn e0 x)))
+(B (name encumbrance) (=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#WEIGHT x :0.45)) (encumbrance-nn e0 x)))
 
-(B (name heavy) (=>(^(S#BURDEN e0 :0.45)(SS#WEIGHT e0 :0.45)) (heavy-adj e0 x)))
-(B (name heavy-weight) (=>(^(S#BURDEN y :0.45)(SS#WEIGHT y :0.45)) (^(heavy-adj e0 x)(weight-nn e1 y))))
-(B (name heavy-load) (=>(^(S#BURDEN y :0.45)(SS#WEIGHT y :0.45)) (^(heavy-adj e0 x)(load-nn e1 y))))
+(B (name heavy) (=>(^(S#PHYSICAL-BURDEN e0 :0.45)(SS#WEIGHT e0 :0.45)) (heavy-adj e0 x)))
+(B (name heavy-weight) (=>(^(S#PHYSICAL-BURDEN y :0.45)(SS#WEIGHT y :0.45)) (^(heavy-adj e0 x)(weight-nn e1 y))))
+(B (name heavy-load) (=>(^(S#PHYSICAL-BURDEN y :0.45)(SS#WEIGHT y :0.45)) (^(heavy-adj e0 x)(load-nn e1 y))))
 
-(B (name loadvb) (=>(^(S#BURDEN e0 :0.2)(SS#WEIGHT e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (load-vb e0 x y u)))
-(B (name burthen) (=>(^(S#BURDEN e0 :0.2)(SS#WEIGHT e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (burthen-vb e0 x y u)))
-(B (name burden) (=>(^(S#BURDEN e0 :0.2)(SS#WEIGHT e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (burden-vb e0 x y u)))
+(B (name loadvb) (=>(^(S#PHYSICAL-BURDEN e0 :0.2)(SS#WEIGHT e0 :0.2)(R#PHYSICAL-BURDEN-CAUSE x e0 :0.2)(R#PHYSICAL-BURDEN-VICTIM y e0 :0.2)) (load-vb e0 x y u)))
+(B (name burthen) (=>(^(S#PHYSICAL-BURDEN e0 :0.2)(SS#WEIGHT e0 :0.2)(R#PHYSICAL-BURDEN-CAUSE x e0 :0.2)(R#PHYSICAL-BURDEN-VICTIM y e0 :0.2)) (burthen-vb e0 x y u)))
+(B (name burdenvb) (=>(^(S#PHYSICAL-BURDEN e0 :0.2)(SS#WEIGHT e0 :0.2)(R#PHYSICAL-BURDEN-CAUSE x e0 :0.2)(R#PHYSICAL-BURDEN-VICTIM y e0 :0.2)) (burden-vb e0 x y u)))
 
-(B (name weightvb) (=>(^(S#BURDEN e0 :0.45)(SS#WEIGHT e0 :0.45)) (weight-vb e0 x y u)))
+(B (name weightvb) (=>(^(S#PHYSICAL-BURDEN e0 :0.45)(SS#WEIGHT e0 :0.45)) (weight-vb e0 x y u)))
 
 ;RELIEF
-(B (name relief) (=>(^(S#BURDEN x :0.45)(SS#RELIEF x :0.45)) (relief-nn e0 x)))
-(B (name ease) (=>(^(S#BURDEN x :0.45)(SS#RELIEF x :0.45)) (ease-nn e0 x)))
-(B (name easing) (=>(^(S#BURDEN x :0.45)(SS#RELIEF x :0.45)) (easing-nn e0 x)))
-(B (name lightening) (=>(^(S#BURDEN x :0.45)(SS#RELIEF x :0.45)) (lightening-nn e0 x)))
+(B (name relief) (=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#RELIEF x :0.45)) (relief-nn e0 x)))
+(B (name ease) (=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#RELIEF x :0.45)) (ease-nn e0 x)))
+(B (name easing) (=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#RELIEF x :0.45)) (easing-nn e0 x)))
+(B (name lightening) (=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#RELIEF x :0.45)) (lightening-nn e0 x)))
 
-(B (name lighten) (=>(^(S#BURDEN x :0.2)(SS#RELIEF x :0.2)(R#CAUSE-RELIEF x e0)(R#BURDEN-VICTIM y e0 :0.2)) (lighten-vb e0 x y u)))
-(B (name easevb) (=>(^(S#BURDEN x :0.2)(SS#RELIEF x :0.2)(R#CAUSE-RELIEF x e0)(R#BURDEN-VICTIM y e0 :0.2)) (ease-vb e0 x y u)))
+(B (name lighten) (=>(^(S#PHYSICAL-BURDEN x :0.2)(SS#RELIEF x :0.2)(R#CAUSE-RELIEF x e0)(R#PHYSICAL-BURDEN-VICTIM y e0 :0.2)) (lighten-vb e0 x y u)))
+(B (name easevb) (=>(^(S#PHYSICAL-BURDEN x :0.2)(SS#RELIEF x :0.2)(R#CAUSE-RELIEF x e0)(R#PHYSICAL-BURDEN-VICTIM y e0 :0.2)) (ease-vb e0 x y u)))
 
-(B (name evasion) (=>(^(S#BURDEN x :0.45)(SS#RELIEF x :0.45)) (evasion-nn e0 x)))
-(B (name tax-evasion) (=>(^(S#BURDEN x :0.45)(SS#RELIEF x :0.45)) (^(tax-nn e0 x)(of-in e1 y x)(evasion-nn e2 y))))
+(B (name evasion) (=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#RELIEF x :0.45)) (evasion-nn e0 x)))
+(B (name tax-evasion) (=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#RELIEF x :0.45)) (^(tax-nn e0 x)(of-in e1 y x)(evasion-nn e2 y))))
 
-(B (name evade) (=>(^(S#BURDEN x :0.3)(SS#RELIEF x :0.3)(R#EVADE-AGENT x e0 :0.3)) (evade-vb e0 x y u)))
+(B (name evade) (=>(^(S#PHYSICAL-BURDEN x :0.3)(SS#RELIEF x :0.3)(R#EVADE-AGENT x e0 :0.3)) (evade-vb e0 x y u)))
 
 :PHYSICAL DISTRESS
-(B (name unsustainable)(=>(^(S#BURDEN x :0.45)(SS#PHYISCAL-DISTRESS e0 :0.45)) (unsustainable-adj e0 y)))
+(B (name unsustainable)(=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#PHYISCAL-DISTRESS e0 :0.45)) (unsustainable-adj e0 y)))
 
-(B (name overwhelm)(=>(^(S#BURDEN e0 :0.3)(SS#PHYISCAL-DISTRESS e0 :0.3)(R#BURDEN-CAUSE x e0 :0.3)) (overwhelm-vb e0 x y u)))
+(B (name overwhelm)(=>(^(S#PHYSICAL-BURDEN e0 :0.3)(SS#PHYISCAL-DISTRESS e0 :0.3)(R#PHYSICAL-BURDEN-CAUSE x e0 :0.3)) (overwhelm-vb e0 x y u)))
 
-(B (name burdenmap) (=>(I#BURDEN  x :0.9) (S#BURDEN x)))
+(B (name physical-burdenmap) (=>(I#PHYSICAL-BURDEN  x :0.9) (S#PHYSICAL-BURDEN x)))
 (B (name weightmap) (=>(I#WEIGHT  x :0.9) (SS#WEIGHT x)))
 (B (name reliefmap) (=>(I#RELIEF  x :0.9) (SS#RELIEF x)))
 
