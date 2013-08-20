@@ -275,16 +275,21 @@
 ; ENSLAVEMENT
 ;SERVANT
 (B (name slave) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(slave-nn e0 x)))
+(B (name servant) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(servant-nn e0 x)))
 
 ;OPPRESSION
 (B (name slavery) (=>(^(S#ENSLAVEMENT x :0.45)(SS#OPPRESSION x :0.45))(slavery-nn e0 x)))
 (B (name enslavement) (=>(^(S#ENSLAVEMENT x :0.45)(SS# OPPRESSIONx :0.45))(enslavement-nn e0 x)))
 (B (name enslave) (=>(^(S#ENSLAVEMENT e0 :0.2)(SS#OPPRESSION e0 :0.2)(R#ENSLAVEMENT-PATIENT y e0 :0.2)(R#ENSLAVEMENT-AGENT x e0 :0.2))(enslave-nn e0 x y u)))
 
+;MASTER
+(B (name master) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(master-nn e0 x)))
+(B (name slave-driver) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3)) (^(slave-nn e0 x)(driver-nn e1 y))))
+
 (B (name enslavementmap)(=>(I#ENSLAVEMENT x :0.9)(S#ENSLAVEMENT x)))
-(B (name servantmap)(=>(I#SERVANT x :0.9)(S#SERVANT x)))
-(B (name oppressionmap)(=>(I#OPPRESSION x :0.9)(S#OPPRESSION x)))
-(B (name mastermap)(=>(I#MASTER x :0.9)(S#MASTER x)))
+(B (name servantmap)(=>(I#SERVANT x :0.9)(SS#SERVANT x)))
+(B (name oppressionmap)(=>(I#OPPRESSION x :0.9)(SS#OPPRESSION x)))
+(B (name mastermap)(=>(I#MASTER x :0.9)(SS#MASTER x)))
 
 ; BODY-OF-WATER
 
@@ -860,13 +865,25 @@
 ; PHYSICAL OBJECT TYPE
 (B (name mass)(=>(^(S#PHYSICAL-OBJECT x :0.45)(SS#PHYSTICAL-OBJECT-TYPE x :0.45)) (mass-nn e0 x)))
 
-:POSSESSION
+;POSSESSION
 (B (name have)(=>(^(S#PHYSICAL-OBJECT y :0.33)(SS#POSSESSION e0 :0.33)(R#POSSESSOR x :0.33)) (have-vb e0 x y u)))
 (B (name possess)(=>(^(S#PHYSICAL-OBJECT y :0.33)(SS#POSSESSION e0 :0.33)(R#POSSESSOR x :0.33)) (possess-vb e0 x y u)))
 (B (name own)(=>(^(S#PHYSICAL-OBJECT y :0.33)(SS#POSSESSION e0 :0.33)(R#POSSESSOR x :0.33)) (own-vb e0 x y u)))
 
+;TRANSFER 
+(B (name receive)(=>(^(S#PHYSICAL-OBJECT e0 :0.33)(SS#TRANSFER e0 :0.33)(R#RECEIVER x e0 :0.33)) (receive-vb e0 x y u)))
+(B (name get)(=>(^(S#PHYSICAL-OBJECT e0 :0.33)(SS#TRANSFER e0 :0.33)(R#RECEIVER x e0 :0.33)) (get-vb e0 x y u)))
+(B (name obtain)(=>(^(S#PHYSICAL-OBJECT e0 :0.33)(SS#TRANSFER e0 :0.33)(R#RECEIVER x e0 :0.33)) (obtain-vb e0 x y u)))
+(B (name give)(=>(^(S#PHYSICAL-OBJECT e0 :0.23)(SS#TRANSFER e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23)) (give-vb e0 x y u)))
+(B (name deliver)(=>(^(S#PHYSICAL-OBJECT e0 :0.23)(SS#TRANSFER e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23)) (deliver-vb e0 x y u)))
+(B (name hand)(=>(^(S#PHYSICAL-OBJECT e0 :0.23)(SS#TRANSFER e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23)) (hand-vb e0 x y u)))
+(B (name toss)(=>(^(S#PHYSICAL-OBJECT e0 :0.23)(SS#TRANSFER e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23)) (toss-vb e0 x y u)))
+(B (name throw)(=>(^(S#PHYSICAL-OBJECT e0 :0.23)(SS#TRANSFER e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23)) (throw-vb e0 x y u)))
+
 (B (name physical-objectmap)(=>(I#PHYSICAL-OBJECT x :0.9)(S#PHYSICAL-OBJECT x)))
+(B (name physical-object-typemap)(=>(I#PHYSICAL-OBJECT-TYPE x :0.9)(SS#PHYSICAL-OBJECT-TYPE x)))
 (B (name possessionmap)(=>(I#POSSESSION x :0.9)(SS#POSSESSION x)))
+(B (name transfermap)(=>(I#TRANSFER x :0.9)(SS#TRANSFER x)))
 
 ;DARKNESS
 (B (name darkness)(=>(^(S#DARKNESS x :0.45)(SS#DARK-END-OF-RANGE x :0.45)) (darkness-nn e0 x)))
@@ -939,3 +956,111 @@
 (B (name visionmap)(=>(I#VISION x :0.9)(S#VISION x)))
 (B (name blindnessmap)(=>(I#BLINDNESS x :0.9)(SS#BLINDNESS x)))
 (B (name seeingmap)(=>(I#SEEING x :0.9)(SS#SEEING x)))
+
+; MONSTER
+; TYPE
+(B (name monster)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (monster-nn e0 x)))
+(B (name beast)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (beast-nn e0 x)))
+(B (name creature)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (creature-nn e0 x)))
+(B (name fiend)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (fiend-nn e0 x)))
+(B (name giant)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (giant-nn e0 x)))
+(B (name troll)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (troll-nn e0 x)))
+(B (name werewolf)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (werewolf-nn e0 x)))
+(B (name zombie)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (zombie-nn e0 x)))
+(B (name specter)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (specter-nn e0 x)))
+(B (name villain)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (villain-nn e0 x)))
+
+
+(B (name monstermap)(=>(I#MONSTER x :0.9)(S#MONSTER x)))
+(B (name monster-typemap)(=>(I#MONSTER-TYPE x :0.9)(SS#MONSTER-TYPE x)))
+
+; SCHISM
+;TYPE
+(B (name schism)(=>(^(S#SCHISM x :0.45)(SS#SCHISM-TYPE x :0.45)) (schism-nn e0 x)))
+(B (name gap)(=>(^(S#SCHISM x :0.45)(SS#SCHISM-TYPE x :0.45)) (gap-nn e0 x)))
+(B (name chasm)(=>(^(S#SCHISM x :0.45)(SS#SCHISM-TYPE x :0.45)) (chasm-nn e0 x)))
+(B (name separation)(=>(^(S#SCHISM x :0.45)(SS#SCHISM-TYPE x :0.45)) (separation-nn e0 x)))
+(B (name divide)(=>(^(S#SCHISM x :0.45)(SS#SCHISM-TYPE x :0.45)) (divide-nn e0 x)))
+(B (name expanse)(=>(^(S#SCHISM x :0.45)(SS#SCHISM-TYPE x :0.45)) (expanse-nn e0 x)))
+
+
+(B (name schismmap)(=>(I#SCHISM x :0.9)(S#SCHISM x)))
+(B (name schism-typemap)(=>(I#SCHISM-TYPE x :0.9)(SS#SCHISM-TYPE x)))
+
+; FORCEFUL EXTRACTION
+; TYPE
+(B (name squeeze)(=>(^(S#FORCEFUL-EXTRACTION x e0 :0.3)(SS#FORCEFUL-EXTRACTION-TYPE e0 :0.3)(R#EXTRACTION-AGENT x :0.3)) (squeeze-vb e0 x y u)))
+(B (name wring)(=>(^(S#FORCEFUL-EXTRACTION x e0 :0.3)(SS#FORCEFUL-EXTRACTION-TYPE e0 :0.3)(R#EXTRACTION-AGENT x :0.3)) (wring-vb e0 x y u)))
+(B (name vacuum)(=>(^(S#FORCEFUL-EXTRACTION x e0 :0.3)(SS#FORCEFUL-EXTRACTION-TYPE e0 :0.3)(R#EXTRACTION-AGENT x :0.3)) (vacuum-vb e0 x y u)))
+(B (name extract)(=>(^(S#FORCEFUL-EXTRACTION x e0 :0.3)(SS#FORCEFUL-EXTRACTION-TYPE e0 :0.3)(R#EXTRACTION-AGENT x :0.3)) (extract-vb e0 x y u)))
+(B (name wrest)(=>(^(S#FORCEFUL-EXTRACTION x e0 :0.3)(SS#FORCEFUL-EXTRACTION-TYPE e0 :0.3)(R#EXTRACTION-AGENT x :0.3)) (wrest-vb e0 x y u)))
+(B (name tug)(=>(^(S#FORCEFUL-EXTRACTION x e0 :0.3)(SS#FORCEFUL-EXTRACTION-TYPE e0 :0.3)(R#EXTRACTION-AGENT x :0.3)) (tug-vb e0 x y u)))
+
+(B (name forceful-extractionmap)(=>(I#FORCEFUL-EXTRACTION x :0.9)(S#FORCEFUL-EXTRACTION x)))
+(B (name forceful-extraction-typemap)(=>(I#FORCEFUL-EXTRACTION-TYPE x :0.9)(SS#FORCEFUL-EXTRACTION-TYPE x)))
+
+; NATURAL PHYSICAL FORCE
+; TYPE
+(B (name avalanche)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (avalanche-nn e0 x)))
+(B (name tsunami)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (tsunami-nn e0 x)))
+(B (name deluge)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (deluge-nn e0 x)))
+(B (name flood)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (flood-nn e0 x)))
+(B (name tornado)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (tornado-nn e0 x)))
+(B (name hurricane)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (hurricane-nn e0 x)))
+(B (name cyclone)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (cyclone-nn e0 x)))
+(B (name natural-disaster)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (^(natural-adj e0 x)(disaster-nn e1 x))))
+(B (name twister)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (twister-nn e0 x)))
+(B (name typhoon)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (typhoon-nn e0 x)))
+(B (name earthquake)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (earthquake-nn e0 x)))
+(B (name eruption)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (eruption-nn e0 x)))
+(B (name hailstorm)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (hailstorm-nn e0 x)))
+(B (name storm)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (storm-nn e0 x)))
+(B (name drought)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (drought-nn e0 x)))
+(B (name heat-wave)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (^(heat-adj e0 x)(wave-nn e1 x))))
+(B (name rock-slide)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (^(rock-adj e0 y)(slide-nn e1 x))))
+(B (name mud-slide)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (^(mud-adj e0 y)(slide-nn e1 x))))
+
+; RESULT
+
+(B (name natural-physical-forcemap)(=>(I#NATURAL-PHYSICAL-FORCE x :0.9)(S#NATURAL-PHYSICAL-FORCE x)))
+(B (name natural-physical-force-typemap)(=>(I#NATURAL-PHYSICAL-FORCE-TYPE x :0.9)(SS#NATURAL-PHYSICAL-FORCE-TYPE x)))
+(B (name natural-physical-force-resultmap)(=>(I#NATURAL-PHYSICAL-FORCE-RESULT x :0.9)(SS#NATURAL-PHYSICAL-FORCE-RESULT x)))
+
+; PHYSICAL LOCATION
+; DEFINED-REGION
+(B (name boundary)(=>(^(S#PHYSICAL-LOCATION x :0.45)(SS#DEFINED-REGION x :0.45)) (boundary-nn e0 x)))
+(B (name destination)(=>(^(S#PHYSICAL-LOCATION x :0.45)(SS#DEFINED-REGION x :0.45)) (destination-nn e0 x)))
+
+(B (name live-in)(=>(^(S#PHYSICAL-LOCATION e0 :0.45)(SS#DEFINED-REGION e0 w :0.45)) (^(live-vb e0 x y z)(in-in e1 e0 w))))
+(B (name reside-in)(=>(^(S#PHYSICAL-LOCATION e0 :0.45)(SS#DEFINED-REGION e0 w :0.45)) (^(reside-vb e0 x y z)(in-in e1 e0 w))))
+(B (name stay-in)(=>(^(S#PHYSICAL-LOCATION e0 :0.45)(SS#DEFINED-REGION e0 w :0.45)) (^(stay-vb e0 x y z)(in-in e1 e0 w))))
+(B (name born-into)(=>(^(S#PHYSICAL-LOCATION e0 :0.45)(SS#DEFINED-REGION e0 w :0.45)) (^(bear-vb e0 x y z)(into-in e1 e0 w))))
+
+;MOVEMENT-INTO
+(B (name pushnn)(=>(^(S#PHYSICAL-LOCATION x :0.45)(SS#MOVEMENT-INTO x :0.45)) (push-nn e0 x)))
+
+(B (name push-into)(=>(^(S#PHYSICAL-LOCATION e0 :0.23)(SS#MOVEMENT-INTO x e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(push-vb e0 x y z)(into-in e1 e0 w))))
+(B (name drive-into)(=>(^(S#PHYSICAL-LOCATION e0 :0.23)(SS#MOVEMENT-INTO x e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(drive-vb e0 x y z)(into-in e1 e0 w))))
+(B (name draw-into)(=>(^(S#PHYSICAL-LOCATION e0 :0.23)(SS#MOVEMENT-INTO x e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(draw-vb e0 x y z)(into-in e1 e0 w))))
+(B (name drag-into)(=>(^(S#PHYSICAL-LOCATION e0 :0.23)(SS#MOVEMENT-INTO x e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(drag-vb e0 x y z)(into-in e1 e0 w))))
+(B (name force-into)(=>(^(S#PHYSICAL-LOCATION e0 :0.23)(SS#MOVEMENT-INTO x e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(force-vb e0 x y z)(into-in e1 e0 w))))
+(B (name move-into)(=>(^(S#PHYSICAL-LOCATION e0 :0.23)(SS#MOVEMENT-INTO x e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(move-vb e0 x y z)(into-in e1 e0 w))))
+(B (name nudge-into)(=>(^(S#PHYSICAL-LOCATION e0 :0.23)(SS#MOVEMENT-INTO x e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(nudge-vb e0 x y z)(into-in e1 e0 w))))
+(B (name pull-into)(=>(^(S#PHYSICAL-LOCATION e0 :0.23)(SS#MOVEMENT-INTO x e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(pull-vb e0 x y z)(into-in e1 e0 w))))
+(B (name shove-into)(=>(^(S#PHYSICAL-LOCATION e0 :0.23)(SS#MOVEMENT-INTO x e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(shove-vb e0 x y z)(into-in e1 e0 w))))
+(B (name throw-into)(=>(^(S#PHYSICAL-LOCATION e0 :0.23)(SS#MOVEMENT-INTO x e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(throw-vb e0 x y z)(into-in e1 e0 w))))
+(B (name tug-into)(=>(^(S#PHYSICAL-LOCATION e0 :0.23)(SS#MOVEMENT-INTO x e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(tug-vb e0 x y z)(into-in e1 e0 w))))
+
+;EXIT
+(B (name emerge)(=>(^(S#PHYSICAL-LOCATION e0 :0.23)(SS#PHYSICAL-LOCATION-EXIT x e0 :0.23)(R#EXIT-AGENT x e0 :0.23)(R#EXIT-PATIENT x e0 :0.23)) (emerge-vb e0 x y u)))
+(B (name exit)(=>(^(S#PHYSICAL-LOCATION e0 :0.23)(SS#PHYSICAL-LOCATION-EXIT x e0 :0.23)(R#EXIT-AGENT x e0 :0.23)(R#EXIT-PATIENT x e0 :0.23)) (exit-vb e0 x y u)))
+
+(B (name passport)(=>(^(S#PHYSICAL-LOCATION x :0.45)(SS#PHYSICAL-LOCATION-EXIT x :0.45)) (passport-nn e0 x)))
+(B (name ticket)(=>(^(S#PHYSICAL-LOCATION x :0.45)(SS#PHYSICAL-LOCATION-EXIT x :0.45)) (ticket-nn e0 x)))
+(B (name exit)(=>(^(S#PHYSICAL-LOCATION x :0.45)(SS#PHYSICAL-LOCATION-EXIT x :0.45)) (exit-nn e0 x)))
+(B (name free-pass)(=>(^(S#PHYSICAL-LOCATION x :0.45)(SS#PHYSICAL-LOCATION-EXIT x :0.45)) (^(free-adj e0 x)(pass-nn e1 x))))
+
+(B (name physical-locationmap)(=>(I#PHYSICAL-LOCATION x :0.9)(S#PHYSICAL-LOCATION x)))
+(B (name defined-regionmap)(=>(I#DEFINED-REGION x :0.9)(SS#DEFINED-REGION x)))
+(B (name movement-intomap)(=>(I#MOVEMENT-INTO x :0.9)(SS#MOVEMENT-INTO x)))
+(B (name physical-location-exitmap)(=>(I#PHYSICAL-LOCATION-EXIT x :0.9)(SS#PHYSICAL-LOCATION-EXIT x)))
