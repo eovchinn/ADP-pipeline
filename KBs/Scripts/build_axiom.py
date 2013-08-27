@@ -2,6 +2,7 @@
 
 import argparse
 import sys
+import re
 
 
 class Template(object):
@@ -11,6 +12,7 @@ class Template(object):
     def __init__(self,pos,name,domain,subdomain,r1,r2,r3,r4,weight):
         self.pos = pos
         self.name = name
+        self.dash = re.search("-",name)
         self.domain = domain
         self.subdomain = subdomain if subdomain else None
         self.r1 = r1 if r1 else None
@@ -66,13 +68,28 @@ class Template(object):
 
     def build_right_side(self):
         tag = self.assign_posTag(self.pos)
-        if tag == "nn":
-            return "("+self.name+"-"+tag+" e0 x)"
-        if tag == "vb":
-            return "("+self.name+"-"+tag+" e0 x y u)"
-        if tag == "adj":
-            return "("+self.name+"-"+tag+" e0 x)"
+        if not self.dash:
+            if tag == "nn":
+                body = "("+self.name+"-"+tag+" e0 x)"
+            if tag == "vb":
+                body = "("+self.name+"-"+tag+" e0 x y u)"
+            if tag == "adj":
+                body = "("+self.name+"-"+tag+" e0 x)"
+            return body
+        else:
+            words = self.name.split("-")
+            if tag == "nn":
+                body = "("+words[0]+"-"+tag+" e0 x)"
+            if tag == "vb":
+                body = "("+words[0]+"-"+tag+" e0 x y u)"
+            if tag == "adj":
+                body = "("+words[0]+"-"+tag+" e0 x)"
+            leftovers = ""
+            for word in words[1:]:
+                leftovers+="("+word+"- )"
+            return "(^"+body+leftovers+")"
 
+            
     def build_full_axiom(self):
         outname = self.build_name()
         ls = self.build_left_side()
