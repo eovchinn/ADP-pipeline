@@ -139,7 +139,7 @@
 (B (name symptomsmap)(=>(I#DISEASE-SYMPTOMS x :0.9)(SS#DISEASE-SYMPTOMS x)))
 
 ; CRIME
-
+;TYPE
 (B (name crime)(=>(^(S#CRIME x :0.45)(SS#CRIME-TYPE x :0.45)) (crime-nn e0 x)))
 (B (name offence)(=>(^(S#CRIME x :0.45)(SS#CRIME-TYPE x :0.45)) (offence-nn e0 x)))
 (B (name felony)(=>(^(S#CRIME x :0.45)(SS#CRIME-TYPE x :0.45)) (felony-nn e0 x)))
@@ -154,16 +154,6 @@
 (B (name public-wrong)(=>(^(S#CRIME x :0.45)(SS#CRIME-TYPE x :0.45))(^(public-adj e1 x)(wrong-nn e0 x))))
 (B (name criminal-wrong)(=>(^(S#CRIME x :0.45)(SS#CRIME-TYPE x :0.45))(^(criminal-adj e1 x)(wrong-nn e0 x))))
 (B (name criminal-act) (=>(S#CRIME e1 :0.9)(^(criminal-adj e1 x)(act-nn e0 x))))
-
-(B (name bandit)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS x :0.3)(R#CRIME-AGENT x e0 :0.3)) (bandit-nn e0 x)))
-(B (name criminal)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS x :0.3)(R#CRIME-AGENT x e0 :0.3)) (criminal-nn e0 x)))
-(B (name criminal2)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS x :0.3)(R#CRIME-AGENT x e0 :0.3)) (criminal-adj e0 x)))
-(B (name delinquent)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS x :0.3)(R#CRIME-AGENT x e0 :0.3)) (delinquent-nn e0 x)))
-(B (name offender)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS x :0.3)(R#CRIME-AGENT x e0 :0.3)) (offender-nn e0 x)))
-(B (name outlaw)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS x :0.3)(R#CRIME-AGENT x e0 :0.3)) (outlaw-nn e0 x)))
-(B (name culprit)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS x :0.3)(R#CRIME-AGENT x e0 :0.3)) (culprit-nn e0 x)))
-(B (name malefactor)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS x :0.3)(R#CRIME-AGENT x e0 :0.3)) (malefactor-nn e0 x)))
-(B (name prostitute)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS x :0.3)(R#CRIME-AGENT x e0 :0.3)) (prostitute-nn e0 x)))
 
 (B (name rape)(=>(^(S#CRIME x :0.45)(SS#CRIME-TYPE x :0.45)) (rape-nn e0 x)))
 
@@ -189,13 +179,6 @@
 (B (name booty) (=>(^(S#CRIME x :0.45)(SS#CRIME-TYPE x :0.45))(booty-nn e0 x)))
 (B (name plunder) (=>(^(S#CRIME x :0.45)(SS#CRIME-TYPE x :0.45))(plunder-nn e0 x)))
 
-(B (name thief) (=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (thief-nn e0 x)))
-(B (name pilferer) (=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (pilferer-nn e0 x)))
-(B (name mugger) (=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (mugger-nn e0 x)))
-(B (name robber) (=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (robber-nn e0 x)))
-(B (name burglar) (=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (burglar-nn e0 x)))
-(B (name plunderer) (=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (plunderer-nn e0 x)))
-(B (name plurdetor) (=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATORS e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (plurdetor-nn e0 x)))
 
 (B (name rob) (=>(^(S#CRIME e0 :0.2)(SS#CRIME-TYPE e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-VICTIM y e0 :0.2)) (rob-vb e0 x y u)))
 (B (name mug) (=>(^(S#CRIME e0 :0.2)(SS#CRIME-TYPE e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-VICTIM y e0 :0.2)) (mug-vb e0 x y u)))
@@ -204,6 +187,26 @@
 (B (name from-theft) (=>(R#CRIME-VICTIM y :0.9)(^(SS#CRIME-TYPE e0)(from-in e1 e0 y))))
 
 (B (name violence) (=>(^(S#CRIME x :0.45)(SS#CRIME-TYPE x :0.45))(violence-nn e0 x)))
+
+;PERPETRATOR
+(B (name bandit)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (bandit-nn e0 x)))
+(B (name criminal)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (criminal-nn e0 x)))
+(B (name criminal2)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (criminal-adj e0 x)))
+(B (name delinquent)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (delinquent-nn e0 x)))
+(B (name offender)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (offender-nn e0 x)))
+(B (name convict)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (convict-nn e0 x)))
+(B (name outlaw)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (outlaw-nn e0 x)))
+(B (name culprit)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (culprit-nn e0 x)))
+(B (name malefactor)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (malefactor-nn e0 x)))
+(B (name prostitute)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (prostitute-nn e0 x)))
+(B (name thief) (=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (thief-nn e0 x)))
+(B (name pilferer) (=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (pilferer-nn e0 x)))
+(B (name mugger) (=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (mugger-nn e0 x)))
+(B (name robber) (=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (robber-nn e0 x)))
+(B (name burglar) (=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (burglar-nn e0 x)))
+(B (name plunderer) (=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (plunderer-nn e0 x)))
+(B (name plurdetor) (=>(^(S#CRIME e0 :0.3)(SS#CRIME-PERPETRATOR x :0.3)(R#CRIME-AGENT x e0 :0.3)) (plurdetor-nn e0 x)))
+
 
 ; PUNISHMENT
 (B (name punishment)(=>(^(S#CRIME u :0.45)(SS#CRIME-PUNISHMENT x :0.45)) (punishment-nn e0 x)))
@@ -214,15 +217,22 @@
 (B (name fine)(=>(^(S#CRIME u :0.45)(SS#CRIME-PUNISHMENT x :0.45)) (fine-nn e0 x)))
 (B (name scourge)(=>(^(S#CRIME u :0.45)(SS#CRIME-PUNISHMENT x :0.45)) (scourge-nn e0 x)))
 
+(B (name punitive)(=>(^(S#CRIME u :0.45)(SS#CRIME-PUNISHMENT x :0.45)) (punitive-adj e0 x)))
+
 (B (name prison-sentence)(=>(^(S#CRIME y :0.45)(SS#CRIME-PUNISHMENT y :0.45)) (^(prison-nn e0 x)(of-in e1 y x)(sentence-nn e2 y))))
 (B (name life-sentence)(=>(^(S#CRIME y :0.45)(SS#CRIME-PUNISHMENT y :0.45)) (^(life-nn e0 x)(of-in e1 y x)(sentence-nn e2 y))))
 
 (B (name punish) (=>(^(S#CRIME e0 :0.2)(SS#CRIME-PUNISHMENT e0 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2))(punish-vb e0 x y u)))
+(B (name convict) (=>(^(S#CRIME e0 :0.2)(SS#CRIME-PUNISHMENT e0 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2))(convict-vb e0 x y u)))
+
+; VICTIM
+(B (name victim)(=>(^(S#CRIME e0 :0.3)(SS#CRIME-VICTIM x :0.3)(R#CRIME-VICTIM x e0 :0.3)) (victim-nn e0 x)))
 
 (B (name crimemap)(=>(I#CRIME x :0.9)(S#CRIME x)))
 (B (name crime-typemap)(=>(I#CRIME-TYPE x :0.9)(SS#CRIME-TYPE x)))
-(B (name crime-perpetratorsmap)(=>(I#CRIME-PERPETRATORS x :0.9)(SS#CRIME-PERPETRATORS x)))
+(B (name crime-perpetratorsmap)(=>(I#CRIME-PERPETRATOR x :0.9)(SS#CRIME-PERPETRATOR x)))
 (B (name punishmentmap)(=>(I#CRIME-PUNISHMENT x :0.9)(SS#CRIME-PUNISHMENT x)))
+(B (name crime-perpetratorsmap)(=>(I#CRIME-VICTIM x :0.9)(SS#CRIME-VICTIM x)))
 
 ; CONFINEMENT
 ; CONFINEMENT-CONFINED-SPACE
@@ -282,6 +292,8 @@
 (B (name enslavement) (=>(^(S#ENSLAVEMENT x :0.45)(SS#ENSLAVEMENT-OPPRESSIONx :0.45))(enslavement-nn e0 x)))
 (B (name enslave) (=>(^(S#ENSLAVEMENT e0 :0.2)(SS#ENSLAVEMENT-OPPRESSION e0 :0.2)(R#ENSLAVEMENT-PATIENT y e0 :0.2)(R#ENSLAVEMENT-AGENT x e0 :0.2))(enslave-nn e0 x y u)))
 
+(B (name oppressive) (=>(^(S#ENSLAVEMENT x :0.45)(SS#ENSLAVEMENT-OPPRESSION x :0.45))(oppressive-adj e0 x)))
+
 ;MASTER
 (B (name master) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#ENSLAVEMENT-MASTER e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(master-nn e0 x)))
 (B (name slave-driver) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#ENSLAVEMENT-MASTER e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3)) (^(slave-nn e0 x)(driver-nn e1 y))))
@@ -306,23 +318,23 @@
 ; OF - BODY-OF-WATER
 (B (name of-body-of-water) (=>(R#MATTER x y :0.9)(^(SS#BODY-OF-WATER-TYPE y)(of-in e1 y x))))
 
-
+;##RI: commenting out drink and thirst because they aren't in the government lists for now.
 ; DRINK
-(B (name drink) (=>(^(S#BODY-OF-WATER u :0.2)(SS#BODY-OF-WATER-DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2)) (drink-vb e0 x y u2)))
-(B (name gulp) (=>(^(S#BODY-OF-WATER u :0.2)(SS#BODY-OF-WATER-DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2))  (gulp-vb e0 x y u2)))
-(B (name imbibe) (=>(^(S#BODY-OF-WATER u :0.2)(SS#BODY-OF-WATER-DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2))  (imbibe-vb e0 x y u2)))
-(B (name quaff) (=>(^(S#BODY-OF-WATER u :0.2)(SS#BODY-OF-WATER-DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2))  (quaff-vb e0 x y u2)))
-(B (name sip) (=>(^(S#BODY-OF-WATER u :0.2)(SS#BODY-OF-WATER-DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2))  (sip-vb e0 x y u2)))
+; (B (name drink) (=>(^(S#BODY-OF-WATER u :0.2)(SS#BODY-OF-WATER-DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2)) (drink-vb e0 x y u2)))
+; (B (name gulp) (=>(^(S#BODY-OF-WATER u :0.2)(SS#BODY-OF-WATER-DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2))  (gulp-vb e0 x y u2)))
+; (B (name imbibe) (=>(^(S#BODY-OF-WATER u :0.2)(SS#BODY-OF-WATER-DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2))  (imbibe-vb e0 x y u2)))
+; (B (name quaff) (=>(^(S#BODY-OF-WATER u :0.2)(SS#BODY-OF-WATER-DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2))  (quaff-vb e0 x y u2)))
+; (B (name sip) (=>(^(S#BODY-OF-WATER u :0.2)(SS#BODY-OF-WATER-DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2))  (sip-vb e0 x y u2)))
 
-(B (name drink2) (=>(^(S#BODY-OF-WATER y :0.45) (SS#BODY-OF-WATER-DRINK x y :0.45))(drink-nn e0 x)))
-(B (name gulp) (=>(^(S#BODY-OF-WATER y :0.45) (SS#BODY-OF-WATER-DRINK x y :0.45))(gulp-nn e0 x)))
-(B (name sip) (=>(^(S#BODY-OF-WATER y :0.45) (SS#BODY-OF-WATER-DRINK x y :0.45))(sip-nn e0 x)))
-(B (name swig) (=>(^(S#BODY-OF-WATER y :0.45) (SS#BODY-OF-WATER-DRINK x y :0.45))(swig-nn e0 x)))
+; (B (name drink2) (=>(^(S#BODY-OF-WATER y :0.45) (SS#BODY-OF-WATER-DRINK x y :0.45))(drink-nn e0 x)))
+; (B (name gulp) (=>(^(S#BODY-OF-WATER y :0.45) (SS#BODY-OF-WATER-DRINK x y :0.45))(gulp-nn e0 x)))
+; (B (name sip) (=>(^(S#BODY-OF-WATER y :0.45) (SS#BODY-OF-WATER-DRINK x y :0.45))(sip-nn e0 x)))
+; (B (name swig) (=>(^(S#BODY-OF-WATER y :0.45) (SS#BODY-OF-WATER-DRINK x y :0.45))(swig-nn e0 x)))
 
 ; THIRST
-(B (name thirst) (=>(^(S#BODY-OF-WATER y :0.3) (SS#BODY-OF-WATER-THIRST x :0.3)(R#DRINKER x e0 :0.3))(thirst-nn e0 x)))
-(B (name thirsty) (=>(^(S#BODY-OF-WATER y :0.3) (SS#BODY-OF-WATER-THIRST e0 :0.3)(R#DRINKER x e0 :0.3))(thirsty-adj e0 x)))
-(B (name thirstier) (=>(^(S#BODY-OF-WATER y :0.3) (SS#BODY-OF-WATER-THIRST e0 :0.3)(R#DRINKER x e0 :0.3))(thirstier-adj e0 x)))
+; (B (name thirst) (=>(^(S#BODY-OF-WATER y :0.3) (SS#BODY-OF-WATER-THIRST x :0.3)(R#DRINKER x e0 :0.3))(thirst-nn e0 x)))
+; (B (name thirsty) (=>(^(S#BODY-OF-WATER y :0.3) (SS#BODY-OF-WATER-THIRST e0 :0.3)(R#DRINKER x e0 :0.3))(thirsty-adj e0 x)))
+; (B (name thirstier) (=>(^(S#BODY-OF-WATER y :0.3) (SS#BODY-OF-WATER-THIRST e0 :0.3)(R#DRINKER x e0 :0.3))(thirstier-adj e0 x)))
 
 ; OF - THIRST
 (B (name of-thirst) (=>(R#THIRST-OBJECT y x :0.9)(^(SS#BODY-OF-WATER-THIRST x)(of-in e1 x y))))
@@ -407,6 +419,7 @@
 (B (name insult) (=>(^(S#STRUGGLE u :0.2) (SS#STRUGGLE-TYPE e0 :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#BATTLE-ENEMY y e0 :0.2)) (insult-vb e0 x y u2)))
 (B (name charge) (=>(^(S#STRUGGLE u :0.2) (SS#STRUGGLE-TYPE e0 :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (charge-vb e0 x y u2)))
 (B (name invade) (=>(^(S#STRUGGLE u :0.2) (SS#STRUGGLE-TYPE e0 :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (invade-vb e0 x y u2)))
+(B (name defeat) (=>(^(S#STRUGGLE u :0.2) (SS#STRUGGLE-TYPE e0 :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (defeat-vb e0 x y u2)))
 
 (B (name fight-with) (=> (S#STRUGGLE y x :0.90)(^(SS#STRUGGLE-TYPE x)(with-in x y))))
 (B (name fight-against) (=> (S#STRUGGLE y x :0.90)(^(SS#STRUGGLE-TYPE x)(against-in x y))))
@@ -502,6 +515,14 @@
 (B (name depth-of) (=> (R#ABYSS-THEME y x :0.90)(^(SS#ABYSS-DEPTH x)(of-in e1 x y))))
 
 ; ENTRANCE
+;##RI: Should these nouns look for an ABYSS-TYPE to trigger?
+(B (name verge)(=>(^(S#ABYSS x :0.45)(SS#ABYSS-ENTRANCE x :0.45)) (verge-nn e0 x)))
+(B (name edge)(=>(^(S#ABYSS x :0.45)(SS#ABYSS-ENTRANCE x :0.45)) (edge-nn e0 x)))
+(B (name border)(=>(^(S#ABYSS x :0.45)(SS#ABYSS-ENTRANCE x :0.45)) (border-nn e0 x)))
+(B (name borderline)(=>(^(S#ABYSS x :0.45)(SS#ABYSS-ENTRANCE x :0.45)) (borderline-nn e0 x)))
+(B (name brink)(=>(^(S#ABYSS x :0.45)(SS#ABYSS-ENTRANCE x :0.45)) (brink-nn e0 x)))
+(B (name cliff)(=>(^(S#ABYSS x :0.45)(SS#ABYSS-ENTRANCE x :0.45)) (cliff-nn e0 x)))
+(B (name precipice)(=>(^(S#ABYSS x :0.45)(SS#ABYSS-ENTRANCE x :0.45)) (precipice-nn e0 x)))
 
 (B (name push-into) (=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(push-vb e0 x y u2)(into-in e1 e0 z))))
 (B (name drive-into)(=>(^(S#ABYSS z :0.2)(SS#ABYSS-ENTRANCE e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(drive-vb e0 x y u2)(into-in e1 e0 z))))
@@ -559,6 +580,7 @@
 
 (B (name lighten) (=>(^(S#PHYSICAL-BURDEN x :0.2)(SS#PHYSICAL-BURDEN-RELIEF x :0.2)(R#CAUSE-RELIEF x e0)(R#PHYSICAL-BURDEN-VICTIM y e0 :0.2)) (lighten-vb e0 x y u)))
 (B (name easevb) (=>(^(S#PHYSICAL-BURDEN x :0.2)(SS#PHYSICAL-BURDEN-RELIEF x :0.2)(R#CAUSE-RELIEF x e0)(R#PHYSICAL-BURDEN-VICTIM y e0 :0.2)) (ease-vb e0 x y u)))
+(B (name relieve) (=>(^(S#PHYSICAL-BURDEN x :0.2)(SS#PHYSICAL-BURDEN-RELIEF x :0.2)(R#CAUSE-RELIEF x e0)(R#PHYSICAL-BURDEN-VICTIM y e0 :0.2)) (relieve-vb e0 x y u)))
 
 (B (name evasion) (=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#PHYSICAL-BURDEN-RELIEF x :0.45)) (evasion-nn e0 x)))
 (B (name tax-evasion) (=>(^(S#PHYSICAL-BURDEN x :0.45)(SS#PHYSICAL-BURDEN-RELIEF x :0.45)) (^(tax-nn e0 x)(of-in e1 y x)(evasion-nn e2 y))))
@@ -586,9 +608,18 @@
 (B (name maim) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(maim-vb e0 x y u2)))
 (B (name traumatize) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(traumatize-vb e0 x y u2)))
 (B (name injure) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(injure-vb e0 x y u2)))
-; (B (name hobble) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(hobble-vb e0 x y u2)))
+(B (name poison) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(poison-vb e0 x y u2)))
+(B (name sting) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(sting-vb e0 x y u2)))
+(B (name strangle) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(strangle-vb e0 x y u2)))
+(B (name slash) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(slash-vb e0 x y u2)))
+(B (name cut) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(cut-vb e0 x y u2)))
+(B (name erode) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(erode-vb e0 x y u2)))
+(B (name hobble) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(hobble-vb e0 x y u2)))
+(B (name target) (=>(^(S#PHYSICAL-HARM e0 :0.2)(SS#PHYSICAL-HARM-TYPE e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(target-vb e0 x y u2)))
 
 (B (name hurtn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(hurt-nn e0 x)))
+(B (name cutn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(cut-nn e0 x)))
+(B (name slashn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(slash-nn e0 x)))
 (B (name biten) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(bite-nn e0 x)))
 (B (name crushn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(crush-nn e0 x)))
 (B (name harmn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(harm-nn e0 x)))
@@ -596,11 +627,16 @@
 (B (name maimn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(maim-nn e0 x)))
 (B (name trauman) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(trauma-nn e0 x)))
 (B (name injuryn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(injury-nn e0 x)))
-(B (name screwn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(screw-nn e0 x)))
+;(B (name screwn) (=>(^(S#PHYSICAL-HARM x :0.2)(SS#PHYSICAL-HARM-TYPE x :0.2))(screw-nn e0 x)))
+(B (name poisonn)(=>(^(S#PHYSICAL-HARM x :0.45)(SS#PHYSICAL-HARM-TYPE x :0.45)) (poison-nn e0 x)))
+(B (name venom)(=>(^(S#PHYSICAL-HARM x :0.45)(SS#PHYSICAL-HARM-TYPE x :0.45)) (venom-nn e0 x)))
+(B (name stingn)(=>(^(S#PHYSICAL-HARM x :0.45)(SS#PHYSICAL-HARM-TYPE x :0.45)) (sting-nn e0 x)))
 
 (B (name crippling)(=>(^(S#PHYSICAL-HARM e0 :0.45)(SS#PHYSICAL-HARM-TYPE e0 :0.45)) (crippling-adj e0 x)))
 (B (name soul-crushing)(=>(^(S#PHYSICAL-HARM e0 :0.45)(SS#PHYSICAL-HARM-TYPE e0 :0.45)) (soul-crushing-adj e0 x)))
-
+(B (name toxic)(=>(^(S#PHYSICAL-HARM e0 :0.45)(SS#PHYSICAL-HARM-TYPE x :0.45)) (toxic-adj e0 x)))
+(B (name targeted)(=>(^(S#PHYSICAL-HARM e0 :0.45)(SS#PHYSICAL-HARM-TYPE x :0.45)) (targeted-adj e0 x)))
+(B (name poisonous)(=>(^(S#PHYSICAL-HARM e0 :0.45)(SS#PHYSICAL-HARM-TYPE x :0.45)) (poisonous-adj e0 x)))
 
 
 ;RESTRAINT
@@ -610,6 +646,10 @@
 (B (name held-back)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#PHYSICAL-HARM-RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(hold-vb e0 x y u)(back-rb e1 e0))))
 (B (name bring-to-knees)(=>(^(S#PHYSICAL-HARM e0 :0.23)(SS#PHYSICAL-HARM-RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(bring-vb e0 x y u)(to-in e1 e0 z) (knees-nn e2 z))))
 (B (name bury)(=>(^(S#PHYSICAL-HARM z :0.23)(SS#PHYSICAL-HARM-RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (bury-vb e0 x y u)))
+(B (name curb)(=>(^(S#PHYSICAL-HARM z :0.23)(SS#PHYSICAL-HARM-RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (curb-vb e0 x y u)))
+(B (name impair)(=>(^(S#PHYSICAL-HARM z :0.23)(SS#PHYSICAL-HARM-RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (impair-vb e0 x y u)))
+(B (name impede)(=>(^(S#PHYSICAL-HARM z :0.23)(SS#PHYSICAL-HARM-RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (impede-vb e0 x y u)))
+(B (name constrict)(=>(^(S#PHYSICAL-HARM z :0.23)(SS#PHYSICAL-HARM-RESTRAINT e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (constrict-vb e0 x y u)))
 
 
 ;PROTECTION
@@ -719,49 +759,49 @@
 (B (name develop-resourcesmap)(=>(I#RESOURCE-DEVELOP-RESOURCES x :0.9)(SS#RESOURCE-DEVELOP-RESOURCES x)))
 
 
-;HUMAN-BODY
-;DEATH
-(B (name dying)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (die-vb e0 x y u)))
-(B (name breathe-last-breath)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(breathe-vb e0 x y u)(last-adj e1 y)(breath-nn e2 y))))
-(B (name buy-the-farm)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(buy-vb e0 x y u)(farm-nn e1 y))))
-(B (name croak)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (croak-vb e0 x y u)))
-(B (name decay)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (decay-vb e0 x y u)))
-(B (name expire)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (expire-vb e0 x y u)))
-(B (name pass-away)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(pass-vb e0 x y u)(away-rb e1 e0))))
-(B (name perish)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (perish-vb e0 x y u)))
-(B (name rot)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (rot-vb e0 x y u)))
-(B (name rot-away)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(rot-vb e0 x y u)(away-rb e1 e0))))
-(B (name take-last-breath)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(take-vb e0 x y u)(last-adj e1 y)(breath-nn e2 y))))
-(B (name wither)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (wither-vb e0 x y u)))
+; ;HUMAN-BODY
+; ;DEATH
+; (B (name dying)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (die-vb e0 x y u)))
+; (B (name breathe-last-breath)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(breathe-vb e0 x y u)(last-adj e1 y)(breath-nn e2 y))))
+; (B (name buy-the-farm)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(buy-vb e0 x y u)(farm-nn e1 y))))
+; (B (name croak)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (croak-vb e0 x y u)))
+; (B (name decay)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (decay-vb e0 x y u)))
+; (B (name expire)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (expire-vb e0 x y u)))
+; (B (name pass-away)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(pass-vb e0 x y u)(away-rb e1 e0))))
+; (B (name perish)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (perish-vb e0 x y u)))
+; (B (name rot)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (rot-vb e0 x y u)))
+; (B (name rot-away)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(rot-vb e0 x y u)(away-rb e1 e0))))
+; (B (name take-last-breath)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(take-vb e0 x y u)(last-adj e1 y)(breath-nn e2 y))))
+; (B (name wither)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (wither-vb e0 x y u)))
 
-(B (name dead)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (dead-adj e0 x)))
-(B (name deceased)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (deceased-adj e0 x)))
+; (B (name dead)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (dead-adj e0 x)))
+; (B (name deceased)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (deceased-adj e0 x)))
 
-(B (name death)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATHx :0.3)(R#DEATH-PATIENT x e0 :0.3)) (death-nn e0 x)))
-(B (name deceasedn)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (deceased-nn e0 x)))
-(B (name fatality)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATHx :0.3)(R#DEATH-PATIENT x e0 :0.3)) (fatality-nn e0 x)))
+; (B (name death)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATHx :0.3)(R#DEATH-PATIENT x e0 :0.3)) (death-nn e0 x)))
+; (B (name deceasedn)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATH e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (deceased-nn e0 x)))
+; (B (name fatality)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-DEATHx :0.3)(R#DEATH-PATIENT x e0 :0.3)) (fatality-nn e0 x)))
 
-;LIVING
-(B (name live)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HUMAN-BODY-LIVING e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (live-vb e0 x y u)))
-(B (name thrive)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HUMAN-BODY-LIVING e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (thrive-vb e0 x y u)))
-(B (name flourish)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HUMAN-BODY-LIVING e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (flourish-vb e0 x y u)))
+; ;LIVING
+; (B (name live)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HUMAN-BODY-LIVING e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (live-vb e0 x y u)))
+; (B (name thrive)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HUMAN-BODY-LIVING e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (thrive-vb e0 x y u)))
+; (B (name flourish)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HUMAN-BODY-LIVING e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (flourish-vb e0 x y u)))
 
-(B (name alive)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-LIVING e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (alive-adj e0 y)))
+; (B (name alive)(=>(^(S#HUMAN-BODY x :0.3)(SS#HUMAN-BODY-LIVING e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (alive-adj e0 y)))
 
-;HEALTH
-(B (name reviving)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HUMAN-BODY-HEALTH x :0.3)(R#DEATH-PATIENT x e0 :0.3)) (revive-vb e0 x y u)))
+; ;HEALTH
+; (B (name reviving)(=>(^(S#HUMAN-BODY e0 :0.3)(SS#HUMAN-BODY-HEALTH x :0.3)(R#DEATH-PATIENT x e0 :0.3)) (revive-vb e0 x y u)))
 
-;COMPONENT
-;##RI: probably different inferences for different components
-(B (name backbone)(=>(^(S#HUMAN-BODY x :0.45)(SS#HUMAN-BODY-COMPONENT x :0.45)) (backbone-nn e0 x)))
-(B (name face)(=>(^(S#HUMAN-BODY x :0.45)(SS#HUMAN-BODY-COMPONENT x :0.45)) (face-nn e0 x)))
-(B (name hand)(=>(^(S#HUMAN-BODY x :0.45)(SS#HUMAN-BODY-COMPONENT x :0.45)) (hand-nn e0 x)))
+; ;COMPONENT
+; ;##RI: probably different inferences for different components
+; (B (name backbone)(=>(^(S#HUMAN-BODY x :0.45)(SS#HUMAN-BODY-COMPONENT x :0.45)) (backbone-nn e0 x)))
+; (B (name face)(=>(^(S#HUMAN-BODY x :0.45)(SS#HUMAN-BODY-COMPONENT x :0.45)) (face-nn e0 x)))
+; (B (name hand)(=>(^(S#HUMAN-BODY x :0.45)(SS#HUMAN-BODY-COMPONENT x :0.45)) (hand-nn e0 x)))
 
-(B (name human-bodymap)(=>(I#HUMAN-BODY x :0.9)(S#HUMAN-BODY x)))
-(B (name human-body-deathmap)(=>(I#HUMAN-BODY-DEATHx :0.9)(SS#HUMAN-BODY-DEATH x)))
-(B (name human-body-livingmap)(=>(I#HUMAN-BODY-LIVINGx :0.9)(SS#HUMAN-BODY-LIVING x)))
-(B (name human-body-healthmap)(=>(I#HUMAN-BODY-HEALTH x :0.9)(SS#HUMAN-BODY-HEALTH x)))
-(B (name human-body-componentmap)(=>(I#HUMAN-BODY-COMPONENT x :0.9)(SS#HUMAN-BODY-COMPONENT x)))
+; (B (name human-bodymap)(=>(I#HUMAN-BODY x :0.9)(S#HUMAN-BODY x)))
+; (B (name human-body-deathmap)(=>(I#HUMAN-BODY-DEATHx :0.9)(SS#HUMAN-BODY-DEATH x)))
+; (B (name human-body-livingmap)(=>(I#HUMAN-BODY-LIVINGx :0.9)(SS#HUMAN-BODY-LIVING x)))
+; (B (name human-body-healthmap)(=>(I#HUMAN-BODY-HEALTH x :0.9)(SS#HUMAN-BODY-HEALTH x)))
+; (B (name human-body-componentmap)(=>(I#HUMAN-BODY-COMPONENT x :0.9)(SS#HUMAN-BODY-COMPONENT x)))
 
 ;VICTIM
 ;SUFFERER
@@ -802,11 +842,10 @@
 (B (name support-structure)(=>(^(S#BUILDING x :0.45)(SS#BUILDING-STRUCTURE x :0.45)) (^(support-nn e0 x)(of-in e1 y x)(structure-nn e2 y))))
 (B (name structure)(=>(^(S#BUILDING x :0.45)(SS#BUILDING-STRUCTURE x :0.45)) (structure-nn e0 x)))
 
-
-; CREATION
-(B (name build)(=>(^(S#BUILDINGx :0.45)(SS#BUILDING-CREATION e0 :0.45)) (build-vb e0 x y u)))
-(B (name construct)(=>(^(S#BUILDINGx :0.45)(SS#BUILDING-CREATION e0 :0.45)) (construct-vb e0 x y u)))
-(B (name construction)(=>(^(S#BUILDING x :0.45)(SS#BUILDING-CREATION x :0.45)) (construction-nn e0 x)))
+; CREATION/DESTRUCTION
+(B (name build)(=>(^(S#BUILDINGx :0.3)(SS#BUILDING-CREATION_DESTRUCTION e0 :0.3)(R#CREATING e0 :0.3)) (build-vb e0 x y u)))
+(B (name construct)(=>(^(S#BUILDINGx :0.3)(SS#BUILDING-CREATION_DESTRUCTION e0 :0.3)(R#CREATING e0 :0.3)) (construct-vb e0 x y u)))
+(B (name construction)(=>(^(S#BUILDINGx :0.3)(SS#BUILDING-CREATION_DESTRUCTION e0 :0.3)(R#CREATING e0 :0.3)) (construction-nn e0 x)))
 
 ; COMPONENTS
 (B (name building-block)(=>(^(S#BUILDING x :0.45)(SS#BUILDING-COMPONENTS x :0.45)) (^(building-nn e0 x)(of-in e1 y x)(block-nn e2 y))))
@@ -815,14 +854,15 @@
 (B (name brick)(=>(^(S#BUILDING x :0.45)(SS#BUILDING-COMPONENTS x :0.45)) (brick-nn e0 x)))
 (B (name concrete)(=>(^(S#BUILDING x :0.45)(SS#BUILDING-COMPONENTS x :0.45)) (concrete-nn e0 x)))
 (B (name mortar)(=>(^(S#BUILDING x :0.45)(SS#BUILDING-COMPONENTS x :0.45)) (mortar-nn e0 x)))
-(B (name sand)(=>(^(S#BUILDING x :0.45)(SS#BUILDING-COMPONENTS x :0.45)) (sand-nn e0 x)))
+;##RI: sand might evoke weakness as opposed to support?
+;(B (name sand)(=>(^(S#BUILDING x :0.45)(SS#BUILDING-COMPONENTS x :0.45)) (sand-nn e0 x)))
 (B (name stone)(=>(^(S#BUILDING x :0.45)(SS#BUILDING-COMPONENTS x :0.45)) (stone-nn e0 x)))
 (B (name keystone)(=>(^(S#BUILDING x :0.45)(SS#BUILDING-COMPONENTS x :0.45)) (keystone-nn e0 x)))
 (B (name wall)(=>(^(S#BUILDING x :0.45)(SS#BUILDING-COMPONENTS x :0.45)) (wall-nn e0 x)))
 
 (B (name buildingmap)(=>(I#BUILDING x :0.9)(S#BUILDING x)))
 (B (name structuremap)(=>(I#BUILDING-STRUCTURE x :0.9)(SS#BUILDING-STRUCTURE x)))
-(B (name creationmap)(=>(I#BUILDING-CREATION x :0.9)(SS#BUILDING-CREATION x)))
+(B (name creation_destructionmap)(=>(I#BUILDING-CREATION_DESTRUCTION x :0.9)(SS#BUILDING-CREATION_DESTRUCTION x)))
 (B (name componentsmap)(=>(I#BUILDING-COMPONENTS x :0.9)(SS#BUILDING-COMPONENTS x)))
 
 ; PATHWAY
@@ -918,7 +958,7 @@
 
 (B (name darknessmap)(=>(I#DARKNESS x :0.9)(S#DARKNESS x)))
 (B (name dark-end-of-rangemap)(=>(I#DARK-END-OF-RANGE x :0.9)(SS#DARKNESS-DARK-END-OF-RANGE x)))
-(B (name darkness-movementmap)(=>(I#MOVEMENT x :0.9)(SS#DARKNESS-MOVEMENT x)))
+(B (name darkness-movementmap)(=>(I#DARKNESS-MOVEMENT x :0.9)(SS#DARKNESS-MOVEMENT x)))
 
 ; BODY WEIGHT
 ;EXCESS BODY WEIGHT
@@ -954,9 +994,9 @@
 (B (name bloodsucker)(=>(^(S#PARASITE x :0.45)(SS#PARASITE-DESTRUCTIVE-BEING x :0.45)) (bloodsucker-nn e0 x)))
 
 (B (name drain-the-lifeblood)(=>(^(S#PARASITE e0 :0.33)(SS#PARASITE-DESTRUCTIVE-BEING e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(drain-vb e0 x y u)(lifeblood-nn e1 y))))
-(B (name suck-the-lifeblood)(=>(^(S#PARASITE e0 :0.33)(SS#PARASITE-DESTRUCTIVE-BEING e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(drain-vb e0 x y u)(lifeblood-nn e1 y))))
+(B (name suck-the-lifeblood)(=>(^(S#PARASITE e0 :0.33)(SS#PARASITE-DESTRUCTIVE-BEING e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(suck-vb e0 x y u)(lifeblood-nn e1 y))))
 (B (name drain-the-blood)(=>(^(S#PARASITE e0 :0.33)(SS#PARASITE-DESTRUCTIVE-BEING e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(drain-vb e0 x y u)(blood-nn e1 y))))
-(B (name suck-the-blood)(=>(^(S#PARASITE e0 :0.33)(SS#PARASITE-DESTRUCTIVE-BEING e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(drain-vb e0 x y u)(blood-nn e1 y))))
+(B (name suck-the-blood)(=>(^(S#PARASITE e0 :0.33)(SS#PARASITE-DESTRUCTIVE-BEING e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(suck-vb e0 x y u)(blood-nn e1 y))))
 (B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#PARASITE-DESTRUCTIVE-BEING e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (leech-vb e0 x y u)))
 
 (B (name parasitemap)(=>(I#PARASITE x :0.9)(S#PARASITE x)))
@@ -964,13 +1004,16 @@
 
 ;VISION
 ;BLINDNESS
-(B (name blind)(=>(^(S#VISION e0 :0.3)(SS#VISION-BLINDESS x e0 :0.3)(R#BLIND x e0 :0.3)) (blind-adj e0 x)))
+(B (name blind)(=>(^(S#VISION e0 :0.3)(SS#VISION-BLINDNESS x :0.3)(R#BLIND x e0 :0.3)) (blind-adj e0 x)))
 
-(B (name blindness)(=>(^(S#VISION x :0.45)(SS#VISION-BLINDESS x :0.45)) (blindness-nn e0 x)))
+(B (name blindness)(=>(^(S#VISION x :0.45)(SS#VISION-BLINDNESS x :0.45)) (blindness-nn e0 x)))
 
-(B (name blindvb)(=>(^(S#VISION e0 :0.3)(SS#VISION-BLINDESS x e0 :0.3)(R#BLIND y :0.3)) (blind-vb e0 x y z)))
+(B (name blindvb)(=>(^(S#VISION e0 :0.3)(SS#VISION-BLINDNESS x e0 :0.3)(R#BLIND y :0.3)) (blind-vb e0 x y z)))
 
 ;SEEING
+(B (name open-eyes)(=>(^(S#VISION e1 :0.45)(SS#SEEING x :0.45)) (^(open-adj e0 x)(eyes-nn e1 x))))
+
+(B (name see)(=>(^(S#VISION e0 :0.3)(SS#VISION-SEEING x e0 :0.3)(R#SIGHTED y :0.3)) (see-vb e0 x y z)))
 
 (B (name visionmap)(=>(I#VISION x :0.9)(S#VISION x)))
 (B (name blindnessmap)(=>(I#VISION-BLINDNESS x :0.9)(SS#VISION-BLINDNESS x)))
@@ -979,6 +1022,8 @@
 ; MONSTER
 ; TYPE
 (B (name monster)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (monster-nn e0 x)))
+(B (name frankenstein)(=>(^(S#MONSTER x :0.45)(SS#FRANKENSTEIN-TYPE x :0.45)) (frankenstein-nn e0 x)))
+(B (name frankensteins-monster)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (^(monster-nn e0 x)(of-in e1 x y)(frankenstein-nn e2 y))))
 (B (name beast)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (beast-nn e0 x)))
 (B (name creature)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (creature-nn e0 x)))
 (B (name fiend)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (fiend-nn e0 x)))
@@ -987,13 +1032,18 @@
 (B (name werewolf)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (werewolf-nn e0 x)))
 (B (name zombie)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (zombie-nn e0 x)))
 (B (name specter)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (specter-nn e0 x)))
+(B (name vampire)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (vampire-nn e0 x)))
 (B (name villain)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (villain-nn e0 x)))
 (B (name dragon)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (dragon-nn e0 x)))
 (B (name godzilla)(=>(^(S#MONSTER x :0.45)(SS#MONSTER-TYPE x :0.45)) (godzilla-nn e0 x)))
 
+; ACTION
+(B (name scare)(=>(^(SS#MONSTER-ACTION e0 :0.45)(R#MONSTER x :0.45)) (^(SS#MONSTER-TYPE x)(scare-vb e0 x y u))))
+(B (name suck)(=>(^(SS#MONSTER-ACTION e0 :0.45)(R#MONSTER x :0.45)) (^(SS#MONSTER-TYPE x)(suck-vb e0 x y u))))
 
 (B (name monstermap)(=>(I#MONSTER x :0.9)(S#MONSTER x)))
 (B (name monster-typemap)(=>(I#MONSTER-TYPE x :0.9)(SS#MONSTER-TYPE x)))
+(B (name monster-typemap)(=>(I#MONSTER-ACTION x :0.9)(SS#MONSTER-ACTION x)))
 
 ; SCHISM
 ;TYPE
@@ -1004,9 +1054,11 @@
 (B (name divide)(=>(^(S#SCHISM x :0.45)(SS#SCHISM-TYPE x :0.45)) (divide-nn e0 x)))
 (B (name expanse)(=>(^(S#SCHISM x :0.45)(SS#SCHISM-TYPE x :0.45)) (expanse-nn e0 x)))
 
+; DISTANCES
 
 (B (name schismmap)(=>(I#SCHISM x :0.9)(S#SCHISM x)))
 (B (name schism-typemap)(=>(I#SCHISM-TYPE x :0.9)(SS#SCHISM-TYPE x)))
+(B (name schism-distancesmap)(=>(I#SCHISM-DISTANCES x :0.9)(SS#SCHISM-DISTANCES x)))
 
 ; FORCEFUL EXTRACTION
 ; TYPE
@@ -1016,6 +1068,16 @@
 (B (name extract)(=>(^(S#FORCEFUL-EXTRACTION x e0 :0.3)(SS#FORCEFUL-EXTRACTION-TYPE e0 :0.3)(R#EXTRACTION-AGENT x :0.3)) (extract-vb e0 x y u)))
 (B (name wrest)(=>(^(S#FORCEFUL-EXTRACTION x e0 :0.3)(SS#FORCEFUL-EXTRACTION-TYPE e0 :0.3)(R#EXTRACTION-AGENT x :0.3)) (wrest-vb e0 x y u)))
 (B (name tug)(=>(^(S#FORCEFUL-EXTRACTION x e0 :0.3)(SS#FORCEFUL-EXTRACTION-TYPE e0 :0.3)(R#EXTRACTION-AGENT x :0.3)) (tug-vb e0 x y u)))
+
+(B (name extraction)(=>(^(S#FORCEFUL-EXTRACTION x :0.45)(SS#FORCEFUL-EXTRACTION-TYPE x :0.45)) (extraction-nn e0 x)))
+(B (name extortion)(=>(^(S#FORCEFUL-EXTRACTION x :0.45)(SS#FORCEFUL-EXTRACTION-TYPE x :0.45)) (extortion-nn e0 x)))
+
+(B (name leech)(=>(^(S#FORCEFUL-EXTRACTION x :0.45)(SS#FORCEFUL-EXTRACTION-TYPE x :0.45)) (leech-nn e0 x)))
+(B (name parasite)(=>(^(S#FORCEFUL-EXTRACTION x :0.45)(SS#FORCEFUL-EXTRACTION-TYPE x :0.45)) (parasite-nn e0 x)))
+(B (name bloodsucker)(=>(^(S#FORCEFUL-EXTRACTION x :0.45)(SS#FORCEFUL-EXTRACTION-TYPE x :0.45)) (bloodsucker-nn e0 x)))
+(B (name blood-sucker)(=>(^(S#FORCEFUL-EXTRACTION x :0.45)(SS#FORCEFUL-EXTRACTION-TYPE x :0.45)) (blood-sucker-nn e0 x)))
+(B (name blood-sucker2)(=>(^(S#FORCEFUL-EXTRACTION x :0.45)(SS#FORCEFUL-EXTRACTION-TYPE x :0.45)) (^(blood-nn e0 x)(sucker-nn e1 y))))
+
 
 (B (name forceful-extractionmap)(=>(I#FORCEFUL-EXTRACTION x :0.9)(S#FORCEFUL-EXTRACTION x)))
 (B (name forceful-extraction-typemap)(=>(I#FORCEFUL-EXTRACTION-TYPE x :0.9)(SS#FORCEFUL-EXTRACTION-TYPE x)))
@@ -1042,6 +1104,9 @@
 (B (name mud-slide)(=>(^(S#NATURAL-PHYSICAL-FORCE x :0.45)(SS#NATURAL-PHYSICAL-FORCE-TYPE x :0.45)) (^(mud-adj e0 y)(slide-nn e1 x))))
 
 ; RESULT
+(B (name destroy)(=>(^(S#NATURAL-PHYSICAL-FORCE e0 :0.23)(SS#NATURAL-PHYSICAL-FORCE-RESULT e0 :0.23)(R#DESTROY-AGENT x :0.23)(R#DESTROY-PATIENT y :0.23)) (destroy-vb e0 x y u)))
+
+(B (name disappearing)(=>(^(S#NATURAL-PHYSICAL-FORCE e0 :0.3)(SS#NATURAL-PHYSICAL-FORCE-RESULT x :0.3)(R#DESTROY-PATIENT x :0.3)) (disappearing-adj e0 x)))
 
 (B (name natural-physical-forcemap)(=>(I#NATURAL-PHYSICAL-FORCE x :0.9)(S#NATURAL-PHYSICAL-FORCE x)))
 (B (name natural-physical-force-typemap)(=>(I#NATURAL-PHYSICAL-FORCE-TYPE x :0.9)(SS#NATURAL-PHYSICAL-FORCE-TYPE x)))
@@ -1051,6 +1116,10 @@
 ; DEFINED-REGION
 (B (name boundary)(=>(^(S#PHYSICAL-LOCATION x :0.45)(SS#PHYSICAL-LOCATION-DEFINED-REGION x :0.45)) (boundary-nn e0 x)))
 (B (name destination)(=>(^(S#PHYSICAL-LOCATION x :0.45)(SS#PHYSICAL-LOCATION-DEFINED-REGION x :0.45)) (destination-nn e0 x)))
+(B (name edge)(=>(^(S#PHYSICAL-LOCATION x :0.45)(SS#PHYSICAL-LOCATION-DEFINED-REGION x :0.45)) (edge-nn e0 x)))
+(B (name margin)(=>(^(S#PHYSICAL-LOCATION x :0.45)(SS#PHYSICAL-LOCATION-DEFINED-REGION x :0.45)) (margin-nn e0 x)))
+(B (name fringe)(=>(^(S#PHYSICAL-LOCATION x :0.45)(SS#PHYSICAL-LOCATION-DEFINED-REGION x :0.45)) (fringe-nn e0 x)))
+(B (name borderline)(=>(^(S#PHYSICAL-LOCATION x :0.45)(SS#PHYSICAL-LOCATION-DEFINED-REGION x :0.45)) (borderline-nn e0 x)))
 
 (B (name live-in)(=>(^(S#PHYSICAL-LOCATION e0 :0.45)(SS#PHYSICAL-LOCATION-DEFINED-REGION e0 w :0.45)) (^(live-vb e0 x y z)(in-in e1 e0 w))))
 (B (name reside-in)(=>(^(S#PHYSICAL-LOCATION e0 :0.45)(SS#PHYSICAL-LOCATION-DEFINED-REGION e0 w :0.45)) (^(reside-vb e0 x y z)(in-in e1 e0 w))))
@@ -1100,7 +1169,8 @@
 
 ; MORAL DUTY
 ; REMUNERATION
-
+(B (name duty)(=>(^(S#MORAL-DUTY x :0.45)(SS#MORAL-DUTY-REMUNERATION x :0.45)) (duty-nn e0 x)))
+(B (name due)(=>(^(S#MORAL-DUTY x :0.45)(SS#MORAL-DUTY-REMUNERATION x :0.45)) (due-nn e0 x)))
 
 (B (name moral-dutymap)(=>(I#MORAL-DUTY x :0.9)(S#MORAL-DUTY x)))
 (B (name remunerationmap)(=>(I#MORAL-DUTY-REMUNERATION x :0.9)(SS#MORAL-DUTY-REMUNERATION x)))
@@ -1168,13 +1238,16 @@
 
 ; ADDICTION
 ; TYPE
-(B (name addiction)(=>(^(S#ADDICTION x :0.45)(SS#ADDICTION-TYPE x :0.45)) (addiction-nn e0 x)))
+; (B (name addiction)(=>(^(S#ADDICTION x :0.45)(SS#ADDICTION-TYPE x :0.45)) (addiction-nn e0 x)))
 (B (name drug)(=>(^(S#ADDICTION x :0.45)(SS#ADDICTION-TYPE x :0.45)) (drug-nn e0 x)))
 (B (name intoxication)(=>(^(S#ADDICTION x :0.45)(SS#ADDICTION-TYPE x :0.45)) (intoxication-nn e0 x)))
 
 (B (name drunk)(=>(^(S#ADDICTION e0 :0.3)(SS#ADDICTION-TYPE e0 :0.3)(R#ADDICTED x e0 :0.3)) (drunk-adj e0 x)))
 
 ; COMPULSION
+(B (name addiction)(=>(^(S#ADDICTION x :0.45)(SS#ADDICTION-COMPULSION x :0.45)) (addiction-nn e0 x)))
+(B (name habit)(=>(^(S#ADDICTION x :0.45)(SS#ADDICTION-COMPULSION x :0.45)) (habit-nn e0 x)))
+(B (name addicted)(=>(^(S#ADDICTION x :0.45)(SS#ADDICTION-COMPULSION x :0.45)) (addicted-adj e0 x)))
 
 ; RESULT
 
@@ -1186,7 +1259,7 @@
 
 ; BLOOD-SYSTEM
 ; COMPONENT
-(B (name blood)(=>(^(S#BLOOD-SYSTEM x :0.45)(SS#BLOOD-SYSTEM-COMPONENT x :0.45)) (blood-nn e0 x)))
+(B (name blood)(=>(^(S#BLOOD-SYSTEM x :0.3)(SS#BLOOD-SYSTEM-COMPONENT x :0.3)(R#BLOOD x :0.3)) (blood-nn e0 x)))
 (B (name vein)(=>(^(S#BLOOD-SYSTEM x :0.45)(SS#BLOOD-SYSTEM-COMPONENT x :0.45)) (vein-nn e0 x)))
 (B (name artery)(=>(^(S#BLOOD-SYSTEM x :0.45)(SS#BLOOD-SYSTEM-COMPONENT x :0.45)) (artery-nn e0 x)))
 
@@ -1222,3 +1295,157 @@
 (B (name god-typemap)(=>(I#GOD-TYPE x :0.9)(SS#GOD-TYPE x)))
 (B (name god-venerationmap)(=>(I#GOD-VENERATION x :0.9)(SS#GOD-VENERATION x)))
 
+; ACCIDENT
+; TYPE
+(B (name accident)(=>(^(S#ACCIDENT x :0.45)(SS#ACCIDENT-TYPE x :0.45)) (accident-nn e0 x)))
+
+(B (name accidentmap)(=>(I#ACCIDENT x :0.9)(S#ACCIDENT x)))
+(B (name accident-typemap)(=>(I#ACCIDENT-TYPE x :0.9)(SS#ACCIDENT-TYPE x)))
+
+
+; PLANT
+; TYPE
+(B (name plant)(=>(^(S#PLANT x :0.45)(SS#PLANT-TYPE x :0.45)) (plant-nn e0 x)))
+(B (name tree)(=>(^(S#PLANT x :0.45)(SS#PLANT-TYPE x :0.45)) (tree-nn e0 x)))
+(B (name weed)(=>(^(S#PLANT x :0.3)(SS#PLANT-TYPE x :0.3)(R#UNWANTED x :0.3)) (weed-nn e0 x)))
+(B (name flower)(=>(^(S#PLANT x :0.45)(SS#PLANT-TYPE x :0.45)) (flower-nn e0 x)))
+
+; PARTS
+(B (name root)(=>(^(S#PLANT x :0.3)(SS#PLANT-PARTS x :0.3)(R#PLANT-ROOT x :0.3)) (root-nn e0 x)))
+(B (name fruit)(=>(^(S#PLANT x :0.3)(SS#PLANT-PARTS x :0.3)(R#PLANT-EXTERNAL x :0.3)) (fruit-nn e0 x)))
+(B (name seed)(=>(^(S#PLANT x :0.3)(SS#PLANT-PARTS x :0.3)(R#PLANT-GENESIS x :0.3)) (seed-nn e0 x)))
+(B (name leaf)(=>(^(S#PLANT x :0.3)(SS#PLANT-PARTS x :0.3)(R#PLANT-EXTERNAL x :0.3)) (leaf-nn e0 x)))
+
+; CHANGE-OF-STATE
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#PLANT-CHANGE-OF-STATE e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (grow-vb e0 x y u)))
+
+(B (name plantmap)(=>(I#PLANT x :0.9)(S#PLANT x)))
+(B (name plant-typemap)(=>(I#PLANT-TYPE x :0.9)(SS#PLANT-TYPE x)))
+(B (name plant-partsmap)(=>(I#PLANT-PARTS x :0.9)(SS#PLANT-PARTS x)))
+(B (name plant-change-of-statemap)(=>(I#PLANT-CHANGE-OF-STATE x :0.9)(SS#PLANT-CHANGE-OF-STATE x)))
+
+; ANIMAL
+; COMPONENT
+(B (name face)(=>(^(S#ANIMAL x :0.45)(SS#ANIMAL-COMPONENT x :0.45)) (face-nn e0 x)))
+
+; FUNCTION
+(B (name swallow)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL-FUNCTION e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (swallow-vb e0 x y u)))
+
+; ACTION
+(B (name eat)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL-ACTION e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (eat-vb e0 x y u)))
+(B (name grow)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL-ACTION e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (grow-vb e0 x y u)))
+(B (name digest)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL-ACTION e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (digest-vb e0 x y u)))
+(B (name touch)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL-ACTION e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (touch-vb e0 x y u)))
+
+(B (name animalmap)(=>(I#ANIMAL x :0.9)(S#ANIMAL x)))
+(B (name animal-typemap)(=>(I#ANIMAL-TYPE x :0.9)(SS#ANIMAL-TYPE x)))
+(B (name animal-componentmap)(=>(I#ANIMAL-COMPONENT x :0.9)(SS#ANIMAL-COMPONENT x)))
+(B (name animal-functionmap)(=>(I#ANIMAL-FUNCTION x :0.9)(SS#ANIMAL-FUNCTION x)))
+(B (name animal-actionmap)(=>(I#ANIMAL-ACTION x :0.9)(SS#ANIMAL-ACTION x)))
+
+; MACHINE
+; TYPE
+(B (name machine)(=>(^(S#MACHINE x :0.45)(SS#MACHINE-TYPE x :0.45)) (machine-nn e0 x)))
+(B (name mechanism)(=>(^(S#MACHINE x :0.45)(SS#MACHINE-TYPE x :0.45)) (mechanism-nn e0 x)))
+
+; PARTS
+(B (name engine)(=>(^(S#MACHINE x :0.45)(SS#MACHINE-PARTS x :0.45)) (engine-nn e0 x)))
+
+; FUNCTION
+(B (name turn)(=>(^(S#MACHINE e0 :0.23)(SS#MACHINE-FUNCTION e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (turn-vb e0 x y u)))
+
+
+(B (name machinemap)(=>(I#MACHINE x :0.9)(S#MACHINE x)))
+(B (name machine-typemap)(=>(I#MACHINE-TYPE x :0.9)(SS#MACHINE-TYPE x)))
+(B (name machine-partsmap)(=>(I#MACHINE-PARTS x :0.9)(SS#MACHINE-PARTS x)))
+(B (name machine-functionmap)(=>(I#MACHINE-FUNCTION x :0.9)(SS#MACHINE-FUNCTION x)))
+
+; DESTROYER
+; DESTRUCTIVE FORCE
+(B (name destroyer)(=>(^(S#DESTROYER x :0.45)(SS#DESTROYER-DESTRUCTIVE-FORCE x :0.45)) (destroyer-nn e0 x)))
+(B (name destruction)(=>(^(S#DESTROYER x :0.45)(SS#DESTROYER-DESTRUCTIVE-FORCE x :0.45)) (destruction-nn e0 x)))
+
+(B (name destroy)(=>(^(S#DESTROYER e0 :0.23)(SS#DESTROYER-DESTRUCTIVE-FORCE e0 :0.23)(R#DESTRUCTIVE-FORCE-AGENT x e0 :0.23)(R#DESTRUCTIVE-FORCE-PATIENT y e0 :0.23)) (destroy-vb e0 x y u)))
+
+(B (name destroyermap)(=>(I#DESTROYER x :0.9)(S#DESTROYER x)))
+(B (name destroyer-destructive-forcemap)(=>(I#DESTROYER-DESTRUCTIVE-FORCE x :0.9)(SS#DESTROYER-DESTRUCTIVE-FORCE x)))
+
+; GEOGRAPHIC FEATURE
+; TYPE
+(B (name mountain)(=>(^(S#GEOGRAPHIC-FEATURE x :0.3)(SS#GEOGRAPHIC-FEATURE-TYPE x :0.3)(R#MOUNTAIN x :0.3)) (mountain-nn e0 x)))
+(B (name himalayas)(=>(^(S#GEOGRAPHIC-FEATURE x :0.3)(SS#GEOGRAPHIC-FEATURE-TYPE x :0.3)(R#MOUNTAIN x :0.3)) (himalayas-nn e0 x)))
+(B (name alps)(=>(^(S#GEOGRAPHIC-FEATURE x :0.3)(SS#GEOGRAPHIC-FEATURE-TYPE x :0.3)(R#MOUNTAIN x :0.3)) (alps-nn e0 x)))
+(B (name ocean)(=>(^(S#GEOGRAPHIC-FEATURE x :0.3)(SS#GEOGRAPHIC-FEATURE-TYPE x :0.3)(R#OCEAN x :0.3)) (ocean-nn e0 x)))
+(B (name sea)(=>(^(S#GEOGRAPHIC-FEATURE x :0.3)(SS#GEOGRAPHIC-FEATURE-TYPE x :0.3)(R#OCEAN x :0.3)) (sea-nn e0 x)))
+(B (name prairie)(=>(^(S#GEOGRAPHIC-FEATURE x :0.3)(SS#GEOGRAPHIC-FEATURE-TYPE x :0.3)(R#VALLEY x :0.3)) (prairie-nn e0 x)))
+(B (name valley)(=>(^(S#GEOGRAPHIC-FEATURE x :0.3)(SS#GEOGRAPHIC-FEATURE-TYPE x :0.3)(R#VALLEY x :0.3)) (valley-nn e0 x)))
+
+(B (name geographic-featuremap)(=>(I#GEOGRAPHIC-FEATURE x :0.9)(S#GEOGRAPHIC-FEATURE x)))
+(B (name geographic-feature-typemap)(=>(I#GEOGRAPHIC-FEATURE-TYPE x :0.9)(SS#GEOGRAPHIC-FEATURE-TYPE x)))
+
+; ENABLER
+; LUBRICANT
+(B (name lubrication)(=>(^(S#ENABLER x :0.45)(SS#ENABLER-LUBRICANT x :0.45)) (lubrication-nn e0 x)))
+(B (name lubricant)(=>(^(S#ENABLER x :0.45)(SS#ENABLER-LUBRICANT x :0.45)) (lubricant-nn e0 x)))
+(B (name oil)(=>(^(S#ENABLER x :0.45)(SS#ENABLER-LUBRICANT x :0.45)) (oil-nn e0 x)))
+(B (name grease)(=>(^(S#ENABLER x :0.45)(SS#ENABLER-LUBRICANT x :0.45)) (grease-nn e0 x)))
+
+(B (name greasevb)(=>(^(S#ENABLER e0 :0.3)(SS#ENABLER-LUBRICANT e0 :0.3)(R#LUBRICATED y e0 :0.3)) (grease-vb e0 x y u)))
+(B (name lubricate)(=>(^(S#ENABLER e0 :0.3)(SS#ENABLER-LUBRICANT e0 :0.3)(R#LUBRICATED y e0 :0.3)) (lubricate-vb e0 x y u)))
+(B (name oilvb)(=>(^(S#ENABLER e0 :0.3)(SS#ENABLER-LUBRICANT e0 :0.3)(R#LUBRICATED y e0 :0.3)) (oil-vb e0 x y u)))
+(B (name grease-the-wheels)(=>(^(S#ENABLER e0 :0.3)(SS#ENABLER-LUBRICANT e0 :0.3)(R#LUBRICATED y e0 :0.3)) (^(grease-vb e0 x y u)(wheel-nn e1 y))))
+
+(B (name enablermap)(=>(I#ENABLER x :0.9)(S#ENABLER x)))
+(B (name enabler-lubricantmap)(=>(I#ENABLER-LUBRICANT x :0.9)(SS#ENABLER-LUBRICANT x)))
+
+; GAME
+; TYPE
+(B (name chess)(=>(^(S#GAME x :0.45)(SS#GAME-TYPE x :0.45)) (chess-nn e0 x)))
+(B (name chess-game)(=>(^(S#GAME x :0.45)(SS#GAME-TYPE x :0.45)) (^(chess-nn e0 x)(of-in e1 y x)(game-nn e2 y))))
+(B (name chess-match)(=>(^(S#GAME x :0.45)(SS#GAME-TYPE x :0.45)) (^(chess-nn e0 x)(of-in e1 y x)(match-nn e2 y))))
+(B (name poker)(=>(^(S#GAME x :0.45)(SS#GAME-TYPE x :0.45)) (poker-nn e0 x)))
+(B (name poker-game)(=>(^(S#GAME x :0.45)(SS#GAME-TYPE x :0.45)) (^(poker-nn e0 x)(of-in e1 y x)(game-nn e2 y))))
+(B (name uno)(=>(^(S#GAME x :0.45)(SS#GAME-TYPE x :0.45)) (uno-nn e0 x)))
+
+; COMPONENTS
+(B (name chip)(=>(^(S#GAME x :0.45)(SS#GAME-COMPONENTS x :0.45)) (chip-nn e0 x)))
+(B (name pawn)(=>(^(S#GAME x :0.45)(SS#GAME-COMPONENTS x :0.45)) (pawn-nn e0 x)))
+
+
+; ACTIONS 
+(B (name play)(=>(^(S#GAME x :0.45)(SS#GAME-ACTIONSx :0.45)) (play-nn e0 x)))
+
+(B (name playvb)(=>(^(S#GAME e0 :0.3)(SS#GAME-ACTIONS e0 :0.3)(R#PLAYER x e0 :0.3)) (play-vb e0 x y u)))
+
+; OUTCOMES
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#GAME-OUTCOMES e0 :0.3)(R#PLAYER x e0 :0.3)) (win-vb e0 x y u)))
+(B (name lose)(=>(^(S#GAME e0 :0.3)(SS#GAME-OUTCOMES e0 :0.3)(R#PLAYER x e0 :0.3)) (lose-vb e0 x y u)))
+
+(B (name gamemap)(=>(I#GAME x :0.9)(S#GAME x)))
+(B (name game-typemap)(=>(I#GAME-TYPE x :0.9)(SS#GAME-TYPE x)))
+(B (name game-componentsmap)(=>(I#GAME-COMPONENTS x :0.9)(SS#GAME-COMPONENTS x)))
+(B (name game-actionsmap)(=>(I#GAME-ACTIONS x :0.9)(SS#GAME-ACTIONS x)))
+(B (name game-outcomesmap)(=>(I#GAME-OUTCOMES x :0.9)(SS#GAME-OUTCOMES x)))
+
+; CROP
+; PLANTING
+(B (name seed)(=>(^(S#CROP x :0.3)(SS#CROP-PLANTING x :0.3)(R#CROP x e0 :0.3)) (seed-nn e0 x)))
+(B (name crop)(=>(^(S#CROP x :0.3)(SS#CROP-PLANTING x :0.3)(R#CROP x e0 :0.3)) (crop-nn e0 x)))
+
+(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#CROP-PLANTING e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (sow-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CROP-PLANTING e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (plant-vb e0 x y u)))
+
+; CULTIVATION
+(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CROP-CULTIVATION e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (grow-vb e0 x y u)))
+
+; OUTCOME
+(B (name reap)(=>(^(S#CROP e0 :0.23)(SS#CROP-OUTCOME e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP x e0 :0.23)) (reap-vb e0 x y u)))
+(B (name harvest)(=>(^(S#CROP e0 :0.23)(SS#CROP-OUTCOME e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP x e0 :0.23)) (harvest-vb e0 x y u)))
+
+(B (name bumper-crop)(=>(^(S#CROP x :0.3)(SS#CROP-OUTCOME x :0.3)(R#CROP y e0 :0.3)) (^(bumper-nn e0 x)(of-in e1 y x)(crop-nn e2 y))))
+(B (name harvestn)(=>(^(S#CROP x :0.3)(SS#CROP-OUTCOME x :0.3)(R#CROP y e0 :0.3)) (harvest-nn e0 x)))
+
+(B (name cropmap)(=>(I#CROP x :0.9)(S#CROP x)))
+(B (name crop-plantingmap)(=>(I#CROP-PLANTING x :0.9)(SS#CROP-PLANTING x)))
+(B (name crop-cultivationmap)(=>(I#CROP-CULTIVATION x :0.9)(SS#CROP-CULTIVATION x)))
+(B (name crop-outcomemap)(=>(I#CROP-OUTCOME x :0.9)(SS#CROP-OUTCOME x)))

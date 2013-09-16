@@ -18,20 +18,20 @@
 
 (B (name base2)(=> (^(M#SUPPORT e1 :0.45)(M#SUPPORTER x e1 :0.45)) (I#BASE x))) 
 
-; WAR 
+; STRUGGLE 
 
-(B (name fight)(=> (^(M#CAUSE-NOT-EXIST e1 :0.3)(M#CAUSING-THING_E z e1 :0.3)(M#EXISTING-THING y e1 :0.3)) (^(I#FIGHT x)(R#WAR-ENEMY y x)(R#WAR-AGENT z x))))
+(B (name fight)(=> (^(M#CAUSE-NOT-EXIST e1 :0.3)(M#CAUSING-THING_E z e1 :0.3)(M#EXISTING-THING y e1 :0.3)) (^(I#STRUGGLE-TYPE x)(R#STRUGGLE-ENEMY y x)(R#STRUGGLE-AGENT z x))))
 
-(B (name fight2)(=> (^(M#CAUSE-NOT-EXIST e1 :0.32)(M#EXISTING-THING y e1 :0.32)(M#CAUSING-THING_E x e1 :0.32)) (^(I#FIGHT x)(R#WAR-ENEMY y x))))
+(B (name fight2)(=> (^(M#CAUSE-NOT-EXIST e1 :0.32)(M#EXISTING-THING y e1 :0.32)(M#CAUSING-THING_E x e1 :0.32)) (^(I#STRUGGLE-TYPE x)(R#STRUGGLE-ENEMY y x))))
 
-(B (name fight3)(=> (^(M#CAUSE-NOT-EXIST e1 :0.46)(M#CAUSING-THING_E z e1 :0.46)) (^(I#FIGHT x)(R#WAR-AGENT z x))))
+(B (name fight3)(=> (^(M#CAUSE-NOT-EXIST e1 :0.46)(M#CAUSING-THING_E z e1 :0.46)) (^(I#STRUGGLE-TYPE x)(R#STRUGGLE-AGENT z x))))
 
-(B (name fight4)(=> (^(M#CAUSE-NOT-EXIST e1 :0.48)(M#CAUSING-THING_E x e1 :0.48)) (I#FIGHT x)))
+(B (name fight4)(=> (^(M#CAUSE-NOT-EXIST e1 :0.48)(M#CAUSING-THING_E x e1 :0.48)) (I#STRUGGLE-TYPE x)))
 
 
-(B (name enemy)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING-F x e1 :0.3)(M#FUNCTION-AGENT z e1 :0.3)) (^ (I#ENEMY x e0)(R#WAR-AGENT z e0))))
+(B (name enemy)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING-F x e1 :0.3)(M#FUNCTION-AGENT z e1 :0.3)) (^ (I#STRUGGLE-ADVERSARY x e0)(R#STRUGGLE-AGENT z e0))))
 
-(B (name enemy2)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#CAUSING-THING-F x e1 :0.45)) (I#ENEMY x e0)))
+(B (name enemy2)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#CAUSING-THING-F x e1 :0.45)) (I#STRUGGLE-ADVERSARY x e0)))
 
 
 ; BODY OF WATER 
@@ -39,17 +39,17 @@
 
 (B (name body_of_water-type)(=> (M#LARGE-AMOUNT-OF y :0.8) (^(I#BODY-OF-WATER-TYPE x)(R#MATTER y x))))
 
-(B (name drink)(=> (^(M#SATISFY-NEED e0 :0.3) (M#SATISFY-AGENT m e0 :0.3) (M#SATISFY-OBJECT d e0 :0.3)) (^(I#DRINK e0 w)(R#DRINKER d e0)(R#MATTER m w))))
+; (B (name drink)(=> (^(M#SATISFY-NEED e0 :0.3) (M#SATISFY-AGENT m e0 :0.3) (M#SATISFY-OBJECT d e0 :0.3)) (^(I#DRINK e0 w)(R#DRINKER d e0)(R#MATTER m w))))
 
-(B (name drink2)(=> (^(M#SATISFY-NEED e0 :0.31) (M#SATISFY-AGENT w e0 :0.31) (M#SATISFY-OBJECT d e0 :0.31)) (^(I#DRINK e0 w)(R#DRINKER d e0))))
+; (B (name drink2)(=> (^(M#SATISFY-NEED e0 :0.31) (M#SATISFY-AGENT w e0 :0.31) (M#SATISFY-OBJECT d e0 :0.31)) (^(I#DRINK e0 w)(R#DRINKER d e0))))
 
-(B (name drink3)(=> (^(M#SATISFY-NEED e0 :0.46) (M#SATISFY-AGENT m e0 :0.46)) (^(I#DRINK e0 w)(R#MATTER m w))))
+; (B (name drink3)(=> (^(M#SATISFY-NEED e0 :0.46) (M#SATISFY-AGENT m e0 :0.46)) (^(I#DRINK e0 w)(R#MATTER m w))))
 
-(B (name drink4)(=> (^(M#SATISFY-NEED e0 :0.47) (M#SATISFY-AGENT w e0 :0.47)) (I#DRINK e0 w)))
+; (B (name drink4)(=> (^(M#SATISFY-NEED e0 :0.47) (M#SATISFY-AGENT w e0 :0.47)) (I#DRINK e0 w)))
 
-(B (name satisfy-need)(=> (^(M#HAVE-NEED e1 :0.3)(M#NEEDY n e1 :0.3)(M#NEED x :0.3)) (^(M#SATISFY-NEED e0)(M#SATISFY-OBJECT n e0))))
+; (B (name satisfy-need)(=> (^(M#HAVE-NEED e1 :0.3)(M#NEEDY n e1 :0.3)(M#NEED x :0.3)) (^(M#SATISFY-NEED e0)(M#SATISFY-OBJECT n e0))))
 
-(B (name satisfy-need2)(=> (^(M#HAVE-NEED e1 :0.46)(M#NEED x :0.46)) (M#SATISFY-NEED e0)))
+; (B (name satisfy-need2)(=> (^(M#HAVE-NEED e1 :0.46)(M#NEED x :0.46)) (M#SATISFY-NEED e0)))
 
 
 (B (name thirst)(=> (M#NEED x :0.9) (I#THIRST x y)))
@@ -82,26 +82,28 @@
 
 ; CRIME 
 
-(B (name crime)(=> (^(M#AGAINST-SOCIETY-ACTION e0 :0.3)(M#AGAINST-SOCIETY-ACTOR x e0 :0.3)(M#AGAINST-SOCIETY-ACTION-VICTIM y e0 :0.3)) (^(I#CRIME e0)(R#CRIME-AGENT x e0)(R#CRIME-VICTIM y e0))))
+(B (name crime)(=> (^(M#AGAINST-SOCIETY-ACTION e0 :0.3)(M#AGAINST-SOCIETY-ACTOR x e0 :0.3)(M#AGAINST-SOCIETY-ACTION-VICTIM y e0 :0.3)) (^(I#CRIME-TYPE e0)(R#CRIME-AGENT x e0)(R#CRIME-VICTIM y e0))))
 
-(B (name crime2)(=> (^(M#AGAINST-SOCIETY-ACTION e0 :0.45)(M#AGAINST-SOCIETY-ACTOR x e0 :0.45)) (^(I#CRIME e0)(R#CRIME-AGENT x e0))))
+(B (name crime2)(=> (^(M#AGAINST-SOCIETY-ACTION e0 :0.45)(M#AGAINST-SOCIETY-ACTOR x e0 :0.45)) (^(I#CRIME-TYPE e0)(R#CRIME-AGENT x e0))))
 
-(B (name crime3)(=> (^(M#AGAINST-SOCIETY-ACTION e0 :0.45)(M#AGAINST-SOCIETY-ACTION-VICTIM y e0 :0.45)) (^(I#CRIME e0)(R#CRIME-VICTIM y e0))))
+(B (name crime3)(=> (^(M#AGAINST-SOCIETY-ACTION e0 :0.45)(M#AGAINST-SOCIETY-ACTION-VICTIM y e0 :0.45)) (^(I#CRIME-TYPE e0)(R#CRIME-VICTIM y e0))))
 
-(B (name crime4)(=> (M#AGAINST-SOCIETY-ACTION e0 :0.91) (I#CRIME e0)))
+(B (name crime4)(=> (M#AGAINST-SOCIETY-ACTION e0 :0.91) (I#CRIME-TYPE e0)))
+
+(B (name crime-perpetrator)(=> (^(M#AGAINST-SOCIETY-ACTION e0 :0.45)(M#AGAINST-SOCIETY-ACTOR x e0 :0.45)) (^(I#CRIME-PERPETRATORS x)(R#CRIME-AGENT x e0))))
 
 ; CONFINEMENT 
 
-(B (name confinement) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING-F x e1 :0.3)(M#FUNCTION-AGENT y e1 :0.3)) (^(I#CONFINEMENT e0)(R#CONFINEMENT-AGENT x e0)(R#CONFINEMENT-PATIENT y e0))))
+(B (name confinement) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING-F x e1 :0.3)(M#FUNCTION-AGENT y e1 :0.3)) (^(I#CONFINEMENT-TYPE e0)(R#CONFINEMENT-AGENT x e0)(R#CONFINEMENT-PATIENT y e0))))
 
-(B (name confinement2) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#CAUSING-THING-F x e1 :0.45)) (^(I#CONFINEMENT e0)(R#CONFINEMENT-AGENT x e0))))
+(B (name confinement2) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#CAUSING-THING-F x e1 :0.45)) (^(I#CONFINEMENT-TYPE e0)(R#CONFINEMENT-AGENT x e0))))
 
-(B (name confinement3) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.31)(M#CAUSING-THING-F e0 e1 :0.31)(M#FUNCTION-AGENT y e1 :0.31)) (^(I#CONFINEMENT e0)(R#CONFINEMENT-PATIENT y e0))))
+(B (name confinement3) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.31)(M#CAUSING-THING-F e0 e1 :0.31)(M#FUNCTION-AGENT y e1 :0.31)) (^(I#CONFINEMENT-TYPE e0)(R#CONFINEMENT-PATIENT y e0))))
 
-(B (name confinement4) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.47)(M#CAUSING-THING-F e0 e1 :0.47)) (I#CONFINEMENT e0)))
+(B (name confinement4) (=> (^(M#CAUSE-NOT-FUNCTION e1 :0.47)(M#CAUSING-THING-F e0 e1 :0.47)) (I#CONFINEMENT-TYPE e0)))
 
 ; EXIT
-(B (name exit) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.9)) (I#EXIT e0)))
+(B (name exit) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.9)) (I#CONFINEMENT-EXIT e0)))
 
 ; ENABLING 
 
@@ -124,32 +126,31 @@
 
 ; PHYSICAL HARM
 
-(B (name physical-harm) (=>(^(M#CAUSE-HARM e0 :0.3)(M#CAUSING-THING-H x e0 :0.3)(M#HARM-VICTIM y e0 :0.3)) (^(I#PHYSICAL-HARM e0)(R#HARM-AGENT x e0)(R#HARM-VICTIM y e0))))
+(B (name physical-harm) (=>(^(M#CAUSE-HARM e0 :0.3)(M#CAUSING-THING-H x e0 :0.3)(M#HARM-VICTIM y e0 :0.3)) (^(I#PHYSICAL-HARM-TYPE e0)(R#HARM-AGENT x e0)(R#HARM-VICTIM y e0))))
 
-(B (name physical-harm2) (=>(^(M#CAUSE-HARM e0 :0.46)(M#CAUSING-THING-H x e0 :0.46)) (^(I#PHYSICAL-HARM e0)(R#HARM-AGENT x e0))))
+(B (name physical-harm2) (=>(^(M#CAUSE-HARM e0 :0.46)(M#CAUSING-THING-H x e0 :0.46)) (^(I#PHYSICAL-HARM-TYPE e0)(R#HARM-AGENT x e0))))
 
-(B (name physical-harm3) (=>(^(M#CAUSE-HARM e0 :0.46)(M#HARM-VICTIM y e0 :0.46)) (^(I#PHYSICAL-HARM e0)(R#HARM-VICTIM y e0))))
+(B (name physical-harm3) (=>(^(M#CAUSE-HARM e0 :0.46)(M#HARM-VICTIM y e0 :0.46)) (^(I#PHYSICAL-HARM-TYPE e0)(R#HARM-VICTIM y e0))))
 
-(B (name physical-harm4) (=>(M#CAUSE-HARM e0 :0.9) (I#PHYSICAL-HARM e0)))
+(B (name physical-harm4) (=>(M#CAUSE-HARM e0 :0.9) (I#PHYSICAL-HARM-TYPE e0)))
 
 (B (name physical-restraint) (=>(^(M#CAUSE-HARM e0 :0.23)(M#CAUSING-THING-H x e0 :0.23)(M#HARM-VICTIM y e0 :0.23)(CAUSE-NOT-FUNCTION e0 :0.23)) (^(I#PHYSICAL-HARM-RESTRAINT e0)(R#HARM-AGENT x e0)(R#HARM-VICTIM y e0))))
 
 (B (name physical-protection) (=>(^(M#CAUSE-REDUCE-HARM e0 :0.3)(M#CAUSING-THING-RH x :0.3)) (I#PHYSICAL-PROTECTION e0)))
 
 ; ABYSS
-(B (name abyss) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.33)(M#CAUSING-THING-F x e0 :0.33)(M#CAUSE-CONFINEMENT e0 :0.33)) (I#ABYSS x)))
+(B (name abyss) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.33)(M#CAUSING-THING-F x e0 :0.33)(M#CAUSE-IMMOBILITY e0 :0.33)) (I#ABYSS-TYPE x)))
 
 ; ABYSS-EXIT
-(B (name abyss-exit) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-EXIT-CONFINEMENT e0 :0.45)) (I#ABYSS-EXIT e0)))
-(B (name abyss-exit2) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-EXIT-CONFINEMENT e0 :0.45)(M#CAUSING-THING-RF x e0 :0.45)) (^(I#ABYSS-EXIT e0)(R#ABYSS-EXIT-CAUSE x e0))))
+(B (name abyss-exit) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-EXIT-IMMOBILITY e0 :0.45)) (I#ABYSS-EXIT e0)))
+(B (name abyss-exit2) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-EXIT-IMMOBILITY e0 :0.45)(M#CAUSING-THING-RF x e0 :0.45)) (^(I#ABYSS-EXIT e0)(R#ABYSS-EXIT-CAUSE x e0))))
 
 ; MAZE
-(B (name maze) (=>(^(M#CAUSE-CONFUSION e0 :0.23)(M#CONFUSING-THING x :0.23)(M#CAUSE-CONFINEMENT e0 :0.23)(M#CAUSE-NOT-FUNCTION e0 :0.23)) (I#MAZE x)))
-;(B (name maze) (=>(^(M#CAUSE-CONFUSION e0 :0.45)(M#CONFUSING-THING x :0.45)) (I#MAZE x)))
+(B (name maze) (=>(^(M#CAUSE-CONFUSION e0 :0.23)(M#CONFUSING-THING x :0.23)(M#CAUSE-IMMOBILITY e0 :0.23)(M#CAUSE-NOT-FUNCTION e0 :0.23)) (I#MAZE-CONFUSING-PATHWAYS x)))
 
 ; NAVIGATION
 
-(B (name navigate) (=>(^(M#CAUSE-REDUCE-CONFUSION e0 :0.23)(M#CONFUSING-THING y :0.23)(M#CAUSE-ESCAPE-CONFINEMENT e0 :0.23)(M#CAUSE-RESUME-FUNCTION e0 :0.23))(^(I#NAVIGATION e0)(R#NAVIGATION-AGENT x e0))))
+(B (name navigate) (=>(^(M#CAUSE-REDUCE-CONFUSION e0 :0.23)(M#CONFUSING-THING y :0.23)(M#CAUSE-ESCAPE-IMMOBILITY e0 :0.23)(M#CAUSE-RESUME-FUNCTION e0 :0.23))(^(I#MAZE-NAVIGATION e0)(R#NAVIGATION-AGENT x e0))))
 
 ; LOW POINT
 ; (B (name low-point) (=>(^(M#BOTTOM-OF-SCALE e0 :0.45)(M#PLACE-ON-SCALE x :0.45)) (I#LOW-POINT e0)))
@@ -162,55 +163,92 @@
 
 ; BURDEN
 ; WEIGHT
-(B (name weight) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#CAUSING-THING-F x e0 :0.45)) (I#WEIGHT x)))
+(B (name weight) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#CAUSING-THING-F x e0 :0.45)) (I#PHYSICAL-BURDEN-WEIGHT x)))
 
 ; RELIEF
-(B(name relief) (=>(^(M#CAUSE-RESUME-FUNCTION e0 :0.45)(M#CAUSING-R-THING x :0.45)) (I#RELIEF)))
+(B(name relief) (=>(^(M#CAUSE-RESUME-FUNCTION e0 :0.45)(M#CAUSING-R-THING x :0.45)) (I#PHYSICAL-BURDEN-RELIEF)))
 
 ;HUMAN-BODY
 ;DEATH
-(B (name death) (=>(^(M#DECREASE-SIZE e0 :0.45)(M#DECREASING-THING x :0.45)) (I#DEATH x)))
+(B (name death) (=>(^(M#DECREASE-SIZE e0 :0.45)(M#DECREASING-THING x :0.45)) (I#HUMAN-BODY-DEATH x)))
 
 ;LIVING
-;(B (name living) (=>(^(M#CAUSE-ABLE-TO-FUNCTION e0 :0.45)(M#CAUSING-THING-AF x :0.45)) (I#LIVING x)))
+;(B (name living) (=>(^(M#CAUSE-ABLE-TO-FUNCTION e0 :0.45)(M#CAUSING-THING-AF x :0.45)) (I#HUMAN-BODY-LIVING x)))
 
 ;HEALTH
-;(B (name health) (=>(^(M#CAUSE-IMPROVE-FUNCTIONALITY e0 :0.45)(M#CAUSING-THING-IF x :0.45)) (I#HEALTH x)))
+;(B (name health) (=>(^(M#CAUSE-IMPROVE-FUNCTIONALITY e0 :0.45)(M#CAUSING-THING-IF x :0.45)) (I#HUMAN-BODY-HEALTH x)))
 
 ;BUILDING
 ;STRUCTURE
-(B (name structure) (=>(^(M#PROVIDE-SUPPORT e0 :0.45)(M#SUPPORTING-THING x :0.45)) (I#STRUCTURE x)))
-(B (name components) (=>(^(M#PROVIDE-SUPPORT e0 :0.45)(M#SUPPORTING-THING x :0.45)) (I#COMPONENTS x)))
+(B (name structure) (=>(^(M#PROVIDE-SUPPORT e0 :0.45)(M#SUPPORTING-THING x :0.45)) (I#BUILDING-STRUCTURE x)))
+(B (name components) (=>(^(M#PROVIDE-SUPPORT e0 :0.45)(M#SUPPORTING-THING x :0.45)) (I#BUILDING-COMPONENTS x)))
 
 
 ; PATHWAY
 ;PATHWAY-TYPE
 (B (name pathway-type) (=>(^(M#PROVIDE-ACCESS e0 :0.45)(M#PROVIDING-THING-A x :0.45)) (I#PATHWAY-TYPE x)))
 ;OPEN-PATH
-(B (name open-path) (=>(^(M#EASE-ACCESS e0 :0.9)) (I#OPEN-PATH x)))
+(B (name open-path) (=>(^(M#EASE-ACCESS e0 :0.9)) (I#PATHWAY-OPEN-PATH x)))
 ;OBSTRUCTED-PATH
-(B (name obstructed-path) (=>(^(M#BLOCK-ACCESS e0 :0.9)) (I#OBSTRUCTED-PATH x)))
+(B (name obstructed-path) (=>(^(M#BLOCK-ACCESS e0 :0.9)) (I#PATHWAY-OBSTRUCTED-PATH x)))
 
 ; PORTAL
 ;MEANS OF ENTRY
-(B (name means-of-entry) (=>(^(M#ALLOW-ACCESS e0 :0.45)(M#ALLOWING-A-THING x :0.45)) (I#MEANS-OF-ENTRY x)))
+(B (name means-of-entry) (=>(^(M#ALLOW-ACCESS e0 :0.45)(M#ALLOWING-A-THING x :0.45)) (I#PORTAL-MEANS-OF-ENTRY x)))
 
 ;OBSTACLES
-(B (name obstacles) (=>(^(M#BLOCK-ACCESS e0 :0.9)) (I#OBSTACLES x)))
+(B (name obstacles) (=>(^(M#BLOCK-ACCESS e0 :0.9)) (I#PORTAL-OBSTACLES x)))
 
 ;PHYSICAL-OBJECT
 ;PHYSICAL-OBJECT-TYPE
 
 ;POSSESSION
-(B (name possession) (=>(^(M#ALLOW-UTILIZATION e0 :0.45)(M#ALLOWING-U-THING x :0.45)) (I#POSSESSION x)))
+(B (name possession) (=>(^(M#ALLOW-UTILIZATION e0 :0.45)(M#ALLOWING-U-THING x :0.45)) (I#PHYSICAL-OBJECT-POSSESSION x)))
 
 
 ;VICTIM
 ;SUFFERER
-(B (name sufferer) (=>(^(M#EXPERIENCE-HARM e0 :0.45)(M#EXPERIENCER x :0.45)) (I#SUFFERER x)))
+(B (name sufferer) (=>(^(M#EXPERIENCE-HARM e0 :0.45)(M#EXPERIENCER x :0.45)) (I#VICTIM-SUFFERER x)))
 
 ;VICTIMIZER
-(B (name victimizer) (=>(^(M#CAUSE-HARM e0 :0.45)(M#CAUSING-THING-H x :0.45)) (I#VICTIMIZER x)))
+(B (name victimizer) (=>(^(M#CAUSE-HARM e0 :0.45)(M#CAUSING-THING-H x :0.45)) (I#VICTIM-VICTIMIZER x)))
 
 ;CHAMPION
-(B (name champion) (=>(^(M#CAUSE-NOT-HARM e0 :0.45)(M#CAUSING-THING-NH x :0.45)) (I#CHAMPION x)))
+(B (name champion) (=>(^(M#CAUSE-NOT-HARM e0 :0.45)(M#CAUSING-THING-NH x :0.45)) (I#VICTIM-CHAMPION x)))
+
+
+;VISION
+;BLINDNESS
+(B (name blindness) (=>(^(M#INDIFFERENT x :0.45)(M#SELFISH x :0.45)) (I#VISION-BLINDNESS x)))
+
+;BLOOD-SYSTEM 
+;COMPONENT
+(B (name component) (=>(^(M#CAUSE-FUNCTION x :0.45)(M#CAUSING-THING-F x :0.45)) (^(I#BLOOD-SYSTEM-COMPONENT x)(R#BLOOD x))))
+
+
+;ENERGY 
+;TYPE
+(B (name energy) (=>(^(M#CAUSE-FUNCTION x :0.45)(M#CAUSING-THING-F x :0.45)) (I#ENERGY-TYPE x)))
+
+;MONSTER
+;TYPE
+(B (name monster) (=>(^(M#STRONG-ENTITY x :0.33)(M#UNDESIRABLE-ENTITY x :0.33) (M#HOARD-RESOURCES x :0.33)) (I#MONSTER-TYPE x)))
+
+;PARASITE
+;DESTRUCTIVE-BEING
+(B (name parasite) (=>(^(M# x :0.33)(M#EXPLOITATIVE x :0.33) (M#DRAIN-RESOURCES x :0.33)) (I#PARASITE-DESTRUCTIVE-BEING x)))
+
+
+;PLANT
+;TYPE
+;(B (name plant) (=>(^(M# x :0.33)(M# x :0.33) (M# x :0.33)) (I#PLANT-TYPE x)))
+
+(B (name plant-roots) (=>(^(M#CAUSE-FUNCTION x :0.33)(M#CAUSING-THING x :0.33) (M#HIDDEN x :0.33)) (^(I#PLANT-PARTS x)(R#PLANT-ROOT x))))
+(B (name plant-fruits) (=>(^(M#BY-PRODUCT x :0.33) (M#EXPOSED x :0.33)) (^(I#PLANT-PARTS x)(R#PLANT-EXTERNAL x))))
+
+; DARKNESS
+(B (name darkness) (=>(^(M#CAUSE-FEAR x :0.33)(M#CAUSE-NOT-FUNCTION x :0.33) (M#CAUSING-THING-FNF x :0.33)) (I#DARKNESS-DARK-END-OF-RANGE x)))
+
+;ENABLER
+;LUBRICANT
+(B (name lubricant) (=>(^(M#CAUSE-FUNCTION x :0.45)(M#CAUSING-THING-F x :0.45)) (I#ENABLER-LUBRICANT x)))
