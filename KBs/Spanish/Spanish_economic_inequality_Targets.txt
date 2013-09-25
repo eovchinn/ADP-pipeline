@@ -4,86 +4,95 @@
 
 ; POVERTY
 
-(B (name pobreza) (=>(^(TS#POBREZA/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(pobreza-nn e0 x)))
-(B (name indigencia) (=>(^(TS#POBREZA/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(indigencia-nn e0 x)))
-(B (name miseria) (=>(^(TS#POBREZA/POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(miseria-nn e0 x)))
+(B (name pobreza) (=>(^(TS#POVERTY_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(pobreza-nn e0 x)))
+(B (name indigencia) (=>(^(TS#POVERTY_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(indigencia-nn e0 x)))
+(B (name miseria) (=>(^(TS#POVERTY_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(miseria-nn e0 x)))
+(B (name penuria) (=>(^(TS#POVERTY_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(penuria-nn e0 x)))
+(B (name escasez) (=>(^(TS#POVERTY_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(escasez-nn e0 x)))
 
 ; POOR
-(B (name pobre) (=>(^(TS#POBREZA/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (pobre-adj e0 y)))
-(B (name miserable) (=>(^(TS#POBREZA/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (miserable-adj e0 y)))
-(B (name indigente) (=>(^(TS#POBREZA/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (indigente-adj e0 y)))
-(B (name pelado) (=>(^(TS#POBREZA/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (pelado-adj e0 y)))
+(B (name pobre) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (pobre-adj e0 y)))
+(B (name miserable) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (miserable-adj e0 y)))
+(B (name indigente) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (indigente-adj e0 y)))
+(B (name pelado) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (pelado-adj e0 y)))
+(B (name bollado) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (bollado-adj e0 y)))
+(B (name empobrecido) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (empobrecido-adj e0 y)))
+(B (name necesitado) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (necesitado-adj e0 y)))
+(B (name sin-hogar) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (^(sin-in e0 x y)(hogar-nn e0 y))))
+(B (name sin-techo) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (^(sin-in e0 x y)(techo-nn e0 y))))
 
 
 ; POOR PERSON
-(B (name mendigo) (=>(^(TS#POBREZA/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (mendigo-nn e0 y)))
-(B (name desamparado) (=>(^(TS#POBREZA/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (desamparado-nn e0 y)))
+(B (name indigente) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (indigente-nn e0 y)))
+(B (name mendigo) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (mendigo-nn e0 y)))
+(B (name desamparado) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (desamparado-nn e0 y)))
 
 ; BECOME POOR
 
-(B (name empobrecer) (=>(^(TS#POBREZA/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (empobrecer-vb e0 x u1 u2)))
-(B (name empobrecerse) (=>(^(TS#POBREZA/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (empobrecerse-vb e0 x u1 u2)))
-(B (name depauperarse) (=>(^(TS#POBREZA/POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (depauperarse-vb e0 x u1 u2)))
+(B (name empobrecer) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (empobrecer-vb e0 x u1 u2)))
+(B (name empobrecerse) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (empobrecerse-vb e0 x u1 u2)))
+(B (name depauperarse) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (depauperarse-vb e0 x u1 u2)))
 
 
 ; OF - POOR
-(B (name de-poor) (=>(R#POOR y x :0.9)(^(TS#POBREZA/POVERTY x)(de-in e1 x y))))
-(B (name of-poor) (=>(R#POOR y x :0.9)(^(TS#POBREZA/POVERTY x)(of-in e1 x y))))
+(B (name de-poor) (=>(R#POOR y x :0.9)(^(TS#POVERTY_ES x)(de-in e1 x y))))
+
+; POOR AREA
+(B (name barrio-bajo) (=>(^(TS#POVERTY_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (^(barrio-nn e0 y)(bajo-adj e1 y))))
 
 
 ; WEALTH
-(B (name riqueza) (=>(^(TS#RIQUEZA/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (riqueza-nn e0 x)))
-(B (name prosperidad) (=>(^(TS#RIQUEZA/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (prosperidad-nn e0 x)))
-(B (name bienestar) (=>(^(TS#RIQUEZA/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (bienestar-nn e0 x)))
-(B (name bienes) (=>(^(TS#RIQUEZA/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (bienes-nn e0 x)))
+(B (name riqueza) (=>(^(TS#WEALTH_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (riqueza-nn e0 x)))
+(B (name prosperidad) (=>(^(TS#WEALTH_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (prosperidad-nn e0 x)))
+(B (name bienestar) (=>(^(TS#WEALTH_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (bienestar-nn e0 x)))
+(B (name bienes) (=>(^(TS#WEALTH_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (bienes-nn e0 x)))
 
 
 ; RICH PERSON
-(B (name rico) (=>(^(TS#RIQUEZA/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (rico-adj e0 y)))
-(B (name rico) (=>(^(TS#RIQUEZA/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (rico-nn e0 y)))
-(B (name opulento) (=>(^(TS#RIQUEZA/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (opulento-adj e0 y)))
-(B (name abundante) (=>(^(TS#RIQUEZA/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (abundante-adj e0 y)))
-(B (name suntuoso) (=>(^(TS#RIQUEZA/WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (suntuoso-adj e0 y)))
+(B (name rico) (=>(^(TS#WEALTH_ES e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (rico-adj e0 y)))
+(B (name rico) (=>(^(TS#WEALTH_ES e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (rico-nn e0 y)))
+(B (name opulento) (=>(^(TS#WEALTH_ES e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (opulento-adj e0 y)))
+(B (name abundante) (=>(^(TS#WEALTH_ES e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (abundante-adj e0 y)))
+(B (name suntuoso) (=>(^(TS#WEALTH_ES e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (suntuoso-adj e0 y)))
 
 
 ; BECOME RICH
-(B (name enriquecerse) (=>(^(TS#RIQUEZA/WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3))(enriquecerse-vb e0 y u1 u2)))
-(B (name fondearse) (=>(^(TS#RIQUEZA/WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3))(fondearse-vb e0 y u1 u2)))
-(B (name prosperar) (=>(^(TS#RIQUEZA/WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3))(prosperar-vb e0 y u1 u2)))
+(B (name enriquecerse) (=>(^(TS#WEALTH_ES e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3))(enriquecerse-vb e0 y u1 u2)))
+(B (name fondearse) (=>(^(TS#WEALTH_ES e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3))(fondearse-vb e0 y u1 u2)))
+(B (name prosperar) (=>(^(TS#WEALTH_ES e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3))(prosperar-vb e0 y u1 u2)))
 
 
 ; OF - WEALTH
-(B (name of-rich) (=>(R#RICH  y x :0.9)(^(TS#RIQUEZA/WEALTH x)(of-in e1 x y))))
-(B (name de-rich) (=>(R#RICH  y x :0.9)(^(TS#RIQUEZA/WEALTH x)(de-in e1 x y))))
+(B (name de-rich) (=>(R#RICH  y x :0.9)(^(TS#WEALTH_ES x)(de-in e1 x y))))
 
 
 ; SOCIAL CLASS
-(B (name clase-social) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(social-adj e0 x)(clase-nn e1 x))))
-(B (name clase-media) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(media-adj e0 x)(clase-nn e1 x))))
-(B (name clase-economica) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(económica-adj e0 x)(clase-nn e1 x))))
-(B (name clase) (=>(^(TS#SOCIAL-CLASS x :0.47)(T#ECONOMIC-INEQUALITY u :0.47)) (clase-nn e1 x)))
+(B (name clase-social) (=>(^(TS#SOCIAL-CLASS_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(social-adj e0 x)(clase-nn e1 x))))
+(B (name clase-media) (=>(^(TS#SOCIAL-CLASS_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(media-adj e0 x)(clase-nn e1 x))))
+(B (name clase-economica) (=>(^(TS#SOCIAL-CLASS_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(económica-adj e0 x)(clase-nn e1 x))))
+(B (name clase) (=>(^(TS#SOCIAL-CLASS_ES x :0.47)(T#ECONOMIC-INEQUALITY u :0.47)) (clase-nn e1 x)))
 
 
 ; TAX
-(B (name impuesto) (=>(^(TS#IMPUESTO/TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (impuesto-nn e0 x)))
-(B (name contribucion) (=>(^(TS#IMPUESTO/TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (contribución-nn e0 x)))
-(B (name tributo) (=>(^(TS#IMPUESTO/TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (tributo-nn e0 x)))
+(B (name impuesto) (=>(^(TS#TAXATION_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (impuesto-nn e0 x)))
+(B (name contribucion) (=>(^(TS#TAXATION_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (contribución-nn e0 x)))
+(B (name tributo) (=>(^(TS#TAXATION_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (tributo-nn e0 x)))
 
-(B (name fiscal) (=>(^(TS#IMPUESTO/TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (fiscal-nn e0 x)))
+(B (name fiscal) (=>(^(TS#TAXATION_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (fiscal-nn e0 x)))
 
-(B (name contribuyente) (=>(^(TS# IMPUESTO/TAXATION y :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3))(contribuyente-nn e0 y)))
+(B (name contribuyente) (=>(^(TS# TAXATION_ES y :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3))(contribuyente-nn e0 y)))
 
 ; ACCESS TO EDUCATION
 
-(B (name acceso-a-educacion) (=>(^(TS#ACCESO-A-EDUCACION/ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)) (^(acceso-nn e0 x)(a-in e1 x y)(educación-nn e2 y))))
-(B (name acceder-a-educacion) (=>(^(TS#ACCESO-A-EDUCACION/ACCESS-TO-EDUCATION e2 :0.2)(T#ECONOMIC-INEQUALITY u :0.2)(R#EDUCATION y x :0.2)(R#EDUCATED x e0 :0.2)) (^(acceder-vb e0 x u1 u2)(a-in e3 e0 y)(educación-nn e2 y))))
-(B (name conseguir-educacion) (=>(^(TS#ACCESO-A-EDUCACION/ACCESS-TO-EDUCATION e2 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)(R#EDUCATED x e0)) (^(conseguir-vb e0 x y u)(educación-nn e2 y))))
+(B (name acceso-a-educacion) (=>(^(TS#ACCESS-TO-EDUCATION_ES x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)) (^(acceso-nn e0 x)(a-in e1 x y)(educación-nn e2 y))))
+(B (name acceder-a-educacion) (=>(^(TS#ACCESS-TO-EDUCATION_ES e2 :0.2)(T#ECONOMIC-INEQUALITY u :0.2)(R#EDUCATION y x :0.2)(R#EDUCATED x e0 :0.2)) (^(acceder-vb e0 x u1 u2)(a-in e3 e0 y)(educación-nn e2 y))))
+(B (name conseguir-educacion) (=>(^(TS#ACCESS-TO-EDUCATION_ES e2 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)(R#EDUCATED x e0)) (^(conseguir-vb e0 x y u)(educación-nn e2 y))))
 
-(B (name educacion) (=>(^(TS#ACCESO-A-EDUCACION/ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (educación-nn e0 x)))
+(B (name educacion) (=>(^(TS#ACCESS-TO-EDUCATION_ES x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (educación-nn e0 x)))
 
-(B (name educar) (=>(^(TS#ACCESO-A-EDUCACION/ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educar-vb e0 u1 x u2)))
+(B (name educar) (=>(^(TS#ACCESS-TO-EDUCATION_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educar-vb e0 u1 x u2)))
 
-(B (name educado) (=>(^(TS#ACCESO-A-EDUCACION/ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educado-adj e0 x)))
-(B (name culto) (=>(^(TS#ACCESO-A-EDUCACION/ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (culto-adj e0 x)))
-(B (name instruido) (=>(^(TS#ACCESO-A-EDUCACION/ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (instruido-adj e0 x)))
+(B (name educado) (=>(^(TS#ACCESS-TO-EDUCATION_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educado-adj e0 x)))
+(B (name culto) (=>(^(TS#ACCESS-TO-EDUCATION_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (culto-adj e0 x)))
+(B (name instruido) (=>(^(TS#ACCESS-TO-EDUCATION_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (instruido-adj e0 x)))
 

@@ -17,6 +17,7 @@ def find_right_side(line):
 
 def collect_lexemes(infile):
     lexemes = []
+    content_tags = set(["adj","rb","nn","vb"])
     with open(infile,"r") as openfile:
         lines = filter(lambda l: l.startswith("("), (line.rstrip() for line in openfile))
         for line in lines:
@@ -27,7 +28,9 @@ def collect_lexemes(infile):
             #to handle colocations, if necessary
             if rs and len(rs.split("(")) == 2:
                 ax_combo = rs.split("(")[1].split()[0]
-                lexemes.append(ax_combo)
+                tag = ax_combo.split("-")[1]
+                if tag in content_tags:
+                    lexemes.append(ax_combo)
     openfile.close()
     return lexemes
 
