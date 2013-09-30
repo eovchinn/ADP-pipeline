@@ -14,12 +14,14 @@
 (B (name need) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (need-nn e0 x)))
 (B (name necessity) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (necessity-nn e0 x)))
 (B (name squalor) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (squalor-nn e0 x)))
+(B (name bankruptcy) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (bankruptcy-nn e0 x)))
 
 ; POOR
 (B (name poor) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (poor-adj e0 y)))
 (B (name poorer) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (poorer-adj e0 y)))
 (B (name poorest) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (poorest-adj e0 y)))
 (B (name broke) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (broke-adj e0 y)))
+(B (name bankrupt) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (bankrupt-adj e0 y)))
 (B (name destitute) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (destitute-adj e0 y)))
 (B (name impoverished) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (impoverished-adj e0 y)))
 (B (name lean) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (lean-adj e0 y)))
@@ -51,6 +53,9 @@
 (B (name shantytown) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (shantytown-nn e0 y)))
 (B (name skid-row) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (^(row-nn e0 y)(skid-adj e1 y))))
 
+; DEBT
+(B (name debt) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#DEBT e0 :0.3)) (debt-nn e0 y)))
+
 ; WEALTH
 (B (name wealth) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (wealth-nn e0 x)))
 (B (name wealthynn) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (wealthy-nn e0 x)))
@@ -63,7 +68,6 @@
 (B (name profusion) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (profusion-nn e0 x)))
 (B (name means) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (means-nn e0 x)))
 (B (name affluence) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (affluence-nn e0 x)))
-(B (name money) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (money-nn e0 x)))
 (B (name property) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (property-nn e0 x)))
 
 ; RICH PERSON
@@ -84,6 +88,9 @@
 
 ; OF - WEALTH
 (B (name of-rich) (=>(R#RICH  y x :0.9)(^(TS#WEALTH x)(of-in e1 x y))))
+
+; MONEY
+(B (name money) (=>(^(TS#WEALTH e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY e0 :0.3)) (money-nn e0 x)))
 
 
 ; SOCIAL CLASS
