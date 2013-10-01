@@ -133,7 +133,7 @@
 ;(B (name of-symptom) (=>(S#DISEASE y :0.9)(^(SS#DISEASE_SYMPTOMS x)(of-in e1 x y))))
 
 (B (name dismap)(=>(I#DISEASE x :0.9)(S#DISEASE x)))
-(B (name dis-typemap)(=>(I#DISEASE_TYPE x :0.9)(S#DISEASE_TYPE x)))
+(B (name dis-typemap)(=>(I#DISEASE_TYPE x :0.9)(SS#DISEASE_TYPE x)))
 (B (name curemap)(=>(I#DISEASE_CURE x :0.9)(SS#DISEASE_CURE x)))
 (B (name treatmentmap)(=>(I#DISEASE_TREATMENT x :0.9)(SS#DISEASE_TREATMENT x)))
 (B (name symptomsmap)(=>(I#DISEASE_SYMPTOMS x :0.9)(SS#DISEASE_SYMPTOMS x)))

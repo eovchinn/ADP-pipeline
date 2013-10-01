@@ -20,13 +20,13 @@
 
 ; STRUGGLE 
 
-(B (name fight)(=> (^(M#CAUSE-NOT-EXIST e1 :0.3)(M#CAUSING-THING_E z e1 :0.3)(M#EXISTING-THING y e1 :0.3)) (^(I#STRUGGLE-TYPE x)(R#STRUGGLE-ENEMY y x)(R#STRUGGLE-AGENT z x))))
+(B (name fight)(=> (^(M#CAUSE-NOT-EXIST e1 :0.3)(M#CAUSING-THING_E z e1 :0.3)(M#EXISTING-THING y e1 :0.3)) (^(I#STRUGGLE x)(R#STRUGGLE-ENEMY y x)(R#STRUGGLE-AGENT z x))))
 
-(B (name fight2)(=> (^(M#CAUSE-NOT-EXIST e1 :0.32)(M#EXISTING-THING y e1 :0.32)(M#CAUSING-THING_E x e1 :0.32)) (^(I#STRUGGLE-TYPE x)(R#STRUGGLE-ENEMY y x))))
+(B (name fight2)(=> (^(M#CAUSE-NOT-EXIST e1 :0.32)(M#EXISTING-THING y e1 :0.32)(M#CAUSING-THING_E x e1 :0.32)) (^(I#STRUGGLE x)(R#STRUGGLE-ENEMY y x))))
 
-(B (name fight3)(=> (^(M#CAUSE-NOT-EXIST e1 :0.46)(M#CAUSING-THING_E z e1 :0.46)) (^(I#STRUGGLE-TYPE x)(R#STRUGGLE-AGENT z x))))
+(B (name fight3)(=> (^(M#CAUSE-NOT-EXIST e1 :0.46)(M#CAUSING-THING_E z e1 :0.46)) (^(I#STRUGGLE x)(R#STRUGGLE-AGENT z x))))
 
-(B (name fight4)(=> (^(M#CAUSE-NOT-EXIST e1 :0.48)(M#CAUSING-THING_E x e1 :0.48)) (I#STRUGGLE-TYPE x)))
+(B (name fight4)(=> (^(M#CAUSE-NOT-EXIST e1 :0.48)(M#CAUSING-THING_E x e1 :0.48)) (^(I#STRUGGLE x)(TYPE x x)))
 
 
 (B (name enemy)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING-F x e1 :0.3)(M#FUNCTION-AGENT z e1 :0.3)) (^ (I#STRUGGLE-ADVERSARY x e0)(R#STRUGGLE-AGENT z e0))))
@@ -37,7 +37,7 @@
 ; BODY OF WATER 
 
 
-(B (name body_of_water-type)(=> (M#LARGE-AMOUNT-OF y :0.8) (^(I#BODY-OF-WATER-TYPE x)(R#MATTER y x))))
+(B (name body_of_water)(=> (M#LARGE-AMOUNT-OF y :0.8) (^(I#BODY-OF-WATER x))))
 
 ; (B (name drink)(=> (^(M#SATISFY-NEED e0 :0.3) (M#SATISFY-AGENT m e0 :0.3) (M#SATISFY-OBJECT d e0 :0.3)) (^(I#DRINK e0 w)(R#DRINKER d e0)(R#MATTER m w))))
 
@@ -64,7 +64,7 @@
 (B (name shoal2)(=> (M#NOT-EXIST e0 :0.9) (I#SHOAL e2 u)))
 
 ; MOVEMENT
-(B (name water-movement) (=>(^(M#LIQUID-MOVE-FREELY e0 :0.3)(M#LIQUID-THING y :0.3))  (^(I#BODY-OF-WATER-MOVEMENT e0)(R#STREAMING x e0))))
+(B (name water-movement) (=>(^(M#LIQUID-MOVE-FREELY e0 :0.3)(M#LIQUID-THING y :0.3))  (^(I#BODY-OF-WATER e0)(MOVEMENT e0)(R#STREAMING x e0))))
 
 
 ; SCHOOL 

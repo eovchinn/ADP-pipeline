@@ -13,8 +13,8 @@ class Template(object):
         self.pos = pos
         self.name = name
         self.dash = re.search("-",name)
-        self.domain = domain
-        self.subdomain = subdomain if subdomain else None
+        self.domain = domain.upper()
+        self.subdomain = subdomain.upper()
         self.r1 = r1 if r1 else None
         self.r2 = r2 if r2 else None
         self.r3 = r3 if r3 else None
@@ -32,16 +32,18 @@ class Template(object):
         return "(S#"+self.domain.upper()+" "+arg+" :"+self.weight+")"
 
     def build_subdomain(self):
-        if self.pos == "noun" or self.pos == "adjective":
-            arg = "x"
-        else:
-            arg = "e0"
-        return "(SS#"+self.subdomain.upper()+" "+arg+" :"+self.weight+")"
+        if self.pos == "noun":
+            arg = "x e0"
+        elif  self.pos == "adjective":
+            arg = "e0 e0"
+        elif self.pos == "verb":
+            arg = "e0 e0"
+        return "(SS#"+self.subdomain+" "+arg+" :"+self.weight+")"
 
     def build_role(self,role):
         if role:
             #if self.pos == "noun":
-            arg = "x e0"
+            arg = "x"
             return "(R#"+role.upper()+" "+arg+" :"+self.weight+")"
         else:
             return ""
@@ -72,7 +74,7 @@ class Template(object):
             if tag == "nn":
                 body = "("+self.name+"-"+tag+" e0 x)"
             if tag == "vb":
-                body = "("+self.name+"-"+tag+" e0 x y u)"
+                body = "("+self.name+"-"+tag+" e0 x y z)"
             if tag == "adj":
                 body = "("+self.name+"-"+tag+" e0 x)"
             return body
