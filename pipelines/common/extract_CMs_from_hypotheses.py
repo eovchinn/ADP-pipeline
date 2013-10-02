@@ -256,13 +256,15 @@ def extract_CM_mapping(id,inputString,DESCRIPTION):
 	if len(bestCM)==0:
 		output_struct_item["targetConceptDomain"] = ''
 		output_struct_item["targetFrame"] = ''
+		output_struct_item["targetConceptSubDomain"] = ''
 		output_struct_item["sourceFrame"] = ''
 		output_struct_item["sourceConceptSubDomain"] = ''
 		output_struct_item['annotationMappings'] = []
 	else:
 		data = bestCM.split(',')
-		output_struct_item["targetConceptDomain"] = data[1]
-		output_struct_item["targetFrame"] = data[2]
+		output_struct_item["targetConceptDomain"] = 'ECONOMIC_INEQUALITY'
+		output_struct_item["targetFrame"] = data[1]
+		output_struct_item["targetConceptSubDomain"] = data[2]
 		output_struct_item["sourceFrame"] = data[3]
 		if data[4]=='-': output_struct_item["sourceConceptSubDomain"] = ''
 		else: output_struct_item["sourceConceptSubDomain"] = data[4]
