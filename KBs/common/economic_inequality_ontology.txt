@@ -126,13 +126,13 @@
 
 ; PHYSICAL HARM
 
-(B (name physical-harm) (=>(^(M#CAUSE-HARM e0 :0.3)(M#CAUSING-THING-H x e0 :0.3)(M#HARM-VICTIM y e0 :0.3)) (^(I#PHYSICAL-HARM-TYPE e0)(R#HARM-AGENT x e0)(R#HARM-VICTIM y e0))))
+(B (name physical-harm) (=>(^(M#CAUSE-HARM e0 :0.3)(M#CAUSING-THING-H x e0 :0.3)(M#HARM-VICTIM y e0 :0.3)) (^(I#PHYSICAL-HARM e0)(R#HARM-AGENT x e0)(R#HARM-VICTIM y e0))))
 
-(B (name physical-harm2) (=>(^(M#CAUSE-HARM e0 :0.46)(M#CAUSING-THING-H x e0 :0.46)) (^(I#PHYSICAL-HARM-TYPE e0)(R#HARM-AGENT x e0))))
+(B (name physical-harm2) (=>(^(M#CAUSE-HARM e0 :0.46)(M#CAUSING-THING-H x e0 :0.46)) (^(I#PHYSICAL-HARM e0)(R#HARM-AGENT x e0))))
 
-(B (name physical-harm3) (=>(^(M#CAUSE-HARM e0 :0.46)(M#HARM-VICTIM y e0 :0.46)) (^(I#PHYSICAL-HARM-TYPE e0)(R#HARM-VICTIM y e0))))
+(B (name physical-harm3) (=>(^(M#CAUSE-HARM e0 :0.46)(M#HARM-VICTIM y e0 :0.46)) (^(I#PHYSICAL-HARM e0)(R#HARM-VICTIM y e0))))
 
-(B (name physical-harm4) (=>(M#CAUSE-HARM e0 :0.9) (I#PHYSICAL-HARM-TYPE e0)))
+(B (name physical-harm4) (=>(M#CAUSE-HARM e0 :0.9) (I#PHYSICAL-HARM e0)))
 
 (B (name physical-restraint) (=>(^(M#CAUSE-HARM e0 :0.23)(M#CAUSING-THING-H x e0 :0.23)(M#HARM-VICTIM y e0 :0.23)(CAUSE-NOT-FUNCTION e0 :0.23)) (^(I#PHYSICAL-HARM-RESTRAINT e0)(R#HARM-AGENT x e0)(R#HARM-VICTIM y e0))))
 
