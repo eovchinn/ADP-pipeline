@@ -26,7 +26,7 @@
 
 (B (name fight3)(=> (^(M#CAUSE-NOT-EXIST e1 :0.46)(M#CAUSING-THING_E z e1 :0.46)) (^(I#STRUGGLE x)(R#STRUGGLE-AGENT z x))))
 
-(B (name fight4)(=> (^(M#CAUSE-NOT-EXIST e1 :0.48)(M#CAUSING-THING_E x e1 :0.48)) (^(I#STRUGGLE x)(TYPE x x)))
+(B (name fight4)(=> (^(M#CAUSE-NOT-EXIST e1 :0.48)(M#CAUSING-THING_E x e1 :0.48)) (^(I#STRUGGLE x)(TYPE x x))))
 
 
 (B (name enemy)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#CAUSING-THING-F x e1 :0.3)(M#FUNCTION-AGENT z e1 :0.3)) (^ (I#STRUGGLE-ADVERSARY x e0)(R#STRUGGLE-AGENT z e0))))
