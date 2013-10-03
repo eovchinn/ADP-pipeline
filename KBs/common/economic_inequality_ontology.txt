@@ -137,7 +137,7 @@
 
 (B (name physical-restraint) (=>(^(M#CAUSE-HARM e0 :0.23)(M#CAUSING-THING-H x e0 :0.23)(M#HARM-VICTIM y e0 :0.23)(CAUSE-NOT-FUNCTION e0 :0.23)) (^(I#PHYSICAL_HARM-RESTRAINT e0)(R#HARM-AGENT x e0)(R#HARM-VICTIM y e0))))
 
-(B (name physical-protection) (=>(^(M#CAUSE-REDUCE-HARM e0 :0.3)(M#CAUSING-THING-RH x :0.3)) (I#PHYSICAL-PROTECTION e0)))
+(B (name physical-protection) (=>(^(M#CAUSE-REDUCE-HARM e0 :0.3)(M#CAUSING-THING-RH x :0.3)) (^(I#PHYSICAL_HARM e0)(I#PROTECTION x e0))))
 
 ; ABYSS
 (B (name abyss) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.33)(M#CAUSING-THING-F x e0 :0.33)(M#CAUSE-IMMOBILITY e0 :0.33)) (^(I#ABYSS e0)(I#TYPE x e0))))
@@ -192,67 +192,68 @@
 ;PATHWAY-TYPE
 (B (name pathway-type) (=>(^(M#PROVIDE-ACCESS e0 :0.45)(M#PROVIDING-THING-A x :0.45)) (^(I#PATHWAY e0)(I#TYPE x e0))))
 ;OPEN-PATH
-(B (name open-path) (=>(^(M#EASE-ACCESS e0 :0.9)) (^(I#PATHWAY e0)(I#OPEN-PATH e0 e0))))
+(B (name open-path) (=>(^(M#EASE-ACCESS e0 :0.9)) (^(I#PATHWAY e1)(I#OPEN-PATH e0 e0))))
 ;OBSTRUCTED-PATH
-(B (name obstructed-path) (=>(^(M#BLOCK-ACCESS e0 :0.9)) (^(I#PATHWAY-OBSTRUCTED-PATH x))))
+(B (name obstructed-path) (=>(^(M#BLOCK-ACCESS e0 :0.9)) (^(I#PATHWAY e1)(I#OBSTRUCTED-PATH e0 e0))))
 
 ; PORTAL
 ;MEANS OF ENTRY
-(B (name means-of-entry) (=>(^(M#ALLOW-ACCESS e0 :0.45)(M#ALLOWING-A-THING x :0.45)) (I#PORTAL-MEANS-OF-ENTRY x)))
+(B (name means-of-entry) (=>(^(M#ALLOW-ACCESS e0 :0.45)(M#ALLOWING-A-THING x :0.45)) (^(I#PORTAL e0)(I#MEANS_OF_ENTRY x e0))))
 
 ;OBSTACLES
-(B (name obstacles) (=>(^(M#BLOCK-ACCESS e0 :0.9)) (I#PORTAL-OBSTACLES x)))
+(B (name obstacles) (=>(^(M#BLOCK-ACCESS e0 :0.9)) (^(I#PORTAL e0)(I#OBSTACLES x e0))))
 
 ;PHYSICAL-OBJECT
 ;PHYSICAL-OBJECT-TYPE
 
 ;POSSESSION
-(B (name possession) (=>(^(M#ALLOW-UTILIZATION e0 :0.45)(M#ALLOWING-U-THING x :0.45)) (I#PHYSICAL-OBJECT-POSSESSION x)))
+(B (name possession) (=>(^(M#ALLOW-UTILIZATION e0 :0.45)(M#ALLOWING-U-THING x :0.45)) (^(I#PHYSICAL_OBJECT e0)(I#POSSESSION x e0))))
 
 
 ;VICTIM
 ;SUFFERER
-(B (name sufferer) (=>(^(M#EXPERIENCE-HARM e0 :0.45)(M#EXPERIENCER x :0.45)) (I#VICTIM-SUFFERER x)))
+(B (name sufferer) (=>(^(M#EXPERIENCE-HARM e0 :0.45)(M#EXPERIENCER x :0.45)) (^(I#VICTIM e0)(I#SUFFERER x e0))))
 
 ;VICTIMIZER
-(B (name victimizer) (=>(^(M#CAUSE-HARM e0 :0.45)(M#CAUSING-THING-H x :0.45)) (I#VICTIM-VICTIMIZER x)))
+(B (name victimizer) (=>(^(M#CAUSE-HARM e0 :0.45)(M#CAUSING-THING-H x :0.45)) (^(I#VICTIM e0)(I#VICTIMIZER x e0))))
 
 ;CHAMPION
-(B (name champion) (=>(^(M#CAUSE-NOT-HARM e0 :0.45)(M#CAUSING-THING-NH x :0.45)) (I#VICTIM-CHAMPION x)))
+(B (name champion) (=>(^(M#CAUSE-NOT-HARM e0 :0.45)(M#CAUSING-THING-NH x :0.45)) (^(I#VICTIM e0)(I#CHAMPION x e0))))
 
 
 ;VISION
 ;BLINDNESS
-(B (name blindness) (=>(^(M#INDIFFERENT x :0.45)(M#SELFISH x :0.45)) (I#VISION-BLINDNESS x)))
+(B (name blindness) (=>(^(M#INDIFFERENT x :0.45)(M#SELFISH x :0.45)) (^(I#VISION e0)(I#BLINDNESS x e0))))
+(B (name blindness2) (=>(^(M#INDIFFERENT x :0.45)(M#SELFISH x :0.45)) (^(I#VISION e0)(I#BLINDNESS e0 e0)(R#BLIND x))))
 
 ;BLOOD-SYSTEM 
 ;COMPONENT
-(B (name component) (=>(^(M#CAUSE-FUNCTION x :0.45)(M#CAUSING-THING-F x :0.45)) (^(I#BLOOD-SYSTEM-COMPONENT x)(R#BLOOD x))))
+(B (name component) (=>(^(M#CAUSE-FUNCTION x :0.45)(M#CAUSING-THING-F x :0.45)) (^(I#BLOOD e0)(I#SYSTEM-COMPONENT x e0)(R#BLOOD x))))
 
 
 ;ENERGY 
 ;TYPE
-(B (name energy) (=>(^(M#CAUSE-FUNCTION x :0.45)(M#CAUSING-THING-F x :0.45)) (I#ENERGY-TYPE x)))
+(B (name energy) (=>(^(M#CAUSE-FUNCTION x :0.45)(M#CAUSING-THING-F x :0.45)) (^(I#ENERGY e0)(I#TYPE x e0))))
 
 ;MONSTER
 ;TYPE
-(B (name monster) (=>(^(M#STRONG-ENTITY x :0.33)(M#UNDESIRABLE-ENTITY x :0.33) (M#HOARD-RESOURCES x :0.33)) (I#MONSTER-TYPE x)))
+(B (name monster) (=>(^(M#STRONG-ENTITY x :0.33)(M#UNDESIRABLE-ENTITY x :0.33) (M#HOARD-RESOURCES x :0.33)) (^(I#MONSTER e0)(I#TYPE x e0))))
 
 ;PARASITE
 ;DESTRUCTIVE-BEING
-(B (name parasite) (=>(^(M# x :0.33)(M#EXPLOITATIVE x :0.33) (M#DRAIN-RESOURCES x :0.33)) (I#PARASITE-DESTRUCTIVE-BEING x)))
+(B (name parasite) (=>(^(M#EXPLOITATIVE x :0.45) (M#DRAIN-RESOURCES x :0.45)) (^(I#PARASITE e0)(I#DESTRUCTIVE-BEING x e0))))
 
 
 ;PLANT
 ;TYPE
 ;(B (name plant) (=>(^(M# x :0.33)(M# x :0.33) (M# x :0.33)) (I#PLANT-TYPE x)))
 
-(B (name plant-roots) (=>(^(M#CAUSE-FUNCTION x :0.33)(M#CAUSING-THING x :0.33) (M#HIDDEN x :0.33)) (^(I#PLANT-PARTS x)(R#PLANT-ROOT x))))
-(B (name plant-fruits) (=>(^(M#BY-PRODUCT x :0.33) (M#EXPOSED x :0.33)) (^(I#PLANT-PARTS x)(R#PLANT-EXTERNAL x))))
+(B (name plant-roots) (=>(^(M#CAUSE-FUNCTION x :0.33)(M#CAUSING-THING x :0.33) (M#HIDDEN x :0.33)) (^(I#PLANT e0) (PARTS x e0)(R#PLANT-ROOT x))))
+(B (name plant-fruits) (=>(^(M#BYPRODUCT x :0.45) (M#EXPOSED x :0.45)) (^(I#PLANT e0)(I#PARTS x e0)(R#PLANT-EXTERNAL x))))
 
 ; DARKNESS
-(B (name darkness) (=>(^(M#CAUSE-FEAR x :0.33)(M#CAUSE-NOT-FUNCTION x :0.33) (M#CAUSING-THING-FNF x :0.33)) (I#DARKNESS-DARK-END-OF-RANGE x)))
+(B (name darkness) (=>(^(M#CAUSE-FEAR x :0.33)(M#CAUSE-NOT-FUNCTION x :0.33) (M#CAUSING-THING-FNF x :0.33)) (^(I#DARKNESS e0)(I#DARK-END-OF-RANGE-OF-DARKNESS/LIGHT x e0))))
 
 ;ENABLER
 ;LUBRICANT
-(B (name lubricant) (=>(^(M#CAUSE-FUNCTION x :0.45)(M#CAUSING-THING-F x :0.45)) (I#ENABLER-LUBRICANT x)))
+(B (name lubricant) (=>(^(M#CAUSE-FUNCTION x :0.45)(M#CAUSING-THING-F x :0.45)) (^(I#ENABLER e0)(I#LUBRICANT x e0))))

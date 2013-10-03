@@ -933,9 +933,9 @@
 (B (name open-path) (=>(SS#OPEN_PATH e0 e0 :0.9) (^(S#PATHWAY e1)(SS#TYPE x e1)(open-adj e0 x))))
 
 ;OBSTRUCTED PATH
-(B (name obstructed-path) (=>(SS#OBSTRUCTED_PATH e0 :0.90)  (^(S#PATHWAY x) (SS#TYPE x)(obstructed-adj e0 x))))
-(B (name blocked-path) (=>(SS#OBSTRUCTED_PATH e0 :0.90)  (^(S#PATHWAY x) (SS#TYPE x)(blocked-adj e0 x))))
-(B (name closed-path) (=>(SS#OBSTRUCTED_PATH e0 :0.90)  (^(S#PATHWAY x) (SS#TYPE x)(closed-adj e0 x))))
+(B (name obstructed-path) (=>(SS#OBSTRUCTED_PATH e0 e0 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(obstructed-adj e0 x))))
+(B (name blocked-path) (=>(SS#OBSTRUCTED_PATH e0 e0 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(blocked-adj e0 x))))
+(B (name closed-path) (=>(SS#OBSTRUCTED_PATH e0 e0 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(closed-adj e0 x))))
 
 (B (name pathwaymap)(=>(I#PATHWAY x :0.9)(S#PATHWAY x)))
 (B (name pathway-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1053,11 +1053,11 @@
 
 ;VISION
 ;BLINDNESS
-(B (name blind)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS x e0 :0.3)(R#BLIND x e0 :0.3)) (blind-adj e0 x)))
+(B (name blind)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#BLIND x :0.3)) (blind-adj e0 x)))
 
 (B (name blindness)(=>(^(S#VISION e0 :0.45)(SS#BLINDNESS x e0 :0.45)) (blindness-nn e0 x)))
 
-(B (name blindvb)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS x e0 e0 :0.3)(R#BLIND y :0.3)) (blind-vb e0 x y z)))
+(B (name blindvb)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#BLIND y :0.3)) (blind-vb e0 x y z)))
 
 ;SEEING
 (B (name open-eyes)(=>(^(S#VISION e1 :0.45)(SS#SEEING x e1 :0.45)) (^(open-adj e0 x)(eyes-nn e1 x))))
