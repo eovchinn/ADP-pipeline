@@ -224,11 +224,11 @@
 ;VISION
 ;BLINDNESS
 (B (name blindness) (=>(^(M#INDIFFERENT x :0.45)(M#SELFISH x :0.45)) (^(I#VISION e0)(I#BLINDNESS x e0))))
-(B (name blindness2) (=>(^(M#INDIFFERENT x :0.45)(M#SELFISH x :0.45)) (^(I#VISION e0)(I#BLINDNESS e0 e0)(R#BLIND x))))
+(B (name blindness2) (=>(^(M#INDIFFERENT x :0.45)(M#SELFISH x :0.45)) (^(I#VISION e0)(I#BLINDNESS e0 e0)(R#BLIND x e0))))
 
 ;BLOOD-SYSTEM 
 ;COMPONENT
-(B (name component) (=>(^(M#CAUSE-FUNCTION x :0.45)(M#CAUSING-THING-F x :0.45)) (^(I#BLOOD e0)(I#SYSTEM-COMPONENT x e0)(R#BLOOD x))))
+(B (name component) (=>(^(M#CAUSE-FUNCTION x :0.45)(M#CAUSING-THING-F x :0.45)) (^(I#BLOOD e0)(I#SYSTEM-COMPONENT x e0)(R#BLOOD x e0))))
 
 
 ;ENERGY 
@@ -248,8 +248,8 @@
 ;TYPE
 ;(B (name plant) (=>(^(M# x :0.33)(M# x :0.33) (M# x :0.33)) (I#PLANT-TYPE x)))
 
-(B (name plant-roots) (=>(^(M#CAUSE-FUNCTION x :0.33)(M#CAUSING-THING x :0.33) (M#HIDDEN x :0.33)) (^(I#PLANT e0) (PARTS x e0)(R#PLANT-ROOT x))))
-(B (name plant-fruits) (=>(^(M#BYPRODUCT x :0.45) (M#EXPOSED x :0.45)) (^(I#PLANT e0)(I#PARTS x e0)(R#PLANT-EXTERNAL x))))
+(B (name plant-roots) (=>(^(M#CAUSE-FUNCTION x :0.33)(M#CAUSING-THING x :0.33) (M#HIDDEN x :0.33)) (^(I#PLANT e0) (PARTS x e0)(R#PLANT-ROOT x e0))))
+(B (name plant-fruits) (=>(^(M#BYPRODUCT x :0.45) (M#EXPOSED x :0.45)) (^(I#PLANT e0)(I#PARTS x e0)(R#PLANT-EXTERNAL x e0))))
 
 ; DARKNESS
 (B (name darkness) (=>(^(M#CAUSE-FEAR x :0.33)(M#CAUSE-NOT-FUNCTION x :0.33) (M#CAUSING-THING-FNF x :0.33)) (^(I#DARKNESS e0)(I#DARK-END-OF-RANGE-OF-DARKNESS/LIGHT x e0))))
