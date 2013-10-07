@@ -80,56 +80,57 @@ def collectVars(struc,superkey):
 	return output
 
 def isLinkedbyParse(v1,v2,word_props,equalities,been):
-	if (v1,v2) in been: return False
+	if (v1,v2) in been: return 0
 	been.append((v1,v2))
 	been.append((v2,v1))
 
-	if equalities.has_key(v1) and equalities[v1].has_key(v2): return True
+	if equalities.has_key(v1) and equalities[v1].has_key(v2): return 2
+
+	for (propName,args) in word_props:
+		if v1 in args and v2 in args: return 2
+
 
 	for (propName,args) in word_props:
 		if v1 in args:
-			if v2 in args: 
-				return True
-			else:
-				if len(args)>2: 
-					i1 = args.index(v1)
-					if i1==0: 
-						if isLinkedbyParse(args[1],v2,word_props,equalities,been): return True
-						if isLinkedbyParse(args[2],v2,word_props,equalities,been): return True
-						if len(args)>3 and isLinkedbyParse(args[3],v2,word_props,equalities,been): return True
-					elif i1==1:
-						if isLinkedbyParse(args[0],v2,word_props,equalities,been): return True
-						if isLinkedbyParse(args[2],v2,word_props,equalities,been): return True
-						if len(args)>3 and isLinkedbyParse(args[3],v2,word_props,equalities,been): return True
-					elif i1==2:
-						if isLinkedbyParse(args[0],v2,word_props,equalities,been): return True
-						if isLinkedbyParse(args[1],v2,word_props,equalities,been): return True
-						if len(args)>3 and isLinkedbyParse(args[3],v2,word_props,equalities,been): return True
-					elif i1==3:
-						if isLinkedbyParse(args[0],v2,word_props,equalities,been): return True
-						if isLinkedbyParse(args[1],v2,word_props,equalities,been): return True
-						if isLinkedbyParse(args[2],v2,word_props,equalities,been): return True
+			if len(args)>2: 
+				i1 = args.index(v1)
+				if i1==0: 
+					if isLinkedbyParse(args[1],v2,word_props,equalities,been)>0: return 1
+					if isLinkedbyParse(args[2],v2,word_props,equalities,been)>0: return 1
+					if len(args)>3 and isLinkedbyParse(args[3],v2,word_props,equalities,been)>0: return 1
+				elif i1==1:
+					if isLinkedbyParse(args[0],v2,word_props,equalities,been)>0: return 1
+					if isLinkedbyParse(args[2],v2,word_props,equalities,been)>0: return 1
+					if len(args)>3 and isLinkedbyParse(args[3],v2,word_props,equalities,been)>0: return 1
+				elif i1==2:
+					if isLinkedbyParse(args[0],v2,word_props,equalities,been)>0: return 1
+					if isLinkedbyParse(args[1],v2,word_props,equalities,been)>0: return 1
+					if len(args)>3 and isLinkedbyParse(args[3],v2,word_props,equalities,been)>0: return 1
+				elif i1==3:
+					if isLinkedbyParse(args[0],v2,word_props,equalities,been)>0: return 1
+					if isLinkedbyParse(args[1],v2,word_props,equalities,been)>0: return 1
+					if isLinkedbyParse(args[2],v2,word_props,equalities,been)>0: return 1
 		elif v2 in args:
 			if len(args)>2: 
 				i2 = args.index(v2)
 				if i2==0: 
-					if isLinkedbyParse(args[1],v1,word_props,equalities,been): return True
-					if isLinkedbyParse(args[2],v1,word_props,equalities,been): return True
-					if len(args)>3 and isLinkedbyParse(args[3],v1,word_props,equalities,been): return True
+					if isLinkedbyParse(args[1],v1,word_props,equalities,been)>0: return 1
+					if isLinkedbyParse(args[2],v1,word_props,equalities,been)>0: return 1
+					if len(args)>3 and isLinkedbyParse(args[3],v1,word_props,equalities,been)>0: return 1
 				elif i2==1:
-					if isLinkedbyParse(args[0],v1,word_props,equalities,been): return True
-					if isLinkedbyParse(args[2],v1,word_props,equalities,been): return True
-					if len(args)>3 and isLinkedbyParse(args[3],v1,word_props,equalities,been): return True
+					if isLinkedbyParse(args[0],v1,word_props,equalities,been)>0: return 1
+					if isLinkedbyParse(args[2],v1,word_props,equalities,been)>0: return 1
+					if len(args)>3 and isLinkedbyParse(args[3],v1,word_props,equalities,been)>0: return 1
 				elif i2==2:
-					if isLinkedbyParse(args[0],v1,word_props,equalities,been): return True
-					if isLinkedbyParse(args[1],v1,word_props,equalities,been): return True
-					if len(args)>3 and isLinkedbyParse(args[3],v1,word_props,equalities,been): return True
+					if isLinkedbyParse(args[0],v1,word_props,equalities,been)>0: return 1
+					if isLinkedbyParse(args[1],v1,word_props,equalities,been)>0: return 1
+					if len(args)>3 and isLinkedbyParse(args[3],v1,word_props,equalities,been)>0: return 1
 				elif i2==3:
-					if isLinkedbyParse(args[0],v1,word_props,equalities,been): return True
-					if isLinkedbyParse(args[1],v1,word_props,equalities,been): return True
-					if isLinkedbyParse(args[2],v1,word_props,equalities,been): return True
+					if isLinkedbyParse(args[0],v1,word_props,equalities,been)>0: return 1
+					if isLinkedbyParse(args[1],v1,word_props,equalities,been)>0: return 1
+					if isLinkedbyParse(args[2],v1,word_props,equalities,been)>0: return 1
 
-	return False
+	return 0
 
 def extract_CM_mapping(id,inputString,DESCRIPTION):
 	#print inputString
@@ -204,6 +205,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION):
 	explanationAppendix = "\n%%BEGIN_CM_LIST\n"
 
 	CMlinked = ''
+	CMhalflinked = ''
 	CMunlinked = ''
 
 	for targetS in target_strucs:
@@ -220,13 +222,15 @@ def extract_CM_mapping(id,inputString,DESCRIPTION):
 
 		for sourceS in source_strucs:
 			sV = collectVars(source_strucs,sourceS)
-			linked = False
+			link = 0
 			for tv in tV:
 				for sv in sV:
-					if isLinkedbyParse(tv,sv,word_props,equalities,[]):
-						linked = True
+					newlink = isLinkedbyParse(tv,sv,word_props,equalities,[])
+					if newlink==2:
+						link = 2
 						break
-				if linked: break
+					elif newlink>link: link=newlink
+				if link==2: break
 
 			Sstrings = []
 			for sarg in source_strucs[sourceS]:
@@ -236,70 +240,100 @@ def extract_CM_mapping(id,inputString,DESCRIPTION):
 					for (ssubd,ssubarg) in source_strucs[sourceS][sarg]:
 						Sstrings.append(','+sourceS+','+ssubd)
 
+
 			for ts in Tstrings:
 				for ss in Sstrings:
 					explanationAppendix += ts+ss
-					if linked: 
+					if link==2: 
 						explanationAppendix += ',0.9\n'
 						CMlinked = ts+ss
-					else: 
+					elif link==1: 
+						explanationAppendix += ',0.5\n'
+						CMhalflinked = ts+ss
+					elif link==0: 
 						explanationAppendix += ',0.3\n'
 						CMunlinked = ts+ss
 
-	explanationAppendix+="%%END_CM_LIST"
+	if len(CMlinked)==0 and len(CMhalflinked)==0 and len(CMunlinked)==0:
+		targetS = ''
+		sourceS = ''
+
+		if len(target_strucs.keys())>0:
+			guessTarget = target_strucs.keys()[0]
+			tArg = target_strucs[guessTarget].keys()[0]
+			if len(target_strucs[guessTarget][tArg])>0:
+				(guessSubTarget,stArg) = target_strucs[guessTarget][tArg][0]
+			else: guessSubTarget = guessTarget
+			targetS = 'ECONOMIC_INEQUALITY,' + guessTarget + ',' + guessSubTarget + ','
+		else:
+			guessTarget = 'POVERTY'
+			guessSubTarget = 'POVERTY'
+			targetS = 'ECONOMIC_INEQUALITY,' + guessTarget + ',' + guessSubTarget + ','
+
+		#print json.dumps(source_strucs, ensure_ascii=False)
+		if len(source_strucs.keys())>0:
+			guessSource = source_strucs.keys()[0]
+			sArg = source_strucs[guessSource].keys()[0]
+			if len(source_strucs[guessSource][sArg])>0:
+				(guessSubSource,stArg) = source_strucs[guessSource][sArg][0]
+			else: guessSubSource = '-'
+			sourceS = guessSource + ',' + guessSubSource
+		else:
+			guessSource = 'STRUGGLE'
+			guessSubSource = 'TYPE'
+			sourceS = guessSource + ',' + guessSubSource
+
+		CMunlinked = targetS+sourceS
+		explanationAppendix += targetS+sourceS+',0.001\n'
+
+	explanationAppendix += "%%END_CM_LIST"
 
 	output_struct_item['isiAbductiveExplanation'] = inputString + explanationAppendix
 
-	bestCM = CMlinked
-	if len(bestCM)==0: bestCM = CMunlinked
+	if len(CMlinked)>0: bestCM = CMlinked
+	elif len(CMhalflinked)>0: bestCM = CMhalflinked
+	else: bestCM = CMunlinked
 
-	if len(bestCM)==0:
-		output_struct_item["targetConceptDomain"] = ''
-		output_struct_item["targetFrame"] = ''
-		output_struct_item["targetConceptSubDomain"] = ''
-		output_struct_item["sourceFrame"] = ''
-		output_struct_item["sourceConceptSubDomain"] = ''
-		output_struct_item['annotationMappings'] = []
-	else:
-		data = bestCM.split(',')
-		output_struct_item["targetConceptDomain"] = 'ECONOMIC_INEQUALITY'
-		output_struct_item["targetFrame"] = data[1]
-		output_struct_item["targetConceptSubDomain"] = data[2]
-		output_struct_item["sourceFrame"] = data[3]
-		if data[4]=='-': output_struct_item["sourceConceptSubDomain"] = ''
-		else: output_struct_item["sourceConceptSubDomain"] = data[4]
+	output_struct_item["targetConceptDomain"] = 'ECONOMIC_INEQUALITY'
+	data = bestCM.split(',')
+	output_struct_item["targetFrame"] = data[1]
+	output_struct_item["targetConceptSubDomain"] = data[2]
+	output_struct_item["sourceFrame"] = data[3]
+	if data[4]=='-': output_struct_item["sourceConceptSubDomain"] = 'TYPE'
+	else: output_struct_item["sourceConceptSubDomain"] = data[4]
 
-		targetArgs = dict()
-		if subtargets.has_key(data[1]):
-			for args in subtargets[data[1]]:
-				targetArgs[args[0]]=1
-		if subsubtargets.has_key(data[2]):
-			for args in subsubtargets[data[2]]:
-				targetArgs[args[0]]=1
+	targetArgs = dict()
+	if subtargets.has_key(data[1]):
+		for args in subtargets[data[1]]:
+			targetArgs[args[0]]=1
+	if subsubtargets.has_key(data[2]):
+		for args in subsubtargets[data[2]]:
+			targetArgs[args[0]]=1
 
-		sourceArgs = dict()
-		if sources.has_key(data[3]):
-			for args in sources[data[3]]:
-				sourceArgs[args[0]]=1
-		if subsources.has_key(data[4]):
-			for args in subsources[data[4]]:
-				sourceArgs[args[0]]=1
+	sourceArgs = dict()
+	if sources.has_key(data[3]):
+		for args in sources[data[3]]:
+			sourceArgs[args[0]]=1
+	if subsources.has_key(data[4]):
+		for args in subsources[data[4]]:
+			sourceArgs[args[0]]=1
 
-		targetWords = wordStr2print(targetArgs,word_props,equalities)
-		sourceWords = wordStr2print(sourceArgs,word_props,equalities)
+	targetWords = wordStr2print(targetArgs,word_props,equalities)
+	sourceWords = wordStr2print(sourceArgs,word_props,equalities)
 
-		mapping_str = wordStr2print_Mapping(mappings,word_props,equalities)
+	mapping_str = wordStr2print_Mapping(mappings,word_props,equalities)
 
-		annotationMappings_struc = dict()
-		annotationMappings_struc['explanation'] = mapping_str
-		annotationMappings_struc['target'] = targetWords
-		annotationMappings_struc['source'] = sourceWords
-		annotationMappings_struc['targetInLm'] = False
-		annotationMappings_struc['sourceInLm'] = False
+	annotationMappings_struc = dict()
+	annotationMappings_struc['explanation'] = mapping_str
+	annotationMappings_struc['target'] = targetWords
+	annotationMappings_struc['source'] = sourceWords
+	if len(targetWords)>0: annotationMappings_struc['targetInLm'] = True
+	else: annotationMappings_struc['targetInLm'] = False
+	if len(sourceWords)>0: annotationMappings_struc['sourceInLm'] = True
+	else: annotationMappings_struc['sourceInLm'] = False
 
-		output_struct_item['annotationMappings'] = [annotationMappings_struc]
-	
+	output_struct_item['annotationMappings'] = [annotationMappings_struc]
 
-	# #print json.dumps(output_struct_item, ensure_ascii=False)
+	#print json.dumps(output_struct_item, ensure_ascii=False)
 
 	return output_struct_item
