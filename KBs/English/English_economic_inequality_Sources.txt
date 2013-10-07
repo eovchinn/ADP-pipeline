@@ -144,6 +144,7 @@
 (B (name offence)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (offence-nn e0 x)))
 (B (name felony)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (felony-nn e0 x)))
 (B (name delinquency)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (delinquency-nn e0 x)))
+(B (name racism)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (racism-nn e0 x)))
 
 (B (name misdeed)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (misdeed-nn e0 x)))
 (B (name malefaction)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (malefaction-nn e0 x)))
@@ -158,6 +159,7 @@
 (B (name rape)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (rape-nn e0 x)))
 
 (B (name rapev) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (rape-vb e0 x y u)))
+(B (name violate) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (violate-vb e0 x y u)))
 
 ; THEFT
 (B (name steal) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#THEME z e0 :0.2)) (steal-vb e0 x z u2)))
@@ -222,13 +224,14 @@
 (B (name prison-sentence)(=>(^(S#CRIME y :0.45)(SS#PUNISHMENT y y :0.45)) (^(prison-nn e0 x)(of-in e1 y x)(sentence-nn e2 y))))
 (B (name life-sentence)(=>(^(S#CRIME y :0.45)(SS#PUNISHMENT y y :0.45)) (^(life-nn e0 x)(of-in e1 y x)(sentence-nn e2 y))))
 
+(B (name condemn) (=>(^(S#CRIME e0 :0.2)(SS#PUNISHMENT e0 e0 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2))(condemn-vb e0 x y u)))
 (B (name punish) (=>(^(S#CRIME e0 :0.2)(SS#PUNISHMENT e0 e0 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2))(punish-vb e0 x y u)))
 (B (name convict) (=>(^(S#CRIME e0 :0.2)(SS#PUNISHMENT e0 e0 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2))(convict-vb e0 x y u)))
 
 ; VICTIM
 (B (name victim)(=>(^(S#CRIME e0 :0.3)(SS#VICTIM x e0 :0.3)(R#VICTIM x e0 :0.3)) (victim-nn e0 x)))
 
-(B (name crimemap)(=>(I#CRIME e0 :0.9)(S#CRIME x)))
+(B (name crimemap)(=>(I#CRIME x :0.9)(S#CRIME x)))
 (B (name crime-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
 (B (name crime-perpetratorsmap)(=>(I#PERPETRATOR x y :0.9)(SS#PERPETRATOR x y)))
 (B (name punishmentmap)(=>(I#PUNISHMENT x y :0.9)(SS#PUNISHMENT x y)))
@@ -273,7 +276,9 @@
 (B (name escape)(=>(^(S#CONFINEMENT e0 :0.45)(SS#EXIT x e0 :0.45)) (escape-nn e0 x)))
 
 (B (name escape)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (escape-vb e0 x y u)))
-(B (name get-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(get-vb e0 x y u)(out-in e1 e0 z)(of-in e2 e1 w))))
+(B (name get-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(get-vb e0 x y u)(out-in e1 e0)(of-in e2 e0 w))))
+(B (name get-out)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(get-vb e0 x y u)(out-in e1 e0 z))))
+(B (name break-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(break-vb e0 x y u)(out-in e1 e0)(of-in e2 e0 w))))
 (B (name break-out)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(break-vb e0 x y u)(out-in e1 e0 z))))
 (B (name liberate)(=>(^(S#CONFINEMENT u1 :0.3)(SS#EXIT e0 u1 :0.3)(R#EXIT-AGENT x e0 :0.3) (R#EXIT-PATIENT y e0 :0.3)) (liberate-vb e0 x y u)))
 
@@ -398,6 +403,7 @@
 (B (name battle) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(battle-nn e0 x)))
 (B (name gunfight) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(gunfight-nn e0 x)))
 (B (name gunshot) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(gunshot-nn e0 x)))
+(B (name chaos) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(chaos-nn e0 x)))
 
 (B (name attack) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (attack-nn e0 x)))
 (B (name assault) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (assault-nn e0 x)))
@@ -656,6 +662,7 @@
 (B (name target) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(target-vb e0 x y u2)))
 
 (B (name hit) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(hit-vb e0 x y u2)))
+(B (name grind) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(grind-vb e0 x y u2)))
 
 (B (name hurtn) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(hurt-nn e0 x)))
 (B (name cutn) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(cut-nn e0 x)))
@@ -1054,10 +1061,14 @@
 ;VISION
 ;BLINDNESS
 (B (name blind)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#BLIND x e0 :0.3)) (blind-adj e0 x)))
+(B (name myopic)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#BLIND x e0 :0.3)) (myopic-adj e0 x)))
 
 (B (name blindness)(=>(^(S#VISION e0 :0.45)(SS#BLINDNESS x e0 :0.45)) (blindness-nn e0 x)))
 
 (B (name blindvb)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#BLIND y e0 :0.3)) (blind-vb e0 x y z)))
+
+(B (name invisible)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#INVISIBLE x e0 :0.3)) (invisible-adj e0 x)))
+(B (name hidden)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#INVISIBLE x e0 :0.3)) (hidden-adj e0 x)))
 
 ;SEEING
 (B (name open-eyes)(=>(^(S#VISION e1 :0.45)(SS#SEEING x e1 :0.45)) (^(open-adj e0 x)(eyes-nn e1 x))))
@@ -1217,13 +1228,23 @@
 (B (name jump)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (jump-vb e0 x y u)))
 (B (name spiral)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (spiral-vb e0 x y u)))
 
+(B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (decrease-vb e0 x y u)))
 (B (name fall)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (fall-vb e0 x y u)))
 (B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (drop-vb e0 x y u)))
 (B (name plummet)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (plummet-vb e0 x y u)))
 
 (B (name freeze)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-STOP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (freeze-vb e0 x y u)))
 
+(B (name increase)(=>(^(S#VERTICAL_SCALE x :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-UP x e0 :0.3)) (increase-nn e0 x)))
+
+(B (name decrease)(=>(^(S#VERTICAL_SCALE x :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-DOWN x e0 :0.3)) (decrease-nn e0 x)))
+
 ; CONTRAST OF POSITIONS
+(B (name higher)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (higher-adj e0 x)))
+(B (name above)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (above-adj e0 x)))
+
+(B (name lower)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (lower-adj e0 x)))
+(B (name below)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (below-adj e0 x)))
 
 (B (name vertical-scalemap)(=>(I#VERTICAL_SCALE x :0.9)(S#VERTICAL_SCALE x)))
 (B (name position-on-a-scalemap)(=>(I#POSITION_ON_A_SCALE x y :0.9)(SS#POSITION_ON_A_SCALE x y)))

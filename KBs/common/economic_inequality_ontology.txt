@@ -223,8 +223,8 @@
 
 ;VISION
 ;BLINDNESS
-(B (name blindness) (=>(^(M#INDIFFERENT x :0.45)(M#SELFISH x :0.45)) (^(I#VISION e0)(I#BLINDNESS x e0))))
-(B (name blindness2) (=>(^(M#INDIFFERENT x :0.45)(M#SELFISH x :0.45)) (^(I#VISION e0)(I#BLINDNESS e0 e0)(R#BLIND x e0))))
+(B (name blindness) (=>(^(M#INDIFFERENT x :0.45)(M#SELFISH x :0.45)) (^(I#VISION e0)(I#BLINDNESS e0 e0)(R#BLIND x e0))))
+(B (name invisible) (=>(^(M#IGNORED x :0.45)(M#HIDDEN x :0.45)) (^(I#VISION e0)(I#BLINDNESS e0 e0)(R#INVISIBLE x e0))))
 
 ;BLOOD-SYSTEM 
 ;COMPONENT

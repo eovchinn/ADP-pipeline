@@ -43,7 +43,7 @@ class Template(object):
     def build_role(self,role):
         if role:
             #if self.pos == "noun":
-            arg = "x"
+            arg = "x e0"
             return "(R#"+role.upper()+" "+arg+" :"+self.weight+")"
         else:
             return ""
