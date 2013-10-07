@@ -305,6 +305,7 @@
 
 (B (name reign) (=>(^(S#ENSLAVEMENT e0 :0.33)(SS#MASTER e0 e0 :0.33)(R#ENSLAVEMENT-AGENT x e0 :0.33))(reign-vb e0 x y u)))
 (B (name rule) (=>(^(S#ENSLAVEMENT e0 :0.33)(SS#MASTER e0 e0 :0.33)(R#ENSLAVEMENT-AGENT x e0 :0.33))(rule-vb e0 x y u)))
+(B (name subject) (=>(^(S#ENSLAVEMENT e0 :0.33)(SS#MASTER e0 e0 :0.33)(R#ENSLAVEMENT-AGENT x e0 :0.33))(subject-vb e0 x y u)))
 
 (B (name enslavementmap)(=>(I#ENSLAVEMENT x :0.9)(S#ENSLAVEMENT x)))
 (B (name servantmap)(=>(I#SERVANT x y :0.9)(SS#SERVANT x y)))
@@ -621,9 +622,10 @@
 (B (name easing) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (easing-nn e0 x)))
 (B (name lightening) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (lightening-nn e0 x)))
 
-(B (name lighten) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#RELIEF x e0 :0.2)(R#RELIEF-CAUSE x e0)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (lighten-vb e0 x y u)))
-(B (name easevb) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#RELIEF x e0 :0.2)(R#RELIEF-CAUSE x e0)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (ease-vb e0 x y u)))
-(B (name relieve) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#RELIEF x e0 :0.2)(R#RELIEF-CAUSE x e0)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (relieve-vb e0 x y u)))
+(B (name lighten) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#RELIEF e0 e0 :0.2)(R#RELIEF-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (lighten-vb e0 x y u)))
+(B (name easevb) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#RELIEF e0 e0 :0.2)(R#RELIEF-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (ease-vb e0 x y u)))
+(B (name relieve) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#RELIEF e0 e0 :0.2)(R#RELIEF-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (relieve-vb e0 x y u)))
+(B (name aid) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#RELIEF e0 e0 :0.2)(R#RELIEF-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (aid-vb e0 x y u)))
 
 (B (name evasion) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (evasion-nn e0 x)))
 (B (name tax-evasion) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (^(tax-nn e0 x)(of-in e1 y x)(evasion-nn e2 y))))
@@ -1359,7 +1361,7 @@
 (B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (energy-nn e0 x)))
 
 ; RESULT
-
+(B (name fuel)(=>(^(S#ENERGY e0 :0.23)(SS#RESULT e0 e0 :0.23)(R#RESULT-AGENT x e0 :0.23)(R#RESULT-PATIENT x e0 :0.23)) (fuel-vb e0 x y z)))
 
 (B (name energymap)(=>(I#ENERGY x :0.9)(S#ENERGY x)))
 (B (name energy-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1438,6 +1440,8 @@
 
 ; FUNCTION
 (B (name turn)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (turn-vb e0 x y u)))
+(B (name repair)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (repair-vb e0 x y u)))
+(B (name fuel)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (fuel-vb e0 x y u)))
 
 
 (B (name machinemap)(=>(I#MACHINE x :0.9)(S#MACHINE x)))

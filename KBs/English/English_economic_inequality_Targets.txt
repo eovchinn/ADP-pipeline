@@ -55,6 +55,7 @@
 
 ; DEBT
 (B (name debt) (=>(^(TS#POVERTY u1 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#DEBT x u1 :0.3)) (debt-nn e0 x)))
+(B (name arrears) (=>(^(TS#POVERTY u1 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#DEBT x u1 :0.3)) (arrears-nn e0 x)))
 
 ; WEALTH
 (B (name wealth) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (wealth-nn e0 x)))
@@ -91,6 +92,29 @@
 
 ; MONEY
 (B (name money) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (money-nn e0 x)))
+(B (name cash) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (cash-nn e0 x)))
+(B (name coin) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (coin-nn e0 x)))
+(B (name cent) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (cent-nn e0 x)))
+(B (name penny) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (penny-nn e0 x)))
+(B (name dime) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (dime-nn e0 x)))
+(B (name nickel) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (nickel-nn e0 x)))
+(B (name quarter) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (quarter-nn e0 x)))
+(B (name currency) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (currency-nn e0 x)))
+(B (name dollar) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (dollar-nn e0 x)))
+(B (name greenback) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (greenback-nn e0 x)))
+(B (name euro) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (euro-nn e0 x)))
+(B (name peso) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (peso-nn e0 x)))
+(B (name rupee) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (rupee-nn e0 x)))
+(B (name yen) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (yen-nn e0 x)))
+(B (name gold) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (gold-nn e0 x)))
+(B (name silver) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (silver-nn e0 x)))
+(B (name income) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (income-nn e0 x)))
+(B (name salary) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (salary-nn e0 x)))
+(B (name wage) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (wage-nn e0 x)))
+(B (name wallet) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (wallet-nn e0 x)))
+(B (name checkbook) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (checkbook-nn e0 x)))
+(B (name credit-card) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (^(credit-nn e0 x)(of-in e2 e1)(card-nn e2 y))))
+
 
 
 ; SOCIAL CLASS
