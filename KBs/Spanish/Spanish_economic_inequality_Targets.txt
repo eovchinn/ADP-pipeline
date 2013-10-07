@@ -67,10 +67,10 @@
 
 
 ; SOCIAL CLASS
-(B (name clase-social) (=>(^(TS#SOCIAL-CLASS_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(social-adj e0 x)(clase-nn e1 x))))
-(B (name clase-media) (=>(^(TS#SOCIAL-CLASS_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(media-adj e0 x)(clase-nn e1 x))))
-(B (name clase-economica) (=>(^(TS#SOCIAL-CLASS_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(económica-adj e0 x)(clase-nn e1 x))))
-(B (name clase) (=>(^(TS#SOCIAL-CLASS_ES x :0.47)(T#ECONOMIC-INEQUALITY u :0.47)) (clase-nn e1 x)))
+; (B (name clase-social) (=>(^(TS#SOCIAL-CLASS_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(social-adj e0 x)(clase-nn e1 x))))
+; (B (name clase-media) (=>(^(TS#SOCIAL-CLASS_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(media-adj e0 x)(clase-nn e1 x))))
+; (B (name clase-economica) (=>(^(TS#SOCIAL-CLASS_ES x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(económica-adj e0 x)(clase-nn e1 x))))
+; (B (name clase) (=>(^(TS#SOCIAL-CLASS_ES x :0.47)(T#ECONOMIC-INEQUALITY u :0.47)) (clase-nn e1 x)))
 
 
 ; TAX
@@ -84,15 +84,15 @@
 
 ; ACCESS TO EDUCATION
 
-(B (name acceso-a-educacion) (=>(^(TS#ACCESS-TO-EDUCATION_ES x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)) (^(acceso-nn e0 x)(a-in e1 x y)(educación-nn e2 y))))
-(B (name acceder-a-educacion) (=>(^(TS#ACCESS-TO-EDUCATION_ES e2 :0.2)(T#ECONOMIC-INEQUALITY u :0.2)(R#EDUCATION y x :0.2)(R#EDUCATED x e0 :0.2)) (^(acceder-vb e0 x u1 u2)(a-in e3 e0 y)(educación-nn e2 y))))
-(B (name conseguir-educacion) (=>(^(TS#ACCESS-TO-EDUCATION_ES e2 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)(R#EDUCATED x e0)) (^(conseguir-vb e0 x y u)(educación-nn e2 y))))
+; (B (name acceso-a-educacion) (=>(^(TS#ACCESS-TO-EDUCATION_ES x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)) (^(acceso-nn e0 x)(a-in e1 x y)(educación-nn e2 y))))
+; (B (name acceder-a-educacion) (=>(^(TS#ACCESS-TO-EDUCATION_ES e2 :0.2)(T#ECONOMIC-INEQUALITY u :0.2)(R#EDUCATION y x :0.2)(R#EDUCATED x e0 :0.2)) (^(acceder-vb e0 x u1 u2)(a-in e3 e0 y)(educación-nn e2 y))))
+; (B (name conseguir-educacion) (=>(^(TS#ACCESS-TO-EDUCATION_ES e2 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)(R#EDUCATED x e0)) (^(conseguir-vb e0 x y u)(educación-nn e2 y))))
 
-(B (name educacion) (=>(^(TS#ACCESS-TO-EDUCATION_ES x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (educación-nn e0 x)))
+; (B (name educacion) (=>(^(TS#ACCESS-TO-EDUCATION_ES x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (educación-nn e0 x)))
 
-(B (name educar) (=>(^(TS#ACCESS-TO-EDUCATION_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educar-vb e0 u1 x u2)))
+; (B (name educar) (=>(^(TS#ACCESS-TO-EDUCATION_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educar-vb e0 u1 x u2)))
 
-(B (name educado) (=>(^(TS#ACCESS-TO-EDUCATION_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educado-adj e0 x)))
-(B (name culto) (=>(^(TS#ACCESS-TO-EDUCATION_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (culto-adj e0 x)))
-(B (name instruido) (=>(^(TS#ACCESS-TO-EDUCATION_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (instruido-adj e0 x)))
+; (B (name educado) (=>(^(TS#ACCESS-TO-EDUCATION_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educado-adj e0 x)))
+; (B (name culto) (=>(^(TS#ACCESS-TO-EDUCATION_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (culto-adj e0 x)))
+; (B (name instruido) (=>(^(TS#ACCESS-TO-EDUCATION_ES e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (instruido-adj e0 x)))
 
