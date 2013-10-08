@@ -789,6 +789,10 @@
 ;QUANTITY
 (B (name fortune)(=>(^(S#RESOURCE e0 :0.45)(SS#QUANTITY/SIZE x e0 :0.45)) (fortune-nn e0 x)))
 
+(B (name sliver)(=>(^(S#RESOURCE e0 :0.3)(SS#QUANTITY/SIZE x e0 :0.3)(R#SMALL-AMOUNT x e0 :0.3)) (sliver-nn e0 x)))
+
+(B (name sparse)(=>(^(S#RESOURCE e0 :0.3)(SS#QUANTITY/SIZE e0 e0 :0.3)(R#SMALL-AMOUNT x e0 :0.3)) (sparse-adj e0 x)))
+
 (B (name deplete)(=>(^(S#RESOURCE e0 :0.45)(SS#QUANTITY/SIZE y e0 :0.45)) (deplete-vb e0 x y u)))
 
 ;DEVELOP RESOURCES

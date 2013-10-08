@@ -16,6 +16,10 @@
 (B (name squalor) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (squalor-nn e0 x)))
 (B (name bankruptcy) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (bankruptcy-nn e0 x)))
 
+; POVERTY/WEALTH
+(B (name inequality) (=>(^(TS#POVERTY/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(inequality-nn e0 x)))
+
+
 ; POOR
 (B (name poor) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (poor-adj e0 y)))
 (B (name poorer) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (poorer-adj e0 y)))
