@@ -160,6 +160,7 @@
 
 (B (name rapev) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (rape-vb e0 x y u)))
 (B (name violate) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (violate-vb e0 x y u)))
+(B (name kill) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (kill-vb e0 x y u)))
 
 ; THEFT
 (B (name steal) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#THEME z e0 :0.2)) (steal-vb e0 x z u2)))
@@ -249,6 +250,7 @@
 (B (name cell)(=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (cell-nn e0 x)))
 (B (name closet)(=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (closet-nn e0 x)))
 ;add prison cell, jail cell
+(B (name stuck)(=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE e0 e0 :0.45)) (stuck-adj e0 x)))
 
 (B (name imprison) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(imprison-vb e0 x y u)))
 (B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(confine-vb e0 x y u)))
@@ -281,6 +283,9 @@
 (B (name break-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(break-vb e0 x y u)(out-in e1 e0)(of-in e2 e0 w))))
 (B (name break-out)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(break-vb e0 x y u)(out-in e1 e0 z))))
 (B (name liberate)(=>(^(S#CONFINEMENT u1 :0.3)(SS#EXIT e0 u1 :0.3)(R#EXIT-AGENT x e0 :0.3) (R#EXIT-PATIENT y e0 :0.3)) (liberate-vb e0 x y u)))
+
+
+(B (name break-restraints) (=>(^(S#CONFINEMENT e0 :0.45) (SS#EXIT e0 e0 :0.45)) (^(S#CONFINEMENT e1)(SS#RESTRAINTS y e1)(break-vb e0 x y z))))
 
 (B (name confinementmap)(=>(I#CONFINEMENT x :0.9)(S#CONFINEMENT x)))
 (B (name confinedspacemap)(=>(I#CONFINED_SPACE x y :0.9)(SS#CONFINED_SPACE x y)))
@@ -358,6 +363,8 @@
 (B (name tide) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(tide-nn e0 y)))
 (B (name rising-tide) (=>(^(S#BODY_OF_WATER y :0.45)(SS#MOVEMENT x y :0.45)) (^(rising-adj e0 x)(tide-nn e1 x))))
 (B (name flood) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(flood-nn e0 y)))
+
+(B (name awash) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT e0 e0 :0.45))(awash-adj e0 y)))
 
 ; OF - MOVEMENT
 (B (name of-stream) (=>(R#STREAMING y e0 :0.9)(^(SS#MOVEMENT x e)(of-in e1 x y))))
@@ -810,6 +817,10 @@
 ;DISTRIBUTION
 (B (name transfer)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (transfer-vb e0 x y u)))
 (B (name distribute)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (distribute-vb e0 x y u)))
+(B (name spread)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (spread-vb e0 x y u)))
+(B (name underwrite)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#SUPPORTER x e0 :0.33)) (underwrite-vb e0 x y u)))
+(B (name sort)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (sort-vb e0 x y u)))
+
 
 (B (name distribution)(=>(^(S#RESOURCE e0 :0.45)(SS#DISTRIBUTION x e0 :0.45)) (distribution-nn e0 x)))
 
@@ -904,8 +915,9 @@
 (B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (structure-nn e0 x)))
 
 ; CREATION/DESTRUCTION
-(B (name build)(=>(^(S#BUILDINGe0 :0.3)(SS#CREATION/DESTRUCTION e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (build-vb e0 x y u)))
-(B (name construct)(=>(^(S#BUILDINGe0 :0.3)(SS#CREATION/DESTRUCTION e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (construct-vb e0 x y u)))
+(B (name build)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION/DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (build-vb e0 x y u)))
+(B (name construct)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION/DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (construct-vb e0 x y u)))
+(B (name fix)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION/DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (fix-vb e0 x y u)))
 
 ; COMPONENTS
 (B (name building-block)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (^(building-nn e0 x)(of-in e1 y x)(block-nn e2 y))))
@@ -1211,10 +1223,12 @@
 (B (name emerge)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (emerge-vb e0 x y u)))
 (B (name exit)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (exit-vb e0 x y u)))
 
+
 (B (name passport)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#EXIT x e0 :0.45)) (passport-nn e0 x)))
 (B (name ticket)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#EXIT x e0 :0.45)) (ticket-nn e0 x)))
 (B (name exit)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#EXIT x e0 :0.45)) (exit-nn e0 x)))
 (B (name free-pass)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#EXIT x e0 :0.45)) (^(free-adj e0 x)(pass-nn e1 x))))
+(B (name pathway-out-of)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#EXIT x e0 :0.45)) (^(pathway-nn e1 x))))
 
 (B (name physical-locationmap)(=>(I#PHYSICAL_LOCATION x :0.9)(S#PHYSICAL_LOCATION x)))
 (B (name defined-regionmap)(=>(I#DEFINED_REGION x y :0.9)(SS#DEFINED_REGION x y)))
@@ -1427,6 +1441,7 @@
 (B (name grow)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (grow-vb e0 x y u)))
 (B (name digest)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (digest-vb e0 x y u)))
 (B (name touch)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (touch-vb e0 x y u)))
+(B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (outlive-vb e0 x y u)))
 
 (B (name animalmap)(=>(I#ANIMAL x :0.9)(S#ANIMAL x)))
 (B (name animal-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1509,6 +1524,7 @@
 (B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS x e0 :0.45)) (play-nn e0 x)))
 
 (B (name playvb)(=>(^(S#GAME e0 :0.3)(SS#ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (play-vb e0 x y u)))
+(B (name assistvb)(=>(^(S#GAME e0 :0.3)(SS#ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (assist-vb e0 x y u)))
 
 ; OUTCOMES
 (B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (win-vb e0 x y u)))

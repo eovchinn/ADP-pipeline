@@ -18,6 +18,8 @@
 
 ; POVERTY/WEALTH
 (B (name inequality) (=>(^(TS#POVERTY/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(inequality-nn e0 x)))
+(B (name inequity) (=>(^(TS#POVERTY/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(inequity-nn e0 x)))
+
 
 
 ; POOR
@@ -74,6 +76,9 @@
 (B (name means) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (means-nn e0 x)))
 (B (name affluence) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (affluence-nn e0 x)))
 (B (name property) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (property-nn e0 x)))
+(B (name property) (=>(^(TS#WEALTH x :0.1)(T#ECONOMIC-INEQUALITY u :0.1)) (^(wall-nn e0 x)(street-nn e1 x))))
+(B (name middle-class) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(middle-adj e0 x)(class-nn e1 x))))
+(B (name upper-class) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(upper-adj e0 x)(class-nn e1 x))))
 
 ; RICH PERSON
 (B (name rich) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (rich-adj e0 y)))
@@ -125,6 +130,7 @@
 ; (B (name social-class) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(social-adj e0 x)(class-nn e1 x))))
 ; (B (name middle-class) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(middle-adj e0 x)(class-nn e1 x))))
 ; (B (name economy-class) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(economy-adj e0 x)(class-nn e1 x))))
+; (B (name class) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (class-nn e0 x)))
 
 
 ; TAXATION
