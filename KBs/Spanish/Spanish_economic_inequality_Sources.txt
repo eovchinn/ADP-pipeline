@@ -203,6 +203,7 @@
 (B (name condena-perpetua)(=>(^(S#CRIME e0 :0.45)(SS#PUNISHMENT x e0 :0.45)) (^(condena-nn e0 x)(perpetua-nn e1 x))))
 
 (B (name castigar) (=>(^(S#CRIME e0 :0.2)(SS#PUNISHMENT e0 e0 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2))(castigar-vb e0 x y u)))
+(B (name condenar) (=>(^(S#CRIME e0 :0.2)(SS#PUNISHMENT e0 e0 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2))(condenar-vb e0 x y u)))
 
 ; VICTIM
 (B (name víctima)(=>(^(S#CRIME e0 :0.3)(SS#VICTIM x e0 :0.3)(R#CRIME-VICTIM x e0 :0.3)) (víctima-nn e0 x)))
@@ -367,6 +368,7 @@
 (B (name forcejeo) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x :0.45))(forcejeo-nn e0 x)))
 (B (name combate) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x :0.45))(combate-nn e0 x)))
 (B (name batalla) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x :0.45))(batalla-nn e0 x)))
+(B (name cruzada) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x :0.45))(cruzada-nn e0 x)))
 
 (B (name ataque) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x :0.45)) (ataque-nn e0 x)))
 (B (name asalto) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x :0.45)) (asalto-nn e0 x)))
@@ -438,7 +440,7 @@
 
 
 ; ABYSS
-
+;TYPE
 (B (name abismo) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (abismo-nn e0 x)))
 (B (name infierno) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (infierno-nn e0 x)))
 (B (name sumidero) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (sumidero-nn e0 x)))
@@ -451,11 +453,13 @@
 (B (name caverna) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (caverna-nn e0 x)))
 (B (name abysm) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (abysm-nn e0 x)))
 (B (name zanja) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (zanja-nn e0 x)))
+(B (name hueco) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (hueco-nn e0 x)))
 (B (name hoyo-negro) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (^(hoyo-nn e1 x) (negro-adj e0 x))))
 (B (name agujero-negro) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (^(agujero-nn e1 x) (negro-adj e0 x))))
 
 (B (name abisal) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE e0 e0 e0 :0.45)) (abisal-adj e0 x)))
 (B (name abismal) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE e0 e0 e0 :0.45)) (abismal-adj e0 x)))
+(B (name hueco-adj) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE e0 e0 e0 :0.45)) (hueco-adj e0 x)))
 
 ; DEPTH
 (B (name profundidad) (=>(^(S#ABYSS e0 :0.45)(SS#DEPTH x e0 :0.45)) (profundidad-nn e0 x)))
@@ -511,6 +515,7 @@
 (B (name arrastrar) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (arrastrar-vb e0 x y u))) 
 (B (name cargarse) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (cargarse-vb e0 x y u)))
 (B (name ponderar) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT e0 e0 :0.45)) (ponderar-vb e0 x y u)))
+(B (name pesar) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT e0 e0 :0.45)) (pesar-vb e0 x y u)))
 
 ;RELIEF
 (B (name alivio) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (alivio-nn e0 x)))
@@ -528,6 +533,9 @@
 
 :PHYSICAL DISTRESS
 (B (name insostenible)(=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_DISTRESS e0 e0 :0.45)) (insostenible-adj e0 y)))
+(B (name incómodo)(=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_DISTRESS e0 e0 :0.45)) (incómodo-adj e0 y)))
+
+(B (name presión)(=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_DISTRESS x e0 :0.45)) (presión-nn e0 x)))
 
 (B (name abrumar)(=>(^(S#PHYSICAL_BURDEN e0 :0.3)(SS#PHYSICAL_DISTRESS e0 e0 :0.3)(R#BURDEN-CAUSE x e0 :0.3)) (abrumar-vb e0 x y u)))
 
@@ -538,14 +546,12 @@
 
 ; PHYSICAL HARM
 ; TYPE
-(B (name lastimar) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(lastimar-vb e0 x
-y u2)))
-(B (name pegar) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(pegar-vb e0 x
-y u2)))
-(B (name herir) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(herir-vb e0 x
-y u2)))
-(B (name dañar) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(dañar-vb e0 x
-y u2)))
+(B (name lastimar) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(lastimar-vb e0 x y u2)))
+(B (name lastimarían) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(lastimarían-vb e0 x y u2)))
+(B (name pegar) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(pegar-vb e0 x y u2)))
+(B (name herir) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(herir-vb e0 x y u2)))
+(B (name golpear) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(golpear-vb e0 x y u2)))
+(B (name dañar) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(dañar-vb e0 x y u2)))
 (B (name aplastar) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(aplastar-vb e0 x y u2)))
 (B (name perjudicar) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(perjudicar-vb e0 x y u2)))
 (B (name atornillar) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(atornillar-vb e0 x y u2)))
@@ -576,6 +582,7 @@ y u2)))
 (B (name protección) (=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#PROTECTION x e0 :0.45))(protección-nn e0 x)))
 
 (B (name proteger) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#PROTECTION e0 e0 :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(proteger-vb e0 x y u2)))
+(B (name cubrir) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#PROTECTION e0 e0 :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(cubrir-vb e0 x y u2)))
 
 (B (name from-theft) (=>(R#HARM-VICTIM y :0.9)(^(S#PHYSICAL_HARM-PROTECTION e0)(from-in e1 e0 y))))
 
@@ -607,11 +614,8 @@ y u2)))
 
 ; LOW POINT
 ; BOTTOM OF ECONOMIC SCALE
-;(B (name the-pits) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECONOMIC-SCALE x e0 :0.45))(pits-nn e0 x)))
-;(B (name bajo) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECONOMIC-SCALE x e0 :0.45))(bajo-nn e0 x)))
 (B (name bajo-la-linea) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECONOMIC-SCALE x e0 :0.45))(^(bajo-nn e0 x)(la-in e1 x y)(linea-nn e2 y))))
-;(B (name rock-bottom) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECONOMIC-SCALE y e0 :0.45))(^(rock-nn e0 x)(of-in e1 y x)(bottom-nn e2 y))))
-;(B (name bottom-of-the-totem-pole) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECONOMIC-SCALE x e0 :0.45))(^(bottom-nn e0 x)(of-in e1 x z)(totem-nn e2 y)(pole-nn e3 z))))
+(B (name fondo) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECONOMIC-SCALE x e0 :0.45))(fondo-nn e0 x)))
 
 ;MOVEMENT DOWNWARD
 (B (name deslizar) (=>(^(S#LOW-POINT e0 :0.3)(SS#MOVEMENT_DOWNWARD e0 e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(deslizar-vb e0 x u u1)))
@@ -748,10 +752,13 @@ y u2)))
 (B (name construcción)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (construcción-nn e0 x)))
 
 ; CREATION/DESTRUCTION
-(B (name construir)(=>(^(S#BUILDINGx e0)(SS#CREATION/DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (construir-vb e0 x y u)))
-(B (name edificar)(=>(^(S#BUILDINGx e0)(SS#CREATION/DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (edificar-vb e0 x y u)))
-(B (name generar)(=>(^(S#BUILDINGx e0)(SS#CREATION/DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (generar-vb e0 x y u)))
-(B (name crear)(=>(^(S#BUILDINGx e0)(SS#CREATION/DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (crear-vb e0 x y u)))
+(B (name construir)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION/DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (construir-vb e0 x y u)))
+(B (name edificar)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION/DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (edificar-vb e0 x y u)))
+(B (name generar)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION/DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (generar-vb e0 x y u)))
+(B (name crear)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION/DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (crear-vb e0 x y u)))
+
+(B (name generación)(=>(^(S#BUILDING e0 :0.45)(SS#CREATION/DESTRUCTION x e0 :0.45)) (generación-nn e0 x)))
+(B (name creación)(=>(^(S#BUILDING e0 :0.45)(SS#CREATION/DESTRUCTION x e0 :0.45)) (creación-nn e0 x)))
 
 ; COMPONENTS
 (B (name cemento)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (cemento-nn e0 x)))
@@ -942,7 +949,8 @@ y u2)))
 
 ; FORCEFUL EXTRACTION
 ; TYPE
-(B (name exprimir)(=>(^(S#FORCEFUL_EXTRACTION e0 e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (squeeze-vb e0 x y u)))
+(B (name exprimir)(=>(^(S#FORCEFUL_EXTRACTION e0 e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (exprimir-vb e0 x y u)))
+(B (name erradicar)(=>(^(S#FORCEFUL_EXTRACTION e0 e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (erradicar-vb e0 x y u)))
 (B (name escurrir)(=>(^(S#FORCEFUL_EXTRACTION e0 e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (escurrir-vb e0 x y u)))
 (B (name extraer)(=>(^(S#FORCEFUL_EXTRACTION e0 e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (extraer-vb e0 x y u)))
 (B (name arrebatar)(=>(^(S#FORCEFUL_EXTRACTION e0 e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (arrebatar-vb e0 x y u)))
@@ -974,6 +982,9 @@ y u2)))
 (B (name heat-wave)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (^(ola-nn e0 x)(de-in e1 x y)(calor-nn e2 x))))
 (B (name rock-slide)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (^(deslizamiento-nn e0 x)(de-in e1 x y)(rocas-nn e2 x))))
 (B (name mud-slide)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (^(avalancha-nn e0 x)(de-in e1 x y)(lodo-nn e2 x))))
+
+(B (name devastadores)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE e0 e0 :0.45)) (devastadores-adj e0 x)))
+(B (name devastadores)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (devastadores-nn e0 x)))
 
 ; RESULT
 (B (name destruir)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.23)(SS#RESULT e0 e0 :0.23)(R#DESTROY-AGENT x e0 :0.23)(R#DESTROY-PATIENT y e0 :0.23)) (destruir-vb e0 x y u)))
@@ -1025,7 +1036,14 @@ y u2)))
 ; POSITION ON A SCALE
 (B (name elevado)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#POSITION_ON_A_SCALE e0 e0 :0.23)(R#HIGH-POINT x e0 :0.23)(R#FIXED-POINT x e0 :0.23)) (elevado-adj e0 x)))
 
+(B (name alto)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#POSITION_ON_A_SCALE e0 e0 :0.23)(R#HIGH-POINT x e0 :0.23)(R#FIXED-POINT x e0 :0.23)) (alto-adj e0 x)))
+
 ; MOVEMENT ON THE SCALE
+(B (name subir)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (subir-vb e0 x y u)))
+(B (name ascender)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (ascender-vb e0 x y u)))
+
+(B (name ascenso)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-UP x e0 :0.3)) (ascenso-nn e0 x)))
+
 ; CONTRAST OF POSITIONS
 (B (name vertical-scalemap)(=>(I#VERTICAL_SCALE x :0.9)(S#VERTICAL_SCALE x)))
 (B (name position-on-a-scalemap)(=>(I#POSITION_ON_A_SCALE x y :0.9)(SS#POSITION_ON_A_SCALE x y)))
@@ -1181,6 +1199,9 @@ y u2)))
 ; COMPONENT
 (B (name cara)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (cara-nn e0 x)))
 (B (name rasgo)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (rasgo-nn e0 x)))
+(B (name mano)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (mano-nn e0 x)))
+(B (name mano-mece-cuna)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (^(mano-nn e0 x)(mece-vb e1 u y z)(cuna-nn e2 y))))
+
 
 ; FUNCTION
 (B (name tragarse)(=>(^(S#ANIMAL e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (tragarse-vb e0 x y u)))

@@ -412,6 +412,7 @@
 (B (name gunfight) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(gunfight-nn e0 x)))
 (B (name gunshot) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(gunshot-nn e0 x)))
 (B (name chaos) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(chaos-nn e0 x)))
+(B (name crusade) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(crusade-nn e0 x)))
 
 (B (name attack) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (attack-nn e0 x)))
 (B (name assault) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (assault-nn e0 x)))
@@ -1432,6 +1433,7 @@
 ; ANIMAL
 ; COMPONENT
 (B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (face-nn e0 x)))
+(B (name hand)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (hand-nn e0 x)))
 
 ; FUNCTION
 (B (name swallow)(=>(^(S#ANIMAL e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (swallow-vb e0 x y u)))

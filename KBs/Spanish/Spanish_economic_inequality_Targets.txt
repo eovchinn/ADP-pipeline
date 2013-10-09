@@ -9,6 +9,7 @@
 (B (name miseria) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(miseria-nn e0 x)))
 (B (name penuria) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(penuria-nn e0 x)))
 (B (name escasez) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(escasez-nn e0 x)))
+(B (name hambre) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(hambre-nn e0 x)))
 
 ; POVERTY/WEALTH
 (B (name desigualdad) (=>(^(TS#POVERTY/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(desigualdad-nn e0 x)))
@@ -50,7 +51,9 @@
 (B (name prosperidad) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (prosperidad-nn e0 x)))
 (B (name bienestar) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (bienestar-nn e0 x)))
 (B (name bienes) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (bienes-nn e0 x)))
-(B (name middle-class) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(medio-adj e0 x)(clase-nn e1 x))))
+(B (name clase) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (clase-nn e0 x)))
+(B (name social) (=>(^(TS#WEALTH e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (social-adj e0 x)))
+(B (name middle-class) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(clase-nn e1 x)(medio-adj e0 x))))
 (B (name upper-class) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(alta-adj e0 x)(clase-nn e1 x))))
 
 ; RICH PERSON
@@ -80,10 +83,14 @@
 
 ; TAX
 (B (name impuesto) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (impuesto-nn e0 x)))
+(B (name impositiva) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (impositiva-nn e0 x)))
 (B (name contribucion) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (contribución-nn e0 x)))
 (B (name tributo) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (tributo-nn e0 x)))
 
+(B (name imponer) (=>(^(TS#TAXATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (imponer-vb e0 x y z)))
+
 (B (name fiscal) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (fiscal-nn e0 x)))
+(B (name fiscal-adj) (=>(^(TS#TAXATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (fiscal-adj e0 x)))
 
 (B (name contribuyente) (=>(^(TS# TAXATION y :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3))(contribuyente-nn e0 y)))
 
