@@ -17,8 +17,8 @@
 (B (name bankruptcy) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (bankruptcy-nn e0 x)))
 
 ; POVERTY/WEALTH
-(B (name inequality) (=>(^(TS#POVERTY/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(inequality-nn e0 x)))
-(B (name inequity) (=>(^(TS#POVERTY/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(inequity-nn e0 x)))
+(B (name inequality) (=>(^(TS#POVERTY/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(inequality-nn e0 x)))
+(B (name inequity) (=>(^(TS#POVERTY/WEALTH x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(inequity-nn e0 x)))
 
 
 

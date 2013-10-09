@@ -1023,7 +1023,7 @@ y u2)))
 
 ; VERTICAL SCALE
 ; POSITION ON A SCALE
-(B (name elevada)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#POSITION_ON_A_SCALE e0 e0 :0.23)(R#HIGH-POINT x e0 :0.23)(R#FIXED-POINT x e0 :0.23)) (elevada-adj e0 x)))
+(B (name elevado)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#POSITION_ON_A_SCALE e0 e0 :0.23)(R#HIGH-POINT x e0 :0.23)(R#FIXED-POINT x e0 :0.23)) (elevado-adj e0 x)))
 
 ; MOVEMENT ON THE SCALE
 ; CONTRAST OF POSITIONS
@@ -1180,6 +1180,7 @@ y u2)))
 ; ANIMAL
 ; COMPONENT
 (B (name cara)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (cara-nn e0 x)))
+(B (name rasgo)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (rasgo-nn e0 x)))
 
 ; FUNCTION
 (B (name tragarse)(=>(^(S#ANIMAL e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (tragarse-vb e0 x y u)))
