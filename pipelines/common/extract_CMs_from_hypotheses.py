@@ -210,7 +210,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 					equalities[args[2]][args[1]]=1
 				else: word_props.append((prop_name,args))
 
-	#print json.dumps(sources, ensure_ascii=False)
+	#print json.dumps(targets, ensure_ascii=False)
 
 	for el1 in equalities.keys():
 		for el2 in equalities[el1].keys():
@@ -328,8 +328,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 
 	explanationAppendix += "%%END_CM_LIST"
 
-	output_struct_item['isiAbductiveExplanation'] = inputString + explanationAppendix
-
+	output_struct_item['isiAbductiveExplanation'] = inputString + explanationAppendix.encode("utf-8")
 	output_struct_item["targetConceptDomain"] = 'ECONOMIC_INEQUALITY'
 	data = bestCM.split(',')
 	output_struct_item["targetFrame"] = data[1]
