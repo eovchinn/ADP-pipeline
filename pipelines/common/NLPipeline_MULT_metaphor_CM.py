@@ -38,7 +38,7 @@ PARSER2HENRY = "%s/pipelines/common/IntParser2Henry.py" % METAPHOR_DIR
 
 # Compiled knowledge bases
 EN_KBPATH = "%s/KBs/English/English_compiled_KB.da" % METAPHOR_DIR
-ES_KBPATH = "%s/KBs/Spanish/Spanish_compiled_KB_2.da" % METAPHOR_DIR
+ES_KBPATH = "%s/KBs/Spanish/Spanish_compiled_KB.da" % METAPHOR_DIR
 RU_KBPATH = "%s/KBs/Russian/Russian_compiled_KB.da" % METAPHOR_DIR
 FA_KBPATH = "%s/KBs/Farsi/Farsi_compiled_KB.da" % METAPHOR_DIR
 
@@ -58,7 +58,7 @@ DESCRIPTION = "Abductive engine output; " \
 
 
 def extract_hypotheses(inputString):
-    output_struct = []
+    output_struct = dict()
     hypothesis_found = False
     p = re.compile('<result-inference target="(.+)"')
     target = ""
@@ -91,11 +91,13 @@ def extract_hypotheses(inputString):
 
         elif line.startswith("</result-inference>"):
 
-            output_struct_item = extract_CM_mapping(target, hypothesis, DESCRIPTION)
+            #output_struct_item = extract_CM_mapping(target, hypothesis, DESCRIPTION)
             #print json.dumps(hypothesis, ensure_ascii=False)
             #print json.dumps(output_struct_item, ensure_ascii=False, indent=4)
 
-            output_struct.append(output_struct_item)
+            output_struct[target] = hypothesis
+
+            #output_struct.append(output_struct_item)
             target = ""
 
     #print json.dumps(output_struct, ensure_ascii=False)
@@ -175,46 +177,46 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
                                stdout=PIPE,
                                stderr=None,
                                close_fds=True)
-
     henry_output = henry_pipeline.communicate(input=parser_output)[0]
     hypotheses = extract_hypotheses(henry_output)
+
+    #print json.dumps(hypotheses, ensure_ascii=False) 
 
     processed, failed, empty = 0, 0, 0
 
     # merge ADB result and input json document
     input_annotations = request_body_dict["metaphorAnnotationRecords"]
+
     total = len(input_annotations)
     for annotation in input_annotations:
-        for hypothesis in hypotheses:
-            try:
-                if "sentenceId" in annotation and \
-                int(annotation["sentenceId"]) == int(hypothesis["id"]):
+        if "sentenceId" in annotation:
+            sID = str(annotation["sentenceId"])
+            if sID in hypotheses.keys():
+                CM_output = extract_CM_mapping(0,hypotheses[sID],DESCRIPTION,annotation)
+                try:
+                    for annot_property in CM_output.keys():
+                        if CM_output.get(annot_property):
+                            annotation[annot_property] = CM_output[annot_property] 
+                    processed += 1
+                except Exception:
+                    failed += 1
                     try:
-                        for annot_propery in hypothesis.keys():
-                            if annot_propery != "id" and hypothesis.get(annot_propery):
-                                annotation[annot_propery] = hypothesis[annot_propery]
-                        if "sourceFrame" in annotation and annotation["sourceFrame"]:
-                            processed += 1
-                        else:
-                            empty += 1
-                            try:
-                                fl = open("/lfs1/vzaytsev/misc/fails/empty_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
-                                fl.write("REASON: EMPTY sourceFrame\n")
-                                fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
-                                fl.close()
-                            except:
-                                pass
-                    except Exception:
-                        failed += 1
-                        try:
-                            fl = open("/lfs1/vzaytsev/misc/fails/failed_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
-                            fl.write("REASON: PROCESSING FAILED\n")
-                            fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
-                            fl.close()
-                        except:
-                            pass
-            except Exception:
+                        fl = open("/lfs1/vzaytsev/misc/fails/failed_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
+                        fl.write("REASON: JOINING FAILED\n")
+                        fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
+                        fl.close()
+                    except:
+                        pass
+            else: 
                 failed += 1
+                try:
+                    fl = open("/lfs1/vzaytsev/misc/fails/failed_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
+                    fl.write("REASON: ABDUCTION PROCESSING FAILED\n")
+                    fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
+                    fl.close()
+                except:
+                    pass
+
     #logger.info("STAT: {'processed':%d,'failed':%d,'empty':%d,'unknown':%d}" % (processed,
     #                                                                            failed,
     #                                                                            empty,

@@ -39,7 +39,7 @@ RUSSIAN_PIPELINE = "%s/pipelines/Russian/run_russian.sh" % METAPHOR_DIR
 
 # Compiled knowledge bases
 EN_KBPATH = "%s/KBs/English/English_compiled_KB.da" % METAPHOR_DIR
-ES_KBPATH = "%s/KBs/Spanish/Spanish_compiled_KB_2.da" % METAPHOR_DIR
+ES_KBPATH = "%s/KBs/Spanish/Spanish_compiled_KB.da" % METAPHOR_DIR
 RU_KBPATH = "%s/KBs/Russian/Russian_compiled_KB.da" % METAPHOR_DIR
 FA_KBPATH = "%s/KBs/Farsi/Farsi_compiled_KB.da" % METAPHOR_DIR
 
@@ -77,7 +77,7 @@ def extract_hypotheses(inputString):
 
         elif line.startswith("</result-inference>"):
 
-            output_struct_item = extract_CM_mapping(target, hypothesis, '')
+            output_struct_item = extract_CM_mapping(target, hypothesis, '' , None)
             #print json.dumps(hypothesis, ensure_ascii=False)
             #print json.dumps(output_struct_item, ensure_ascii=False, indent=4)
 
@@ -219,7 +219,7 @@ def main():
 		f_henry.write(henry_output)
 		f_henry.close()
 
-       # Graphical output
+	# Graphical output
 	if pa.graph:
 		# Parse possible 'allN' value 
 		matchObj = re.match(r'all(\d+)', pa.graph, re.M|re.I)
@@ -240,6 +240,10 @@ def main():
 
 	# Conceptual metaphor output
 	if pa.CMoutput:
+		if not pa.henry and pa.input: 
+			fh = open(pa.input, "r")
+			henry_output = fh.read()
+			fh.close()
 		hypotheses = extract_hypotheses(henry_output)
 		f_cm = open(os.path.join(outputdir,fname+".cm"), "w")
 		f_cm.write(json.dumps(hypotheses, ensure_ascii=False, indent=4))

@@ -70,13 +70,19 @@ def createDStruc(superD,subD):
 	#print json.dumps(outputstrucs, ensure_ascii=False)
 	return outputstrucs
 
-def collectVars(struc,superkey):
+def collectVars(struc,superkey,equalities):
 	output = []
 
 	for arg in struc[superkey]:
-		if not arg.startswith('_'): output.append(arg)
+		if not arg.startswith('_'): 
+			output.append(arg)
+			if equalities.has_key(arg):
+				for a in equalities[arg]: output.append(a)
 		for (subd,subarg) in struc[superkey][arg]:
-			if not subarg.startswith('_'): output.append(subarg)
+			if not subarg.startswith('_'): 
+				output.append(subarg)
+				if equalities.has_key(subarg):
+					for a in equalities[subarg]: output.append(a)
 	return output
 
 def isLinkedbyParse(v1,v2,word_props,equalities,been):
@@ -84,11 +90,10 @@ def isLinkedbyParse(v1,v2,word_props,equalities,been):
 	been.append((v1,v2))
 	been.append((v2,v1))
 
-	if equalities.has_key(v1) and equalities[v1].has_key(v2): return 2
+	#if equalities.has_key(v1) and equalities[v1].has_key(v2): return 2
 
 	for (propName,args) in word_props:
 		if v1 in args and v2 in args: return 2
-
 
 	for (propName,args) in word_props:
 		if v1 in args:
@@ -132,8 +137,7 @@ def isLinkedbyParse(v1,v2,word_props,equalities,been):
 
 	return 0
 
-def extract_CM_mapping(id,inputString,DESCRIPTION):
-	#print inputString
+def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	targets = dict()	
 	subtargets = dict()
 	subsubtargets = dict()
@@ -143,6 +147,14 @@ def extract_CM_mapping(id,inputString,DESCRIPTION):
 	roles = []
 	word_props = []
 	equalities = defaultdict(dict)
+
+	sourceTask = False
+	if LCCannotation:
+		if "sourceFrame" in LCCannotation and "targetFrame" in LCCannotation and "targetConceptSubDomain" in LCCannotation:
+			if LCCannotation["sourceFrame"] and len(LCCannotation["sourceFrame"])>0:
+				if LCCannotation["targetFrame"] and len(LCCannotation["targetFrame"])>0:
+					if LCCannotation["targetConceptSubDomain"] and len(LCCannotation["targetConceptSubDomain"])>0:
+						sourceTask = True
 
 	prop_pattern = re.compile('([^\(]+)\(([^\)]+)\)')
 	
@@ -159,14 +171,20 @@ def extract_CM_mapping(id,inputString,DESCRIPTION):
 				if not targets.has_key(prop_name[2:]): targets[prop_name[2:]] = []
 				targets[prop_name[2:]].append(args)
 			elif prop_name.startswith('TS#'):
-				if not subtargets.has_key(prop_name[3:]): subtargets[prop_name[3:]] = []
-				subtargets[prop_name[3:]].append(args)
+				dname = prop_name[3:]
+				if not sourceTask or dname == LCCannotation["targetFrame"]:
+					if not subtargets.has_key(dname): subtargets[dname] = []
+					subtargets[dname].append(args)
 			elif prop_name.startswith('TSS#'):
-				if not subsubtargets.has_key(prop_name[4:]): subsubtargets[prop_name[4:]] = []
-				subsubtargets[prop_name[4:]].append(args)
+				dname = prop_name[4:]
+				if not sourceTask or dname == LCCannotation["targetConceptSubDomain"]:
+					if not subsubtargets.has_key(dname): subsubtargets[dname] = []
+					subsubtargets[dname].append(args)
 			elif prop_name.startswith('S#'):
-				if not sources.has_key(prop_name[2:]): sources[prop_name[2:]] = []
-				sources[prop_name[2:]].append(args)
+				dname = prop_name[2:]
+				if not sourceTask or dname == LCCannotation["sourceFrame"]:
+					if not sources.has_key(dname): sources[dname] = []
+					sources[dname].append(args)
 			elif prop_name.startswith('SS#'):
 				if not subsources.has_key(prop_name[3:]): subsources[prop_name[3:]] = []
 				subsources[prop_name[3:]].append(args)
@@ -194,23 +212,34 @@ def extract_CM_mapping(id,inputString,DESCRIPTION):
 
 	#print json.dumps(sources, ensure_ascii=False)
 
+	for el1 in equalities.keys():
+		for el2 in equalities[el1].keys():
+			for el3 in equalities[el2].keys():
+				if el1 != el3:
+					equalities[el1][el3]=1
+					equalities[el3][el1]=1
+
 	target_strucs = createDStruc(subtargets,subsubtargets)
 	source_strucs = createDStruc(sources,subsources)
 
+	#print json.dumps(target_strucs, ensure_ascii=False)
+	#print json.dumps(source_strucs, ensure_ascii=False)
+	#print json.dumps(equalities, ensure_ascii=False)
+
 	output_struct_item = {}
-	output_struct_item["id"] = id
+	if not LCCannotation: output_struct_item["id"] = id
 	output_struct_item["isiDescription"] = DESCRIPTION
 	output_struct_item["targetConceptDomain"] = "ECONOMIC_INEQUALITY"
 
 	explanationAppendix = "\n%%BEGIN_CM_LIST\n"
+
 
 	CMlinked = ''
 	CMhalflinked = ''
 	CMunlinked = ''
 
 	for targetS in target_strucs:
-		tV = collectVars(target_strucs,targetS)
-
+		tV = collectVars(target_strucs,targetS,equalities)
 		Tstrings = []
 
 		for targ in target_strucs[targetS]: 
@@ -221,7 +250,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION):
 					Tstrings.append('ECONOMIC_INEQUALITY,' + targetS + ',' + tsubd)
 
 		for sourceS in source_strucs:
-			sV = collectVars(source_strucs,sourceS)
+			sV = collectVars(source_strucs,sourceS,equalities)
 			link = 0
 			for tv in tV:
 				for sv in sV:
@@ -235,7 +264,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION):
 			Sstrings = []
 			for sarg in source_strucs[sourceS]:
 				if len(source_strucs[sourceS][sarg])==0:
-					Sstrings.append(','+sourceS+',-')
+					Sstrings.append(','+sourceS+',TYPE')
 				else:
 					for (ssubd,ssubarg) in source_strucs[sourceS][sarg]:
 						Sstrings.append(','+sourceS+','+ssubd)
@@ -266,8 +295,12 @@ def extract_CM_mapping(id,inputString,DESCRIPTION):
 			else: guessSubTarget = guessTarget
 			targetS = 'ECONOMIC_INEQUALITY,' + guessTarget + ',' + guessSubTarget + ','
 		else:
-			guessTarget = 'POVERTY'
-			guessSubTarget = 'POVERTY'
+			if sourceTask:
+				guessTarget = LCCannotation["targetFrame"]
+				guessSubTarget = LCCannotation["targetConceptSubDomain"]
+			else:
+				guessTarget = 'POVERTY'
+				guessSubTarget = 'POVERTY'
 			targetS = 'ECONOMIC_INEQUALITY,' + guessTarget + ',' + guessSubTarget + ','
 
 		#print json.dumps(source_strucs, ensure_ascii=False)
@@ -276,23 +309,26 @@ def extract_CM_mapping(id,inputString,DESCRIPTION):
 			sArg = source_strucs[guessSource].keys()[0]
 			if len(source_strucs[guessSource][sArg])>0:
 				(guessSubSource,stArg) = source_strucs[guessSource][sArg][0]
-			else: guessSubSource = '-'
+			else: guessSubSource = 'TYPE'
 			sourceS = guessSource + ',' + guessSubSource
 		else:
-			guessSource = 'STRUGGLE'
+			if sourceTask:
+				guessSource = LCCannotation["sourceFrame"]
+			else:
+				guessSource = 'STRUGGLE'
 			guessSubSource = 'TYPE'
 			sourceS = guessSource + ',' + guessSubSource
 
 		CMunlinked = targetS+sourceS
 		explanationAppendix += targetS+sourceS+',0.001\n'
 
-	explanationAppendix += "%%END_CM_LIST"
-
-	output_struct_item['isiAbductiveExplanation'] = inputString + explanationAppendix
-
 	if len(CMlinked)>0: bestCM = CMlinked
 	elif len(CMhalflinked)>0: bestCM = CMhalflinked
 	else: bestCM = CMunlinked
+
+	explanationAppendix += "%%END_CM_LIST"
+
+	output_struct_item['isiAbductiveExplanation'] = inputString + explanationAppendix
 
 	output_struct_item["targetConceptDomain"] = 'ECONOMIC_INEQUALITY'
 	data = bestCM.split(',')
