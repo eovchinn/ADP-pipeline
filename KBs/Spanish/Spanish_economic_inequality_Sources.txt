@@ -403,18 +403,33 @@
 
 
 
-(B (name armo) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(armo-nn e0 y)))
-(B (name pistola) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(pistola-nn e0 y)))
-(B (name cañón) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(cañón-nn e0 y)))
-(B (name fusil) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(fusil-nn e0 y)))
-(B (name cuchillo) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(cuchillo-nn e0 y)))
-(B (name bomba) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(bomba-nn e0 y)))
-(B (name escopeta) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(escopeta-nn e0 y)))
-(B (name arma-de-fuego) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(^(arma-nn e0 y)(de-in e1 y z)(fuego-nn e2 z))))
-(B (name artillería) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(artillería-nn e0 y)))
-(B (name revólver) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(revólver-nn e0 y)))
-(B (name espada) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(espada-nn e0 y)))
-(B (name estoque) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(estoque-nn e0 y)))
+; (B (name armo) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(armo-nn e0 y)))
+; (B (name pistola) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(pistola-nn e0 y)))
+; (B (name cañón) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(cañón-nn e0 y)))
+; (B (name fusil) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(fusil-nn e0 y)))
+; (B (name cuchillo) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(cuchillo-nn e0 y)))
+; (B (name bomba) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(bomba-nn e0 y)))
+; (B (name escopeta) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(escopeta-nn e0 y)))
+; (B (name arma-de-fuego) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(^(arma-nn e0 y)(de-in e1 y z)(fuego-nn e2 z))))
+; (B (name artillería) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(artillería-nn e0 y)))
+; (B (name revólver) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(revólver-nn e0 y)))
+; (B (name espada) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(espada-nn e0 y)))
+; (B (name estoque) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(estoque-nn e0 y)))
+
+;(B (name weapon) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(weapon-nn e0 x)))
+
+(B (name armo) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(armo-nn e0 x)))
+(B (name pistola) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(pistola-nn e0 x)))
+(B (name cañón) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(cañón-nn e0 x)))
+(B (name fusil) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(fusil-nn e0 x)))
+(B (name cuchillo) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(cuchillo-nn e0 x)))
+(B (name bomba) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(bomba-nn e0 x)))
+(B (name escopeta) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(escopeta-nn e0 x)))
+(B (name arma-de-fuego) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(^(arma-nn e0 x)(de-in e1 x z)(fuego-nn e2 z))))
+(B (name artillería) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(artillería-nn e0 x)))
+(B (name revólver) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(revólver-nn e0 x)))
+(B (name espada) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(espada-nn e0 x)))
+(B (name estoque) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(estoque-nn e0 x)))
 
 (B (name battlemap)(=>(I#STRUGGLE x 0.9)(S#STRUGGLE x)))
 (B (name fightmap)(=>(I#SS#FIGHT x y :0.9)(SS#STYPE x y)))
@@ -488,10 +503,13 @@
 (B (name peso) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (peso-nn e0 x)))
 (B (name cargo) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (cargo-nn e0 x)))
 (B (name gravamen) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (gravamen-nn e0 x)))
+(B (name lastre) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (lastre-nn e0 x)))
 
 (B (name pesado) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT e0 e0 :0.45)) (pesado-adj e0 x)))
 
-(B (name cargar) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (cargar-vb e0 x y u))) (B (name cargarse) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (cargarse-vb e0 x y u)))
+(B (name cargar) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (cargar-vb e0 x y u))) 
+(B (name arrastrar) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (arrastrar-vb e0 x y u))) 
+(B (name cargarse) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (cargarse-vb e0 x y u)))
 (B (name ponderar) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT e0 e0 :0.45)) (ponderar-vb e0 x y u)))
 
 ;RELIEF
@@ -1005,6 +1023,8 @@ y u2)))
 
 ; VERTICAL SCALE
 ; POSITION ON A SCALE
+(B (name elevada)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#POSITION_ON_A_SCALE e0 e0 :0.23)(R#HIGH-POINT x e0 :0.23)(R#FIXED-POINT x e0 :0.23)) (elevada-adj e0 x)))
+
 ; MOVEMENT ON THE SCALE
 ; CONTRAST OF POSITIONS
 (B (name vertical-scalemap)(=>(I#VERTICAL_SCALE x :0.9)(S#VERTICAL_SCALE x)))
