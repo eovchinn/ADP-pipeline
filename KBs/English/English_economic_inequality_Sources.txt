@@ -613,6 +613,7 @@
 (B (name loading) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (loading-nn e0 x)))
 (B (name millstone) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (millstone-nn e0 x)))
 (B (name encumbrance) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (encumbrance-nn e0 x)))
+(B (name burden) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (pressure-nn e0 x)))
 
 (B (name heavy) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT e0 e0 :0.45)) (heavy-adj e0 x)))
 (B (name heavy-weight) (=>(^(S#PHYSICAL_BURDEN y :0.45)(SS#WEIGHT y y :0.45)) (^(heavy-adj e0 x)(weight-nn e1 y))))
@@ -1388,15 +1389,15 @@
 
 ; GOD
 ; TYPE
-(B (name god)(=>(^(S#GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (god-nn e0 x)))
-(B (name idol)(=>(^(S#GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (idol-nn e0 x)))
+(B (name god)(=>(^(S#A_GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (god-nn e0 x)))
+(B (name idol)(=>(^(S#A_GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (idol-nn e0 x)))
 
 ; VENERATION
-(B (name worship)(=>(^(S#GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (worship-vb e0 x y u)))
-(B (name pray)(=>(^(S#GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (pray-vb e0 x y u)))
-(B (name bow-to)(=>(^(S#GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (^(bow-vb e0 x y u)(to-in e1 e0 z))))
+(B (name worship)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (worship-vb e0 x y u)))
+(B (name pray)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (pray-vb e0 x y u)))
+(B (name bow-to)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (^(bow-vb e0 x y u)(to-in e1 e0 z))))
 
-(B (name godmap)(=>(I#GOD x :0.9)(S#GOD x)))
+(B (name godmap)(=>(I#GOD x :0.9)(S#A_GOD x)))
 (B (name god-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
 (B (name god-venerationmap)(=>(I#VENERATION x y :0.9)(SS#VENERATION x y)))
 

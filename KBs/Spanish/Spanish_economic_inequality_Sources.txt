@@ -1154,16 +1154,16 @@
 
 ; GOD
 ; TYPE
-(B (name dios)(=>(^(S#GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (dios-nn e0 x)))
-(B (name ídolo)(=>(^(S#GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (ídolo-nn e0 x)))
+(B (name dios)(=>(^(S#A_GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (dios-nn e0 x)))
+(B (name ídolo)(=>(^(S#A_GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (ídolo-nn e0 x)))
 
 ; VENERATION
-(B (name adorar)(=>(^(S#GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (adorar-vb e0 x y u)))
-(B (name orar)(=>(^(S#GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (orar-vb e0 x y u)))
-(B (name rezar)(=>(^(S#GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (rezar-vb e0 x y u)))
-(B (name someterse-to)(=>(^(S#GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (^(someterse-vb e0 x y u)(a-in e1 e0 z))))
+(B (name adorar)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (adorar-vb e0 x y u)))
+(B (name orar)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (orar-vb e0 x y u)))
+(B (name rezar)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (rezar-vb e0 x y u)))
+(B (name someterse-to)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (^(someterse-vb e0 x y u)(a-in e1 e0 z))))
 
-(B (name godmap)(=>(I#GOD x :0.9)(S#GOD x)))
+(B (name godmap)(=>(I#GOD x :0.9)(S#A_GOD x)))
 (B (name god-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
 (B (name god-venerationmap)(=>(I#VENERATION x y :0.9)(SS#VENERATION x y)))
 

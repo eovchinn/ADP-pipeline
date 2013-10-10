@@ -746,6 +746,7 @@
 (B (name parasite)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (паразит-nn e0 x)))
 (B (name louse)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (вошь-nn e0 x)))
 (B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (кровосос-nn e0 x)))
+(B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (кровопийца-nn e0 x)))
 
 (B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (паразитный-adj e0 x)))
 (B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (паразитарный-adj e0 x)))
@@ -1000,21 +1001,21 @@
 
 ; GOD
 ; TYPE
-(B (name god)(=>(^(S#GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (бог-nn e0 x)))
-(B (name idol)(=>(^(S#GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (божество-nn e0 x)))
-(B (name idol)(=>(^(S#GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (идол-nn e0 x)))
+(B (name god)(=>(^(S#A_GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (бог-nn e0 x)))
+(B (name idol)(=>(^(S#A_GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (божество-nn e0 x)))
+(B (name idol)(=>(^(S#A_GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (идол-nn e0 x)))
 
 ; VENERATION
-(B (name worship)(=>(^(S#GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (поклоняться-vb e0 x y u)))
-(B (name worship)(=>(^(S#GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (преклоняться-vb e0 x y u)))
-(B (name worship)(=>(^(S#GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (кланяться-vb e0 x y u)))
-(B (name worship)(=>(^(S#GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (почитать-vb e0 x y u)))
-(B (name pray)(=>(^(S#GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (молиться-vb e0 x y u)))
+(B (name worship)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (поклоняться-vb e0 x y u)))
+(B (name worship)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (преклоняться-vb e0 x y u)))
+(B (name worship)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (кланяться-vb e0 x y u)))
+(B (name worship)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (почитать-vb e0 x y u)))
+(B (name pray)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (молиться-vb e0 x y u)))
 
-(B (name worship)(=>(^(S#GOD u :0.45)(SS#VENERATION x u :0.45)) (поклонение-vb e0 x y u)))
-(B (name worship)(=>(^(S#GOD u :0.45)(SS#VENERATION x u :0.45)) (преклонение-vb e0 x y u)))
+(B (name worship)(=>(^(S#A_GOD u :0.45)(SS#VENERATION x u :0.45)) (поклонение-vb e0 x y u)))
+(B (name worship)(=>(^(S#A_GOD u :0.45)(SS#VENERATION x u :0.45)) (преклонение-vb e0 x y u)))
 
-(B (name godmap)(=>(I#GOD x :0.9)(S#GOD x)))
+(B (name godmap)(=>(I#GOD x :0.9)(S#A_GOD x)))
 (B (name god-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
 (B (name god-venerationmap)(=>(I#VENERATION x y :0.9)(SS#VENERATION x y)))
 
