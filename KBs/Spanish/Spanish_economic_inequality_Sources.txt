@@ -481,6 +481,7 @@
 (B (name caída-en) (=>(^(S#ABYSS e0 :0.2)(SS#ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(caída-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name caída-en2) (=>(^(S#ABYSS e0 :0.3)(SS#ENTRANCE e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(caída-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name tirar-en) (=>(^(S#ABYSS e0 :0.2)(SS#ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(tirar-vb e0 x y u2)(en-in e1 e0 z))))
+(B (name descender-en) (=>(^(S#ABYSS e0 :0.2)(SS#ENTRANCE e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(caer-vb e0 x y u2)(en-in e1 e0 z))))
 
 ; EXIT
 ; Not sure about the translations of these for Spanish
@@ -617,6 +618,7 @@
 ; BOTTOM OF ECONOMIC SCALE
 (B (name bajo-la-linea) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECONOMIC-SCALE x e0 :0.45))(^(bajo-nn e0 x)(la-in e1 x y)(linea-nn e2 y))))
 (B (name fondo) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECONOMIC-SCALE x e0 :0.45))(fondo-nn e0 x)))
+;(B (name low) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE e0 e0 :0.45))(bajo-adj e0 x)))
 
 ;MOVEMENT DOWNWARD
 (B (name deslizar) (=>(^(S#LOW-POINT e0 :0.3)(SS#MOVEMENT_DOWNWARD e0 e0 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(deslizar-vb e0 x u u1)))
@@ -1190,6 +1192,7 @@
 
 ; CHANGE-OF-STATE
 (B (name crecer)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (crecer-vb e0 x y u)))
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE x e0 :0.3)) (crecimiento-nn e0 x)))
 
 (B (name plantmap)(=>(I#PLANT x :0.9)(S#PLANT x)))
 (B (name plant-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))

@@ -758,6 +758,7 @@
 ; BOTTOM OF ECONOMIC SCALE
 (B (name the-pits) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE x e0 :0.45))(pits-nn e0 x)))
 ;(B (name low) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE x e0 :0.45))(low-nn e0 x)))
+;(B (name low) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE e0 e0 :0.45))(low-adj e0 x)))
 (B (name rock-bottom) (=>(^(S#LOW_POINT e2 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE y e2 :0.45))(^(rock-nn e0 x)(of-in e1 y x)(bottom-nn e2 y))))
 (B (name bottom-of-the-heap) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE x e0 :0.45))(^(bottom-nn e0 x)(of-in e1 x y)(heap-nn e2 y))))
 (B (name bottom-of-the-totem-pole) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE x e0 :0.45))(^(bottom-nn e0 x)(of-in e1 x z)(totem-nn e2 y)(pole-nn e3 z))))
@@ -1425,6 +1426,7 @@
 
 ; CHANGE_OF_STATE
 (B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (grow-vb e0 x y u)))
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE x e0 :0.3)) (growth-nn e0 x)))
 
 (B (name plantmap)(=>(I#PLANT x :0.9)(S#PLANT x)))
 (B (name plant-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))

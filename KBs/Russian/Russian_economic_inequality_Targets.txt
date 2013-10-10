@@ -136,6 +136,6 @@
 
 ; INEQUALITY
 
-(B (name neravenstvo) (=>(^(TS#POVERTY_WEALTH x :0.45)(T#ECONOMIC-INEQUALITY e0 :0.45)) (неравенство-nn e0 x)))
-(B (name raznica) (=>(^(TS#POVERTY_WEALTH x :0.45)(T#ECONOMIC-INEQUALITY e0 :0.45))(разница-nn e0 x)))
-(B (name rashozhdenie) (=>(^(TS#POVERTY_WEALTH x :0.45)(T#ECONOMIC-INEQUALITY e0 :0.45))(расхождение-nn e0 x)))
+(B (name neravenstvo) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY e0 :0.45)) (неравенство-nn e0 x)))
+(B (name raznica) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY e0 :0.45))(разница-nn e0 x)))
+(B (name rashozhdenie) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY e0 :0.45))(расхождение-nn e0 x)))

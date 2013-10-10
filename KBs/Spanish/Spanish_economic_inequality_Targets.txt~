@@ -12,8 +12,8 @@
 (B (name hambre) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(hambre-nn e0 x)))
 
 ; POVERTY/WEALTH
-(B (name desigualdad) (=>(^(TS#POVERTY_WEALTH x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(desigualdad-nn e0 x)))
-(B (name falta-de-equidad) (=>(^(TS#POVERTY_WEALTH x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(^(falta-nn e1 y)(de-in e2 x y)(equidad-nn e0 x))))
+(B (name desigualdad) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(desigualdad-nn e0 x)))
+(B (name falta-de-equidad) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(^(falta-nn e1 y)(de-in e2 x y)(equidad-nn e0 x))))
 
 ; POOR
 (B (name pobre) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (pobre-adj e0 y)))
