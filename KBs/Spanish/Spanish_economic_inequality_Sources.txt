@@ -536,6 +536,7 @@
 (B (name incómodo)(=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_DISTRESS e0 e0 :0.45)) (incómodo-adj e0 y)))
 
 (B (name presión)(=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_DISTRESS x e0 :0.45)) (presión-nn e0 x)))
+(B (name tensión)(=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_DISTRESS x e0 :0.45)) (tensión-nn e0 x)))
 
 (B (name abrumar)(=>(^(S#PHYSICAL_BURDEN e0 :0.3)(SS#PHYSICAL_DISTRESS e0 e0 :0.3)(R#BURDEN-CAUSE x e0 :0.3)) (abrumar-vb e0 x y u)))
 
