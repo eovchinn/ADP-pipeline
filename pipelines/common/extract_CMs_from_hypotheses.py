@@ -269,8 +269,8 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 
 	for targetS in target_strucs:
 		tV = collectVars(target_strucs,targetS,equalities)
-		Tstrings = []
 
+		Tstrings = []
 		for targ in target_strucs[targetS]: 
 			if len(target_strucs[targetS][targ])==0: 
 				Tstrings.append('ECONOMIC_INEQUALITY,' + targetS + ',' + targetS)
@@ -290,14 +290,18 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 					elif newlink>link: link=newlink
 				if link==2: break
 
+			if sourceS == 'SCHISM':
+				Tstrings.append('ECONOMIC_INEQUALITY,POVERTY/WEALTH,POVERTY/WEALTH')
+
 			Sstrings = []
 			for sarg in source_strucs[sourceS]:
 				if len(source_strucs[sourceS][sarg])==0:
-					Sstrings.append(','+sourceS+',TYPE')
+					if SSforS.has_key(sourceS): 
+						Sstrings.append(','+sourceS+','+SSforS[sourceS])
+					else: Sstrings.append(','+sourceS+',TYPE')				
 				else:
 					for (ssubd,ssubarg) in source_strucs[sourceS][sarg]:
 						Sstrings.append(','+sourceS+','+ssubd)
-
 
 			for ts in Tstrings:
 				for ss in Sstrings:
@@ -350,6 +354,9 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 			if SSforS.has_key(guessSource): guessSubSource = SSforS[guessSource]
 			else: guessSubSource = 'TYPE'
 			sourceS = guessSource + ',' + guessSubSource
+
+			if guessSource == 'SCHISM':
+				targetS = 'ECONOMIC_INEQUALITY,POVERTY/WEALTH,POVERTY/WEALTH,'
 
 		CMunlinked = targetS+sourceS
 		explanationAppendix += targetS+sourceS+',0.001\n'
