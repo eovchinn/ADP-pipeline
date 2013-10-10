@@ -5,6 +5,33 @@ import re
 from collections import defaultdict
 import json
 
+SSforS = {
+'ANIMAL': 'ACTION', 
+'BODY_OF_WATER': 'MOVEMENT', 
+'CONFINEMENT': 'EXIT',
+'ENSLAVEMENT': 'OPRESSION',
+'MAZE': 'OBSTRUCTION',
+'PARASITE': 'DESTRUCTUVE_BEING',
+'PHYSICAL_BURDEN': 'WEIGHT',
+'PHYSICAL_LOCATION': 'DEFINED_REGION',
+'PHYSICAL_BURDEN': 'WEIGHT',
+'DARKNESS': 'DARK_END_OF_RANGE_OF_DARKNESS/LIGHT',
+'LOW_POINT': 'MOVEMENT_DOWNWARD',
+'BUILDING': 'COMPONENTS',
+'MEDICINE': 'ADMINISTRATION',
+'MORAL_DUTY': 'REMUNERATION',
+'VERTICAL_SCALE': 'MOVEMENT_ON_THE_SCALE',
+'DESTROYER': 'DESTRUCTIVE_FORCE',
+'ENABLER': 'LUBRICANT',
+'OBESITY': 'EXCESS_CONSUMPTION',
+'RESOURCE': 'SUBSTANCE',
+'VISION': 'SEEING',
+'HIGH_POINT': 'MOVEMENT_FORWARD/UPWARD',
+'LIGHT': 'LIGHT_END_OF_RANGE_OF_DARKNESS/LIGHT',
+'BLOOD_SYSTEM': 'MOVEMENT',
+'CROP': 'PLANTING',
+'MOVEMENT': 'MOVEMENT'}
+
 def wordStr2print(Args,WordProps,Equalities):
 	output_str = ''
 
@@ -309,14 +336,17 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 			sArg = source_strucs[guessSource].keys()[0]
 			if len(source_strucs[guessSource][sArg])>0:
 				(guessSubSource,stArg) = source_strucs[guessSource][sArg][0]
-			else: guessSubSource = 'TYPE'
+			else: 
+				if SSforS.has_key(guessSource): guessSubSource = SSforS[guessSource]
+				else: guessSubSource = 'TYPE'
 			sourceS = guessSource + ',' + guessSubSource
 		else:
 			if sourceTask:
 				guessSource = LCCannotation["sourceFrame"]
 			else:
 				guessSource = 'STRUGGLE'
-			guessSubSource = 'TYPE'
+			if SSforS.has_key(guessSource): guessSubSource = SSforS[guessSource]
+			else: guessSubSource = 'TYPE'
 			sourceS = guessSource + ',' + guessSubSource
 
 		CMunlinked = targetS+sourceS
