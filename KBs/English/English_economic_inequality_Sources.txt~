@@ -101,7 +101,7 @@
 ; OF - CURE
 (B (name for-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE x y)(for-in e1 x y))))
 
-; FROM_AGAINST - CURE
+; FROM/AGAINST - CURE
 ; (B (name from-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE e0 y)(from-in e1 e0 y))))
 ; (B (name against-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE e0 y)(against-in e1 e0 y))))
 
@@ -1018,14 +1018,14 @@
 (B (name transfermap)(=>(I#TRANSFER x y :0.9)(SS#TRANSFER x y)))
 
 ;DARKNESS
-(B (name darkness)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (darkness-nn e0 x)))
-(B (name blackness)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (blackness-nn e0 x)))
-(B (name cave)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (cave-nn e0 x)))
-(B (name dark-days)(=>(^(S#DARKNESS e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (^(dark-adj e0 x)(day-nn e1 x))))
-(B (name dark-cloud)(=>(^(S#DARKNESS e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (^(dark-adj e0 x)(cloud-nn e1 x))))
+(B (name darkness)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT x e0 :0.45)) (darkness-nn e0 x)))
+(B (name blackness)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT x e0 :0.45)) (blackness-nn e0 x)))
+(B (name cave)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT x e0 :0.45)) (cave-nn e0 x)))
+(B (name dark-days)(=>(^(S#DARKNESS e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (^(dark-adj e0 x)(day-nn e1 x))))
+(B (name dark-cloud)(=>(^(S#DARKNESS e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (^(dark-adj e0 x)(cloud-nn e1 x))))
 
 
-(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.3)(R#DARK x e0 :0.3)) (dark-adj e0 x)))
+(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT x e0 :0.3)(R#DARK x e0 :0.3)) (dark-adj e0 x)))
 
 ;MOVEMENT
 ; (B (name darken)(=>(^(S#DARKNESS x e0 :0.3)(SS#MOVEMENT x e0 :0.3)(R#DARK y e0 :0.3)) (darken-vb e0 x y u)))
@@ -1033,7 +1033,7 @@
 
 
 (B (name darknessmap)(=>(I#DARKNESS x :0.9)(S#DARKNESS x)))
-(B (name dark-end-of-rangemap)(=>(I#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y :0.9)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y)))
+(B (name dark-end-of-rangemap)(=>(I#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT x y :0.9)(SS#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT x y)))
 (B (name darkness-movementmap)(=>(I#MOVEMENT x y :0.9)(SS#MOVEMENT x y)))
 
 ; BODY WEIGHT

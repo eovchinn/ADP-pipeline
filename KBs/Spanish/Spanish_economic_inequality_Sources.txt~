@@ -93,7 +93,7 @@
 ; OF - CURE
 (B (name of-cure) (=>(S#DISEASE e0 :0.9)(^(SS#CURE x e0)(de-in e1 x y))))
 
-; FROM_AGAINST - CURE
+; FROM/AGAINST - CURE
 ;(B (name from-cure) (=>(S#DISEASE e0 :0.9)(^(SS#CURE e0 e0)(from-in e1 e0 y))))
 ;(B (name against-cure) (=>(S#DISEASE e0 :0.9)(^(SS#CURE e0 e0)(against-in e1 e0 y))))
 
@@ -341,24 +341,24 @@
 ; MATERIAL
 
 ; CUT
-; (B (name cortar) (=>(^(S#MATERIAL_MATERIAL e0 :0.3)(SS#CORTAR_CUT e0 e0 y :0.3)(R#CUT-AGENT x e0 :0.3))(cortar-vb e0 x y u2)))
-; (B (name cortada) (=>(^(S#MATERIAL_MATERIAL e0 :0.45)(SS#CORTAR_CUT e0 e0 y :0.45))(^(nn e1 x y)(cortada-nn e0 x))))
-; ;(B (name cortada) (=>(^(S#MATERIAL_MATERIAL e0 :0.45)(SS#CORTAR_CUT e0 e0 y :0.45))(^(de-in e1 x y)(cut-nn e0 x))))
-; (B (name cortada) (=>(^(S#MATERIAL_MATERIAL e0 :0.48)(SS#CORTAR_CUT e0 e0 y :0.48))(cortada-nn e0 x)))
+; (B (name cortar) (=>(^(S#MATERIAL/MATERIAL e0 :0.3)(SS#CORTAR/CUT e0 e0 y :0.3)(R#CUT-AGENT x e0 :0.3))(cortar-vb e0 x y u2)))
+; (B (name cortada) (=>(^(S#MATERIAL/MATERIAL e0 :0.45)(SS#CORTAR/CUT e0 e0 y :0.45))(^(nn e1 x y)(cortada-nn e0 x))))
+; ;(B (name cortada) (=>(^(S#MATERIAL/MATERIAL e0 :0.45)(SS#CORTAR/CUT e0 e0 y :0.45))(^(de-in e1 x y)(cut-nn e0 x))))
+; (B (name cortada) (=>(^(S#MATERIAL/MATERIAL e0 :0.48)(SS#CORTAR/CUT e0 e0 y :0.48))(cortada-nn e0 x)))
 
-; (B (name materialmap)(=>(I#MATERIAL x :0.9)(S#MATERIAL_MATERIAL x)))
-; (B (name cutmap)(=>(I#CUT x y y :0.9)(SS#CORTAR_CUT x y y)))
+; (B (name materialmap)(=>(I#MATERIAL x :0.9)(S#MATERIAL/MATERIAL x)))
+; (B (name cutmap)(=>(I#CUT x y y :0.9)(SS#CORTAR/CUT x y y)))
 
 ; ; ORGANISM
 
 ; ; GROWTH
-; (B (name crecer) (=>(^(S#ORGANISMO_ORGANISM e0 :0.45)(SS#CRECER_GROW e0 e0 x :0.45))(crecer-vb e0 x u1 u2)))
-; ;(B (name crecimiento2) (=>(^(S#ORGANISMO_ORGANISM e0 :0.45)(SS#CRECER_GROW e0 e0 y :0.45))(^(nn e1 x y)(crecimiento-nn e0 x))))
-; ;(B (name de-crecimiento) (=>(^(S#ORGANISMO_ORGANISM e0 :0.45)(SS#CRECER_GROW e0 e0 y :0.45))(^(de-in e1 x y)(crecimiento-nn e0 x))))
-; (B (name crecimiento) (=>(^(S#ORGANISMO_ORGANISM e0 :0.47)(SS#CRECER_GROW e0 e0 y :0.47))(crecimiento-nn e0 x)))
+; (B (name crecer) (=>(^(S#ORGANISMO/ORGANISM e0 :0.45)(SS#CRECER/GROW e0 e0 x :0.45))(crecer-vb e0 x u1 u2)))
+; ;(B (name crecimiento2) (=>(^(S#ORGANISMO/ORGANISM e0 :0.45)(SS#CRECER/GROW e0 e0 y :0.45))(^(nn e1 x y)(crecimiento-nn e0 x))))
+; ;(B (name de-crecimiento) (=>(^(S#ORGANISMO/ORGANISM e0 :0.45)(SS#CRECER/GROW e0 e0 y :0.45))(^(de-in e1 x y)(crecimiento-nn e0 x))))
+; (B (name crecimiento) (=>(^(S#ORGANISMO/ORGANISM e0 :0.47)(SS#CRECER/GROW e0 e0 y :0.47))(crecimiento-nn e0 x)))
 
-; (B (name organismmap)(=>(I#ORGANISM x :0.9)(S#ORGANISMO_ORGANISM x)))
-; (B (name growmap)(=>(I#GROW x y y :0.9)(SS#CRECER_GROW x y y)))
+; (B (name organismmap)(=>(I#ORGANISM x :0.9)(S#ORGANISMO/ORGANISM x)))
+; (B (name growmap)(=>(I#GROW x y y :0.9)(SS#CRECER/GROW x y y)))
 
 ; BATTLE
 
@@ -847,19 +847,19 @@
 (B (name transfermap)(=>(I#TRANSFER x y :0.9)(SS#TRANSFER x y)))
 
 ;DARKNESS
-(B (name oscuridad)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (oscuridad-nn e0 x)))
-(B (name tinieblas)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (tinieblas-nn e0 x)))
-(B (name cueva)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (cueva-nn e0 x)))
-; (B (name dark-days)(=>(^(S#DARKNESS e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (^(dark-adj e0 x)(day-nn e1 x))))
-; (B (name dark-cloud)(=>(^(S#DARKNESS e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (^(dark-adj e0 x)(cloud-nn e1 x))))
-(B (name oscuro)(=>(^(S#DARKNESS e0 e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.3)(R#DARK x e0 :0.3)) (oscuro-adj e0 x)))
+(B (name oscuridad)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT x e0 :0.45)) (oscuridad-nn e0 x)))
+(B (name tinieblas)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT x e0 :0.45)) (tinieblas-nn e0 x)))
+(B (name cueva)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT x e0 :0.45)) (cueva-nn e0 x)))
+; (B (name dark-days)(=>(^(S#DARKNESS e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (^(dark-adj e0 x)(day-nn e1 x))))
+; (B (name dark-cloud)(=>(^(S#DARKNESS e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (^(dark-adj e0 x)(cloud-nn e1 x))))
+(B (name oscuro)(=>(^(S#DARKNESS e0 e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT x e0 :0.3)(R#DARK x e0 :0.3)) (oscuro-adj e0 x)))
 
 ;MOVEMENT
 ; (B (name darken)(=>(^(S#DARKNESS e0 e0 :0.3)(SS#MOVEMENT x e0 :0.3)(R#DARK y e0 :0.3)) (darken-vb e0 x y u)))
 ; (B (name enlighten)(=>(^(S#DARKNESS e0 e0 :0.3)(SS#MOVEMENT x e0 :0.3)(R#DARK y e0 :0.3)) (enlighten-vb e0 x y u)))
 
 (B (name darknessmap)(=>(I#DARKNESS x :0.9)(S#DARKNESS x)))
-(B (name dark-end-of-rangemap)(=>(I#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y :0.9)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y)))
+(B (name dark-end-of-rangemap)(=>(I#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT x y :0.9)(SS#DARK_END_OF_RANGE_OF_DARKNESS/LIGHT x y)))
 (B (name darkness-movementmap)(=>(I#MOVEMENT x y :0.9)(SS#MOVEMENT x y)))
 
 ;OBESITY
