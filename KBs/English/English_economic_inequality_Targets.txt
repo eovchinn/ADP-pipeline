@@ -17,8 +17,8 @@
 (B (name bankruptcy) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (bankruptcy-nn e0 x)))
 
 ; POVERTY/WEALTH
-(B (name inequality) (=>(^(TS#POVERTY_WEALTH x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(inequality-nn e0 x)))
-(B (name inequity) (=>(^(TS#POVERTY_WEALTH x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(inequity-nn e0 x)))
+(B (name inequality) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(inequality-nn e0 x)))
+(B (name inequity) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(inequity-nn e0 x)))
 
 
 
@@ -135,6 +135,7 @@
 
 ; TAXATION
 (B (name tax) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (tax-nn e0 x)))
+(B (name tax) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (income-tax-nn e0 x)))
 (B (name taxation) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (taxation-nn e0 x)))
 (B (name impost) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (impost-nn e0 x)))
 (B (name tribute) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (tribute-nn e0 x)))

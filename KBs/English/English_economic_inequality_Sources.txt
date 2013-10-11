@@ -255,6 +255,7 @@
 (B (name imprison) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(imprison-vb e0 x y u)))
 (B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(confine-vb e0 x y u)))
 (B (name incarcerate) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(incarcerate-vb e0 x y u)))
+(B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(lock-vb e0 x y u)))
 
 ; RESTRAINTS
 (B (name trap) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45)) (trap-nn e0 x)))
@@ -671,6 +672,8 @@
 (B (name erode) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(erode-vb e0 x y u2)))
 (B (name hobble) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(hobble-vb e0 x y u2)))
 (B (name target) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(target-vb e0 x y u2)))
+(B (name target) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(grind-vb e0 x y u2)))
+(B (name target) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(break-vb e0 x y u2)))
 
 (B (name hit) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(hit-vb e0 x y u2)))
 (B (name grind) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(grind-vb e0 x y u2)))
@@ -808,7 +811,7 @@
 ;DEVELOP RESOURCES
 (B (name invest)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (invest-vb e0 x y u)))
 (B (name deposit)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (deposit-vb e0 x y u)))
-(B (name grow)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (grow-vb e0 x y u)))
+;(B (name grow)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (grow-vb e0 x y u)))
 (B (name accumulate)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (accumulate-vb e0 x y u)))
 (B (name bankvb)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (bank-vb e0 x y u)))
 
@@ -1250,6 +1253,7 @@
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (increase-vb e0 x y u)))
 (B (name jump)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (jump-vb e0 x y u)))
 (B (name spiral)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (spiral-vb e0 x y u)))
+(B (name spiral)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (soar-vb e0 x y u)))
 
 (B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (decrease-vb e0 x y u)))
 (B (name fall)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (fall-vb e0 x y u)))
@@ -1261,13 +1265,14 @@
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-UP x e0 :0.3)) (increase-nn e0 x)))
 
 (B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-DOWN x e0 :0.3)) (decrease-nn e0 x)))
+(B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-DOWN x e0 :0.3)) (drop-nn e0 x)))
 
 ; CONTRAST OF POSITIONS
 (B (name higher)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (higher-adj e0 x)))
 (B (name above)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (above-adj e0 x)))
 
 (B (name lower)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (lower-adj e0 x)))
-(B (name below)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (below-adj e0 x)))
+(B (name below)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (below-in e0 x y)))
 
 (B (name vertical-scalemap)(=>(I#VERTICAL_SCALE x :0.9)(S#VERTICAL_SCALE x)))
 (B (name position-on-a-scalemap)(=>(I#POSITION_ON_A_SCALE x y :0.9)(SS#POSITION_ON_A_SCALE x y)))
@@ -1323,7 +1328,6 @@
 
 
 (B (name goal-directedmap)(=>(I#GOAL_DIRECTED x :0.9)(S#GOAL_DIRECTED x)))
-(B (name goal-directed-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
 (B (name goal-directed-riskmap)(=>(I#RISK x y :0.9)(SS#RISK x y)))
 (B (name goal-directed-obstaclesmap)(=>(I#OBSTACLES x y :0.9)(SS#OBSTACLES x y)))
 
@@ -1336,6 +1340,10 @@
 (B (name taste-of)(=>(^(S#FOOD e0 :0.3)(SS#CONSUMPTION x e0 :0.3)(R#TASTE-OBJECT y e0 :0.3)) (^(taste-nn e0 x)(of-in e1 x y))))
 
 (B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (taste-vb e0 x y u)))
+(B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (consume-vb e0 x y u)))
+(B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (eat-vb e0 x y u)))
+
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (carrot-nn e0 x)))
 
 
 (B (name foodmap)(=>(I#FOOD x :0.9)(S#FOOD x)))
@@ -1443,7 +1451,7 @@
 
 ; ACTION
 (B (name eat)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (eat-vb e0 x y u)))
-(B (name grow)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (grow-vb e0 x y u)))
+;(B (name grow)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (grow-vb e0 x y u)))
 (B (name digest)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (digest-vb e0 x y u)))
 (B (name touch)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (touch-vb e0 x y u)))
 (B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (outlive-vb e0 x y u)))
@@ -1475,13 +1483,13 @@
 
 ; DESTROYER
 ; DESTRUCTIVE FORCE
-(B (name destroyer)(=>(^(S#DESTROYER e0 :0.45)(SS#DESTRUCTIVE-FORCE x e0 :0.45)) (destroyer-nn e0 x)))
-(B (name destruction)(=>(^(S#DESTROYER e0 :0.45)(SS#DESTRUCTIVE-FORCE x e0 :0.45)) (destruction-nn e0 x)))
+(B (name destroyer)(=>(^(S#DESTROYER e0 :0.45)(SS#DESTRUCTIVE_FORCE x e0 :0.45)) (destroyer-nn e0 x)))
+(B (name destruction)(=>(^(S#DESTROYER e0 :0.45)(SS#DESTRUCTIVE_FORCE x e0 :0.45)) (destruction-nn e0 x)))
 
-(B (name destroy)(=>(^(S#DESTROYER e0 :0.23)(SS#DESTRUCTIVE-FORCE e0 e0 :0.23)(R#DESTRUCTIVE-FORCE-AGENT x e0 :0.23)(R#DESTRUCTIVE-FORCE-PATIENT y e0 :0.23)) (destroy-vb e0 x y u)))
+(B (name destroy)(=>(^(S#DESTROYER e0 :0.23)(SS#DESTRUCTIVE_FORCE e0 e0 :0.23)(R#DESTRUCTIVE_FORCE-AGENT x e0 :0.23)(R#DESTRUCTIVE_FORCE-PATIENT y e0 :0.23)) (destroy-vb e0 x y u)))
 
 (B (name destroyermap)(=>(I#DESTROYER x :0.9)(S#DESTROYER x)))
-(B (name destroyer-destructive-forcemap)(=>(I#DESTRUCTIVE-FORCE x y :0.9)(SS#DESTRUCTIVE-FORCE x y)))
+(B (name destroyer-DESTRUCTIVE_FORCEmap)(=>(I#DESTRUCTIVE_FORCE x y :0.9)(SS#DESTRUCTIVE_FORCE x y)))
 
 ; GEOGRAPHIC FEATURE
 ; TYPE
@@ -1519,6 +1527,8 @@
 (B (name poker)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (poker-nn e0 x)))
 (B (name poker-game)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(poker-nn e0 x)(of-in e1 y x)(game-nn e2 y))))
 (B (name uno)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (uno-nn e0 x)))
+(B (name uno)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (game-nn e0 x)))
+(B (name uno)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (gamble-nn e0 x)))
 
 ; COMPONENTS
 (B (name chip)(=>(^(S#GAME e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (chip-nn e0 x)))

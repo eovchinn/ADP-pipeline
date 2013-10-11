@@ -122,7 +122,9 @@ def isLinkedbyParse(v1,v2,word_props,equalities,been):
 	#if equalities.has_key(v1) and equalities[v1].has_key(v2): return 2
 
 	for (propName,args) in word_props:
-		if v1 in args and v2 in args: return 2
+		if v1 in args and v2 in args: 
+			#print propName + ' ' + v1 + ' ' + v2
+			return 2
 
 	for (propName,args) in word_props:
 		if v1 in args:
@@ -285,6 +287,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 				for sv in sV:
 					newlink = isLinkedbyParse(tv,sv,word_props,equalities,[])
 					if newlink==2:
+						#print '!!!!!!!!! ' + targetS + ' ' + tv + ' ' + sourceS + ' ' + sv
 						link = 2
 						break
 					elif newlink>link: link=newlink

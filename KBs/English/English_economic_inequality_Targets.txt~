@@ -17,8 +17,8 @@
 (B (name bankruptcy) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (bankruptcy-nn e0 x)))
 
 ; POVERTY/WEALTH
-(B (name inequality) (=>(^(TS#POVERTY_WEALTH x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(inequality-nn e0 x)))
-(B (name inequity) (=>(^(TS#POVERTY_WEALTH x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(inequity-nn e0 x)))
+(B (name inequality) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(inequality-nn e0 x)))
+(B (name inequity) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(inequity-nn e0 x)))
 
 
 
@@ -127,10 +127,10 @@
 
 
 ; SOCIAL CLASS
-; (B (name social-class) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(social-adj e0 x)(class-nn e1 x))))
-; (B (name middle-class) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(middle-adj e0 x)(class-nn e1 x))))
-; (B (name economy-class) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(economy-adj e0 x)(class-nn e1 x))))
-; (B (name class) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (class-nn e0 x)))
+(B (name social-class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(social-adj e0 x)(class-nn e1 x))))
+(B (name middle-class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(middle-adj e0 x)(class-nn e1 x))))
+(B (name economy-class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(economy-adj e0 x)(class-nn e1 x))))
+(B (name class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (class-nn e0 x)))
 
 
 ; TAXATION
