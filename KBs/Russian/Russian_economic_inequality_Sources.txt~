@@ -15,6 +15,7 @@
 (B (name prokaza) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (проказа-nn e0 x)))
 (B (name jazva) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (язва-nn e0 x)))
 (B (name opuhol) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (опухоль-nn e0 x)))
+(B (name opuhol) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (ущербность-nn e0 x)))
 
 ; SICK
 (B (name bolnoj) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3))(больной-adj e0 y)))
@@ -35,11 +36,12 @@
 ; BECOME SICK
 (B (name bolet) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3))(болеть-vb e0 y u1 u2)))
 (B (name zabolet) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (заболеть-vb e0 y u1 u2)))
+(B (name zabolet) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (заболевать-vb e0 y u1 u2)))
 (B (name razboletsja) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (разболеться-vb e0 y u1 u2)))
 (B (name pribolet) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (приболеть-vb e0 y u1 u2)))
 (B (name zaneduzhit) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (занедужить-vb e0 y u1 u2)))
 (B (name neduzhit) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (недужить-vb e0 y u1 u2)))
-
+(B (name neduzhit) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (вымирать-vb e0 y u1 u2)))
 
 ; TREATMENT
 
@@ -75,17 +77,17 @@
 (B (name vylechit) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (вылечить-vb e0 y x u2)))
 (B (name vylechivat) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (вылечивать-vb e0 y x u2)))
 (B (name zalechit) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (залечить-vb e0 y x u2)))
+(B (name zalechit) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (залечивать-vb e0 y x u2)))
 (B (name vrachevat) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (врачевать-vb e0 y x u2)))
-(B (name zalechivat) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (залечивать-vb e0 y x u2)))
 
 (B (name izlechitsja) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (излечиться-vb e0 y u1 u2)))
 (B (name izlechivatsja) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (излечиваться-vb e0 y u1 u2)))
+(B (name vylechivatsja) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (вылечиться-vb e0 y u1 u2)))
 (B (name vylechivatsja) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (вылечиваться-vb e0 y u1 u2)))
 
- (B (name vyzdoravlivat) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (выздоравливать-vb e0 y u1 u2)))
+(B (name vyzdoravlivat) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (выздоравливать-vb e0 y u1 u2)))
 (B (name vyzdorovet) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (выздороветь-vb e0 y u1 u2)))
 (B (name popravitsja) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (поправиться-vb e0 y u1 u2)))
-
 (B (name idti-na-popravku) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (^(идти-vb e1 y u1 u2)(на-in e2 e1 e0)(поправка-nn e3 e0))))
 
 (B (name vyzdorovlenie) (=>(^(S#DISEASE x :0.3)(SS#CURE y x :0.3)) (выздоровление-nn e0 y)))
@@ -100,15 +102,16 @@
 
 ; EPIDEMIC
 
-(B (name epidemija) (=>(^(S#DISEASE x :0.45)(SS#TYPE y x :0.45))(эпидемия-nn e0 y)))
-(B (name pandemija) (=>(^(S#DISEASE x :0.45)(SS#TYPE y x :0.45)) (пандемия-nn e0 y)))
-(B (name virus) (=>(^(S#DISEASE x :0.45)(SS#TYPE y x :0.45))(вирус-nn e0 y)))
+(B (name epidemija) (=>(^(S#DISEASE x :0.45)(SS#TYPE e0 x :0.45))(эпидемия-nn e0 y)))
+(B (name pandemija) (=>(^(S#DISEASE x :0.45)(SS#TYPE e0 x :0.45)) (пандемия-nn e0 y)))
+(B (name virus) (=>(^(S#DISEASE x :0.45)(SS#TYPE e0 x :0.45))(вирус-nn e0 y)))
 (B (name virus) (=>(^(S#DISEASE x :0.45)(SS#TYPE e0 x :0.45)) (эпидемический-adj e0 y)))
 
 ; SYMPTOM
 
 (B (name symptom)  (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y x :0.45)) (симптом-nn e0 y)))
-(B (name symptomatic)  (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS e0 x :0.45)) (симптоматически-adj e0 y)))
+(B (name symptomatic)  (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS e0 x :0.45)) (симптоматический-adj e0 y)))
+(B (name symptomatic)  (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS e0 x :0.45)) (симптоматически-rb e0 y)))
 
 (B (name krovotechenie) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y x :0.45))(кровотечение-nn e0 y)))
 (B (name rana) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y x :0.45)) (рана-nn e0 y)))
@@ -130,9 +133,8 @@
 (B (name more) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45))(море-nn e0 y)))
 (B (name okean) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (океан-nn e0 y)))
 (B (name reka) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (река-nn e0 y)))
+(B (name rucheek) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (ручей-nn e0 y)))
 (B (name rucheek) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (ручеек-nn e0 y)))
-
-(B (name rucheek) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (трясина-nn e0 y)))
 
 ; OF - BODY_OF_WATER
 (B (name of-BODY_OF_WATER) (=>(R#MATTER x y :0.9)(^(S#BODY_OF_WATER z)(SS#TYPE y z)(of-in e1 y x))))
@@ -152,10 +154,13 @@
 (B (name vytech) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3)) (вытечь-vb e0 x u1 u2)))
 (B (name vytekat) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3)) (вытекать-vb e0 x u1 u2)))
 (B (name litsja) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3)) (литься-vb e0 x u1 u2)))
+(B (name litsja) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3)) (вылиться-vb e0 x u1 u2)))
 (B (name struitsja) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3)) (струиться-vb e0 x u1 u2)))
 (B (name struitsja) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3)) (влить-vb e0 x u1 u2)))
 (B (name struitsja) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3)) (вливать-vb e0 x u1 u2)))
 (B (name struitsja) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3)) (купаться-vb e0 x u1 u2)))
+(B (name struitsja) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3)) (искупаться-vb e0 x u1 u2)))
+(B (name struitsja) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3)) (выкупаться-vb e0 x u1 u2)))
 
 ; OF - MOVEMENT
 (B (name of-stream) (=>(R#STREAMING y x :0.9)(^(SS#MOVEMENT x u)(of-in e1 x y))))
@@ -170,6 +175,7 @@
 (B (name techvb) (=>(^(S#BODY_OF_WATER y :0.45)(SS#MOVEMENT e0 y :0.45))(захлебываться-vb e0 x u1 u2)))
 (B (name techvb) (=>(^(S#BODY_OF_WATER y :0.45)(SS#MOVEMENT e0 y :0.45))(тонуть-vb e0 x u1 u2)))
 (B (name techvb) (=>(^(S#BODY_OF_WATER y :0.45)(SS#MOVEMENT e0 y :0.45))(утонуть-vb e0 x u1 u2)))
+(B (name techvb) (=>(^(S#BODY_OF_WATER y :0.45)(SS#MOVEMENT e0 y :0.45))(потонуть-vb e0 x u1 u2)))
 
 ; SHOAL
 ;(B (name mel) (=>(^(S#ВОДА_WATER x :0.45)(SS#МЕЛЬ_SHOAL y x :0.45))(мель-nn e0 y)))
@@ -214,18 +220,18 @@
 
 ; STRUGGLE
 
-(B (name vojna) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE e0 :0.45)) (война-nn e0 x)))
-(B (name borba) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE e0 :0.45)) (борьба-nn e0 x)))
-(B (name bitva) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE e0 :0.45)) (битва-nn e0 x)))
-(B (name boj) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE e0 :0.45)) (бой-nn e0 x)))
-(B (name srazhenie) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE e0 :0.45)) (сражение-nn e0 x)))
-(B (name razgrom) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE e0 :0.45)) (разгром-nn e0 x)))
+(B (name vojna) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (война-nn e0 x)))
+(B (name borba) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (борьба-nn e0 x)))
+(B (name bitva) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (битва-nn e0 x)))
+(B (name boj) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (бой-nn e0 x)))
+(B (name srazhenie) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (сражение-nn e0 x)))
+(B (name razgrom) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (разгром-nn e0 x)))
 
 
-(B (name ataka) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE e0 :0.45)) (атака-nn e0 x)))
-(B (name napadenie)(=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE e0 :0.45)) (нападение-nn e0 x)))
-(B (name nastuplenie) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE e0 :0.45))(наступление-nn e0 x)))
-(B (name shturm) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE e0 :0.45)) (штурм-nn e0 x)))
+(B (name ataka) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (атака-nn e0 x)))
+(B (name napadenie)(=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (нападение-nn e0 x)))
+(B (name nastuplenie) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(наступление-nn e0 x)))
+(B (name shturm) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (штурм-nn e0 x)))
 
 (B (name pobeda) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE x e0 :0.3)(R#STRUGGLE-ENEMY y x :0.3))(^(победа-nn e0 x)(над-in e1 x y))))
 (B (name preodolenie) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE x e0 :0.3)(R#STRUGGLE-ENEMY y x :0.3)) (^(преодоление-nn e0 x)(of-in e1 x y))))
@@ -245,16 +251,17 @@
 (B (name pobezhdat) (=>(^(S#STRUGGLE e0 :0.2) (SS#TYPE e0 e0 :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (SS#ENEMY y e0 :0.2)) (побеждать-vb e0 x y u2)))
 (B (name preodolet) (=>(^(S#STRUGGLE e0 :0.2) (SS#TYPE e0 e0 :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (SS#ENEMY y e0 :0.2)) (преодолеть-vb e0 x y u2)))
 
-(B (name borba-s) (=> (R#STRUGGLE-ENEMY y x :0.9)(^(S#STRUGGLE x)(с-in x y))))
-(B (name borba-protiv) (=> (R#STRUGGLE-ENEMY y x :0.9)(^(S#STRUGGLE x)(против-in x y))))
-(B (name borba-na) (=> (R#STRUGGLE-ENEMY y x :0.9)(^(S#STRUGGLE x)(на-in x y))))
+(B (name borba-s) (=> (R#STRUGGLE-ENEMY y x :0.9)(^(S#STRUGGLE x)(SS#TYPE x e0)(с-in x y))))
+(B (name borba-protiv) (=> (R#STRUGGLE-ENEMY y x :0.9)(^(S#STRUGGLE x)(SS#TYPE x e0)(против-in x y))))
+(B (name borba-na) (=> (R#STRUGGLE-ENEMY y x :0.9)(^(S#STRUGGLE x)(SS#TYPE x e0)(на-in x y))))
 
 
 (B (name vrag) (=>(^(S#STRUGGLE u :0.45) (SS#ENEMY x u :0.45))(враг-nn e1 x)))
 (B (name protivnik) (=>(^(S#STRUGGLE u :0.45) (SS#ENEMY x u :0.45))(противник-nn e1 x)))
+(B (name protivnik) (=>(^(S#STRUGGLE u :0.45) (SS#ENEMY x u :0.45))(оппонент-nn e1 x)))
 (B (name nedrug) (=>(^(S#STRUGGLE u :0.45) (SS#ENEMY x u :0.45))(недруг-nn e1 x)))
-(B (name vrazheskij) (=>(^(S#STRUGGLE u :0.45) (SS#ENEMY x u :0.45)) (вражеский-adj e1 x)))
-(B (name vrazhdebnyj) (=>(^(S#STRUGGLE u :0.45) (SS#ENEMY x u :0.45))(враждебный-adj e1 x)))
+(B (name vrazheskij) (=>(^(S#STRUGGLE u :0.45) (SS#ENEMY e1 u :0.45)) (вражеский-adj e1 x)))
+(B (name vrazhdebnyj) (=>(^(S#STRUGGLE u :0.45) (SS#ENEMY e1 u :0.45))(враждебный-adj e1 x)))
 
 (B (name vrag-of) (=> (R#STRUGGLE-AGENT y e0 :0.9)(^(SS#ENEMY x e0)(of-in e1 x y))))
 
@@ -319,7 +326,8 @@
 (B (name krazha) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (кража-nn e0 x)))
 (B (name vorovstvo) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (воровство-nn e0 x)))
 
-(B (name grabitelskij) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (грабительский-adj e0 x)))
+(B (name grabitelskij) (=>(^(S#CRIME e0 :0.45)(SS#TYPE e0 e0 :0.45)) (грабительский-adj e0 x)))
+(B (name vorjuga) (=>(^(S#CRIME e0 :0.45)(SS#TYPE e0 e0 :0.45)) (воровской-adj e0 x)))
 
 (B (name grabit) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#THEFT-THEME z e0 :0.2)) (грабить-vb e0 x z u2)))
 (B (name ograbit) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#THEFT-THEME z e0 :0.2)) (ограбить-vb e0 x z u2)))
@@ -332,7 +340,7 @@
 (B (name svorovat) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#THEFT-THEME z e0 :0.2)) (своровать-vb e0 x z u2)))
 (B (name obvorovat) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-VICTIM z e0 :0.2)) (обворовать-vb e0 x z u2)))
 
-;PERPETRATOR
+; PERPETRATOR
 
 (B (name prestuplenie) (=>(^(S#CRIME e0 :0.45)(SS#PERPETRATOR x e0 :0.45))(преступный-adj e0 x)))
 (B (name prestupnik) (=>(^(S#CRIME e0 :0.45)(SS#PERPETRATOR x e0 :0.45))(преступник-nn e0 x)))
@@ -343,6 +351,10 @@
 (B (name grabitel) (=>(^(S#CRIME e0 :0.45)(SS#PERPETRATOR x e0 :0.45)) (грабитель-nn e0 x)))
 (B (name vor) (=>(^(S#CRIME e0 :0.45)(SS#PERPETRATOR x e0 :0.45)) (вор-nn e0 x)))
 (B (name vorjuga) (=>(^(S#CRIME e0 :0.45)(SS#PERPETRATOR x e0 :0.45)) (ворюга-nn e0 x)))
+(B (name vorjuga) (=>(^(S#CRIME e0 :0.45)(SS#PERPETRATOR x e0 :0.45)) (воришка-nn e0 x)))
+(B (name vorjuga) (=>(^(S#CRIME e0 :0.45)(SS#PERPETRATOR x e0 :0.45)) (похититель-nn e0 x)))
+
+(B (name vorjuga) (=>(^(S#CRIME e0 :0.45)(SS#PERPETRATOR e0 e0 :0.45)) (вороватый-adj e0 x)))
 
 ; FROM - CRIME
 (B (name vorovat-u) (=>(R#CRIME-VICTIM y e0 :0.9)(^(S#CRIME x)(у-in e1 x y))))
@@ -365,6 +377,8 @@
 (B (name prigovorit) (=>(^(S#CRIME u1 :0.2)(SS#PUNISHMENT e0 u1 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2)) (приговаривать-vb e0 x y u)))
 
 ;(B (name nakazannyj) (=>(^(S#PUNISHMENT e0 :0.45)(R#PUNISHMENT-VICTIM x e0 :0.45))(наказанный-adj e0 x)))
+;(B (name nakazannyj) (=>(^(S#PUNISHMENT e0 :0.45)(R#PUNISHMENT-VICTIM x e0 :0.45))(приговоренный-adj e0 x)))
+;(B (name nakazannyj) (=>(^(S#PUNISHMENT e0 :0.45)(R#PUNISHMENT-VICTIM x e0 :0.45))(приговорённый-adj e0 x)))
 
 (B (name crimemap)(=>(I#CRIME x :0.9)(S#CRIME x)))
 ;(B (name crime-typemap)(=>(I#CRIME-TYPE x y :0.9)(SS#CRIME-TYPE x y)))
@@ -373,6 +387,7 @@
 
 ; VICTIM
 (B (name zhertva)(=>(^(S#CRIME e0 :0.3)(SS#VICTIM x e0 :0.3)(R#VICTIM x e0 :0.3)) (жертва-nn e0 x)))
+(B (name zhertva)(=>(^(S#CRIME e0 :0.3)(SS#VICTIM x e0 :0.3)(R#VICTIM x e0 :0.3)) (добыча-nn e0 x)))
 (B (name zhertva)(=>(^(SS#VICTIM x e0 :0.4)(R#VICTIM x e0 :0.4)) (^(жертва-nn e0 x)(S#CRIME e1 :0.45)(SS#TYPE y e1 :0.45)(of-in e2 x y))))
 (B (name zhertva)(=>(^(S#CRIME e0 :0.3)(SS#VICTIM x e0 :0.3)(R#VICTIM x e0 :0.3)) (жертвами-nn e0 x)))
 
@@ -381,15 +396,14 @@
 ; CONFINED SPACE
 
 (B (name zatochenie) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45))(заточение-nn e0 x)))
+(B (name zatochenie) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45))(заключение-nn e0 x)))
 (B (name turma) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45))(тюрьма-nn e0 x)))
 (B (name kletka) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45))(клетка-nn e0 x)))
 
 (B (name boloto) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (болото-nn e0 x)))
 (B (name boloto) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (трясина-nn e0 x)))
-(B (name jama) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45))(яма-nn e0 x)))
 
 (B (name jama) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45))(^(замкнутый-adj e1 x)(круг-nn e0 x))))
-
 
 ; RESTRAINTS
 
@@ -397,7 +411,6 @@
 (B (name zapadnja) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45)) (западня-nn e0 x)))
 (B (name kapkan) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45)) (капкан-nn e0 x)))
 (B (name silok) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45)) (силок-nn e0 x)))
-
 (B (name puty) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45)) (путы-nn e0 x)))
 (B (name puty) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45)) (оковы-nn e0 x)))
 (B (name puty) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45)) (цепь-nn e0 x)))
@@ -417,8 +430,8 @@
 (B (name svjazat) (=>(^(S#CONFINEMENT u :0.2)(SS#RESTRAINTS e0 u :0.2)(R#RESTRAINTS-AGENT x e0 :0.2)(R#RESTRAINTS-PATIENT y e0 :0.2))(приковать-vb e0 x y u)))
 (B (name svjazat) (=>(^(S#CONFINEMENT u :0.2)(SS#RESTRAINTS e0 u :0.2)(R#RESTRAINTS-AGENT x e0 :0.2)(R#RESTRAINTS-PATIENT y e0 :0.2))(приковывать-vb e0 x y u)))
 
-(B (name dushit) (=>(^(S#CONFINEMENT e0 :0.3)(SS#RESTRAINTS e0 e0 :0.3)(R#CONFINEMENT-PATIENT y e0 :0.2)) (душить-vb e0 x y u)))
-(B (name zadushit) (=>(^(S#CONFINEMENT e0 :0.3)(SS#RESTRAINTS e0 e0 :0.3)(R#CONFINEMENT-PATIENT y e0 :0.2)) (задушить-vb e0 x y u)))
+(B (name dushit) (=>(^(S#CONFINEMENT u :0.3)(SS#RESTRAINTS e0 u :0.3)(R#CONFINEMENT-PATIENT y e0 :0.2)) (душить-vb e0 x y u)))
+(B (name zadushit) (=>(^(S#CONFINEMENT u :0.3)(SS#RESTRAINTS e0 u :0.3)(R#CONFINEMENT-PATIENT y e0 :0.2)) (задушить-vb e0 x y u)))
 
 ; EXIT
 
@@ -429,6 +442,12 @@
 
 (B (name vyrvatsja-iz)(=>(^(S#CONFINEMENT u :0.3)(SS#EXIT e0 u :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(вырваться-vb e0 x y u)(из-in e1 e0 z))))
 (B (name sbezhat-iz)(=>(^(S#CONFINEMENT u :0.3)(SS#EXIT e0 u :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(сбежать-vb e0 x y u)(из-in e1 e0 z))))
+(B (name sbezhat-iz)(=>(^(S#CONFINEMENT u :0.3)(SS#EXIT e0 u :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(выбраться-vb e0 x y u)(из-in e1 e0 z))))
+(B (name sbezhat-iz)(=>(^(S#CONFINEMENT u :0.3)(SS#EXIT e0 u :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(освободиться-vb e0 x y u)(от-in e1 e0 z))))
+(B (name vyrvatsja-iz)(=>(^(S#CONFINEMENT u :0.3)(SS#EXIT e0 u :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (вырваться-vb e0 x y u)))
+(B (name sbezhat-iz)(=>(^(S#CONFINEMENT u :0.3)(SS#EXIT e0 u :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (сбежать-vb e0 x y u)))
+(B (name sbezhat-iz)(=>(^(S#CONFINEMENT u :0.3)(SS#EXIT e0 u :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (выбраться-vb e0 x y u)))
+(B (name sbezhat-iz)(=>(^(S#CONFINEMENT u :0.3)(SS#EXIT e0 u :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (освободиться-vb e0 x y u)))
 
 (B (name confinementmap)(=>(I#CONFINEMENT x :0.9)(S#CONFINEMENT x)))
 (B (name confinedspacemap)(=>(I#CONFINED_SPACE x y :0.9)(SS#CONFINED_SPACE x y)))
@@ -438,10 +457,13 @@
 ; ENSLAVEMENT
 
 ;SERVANT
-(B (name rab) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(раб-nn e0 x)))
-(B (name sluga) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(слуга-nn e0 x)))
-(B (name sluga) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(прислуга-nn e0 x)))
-(B (name sluga) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(холоп-nn e0 x)))
+
+(B (name rab) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT x e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(раб-nn e0 x)))
+(B (name sluga) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT x e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(слуга-nn e0 x)))
+(B (name sluga) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT x e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(прислуга-nn e0 x)))
+(B (name sluga) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT x e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(холоп-nn e0 x)))
+(B (name sluga) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT x e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(невольник-nn e0 x)))
+(B (name sluga) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT x e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(невольница-nn e0 x)))
 
 ;OPPRESSION
 
@@ -452,9 +474,14 @@
 
 ;MASTER
 
-(B (name hozjain) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER e0 e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(хозяин-nn e0 x)))
-(B (name goospodin) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER e0 e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(господин-nn e0 x)))
-(B (name povelitel) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER e0 e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(повелитель-nn e0 x)))
+(B (name hozjain) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER x e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(хозяин-nn e0 x)))
+(B (name goospodin) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER x e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(господин-nn e0 x)))
+(B (name povelitel) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER x e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(повелитель-nn e0 x)))
+(B (name hozjain) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER x e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(царь-nn e0 x)))
+(B (name hozjain) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER x e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(хан-nn e0 x)))
+(B (name hozjain) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER x e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(пахан-nn e0 x)))
+(B (name hozjain) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER x e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(король-nn e0 x)))
+(B (name hozjain) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER x e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(князь-nn e0 x)))
 
 (B (name pravit) (=>(^(S#ENSLAVEMENT e0 :0.33)(SS#MASTER e0 e0 :0.33)(R#ENSLAVEMENT-AGENT x e0 :0.33))(править-vb e0 x y u)))
 (B (name upravljat) (=>(^(S#ENSLAVEMENT e0 :0.33)(SS#MASTER e0 e0 :0.33)(R#ENSLAVEMENT-AGENT x e0 :0.33))(управлять-vb e0 x y u)))
@@ -489,6 +516,7 @@
 (B (name ad) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (ад-nn e0 x)))
 (B (name peshhera) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (пещера-nn e0 x)))
 (B (name dyra) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (дыра-nn e0 x)))
+(B (name dyra) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (яма-nn e0 x)))
 (B (name chernaya-dyra) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (^(черный-adj e0 x)(дыра-nn e1 x))))
 (B (name chernaya-dyra2) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (^(чёрный-adj e0 x)(дыра-nn e1 x))))
 
@@ -496,6 +524,7 @@
 
 (B (name glubina) (=>(^(S#ABYSS u :0.45)(SS#DEPTH x u :0.45)) (глубина-nn e0 x)))
 (B (name glubokij) (=>(^(S#ABYSS x :0.45)(SS#DEPTH e0 x :0.45)) (глубокий-adj e0 x)))
+(B (name glubokij) (=>(^(S#ABYSS u :0.45)(SS#DEPTH e0 u :0.45)) (глубже-rb e0 x)))
 (B (name bezdonnyj) (=>(^(S#ABYSS x :0.45)(SS#DEPTH e0 x :0.45)) (бездонный-adj e0 x)))
 (B (name uglublenie) (=>(^(S#ABYSS x :0.45)(SS#DEPTH e0 x :0.45)) (^(углубление-nn e0 y)(of-in e1 y x))))
 
@@ -511,7 +540,14 @@
 (B (name tolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(толкнуть-vb e0 x y u) (в-in e1 e0 z))))
 (B (name stolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(столкнуть-vb e0 x y u) (в-in e1 e0 z))))
 
-(B (name cherta)(=>(^(S#ABYSS u :0.45)(SS#ENTRANCE x u :0.45)) (черта-nn e0 x)))
+(B (name pogruzitsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (погрузиться-vb e0 x y u)))
+(B (name pogruzhatsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (погружаться-vb e0 x y u)))
+(B (name provalitsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (провалиться-vb e0 x y u)))
+(B (name provalivatsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (проваливаться-vb e0 x y u)))
+(B (name tolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (толкнуть-vb e0 x y u)))
+(B (name stolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (столкнуть-vb e0 x y u)))
+
+;(B (name cherta)(=>(^(S#ABYSS u :0.45)(SS#ENTRANCE x u :0.45)) (черта-nn e0 x)))
 (B (name kraj)(=>(^(S#ABYSS u :0.45)(SS#ENTRANCE x u :0.45)) (край-nn e0 x)))
 (B (name gran)(=>(^(S#ABYSS u :0.45)(SS#ENTRANCE x u :0.45)) (грань-nn e0 x)))
 
@@ -519,6 +555,10 @@
 
 (B (name vybratsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(выбраться-vb e0 x y u) (из-in e1 e0 z))))
 (B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(выкарабкаться-vb e0 x y u) (из-in e1 e0 z))))
+(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(вылезти-vb e0 x y u) (из-in e1 e0 z))))
+(B (name vybratsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (выбраться-vb e0 x y u)))
+(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (выкарабкаться-vb e0 x y u)))
+(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (вылезти-vb e0 x y u)))
 
 (B (name abyssmap)(=>(I#ABYSS x :0.9)(S#ABYSS x)))
 (B (name abysstypemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -534,8 +574,10 @@
 (B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (давление-nn e0 x)))
 (B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (нагрузка-nn e0 x)))
 (B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (тяжесть-nn e0 x)))
+(B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (тягость-nn e0 x)))
 
 (B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT e0 e0 :0.45)) (тяжелый-adj e0 x)))
+(B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT e0 e0 :0.45)) (тяжкий-adj e0 x)))
 
 (B (name nagruzit) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (нагрузить-vb e0 x y u)))
 (B (name nagruzit) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (нагружать-vb e0 x y u)))
@@ -543,6 +585,12 @@
 (B (name zarguzit) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (загружать-vb e0 x y u)))
 (B (name zarguzit) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (давить-vb e0 x y u)))
 (B (name zarguzit) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (надавить-vb e0 x y u)))
+(B (name zarguzit) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (отягощать-vb e0 x y u)))
+(B (name zarguzit) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (отяготить-vb e0 x y u)))
+(B (name zarguzit) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (обременять-vb e0 x y u)))
+(B (name zarguzit) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (обременить-vb e0 x y u)))
+(B (name zarguzit) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (утяжелять-vb e0 x y u)))
+(B (name zarguzit) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#BURDEN-CAUSE x e0 :0.2)(R#BURDEN-VICTIM y e0 :0.2)) (утяжелить-vb e0 x y u)))
 
 ;RELIEF
 
@@ -554,7 +602,7 @@
 (B (name oblegchat) (=>(^(SS#RELIEF e0 e1 :0.2)(R#CAUSE-RELIEF x e0)(R#BURDEN-VICTIM y e0 :0.2)) (^(сбросить-vb e0 x y u)(SS#WEIGHT y e1 :0.45))))
 (B (name oblegchat) (=>(^(SS#RELIEF e0 e1 :0.2)(R#CAUSE-RELIEF x e0)(R#BURDEN-VICTIM y e0 :0.2)) (^(скинуть-vb e0 x y u)(SS#WEIGHT y e1 :0.45))))
 
-:PHYSICAL DISTRESS
+;PHYSICAL DISTRESS
 
 (B (name sokrushat)(=>(^(S#PHYSICAL_BURDEN e0 :0.3)(SS#PHYSICAL_DISTRESS e0 e0 :0.3)(R#PHYSICAL_BURDEN-CAUSE x e0 :0.3)) (сокрушать-vb e0 x y u)))
 (B (name sokrushit)(=>(^(S#PHYSICAL_BURDEN e0 :0.3)(SS#PHYSICAL_DISTRESS e0 e0 :0.3)(R#PHYSICAL_BURDEN-CAUSE x e0 :0.3)) (сокрушить-vb e0 x y u)))
@@ -573,6 +621,7 @@
 ; TYPE
 ;(B (name razdavit) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(раздавить-vb e0 x y u2)))
 (B (name unichtozhit) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(уничтожить-vb e0 x y u2)))
+(B (name unichtozhit) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(уничтожать-vb e0 x y u2)))
 (B (name pokalechit) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(покалечить-vb e0 x y u2)))
 (B (name kalechit) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(калечить-vb e0 x y u2)))
 (B (name travmirovat) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(травмировать-vb e0 x y u2)))
@@ -584,8 +633,6 @@
 (B (name udarit) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(ломать-vb e0 x y u2)))
 (B (name udarit) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(сломать-vb e0 x y u2)))
 
-(B (name udarit) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(грозить-vb e0 x y u2)))
-
 (B (name udarit) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(пострадать-vb e0 y u2 u2)(от-in e1 e0 x))))
 (B (name udarit) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(страдать-vb e0 y u2 u2)(от-in e1 e0 x))))
 
@@ -593,7 +640,8 @@
 (B (name udar) (=>(^(S#PHYSICAL_HARM e0 :0.4)(SS#TYPE x e0 :0.4))(удар-nn e0 x)))
 (B (name udar-po) (=>(^(S#PHYSICAL_HARM e0 :0.4)(SS#TYPE x e0 :0.4)) (^(удар-nn e0 x)(по-in e1 x y))))
 
-(B (name travma) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(ущербность-nn e0 x)))
+;(B (name travma) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(ущербность-nn e0 x)))
+;(B (name udarit) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(грозить-vb e0 x y u2)))
 
 ; RESTRAINT
 
@@ -605,10 +653,17 @@
 (B (name zashhita) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(защита-nn e0 x)))
 (B (name ukrytie) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(укрытие-nn e0 x)))
 (B (name shhit) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(щит-nn e0 x)))
+(B (name shhit) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(броня-nn e0 x)))
+(B (name shhit) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(доспех-nn e0 x)))
+(B (name shhit) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(латы-nn e0 x)))
 
 (B (name ukryt) (=>(^(S#PHYSICAL_HARM u :0.2)(SS#PROTECTION e0 u :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(укрыть-vb e0 x y u2)))
+(B (name ukryt) (=>(^(S#PHYSICAL_HARM u :0.2)(SS#PROTECTION e0 u :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(укрывать-vb e0 x y u2)))
+(B (name ukryt) (=>(^(S#PHYSICAL_HARM u :0.2)(SS#PROTECTION e0 u :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(скрыть-vb e0 x y u2)))
+(B (name ukryt) (=>(^(S#PHYSICAL_HARM u :0.2)(SS#PROTECTION e0 u :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(скрывать-vb e0 x y u2)))
 (B (name zasshitit) (=>(^(S#PHYSICAL_HARM u :0.2)(SS#PROTECTION e0 u :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(защитить-vb e0 x y u2)))
 (B (name zashhishhat) (=>(^(S#PHYSICAL_HARM u :0.2)(SS#PROTECTION e0 u :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(защищать-vb e0 x y u2)))
+(B (name zashhishhat) (=>(^(S#PHYSICAL_HARM u :0.2)(SS#PROTECTION e0 u :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(охранять-vb e0 x y u2)))
 
 (B (name physical-harm-map) (=>(I#PHYSICAL_HARM  x :0.9) (S#PHYSICAL_HARM x)))
 (B (name physical-harm-typemap) (=>(I#TYPE x y :0.9) (SS#TYPE x y)))
@@ -618,7 +673,8 @@
 ; MAZE
 
 (B (name labirint)(=>(^(S#MAZE e0 :0.45)(SS#CONFUSING_PATHWAYS x e0 :0.45))(лабиринт-nn e0 x)))
-(B (name labirint)(=>(^(S#MAZE e0 :0.45)(SS#CONFUSING_PATHWAYS x e0 :0.45))(терни-nn e0 x)))
+(B (name labirint)(=>(^(S#MAZE e0 :0.45)(SS#CONFUSING_PATHWAYS x e0 :0.45))(терние-nn e0 x)))
+(B (name labirint)(=>(^(S#MAZE e0 :0.45)(SS#CONFUSING_PATHWAYS x e0 :0.45))(петля-nn e0 x)))
 
 ; NAVIGATION
 
@@ -631,9 +687,14 @@
 (B (name pomeha)(=>(^(S#MAZE e0 :0.45)(SS#OBSTRUCTION x e0 :0.45)) (помеха-nn e0 x)))
 (B (name barjer)(=>(^(S#MAZE e0 :0.45)(SS#OBSTRUCTION x e0 :0.45)) (барьер-nn e0 x)))
 (B (name pregrada)(=>(^(S#MAZE e0 :0.45)(SS#OBSTRUCTION x e0 :0.45)) (преграда-nn e0 x)))
+(B (name pregrada)(=>(^(S#MAZE e0 :0.45)(SS#OBSTRUCTION x e0 :0.45)) (препятствие-nn e0 x)))
+(B (name pregrada)(=>(^(S#MAZE e0 :0.45)(SS#OBSTRUCTION x e0 :0.45)) (препона-nn e0 x)))
+(B (name pregrada)(=>(^(S#MAZE e0 :0.45)(SS#OBSTRUCTION x e0 :0.45)) (стена-nn e0 x)))
 
 (B (name pregrazhdat)(=>(^(S#MAZE z :0.23)(SS#OBSTRUCTION e0 z :0.23)(R#OBSTRUCTION-AGENT x e0 :0.23)(R#OBSTRUCTION-PATIENT y e0 :0.23)) (преграждать-vb e0 x y u)))
 (B (name pregradit)(=>(^(S#MAZE z :0.23)(SS#OBSTRUCTION e0 z :0.23)(R#OBSTRUCTION-AGENT x e0 :0.23)(R#OBSTRUCTION-PATIENT y e0 :0.23)) (преградить-vb e0 x y u)))
+(B (name pregradit)(=>(^(S#MAZE z :0.23)(SS#OBSTRUCTION e0 z :0.23)(R#OBSTRUCTION-AGENT x e0 :0.23)(R#OBSTRUCTION-PATIENT y e0 :0.23)) (загородить-vb e0 x y u)))
+(B (name pregradit)(=>(^(S#MAZE z :0.23)(SS#OBSTRUCTION e0 z :0.23)(R#OBSTRUCTION-AGENT x e0 :0.23)(R#OBSTRUCTION-PATIENT y e0 :0.23)) (загораживать-vb e0 x y u)))
 
 (B (name mazemap)(=>(I#MAZE x :0.9)(S#MAZE x)))
 (B (name maze-confusing-pathwaysmap)(=>(I#CONFUSING_PATHWAYS x y :0.9)(SS#CONFUSING_PATHWAYS x y)))
@@ -653,15 +714,17 @@
 (B (name spolzti) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(сползти-vb e0 x u u1)))
 (B (name spuskatsja) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(спускаться-vb e0 x u u1)))
 (B (name spustitsja) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(спуститься-vb e0 x u u1)))
+(B (name spuskatsja) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(опуститься-vb e0 x u u1)))
+(B (name spustitsja) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(опускаться-vb e0 x u u1)))
 (B (name upast) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(упасть-vb e0 x u u1)))
+(B (name upast) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(пасть-vb e0 x u u1)))
 (B (name padat) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(падать-vb e0 x u u1)))
+(B (name padat) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(свалиться-vb e0 x u u1)))
 
 ;MOVEMENT UPWARD
 
 (B (name podnjatsja) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(подняться-vb e0 x u u1)))
 (B (name podnimatsja) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(подниматься-vb e0 x u u1)))
-(B (name podskachit) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(подскачить-vb e0 x u u1)))
-(B (name skaknut) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(скакнуть-vb e0 x u u1)))
 
 (B (name lowpointmap)(=>(I#LOW_POINT x :0.9)(S#LOW_POINT x)))
 (B (name bottom-of-econ-scale-map)(=>(I#BOTTOM_OF_ECONOMIC_SCALE x y :0.9)(SS#BOTTOM_OF_ECONOMIC_SCALE x y)))
@@ -675,6 +738,7 @@
 (B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(пик-nn e0 x)))
 (B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(вершина-nn e0 x)))
 (B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(высота-nn e0 x)))
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(небеса-nn e0 x)))
 
 ;MOVEMENT BACKWARD DOWNWARD
 
@@ -682,7 +746,9 @@
 (B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(падать-vb e0 x u u1)))
 (B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(свалиться-vb e0 x u u1)))
 (B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(опуститься-vb e0 x u u1)))
-(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(опускаься-vb e0 x u u1)))
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(опускаться-vb e0 x u u1)))
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(спуститься-vb e0 x u u1)))
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(спускаться-vb e0 x u u1)))
 
 ;MOVEMENT FORWARD UPWARD
 
@@ -704,8 +770,9 @@
 
 (B (name sliver)(=>(^(S#RESOURCE e0 :0.3)(SS#QUANTITY_SIZE x e0 :0.3)(R#SMALL-AMOUNT x e0 :0.3)) (щепотка-nn e0 x)))
 (B (name sparse)(=>(^(S#RESOURCE e0 :0.3)(SS#QUANTITY_SIZE e0 e0 :0.3)(R#SMALL-AMOUNT x e0 :0.3)) (ломтик-adj e0 x)))
-(B (name sparse)(=>(^(S#RESOURCE e0 :0.3)(SS#QUANTITY_SIZE e0 e0 :0.3)(R#SMALL-AMOUNT x e0 :0.3)) (кипа-adj e0 x)))
-(B (name sparse)(=>(^(S#RESOURCE e0 :0.3)(SS#QUANTITY_SIZE e0 e0 :0.3)(R#SMALL-AMOUNT x e0 :0.3)) (куча-adj e0 x)))
+(B (name sparse)(=>(^(S#RESOURCE e0 :0.3)(SS#QUANTITY_SIZE e0 e0 :0.3)(R#LARGE-AMOUNT x e0 :0.3)) (кипа-adj e0 x)))
+(B (name sparse)(=>(^(S#RESOURCE e0 :0.3)(SS#QUANTITY_SIZE e0 e0 :0.3)(R#LARGE-AMOUNT x e0 :0.3)) (куча-adj e0 x)))
+(B (name sparse)(=>(^(S#RESOURCE e0 :0.3)(SS#QUANTITY_SIZE e0 e0 :0.3)(R#LARGE-AMOUNT x e0 :0.3)) (груда-adj e0 x)))
 
 ;DEVELOP RESOURCES
 
@@ -719,6 +786,7 @@
 ;DISTRIBUTION
 
 (B (name distribute)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (распределять-vb e0 x y u)))
+(B (name distribute)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (распределить-vb e0 x y u)))
 (B (name sort)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (соритировать-vb e0 x y u)))
 (B (name sort)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (расточать-vb e0 x y u)))
 (B (name sort)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (расточить-vb e0 x y u)))
@@ -728,6 +796,7 @@
 (B (name sort)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (получить-vb e0 x y u)))
 
 (B (name distribution)(=>(^(S#RESOURCE e0 :0.45)(SS#DISTRIBUTION x e0 :0.45)) (распределение-nn e0 x)))
+(B (name distribution)(=>(^(S#RESOURCE e0 :0.45)(SS#DISTRIBUTION x e0 :0.45)) (расточительство-nn e0 x)))
 
 (B (name resourcemap)(=>(I#RESOURCE x :0.9)(S#RESOURCE x)))
 (B (name substancemap)(=>(I#SUBSTANCE x y :0.9)(SS#SUBSTANCE x y)))
@@ -761,13 +830,14 @@
 
 ;VICTIM
 ;SUFFERER
-(B (name victim)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (жертва-nn e0 x)))
-(B (name victim)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (добыча-nn e0 x)))
 
-(B (name victimmap)(=>(I#VICTIM x :0.9)(S#VICTIM x)))
-(B (name sufferermap)(=>(I#SUFFERER x y :0.9)(SS#SUFFERER x y)))
-(B (name victimizermap)(=>(I#VICTIMIZER x y :0.9)(SS#VICTIMIZER x y)))
-(B (name championmap)(=>(I#CHAMPION x y :0.9)(SS#CHAMPION x y)))
+;(B (name victim)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (жертва-nn e0 x)))
+;(B (name victim)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (добыча-nn e0 x)))
+
+;(B (name victimmap)(=>(I#VICTIM x :0.9)(S#VICTIM x)))
+;(B (name sufferermap)(=>(I#SUFFERER x y :0.9)(SS#SUFFERER x y)))
+;(B (name victimizermap)(=>(I#VICTIMIZER x y :0.9)(SS#VICTIMIZER x y)))
+;(B (name championmap)(=>(I#CHAMPION x y :0.9)(SS#CHAMPION x y)))
 
 ; BUILDING
 
@@ -788,6 +858,8 @@
 
 (B (name build)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (строить-vb e0 x y u)))
 (B (name construct)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (построить-vb e0 x y u)))
+(B (name construct)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (выстроить-vb e0 x y u)))
+(B (name construct)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (отстроить-vb e0 x y u)))
 (B (name construct)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (конструировать-vb e0 x y u)))
 (B (name construct)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (сконструировать-vb e0 x y u)))
 (B (name construct)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (сколотить-vb e0 x y u)))
@@ -806,6 +878,7 @@
 (B (name brick)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (кирпич-nn e0 x)))
 (B (name concrete)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (^(краеугольный-nn e1 x)(камень-nn e0 x))))
 (B (name mortar)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (стена-nn e0 x)))
+(B (name mortar)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (крыша-nn e0 x)))
 
 (B (name buildingmap)(=>(I#BUILDING x :0.9)(S#BUILDING x)))
 (B (name structuremap)(=>(I#STRUCTURE x y :0.9)(SS#STRUCTURE x y)))
@@ -835,6 +908,7 @@
 (B (name blocked-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(заблокированный-adj e0 x))))
 (B (name closed-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(закрытый-adj e0 x))))
 (B (name closed-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(непроходимый-adj e0 x))))
+(B (name closed-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(непролазный-adj e0 x))))
 
 (B (name closed-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9)  (^(S#PATHWAY e1) (SS#TYPE y e1)(заблокировать-vb e0 x y z))))
 (B (name closed-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9)  (^(S#PATHWAY e1) (SS#TYPE y e1)(блокировать-vb e0 x y z))))
@@ -846,6 +920,15 @@
 (B (name pomeha)(=>(^(S#PATHWAY e0 :0.4)(SS#OBSTRUCTED_PATH x e0 :0.4)) (помеха-nn e0 x)))
 (B (name barjer)(=>(^(S#PATHWAY e0 :0.4)(SS#OBSTRUCTED_PATH x e0 :0.4)) (барьер-nn e0 x)))
 (B (name pregrada)(=>(^(S#PATHWAY e0 :0.4)(SS#OBSTRUCTED_PATH x e0 :0.4)) (преграда-nn e0 x)))
+(B (name pomeha)(=>(^(S#PATHWAY e0 :0.4)(SS#OBSTRUCTED_PATH x e0 :0.4)) (препятствие-nn e0 x)))
+(B (name barjer)(=>(^(S#PATHWAY e0 :0.4)(SS#OBSTRUCTED_PATH x e0 :0.4)) (препона-nn e0 x)))
+(B (name pregrada)(=>(^(S#PATHWAY e0 :0.4)(SS#OBSTRUCTED_PATH x e0 :0.4)) (стена-nn e0 x)))
+
+
+(B (name pregrazhdat)(=>(^(S#PATHWAY z :0.4)(SS#OBSTRUCTED_PATH e0 z :0.4)) (преграждать-vb e0 x y u)))
+(B (name pregradit)(=>(^(S#PATHWAY z :0.4)(SS#OBSTRUCTED_PATH e0 z :0.4)) (преградить-vb e0 x y u)))
+(B (name pregradit)(=>(^(S#PATHWAY z :0.4)(SS#OBSTRUCTED_PATH e0 z :0.4))(загородить-vb e0 x y u)))
+(B (name pregradit)(=>(^(S#PATHWAY z :0.4)(SS#OBSTRUCTED_PATH e0 z :0.4))(загораживать-vb e0 x y u)))
 
 
 (B (name pathwaymap)(=>(I#PATHWAY x :0.9)(S#PATHWAY x)))
@@ -864,7 +947,8 @@
 (B (name doorway)(=>(^(S#PORTAL e0 :0.45)(SS#MEANS_OF_ENTRY x e0 :0.45)) (окно-nn e0 x)))
 
 ;OBSTACLES
-(B (name narrow) (=>(SS#OBSTACLES e0 e1 :0.9) (^(SS#PORTAL_MEANS_OF_ENTRY x e1)(узкий-adj e0 x))))
+(B (name narrow) (=>(SS#OBSTACLES e0 e1 :0.9) (^(S#PORTAL e1)(SS#MEANS_OF_ENTRY x e1)(узкий-adj e0 x))))
+(B (name narrow) (=>(SS#OBSTACLES e0 e1 :0.9) (^(S#PORTAL e1)(SS#MEANS_OF_ENTRY x e1)(непролазный-adj e0 x))))
 
 (B (name portalmap)(=>(I#PORTAL e0 :0.9)(S#PORTAL x)))
 (B (name meansofentrymap)(=>(I#MEANS_OF_ENTRY x y :0.9)(SS#MEANS_OF_ENTRY x y)))
@@ -874,12 +958,18 @@
 
 (B (name darkness)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (темнота-nn e0 x)))
 (B (name blackness)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (чернота-nn e0 x)))
+(B (name blackness)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (мрак-nn e0 x)))
+(B (name blackness)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (тьма-nn e0 x)))
+(B (name blackness)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (тень-nn e0 x)))
 (B (name dark-cloud)(=>(^(S#DARKNESS e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (туча-nn e1 x)))
 
-(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.3)(R#DARK x e0 :0.3)) (черный-adj e0 x)))
-(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.3)(R#DARK x e0 :0.3)) (чёрный-adj e0 x)))
-(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.3)(R#DARK x e0 :0.3)) (темный-adj e0 x)))
-(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.3)(R#DARK x e0 :0.3)) (тёмный-adj e0 x)))
+(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (черный-adj e0 x)))
+(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (чёрный-adj e0 x)))
+(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (темный-adj e0 x)))
+(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (тёмный-adj e0 x)))
+(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (мрачный-adj e0 x)))
+(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (сумрачный-adj e0 x)))
+(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (теневой-adj e0 x)))
 
 (B (name dark)(=>(^(S#DARKNESS e0 e0 :0.3)(SS#MOVEMENT_IN_THE_RANGE e0 e0 :0.3)(R#DARK x e0 :0.3)) (темнеть-vb e0 x y z)))
 (B (name dark)(=>(^(S#DARKNESS e0 e0 :0.3)(SS#MOVEMENT_IN_THE_RANGE e0 e0 :0.3)(R#DARK x e0 :0.3)) (потемнеть-vb e0 x y z)))
@@ -903,9 +993,11 @@
 (B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#MOVEMENT e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (просветлеть-vb e0 x y z)))
 (B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#MOVEMENT e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (проясниться-vb e0 x y z)))
 
+; ILLUMINATION
 (B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (светить-vb e0 x y z)))
 (B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (осветить-vb e0 x y z)))
 (B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (освещать-vb e0 x y z)))
+(B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (освещение-nn e0 x)))
 
 (B (name darknessmap)(=>(I#DARKNESS x :0.9)(S#DARKNESS x)))
 (B (name dark-end-of-rangemap)(=>(I#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y :0.9)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y)))
@@ -925,6 +1017,8 @@
 (B (name feast)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (сжирать-vb e0 x y u)))
 (B (name feast)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (поглотить-vb e0 x y u)))
 (B (name feast)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (поглощать-vb e0 x y u)))
+(B (name feast)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (обожраться-vb e0 x y u)))
+(B (name feast)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (объесться-vb e0 x y u)))
 
 (B (name obesitymap)(=>(I#OBESITY x :0.9)(S#OBESITY x)))
 (B (name excess-body-weightmap)(=>(I#BODY-WEIGHT x y :0.9)(SS#EXCESS_BODY_WEIGHT x y)))
@@ -939,6 +1033,10 @@
 (B (name louse)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (вошь-nn e0 x)))
 (B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (кровосос-nn e0 x)))
 (B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (кровопийца-nn e0 x)))
+(B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (блоха-nn e0 x)))
+(B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (клоп-nn e0 x)))
+(B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (комар-nn e0 x)))
+(B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (слепень-nn e0 x)))
 
 (B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (паразитный-adj e0 x)))
 (B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (паразитарный-adj e0 x)))
@@ -946,6 +1044,7 @@
 (B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#DESTRUCTIVE_BEING e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (присосаться-vb e0 x y u)))
 (B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#DESTRUCTIVE_BEING e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (присасываться-vb e0 x y u)))
 (B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#DESTRUCTIVE_BEING e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (паразитировать-vb e0 x y u)))
+(B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#DESTRUCTIVE_BEING e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (^(пить-vb e0 x y u)(кровь-nn e1 y))))
 
 (B (name parasitemap)(=>(I#PARASITE x :0.9)(S#PARASITE x)))
 (B (name destructive-beingmap)(=>(I#DESTRUCTIVE_BEING x y :0.9)(SS#DESTRUCTIVE_BEING x y)))
@@ -955,6 +1054,7 @@
 ;BLINDNESS
 (B (name blind)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#BLIND x e0 :0.3)) (слепой-adj e0 x)))
 (B (name myopic)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#BLIND x e0 :0.3)) (незрячий-adj e0 x)))
+(B (name blind)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS x e0 :0.3)(R#BLIND x e0 :0.3)) (слепец-nn e0 x)))
 
 (B (name blindness)(=>(^(S#VISION e0 :0.45)(SS#BLINDNESS x e0 :0.45)) (слепота-nn e0 x)))
 
@@ -968,6 +1068,7 @@
 
 (B (name open-eyes)(=>(^(S#VISION e0 :0.45)(SS#SEEING e0 e0 :0.45)) (^(открыть-vb e0 x y z)(глаз-nn e1 y))))
 (B (name open-eyes)(=>(^(S#VISION e0 :0.45)(SS#SEEING e0 e0 :0.45)) (прозреть-vb e0 x y z)))
+(B (name open-eyes)(=>(^(S#VISION e0 :0.45)(SS#SEEING e0 e0 :0.45)) (прозревать-vb e0 x y z)))
 
 (B (name visionmap)(=>(I#VISION x :0.9)(S#VISION x)))
 (B (name blindnessmap)(=>(I#BLINDNESS x y :0.9)(SS#BLINDNESS x y)))
@@ -983,6 +1084,7 @@
 
 ; ACTION
 (B (name scare)(=>(^(SS#MONSTER_ACTION e0 :0.45)(R#MONSTER x e0 :0.45)) (^(SS#MONSTER_TYPE x)(пугать-vb e0 x y u))))
+(B (name scare)(=>(^(SS#MONSTER_ACTION e0 :0.45)(R#MONSTER x e0 :0.45)) (^(SS#MONSTER_TYPE x)(испугать-vb e0 x y u))))
 (B (name suck)(=>(^(SS#MONSTER_ACTION e0 :0.45)(R#MONSTER x e0 :0.45)) (^(SS#MONSTER_TYPE x)(страшить-vb e0 x y u))))
 
 (B (name monstermap)(=>(I#MONSTER x :0.9)(S#MONSTER x)))
@@ -996,7 +1098,7 @@
 
 ; DISTANCES
 
-(B (name schism)(=>(^(S#SCHISM e0 :0.45)(SS#DISTANCES x e0 :0.45)) (мерило-nn e0 x)))
+; (B (name schism)(=>(^(S#SCHISM e0 :0.45)(SS#DISTANCES x e0 :0.45)) (мерило-nn e0 x)))
 
 (B (name schismmap)(=>(I#SCHISM x :0.9)(S#SCHISM x)))
 (B (name schism-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1104,6 +1206,7 @@
 
 (B (name peak)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (уровень-nn e0 x)))
 (B (name peak)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (планка-nn e0 x)))
+(B (name peak)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (мерило-nn e0 x)))
 
 (B (name freeze)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#POSITION_ON_A_SCALE e0 e0 :0.23)(R#MOVE-STOP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (застыть-vb e0 x y u)))
 
@@ -1115,7 +1218,7 @@
 (B (name skyrocket)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (взлететь-vb e0 x y u)))
 (B (name skyrocket)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (взлетать-vb e0 x y u)))
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (подскочить-vb e0 x y u)))
-e0 :0.23)(R#MOVER x e0 :0.23)) (подскакивать-vb e0 x y u)))
+(B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (подскакивать-vb e0 x y u)))
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (повышаться-vb e0 x y u)))
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (повыситься-vb e0 x y u)))
 
@@ -1135,4 +1238,428 @@ e0 :0.23)(R#MOVER x e0 :0.23)) (подскакивать-vb e0 x y u)))
 (B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-DOWN x e0 :0.3)) (падение-nn e0 x)))
 (B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-DOWN x e0 :0.3)) (снижение-nn e0 x)))
 
+; CONTRAST OF POSITIONS
 
+(B (name higher)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (высокий-adj e0 x)))
+(B (name above)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (выше-rb e0 x)))
+
+(B (name lower)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (низкий-adj e0 x)))
+(B (name below)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (ниже-rb e0 x)))
+
+;(B (name below)(=>(^(S#VERTICAL_SCALE e0 :0.45)(SS#CONTRAST_OF_POSITIONS x e0 :0.45)) (черта-nn e0 x)))
+
+(B (name vertical-scalemap)(=>(I#VERTICAL_SCALE x :0.9)(S#VERTICAL_SCALE x)))
+(B (name position-on-a-scalemap)(=>(I#POSITION_ON_A_SCALE x y :0.9)(SS#POSITION_ON_A_SCALE x y)))
+(B (name movement-on-the-scalemap)(=>(I#MOVEMENT_ON_THE_SCALE x y :0.9)(SS#MOVEMENT_ON_THE_SCALE x y)))
+(B (name contrast-of-positionsmap)(=>(I#CONTRAST_OF_POSITIONS x y :0.9)(SS#CONTRAST_OF_POSITIONS x y)))
+
+; MORAL DUTY
+
+; REMUNERATION
+(B (name duty)(=>(^(S#MORAL-DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (обязанность-nn e0 x)))
+(B (name duty)(=>(^(S#MORAL-DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (обязательство-nn e0 x)))
+(B (name due)(=>(^(S#MORAL-DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (долг-nn e0 x)))
+
+(B (name due)(=>(^(S#MORAL-DUTY e0 :0.45)(SS#REMUNERATION e0 e0 :0.45)) (обязать-vb e0 x y z)))
+
+(B (name moral-dutymap)(=>(I#MORAL-DUTY e0 :0.9)(S#MORAL-DUTY x)))
+(B (name remunerationmap)(=>(I#REMUNERATION x y :0.9)(SS#REMUNERATION x y)))
+
+; MEDICINE
+; ADMINISTRATION
+(B (name inject)(=>(^(S#MEDICINE e0 :0.45)(SS#ADMINISTRATION x e0 :0.45)(R#ADMINISTRATION-AGENT x e0 :0.33)) (вколоть-vb e0 x y z)))
+(B (name inject)(=>(^(S#MEDICINE e0 :0.45)(SS#ADMINISTRATION x e0 :0.45)(R#ADMINISTRATION-AGENT x e0 :0.33)) (вкалывать-vb e0 x y z)))
+
+;(B (name shot)(=>(^(S#MEDICINE e0 :0.45)(SS#ADMINISTRATION x e0 :0.45)) (укол-nn e0 x)))
+;(B (name injection)(=>(^(S#MEDICINE e0 :0.45)(SS#ADMINISTRATION x e0 :0.45)) (инъекция-nn e0 x)))
+
+(B (name medicinemap)(=>(I#MEDICINE x :0.9)(S#MEDICINE x)))
+(B (name administrationmap)(=>(I#ADMINISTRATION x y :0.9)(SS#ADMINISTRATION x y)))
+
+;RIGHT
+;TYPE
+(B (name right-to)(=>(^(S#RIGHT e0 :0.45)(SS#TYPE x e0 :0.45)) (^(право-nn e0 x)(на-in e1 x y ))))
+(B (name right-to)(=>(^(S#RIGHT e0 :0.45)(SS#TYPE x e0 :0.45)) (право-nn e0 x)))
+
+(B (name rightmap)(=>(I#RIGHT x :0.9)(S#RIGHT x)))
+(B (name right-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+
+;FOOD
+;TYPE
+
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (пирог-nn e0 x)))
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (хлеб-nn e0 x)))
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (пища-nn e0 x)))
+
+;CONSUMPTION
+
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#CONSUMPTION x e0 :0.45)) (вкус-nn e0 x)))
+(B (name taste-of)(=>(^(S#FOOD e0 :0.3)(SS#CONSUMPTION x e0 :0.3)(R#TASTE-OBJECT y e0 :0.3)) (^(вкус-nn e0 x)(of-in e1 x y))))
+
+(B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (вкусить-vb e0 x y u)))
+(B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (отведать-vb e0 x y u)))
+
+(B (name foodmap)(=>(I#FOOD x :0.9)(S#FOOD x)))
+(B (name food-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name food-consumptionmap)(=>(I#CONSUMPTION x y :0.9)(SS#CONSUMPTION x y)))
+
+; ADDICTION
+
+; TYPE
+
+(B (name drug)(=>(^(S#ADDICTION e0 :0.3)(SS#TYPE x e0 :0.3)(R#SUBSTANCE x e0 :0.3)) (накротик-nn e0 x)))
+(B (name drug)(=>(^(S#ADDICTION e0 :0.3)(SS#TYPE x e0 :0.3)(R#SUBSTANCE x e0 :0.3)) (кокаин-nn e0 x)))
+(B (name drug)(=>(^(S#ADDICTION e0 :0.3)(SS#TYPE x e0 :0.3)(R#SUBSTANCE x e0 :0.3)) (алкоголь-nn e0 x)))
+(B (name drug)(=>(^(S#ADDICTION e0 :0.3)(SS#TYPE x e0 :0.3)(R#SUBSTANCE x e0 :0.3)) (выпивка-nn e0 x)))
+(B (name drug)(=>(^(S#ADDICTION e0 :0.3)(SS#TYPE x e0 :0.3)(R#SUBSTANCE x e0 :0.3)) (водка-nn e0 x)))
+
+; RESULT
+
+(B (name drunk)(=>(^(S#ADDICTION e0 :0.2)(SS#RESULT e0 e0 :0.2)(R#SUBSTANCE x e0 :0.2)(R#ADDICTED y e0 :0.2)) (пьянить-vb e0 x y z)))
+(B (name drunk)(=>(^(S#ADDICTION e0 :0.2)(SS#RESULT e0 e0 :0.2)(R#SUBSTANCE x e0 :0.2)(R#ADDICTED y e0 :0.2)) (опьянить-vb e0 x y z)))
+(B (name drunk)(=>(^(S#ADDICTION e0 :0.2)(SS#RESULT e0 e0 :0.2)(R#SUBSTANCE x e0 :0.2)(R#ADDICTED y e0 :0.2)) (опьянять-vb e0 x y z)))
+(B (name drunk)(=>(^(S#ADDICTION e0 :0.2)(SS#RESULT e0 e0 :0.2)(R#SUBSTANCE x e0 :0.2)(R#ADDICTED y e0 :0.2)) (одурманить-vb e0 x y z)))
+(B (name drunk)(=>(^(S#ADDICTION e0 :0.2)(SS#RESULT e0 e0 :0.2)(R#SUBSTANCE x e0 :0.2)(R#ADDICTED y e0 :0.2)) (одурманивать-vb e0 x y z)))
+(B (name drunk)(=>(^(S#ADDICTION e0 :0.2)(SS#RESULT e0 e0 :0.2)(R#SUBSTANCE x e0 :0.2)(R#ADDICTED y e0 :0.2)) (дурманить-vb e0 x y z)))
+
+(B (name drunk)(=>(^(S#ADDICTION e0 :0.3)(SS#RESULT e0 e0 :0.3)(R#ADDICTED x e0 :0.3)) (пьяный-adj e0 x)))
+(B (name drunk)(=>(^(S#ADDICTION e0 :0.3)(SS#RESULT e0 e0 :0.3)(R#ADDICTED x e0 :0.3)) (одурманенный-adj e0 x)))
+
+(B (name intoxication)(=>(^(S#ADDICTION e0 :0.45)(SS#RESULT x e0 :0.45)) (опъянение-nn e0 x)))
+
+; COMPULSION
+
+(B (name habit)(=>(^(S#ADDICTION e0 :0.45)(SS#COMPULSION x e0 :0.45)) (привычка-nn e0 x)))
+(B (name habit)(=>(^(S#ADDICTION e0 :0.45)(SS#COMPULSION x e0 :0.45)) (порок-nn e0 x)))
+(B (name addiction)(=>(^(S#ADDICTION e0 :0.45)(SS#COMPULSION x e0 :0.45)) (зависимость-nn e0 x)))
+
+(B (name addictionmap)(=>(I#ADDICTION x :0.9)(S#ADDICTION x)))
+(B (name addiction-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name addiction-compulsionmap)(=>(I#COMPULSION x y :0.9)(SS#COMPULSION x y)))
+(B (name addiction-resultmap)(=>(I#RESULT x y :0.9)(SS#RESULT x y)))
+
+; BLOOD_SYSTEM
+; COMPONENT
+(B (name blood)(=>(^(S#BLOOD_SYSTEM e0 :0.3)(SS#COMPONENT x e0 :0.3)(R#BLOOD x e0 :0.3)) (кровь-nn e0 x)))
+(B (name vein)(=>(^(S#BLOOD_SYSTEM e0 :0.45)(SS#COMPONENT x e0 :0.45)) (вена-nn e0 x)))
+(B (name artery)(=>(^(S#BLOOD_SYSTEM e0 :0.45)(SS#COMPONENT x e0 :0.45)) (артерия-nn e0 x)))
+
+; MOVEMENT
+
+(B (name taste)(=>(^(S#BLOOD_SYSTEM e0 :0.45)(SS#MOVEMENT e1 e0 :0.45)) (^(течь-vb e1 x y u)(SS#COMPONENT x e0))))
+(B (name taste)(=>(^(S#BLOOD_SYSTEM e0 :0.45)(SS#MOVEMENT e1 e0 :0.45)) (^(струиться-vb e1 x y u)(SS#COMPONENT x e0))))
+
+(B (name blood-systemmap)(=>(I#BLOOD_SYSTEM x :0.9)(S#BLOOD_SYSTEM x)))
+(B (name blood-system-componentmap)(=>(I#COMPONENT x y :0.9)(SS#COMPONENT x y)))
+(B (name blood-system-movementmap)(=>(I#MOVEMENT x y :0.9)(SS#MOVEMENT x y)))
+
+; ENERGY
+
+; TYPE
+(B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (энергия-nn e0 x)))
+(B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (горючее-nn e0 x)))
+(B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (топливо-nn e0 x)))
+
+; RESULT
+
+(B (name energymap)(=>(I#ENERGY x :0.9)(S#ENERGY x)))
+(B (name energy-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name energy-resultmap)(=>(I#RESULT x y :0.9)(SS#RESULT x y)))
+
+; A GOD
+; TYPE
+(B (name god)(=>(^(S#A_GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (бог-nn e0 x)))
+(B (name idol)(=>(^(S#A_GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (божество-nn e0 x)))
+(B (name idol)(=>(^(S#A_GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (идол-nn e0 x)))
+
+; VENERATION
+(B (name worship)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (поклоняться-vb e0 x y u)))
+(B (name worship)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (преклоняться-vb e0 x y u)))
+(B (name worship)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (кланяться-vb e0 x y u)))
+(B (name worship)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (почитать-vb e0 x y u)))
+(B (name pray)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (молиться-vb e0 x y u)))
+
+(B (name worship)(=>(^(S#A_GOD u :0.45)(SS#VENERATION x u :0.45)) (поклонение-nn e0 x)))
+(B (name worship)(=>(^(S#A_GOD u :0.45)(SS#VENERATION x u :0.45)) (преклонение-nn e0 x)))
+
+(B (name godmap)(=>(I#GOD x :0.9)(S#A_GOD x)))
+(B (name god-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name god-venerationmap)(=>(I#VENERATION x y :0.9)(SS#VENERATION x y)))
+
+; PLANT
+
+; TYPE
+(B (name plant)(=>(^(S#PLANT e0 :0.45)(SS#TYPE x e0 :0.45)) (растение-nn e0 x)))
+(B (name tree)(=>(^(S#PLANT e0 :0.45)(SS#TYPE x e0 :0.45)) (дерево-nn e0 x)))
+(B (name weed)(=>(^(S#PLANT e0 :0.3)(SS#TYPE x e0 :0.3)(R#UNWANTED x e0 :0.3)) (сорняк-nn e0 x)))
+(B (name flower)(=>(^(S#PLANT e0 :0.45)(SS#TYPE x e0 :0.45)) (цветок-nn e0 x)))
+(B (name grass)(=>(^(S#PLANT e0 :0.45)(SS#TYPE x e0 :0.45)) (трава-nn e0 x)))
+
+; PARTS
+
+(B (name root)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-ROOT x e0 :0.3)) (корень-nn e0 x)))
+(B (name fruit)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-EXTERNAL x e0 :0.3)) (плод-nn e0 x)))
+(B (name seed)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-GENESIS x e0 :0.3)) (семя-nn e0 x)))
+(B (name leaf)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-EXTERNAL x e0 :0.3)) (лист-nn e0 x)))
+(B (name leaf)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-EXTERNAL x e0 :0.3)) (ветвь-nn e0 x)))
+(B (name leaf)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-EXTERNAL x e0 :0.3)) (ствол-nn e0 x)))
+
+; CHANGE_OF_STATE
+
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (расти-vb e0 x y u)))
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (вырасти-vb e0 x y u)))
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (вырастать-vb e0 x y u)))
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (прорасти-vb e0 x y u)))
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (прорастать-vb e0 x y u)))
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (подрасти-vb e0 x y u)))
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (отрасти-vb e0 x y u)))
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (отрастать-vb e0 x y u)))
+
+(B (name grow)(=>(^(S#PLANT e0 :0.4)(SS#CHANGE_OF_STATE x e0 :0.4)) (рост-nn e0 x)))
+
+(B (name grass)(=>(^(S#PLANT e0 :0.45)(SS#CHANGE_OF_STATE e0 e0 :0.45)) (цвести-nn e0 x y z)))
+(B (name grass)(=>(^(S#PLANT e0 :0.45)(SS#CHANGE_OF_STATE e0 e0 :0.45)) (расцвести-nn e0 x y z)))
+(B (name grass)(=>(^(S#PLANT e0 :0.45)(SS#CHANGE_OF_STATE e0 e0 :0.45)) (расцветать-nn e0 x y z)))
+(B (name grass)(=>(^(S#PLANT e0 :0.45)(SS#CHANGE_OF_STATE e0 e0 :0.45)) (разрастаться-nn e0 x y z)))
+
+(B (name plantmap)(=>(I#PLANT x :0.9)(S#PLANT x)))
+(B (name plant-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name plant-partsmap)(=>(I#PARTS x y :0.9)(SS#PARTS x y)))
+(B (name plant-change-of-statemap)(=>(I#CHANGE_OF_STATE x y :0.9)(SS#CHANGE_OF_STATE x y)))
+
+; ANIMAL
+; COMPONENT
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (рыло-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (морда-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (лапа-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (пасть-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (клык-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (шкура-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (хвост-nn e0 x)))
+
+; FUNCTION
+;(B (name swallow)(=>(^(S#ANIMAL e0 :0.45)(SS#FUNCTION e0 e0 :0.45)) (доить-vb e0 x y u)))
+
+; ACTION
+(B (name eat)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (есть-vb e0 x y u)))
+(B (name eat)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.2)(R#ACTION-AGENT x e0 :0.2)(R#ACTION-PATIENT y e0 :0.2)) (проглотить-vb e0 x y u)))
+(B (name eat)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (съесть-vb e0 x y u)))
+(B (name eat)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (кормиться-vb e0 x y u)))
+;(B (name grow)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (расти-vb e0 x y u)))
+(B (name digest)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (переварить-vb e0 x y u)))
+(B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (пережить-vb e0 x y u)))
+(B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (свирепствовать-vb e0 x y u)))
+(B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (кусать-vb e0 x y u)))
+(B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (кусаться-vb e0 x y u)))
+(B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (грызть-vb e0 x y u)))
+(B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (рычать-vb e0 x y u)))
+
+(B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (вопиять-vb e0 x y u)))
+
+(B (name animalmap)(=>(I#ANIMAL x :0.9)(S#ANIMAL x)))
+(B (name animal-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name animal-componentmap)(=>(I#COMPONENT x y :0.9)(SS#COMPONENT x y)))
+(B (name animal-functionmap)(=>(I#FUNCTION x y :0.9)(SS#FUNCTION x y)))
+(B (name animal-actionmap)(=>(I#ACTION x y :0.9)(SS#ACTION x y)))
+
+; MACHINE
+
+; TYPE
+
+(B (name machine)(=>(^(S#MACHINE e0 :0.45)(SS#TYPE x e0 :0.45)) (машина-nn e0 x)))
+(B (name mechanism)(=>(^(S#MACHINE e0 :0.45)(SS#TYPE x e0 :0.45)) (механизм-nn e0 x)))
+
+(B (name mechanism)(=>(^(S#MACHINE e0 :0.45)(SS#TYPE x e0 :0.45)) (гребенка-nn e0 x)))
+(B (name mechanism)(=>(^(S#MACHINE e0 :0.45)(SS#TYPE x e0 :0.45)) (гребёнка-nn e0 x)))
+
+; PARTS
+
+(B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (двигатель-nn e0 x)))
+(B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (мотор-nn e0 x)))
+(B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (движок-nn e0 x)))
+(B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (поршень-nn e0 x)))
+(B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (шестерёнка-nn e0 x)))
+(B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (шестеренка-nn e0 x)))
+(B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (колесо-nn e0 x)))
+
+; FUNCTION
+
+(B (name turn)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (завестись-vb e0 x y u)))
+(B (name turn)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (заводиться-vb e0 x y u)))
+(B (name turn)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (двигать-vb e0 x y u)))
+(B (name turn)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (обкатать-vb e0 x y u)))
+(B (name turn)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (наезжать-vb e0 x y u)))
+(B (name turn)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (наехать-vb e0 x y u)))
+
+(B (name turn)(=>(^(S#MACHINE e0 :0.45)(SS#FUNCTION x e0 :0.45)) (наезд-nn e0 x)))
+
+(B (name machinemap)(=>(I#MACHINE x :0.9)(S#MACHINE x)))
+(B (name machine-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name machine-partsmap)(=>(I#PARTS x y :0.9)(SS#PARTS x y)))
+(B (name machine-functionmap)(=>(I#FUNCTION x y :0.9)(SS#FUNCTION x y)))
+
+; DESTROYER
+
+; DESTRUCTIVE FORCE
+(B (name destroyer)(=>(^(S#DESTROYER e0 :0.45)(SS#DESTRUCTIVE-FORCE x e0 :0.45)) (разрушитель-nn e0 x)))
+(B (name destruction)(=>(^(S#DESTROYER e0 :0.45)(SS#DESTRUCTIVE-FORCE x e0 :0.45)) (разрушение-nn e0 x)))
+
+(B (name destroy)(=>(^(S#DESTROYER e0 :0.23)(SS#DESTRUCTIVE-FORCE e0 e0 :0.23)(R#DESTRUCTIVE-FORCE-AGENT x e0 :0.23)(R#DESTRUCTIVE-FORCE-PATIENT y e0 :0.23)) (разрушать-vb e0 x y u)))
+(B (name destroy)(=>(^(S#DESTROYER e0 :0.23)(SS#DESTRUCTIVE-FORCE e0 e0 :0.23)(R#DESTRUCTIVE-FORCE-AGENT x e0 :0.23)(R#DESTRUCTIVE-FORCE-PATIENT y e0 :0.23)) (разрушить-vb e0 x y u)))
+(B (name destroy)(=>(^(S#DESTROYER e0 :0.23)(SS#DESTRUCTIVE-FORCE e0 e0 :0.23)(R#DESTRUCTIVE-FORCE-AGENT x e0 :0.23)(R#DESTRUCTIVE-FORCE-PATIENT y e0 :0.23)) (рушить-vb e0 x y u)))
+(B (name destroy)(=>(^(S#DESTROYER e0 :0.23)(SS#DESTRUCTIVE-FORCE e0 e0 :0.23)(R#DESTRUCTIVE-FORCE-AGENT x e0 :0.23)(R#DESTRUCTIVE-FORCE-PATIENT y e0 :0.23)) (крушить-vb e0 x y u)))
+
+(B (name destroyermap)(=>(I#DESTROYER x :0.9)(S#DESTROYER x)))
+(B (name destroyer-destructive-forcemap)(=>(I#DESTRUCTIVE-FORCE x y :0.9)(SS#DESTRUCTIVE-FORCE x y)))
+
+; GEOGRAPHIC FEATURE
+
+; TYPE
+(B (name mountain)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#MOUNTAIN x e0 :0.3)) (гора-nn e0 x)))
+(B (name himalayas)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#RIVER x e0 :0.3)) (река-nn e0 x)))
+(B (name alps)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#FOREST x e0 :0.3)) (лес-nn e0 x)))
+(B (name ocean)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#OCEAN x e0 :0.3)) (океан-nn e0 x)))
+;(B (name sea)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#OCEAN x e0 :0.3)) (море-nn e0 x)))
+(B (name prairie)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (степь-nn e0 x)))
+(B (name valley)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (далина-nn e0 x)))
+(B (name valley)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#OASIS x e0 :0.3)) (оазис-nn e0 x)))
+
+(B (name valley)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#CLIMATE x e0 :0.3)) (климат-nn e0 x)))
+
+(B (name geographic-featuremap)(=>(I#GEOGRAPHIC_FEATURE x :0.9)(S#GEOGRAPHIC_FEATURE x)))
+(B (name geographic-feature-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+
+; ENABLER
+
+; LUBRICANT
+(B (name lubrication)(=>(^(S#ENABLER e0 :0.45)(SS#LUBRICANT x e0 :0.45)) (смазка-nn e0 x)))
+(B (name oil)(=>(^(S#ENABLER e0 :0.45)(SS#LUBRICANT x e0 :0.45)) (масло-nn e0 x)))
+
+(B (name greasevb)(=>(^(S#ENABLER e0 :0.3)(SS#LUBRICANT e0 e0 :0.3)(R#LUBRICATED y e0 :0.3)) (смазать-vb e0 x y u)))
+(B (name lubricate)(=>(^(S#ENABLER e0 :0.3)(SS#LUBRICANT e0 e0 :0.3)(R#LUBRICATED y e0 :0.3)) (смазывать-vb e0 x y u)))
+(B (name oilvb)(=>(^(S#ENABLER e0 :0.3)(SS#LUBRICANT e0 e0 :0.3)(R#LUBRICATED y e0 :0.3)) (умаслить-vb e0 x y u)))
+(B (name oilvb)(=>(^(S#ENABLER e0 :0.3)(SS#LUBRICANT e0 e0 :0.3)(R#LUBRICATED y e0 :0.3)) (умасливать-vb e0 x y u)))
+
+(B (name enablermap)(=>(I#ENABLER x :0.9)(S#ENABLER x)))
+(B (name enabler-lubricantmap)(=>(I#LUBRICANT x y :0.9)(SS#LUBRICANT x y)))
+
+; GAME
+; TYPE
+(B (name chess)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (игра-nn e0 x)))
+(B (name chess)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (шашки-nn e0 x)))
+(B (name poker)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (покер-nn e0 x)))
+(B (name chess)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (шахматы-nn e0 x)))
+(B (name chess)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (гонка-nn e0 x)))
+
+; COMPONENTS
+(B (name chip)(=>(^(S#GAME e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (пешка-nn e0 x)))
+(B (name chip)(=>(^(S#GAME e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (карта-nn e0 x)))
+(B (name chip)(=>(^(S#GAME e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (фишка-nn e0 x)))
+(B (name chip)(=>(^(S#GAME e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (мяч-nn e0 x)))
+
+; ACTIONS
+
+(B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS x e0 :0.45)) (старт-nn e0 x)))
+(B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS e0 e0 :0.45)) (стартовый-adj e0 x)))
+(B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS x e0 :0.45)) (финиш-nn e0 x)))
+(B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS e0 e0 :0.45)) (финишный-adj e0 x)))
+
+(B (name playvb)(=>(^(S#GAME e0 :0.3)(SS#ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (играть-vb e0 x y u)))
+
+; OUTCOMES
+
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (побеждать-vb e0 x y u)))
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (победить-vb e0 x y u)))
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (выиграть-vb e0 x y u)))
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (выигрывать-vb e0 x y u)))
+(B (name lose)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (проиграть-vb e0 x y u)))
+(B (name lose)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (проигрывать-vb e0 x y u)))
+
+(B (name lose)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES c e0 :0.45)) (победа-nn e0 x)))
+(B (name lose)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES c e0 :0.45)) (выигрыш-nn e0 x)))
+(B (name lose)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES c e0 :0.45)) (поражение-nn e0 x)))
+(B (name lose)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES c e0 :0.45)) (проигрыш-nn e0 x)))
+
+(B (name gamemap)(=>(I#GAME x :0.9)(S#GAME x)))
+(B (name game-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name game-componentsmap)(=>(I#COMPONENTS x y :0.9)(SS#COMPONENTS x y)))
+
+; COMPETITION
+
+(B (name chess)(=>(^(S#COMPETITION e0 :0.45)(SS#COMPONENT x e0 :0.45)) (гонка-nn e0 x)))
+(B (name chess)(=>(^(S#COMPETITION e0 :0.45)(SS#COMPONENT x e0 :0.45)) (соревнование-nn e0 x)))
+
+(B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS x e0 :0.45)) (старт-nn e0 x)))
+(B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS x e0 :0.45))  (стартовый-adj e0 x)))
+(B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS x e0 :0.45))  (финиш-nn e0 x)))
+(B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS x e0 :0.45))  (финишный-adj e0 x)))
+
+(B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS e0 e0 :0.45))(стартовать-vb e0 x y z)))
+(B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS e0 e0 :0.45))(финишировать-vb e0 x y z)))
+
+; CROP
+
+; PLANTING
+
+(B (name seed)(=>(^(S#CROP e0 :0.3)(SS#PLANTING x e0 :0.3)(R#CROP x e0 :0.3)) (посев-nn e0 x)))
+(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (сеять-vb e0 x y u)))
+(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (посеять-vb e0 x y u)))
+(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (засеять-vb e0 x y u)))
+(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (посадить-vb e0 x y u)))
+(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (сажать-vb e0 x y u)))
+
+; CULTIVATION
+
+(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (растить-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (выращивать-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (поливать-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (полить-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (удобрять-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (удобрить-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (окучивать-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (окучить-vb e0 x y u)))
+
+(B (name grass)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (искоренить-vb e0 x y z)))
+(B (name grass)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (искоренять-vb e0 x y z)))
+
+; OUTCOME
+
+(B (name reap)(=>(^(S#CROP e0 :0.45)(SS#OUTCOME x e0 :0.45)) (жатва-vb e0 x y u)))
+(B (name crop)(=>(^(S#CROP e0 :0.45)(SS#OUTCOME x e0 :0.45)) (урожай-nn e0 x)))
+(B (name crop)(=>(^(S#CROP e0 :0.45)(SS#OUTCOME x e0 :0.45)) (плод-nn e0 x)))
+
+(B (name crop)(=>(^(S#CROP e0 :0.45)(SS#OUTCOME e0 e0 :0.45)) (плодоносить-vb e0 x y z)))
+
+(B (name cropmap)(=>(I#CROP x :0.9)(S#CROP x)))
+(B (name crop-plantingmap)(=>(I#PLANTING x y :0.9)(SS#PLANTING x y)))
+(B (name crop-cultivationmap)(=>(I#CULTIVATION x y :0.9)(SS#CULTIVATION x y)))
+(B (name crop-outcomemap)(=>(I#OUTCOME x y :0.9)(SS#OUTCOME x y)))
+(B (name game-actionsmap)(=>(I#ACTIONS x y :0.9)(SS#ACTIONS x y)))
+(B (name game-outcomesmap)(=>(I#OUTCOMES x y :0.9)(SS#OUTCOMES x y)))
+
+; PHYSICAL OBJECT
+
+(B (name chess)(=>(^(S#PHYSICAL_OBJECT e0 :0.45)(SS#TYPE x e0 :0.45)) (вещь-nn e0 x)))
+
+; GOAL_DIRECTED
+
+(B (name win)(=>(^(S#GOAL_DIRECTED e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (^(стремиться-vb e0 x y u)(к-in e1 e0 z))))
+(B (name win)(=>(^(S#GOAL_DIRECTED e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (^(рваться-vb e0 x y u)(к-in e1 e0 z))))
+
+; A RIGHT
+; TYPE
+(B (name god)(=>(^(S#A_RIGHT e0 :0.45)(SS#TYPE x e0 :0.45)) (право-nn e0 x)))
+(B (name god)(=>(^(S#A_RIGHT e0 :0.45)(SS#TYPE x e0 :0.45)) (^(право-nn e0 x)(на-in e1 x y))))
+
+; IMPURITY
+; TYPE
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE x e0 :0.45)) (грязь-nn e0 x)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE x e0 :0.45)) (пыль-nn e0 x)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE x e0 :0.45)) (мусор-nn e0 x)))
+
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (грязный-adj e0 x)))
+
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (загрязнить-nn e0 x)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (загрязнять-nn e0 x)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (пачкать-nn e0 x)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (запачкать-nn e0 x)))
