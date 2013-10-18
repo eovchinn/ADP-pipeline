@@ -131,10 +131,12 @@
 (B (name middle-class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(middle-adj e0 x)(class-nn e1 x))))
 (B (name economy-class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(economy-adj e0 x)(class-nn e1 x))))
 (B (name class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (class-nn e0 x)))
+(B (name class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (elite-nn e0 x)))
 
 
 ; TAXATION
 (B (name tax) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (tax-nn e0 x)))
+(B (name tax) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (income-tax-nn e0 x)))
 (B (name taxation) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (taxation-nn e0 x)))
 (B (name impost) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (impost-nn e0 x)))
 (B (name tribute) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (tribute-nn e0 x)))

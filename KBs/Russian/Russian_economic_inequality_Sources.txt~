@@ -880,6 +880,11 @@
 (B (name mortar)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (стена-nn e0 x)))
 (B (name mortar)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (крыша-nn e0 x)))
 
+; SUPPORT
+(B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT x e0 :0.45)) (поддержка-nn e0 x)))
+(B (name build)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT e0 e0 :0.45))) (поддержать-vb e0 x y u)))
+(B (name build)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT e0 e0 :0.45))) (поддерживать-vb e0 x y u)))
+
 (B (name buildingmap)(=>(I#BUILDING x :0.9)(S#BUILDING x)))
 (B (name structuremap)(=>(I#STRUCTURE x y :0.9)(SS#STRUCTURE x y)))
 (B (name creation_destructionmap)(=>(I#CREATION-DESTRUCTION x y :0.9)(SS#CREATION_DESTRUCTION x y)))
@@ -1041,10 +1046,10 @@
 (B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (паразитный-adj e0 x)))
 (B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (паразитарный-adj e0 x)))
 
-(B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#DESTRUCTIVE_BEING e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (присосаться-vb e0 x y u)))
-(B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#DESTRUCTIVE_BEING e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (присасываться-vb e0 x y u)))
-(B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#DESTRUCTIVE_BEING e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (паразитировать-vb e0 x y u)))
-(B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#DESTRUCTIVE_BEING e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (^(пить-vb e0 x y u)(кровь-nn e1 y))))
+(B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#ACTION e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (присосаться-vb e0 x y u)))
+(B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#ACTION e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (присасываться-vb e0 x y u)))
+(B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#ACTION e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (паразитировать-vb e0 x y u)))
+(B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#ACTION e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (^(пить-vb e0 x y u)(кровь-nn e1 y))))
 
 (B (name parasitemap)(=>(I#PARASITE x :0.9)(S#PARASITE x)))
 (B (name destructive-beingmap)(=>(I#DESTRUCTIVE_BEING x y :0.9)(SS#DESTRUCTIVE_BEING x y)))
@@ -1359,6 +1364,8 @@
 (B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (энергия-nn e0 x)))
 (B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (горючее-nn e0 x)))
 (B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (топливо-nn e0 x)))
+(B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (батарея-nn e0 x)))
+(B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (батарейка-nn e0 x)))
 
 ; RESULT
 
@@ -1455,6 +1462,8 @@
 (B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (рычать-vb e0 x y u)))
 
 (B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (вопиять-vb e0 x y u)))
+(B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (вопить-vb e0 x y u)))
+(B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (возопить-vb e0 x y u)))
 
 (B (name animalmap)(=>(I#ANIMAL x :0.9)(S#ANIMAL x)))
 (B (name animal-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1575,10 +1584,13 @@
 (B (name lose)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (проиграть-vb e0 x y u)))
 (B (name lose)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (проигрывать-vb e0 x y u)))
 
-(B (name lose)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES c e0 :0.45)) (победа-nn e0 x)))
-(B (name lose)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES c e0 :0.45)) (выигрыш-nn e0 x)))
-(B (name lose)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES c e0 :0.45)) (поражение-nn e0 x)))
-(B (name lose)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES c e0 :0.45)) (проигрыш-nn e0 x)))
+(B (name lose)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES x e0 :0.45)) (победа-nn e0 x)))
+(B (name lose)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES x e0 :0.45)) (выигрыш-nn e0 x)))
+(B (name lose)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES x e0 :0.45)) (поражение-nn e0 x)))
+(B (name lose)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES x e0 :0.45)) (проигрыш-nn e0 x)))
+
+(B (name lose)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES x e0 :0.45)) (победитель-nn e0 x)))
+(B (name lose)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES x e0 :0.45)) (проигравший-nn e0 x)))
 
 (B (name gamemap)(=>(I#GAME x :0.9)(S#GAME x)))
 (B (name game-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1639,7 +1651,11 @@
 
 ; PHYSICAL OBJECT
 
-(B (name chess)(=>(^(S#PHYSICAL_OBJECT e0 :0.45)(SS#TYPE x e0 :0.45)) (вещь-nn e0 x)))
+(B (name thing)(=>(^(S#PHYSICAL_OBJECT e0 :0.45)(SS#TYPE x e0 :0.45)) (вещь-nn e0 x)))
+(B (name mass)(=>(^(S#PHYSICAL_OBJECT e0 :0.45)(SS#PHYSTICAL-OBJECT-TYPE x e0 :0.45)) (масса-nn e0 x)))
+
+;POSSESSION
+(B (name possess)(=>(^(S#PHYSICAL_OBJECT y :0.33)(SS#POSSESSION e0 y :0.33)(R#POSSESSOR x e0 :0.33)) (владеть-vb e0 x y u)))
 
 ; GOAL_DIRECTED
 
@@ -1659,7 +1675,7 @@
 
 (B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (грязный-adj e0 x)))
 
-(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (загрязнить-nn e0 x)))
-(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (загрязнять-nn e0 x)))
-(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (пачкать-nn e0 x)))
-(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (запачкать-nn e0 x)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (загрязнить-vb e0 x y z)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (загрязнять-vb e0 x y z)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (пачкать-vb e0 x y z)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (запачкать-vb e0 x y z)))

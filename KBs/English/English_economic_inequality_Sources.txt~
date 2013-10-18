@@ -608,6 +608,7 @@
 
 ; BURDEN
 ; WEIGHT
+
 (B (name burden) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (burden-nn e0 x)))
 (B (name weight) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (weight-nn e0 x)))
 (B (name load) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (load-nn e0 x)))
@@ -741,8 +742,6 @@
 
 (B (name navigate) (=>(^(S#MAZE z :0.3) (SS#NAVIGATION e0 z :0.3)(R#NAVIGATION-AGENT x e0 :0.3))(navigate-vb e0 x y u)))
 
-
-
 ; OBSTRUCTION
 (B (name tangle)(=>(^(S#MAZE e0 :0.45)(SS#OBSTRUCTION x e0 :0.45)) (tangle-nn e0 x)))
 (B (name snarl)(=>(^(S#MAZE e0 :0.45)(SS#OBSTRUCTION x e0 :0.45)) (snarl-nn e0 x)))
@@ -758,6 +757,7 @@
 (B (name maze-obstructionmap)(=>(I#OBSTRUCTION x y :0.9)(SS#OBSTRUCTION x y)))
 
 ; LOW POINT
+
 ; BOTTOM OF ECONOMIC SCALE
 (B (name the-pits) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE x e0 :0.45))(pits-nn e0 x)))
 ;(B (name low) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE x e0 :0.45))(low-nn e0 x)))
@@ -791,6 +791,27 @@
 (B (name bottom-of-econ-scale-map)(=>(I#BOTTOM_OF_ENCONOMIC_SCALE x y :0.9)(SS#BOTTOM_OF_ENCONOMIC_SCALE x y)))
 (B (name movement-downwardmap)(=>(I#MOVEMENT_DOWNWARD x y :0.9)(SS#MOVEMENT_DOWNWARD x y)))
 (B (name movement-upwardmap)(=>(I#MOVEMENT_UPWARD x y :0.9)(SS#MOVEMENT_UPWARD x y)))
+
+; HIGH POINT 
+
+; TOP OF ECONOMIC SCALE
+
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(peak-nn e0 x)))
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(top-nn e0 x)))
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(summit-nn e0 x)))
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(crest-nn e0 x)))
+
+;MOVEMENT BACKWARD DOWNWARD
+
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(drop-vb e0 x u u1)))
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(fall-vb e0 x u u1)))
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(slide-vb e0 x u u1)))
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(slip-vb e0 x u u1)))
+
+;MOVEMENT FORWARD UPWARD
+
+(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(climb-vb e0 x u u1)))
+(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(rise-vb e0 x u u1)))
 
 : RESOURCE
 ; SUBSTANCE
@@ -869,17 +890,19 @@
 ; ;HEALTH
 ; (B (name reviving)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#HEALTH x e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (revive-vb e0 x y u)))
 
-; ;COMPONENT
-; ;##RI: probably different inferences for different components
-; (B (name backbone)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (backbone-nn e0 x)))
-; (B (name face)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (face-nn e0 x)))
-; (B (name hand)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (hand-nn e0 x)))
+; COMPONENT
+(B (name backbone)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (backbone-nn e0 x)))
+(B (name face)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (face-nn e0 x)))
+(B (name hand)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (hand-nn e0 x)))
+(B (name hand)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (skin-nn e0 x)))
+(B (name hand)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (heart-nn e0 x)))
+(B (name hand)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (brain-nn e0 x)))
 
-; (B (name human-bodymap)(=>(I#HUMAN_BODY x :0.9)(S#HUMAN_BODY x)))
+(B (name human-bodymap)(=>(I#HUMAN_BODY x :0.9)(S#HUMAN_BODY x)))
 ; (B (name human-body-deathmap)(=>(I#DEATHx :0.9)(SS#DEATH x y)))
 ; (B (name human-body-livingmap)(=>(I#LIVINGx :0.9)(SS#LIVING x y)))
 ; (B (name human-body-healthmap)(=>(I#HEALTH x y :0.9)(SS#HEALTH x y)))
-; (B (name human-body-componentmap)(=>(I#COMPONENT x y :0.9)(SS#COMPONENT x y)))
+(B (name human-body-componentmap)(=>(I#COMPONENT x y :0.9)(SS#COMPONENT x y)))
 
 ;VICTIM
 ;SUFFERER
@@ -925,6 +948,13 @@
 (B (name construct)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (construct-vb e0 x y u)))
 (B (name fix)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (fix-vb e0 x y u)))
 
+(B (name destroy)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (destroy-vb e0 x y u)))
+(B (name deconstruct)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (deconstruct-vb e0 x y u)))
+(B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (ruin-vb e0 x y u)))
+
+(B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION x e0 :0.3 :0.3)(R#DESTRUCTION x e0 :0.3)) (deconstruction-nn e0 x)))
+(B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION x e0 :0.3 :0.3)(R#DESTRUCTION x e0 :0.3)) (destruction-nn e0 x)))
+
 ; COMPONENTS
 (B (name building-block)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (^(building-nn e0 x)(of-in e1 y x)(block-nn e2 y))))
 (B (name support-beam)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (^(support-nn e0 x)(of-in e1 y x)(beam-nn e2 y))))
@@ -937,6 +967,10 @@
 (B (name stone)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (stone-nn e0 x)))
 (B (name keystone)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (keystone-nn e0 x)))
 (B (name wall)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (wall-nn e0 x)))
+
+; SUPPORT
+(B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT x e0 :0.45)) (support-nn e0 x)))
+(B (name ruin)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT e0 e0 :0.3 :0.45)) (support-vb e0 x y u)))
 
 (B (name buildingmap)(=>(I#BUILDING x :0.9)(S#BUILDING x)))
 (B (name structuremap)(=>(I#STRUCTURE x y :0.9)(SS#STRUCTURE x y)))
@@ -960,13 +994,20 @@
 (B (name way-out) (=>(^(S#PATHWAY e0 :0.45)(SS#TYPE x e0 :0.45)) (^(way-nn e0 x)(out-in e1 x u))))
 
 ;OPEN PATH
-(B (name clear-path) (=>(SS#OPEN_PATH e0 e0 :0.9) (^(S#PATHWAY e1)(SS#TYPE x e1)(clear-adj e0 x))))
-(B (name open-path) (=>(SS#OPEN_PATH e0 e0 :0.9) (^(S#PATHWAY e1)(SS#TYPE x e1)(open-adj e0 x))))
+(B (name clear-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE x e1)(clear-adj e0 x))))
+(B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE x e1)(open-adj e0 x))))
+
+(B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(clear-vb e0 x y z))))
+(B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(open-vb e0 x y z))))
 
 ;OBSTRUCTED PATH
-(B (name obstructed-path) (=>(SS#OBSTRUCTED_PATH e0 e0 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(obstructed-adj e0 x))))
-(B (name blocked-path) (=>(SS#OBSTRUCTED_PATH e0 e0 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(blocked-adj e0 x))))
-(B (name closed-path) (=>(SS#OBSTRUCTED_PATH e0 e0 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(closed-adj e0 x))))
+(B (name obstructed-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(obstructed-adj e0 x))))
+(B (name blocked-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(blocked-adj e0 x))))
+(B (name closed-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(closed-adj e0 x))))
+
+(B (name open-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(close-vb e0 x y z))))
+(B (name open-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(block-vb e0 x y z))))
+(B (name open-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(obstruct-vb e0 x y z))))
 
 (B (name pathwaymap)(=>(I#PATHWAY x :0.9)(S#PATHWAY x)))
 (B (name pathway-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1032,9 +1073,28 @@
 (B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.3)(R#DARK x e0 :0.3)) (dark-adj e0 x)))
 
 ;MOVEMENT
-; (B (name darken)(=>(^(S#DARKNESS x e0 :0.3)(SS#MOVEMENT x e0 :0.3)(R#DARK y e0 :0.3)) (darken-vb e0 x y u)))
-; (B (name enlighten)(=>(^(S#DARKNESS x e0 :0.3)(SS#MOVEMENT x e0 :0.3)(R#DARK y e0 :0.3)) (enlighten-vb e0 x y u)))
+(B (name darken)(=>(^(S#DARKNESS x e0 :0.3)(SS#MOVEMENT_IN_THE_RANGE x e0 :0.3)(R#DARK y e0 :0.3)) (darken-vb e0 x y u)))
 
+(B (name darknessmap)(=>(I#DARKNESS x :0.9)(S#DARKNESS x)))
+(B (name dark-end-of-rangemap)(=>(I#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y :0.9)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y)))
+(B (name darkness-movementmap)(=>(I#MOVEMENT x y :0.9)(SS#MOVEMENT x y)))
+
+;LIGHT
+
+(B (name light)(=>(^(S#DARKNESS e0 :0.45)(SS#LIGHT_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (light-nn e0 x)))
+(B (name sun)(=>(^(S#DARKNESS e0 :0.45)(SS#LIGHT_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (sun-nn e0 x)))
+
+(B (name light-a)(=>(^(S#DARKNESS x e0 :0.3)(SS#LIGHT_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.3)(R#LIGHT x e0 :0.3)) (light-adj e0 x)))
+(B (name sun)(=>(^(S#DARKNESS x e0 :0.3)(SS#LIGHT_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.3)(R#LIGHT x e0 :0.3)) (sunny-adj e0 x)))
+
+(B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#MOVEMENT e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (enlighten-vb e0 x y z)))
+(B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#MOVEMENT e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (lighten-vb e0 x y z)))
+
+; ILLUMINATION
+(B (name shine)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (shine-vb e0 x y z)))
+(B (name illuminate)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (illuminate-vb e0 x y z)))
+(B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (shining-nn e0 x)))
+(B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (ilumination-nn e0 x)))
 
 (B (name darknessmap)(=>(I#DARKNESS x :0.9)(S#DARKNESS x)))
 (B (name dark-end-of-rangemap)(=>(I#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y :0.9)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y)))
@@ -1073,11 +1133,11 @@
 (B (name mosquito)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (mosquito-nn e0 x)))
 (B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (bloodsucker-nn e0 x)))
 
-(B (name drain-the-lifeblood)(=>(^(S#PARASITE e0 :0.33)(SS#DESTRUCTIVE_BEING e0 e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(drain-vb e0 x y u)(lifeblood-nn e1 y))))
-(B (name suck-the-lifeblood)(=>(^(S#PARASITE e0 :0.33)(SS#DESTRUCTIVE_BEING e0 e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(suck-vb e0 x y u)(lifeblood-nn e1 y))))
-(B (name drain-the-blood)(=>(^(S#PARASITE e0 :0.33)(SS#DESTRUCTIVE_BEING e0 e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(drain-vb e0 x y u)(blood-nn e1 y))))
-(B (name suck-the-blood)(=>(^(S#PARASITE e0 :0.33)(SS#DESTRUCTIVE_BEING e0 e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(suck-vb e0 x y u)(blood-nn e1 y))))
-(B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#DESTRUCTIVE_BEING e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (leech-vb e0 x y u)))
+(B (name drain-the-lifeblood)(=>(^(S#PARASITE e0 :0.33)(SS#ACTION e0 e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(drain-vb e0 x y u)(lifeblood-nn e1 y))))
+(B (name suck-the-lifeblood)(=>(^(S#PARASITE e0 :0.33)(SS#ACTION e0 e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(suck-vb e0 x y u)(lifeblood-nn e1 y))))
+(B (name drain-the-blood)(=>(^(S#PARASITE e0 :0.33)(SS#ACTION e0 e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(drain-vb e0 x y u)(blood-nn e1 y))))
+(B (name suck-the-blood)(=>(^(S#PARASITE e0 :0.33)(SS#ACTION e0 e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(suck-vb e0 x y u)(blood-nn e1 y))))
+(B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#ACTION e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (leech-vb e0 x y u)))
 
 (B (name parasitemap)(=>(I#PARASITE x :0.9)(S#PARASITE x)))
 (B (name destructive-beingmap)(=>(I#DESTRUCTIVE_BEING x y :0.9)(SS#DESTRUCTIVE_BEING x y)))
@@ -1121,8 +1181,8 @@
 (B (name godzilla)(=>(^(S#MONSTER e0 :0.45)(SS#TYPE x e0 :0.45)) (godzilla-nn e0 x)))
 
 ; ACTION
-(B (name scare)(=>(^(SS#MONSTER_ACTION e0 :0.45)(R#MONSTER x e0 :0.45)) (^(SS#MONSTER_TYPE x)(scare-vb e0 x y u))))
-(B (name suck)(=>(^(SS#MONSTER_ACTION e0 :0.45)(R#MONSTER x e0 :0.45)) (^(SS#MONSTER_TYPE x)(suck-vb e0 x y u))))
+(B (name scare)(=>(SS#ACTION e0 e1 :0.9) (^(S#MONSTER e1)(SS#TYPE x e1)(scare-vb e0 x y u))))
+(B (name suck)(=>(SS#ACTION e0 e1 :0.9) (^(S#MONSTER e1)(SS#TYPE x e1)(suck-vb e0 x y u))))
 
 (B (name monstermap)(=>(I#MONSTER x :0.9)(S#MONSTER x)))
 (B (name monster-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1243,7 +1303,8 @@
 
 ; VERTICAL SCALE
 ; POSITION ON A SCALE
-(B (name peak)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#POSITION_ON_A_SCALE e0 e0 :0.23)(R#HIGHEST-POINT x e0 :0.23)(R#FIXED-POINT x e0 :0.23)) (peak-vb e0 x y u)))
+(B (name peak)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (level-nn e0 x)))
+(B (name peak)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (line-nn e0 x)))
 
 ; MOVEMENT ON THE SCALE
 (B (name raise)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (raise-vb e0 x y u)))
@@ -1253,6 +1314,7 @@
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (increase-vb e0 x y u)))
 (B (name jump)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (jump-vb e0 x y u)))
 (B (name spiral)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (spiral-vb e0 x y u)))
+(B (name spiral)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (soar-vb e0 x y u)))
 
 (B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (decrease-vb e0 x y u)))
 (B (name fall)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (fall-vb e0 x y u)))
@@ -1280,10 +1342,10 @@
 
 ; MORAL DUTY
 ; REMUNERATION
-(B (name duty)(=>(^(S#MORAL-DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (duty-nn e0 x)))
-(B (name due)(=>(^(S#MORAL-DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (due-nn e0 x)))
+(B (name duty)(=>(^(S#MORAL_DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (duty-nn e0 x)))
+(B (name due)(=>(^(S#MORAL_DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (due-nn e0 x)))
 
-(B (name moral-dutymap)(=>(I#MORAL-DUTY e0 :0.9)(S#MORAL-DUTY x)))
+(B (name MORAL_DUTYmap)(=>(I#MORAL_DUTY e0 :0.9)(S#MORAL_DUTY x)))
 (B (name remunerationmap)(=>(I#REMUNERATION x y :0.9)(SS#REMUNERATION x y)))
 
 ; MEDICINE
@@ -1334,6 +1396,11 @@
 ;FOOD
 ;TYPE
 
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (food-nn e0 x)))
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (bread-nn e0 x)))
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (meat-nn e0 x)))
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (carrot-nn e0 x)))
+
 ;CONSUMPTION
 (B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#CONSUMPTION x e0 :0.45)) (taste-nn e0 x)))
 (B (name taste-of)(=>(^(S#FOOD e0 :0.3)(SS#CONSUMPTION x e0 :0.3)(R#TASTE-OBJECT y e0 :0.3)) (^(taste-nn e0 x)(of-in e1 x y))))
@@ -1341,9 +1408,6 @@
 (B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (taste-vb e0 x y u)))
 (B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (consume-vb e0 x y u)))
 (B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (eat-vb e0 x y u)))
-
-(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (carrot-nn e0 x)))
-
 
 (B (name foodmap)(=>(I#FOOD x :0.9)(S#FOOD x)))
 (B (name food-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1356,15 +1420,14 @@
 (B (name drug)(=>(^(S#ADDICTION e0 :0.3)(SS#TYPE x e0 :0.3)(R#SUBSTANCE x e0 :0.3)) (drug-nn e0 x)))
 (B (name intoxication)(=>(^(S#ADDICTION e0 :0.45)(SS#TYPE x e0 :0.45)) (intoxication-nn e0 x)))
 
-(B (name drunk)(=>(^(S#ADDICTION e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#ADDICTED x e0 :0.3)) (drunk-adj e0 x)))
-
 ; COMPULSION
 (B (name addiction)(=>(^(S#ADDICTION e0 :0.45)(SS#COMPULSION x e0 :0.45)) (addiction-nn e0 x)))
 (B (name habit)(=>(^(S#ADDICTION e0 :0.45)(SS#COMPULSION x e0 :0.45)) (habit-nn e0 x)))
 (B (name addicted)(=>(^(S#ADDICTION e0 :0.45)(SS#COMPULSION x e0 :0.45)) (addicted-adj e0 x)))
 
 ; RESULT
-
+(B (name drunk)(=>(^(S#ADDICTION e0 :0.3)(SS#RESULT e0 e0 :0.3)(R#ADDICTED x e0 :0.3)) (drunk-adj e0 x)))
+(B (name drunk)(=>(^(S#ADDICTION e0 :0.3)(SS#RESULT e0 e0 :0.3)(R#ADDICTED x e0 :0.3)) (intoxicated-adj e0 x)))
 
 (B (name addictionmap)(=>(I#ADDICTION x :0.9)(S#ADDICTION x)))
 (B (name addiction-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1378,6 +1441,7 @@
 (B (name artery)(=>(^(S#BLOOD_SYSTEM e0 :0.45)(SS#COMPONENT x e0 :0.45)) (artery-nn e0 x)))
 
 ; MOVEMENT
+(B (name flow)(=>(SS#MOVEMENT e0 e1 :0.9) (^(flow-vb e0 x y z)(S#BLOOD_SYSTEM e1)(SS#COMPONENT x e1))))
 
 (B (name blood-systemmap)(=>(I#BLOOD_SYSTEM x :0.9)(S#BLOOD_SYSTEM x)))
 (B (name blood-system-componentmap)(=>(I#COMPONENT x y :0.9)(SS#COMPONENT x y)))
@@ -1387,6 +1451,8 @@
 ; ENERGY
 ; TYPE
 (B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (energy-nn e0 x)))
+(B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (fuel-nn e0 x)))
+(B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (battery-nn e0 x)))
 
 ; RESULT
 (B (name fuel)(=>(^(S#ENERGY e0 :0.23)(SS#RESULT e0 e0 :0.23)(R#RESULT-AGENT x e0 :0.23)(R#RESULT-PATIENT x e0 :0.23)) (fuel-vb e0 x y z)))
@@ -1412,6 +1478,8 @@
 ; ACCIDENT
 ; TYPE
 (B (name accident)(=>(^(S#ACCIDENT e0 :0.45)(SS#TYPE x e0 :0.45)) (accident-nn e0 x)))
+(B (name accident)(=>(^(S#ACCIDENT e0 :0.45)(SS#TYPE x e0 :0.45)) (disaster-nn e0 x)))
+(B (name accident)(=>(^(S#ACCIDENT e0 :0.45)(SS#TYPE x e0 :0.45)) (disaster-nn e0 x)))
 
 (B (name accidentmap)(=>(I#ACCIDENT x :0.9)(S#ACCIDENT x)))
 (B (name accident-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1430,20 +1498,26 @@
 (B (name fruit)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-EXTERNAL x e0 :0.3)) (fruit-nn e0 x)))
 (B (name seed)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-GENESIS x e0 :0.3)) (seed-nn e0 x)))
 (B (name leaf)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-EXTERNAL x e0 :0.3)) (leaf-nn e0 x)))
+(B (name leaf)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-EXTERNAL x e0 :0.3)) (branch-nn e0 x)))
+(B (name leaf)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-EXTERNAL x e0 :0.3)) (trunk-nn e0 x)))
 
 ; CHANGE_OF_STATE
 (B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (grow-vb e0 x y u)))
 (B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE x e0 :0.3)) (growth-nn e0 x)))
 
-(B (name plantmap)(=>(I#PLANT x :0.9)(S#PLANT x)))
 (B (name plant-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
 (B (name plant-partsmap)(=>(I#PARTS x y :0.9)(SS#PARTS x y)))
 (B (name plant-change-of-statemap)(=>(I#CHANGE_OF_STATE x y :0.9)(SS#CHANGE_OF_STATE x y)))
 
 ; ANIMAL
 ; COMPONENT
-(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (face-nn e0 x)))
-(B (name hand)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (hand-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (muzzle-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (snout-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (jaws-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (fang-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (клык-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (fell-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (tail-nn e0 x)))
 
 ; FUNCTION
 (B (name swallow)(=>(^(S#ANIMAL e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (swallow-vb e0 x y u)))
@@ -1454,6 +1528,7 @@
 (B (name digest)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (digest-vb e0 x y u)))
 (B (name touch)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (touch-vb e0 x y u)))
 (B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (outlive-vb e0 x y u)))
+(B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (bite-vb e0 x y u)))
 
 (B (name animalmap)(=>(I#ANIMAL x :0.9)(S#ANIMAL x)))
 (B (name animal-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1468,6 +1543,8 @@
 
 ; PARTS
 (B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (engine-nn e0 x)))
+(B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (motor-nn e0 x)))
+(B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (wheel-nn e0 x)))
 
 ; FUNCTION
 (B (name turn)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (turn-vb e0 x y u)))
@@ -1499,6 +1576,7 @@
 (B (name sea)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#OCEAN x e0 :0.3)) (sea-nn e0 x)))
 (B (name prairie)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (prairie-nn e0 x)))
 (B (name valley)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (valley-nn e0 x)))
+(B (name valley)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (oasis-nn e0 x)))
 
 (B (name geographic-featuremap)(=>(I#GEOGRAPHIC_FEATURE x :0.9)(S#GEOGRAPHIC_FEATURE x)))
 (B (name geographic-feature-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1536,6 +1614,7 @@
 
 ; ACTIONS
 (B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS x e0 :0.45)) (play-nn e0 x)))
+(B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS e0 e0 :0.45)) (play-vb e0 x y z)))
 
 (B (name playvb)(=>(^(S#GAME e0 :0.3)(SS#ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (play-vb e0 x y u)))
 (B (name assistvb)(=>(^(S#GAME e0 :0.3)(SS#ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (assist-vb e0 x y u)))
@@ -1543,6 +1622,14 @@
 ; OUTCOMES
 (B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (win-vb e0 x y u)))
 (B (name lose)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (lose-vb e0 x y u)))
+
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (winner-nn e0 x)))
+(B (name lose)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (looser-nn e0)))
+
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES x e0 :0.3)) (victory-nn e0 x)))
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES x e0 :0.3)) (triumph-nn e0 x)))
+
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES x e0 :0.3)) (defeat-nn e0 x)))
 
 (B (name gamemap)(=>(I#GAME x :0.9)(S#GAME x)))
 (B (name game-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1572,3 +1659,20 @@
 (B (name crop-plantingmap)(=>(I#PLANTING x y :0.9)(SS#PLANTING x y)))
 (B (name crop-cultivationmap)(=>(I#CULTIVATION x y :0.9)(SS#CULTIVATION x y)))
 (B (name crop-outcomemap)(=>(I#OUTCOME x y :0.9)(SS#OUTCOME x y)))
+
+; A RIGHT
+; TYPE
+(B (name right)(=>(^(S#A_RIGHT e0 :0.45)(SS#TYPE x e0 :0.45)) (right-nn e0 x)))
+(B (name right-for)(=>(^(S#A_RIGHT e0 :0.45)(SS#TYPE x e0 :0.45)) (^(right-nn e0 x)(for-in e1 x y))))
+
+; IMPURITY
+; TYPE
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE x e0 :0.45)) (dirt-nn e0 x)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE x e0 :0.45)) (dust-nn e0 x)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE x e0 :0.45)) (trash-nn e0 x)))
+
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (dirty-adj e0 x)))
+
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (dirty-nn e0 x)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (stain-nn e0 x)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (sully-nn e0 x)))
