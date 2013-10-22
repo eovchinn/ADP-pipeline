@@ -817,7 +817,7 @@
 (B (name portal)(=>(^(S#PORTAL e0 :0.45)(SS#MEANS_OF_ENTRY x e0 :0.45)) (portal-nn e0 x)))
 
 ;OBSTACLES
-(B (name estrecho) (=>(SS#OBSTACLES e0 :0.90) (^(SS#MEANS_OF_ENTRY x)(estrecho-adj e0 x))))
+(B (name estrecho) (=>(SS#OBSTACLES e0 :0.90) (^(S#PORTAL e0)(SS#MEANS_OF_ENTRY x)(estrecho-adj e0 x))))
 
 (B (name portalmap)(=>(I#PORTAL x :0.9)(S#PORTAL x)))
 (B (name meansofentrymap)(=>(I#MEANS_OF_ENTRY x y :0.9)(SS#MEANS_OF_ENTRY x y)))

@@ -577,7 +577,7 @@
 (B (name cliff)(=>(^(S#ABYSS e0 :0.45)(SS#ENTRANCE x e0 :0.45)) (cliff-nn e0 x)))
 (B (name precipice)(=>(^(S#ABYSS e0 :0.45)(SS#ENTRANCE x e0 :0.45)) (precipice-nn e0 x)))
 
-(B (name push-into) (=>(^(S#ABYSS e0 :0.2)(SS#ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(push-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name push-into) (=>(^(SS#ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(push-vb e0 x y u2)(into-in e1 e0 z))))
 (B (name drive-into)(=>(^(S#ABYSS e0 :0.2)(SS#ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(drive-vb e0 x y u2)(into-in e1 e0 z))))
 (B (name suck-into) (=>(^(S#ABYSS e0 :0.2)(SS#ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(suck-vb e0 x y u2)(into-in e1 e0 z))))
 (B (name drag-into) (=>(^(S#ABYSS e0 :0.2)(SS#ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(drag-vb e0 x y u2)(into-in e1 e0 z))))
@@ -1029,7 +1029,7 @@
 (B (name turnstile)(=>(^(S#PORTAL e0 :0.45)(SS#MEANS_OF_ENTRY x e0 :0.45)) (turnstile-nn e0 x)))
 
 ;OBSTACLES
-(B (name narrow) (=>(SS#OBSTACLES e0 :0.90) (^(SS#PORTAL_MEANS_OF_ENTRY x)(narrow-adj e0 x))))
+(B (name narrow) (=>(SS#OBSTACLES e0 :0.90) (^(S#PORTAL e0)(SS#MEANS_OF_ENTRY x)(narrow-adj e0 x))))
 
 (B (name portalmap)(=>(I#PORTAL e0 :0.9)(S#PORTAL x)))
 (B (name meansofentrymap)(=>(I#MEANS_OF_ENTRY x y :0.9)(SS#MEANS_OF_ENTRY x y)))
@@ -1037,7 +1037,7 @@
 
 ;PHYSICAL OBJECT
 ; PHYSICAL OBJECT TYPE
-(B (name mass)(=>(^(S#PHYSICAL_OBJECT e0 :0.45)(SS#PHYSTICAL-OBJECT-TYPE x e0 :0.45)) (mass-nn e0 x)))
+;(B (name mass)(=>(^(S#PHYSICAL_OBJECT e0 :0.45)(SS#TYPE x e0 :0.45)) (mass-nn e0 x)))
 
 ;POSSESSION
 ;##RI: "have" is likely very important here, but might generate a lot of FPs.
