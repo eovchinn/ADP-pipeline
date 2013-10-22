@@ -231,6 +231,8 @@
 
 ; VICTIM
 (B (name victim)(=>(^(S#CRIME e0 :0.3)(SS#VICTIM x e0 :0.3)(R#VICTIM x e0 :0.3)) (victim-nn e0 x)))
+(B (name prey)(=>(^(S#CRIME e0 :0.3)(SS#VICTIM x e0 :0.3)(R#VICTIM x e0 :0.3)) (prey-nn e0 x)))
+(B (name sufferer)(=>(^(SS#VICTIM x e1 :0.3)(R#VICTIM x e1 :0.3)) (^(S#CRIME e1)(SS#TYPE e1)(sufferer-nn e0 x))))
 
 (B (name crimemap)(=>(I#CRIME x :0.9)(S#CRIME x)))
 (B (name crime-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -296,7 +298,12 @@
 ; ENSLAVEMENT
 ;SERVANT
 (B (name slave) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(slave-nn e0 x)))
+(B (name vassal) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(vassal-nn e0 x)))
+(B (name thrall) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(thrall-nn e0 x)))
 (B (name servant) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(servant-nn e0 x)))
+(B (name minion) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(minion-nn e0 x)))
+(B (name butler) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(butler-nn e0 x)))
+(B (name subject) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(subject-nn e0 x)))
 
 ;OPPRESSION
 (B (name slavery) (=>(^(S#ENSLAVEMENT e0 :0.45)(SS#OPPRESSION x e0 :0.45))(slavery-nn e0 x)))
@@ -307,6 +314,7 @@
 
 ;MASTER
 (B (name master) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER e0 e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(master-nn e0 x)))
+(B (name ruler) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER e0 e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(ruler-nn e0 x)))
 (B (name slave-driver) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER e0 e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3)) (^(slave-nn e0 x)(driver-nn e1 y))))
 
 (B (name reign) (=>(^(S#ENSLAVEMENT e0 :0.33)(SS#MASTER e0 e0 :0.33)(R#ENSLAVEMENT-AGENT x e0 :0.33))(reign-vb e0 x y u)))
@@ -577,16 +585,17 @@
 (B (name cliff)(=>(^(S#ABYSS e0 :0.45)(SS#ENTRANCE x e0 :0.45)) (cliff-nn e0 x)))
 (B (name precipice)(=>(^(S#ABYSS e0 :0.45)(SS#ENTRANCE x e0 :0.45)) (precipice-nn e0 x)))
 
-(B (name push-into) (=>(^(SS#ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(push-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name drive-into)(=>(^(S#ABYSS e0 :0.2)(SS#ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(drive-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name suck-into) (=>(^(S#ABYSS e0 :0.2)(SS#ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(suck-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name drag-into) (=>(^(S#ABYSS e0 :0.2)(SS#ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(drag-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name push-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(push-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name drive-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(drive-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name suck-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(suck-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name drag-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(drag-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name plunge-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(plunge-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name throw-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(throw-vb e0 x y u2)(into-in e1 e0 z))))
+
 (B (name descend-into) (=>(^(S#ABYSS e0 :0.3)(SS#ENTRANCE e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(descend-vb e0 x y u2)(into-in e1 e0 z))))
 (B (name sink-into) (=>(^(S#ABYSS e0 :0.3)(SS#ENTRANCE e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(sink-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name plunge-into) (=>(^(S#ABYSS e0 :0.2)(SS#ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(plunge-vb e0 x y u2)(into-in e1 e0 z))))
 (B (name plunge-into2) (=>(^(S#ABYSS e0 :0.3)(SS#ENTRANCE e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(plunge-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name throw-into) (=>(^(S#ABYSS e0 :0.2)(SS#ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(throw-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name fall-into) (=>(^(S#ABYSS e0 :0.2)(SS#ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-CAUSE x e0 :0.2)) (^(fall-vb e0 x y u2)(into-in e1 e0 z))))
+(B (name fall-into) (=>(^(S#ABYSS e0 :0.3)(SS#ENTRANCE e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(fall-vb e0 x y u2)(into-in e1 e0 z))))
 
 
 ; EXIT
@@ -767,25 +776,25 @@
 (B (name bottom-of-the-totem-pole) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE x e0 :0.45))(^(bottom-nn e0 x)(of-in e1 x z)(totem-nn e2 y)(pole-nn e3 z))))
 
 ;MOVEMENT DOWNWARD
-(B (name slide) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(slide-vb e0 x u u1)))
-(B (name drop) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(drop-vb e0 x u u1)))
-(B (name slip) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(slip-vb e0 x u u1)))
-(B (name fall) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(fall-vb e0 x u u1)))
-(B (name tumble) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(tumble-vb e0 x u u1)))
-(B (name plummet) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(plummet-vb e0 x u u1)))
-(B (name sink) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(sink-vb e0 x u u1)))
-(B (name plunge) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(plunge-vb e0 x u u1)))
-(B (name deg-self-deeper) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(dig-vb e0 x u u1)(deeper-adj e1 y))))
+(B (name slide) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(slide-vb e0 x y z))))
+(B (name drop) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(drop-vb e0 x y z))))
+(B (name slip) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(slip-vb e0 x y z))))
+(B (name fall) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(fall-vb e0 x y z))))
+(B (name tumble) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(tumble-vb e0 x y z))))
+(B (name plummet) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(plummet-vb e0 x y z))))
+(B (name sink) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(sink-vb e0 x y z))))
+(B (name plunge) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(plunge-vb e0 x y z))))
+(B (name dig-self-deeper) (=>(^(SS#MOVEMENT_DOWNWARD e0 e2 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e2)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1) (dig-vb e0 x y z)(deeper-adj e1 y))))
 
 ;MOVEMENT UPWARD
-(B (name hover-above) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(hover-vb e0 x u u1)(above-in e1 e0 y))))
-(B (name rise-above) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(rise-vb e0 x u u1)(above-in e1 e0 y))))
-(B (name rise-from) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(rise-vb e0 x u u1)(from-in e1 e0 y))))
-(B (name rise-up-from) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(rise-vb e0 x u u1)(up-in e1 e0 e2)(from-in e2 e1 y))))
-(B (name rise) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(rise-vb e0 x u u1)))
-(B (name leap) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(leap-vb e0 x u u1)))
-(B (name skyrocket) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(skyrocket-vb e0 x u u1)))
-(B (name jump) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(jump-vb e0 x u u1)))
+(B (name hover-above) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(hover-vb e0 x y z)(above-in e1 e0 y))))
+(B (name rise-above) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(rise-vb e0 x y z)(above-in e1 e0 y))))
+(B (name rise-from) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(rise-vb e0 x y z)(from-in e1 e0 y))))
+(B (name rise-up-from) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(rise-vb e0 x y z)(up-in e1 e0 e2)(from-in e2 e1 y))))
+(B (name rise) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(rise-vb e0 x y z)))
+(B (name leap) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(leap-vb e0 x y z)))
+(B (name skyrocket) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(skyrocket-vb e0 x y z)))
+(B (name jump) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(jump-vb e0 x y z)))
 
 (B (name lowpointmap)(=>(I#LOW_POINT x :0.9)(S#LOW_POINT x)))
 (B (name bottom-of-econ-scale-map)(=>(I#BOTTOM_OF_ENCONOMIC_SCALE x y :0.9)(SS#BOTTOM_OF_ENCONOMIC_SCALE x y)))
@@ -906,42 +915,43 @@
 
 ;VICTIM
 ;SUFFERER
-(B (name threatened)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (threatened-adj e0 x)))
-(B (name victim)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (victim-nn e0 x)))
-(B (name prey)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (prey-nn e0 x)))
-(B (name sufferer)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x:0.3 x)(R#VICTIMIZE-PATIENT x e0 :0.3)) (sufferer-nn e0 x)))
+; (B (name threatened)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (threatened-adj e0 x)))
+; (B (name victim)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (victim-nn e0 x)))
+; (B (name prey)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (prey-nn e0 x)))
+; (B (name sufferer)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x:0.3 x)(R#VICTIMIZE-PATIENT x e0 :0.3)) (sufferer-nn e0 x)))
 
-;VICTIMIZER
-(B (name vampire)(=>(^(S#VICTIM z :0.3)(SS#VICTIMIZER x z :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (vampire-nn e0 x)))
-(B (name victimizer)(=>(^(S#VICTIM z :0.3)(SS#VICTIMIZER x z :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (victimizer-nn e0 x)))
-(B (name dracula)(=>(^(S#VICTIM z :0.3)(SS#VICTIMIZER x z :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (dracula-nn e0 x)))
+; ;VICTIMIZER
+; (B (name vampire)(=>(^(S#VICTIM z :0.3)(SS#VICTIMIZER x z :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (vampire-nn e0 x)))
+; (B (name victimizer)(=>(^(S#VICTIM z :0.3)(SS#VICTIMIZER x z :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (victimizer-nn e0 x)))
+; (B (name dracula)(=>(^(S#VICTIM z :0.3)(SS#VICTIMIZER x z :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (dracula-nn e0 x)))
 
-(B (name victimize)(=>(^(S#VICTIM y :0.3)(SS#VICTIMIZER e0 y :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (victimize-vb e0 x y u)))
+; (B (name victimize)(=>(^(S#VICTIM y :0.3)(SS#VICTIMIZER e0 y :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (victimize-vb e0 x y u)))
 
-;CHAMPION
-(B (name champion)(=>(^(S#VICTIM z :0.3)(SS#CHAMPION x z :0.3)(R#CHAMPION x e0 :0.3)) (champion-nn e0 x)))
-(B (name knight)(=>(^(S#VICTIM z :0.3)(SS#CHAMPION x z :0.3)(R#CHAMPION x e0 :0.3)) (knight-nn e0 x)))
-(B (name superman)(=>(^(S#VICTIM z :0.3)(SS#CHAMPION x z :0.3)(R#CHAMPION x e0 :0.3)) (superman-nn e0 x)))
-(B (name superhero)(=>(^(S#VICTIM z :0.3)(SS#CHAMPION x z :0.3)(R#CHAMPION x e0 :0.3)) (superhero-nn e0 x)))
+; ;CHAMPION
+; (B (name champion)(=>(^(S#VICTIM z :0.3)(SS#CHAMPION x z :0.3)(R#CHAMPION x e0 :0.3)) (champion-nn e0 x)))
+; (B (name knight)(=>(^(S#VICTIM z :0.3)(SS#CHAMPION x z :0.3)(R#CHAMPION x e0 :0.3)) (knight-nn e0 x)))
+; (B (name superman)(=>(^(S#VICTIM z :0.3)(SS#CHAMPION x z :0.3)(R#CHAMPION x e0 :0.3)) (superman-nn e0 x)))
+; (B (name superhero)(=>(^(S#VICTIM z :0.3)(SS#CHAMPION x z :0.3)(R#CHAMPION x e0 :0.3)) (superhero-nn e0 x)))
 
-(B (name save)(=>(^(S#VICTIM y :0.3)(SS#CHAMPION e0 y :0.3)(R#CHAMPION x e0 :0.3)) (victimize-vb e0 x y u)))
+; (B (name save)(=>(^(S#VICTIM y :0.3)(SS#CHAMPION e0 y :0.3)(R#CHAMPION x e0 :0.3)) (victimize-vb e0 x y u)))
 
-(B (name victimmap)(=>(I#VICTIM x :0.9)(S#VICTIM x)))
-(B (name sufferermap)(=>(I#SUFFERER x y :0.9)(SS#SUFFERER x y)))
-(B (name victimizermap)(=>(I#VICTIMIZER x y :0.9)(SS#VICTIMIZER x y)))
-(B (name championmap)(=>(I#CHAMPION x y :0.9)(SS#CHAMPION x y)))
+; (B (name victimmap)(=>(I#VICTIM x :0.9)(S#VICTIM x)))
+; (B (name sufferermap)(=>(I#SUFFERER x y :0.9)(SS#SUFFERER x y)))
+; (B (name victimizermap)(=>(I#VICTIMIZER x y :0.9)(SS#VICTIMIZER x y)))
+; (B (name championmap)(=>(I#CHAMPION x y :0.9)(SS#CHAMPION x y)))
 
 ; BUILDING
+; TYPE
+(B (name house)(=>(^(S#BUILDING e0 :0.45)(SS#TYPE x e0 :0.45)) (house-nn e0 x)))
+(B (name home)(=>(^(S#BUILDING e0 :0.45)(SS#TYPE x e0 :0.45)) (home-nn e0 x)))
+(B (name skyscraper)(=>(^(S#BUILDING e0 :0.45)(SS#TYPE x e0 :0.45)) (skyscraper-nn e0 x)))
+(B (name mansion)(=>(^(S#BUILDING e0 :0.45)(SS#TYPE x e0 :0.45)) (mansion-nn e0 x)))
+
 ; STRUCTURE
 (B (name building)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (building-nn e0 x)))
-(B (name edifice)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (edifice-nn e0 x)))
-(B (name foundation)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (foundation-nn e0 x)))
-(B (name base)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (base-nn e0 x)))
-(B (name basement)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (basement-nn e0 x)))
-(B (name house)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (house-nn e0 x)))
-(B (name home)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (home-nn e0 x)))
-(B (name support-structure)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (^(support-nn e0 x)(of-in e1 y x)(structure-nn e2 y))))
 (B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (structure-nn e0 x)))
+(B (name edifice)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (edifice-nn e0 x)))
+(B (name basement)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (basement-nn e0 x)))
 
 ; CREATION_DESTRUCTION
 (B (name build)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (build-vb e0 x y u)))
@@ -956,6 +966,9 @@
 (B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION x e0 :0.3 :0.3)(R#DESTRUCTION x e0 :0.3)) (destruction-nn e0 x)))
 
 ; COMPONENTS
+(B (name foundation)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (foundation-nn e0 x)))
+(B (name base)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (base-nn e0 x)))
+
 (B (name building-block)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (^(building-nn e0 x)(of-in e1 y x)(block-nn e2 y))))
 (B (name support-beam)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (^(support-nn e0 x)(of-in e1 y x)(beam-nn e2 y))))
 (B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (cement-nn e0 x)))
@@ -967,6 +980,9 @@
 (B (name stone)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (stone-nn e0 x)))
 (B (name keystone)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (keystone-nn e0 x)))
 (B (name wall)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (wall-nn e0 x)))
+(B (name support-structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (^(support-nn e0 x)(of-in e1 y x)(structure-nn e2 y))))
+(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (structure-nn e0 x)))
+
 
 ; SUPPORT
 (B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT x e0 :0.45)) (support-nn e0 x)))
@@ -999,15 +1015,30 @@
 
 (B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(clear-vb e0 x y z))))
 (B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(open-vb e0 x y z))))
+(B (name build-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(build-vb e0 x y z))))
+(B (name forge-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(forge-vb e0 x y z))))
+
+
 
 ;OBSTRUCTED PATH
 (B (name obstructed-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(obstructed-adj e0 x))))
 (B (name blocked-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(blocked-adj e0 x))))
 (B (name closed-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(closed-adj e0 x))))
+(B (name clogged-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(clogged-adj e0 x))))
+(B (name jammed-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9)  (^(S#PATHWAY e1) (SS#TYPE x e1)(jammed-adj e0 x))))
 
-(B (name open-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(close-vb e0 x y z))))
-(B (name open-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(block-vb e0 x y z))))
-(B (name open-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(obstruct-vb e0 x y z))))
+(B (name close-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(close-vb e0 x y z))))
+(B (name block-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(block-vb e0 x y z))))
+(B (name obstruct-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(obstruct-vb e0 x y z))))
+(B (name clog-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(clog-vb e0 x y z))))
+(B (name jam-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(jam-vb e0 x y z))))
+
+(B (name barricade) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH e0 e0 :0.45)) (barricade-vb e0 x y z)))
+(B (name bar) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH e0 e0 :0.45)) (bar-vb e0 x y z)))
+
+(B (name barricadenn) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH x e0 :0.45)) (barricade-nn e0 x )))
+
+
 
 (B (name pathwaymap)(=>(I#PATHWAY x :0.9)(S#PATHWAY x)))
 (B (name pathway-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1029,7 +1060,19 @@
 (B (name turnstile)(=>(^(S#PORTAL e0 :0.45)(SS#MEANS_OF_ENTRY x e0 :0.45)) (turnstile-nn e0 x)))
 
 ;OBSTACLES
-(B (name narrow) (=>(SS#OBSTACLES e0 :0.90) (^(S#PORTAL e0)(SS#MEANS_OF_ENTRY x)(narrow-adj e0 x))))
+(B (name narrow) (=>(SS#OBSTACLES e0 e1 :0.90) (^(S#PORTAL e1)(SS#MEANS_OF_ENTRY x e1)(narrow-adj e0 x))))
+
+(B (name obstructed-path) (=>(SS#OBSTACLES e0 e1 :0.9)  (^(S#PORTAL e1) (SS#TYPE x e1)(obstructed-adj e0 x))))
+(B (name blocked-path) (=>(SS#OBSTACLES e0 e1 :0.9)  (^(S#PORTAL e1) (SS#TYPE x e1)(blocked-adj e0 x))))
+(B (name closed-path) (=>(SS#OBSTACLES e0 e1 :0.9)  (^(S#PORTAL e1) (SS#TYPE x e1)(closed-adj e0 x))))
+(B (name clogged-path) (=>(SS#OBSTACLES e0 e1 :0.9)  (^(S#PORTAL e1) (SS#TYPE x e1)(clogged-adj e0 x))))
+(B (name jammed-path) (=>(SS#OBSTACLES e0 e1 :0.9)  (^(S#PORTAL e1) (SS#TYPE x e1)(jammed-adj e0 x))))
+
+(B (name close-path) (=>(SS#OBSTACLES e0 e1 :0.9) (^(S#PORTAL e1)(SS#TYPE y e1)(close-vb e0 x y z))))
+(B (name block-path) (=>(SS#OBSTACLES e0 e1 :0.9) (^(S#PORTAL e1)(SS#TYPE y e1)(block-vb e0 x y z))))
+(B (name obstruct-path) (=>(SS#OBSTACLES e0 e1 :0.9) (^(S#PORTAL e1)(SS#TYPE y e1)(obstruct-vb e0 x y z))))
+(B (name clog-path) (=>(SS#OBSTACLES e0 e1 :0.9) (^(S#PORTAL e1)(SS#TYPE y e1)(clog-vb e0 x y z))))
+(B (name jam-path) (=>(SS#OBSTACLES e0 e1 :0.9) (^(S#PORTAL e1)(SS#TYPE y e1)(jam-vb e0 x y z))))
 
 (B (name portalmap)(=>(I#PORTAL e0 :0.9)(S#PORTAL x)))
 (B (name meansofentrymap)(=>(I#MEANS_OF_ENTRY x y :0.9)(SS#MEANS_OF_ENTRY x y)))
