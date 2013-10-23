@@ -16,6 +16,7 @@ wordStopList=["\"","'","(",")"]
 POSDict={"N":"N","V":"V","ADJ":"ADJ","ADV":"ADV","PREP":"PREP","PR":"PR","CONJ":"CONJ","SUBR":"SUBR"}
 postFixDict={"N":"-nn","V":"-vb","ADJ":"-adj","ADV":"-rb","PREP":"-in","":""}
 argDict={"N":2,"V":4,"ADJ":2,"ADV":2,"PREP":3,"PR":2,"":1,"CONJ":2,"SUBR":3}
+listOfNonAlphaNumChars=["!","+","<",">","[","]","%",",","(",")","!",".","?","@","#","$","%","^","&","*","-","_","=","+","'",'"',";",":","/","\\","|","{","}","`","'"]
 #tempFile=codecs.open("%s.tmp.txt"%sys.argv[3], encoding='utf-8',mode='w')
 pronouns={}
 pluralPostfixes=[]
@@ -128,6 +129,7 @@ def propToString(sentenceId,prop):
         idString=""
     else:
         idString="[%s]:"%(sentenceId*1000+id)
+    #token="%s%s__%s%s(%s)"%(idString,word,lemma,postfix,",".join(args))
     token="%s%s%s(%s)"%(idString,lemma,postfix,",".join(args))
     return token
     
@@ -442,6 +444,7 @@ def createNewPropsForNounsWithPossesivePostfixes(props,rels):
         entityArgCounter+=1
         pronounArg="x%s"%str(entityArgCounter)
         newProps+=[(id,postFix,getTranslit(postFix),POSDict["PR"],["e%s"%str(eventualityArgCounter),pronounArg])]
+        #newProps+=[(id,postFix,postFix,POSDict["PR"],["e%s"%str(eventualityArgCounter),pronounArg])]
         
         eventualityArgCounter+=1
         
@@ -652,17 +655,27 @@ def refineRels(props,rels):
             newRels+=[rel]
     return newRels    
 
+def removeAllNonAlphaNum(word):
+    for char in listOfNonAlphaNumChars:
+        word=word.replace(char,"")
+    return word.strip()
+    
+    
+    
 def hasAlphabet(word):
     if word.strip()=="_": return 0
-    if re.match("\w+", word):
-        return 1        
-    return 0
+    modifiedWord=removeAllNonAlphaNum(word)
+    if modifiedWord=="":return 0
+    #if re.match("\w+", word):
+    #    return 1        
+    return 1
 def refineProps(props):
     newProps=[]
     for prop in props:
         (id,word,lemma,POS,args)=prop
         if POS not in POSStopList and hasAlphabet(lemma):
             newProps+=[prop]
+            
     return newProps    
 def createLF(tokens,sentenceId):
     props=[]
@@ -672,10 +685,13 @@ def createLF(tokens,sentenceId):
         (id,word,lemma,POS,relName,dep)=token
         words+=[word]
         
-        props+=[(id,word,getTranslit(lemma),POS,getArgs(POS))]
+        #props+=[(id,word,getTranslit(lemma),POS,getArgs(POS))]
+        #print "(word,lemma): %s,%s"%(word,lemma)
+        props+=[(id,word,lemma,POS,getArgs(POS))]
         rels+=[(relName,id,dep)]
     sentence= " ".join(words)
     props=refineProps(props)
+    
     rels=refineRels(props,rels)
     LF=(sentenceId,sentence,props,rels)
     LF2=resolveArgs(LF)
@@ -688,7 +704,8 @@ def getSentenceAndLFString(lf):
     for prop in props:
         (id,word,lemma,POS,args)=prop
         words+=[word]
-        PropStrings+=[propToString(sentenceId,prop)]
+        pstr=propToString(sentenceId,prop)
+        PropStrings+=[pstr]
     lfLine=" & ".join(PropStrings)
     
     return (sentence,sentenceId,lfLine)
@@ -763,12 +780,12 @@ paragraphLFString=""
 line=inputFile.readline()
 
 while line!="":
-    if sentenceId==8:
-        niloo=1
+    
     line=line.replace(u'\u200e',"")
     if line.strip()=="" and len(tokens)!=0: #one sentence read, process it 
         lf=createLF(tokens,sentenceId) #create logical form
         (sentence,sentenceId,LFString)=getSentenceAndLFString(lf) # get sentence and string representation of the logical form
+        
         
         if "META" in sentence: #this was not a real sentence, it was just a marker for a new paragraph -> get the paragraph id , reset everything and don't print anything in the output file 
             if paragraphId != "NILOO":
@@ -824,6 +841,7 @@ while line!="":
         if word=="-LRB-": word="("
         if word=="-RRB-": word=")"
         tokens+=[(id,word,lemma,CoarsePOS,relName,dep)]
+        
         
     line=inputFile.readline()
 
