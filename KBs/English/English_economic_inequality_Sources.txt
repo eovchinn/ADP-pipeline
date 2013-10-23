@@ -1227,7 +1227,7 @@
 ;SEEING
 (B (name open-eyes)(=>(^(S#VISION e1 :0.45)(SS#SEEING x e1 :0.45)) (^(open-adj e0 x)(eye-nn e1 x))))
 
-(B (name see)(=>(^(S#VISION e0 :0.3)(SS#SEEING x e0 e0 :0.3)(R#SIGHTED y e0 :0.3)) (see-vb e0 x y z)))
+;(B (name see)(=>(^(S#VISION e0 :0.3)(SS#SEEING x e0 e0 :0.3)(R#SIGHTED y e0 :0.3)) (see-vb e0 x y z)))
 
 (B (name visionmap)(=>(I#VISION x :0.9)(S#VISION x)))
 (B (name blindnessmap)(=>(I#BLINDNESS x y :0.9)(SS#BLINDNESS x y)))
@@ -1283,6 +1283,10 @@
 (B (name extract)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (extract-vb e0 x y u)))
 (B (name wrest)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (wrest-vb e0 x y u)))
 (B (name tug)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (tug-vb e0 x y u)))
+(B (name milk)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (milk-vb e0 x y u)))
+(B (name skin)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (skin-vb e0 x y u)))
+(B (name fleece)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (fleece-vb e0 x y u)))
+(B (name shear)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (shear-vb e0 x y u)))
 
 (B (name extraction)(=>(^(S#FORCEFUL_EXTRACTION e0 :0.45)(SS#TYPE x e0 :0.45)) (extraction-nn e0 x)))
 (B (name extortion)(=>(^(S#FORCEFUL_EXTRACTION e0 :0.45)(SS#TYPE x e0 :0.45)) (extortion-nn e0 x)))
@@ -1605,7 +1609,8 @@
 (B (name leaf)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-EXTERNAL x e0 :0.3)) (trunk-nn e0 x)))
 
 ; CHANGE_OF_STATE
-(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (grow-vb e0 x y u)))
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#POVERTY x)(grow-vb e0 x y u))))
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#WEALTH x)(grow-vb e0 x y u))))
 (B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE x e0 :0.3)) (growth-nn e0 x)))
 
 (B (name plant-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1767,7 +1772,7 @@
 (B (name plant)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (plant-vb e0 x y u)))
 
 ; CULTIVATION
-(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (grow-vb e0 x y u)))
+(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (^(TS#WEALTH y)(grow-vb e0 x y u))))
 (B (name fertalize)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (fertalize-vb e0 x y u)))
 (B (name water)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (water-vb e0 x y u)))
 
