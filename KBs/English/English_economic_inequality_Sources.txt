@@ -1181,6 +1181,7 @@
 (B (name gobble)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (^(gobble-vb e0 x y u)(up-in e1 e0 z))))
 (B (name eat)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (^(eat-vb e0 x y u)(up-in e1 e0 z))))
 (B (name feast)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (feast-vb e0 x y u)))
+(B (name overeat)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (overeat-vb e0 x y u)))
 ;##RI: This will probably over-generate
 ;(B (name eat)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (eat-vb e0 x y u)))
 
@@ -1447,7 +1448,14 @@
 
 ;COMPETITION
 ;TYPE
+(B (name contest)(=>(^(S#COMPETITION x :0.45)(SS#TYPE x e0 :0.45)) (contest-nn e0 x)))
 (B (name fair-shot-at)(=>(^(S#COMPETITION e1 :0.45)(SS#COMPONENT x e1 :0.45)) (^(fair-adj e0 x)(shot-nn e1 x)(at-in e3 x y))))
+
+
+;COMPONENT
+(B (name winner)(=>(^(S#COMPETITION x :0.45)(SS#COMPONENT x e0 :0.45)) (winner-nn e0 x)))
+(B (name loser)(=>(^(S#COMPETITION x :0.45)(SS#COMPONENT x e0 :0.45)) (loser-nn e0 x))) 
+(B (name player)(=>(^(S#COMPETITION x :0.45)(SS#COMPONENT x e0 :0.45)) (player-nn e0 x)))
 
 (B (name competitionmap)(=>(I#COMPETITION x :0.9)(S#COMPETITION x)))
 (B (name competition-componentmap)(=>(I#COMPONENT x y :0.9)(SS#COMPONENT x y)))
@@ -1457,6 +1465,8 @@
 (B (name goal)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (goal-nn e0 x)))
 (B (name force)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (force-nn e0 x)))
 (B (name achievement)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (achievement-nn e0 x)))
+(B (name reach)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE e0 e0 :0.45)) (reach-vb e0 x y z)))
+(B (name strive)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE e0 e0 :0.45)) (strive-vb e0 x y z)))
 
 ;RISK
 (B (name high-stakes-bet)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#RISK x e0 e0 :0.45)) (^(high-stakes-adj e0 x)(bet-nn e1 x))))
@@ -1601,7 +1611,9 @@
 (B (name swallow)(=>(^(S#ANIMAL e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (swallow-vb e0 x y u)))
 
 ; ACTION
-(B (name eat)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (eat-vb e0 x y u)))
+(B (name eat)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#POVERTY x)(eat-vb e0 x y u))))
+(B (name eat)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION x)(eat-vb e0 x y u))))
+
 ;(B (name grow)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (grow-vb e0 x y u)))
 (B (name digest)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (digest-vb e0 x y u)))
 (B (name touch)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (touch-vb e0 x y u)))
@@ -1650,8 +1662,8 @@
 (B (name mountain)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#MOUNTAIN x e0 :0.3)) (mountain-nn e0 x)))
 (B (name himalayas)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#MOUNTAIN x e0 :0.3)) (himalayas-nn e0 x)))
 (B (name alps)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#MOUNTAIN x e0 :0.3)) (alps-nn e0 x)))
-(B (name ocean)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#OCEAN x e0 :0.3)) (ocean-nn e0 x)))
-(B (name sea)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#OCEAN x e0 :0.3)) (sea-nn e0 x)))
+;(B (name ocean)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#OCEAN x e0 :0.3)) (ocean-nn e0 x)))
+;(B (name sea)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#OCEAN x e0 :0.3)) (sea-nn e0 x)))
 (B (name prairie)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (prairie-nn e0 x)))
 (B (name valley)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (valley-nn e0 x)))
 (B (name valley)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (oasis-nn e0 x)))
@@ -1700,12 +1712,14 @@
 ; OUTCOMES
 (B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (win-vb e0 x y u)))
 (B (name lose)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (lose-vb e0 x y u)))
+(B (name defeat)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (defeat-vb e0 x y u)))
+(B (name triumph)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (triumph-vb e0 x y u)))
 
-(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (winner-nn e0 x)))
-(B (name lose)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (looser-nn e0)))
+(B (name win)(=>(^(SS#OUTCOMES e0 a :0.45)(R#PLAYER x e0 :0.45)) (^(S#GAME a)(SS#TYPE b a) (winner-nn e0 x))))
+(B (name lose)(=>(^(SS#OUTCOMES e0 a :0.45)(R#PLAYER x e0 :0.45)) (^(S#GAME a)(SS#TYPE b a) (loser-nn e0 x))))
 
-(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES x e0 :0.3)) (victory-nn e0 x)))
-(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES x e0 :0.3)) (triumph-nn e0 x)))
+(B (name win)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES x e0 :0.45)) (victory-nn e0 x)))
+(B (name win)(=>(^(S#GAME e0 :0.45)(SS#OUTCOMES x e0 :0.45)) (triumph-nn e0 x)))
 
 (B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES x e0 :0.3)) (defeat-nn e0 x)))
 
