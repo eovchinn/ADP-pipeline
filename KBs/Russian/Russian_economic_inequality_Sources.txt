@@ -473,6 +473,69 @@
 (B (name confinement-restraintsmap)(=>(I#RESTRAINTS x y :0.9)(SS#RESTRAINTS x y)))
 (B (name exitmap)(=>(I#EXIT x y :0.9)(SS#EXIT x y)))
 
+; ABYSS
+
+(B (name propast) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (пропасть-nn e0 x)))
+(B (name ad) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (ад-nn e0 x)))
+(B (name peshhera) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (пещера-nn e0 x)))
+(B (name dyra) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (дыра-nn e0 x)))
+(B (name dyra) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (яма-nn e0 x)))
+(B (name chernaya-dyra) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (^(черный-adj e0 x)(дыра-nn e1 x))))
+(B (name chernaya-dyra2) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (^(чёрный-adj e0 x)(дыра-nn e1 x))))
+
+; DEPTH
+
+(B (name glubina) (=>(^(S#ABYSS u :0.45)(SS#DEPTH x u :0.45)) (глубина-nn e0 x)))
+(B (name glubokij) (=>(^(S#ABYSS x :0.45)(SS#DEPTH e0 x :0.45)) (глубокий-adj e0 x)))
+(B (name glubokij) (=>(^(S#ABYSS u :0.45)(SS#DEPTH e0 u :0.45)) (глубже-rb e0 x)))
+(B (name bezdonnyj) (=>(^(S#ABYSS x :0.45)(SS#DEPTH e0 x :0.45)) (бездонный-adj e0 x)))
+(B (name uglublenie) (=>(^(S#ABYSS x :0.45)(SS#DEPTH e0 x :0.45)) (^(углубление-nn e0 y)(of-in e1 y x))))
+
+(B (name bezdonnyj) (=>(^(S#ABYSS x :0.45)(SS#DEPTH e0 x :0.45)) (углубляться-vb e0 x y z)))
+(B (name bezdonnyj) (=>(^(S#ABYSS x :0.45)(SS#DEPTH e0 x :0.45)) (углубиться-vb e0 x y z)))
+
+; ENTRANCE
+
+(B (name pogruzitsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(погрузиться-vb e0 x y u) (в-in e1 e0 z))))
+(B (name pogruzhatsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(погружаться-vb e0 x y u) (в-in e1 e0 z))))
+(B (name provalitsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(провалиться-vb e0 x y u) (в-in e1 e0 z))))
+(B (name provalivatsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(проваливаться-vb e0 x y u) (в-in e1 e0 z))))
+(B (name tolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(толкнуть-vb e0 x y u) (в-in e1 e0 z))))
+(B (name stolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(столкнуть-vb e0 x y u) (в-in e1 e0 z))))
+(B (name tolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(бросить-vb e0 x y u) (в-in e1 e0 z))))
+(B (name stolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(сбросить-vb e0 x y u) (в-in e1 e0 z))))
+(B (name tolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(кинуть-vb e0 x y u) (в-in e1 e0 z))))
+(B (name stolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(скинуть-vb e0 x y u) (в-in e1 e0 z))))
+
+(B (name pogruzitsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (погрузиться-vb e0 x y u)))
+(B (name pogruzhatsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (погружаться-vb e0 x y u)))
+(B (name provalitsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (провалиться-vb e0 x y u)))
+(B (name provalivatsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (проваливаться-vb e0 x y u)))
+
+(B (name kraj)(=>(^(S#ABYSS u :0.45)(SS#ENTRANCE x u :0.45)) (край-nn e0 x)))
+(B (name gran)(=>(^(S#ABYSS u :0.45)(SS#ENTRANCE x u :0.45)) (грань-nn e0 x)))
+
+; EXIT
+
+(B (name vybratsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(S#ABYSS e2)(выбраться-vb e0 x y u) (из-in e1 e0 z))))
+(B (name vybratsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(S#ABYSS e2)(выбираться-vb e0 x y u) (из-in e1 e0 z))))
+(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(выкарабкаться-vb e0 x y u) (из-in e1 e0 z))))
+(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(вылезти-vb e0 x y u) (из-in e1 e0 z))))
+(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(вылезать-vb e0 x y u) (из-in e1 e0 z))))
+(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(подняться-vb e0 x y u) (из-in e1 e0 z))))
+(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(подниматься-vb e0 x y u) (из-in e1 e0 z))))
+(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (выкарабкаться-vb e0 x y u)))
+(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (вылезти-vb e0 x y u)))
+(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (вылезать-vb e0 x y u)))
+
+(B (name vybratsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(S#ABYSS e1)(выбраться-vb e0 x y u))))
+(B (name vybratsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(S#ABYSS e1)(выбираться-vb e0 x y u))))
+
+(B (name abyssmap)(=>(I#ABYSS x :0.9)(S#ABYSS x)))
+(B (name abysstypemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name abyssentrancemap)(=>(I#ABYSS-ENTRANCE x y :0.9)(SS#ABYSS-ENTRANCE x y)))
+(B (name abyssexitmap)(=>(I#EXIT x y :0.9)(SS#EXIT x y)))
+
 ; ENSLAVEMENT
 
 ;SERVANT
@@ -528,68 +591,6 @@
 ;(B (name organismmap)(=>(I#ORGANISM x :0.9)(S#ORGANISM x)))
 ;(B (name growmap)(=>(I#GROW x y :0.9)(SS#GROW x y)))
 
-
-; ABYSS
-
-(B (name propast) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (пропасть-nn e0 x)))
-(B (name ad) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (ад-nn e0 x)))
-(B (name peshhera) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (пещера-nn e0 x)))
-(B (name dyra) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (дыра-nn e0 x)))
-(B (name dyra) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (яма-nn e0 x)))
-(B (name chernaya-dyra) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (^(черный-adj e0 x)(дыра-nn e1 x))))
-(B (name chernaya-dyra2) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (^(чёрный-adj e0 x)(дыра-nn e1 x))))
-
-; DEPTH
-
-(B (name glubina) (=>(^(S#ABYSS u :0.45)(SS#DEPTH x u :0.45)) (глубина-nn e0 x)))
-(B (name glubokij) (=>(^(S#ABYSS x :0.45)(SS#DEPTH e0 x :0.45)) (глубокий-adj e0 x)))
-(B (name glubokij) (=>(^(S#ABYSS u :0.45)(SS#DEPTH e0 u :0.45)) (глубже-rb e0 x)))
-(B (name bezdonnyj) (=>(^(S#ABYSS x :0.45)(SS#DEPTH e0 x :0.45)) (бездонный-adj e0 x)))
-(B (name uglublenie) (=>(^(S#ABYSS x :0.45)(SS#DEPTH e0 x :0.45)) (^(углубление-nn e0 y)(of-in e1 y x))))
-
-(B (name bezdonnyj) (=>(^(S#ABYSS x :0.45)(SS#DEPTH e0 x :0.45)) (углубляться-vb e0 x y z)))
-(B (name bezdonnyj) (=>(^(S#ABYSS x :0.45)(SS#DEPTH e0 x :0.45)) (углубиться-vb e0 x y z)))
-
-; ENTRANCE
-
-(B (name pogruzitsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(погрузиться-vb e0 x y u) (в-in e1 e0 z))))
-(B (name pogruzhatsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(погружаться-vb e0 x y u) (в-in e1 e0 z))))
-(B (name provalitsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(провалиться-vb e0 x y u) (в-in e1 e0 z))))
-(B (name provalivatsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(проваливаться-vb e0 x y u) (в-in e1 e0 z))))
-(B (name tolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(толкнуть-vb e0 x y u) (в-in e1 e0 z))))
-(B (name stolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(столкнуть-vb e0 x y u) (в-in e1 e0 z))))
-(B (name tolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(бросить-vb e0 x y u) (в-in e1 e0 z))))
-(B (name stolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(сбросить-vb e0 x y u) (в-in e1 e0 z))))
-(B (name tolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(кинуть-vb e0 x y u) (в-in e1 e0 z))))
-(B (name stolknut-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(скинуть-vb e0 x y u) (в-in e1 e0 z))))
-
-(B (name pogruzitsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (погрузиться-vb e0 x y u)))
-(B (name pogruzhatsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (погружаться-vb e0 x y u)))
-(B (name provalitsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (провалиться-vb e0 x y u)))
-(B (name provalivatsja-v) (=>(^(S#ABYSS z :0.3)(SS#ENTRANCE e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (проваливаться-vb e0 x y u)))
-
-(B (name kraj)(=>(^(S#ABYSS u :0.45)(SS#ENTRANCE x u :0.45)) (край-nn e0 x)))
-(B (name gran)(=>(^(S#ABYSS u :0.45)(SS#ENTRANCE x u :0.45)) (грань-nn e0 x)))
-
-; EXIT
-
-(B (name vybratsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(выбраться-vb e0 x y u) (из-in e1 e0 z))))
-(B (name vybratsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(выбираться-vb e0 x y u) (из-in e1 e0 z))))
-(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(выкарабкаться-vb e0 x y u) (из-in e1 e0 z))))
-(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(вылезти-vb e0 x y u) (из-in e1 e0 z))))
-(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(вылезать-vb e0 x y u) (из-in e1 e0 z))))
-(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(подняться-vb e0 x y u) (из-in e1 e0 z))))
-(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(подниматься-vb e0 x y u) (из-in e1 e0 z))))
-(B (name vybratsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (выбраться-vb e0 x y u)))
-(B (name vybratsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (выбираться-vb e0 x y u)))
-(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (выкарабкаться-vb e0 x y u)))
-(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (вылезти-vb e0 x y u)))
-(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (вылезать-vb e0 x y u)))
-
-(B (name abyssmap)(=>(I#ABYSS x :0.9)(S#ABYSS x)))
-(B (name abysstypemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
-(B (name abyssentrancemap)(=>(I#ABYSS-ENTRANCE x y :0.9)(SS#ABYSS-ENTRANCE x y)))
-(B (name abyssexitmap)(=>(I#EXIT x y :0.9)(SS#EXIT x y)))
 
 ; BURDEN
 ; WEIGHT
@@ -740,64 +741,6 @@
 (B (name maze-confusing-pathwaysmap)(=>(I#CONFUSING_PATHWAYS x y :0.9)(SS#CONFUSING_PATHWAYS x y)))
 (B (name maze-navigationmap)(=>(I#NAVIGATION x y :0.9)(SS#NAVIGATION x y)))
 (B (name maze-obstructionmap)(=>(I#OBSTRUCTION x y :0.9)(SS#OBSTRUCTION x y)))
-
-; LOW POINT 
-
-; BOTTOM OF ECONOMIC SCALE
-
-(B (name dno) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ECONOMIC_SCALE x e0 :0.45))(дно-nn e0 x)))
-(B (name niz) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ECONOMIC_SCALE x e0 :0.45))(низ-nn e0 x)))
-
-;MOVEMENT DOWNWARD
-
-(B (name spolzat) (=>(^(S#LOW_POINT u :0.33)(SS#MOVEMENT_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(сползать-vb e0 x u u1)))
-(B (name spolzti) (=>(^(S#LOW_POINT u :0.33)(SS#MOVEMENT_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(сползти-vb e0 x u u1)))
-(B (name spuskatsja) (=>(^(S#LOW_POINT u :0.33)(SS#MOVEMENT_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(спускаться-vb e0 x u u1)))
-(B (name spustitsja) (=>(^(S#LOW_POINT u :0.33)(SS#MOVEMENT_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(спуститься-vb e0 x u u1)))
-(B (name spuskatsja) (=>(^(S#LOW_POINT u :0.33)(SS#MOVEMENT_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(опуститься-vb e0 x u u1)))
-(B (name spustitsja) (=>(^(S#LOW_POINT u :0.33)(SS#MOVEMENT_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(опускаться-vb e0 x u u1)))
-(B (name upast) (=>(^(S#LOW_POINT u :0.33)(SS#MOVEMENT_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(упасть-vb e0 x u u1)))
-(B (name upast) (=>(^(S#LOW_POINT u :0.33)(SS#MOVEMENT_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(пасть-vb e0 x u u1)))
-(B (name padat) (=>(^(S#LOW_POINT u :0.33)(SS#MOVEMENT_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(падать-vb e0 x u u1)))
-(B (name padat) (=>(^(S#LOW_POINT u :0.33)(SS#MOVEMENT_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(свалиться-vb e0 x u u1)))
-
-;MOVEMENT UPWARD
-
-(B (name podnjatsja) (=>(^(S#LOW_POINT u :0.33)(SS#MOVEMENT_UPWARD e0 u :0.33)(R#MOVE-U-PATIENT x e0 :0.33))(подняться-vb e0 x u u1)))
-(B (name podnimatsja) (=>(^(S#LOW_POINT u :0.33)(SS#MOVEMENT_UPWARD e0 u :0.33)(R#MOVE-U-PATIENT x e0 :0.33))(подниматься-vb e0 x u u1)))
-
-(B (name lowpointmap)(=>(I#LOW_POINT x :0.9)(S#LOW_POINT x)))
-(B (name bottom-of-econ-scale-map)(=>(I#BOTTOM_OF_ECONOMIC_SCALE x y :0.9)(SS#BOTTOM_OF_ECONOMIC_SCALE x y)))
-(B (name MOVEMENT_DOWNWARDmap)(=>(I#MOVEMENT_DOWNWARD x y :0.9)(SS#MOVEMENT_DOWNWARD x y)))
-(B (name MOVEMENT_UPWARDmap)(=>(I#MOVEMENT_UPWARD x y 0.9)(SS#MOVEMENT_UPWARD xy )))
-
-; HIGH POINT 
-
-; TOP OF ECONOMIC SCALE
-
-(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(пик-nn e0 x)))
-(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(вершина-nn e0 x)))
-(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(высота-nn e0 x)))
-(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(небеса-nn e0 x)))
-
-;MOVEMENT BACKWARD DOWNWARD
-
-(B (name spolzat) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(упасть-vb e0 x u u1)))
-(B (name spolzat) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(падать-vb e0 x u u1)))
-(B (name spolzat) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(свалиться-vb e0 x u u1)))
-(B (name spolzat) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(опуститься-vb e0 x u u1)))
-(B (name spolzat) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(опускаться-vb e0 x u u1)))
-(B (name spolzat) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(спуститься-vb e0 x u u1)))
-(B (name spolzat) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.33)(R#MOVE-D-PATIENT x e0 :0.33))(спускаться-vb e0 x u u1)))
-
-;MOVEMENT FORWARD UPWARD
-
-(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.33))(подняться-vb e0 x u u1)))
-(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.33))(подниматься-vb e0 x u u1)))
-(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.33))(взлетать-vb e0 x u u1)))
-(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.33))(взлететь-vb e0 x u u1)))
-(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.33))(забраться-vb e0 x u u1)))
-(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.33))(забираться-vb e0 x u u1)))
 
 ; RESOURCE
 
@@ -1288,8 +1231,11 @@
 ; MOVEMENT ON THE SCALE
 
 (B (name raise)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (подняться-vb e0 x y u)))
+(B (name raise)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (подниматься-vb e0 x y u)))
 (B (name rise)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (забраться-vb e0 x y u)))
+(B (name rise)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (забираться-vb e0 x y u)))
 (B (name leap)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (заползти-vb e0 x y u)))
+(B (name leap)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (заползать-vb e0 x y u)))
 (B (name skyrocket)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (взлететь-vb e0 x y u)))
 (B (name skyrocket)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (взлетать-vb e0 x y u)))
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (подскочить-vb e0 x y u)))
@@ -1297,14 +1243,28 @@
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (повышаться-vb e0 x y u)))
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (повыситься-vb e0 x y u)))
 
+(B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (повышать-vb e0 x y u)))
+(B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (повысить-vb e0 x y u)))
+(B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (поднять-vb e0 x y u)))
+(B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (поднимать-vb e0 x y u)))
+
 (B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (упасть-vb e0 x y u)))
 (B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (падать-vb e0 x y u)))
+(B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (cползти-vb e0 x y u)))
+(B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (сползать-vb e0 x y u)))
 (B (name fall)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (спуститься-vb e0 x y u)))
 (B (name fall)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (спускаться-vb e0 x y u)))
 (B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (опуститься-vb e0 x y u)))
 (B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (опускаться-vb e0 x y u)))
 (B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (снижаться-vb e0 x y u)))
 (B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (снизиться-vb e0 x y u)))
+
+(B (name fall)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (спустить-vb e0 x y u)))
+(B (name fall)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (спускать-vb e0 x y u)))
+(B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (опустить-vb e0 x y u)))
+(B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (опускать-vb e0 x y u)))
+(B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (снижать-vb e0 x y u)))
+(B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (снизить-vb e0 x y u)))
 
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-UP x e0 :0.3)) (взлет-nn e0 x)))
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-UP x e0 :0.3)) (скачок-nn e0 x)))
@@ -1327,6 +1287,68 @@
 (B (name position-on-a-scalemap)(=>(I#POSITION_ON_A_SCALE x y :0.9)(SS#POSITION_ON_A_SCALE x y)))
 (B (name movement-on-the-scalemap)(=>(I#MOVEMENT_ON_THE_SCALE x y :0.9)(SS#MOVEMENT_ON_THE_SCALE x y)))
 (B (name contrast-of-positionsmap)(=>(I#CONTRAST_OF_POSITIONS x y :0.9)(SS#CONTRAST_OF_POSITIONS x y)))
+
+; LOW POINT 
+
+; BOTTOM OF ECONOMIC SCALE
+
+(B (name dno) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ECONOMIC_SCALE x e0 :0.45))(дно-nn e0 x)))
+(B (name niz) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ECONOMIC_SCALE x e0 :0.45))(низ-nn e0 x)))
+
+;MOVEMENT DOWNWARD
+
+(B (name spolzat) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(сползать-vb e0 x u u1))))
+(B (name spolzti) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(сползти-vb e0 x u u1))))
+(B (name spuskatsja) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(спускаться-vb e0 x u u1))))
+(B (name spustitsja) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(спуститься-vb e0 x u u1))))
+(B (name spuskatsja) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(опуститься-vb e0 x u u1))))
+(B (name spustitsja) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(опускаться-vb e0 x u u1))))
+(B (name upast) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(упасть-vb e0 x u u1))))
+(B (name upast) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(пасть-vb e0 x u u1))))
+(B (name padat) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(падать-vb e0 x u u1))))
+(B (name padat) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(свалиться-vb e0 x u u1))))
+
+;MOVEMENT UPWARD
+
+(B (name podnjatsja) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(подняться-vb e0 x u u1))))
+(B (name podnimatsja) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(подниматься-vb e0 x u u1))))
+(B (name podnimatsja) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(взбираться-vb e0 x u u1))))
+(B (name podnimatsja) (=>(^(S#LOW_POINT u :0.3)(SS#MOVEMENT_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(взобраться-vb e0 x u u1))))
+
+(B (name lowpointmap)(=>(I#LOW_POINT x :0.9)(S#LOW_POINT x)))
+(B (name bottom-of-econ-scale-map)(=>(I#BOTTOM_OF_ECONOMIC_SCALE x y :0.9)(SS#BOTTOM_OF_ECONOMIC_SCALE x y)))
+(B (name MOVEMENT_DOWNWARDmap)(=>(I#MOVEMENT_DOWNWARD x y :0.9)(SS#MOVEMENT_DOWNWARD x y)))
+(B (name MOVEMENT_UPWARDmap)(=>(I#MOVEMENT_UPWARD x y 0.9)(SS#MOVEMENT_UPWARD xy )))
+
+; HIGH POINT 
+
+; TOP OF ECONOMIC SCALE
+
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(пик-nn e0 x)))
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(вершина-nn e0 x)))
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(высота-nn e0 x)))
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(небеса-nn e0 x)))
+
+;MOVEMENT BACKWARD DOWNWARD
+
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(HIGH_POINT e1)(упасть-vb e0 x u u1))))
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(HIGH_POINT e1)(падать-vb e0 x u u1))))
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(HIGH_POINT e1)(свалиться-vb e0 x u u1))))
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(HIGH_POINT e1)(опуститься-vb e0 x u u1))))
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(HIGH_POINT e1)(опускаться-vb e0 x u u1))))
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(HIGH_POINT e1)(спуститься-vb e0 x u u1))))
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(HIGH_POINT e1)(спускаться-vb e0 x u u1))))
+
+;MOVEMENT FORWARD UPWARD
+
+(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.33))(^(HIGH_POINT e1)(подняться-vb e0 x u u1))))
+(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.33))(^(HIGH_POINT e1)(подниматься-vb e0 x u u1))))
+(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.33))(^(HIGH_POINT e1)(взлетать-vb e0 x u u1))))
+(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.33))(^(HIGH_POINT e1)(взлететь-vb e0 x u u1))))
+(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.33))(^(HIGH_POINT e1)(забраться-vb e0 x u u1))))
+(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.33))(^(HIGH_POINT e1)(забираться-vb e0 x u u1))))
+(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.33))(^(HIGH_POINT e1)(взбраться-vb e0 x u u1))))
+(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.33)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.33))(^(HIGH_POINT e1)(взобираться-vb e0 x u u1))))
 
 ; MORAL DUTY
 
@@ -1500,6 +1522,8 @@
 (B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (подрасти-vb e0 x y u)))
 (B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (отрасти-vb e0 x y u)))
 (B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (отрастать-vb e0 x y u)))
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (зарасти-vb e0 x y u)))
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (зарастать-vb e0 x y u)))
 
 (B (name grow)(=>(^(S#PLANT e0 :0.4)(SS#CHANGE_OF_STATE x e0 :0.4)) (рост-nn e0 x)))
 
@@ -1512,6 +1536,47 @@
 (B (name plant-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
 (B (name plant-partsmap)(=>(I#PARTS x y :0.9)(SS#PARTS x y)))
 (B (name plant-change-of-statemap)(=>(I#CHANGE_OF_STATE x y :0.9)(SS#CHANGE_OF_STATE x y)))
+
+; CROP
+
+; PLANTING
+
+(B (name seed)(=>(^(S#CROP e0 :0.3)(SS#PLANTING x e0 :0.3)(R#CROP x e0 :0.3)) (посев-nn e0 x)))
+(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (сеять-vb e0 x y u)))
+(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (посеять-vb e0 x y u)))
+(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (засеять-vb e0 x y u)))
+(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (посадить-vb e0 x y u)))
+(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (сажать-vb e0 x y u)))
+
+; CULTIVATION
+
+(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (растить-vb e0 x y u)))
+(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (вырастить-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (выращивать-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (поливать-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (полить-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (удобрять-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (удобрить-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (окучивать-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (окучить-vb e0 x y u)))
+
+(B (name grass)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (искоренить-vb e0 x y z)))
+(B (name grass)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (искоренять-vb e0 x y z)))
+
+; OUTCOME
+
+(B (name reap)(=>(^(S#CROP e0 :0.45)(SS#OUTCOME x e0 :0.45)) (жатва-vb e0 x y u)))
+(B (name crop)(=>(^(S#CROP e0 :0.45)(SS#OUTCOME x e0 :0.45)) (урожай-nn e0 x)))
+(B (name crop)(=>(^(S#CROP e0 :0.45)(SS#OUTCOME x e0 :0.45)) (плод-nn e0 x)))
+
+(B (name crop)(=>(^(S#CROP e0 :0.45)(SS#OUTCOME e0 e0 :0.45)) (плодоносить-vb e0 x y z)))
+
+(B (name cropmap)(=>(I#CROP x :0.9)(S#CROP x)))
+(B (name crop-plantingmap)(=>(I#PLANTING x y :0.9)(SS#PLANTING x y)))
+(B (name crop-cultivationmap)(=>(I#CULTIVATION x y :0.9)(SS#CULTIVATION x y)))
+(B (name crop-outcomemap)(=>(I#OUTCOME x y :0.9)(SS#OUTCOME x y)))
+(B (name game-actionsmap)(=>(I#ACTIONS x y :0.9)(SS#ACTIONS x y)))
+(B (name game-outcomesmap)(=>(I#OUTCOMES x y :0.9)(SS#OUTCOMES x y)))
 
 ; ANIMAL
 ; COMPONENT
@@ -1698,47 +1763,6 @@
 
 (B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS e0 e0 :0.45))(стартовать-vb e0 x y z)))
 (B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS e0 e0 :0.45))(финишировать-vb e0 x y z)))
-
-; CROP
-
-; PLANTING
-
-(B (name seed)(=>(^(S#CROP e0 :0.3)(SS#PLANTING x e0 :0.3)(R#CROP x e0 :0.3)) (посев-nn e0 x)))
-(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (сеять-vb e0 x y u)))
-(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (посеять-vb e0 x y u)))
-(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (засеять-vb e0 x y u)))
-(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (посадить-vb e0 x y u)))
-(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (сажать-vb e0 x y u)))
-
-; CULTIVATION
-
-(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (растить-vb e0 x y u)))
-(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (вырастить-vb e0 x y u)))
-(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (выращивать-vb e0 x y u)))
-(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (поливать-vb e0 x y u)))
-(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (полить-vb e0 x y u)))
-(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (удобрять-vb e0 x y u)))
-(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (удобрить-vb e0 x y u)))
-(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (окучивать-vb e0 x y u)))
-(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (окучить-vb e0 x y u)))
-
-(B (name grass)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (искоренить-vb e0 x y z)))
-(B (name grass)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (искоренять-vb e0 x y z)))
-
-; OUTCOME
-
-(B (name reap)(=>(^(S#CROP e0 :0.45)(SS#OUTCOME x e0 :0.45)) (жатва-vb e0 x y u)))
-(B (name crop)(=>(^(S#CROP e0 :0.45)(SS#OUTCOME x e0 :0.45)) (урожай-nn e0 x)))
-(B (name crop)(=>(^(S#CROP e0 :0.45)(SS#OUTCOME x e0 :0.45)) (плод-nn e0 x)))
-
-(B (name crop)(=>(^(S#CROP e0 :0.45)(SS#OUTCOME e0 e0 :0.45)) (плодоносить-vb e0 x y z)))
-
-(B (name cropmap)(=>(I#CROP x :0.9)(S#CROP x)))
-(B (name crop-plantingmap)(=>(I#PLANTING x y :0.9)(SS#PLANTING x y)))
-(B (name crop-cultivationmap)(=>(I#CULTIVATION x y :0.9)(SS#CULTIVATION x y)))
-(B (name crop-outcomemap)(=>(I#OUTCOME x y :0.9)(SS#OUTCOME x y)))
-(B (name game-actionsmap)(=>(I#ACTIONS x y :0.9)(SS#ACTIONS x y)))
-(B (name game-outcomesmap)(=>(I#OUTCOMES x y :0.9)(SS#OUTCOMES x y)))
 
 ; PHYSICAL OBJECT
 
