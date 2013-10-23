@@ -72,6 +72,7 @@
 (B (name gorgeousness) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (gorgeousness-nn e0 x)))
 (B (name luxury) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (luxury-nn e0 x)))
 (B (name treasure) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (treasure-nn e0 x)))
+(B (name fortune) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (fortune-nn e0 x)))
 (B (name profusion) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (profusion-nn e0 x)))
 (B (name means) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (means-nn e0 x)))
 (B (name affluence) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (affluence-nn e0 x)))
