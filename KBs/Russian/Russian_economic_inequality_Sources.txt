@@ -24,8 +24,8 @@
 (B (name nezdorovyj) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (невменяемый-adj e0 y)))
 (B (name nezdorovyj) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (вымирающий-adj e0 y)))
 
-(B (name nezdorovyj) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE e0 e0 :0.45)) (хронический-adj e0 y)))
-(B (name nezdorovyj) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE e0 e0 :0.45)) (хронически-rb e0 e1)))
+(B (name nezdorovyj) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (хронический-adj e0 y)))
+(B (name nezdorovyj) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (хронически-rb e0 e1)))
 
 (B (name invalid) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (инвалид-nn e0 y)))
 (B (name pacient) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (пациент-nn e0 y)))
@@ -34,61 +34,61 @@
 (B (name of-disease) (=>(R#SICK y x :0.9)(^(S#DISEASE x)(of-in e1 x y))))
 
 ; BECOME SICK
-(B (name bolet) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3))(болеть-vb e0 y u1 u2)))
-(B (name zabolet) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (заболеть-vb e0 y u1 u2)))
-(B (name zabolet) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (заболевать-vb e0 y u1 u2)))
-(B (name razboletsja) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (разболеться-vb e0 y u1 u2)))
-(B (name pribolet) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (приболеть-vb e0 y u1 u2)))
-(B (name zaneduzhit) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (занедужить-vb e0 y u1 u2)))
-(B (name neduzhit) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (недужить-vb e0 y u1 u2)))
-(B (name neduzhit) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (вымирать-vb e0 y u1 u2)))
+(B (name bolet) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3))(болеть-vb e0 y u1 u2)))
+(B (name zabolet) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (заболеть-vb e0 y u1 u2)))
+(B (name zabolet) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (заболевать-vb e0 y u1 u2)))
+(B (name razboletsja) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (разболеться-vb e0 y u1 u2)))
+(B (name pribolet) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (приболеть-vb e0 y u1 u2)))
+(B (name zaneduzhit) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (занедужить-vb e0 y u1 u2)))
+(B (name neduzhit) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (недужить-vb e0 y u1 u2)))
+(B (name neduzhit) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (вымирать-vb e0 y u1 u2)))
 
 ; TREATMENT
 
-(B (name lechenie) (=>(^(S#DISEASE x :0.45)(SS#TREATMENT e0 x :0.45))(лечение-nn e1 e0)))
-(B (name terapija) (=>(^(S#DISEASE x :0.45)(SS#TREATMENT e0 x :0.45))(терапия-nn e1 e0)))
+(B (name lechenie) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(лечение-nn e0 x)))
+(B (name terapija) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(терапия-nn e0 x)))
 
-(B (name diagnoz) (=>(^(S#DISEASE x :0.45)(SS#TREATMENT e0 x :0.45))(диагноз-nn e1 e0)))
-(B (name diagnostika) (=>(^(S#DISEASE x :0.45)(SS#TREATMENT e0 x :0.45))(диагностика-nn e1 e0)))
+(B (name diagnoz) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(диагноз-nn e0 x)))
+(B (name diagnostika) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(диагностика-nn e0 x)))
 
-(B (name doktor) (=>(^(S#DISEASE x :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(доктор-nn e0 y)))
-(B (name vrach) (=>(^(S#DISEASE x :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(врач-nn e0 y)))
-(B (name lekarstvo) (=>(^(S#DISEASE x :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(лекарство-nn e0 y)))
-(B (name medikament) (=>(^(S#DISEASE x :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(медикамент-nn e0 y)))
+(B (name doktor) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT x u :0.3)(R#CURE-AGENT y e0 :0.3))(доктор-nn e0 x)))
+(B (name vrach) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT x u :0.3)(R#CURE-AGENT y e0 :0.3))(врач-nn e0 x)))
+(B (name lekarstvo) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT x u :0.3)(R#CURE-AGENT y e0 :0.3))(лекарство-nn e0 x)))
+(B (name medikament) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT x u :0.3)(R#CURE-AGENT y e0 :0.3))(медикамент-nn e0 x)))
 
-(B (name lechit) (=>(^(S#DISEASE x :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(лечить-vb e0 y x u2)))
-(B (name diagnostirovat) (=>(^(S#DISEASE x :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(диагностировать-vb e0 y x u2)))
-(B (name propisat) (=>(^(S#DISEASE x :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(прописать-vb e0 y u1 u2)))
+(B (name lechit) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT e0 u :0.3)(R#CURE-AGENT x e0 :0.3))(лечить-vb e0 x y z)))
+(B (name diagnostirovat) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT e0 u :0.3)(R#CURE-AGENT x e0 :0.3))(диагностировать-vb e0 x y z)))
+(B (name propisat) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT e0 u :0.3)(R#CURE-AGENT x e0 :0.3))(прописать-vb e0 x y z)))
 
-(B (name lechitsja) (=>(^(S#DISEASE x :0.45)(SS#TREATMENT e0 x :0.45)) (лечиться-vb e0 x u1 u2)))
+(B (name lechitsja) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT e0 u :0.45)) (лечиться-vb e0 x u1 u2)))
 
-(B (name neizlechimyj) (=>(^(S#DISEASE x :0.3)(SS#TREATMENT e0 x :0.3)(R#SICK y e0 :0.3))(неизлечимый-adj e0 y)))
-(B (name izlechimyj) (=>(^(S#DISEASE x :0.3)(SS#TREATMENT e0 x :0.3)(R#SICK y e0 :0.3)) (излечимый-adj e0 y)))
+(B (name neizlechimyj) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT e0 u :0.3)(R#SICK y e0 :0.3))(неизлечимый-adj e0 y)))
+(B (name izlechimyj) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT e0 u :0.3)(R#SICK y e0 :0.3)) (излечимый-adj e0 y)))
 
 
 ; OF - TREATMENT
-(B (name of-treatment) (=>(S#DISEASE y :0.9)(^(SS#TREATMENT x u)(of-in e1 x y))))
+(B (name of-treatment) (=>(S#DISEASE y :0.9)(^(SS#TREATMENT x u)(против-in e1 x y))))
 
 ; FROM - TREATMENT
 (B (name from-treatment) (=>(S#DISEASE y :0.9)(^(SS#TREATMENT x u)(от-in e1 x y))))
  
 ; CURE
 
-(B (name vylechit) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (вылечить-vb e0 y x u2)))
-(B (name vylechivat) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (вылечивать-vb e0 y x u2)))
-(B (name zalechit) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (залечить-vb e0 y x u2)))
-(B (name zalechit) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (залечивать-vb e0 y x u2)))
-(B (name vrachevat) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (врачевать-vb e0 y x u2)))
+(B (name vylechit) (=>(^(S#DISEASE u :0.3)(SS#CURE e0 u :0.3)(R#CURE-AGENT x e0 :0.3)) (вылечить-vb e0 x y z)))
+(B (name vylechivat) (=>(^(S#DISEASE u :0.3)(SS#CURE e0 u :0.3)(R#CURE-AGENT x e0 :0.3)) (вылечивать-vb e0 x y z)))
+(B (name zalechit) (=>(^(S#DISEASE u :0.3)(SS#CURE e0 u :0.3)(R#CURE-AGENT x e0 :0.3)) (залечить-vb e0 x y z)))
+(B (name zalechit) (=>(^(S#DISEASE u :0.3)(SS#CURE e0 u :0.3)(R#CURE-AGENT x e0 :0.3)) (залечивать-vb e0 x y z)))
+(B (name vrachevat) (=>(^(S#DISEASE u :0.3)(SS#CURE e0 u :0.3)(R#CURE-AGENT x e0 :0.3)) (врачевать-vb e0 x y z)))
 
-(B (name izlechitsja) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (излечиться-vb e0 y u1 u2)))
-(B (name izlechivatsja) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (излечиваться-vb e0 y u1 u2)))
-(B (name vylechivatsja) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (вылечиться-vb e0 y u1 u2)))
-(B (name vylechivatsja) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (вылечиваться-vb e0 y u1 u2)))
+(B (name izlechitsja) (=>(^(S#DISEASE u :0.3)(SS#CURE e0 u :0.3)(R#SICK x e0 :0.3)) (излечиться-vb e0 x y z)))
+(B (name izlechivatsja) (=>(^(S#DISEASE u :0.3)(SS#CURE e0 u :0.3)(R#SICK x e0 :0.3)) (излечиваться-vb e0 x y z)))
+(B (name vylechivatsja) (=>(^(S#DISEASE u :0.3)(SS#CURE e0 u :0.3)(R#SICK x e0 :0.3)) (вылечиться-vb e0 x y z)))
+(B (name vylechivatsja) (=>(^(S#DISEASE u :0.3)(SS#CURE e0 u :0.3)(R#SICK x e0 :0.3)) (вылечиваться-vb e0 x y z)))
 
-(B (name vyzdoravlivat) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (выздоравливать-vb e0 y u1 u2)))
-(B (name vyzdorovet) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (выздороветь-vb e0 y u1 u2)))
-(B (name popravitsja) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (поправиться-vb e0 y u1 u2)))
-(B (name idti-na-popravku) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (^(идти-vb e1 y u1 u2)(на-in e2 e1 e0)(поправка-nn e3 e0))))
+(B (name vyzdoravlivat) (=>(^(S#DISEASE u :0.3)(SS#CURE e0 u :0.3)(R#SICK x e0 :0.3)) (выздоравливать-vb e0 x y z)))
+(B (name vyzdorovet) (=>(^(S#DISEASE u :0.3)(SS#CURE e0 u :0.3)(R#SICK x e0 :0.3)) (выздороветь-vb e0 x y z)))
+(B (name popravitsja) (=>(^(S#DISEASE u :0.3)(SS#CURE e0 u :0.3)(R#SICK x e0 :0.3)) (поправиться-vb e0 x y z)))
+(B (name idti-na-popravku) (=>(^(S#DISEASE u :0.3)(SS#CURE e0 u :0.3)(R#SICK x e0 :0.3)) (^(идти-vb e1 x y z)(на-in e2 e1 e0)(поправка-nn e3 e0))))
 
 (B (name vyzdorovlenie) (=>(^(S#DISEASE x :0.3)(SS#CURE y x :0.3)) (выздоровление-nn e0 y)))
 (B (name izlechenie) (=>(^(S#DISEASE x :0.3)(SS#CURE y x :0.3)) (излечение-nn e0 y)))
@@ -120,7 +120,7 @@
 (B (name krovotochit) (=>(^(S#DISEASE u :0.3)(SS#SYMPTOMS e0 u :0.3)(R#SICK y e0 :0.3))(кровоточить-vb e0 y u1 u2)))
 
 ; OF - SYMPTOM
-;(B (name of-symptom) (=>(S#DISEASE y :0.9)(^(SS#SYMPTOMS x u)(of-in e1 x y))))
+(B (name of-symptom) (=>(S#DISEASE y :0.9)(^(SS#SYMPTOMS x u)(of-in e1 x y))))
 
 (B (name dismap)(=>(I#DISEASE x :0.9)(S#DISEASE x)))
 (B (name dis-typemap)(=>(I#DISEASE-TYPE x y :0.9)(SS#TYPE x y)))
