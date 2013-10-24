@@ -814,10 +814,10 @@
 
 ; TOP OF ECONOMIC SCALE
 
-(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(peak-nn e0 x)))
-(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(top-nn e0 x)))
-(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(summit-nn e0 x)))
-(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(crest-nn e0 x)))
+(B (name peak) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(peak-nn e0 x)))
+(B (name top) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(top-nn e0 x)))
+(B (name summit) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(summit-nn e0 x)))
+(B (name crest) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(crest-nn e0 x)))
 
 ;MOVEMENT BACKWARD DOWNWARD
 
@@ -830,6 +830,11 @@
 
 (B (name climb) (=>(^(SS#MOVEMENT_FORWARD_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3)) (^(S#HIGH_POINT a)(SS#TOP_OF_ECONOMIC_SCALE b a) (climb-vb e0 x y u1))))
 (B (name rise) (=>(^(SS#MOVEMENT_FORWARD_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3)) (^(S#HIGH_POINT a)(SS#TOP_OF_ECONOMIC_SCALE b a) (rise-vb e0 x y u1))))
+
+(B (name highpointmap)(=>(I#HIGH_POINT x :0.9)(S#HIGH_POINT x)))
+(B (name top-of-econ-scale-map)(=>(I#TOP_OF_ENCONOMIC_SCALE x y :0.9)(SS#TOP_OF_ENCONOMIC_SCALE x y)))
+(B (name movement-downwardmap)(=>(I#MOVEMENT_BACKWARD_DOWNWARD x y :0.9)(SS#MOVEMENT_BACKWARD_DOWNWARD x y)))
+(B (name movement-upwardmap)(=>(I#MOVEMENT_FORWARD_UPWARD x y :0.9)(SS#MOVEMENT_FORWARD_UPWARD x y)))
 
 : RESOURCE
 ; SUBSTANCE
@@ -955,6 +960,8 @@
 (B (name home)(=>(^(S#BUILDING e0 :0.45)(SS#TYPE x e0 :0.45)) (home-nn e0 x)))
 (B (name skyscraper)(=>(^(S#BUILDING e0 :0.45)(SS#TYPE x e0 :0.45)) (skyscraper-nn e0 x)))
 (B (name mansion)(=>(^(S#BUILDING e0 :0.45)(SS#TYPE x e0 :0.45)) (mansion-nn e0 x)))
+(B (name palace)(=>(^(S#BUILDING e0 :0.45)(SS#TYPE x e0 :0.45)) (palace-nn e0 x)))
+(B (name castle)(=>(^(S#BUILDING e0 :0.45)(SS#TYPE x e0 :0.45)) (castle-nn e0 x)))
 
 ; STRUCTURE
 (B (name building)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (building-nn e0 x)))
@@ -990,7 +997,7 @@
 (B (name keystone)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (keystone-nn e0 x)))
 (B (name wall)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (wall-nn e0 x)))
 (B (name support-structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (^(support-nn e0 x)(of-in e1 y x)(structure-nn e2 y))))
-(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (structure-nn e0 x)))
+;(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (structure-nn e0 x)))
 
 
 ; SUPPORT
@@ -1349,27 +1356,27 @@
 ;MOVEMENT-INTO
 (B (name pushnn)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#MOVEMENT_INTO x e0 :0.45)) (push-nn e0 x)))
 
-(B (name push-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(push-vb e0 x y z)(into-in e1 e0 w))))
+;(B (name push-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(push-vb e0 x y z)(into-in e1 e0 w))))
 (B (name push-into-pov) (=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO e0 e0 :0.23)(R##PROPEL-PATIENT y e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)) (^(TS#POVERTY z)(push-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name drive-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(drive-vb e0 x y z)(into-in e1 e0 w))))
+;(B (name drive-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(drive-vb e0 x y z)(into-in e1 e0 w))))
 (B (name drive-into-pov) (=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO e0 e0 :0.23)(R##PROPEL-PATIENT y e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)) (^(TS#POVERTY z)(drive-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name draw-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(draw-vb e0 x y z)(into-in e1 e0 w))))
+;(B (name draw-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(draw-vb e0 x y z)(into-in e1 e0 w))))
 (B (name draw-into-pov) (=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO e0 e0 :0.23)(R##PROPEL-PATIENT y e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)) (^(TS#POVERTY z)(draw-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name drag-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(drag-vb e0 x y z)(into-in e1 e0 w))))
+;(B (name drag-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(drag-vb e0 x y z)(into-in e1 e0 w))))
 (B (name drag-into-pov) (=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO e0 e0 :0.23)(R##PROPEL-PATIENT y e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)) (^(TS#POVERTY z)(drag-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name force-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(force-vb e0 x y z)(into-in e1 e0 w))))
+;(B (name force-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(force-vb e0 x y z)(into-in e1 e0 w))))
 (B (name force-into-pov) (=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO e0 e0 :0.23)(R##PROPEL-PATIENT y e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)) (^(TS#POVERTY z)(force-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name move-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(move-vb e0 x y z)(into-in e1 e0 w))))
+;(B (name move-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(move-vb e0 x y z)(into-in e1 e0 w))))
 (B (name move-into-pov) (=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO e0 e0 :0.23)(R##PROPEL-PATIENT y e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)) (^(TS#POVERTY z)(move-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name nudge-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(nudge-vb e0 x y z)(into-in e1 e0 w))))
+;(B (name nudge-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(nudge-vb e0 x y z)(into-in e1 e0 w))))
 (B (name nudge-into-pov) (=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO e0 e0 :0.23)(R##PROPEL-PATIENT y e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)) (^(TS#POVERTY z)(nudge-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name pull-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(pull-vb e0 x y z)(into-in e1 e0 w))))
+;(B (name pull-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(pull-vb e0 x y z)(into-in e1 e0 w))))
 (B (name pull-into-pov) (=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO e0 e0 :0.23)(R##PROPEL-PATIENT y e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)) (^(TS#POVERTY z)(pull-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name shove-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(shove-vb e0 x y z)(into-in e1 e0 w))))
+;(B (name shove-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(shove-vb e0 x y z)(into-in e1 e0 w))))
 (B (name shove-into-pov) (=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO e0 e0 :0.23)(R##PROPEL-PATIENT y e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)) (^(TS#POVERTY z)(shove-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name throw-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(throw-vb e0 x y z)(into-in e1 e0 w))))
+;(B (name throw-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(throw-vb e0 x y z)(into-in e1 e0 w))))
 (B (name throw-into-pov) (=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO e0 e0 :0.23)(R##PROPEL-PATIENT y e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)) (^(TS#POVERTY z)(throw-vb e0 x y u2)(into-in e1 e0 z))))
-(B (name tug-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(tug-vb e0 x y z)(into-in e1 e0 w))))
+;(B (name tug-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(tug-vb e0 x y z)(into-in e1 e0 w))))
 (B (name tug-into-pov) (=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO e0 e0 :0.23)(R##PROPEL-PATIENT y e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)) (^(TS#POVERTY z)(tug-vb e0 x y u2)(into-in e1 e0 z))))
 
 ;EXIT
@@ -1418,7 +1425,7 @@
 
 ; CONTRAST OF POSITIONS
 (B (name higher)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (higher-adj e0 x)))
-(B (name above)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (above-adj e0 x)))
+(B (name above)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (above-in e0 x)))
 
 (B (name lower)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (lower-adj e0 x)))
 (B (name below)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (below-in e0 x y)))
