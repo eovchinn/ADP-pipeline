@@ -608,15 +608,15 @@
 
 ; EXIT
 
-(B (name climb-out-of) (=>(^(S#ABYSS e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(climb-vb e0 x y u) (out-in e1 e0 w)(of-in e2 e1 z))))
-(B (name jump-out-of) (=>(^(S#ABYSS e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(jump-vb e0 x y u) (out-in e1 e0 w) (of-in e2 e1 z))))
+(B (name climb-out-of) (=>(^(S#ABYSS e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(climb-vb e0 x y u) (out-in e1 e0)(of-in e2 e0 z))))
+(B (name jump-out-of) (=>(^(S#ABYSS e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(jump-vb e0 x y u) (out-in e1 e0) (of-in e2 e0 z))))
 
-(B (name pull-out-of) (=>(^(S#ABYSS e0 :0.2)(SS#EXIT e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(pull-vb e0 x y u)(out-in e1 e0 w)(of-in e2 e1 z))))
-(B (name lift-out-of) (=>(^(S#ABYSS e0 :0.2)(SS#EXIT e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(lift-vb e0 x y u) (out-in e1 e0 w) (of-in e2 e1 z))))
-(B (name yank-out-of) (=>(^(S#ABYSS e0 :0.2)(SS#EXIT e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(yank-vb e0 x y u) (out-in e1 e0 w)(of-in e2 e1 z))))
-(B (name dig-out-of) (=>(^(S#ABYSSan  e0 :0.2)(SS#EXIT e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(dig-vb e0 x y u) (out-in e1 e0 w)(of-in e2 e1 z))))
+(B (name pull-out-of) (=>(^(S#ABYSS e0 :0.2)(SS#EXIT e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(pull-vb e0 x y u)(out-in e1 e0)(of-in e2 e0 z))))
+(B (name lift-out-of) (=>(^(S#ABYSS e0 :0.2)(SS#EXIT e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(lift-vb e0 x y u) (out-in e1 e0) (of-in e2 e0 z))))
+(B (name yank-out-of) (=>(^(S#ABYSS e0 :0.2)(SS#EXIT e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(yank-vb e0 x y u) (out-in e1 e0)(of-in e2 e0 z))))
+(B (name dig-out-of) (=>(^(S#ABYSSan  e0 :0.2)(SS#EXIT e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(dig-vb e0 x y u) (out-in e1 e0)(of-in e2 e0 z))))
 (B (name emerge-from) (=>(^(S#ABYSS e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(emerge-vb e0 x y u)(out-in e1 e0 w)(from-in e2 e1 z))))
-(B (name help-out-of) (=>(^(S#ABYSS e0 :0.2)(SS#EXIT e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(help-vb e0 x y u)(out-in e1 e0 w)(of-in e2 e1 z))))
+(B (name help-out-of) (=>(^(S#ABYSS e0 :0.2)(SS#EXIT e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(help-vb e0 x y u)(out-in e1 e0)(of-in e2 e0 z))))
 
 (B (name abyssmap)(=>(I#ABYSS x :0.9)(S#ABYSS x)))
 (B (name abysstypemap)(=>(I#TYPE x e0 :0.9)(SS#TYPE x e0)))
@@ -1480,9 +1480,9 @@
 
 ;GOAL DIRECTED
 ;TYPE
-(B (name goal)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (goal-nn e0 x)))
-(B (name force)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (force-nn e0 x)))
-(B (name achievement)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (achievement-nn e0 x)))
+;(B (name goal)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (goal-nn e0 x)))
+;(B (name force)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (force-nn e0 x)))
+;(B (name achievement)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (achievement-nn e0 x)))
 (B (name reach)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE e0 e0 :0.45)) (reach-vb e0 x y z)))
 (B (name strive)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE e0 e0 :0.45)) (strive-vb e0 x y z)))
 
@@ -1505,14 +1505,19 @@
 (B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (bread-nn e0 x)))
 (B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (meat-nn e0 x)))
 (B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (carrot-nn e0 x)))
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (steak-nn e0 x)))
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (potato-nn e0 x)))
 
 ;CONSUMPTION
 (B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#CONSUMPTION x e0 :0.45)) (taste-nn e0 x)))
 (B (name taste-of)(=>(^(S#FOOD e0 :0.3)(SS#CONSUMPTION x e0 :0.3)(R#TASTE-OBJECT y e0 :0.3)) (^(taste-nn e0 x)(of-in e1 x y))))
 
 (B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (taste-vb e0 x y u)))
-(B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(TS#WEALTH y) (consume-vb e0 x y u))))
-(B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(TS#WEALTH y)(eat-vb e0 x y u))))
+(B (name consume)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(TS#WEALTH y) (consume-vb e0 x y u))))
+(B (name eat)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(TS#WEALTH y)(eat-vb e0 x y u))))
+(B (name swallow)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(TS#WEALTH y)(swallow-vb e0 x y u))))
+(B (name chew)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(TS#WEALTH y)(chew-vb e0 x y u))))
+
 
 (B (name foodmap)(=>(I#FOOD x :0.9)(S#FOOD x)))
 (B (name food-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1646,9 +1651,10 @@
 (B (name swallow)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION x)(swallow-vb e0 x y u))))
 (B (name chew)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#POVERTY x)(chew-vb e0 x y u))))
 (B (name chew)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION x)(chew-vb e0 x y u))))
+(B (name digest)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#POVERTY x)(digest-vb e0 x y u))))
+(B (name digest)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION x)(digest-vb e0 x y u))))
 
 ;(B (name grow)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (grow-vb e0 x y u)))
-(B (name digest)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (digest-vb e0 x y u)))
 (B (name touch)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (touch-vb e0 x y u)))
 (B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (outlive-vb e0 x y u)))
 (B (name roar)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (roar-vb e0 x y u)))
@@ -1679,8 +1685,7 @@
 
 ; FUNCTION
 (B (name turn)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (^(engine-nn e1 x)(turn-vb e0 x y u))))
-(B (name repair)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (repair-vb e0 x y u)))
-(B (name fuel)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (fuel-vb e0 x y u)))
+;(B (name repair)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (repair-vb e0 x y u)))
 
 
 (B (name machinemap)(=>(I#MACHINE x :0.9)(S#MACHINE x)))
@@ -1780,7 +1785,7 @@
 
 ; CULTIVATION
 (B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (^(TS#WEALTH y)(grow-vb e0 x y u))))
-(B (name fertalize)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (fertalize-vb e0 x y u)))
+(B (name fertilize)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (fertilize-vb e0 x y u)))
 (B (name water)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (water-vb e0 x y u)))
 
 ; OUTCOME

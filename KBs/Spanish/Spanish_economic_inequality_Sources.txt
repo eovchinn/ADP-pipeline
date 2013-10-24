@@ -331,6 +331,8 @@
 
 ; DANGER
 (B (name tsunami) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#DANGER y e0 :0.45))(tsunami-nn e0 y)))
+(B (name swamp) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#DANGER y e0 :0.45))(pantano-nn e0 y)))
+(B (name mire) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#DANGER y e0 :0.45))(fango-nn e0 y)))
 (B (name submarino) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#DANGER y e0 :0.45))(submarino-nn e0 y)))
 
 (B (name aguamap)(=>(I#BODY_OF_WATER x :0.9)(S#BODY_OF_WATER x)))
@@ -860,6 +862,10 @@
 (B (name obstruido-path) (=>(SS#OBSTRUCTED_PATH e0 e0 :0.90) (^(S#PATHWAY e1) (SS#TYPE x e1)(obstruido-adj e0 x))))
 (B (name path-bloqueado) (=>(SS#OBSTRUCTED_PATH e0 e0 :0.90) (^(S#PATHWAY e1) (SS#TYPE x e1)(bloqueado-adj e0 x))))
 
+(B (name barricada)(=>(^(S#PATHWAY e0 :0.45)(SS#OBSTRUCTED_PATH x e0 :0.45)) (barricada-nn e0 x)))
+(B (name barricada)(=>(^(S#PATHWAY e0 :0.45)(SS#OBSTRUCTED_PATH x e0 :0.45)) (barrera-nn e0 x)))
+(B (name barricada)(=>(^(S#PATHWAY e0 :0.45)(SS#OBSTRUCTED_PATH x e0 :0.45)) (impedimento-nn e0 x)))
+
 (B (name pathwaymap)(=>(I#PATHWAY x :0.9)(S#PATHWAY x)))
 (B (name pathway-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
 (B (name open-pathmap)(=>(I#OPEN_PATH x y :0.9)(SS#OPEN_PATH x y)))
@@ -996,7 +1002,7 @@
 
 ;SEEING
 (B (name abiertos-ojos)(=>(^(S#VISION e0 :0.45)(SS#SEEING x e0 :0.45)) (^(abiertos-adj e0 x)(ojos-nn e1 x))))
-(B (name ver)(=>(^(S#VISION e0 :0.3)(SS#SEEING x e0 e0 :0.3)(R#SIGHTED y e0 :0.3)) (ver-vb e0 x y z)))
+;(B (name ver)(=>(^(S#VISION e0 :0.3)(SS#SEEING x e0 e0 :0.3)(R#SIGHTED y e0 :0.3)) (ver-vb e0 x y z)))
 
 (B (name visionmap)(=>(I#VISION x :0.9)(S#VISION x)))
 (B (name blindnessmap)(=>(I#VISION-BLINDNESS x y :0.9)(SS#BLINDNESS x y)))
@@ -1021,6 +1027,11 @@
 ; ACTION
 (B (name asustar)(=>(^(SS#ACTION e0 :0.45)(R#MONSTER x e0 :0.45)) (^(SS#TYPE x)(asustar-vb e0 x y u))))
 (B (name chupar)(=>(^(SS#ACTION e0 :0.45)(R#MONSTER x e0 :0.45)) (^(SS#TYPE x)(chupar-vb e0 x y u))))
+
+(B (name terrify)(=>(SS#ACTION e0 e1 :0.9) (^(S#MONSTER e1)(SS#TYPE x e1)(aterrorizar-vb e0 x y u))))
+(B (name devour)(=>(SS#ACTION e0 e1 :0.9) (^(S#MONSTER e1)(SS#TYPE x e1)(devorar-vb e0 x y u))))
+
+
 
 (B (name monstermap)(=>(I#MONSTER x :0.9)(S#MONSTER x)))
 (B (name monster-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1047,6 +1058,10 @@
 (B (name escurrir)(=>(^(S#FORCEFUL_EXTRACTION e0 e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (escurrir-vb e0 x y u)))
 (B (name extraer)(=>(^(S#FORCEFUL_EXTRACTION e0 e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (extraer-vb e0 x y u)))
 (B (name arrebatar)(=>(^(S#FORCEFUL_EXTRACTION e0 e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (arrebatar-vb e0 x y u)))
+(B (name milk)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (ordeñar-vb e0 x y u)))
+(B (name skin)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (pelar-vb e0 x y u)))
+(B (name fleece)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (esquilar-vb e0 x y u)))
+
 (B (name tug)(=>(^(S#FORCEFUL_EXTRACTION e0 e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (tug-vb e0 x y u)))
 (B (name extraction)(=>(^(S#FORCEFUL_EXTRACTION e0 :0.45)(SS#TYPE x e0 :0.45)) (extraction-nn e0 x)))
 (B (name extortion)(=>(^(S#FORCEFUL_EXTRACTION e0 :0.45)(SS#TYPE x e0 :0.45)) (extortion-nn e0 x)))
@@ -1094,11 +1109,12 @@
 (B (name margen)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (margen-nn e0 x)))
 (B (name franja)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (franja-nn e0 x)))
 (B (name frontera)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (frontera-nn e0 x)))
-(B (name vivir-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(viver-vb e0 x y z)(en-in e1 e0 w))))
-(B (name reside-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(residir-vb e0 x y z)(en-in e1 e0 w))))
-(B (name permanecer-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(permanecer-vb e0 x y z)(en-in e1 e0 w))))
-(B (name permanecer)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (permanecer-vb e0 x y z))))
-(B (name nacido-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(nacido-adj e0 x)(en-in e1 x w))))
+
+(B (name vivir-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (viver-vb e0 x y z)(en-in e1 e0 w))))
+(B (name reside-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (residir-vb e0 x y z)(en-in e1 e0 w))))
+(B (name permanecer-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (permanecer-vb e0 x y z)(en-in e1 e0 w))))
+(B (name permanecer)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (permanecer-vb e0 x y z)))))
+(B (name nacido-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (nacido-adj e0 x)(en-in e1 x w))))
 
 ;MOVEMENT_INTO
 (B (name empuje)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#MOVEMENT_INTO x e0 :0.45)) (empuje-nn e0 x)))
@@ -1171,6 +1187,7 @@
 ; REMUNERATION
 (B (name deber)(=>(^(S#MORAL_DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (deber-nn e0 x)))
 (B (name debido)(=>(^(S#MORAL_DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (debido-nn e0 x)))
+(B (name obligation)(=>(^(S#MORAL_DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (obligación-nn e0 x)))
 
 (B (name moral-dutymap)(=>(I#MORAL_DUTY x :0.9)(S#MORAL_DUTY x)))
 (B (name remunerationmap)(=>(I#REMUNERATION x y :0.9)(SS#REMUNERATION x y)))
@@ -1202,15 +1219,18 @@
 
 ;GOAL DIRECTED
 ;TYPE
-(B (name objetivo)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (objetivo-nn e0 x)))
-(B (name meta)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (meta-nn e0 x)))
-(B (name fuerza)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (fuerza-nn e0 x)))
-(B (name logro)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (achievement.-nn e0 x)))
+;(B (name objetivo)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (objetivo-nn e0 x)))
+;(B (name meta)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (meta-nn e0 x)))
+;(B (name fuerza)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (fuerza-nn e0 x)))
+;(B (name logro)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (achievement-nn e0 x)))
+
+(B (name reach)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE e0 e0 :0.45)) (llegar-vb e0 x y z)))
+(B (name strive)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE e0 e0 :0.45)) (esforzase-vb e0 x y z)))
 ;RISK
 ;(B (name high-stakes-bet)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#RISK x e0 e0 :0.45)) (^(high-stakes-adj e0 x)(bet-nn e1 x))))
 
 ;OBSTACLES
-(B (name barricada)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#OBSTACLES x e0 :0.45)) (barricada-nn e0 x)))
+
 
 (B (name goal-directedmap)(=>(I#GOAL_DIRECTED x :0.9)(S#GOAL_DIRECTED x)))
 (B (name goal-directed-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1218,11 +1238,27 @@
 (B (name goal-directed-obstaclesmap)(=>(I#OBSTACLES x y :0.9)(SS#OBSTACLES x y)))
 
 ;FOOD
+
+(B (name comida)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (comida-nn e0 x)))
+(B (name pan)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (pan-nn e0 x)))
+(B (name meat)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (carne-nn e0 x)))
+(B (name carrot)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (zanahoria-nn e0 x)))
+(B (name corn)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (maíz-nn e0 x)))
+(B (name potato)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (patata-nn e0 x)))
+(B (name tortilla)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (tortilla-nn e0 x)))
+
 ;TYPE
 ;CONSUMPTION
 (B (name sabor)(=>(^(S#FOOD e0 :0.45)(SS#CONSUMPTION x e0 :0.45)) (sabor-nn e0 x)))
-(B (name taste-de)(=>(^(S#FOOD e0 :0.3)(SS#CONSUMPTION x e0 :0.3)(R#TASTE-OBJECT y e0 :0.3)) (^(taste-nn e0 x)(de-in e1 x y))))
+(B (name taste-of)(=>(^(S#FOOD e0 :0.3)(SS#CONSUMPTION x e0 :0.3)(R#TASTE-OBJECT y e0 :0.3)) (^(sabor-nn e0 x)(de-in e1 x y))))
+
+
 (B (name probar)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (probar-vb e0 x y u)))
+(B (name consumir)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(TS#WEALTH y) (consumir-vb e0 x y u))))
+(B (name comer)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(TS#WEALTH y)(comer-vb e0 x y u))))
+(B (name tragarse)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(TS#WEALTH y)(tragarse-vb e0 x y u))))
+(B (name masticar)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(TS#WEALTH y)(masticar-vb e0 x y u))))
+
 
 (B (name foodmap)(=>(I#FOOD x :0.9)(S#FOOD x)))
 (B (name food-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1261,8 +1297,13 @@
 ; ENERGY
 ; TYPE
 (B (name energía)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (energía-nn e0 x)))
+(B (name electricity)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (electricidad-nn e0 x)))
+(B (name fuel)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (combustible-nn e0 x)))
+(B (name fuel)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (carburante-nn e0 x)))
+(B (name battery)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (batería-nn e0 x)))
 
 ; RESULT
+(B (name energize)(=>(^(S#ENERGY e0 :0.23)(SS#RESULT e0 e0 :0.23)(R#RESULT-AGENT x e0 :0.23)(R#RESULT-PATIENT x e0 :0.23)) (energizar-vb e0 x y z)))
 
 (B (name energymap)(=>(I#ENERGY x :0.9)(S#ENERGY x)))
 (B (name energy-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1327,9 +1368,19 @@
 (B (name tragarse)(=>(^(S#ANIMAL e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (tragarse-vb e0 x y u)))
 
 ; ACTION
-(B (name comer)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (comer-vb e0 x y u)))
-(B (name crecer)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (crecer-vb e0 x y u))) (B (name digerir)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (digerir-vb e0 x y u)))
+(B (name comer)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#POVERTY x)(comer-vb e0 x y u))))
+(B (name comer)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION x)(comer-vb e0 x y u))))
+(B (name masticar)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#POVERTY x)(masticar-vb e0 x y u))))
+(B (name masticar)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION x)(masticar-vb e0 x y u))))
+(B (name digerir)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#POVERTY x)(digerir-vb e0 x y u))))
+(B (name digerir)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION x)(digerir-vb e0 x y u))))
+(B (name tragarse)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#POVERTY x)(tragarse-vb e0 x y u))))
+(B (name tragarse)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION x)(tragarse-vb e0 x y u))))
+
+
 (B (name tocar)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (tocar-vb e0 x y u)))
+(B (name ladrar)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (ladrar-vb e0 x y u)))
+(B (name rugir)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (rugir-vb e0 x y u)))
 
 (B (name animalmap)(=>(I#ANIMAL x :0.9)(S#ANIMAL x)))
 (B (name animal-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1341,12 +1392,19 @@
 ; TYPE
 (B (name máquina)(=>(^(S#MACHINE e0 :0.45)(SS#TYPE x e0 :0.45)) (máquina-nn e0 x)))
 (B (name mecanismo)(=>(^(S#MACHINE e0 :0.45)(SS#TYPE x e0 :0.45)) (mecanismo-nn e0 x)))
+(B (name bulldozer)(=>(^(S#MACHINE e0 :0.45)(SS#TYPE x e0 :0.45)) (excavadora-nn e0 x)))
+(B (name steamroller)(=>(^(S#MACHINE e0 :0.45)(SS#TYPE x e0 :0.45)) (apisonadora-nn e0 x)))
+(B (name car)(=>(^(S#MACHINE e0 :0.45)(SS#TYPE x e0 :0.45)) (coche-nn e0 x)))
+(B (name truck)(=>(^(S#MACHINE e0 :0.45)(SS#TYPE x e0 :0.45)) (camión-nn e0 x)))
+(B (name crane)(=>(^(S#MACHINE e0 :0.45)(SS#TYPE x e0 :0.45)) (grúa-nn e0 x)))
+
 
 ; PARTS
 (B (name motor)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (motor-nn e0 x)))
+(B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (rueda-nn e0 x)))
 
 ; FUNCTION
-(B (name girar)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (girar-vb e0 x y u)))
+(B (name girar)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23))  (^(motor-nn e1 x) (girar-vb e0 x y u))))
 
 (B (name machinemap)(=>(I#MACHINE x :0.9)(S#MACHINE x)))
 (B (name machine-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1365,10 +1423,10 @@
 ; GEOGRAPHIC FEATURE
 ; TYPE
 (B (name montaña)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#MOUNTAIN x e0 :0.3)) (mountain-nn e0 x)))
-;(B (name himalayas)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#MOUNTAIN x e0 :0.3)) (himalayas-nn e0 x)))
-;(B (name alps)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#MOUNTAIN x e0 :0.3)) (alps-nn e0 x)))
-(B (name océano)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#OCEAN x e0 :0.3)) (ocean-nn e0 x)))
-(B (name mar)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#OCEAN x e0 :0.3)) (mar-nn e0 x)))
+(B (name himalayas)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#MOUNTAIN x e0 :0.3)) (himalayas-nn e0 x)))
+(B (name alps)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#MOUNTAIN x e0 :0.3)) (alps-nn e0 x)))
+;(B (name océano)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#OCEAN x e0 :0.3)) (ocean-nn e0 x)))
+;(B (name mar)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#OCEAN x e0 :0.3)) (mar-nn e0 x)))
 (B (name pradera)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (pradera-nn e0 x)))
 (B (name valle)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (valle-nn e0 x)))
 
@@ -1428,6 +1486,8 @@
 
 ; CULTIVATION
 (B (name crecer)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (^(TS#WEALTH y)(crecer-vb e0 x y u))))
+(B (name fertitlize)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (fertilizar-vb e0 x y u)))
+(B (name water)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (regar-vb e0 x y u)))
 
 
 ; OUTCOME
