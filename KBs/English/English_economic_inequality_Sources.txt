@@ -44,58 +44,58 @@
 
 ; TREATMENT
 
-(B (name treatment) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(treatment-nn e0 x)))
-(B (name operation) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(operation-nn e0 x)))
-(B (name therapy) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(therapy-nn e0 x)))
-(B (name diagnosis) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(diagnosis-nn e0 x)))
-(B (name diagnostic) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(diagnostic-adj e0 x)))
-; (B (name examination)(=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45)) (examination-nn e0 x)))
-(B (name prescription)(=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45)) (prescription-nn e0 x)))
+(B (name treatment) (=>(^(S#DISEASE e0:0.45)(SS#TREATMENT x e0:0.45))(treatment-nn e0 x)))
+(B (name operation) (=>(^(S#DISEASE e0 :0.45)(SS#TREATMENT x e0 :0.45))(operation-nn e0 x)))
+(B (name therapy) (=>(^(S#DISEASE e0 :0.45)(SS#TREATMENT x e0 :0.45))(therapy-nn e0 x)))
+(B (name diagnosis) (=>(^(S#DISEASE e0 :0.45)(SS#TREATMENT x e0 :0.45))(diagnosis-nn e0 x)))
+(B (name diagnostic) (=>(^(S#DISEASE e0 :0.45)(SS#TREATMENT x e0 :0.45))(diagnostic-adj e0 x)))
+; (B (name examination)(=>(^(S#DISEASE e0 :0.45)(SS#TREATMENT x e0 :0.45)) (examination-nn e0 x)))
+(B (name prescription)(=>(^(S#DISEASE e0 :0.45)(SS#TREATMENT x e0 :0.45)) (prescription-nn e0 x)))
 
-(B (name doctor) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(doctor-nn e0 y)))
-(B (name healer) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(healer-nn e0 y)))
-(B (name physician) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(physician-nn e0 y)))
-(B (name suregon) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(surgeon-nn e0 y)))
-(B (name medic) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(medic-nn e0 y)))
-(B (name medicament) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(medicament-nn e0 y)))
-(B (name remedy) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(remedy-nn e0 y)))
-(B (name antibiotic)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x x :0.3)(R#CURE-AGENT x e0 :0.3)) (antibiotic-nn e0 x)))
-(B (name medicine)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x x :0.3)(R#CURE-AGENT x e0 :0.3)) (medicine-nn e0 x)))
-(B (name drug)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x x :0.3) (R#CURE-AGENT x e0 :0.3)) (drug-nn e0 x)))
-(B (name pill)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x x :0.3)(R#CURE-AGENT x e0 :0.3)) (pill-nn e0 x)))
-(B (name bandage) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(bandage-nn e0 y)))
-(B (name band-aid) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(band-aid-nn e0 y)))
+(B (name doctor) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x e0 :0.3)(R#CURE-AGENT y e0 :0.3))(doctor-nn e0 x)))
+(B (name healer) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x e0 :0.3)(R#CURE-AGENT y e0 :0.3))(healer-nn e0 x)))
+(B (name physician) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x e0 :0.3)(R#CURE-AGENT y e0 :0.3))(physician-nn e0 x)))
+(B (name suregon) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x e0 :0.3)(R#CURE-AGENT y e0 :0.3))(surgeon-nn e0 x)))
+(B (name medic) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x e0 :0.3)(R#CURE-AGENT y e0 :0.3))(medic-nn e0 x)))
+(B (name medicament) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x e0 :0.3)(R#CURE-AGENT y e0 :0.3))(medicament-nn e0 x)))
+(B (name remedy) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x e0 :0.3)(R#CURE-AGENT y e0 :0.3))(remedy-nn e0 x)))
+(B (name antibiotic)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x e0 :0.3)(R#CURE-AGENT x e0 :0.3)) (antibiotic-nn e0 x)))
+(B (name medicine)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x e0 :0.3)(R#CURE-AGENT x e0 :0.3)) (medicine-nn e0 x)))
+(B (name drug)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x e0 :0.3) (R#CURE-AGENT x e0 :0.3)) (drug-nn e0 x)))
+(B (name pill)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x e0 :0.3)(R#CURE-AGENT x e0 :0.3)) (pill-nn e0 x)))
+(B (name bandage) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x e0 :0.3)(R#CURE-AGENT y e0 :0.3))(bandage-nn e0 x)))
+(B (name band-aid) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x e0 :0.3)(R#CURE-AGENT y e0 :0.3))(band-aid-nn e0 x)))
 
-(B (name treat) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (treat-vb e0 y x u2)))
-(B (name prescribe) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT e0 u :0.3)(R#CURE-AGENT y e0 :0.3)) (prescribe-vb e0 y u1 u2)))
-(B (name diagnose) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (diagnose-vb e0 y x u2)))
-(B (name misdiagnose) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (misdiagnose-vb e0 y x u2)))
-(B (name alleviate) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (alleviate-vb e0 y x u2)))
-(B (name dissect) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT e0 u :0.3)(R#CURE-AGENT y e0 :0.3)) (dissect-vb e0 y u1 u2)))
+(B (name treat) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (treat-vb e0 y x u2)))
+(B (name prescribe) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (prescribe-vb e0 y u1 u2)))
+(B (name diagnose) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (diagnose-vb e0 y x u2)))
+(B (name misdiagnose) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (misdiagnose-vb e0 y x u2)))
+(B (name alleviate) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (alleviate-vb e0 y x u2)))
+(B (name dissect) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (dissect-vb e0 y u1 u2)))
 
 (B (name of-treatment) (=>(S#DISEASE y e0 :0.9)(^(SS#TREATMENT x y)(of-in e1 x y))))
 
 ; CURE
 
-(B (name cure) (=>(^(S#DISEASE u :0.45)(SS#CURE x u :0.45))(cure-nn e0 x)))
-(B (name panacea) (=>(^(S#DISEASE u :0.45)(SS#CURE x u :0.45))(panacea-nn e0 x)))
+(B (name cure) (=>(^(S#DISEASE e0 :0.45)(SS#CURE x e0 :0.45))(cure-nn e0 x)))
+(B (name panacea) (=>(^(S#DISEASE e0 :0.45)(SS#CURE x e0 :0.45))(panacea-nn e0 x)))
 (B (name cure-all)(=>(^(S#DISEASE e0 :0.45)(SS#CURE x e0 :0.45)) (cure-all-nn e0 x)))
 
-(B (name curevb) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (cure-vb e0 y x u2)))
-(B (name heal) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (heal-vb e0 y x u2)))
+(B (name curevb) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (cure-vb e0 y x u2)))
+(B (name heal) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (heal-vb e0 y x u2)))
 
-(B (name unrecoverable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e1 x :0.2)(R#SICK y e1 :0.1))(unrecoverable-adj e1 y)))
-(B (name incurable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e1 x :0.2)(R#SICK y e1 :0.1)) (incurable-adj e1 y)))
-(B (name miscurable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e1 x :0.2)(R#SICK y e1 :0.1)) (miscurable-adj e1 y)))
+(B (name unrecoverable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e0 e0 :0.2)(R#SICK y e0 :0.1))(unrecoverable-adj e0 y)))
+(B (name incurable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e0 e0 :0.2)(R#SICK y e0 :0.1)) (incurable-adj e0 y)))
+(B (name miscurable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e0 e0 :0.2)(R#SICK y e0 :0.1)) (miscurable-adj e0 y)))
 
 
-(B (name recover) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (recover-vb e0 y u1 u2)))
-(B (name recuperate) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 e0 :0.3)(R#SICK y x :0.3)) (recuperate-vb e0 y u1 u2)))
-(B (name convalesce) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.3)(R#SICK y x :0.3)) (convalesce-vb e0 y u1 u2)))
+(B (name recover) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 e0 :0.3)(R#SICK y e0 :0.3)) (recover-vb e0 y u1 u2)))
+(B (name recuperate) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 e0 :0.3)(R#SICK y e0 :0.3)) (recuperate-vb e0 y u1 u2)))
+(B (name convalesce) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 e0 :0.3)(R#SICK y e0 :0.3)) (convalesce-vb e0 y u1 u2)))
 
-(B (name recovery) (=>(^(S#DISEASE e0 :0.45)(SS#CURE e0 x :0.45)) (recovery-nn e1)))
-(B (name recuperation) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.45)) (recuperation-nn e1)))
-(B (name convalescence) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.45)) (convalescence-nn e1)))
+(B (name recovery) (=>(^(S#DISEASE e0 :0.45)(SS#CURE x e0 :0.45)) (recovery-nn e1)))
+(B (name recuperation) (=>(^(S#DISEASE e0 :0.3)(SS#CURE x e0 :0.45)) (recuperation-nn e1)))
+(B (name convalescence) (=>(^(S#DISEASE e0 :0.3)(SS#CURE x e0 :0.45)) (convalescence-nn e1)))
 
 
 ; OF - CURE
@@ -151,10 +151,10 @@
 (B (name violation)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (violation-nn e0 x)))
 
 (B (name guilty-conduct)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(^(guilty-adj e1 x)(conduct-nn e0 x))))
-(B (name criminal-conduct)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(^(criminal-adj e1 x)(conduct-nn e0 x))))
+(B (name criminal-conduct)(=>(^(S#CRIME e1 :0.45)(SS#TYPE x e1 :0.45))(^(criminal-adj e1 x)(conduct-nn e0 x))))
 (B (name public-wrong)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(^(public-adj e1 x)(wrong-nn e0 x))))
 (B (name criminal-wrong)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(^(criminal-adj e1 x)(wrong-nn e0 x))))
-(B (name criminal-act) (=>(S#CRIME e1 :0.9)(^(criminal-adj e1 x)(act-nn e0 x))))
+(B (name criminal-act) (=>(S#CRIME e1 :0.45)(SS#TYPE x e1 :0.45)(^(criminal-adj e1 x)(act-nn e0 x))))
 
 (B (name rape)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (rape-nn e0 x)))
 
@@ -1232,9 +1232,12 @@
 (B (name hidden)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#INVISIBLE x e0 :0.3)) (hidden-adj e0 x)))
 
 ;SEEING
+(B (name picture)(=>(^(S#VISION e0 :0.45)(SS#SEEING x e0 :0.45)) (picture-nn e0 x)))
+
 (B (name open-eyes)(=>(^(S#VISION e1 :0.45)(SS#SEEING x e1 :0.45)) (^(open-adj e0 x)(eye-nn e1 x))))
 
 ;(B (name see)(=>(^(S#VISION e0 :0.3)(SS#SEEING x e0 e0 :0.3)(R#SIGHTED y e0 :0.3)) (see-vb e0 x y z)))
+(B (name see)(=>(^(S#VISION e0 :0.3)(SS#SEEING x e0 e0 :0.3)(R#SIGHTED y e0 :0.3)) (picture-vb e0 x y z)))
 
 (B (name visionmap)(=>(I#VISION x :0.9)(S#VISION x)))
 (B (name blindnessmap)(=>(I#BLINDNESS x y :0.9)(SS#BLINDNESS x y)))
