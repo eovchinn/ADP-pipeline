@@ -43,20 +43,20 @@
 
 ; TREATMENT
 
-(B (name tratamiento) (=>(^(S#DISEASE e0 :0.45)(SS#TREATMENT e0 e0 :0.45))(tratamiento-nn e1 e0)))
-(B (name terapia) (=>(^(S#DISEASE e0 :0.45)(SS#TREATMENT e0 e0 :0.45))(terapia-nn e1 e0)))
-(B (name diagnóstico) (=>(^(S#DISEASE e0 :0.45)(SS#TREATMENT e0 e0 :0.45))(diagnóstico-nn e1 e0)))
-(B (name diagnóstica) (=>(^(S#DISEASE e0 :0.45)(SS#TREATMENT e0 e0 :0.45))(diagnóstica-nn e1 e0)))
+(B (name tratamiento) (=>(^(S#DISEASE e0 :0.45)(SS#TREATMENT x e0 :0.45))(tratamiento-nn e0 x)))
+(B (name terapia) (=>(^(S#DISEASE e0 :0.45)(SS#TREATMENT x e0 :0.45))(terapia-nn e0 x)))
+(B (name diagnóstico) (=>(^(S#DISEASE e0 :0.45)(SS#TREATMENT x e0 :0.45))(diagnóstico-nn e0 x)))
+(B (name diagnóstica) (=>(^(S#DISEASE e0 :0.45)(SS#TREATMENT x e0 :0.45))(diagnóstica-nn e0 x)))
 
 
-(B (name doctor) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3))(doctor-nn e0 y)))
-(B (name médico) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3))(médico-nn e0 y)))
-(B (name facultativo) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3))(facultativo-nn e0 y)))
-(B (name medicina) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3))(medicina-nn e0 y)))
-(B (name remedio) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3))(remedio-nn e0 y)))
-(B (name vendaje) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3))(vendaje-nn e0 y)))
-(B (name venda) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3))(venda-nn e0 y)))
-(B (name tirita) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3))(tirita-nn e0 y)))
+(B (name doctor) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT y e0 :0.3)(R#CURE-AGENT y e0 :0.3))(doctor-nn e0 y)))
+(B (name médico) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT y e0 :0.3)(R#CURE-AGENT y e0 :0.3))(médico-nn e0 y)))
+(B (name facultativo) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT y e0 :0.3)(R#CURE-AGENT y e0 :0.3))(facultativo-nn e0 y)))
+(B (name medicina) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT y e0 :0.3)(R#CURE-AGENT y e0 :0.3))(medicina-nn e0 y)))
+(B (name remedio) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT y e0 :0.3)(R#CURE-AGENT y e0 :0.3))(remedio-nn e0 y)))
+(B (name vendaje) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT y e0 :0.3)(R#CURE-AGENT y e0 :0.3))(vendaje-nn e0 y)))
+(B (name venda) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT y e0 :0.3)(R#CURE-AGENT y e0 :0.3))(venda-nn e0 y)))
+(B (name tirita) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT y e0 :0.3)(R#CURE-AGENT y e0 :0.3))(tirita-nn e0 y)))
 
 (B (name tratar) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (tratar-vb e0 y x u2)))
 (B (name prescribir) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (prescribir-vb e0 y u1 u2)))
@@ -75,9 +75,9 @@
 (B (name curar) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (curar-vb e0 y x u2)))
 (B (name sanar) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 e0 :0.3)(R#CURE-AGENT y e0 :0.3)) (sanar-vb e0 y x u2)))
 
-(B (name irrecuperable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e1 e0 :0.2)(R#SICK y e1 :0.1))(irrecupable-adj e1 y)))
-(B (name incurable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e1 e0 :0.2)(R#SICK y e1 :0.1)) (incurable-adj e1 y)))
-(B (name irremediable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e1 e0 :0.2)(R#SICK y e1 :0.1)) (irremediable-adj e1 y)))
+(B (name irrecuperable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE y e0 :0.2)(R#SICK y e1 :0.1))(irrecupable-adj e0 y)))
+(B (name incurable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE y e0 :0.2)(R#SICK y e1 :0.1)) (incurable-adj e0 y)))
+(B (name irremediable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE y e0 :0.2)(R#SICK y e1 :0.1)) (irremediable-adj e0 y)))
 
 
 (B (name recuperar) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 e0 :0.3)(R#SICK y x :0.3)) (recuperar-vb e0 y u1 u2)))
@@ -86,8 +86,8 @@
 (B (name restablecerse) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 e0 :0.3)(R#SICK y x :0.3)) (restablecerse-vb e0 y u1 u2)))
 (B (name convalecer) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 e0 :0.3)(R#SICK y x :0.3)) (convalecer-vb e0 y u1 u2)))
 
-(B (name recuperación) (=>(^(S#DISEASE e0 :0.45)(SS#CURE e0 e0 :0.45)) (recuperación-nn e1)))
-(B (name convalencia) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 e0 :0.45)) (convalencia-nn e1)))
+(B (name recuperación) (=>(^(S#DISEASE e0 :0.45)(SS#CURE x e0 :0.45)) (recuperación-nn e0 x)))
+(B (name convalencia) (=>(^(S#DISEASE e0 :0.3)(SS#CURE x e0 :0.45)) (convalencia-nn e0 x)))
 
 
 ; OF - CURE
@@ -132,19 +132,19 @@
 
 ; CRIME
 
-(B (name crimen)(=>(^(S#CRIME x :0.45)(TYPE x :0.45)) (crimen-nn e0 x)))
-(B (name delito)(=>(^(S#CRIME x :0.45)(TYPE x :0.45)) (delito-nn e0 x)))
-(B (name malhecho)(=>(^(S#CRIME x :0.45)(TYPE x :0.45)) (malhecho-nn e0 x)))
-(B (name delincuencia)(=>(^(S#CRIME x :0.45)(TYPE x :0.45)) (delincuencia-nn e0 x)))
+(B (name crimen)(=>(^(S#CRIME e0 :0.45)(TYPE x e0 :0.45)) (crimen-nn e0 x)))
+(B (name delito)(=>(^(S#CRIME e0 :0.45)(TYPE x e0 :0.45)) (delito-nn e0 x)))
+(B (name malhecho)(=>(^(S#CRIME e0 :0.45)(TYPE x e0 :0.45)) (malhecho-nn e0 x)))
+(B (name delincuencia)(=>(^(S#CRIME e0 :0.45)(TYPE x e0 :0.45)) (delincuencia-nn e0 x)))
 
-(B (name fechoría)(=>(^(S#CRIME x :0.45)(TYPE x :0.45)) (fechoría-nn e0 x)))
-(B (name violación)(=>(^(S#CRIME x :0.45)(TYPE x :0.45)) (violación-nn e0 x)))
+(B (name fechoría)(=>(^(S#CRIME e0 :0.45)(TYPE x e0 :0.45)) (fechoría-nn e0 x)))
+(B (name violación)(=>(^(S#CRIME e0 :0.45)(TYPE x e0 :0.45)) (violación-nn e0 x)))
 
-(B (name conducta-culpable)(=>(^(S#CRIME x :0.45)(TYPE x :0.45))(^(conducta-nn e0 x) (culpable-adj e1 x))))
-(B (name criminal-conduct)(=>(^(S#CRIME x :0.45)(TYPE x :0.45))(^(conduct-nn e0 x) (criminal-adj e1 x))))
-;(B (name public-wrong)(=>(^(S#CRIME x :0.45)(TYPE x :0.45))(^(public-adj e1 x)(wrong-nn e0 x))))
-;(B (name criminal-wrong)(=>(^(S#CRIME x :0.45)(TYPE x :0.45))(^(criminal-adj e1 x)(wrong-nn e0 x))))
-;(B (name criminal-act) (=>(S#CRIME e1 :0.9)(^(criminal-adj e1 x)(act-nn e0 x))))
+(B (name conducta-culpable)(=>(^(S#CRIME e0 :0.45)(TYPE x e0 :0.45))(^(conducta-nn e0 x) (culpable-adj e1 x))))
+(B (name criminal-conduct)(=>(^(S#CRIME e0 :0.45)(TYPE x e0 :0.45))(^(conduct-nn e0 x) (criminal-adj e1 x))))
+;(B (name public-wrong)(=>(^(S#CRIME e0 :0.45)(TYPE x e0 :0.45))(^(public-adj e1 x)(wrong-nn e0 x))))
+;(B (name criminal-wrong)(=>(^(S#CRIME e0 :0.45)(TYPE x e0 :0.45))(^(criminal-adj e1 x)(wrong-nn e0 x))))
+;(B (name criminal-act) (=>(S#CRIME e1 :0.45)(TYPE x e1 :0.45)(^(criminal-adj e1 x)(act-nn e0 x))))
 
 ; PERPETRATOR
 (B (name bandido)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (bandido-nn e0 x)))
@@ -160,22 +160,22 @@
 (B (name malhechor)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (malhechor-nn e0 x)))
 (B (name prostituta)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (prostituta-nn e0 x)))
 
-(B (name rape)(=>(^(S#CRIME x :0.45)(CRIME-TYPE x :0.45)) (rape-nn e0 x)))
+(B (name rape)(=>(^(S#CRIME x :0.45)(CRIME-TYPE x :e0 0.45)) (rape-nn e0 x)))
 
-(B (name rapev) (=>(^(S#CRIME e0 :0.2)(CRIME-TYPE e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-VICTIM y e0 :0.2)) (rape-vb e0 x y u)))
+(B (name rapev) (=>(^(S#CRIME e0 :0.2)(CRIME-TYPE e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-VICTIM y e0 :0.2)) (rape-vb e0 x y u)))
 
-(B (name robar) (=>(^(S#CRIME e0 :0.2)(CRIME-TYPE e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-THEME z e0 :0.2)) (robar-vb e0 x z u2)))
-(B (name ratear) (=>(^(S#CRIME e0 :0.2)(CRIME-TYPE e0 :0.2)(R#CRIME-AGENT x e0 :0.2) (R#CRIME-THEME z e0 :0.2)) (ratear-vb e0 x z u2)))
-(B (name saquear) (=>(^(S#CRIME e0 :0.2)(CRIME-TYPE e0 :0.2)(R#CRIME-AGENT x e0 :0.2) (R#CRIME-THEME z e0 :0.2)) (saquear-vb e0 x z u2)))
-(B (name pillar) (=>(^(S#CRIME e0 :0.2)(CRIME-TYPE e0 :0.2)(R#CRIME-AGENT x e0 :0.2) (R#CRIME-THEME z e0 :0.2)) (pillar-vb e0 x z u2)))
+(B (name robar) (=>(^(S#CRIME e0 :0.2)(CRIME-TYPE e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-THEME z e0 :0.2)) (robar-vb e0 x z u2)))
+(B (name ratear) (=>(^(S#CRIME e0 :0.2)(CRIME-TYPE e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2) (R#CRIME-THEME z e0 :0.2)) (ratear-vb e0 x z u2)))
+(B (name saquear) (=>(^(S#CRIME e0 :0.2)(CRIME-TYPE e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2) (R#CRIME-THEME z e0 :0.2)) (saquear-vb e0 x z u2)))
+(B (name pillar) (=>(^(S#CRIME e0 :0.2)(CRIME-TYPE e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2) (R#CRIME-THEME z e0 :0.2)) (pillar-vb e0 x z u2)))
 
-(B (name robo) (=>(^(S#CRIME x :0.45)(CRIME-TYPE x :0.45)) (robo-nn e0 x)))
-(B (name hurto) (=>(^(S#CRIME x :0.45)(CRIME-TYPE x :0.45)) (hurto-nn e0 x)))
-(B (name latrocinio) (=>(^(S#CRIME x :0.45)(CRIME-TYPE x :0.45)) (latrocinio-nn e0 x)))
+(B (name robo) (=>(^(S#CRIME x :0.45)(CRIME-TYPE x e0 :0.45)) (robo-nn e0 x)))
+(B (name hurto) (=>(^(S#CRIME x :0.45)(CRIME-TYPE x e0 :0.45)) (hurto-nn e0 x)))
+(B (name latrocinio) (=>(^(S#CRIME x :0.45)(CRIME-TYPE x e0 :0.45)) (latrocinio-nn e0 x)))
 
-(B (name pillaje) (=>(^(S#CRIME x :0.45)(CRIME-TYPE x :0.45))(pillaje-nn e0 x)))
-(B (name saqueo) (=>(^(S#CRIME x :0.45)(CRIME-TYPE x :0.45))(saqueo-nn e0 x)))
-(B (name botín) (=>(^(S#CRIME x :0.45)(CRIME-TYPE x :0.45))(botín-nn e0 x)))
+(B (name pillaje) (=>(^(S#CRIME x :0.45)(CRIME-TYPE x e0 :0.45))(pillaje-nn e0 x)))
+(B (name saqueo) (=>(^(S#CRIME x :0.45)(CRIME-TYPE x e0 :0.45))(saqueo-nn e0 x)))
+(B (name botín) (=>(^(S#CRIME x :0.45)(CRIME-TYPE x e0 :0.45))(botín-nn e0 x)))
 
 (B (name ladrón) (=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR e0 e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (ladrón-nn e0 x)))
 (B (name ladronzuelo) (=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR e0 e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (ladronzuelo-nn e0 x)))
@@ -292,7 +292,7 @@
 (B (name río) (=> (^(S#BODY-OF-WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (río-nn e0 y)))
 
 ; OF - BODY_OF_WATER
-(B (name of-body-of-water) (=>(R#MATTER x y :0.9)(^(SS#TYPE y)(de-in e1 y x))))
+; (B (name of-body-of-water) (=>(R#MATTER x y :0.9)(^(SS#TYPE y)(de-in e1 y x))))
 
 
 ; DRINK
