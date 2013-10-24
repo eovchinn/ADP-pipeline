@@ -292,7 +292,7 @@
 (B (name río) (=> (^(S#BODY-OF-WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (río-nn e0 y)))
 
 ; OF - BODY_OF_WATER
-(B (name of-body-of-water) (=>(R#MATTER x y :0.9)(^(SS#TYPE y)(de-in e1 y x))))
+; (B (name of-body-of-water) (=>(R#MATTER x y :0.9)(^(SS#TYPE y)(de-in e1 y x))))
 
 
 ; DRINK

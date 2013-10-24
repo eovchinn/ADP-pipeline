@@ -331,9 +331,9 @@
 (B (name water) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45))(water-nn e0 x)))
 (B (name sea-water) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (sea-water-nn e0 x)))
 
-(B (name sea) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (sea-nn e0 y)))
-(B (name ocean) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (ocean-nn e0 y)))
-(B (name river) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (river-nn e0 y)))
+(B (name sea) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (sea-nn e0 x)))
+(B (name ocean) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (ocean-nn e0 x)))
+(B (name river) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (river-nn e0 x)))
 
 ; OF - BODY_OF_WATER
 (B (name of-body-of-water) (=>(R#MATTER x y :0.9)(^(SS#BODY_OF_WATER_TYPE y)(of-in e1 y x))))
@@ -361,16 +361,16 @@
 
 
 ; MOVEMENT
-(B (name flow) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(flow-vb e0 x u1 u2)))
-(B (name leak) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(leak-vb e0 x u1 u2)))
-(B (name stream) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(stream-vb e0 x u1 u2)))
+(B (name flow) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(flow-vb e0 x u1 u2)))
+(B (name leak) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(leak-vb e0 x u1 u2)))
+(B (name stream) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(stream-vb e0 x u1 u2)))
 
 (B (name stream2) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(stream-nn e0 y)))
 (B (name flow2) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(flow-nn e0 y)))
 (B (name leak2) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(leak-nn e0 y)))
 (B (name wave) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(wave-nn e0 y)))
 (B (name tide) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(tide-nn e0 y)))
-(B (name rising-tide) (=>(^(S#BODY_OF_WATER y :0.45)(SS#MOVEMENT x y :0.45)) (^(rising-adj e0 x)(tide-nn e1 x))))
+(B (name rising-tide) (=>(^(S#BODY_OF_WATER e1 :0.45)(SS#MOVEMENT x e1 :0.45)) (^(rising-adj e0 x)(tide-nn e1 x))))
 (B (name flood) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(flood-nn e0 y)))
 
 (B (name awash) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT e0 e0 :0.45))(awash-adj e0 y)))
