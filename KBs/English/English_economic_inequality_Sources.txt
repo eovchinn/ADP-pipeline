@@ -154,7 +154,7 @@
 (B (name criminal-conduct)(=>(^(S#CRIME e1 :0.45)(SS#TYPE x e1 :0.45))(^(criminal-adj e1 x)(conduct-nn e0 x))))
 (B (name public-wrong)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(^(public-adj e1 x)(wrong-nn e0 x))))
 (B (name criminal-wrong)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(^(criminal-adj e1 x)(wrong-nn e0 x))))
-(B (name criminal-act) (=>(S#CRIME e1 :0.45)(SS#TYPE x e1 :0.45)(^(criminal-adj e1 x)(act-nn e0 x))))
+(B (name criminal-act) (=>(^(S#CRIME e1 :0.45)(SS#TYPE x e1 :0.45))(^(criminal-adj e1 x)(act-nn e0 x))))
 
 (B (name rape)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (rape-nn e0 x)))
 
