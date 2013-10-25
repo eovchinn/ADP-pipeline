@@ -1,0 +1,150 @@
+; DISEASE
+(B (name disease) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (مرض-nn e0 x)))
+(B (name illness) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (بیماری-nn e0 x)))
+(B (name disorder) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (کسالت-nn e0 x)))
+(B (name sickness) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (ناخوشی-nn e0 x)))
+(B (name malum) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (مضر-nn e0 x)))
+(B (name morbus) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (مرض-nn e0 x)))
+(B (name malady) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (عارضه-nn e0 x)))
+(B (name malaise) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (احساس-مرض-nn e0 x)))
+(B (name ailment) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (بیماری-مزمن-nn e0 x)))
+(B (name affliction) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (رنجوری-nn e0 x)))
+(B (name medical-condition) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (^(وضعیت-nn e0 x)(پزشکی-adj e1 x))))
+(B (name health-problem) (=>(^(S#DISEASE e1 :0.45)(SS#TYPE y e1 :0.45)) (^(سلامت-nn e0 x)(of-in e2 y x)(مشکل-nn e1 y))))
+ 
+(B (name plague) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (طاعون-nn e0 x)))
+(B (name cancer) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (سرطان-nn e0 x)))
+(B (name infection) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (عفونت-nn e0 x)))
+(B (name blight) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (عدم-رشد-nn e0 x)))
+ 
+
+; SICK
+(B (name sick) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (بیمار-adj e0 y)))
+(B (name ill) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (مریض-adj e0 y)))
+(B (name sore) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (مجروح-adj e0 y)))
+(B (name diseased) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (بیمار-adj e0 y)))
+(B (name handicapped) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (معلول-adj e0 y)))
+(B (name disabled) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (ناتوان-adj e0 y)))
+ 
+(B (name crippled) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (چلاق-adj e0 y)))
+ 
+(B (name invalid) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (علیل-nn e0 y)))
+(B (name patient) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (ناخوش-nn e0 y)))
+ 
+(B (name suffer-from) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y x :0.3))(^(رنج-بردن-vb e0 y u1 u2)(از-in e1 e0 x))))
+ 
+; OF - DISEASE
+(B (name of-disease) (=>(R#SICK y x :0.9)(^(S#DISEASE x)(از-in e1 x y))))
+
+
+
+; TREATMENT
+ 
+(B (name treatment) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(درمان-nn e0 x)))
+(B (name operation) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(جراحی-nn e0 x)))
+(B (name therapy) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(معالجه-nn e0 x)))
+(B (name diagnosis) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(تشخیص-ناخوشی-nn e0 x)))
+(B (name diagnostic) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(تشخیصی-adj e0 x)))
+; (B (name examination)(=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45)) (معاینه-nn e0 x)))
+(B (name prescription)(=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45)) (نسخه-nn e0 x)))
+ 
+(B (name doctor) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(پزشک-nn e0 y)))
+(B (name healer) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(التیام-دهنده-nn e0 y)))
+(B (name physician) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(طبیب-nn e0 y)))
+(B (name suregon) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(جراح-nn e0 y)))
+(B (name medic) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(پزشکی-nn e0 y)))
+(B (name medicament) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(دوا-nn e0 y)))
+(B (name remedy) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(درمان-nn e0 y)))
+(B (name antibiotic)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x x :0.3)(R#CURE-AGENT x e0 :0.3)) (آنتی-بیوتیک-nn e0 x)))
+(B (name medicine)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x x :0.3)(R#CURE-AGENT x e0 :0.3)) (پزشکی-nn e0 x)))
+(B (name drug)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x x :0.3) (R#CURE-AGENT x e0 :0.3)) (دارو-nn e0 x)))
+(B (name pill)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x x :0.3)(R#CURE-AGENT x e0 :0.3)) (قرص-nn e0 x)))
+(B (name bandage) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(نوار-زخم-بندی-nn e0 y)))
+(B (name band-aid) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(چسب-زخم-nn e0 y)))
+ 
+(B (name treat) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (درمان-کردن-vb e0 y x u2)))
+(B (name prescribe) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT e0 u :0.3)(R#CURE-AGENT y e0 :0.3)) (تجویز-کردن-vb e0 y u1 u2)))
+(B (name diagnose) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (تشخیص-دادن-vb e0 y x u2)))
+(B (name misdiagnose) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (تشخیص-اشتباه-دادن-vb e0 y x u2)))
+(B (name alleviate) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (آرام-کردن-vb e0 y x u2)))
+(B (name dissect) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT e0 u :0.3)(R#CURE-AGENT y e0 :0.3)) (کالبدشکافی-کردن-vb e0 y u1 u2)))
+ 
+(B (name of-treatment) (=>(S#DISEASE y e0 :0.9)(^(SS#TREATMENT x y)(از-in e1 x y))))
+ 
+; CURE
+ 
+(B (name cure) (=>(^(S#DISEASE u :0.45)(SS#CURE x u :0.45))(علاج-nn e0 x)))
+(B (name panacea) (=>(^(S#DISEASE u :0.45)(SS#CURE x u :0.45))(اکسیر-nn e0 x)))
+(B (name cure-all)(=>(^(S#DISEASE e0 :0.45)(SS#CURE x e0 :0.45)) (نوشدارو-nn e0 x)))
+ 
+(B (name curevb) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (شفاء-دادن-vb e0 y x u2)))
+(B (name heal) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (التیام-دادن-vb e0 y x u2)))
+ 
+(B (name unrecoverable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e1 x :0.2)(R#SICK y e1 :0.1))(بی-درمان-adj e1 y)))
+(B (name incurable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e1 x :0.2)(R#SICK y e1 :0.1)) (علاج-ناپذیر-adj e1 y)))
+ 
+ 
+(B (name recover) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (بهبود-یافتن-vb e0 y u1 u2)))
+(B (name recuperate) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 e0 :0.3)(R#SICK y x :0.3)) (نیروی-تازه-یافتن-vb e0 y u1 u2)))
+(B (name convalesce) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.3)(R#SICK y x :0.3)) (دوره-نقاهت-را-گذراندن-vb e0 y u1 u2)))
+ 
+(B (name recovery) (=>(^(S#DISEASE e0 :0.45)(SS#CURE e0 x :0.45)) (بهبود-nn e1)))
+(B (name recuperation) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.45)) (بهبودی-nn e1)))
+(B (name convalescence) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.45)) (دوره-نقاهت-nn e1)))
+ 
+ 
+; OF - CURE
+(B (name for-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE x y)(برای-in e1 x y))))
+ 
+; FROM_AGAINST - CURE
+; (B (name from-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE e0 y)(بواسطه-in e1 e0 y))))
+; (B (name against-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE e0 y)(علیه-in e1 e0 y))))
+ 
+ 
+; EPIDEMIC
+(B (name epidemic) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE y e0 :0.45)) (بیماری-همه-گیر-nn e0 y)))
+(B (name epidemic2) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE e0 e0 :0.45)) (واگیر-adj e0 y)))
+(B (name pandemia) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE y e0 :0.45)) (همه-گیر-nn e0 y)))
+(B (name pandemic) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE e0 e0 :0.45)) (ناخوشی-همه-گیر-adj e0 y)))
+(B (name virus) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE y e0 :0.45)) (ویروس-nn e0 y)))
+ 
+; OF - EPIDEMIC
+(B (name of-epidemic) (=>(S#DISEASE y :0.9)(^(SS#TYPE x y u)(از-لحاظ-in e1 x y))))
+ 
+
+; SYMPTOM
+(B (name symptom) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (علامت-مرض-nn e0 y)))
+(B (name symptomatic) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS e0 e0 :0.45)) (نشانه-بیماری-adj e0 y)))
+ 
+(B (name bleeding) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS e0 e0 :0.45))(خون-ریزی-adj e0 y)))
+(B (name wound) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (زخم-nn e0 y)))
+(B (name pain) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (درد-nn e0 y)))
+(B (name scar) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (جای-زخم-nn e0 y)))
+(B (name fever) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (تب-nn e0 y)))
+ 
+(B (name ache) (=>(^(S#DISEASE e0 :0.3)(SS#SYMPTOMS e0 e0 :0.3)(R#SICK y e0 :0.3))(تیر-کشیدن-vb e0 y u1 u2)))
+(B (name bleed) (=>(^(S#DISEASE e0 :0.3)(SS#SYMPTOMS e0 e0 :0.3)(R#SICK y e0 :0.3))(خون-آمدن-vb e0 y u1 u2)))
+ 
+; OF - SYMPTOM
+;(B (name of-symptom) (=>(S#DISEASE y :0.9)(^(SS#SYMPTOMS x y)(از-in e1 x y))))
+ 
+(B (name dismap)(=>(I#DISEASE e0 :0.9)(S#DISEASE x)))
+(B (name dis-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name curemap)(=>(I#CURE x y :0.9)(SS#CURE x y)))
+(B (name treatmentmap)(=>(I#TREATMENT x y :0.9)(SS#TREATMENT x y)))
+(B (name symptomsmap)(=>(I#SYMPTOMS x y :0.9)(SS#SYMPTOMS x y)))
+
+
+; CRIME
+;TYPE
+(B (name crime)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (جرم-nn e0 x)))
+(B (name offence)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (بزه-nn e0 x)))
+(B (name felony)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (جنایت-nn e0 x)))
+(B (name delinquency)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (تخلف-nn e0 x)))
+(B (name racism)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (نژاد-پرستی-nn e0 x)))
+ 
+(B (name misdeed)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (بد-کرداری-nn e0 x)))
+(B (name malefaction)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (تبه-کاری-nn e0 x)))
+(B (name violation)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (تخطی-nn e0 x)))
+
+

@@ -14,7 +14,7 @@ SSforS = {
 'PARASITE': 'DESTRUCTUVE_BEING',
 'PHYSICAL_BURDEN': 'RELIEF',
 'PHYSICAL_LOCATION': 'DEFINED_REGION',
-'DARKNESS': 'DARK_END_OF_RANGE_OF_DARKNESS/LIGHT',
+'DARKNESS': 'DARK_END_OF_RANGE_OF_DARKNESS_LIGHT',
 'LOW_POINT': 'MOVEMENT_DOWNWARD',
 'BUILDING': 'CREATION_DESTRUCTION',
 'MEDICINE': 'ADMINISTRATION',
@@ -26,13 +26,18 @@ SSforS = {
 'RESOURCE': 'QUANTITY_SIZE',
 'VISION': 'SEEING',
 'HIGH_POINT': 'TOP_OF_ECONOMIC_SCALE',
-'LIGHT': 'LIGHT_END_OF_RANGE_OF_DARKNESS/LIGHT',
+'LIGHT': 'LIGHT_END_OF_RANGE_OF_DARKNESS_LIGHT',
 'BLOOD_SYSTEM': 'MOVEMENT',
 'CROP': 'PLANTING',
 'MOVEMENT': 'MOVEMENT',
 'FOOD': 'CONSUMPTION',
 'GAME': 'ACTIONS',
-'PLANT': 'CHANGE_OF_STATE'}
+'PLANT': 'CHANGE_OF_STATE',
+'PORTAL': 'MEANS_OF_ENTRY',
+'MOVEMENT_ON_A_VERTICAL_SCALE': 'MOVEMENT',
+'COMPETITION': 'COMPONENT',
+'HUMAN_BODY': 'COMPONENT',
+'MOVEMENT': 'MOVEMENT'}
 
 def wordStr2print(Args,WordProps,Equalities):
 	output_str = ''
@@ -118,6 +123,8 @@ def isLinkedbyParse(v1,v2,word_props,equalities,been):
 	if (v1,v2) in been: return 0
 	been.append((v1,v2))
 	been.append((v2,v1))
+
+	#print (v1,v2)
 
 	#if equalities.has_key(v1) and equalities[v1].has_key(v2): return 2
 
@@ -234,12 +241,11 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 						equalities[arg1][arg2]=1
 						equalities[arg2][arg1]=1
 						j += 1
-			else:
-				#print json.dumps((prop_name,args), ensure_ascii=False) 
-				if prop_name == 'equal':
-					equalities[args[1]][args[2]]=1
-					equalities[args[2]][args[1]]=1
-				else: word_props.append((prop_name,args))
+			elif prop_name == '!=': continue
+			elif prop_name == 'equal':
+				equalities[args[1]][args[2]]=1
+				equalities[args[2]][args[1]]=1
+			else: word_props.append((prop_name,args))
 
 	#print json.dumps(targets, ensure_ascii=False)
 
@@ -260,113 +266,99 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	output_struct_item = {}
 	if not LCCannotation: output_struct_item["id"] = id
 	output_struct_item["isiDescription"] = DESCRIPTION
-	output_struct_item["targetConceptDomain"] = "ECONOMIC_INEQUALITY"
+	output_struct_item["targetConceptDomain"] = "ECONOMIC_INEQUALITY"	
 
 	explanationAppendix = "\n%%BEGIN_CM_LIST\n"
+	CMlinked = False
+	CMhalflinked = False
+	CMunlinked = False
+	CMrandom = False
+	bestCM = ''
 
-
-	CMlinked = ''
-	CMhalflinked = ''
-	CMunlinked = ''
+	Tdomains = []
+	Sdomains = []
 
 	for targetS in target_strucs:
-		tV = collectVars(target_strucs,targetS,equalities)
+		if sourceTask and targetS != LCCannotation["targetFrame"]: continue
 
-		Tstrings = []
-		for targ in target_strucs[targetS]: 
+		tV = collectVars(target_strucs,targetS,equalities)
+		Tdomains = []
+
+		for targ in target_strucs[targetS]: 			
 			if len(target_strucs[targetS][targ])==0: 
-				Tstrings.append('ECONOMIC_INEQUALITY,' + targetS + ',' + targetS)
+				Tdomains.append((targetS,targetS))
 			else: 		
 				for (tsubd,tsubarg) in target_strucs[targetS][targ]:
-					Tstrings.append('ECONOMIC_INEQUALITY,' + targetS + ',' + tsubd)
-
+					Tdomains.append((targetS,tsubd))
+		
+		Sdomains = []
 		for sourceS in source_strucs:
-			sV = collectVars(source_strucs,sourceS,equalities)
-			link = 0
-			for tv in tV:
-				for sv in sV:
-					newlink = isLinkedbyParse(tv,sv,word_props,equalities,[])
-					if newlink==2:
-						#print '!!!!!!!!! ' + targetS + ' ' + tv + ' ' + sourceS + ' ' + sv
-						link = 2
-						break
-					elif newlink>link: link=newlink
-				if link==2: break
+			if sourceTask and sourceS != LCCannotation["sourceFrame"]: continue
 
-			if sourceS == 'SCHISM':
-				Tstrings.append('ECONOMIC_INEQUALITY,POVERTY/WEALTH,POVERTY/WEALTH')
-
-			Sstrings = []
 			for sarg in source_strucs[sourceS]:
-				if len(source_strucs[sourceS][sarg])==0:
-					if SSforS.has_key(sourceS): 
-						Sstrings.append(','+sourceS+','+SSforS[sourceS])
-					else: Sstrings.append(','+sourceS+',TYPE')				
+				for (ssubS,ssarg) in source_strucs[sourceS][sarg]:
+					sargs = [ssarg]
+					sargs += equalities[ssarg].keys()
+					link = 0
+					for tv in tV:
+						for sv in sargs:
+							#print "%s,%s,%s,%s,%s" % (targetS,sourceS,ssubS,tv,sv)
+							newlink = isLinkedbyParse(tv,sv,word_props,equalities,[])
+							#print newlink
+							if newlink==2:
+								link=2
+								break
+							elif newlink>link: link=newlink
+						if link==2: break
+					if link==0:	Sdomains.append((sourceS,ssubS,0.3))
+					elif link==1: Sdomains.append((sourceS,ssubS,0.5))
+					elif link==2: Sdomains.append((sourceS,ssubS,0.9))
+
+					for (t,ts) in Tdomains:
+						for (s,ss,c) in Sdomains:
+								explanationAppendix += "ECONOMIC_INEQUALITY,%s,%s,%s,%s,%s\n" % (t,ts,s,ss,c)
+								if not CMlinked and c==0.9: 
+									bestCM = "ECONOMIC_INEQUALITY,%s,%s,%s,%s,%s\n" % (t,ts,s,ss,c)
+									CMlinked = True
+								elif not CMlinked and not CMhalflinked and c==0.5:
+									bestCM = "ECONOMIC_INEQUALITY,%s,%s,%s,%s,%s\n" % (t,ts,s,ss,c)
+									CMhalflinked = True
+								elif not CMlinked and not CMhalflinked and not CMunlinked and c==0.3:
+									bestCM = "ECONOMIC_INEQUALITY,%s,%s,%s,%s,%s\n" % (t,ts,s,ss,c)
+									CMunlinked = True
+								elif not CMlinked and not CMhalflinked and not CMunlinked and not CMrandom: 
+									bestCM = "ECONOMIC_INEQUALITY,%s,%s,%s,%s,%s\n" % (t,ts,s,ss,c)
+									CMrandom = True
+
+	if len(Tdomains)==0 or len(Sdomains)==0:
+		if len(Tdomains)==0:
+			if sourceTask:
+				Tdomains.append((LCCannotation["targetFrame"],LCCannotation["targetConceptSubDomain"]))
+			else:
+				Tdomains.append(('POVERTY','POVERTY'))
+
+			if len(source_strucs)>0:
+				for sourceS in source_strucs:
+					if sourceTask and sourceS != LCCannotation["sourceFrame"]: continue
+
+					for sarg in source_strucs[sourceS]:
+						for (ssubS,ssarg) in source_strucs[sourceS][sarg]:
+							Sdomains.append((sourceS,ssubS,0.001))
+
+		if len(Sdomains)==0:
+			if sourceTask:
+				if SSforS.has_key(LCCannotation["sourceFrame"]):
+					Sdomains.append((LCCannotation["sourceFrame"],SSforS[LCCannotation["sourceFrame"]],0.001))
 				else:
-					for (ssubd,ssubarg) in source_strucs[sourceS][sarg]:
-						Sstrings.append(','+sourceS+','+ssubd)
-
-			for ts in Tstrings:
-				for ss in Sstrings:
-					explanationAppendix += ts+ss
-					if link==2: 
-						explanationAppendix += ',0.9\n'
-						CMlinked = ts+ss
-					elif link==1: 
-						explanationAppendix += ',0.5\n'
-						CMhalflinked = ts+ss
-					elif link==0: 
-						explanationAppendix += ',0.3\n'
-						CMunlinked = ts+ss
-
-	if len(CMlinked)==0 and len(CMhalflinked)==0 and len(CMunlinked)==0:
-		targetS = ''
-		sourceS = ''
-
-		if len(target_strucs.keys())>0:
-			guessTarget = target_strucs.keys()[0]
-			tArg = target_strucs[guessTarget].keys()[0]
-			if len(target_strucs[guessTarget][tArg])>0:
-				(guessSubTarget,stArg) = target_strucs[guessTarget][tArg][0]
-			else: guessSubTarget = guessTarget
-			targetS = 'ECONOMIC_INEQUALITY,' + guessTarget + ',' + guessSubTarget + ','
-		else:
-			if sourceTask:
-				guessTarget = LCCannotation["targetFrame"]
-				guessSubTarget = LCCannotation["targetConceptSubDomain"]
+					Sdomains.append((LCCannotation["sourceFrame"],'TYPE',0.001))
 			else:
-				guessTarget = 'POVERTY'
-				guessSubTarget = 'POVERTY'
-			targetS = 'ECONOMIC_INEQUALITY,' + guessTarget + ',' + guessSubTarget + ','
+				Sdomains.append(('STRUGGLE','TYPE',0.001))
 
-		#print json.dumps(source_strucs, ensure_ascii=False)
-		if len(source_strucs.keys())>0:
-			guessSource = source_strucs.keys()[0]
-			sArg = source_strucs[guessSource].keys()[0]
-			if len(source_strucs[guessSource][sArg])>0:
-				(guessSubSource,stArg) = source_strucs[guessSource][sArg][0]
-			else: 
-				if SSforS.has_key(guessSource): guessSubSource = SSforS[guessSource]
-				else: guessSubSource = 'TYPE'
-			sourceS = guessSource + ',' + guessSubSource
-		else:
-			if sourceTask:
-				guessSource = LCCannotation["sourceFrame"]
-			else:
-				guessSource = 'STRUGGLE'
-			if SSforS.has_key(guessSource): guessSubSource = SSforS[guessSource]
-			else: guessSubSource = 'TYPE'
-			sourceS = guessSource + ',' + guessSubSource
+		for (t,ts) in Tdomains:
+			for (s,ss,c) in Sdomains:
+				explanationAppendix += "ECONOMIC_INEQUALITY,%s,%s,%s,%s,%s\n" % (t,ts,s,ss,c)
+				bestCM = "ECONOMIC_INEQUALITY,%s,%s,%s,%s,%s\n" % (t,ts,s,ss,c)
 
-			if guessSource == 'SCHISM':
-				targetS = 'ECONOMIC_INEQUALITY,POVERTY/WEALTH,POVERTY/WEALTH,'
-
-		CMunlinked = targetS+sourceS
-		explanationAppendix += targetS+sourceS+',0.001\n'
-
-	if len(CMlinked)>0: bestCM = CMlinked
-	elif len(CMhalflinked)>0: bestCM = CMhalflinked
-	else: bestCM = CMunlinked
 
 	explanationAppendix += "%%END_CM_LIST"
 
