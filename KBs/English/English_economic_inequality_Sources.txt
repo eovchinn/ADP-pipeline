@@ -157,6 +157,7 @@
 (B (name criminal-act) (=>(^(S#CRIME e1 :0.45)(SS#TYPE x e1 :0.45))(^(criminal-adj e1 x)(act-nn e0 x))))
 
 (B (name rape)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (rape-nn e0 x)))
+(B (name rape)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (assault-nn e0 x)))
 
 (B (name rapev) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (rape-vb e0 x y u)))
 (B (name violate) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (violate-vb e0 x y u)))
@@ -666,6 +667,7 @@
 
 (B (name overwhelm)(=>(^(S#PHYSICAL_BURDEN e0 :0.3)(SS#PHYSICAL_DISTRESS e0 e0 :0.3)(R#PHYSICAL_BURDEN-CAUSE x e0 :0.3)) (overwhelm-vb e0 x y u)))
 (B (name crush)(=>(^(S#PHYSICAL_BURDEN e0 :0.3)(SS#PHYSICAL_DISTRESS e0 e0 :0.3)(R#PHYSICAL_BURDEN-CAUSE x e0 :0.3)) (crush-vb e0 x y u)))
+(B (name suffer)(=>(^(S#PHYSICAL_BURDEN e0 :0.3)(SS#PHYSICAL_DISTRESS e0 e0 :0.3)(R#PHYSICAL_BURDEN-PATIENT x e0 :0.3)) (suffer-vb e0 x y u)))
 
 (B (name physical-burdenmap) (=>(I#PHYSICAL_BURDEN  e0 :0.9) (S#PHYSICAL_BURDEN x)))
 (B (name weightmap) (=>(I#WEIGHT  x y :0.9) (SS#WEIGHT x y)))
@@ -1267,6 +1269,7 @@
 
 ; ACTION
 (B (name scare)(=>(SS#ACTION e0 e1 :0.9) (^(S#MONSTER e1)(SS#TYPE x e1)(scare-vb e0 x y u))))
+(B (name threaten)(=>(SS#ACTION e0 e1 :0.9) (^(S#MONSTER e1)(SS#TYPE x e1)(threaten-vb e0 x y u))))
 (B (name terrify)(=>(SS#ACTION e0 e1 :0.9) (^(S#MONSTER e1)(SS#TYPE x e1)(terrify-vb e0 x y u))))
 (B (name devour)(=>(SS#ACTION e0 e1 :0.9) (^(S#MONSTER e1)(SS#TYPE x e1)(devour-vb e0 x y u))))
 (B (name suck)(=>(SS#ACTION e0 e1 :0.9) (^(S#MONSTER e1)(SS#TYPE x e1)(suck-vb e0 x y u))))
@@ -1302,6 +1305,7 @@
 (B (name skin)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (skin-vb e0 x y u)))
 (B (name fleece)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (fleece-vb e0 x y u)))
 (B (name shear)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (shear-vb e0 x y u)))
+(B (name wring)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (wring-vb e0 x y u)))
 
 (B (name extraction)(=>(^(S#FORCEFUL_EXTRACTION e0 :0.45)(SS#TYPE x e0 :0.45)) (extraction-nn e0 x)))
 (B (name extortion)(=>(^(S#FORCEFUL_EXTRACTION e0 :0.45)(SS#TYPE x e0 :0.45)) (extortion-nn e0 x)))
@@ -1463,7 +1467,7 @@
 (B (name inject)(=>(^(S#MEDICINE e0 :0.45)(SS#ADMINISTRATION x e0 :0.45)(R#ADMINISTRATION-AGENT x e0 :0.33)) (inject-vb e0 x y z)))
 
 ;(B (name shot)(=>(^(S#MEDICINE e0 :0.45)(SS#ADMINISTRATION x e0 :0.45)) (shot-nn e0 x)))
-;(B (name injection)(=>(^(S#MEDICINE e0 :0.45)(SS#ADMINISTRATION x e0 :0.45)) (injection-nn e0 x)))
+(B (name injection)(=>(^(S#MEDICINE e0 :0.45)(SS#ADMINISTRATION x e0 :0.45)) (injection-nn e0 x)))
 
 (B (name medicinemap)(=>(I#MEDICINE x :0.9)(S#MEDICINE x)))
 (B (name administrationmap)(=>(I#ADMINISTRATION x y :0.9)(SS#ADMINISTRATION x y)))
@@ -1646,13 +1650,53 @@
 (B (name plant-change-of-statemap)(=>(I#CHANGE_OF_STATE x y :0.9)(SS#CHANGE_OF_STATE x y)))
 
 ; ANIMAL
+;TYPE
+(B (name animal)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (animal-nn e0 x)))
+(B (name beast)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (beast-nn e0 x)))
+(B (name bear)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (bear-nn e0 x)))
+(B (name dog)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (dog-nn e0 x)))
+(B (name cat)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (cat-nn e0 x)))
+(B (name lion)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (lion-nn e0 x)))
+(B (name tiger)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (tiger-nn e0 x)))
+(B (name shark)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (shark-nn e0 x)))
+(B (name whale)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (whale-nn e0 x)))
+(B (name bird)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (bird-nn e0 x)))
+(B (name wolf)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (wolf-nn e0 x)))
+(B (name lamb)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (lamb-nn e0 x)))
+(B (name sheep)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (sheep-nn e0 x)))
+(B (name deer)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (deer-nn e0 x)))
+
+(B (name gorilla)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (gorilla-nn e0 x)))
+(B (name monkey)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (monkey-nn e0 x)))
+(B (name goat)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (goat-nn e0 x)))
+(B (name horse)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (horse-nn e0 x)))
+(B (name turtle)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (turtle-nn e0 x)))
+(B (name cow)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (cow-nn e0 x)))
+(B (name bull)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (bull-nn e0 x)))
+(B (name snake)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (snake-nn e0 x)))
+(B (name fox)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (fox-nn e0 x)))
+(B (name beaver)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (beaver-nn e0 x)))
+(B (name bee)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (bee-nn e0 x)))
+(B (name hornet)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (hornet-nn e0 x)))
+(B (name wasp)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (wasp-nn e0 x)))
+(B (name mole)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (mole-nn e0 x)))
+(B (name owl)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (owl-nn e0 x)))
+(B (name elephant)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (elephant-nn e0 x)))
+(B (name hound)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (hound-nn e0 x)))
+(B (name cuckoo)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (cuckoo-nn e0 x)))
+(B (name otter)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (otter-nn e0 x)))
+(B (name hyena)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (hyena-nn e0 x)))
+(B (name chicken)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (chicken-nn e0 x)))
+(B (name eagle)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (^(eagle-nn e0 x)(eye-nn e1 y))))
+
+
 ; COMPONENT
 (B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (muzzle-nn e0 x)))
 (B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (snout-nn e0 x)))
 (B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (jaws-nn e0 x)))
 (B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (fang-nn e0 x)))
-(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (клык-nn e0 x)))
-(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (fell-nn e0 x)))
+;(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (клык-nn e0 x)))
+;(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (fell-nn e0 x)))
 (B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (tail-nn e0 x)))
 
 ; FUNCTION
@@ -1676,6 +1720,8 @@
 (B (name roar)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (roar-vb e0 x y u)))
 (B (name bark)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (bark-vb e0 x y u)))
 (B (name scratch)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (scratch-vb e0 x y u)))
+(B (name swim)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (swim-vb e0 x y u)))
+(B (name stampede)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (stampede-vb e0 x y u)))
 
 (B (name animalmap)(=>(I#ANIMAL x :0.9)(S#ANIMAL x)))
 (B (name animal-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -1698,6 +1744,7 @@
 (B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (engine-nn e0 x)))
 (B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (motor-nn e0 x)))
 (B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (wheel-nn e0 x)))
+(B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (brake-nn e0 x)))
 
 ; FUNCTION
 (B (name turn)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (^(engine-nn e1 x)(turn-vb e0 x y u))))
