@@ -161,7 +161,7 @@
 (B (name malhechor)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (malhechor-nn e0 x)))
 (B (name prostituta)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (prostituta-nn e0 x)))
 
-(B (name rape)(=>(^(S#CRIME x :0.45)(SS#TYPE x :e0 0.45)) (rape-nn e0 x)))
+(B (name rape)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x :e0 0.45)) (rape-nn e0 x)))
 
 (B (name rapev) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2)(R#CRIME-VICTIM y e0 :0.2)) (rape-vb e0 x y u)))
 
@@ -170,13 +170,13 @@
 (B (name saquear) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2) (R#CRIME-THEME z e0 :0.2)) (saquear-vb e0 x z u2)))
 (B (name pillar) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#CRIME-AGENT x e0 :0.2) (R#CRIME-THEME z e0 :0.2)) (pillar-vb e0 x z u2)))
 
-(B (name robo) (=>(^(S#CRIME x :0.45)(SS#TYPE x e0 :0.45)) (robo-nn e0 x)))
-(B (name hurto) (=>(^(S#CRIME x :0.45)(SS#TYPE x e0 :0.45)) (hurto-nn e0 x)))
-(B (name latrocinio) (=>(^(S#CRIME x :0.45)(SS#TYPE x e0 :0.45)) (latrocinio-nn e0 x)))
+(B (name robo) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (robo-nn e0 x)))
+(B (name hurto) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (hurto-nn e0 x)))
+(B (name latrocinio) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (latrocinio-nn e0 x)))
 
-(B (name pillaje) (=>(^(S#CRIME x :0.45)(SS#TYPE x e0 :0.45))(pillaje-nn e0 x)))
-(B (name saqueo) (=>(^(S#CRIME x :0.45)(SS#TYPE x e0 :0.45))(saqueo-nn e0 x)))
-(B (name botín) (=>(^(S#CRIME x :0.45)(SS#TYPE x e0 :0.45))(botín-nn e0 x)))
+(B (name pillaje) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(pillaje-nn e0 x)))
+(B (name saqueo) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(saqueo-nn e0 x)))
+(B (name botín) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(botín-nn e0 x)))
 
 (B (name ladrón) (=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR e0 e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (ladrón-nn e0 x)))
 (B (name ladronzuelo) (=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR e0 e0 :0.3)(R#CRIME-AGENT x e0 :0.3)) (ladronzuelo-nn e0 x)))
@@ -371,19 +371,19 @@
 
 ; BATTLE
 
-(B (name guerra) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x e0 :0.45))(guerra-nn e0 x)))
-(B (name lucha) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x e0 :0.45))(lucha-nn e0 x)))
-(B (name palea) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x e0 :0.45))(palea-nn e0 x)))
-(B (name forcejeo) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x e0 :0.45))(forcejeo-nn e0 x)))
-(B (name combate) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x e0 :0.45))(combate-nn e0 x)))
-(B (name batalla) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x e0 :0.45))(batalla-nn e0 x)))
-(B (name cruzada) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x e0 :0.45))(cruzada-nn e0 x)))
+(B (name guerra) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(guerra-nn e0 x)))
+(B (name lucha) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(lucha-nn e0 x)))
+(B (name palea) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(palea-nn e0 x)))
+(B (name forcejeo) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(forcejeo-nn e0 x)))
+(B (name combate) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(combate-nn e0 x)))
+(B (name batalla) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(batalla-nn e0 x)))
+(B (name cruzada) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(cruzada-nn e0 x)))
 
-(B (name ataque) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x e0 :0.45)) (ataque-nn e0 x)))
-;(B (name asalto) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x e0 :0.45)) (asalto-nn e0 x)))
-(B (name bombardeo-aéreo) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x e0 :0.45)) (^(bombardeo-nn e0 x)(aéreo-adj e1 x))))
-(B (name bombardeo) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x e0 :0.45)) (bombardeo-nn e0 x)))
-(B (name invasión) (=>(^(S#STRUGGLE x :0.45)(SS#TYPE x e0 :0.45)) (invasión-nn e0 x)))
+(B (name ataque) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (ataque-nn e0 x)))
+;(B (name asalto) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (asalto-nn e0 x)))
+(B (name bombardeo-aéreo) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (^(bombardeo-nn e0 x)(aéreo-adj e1 x))))
+(B (name bombardeo) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (bombardeo-nn e0 x)))
+(B (name invasión) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (invasión-nn e0 x)))
 
 (B (name combatir) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE e0 e0 :0.3)(R#BATTLE-AGENT x e0 :0.3))(combatir-vb e0 x u1 u2)))
 (B (name forcejear) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE e0 e0 :0.3)(R#BATTLE-AGENT x e0 :0.3))(forcejear-vb e0 x u1 u2)))
