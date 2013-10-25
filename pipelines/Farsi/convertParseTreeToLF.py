@@ -443,8 +443,8 @@ def createNewPropsForNounsWithPossesivePostfixes(props,rels):
         eventualityArgCounter+=1
         entityArgCounter+=1
         pronounArg="x%s"%str(entityArgCounter)
-        newProps+=[(id,postFix,getTranslit(postFix),POSDict["PR"],["e%s"%str(eventualityArgCounter),pronounArg])]
-        #newProps+=[(id,postFix,postFix,POSDict["PR"],["e%s"%str(eventualityArgCounter),pronounArg])]
+        #newProps+=[(id,postFix,getTranslit(postFix),POSDict["PR"],["e%s"%str(eventualityArgCounter),pronounArg])]
+        newProps+=[(id,postFix,postFix,POSDict["PR"],["e%s"%str(eventualityArgCounter),pronounArg])]
         
         eventualityArgCounter+=1
         
