@@ -653,6 +653,7 @@
 (B (name lighten) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#RELIEF e0 e0 :0.2)(R#RELIEF-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (lighten-vb e0 x y u)))
 (B (name easevb) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#RELIEF e0 e0 :0.2)(R#RELIEF-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (ease-vb e0 x y u)))
 (B (name relieve) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#RELIEF e0 e0 :0.2)(R#RELIEF-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (relieve-vb e0 x y u)))
+
 ;(B (name aid) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#RELIEF e0 e0 :0.2)(R#RELIEF-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (aid-vb e0 x y u)))
 
 (B (name evasion) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (evasion-nn e0 x)))
@@ -768,6 +769,7 @@
 (B (name catchvb)(=>(^(S#MAZE z :0.23)(SS#OBSTRUCTION e0 z :0.23)(R#OBSTRUCTION-AGENT x e0 :0.23)(R#OBSTRUCTION-PATIENT y e0 :0.23)) (catch-vb e0 x y u)))
 (B (name tanglevb)(=>(^(S#MAZE z :0.3)(SS#OBSTRUCTION e0 z :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3)) (tangle-vb e0 u y u1)))
 (B (name snarlvb)(=>(^(S#MAZE z :0.3)(SS#OBSTRUCTION e0 z :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3)) (snarl-vb e0 u y u1)))
+(B (name snarlvb)(=>(^(S#MAZE z :0.3)(SS#OBSTRUCTION e0 z :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3)) (hinder-vb e0 u y u1)))
 
 (B (name mazemap)(=>(I#MAZE x :0.9)(S#MAZE x)))
 (B (name maze-confusing-pathwaysmap)(=>(I#CONFUSING_PATHWAYS x y :0.9)(SS#CONFUSING_PATHWAYS x y)))
@@ -804,6 +806,7 @@
 (B (name leap) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(leap-vb e0 x y z)))
 (B (name skyrocket) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(skyrocket-vb e0 x y z)))
 (B (name jump) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(jump-vb e0 x y z)))
+(B (name boost) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(boost-vb e0 x y z)))
 
 (B (name lowpointmap)(=>(I#LOW_POINT x :0.9)(S#LOW_POINT x)))
 (B (name bottom-of-econ-scale-map)(=>(I#BOTTOM_OF_ENCONOMIC_SCALE x y :0.9)(SS#BOTTOM_OF_ENCONOMIC_SCALE x y)))
@@ -830,6 +833,7 @@
 
 (B (name climb) (=>(^(SS#MOVEMENT_FORWARD_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3)) (^(S#HIGH_POINT a)(SS#TOP_OF_ECONOMIC_SCALE b a) (climb-vb e0 x y u1))))
 (B (name rise) (=>(^(SS#MOVEMENT_FORWARD_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3)) (^(S#HIGH_POINT a)(SS#TOP_OF_ECONOMIC_SCALE b a) (rise-vb e0 x y u1))))
+(B (name boost) (=>(^(S#HIGH_POINT a :0.3)(SS#MOVEMENT_FORWARD_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(boost-vb e0 x y z)))
 
 (B (name highpointmap)(=>(I#HIGH_POINT x :0.9)(S#HIGH_POINT x)))
 (B (name top-of-econ-scale-map)(=>(I#TOP_OF_ENCONOMIC_SCALE x y :0.9)(SS#TOP_OF_ENCONOMIC_SCALE x y)))
@@ -1051,6 +1055,7 @@
 
 (B (name barricade) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH e0 e0 :0.45)) (barricade-vb e0 x y z)))
 (B (name bar) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH e0 e0 :0.45)) (bar-vb e0 x y z)))
+(B (name hinder) (=>(^(S#PATHWAY e0 :0.4) (SS#OBSTRUCTED_PATH e0 e0 :0.4)) (hinder-vb e0 x y z)))
 
 (B (name barricadenn) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH x e0 :0.45)) (barricade-nn e0 x )))
 (B (name roadblock)(=>(^(S#PATHWAY e0 :0.45)(SS#OBSTRUCTED_PATH x e0 :0.45)) (roadblock-nn e0 x)))
@@ -1415,19 +1420,25 @@
 (B (name spiral)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (soar-vb e0 x y u)))
 
 (B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (decrease-vb e0 x y u)))
+(B (name reduce)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (reduce-vb e0 x y u)))
+
 (B (name fall)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (fall-vb e0 x y u)))
 (B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (drop-vb e0 x y u)))
 (B (name plummet)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (plummet-vb e0 x y u)))
 
 (B (name freeze)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-STOP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (freeze-vb e0 x y u)))
+(B (name flatten)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-STOP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (flatten-vb e0 x y u)))
 
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-UP x e0 :0.3)) (increase-nn e0 x)))
 
 (B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-DOWN x e0 :0.3)) (decrease-nn e0 x)))
+
 (B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-DOWN x e0 :0.3)) (drop-nn e0 x)))
 
 ; CONTRAST OF POSITIONS
 (B (name higher)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (higher-adj e0 x)))
+(B (name steep)(=>(^(S#VERTICAL_SCALE e0 :0.45)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.45)) (steep-adj e0 x)))
+(B (name steeper)(=>(^(S#VERTICAL_SCALE e0 :0.45)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.45)) (steeper-adj e0 x)))
 (B (name above)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (above-in e0 x)))
 
 (B (name lower)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (lower-adj e0 x)))
@@ -1513,10 +1524,12 @@
 
 ;CONSUMPTION
 (B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#CONSUMPTION x e0 :0.45)) (taste-nn e0 x)))
+
 (B (name taste-of)(=>(^(S#FOOD e0 :0.3)(SS#CONSUMPTION x e0 :0.3)(R#TASTE-OBJECT y e0 :0.3)) (^(taste-nn e0 x)(of-in e1 x y))))
 
 (B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (taste-vb e0 x y u)))
-(B (name consume)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(TS#WEALTH y) (consume-vb e0 x y u))))
+(B (name consume)(=>(^(S#FOOD e0 :0.2)(SS#CONSUMPTION e0 e0 :0.2)(R#TASTE-AGENT x e0 :0.2)(R#TASTE-OBJECT y e0 :0.2)) (^(TS#WEALTH y) (consume-vb e0 x y u))))
+(B (name consume)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (consume-vb e0 x y u)))
 (B (name eat)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(TS#WEALTH y)(eat-vb e0 x y u))))
 (B (name swallow)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(TS#WEALTH y)(swallow-vb e0 x y u))))
 (B (name chew)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(TS#WEALTH y)(chew-vb e0 x y u))))
@@ -1757,6 +1770,7 @@
 
 (B (name playvb)(=>(^(S#GAME e0 :0.3)(SS#ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (play-vb e0 x y u)))
 (B (name assistvb)(=>(^(S#GAME e0 :0.3)(SS#ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (assist-vb e0 x y u)))
+(B (name tilt-the-field)(=>(^(S#GAME e0 :0.3)(SS#ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (^(tilt-vb e0 x y u)(field-nn e1 y))))
 
 ; OUTCOMES
 (B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (win-vb e0 x y u)))
@@ -1788,6 +1802,7 @@
 
 ; CULTIVATION
 (B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (^(TS#WEALTH y)(grow-vb e0 x y u))))
+(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (^(TS#WEALTH_AND_SOCIAL_CLASS y)(grow-vb e0 x y u))))
 (B (name fertilize)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (fertilize-vb e0 x y u)))
 (B (name water)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (water-vb e0 x y u)))
 
