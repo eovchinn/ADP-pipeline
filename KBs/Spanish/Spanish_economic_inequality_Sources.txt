@@ -1039,12 +1039,12 @@
 (B (name godzilla)(=>(^(S#MONSTER e0 :0.45)(SS#TYPE x e0 :0.45)) (godzilla-nn e0 x)))
 
 ; ACTION
-(B (name asustar)(=>(^(SS#ACTION e0 :0.45)(R#MONSTER x e0 :0.45)) (^(SS#TYPE x)(asustar-vb e0 x y u))))
-(B (name chupar)(=>(^(SS#ACTION e0 :0.45)(R#MONSTER x e0 :0.45)) (^(SS#TYPE x)(chupar-vb e0 x y u))))
+(B (name asustar)(=>(^(S#MONSTER e0 :0.45)(SS#ACTION e0 e0 :0.45)) (asustar-vb e0 x y u)))
+(B (name chupar)(=>(^(S#MONSTER e0 :0.45)(SS#ACTION e0 e0 :0.45)) (chupar-vb e0 x y u)))
 
-(B (name terrify)(=>(SS#ACTION e0 e1 :0.9) (^(S#MONSTER e1)(SS#TYPE x e1)(aterrorizar-vb e0 x y u))))
-(B (name devour)(=>(SS#ACTION e0 e1 :0.9) (^(S#MONSTER e1)(SS#TYPE x e1)(devorar-vb e0 x y u))))
-(B (name threaten)(=>(SS#ACTION e0 e1 :0.9) (^(S#MONSTER e1)(SS#TYPE x e1)(amenaza-vb e0 x y u))))
+(B (name terrify)(=>(^(S#MONSTER e0 :0.45)(SS#ACTION e0 e0 :0.45)) (aterrorizar-vb e0 x y u)))
+(B (name devour)(=>(^(S#MONSTER e0 :0.45)(SS#ACTION e0 e0 :0.45)) (devorar-vb e0 x y u)))
+(B (name threaten)(=>(^(S#MONSTER e0 :0.45)(SS#ACTION e0 e0 :0.45)) (amenaza-vb e0 x y u)))
 
 
 

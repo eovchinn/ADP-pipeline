@@ -53,7 +53,7 @@
 (B (name bienes) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (bienes-nn e0 x)))
 
 (B (name clase) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (clase-nn e0 x)))
-;(B (name social) (=>(^(TS#WEALTH e0 :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (social-adj e0 x)))
+(B (name social) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS e0 :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (social-adj e0 x)))
 (B (name middle-class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (^(clase-nn e1 x)(medio-adj e0 x))))
 (B (name upper-class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (^(alta-adj e0 x)(clase-nn e1 x))))
 
