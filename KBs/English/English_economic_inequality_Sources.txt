@@ -365,6 +365,7 @@
 (B (name flow) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(flow-vb e0 x u1 u2)))
 (B (name leak) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(leak-vb e0 x u1 u2)))
 (B (name stream) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(stream-vb e0 x u1 u2)))
+(B (name stream) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(stagnate-vb e0 x u1 u2)))
 
 (B (name stream2) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(stream-nn e0 y)))
 (B (name flow2) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(flow-nn e0 y)))
@@ -375,6 +376,7 @@
 (B (name flood) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(flood-nn e0 y)))
 
 (B (name awash) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT e0 e0 :0.45))(awash-adj e0 y)))
+(B (name stagnant) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT e0 e0 :0.45))(stagnant-adj e0 y)))
 
 ; OF - MOVEMENT
 (B (name of-stream) (=>(R#STREAMING y e0 :0.9)(^(SS#MOVEMENT x e)(of-in e1 x y))))
@@ -440,13 +442,13 @@
 (B (name fight) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE e0 e0 :0.3)(R#STRUGGLE-AGENT x e0 :0.3))(fight-vb e0 x u1 u2)))
 (B (name combat) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE e0 e0 :0.3)(R#STRUGGLE-AGENT x e0 :0.3))(combat-vb e0 x u1 u2)))
 
-(B (name attack) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (attack-vb e0 x y u2)))
-(B (name bombvb) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (bomb-vb e0 x y u2)))
-(B (name assail) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (assail-vb e0 x y u2)))
-(B (name insult) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#BATTLE-ENEMY y e0 :0.2)) (insult-vb e0 x y u2)))
-(B (name charge) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (charge-vb e0 x y u2)))
-(B (name invade) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (invade-vb e0 x y u2)))
-(B (name defeat) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (defeat-vb e0 x y u2)))
+(B (name attack) (=>(^(S#STRUGGLE e0 :0.2) (SS#TYPE e0 e0 :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (attack-vb e0 x y u2)))
+(B (name bombvb) (=>(^(S#STRUGGLE e0 :0.2) (SS#TYPE e0 e0 :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (bomb-vb e0 x y u2)))
+(B (name assail) (=>(^(S#STRUGGLE e0 :0.2) (SS#TYPE e0 e0 :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (assail-vb e0 x y u2)))
+(B (name insult) (=>(^(S#STRUGGLE e0 :0.2) (SS#TYPE e0 e0 :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#BATTLE-ENEMY y e0 :0.2)) (insult-vb e0 x y u2)))
+(B (name charge) (=>(^(S#STRUGGLE e0 :0.2) (SS#TYPE e0 e0 :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (charge-vb e0 x y u2)))
+(B (name invade) (=>(^(S#STRUGGLE e0 :0.2) (SS#TYPE e0 e0 :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (invade-vb e0 x y u2)))
+(B (name defeat) (=>(^(S#STRUGGLE e0 :0.2) (SS#TYPE e0 e0 :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (defeat-vb e0 x y u2)))
 
 (B (name fight-with) (=> (S#STRUGGLE y x :0.90)(^(SS#TYPE x y)(with-in x y))))
 (B (name fight-against) (=> (S#STRUGGLE y x :0.90)(^(SS#TYPE x y)(against-in x y))))
@@ -454,18 +456,18 @@
 (B (name fight-on) (=> (R#STRUGGLE-AGENT y x :0.90)(^(SS#STRUGGLE_TYPE x)(on-in x y))))
 (B (name fight-at) (=> (R#STRUGGLE-AGENT y x :0.90)(^(SS#STRUGGLE_TYPE x)(at-in x y))))
 
-(B (name enemy) (=>(^(S#STRUGGLE u :0.3) (SS#ADVERSARY x u :0.3))(enemy-nn e1 x)))
-(B (name adversary) (=>(^(S#STRUGGLE u :0.3) (SS#ADVERSARY x u :0.3))(adversary-nn e1 x)))
-(B (name rival) (=>(^(S#STRUGGLE u :0.3) (SS#ADVERSARY x u :0.3))(rival-nn e1 x)))
-(B (name opponent) (=>(^(S#STRUGGLE u :0.3) (SS#ADVERSARY x u :0.3))(opponent-nn e1 x)))
+(B (name enemy) (=>(^(S#STRUGGLE e0 :0.3) (SS#ADVERSARY x e0 :0.3))(enemy-nn e1 x)))
+(B (name adversary) (=>(^(S#STRUGGLE e0 :0.3) (SS#ADVERSARY x e0 :0.3))(adversary-nn e1 x)))
+(B (name rival) (=>(^(S#STRUGGLE e0 :0.3) (SS#ADVERSARY x e0 :0.3))(rival-nn e1 x)))
+(B (name opponent) (=>(^(S#STRUGGLE e0 :0.3) (SS#ADVERSARY x e0 :0.3))(opponent-nn e1 x)))
 
 (B (name enemy-of) (=> (R#STRUGGLE-AGENT y e0 :0.90)(^(SS#STRUGGLE_ADVERSARY x e0)(of-in e1 x y))))
 
 ;WE MIGHT WANT TO DO SOMETHING ELSE WITH THESE
-(B (name soldier) (=>(^(S#STRUGGLE u :0.45)(SS#ADVERSARY x u :0.45))(soldier-nn e0 x)))
-(B (name army) (=>(^(S#STRUGGLE u :0.45)(SS#ADVERSARY x u :0.45))(army-nn e0 x)))
-(B (name gunner) (=>(^(S#STRUGGLE u :0.45)(SS#ADVERSARY x u :0.45))(gunner-nn e0 x)))
-(B (name shooter) (=>(^(S#STRUGGLE u :0.45)(SS#ADVERSARY x u :0.45))(shooter-nn e0 x)))
+(B (name soldier) (=>(^(S#STRUGGLE e0 :0.45)(SS#ADVERSARY x e0 :0.45))(soldier-nn e0 x)))
+(B (name army) (=>(^(S#STRUGGLE e0 :0.45)(SS#ADVERSARY x e0 :0.45))(army-nn e0 x)))
+(B (name gunner) (=>(^(S#STRUGGLE e0 :0.45)(SS#ADVERSARY x e0 :0.45))(gunner-nn e0 x)))
+(B (name shooter) (=>(^(S#STRUGGLE e0 :0.45)(SS#ADVERSARY x e0 :0.45))(shooter-nn e0 x)))
 
 ;##RI: weapon is not a gvmt approved sub-dimension
 ; (B (name weapon) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(weapon-nn e0 y)))
@@ -1171,8 +1173,10 @@
 ; ILLUMINATION
 (B (name shine)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (shine-vb e0 x y z)))
 (B (name illuminate)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (illuminate-vb e0 x y z)))
+(B (name illuminate)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (reflect-vb e0 x y z)))
 (B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (shining-nn e0 x)))
-(B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (ilumination-nn e0 x)))
+(B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (illumination-nn e0 x)))
+(B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (reflection-nn e0 x)))
 
 (B (name darknessmap)(=>(I#DARKNESS x :0.9)(S#DARKNESS x)))
 (B (name dark-end-of-rangemap)(=>(I#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y :0.9)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y)))
@@ -1722,6 +1726,10 @@
 (B (name scratch)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (scratch-vb e0 x y u)))
 (B (name swim)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (swim-vb e0 x y u)))
 (B (name stampede)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (stampede-vb e0 x y u)))
+(B (name gallop)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (gallop-vb e0 x y u)))
+
+(B (name gallop)(=>(^(S#ANIMAL e0 :0.3)(SS#ACTION x e0 :0.3)(R#ACTION-AGENT x e0 :0.3)) (gallop-nn e0 x)))
+(B (name gallop)(=>(^(S#ANIMAL e0 :0.3)(SS#ACTION e0 e0 :0.3)(R#ACTION-AGENT x e0 :0.3)) (galloping-adj e0 x)))
 
 (B (name animalmap)(=>(I#ANIMAL x :0.9)(S#ANIMAL x)))
 (B (name animal-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
