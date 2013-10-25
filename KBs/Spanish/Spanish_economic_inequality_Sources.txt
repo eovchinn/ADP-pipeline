@@ -390,9 +390,9 @@
 (B (name luchar-contra) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE e0 e0 :0.3)(R#BATTLE-AGENT x e0 :0.3))(^(luchar-vb e0 x u1 u2)(contra-in e1 e0 z))))
 (B (name luchar) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE e0 e0 :0.3)(R#BATTLE-AGENT x e0 :0.3))(luchar-vb e0 x u1 u2)))
 
-(B (name atacar) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 e0 :0.2)(R#BATTLE-AGENT x e0 :0.2) (R#BATTLE-ENEMY y e0 :0.2)) (atacar-vb e0 x y u2)))
-(B (name asaltar) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 e0 :0.2)(R#BATTLE-AGENT x e0 :0.2) (R#BATTLE-ENEMY y e0 :0.2)) (asaltar-vb e0 x y u2)))
-(B (name invadir) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 e0 :0.2)(R#BATTLE-AGENT x e0 :0.2) (R#BATTLE-ENEMY y e0 :0.2)) (invadir-vb e0 x y u2)))
+(B (name atacar) (=>(^(S#STRUGGLE e0 :0.2) (SS#TYPE e0 e0 :0.2)(R#BATTLE-AGENT x e0 :0.2) (R#BATTLE-ENEMY y e0 :0.2)) (atacar-vb e0 x y u2)))
+(B (name asaltar) (=>(^(S#STRUGGLE e0 :0.2) (SS#TYPE e0 e0 :0.2)(R#BATTLE-AGENT x e0 :0.2) (R#BATTLE-ENEMY y e0 :0.2)) (asaltar-vb e0 x y u2)))
+(B (name invadir) (=>(^(S#STRUGGLE e0 :0.2) (SS#TYPE e0 e0 :0.2)(R#BATTLE-AGENT x e0 :0.2) (R#BATTLE-ENEMY y e0 :0.2)) (invadir-vb e0 x y u2)))
 
 (B (name luchar-con) (=> (R#BATTLE-ENEMY y x :0.90)(^(SS#TYPE x)(con-in x y))))
 (B (name luchar-contra) (=> (R#BATTLE-ENEMY y x :0.90)(^(SS#TYPE x)(contra-in x y))))
@@ -657,8 +657,8 @@
 
 ; LOW POINT
 ; BOTTOM OF ECONOMIC SCALE
-(B (name bajo-la-linea) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECONOMIC-SCALE x e0 :0.45))(^(bajo-nn e0 x)(la-in e1 x y)(linea-nn e2 y))))
-(B (name fondo) (=>(^(S#LOW-POINT e0 :0.45)(SS#BOTTOM-OF-ECONOMIC-SCALE x e0 :0.45))(fondo-nn e0 x)))
+(B (name bajo-la-linea) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ECONOMIC_SCALE x e0 :0.45))(^(bajo-nn e0 x)(la-in e1 x y)(linea-nn e2 y))))
+(B (name fondo) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ECONOMIC_SCALE x e0 :0.45))(fondo-nn e0 x)))
 ;(B (name low) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE e0 e0 :0.45))(bajo-adj e0 x)))
 
 ;MOVEMENT DOWNWARD
@@ -679,8 +679,8 @@
 (B (name saltar) (=>(^(SS#MOVEMENT_UPWARD e0 e1 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1 )(saltar-vb e0 x y z))))
 (B (name brincar) (=>(^(SS#MOVEMENT_UPWARD e0 e1 :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1 )(brincar-vb e0 x y z))))
 
-(B (name bajo-puntomap)(=>(I#LOW-POINT x :0.9)(S#LOW-POINT x)))
-(B (name parte-inferior-econ-scale-map)(=>(I#BOTTOM-OF-ECONOMIC-SCALE x y :0.9)(SS#BOTTOM-OF-ECONOMIC-SCALE x y)))
+(B (name bajo-puntomap)(=>(I#LOW-POINT x :0.9)(S#LOW_POINT x)))
+(B (name parte-inferior-econ-scale-map)(=>(I#BOTTOM-OF-ECONOMIC-SCALE x y :0.9)(SS#BOTTOM_OF_ECONOMIC_SCALE x y)))
 (B (name movimiento-hacia-abajomap)(=>(I#MOVEMENT_DOWNWARD x y :0.9)(SS#MOVEMENT_DOWNWARD x y)))
 (B (name movimiento-ascendentemap)(=>(I#MOVEMENT_UPWARD x y :0.9)(SS#MOVEMENT_UPWARD x y)))
 
