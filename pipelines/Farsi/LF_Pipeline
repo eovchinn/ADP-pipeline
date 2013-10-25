@@ -6,7 +6,9 @@ outputFileName="${2:-/dev/stdout}"
 farsiPipelineDir=$METAPHOR_DIR/pipelines/Farsi
 
 if [ -d "$2" ]; then
-	$farsiPipelineDir/tokenize < $inputFile | 
+	$farsiPipelineDir/farsilemm.py  $farsiPipelineDir/lemmatizationDict.txt < $inputFile |
+	tee $2/preproc_o.txt |
+	$farsiPipelineDir/tokenize | 
 	tee $2/tokenizer_o.txt |
 	$farsiPipelineDir/addDot.py |
 	tee $2/dot_o.txt |
@@ -16,7 +18,8 @@ if [ -d "$2" ]; then
 	tee $2/parser_o.txt |
 	$farsiPipelineDir/createLF > /dev/stdout
 else
-	$farsiPipelineDir/tokenize < $inputFile | 
+	$farsiPipelineDir/farsilemm.py $farsiPipelineDir/lemmatizationDict.txt < $inputFile |
+	$farsiPipelineDir/tokenize  | 
 	$farsiPipelineDir/addDot.py |
 	$farsiPipelineDir/tag |
 	$farsiPipelineDir/parse |
