@@ -18,6 +18,38 @@ lemmaFile=codecs.open("%s/pipelines/Farsi/lemmatizationDict.txt"%metaphorDir, en
 testLemmaFile=codecs.open("%s/pipelines/Farsi/testLemmatizationDict.txt"%metaphorDir,encoding='utf-8',mode="w")
 
 pronounList=[u'\u0627\u0634',u'\u062a\u0627\u0646',u'\u0627\u0645',u'\u062a',u'\u0634',u'\u0634\u0627\u0646',u'\u0645\u0627\u0646',u'\u0645',u'\u0627\u062a']
+
+POSTFIXES = [
+        u"ام",
+        u"ات",
+        u"اش",
+        u"ایم",
+        u"اید",
+        u"اند",
+        u"یم",
+        u"یت",
+        u"یش",
+        u"یمان",
+        u"یتان",
+        u"یشان",
+        u"ها",
+        u"تر",
+        u"ترین",
+        u"هایم",
+        u"های",
+        u"یهای",
+        u"هایمان",
+        u"هایتان",
+        u"هایت",
+        u"هایش",
+        u"هایشان",
+        u"ای",
+        u"ایم",
+        u"اید",
+        u"اند",
+]
+
+
 #for pronoun in pronounList:
 #    print (pronoun,"PRO")
 niloo=1
@@ -53,9 +85,21 @@ def addLemmaForWordsWithpossesivePostFix(lemmaDict):
         lemmaDict[key]=newItems[key]
                 
 def getLemma(word,POS,lemmaDict):
+    #first check whether the word matches word-POSTFIX , then return word
+    dashIndex=-1
+    for i in range(len(word)-1,-1,-1):
+        if word[i]=="-": 
+            dashIndex=i
+            break
+    if dashIndex>-1 and word[dashIndex+1:] in POSTFIXES:
+        return word[0:dashIndex]
+    
+    
+    #otherwise, refer to lemmatization dict
     if (word,POS) not in lemmaDict: 
 #        print "NILOO:%s\t%s"%(word,str((word,POS)))
         return word
+    
     return lemmaDict[(word,POS)]
 
 lemmaDict=loadLemmaDict(lemmaFile)

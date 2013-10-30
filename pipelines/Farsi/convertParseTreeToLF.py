@@ -8,7 +8,10 @@ outputFile=sys.stdout
 farsiWordsForLFFile=codecs.open(sys.argv[3], encoding='utf-8')
 
 #each rule is in the form "relationName":(headArgIndex,dependentArgIndex)
-rules={"SBJ":[(1,1)],"OBJ":[(2,1)],"NCL":[(1,1)],"PRD":[(2,0)],"NPOSTMOD":[(1,1)],"NPREMOD":[(1,1)],"ADV":[(0,1)],"POSDEP":[(2,1)],"VPP":[(0,1)],"NPP":[(1,1)],"PARCL":[(1,1)]}
+rules={"SBJ":[(1,1)],"OBJ":[(2,1)],"NCL":[(1,1)],"PRD":[(2,0)],"NPOSTMOD":[(1,1)],"NPREMOD":[(1,1)],"ADV":[(0,1)],"POSDEP":[(2,1)],"VPP":[(0,1)],"NPP":[(1,1)],"PARCL":[(1,1)],"MOS":[(3,1)]}
+
+#for stemming
+
 
 #this is a global dict for easy handling of different POS schema
 POSStopList=["PUNC"]
@@ -188,8 +191,6 @@ def getEqualArgSets(propDict,rels):
         if relName not in rules:
             continue
         
-        if relName=="ADV":
-            niloo=1
         if head not in propDict:
             niloo=1
         headProp=propDict[head]
@@ -201,8 +202,12 @@ def getEqualArgSets(propDict,rels):
         argUnifications=rules[relName]
         for argUnification in argUnifications:      
             (headArgIndex,dependentArgIndex)=argUnification
-            if headArgIndex>=len(headArgs) or dependentArgIndex>len(dependentArgs):
+            if headArgIndex>=len(headArgs):
                 #warning
+                #print ">>>head prop %s-%s has %s args. You are asking for argument %s"%(headWord,headPOS,len(headArgs),headArgIndex)
+                continue
+            if dependentArgIndex>len(dependentArgs):
+                #print ">>>dependent prop %s-%s has %s args. You are asking for argument %s"%(dependentWord,dependentPOS,len(dependentArgs),dependentArgIndex)
                 continue
             headArgName=headArgs[headArgIndex]
             dependentArgName=dependentArgs[dependentArgIndex]

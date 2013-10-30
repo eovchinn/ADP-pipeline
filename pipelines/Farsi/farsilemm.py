@@ -9,7 +9,7 @@ input_fl = sys.stdin
 output_fl = sys.stdout
 dict_fl = open(sys.argv[1], "rb")
 
-badChars =  {
+badChars1 =  {
         u"ۀ":u"ه",
         u"ي":u"ی",
         u"ك":u"ک",
@@ -56,6 +56,10 @@ POSTFIXES = [
 PREFIXES = [p.encode("utf-8") for p in PREFIXES]
 POSTFIXES = [p.encode("utf-8") for p in POSTFIXES]
 
+badChars={}
+for item in badChars1:
+    badChars[item.encode("utf-8")]=badChars1[item].encode("utf-8")
+    
 
 lemm_dict = set()
 for line in dict_fl:
