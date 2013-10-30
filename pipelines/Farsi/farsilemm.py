@@ -9,6 +9,12 @@ input_fl = sys.stdin
 output_fl = sys.stdout
 dict_fl = open(sys.argv[1], "rb")
 
+badChars =  {
+        u"ۀ":u"ه",
+        u"ي":u"ی",
+        u"ك":u"ک",
+}
+
 PREFIXES =  [
         u"می",
         u"نمی",
@@ -34,6 +40,7 @@ POSTFIXES = [
         u"تر",
         u"ترین",
         u"هایم",
+        u"های",
         u"هایمان",
         u"هایتان",
         u"هایت",
@@ -143,6 +150,9 @@ def check_with_dict(tokens):
 
 for line in input_fl:
     line = line.replace("\n", "")
+    for ch in badChars:
+        line = line.replace(ch, badChars[ch])
+    
     tokens = line.split(" ")
     tokens[-1] = tokens[-1][:(len(tokens[-1]) -1)]
 
