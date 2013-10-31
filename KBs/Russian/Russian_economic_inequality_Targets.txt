@@ -71,6 +71,7 @@
 (B (name blagosostojanie) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (доход-nn e0 x)))
 
 ; RICH PERSON
+(B (name bogach) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3))(олигарх-nn e0 y)))
 (B (name bogach) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3))(богач-nn e0 y)))
 (B (name bogatej) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (богатей-nn e0 y)))
 (B (name tolstosum) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (толстосум-nn e0 y)))
@@ -113,6 +114,8 @@
 ; TAXATION
 
 (B (name nalog) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(налог-nn e0 x)))
+(B (name nalog) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(пошлина-nn e0 x)))
+(B (name nalog) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(дань-nn e0 x)))
 (B (name nalog) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(налоговая-nn e0 x)))
 (B (name nalogovyj) (=>(^(TS#TAXATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (налоговый-adj e0 x)))
 (B (name nalogooblazhenie) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (налогообложение-nn e0 x)))

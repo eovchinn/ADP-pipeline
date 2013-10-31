@@ -107,10 +107,14 @@
 (B (name socialnyj_class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(^(социальный-adj e0 x)(класс-nn e1 x))))
 (B (name elita) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(элита-nn e1 x)))
 
+(B (name socialnyj_class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(социальный-adj e0 x)))
+
 
 ; TAXATION
 
 (B (name nalog) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(налог-nn e0 x)))
+(B (name nalog) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(пошлина-nn e0 x)))
+(B (name nalog) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(дань-nn e0 x)))
 (B (name nalog) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(налоговая-nn e0 x)))
 (B (name nalogovyj) (=>(^(TS#TAXATION e0 :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (налоговый-adj e0 x)))
 (B (name nalogooblazhenie) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (налогообложение-nn e0 x)))
