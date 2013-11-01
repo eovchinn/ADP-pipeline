@@ -1,0 +1,5 @@
+او_PR بالاخره_ADV از_PREP دست_N تو_PR ترسیده_V و_CONJ هلاک_N خواهد-شد_V ._PUNC
+او_PR هلاک_N می-شود_V ._PUNC
+تو_PR او_PR را_POSTP هلاک_N کردی_V ._PUNC
+او_PR هلاک_ADJ شد_V ._PUNC
+او_PR را_POSTP هلاک_N خواهی-کرد_V ._PUNC

@@ -1,0 +1,34 @@
+1	او	او	PR	PR	_	6	SBJ	_	_
+2	بالاخره	بالاخره	ADV	ADV	_	6	ADV	_	_
+3	از	از	PREP	PREP	_	6	VPP	_	_
+4	دست	_	N	N	_	3	POSDEP	_	_
+5	تو	تو	PR	PR	_	4	MOZ	_	_
+6	ترسیده	ترسیده	V	V	_	7	PREDEP	_	_
+7	و	_	CONJ	CONJ	_	9	VCONJ	_	_
+8	هلاک	هلاک	N	N	_	9	MOS	_	_
+9	خواهد-شد	کرد#کن	V	V	_	0	ROOT	_	_
+10	.	_	PUNC	PUNC	_	9	PUNC	_	_
+
+1	او	او	PR	PR	_	3	SBJ	_	_
+2	هلاک	هلاک	N	N	_	3	MOS	_	_
+3	می-شود	شد#شو	V	V	_	0	ROOT	_	_
+4	.	_	PUNC	PUNC	_	3	PUNC	_	_
+
+1	تو	تو	PR	PR	_	5	SBJ	_	_
+2	او	او	PR	PR	_	5	OBJ	_	_
+3	را	را	POSTP	POSTP	_	2	ACC-CASE	_	_
+4	هلاک	هلاک	N	N	_	5	NVE	_	_
+5	کردی	کرد#کن	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	او	او	PR	PR	_	3	SBJ	_	_
+2	هلاک	هلاک	ADJ	ADJ	_	3	MOS	_	_
+3	شد	شد#شو	V	V	_	0	ROOT	_	_
+4	.	_	PUNC	PUNC	_	3	PUNC	_	_
+
+1	او	او	PR	PR	_	4	OBJ	_	_
+2	را	را	POSTP	POSTP	_	1	ACC-CASE	_	_
+3	هلاک	هلاک	N	N	_	4	NVE	_	_
+4	خواهی-کرد	کرد#کن	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+

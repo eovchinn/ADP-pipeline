@@ -1,0 +1,97 @@
+[
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "", 
+                "explanation": "", 
+                "sourceInLm": false, 
+                "target": "", 
+                "targetInLm": false
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "TYPE", 
+        "isiDescription": "", 
+        "sourceFrame": "STRUGGLE", 
+        "isiAbductiveExplanation": "او(e0,x0) ^ بالاخره-rb(e1,e5) ^ از-in(e2,e5,u2) ^ تو(e4,x2) ^ ترسیده-vb(e5,x0,u4,u5) ^ هلاک-nn(e7,x3) ^ کرد#کن-vb(e8,u7,u8,x3) ^ person(e11,x0) ^ person(e12,x2) ^ !=(e11,e12)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,STRUGGLE,TYPE,0.001\n%%END_CM_LIST", 
+        "id": "1"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "", 
+                "explanation": "", 
+                "sourceInLm": false, 
+                "target": "", 
+                "targetInLm": false
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "TYPE", 
+        "isiDescription": "", 
+        "sourceFrame": "STRUGGLE", 
+        "isiAbductiveExplanation": "او(e0,x0) ^ هلاک-nn(e1,x1) ^ شد#شو-vb(e2,x0,u1,x1) ^ person(e5,x0)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,STRUGGLE,TYPE,0.001\n%%END_CM_LIST", 
+        "id": "2"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "کرد#کن", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "", 
+                "targetInLm": false
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "DEATH", 
+        "isiDescription": "", 
+        "sourceFrame": "HUMAN_BODY", 
+        "isiAbductiveExplanation": "تو(e0,x0) ^ او(e1,x1) ^ را(e2,u0) ^ هلاک-nn(e3,x2) ^ کرد#کن-vb(e4,x0,x1,u3) ^ NVE(e7,x2,e4) ^ person(e8,x0) ^ person(e9,x1) ^ !=(e8,e9) ^ S#HUMAN_BODY(e4) ^ SS#DEATH(e4,e4) ^ R#DEATH-PATIENT(x0,e4)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,HUMAN_BODY,DEATH,0.001\n%%END_CM_LIST", 
+        "id": "3"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "", 
+                "explanation": "", 
+                "sourceInLm": false, 
+                "target": "", 
+                "targetInLm": false
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "TYPE", 
+        "isiDescription": "", 
+        "sourceFrame": "STRUGGLE", 
+        "isiAbductiveExplanation": "او(e0,x0) ^ هلاک-adj(e1,u0) ^ شد#شو-vb(e2,x0,u2,u0) ^ person(e5,x0)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,STRUGGLE,TYPE,0.001\n%%END_CM_LIST", 
+        "id": "4"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "کرد#کن", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "", 
+                "targetInLm": false
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "DEATH", 
+        "isiDescription": "", 
+        "sourceFrame": "HUMAN_BODY", 
+        "isiAbductiveExplanation": "او(e0,x0) ^ را(e1,u0) ^ هلاک-nn(e2,x1) ^ کرد#کن-vb(e3,u1,x0,u3) ^ NVE(e6,x1,e3) ^ person(e7,x0) ^ S#HUMAN_BODY(e3) ^ SS#DEATH(e3,e3) ^ R#DEATH-PATIENT(u1,e3)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,HUMAN_BODY,DEATH,0.001\n%%END_CM_LIST", 
+        "id": "5"
+    }
+]

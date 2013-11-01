@@ -1,0 +1,14 @@
+;(B (name shodan) (=>(shodan e0 x y :0.9)(شد#شو-vb e0 x u2 y)))
+;(B (name shodan) (=>(shodan e0 x z :0.9)(کرد#کن-vb e0 x y z)))
+;(B (name kardan) (=>(kardan e0 x y z :0.9)(^(کرد#کن-vb e0 x y u3)(NVE e6 z e0))))
+
+;(B (name halak)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (هلاک-nn e0 x)))
+
+
+;(B (name threatened)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (ترسیده-adj e0 x)))
+
+;(B (name perish)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(هلاک-nn e1 z)(shodan e0 x z))))
+
+;(B (name kill)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(هلاک-nn e1 z)(kardan e0 y x z))))
+
+(B (name kill)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(هلاک-nn e1 z)(کرد#کن-vb e0 x y u3)(NVE e6 z e0))))
