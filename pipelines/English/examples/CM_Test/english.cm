@@ -1,0 +1,515 @@
+[
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "sliver,sliver", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "wealth,income", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "WEALTH", 
+        "targetConceptSubDomain": "WEALTH", 
+        "sourceConceptSubDomain": "RESOURCE%QUANTITY_SIZE", 
+        "isiDescription": "", 
+        "sourceFrame": "RESOURCE", 
+        "isiAbductiveExplanation": "more-adj(e42,x3) ^ town-nn(e41,x13) ^ work-vb(x11,x12,u39,u40) ^ family-nn(e38,x12) ^ of-in(e37,x10,x12) ^ subset_of(e36,x9,x10) ^ subset_of(e35,x8,x10) ^ income-nn(e34,x7) ^ of-in(e33,x9,x7) ^ value-nn(e32,x9) ^ home-nn(e31,x6) ^ of-in(e30,x8,x6) ^ value-nn(e29,x8) ^ sliver-nn(e28,x14) ^ of-in(e27,x14,x0) ^ equal(e26,x10,x14) ^ nearby-rb(e25,e28) ^ of-in(e24,x13,x12) ^ rel(e23,x2,x13) ^ than-in(e22,x3,x2) ^ modest-adj(e21,x3) ^ suburb-nn(e20,x3) ^ two-third-nn(e19,x1) ^ of-in(e18,x2,x1) ^ latino-nn(e16,x2) ^ tim(e17,x2) ^ wealth-nn(e15,x0) ^ !=(e16,e17) ^ !=(e32,e29) ^ !=(e37,e33,e30,e27,e24,e18) ^ !=(e36,e35) ^ TS#WEALTH(x7) ^ T#ECONOMIC-INEQUALITY(_0) ^ TSS#MONEY(x7,x7) ^ S#BUILDING(e31) ^ SS#BUILDING%TYPE(x6,e31) ^ S#RESOURCE(e28) ^ SS#RESOURCE%QUANTITY_SIZE(x14,e28) ^ R#SMALL-AMOUNT(x14,e28) ^ TS#WEALTH(x0) ^ T#ECONOMIC-INEQUALITY(_1) ^ I#BUILDING(e31) ^ I#RESOURCE(e28) ^ I#RESOURCE%QUANTITY_SIZE(x14,e28) ^ =(_0,_1) ^ =(x7,x0)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,BUILDING,BUILDING%TYPE,0.5\nECONOMIC_INEQUALITY,WEALTH,MONEY,BUILDING,BUILDING%TYPE,0.5\nECONOMIC_INEQUALITY,WEALTH,WEALTH,BUILDING,BUILDING%TYPE,0.5\nECONOMIC_INEQUALITY,WEALTH,WEALTH,RESOURCE,RESOURCE%QUANTITY_SIZE,0.9\nECONOMIC_INEQUALITY,WEALTH,MONEY,BUILDING,BUILDING%TYPE,0.5\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,RESOURCE%QUANTITY_SIZE,0.9\n%%END_CM_LIST", 
+        "id": "1"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "", 
+                "explanation": "", 
+                "sourceInLm": false, 
+                "target": "", 
+                "targetInLm": false
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "TYPE", 
+        "isiDescription": "", 
+        "sourceFrame": "STRUGGLE", 
+        "isiAbductiveExplanation": "access-nn(e62,x18) ^ subset_of(e61,x16,x17) ^ subset_of(e60,x15,x17) ^ regular-adj(e59,x16) ^ internet-nn(e58,x16) ^ free-adj(e57,x15) ^ time-nn(e56,x15) ^ to-in(e55,x18,x17) ^ course-nn(e54,x21) ^ complete-vb(x20,x18,x21,u53) ^ privilege-nn(e52,x19) ^ equal(e51,x18,x19) ^ itself(e50,e52) ^ equal(e49,x2,x12) ^ successfully-rb(e48,x11) ^ complete-adj(e47,x11) ^ course-nn(e46,x11) ^ seek-vb(x10,x12,x11,u45) ^ out-rb(e44,x10) ^ through-in(e43,x10,x1) ^ likely-adj(e42,x2) ^ thing(e41,x3) ^ thing(e40,x6) ^ equal(e39,x6,x8) ^ engender-vb(x7,x6,x0,u38) ^ formal-adj(e37,x6) ^ education-nn(e36,x6) ^ have-vb(x5,x8,x0,u35) ^ already-rb(e34,x5) ^ solve-vb(x4,x3,x6,u33) ^ inequality—after-nn(e32,x3) ^ on-in(e31,x4,x3) ^ all(e30,x4) ^ never-rb(e29,x4) ^ alone-rb(e28,x4) ^ however-rb(e27,x4) ^ student-nn(e26,x2) ^ edx-nn(e24,x1) ^ loc(e25,x1) ^ academic-adj(e23,x0) ^ discipline-nn(e22,x0) ^ !=(e24,e25) ^ !=(e51,e49,e39) ^ !=(e41,e40) ^ !=(e61,e60) ^ =(x21,x11) ^ =(e54,e46)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,STRUGGLE,TYPE,0.001\n%%END_CM_LIST", 
+        "id": "2"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "sparse", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "tax", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "TAXATION", 
+        "targetConceptSubDomain": "TAXATION", 
+        "sourceConceptSubDomain": "RESOURCE%QUANTITY_SIZE", 
+        "isiDescription": "", 
+        "sourceFrame": "RESOURCE", 
+        "isiAbductiveExplanation": "imp(e45,e48,x17) ^ disobey-vb(x17,x15,x18,u60) ^ neither(e59,x19) ^ in-in(e58,x5,x19) ^ have-vb(x18,x5,u56,u57) ^ to-in(e55,x18,x4) ^ not(e49,x20) ^ neither(e54,x21) ^ in-in(e53,x3,x21) ^ have-vb(x20,x3,u51,u52) ^ to-in(e50,x20,x1) ^ tax-nn(e48,x14) ^ of-in(e47,x15,x14) ^ law-nn(e46,x15) ^ thing(e44,x10) ^ pay-vb(x9,x10,x6,u43) ^ violate-vb(x8,x6,x11,u42) ^ basic-adj(e41,x13) ^ sense-nn(e40,x13) ^ fairness-nn(e39,x12) ^ of-in(e38,x13,x12) ^ ’-vb(x11,x0,x13,u37) ^ g.e.-nn(e35,x5) ^ loc(e36,x5) ^ person(e34,x5) ^ of-in(e33,x4,x5) ^ knowledge-nn(e32,x4) ^ mr._romney-nn(e30,x3) ^ loc(e31,x3) ^ person(e29,x2) ^ of-in(e28,x1,x2) ^ knowledge-nn(e27,x1) ^ sparse-adj(e26,x6) ^ tax-nn(e25,x6) ^ most-rb(e24,x0) ^ americans-nn(e22,x0) ^ nam(e23,x0) ^ !=(e30,e31) ^ !=(e30,e31) ^ !=(x18,x20) ^ !=(e59,e54) ^ !=(e35,e36) ^ !=(e34,e29) ^ !=(e55,e50) ^ !=(e22,e23) ^ !=(e32,e27) ^ !=(e36,e31) ^ !=(e47,e38,e33,e28) ^ !=(e34,e29) ^ !=(e55,e50) ^ !=(e58,e53) ^ !=(e59,e54) ^ TS#TAXATION(x14) ^ T#ECONOMIC-INEQUALITY(_2) ^ S#CRIME(x8) ^ SS#CRIME%TYPE(x8,x8) ^ R#AGENT(x6,x8) ^ R#VICTIM(x11,x8) ^ S#RESOURCE(e26) ^ SS#RESOURCE%QUANTITY_SIZE(e26,e26) ^ R#SMALL-AMOUNT(x6,e26) ^ I#CRIME(x8) ^ I#CRIME%TYPE(x8,x8) ^ I#RESOURCE(e26) ^ I#RESOURCE%QUANTITY_SIZE(e26,e26) ^ =(x14,x6) ^ =(e48,e25)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,TAXATION,TAXATION,RESOURCE,RESOURCE%QUANTITY_SIZE,0.9\nECONOMIC_INEQUALITY,TAXATION,TAXATION,RESOURCE,RESOURCE%QUANTITY_SIZE,0.9\nECONOMIC_INEQUALITY,TAXATION,TAXATION,CRIME,CRIME%TYPE,0.9\n%%END_CM_LIST", 
+        "id": "3"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "grow", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "poverty", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "PLANT%CHANGE_OF_STATE", 
+        "isiDescription": "", 
+        "sourceFrame": "PLANT", 
+        "isiAbductiveExplanation": "say-vb(x4,x2,x6,u34) ^ grow-vb(x6,x7,u32,u33) ^ poverty-nn(e31,x7) ^ in-in(e30,x7,x1) ^ “-adj(e29,x13) ^ emblematic-nn(e28,x13) ^ larger-adj(e27,x12) ^ problem-nn(e26,x12) ^ in-in(e25,x12,x0) ^ equal(e24,x12,x11) ^ inequality-nn(e23,x10) ^ increase-vb(x9,x11,x10,u22) ^ of-in(e21,x13,x12) ^ ”-nn(e20,x8) ^ in-in(e19,x13,x8) ^ equal(e18,x7,x13) ^ blodget-nn(e16,x2) ^ org(e17,x2) ^ suburb-nn(e15,x1) ^ country-nn(e14,x0) ^ !=(e16,e17) ^ !=(e24,e18) ^ !=(e30,e25,e19) ^ TS#POVERTY(x7) ^ T#ECONOMIC-INEQUALITY(_4) ^ TS#WEALTH_AND_SOCIAL_CLASS(x10) ^ T#ECONOMIC-INEQUALITY(x10) ^ S#VERTICAL_SCALE(x9) ^ SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x9,x9) ^ R#MOVE-UP(x9,x9) ^ R#MOVER(x11,x9) ^ S#PLANT(x6) ^ SS#PLANT%CHANGE_OF_STATE(x6,x6) ^ R#CHANGING-THING(x7,x6) ^ I#VERTICAL_SCALE(x9) ^ I#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x9,x9) ^ I#PLANT%CHANGE_OF_STATE(x6,x6) ^ =(_4,x10)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,PLANT,PLANT%CHANGE_OF_STATE,0.9\nECONOMIC_INEQUALITY,POVERTY,POVERTY,PLANT,PLANT%CHANGE_OF_STATE,0.9\nECONOMIC_INEQUALITY,POVERTY,POVERTY,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.3\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,PLANT,PLANT%CHANGE_OF_STATE,0.3\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,PLANT,PLANT%CHANGE_OF_STATE,0.3\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.9\n%%END_CM_LIST", 
+        "id": "4"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "skyrocket", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "poverty", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "LOW_POINT%MOVEMENT_UPWARD", 
+        "isiDescription": "", 
+        "sourceFrame": "LOW_POINT", 
+        "isiAbductiveExplanation": "poverty-nn(e12,x2) ^ of-in(e11,x3,x2) ^ rate-nn(e10,x3) ^ skyrocket-vb(x1,x3,u8,u9) ^ among-in(e7,x1,x0) ^ black-adj(e6,x0) ^ americans-nn(e4,x0) ^ nam(e5,x0) ^ !=(e4,e5) ^ TS#POVERTY(x2) ^ T#ECONOMIC-INEQUALITY(_5) ^ S#LOW_POINT(_6) ^ SS#LOW_POINT%MOVEMENT_UPWARD(x1,_6) ^ R#MOVE-U-PATIENT(x3,x1) ^ I#LOW_POINT(_6) ^ I#LOW_POINT%MOVEMENT_UPWARD(x1,_6)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,LOW_POINT,LOW_POINT%MOVEMENT_UPWARD,0.5\n%%END_CM_LIST", 
+        "id": "5"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "picture,picture", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "poverty", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "VISION%SEEING", 
+        "isiDescription": "", 
+        "sourceFrame": "VISION", 
+        "isiAbductiveExplanation": "under-in(e20,x3,x0) ^ show-vb(x5,x4,x3,u19) ^ how(e18,x5) ^ census-nn(e16,x4) ^ org(e17,x4) ^ bureau-nn(e14,x4) ^ org(e15,x4) ^ report-nn(e13,x4) ^ poverty-nn(e12,x2) ^ of-in(e11,x3,x2) ^ picture-nn(e10,x1) ^ of-in(e9,x3,x1) ^ change-nn(e8,x3) ^ new-adj(e7,x0) ^ measure-nn(e6,x0) ^ !=(e16,e17) ^ !=(e14,e15) ^ !=(e11,e9) ^ !=(e17,e15) ^ TS#POVERTY(x2) ^ T#ECONOMIC-INEQUALITY(_7) ^ S#VISION(e10) ^ SS#VISION%SEEING(x1,e10) ^ I#VISION(e10) ^ I#VISION%SEEING(x1,e10)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,VISION,VISION%SEEING,0.5\n%%END_CM_LIST", 
+        "id": "6"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "steeper,level", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "tax", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "TAXATION", 
+        "targetConceptSubDomain": "TAXATION", 
+        "sourceConceptSubDomain": "VERTICAL_SCALE%CONTRAST_OF_POSITIONS", 
+        "isiDescription": "", 
+        "sourceFrame": "VERTICAL_SCALE", 
+        "isiAbductiveExplanation": "several-adj(e51,x5) ^ democrat-nn(e50,x5) ^ advocate-vb(x17,x5,u48,u49) ^ bush-nn(e46,x16) ^ org(e47,x16) ^ of-in(e45,x16,x11) ^ reductions—-nn(e44,x16) ^ signature-nn(e43,x15) ^ in-in(e42,x15,x1) ^ permanent-adj(e41,x13) ^ —-nn(e40,x13) ^ subset_of(e39,x13,x14) ^ imposition-nn(e38,x12) ^ steeper-adj(e37,x11) ^ tax-nn(e36,x11) ^ certain-adj(e35,x10) ^ income-nn(e34,x9) ^ of-in(e33,x10,x9) ^ level-nn(e32,x10) ^ on-in(e31,x11,x10) ^ of-in(e30,x12,x11) ^ subset_of(e29,x12,x14) ^ make-vb(x8,x15,x14,u28) ^ equal(e27,x16,x7) ^ ’s-vb(x6,x0,x7,u26) ^ of-in(e25,x2,x16) ^ for-in(e24,x17,x2) ^ continue-vb(x3,x5,x17,u23) ^ repeal-nn(e22,x2) ^ january-nn(e20,x1) ^ tim(e21,x1) ^ obama-nn(e18,x0) ^ org(e19,x0) ^ !=(e20,e21) ^ !=(e18,e19) ^ !=(e46,e47) ^ !=(e45,e33,e30,e25) ^ !=(e39,e29) ^ !=(e47,e19) ^ S#VERTICAL_SCALE(e37) ^ SS#VERTICAL_SCALE%CONTRAST_OF_POSITIONS(e37,e37) ^ TS#TAXATION(x11) ^ T#ECONOMIC-INEQUALITY(_8) ^ TS#WEALTH(x9) ^ T#ECONOMIC-INEQUALITY(_9) ^ TSS#MONEY(x9,x9) ^ S#VERTICAL_SCALE(e32) ^ SS#VERTICAL_SCALE%POSITION_ON_A_SCALE(x10,e32) ^ R#FIXED-POINT(x10,e32) ^ I#VERTICAL_SCALE(e32) ^ I#VERTICAL_SCALE%POSITION_ON_A_SCALE(x10,e32) ^ =(e37,e32) ^ =(_9,_8)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%CONTRAST_OF_POSITIONS,0.9\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%CONTRAST_OF_POSITIONS,0.9\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%POSITION_ON_A_SCALE,0.9\nECONOMIC_INEQUALITY,WEALTH,MONEY,VERTICAL_SCALE,VERTICAL_SCALE%CONTRAST_OF_POSITIONS,0.5\nECONOMIC_INEQUALITY,WEALTH,MONEY,VERTICAL_SCALE,VERTICAL_SCALE%CONTRAST_OF_POSITIONS,0.5\nECONOMIC_INEQUALITY,WEALTH,MONEY,VERTICAL_SCALE,VERTICAL_SCALE%POSITION_ON_A_SCALE,0.9\n%%END_CM_LIST", 
+        "id": "8"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "flatten,flatten", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "tax,income-tax,income-tax,tax", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "TAXATION", 
+        "targetConceptSubDomain": "TAXATION", 
+        "sourceConceptSubDomain": "VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE", 
+        "isiDescription": "", 
+        "sourceFrame": "VERTICAL_SCALE", 
+        "isiAbductiveExplanation": "or(e86,x25,x35) ^ of-in(e139,x40,x32) ^ system-nn(e138,x40) ^ existing-adj(e137,x39) ^ inequality-nn(e136,x39) ^ worsen-vb(x38,x40,x39,u135) ^ lately-rb(e134,x38) ^ federal-adj(e133,x37) ^ income-tax-nn(e132,x36) ^ of-in(e131,x37,x36) ^ rate-nn(e130,x37) ^ flatten-vb(x35,x10,x37,u129) ^ gradually-rb(e128,x35) ^ with-in(e127,x38,x10) ^ already-regressive-adj(e126,x34) ^ state-nn(e125,x33) ^ of-in(e124,x34,x33) ^ tax-nn(e123,x32) ^ of-in(e122,x34,x32) ^ rate-nn(e121,x34) ^ gop-nn(e119,x31) ^ org(e120,x31) ^ bastion-nn(e118,x31) ^ like-in(e117,x31,x8) ^ in-in(e116,x34,x31) ^ with-in(e115,x9,x34) ^ with-in(e114,x38,x9) ^ but-in(e113,x38) ^ of-in(e112,x30,x22) ^ system-nn(e111,x30) ^ existing-adj(e110,x29) ^ inequality-nn(e109,x29) ^ maintain-vb(x28,x30,x29,u108) ^ lately-rb(e107,x28) ^ federal-adj(e106,x27) ^ income-tax-nn(e105,x26) ^ of-in(e104,x27,x26) ^ rate-nn(e103,x27) ^ flatten-vb(x25,x20,x27,u102) ^ gradually-rb(e101,x25) ^ already-regressive-adj(e100,x24) ^ state-nn(e99,x23) ^ of-in(e98,x24,x23) ^ tax-nn(e97,x22) ^ of-in(e96,x24,x22) ^ rate-nn(e95,x24) ^ gop-nn(e93,x21) ^ org(e94,x21) ^ bastion-nn(e92,x21) ^ like-in(e91,x21,x19) ^ in-in(e90,x24,x21) ^ with-in(e89,x20,x24) ^ with-in(e88,x28,x20) ^ but-in(e87,x28) ^ congressional-adj(e85,x20) ^ republicans-nn(e83,x20) ^ nam(e84,x20) ^ subset_of(e82,x18,x19) ^ subset_of(e81,x17,x19) ^ texas-nn(e79,x18) ^ loc(e80,x18) ^ subset_of(e78,x16,x17) ^ subset_of(e77,x15,x17) ^ wyoming-nn(e75,x16) ^ loc(e76,x16) ^ subset_of(e74,x14,x15) ^ subset_of(e73,x13,x15) ^ tennessee-nn(e71,x14) ^ loc(e72,x14) ^ subset_of(e70,x12,x13) ^ subset_of(e69,x11,x13) ^ south_dakota-nn(e67,x12) ^ loc(e68,x12) ^ mississippi-nn(e65,x11) ^ loc(e66,x11) ^ congressional-adj(e64,x10) ^ republicans-nn(e62,x10) ^ nam(e63,x10) ^ congressional-adj(e61,x9) ^ republicans-nn(e59,x9) ^ nam(e60,x9) ^ subset_of(e58,x7,x8) ^ subset_of(e57,x6,x8) ^ texas-nn(e55,x7) ^ loc(e56,x7) ^ subset_of(e54,x5,x6) ^ subset_of(e53,x4,x6) ^ wyoming-nn(e51,x5) ^ loc(e52,x5) ^ subset_of(e50,x3,x4) ^ subset_of(e49,x2,x4) ^ tennessee-nn(e47,x3) ^ loc(e48,x3) ^ subset_of(e46,x1,x2) ^ subset_of(e45,x0,x2) ^ south_dakota-nn(e43,x1) ^ loc(e44,x1) ^ mississippi-nn(e41,x0) ^ loc(e42,x0) ^ !=(e134,e107) ^ !=(e123,e97) ^ !=(e138,e111) ^ !=(e116,e90) ^ !=(e119,e120,e93,e94) ^ !=(e115,e89) ^ !=(e126,e100) ^ !=(e125,e99) ^ !=(e118,e92) ^ !=(e117,e91) ^ !=(e67,e68,e43,e44) ^ !=(e75,e76,e51,e52) ^ !=(e133,e106) ^ !=(x35,x25) ^ !=(e128,e101) ^ !=(e83,e83,e84,e84,e62,e63,e59,e60) ^ !=(e85,e85,e64,e61) ^ !=(e127,e114,e88,e88) ^ !=(e113,e87) ^ !=(e71,e72,e47,e48) ^ !=(e136,e109) ^ !=(e137,e110) ^ !=(e79,e80,e55,e56) ^ !=(e130,e103) ^ !=(e132,e105) ^ !=(e123,e97) ^ !=(e121,e95) ^ !=(e65,e66,e41,e42) ^ !=(e67,e68,e43,e44) ^ !=(e117,e91) ^ !=(e80,e76,e72,e68,e66,e56,e52,e48,e44,e42) ^ !=(e139,e131,e124,e122,e112,e104,e98,e96) ^ !=(e113,e87) ^ !=(e84,e63,e60) ^ !=(e116,e90) ^ !=(e82,e81,e78,e77,e74,e73,e70,e69,e58,e57,e54,e53,e50,e49,e46,e45) ^ !=(e120,e94) ^ !=(e127,e115,e114,e89,e88) ^ TS#WEALTH_AND_SOCIAL_CLASS(x39) ^ T#ECONOMIC-INEQUALITY(x39) ^ TS#TAXATION(x36) ^ T#ECONOMIC-INEQUALITY(_10) ^ S#VERTICAL_SCALE(x35) ^ SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x35,x35) ^ R#MOVE-STOP(x35,x35) ^ R#MOVER(x10,x35) ^ TS#TAXATION(x32) ^ T#ECONOMIC-INEQUALITY(_11) ^ TS#WEALTH_AND_SOCIAL_CLASS(x29) ^ T#ECONOMIC-INEQUALITY(x29) ^ TS#TAXATION(x26) ^ T#ECONOMIC-INEQUALITY(_12) ^ S#VERTICAL_SCALE(x25) ^ SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x25,x25) ^ R#MOVE-STOP(x25,x25) ^ R#MOVER(x20,x25) ^ TS#TAXATION(x22) ^ T#ECONOMIC-INEQUALITY(_13) ^ I#VERTICAL_SCALE(x35) ^ I#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x35,x35) ^ I#VERTICAL_SCALE(x25) ^ I#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x25,x25) ^ =(x24,x27) ^ =(e95,e103) ^ =(_10,x39,_11,_12,_13,x29) ^ =(x37,x34) ^ =(x36,x22,x26,x32) ^ =(e121,e130)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\n%%END_CM_LIST", 
+        "id": "9"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "tilt", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "tax", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "TAXATION", 
+        "targetConceptSubDomain": "TAXATION", 
+        "sourceConceptSubDomain": "GAME%ACTIONS", 
+        "isiDescription": "", 
+        "sourceFrame": "GAME", 
+        "isiAbductiveExplanation": "tilt-vb(x4,x2,x0,u12) ^ but-in(e11,x4) ^ person(e10,x3) ^ of-in(e9,x2,x3) ^ tax-nn(e8,x1) ^ of-in(e7,x2,x1) ^ system-nn(e6,x2) ^ field-nn(e5,x0) ^ !=(e9,e7) ^ S#GAME(x4) ^ SS#GAME%ACTIONS(x4,x4) ^ R#PLAYER(x2,x4) ^ TS#TAXATION(x1) ^ T#ECONOMIC-INEQUALITY(_14) ^ I#GAME(x4) ^ I#GAME%ACTIONS(x4,x4)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,TAXATION,TAXATION,GAME,GAME%ACTIONS,0.5\n%%END_CM_LIST", 
+        "id": "10"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "", 
+                "explanation": "", 
+                "sourceInLm": false, 
+                "target": "poverty", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "TYPE", 
+        "isiDescription": "", 
+        "sourceFrame": "STRUGGLE", 
+        "isiAbductiveExplanation": "person(e36,x2) ^ poverty-nn(e35,x13) ^ child-nn(e34,x11) ^ of-in(e33,x12,x11) ^ ’s-nn(e32,x10) ^ of-in(e31,x12,x10) ^ success-nn(e30,x12) ^ diminish-vb(x9,x13,x12,u29) ^ school-nn(e28,x8) ^ in-in(e27,x9,x8) ^ know-vb(x3,x2,x9,u26) ^ more-rb(e25,x2) ^ recent-adj(e24,x2) ^ evidence-nn(e23,x2) ^ neuter(e22,x6) ^ thing(e21,x6) ^ of-in(e20,x7,x6) ^ earnings-nn(e19,x7) ^ adult-nn(e18,x6) ^ as-in(e17,x7,x6) ^ dampen-vb(x5,x6,x7,u16) ^ even-rb(e15,x5) ^ confirm-vb(x0,x2,x5,u14) ^ !=(e33,e31,e20) ^ TS#POVERTY(x13) ^ T#ECONOMIC-INEQUALITY(_15)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,STRUGGLE,TYPE,0.001\n%%END_CM_LIST", 
+        "id": "11"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "foundation,foundation", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "poverty", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "BUILDING%COMPONENTS", 
+        "isiDescription": "", 
+        "sourceFrame": "BUILDING", 
+        "isiAbductiveExplanation": "child-nn(e34,x10) ^ grow-vb(x9,x10,u32,u33) ^ up-rb(e31,x9) ^ poverty-nn(e30,x8) ^ in-in(e29,x9,x8) ^ of-in(e28,x2,x10) ^ strong-adj(e27,x7) ^ subset_of(e26,x6,x7) ^ subset_of(e25,x5,x7) ^ economy-nn(e24,x6) ^ shared-adj(e23,x5) ^ prosperity-nn(e22,x5) ^ of-in(e21,x0,x7) ^ person(e20,x5) ^ of-in(e19,x4,x5) ^ human-adj(e18,x4) ^ capital-nn(e17,x4) ^ :-in(e16,x0,x4) ^ undermine-vb(x3,x2,x0,u15) ^ rise-vb(x1,x2,u13,u14) ^ share-nn(e12,x2) ^ foundation-nn(e11,x0) ^ !=(e28,e21,e19) ^ !=(e26,e25) ^ TS#POVERTY(x8) ^ T#ECONOMIC-INEQUALITY(_16) ^ S#LOW_POINT(_17) ^ SS#LOW_POINT%MOVEMENT_UPWARD(x1,_17) ^ R#MOVE-U-PATIENT(x2,x1) ^ S#BUILDING(e11) ^ SS#BUILDING%COMPONENTS(x0,e11) ^ I#LOW_POINT(_17) ^ I#LOW_POINT%MOVEMENT_UPWARD(x1,_17) ^ I#BUILDING(e11) ^ I#BUILDING%COMPONENTS(x0,e11)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,BUILDING,BUILDING%COMPONENTS,0.5\nECONOMIC_INEQUALITY,POVERTY,POVERTY,BUILDING,BUILDING%COMPONENTS,0.5\nECONOMIC_INEQUALITY,POVERTY,POVERTY,LOW_POINT,LOW_POINT%MOVEMENT_UPWARD,0.5\n%%END_CM_LIST", 
+        "id": "12"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "consume", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "luxury,income", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "WEALTH", 
+        "targetConceptSubDomain": "WEALTH", 
+        "sourceConceptSubDomain": "FOOD%CONSUMPTION", 
+        "isiDescription": "", 
+        "sourceFrame": "FOOD", 
+        "isiAbductiveExplanation": "not(e12,x5) ^ people-nn(e30,x6) ^ not(e26,e29) ^ lucrative-adj(e29,x10) ^ employment-nn(e28,x10) ^ with-in(e27,x6,x10) ^ have-vb(x5,x6,x0,u25) ^ people-nn(e24,x4) ^ not(e20,e23) ^ lucrative-adj(e23,x9) ^ employment-nn(e22,x9) ^ with-in(e21,x4,x9) ^ of-in(e19,x1,x8) ^ income-nn(e18,x1) ^ most-adj(e17,x8) ^ thing(e16,x8) ^ of-in(e15,x8,x1) ^ consume-vb(x7,x4,x8,u14) ^ tend-vb(x2,x4,x7,u13) ^ luxury-nn(e11,x0) ^ !=(e28,e22) ^ !=(e30,e24) ^ !=(e29,e23) ^ !=(e26,e27,e20,e21) ^ !=(e12,e26,e20) ^ !=(e27,e21) ^ !=(e19,e15) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_18) ^ TSS#MONEY(x1,x1) ^ S#FOOD(x7) ^ SS#FOOD%CONSUMPTION(x7,x7) ^ R#TASTE-AGENT(x4,x7) ^ R#TASTE-OBJECT(x8,x7) ^ TS#WEALTH(x0) ^ T#ECONOMIC-INEQUALITY(_19) ^ R#RICH(x8,x1) ^ I#FOOD(x7) ^ I#FOOD%CONSUMPTION(x7,x7) ^ =(x0,x1) ^ =(_19,_18)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,FOOD,FOOD%CONSUMPTION,0.5\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,FOOD%CONSUMPTION,0.5\n%%END_CM_LIST", 
+        "id": "13"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "destruction,destruction", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "class", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "WEALTH_AND_SOCIAL_CLASS", 
+        "targetConceptSubDomain": "WEALTH_AND_SOCIAL_CLASS", 
+        "sourceConceptSubDomain": "DESTROYER%DESTRUCTIVE_FORCE", 
+        "isiDescription": "", 
+        "sourceFrame": "DESTROYER", 
+        "isiAbductiveExplanation": "of-in(e24,x2,x1) ^ continue-vb(x5,x2,u22,u23) ^ solution-nn(e21,x8) ^ understand-vb(x7,u19,x8,u20) ^ in-in(e18,x7,x0) ^ absent-adj(e17,x6) ^ correcting-nn(e16,x6) ^ as-in(e15,x7,x6) ^ essential-adj(e14,x5) ^ systematic-adj(e13,x2) ^ destruction-nn(e12,x2) ^ middle-adj(e11,x1) ^ class-nn(e10,x1) ^ problem-nn(e9,x0) ^ S#DESTROYER(e12) ^ SS#DESTROYER%DESTRUCTIVE_FORCE(x2,e12) ^ TS#WEALTH_AND_SOCIAL_CLASS(x1) ^ T#ECONOMIC-INEQUALITY(_21) ^ TS#WEALTH_AND_SOCIAL_CLASS(x1) ^ T#ECONOMIC-INEQUALITY(_22) ^ I#DESTROYER(e12) ^ I#DESTROYER%DESTRUCTIVE_FORCE(x2,e12) ^ =(_21,_22)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,DESTROYER,DESTROYER%DESTRUCTIVE_FORCE,0.9\n%%END_CM_LIST", 
+        "id": "15"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "drop,drop", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "income", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "WEALTH", 
+        "targetConceptSubDomain": "MONEY", 
+        "sourceConceptSubDomain": "VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE", 
+        "isiDescription": "", 
+        "sourceFrame": "VERTICAL_SCALE", 
+        "isiAbductiveExplanation": "card(e53,x13,20) ^ percent-nn(e52,x13) ^ family-nn(e51,x12) ^ in-in(e50,x12,x2) ^ of-in(e49,x13,x12) ^ thing(e48,x4) ^ of-in(e47,x11,x4) ^ income-nn(e46,x10) ^ of-in(e45,x11,x10) ^ drop-nn(e44,x11) ^ half-nn(e43,x9) ^ least-adj(e42,x9) ^ at-in(e41,x9) ^ by-in(e40,x11,x9) ^ card(e39,x8,1) ^ four-month-adj(e38,x8) ^ period-nn(e37,x8) ^ from-in(e36,x11,x8) ^ to-in(e35,x11,x1) ^ see-vb(x7,x13,x11,u34) ^ accord-vb(x6,u31,u32,u33) ^ urban-nn(e29,x5) ^ org(e30,x5) ^ institute-nn(e27,x5) ^ org(e28,x5) ^ research-nn(e26,x5) ^ to-in(e25,x6,x5) ^ year-nn(e24,x4) ^ of-in(e23,x0,x4) ^ over-in(e22,x7,x0) ^ fifth-nn(e21,x2) ^ imp(e16,e18,e20) ^ poorest-adj(e20,x2,x3) ^ not(e18,e19) ^ equal(e19,x2,x3) ^ fifth-nn(e17,x3) ^ next-adj(e15,x1) ^ course-nn(e14,x0) ^ !=(e21,e17) ^ !=(e27,e28) ^ !=(e29,e30) ^ !=(e49,e47,e45,e23) ^ !=(e35,e25) ^ !=(e30,e28) ^ !=(e53,e39) ^ TS#WEALTH(x10) ^ T#ECONOMIC-INEQUALITY(_23) ^ TSS#MONEY(x10,x10) ^ S#VERTICAL_SCALE(e44) ^ SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x11,e44) ^ R#MOVE-DOWN(x11,e44) ^ I#VERTICAL_SCALE(e44) ^ I#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x11,e44)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.9\n%%END_CM_LIST", 
+        "id": "16"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "increase,increase", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "poverty", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE", 
+        "isiDescription": "", 
+        "sourceFrame": "VERTICAL_SCALE", 
+        "isiAbductiveExplanation": "suburb-nn(e53,x11) ^ increase-nn(e52,x10) ^ poverty-nn(e51,x9) ^ in-in(e50,x10,x9) ^ see-vb(x8,x11,x10,u49) ^ include-vb(x7,u46,u47,u48) ^ political-adj(e45,x6) ^ battleground-nn(e44,x6) ^ where(e43,x4,x17) ^ voter-nn(e42,x18) ^ cope-vb(x17,x18,u40,u41) ^ new-adj(e39,x16) ^ norm-nn(e38,x16) ^ equal(e37,x16,x15) ^ hand-nn(e36,x14) ^ live-vb(x13,x15,x14,u35) ^ mouth-nn(e34,x12) ^ to-in(e33,x13,x12) ^ with-in(e32,x17,x16) ^ as-in(e31,x6,x4) ^ such-adj(e30,x6) ^ in-in(e29,x7,x6) ^ subset_of(e28,x3,x4) ^ subset_of(e27,x2,x4) ^ colorado-nn(e25,x3) ^ loc(e26,x3) ^ subset_of(e24,x1,x2) ^ subset_of(e23,x0,x2) ^ florida-nn(e21,x1) ^ loc(e22,x1) ^ nevada-nn(e19,x0) ^ loc(e20,x0) ^ !=(e19,e20) ^ !=(e21,e22) ^ !=(e25,e26) ^ !=(e26,e22,e20) ^ !=(e50,e29) ^ !=(e28,e27,e24,e23) ^ S#VERTICAL_SCALE(e52) ^ SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x10,e52) ^ R#MOVE-UP(x10,e52) ^ TS#POVERTY(x9) ^ T#ECONOMIC-INEQUALITY(_24) ^ S#HUMAN_BODY(e36) ^ SS#HUMAN_BODY%COMPONENT(x14,e36) ^ I#VERTICAL_SCALE(e52) ^ I#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x10,e52) ^ I#HUMAN_BODY(e36) ^ I#HUMAN_BODY%COMPONENT(x14,e36)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,HUMAN_BODY,HUMAN_BODY%COMPONENT,0.3\nECONOMIC_INEQUALITY,POVERTY,POVERTY,HUMAN_BODY,HUMAN_BODY%COMPONENT,0.3\nECONOMIC_INEQUALITY,POVERTY,POVERTY,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.9\n%%END_CM_LIST", 
+        "id": "17"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "soar", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "inequality", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "WEALTH_AND_SOCIAL_CLASS", 
+        "targetConceptSubDomain": "WEALTH_AND_SOCIAL_CLASS", 
+        "sourceConceptSubDomain": "VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE", 
+        "isiDescription": "", 
+        "sourceFrame": "VERTICAL_SCALE", 
+        "isiAbductiveExplanation": "person(e41,x7) ^ of-in(e40,x8,x7) ^ friend-nn(e39,x8) ^ on-in(e38,x8,x1) ^ card(e37,x7,1) ^ narrow-adj(e36,x7) ^ statistic-nn(e35,x7) ^ equal(e34,x7,x6) ^ say-vb(x5,x6,x13,u33) ^ wealth-nn(e32,x14) ^ of-in(e31,x15,x14) ^ inequality-nn(e30,x15) ^ soar-vb(x13,x15,u28,u29) ^ have-vb(x3,x8,x7,u27) ^ ok-adj(e26,x3) ^ fair-adj(e25,x12) ^ –-nn(e24,x12) ^ equal(e23,x11,x12) ^ not(e19,x9) ^ capture-vb(x9,x1,x0,u22) ^ either-rb(e21,x9) ^ ok-adj(e20,x9) ^ left-nn(e18,x1) ^ thing(e17,x1) ^ distribution-nn(e16,x0) ^ !=(e26,e20) ^ !=(e40,e31) ^ !=(e34,e23) ^ TS#WEALTH(x14) ^ T#ECONOMIC-INEQUALITY(_25) ^ TS#WEALTH_AND_SOCIAL_CLASS(x15) ^ T#ECONOMIC-INEQUALITY(x15) ^ S#VERTICAL_SCALE(x13) ^ SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x13,x13) ^ R#MOVE-UP(x13,x13) ^ R#MOVER(x15,x13) ^ S#RESOURCE(e16) ^ SS#RESOURCE%DISTRIBUTION(x0,e16) ^ I#VERTICAL_SCALE(x13) ^ I#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x13,x13) ^ I#RESOURCE(e16) ^ I#RESOURCE%DISTRIBUTION(x0,e16) ^ =(x15,_25)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,WEALTH,WEALTH,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,WEALTH,WEALTH,RESOURCE,RESOURCE%DISTRIBUTION,0.3\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.9\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.9\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,RESOURCE,RESOURCE%DISTRIBUTION,0.3\n%%END_CM_LIST", 
+        "id": "18"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "drive", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "poverty", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "ABYSS%ENTRANCE", 
+        "isiDescription": "", 
+        "sourceFrame": "ABYSS", 
+        "isiAbductiveExplanation": "particularly-rb(e24,x2) ^ rel(e23,x3,x2) ^ inside-in(e22,x4,x3) ^ drive-vb(x6,u20,x4,u21) ^ poverty-nn(e19,x5) ^ into-in(e18,x6,x5) ^ however-rb(e17,x6) ^ people-nn(e16,x4) ^ u.s.-nn(e14,x3) ^ loc(e15,x3) ^ subset_of(e13,x1,x2) ^ subset_of(e12,x0,x2) ^ oppressed-adj(e11,x1) ^ african-adj(e10,x1) ^ nation-nn(e9,x1) ^ latino-adj(e8,x0) ^ nation-nn(e7,x0) ^ !=(e9,e7) ^ !=(e14,e15) ^ !=(e13,e12) ^ TS#POVERTY(x5) ^ T#ECONOMIC-INEQUALITY(_26) ^ S#ABYSS(x6) ^ SS#ABYSS%ENTRANCE(x6,x6) ^ R#ABYSS-THEME(x4,x6) ^ R#ABYSS-CAUSE(u20,x6) ^ I#ABYSS(x6) ^ I#ABYSS%ENTRANCE(x6,x6)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,ABYSS,ABYSS%ENTRANCE,0.9\n%%END_CM_LIST", 
+        "id": "19"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "hinder", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "poverty,poor", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "PATHWAY%OBSTRUCTED_PATH", 
+        "isiDescription": "", 
+        "sourceFrame": "PATHWAY", 
+        "isiAbductiveExplanation": "card(e72,x14,1) ^ equal(e71,x3,x13) ^ move-vb(x12,x13,u69,u70) ^ subset_of(e68,x4,x11) ^ subset_of(e67,x10,x11) ^ opportunity-nn(e65,x4) ^ nam(e66,x4) ^ program-nn(e64,x4) ^ similar-adj(e63,x10) ^ program-nn(e62,x10) ^ to-in(e61,x12,x11) ^ of-in(e60,x14,x3) ^ be-vb(x9,x14,u58,u59) ^ that-in(e57,x9,e55) ^ neuter(e56,x4) ^ neighborhood-nn(e55,x25) ^ of-in(e54,x23,x4) ^ resident-nn(e53,x23) ^ of-in(e52,x2,x1) ^ equal(e51,x25,x2) ^ largely-rb(e50,e52) ^ while-in(e49,x20,x15) ^ poor-adj(e48,x22) ^ community-nn(e47,x22) ^ of-in(e46,x0,x22) ^ escape-nn(e45,x21) ^ hinder-vb(x20,x0,x21,u44) ^ poverty-nn(e43,x19) ^ from-in(e42,x20,x19) ^ time-nn(e41,x18) ^ at-in(e40,x20,x18) ^ thing(e39,x16) ^ key-adj(e38,x17) ^ source-nn(e37,x17) ^ support-nn(e36,x16) ^ of-in(e35,x17,x16) ^ provide-vb(x15,x16,x17,u34) ^ often-rb(e33,x15) ^ also-rb(e32,x15) ^ conclusion-nn(e31,x3) ^ product-nn(e30,x2) ^ of-in(e29,x1,x23) ^ social-adj(e28,x1) ^ connection-nn(e27,x1) ^ network-nn(e26,x0) ^ !=(e64,e62) ^ !=(e65,e66) ^ !=(e60,e54,e52,e46,e35,e29) ^ !=(e71,e51) ^ !=(e68,e67) ^ TS#POVERTY(e48) ^ T#ECONOMIC-INEQUALITY(_27) ^ R#POOR(x22,e48) ^ S#CONFINEMENT(e45) ^ SS#CONFINEMENT%EXIT(x21,e45) ^ S#PATHWAY(x20) ^ SS#PATHWAY%OBSTRUCTED_PATH(x20,x20) ^ TS#POVERTY(x19) ^ T#ECONOMIC-INEQUALITY(_29) ^ S#BUILDING(e36) ^ SS#BUILDING%SUPPORT(x16,e36) ^ TS#WEALTH_AND_SOCIAL_CLASS(e28) ^ T#ECONOMIC-INEQUALITY(_30) ^ I#CONFINEMENT(e45) ^ I#CONFINEMENT%EXIT(x21,e45) ^ I#PATHWAY(x20) ^ I#PATHWAY%OBSTRUCTED_PATH(x20,x20) ^ I#BUILDING(e36) ^ =(_30,_29,_27) ^ =(e48,x19)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,BUILDING,BUILDING%SUPPORT,0.5\nECONOMIC_INEQUALITY,POVERTY,POVERTY,BUILDING,BUILDING%SUPPORT,0.5\nECONOMIC_INEQUALITY,POVERTY,POVERTY,BUILDING,BUILDING%SUPPORT,0.5\nECONOMIC_INEQUALITY,POVERTY,POVERTY,CONFINEMENT,CONFINEMENT%EXIT,0.5\nECONOMIC_INEQUALITY,POVERTY,POVERTY,BUILDING,BUILDING%SUPPORT,0.5\nECONOMIC_INEQUALITY,POVERTY,POVERTY,CONFINEMENT,CONFINEMENT%EXIT,0.5\nECONOMIC_INEQUALITY,POVERTY,POVERTY,BUILDING,BUILDING%SUPPORT,0.5\nECONOMIC_INEQUALITY,POVERTY,POVERTY,CONFINEMENT,CONFINEMENT%EXIT,0.5\nECONOMIC_INEQUALITY,POVERTY,POVERTY,PATHWAY,PATHWAY%OBSTRUCTED_PATH,0.9\nECONOMIC_INEQUALITY,POVERTY,POVERTY,BUILDING,BUILDING%SUPPORT,0.5\nECONOMIC_INEQUALITY,POVERTY,POVERTY,CONFINEMENT,CONFINEMENT%EXIT,0.5\nECONOMIC_INEQUALITY,POVERTY,POVERTY,PATHWAY,PATHWAY%OBSTRUCTED_PATH,0.9\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,BUILDING,BUILDING%SUPPORT,0.3\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,BUILDING,BUILDING%SUPPORT,0.3\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,CONFINEMENT,CONFINEMENT%EXIT,0.3\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,BUILDING,BUILDING%SUPPORT,0.3\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,CONFINEMENT,CONFINEMENT%EXIT,0.3\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,PATHWAY,PATHWAY%OBSTRUCTED_PATH,0.3\n%%END_CM_LIST", 
+        "id": "20"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "reduce", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "income-tax", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "TAXATION", 
+        "targetConceptSubDomain": "TAXATION", 
+        "sourceConceptSubDomain": "VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE", 
+        "isiDescription": "", 
+        "sourceFrame": "VERTICAL_SCALE", 
+        "isiAbductiveExplanation": "of-in(e53,x15,x8) ^ rate-nn(e52,x15) ^ reduce-vb(x14,x2,x15,u51) ^ across-in(e50,x14,x3) ^ as-in(e49,x14,x16) ^ do-vb(x16,x0,u47,u48) ^ governor-nn(e46,x12) ^ as-in(e45,x1,x12) ^ in-in(e44,x14,x1) ^ state-nn(e43,x10) ^ of-in(e42,x11,x10) ^ ’s-nn(e41,x9) ^ of-in(e40,x11,x9) ^ top-adj(e39,x11) ^ income-tax-nn(e38,x8) ^ of-in(e37,x11,x8) ^ rate-nn(e36,x11) ^ reduce-vb(x7,x2,x11,u35) ^ card(e34,x6,8.2) ^ percent-nn(e33,x6) ^ from-in(e32,x7,x6) ^ card(e31,x5,4.9) ^ percent-nn(e30,x5) ^ to-in(e29,x7,x5) ^ card(e28,x4,5) ^ year-nn(e27,x4) ^ over-in(e26,x7,x4) ^ mr._richardson-nn(e24,x2) ^ per(e25,x2) ^ spectrum-nn(e23,x3) ^ mr._bush-nn(e21,x0) ^ loc(e22,x0) ^ male(e20,x2) ^ of-in(e19,x1,x2) ^ first-adj(e18,x1) ^ term-nn(e17,x1) ^ !=(e24,e25) ^ !=(e24,e25) ^ !=(e21,e22) ^ !=(e21,e22) ^ !=(e53,e42,e40,e37,e19) ^ !=(e49,e45) ^ !=(e34,e31,e28) ^ S#VERTICAL_SCALE(x14) ^ SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x14,x14) ^ R#MOVE-DOWN(x14,x14) ^ R#MOVER(x2,x14) ^ TS#TAXATION(x8) ^ T#ECONOMIC-INEQUALITY(_31) ^ I#VERTICAL_SCALE(x14) ^ I#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x14,x14) ^ =(x14,x7) ^ =(e33,e30) ^ =(x5,x6) ^ =(x15,x11) ^ =(u35,u51) ^ =(e36,e52)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\n%%END_CM_LIST", 
+        "id": "21"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "reduce", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "income-tax", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "TAXATION", 
+        "targetConceptSubDomain": "TAXATION", 
+        "sourceConceptSubDomain": "VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE", 
+        "isiDescription": "", 
+        "sourceFrame": "VERTICAL_SCALE", 
+        "isiAbductiveExplanation": "of-in(e53,x15,x8) ^ rate-nn(e52,x15) ^ reduce-vb(x14,x2,x15,u51) ^ across-in(e50,x14,x3) ^ as-in(e49,x14,x16) ^ do-vb(x16,x0,u47,u48) ^ governor-nn(e46,x12) ^ as-in(e45,x1,x12) ^ in-in(e44,x14,x1) ^ state-nn(e43,x10) ^ of-in(e42,x11,x10) ^ ’s-nn(e41,x9) ^ of-in(e40,x11,x9) ^ top-adj(e39,x11) ^ income-tax-nn(e38,x8) ^ of-in(e37,x11,x8) ^ rate-nn(e36,x11) ^ reduce-vb(x7,x2,x11,u35) ^ card(e34,x6,8.2) ^ percent-nn(e33,x6) ^ from-in(e32,x7,x6) ^ card(e31,x5,4.9) ^ percent-nn(e30,x5) ^ to-in(e29,x7,x5) ^ card(e28,x4,5) ^ year-nn(e27,x4) ^ over-in(e26,x7,x4) ^ mr._richardson-nn(e24,x2) ^ per(e25,x2) ^ spectrum-nn(e23,x3) ^ mr._bush-nn(e21,x0) ^ loc(e22,x0) ^ male(e20,x2) ^ of-in(e19,x1,x2) ^ first-adj(e18,x1) ^ term-nn(e17,x1) ^ !=(e21,e22) ^ !=(e21,e22) ^ !=(e24,e25) ^ !=(e24,e25) ^ !=(e53,e42,e40,e37,e19) ^ !=(e49,e45) ^ !=(e34,e31,e28) ^ S#VERTICAL_SCALE(x14) ^ SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x14,x14) ^ R#MOVE-DOWN(x14,x14) ^ R#MOVER(x2,x14) ^ TS#TAXATION(x8) ^ T#ECONOMIC-INEQUALITY(_32) ^ I#VERTICAL_SCALE(x14) ^ I#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x14,x14) ^ =(e33,e30) ^ =(x5,x6) ^ =(x15,x11) ^ =(u35,u51) ^ =(e36,e52) ^ =(x14,x7)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\n%%END_CM_LIST", 
+        "id": "22"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "rise", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "wealth", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "WEALTH", 
+        "targetConceptSubDomain": "WEALTH", 
+        "sourceConceptSubDomain": "LOW_POINT%MOVEMENT_UPWARD", 
+        "isiDescription": "", 
+        "sourceFrame": "LOW_POINT", 
+        "isiAbductiveExplanation": "mask-vb(x8,x3,x2,u23) ^ however-rb(e22,x8) ^ generally-rb(e21,x3) ^ good-adj(e20,x3) ^ news-nn(e19,x3) ^ fact-nn(e18,x2) ^ benefit-nn(e17,x0) ^ not(e9,x6) ^ rise-vb(x6,x7,u15,u16) ^ wealth-nn(e14,x7) ^ of-in(e13,x0,x7) ^ share-vb(x5,u11,x0,u12) ^ equally-rb(e10,x5) ^ S#LOW_POINT(_33) ^ SS#LOW_POINT%MOVEMENT_UPWARD(x6,_33) ^ R#MOVE-U-PATIENT(x7,x6) ^ TS#WEALTH(x7) ^ T#ECONOMIC-INEQUALITY(_34) ^ I#LOW_POINT(_33) ^ I#LOW_POINT%MOVEMENT_UPWARD(x6,_33)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,LOW_POINT,LOW_POINT%MOVEMENT_UPWARD,0.9\n%%END_CM_LIST", 
+        "id": "23"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "fall", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "tax,taxpayer", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "TAXATION", 
+        "targetConceptSubDomain": "TAXATION", 
+        "sourceConceptSubDomain": "VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE", 
+        "isiDescription": "", 
+        "sourceFrame": "VERTICAL_SCALE", 
+        "isiAbductiveExplanation": "tax-nn(e19,x4) ^ of-in(e18,x5,x4) ^ rate-nn(e17,x5) ^ taxpayer-nn(e16,x3) ^ of-in(e15,x1,x3) ^ on-in(e14,x5,x1) ^ fall-vb(x2,x5,u12,u13) ^ over-in(e11,x2,x0) ^ top-adj(e10,x1) ^ card(e9,x1,1) ^ percent-nn(e8,x1) ^ same-adj(e7,x0) ^ period-nn(e6,x0) ^ !=(e18,e15) ^ TS#TAXATION(x4) ^ T#ECONOMIC-INEQUALITY(_35) ^ TS#TAXATION(e16) ^ T#ECONOMIC-INEQUALITY(_36) ^ R#TAX-PAYER(x3,e16) ^ S#VERTICAL_SCALE(x2) ^ SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x2,x2) ^ R#MOVE-DOWN(x2,x2) ^ R#MOVER(x5,x2) ^ I#VERTICAL_SCALE(x2) ^ I#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE(x2,x2) ^ =(e16,x4) ^ =(_35,_36)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE,0.5\n%%END_CM_LIST", 
+        "id": "24"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "", 
+                "explanation": "", 
+                "sourceInLm": false, 
+                "target": "debt", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "DEBT", 
+        "sourceConceptSubDomain": "TYPE", 
+        "isiDescription": "", 
+        "sourceFrame": "STRUGGLE", 
+        "isiAbductiveExplanation": "do-vb(x4,x2,u56,u57) ^ n’t-rb(e55,x4) ^ because-in(e54,x4,x9) ^ “-adj(x20,x0,x21,u53) ^ ”-adj(e52,x23) ^ debt-nn(e51,x23) ^ issue-vb(x22,x1,x23,u50) ^ buy-vb(x21,x0,x23,u49) ^ spend-vb(x9,x10,u47,u48) ^ dollar(e46,x10) ^ card(e45,x10,845000000000) ^ equal(e44,x10,x8) ^ have-vb(x7,x0,x8,u43) ^ n’t-rb(e42,x7) ^ mean-vb(x6,x10,x12,u41) ^ dollar(e40,x17) ^ card(e39,x17,845000000000) ^ more-adj(e38,x17) ^ subset_of(e37,x17,x18) ^ interest-nn(e36,x16) ^ subset_of(e35,x16,x18) ^ pay-vb(x15,x0,x18,u34) ^ tax-nn(e33,x14) ^ in-in(e32,x15,x14) ^ have-vb(x12,x0,x15,u31) ^ eventually-rb(e30,x12) ^ thing(e29,x2) ^ federal_reserve-nn(e27,x0) ^ org(e28,x0) ^ treasury_department-nn(e25,x1) ^ org(e26,x1) ^ person(e24,x0) ^ !=(e25,e26) ^ !=(e25,e26) ^ !=(e27,e28) ^ !=(e27,e28) ^ !=(e46,e40) ^ !=(e37,e35) ^ !=(e28,e26) ^ !=(e45,e39) ^ TS#POVERTY(_37) ^ T#ECONOMIC-INEQUALITY(_38) ^ TSS#DEBT(x23,_37) ^ TS#TAXATION(x14) ^ T#ECONOMIC-INEQUALITY(_39) ^ =(e42,e55) ^ =(u43,u31) ^ =(_38,_39) ^ =(x15,x8) ^ =(x7,x4,x12)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,DEBT,STRUGGLE,TYPE,0.001\n%%END_CM_LIST", 
+        "id": "25"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "destroy", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "social,class", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "WEALTH_AND_SOCIAL_CLASS", 
+        "targetConceptSubDomain": "WEALTH_AND_SOCIAL_CLASS", 
+        "sourceConceptSubDomain": "BUILDING%CREATION_DESTRUCTION", 
+        "isiDescription": "", 
+        "sourceFrame": "BUILDING", 
+        "isiAbductiveExplanation": "there-vb(e50,x1) ^ not(e43,x15) ^ difference-nn(e49,x17) ^ oppose-vb(x15,x16,u47,u48) ^ class-nn(e46,x16) ^ between-in(e45,x17,x16) ^ equal(e44,x1,x17) ^ as-in(e42,e43,x14) ^ predict-vb(x14,u40,x0,u41) ^ economic-adj(e39,x9) ^ specialization-nn(e38,x9) ^ society-nn(e37,x8) ^ produce-vb(x13,x8,u35,u36) ^ effectively-rb(e34,x13) ^ more-rb(e33,x13) ^ enable-vb(x6,x9,x13,u32) ^ economic-adj(e31,x5) ^ specialization-nn(e30,x5) ^ more-rb(e29,x4) ^ new-adj(e28,x4) ^ social-adj(e27,x4) ^ group-nn(e26,x4) ^ than-in(e25,x4,x12) ^ neuter(e24,x1) ^ destroy-vb(x12,x1,u22,u23) ^ create-vb(x2,x5,x4,u21) ^ thereby-rb(e20,x2) ^ marx-nn(e18,x0) ^ per(e19,x0) ^ !=(e38,e30) ^ !=(e18,e19) ^ !=(e39,e31) ^ TS#WEALTH_AND_SOCIAL_CLASS(x16) ^ T#ECONOMIC-INEQUALITY(_40) ^ TS#WEALTH_AND_SOCIAL_CLASS(e27) ^ T#ECONOMIC-INEQUALITY(_41) ^ S#BUILDING(x12) ^ SS#BUILDING%CREATION_DESTRUCTION(x12,x12) ^ R#DESTRUCTION(x12,x12) ^ I#BUILDING(x12) ^ I#BUILDING%CREATION-DESTRUCTION(x12,x12) ^ =(e27,x16) ^ =(e33,e29) ^ =(x4,x13) ^ =(_40,_41)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,BUILDING,BUILDING%CREATION_DESTRUCTION,0.5\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,BUILDING,BUILDING%CREATION_DESTRUCTION,0.5\n%%END_CM_LIST", 
+        "id": "26"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "", 
+                "explanation": "", 
+                "sourceInLm": false, 
+                "target": "inequality", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "WEALTH_AND_SOCIAL_CLASS", 
+        "targetConceptSubDomain": "WEALTH_AND_SOCIAL_CLASS", 
+        "sourceConceptSubDomain": "TYPE", 
+        "isiDescription": "", 
+        "sourceFrame": "STRUGGLE", 
+        "isiAbductiveExplanation": "describe-vb(x9,x2,x6,u33) ^ of-in(e32,x4,x1) ^ as-in(e31,x9,x4) ^ male(e30,x7) ^ of-in(e29,x8,x7) ^ kansas-nn(e27,x8) ^ loc(e28,x8) ^ speech-nn(e26,x8) ^ on-in(e25,x8,x0) ^ in-in(e24,x8,x7) ^ month-nn(e23,x7) ^ in-in(e22,x9,x8) ^ president_obama-nn(e20,x2) ^ org(e21,x2) ^ grow-vb(x5,x6,u18,u19) ^ inequality-nn(e17,x6) ^ define-vb(x3,x4,u15,u16) ^ issue-nn(e14,x4) ^ person(e13,x2) ^ of-in(e12,x1,x2) ^ time-nn(e11,x1) ^ economy-nn(e10,x0) ^ !=(e20,e21) ^ !=(e27,e28) ^ !=(e20,e21) ^ !=(e32,e29,e12) ^ !=(e24,e22) ^ TS#WEALTH_AND_SOCIAL_CLASS(x6) ^ T#ECONOMIC-INEQUALITY(x6)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH_AND_SOCIAL_CLASS,WEALTH_AND_SOCIAL_CLASS,STRUGGLE,TYPE,0.001\n%%END_CM_LIST", 
+        "id": "28"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "", 
+                "explanation": "", 
+                "sourceInLm": false, 
+                "target": "tax", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "TAXATION", 
+        "targetConceptSubDomain": "TAXATION", 
+        "sourceConceptSubDomain": "TYPE", 
+        "isiDescription": "", 
+        "sourceFrame": "STRUGGLE", 
+        "isiAbductiveExplanation": "series-nn(e28,x7) ^ important-adj(e27,x6) ^ step-nn(e26,x6) ^ fairness-nn(e25,x11) ^ restore-vb(x10,x6,x11,u24) ^ repair-vb(x9,x6,x2,u23) ^ by-in(e22,x10,x9) ^ of-in(e21,x7,x6) ^ lay-vb(x4,x3,x7,u20) ^ out-rb(e19,x4) ^ not(e17,e18) ^ enough-rb(e18,x0) ^ president-nn(e16,x3) ^ tax-nn(e15,x1) ^ of-in(e14,x2,x1) ^ system-nn(e13,x2) ^ strategy-nn(e12,x0) ^ !=(e21,e14) ^ TS#TAXATION(x1) ^ T#ECONOMIC-INEQUALITY(_42)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,TAXATION,TAXATION,STRUGGLE,TYPE,0.001\n%%END_CM_LIST", 
+        "id": "29"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "pathway,pathway", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "poverty", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "PATHWAY%TYPE", 
+        "isiDescription": "", 
+        "sourceFrame": "PATHWAY", 
+        "isiAbductiveExplanation": "powerful-adj(e50,x3) ^ case-nn(e49,x3) ^ about-in(e48,x3,e22) ^ whq(e22,e23,x5) ^ wall-nn(e46,x14) ^ org(e47,x14) ^ street-nn(e44,x14) ^ org(e45,x14) ^ accountability-nn(e43,x14) ^ economy-nn(e42,x13) ^ equal(e41,x13,x12) ^ so-rb(e40,x11) ^ few-adj(e39,x11) ^ pathway-nn(e38,x11) ^ offer-vb(x10,x12,x11,u37) ^ out-in(e36,x10) ^ poverty-nn(e35,x8) ^ subset_of(e34,x8,x9) ^ so-rb(e33,x7) ^ quantity-adj(e32,x7) ^ way-nn(e31,x7) ^ people-nn(e30,x17) ^ keep-vb(x16,x7,e28,u29) ^ impoverish-vb(e28,x17) ^ subset_of(e27,x7,x9) ^ of-in(e26,x10,x9) ^ transform-vb(x5,x14,x13,u25) ^ manner_rel(e24,x5,x4) ^ manner(e23,x4) ^ lay-vb(x1,x0,x3,u21) ^ out-rb(e20,x1) ^ lerner-nn(e18,x0) ^ org(e19,x0) ^ !=(e44,e45) ^ !=(e18,e19) ^ !=(e46,e47) ^ !=(e34,e27) ^ !=(e47,e45,e19) ^ TS#WEALTH(x14) ^ T#ECONOMIC-INEQUALITY(_43) ^ S#PATHWAY(e38) ^ SS#PATHWAY%TYPE(x11,e38) ^ TS#POVERTY(x8) ^ T#ECONOMIC-INEQUALITY(_45) ^ I#PATHWAY(e38) ^ I#PATHWAY%TYPE(x11,e38) ^ =(e33,e40) ^ =(x7,x11) ^ =(_43,_45)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,PATHWAY,PATHWAY%TYPE,0.5\nECONOMIC_INEQUALITY,WEALTH,WEALTH,PATHWAY,PATHWAY%TYPE,0.3\n%%END_CM_LIST", 
+        "id": "30"
+    }
+]
