@@ -154,19 +154,35 @@ def check_with_dict(tokens):
     return mapped
 
 for line in input_fl:
-    line = line.replace("\n", "")
+    
+    #line = line.replace("\n", "")
+    line = line.strip()
+    
+    if line=="":
+        output_fl.write("\n")
+        continue
+    
     for ch in badChars:
         line = line.replace(ch, badChars[ch])
     
+    
     tokens = line.split(" ")
-    tokens[-1] = tokens[-1][:(len(tokens[-1]) -1)]
-
+    lastToken=tokens[-1]
+    
+    removedChar=""
+    lastChar=lastToken[-1]
+    
+    if lastChar in [".",",",";","?","!",":"]:
+        removedChar=lastChar
+        tokens[-1] = tokens[-1][:(len(tokens[-1]) -1)]
+    
     tokens = check_with_dict(tokens)
+    
 
     tokens = list(preprocess_prefixes(tokens))
     tokens = list(preprocess_postfixes(tokens))
 
 
     output_fl.write(" ".join(tokens))
-    output_fl.write(".\n")
+    output_fl.write("%s\n"%removedChar)
 
