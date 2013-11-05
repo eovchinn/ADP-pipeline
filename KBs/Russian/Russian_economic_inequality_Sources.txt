@@ -120,6 +120,7 @@
 (B (name rana) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y x :0.45)) (рана-nn e0 y)))
 (B (name bol) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y x :0.45)) (боль-nn e0 y)))
 (B (name bol) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y x :0.45)) (головокружение-nn e0 y)))
+(B (name bol) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y x :0.45)) (слабость-nn e0 y)))
 
 (B (name bol) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS e0 x :0.45)) (болезненный-adj e0 y)))
 
@@ -636,6 +637,8 @@
 (B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (тяжесть-nn e0 x)))
 (B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (тягость-nn e0 x)))
 (B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (ярмо-nn e0 x)))
+(B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (гнет-nn e0 x)))
+(B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (гнёт-nn e0 x)))
 
 (B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT e0 e0 :0.45)) (тяжелый-adj e0 x)))
 (B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT e0 e0 :0.45)) (тяжкий-adj e0 x)))
@@ -855,6 +858,8 @@
 
 (B (name distribute)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (распределять-vb e0 x y u)))
 (B (name distribute)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (распределить-vb e0 x y u)))
+(B (name distribute)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (распростронять-vb e0 x y u)))
+(B (name distribute)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (распростронить-vb e0 x y u)))
 (B (name sort)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (соритировать-vb e0 x y u)))
 (B (name sort)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (расточать-vb e0 x y u)))
 (B (name sort)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (расточить-vb e0 x y u)))
@@ -1262,6 +1267,9 @@
 (B (name twister)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#NATURAL_PHYSICAL_FORCE%TYPE x e0 :0.45)) (взрыв-nn e0 x)))
 
 ;(B (name twister)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#NATURAL_PHYSICAL_FORCE%TYPE x e0 :0.45)) (слабость-nn e0 x)))
+
+(B (name twister)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#NATURAL_PHYSICAL_FORCE%TYPE x e0 :0.45)) (хаос-nn e0 x)))
+(B (name twister)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#NATURAL_PHYSICAL_FORCE%TYPE e0 e0 :0.45)) (хаотический-adj e0 x)))
 
 ; RESULT
 (B (name destroy)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.23)(SS#NATURAL_PHYSICAL_FORCE%RESULT e0 e0 :0.23)(R#DESTROY-AGENT x e0 :0.23)(R#DESTROY-PATIENT y e0 :0.23)) (разрушить-vb e0 x y u)))
@@ -1892,7 +1900,7 @@
 (B (name chess)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (шашки-nn e0 x)))
 (B (name poker)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (покер-nn e0 x)))
 (B (name chess)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (шахматы-nn e0 x)))
-(B (name chess)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (гонка-nn e0 x)))
+;(B (name chess)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (гонка-nn e0 x)))
 
 ; COMPONENTS
 (B (name chip)(=>(^(S#GAME e0 :0.45)(SS#GAME%COMPONENTS x e0 :0.45)) (пешка-nn e0 x)))

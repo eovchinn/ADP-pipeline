@@ -120,6 +120,7 @@
 (B (name rana) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y x :0.45)) (рана-nn e0 y)))
 (B (name bol) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y x :0.45)) (боль-nn e0 y)))
 (B (name bol) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y x :0.45)) (головокружение-nn e0 y)))
+(B (name bol) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS y x :0.45)) (слабость-nn e0 y)))
 
 (B (name bol) (=>(^(S#DISEASE x :0.45) (SS#SYMPTOMS e0 x :0.45)) (болезненный-adj e0 y)))
 
@@ -636,6 +637,8 @@
 (B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (тяжесть-nn e0 x)))
 (B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (тягость-nn e0 x)))
 (B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (ярмо-nn e0 x)))
+(B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (гнет-nn e0 x)))
+(B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (гнёт-nn e0 x)))
 
 (B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT e0 e0 :0.45)) (тяжелый-adj e0 x)))
 (B (name obuza) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT e0 e0 :0.45)) (тяжкий-adj e0 x)))
@@ -1263,6 +1266,9 @@
 
 ;(B (name twister)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#NATURAL_PHYSICAL_FORCE%TYPE x e0 :0.45)) (слабость-nn e0 x)))
 
+(B (name twister)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#NATURAL_PHYSICAL_FORCE%TYPE x e0 :0.45)) (хаос-nn e0 x)))
+(B (name twister)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#NATURAL_PHYSICAL_FORCE%TYPE e0 e0 :0.45)) (хаотический-adj e0 x)))
+
 ; RESULT
 (B (name destroy)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.23)(SS#NATURAL_PHYSICAL_FORCE%RESULT e0 e0 :0.23)(R#DESTROY-AGENT x e0 :0.23)(R#DESTROY-PATIENT y e0 :0.23)) (разрушить-vb e0 x y u)))
 (B (name destroy)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.23)(SS#NATURAL_PHYSICAL_FORCE%RESULT e0 e0 :0.23)(R#DESTROY-AGENT x e0 :0.23)(R#DESTROY-PATIENT y e0 :0.23)) (разрушать-vb e0 x y u)))
@@ -1392,6 +1398,10 @@
 (B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (опускать-vb e0 x y u)))
 (B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (снижать-vb e0 x y u)))
 (B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (снизить-vb e0 x y u)))
+(B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (понижать-vb e0 x y u)))
+(B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (понизить-vb e0 x y u)))
+(B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (занижать-vb e0 x y u)))
+(B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVER y e0 :0.3)) (занизить-vb e0 x y u)))
 
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-UP x e0 :0.3)) (взлет-nn e0 x)))
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-UP x e0 :0.3)) (скачок-nn e0 x)))
@@ -1888,7 +1898,7 @@
 (B (name chess)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (шашки-nn e0 x)))
 (B (name poker)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (покер-nn e0 x)))
 (B (name chess)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (шахматы-nn e0 x)))
-(B (name chess)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (гонка-nn e0 x)))
+;(B (name chess)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (гонка-nn e0 x)))
 
 ; COMPONENTS
 (B (name chip)(=>(^(S#GAME e0 :0.45)(SS#GAME%COMPONENTS x e0 :0.45)) (пешка-nn e0 x)))
