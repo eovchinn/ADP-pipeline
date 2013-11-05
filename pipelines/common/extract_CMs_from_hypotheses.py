@@ -119,8 +119,13 @@ def collectVars(struc,superkey,equalities):
 					for a in equalities[subarg]: output.append(a)
 	return output
 
-def isLinkedbyParse(v1,v2,word_props,equalities,been):
-	if (v1,v2) in been: return 0
+def isLinkedbyParse(v1,v2,word_props,equalities,been,pathlength):
+	if v1==v2: return pathlength
+
+	pathlength += 1
+	if pathlength == 9: return pathlength
+
+	if (v1,v2) in been: return 9
 	been.append((v1,v2))
 	been.append((v2,v1))
 
@@ -131,49 +136,81 @@ def isLinkedbyParse(v1,v2,word_props,equalities,been):
 	for (propName,args) in word_props:
 		if v1 in args and v2 in args: 
 			#print propName + ' ' + v1 + ' ' + v2
-			return 2
+			return pathlength
 
+	pl = 9
+	npl = 9
 	for (propName,args) in word_props:
 		if v1 in args:
 			if len(args)>2: 
 				i1 = args.index(v1)
 				if i1==0: 
-					if isLinkedbyParse(args[1],v2,word_props,equalities,been)>0: return 1
-					if isLinkedbyParse(args[2],v2,word_props,equalities,been)>0: return 1
-					if len(args)>3 and isLinkedbyParse(args[3],v2,word_props,equalities,been)>0: return 1
+					npl = isLinkedbyParse(args[1],v2,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					npl = isLinkedbyParse(args[2],v2,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					if len(args)>3:
+						npl = isLinkedbyParse(args[3],v2,word_props,equalities,been,pathlength)
+						if npl<pl: pl=npl
 				elif i1==1:
-					if isLinkedbyParse(args[0],v2,word_props,equalities,been)>0: return 1
-					if isLinkedbyParse(args[2],v2,word_props,equalities,been)>0: return 1
-					if len(args)>3 and isLinkedbyParse(args[3],v2,word_props,equalities,been)>0: return 1
+					npl = isLinkedbyParse(args[0],v2,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					npl = isLinkedbyParse(args[2],v2,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					if len(args)>3:
+						npl = isLinkedbyParse(args[3],v2,word_props,equalities,been,pathlength)
+						if npl<pl: pl=npl
 				elif i1==2:
-					if isLinkedbyParse(args[0],v2,word_props,equalities,been)>0: return 1
-					if isLinkedbyParse(args[1],v2,word_props,equalities,been)>0: return 1
-					if len(args)>3 and isLinkedbyParse(args[3],v2,word_props,equalities,been)>0: return 1
+					npl = isLinkedbyParse(args[0],v2,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					npl = isLinkedbyParse(args[1],v2,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					if len(args)>3:
+						npl = isLinkedbyParse(args[3],v2,word_props,equalities,been,pathlength)
+						if npl<pl: pl=npl
 				elif i1==3:
-					if isLinkedbyParse(args[0],v2,word_props,equalities,been)>0: return 1
-					if isLinkedbyParse(args[1],v2,word_props,equalities,been)>0: return 1
-					if isLinkedbyParse(args[2],v2,word_props,equalities,been)>0: return 1
+					npl = isLinkedbyParse(args[0],v2,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					npl = isLinkedbyParse(args[1],v2,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					npl = isLinkedbyParse(args[2],v2,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
 		elif v2 in args:
 			if len(args)>2: 
 				i2 = args.index(v2)
 				if i2==0: 
-					if isLinkedbyParse(args[1],v1,word_props,equalities,been)>0: return 1
-					if isLinkedbyParse(args[2],v1,word_props,equalities,been)>0: return 1
-					if len(args)>3 and isLinkedbyParse(args[3],v1,word_props,equalities,been)>0: return 1
+					npl = isLinkedbyParse(args[1],v1,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					npl = isLinkedbyParse(args[2],v1,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					if len(args)>3:
+						npl = isLinkedbyParse(args[3],v1,word_props,equalities,been,pathlength)
+						if npl<pl: pl=npl
 				elif i2==1:
-					if isLinkedbyParse(args[0],v1,word_props,equalities,been)>0: return 1
-					if isLinkedbyParse(args[2],v1,word_props,equalities,been)>0: return 1
-					if len(args)>3 and isLinkedbyParse(args[3],v1,word_props,equalities,been)>0: return 1
+					npl = isLinkedbyParse(args[0],v1,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					npl = isLinkedbyParse(args[2],v1,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					if len(args)>3:
+						npl = isLinkedbyParse(args[3],v1,word_props,equalities,been,pathlength)
+						if npl<pl: pl=npl
 				elif i2==2:
-					if isLinkedbyParse(args[0],v1,word_props,equalities,been)>0: return 1
-					if isLinkedbyParse(args[1],v1,word_props,equalities,been)>0: return 1
-					if len(args)>3 and isLinkedbyParse(args[3],v1,word_props,equalities,been)>0: return 1
+					npl = isLinkedbyParse(args[0],v1,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					npl = isLinkedbyParse(args[1],v1,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					if len(args)>3:
+						npl = isLinkedbyParse(args[3],v1,word_props,equalities,been,pathlength)
+						if npl<pl: pl=npl
 				elif i2==3:
-					if isLinkedbyParse(args[0],v1,word_props,equalities,been)>0: return 1
-					if isLinkedbyParse(args[1],v1,word_props,equalities,been)>0: return 1
-					if isLinkedbyParse(args[2],v1,word_props,equalities,been)>0: return 1
+					npl = isLinkedbyParse(args[0],v1,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					npl = isLinkedbyParse(args[1],v1,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
+					npl = isLinkedbyParse(args[2],v1,word_props,equalities,been,pathlength)
+					if npl<pl: pl=npl
 
-	return 0
+	return pl
 
 def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	targets = dict()	
@@ -251,7 +288,9 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 				equalities[args[2]][args[1]]=1
 			else: word_props.append((prop_name,args))
 
-	#print json.dumps(targets, ensure_ascii=False)
+	#print json.dumps(subtargets, ensure_ascii=False)
+	#print json.dumps(sources, ensure_ascii=False)
+	#print json.dumps(subsources, ensure_ascii=False)
 
 	for el1 in equalities.keys():
 		for el2 in equalities[el1].keys():
@@ -273,17 +312,13 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	output_struct_item["targetConceptDomain"] = "ECONOMIC_INEQUALITY"	
 
 	explanationAppendix = "\n%%BEGIN_CM_LIST\n"
-	CMlinked = False
-	CMhalflinked = False
-	CMunlinked = False
-	CMrandom = False
 	bestCM = ''
+	bestlink = 0
 
 	Tdomains = []
 	Sdomains = []
 
 	for targetS in target_strucs:
-		if sourceTask and targetS != LCCannotation["targetFrame"]: continue
 
 		tV = collectVars(target_strucs,targetS,equalities)
 		Tdomains = []
@@ -294,45 +329,39 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 			else: 		
 				for (tsubd,tsubarg) in target_strucs[targetS][targ]:
 					Tdomains.append((targetS,tsubd))
+
+		#print json.dumps(Tdomains, ensure_ascii=False)
+		#print json.dumps(tV, ensure_ascii=False)
 		
 		Sdomains = []
 		for sourceS in source_strucs:
-			if sourceTask and sourceS != LCCannotation["sourceFrame"]: continue
-
 			for sarg in source_strucs[sourceS]:
 				for (ssubS,ssarg) in source_strucs[sourceS][sarg]:
 					sargs = [ssarg]
 					sargs += equalities[ssarg].keys()
-					link = 0
+					link = 9
+					#print (sourceS,ssubS,sargs)
 					for tv in tV:
 						for sv in sargs:
-							#print "%s,%s,%s,%s,%s" % (targetS,sourceS,ssubS,tv,sv)
-							newlink = isLinkedbyParse(tv,sv,word_props,equalities,[])
-							#print newlink
-							if newlink==2:
-								link=2
+							newlink = isLinkedbyParse(tv,sv,word_props,equalities,[],0)
+							#print "%s,%s,%s,%s,%s,%s" % (targetS,sourceS,ssubS,tv,sv,newlink)
+							if newlink<2:
+								link=newlink
 								break
-							elif newlink>link: link=newlink
-						if link==2: break
-					if link==0:	Sdomains.append((sourceS,ssubS,0.3))
-					elif link==1: Sdomains.append((sourceS,ssubS,0.5))
-					elif link==2: Sdomains.append((sourceS,ssubS,0.9))
+							elif newlink<link: link=newlink
+						if link<2: break
+					Sdomains.append((sourceS,ssubS,(1-0.05-0.1*link)))
+					#print "%s,%s,%s" % (sourceS,ssubS,(1-0.05-0.1*link))
 
 					for (t,ts) in Tdomains:
 						for (s,ss,c) in Sdomains:
 								explanationAppendix += "ECONOMIC_INEQUALITY,%s,%s,%s,%s,%s\n" % (t,ts,s,ss,c)
-								if not CMlinked and c==0.9: 
+								if c>bestlink:
+									bestlink = c
 									bestCM = "ECONOMIC_INEQUALITY,%s,%s,%s,%s,%s\n" % (t,ts,s,ss,c)
-									CMlinked = True
-								elif not CMlinked and not CMhalflinked and c==0.5:
-									bestCM = "ECONOMIC_INEQUALITY,%s,%s,%s,%s,%s\n" % (t,ts,s,ss,c)
-									CMhalflinked = True
-								elif not CMlinked and not CMhalflinked and not CMunlinked and c==0.3:
-									bestCM = "ECONOMIC_INEQUALITY,%s,%s,%s,%s,%s\n" % (t,ts,s,ss,c)
-									CMunlinked = True
-								elif not CMlinked and not CMhalflinked and not CMunlinked and not CMrandom: 
-									bestCM = "ECONOMIC_INEQUALITY,%s,%s,%s,%s,%s\n" % (t,ts,s,ss,c)
-									CMrandom = True
+
+	#print 'BEST: ' + bestCM
+	#exit(0)
 
 	if len(Tdomains)==0 or len(Sdomains)==0:
 		if len(Tdomains)==0:
