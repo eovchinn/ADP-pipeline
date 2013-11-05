@@ -224,8 +224,12 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 					if not sources.has_key(dname): sources[dname] = []
 					sources[dname].append(args)
 			elif prop_name.startswith('SS#'):
-				if not subsources.has_key(prop_name[3:]): subsources[prop_name[3:]] = []
-				subsources[prop_name[3:]].append(args)
+				ss_data = prop_name[3:].split('%')
+				if len(ss_data)>1: prop_name = ss_data[1]
+				else: prop_name = ss_data[0]
+
+				if not subsources.has_key(prop_name): subsources[prop_name] = []
+				subsources[prop_name].append(args)
 			elif prop_name.startswith('M#'):
 				mappings.append((prop_name[2:],args))
 			elif prop_name.startswith('R#'):
