@@ -644,6 +644,7 @@
 (B (name millstone) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%WEIGHT x e0 :0.45)) (millstone-nn e0 x)))
 (B (name encumbrance) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%WEIGHT x e0 :0.45)) (encumbrance-nn e0 x)))
 (B (name burden) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%WEIGHT x e0 :0.45)) (pressure-nn e0 x)))
+(B (name anchor) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%WEIGHT x e0 :0.45)) (anchor-nn e0 x)))
 
 (B (name heavy) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%WEIGHT e0 e0 :0.45)) (heavy-adj e0 x)))
 (B (name heavy-weight) (=>(^(S#PHYSICAL_BURDEN y :0.45)(SS#PHYSICAL_BURDEN%WEIGHT y y :0.45)) (^(heavy-adj e0 x)(weight-nn e1 y))))
@@ -1198,7 +1199,7 @@
 (B (name illuminate)(=>(^(S#LIGHT e0 e0 :0.3)(SS#LIGHT%ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (reflect-vb e0 x y z)))
 (B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#LIGHT%ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (shining-nn e0 x)))
 (B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#LIGHT%ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (illumination-nn e0 x)))
-(B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#LIGHT%ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (reflection-nn e0 x)))
+(B (name reflection)(=>(^(S#LIGHT e0 e0 :0.3)(SS#LIGHT%ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (reflection-nn e0 x)))
 
 (B (name lightmap)(=>(I#LIGHT x :0.9)(S#LIGHT x)))
 (B (name dark-end-of-rangemap)(=>(I#LIGHT%LIGHT_END_OF_RANGE_OF_DARKNESS_LIGHT x y :0.9)(SS#LIGHT%LIGHT_END_OF_RANGE_OF_DARKNESS_LIGHT x y)))
@@ -1436,7 +1437,7 @@
 ; VERTICAL SCALE
 ; POSITION ON A SCALE
 
-(B (name level)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (level-nn e0 x)))
+;(B (name level)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (level-nn e0 x)))
 (B (name level)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (level-nn e0 x)))
 (B (name line)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (line-nn e0 x)))
 (B (name point)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (point-nn e0 x)))
@@ -1444,6 +1445,10 @@
 
 (B (name low)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(low-adj e0 x)(TS#TAXATION x))))
 (B (name high)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(high-adj e0 x)(TS#TAXATION x))))
+(B (name low)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(low-adj e0 x)(TS#WEALTH_AND_SOCIAL_CLASS x))))
+(B (name high)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(high-adj e0 x)(TS#WEALTH_AND_SOCIAL_CLASS x))))
+(B (name middle)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(middle-adj e0 x)(TS#WEALTH_AND_SOCIAL_CLASS x))))
+
 
 ; MOVEMENT ON THE SCALE
 (B (name raise)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (raise-vb e0 x y u)))
@@ -1844,12 +1849,14 @@
 (B (name poker)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (poker-nn e0 x)))
 (B (name poker-game)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (^(poker-nn e0 x)(of-in e1 y x)(game-nn e2 y))))
 (B (name uno)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (uno-nn e0 x)))
-(B (name uno)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (game-nn e0 x)))
-(B (name uno)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (gamble-nn e0 x)))
+(B (name game)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (game-nn e0 x)))
+(B (name puzzle)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (puzzle-nn e0 x)))
+(B (name gamble)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (gamble-nn e0 x)))
 
 ; COMPONENTS
 (B (name chip)(=>(^(S#GAME e0 :0.45)(SS#GAME%COMPONENTS x e0 :0.45)) (chip-nn e0 x)))
 (B (name pawn)(=>(^(S#GAME e0 :0.45)(SS#GAME%COMPONENTS x e0 :0.45)) (pawn-nn e0 x)))
+(B (name puzzle)(=>(^(S#GAME e0 :0.45)(SS#GAME%COMPONENTS x e0 :0.45)) (^(puzzle-nn e0 x)(of-in e1 y x)(piece-nn e2 y))))
 
 
 ; ACTIONS
@@ -1914,6 +1921,9 @@
 (B (name right)(=>(^(S#A_RIGHT e0 :0.45)(SS#A_RIGHT%TYPE x e0 :0.45)) (right-nn e0 x)))
 (B (name right-for)(=>(^(S#A_RIGHT e0 :0.45)(SS#A_RIGHT%TYPE x e0 :0.45)) (^(right-nn e0 x)(for-in e1 x y))))
 
+(B (name a_rightmap)(=>(I#A_RIGHT x :0.9)(S#A_RIGHT x)))
+(B (name a_right-typemap)(=>(I#A_RIGHT%TYPE x y :0.9)(SS#A_RIGHT%TYPE x y)))
+
 ; IMPURITY
 ; TYPE
 (B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#IMPURITY%TYPE x e0 :0.45)) (dirt-nn e0 x)))
@@ -1925,3 +1935,20 @@
 (B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#IMPURITY%TYPE e0 e0 :0.45)) (dirty-nn e0 x)))
 (B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#IMPURITY%TYPE e0 e0 :0.45)) (stain-nn e0 x)))
 (B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#IMPURITY%TYPE e0 e0 :0.45)) (sully-nn e0 x)))
+
+(B (name impuritymap)(=>(I#IMPURITY x :0.9)(S#IMPURITY x)))
+(B (name impurity-typemap)(=>(I#IMPURITY%TYPE x y :0.9)(SS#IMPURITY%TYPE x y)))
+
+;MOVEMENT
+;MOVEMENT
+(B (name movement)(=>(^(S#MOVEMENT e0 :0.45)(SS#MOVEMENT%MOVEMENT x e0 :0.45)) (movement-nn e0 x)))
+(B (name move)(=>(^(S#MOVEMENT e0 :0.45)(SS#MOVEMENT%MOVEMENT x e0 :0.45)) (move-nn e0 x)))
+(B (name mobility)(=>(^(S#MOVEMENT e0 :0.45)(SS#MOVEMENT%MOVEMENT x e0 :0.45)) (mobility-nn e0 x)))
+
+(B (name move)(=>(^(S#MOVEMENT e0 :0.45)(SS#MOVEMENT%MOVEMENT e0 e0 :0.45)) (move-vb e0 x y z)))
+(B (name move)(=>(^(S#MOVEMENT e0 :0.45)(SS#MOVEMENT%MOVEMENT e0 e0 :0.45)) (circle-vb e0 x y z)))
+(B (name move)(=>(^(S#MOVEMENT e0 :0.45)(SS#MOVEMENT%MOVEMENT e0 e0 :0.45)) (cycle-vb e0 x y z)))
+
+
+(B (name movementmap)(=>(I#MOVEMENT x :0.9)(S#MOVEMENT x)))
+(B (name movement-movementmap)(=>(I#MOVEMENT%MOVEMENT x y :0.9)(SS#MOVEMENT%MOVEMENT x y)))

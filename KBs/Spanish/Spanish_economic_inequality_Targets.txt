@@ -51,6 +51,7 @@
 (B (name prosperidad) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (prosperidad-nn e0 x)))
 (B (name bienestar) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (bienestar-nn e0 x)))
 (B (name bienes) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (bienes-nn e0 x)))
+(B (name bienes) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (enriquecimiento-nn e0 x)))
 
 (B (name clase) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (clase-nn e0 x)))
 (B (name social) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS e0 :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (social-adj e0 x)))
@@ -76,10 +77,10 @@
 
 
 ; SOCIAL CLASS
-; (B (name clase-social) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (^(social-adj e0 x)(clase-nn e1 x))))
-; (B (name clase-media) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (^(media-adj e0 x)(clase-nn e1 x))))
-; (B (name clase-economica) (=>(^(TS#SOCIAL-CLASS x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (^(económica-adj e0 x)(clase-nn e1 x))))
-; (B (name clase) (=>(^(TS#SOCIAL-CLASS x :0.47)(T#ECONOMIC_INEQUALITY u :0.47)) (clase-nn e1 x)))
+; (B (name clase-social) (=>(^(TS#WEALTH_AND_SOCIAL-CLASS x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (^(social-adj e0 x)(clase-nn e1 x))))
+; (B (name clase-media) (=>(^(TS#WEALTH_AND_SOCIAL-CLASS x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (^(media-adj e0 x)(clase-nn e1 x))))
+; (B (name clase-economica) (=>(^(TS#WEALTH_AND_SOCIAL-CLASS x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (^(económica-adj e0 x)(clase-nn e1 x))))
+ (B (name clase) (=>(^(TS#WEALTH_AND_SOCIAL-CLASS x :0.47)(T#ECONOMIC_INEQUALITY u :0.47)) (clase-nn e1 x)))
 
 
 ; TAX
