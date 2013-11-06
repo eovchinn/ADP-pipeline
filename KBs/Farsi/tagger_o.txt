@@ -1,0 +1,50 @@
+او_PR خوشحال_ADJ شد_V ._PUNC
+او_PR به_PREP سوی_N من_PR آمد_V ._PUNC
+او_PR بسوی_N من_PR آمد_V ._PUNC
+بیماری_N علاج_N ناپذیر_ADJ نیست_V ._PUNC
+بیماری_N علاج-ناپذیر_ADJ نیست_V ._PUNC
+این_PREM نوش-دارو_N نیست_V ._PUNC
+این_PREM نوش-دارویی_N بیش_ADJ نیست_V ._PUNC
+او_PR بهبود_N یافت_V ._PUNC
+او_PR نیرویی_N تازه_ADJ یافت_V ._PUNC
+او_PR دوره_N نقاهت_N را_POSTP می-گذراند_V ._PUNC
+این_PREM یک_PRENUM بیماری_N همه_N گیر_ADJ است_V ._PUNC
+این_PREM یک_PRENUM بیماری_N همه-گیر_ADJ است_V ._PUNC
+دستش_N تیر_N می-کشد_V ._PUNC
+دستش_N خون_N آمد_V ._PUNC
+او_PR از_PREP نژاد_N پرستی_N بدش_ADJ می-آید_V ._PUNC
+او_PR از_PREP بد_N کرداری_N بدش_ADJ می-آید_V ._PUNC
+او_PR کیف_N مرا_N کش_N رفت_V ._PUNC
+یغما_N گری_N کار_N بدی_ADJ است_V ._PUNC
+به_PREP خانه-اش_N دستبرد_N زدند_V ._PUNC
+این_PREM یک_PRENUM سیاه_N چال_N است_V ._PUNC
+در_PREP اتاقش_N گیر_N کرده_V ._PUNC
+او_PR را_POSTP به_PREP زندان_N افکندند_V ._PUNC
+او_PR را_POSTP بزندان_N افکندند_V ._PUNC
+او_PR را_POSTP نگه_N داشنتد_V ._PUNC
+به_PREP دستهایش_N قفل_N زدند_V ._PUNC
+به_PREP او_PR دستبند_N زدند_V ._PUNC
+این_PREM جزر_N و_CONJ مد_N دریا_N است_V ._PUNC
+این_PREM جزر_N و_CONJ مد_N است_V ._PUNC
+او_PR لباسم_N را_POSTP برش_N داد_V ._PUNC
+تیر_N اندازی_N کار_N خوبی_ADJ نیست_V ._PUNC
+آنها_PR هرج_N و_CONJ مرج_N را_POSTP برطرف_ADJ کردند_V ._PUNC
+آنها_PR هجوم_N آوردند_V ._PUNC
+دعوا_N بر_PREP سر_N لحاف_N ملا_N است_V ._PUNC
+دعوا_N سر_N لحاف_N ملا_N است_V ._PUNC
+او_PR هفت_PRENUM تیر_N دارد_V ._PUNC
+او_PR را_POSTP درون_PREP خانه_N هل_N داد_V ._PUNC
+او_PR را_POSTP از_PREP خانه_N بیرون_N کشید_V ._PUNC
+او_PR از_PREP خانه_N بیرون_N آمد_V ._PUNC
+آفتاب_N از_PREP مشرق_N زندگی_N برآمد_V ._PUNC
+او_PR از_PREP این_PREM کار_N طفره_N رفت_V ._PUNC
+او_PR من_PR را_POSTP گاز_N گرفت_V ._PUNC
+او_PR به_PREP تو_PR صدمه_N زد_V ._PUNC
+او_PR اشتباه_N هدف_N گیری_N کرد_V ._PUNC
+او_PR را_POSTP به_PREP زانو_N درآوردند_V ._PUNC
+او_PR در_PREP پیچ_N و_CONJ خم_N این_PREM راه_N گم_ADJ شد_V ._PUNC
+سرنوشتشان_N با_PREP هم_PR گره_N خورد_V ._PUNC
+او_PR پایین_N رفت_V ._PUNC
+او_PR سوزنی_N در_PREP پارچه_N فروکرد_V ._PUNC
+سوزنی_N در_PREP پارچه_N فرورفت_V ._PUNC
+او_PR در_PREP این_PREM راستا_N سرمایه-گذاری_N کرد_V ._PUNC

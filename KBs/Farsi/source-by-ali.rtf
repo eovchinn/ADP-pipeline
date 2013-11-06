@@ -1,13 +1,14 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf360
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 LucidaGrande;\f2\fnil\fcharset178 GeezaPro;
 \f3\fnil\fcharset0 Verdana;\f4\fmodern\fcharset0 Courier;}
-{\colortbl;\red255\green255\blue255;\red255\green50\blue44;\red93\green156\blue48;\red255\green255\blue0;
-\red185\green0\blue0;\red34\green141\blue41;}
-\margl1440\margr1440\vieww25100\viewh14120\viewkind0
+{\colortbl;\red255\green255\blue255;\red255\green50\blue44;\red185\green0\blue0;\red34\green141\blue41;
+}
+\margl1440\margr1440\vieww25100\viewh13800\viewkind0
 \deftab720
 \pard\pardeftab720\ql\qnatural
 
 \f0\fs24 \cf0 ;general farsi axioms\
+\
 \
 \pard\pardeftab720\ql\qnatural
 
@@ -45,10 +46,8 @@
 \f2  
 \f1 y
 \f2  
-\f1 e0))))
-\f2 \
-
-\f1 (B
+\f1 e0))))\
+(B
 \f2  
 \f1 (name
 \f2  
@@ -92,6 +91,7 @@
 \f1 #
 \f2 \'c8\'c7\'d4
 \f0 -vb e0 x u1 u2)(NVE e6 y e0)))) ;;; check konam ke boodan chejoori miad\
+\pard\pardeftab720\ql\qnatural
 \cf0 (B (name kardan) (=>(kardan e0 x y z :0.9)(^(
 \f2 \uc0\u1705 \'d1\'cf
 \f0 \uc0\u8235 #
@@ -141,11 +141,11 @@
 \f3 aamadan
 \f0 ) (=>(
 \f3 aamadan
-\f0  e0 x y z :0.9)(^(
+\f0  e0 x z :0.9)(^(
 \f2 \'c2\'e3\'cf
 \f1 #
 \f2 \'c2
-\f0 -vb e0 x y u2)(NVE e6 z e0))))\cf2 \
+\f0 -vb e0 x u1 u2)(NVE e6 z e0))))\cf2 \
 \cf0 (B (name 
 \f3 zadan
 \f0 ) (=>(
@@ -163,13 +163,53 @@
 \f2 \'c2\'e6\'d1\'cf
 \f1 #
 \f2 \'c2\'e6\'d1
+\f0 -vb e0 x y u2)(NVE e6 z e0))))\
+(B (name 
+\f3 bordan
+\f0 ) (=>(
+\f3 bordan
+\f0  e0 x y z :0.9)(^(
+\f2 \'c8\'d1\'cf
+\f1 #
+\f2 \'c8\'d1
 \f0 -vb e0 x y u2)(NVE e6 z e0))))\cf2 \
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 \
-\pard\pardeftab720\ql\qnatural
-
-\f0 \cf0 \
+\cf0 (B (name 
+\f1 keshidan
+\f0 ) (=>(
+\f3 keshidan
+\f0  e0 x y z :0.9)(^(
+\f2 \uc0\u1705 \'d4\u1740 \'cf
+\f1 #
+\f2 \uc0\u1705 \'d4
+\f0 -vb e0 x y u2)(NVE e6 z e0))))\cf2 \
+\cf0 (B (name 
+\f1 raftan
+\f0 ) (=>(
+\f3 raftan
+\f0  e0 x y z :0.9)(^(
+\f2 \'d1\'dd\'ca
+\f1 #
+\f2 \'d1\'e6
+\f0 -vb e0 x y u2)(NVE e6 z e0))))\cf2 \
+\cf0 (B (name 
+\f1 dashtan
+\f0 ) (=>(
+\f3 dashtan
+\f0  e0 x y z :0.9)(^(
+\f2 \'cf\'c7\'d4\'ca
+\f1 #
+\f2 \'cf\'c7\'d1
+\f0 -vb e0 x y u2)(NVE e6 z e0))))\cf2 \
+\cf0 (B (name 
+\f1 khordan
+\f0 ) (=>(
+\f3 khordan
+\f0  e0 x y z :0.9)(^(
+\f2 \'ce\'e6\'d1\'cf
+\f1 #
+\f2 \'ce\'e6\'d1
+\f0 -vb e0 x y u2)(NVE e6 z e0))))\cf2 \
+\cf0 \
 \
 ; DISEASE\
 (B (name disease) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (
@@ -452,42 +492,44 @@
 \f2 \'cf\'d1\'e3\'c7\'e4
 \f0 -adj e1 y)))\
 \pard\pardeftab720\ql\qnatural
-\cf0 \cb3 (B (name incurable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e1 x :0.2)(R#SICK y e1 :0.1)) (
+
+\f3 \cf0 (B (name incurable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e1 x :0.2)(R#SICK y e1 :0.1)) (
 \f2 \'da\'e1\'c7\'cc
-\f0 -
-\f2 \'e4\'c7\'81\'d0\uc0\u1740 \'d1
-\f0 -adj e1 y)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 \cb4 (B (name miscurable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e1 x :0.2)(R#SICK y e1 :0.1)) (miscurable-adj e1 y)))\cf5 \cb1 \
-\pard\pardeftab720\ql\qnatural
-\cf0 \'a0\
-\'a0\
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf6 (B (name recover) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) (
-\f2 \'c8\'e5\'c8\'e6\'cf
 \f3 -
-\f2 \uc0\u1740 \'c7\'dd\'ca\'e4
-\f3 -vb e0 y u1 u2)))\
+\f2 \'e4\'c7\'81\'d0\uc0\u1740 \'d1
+\f3 -adj e1 y)))\
 \pard\pardeftab720\ql\qnatural
 
-\f0 \cf0 \cb3 (B (name recuperate) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 e0 :0.3)(R#SICK y x :0.3)) (
-\f2 \'e4\uc0\u1740 \'d1\'e6\u1740 
-\f0 -
+\f0 \cf0 \'a0\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f3 \cf0 (B (name recover) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3)) \'a0(^(
+\f2 \'c8\'e5\'c8\'e6\'cf
+\f3 -nn e1 z)(yaftan e0 y z))))\
+\
+(B (name recuperate) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 e0 :0.3)(R#SICK y x :0.3)) (^(
+\f2 \'e4\uc0\u1740 \'d1\'e6
+\f3 -nn e1 x1)(
 \f2 \'ca\'c7\'d2\'e5
-\f0 -
-\f2 \uc0\u1740 \'c7\'dd\'ca\'e4
-\f0 -vb e0 y u1 u2)))\cb1 \
-\cb3 (B (name convalesce) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.3)(R#SICK y x :0.3)) (
+\f3 -adj e3 x1)(
+\f2 \uc0\u1740 \'c7\'dd\'ca
+\f3 #
+\f2 \uc0\u1740 \'c7\'c8
+\f3 -vb e0 y x1 u3))))\
+\
+(B (name convalesce) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.3)(R#SICK y x :0.3))(^(
 \f2 \'cf\'e6\'d1\'e5
-\f0 -
+\f3 -nn e1 x1)(
 \f2 \'e4\'de\'c7\'e5\'ca
-\f0 -
-\f2 \'d1\'c7
-\f0 -
-\f2 \'90\'d0\'d1\'c7\'e4\'cf\'e4
-\f0 -vb e0 y u1 u2)))\cb1 \
-\'a0\
+\f3 -nn e2 x2)(nn e3 x1 x2)(
+\f2 \'90\'d0\'d1\'c7\'e4\'cf
+\f3 #
+\f2 \'90\'d0\'d1\'c7\'e4
+\f3 -vb e0 y x1 u3))))\
+\pard\pardeftab720\ql\qnatural
+
+\f0 \cf0 \'a0\
 (B (name recovery) (=>(^(S#DISEASE e0 :0.45)(SS#CURE e0 x :0.45)) (
 \f2 \'c8\'e5\'c8\'e6\'cf
 \f0 -nn x e1)))\
@@ -496,7 +538,7 @@
 \f0 -nn e1)))\
 (B (name convalescence) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.45)) (^(
 \f2 \'cf\'e6\'d1\'e5
-\f0 -nn x e1)(
+\f0 -nn e1 x)(
 \f2 \'e4\'de\'c7\'e5\'ca
 \f1 -nn
 \f2  
@@ -535,7 +577,7 @@
 \f0 -adj e0 y)))\
 \pard\pardeftab720\ql\qnatural
 
-\f3 \cf6 (B (name pandemia) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE y e0 :0.45)) (
+\f3 \cf0 (B (name pandemia) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE y e0 :0.45)) (
 \f2 \'e5\'e3\'e5
 \f3 -
 \f2 \'90\uc0\u1740 \'d1
@@ -546,21 +588,14 @@
 \f2 \'e6\uc0\u1740 \'d1\'e6\'d3
 \f0 -nn e0 y)))\
 \'a0\
-; OF - EPIDEMIC\cf5 \
+; OF - EPIDEMIC\cf3 \
+\cf0 (B (name of-epidemic) (=>(S#DISEASE y :0.9)(^(SS#TYPE x y u)(nn e1 x y))))\
 \pard\pardeftab720\ql\qnatural
-
-\f3 \cf6 (B (name of-epidemic) (=>(S#DISEASE y :0.9)(^(SS#TYPE x y u)(
-\f2 \'c7\'d2
-\f3 -
-\f2 \'e1\'cd\'c7\'d9
-\f3 -in e1 x y))))\
-\pard\pardeftab720\ql\qnatural
-
-\f0 \cf5 \'a0 \
+\cf3 \'a0 \
 \
 \pard\pardeftab720\ql\qnatural
 \cf0 ; SYMPTOM\
-(B (name symptom) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (^(
+(B (name symptom) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (^(
 \f2 \'da\'e1\'c7\'e3\'ca
 \f0 -nn e0 y)(
 \f2 \'c8\uc0\u1740 \'e3\'c7\'d1\u1740 
@@ -635,18 +670,15 @@
 \f2 \'ca\'c8
 \f0 -nn e0 y)))\
 \'a0\
+\
 \pard\pardeftab720\ql\qnatural
 
-\f3 \cf6 (B (name ache) (=>(^(S#DISEASE e0 :0.3)(SS#SYMPTOMS e0 e0 :0.3)(R#SICK y e0 :0.3))(
-\f2 \'ca\uc0\u1740 \'d1
-\f3 -
+\f3 \cf0 (B (name ache) (=>(^(S#DISEASE e0 :0.3)(SS#SYMPTOMS e0 e0 :0.3)(R#SICK y e0 :0.3))(^(
 \f2 \uc0\u1705 \'d4\u1740 \'cf\'e4
-\f3 -vb e0 y u1 u2)))\
-(B (name bleed) (=>(^(S#DISEASE e0 :0.3)(SS#SYMPTOMS e0 e0 :0.3)(R#SICK y e0 :0.3))(
+\f3 -nn e1 z)(keshidan e0 y u z))))\
+(B (name ache) (=>(^(S#DISEASE e0 :0.3)(SS#SYMPTOMS e0 e0 :0.3)(R#SICK y e0 :0.3))(^(
 \f2 \'ce\'e6\'e4
-\f3 -
-\f2 \'c2\'e3\'cf\'e4
-\f3 -vb e0 y u1 u2)))\
+\f3 -nn e1 z)(aamadan e0 y z))))\
 \pard\pardeftab720\ql\qnatural
 
 \f0 \cf0 \'a0\
@@ -681,40 +713,56 @@
 (B (name delinquency)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
 \f2 \'ca\'ce\'e1\'dd
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name racism)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\
+(B (name racism)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(
 \f2 \'e4\'8e\'c7\'cf
-\f3 -
+\f3 -nn e0 x)(
 \f2 \'81\'d1\'d3\'ca\uc0\u1740 
+\f3 -nn e1 y)(nn e2 x y))))\
+\
+(B (name racism)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \'e4\'8e\'c7\'cf\'81\'d1\'d3\'ca\uc0\u1740 
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 \'a0\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name misdeed)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\'a0\
+(B (name misdeed)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(
 \f2 \'c8\'cf
-\f3 -
+\f3 -nn e0 x)(
 \f2 \uc0\u1705 \'d1\'cf\'c7\'d1\u1740 
+\f3 -nn e1 y)(nn e2 x y))))\
+(B (name misdeed)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \'c8\'cf\uc0\u1705 \'d1\'cf\'c7\'d1\u1740 
 \f3 -nn e0 x)))\
-(B (name malefaction)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
-\f2 \'ca\'c8\'e5
-\f3 -
+(B (name misdeed)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \'c8\'d2\'e5\uc0\u1705 \'c7\'d1\u1740 
+\f3 -nn e0 x)))\
+(B (name misdeed)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(
+\f2 \'c8\'d2\'e5
+\f3 -nn e0 x)(
 \f2 \uc0\u1705 \'c7\'d1\u1740 
+\f3 -nn e1 y)(nn e2 x y))))\
+(B (name misdeed)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(
+\f2 \'ca\'c8\'e5
+\f3 -nn e0 x)(
+\f2 \uc0\u1705 \'c7\'d1\u1740 
+\f3 -nn e1 y)(nn e2 x y))))\
+(B (name malefaction)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \'ca\'c8\'e5\uc0\u1705 \'c7\'d1\u1740 
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 (B (name violation)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
+(B (name violation)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
 \f2 \'ca\'ce\'d8\uc0\u1740 
 \f3 -nn e0 x)))\
 \'a0\
-(B (name guilty-conduct)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(^(
-\f2 \uc0\u1705 \u1740 \'dd\'d1\u1740 
-\f3 -adj e1 x)(
-\f2 \'d1\'dd\'ca\'c7\'d1
-\f3 -nn e0 x))))\
-(B (name criminal-conduct)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(^(
-\f2 \'cc\'e4\'c7\uc0\u1740 \u1740 
-\f3 -adj e1 x)(
-\f2 \'d1\'dd\'ca\'c7\'d1
-\f3 -nn e0 x))))\
+(B (name guilty-conduct)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(
+\f2 \'c8\'d2\'e5
+\f3 \uc0\u8235 -
+\f2 \uc0\u8236 \uc0\u1705 \'c7\'d1\'c7\'e4\'e5
+\f3 -adj e1 x)))\
+(B (name guilty-conduct)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(
+\f2 \'c8\'d2\'e5\uc0\u1705 \'c7\'d1\'c7\'e4\'e5
+\f3 -adj e1 x)))\
+(B (name guilty-conduct)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(
+\f2 \'e3\'cc\'d1\'e3\'c7\'e4\'e5
+\f3 -adj e1 x)))\
 (B (name public-wrong)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(^(
 \f2 \'da\'e3\'e6\'e3\uc0\u1740 
 \f3 -adj e1 x)(
@@ -735,19 +783,13 @@
 \f2 \'ca\'cc\'c7\'e6\'d2
 \f3 -nn e0 x)))\
 \'a0\
-\pard\pardeftab720\ql\qnatural
-\cf2 (B (name rapev) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (^(
+(B (name rapev) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (^(
 \f2 \'ca\'cc\'c7\'e6\'d2
-\f3 -nn e1 z)(
-\f1 kardan
-\f3  e0 x y z))))\
+\f3 -nn e1 z)(kardan e0 x y z))))\
 (B (name violate) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (^(
 \f2 \'e4\'de\'d6
-\f3 -nn e1 z)(
-\f1 kardan
-\f3  e0 x y z))))\
-\pard\pardeftab720\ql\qnatural
-\cf0 (B (name kill) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (
+\f3 -nn e1 z)(kardan e0 x y z))))\
+(B (name kill) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (
 \f2 \uc0\u1705 \'d4\'ca
 \f1 #
 \f2 \uc0\u1705 \'d4
@@ -764,35 +806,33 @@
 \f0 #
 \f2 \'cf\'d2\'cf
 \f0 -vb e0 x z u2)))\
+\
 \pard\pardeftab720\ql\qnatural
 
-\f3 \cf6 (B (name pilfer) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2) (R#THEME z e0 :0.2)) (
+\f3 \cf0 (B (name pilfer) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2) (R#THEME z e0 :0.2)) (^(
 \f2 \uc0\u1705 \'d4
-\f3 -
-\f2 \'d1\'dd\'ca\'e4
-\f3 -vb e0 x z u2)))\
-\pard\pardeftab720\ql\qnatural
-\cf2 \
-\pard\pardeftab720\ql\qnatural
-\cf0 (B (name pinch) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2) (R#THEME z e0 :0.2)) (
+\f3 -nn e1 a)(raftan e0 x z a))))\
+(B (name pinch) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2) (R#THEME z e0 :0.2)) (
 \f2 \'de\'c7\'81\uc0\u1740 \'cf
 \f1 #
 \f2 \'de\'c7\'81
 \f3 -vb e0 x z u2)))\
-\pard\pardeftab720\ql\qnatural
-
-\f0 \cf0 (B (name plunder) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2) (R#THEME z e0 :0.2)) (^(
+(B (name pinch) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2) (R#THEME z e0 :0.2)) (
+\f2 \'de\'c7\'81\uc0\u1740 \'cf
+\f1 #
+\f2 \'de\'c7\'81
+\f3 -vb e0 x z u2)))\
+(B (name pinch) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2) (R#THEME z e0 :0.2)) (
+\f2 \'de\'c7\'81\uc0\u1740 \'cf
+\f1 #
+\f2 \'de\'c7\'81
+\f3 -vb e0 x z u2)))
+\f0 \
+(B (name plunder) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2) (R#THEME z e0 :0.2)) (^(
 \f2 \'db\'c7\'d1\'ca
 \f0 -nn e1 z)(kardan e0 x y z))))\
-\pard\pardeftab720\ql\qnatural
 
-\f3 \cf6 (B (name pillage) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2) (R#THEME z e0 :0.2)) (
-\f2 \uc0\u1740 \'db\'e3\'c7
-\f3 -
-\f2 \'90\'d1\uc0\u1740 
-\f3 -vb e0 x z u2)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 \'a0\
+\f3 \'a0\
 (B (name theft) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
 \f2 \'d3\'d1\'de\'ca
 \f3 -nn e0 x)))\
@@ -802,19 +842,29 @@
 (B (name stealage) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
 \f2 \'cf\'d2\'cf\uc0\u1740 
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name stealing) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
+(B (name stealing) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(
 \f2 \'d1\'c7\'e5
-\f3 -
+\f3 -nn e0 x)(
 \f2 \'d2\'e4\uc0\u1740 
+\f3 -nn e1 y)(nn e2 x y))))\
+(B (name stealing) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(
+\f2 \uc0\u1740 \'db\'e3\'c7
+\f3 -nn e0 x)(
+\f2 \'90\'d1\uc0\u1740 
+\f3 -nn e1 y)(nn e2 x y))))\
+(B (name stealing) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \'d1\'c7\'e5\'d2\'e4\uc0\u1740 
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 (B (name thievery) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
+(B (name thievery) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
 \f2 \'db\'c7\'d1\'ca
 \f3 -nn e0 x)))\
-\'a0\
-(B (name robbery) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(
-\f2 \'db\'c7\'d1\'ca
+(B (name thievery) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \uc0\u1740 \'db\'e3\'c7\'90\'d1\u1740 
+\f3 -nn e0 x)))\
+(B (name thievery) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \uc0\u1740 \'db\'e3\'c7
+\f3 \uc0\u8235 -
+\f2 \uc0\u8236 \'90\'d1\uc0\u1740 
 \f3 -nn e0 x)))\
 (B (name pillage) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(
 \f2 \'ca\'c7\'d1\'c7\'cc
@@ -835,17 +885,18 @@
 \f1 #
 \f2 \'d1\'c8\'c7
 \f3 -vb e0 x y u)))\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name mug) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (
+(B (name mug) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (^(
 \f2 \'cf\'d3\'ca\'c8\'d1\'cf
-\f3 -
-\f2 \'d2\'cf\'e4
-\f3 -vb e0 x y u)))\
+\f3 -nn e1 a)(zadan e0 x z a))))\
 \pard\pardeftab720\ql\qnatural
-\cf0 \'a0\
-; FROM - CRIME\
+\cf4 \
+\pard\pardeftab720\ql\qnatural
+\cf0 ; FROM - CRIME\
 (B (name from-theft) (=>(R#CRIME_VICTIM y :0.9)(^(SS#CRIME_TYPE e0)(
 \f2 \'c7\'d2
+\f3 -in e1 e0 y))))\
+(B (name from-theft) (=>(R#CRIME_VICTIM y :0.9)(^(SS#CRIME_TYPE e0)(
+\f2 \'c8\'e5
 \f3 -in e1 e0 y))))\
 \'a0\
 (B (name violence) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(
@@ -990,14 +1041,13 @@
 (B (name cage) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (
 \f2 \'cd\'c8\'d3
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name dungeon) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (
+\
+(B (name dungeon) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (^(
 \f2 \'d3\uc0\u1740 \'c7\'e5
-\f3 -
+\f3 -nn e0 x)(
 \f2 \'8d\'c7\'e1
-\f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 (B (name penitentiary) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (
+\f3 -nn e1 y)(nn e2 x y))))\
+(B (name penitentiary) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (
 \f2 \'e4\'cf\'c7\'e3\'ca\'90\'c7\'e5
 \f3 -nn e0 x)))\
 (B (name dead-end) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (
@@ -1023,42 +1073,35 @@
 \
 \
 ;add prison cell, jail cell\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name stuck)(=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE e0 e0 :0.45)) (
+(B (name stuck)(=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE e0 e0 :0.45)) (
 \f2 \'90\uc0\u1740 \'d1
-\f3 -
-\f2 \uc0\u1705 \'d1\'cf\'e5
-\f3 -adj e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 \'a0\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name imprison) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(
-\f2 \'c8\'d2\'e4\'cf\'c7\'e4
-\f3 -
-\f2 \'c7\'dd\uc0\u1705 \'e4\'cf\'e4
-\f3 -vb e0 x y u)))\
-(B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(
+\f3 -nn e0 x)))\
+(B (name stuck)(=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE e0 e0 :0.45)) (
+\f2 \'e3\'cd\'c8\'e6\'d3
+\f3 -nn e0 x)))\'a0\
+\
+(B (name imprison) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(^(
+\f2 \'c8\'e5
+\f3 -in e2 e0 z)(
+\f2 \'d2\'e4\'cf\'c7\'e4
+\f3 -nn e1 z)(
+\f2 \'c7\'dd\uc0\u1705 \'e4\'cf
+\f3 #
+\f2 \'c7\'dd\uc0\u1705 \'e4
+\f3 -vb e0 x y u5))))\
+(B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(^(
 \f2 \'e4\'90\'e5
-\f3 -
-\f2 \'cf\'c7\'d4\'ca\'e4
-\f3 -vb e0 x y u)))\
-\pard\pardeftab720\ql\qnatural
-
-\f0 \cf0 (B (name incarcerate) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(^(
+\f3 -nn e1 z)(dashtan e0 x y z))))\
+(B (name incarcerate) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(^(
 \f2 \'cd\'c8\'d3
-\f0 -nn e1 z)(kardan e0 x y z))))\
+\f3 -nn e1 z)(kardan e0 x y z))))\
 (B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(^(
 \f2 \'de\'dd\'e1
-\f0 -nn e1 z)(kardan e0 x y z))))\
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf6 (B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(
+\f3 -nn e1 z)(kardan e0 x y z))))\
+(B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(^(
 \f2 \'de\'dd\'e1
-\f3 -
-\f2 \'d2\'cf\'e4
-\f3 -vb e0 x y u)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 \
+\f3 -nn e1 z)(zadan e0 x y z))))\
+\
 ; RESTRAINTS\
 (B (name trap) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45)) (
 \f2 \'ca\'e1\'e5
@@ -1066,12 +1109,11 @@
 (B (name net) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45))(
 \f2 \'cf\'c7\'e3
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name handcuffs) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45))(
+(B (name handcuffs) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45))(^(
 \f2 \'cf\'d3\'ca
-\f3 -
+\f3 -nn e0 x)(
 \f2 \'c8\'e4\'cf
-\f3 -nn e0 x)))\
+\f3 -nn e1 y)(nn e2 x y))))\
 \pard\pardeftab720\ql\qnatural
 
 \f0 \cf0 (B (name handcuffs) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45))(
@@ -1110,15 +1152,10 @@
 \f0 -nn e1 z)(kardan e0 x y z))))\
 \pard\pardeftab720\ql\qnatural
 
-\f3 \cf2 \
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name handcuff) (=>(^(S#CONFINEMENT e0 :0.2)(SS#RESTRAINTS e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(
+\f3 \cf0 (B (name handcuff) (=>(^(S#CONFINEMENT e0 :0.2)(SS#RESTRAINTS e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(^(
 \f2 \'cf\'d3\'ca\'c8\'e4\'cf
-\f3 -
-\f2 \'d2\'cf\'e4
-\f3 -vb e0 x y u)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 \'a0\
+\f3 -nn e1 z)(zadan e0 x y z))))\
+\'a0\
 ; EXIT\
 (B (name door)(=>(^(S#CONFINEMENT e0 :0.45)(SS#EXIT x e0 :0.45)) (
 \f2 \'cf\'d1
@@ -1151,7 +1188,17 @@
 (B (name get-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(
 \f2 \'ce\'c7\'d1\'cc
 \f0 -nn e1 z)(shodan e0 x y z))))\
-(B (name break-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (
+
+\f3 (B (name get-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(
+\f2 \'ce\'c7\'d1\'cc
+\f3 -adj e1 z)(
+\f2 \'d4\'cf
+\f3 \uc0\u8235 #
+\f2 \uc0\u8236 \'d4\'e6
+\f3 -vb e0 x u1 z))))\
+\pard\pardeftab720\ql\qnatural
+
+\f0 \cf0 (B (name break-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (
 \f2 \'90\'d1\uc0\u1740 \'ce\'ca
 \f0 #
 \f2 \'90\'d1\uc0\u1740 \'d2
@@ -1205,22 +1252,14 @@
 (B (name master) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER e0 e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(
 \f2 \'c7\'d1\'c8\'c7\'c8
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 \cb3 (B (name slave-driver) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER e0 e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3)) (^(
+(B (name master) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER e0 e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(^(
 \f2 \'c8\'d1\'cf\'e5
 \f3 -nn e0 x)(
-\f2 \'e4\'d9\'c7\'d1\'ca
-\f3 -
-\f2 \uc0\u1705 \'e4\'e4\'cf\'e5
-\f3 -
-\f2 \'c8\'d1
-\f3 -
-\f2 \uc0\u1705 \'c7\'d1
-\f3 -nn e1 y))))\cb1 \
+\f2 \'cf\'c7\'d1
+\f3 -nn e1 y)(nn e2 x y))))\
 \'a0\
-\pard\pardeftab720\ql\qnatural
 
-\f0 \cf0 (B (name reign) (=>(^(S#ENSLAVEMENT e0 :0.33)(SS#MASTER e0 e0 :0.33)(R#ENSLAVEMENT-AGENT x e0 :0.33))(^(
+\f0 (B (name reign) (=>(^(S#ENSLAVEMENT e0 :0.33)(SS#MASTER e0 e0 :0.33)(R#ENSLAVEMENT-AGENT x e0 :0.33))(^(
 \f2 \'cd\uc0\u1705 \'e3\'d1\'c7\'e4\u1740 
 \f0 -nn e1 z)(kardan e0 y x z))))\
 (B (name rule) (=>(^(S#ENSLAVEMENT e0 :0.33)(SS#MASTER e0 e0 :0.33)(R#ENSLAVEMENT-AGENT x e0 :0.33))(^(
@@ -1347,11 +1386,31 @@
 (B (name leak) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(
 \f2 \'d1\'e6\'c7\'e4
 \f0 -nn e1 z)(shodan e0 x y z))))\
-(B (name stream) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(
+\pard\pardeftab720\ql\qnatural
+
+\f3 \cf0 (B (name leak) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(
+\f2 \'d1\'e6\'c7\'e4
+\f3 -adj e1 z)(
+\f2 \'d4\'cf
+\f3 \uc0\u8235 #
+\f2 \uc0\u8236 \'d4\'e6
+\f3 -vb e0 x u1 z))))\
+\pard\pardeftab720\ql\qnatural
+
+\f0 \cf0 (B (name stream) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(
 \f2 \'cc\'c7\'d1\uc0\u1740 
 \f0 -nn e1 z)(shodan e0 x y z))))
 \f3 \cf2 \
-\
+\pard\pardeftab720\ql\qnatural
+\cf0 (B (name leak) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(
+\f2 \'cc\'c7\'d1\uc0\u1740 
+\f3 -adj e1 z)(
+\f2 \'d4\'cf
+\f3 \uc0\u8235 #
+\f2 \uc0\u8236 \'d4\'e6
+\f3 -vb e0 x u1 z))))\
+\pard\pardeftab720\ql\qnatural
+\cf2 \
 \pard\pardeftab720\ql\qnatural
 \cf0 \'a0\
 (B (name stream2) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(
@@ -1366,16 +1425,14 @@
 (B (name wave) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(
 \f2 \'e3\'e6\'cc
 \f3 -nn e0 y)))\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name tide) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(
+(B (name tide) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(
 \f2 \'cc\'d2\'d1
 \f3 -
 \f2 \'e6
 \f3 -
 \f2 \'e3\'cf
 \f3 -nn e0 y)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 (B (name flood) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(
+(B (name flood) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(
 \f2 \'d3\uc0\u1740 \'e1
 \f3 -nn e0 y)))\
 (B (name flood) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(
@@ -1396,14 +1453,10 @@
 (B (name tsunami) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#DANGER y e0 :0.45))(
 \f2 \'d3\'e6\'e4\'c7\'e3\uc0\u1740 
 \f3 -nn e0 y)))\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name underwater) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#DANGER y e0 :0.45))(
-\f2 \'d2\uc0\u1740 \'d1
-\f3 -
-\f2 \'c2\'c8
+(B (name underwater) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#DANGER y e0 :0.45))(
+\f2 \'d2\uc0\u1740 \'d1\'c2\'c8\u1740 
 \f3 -nn e0 y)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 \'a0\
+\'a0\
 \pard\pardeftab720\ql\qnatural
 
 \f0 \cf0 (B (name drown) (=>(^(S#BODY_OF_WATER y :0.3)(SS#DANGER e0 y :0.3)(R#DROWN-PATIENT x e0 :0.3))(^(
@@ -1421,14 +1474,10 @@
 ;##RI: material and cut are not in the approved gvmt. lists, so I've taken them out.\
 ; ; MATERIAL\
 ; ; CUT\
-\pard\pardeftab720\ql\qnatural
-\cf6 ; (B (name cut) (=>(^(S#MATERIAL y :0.3)(SS#MATERIAL-CUT e0 y y :0.3)(R#CUT-AGENT x e0 :0.3))(
+; (B (name cut) (=>(^(S#MATERIAL y :0.3)(SS#MATERIAL-CUT e0 y y :0.3)(R#CUT-AGENT x e0 :0.3))(^(
 \f2 \'c8\'d1\'d4
-\f3 -
-\f2 \'cf\'c7\'cf\'e4
-\f3 -vb e0 x y u2)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 ; (B (name cut2) (=>(^(S#MATERIAL y :0.45)(SS#MATERIAL-CUT e0 y y :0.45))(^(nn e1 x y)(
+\f3 -nn e1 z)(dadan e0 x y z))))\
+; (B (name cut2) (=>(^(S#MATERIAL y :0.45)(SS#MATERIAL-CUT e0 y y :0.45))(^(nn e1 x y)(
 \f2 \'c8\'d1\'d4
 \f3 -nn e0 x))))\
 ; (B (name cut3) (=>(^(S#MATERIAL y :0.45)(SS#MATERIAL-CUT e0 y y :0.45))(^(
@@ -1494,8 +1543,7 @@
 (B (name battle) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(
 \f2 \'d1\'d2\'e3
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name gunshot) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(
+(B (name gunshot) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(
 \f2 \'ca\uc0\u1740 \'d1
 \f3 -
 \f2 \'c7\'e4\'cf\'c7\'d2\uc0\u1740 
@@ -1507,8 +1555,7 @@
 \f3 -
 \f2 \'e3\'d1\'cc
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 \'a0\
+\'a0\
 (B (name attack) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (
 \f2 \'cd\'e3\'e1\'e5
 \f3 -nn e0 x)))\
@@ -1578,78 +1625,15 @@
 \pard\pardeftab720\ql\qnatural
 \cf2 \
 \pard\pardeftab720\ql\qnatural
-\cf6 (B (name assail) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (
+\cf0 (B (name assail) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (^(
 \f2 \'e5\'cc\'e6\'e3
-\f3 -
-\f2 \'c2\'e6\'d1\'cf\'e4
-\f3 -vb e0 x y u2)))\
-\pard\pardeftab720\ql\qnatural
-
-\f1 \cf6 (B
-\f2  
-\f1 (name
-\f2  
-\f1 charge)
-\f2  
-\f1 (=>(^(S#STRUGGLE
-\f2  
-\f1 u
-\f2  
-\f1 :0
-\f2 .
-\f1 2)
-\f2  
-\f1 (SS#TYPE
-\f2  
-\f1 e0
-\f2  
-\f1 u
-\f2  
-\f1 :0
-\f2 .
-\f1 2)(R#STRUGGLE-AGENT
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 2)
-\f2  
-\f1 (R#STRUGGLE-ENEMY
-\f2  
-\f1 y
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 2))
-\f2  
-\f1 (
+\f3 -nn e1 z)(aavardan e0 x y z))))\
+(B (name charge) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (^(
 \f2 \'e3\'ca\'e5\'e3
-\f1 -
-\f2 \'d3\'c7\'ce\'ca\'e4
-\f1 -vb
-\f2  
-\f1 e0
-\f2  
-\f1 x
-\f2  
-\f1 y
-\f2  
-\f1 u2)))
-\f2 \
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf6 (B (name defeat) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (
+\f3 -nn e1 z)(kardan e0 x y z))))\
+(B (name defeat) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (^(
 \f2 \'d4\uc0\u1705 \'d3\'ca
-\f3 -
-\f2 \'cf\'c7\'cf\'e4
-\f3 -vb e0 x y u2)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 \'a0\
+\f3 -nn e1 z)(dadan e0 x y z))))\
 (B (name fight-with) (=> (S#STRUGGLE y x :0.90)(^(SS#TYPE x y)(
 \f2 \'c8\'c7
 \f3 -in x y))))\
@@ -1659,23 +1643,14 @@
 (B (name fight-against) (=> (S#STRUGGLE y x :0.90)(^(SS#TYPE x y)(
 \f2 \'c8\'d1\'c7\'c8\'d1
 \f3 -in x y))))\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name fight-against) (=> (S#STRUGGLE y x :0.90)(^(SS#TYPE x y)(
-\f2 \'cf\'d1
-\f3 \uc0\u8235 -
-\f2 \uc0\u8236 \'c8\'d1\'c7\'c8\'d1
-\f3 -in x y))))\
-\pard\pardeftab720\ql\qnatural
-\cf0 \
+\
 (B (name fight-of) (=> (R#STRUGGLE-AGENT y x :0.90)(^(SS#STRUGGLE_TYPE x)(
 \f2 \'cf\'d1\'c8\'c7\'d1\'e5
 \f3 -in x y))))\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name fight-on) (=> (R#STRUGGLE-AGENT y x :0.90)(^(SS#STRUGGLE_TYPE x)(
-\f2 \'c8\'d1\'d3\'d1
-\f3 -in x y))))\
-\pard\pardeftab720\ql\qnatural
-\cf0 (B (name fight-at) (=> (R#STRUGGLE-AGENT y x :0.90)(^(SS#STRUGGLE_TYPE x)(
+(B (name fight-on) (=> (R#STRUGGLE-AGENT y x :0.90)(^(SS#STRUGGLE_TYPE x)(
+\f2 \'d3\'d1
+\f3 -nn e1 y)(nn e2 y z))))\
+(B (name fight-at) (=> (R#STRUGGLE-AGENT y x :0.90)(^(SS#STRUGGLE_TYPE x)(
 \f2 \'cf\'d1
 \f3 -in x y))))\
 \'a0\
@@ -1731,27 +1706,18 @@
 ; (B (name artillery) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(
 \f2 \'ca\'e6\'81\'ce\'c7\'e4\'e5
 \f3 -nn e0 y)))\
-\pard\pardeftab720\ql\qnatural
-\cf6 ; (B (name revolver) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(
+; (B (name revolver) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(
 \f2 \'e5\'dd\'ca
 \f3 -
 \f2 \'ca\uc0\u1740 \'d1
 \f3 -nn e0 y)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 ; (B (name sword) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(
+; (B (name sword) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(
 \f2 \'d4\'e3\'d4\uc0\u1740 \'d1
 \f3 -nn e0 y)))\
 ; (B (name ammunition)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45))(
 \f2 \'e3\'e5\'e3\'c7\'ca
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf6 ; (B (name barrel)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (
-\f2 \'e1\'e6\'e1\'e5
-\f3 -
-\f2 \'ca\'dd\'e4\'90
-\f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 ; (B (name bayonet)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (
+; (B (name bayonet)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (
 \f2 \'d3\'d1\'e4\uc0\u1740 \'d2\'e5
 \f3 -nn e0 x)))\
 ; (B (name bomb)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (
@@ -1766,12 +1732,10 @@
 ; (B (name laser)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (
 \f2 \'e1\uc0\u1740 \'d2\'d1
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf6 ; (B (name machine-gun)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (
+; (B (name machine-gun)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (
 \f2 \'e3\'d3\'e1\'d3\'e1
 \f3 -nn e1 y)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 ; (B (name minigun)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (
+; (B (name minigun)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (
 \f2 \'ca\uc0\u1740 \'d1\'c8\'c7\'d1
 \f3 -nn e0 x)))\
 ; (B (name pistol)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (
@@ -1790,14 +1754,12 @@
 \f2 \uc0\u1740 \'e6\'d2\u1740 
 \f3 -nn e0 x)))\
 \'a0\
-\pard\pardeftab720\ql\qnatural
-\cf6 ; (B (name armory)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45))(
+; (B (name armory)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45))(
 \f2 \'d2\'d1\'c7\'cf
 \f3 -
 \f2 \'ce\'c7\'e4\'e5
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 ; (B (name arsenal)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (^(
+; (B (name arsenal)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (^(
 \f2 \'c7\'e4\'c8\'c7\'d1
 \f3 -nn e0 x)(
 \f2 \'e3\'e5\'e3\'c7\'ca
@@ -1808,14 +1770,17 @@
 (B (name weapon) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(
 \f2 \'c7\'d3\'e1\'cd\'e5
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name gun) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(
+(B (name gun) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(^(
+\f2 \'cc\'e4\'90
+\f3 -nn e0 y)(
+\f2 \'c7\'dd\'d2\'c7\'d1
+\f3 -nn e1 x)(nn e2 y x))))\
+(B (name gun) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(
 \f2 \'cc\'e4\'90
 \f3 -
 \f2 \'c7\'dd\'d2\'c7\'d1
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 (B (name knife) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(
+(B (name knife) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(
 \f2 \'8d\'c7\'de\'e6
 \f3 -nn e0 x)))\
 (B (name bomb) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(
@@ -1824,62 +1789,18 @@
 (B (name artillery) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(
 \f2 \'ca\'e6\'81\'ce\'c7\'e4\'e5
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name revolver) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(
+(B (name revolver) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(
 \f2 \'e5\'dd\'ca
 \f3 -
 \f2 \'ca\uc0\u1740 \'d1
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 (B (name sword) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(
+(B (name sword) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(
 \f2 \'d4\'e3\'d4\uc0\u1740 \'d1
 \f3 -nn e0 x)))\
 (B (name ammunition) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(
 \f2 \'e3\'e5\'e3\'c7\'ca
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-
-\f1 \cf6 (B
-\f2  
-\f1 (name
-\f2  
-\f1 barrel)(=>(^(S#STRUGGLE
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 33)(SS#TYPE
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 33)(R#WEAPON
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 33))
-\f2  
-\f1 (
-\f2 \'e1\'e6\'e1\'e5
-\f1 -
-\f2 \'ca\'dd\'e4\'90
-\f1 -nn
-\f2  
-\f1 e0
-\f2  
-\f1 x)))
-\f2 \
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 (B (name bayonet)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (
+(B (name bayonet)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (
 \f2 \'d3\'d1\'e4\uc0\u1740 \'d2\'e5
 \f3 -nn e0 x)))\
 (B (name bomb)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (
@@ -1917,14 +1838,17 @@
 \f3 -nn e0 x)))\
 \'a0\
 \
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name armory)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(
+(B (name armory)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(^(
+\f2 \'d2\'d1\'c7\'cf
+\f3 -nn e0 y)(
+\f2 \'ce\'c7\'e4\'e5
+\f3 -nn e1 x)(nn e2 y x))))\
+(B (name armory)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(
 \f2 \'d2\'d1\'c7\'cf
 \f3 -
 \f2 \'ce\'c7\'e4\'e5
 \f3 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 ; (B (name arsenal)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (^(
+; (B (name arsenal)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (^(
 \f2 \'c7\'e4\'c8\'c7\'d1
 \f3 -nn e0 x)(
 \f2 \'e3\'e5\'e3\'c7\'ca
@@ -2120,21 +2044,13 @@
 
 \fs24 (B (name precipice)(=>(^(S#ABYSS e0 :0.45)(SS#ENTRANCE x e0 :0.45)) (
 \f2 \'81\'d1\'ca\'90\'c7\'e5
-\f3 -nn e0 x)))
-\fs28 \
-
-\fs24 \
-\
-\pard\pardeftab720\ql\qnatural
-\cf6 (B (name push-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(
+\f3 -nn e0 x)))\
+(B (name push-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(
 \f2 \'e5\'e1
-\f3 -
-\f2 \'cf\'c7\'cf\'e4
-\f3 -vb e0 x y u2)(
-\f2 \cf0 \'cf\'d1\'e6\'e4
-\f3 \cf6 -in e1 e0 z))))\
-\pard\pardeftab720\ql\qnatural
-\cf0 (B (name suck-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(
+\f3 -nn e1 z)(dadan e0 x y z)(
+\f2 \'cf\'d1\'e6\'e4
+\f3 -in e1 e0 z))))\
+(B (name suck-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(
 \f2 \'e3\uc0\u1705 \u1740 \'cf
 \f3 #
 \f2 \'e3\uc0\u1705 
@@ -2175,48 +2091,41 @@
 ; EXIT
 \fs28 \
 
-\fs24 \'a0
-\fs28 \
-\pard\pardeftab720\ql\qnatural
-
-\fs24 \cf6 (B (name climb-out-of) (=>(^(S#ABYSS e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(
+\fs24 (B (name climb-out-of) (=>(^(S#ABYSS e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(
 \f2 \'c8\uc0\u1740 \'d1\'e6\'e4
-\f1 \uc0\u8235 -
-\f2 \uc0\u8236 \'c2\'e3\'cf\'e4
+\f3 -nn e1 u2)(
+\f2 \'c2\'e3\'cf
+\f3 #
+\f2 \'c2\uc0\u1740 
 \f3 -vb e0 x y u) (
 \f2 \'c7\'d2
-\f3 -in e2 e
-\f1 0
-\f3  z))))\
+\f3 -in e2 e0 z))))\
 (B (name climb-out-of) (=>(^(S#ABYSS e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(
 \f2 \'c8\uc0\u1740 \'d1\'e6\'e4
-\f1 \uc0\u8235 -
-\f2 \uc0\u8236 \uc0\u1705 \'d4\u1740 \'cf\'e4
+\f3 -nn e1 u2)(
+\f2 \uc0\u1705 \'d4\u1740 \'cf
+\f3 #
+\f2 \uc0\u1705 \'d4
 \f3 -vb e0 x y u) (
 \f2 \'c7\'d2
-\f3 -in e2 e
-\f1 0
-\f3  z))))\
+\f3 -in e2 e0 z))))\
 (B (name climb-out-of) (=>(^(S#ABYSS e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(
 \f2 \'c8\uc0\u1740 \'d1\'e6\'e4
-\f1 \uc0\u8235 -
-\f2 \uc0\u8236 \'cc\'d3\'ca\'e4
+\f3 -nn e1 u2)(
+\f2 \'cc\'d3\'ca
+\f3 #
+\f2 \'cc\'e5
 \f3 -vb e0 x y u) (
 \f2 \'c7\'d2
-\f3 -in e2 e
-\f1 0
-\f3  z))))\
+\f3 -in e2 e0 z))))\
 (B (name climb-out-of) (=>(^(S#ABYSS e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(
-\f2 \'c8\'d1
-\f1 \uc0\u8235 -
-\f2 \uc0\u8236 \'c2\'e3\'cf\'e4
+\f2 \'c8\'d1\'c2\'e3\'cf
+\f3 #
+\f2 \'c8\'d1\'c2
 \f3 -vb e0 x y u) (
 \f2 \'c7\'d2
-\f3 -in e2 e
-\f1 0
-\f3  z))))\
-\pard\pardeftab720\ql\qnatural
-\cf0 \'a0
+\f3 -in e2 e0 z))))\
+\'a0
 \fs28 \
 
 \fs24 (B (name abyssmap)(=>(I#ABYSS x :0.9)(S#ABYSS x)))
@@ -2366,15 +2275,11 @@
 
 \fs24 \'a0
 \fs28 \
-\pard\pardeftab720\ql\qnatural
 
-\fs24 \cf6 (B (name evade) (=>(^(S#PHYSICAL_BURDEN e0 :0.3)(SS#RELIEF x e0 :0.3)(R#EVADE-AGENT x e0 :0.3)) (
+\fs24 (B (name evade) (=>(^(S#PHYSICAL_BURDEN e0 :0.3)(SS#RELIEF x e0 :0.3)(R#EVADE-AGENT x e0 :0.3)) (^(
 \f2 \'d8\'dd\'d1\'e5
-\f3 -
-\f2 \'d1\'dd\'ca\'e4
-\f3 -vb e0 x y u)))\
-\pard\pardeftab720\ql\qnatural
-\cf0 \'a0
+\f3 -nn e1 z)(raftan e0 x y z))))\
+\'a0
 \fs28 \
 
 \fs24 \
@@ -2419,45 +2324,27 @@
 
 \fs24 \cf2 \
 \pard\pardeftab720\ql\qnatural
-\cf6 (B (name bite) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(
+\cf0 (B (name bite) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(
 \f2 \'90\'c7\'d2
-\f3 -
-\f2 \'90\'d1\'dd\'ca\'e4
-\f3 -vb e0 x y u2)))\
-(B (name harm) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(
+\f3 -nn e1 z)(gereftan e0 x y z))))\
+(B (name harm) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(
 \f2 \'d5\'cf\'e3\'e5
-\f3 -
-\f2 \'d2\'cf\'e4
-\f3 -vb e0 x y u2)))\
-(B (name torture) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(
+\f3 -nn e1 z)(zadan e0 x y z))))\
+(B (name torture) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(
 \f2 \'c2\'d2\'c7\'d1
-\f3 -
-\f2 \'d1\'d3\'c7\'e4\'cf\'e4
-\f3 -vb e0 x y u2)))\
-(B (name traumatize) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(
-\f2 \'d2\'ce\'e3
-\f3 -
-\f2 \'d1\'e6\'c7\'e4
-\f3 -
-\f2 \'d2\'cf\'e4
-\f3 vb e0 x y u2)))\
-(B (name injure) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(
-\f2 \'c2\'d2\'c7\'d1
-\f3 -
-\f2 \'d1\'d3\'c7\'e4\'cf\'e4
-\f3 -vb e0 x y u2)))\
-(B (name sting) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(
+\f3 -nn e1 z)(
+\f2 \'d1\'d3\'c7\'e4\'cf
+\f3 #
+\f2 \'d1\'d3\'c7\'e4
+\f3 -vb e0 x y z))))\
+(B (name injure) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(
 \f2 \'e4\uc0\u1740 \'d4
-\f3 -
-\f2 \'d2\'cf\'e4
-\f3 -vb e0 x y u2)))\
-(B (name slash) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(
-\f2 \'c8\'d1\uc0\u1740 \'cf\'e5
-\f3 -
-\f2 \'c8\'d1\uc0\u1740 \'cf\'e5
-\f3 -
-\f2 \uc0\u1705 \'d1\'cf\'e4
-\f3 -vb e0 x y u2)))\
+\f3 -nn e1 z)(zadan e0 x y z))))\
+(B (name sting) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(
+\f2 \'d3\'e1\'c7\'ce\uc0\u1740 
+\f3 -nn e1 z)(kardan e0 x y z))))\
+\pard\pardeftab720\ql\qnatural
+\cf4 \
 \
 \pard\pardeftab720\ql\qnatural
 \cf0 (B (name hurt) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(
@@ -2518,62 +2405,14 @@
 \cf0 (B (name target) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(
 \f2 \'e5\'cf\'dd
 \f3 -nn e1 z)(gereftan e0 x y z)))\
-\pard\pardeftab720\ql\qnatural
-
-\f1 \cf6 (B
-\f2  
-\f1 (name
-\f2  
-\f1 target)
-\f2  
-\f1 (=>(^(S#PHYSICAL_HARM
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 2)(SS#TYPE
-\f2  
-\f1 e0
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 2)(R#HARM-VICTIM
-\f2  
-\f1 y
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 2)(R#HARM-AGENT
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 2))(
+(B (name target) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(
 \f2 \'e5\'cf\'dd
-\f1 -
+\f3 -
 \f2 \'90\uc0\u1740 \'d1\u1740 
-\f1 -
-\f2 \uc0\u1705 \'d1\'cf\'e4
-\f1 -vb
-\f2  
-\f1 e0
-\f2  
-\f1 x
-\f2  
-\f1 y
-\f2  
-\f1 u2)))\
+\f3 -nn e1 z)(kardan e0 x y z))))\
 \pard\pardeftab720\ql\qnatural
 
-\f2 \cf6 \
+\f2 \cf4 \
 \pard\pardeftab720\ql\qnatural
 
 \f3\fs28 \cf0 \
@@ -2623,41 +2462,13 @@
 \f2 \'d5\'cf\'e3\'e5
 \f3 -nn e0 x)))
 \fs28 \
-\pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 ;(B
-\f2  
-\f1 (name
-\f2  
-\f1 screwn)
-\f2  
-\f1 (=>(^(S#PHYSICAL_HARM
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 2)(SS#TYPE
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 2))(
+\fs24 ;(B (name screwn) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(
 \f2 \'81\uc0\u1740 \'8d
-\f1 -
+\f3 -
 \f2 \'ce\'e6\'d1\'cf\'90\uc0\u1740 
-\f1 -nn
-\f2  
-\f1 e0
-\f2  
-\f1 x)))
-\f2 \
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 (B (name poisonn)(=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f3 -nn e0 x)))\
+(B (name poisonn)(=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#TYPE x e0 :0.45)) (
 \f2 \'d2\'e5\'d1
 \f3 -nn e0 x)))
 \fs28 \
@@ -2698,75 +2509,17 @@
 
 \fs24 \
 ;RESTRAINT\
-\pard\pardeftab720\ql\qnatural
-
-\f1 \cf6 (B
-\f2  
-\f1 (name
-\f2  
-\f1 bring-to-knees)(=>(^(S#PHYSICAL_HARM
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 23)(SS#RESTRAINT
-\f2  
-\f1 e0
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 23)(R#HARM-AGENT
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 23)(R#HARM-VICTIM
-\f2  
-\f1 y
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 23))
-\f2  
-\f1 (^(
-\f2 \'cf\'d1\'c2\'e6\'d1\'cf\'e4
-\f1 -vb
-\f2  
-\f1 e0
-\f2  
-\f1 x
-\f2  
-\f1 y
-\f2  
-\f1 u)(
+\
+(B (name bring-to-knees)(=>(^(S#PHYSICAL_HARM e0 :0.23)(SS#RESTRAINT e0 e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(
+\f2 \'cf\'d1\'c2\'e6\'d1\'cf
+\f3 #
+\f2 \'cf\'d1\'c2\'e6\'d1
+\f3 -vb e0 x y u)(
 \f2 \'c8\'e5
-\f1 -in
-\f2  
-\f1 e1
-\f2  
-\f1 e0
-\f2  
-\f1 z)
-\f2  
-\f1 (
+\f3 -in e1 e0 z) (
 \f2 \'d2\'c7\'e4\'e6
-\f1 -nn
-\f2  
-\f1 e2
-\f2  
-\f1 z))))
-\f2 \
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 (B (name hobble)(=>(^(S#PHYSICAL_HARM e0 :0.23)(SS#RESTRAINT e0 e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(
+\f3 -nn e2 z))))\
+(B (name hobble)(=>(^(S#PHYSICAL_HARM e0 :0.23)(SS#RESTRAINT e0 e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(
 \f2 \'e3\'c7\'e4\'da
 \f3 -nn e1 z)(shodan e0 y x z))))\
 (B (name overwhelmed)(=>(^(S#PHYSICAL_HARM e0 :0.23)(SS#RESTRAINT e0 e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(
@@ -2863,41 +2616,15 @@
 
 \fs24 ; Katya and Ross decided to change these based on illogical output
 \fs28 \
-\pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 (B
-\f2  
-\f1 (name
-\f2  
-\f1 maze)(=>(^(S#MAZE
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 45)(SS#CONFUSING_PATHWAYS
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 45))(
+\fs24 (B (name maze)(=>(^(S#MAZE e0 :0.45)(SS#CONFUSING_PATHWAYS x e0 :0.45))(
 \f2 \'81\uc0\u1740 \'8d
-\f1 -
+\f3 -
 \f2 \'e6
-\f1 -
+\f3 -
 \f2 \'ce\'e3
-\f1 -nn
-\f2  
-\f1 e0
-\f2  
-\f1 x)))
-\f2 \
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 (B (name labyrinth)(=>(^(S#MAZE e0 :0.45)(SS#CONFUSING_PATHWAYS x e0 :0.45))(
+\f3 -nn e0 x)))\
+(B (name labyrinth)(=>(^(S#MAZE e0 :0.45)(SS#CONFUSING_PATHWAYS x e0 :0.45))(
 \f2 \'81\uc0\u1740 \'8d\u1740 \'cf\'90\u1740 
 \f3 -nn e0 x)))
 \fs28 \
@@ -2911,11 +2638,9 @@
 \fs24 \'a0
 \fs28 \
 
-\fs24 (B (name navigate) (=>(^(S#MAZE z :0.3) (SS#NAVIGATION e0 z :0.3)(R#NAVIGATION-AGENT x e0 :0.3))(
+\fs24 (B (name navigate) (=>(^(S#MAZE z :0.3) (SS#NAVIGATION e0 z :0.3)(R#NAVIGATION-AGENT x e0 :0.3))(^(
 \f2 \'e5\'cf\'c7\uc0\u1740 \'ca
-\f3 -
-\f2 \uc0\u1705 \'d1\'cf\'e4
-\f3 -vb e0 x y u)))
+\f3 -nn e1 z)(kardan e0 x y z))))
 \fs28 \
 
 \fs24 \'a0
@@ -2946,53 +2671,10 @@
 (B (name tanglevb)(=>(^(S#MAZE z :0.3)(SS#OBSTRUCTION e0 z :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3))(^(
 \f2 \'90\'d1\'dd\'ca\'c7\'d1
 \f3 -nn e1 z)(kardan e0 x y z))))\
-\pard\pardeftab720\ql\qnatural
-
-\f1 \cf6 (B
-\f2  
-\f1 (name
-\f2  
-\f1 snarlvb)(=>(^(S#MAZE
-\f2  
-\f1 z
-\f2  
-\f1 :0
-\f2 .
-\f1 3)(SS#OBSTRUCTION
-\f2  
-\f1 e0
-\f2  
-\f1 z
-\f2  
-\f1 :0
-\f2 .
-\f1 3)(R#OBSTRUCTION-PATIENT
-\f2  
-\f1 y
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 3))
-\f2  
-\f1 (
+(B (name snarlvb)(=>(^(S#MAZE z :0.3)(SS#OBSTRUCTION e0 z :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3)) (^(
 \f2 \'90\'d1\'e5
-\f1 -
-\f2 \'ce\'e6\'d1\'cf\'e4
-\f1 -vb
-\f2  
-\f1 e0
-\f2  
-\f1 u
-\f2  
-\f1 y
-\f2  
-\f1 u1)))
-\f2 \
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 \'a0
+\f3 -nn e1 z)(khordan e0 x y z))))\
+\'a0
 \fs28 \
 
 \fs24 (B (name mazemap)(=>(I#MAZE x :0.9)(S#MAZE x)))
@@ -3067,267 +2749,25 @@
 \pard\pardeftab720\ql\qnatural
 \cf2 \
 \pard\pardeftab720\ql\qnatural
-
-\f1 \cf6 (B
-\f2  
-\f1 (name
-\f2  
-\f1 slip)
-\f2  
-\f1 (=>(^(SS#MOVEMENT_DOWNWARD
-\f2  
-\f1 e0
-\f2  
-\f1 e1
-\f2  
-\f1 :0
-\f2 .
-\f1 3)(R#MOVE-D-PATIENT
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 3))(^(S#LOW_POINT
-\f2  
-\f1 e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE
-\f2  
-\f1 u
-\f2  
-\f1 e1)(
+\cf0 (B (name slip) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1(^(
 \f2 \'e1\uc0\u1740 \'d2
-\f1 -
-\f2 \'ce\'e6\'d1\'cf\'e4
-\f1 -vb
-\f2  
-\f1 e0
-\f2  
-\f1 x
-\f2  
-\f1 y
-\f2  
-\f1 z))))
-\f2 \
-
-\f1 (B
-\f2  
-\f1 (name
-\f2  
-\f1 slip)
-\f2  
-\f1 (=>(^(SS#MOVEMENT_DOWNWARD
-\f2  
-\f1 e0
-\f2  
-\f1 e1
-\f2  
-\f1 :0
-\f2 .
-\f1 3)(R#MOVE-D-PATIENT
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 3))(^(S#LOW_POINT
-\f2  
-\f1 e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE
-\f2  
-\f1 u
-\f2  
-\f1 e1)(
+\f3 -nn e1 z)(khordan e0 x y z)))))\
+(B (name slip) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(
 \f2 \'d3\'d1
-\f1 -
-\f2 \'ce\'e6\'d1\'cf\'e4
-\f1 -vb
-\f2  
-\f1 e0
-\f2  
-\f1 x
-\f2  
-\f1 y
-\f2  
-\f1 z))))
-\f2 \
-
-\f1 (B
-\f2  
-\f1 (name
-\f2  
-\f1 fall)
-\f2  
-\f1 (=>(^(SS#MOVEMENT_DOWNWARD
-\f2  
-\f1 e0
-\f2  
-\f1 e1
-\f2  
-\f1 :0
-\f2 .
-\f1 3)(R#MOVE-D-PATIENT
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 3))(^(S#LOW_POINT
-\f2  
-\f1 e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE
-\f2  
-\f1 u
-\f2  
-\f1 e1)(
+\f3 -nn e1 z)(khordan e0 x y z)))))\
+(B (name fall) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(
 \f2 \'81\'c7\uc0\u1740 \u1740 \'e4
-\f1 -
-\f2 \'c2\'e3\'cf\'e4
-\f1 -vb
-\f2  
-\f1 e0
-\f2  
-\f1 x
-\f2  
-\f1 y
-\f2  
-\f1 z))))
-\f2 \
-
-\f1 (B
-\f2  
-\f1 (name
-\f2  
-\f1 fall)
-\f2  
-\f1 (=>(^(SS#MOVEMENT_DOWNWARD
-\f2  
-\f1 e0
-\f2  
-\f1 e1
-\f2  
-\f1 :0
-\f2 .
-\f1 3)(R#MOVE-D-PATIENT
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 3))(^(S#LOW_POINT
-\f2  
-\f1 e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE
-\f2  
-\f1 u
-\f2  
-\f1 e1)(
+\f3 -nn e1 z)(aamadan e0 x y z)))))\
+(B (name fall) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(
 \f2 \'81\'c7\uc0\u1740 \u1740 \'e4
-\f1 -
-\f2 \'d1\'dd\'ca\'e4
-\f1 -vb
-\f2  
-\f1 e0
-\f2  
-\f1 x
-\f2  
-\f1 y
-\f2  
-\f1 z))))
-\f2 \
-
-\f1 (B
-\f2  
-\f1 (name
-\f2  
-\f1 fall)
-\f2  
-\f1 (=>(^(SS#MOVEMENT_DOWNWARD
-\f2  
-\f1 e0
-\f2  
-\f1 e1
-\f2  
-\f1 :0
-\f2 .
-\f1 3)(R#MOVE-D-PATIENT
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 3))(^(S#LOW_POINT
-\f2  
-\f1 e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE
-\f2  
-\f1 u
-\f2  
-\f1 e1)(
+\f3 -nn e1 z)(raftan e0 x y z)))))\
+(B (name fall) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(
 \f2 \'dd\'d1\'e6
-\f1 -
-\f2 \'d1\'dd\'ca\'e4
-\f1 -vb
-\f2  
-\f1 e0
-\f2  
-\f1 x
-\f2  
-\f1 y
-\f2  
-\f1 z))))
-\f2 \
-
-\f1 (B
-\f2  
-\f1 (name
-\f2  
-\f1 plunge)
-\f2  
-\f1 (=>(^(SS#MOVEMENT_DOWNWARD
-\f2  
-\f1 e0
-\f2  
-\f1 e1
-\f2  
-\f1 :0
-\f2 .
-\f1 3)(R#MOVE-D-PATIENT
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 3))(^(S#LOW_POINT
-\f2  
-\f1 e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE
-\f2  
-\f1 u
-\f2  
-\f1 e1)(
+\f3 -nn e1 z)(raftan e0 x y z)))))\
+(B (name plunge) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(
 \f2 \'d4\uc0\u1740 \'d1\'cc\'e5
-\f1 -
-\f2 \'d1\'dd\'ca\'e4
-\f1 -vb
-\f2  
-\f1 e0
-\f2  
-\f1 x
-\f2  
-\f1 y
-\f2  
-\f1 z))))
-\f2 \
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 \'a0
+\f3 -nn e1 z)(raftan e0 x y z)))))\
+\'a0
 \fs28 \
 
 \fs24 ;MOVEMENT UPWARD
@@ -3356,31 +2796,32 @@
 \f3 -nn e1 z)(kardan e0 x y z))))\cf2 \
 \pard\pardeftab720\ql\qnatural
 
-\f1 \cf6 \
-(B (name rise-above) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(
-\f2 \'c8\'c7\'e1\'c7
-\f1 -
-\f2 \'d1\'dd\'ca\'e4
-\f1 -vb e0 x y z)(
+\f1 \cf4 \
+(B (name rise-above) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^
+\f3 \cf0 (
+\f2 \cf4 \'c8\'c7\'e1\'c7
+\f3 \cf0 -nn e1 z)(raftan e0 x y z)
+\f1 \cf4 (
 \f2 \'c7\'d2
-\f1 -in e1 e0 y))))\
-(B (name rise-from) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(
-\f2 \'c8\'c7\'e1\'c7
-\f1 -
-\f2 \'d2\'cf\'e4
-\f1 -vb e0 x y z)(
+\f1 -in e1 e0 w))))\
+(B (name rise-from) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^
+\f3 \cf0 (
+\f2 \cf4 \'c8\'c7\'e1\'c7
+\f3 \cf0 -nn e1 z)(zadan e0 x y z)
+\f1 \cf4 (
 \f2 \'c7\'d2
-\f1 -in e1 e0 y))))
+\f1 -in e1 e0 w))))
 \f3 \cf2 \
 
-\f1 \cf6 (B (name rise) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(
-\f2 \'c8\'c7\'e1\'c7
-\f1 -
-\f2 \'c2\'e3\'cf\'e4
-\f1 -vb e0 x y z)))\
+\f1 \cf4 (B (name rise) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))
+\f3 \cf0 (^(
+\f2 \cf4 \'c8\'c7\'e1\'c7
+\f3 \cf0 -nn e1 z)(aamadan e0 x y z))
+\f1 \cf4 ))\
 \pard\pardeftab720\ql\qnatural
 
 \f3 \cf2 \
+\
 \pard\pardeftab720\ql\qnatural
 \cf0 \'a0
 \fs28 \
@@ -3458,11 +2899,11 @@
 \f3 -vb e0 x u u1)))\cf2 \
 \pard\pardeftab720\ql\qnatural
 
-\f1 \cf6 (B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(
-\f2 \'e1\uc0\u1740 \'d2
-\f1 -
-\f2 \'ce\'e6\'d1\'cf\'e4
-\f1 -vb e0 x u u1)))\
+\f1 \cf4 (B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))
+\f3 \cf0 (^(
+\f2 \cf4 \'e1\uc0\u1740 \'d2
+\f3 \cf0 -nn e1 z)(khordan e0 x y z))
+\f1 \cf4 ))\
 \pard\pardeftab720\ql\qnatural
 
 \f3 \cf0 \'a0
@@ -3562,16 +3003,13 @@
 
 \fs24 ;DEVELOP RESOURCES
 \fs28 \
-\pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 (B (name invest)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (^(
+\fs24 (B (name invest)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (^(
 \f2 \'d3\'d1\'e3\'c7\uc0\u1740 \'e5
-\f1 -
+\f3 -
 \f2 \'90\'d0\'c7\'d1\uc0\u1740 
-\f1 -nn e1 z)(kardan e0 x y z))))\
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 (B (name invest)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (^(
+\f3 -nn e1 z)(kardan e0 x y z))))\
+(B (name invest)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (^(
 \f2 \'cc\'e3\'da
 \f3 -nn e1 z)(kardan e0 x y z))))\
 \
@@ -4057,18 +3495,10 @@
 
 \fs24 \cf2 \
 \pard\pardeftab720\ql\qnatural
-
-\f1 \cf6 (B (name deconstruct)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (
+\cf0 (B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION x e0 :0.3 :0.3)(R#DESTRUCTION x e0 :0.3)) (
 \f2 \'d3\'c7\'ce\'ca\'c7\'d1\'d4\uc0\u1705 \'e4\u1740 
-\f1 -
-\f2 \uc0\u1705 \'d1\'cf\'e4
-\f1 -vb e0 x y u)))
-\f3 \cf2 \
-
-\f1 \cf6 (B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION x e0 :0.3 :0.3)(R#DESTRUCTION x e0 :0.3)) (
-\f2 \'d3\'c7\'ce\'ca\'c7\'d1\'d4\uc0\u1705 \'e4\u1740 
-\f1 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
+\f3 -nn e0 x)))
+\f1 \cf4 \
 
 \f3 \cf0 \'a0
 \fs28 \
@@ -4372,14 +3802,10 @@
 \f2 \'d1\'c7\'e5\'d3\'c7\'d2\uc0\u1740 
 \f3 -nn e0 x y z))))\cf2 \
 \
-\pard\pardeftab720\ql\qnatural
-
-\f1 \cf6 (B (name forge-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(
+\cf0 (B (name forge-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(
 \f2 \'cc\'e1\'e6
-\f1 -
-\f2 \'d1\'dd\'ca\'e4
-\f1 -vb e0 x y z))))\
-\pard\pardeftab720\ql\qnatural
+\f3 -nn e1 z)(raftan e0 x y z)))))
+\f1 \cf4 \
 
 \f3 \cf0 \
 ;OBSTRUCTED PATH
@@ -4408,14 +3834,10 @@
 \f3 #
 \f2 \'c8\'e4\'cf
 \f3 -vb e0 x y z))))\
-\pard\pardeftab720\ql\qnatural
-
-\f1 \cf6 (B (name block-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(
+(B (name block-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(
 \f2 \'c8\'e4\'cf
-\f1 -
-\f2 \'c2\'e6\'d1\'cf\'e4
-\f1 -vb e0 x y z))))\
-\pard\pardeftab720\ql\qnatural
+\f3 -nn e1 z)(aavardan e0 x y z))))
+\f1 \cf4 \
 
 \f3 \cf0 \
 (B (name obstruct-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(
@@ -4565,24 +3987,15 @@
 \f2 \'cf\'c7\'d1
 \f3 -vb e0 x y u)))
 \fs28 \
-\pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 (B (name possess)(=>(^(S#PHYSICAL_OBJECT y :0.33)(SS#POSSESSION e0 y :0.33)(R#POSSESSOR x e0 :0.33)) (
+\fs24 (B (name possess)(=>(^(S#PHYSICAL_OBJECT y :0.33)(SS#POSSESSION e0 y :0.33)(R#POSSESSOR x e0 :0.33)) (^(
 \f2 \'cf\'c7\'d1\'c7
-\f1 -
-\f2 \'c8\'e6\'cf\'e4
-\f1 -vb e0 x y u)))\
-(B (name own)(=>(^(S#PHYSICAL_OBJECT y :0.33)(SS#POSSESSION e0 y :0.33)(R#POSSESSOR x e0 :0.33)) (
+\f3 -nn e1 z)(shodan e0 x y z))))\
+(B (name own)(=>(^(S#PHYSICAL_OBJECT y :0.33)(SS#POSSESSION e0 y :0.33)(R#POSSESSOR x e0 :0.33)) (^(
 \f2 \'d5\'c7\'cd\'c8
-\f1 -
-\f2 \'c8\'e6\'cf\'e4
-\f1 -vb e0 x y u)))\
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 \'a0
-\fs28 \
-
-\fs24 ;TRANSFER
+\f3 -nn e1 z)(shodan e0 x y z))))\
+\
+;TRANSFER
 \fs28 \
 
 \fs24 (B (name receive)(=>(^(S#PHYSICAL_OBJECT e0 :0.33)(SS#TRANSFER e0 e0 :0.33)(R#RECEIVER x e0 :0.33)) (
@@ -4591,24 +4004,18 @@
 \f2 \'90\uc0\u1740 \'d1
 \f3 -vb e0 x y u)))
 \fs28 \
-\pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 (B (name obtain)(=>(^(S#PHYSICAL_OBJECT e0 :0.33)(SS#TRANSFER e0 e0 :0.33)(R#RECEIVER x e0 :0.33)) (
+\fs24 (B (name obtain)(=>(^(S#PHYSICAL_OBJECT e0 :0.33)(SS#TRANSFER e0 e0 :0.33)(R#RECEIVER x e0 :0.33))(^(
 \f2 \'c8\'cf\'d3\'ca
-\f1 -
-\f2 \'c2\'e6\'d1\'cf\'e4
-\f1 -vb e0 x y u)))\
-(B (name deliver)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23)) (
+\f3 -nn e1 z)(shodan e0 x y z))))\
+(B (name deliver)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23))(^(
 \f2 \'ca\'cd\'e6\uc0\u1740 \'e1
-\f1 -
+\f3 -nn e1 z)(shodan e0 x y z))))\
+(B (name hand)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23))(
 \f2 \'cf\'c7\'cf\'e4
-\f1 -vb e0 x y u)))\
-(B (name hand)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23)) (
-\f2 \'cf\'c7\'cf\'e4
-\f1 -vb e0 x y u)))\
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 (B (name toss)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23)) (
+\f3 -vb e0 x y u)))\
+\
+(B (name toss)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23)) (
 \f2 \'c7\'e4\'cf\'c7\'ce\'ca
 \f1 #
 \f2 \'c7\'e4\'cf\'c7\'d2
@@ -4800,16 +4207,15 @@
 \f2 \'cf\'d1\'ce\'d4\'c7\'e4
 \f3 -nn e0 x)))
 \fs28 \
-\pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 (B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (
+\fs24 (B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (
 \f2 \'d1\'e6\'d4\'e4
-\f1 -
+\f3 -
 \f2 \'d3\'c7\'d2\uc0\u1740 
-\f1 -nn e0 x)))\
+\f3 -nn e0 x)))\
 \pard\pardeftab720\ql\qnatural
 
-\f3\fs28 \cf0 \
+\fs28 \cf0 \
 \pard\pardeftab720\ql\qnatural
 
 \fs24 \cf0 \'a0
@@ -4845,68 +4251,20 @@
 
 \fs24 ;EXCESS CONSUMPTION
 \fs28 \
+
+\fs24 (B (name gluttony)(=>(^(S#OBESITY e0 :0.45)(SS#EXCESS_CONSUMPTION x e0 :0.45)) (
+\f2 \'d4\uc0\u1705 \'e3
+\f3 -
+\f2 \'81\'d1\'d3\'ca\uc0\u1740 
+\f3 -nn e0 x)))\
+(B (name gluttony)(=>(^(S#OBESITY e0 :0.45)(SS#EXCESS_CONSUMPTION x e0 :0.45)) (
+\f2 \'d4\uc0\u1705 \'e3
+\f3 \uc0\u8235 -
+\f2 \uc0\u8236 \'81\'d1\'d3\'ca
+\f3 -nn e0 x)))\
 \pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 (B
-\f2  
-\f1 (name
-\f2  
-\f1 gluttony)(=>(^(S#OBESITY
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 45)(SS#EXCESS_CONSUMPTION
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 45))
-\f2  
-\f1 (
-\f2 \'d4\uc0\u1705 \'e3
-\f1 -
-\f2 \'81\'d1\'d3\'ca\uc0\u1740 
-\f1 -nn
-\f2  
-\f1 e0
-\f2  
-\f1 x)))\
-(B
-\f2  
-\f1 (name
-\f2  
-\f1 gluttony)(=>(^(S#OBESITY
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 45)(SS#EXCESS_CONSUMPTION
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 45))
-\f2  
-\f1 (
-\f2 \'d4\uc0\u1705 \'e3
-\f1 \uc0\u8235 -
-\f2 \uc0\u8236 \'81\'d1\'d3\'ca
-\f1 -nn
-\f2  
-\f1 e0
-\f2  
-\f1 x)))
-\f2 \
-\
+\f2 \cf4 \
 \pard\pardeftab720\ql\qnatural
 
 \f3 \cf0 \'a0
@@ -4967,16 +4325,13 @@
 \f2 \'81\'d4\'e5
 \f3 -nn e0 x)))
 \fs28 \
-\pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 (B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (
+\fs24 (B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (
 \f2 \'ce\'e6\'e4
-\f1 -
+\f3 -
 \f2 \'c2\'d4\'c7\'e3
-\f1 -nn e0 x)))\
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 \'a0
+\f3 -nn e0 x)))\
+\'a0
 \fs28 \
 
 \fs24 (B (name suck-the-blood)(=>(^(S#PARASITE e0 :0.33)(SS#ACTION e0 e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(
@@ -5146,7 +4501,7 @@
 \fs28 \
 \pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 (B
+\f1\fs24 \cf4 (B
 \f2  
 \f1 (name
 \f2  
@@ -5167,7 +4522,9 @@
 \f1 45))
 \f2  
 \f1 (
-\f2 \'ce\'e6\'e4 \'c2\'d4\'c7\'e3
+\f2 \'ce\'e6\'e4
+\f1 \uc0\u8235 -
+\f2 \uc0\u8236 \'c2\'d4\'c7\'e3
 \f1 -nn
 \f2  
 \f1 e0
@@ -5304,62 +4661,15 @@
 \f2 \'e3\uc0\u1705 
 \f3 -vb e0 x y u)))
 \fs28 \
-\pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 (B
-\f2  
-\f1 (name
-\f2  
-\f1 extract)(=>(^(S#FORCEFUL_EXTRACTION
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 3)(SS#TYPE
-\f2  
-\f1 e0
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 3)(R#EXTRACTION-AGENT
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 3))
-\f2  
-\f1 (
+\fs24 (B (name extract)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (^(
 \f2 \'c8\uc0\u1740 \'d1\'e6\'e4
-\f1 -
-\f2 \uc0\u1705 \'d4\u1740 \'cf\'e4
-\f1 -vb
-\f2  
-\f1 e0
-\f2  
-\f1 x
-\f2  
-\f1 y
-\f2  
-\f1 u)))
-\f2 \
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 (B (name wrest)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (
+\f3 -nn e1 z)(keshidan e0 x y z))))\
+(B (name wrest)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (
 \f2 \'81\uc0\u1740 \'8d\'c7\'e4\'cf
 \f1 #
 \f2 \'81\uc0\u1740 \'8d\'c7\'e4
 \f3 -vb e0 x y u)))
-\fs28 \
-
-\fs24 \'a0
 \fs28 \
 
 \fs24 (B (name extraction)(=>(^(S#FORCEFUL_EXTRACTION e0 :0.45)(SS#TYPE x e0 :0.45)) (
@@ -5384,41 +4694,13 @@
 \f2 \'c7\'e4\'90\'e1
 \f3 -nn e0 x)))
 \fs28 \
-\pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 (B
-\f2  
-\f1 (name
-\f2  
-\f1 bloodsucker_fe)(=>(^(S#FORCEFUL_EXTRACTION
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 45)(SS#TYPE
-\f2  
-\f1 x
-\f2  
-\f1 e0
-\f2  
-\f1 :0
-\f2 .
-\f1 45))
-\f2  
-\f1 (
+\fs24 (B (name bloodsucker_fe)(=>(^(S#FORCEFUL_EXTRACTION e0 :0.45)(SS#TYPE x e0 :0.45)) (
 \f2 \'ce\'e6\'e4
-\f1 -
+\f3 -
 \f2 \'c2\'d4\'c7\'e3
-\f1 -nn
-\f2  
-\f1 e0
-\f2  
-\f1 x)))
-\f2 \
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 \'a0
+\f3 -nn e0 x)))\
+\'a0
 \fs28 \
 
 \fs24 \'a0
@@ -5734,10 +5016,10 @@
 
 \fs24 (B (name emerge)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (^(
 \f2 \'c8\uc0\u1740 \'d1\'e6\'e4
-\f3 -nn e1 z)(aamadan e0 x y z))))\
+\f3 -nn e1 z)(aamadan e0 x z))))\
 (B (name emerge)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (^(
 \f2 \'cf\'d1
-\f3 -nn e1 z)(aamadan e0 x y z))))
+\f3 -nn e1 z)(aamadan e0 x z))))
 \fs28 \
 
 \fs24 (B (name exit)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (^(
@@ -5812,21 +5094,8 @@
 
 \fs24 ; MOVEMENT ON THE SCALE
 \fs28 \
-\pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 (B (name raise)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (
-\f2 \'c8\'c7\'e1\'c7
-\f1 -
-\f2 \'c8\'d1\'cf\'e4
-\f1 -vb e0 x y u)))\
-(B (name rise)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (
-\f2 \'c8\'c7\'e1\'c7
-\f1 -
-\f2 \'d1\'dd\'ca\'e4
-\f1 -vb e0 x y u)))\
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 (B (name leap)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (
+\fs24 (B (name leap)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (
 \f2 \'81\'d1\uc0\u1740 \'cf
 \f1 #
 \f2 \'81\'d1
@@ -5852,16 +5121,17 @@
 \f2 \'c7\'d2\'cf\uc0\u1740 \'c7\'cf
 \f3 -nn e1 e0)))
 \fs28 \
-\pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 (B (name spiral)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (
+\fs24 (B (name spiral)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(
 \f2 \'c7\'e6\'cc
-\f1 -
-\f2 \'90\'d1\'dd\'ca\'e4
-\f1 -vb e0 x y u)))\
-\pard\pardeftab720\ql\qnatural
-
-\f3 \cf0 \'a0
+\f3 -nn e1 z)(gereftan e0 x y z))))\
+(B (name raise)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23))(^(
+\f2 \'c8\'c7\'e1\'c7
+\f3 -nn e1 z)(bordan e0 x y z))))\
+(B (name rise)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(
+\f2 \'c8\'c7\'e1\'c7
+\f3 -nn e1 z)(raftan e0 x y z))))\
+\'a0
 \f2 \
 
 \f3 (B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (
@@ -6416,16 +5686,13 @@
 
 \fs24 ; RESULT
 \fs28 \
-\pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 (B (name fuel)(=>(^(S#ENERGY e0 :0.23)(SS#RESULT e0 e0 :0.23)(R#RESULT-AGENT x e0 :0.23)(R#RESULT-PATIENT x e0 :0.23)) (
+\fs24 (B (name fuel)(=>(^(S#ENERGY e0 :0.23)(SS#RESULT e0 e0 :0.23)(R#RESULT-AGENT x e0 :0.23)(R#RESULT-PATIENT x e0 :0.23)) (^(
 \f2 \'d3\'e6\'ce\'ca
-\f1 -
+\f3 -
 \f2 \'90\uc0\u1740 \'d1\u1740 
-\f1 -
-\f2 \uc0\u1705 \'d1\'cf\'e4
-\f1 -vb e0 x y z)))\
-\pard\pardeftab720\ql\qnatural
+\f3 -nn e1 z)(kardan e0 x y z))))
+\f1 \cf4 \
 
 \f3 \cf0 \'a0
 \fs28 \
@@ -6479,12 +5746,10 @@
 \f3 -
 \f1 nn
 \f3  e0 x y u)))\
-\pard\pardeftab720\ql\qnatural
 
-\f2 \cf0 \
-\pard\pardeftab720\ql\qnatural
+\f2 \
 
-\f3 \cf0 (B (name pray)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (^(
+\f3 (B (name pray)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (^(
 \f2 \'cf\'da\'c7
 \f3 -nn e1 z)(kardan e0 x y z))))
 \fs28 \
@@ -6807,19 +6072,13 @@
 \f2 \'ca\'da\'e3\uc0\u1740 \'d1
 \f3 -nn e1 z)(kardan e0 x y z))))
 \fs28 \
-\pard\pardeftab720\ql\qnatural
 
-\fs24 \cf0 \cb3 (B (name fuel)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (
+\fs24 (B (name fuel)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (^(
 \f2 \'d3\'e6\'ce\'ca
 \f3 -
 \f2 \'90\uc0\u1740 \'d1\u1740 
-\f3 -
-\f2 \uc0\u1705 \'d1\'cf\'e4
-\f3 -vb e0 x y u)))
-\fs28 \cb1 \
-\pard\pardeftab720\ql\qnatural
-
-\fs24 \cf0 \'a0
+\f3 -nn e1 z)(kardan e0 x y z))))\
+\'a0
 \fs28 \
 
 \fs24 \'a0
@@ -6969,17 +6228,12 @@
 \fs28 \cf0 \
 \pard\pardeftab720\ql\qnatural
 
-\fs24 \cf0 \cb3 (B (name oilvb)(=>(^(S#ENABLER e0 :0.3)(SS#LUBRICANT e0 e0 :0.3)(R#LUBRICATED y e0 :0.3)) (
+\fs24 \cf0 (B (name oilvb)(=>(^(S#ENABLER e0 :0.3)(SS#LUBRICANT e0 e0 :0.3)(R#LUBRICATED y e0 :0.3)) (^(
 \f2 \'d1\'e6\'db\'e4
 \f3 -
 \f2 \uc0\u1705 \'c7\'d1\u1740 
-\f3 -
-\f2 \uc0\u1705 \'d1\'cf\'e4
-\f3 -vb e0 x y u)))
-\fs28 \cb1 \
-\pard\pardeftab720\ql\qnatural
-
-\fs24 \cf0 \'a0
+\f3 -nn e1 z)(kardan e0 x y z))))\
+\'a0
 \fs28 \
 
 \fs24 (B (name enablermap)(=>(I#ENABLER x :0.9)(S#ENABLER x)))
@@ -7035,7 +6289,7 @@
 \fs28 \
 \pard\pardeftab720\ql\qnatural
 
-\f1\fs24 \cf6 (B (name uno)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f1\fs24 \cf4 (B (name uno)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (
 \f2 \'e6\'d1\'de
 \f1 -
 \f2 \'c8\'c7\'d2\uc0\u1740 
@@ -7364,4 +6618,233 @@
 \fs28 \
 
 \fs24 \
+#------new-----\
+(B (name location)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (
+\f2 \'e3\'cd\'e1
+\f3 -nn e0 x)))\
+\
+(B (name dimension)(=>(^(S#RESOURCE e0 :0.45)(SS#QUANTITY_SIZE x e0 :0.45)) (
+\f2 \'c8\'da\'cf
+\f3 -nn e0 x)))\
+\
+(B (name pain) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(
+\f2 \'d1\'e4\'cc
+\f3 -nn e0 x)))\
+\
+(B (name view)(=>(^(S#VISION e1 :0.45)(SS#SEEING x e1 :0.45)) (
+\f2 \'e4\'e3\'c7
+\f3 -nn e1 x))))\
+\
+(B (name donkey)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \'ce\'d1
+\f3 -nn e0 x)))\
+\
+(B (name exemption) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (
+\f2 \'e3\'da\'c7\'dd\uc0\u1740 \'ca
+\f3 -nn e0 x)))\
+\
+(B (name ceiling)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (
+\f2 \'d3\'de\'dd
+\f3 -nn e0 x)))\
+\
+(B (name distance)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \'dd\'c7\'d5\'e1\'e5
+\f3 -nn e0 x)))\
+\
+(B (name green)(=>(^(S#PLANT e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \'d3\'c8\'d2
+\f3 -adj e0 x)))   \
+\
+(B (name line)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (
+\f2 \'ce\'d8
+\f3 -nn e0 x)))\
+\
+(B (name line)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (
+\f2 \'ce\'d8
+\f3 -nn e0 x)))\
+\
+(B (name society) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(
+\f2 \'cc\'c7\'e3\'da\'e5
+\f3 -nn e0 x)))\
+\
+(B (name infestation) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \'e5\'cc\'e6\'e3
+\f3 -nn e0 x)))\
+\
+(B (name distance)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \'dd\'c7\'d5\'e1\'e5
+\f3 -nn e0 x)))\
+\
+(B (name line)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (
+\f2 \'ce\'d8
+\f3 -nn e0 x)))\
+\
+(B (name distance)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \'dd\'c7\'d5\'e1\'e5
+\f3 -nn e0 x)))\
+\
+(B (name line)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (
+\f2 \'ce\'d8
+\f3 -nn e0 x)))\
+\
+(B (name painless) (=>(^(S#DISEASE e0 :0.45)(SS#CURE x e0 :0.45)) (
+\f2 \'c8\uc0\u1740 
+\f3 -
+\f2 \'cf\'d1\'cf
+\f3 -nn e1)))\
+\
+(B (name elimination) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (
+\f2 \'d1\'dd\'da
+\f3 -nn e0 x)))\
+\
+(B (name level)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (
+\f2 \'d3\'d8\'cd
+\f3 -nn e0 x))\
+\
+(B (name prevention) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(
+\f2 \'81\uc0\u1740 \'d4\'90\u1740 \'d1\u1740 
+\f3 -nn e0 x))\
+\
+(B (name silent)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.3)(R#DARK x e0 :0.3)) (
+\f2 \'ce\'c7\'e3\'e6\'d4
+\f3 -adj e0 x)))\
+\
+(B (name factor)(=>(^(S#RESOURCE e0 :0.45)(SS#DISTRIBUTION x e0 :0.45)) (
+\f2 \'da\'c7\'e3\'e1
+\f3 -nn e0 x)))\
+\
+(B (name volume)(=>(^(S#RESOURCE e0 :0.45)(SS#QUANTITY_SIZE x e0 :0.45)) (
+\f2 \'cd\'cc\'e3
+\f3 -nn e0 x)))\
+\
+(B (name heaven) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (
+\f2 \'c8\'e5\'d4\'ca
+\f3 -nn e0 x)))\
+\
+(B (name tension)(=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_DISTRESS e0 e0 :0.45)) (
+\f2 \'ca\'e4\'d4
+\f3 -nn e0 y)))\
+\
+(B (name line)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (
+\f2 \'ce\'d8
+\f3 -nn e0 x)))\
+\
+(B (name fragile)(=>(^(S#PHYSICAL_OBJECT e0 :0.45)(SS#PHYSICAL-OBJECT-TYPE x e0 :0.45)) (
+\f2 \'d4\uc0\u1705 \'e4\'e4\'cf\'e5
+\f3 -nn e0 x)))\
+\
+(B (name injustice) (=>(^(S#ENSLAVEMENT e0 :0.45)(SS#OPPRESSION x e0 :0.45))(
+\f2 \'c8\uc0\u1740 \'cf\'c7\'cf
+\f3 -nn e0 x)))\
+\
+(B (name claw)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (
+\f2 \'81\'e4\'cc\'e5
+\f3 -nn e0 x)))\
+\
+(B (name class)(=>(^(S#RESOURCE e0 :0.45)(SS#DISTRIBUTION x e0 :0.45)) (
+\f2 \'d8\'c8\'de\'e5
+\f3 -nn e0 x)))\
+\
+(B (name reflection)(=>(^(S#DARKNESS e0 :0.45)(SS#LIGHT_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (
+\f2 \'c8\'c7\'d2\'ca\'c7\'c8
+\f3 -nn e0 x)))\
+\
+(B (name free)(=>(^(S#CONFINEMENT e0 :0.45)(SS#EXIT x e0 :0.45)) (
+\f2 \'d1\'e5\'c7
+\f3 -nn e0 x)))\
+\
+(B (name pressure) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (
+\f2 \'dd\'d4\'c7\'d1
+\f3 -nn e0 x)))\
+\
+(B (name shock) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(
+\f2 \'d4\'e6\uc0\u1705 
+\f3 -nn e0 x)))\
+\
+(B (name catastrophe)(=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \'e3\'d5\uc0\u1740 \'c8\'ca
+\f3 -nn e0 x)))\
+\
+\
+\
+(B (name bear)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#LIVING e0 e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (
+\f2 \'d2\'c7\uc0\u1740 \u1740 \'cf
+\f1 #
+\f2 \'d2\'c7
+\f3 -vb e0 y)))\
+(B (name stabilize)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (^(
+\f2 \'81\'c7\uc0\u1740 \'cf\'c7\'d1
+\f3 -nn e1 z)(kardan e0 x y z))))\
+(B (name sink) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT e0 e0 :0.45))(^(
+\f2 \'db\'d1\'de
+\f3 -nn e1 z)(shodan e0 y u z))))\
+(B (name suffer) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (^(
+\f2 \'d1\'e4\'cc
+\f3 -nn e1 z)(bordan e0 y u z))))\
+(B (name paint)(=>(^(S#DARKNESS x e0 :0.3)(SS#MOVEMENT_IN_THE_RANGE x e0 :0.3)(R#DARK y e0 :0.3))(^(
+\f2 \'d1\'e4\'90
+\f3 -nn e1 z)(kardan e0 x y z))))\
+(B (name sink) (=>(^(SS#MOVEMENT_DOWNWARD e0 e2 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e2)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1) (dig-vb e0 x y z)(
+\f2 \'db\'d1\'de
+\f3 -
+\f2 \'d4\'cf\'e4
+\f3 -adj e1 y))))\
+(B (name percolate) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(
+\f2 \'e4\'dd\'e6\'d0
+\f3 -nn e1 z)(kardan e0 x y z))))\
+(B (name be-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(
+\f2 \'c8\'e6\'cf
+\f1 #
+\f2 \'c8\'c7\'d4
+\f3 -vb e0 x y z)(
+\f2 \'cf\'d1
+\f3 -in e1 e0 w))))\
+\
+\
+\
+\
+(B (name rocket) (=>(^(S#HIGH_POINT a :0.3)(SS#MOVEMENT_FORWARD_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(
+\f2 \'c8\'c7
+\f3 -
+\f2 \'d3\'d1\'da\'ca
+\f3 -
+\f2 \'c8\'c7\'e1\'c7
+\f3 -
+\f2 \'dd\'ca\'e4
+\f3 -vb e0 x y z)))\
+(B (name buckle) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE e0 e0 :0.3)(R#STRUGGLE-AGENT x e0 :0.3))(
+\f2 \'cf\'d3\'ca
+\f3 -
+\f2 \'e6
+\f3 -
+\f2 \'81\'e4\'cc\'e5
+\f3 -
+\f2 \'e4\'d1\'e3
+\f3 -
+\f2 \uc0\u1705 \'d1\'cf\'e4
+\f3 -vb e0 x u1 u2)))\
+(B (name rising)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (
+\f2 \'c8\'c7\'e1\'c7
+\f3 -
+\f2 \'d1\'e6\'e4\'cf\'e5
+\f3 -adj e0 x)))\
+(B (name gone-with-the-wind)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.3)(SS#RESULT x e0 :0.3)(R#DESTROY-PATIENT x e0 :0.3)) (
+\f2 \'c8\'d1
+\f3 -
+\f2 \'c8\'c7\'cf
+\f3 -
+\f2 \'d1\'dd\'ca\'e5
+\f3 -adj e0 x))\
+(B (name eolian)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (
+\f2 \'c8\'c7\'cf
+\f3 -
+\f2 \'c2\'e6\'d1\'cf\'e5
+\f3 -nn e0 x)))\
+(B (name eradicate)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (
+\f2 \'d1\uc0\u1740 \'d4\'e5
+\f3 -
+\f2 \uc0\u1705 \'e4
+\f3 -
+\f2 \uc0\u1705 \'d1\'cf\'e4
+\f3 -vb e0 x y u)))\
 }

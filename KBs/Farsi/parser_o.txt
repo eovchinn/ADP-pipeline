@@ -1,0 +1,337 @@
+1	او	او	PR	PR	_	3	SBJ	_	_
+2	خوشحال	خوشحال	ADJ	ADJ	_	3	MOS	_	_
+3	شد	شد#شو	V	V	_	0	ROOT	_	_
+4	.	_	PUNC	PUNC	_	3	PUNC	_	_
+
+1	او	او	PR	PR	_	5	SBJ	_	_
+2	به	به	PREP	PREP	_	5	VPRT	_	_
+3	سوی	سو	N	N	_	2	POSDEP	_	_
+4	من	من	PR	PR	_	3	MOZ	_	_
+5	آمد	آمد#آی	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	او	او	PR	PR	_	0	ROOT	_	_
+2	بسوی	بسوی	N	N	_	4	SBJ	_	_
+3	من	من	PR	PR	_	2	MOZ	_	_
+4	آمد	آمد#آی	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+
+1	بیماری	بیمار	N	N	_	4	SBJ	_	_
+2	علاج	علاج	N	N	_	1	MOZ	_	_
+3	ناپذیر	ناپذیر	ADJ	ADJ	_	4	MOS	_	_
+4	نیست	#هست	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+
+1	بیماری	بیمار	N	N	_	3	SBJ	_	_
+2	علاج-ناپذیر	علاج-ناپذیر	ADJ	ADJ	_	3	MOS	_	_
+3	نیست	#هست	V	V	_	0	ROOT	_	_
+4	.	_	PUNC	PUNC	_	3	PUNC	_	_
+
+1	این	این	PREM	PREM	_	2	NPREMOD	_	_
+2	نوش-دارو	نوش-دارو	N	N	_	3	SBJ	_	_
+3	نیست	#هست	V	V	_	0	ROOT	_	_
+4	.	_	PUNC	PUNC	_	3	PUNC	_	_
+
+1	این	این	PREM	PREM	_	2	NPREMOD	_	_
+2	نوش-دارویی	نوش-دارویی	N	N	_	4	SBJ	_	_
+3	بیش	بیش	ADJ	ADJ	_	4	MOS	_	_
+4	نیست	#هست	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+
+1	او	او	PR	PR	_	3	SBJ	_	_
+2	بهبود	بهبود	N	N	_	3	NVE	_	_
+3	یافت	یافت#یاب	V	V	_	0	ROOT	_	_
+4	.	_	PUNC	PUNC	_	3	PUNC	_	_
+
+1	او	او	PR	PR	_	4	SBJ	_	_
+2	نیرویی	نیرو	N	N	_	4	OBJ	_	_
+3	تازه	تازه	ADJ	ADJ	_	2	NPOSTMOD	_	_
+4	یافت	یافت#یاب	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+
+1	او	او	PR	PR	_	5	SBJ	_	_
+2	دوره	دوره	N	N	_	5	OBJ	_	_
+3	نقاهت	نقاهت	N	N	_	2	MOZ	_	_
+4	را	را	POSTP	POSTP	_	2	ACC-CASE	_	_
+5	می-گذراند	گذراند#گذران	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	این	این	PREM	PREM	_	3	NPREMOD	_	_
+2	یک	یک	PRENUM	PRENUM	_	3	NPREMOD	_	_
+3	بیماری	بیمار	N	N	_	0	ROOT	_	_
+4	همه	همه	N	N	_	6	SBJ	_	_
+5	گیر	گیر	ADJ	ADJ	_	6	MOS	_	_
+6	است	#است	V	V	_	0	ROOT	_	_
+7	.	_	PUNC	PUNC	_	6	PUNC	_	_
+
+1	این	این	PREM	PREM	_	3	NPREMOD	_	_
+2	یک	یک	PRENUM	PRENUM	_	3	NPREMOD	_	_
+3	بیماری	بیمار	N	N	_	5	SBJ	_	_
+4	همه-گیر	همه-گیر	ADJ	ADJ	_	5	MOS	_	_
+5	است	#است	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	دستش	دست	N	N	_	3	SBJ	_	_
+2	تیر	تیر	N	N	_	3	NVE	_	_
+3	می-کشد	کشید#کش	V	V	_	0	ROOT	_	_
+4	.	_	PUNC	PUNC	_	3	PUNC	_	_
+
+1	دستش	دست	N	N	_	3	SBJ	_	_
+2	خون	خون	N	N	_	3	NVE	_	_
+3	آمد	آمد#آی	V	V	_	0	ROOT	_	_
+4	.	_	PUNC	PUNC	_	3	PUNC	_	_
+
+1	او	او	PR	PR	_	6	SBJ	_	_
+2	از	از	PREP	PREP	_	6	VPP	_	_
+3	نژاد	نژاد	N	N	_	2	POSDEP	_	_
+4	پرستی	پرستی	N	N	_	3	MOZ	_	_
+5	بدش	بد	ADJ	ADJ	_	4	NPOSTMOD	_	_
+6	می-آید	آمد#آی	V	V	_	0	ROOT	_	_
+7	.	_	PUNC	PUNC	_	6	PUNC	_	_
+
+1	او	او	PR	PR	_	6	SBJ	_	_
+2	از	از	PREP	PREP	_	6	ADV	_	_
+3	بد	به	N	N	_	2	POSDEP	_	_
+4	کرداری	کرداری	N	N	_	3	MOZ	_	_
+5	بدش	بد	ADJ	ADJ	_	6	MOS	_	_
+6	می-آید	آمد#آی	V	V	_	0	ROOT	_	_
+7	.	_	PUNC	PUNC	_	6	PUNC	_	_
+
+1	او	او	PR	PR	_	0	ROOT	_	_
+2	کیف	کیف	N	N	_	5	SBJ	_	_
+3	مرا	مرا	N	N	_	2	MOZ	_	_
+4	کش	کش	N	N	_	5	NVE	_	_
+5	رفت	رفت#روب	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	یغما	یغما	N	N	_	5	SBJ	_	_
+2	گری	گری	N	N	_	1	MOZ	_	_
+3	کار	کار	N	N	_	5	MOS	_	_
+4	بدی	بد	ADJ	ADJ	_	3	NPOSTMOD	_	_
+5	است	#است	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	به	به	PREP	PREP	_	4	VPP	_	_
+2	خانه-اش	خانه	N	N	_	1	POSDEP	_	_
+3	دستبرد	دستبرد	N	N	_	4	NVE	_	_
+4	زدند	زد#زن	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+
+1	این	این	PREM	PREM	_	3	NPREMOD	_	_
+2	یک	یک	PRENUM	PRENUM	_	3	NPREMOD	_	_
+3	سیاه	سیاه	N	N	_	5	SBJ	_	_
+4	چال	چال	N	N	_	5	MOS	_	_
+5	است	#است	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	در	در	PREP	PREP	_	4	ADV	_	_
+2	اتاقش	اتاق	N	N	_	1	POSDEP	_	_
+3	گیر	گیر	N	N	_	4	NVE	_	_
+4	کرده	کرد#کن	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+
+1	او	او	PR	PR	_	5	OBJ	_	_
+2	را	را	POSTP	POSTP	_	1	ACC-CASE	_	_
+3	به	به	PREP	PREP	_	5	VPP	_	_
+4	زندان	زندان	N	N	_	3	POSDEP	_	_
+5	افکندند	افکند#افکن	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	او	او	PR	PR	_	4	OBJ	_	_
+2	را	را	POSTP	POSTP	_	1	ACC-CASE	_	_
+3	بزندان	بزندان	N	N	_	4	NVE	_	_
+4	افکندند	افکند#افکن	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+
+1	او	او	PR	PR	_	4	OBJ	_	_
+2	را	را	POSTP	POSTP	_	1	ACC-CASE	_	_
+3	نگه	نگه	N	N	_	4	NVE	_	_
+4	داشنتد	داشنتد	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+
+1	به	به	PREP	PREP	_	4	VPP	_	_
+2	دستهایش	دست	N	N	_	1	POSDEP	_	_
+3	قفل	قفل	N	N	_	4	NVE	_	_
+4	زدند	زد#زن	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+
+1	به	به	PREP	PREP	_	4	VPP	_	_
+2	او	او	PR	PR	_	1	POSDEP	_	_
+3	دستبند	دستبند	N	N	_	4	NVE	_	_
+4	زدند	زد#زن	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+
+1	این	این	PREM	PREM	_	2	NPREMOD	_	_
+2	جزر	جزر	N	N	_	6	SBJ	_	_
+3	و	_	CONJ	CONJ	_	2	NCONJ	_	_
+4	مد	مد	N	N	_	3	POSDEP	_	_
+5	دریا	دریا	N	N	_	6	MOS	_	_
+6	است	#است	V	V	_	0	ROOT	_	_
+7	.	_	PUNC	PUNC	_	6	PUNC	_	_
+
+1	این	این	PREM	PREM	_	2	NPREMOD	_	_
+2	جزر	جزر	N	N	_	5	SBJ	_	_
+3	و	_	CONJ	CONJ	_	2	NCONJ	_	_
+4	مد	مد	N	N	_	3	POSDEP	_	_
+5	است	#است	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	او	او	PR	PR	_	5	SBJ	_	_
+2	لباسم	لباس	N	N	_	5	OBJ	_	_
+3	را	را	POSTP	POSTP	_	2	ACC-CASE	_	_
+4	برش	بر	N	N	_	5	NVE	_	_
+5	داد	داد#ده	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	تیر	تیر	N	N	_	5	SBJ	_	_
+2	اندازی	اندازی	N	N	_	1	MOZ	_	_
+3	کار	کار	N	N	_	5	MOS	_	_
+4	خوبی	خوب	ADJ	ADJ	_	3	NPOSTMOD	_	_
+5	نیست	#هست	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	آنها	آن-ها	PR	PR	_	7	SBJ	_	_
+2	هرج	هرج	N	N	_	7	OBJ	_	_
+3	و	_	CONJ	CONJ	_	2	NCONJ	_	_
+4	مرج	مرج	N	N	_	3	POSDEP	_	_
+5	را	را	POSTP	POSTP	_	2	ACC-CASE	_	_
+6	برطرف	برطرف	ADJ	ADJ	_	7	NVE	_	_
+7	کردند	کرد#کن	V	V	_	0	ROOT	_	_
+8	.	_	PUNC	PUNC	_	7	PUNC	_	_
+
+1	آنها	آن-ها	PR	PR	_	3	SBJ	_	_
+2	هجوم	هجوم	N	N	_	3	NVE	_	_
+3	آوردند	آورد#آور	V	V	_	0	ROOT	_	_
+4	.	_	PUNC	PUNC	_	3	PUNC	_	_
+
+1	دعوا	دعوا	N	N	_	6	SBJ	_	_
+2	بر	بر	PREP	PREP	_	6	MOS	_	_
+3	سر	،سر	N	N	_	2	POSDEP	_	_
+4	لحاف	لحاف	N	N	_	3	MOZ	_	_
+5	ملا	ملا	N	N	_	4	MOZ	_	_
+6	است	#است	V	V	_	0	ROOT	_	_
+7	.	_	PUNC	PUNC	_	6	PUNC	_	_
+
+1	دعوا	دعوا	N	N	_	5	SBJ	_	_
+2	سر	،سر	N	N	_	5	MOS	_	_
+3	لحاف	لحاف	N	N	_	2	MOZ	_	_
+4	ملا	ملا	N	N	_	3	MOZ	_	_
+5	است	#است	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	او	او	PR	PR	_	4	SBJ	_	_
+2	هفت	هفت	PRENUM	PRENUM	_	3	NPREMOD	_	_
+3	تیر	تیر	N	N	_	4	OBJ	_	_
+4	دارد	داشت#دار	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+
+1	او	او	PR	PR	_	6	OBJ	_	_
+2	را	را	POSTP	POSTP	_	1	ACC-CASE	_	_
+3	درون	درون	PREP	PREP	_	6	ADV	_	_
+4	خانه	خانه	N	N	_	3	POSDEP	_	_
+5	هل	هل	N	N	_	6	NVE	_	_
+6	داد	داد#ده	V	V	_	0	ROOT	_	_
+7	.	_	PUNC	PUNC	_	6	PUNC	_	_
+
+1	او	او	PR	PR	_	6	OBJ	_	_
+2	را	را	POSTP	POSTP	_	1	ACC-CASE	_	_
+3	از	از	PREP	PREP	_	6	VPP	_	_
+4	خانه	خانه	N	N	_	3	POSDEP	_	_
+5	بیرون	بیرون	N	N	_	6	ADVC	_	_
+6	کشید	کشید#کش	V	V	_	0	ROOT	_	_
+7	.	_	PUNC	PUNC	_	6	PUNC	_	_
+
+1	او	او	PR	PR	_	5	SBJ	_	_
+2	از	از	PREP	PREP	_	5	VPP	_	_
+3	خانه	خانه	N	N	_	2	POSDEP	_	_
+4	بیرون	بیرون	N	N	_	5	ADVC	_	_
+5	آمد	آمد#آی	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	آفتاب	آفتاب	N	N	_	5	SBJ	_	_
+2	از	از	PREP	PREP	_	5	VPRT	_	_
+3	مشرق	مشرق	N	N	_	2	POSDEP	_	_
+4	زندگی	زندگی	N	N	_	3	MOZ	_	_
+5	برآمد	برآمد#برآ	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	او	او	PR	PR	_	6	SBJ	_	_
+2	از	از	PREP	PREP	_	6	VPP	_	_
+3	این	این	PREM	PREM	_	4	NPREMOD	_	_
+4	کار	کار	N	N	_	2	POSDEP	_	_
+5	طفره	طفره	N	N	_	6	NVE	_	_
+6	رفت	رفت#روب	V	V	_	0	ROOT	_	_
+7	.	_	PUNC	PUNC	_	6	PUNC	_	_
+
+1	او	او	PR	PR	_	5	SBJ	_	_
+2	من	من	PR	PR	_	5	OBJ	_	_
+3	را	را	POSTP	POSTP	_	2	ACC-CASE	_	_
+4	گاز	گاز	N	N	_	5	NVE	_	_
+5	گرفت	گرفت#گیر	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	او	او	PR	PR	_	5	SBJ	_	_
+2	به	به	PREP	PREP	_	5	ADV	_	_
+3	تو	تو	PR	PR	_	2	POSDEP	_	_
+4	صدمه	صدمه	N	N	_	5	OBJ	_	_
+5	زد	زد#زن	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	او	او	PR	PR	_	0	ROOT	_	_
+2	اشتباه	اشتباه	N	N	_	5	SBJ	_	_
+3	هدف	هدف	N	N	_	2	MOZ	_	_
+4	گیری	گیری	N	N	_	5	NVE	_	_
+5	کرد	کرد#کن	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	او	او	PR	PR	_	5	OBJ	_	_
+2	را	را	POSTP	POSTP	_	1	ACC-CASE	_	_
+3	به	به	PREP	PREP	_	5	VPP	_	_
+4	زانو	زانو	N	N	_	3	POSDEP	_	_
+5	درآوردند	درآورد#درآور	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	او	او	PR	PR	_	9	SBJ	_	_
+2	در	در	PREP	PREP	_	9	ADV	_	_
+3	پیچ	پیچ	N	N	_	2	POSDEP	_	_
+4	و	_	CONJ	CONJ	_	3	NCONJ	_	_
+5	خم	خم	N	N	_	4	POSDEP	_	_
+6	این	این	PREM	PREM	_	7	NPREMOD	_	_
+7	راه	راه	N	N	_	9	SBJ	_	_
+8	گم	گم	ADJ	ADJ	_	9	MOS	_	_
+9	شد	شد#شو	V	V	_	0	ROOT	_	_
+10	.	_	PUNC	PUNC	_	9	PUNC	_	_
+
+1	سرنوشتشان	سرنوشتشان	N	N	_	5	SBJ	_	_
+2	با	با	PREP	PREP	_	4	NPP	_	_
+3	هم	هم	PR	PR	_	2	POSDEP	_	_
+4	گره	گره	N	N	_	5	NVE	_	_
+5	خورد	خورد#خور	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	او	او	PR	PR	_	3	SBJ	_	_
+2	پایین	پایین	N	N	_	3	ADVC	_	_
+3	رفت	رفت#روب	V	V	_	0	ROOT	_	_
+4	.	_	PUNC	PUNC	_	3	PUNC	_	_
+
+1	او	او	PR	PR	_	5	SBJ	_	_
+2	سوزنی	سوزن	N	N	_	5	OBJ	_	_
+3	در	در	PREP	PREP	_	5	VPP	_	_
+4	پارچه	پارچه	N	N	_	3	POSDEP	_	_
+5	فروکرد	فروکرد#فروکن	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+
+1	سوزنی	سوزن	N	N	_	4	SBJ	_	_
+2	در	در	PREP	PREP	_	4	VPP	_	_
+3	پارچه	پارچه	N	N	_	2	POSDEP	_	_
+4	فرورفت	فرورفت#فرورو	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+
+1	او	او	PR	PR	_	6	SBJ	_	_
+2	در	در	PREP	PREP	_	6	ADV	_	_
+3	این	این	PREM	PREM	_	4	NPREMOD	_	_
+4	راستا	راستا	N	N	_	2	POSDEP	_	_
+5	سرمایه-گذاری	سرمایه-گذاری	N	N	_	6	NVE	_	_
+6	کرد	کرد#کن	V	V	_	0	ROOT	_	_
+7	.	_	PUNC	PUNC	_	6	PUNC	_	_
+
