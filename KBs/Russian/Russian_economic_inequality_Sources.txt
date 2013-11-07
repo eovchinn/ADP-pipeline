@@ -751,7 +751,11 @@
 (B (name shhit) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(доспех-nn e0 x)))
 (B (name shhit) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(латы-nn e0 x)))
 
-(B (name ukrytie) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(уклонение-vb e0 x y z)))
+(B (name ukrytie) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(^(уклонение-nn e0 x)(от-in e1 x u))))
+(B (name ukrytie) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(^(уклониться-vb e0 x y z)(от-in e1 e0 u))))
+(B (name ukrytie) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(^(уклоняться-vb e0 x y z)(от-in e1 e0 u))))
+
+(B (name ukrytie) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(уклонение-nn e0 x)))
 (B (name ukrytie) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(уклониться-vb e0 x y z)))
 (B (name ukrytie) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(уклоняться-vb e0 x y z)))
 
@@ -1354,6 +1358,7 @@
 
 (B (name peak)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (уровень-nn e0 x)))
 (B (name peak)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(ниже-rb e1 x)(черта-nn e0 x))))
+(B (name peak)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(ниже-in e1 y x)(черта-nn e0 x))))
 (B (name peak)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (планка-nn e0 x)))
 (B (name peak)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (мерило-nn e0 x)))
 
@@ -1420,7 +1425,8 @@
 
 (B (name lower)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (низкий-adj e0 x)))
 (B (name below)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (ниже-rb e0 x)))
-(B (name below)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (^(ниже-rb e0 e1)(черта-nn e1 x))))
+(B (name below)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (ниже-in e0 y x)))
+;(B (name below)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (^(ниже-rb e0 e1)(черта-nn e1 x))))
 
 ;(B (name below)(=>(^(S#VERTICAL_SCALE e0 :0.45)(SS#CONTRAST_OF_POSITIONS x e0 :0.45)) (черта-nn e0 x)))
 
