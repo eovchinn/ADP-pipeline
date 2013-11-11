@@ -1441,7 +1441,7 @@
 ;(B (name level)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (level-nn e0 x)))
 (B (name level)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (level-nn e0 x)))
 (B (name line)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (line-nn e0 x)))
-(B (name point)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (point-nn e0 x)))
+;(B (name point)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (point-nn e0 x)))
 
 
 (B (name low)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(low-adj e0 x)(TS#TAXATION x))))
@@ -1472,7 +1472,7 @@
 (B (name freeze)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-STOP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (freeze-vb e0 x y u)))
 (B (name flatten)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-STOP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (flatten-vb e0 x y u)))
 
-;(B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-UP x e0 :0.3)) (increase-nn e0 x)))
+(B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-UP x e0 :0.3)) (increase-nn e0 x)))
 
 (B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-DOWN x e0 :0.3)) (decrease-nn e0 x)))
 
