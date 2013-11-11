@@ -1001,19 +1001,22 @@
 (B (name honeycomb)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%STRUCTURE e0 e0 :0.45)) (honeycomb-vb e0 x y z)))
 
 ; CREATION_DESTRUCTION
-(B (name build)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (build-vb e0 x y u)))
-(B (name construct)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (construct-vb e0 x y u)))
-(B (name fix)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (fix-vb e0 x y u)))
+(B (name build)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 )(R#CREATING e0 e0 :0.3)) (build-vb e0 x y u)))
+(B (name construct)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (construct-vb e0 x y u)))
+(B (name fix)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (fix-vb e0 x y u)))
 
-(B (name destroy)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (^(SS#BUILDING%TYPE y)(destroy-vb e0 x y u))))
-(B (name destroy)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (^(SS#BUILDING%STRUCTURE y)(destroy-vb e0 x y u))))
-(B (name create)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (^(SS#BUILDING%TYPE y)(create-vb e0 x y u))))
-(B (name create)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (^(SS#BUILDING%STRUCTURE y)(create-vb e0 x y u))))
-(B (name deconstruct)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (deconstruct-vb e0 x y u)))
-(B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (ruin-vb e0 x y u)))
+(B (name destroy)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (^(SS#BUILDING%TYPE y)(destroy-vb e0 x y u))))
+(B (name destroy)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (^(SS#BUILDING%STRUCTURE y)(destroy-vb e0 x y u))))
+(B (name create)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#CREATION e0 e0 :0.3)) (^(SS#BUILDING%TYPE y)(create-vb e0 x y u))))
+(B (name create)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#CREATION e0 e0 :0.3)) (^(SS#BUILDING%STRUCTURE y)(create-vb e0 x y u))))
+(B (name create)(=>(^(S#BUILDING e0 :0.33)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.33)(R#CREATION e0 e0 :0.33)) (create-vb e0 x y u)))
+(B (name create)(=>(^(S#BUILDING e0 :0.33)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.33)(R#DESTRUCTION e0 e0 :0.33)) (destroy-vb e0 x y u)))
 
-(B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION x e0 :0.3 :0.3)(R#DESTRUCTION x e0 :0.3)) (deconstruction-nn e0 x)))
-(B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION x e0 :0.3 :0.3)(R#DESTRUCTION x e0 :0.3)) (destruction-nn e0 x)))
+(B (name deconstruct)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (deconstruct-vb e0 x y u)))
+(B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (ruin-vb e0 x y u)))
+
+(B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION x e0 :0.3)(R#DESTRUCTION x e0 :0.3)) (deconstruction-nn e0 x)))
+(B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION x e0 :0.3)(R#DESTRUCTION x e0 :0.3)) (destruction-nn e0 x)))
 
 ; COMPONENTS
 (B (name foundation)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%COMPONENTS x e0 :0.45)) (foundation-nn e0 x)))
