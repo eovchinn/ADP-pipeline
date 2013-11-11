@@ -791,7 +791,7 @@
 (B (name catchvb)(=>(^(S#MAZE z :0.23)(SS#MAZE%OBSTRUCTION e0 z :0.23)(R#OBSTRUCTION-AGENT x e0 :0.23)(R#OBSTRUCTION-PATIENT y e0 :0.23)) (catch-vb e0 x y u)))
 (B (name tanglevb)(=>(^(S#MAZE z :0.3)(SS#MAZE%OBSTRUCTION e0 z :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3)) (tangle-vb e0 u y u1)))
 (B (name snarlvb)(=>(^(S#MAZE z :0.3)(SS#MAZE%OBSTRUCTION e0 z :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3)) (snarl-vb e0 u y u1)))
-(B (name snarlvb)(=>(^(S#MAZE z :0.3)(SS#MAZE%OBSTRUCTION e0 z :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3)) (hinder-vb e0 u y u1)))
+(B (name hindervb)(=>(^(S#MAZE z :0.3)(SS#MAZE%OBSTRUCTION e0 z :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3)) (hinder-vb e0 u y u1)))
 
 (B (name mazemap)(=>(I#MAZE x :0.9)(S#MAZE x)))
 (B (name maze-confusing-pathwaysmap)(=>(I#MAZE%CONFUSING_PATHWAYS x y :0.9)(SS#MAZE%CONFUSING_PATHWAYS x y)))
@@ -1007,6 +1007,8 @@
 
 (B (name destroy)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (^(SS#BUILDING%TYPE y)(destroy-vb e0 x y u))))
 (B (name destroy)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (^(SS#BUILDING%STRUCTURE y)(destroy-vb e0 x y u))))
+(B (name create)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (^(SS#BUILDING%TYPE y)(create-vb e0 x y u))))
+(B (name create)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (^(SS#BUILDING%STRUCTURE y)(create-vb e0 x y u))))
 (B (name deconstruct)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (deconstruct-vb e0 x y u)))
 (B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (ruin-vb e0 x y u)))
 
