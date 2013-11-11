@@ -895,6 +895,7 @@
 (B (name transfer)(=>(^(S#RESOURCE e0 :0.33)(SS#RESOURCE%DISTRIBUTION e0 e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (transfer-vb e0 x y u)))
 (B (name distribute)(=>(^(S#RESOURCE e0 :0.33)(SS#RESOURCE%DISTRIBUTION e0 e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (distribute-vb e0 x y u)))
 (B (name spread)(=>(^(S#RESOURCE e0 :0.33)(SS#RESOURCE%DISTRIBUTION e0 e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (^(TS#WEALTH y)(spread-vb e0 x y u))))
+(B (name spread)(=>(^(S#RESOURCE e0 :0.33)(SS#RESOURCE%DISTRIBUTION e0 e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (spread-vb e0 x y u)))
 (B (name underwrite)(=>(^(S#RESOURCE e0 :0.33)(SS#RESOURCE%DISTRIBUTION e0 e0 :0.33) (R#SUPPORTER x e0 :0.33)) (underwrite-vb e0 x y u)))
 (B (name sort)(=>(^(S#RESOURCE e0 :0.33)(SS#RESOURCE%DISTRIBUTION e0 e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (sort-vb e0 x y u)))
 
@@ -1479,7 +1480,7 @@
 
 ; CONTRAST OF POSITIONS
 (B (name higher)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (higher-adj e0 x)))
-(B (name higher-taxes)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (^(higher-adj e0 x)(tax-nn e1 x))))
+(B (name higher-taxes)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (^(higher-adj e0 x)(TS#TAXATION x))))
 (B (name steep)(=>(^(S#VERTICAL_SCALE e0 :0.45)(SS#VERTICAL_SCALE%CONTRAST_OF_POSITIONS e0 e0 :0.45)) (steep-adj e0 x)))
 (B (name steeper)(=>(^(S#VERTICAL_SCALE e0 :0.45)(SS#VERTICAL_SCALE%CONTRAST_OF_POSITIONS e0 e0 :0.45)) (steeper-adj e0 x)))
 (B (name above)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (above-in e0 x)))
