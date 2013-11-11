@@ -661,7 +661,7 @@
 (B (name ease) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.45)) (ease-nn e0 x)))
 (B (name easing) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.45)) (easing-nn e0 x)))
 ;(B (name lightening) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.45)) (lightening-nn e0 x)))
-(B (name tax-shift) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.45)) (^(tax-nn e0 x)(shift-nn e1 y)(of-in e2 y x))))
+(B (name tax-shift) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.45)) (^(TS#TAXATION x)(shift-nn e1 y)(of-in e2 y x))))
 
 (B (name lighten) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#PHYSICAL_BURDEN%RELIEF e0 e0 :0.2)(R#RELIEF-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (lighten-vb e0 x y u)))
 (B (name easevb) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#PHYSICAL_BURDEN%RELIEF e0 e0 :0.2)(R#RELIEF-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (ease-vb e0 x y u)))
@@ -671,7 +671,7 @@
 ;(B (name aid) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#PHYSICAL_BURDEN%RELIEF e0 e0 :0.2)(R#RELIEF-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (aid-vb e0 x y u)))
 
 (B (name evasion) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.45)) (evasion-nn e0 x)))
-(B (name tax-evasion) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.45)) (^(tax-nn e0 x)(of-in e1 y x)(evasion-nn e2 y))))
+(B (name tax-evasion) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.45)) (^(TS#TAXATION x)(of-in e1 y x)(evasion-nn e2 y))))
 
 (B (name evade) (=>(^(S#PHYSICAL_BURDEN e0 :0.3)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.3)(R#EVADE-AGENT x e0 :0.3)) (evade-vb e0 x y u)))
 
@@ -1486,7 +1486,7 @@
 (B (name above)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (above-in e0 x)))
 
 (B (name lower)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (lower-adj e0 x)))
-(B (name lower-taxes)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (^(lower-adj e0 x)(tax-nn e1 x))))
+(B (name lower-taxes)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (^(lower-adj e0 x)(TS#TAXATION x))))
 (B (name below)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (below-in e0 x y)))
 
 (B (name vertical-scalemap)(=>(I#VERTICAL_SCALE x :0.9)(S#VERTICAL_SCALE x)))
