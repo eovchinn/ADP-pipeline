@@ -370,6 +370,7 @@
 (B (name stream) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(stream-vb e0 x u1 u2)))
 (B (name stream) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(stagnate-vb e0 x u1 u2)))
 (B (name absorb) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#ABSORBING x e0 :0.3))(absorb-vb e0 x u1 u2)))
+(B (name dampen) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#DAMPENING x e0 :0.3))(dampen-vb e0 x u1 u2)))
 
 (B (name stream2) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%MOVEMENT y e0 :0.45))(stream-nn e0 y)))
 (B (name flow2) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%MOVEMENT y e0 :0.45))(flow-nn e0 y)))
@@ -398,9 +399,10 @@
 
 (B (name watermap)(=>(I#BODY_OF_WATER x :0.9)(S#BODY_OF_WATER x)))
 (B (name watertypemap)(=>(I#BODY_OF_WATER%TYPE x y :0.9)(SS#BODY_OF_WATER%TYPE x y)))
-(B (name drinkmap)(=>(I#BODY_OF_WATER%DRINK x y y :0.9)(SS#BODY_OF_WATER%DRINK x y y)))
-(B (name thirstmap)(=>(I#BODY_OF_WATER%THIRST x y y :0.9)(SS#BODY_OF_WATER%THIRST x y y)))
-(B (name streammap)(=>(I#BODY_OF_WATER%MOVEMENT x y :0.9)(SS#BODY_OF_WATER%MOVEMENT x y)))
+;(B (name drinkmap)(=>(I#BODY_OF_WATER%DRINK x y :0.9)(SS#BODY_OF_WATER%DRINK x y )))
+;(B (name thirstmap)(=>(I#BODY_OF_WATER%THIRST x y :0.9)(SS#BODY_OF_WATER%THIRST x y )))
+(B (name movementmap)(=>(I#BODY_OF_WATER%MOVEMENT x y :0.9)(SS#BODY_OF_WATER%MOVEMENT x y)))
+(B (name dangermap)(=>(I#BODY_OF_WATER%DANGER x y :0.9)(SS#BODY_OF_WATER%DANGER x y)))
 
 ;##RI: material and cut are not in the approved gvmt. lists, so I've taken them out.
 ; ; MATERIAL
@@ -1022,7 +1024,7 @@
 (B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (ruin-vb e0 x y u)))
 
 (B (name deconstruction)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION x e0 :0.3)(R#DESTRUCTION x e0 :0.3)) (deconstruction-nn e0 x)))
-;(B (name destruction)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION x e0 :0.3)(R#DESTRUCTION x e0 :0.3)) (destruction-nn e0 x)))
+(B (name destruction)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION x e0 :0.3)(R#DESTRUCTION x e0 :0.3)) (destruction-nn e0 x)))
 
 ; COMPONENTS
 (B (name foundation)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%COMPONENTS x e0 :0.45)) (foundation-nn e0 x)))
@@ -1317,12 +1319,15 @@
 ; SCHISM
 ;TYPE
 (B (name schism)(=>(^(S#SCHISM e0 :0.45)(SS#SCHISM%TYPE x e0 :0.45)) (schism-nn e0 x)))
+(B (name schism)(=>(SS#SCHISM%TYPE x e1 :0.9) (^(deep-adj e1 x)(SS#SCHISM%TYPE x e0))))
 (B (name gap)(=>(^(S#SCHISM e0 :0.45)(SS#SCHISM%TYPE x e0 :0.45)) (gap-nn e0 x)))
 (B (name chasm)(=>(^(S#SCHISM e0 :0.45)(SS#SCHISM%TYPE x e0 :0.45)) (chasm-nn e0 x)))
 (B (name separation)(=>(^(S#SCHISM e0 :0.45)(SS#SCHISM%TYPE x e0 :0.45)) (separation-nn e0 x)))
 (B (name divide)(=>(^(S#SCHISM e0 :0.45)(SS#SCHISM%TYPE x e0 :0.45)) (divide-nn e0 x)))
 (B (name expanse)(=>(^(S#SCHISM e0 :0.45)(SS#SCHISM%TYPE x e0 :0.45)) (expanse-nn e0 x)))
 (B (name polarization)(=>(^(S#SCHISM e0 :0.45)(SS#SCHISM%TYPE x e0 :0.45)) (polarization-nn e0 x)))
+
+
 
 ; DISTANCES
 
@@ -1402,6 +1407,7 @@
 (B (name borderline)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION x e0 :0.45)) (borderline-nn e0 x)))
 
 (B (name live-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w)(live-vb e0 x y z)(in-in e1 e0 w))))
+(B (name grow-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w)(grow-vb e0 x y z)(in-in e1 e0 w))))
 (B (name reside-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (reside-vb e0 x y z)(in-in e1 e0 w))))
 (B (name stay-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (stay-vb e0 x y z)(in-in e1 e0 w))))
 (B (name born-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (bear-vb e0 x y z)(into-in e1 e0 w))))
@@ -1431,10 +1437,15 @@
 ;(B (name tug-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(tug-vb e0 x y z)(into-in e1 e0 w))))
 (B (name tug-into-pov) (=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R##PROPEL-PATIENT y e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)) (^(TS#POVERTY z)(tug-vb e0 x y u2)(into-in e1 e0 z))))
 
+(B (name cycle-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(cycle-vb e0 x y z)(in-in e1 e0 w))))
+(B (name cycle-in-pov) (=>(^(S#PHYSICAL_LOCATION e0 :0.2)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.2)(R##PROPEL-PATIENT y e0 :0.23)(R#PROPEL-AGENT x e0 :0.2)) (^(TS#POVERTY z)(cycle-vb e0 x y u2)(in-in e2 e0)(of-in e1 e0 z))))
+
 ;EXIT
 (B (name emerge)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (emerge-vb e0 x y u)))
 (B (name exit)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (exit-vb e0 x y u)))
 
+(B (name cycle-out)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(cycle-vb e0 x y z)(out-in e1 e0))))
+(B (name cycle-out-pov) (=>(^(S#PHYSICAL_LOCATION e0 :0.2)(SS#PHYSICAL_LOCATION%EXIT e0 e0 :0.2)(R##EXIT-PATIENT y e0 :0.23)(R#PROPEL-AGENT x e0 :0.2)) (^(TS#POVERTY z)(cycle-vb e0 x y u2)(out-in e2 e0)(of-in e1 e0 z))))
 
 (B (name passport)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%EXIT x e0 :0.45)) (passport-nn e0 x)))
 (B (name ticket)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%EXIT x e0 :0.45)) (ticket-nn e0 x)))
@@ -1822,7 +1833,7 @@
 ; DESTROYER
 ; DESTRUCTIVE FORCE
 (B (name destroyer)(=>(^(S#DESTROYER e0 :0.45)(SS#DESTROYER%DESTRUCTIVE_FORCE x e0 :0.45)) (destroyer-nn e0 x)))
-;(B (name destruction)(=>(^(S#DESTROYER e0 :0.45)(SS#DESTROYER%DESTRUCTIVE_FORCE x e0 :0.45)) (destruction-nn e0 x)))
+(B (name destruction)(=>(^(S#DESTROYER e0 :0.45)(SS#DESTROYER%DESTRUCTIVE_FORCE x e0 :0.45)) (destruction-nn e0 x)))
 
 (B (name destroy)(=>(^(S#DESTROYER e0 :0.23)(SS#DESTROYER%DESTRUCTIVE_FORCE e0 e0 :0.23)(R#DESTRUCTIVE_FORCE-AGENT x e0 :0.23)(R#DESTRUCTIVE_FORCE-PATIENT y e0 :0.23)) (^(TS#POVERTY x)(destroy-vb e0 x y u))))
 
