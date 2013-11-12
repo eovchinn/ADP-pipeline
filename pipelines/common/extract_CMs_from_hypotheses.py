@@ -142,24 +142,26 @@ def isLinkedbyParse(v1,v2,word_props,equalities,been,pathlength):
 	npl = 9
 	for (propName,args) in word_props:
 		if v1 in args:
-			if len(args)>2: 
+			if len(args)>1: 
 				i1 = args.index(v1)
 				if i1==0: 
 					npl = isLinkedbyParse(args[1],v2,word_props,equalities,been,pathlength)
 					if npl<pl: pl=npl
-					npl = isLinkedbyParse(args[2],v2,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					if len(args)>3:
-						npl = isLinkedbyParse(args[3],v2,word_props,equalities,been,pathlength)
+					if len(args)>2:
+						npl = isLinkedbyParse(args[2],v2,word_props,equalities,been,pathlength)
 						if npl<pl: pl=npl
+						if len(args)>3:
+							npl = isLinkedbyParse(args[3],v2,word_props,equalities,been,pathlength)
+							if npl<pl: pl=npl
 				elif i1==1:
 					npl = isLinkedbyParse(args[0],v2,word_props,equalities,been,pathlength)
 					if npl<pl: pl=npl
-					npl = isLinkedbyParse(args[2],v2,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					if len(args)>3:
-						npl = isLinkedbyParse(args[3],v2,word_props,equalities,been,pathlength)
+					if len(args)>2:
+						npl = isLinkedbyParse(args[2],v2,word_props,equalities,been,pathlength)
 						if npl<pl: pl=npl
+						if len(args)>3:
+							npl = isLinkedbyParse(args[3],v2,word_props,equalities,been,pathlength)
+							if npl<pl: pl=npl
 				elif i1==2:
 					npl = isLinkedbyParse(args[0],v2,word_props,equalities,been,pathlength)
 					if npl<pl: pl=npl
@@ -176,24 +178,26 @@ def isLinkedbyParse(v1,v2,word_props,equalities,been,pathlength):
 					npl = isLinkedbyParse(args[2],v2,word_props,equalities,been,pathlength)
 					if npl<pl: pl=npl
 		elif v2 in args:
-			if len(args)>2: 
+			if len(args)>1: 
 				i2 = args.index(v2)
 				if i2==0: 
 					npl = isLinkedbyParse(args[1],v1,word_props,equalities,been,pathlength)
 					if npl<pl: pl=npl
-					npl = isLinkedbyParse(args[2],v1,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					if len(args)>3:
-						npl = isLinkedbyParse(args[3],v1,word_props,equalities,been,pathlength)
+					if len(args)>2:
+						npl = isLinkedbyParse(args[2],v1,word_props,equalities,been,pathlength)
 						if npl<pl: pl=npl
+						if len(args)>3:
+							npl = isLinkedbyParse(args[3],v1,word_props,equalities,been,pathlength)
+							if npl<pl: pl=npl
 				elif i2==1:
 					npl = isLinkedbyParse(args[0],v1,word_props,equalities,been,pathlength)
 					if npl<pl: pl=npl
-					npl = isLinkedbyParse(args[2],v1,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					if len(args)>3:
-						npl = isLinkedbyParse(args[3],v1,word_props,equalities,been,pathlength)
+					if len(args)>2:
+						npl = isLinkedbyParse(args[2],v1,word_props,equalities,been,pathlength)
 						if npl<pl: pl=npl
+						if len(args)>3:
+							npl = isLinkedbyParse(args[3],v1,word_props,equalities,been,pathlength)
+							if npl<pl: pl=npl
 				elif i2==2:
 					npl = isLinkedbyParse(args[0],v1,word_props,equalities,been,pathlength)
 					if npl<pl: pl=npl
