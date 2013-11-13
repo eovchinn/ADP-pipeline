@@ -763,11 +763,13 @@
 (B (name buffer) (=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#PHYSICAL_HARM%PROTECTION x e0 :0.45))(buffer-nn e0 x)))
 (B (name dodge) (=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#PHYSICAL_HARM%PROTECTION x e0 :0.45))(dodge-nn e0 x)))
 (B (name dodging) (=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#PHYSICAL_HARM%PROTECTION x e0 :0.45))(dodging-nn e0 x)))
+(B (name evasion) (=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#PHYSICAL_HARM%PROTECTION x e0 :0.45))(evasion-nn e0 x)))
 
 (B (name shieldvb) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#PHYSICAL_HARM%PROTECTION e0 e0 :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(shield-vb e0 x y u2)))
 (B (name cushionvb) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#PHYSICAL_HARM%PROTECTION e0 e0 :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(cushion-vb e0 x y u2)))
 (B (name buffervb) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#PHYSICAL_HARM%PROTECTION e0 e0 :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(buffer-vb e0 x y u2)))
 (B (name dodgevb) (=>(^(S#PHYSICAL_HARM e0 :0.3)(SS#PHYSICAL_HARM%PROTECTION e0 e0 :0.3)(R#PROTECT-AGENT x e0 :0.3))(dodge-vb e0 x y u2)))
+(B (name evadevb) (=>(^(S#PHYSICAL_HARM e0 :0.3)(SS#PHYSICAL_HARM%PROTECTION e0 e0 :0.3)(R#PROTECT-AGENT x e0 :0.3))(evade-vb e0 x y u2)))
 
 
 (B (name from-theft) (=>(R#HARM-VICTIM y :0.9)(^(S#PHYSICAL_HARM-PROTECTION e0)(from-in e1 e0 y))))

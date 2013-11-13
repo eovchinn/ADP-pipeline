@@ -486,45 +486,51 @@
 #(B (name depth-of) (=> (R#ABYSS-THEME y x :0.90)(^(SS#DEPTH x)(of-in e1 x y))))
 
 ; ENTRANCE
+WEALTH_AND_SOCIAL_CLASS
 
 (B (name empujar-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (empujar-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name empujar-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(empujar-vb e0 x y u2)(en-in e1 e0 z))))
+(B (name empujar-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#WEALTH_AND_SOCIAL_CLASS z)(empujar-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name empujar-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (empujar-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name empujar-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(empujar-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name conducir-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (conducir-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name conducir-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(conducir-vb e0 x y u2)(en-in e1 e0 z))))
+(B (name conducir-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#WEALTH_AND_SOCIAL_CLASS z)(conducir-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name conducir-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (conducir-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name conducir-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(conducir-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name chupar-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (chupar-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name chupar-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(chupar-vb e0 x y u2)(en-in e1 e0 z))))
+(B (name chupar-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#WEALTH_AND_SOCIAL_CLASS z)(chupar-vb e0 x y u2)(en-in e1 e0 z)))) 
 (B (name chupar-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (chupar-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name chupar-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(chupar-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name arrastrar-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (arrastrar-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name arrastrar-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(arrastrar-vb e0 x y u2)(en-in e1 e0 z))))
+(B (name arrastrar-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#WEALTH_AND_SOCIAL_CLASS z)(arrastrar-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name arrastrar-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (arrastrar-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name arrastrar-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(arrastrar-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name descender-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (descender-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name descender-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(descender-vb e0 x y u2)(en-in e1 e0 z))))
+(B (name descender-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#WEALTH_AND_SOCIAL_CLASS z)(descender-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name descender-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (descender-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name descender-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(descender-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name hundirse-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (hundirse-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name hundirse-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(hundirse-vb e0 x y u2)(en-in e1 e0 z))))
+(B (name hundirse-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#WEALTH_AND_SOCIAL_CLASS z)(hundirse-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name hundirse-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (hundirse-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name hundirse-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(hundirse-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name caída-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (caída-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name caída-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(caída-vb e0 x y u2)(en-in e1 e0 z))))
+(B (name caída-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#WEALTH_AND_SOCIAL_CLASS z)(caída-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name caída-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (caída-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name caída-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(caída-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name tirar-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (tirar-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name tirar-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(tirar-vb e0 x y u2)(en-in e1 e0 z))))
+(B (name tirar-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#WEALTH_AND_SOCIAL_CLASS z)(tirar-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name tirar-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (tirar-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name tirar-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(tirar-vb e0 x y u2)(a-in e1 e0 z))))
 (B (name caer-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (caer-vb e0 x y u2)(en-in e1 e0 z))))
 (B (name caer-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(caer-vb e0 x y u2)(en-in e1 e0 z))))
-(B (name caer-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (caer-vb e0 x y u2)(a-in e1 e0 z))))
-(B (name caer-en) (=>(^(SS#ABYSS%ENTRANCE e0 e2 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2) (caer-vb e0 x y u2)(a-in e1 e0 z)(clase-nn e2 z)(bajo-adj e3 z))))
-(B (name caer-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#POVERTY z)(caer-vb e0 x y u2)(a-in e1 e0 z))))
-
+(B (name caer-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.2)(R#ABYSS-THEME y e2 :0.2)(R#ABYSS-CAUSE x e2 :0.2)) (^(TS#WEALTH_AND_SOCIAL_CLASS z)(caer-vb e0 x y u2)(en-in e1 e0 z))))
 
 (B (name caer-en) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%ENTRANCE e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(caer-vb e0 x y u2)(en-in e1 e0 z))))
 
@@ -564,11 +570,7 @@
 (B (name aligerar) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.2)(R#CAUSE-RELIEF x e0)(R#BURDEN-VICTIM y e0 :0.2)) (aligerar-vb e0 x y u)))
 (B (name aliviar) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.2)(R#CAUSE-RELIEF x e0)(R#BURDEN-VICTIM y e0 :0.2)) (aliviar-vb e0 x y u)))
 
-(B (name evasión) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.45)) (evasión-nn e0 x)))
-(B (name evasión-de-impuestos) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.45)) (^(evasión-nn e0 x)(de-in e1 y e2)(impuesto-vb e2 u v w))))
 
-(B (name evadir) (=>(^(S#PHYSICAL_BURDEN e0 :0.3)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.3)(R#EVADE-AGENT x e0 :0.3)) (evadir-vb e0 x y u)))
-(B (name eludir) (=>(^(S#PHYSICAL_BURDEN e0 :0.3)(SS#PHYSICAL_BURDEN%RELIEF x e0 :0.3)(R#EVADE-AGENT x e0 :0.3)) (eludir-vb e0 x y u)))
 
 :PHYSICAL DISTRESS
 (B (name insostenible)(=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_BURDEN%PHYSICAL_DISTRESS e0 e0 :0.45)) (insostenible-adj e0 y)))
@@ -634,6 +636,12 @@
 
 (B (name proteger) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#PHYSICAL_HARM%PROTECTION e0 e0 :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(proteger-vb e0 x y u2)))
 (B (name cubrir) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#PHYSICAL_HARM%PROTECTION e0 e0 :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(cubrir-vb e0 x y u2)))
+
+(B (name evasión) (=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#PHYSICAL_HARM%PROTECTION x e0 :0.45)) (evasión-nn e0 x)))
+(B (name evasión-de-impuestos) (=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#PHYSICAL_HARM%PROTECTION x e0 :0.45)) (^(evasión-nn e0 x)(de-in e1 y e2)(impuesto-vb e2 u v w))))
+
+(B (name evadir) (=>(^(S#PHYSICAL_HARM e0 :0.3)(SS#PHYSICAL_HARM%PROTECTION x e0 :0.3)(R#EVADE-AGENT x e0 :0.3)) (evadir-vb e0 x y u)))
+(B (name eludir) (=>(^(S#PHYSICAL_HARM e0 :0.3)(SS#PHYSICAL_HARM%PROTECTION x e0 :0.3)(R#EVADE-AGENT x e0 :0.3)) (eludir-vb e0 x y u)))
 
 (B (name from-theft) (=>(R#HARM-VICTIM y :0.9)(^(S#PHYSICAL_HARM-PROTECTION e0)(from-in e1 e0 y))))
 
@@ -833,7 +841,7 @@
 ;(B (name fundación)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%STRUCTURE x e0 :0.45)) (fundación-nn e0 x)))
 (B (name sótano)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%STRUCTURE x e0 :0.45)) (sótano-nn e0 x)))
 (B (name construcción)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%STRUCTURE x e0 :0.45)) (construcción-nn e0 x)))
-(B (name form)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%STRUCTURE x e0 :0.45)) (forma-nn e0 x)))
+;(B (name form)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%STRUCTURE x e0 :0.45)) (forma-nn e0 x)))
 
 ; CREATION_DESTRUCTION
 (B (name construir)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (construir-vb e0 x y u)))
@@ -917,7 +925,8 @@
 
 ;PHYSICAL OBJECT
 ; PHYSICAL OBJECT TYPE
-(B (name masa)(=>(^(S#PHYSICAL_OBJECT e0 :0.45)(SS#PHYSICAL_OBJECT%PHYSTICAL-OBJECT-TYPE x e0 :0.45)) (masa-nn e0 x)))
+(B (name mass)(=>(^(S#PHYSICAL_OBJECT e0 :0.45)(SS#PHYSICAL_OBJECT%PHYSTICAL-OBJECT-TYPE x e0 :0.45)) (masa-nn e0 x)))
+(B (name polygon)(=>(^(S#PHYSICAL_OBJECT e0 :0.45)(SS#PHYSICAL_OBJECT%PHYSTICAL-OBJECT-TYPE x e0 :0.45)) (polígono-nn e0 x)))
 
 ;POSSESSION
 ;##RI: "have" is likely very important here, but might generate a lot of FPs.
@@ -1407,6 +1416,8 @@
 
 ; CHANGE-OF-STATE
 (B (name crecer)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#POVERTY x)(crecer-vb e0 x y u))))
+(B (name crecer)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#TAXATION x)(crecer-vb e0 x y u))))
+(B (name crecer)(=>(^(S#PLANT e0 :0.2)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.2)(R#CHANGING-THING x e0 :0.2)) (crecer-vb e0 x y u)))
 (B (name crecer)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#WEALTH x)(crecer-vb e0 x y u))))
 (B (name crecer)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#WEALTH_AND_SOCIAL_CLASS x)(crecer-vb e0 x y u))))
 (B (name medrar)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#POVERTY x)(medrar-vb e0 x y u))))
@@ -1494,6 +1505,7 @@
 (B (name stampede)(=>(^(S#ANIMAL e0 :0.3)(SS#ANIMAL%ACTION e0 e0 :0.3)(R#ACTION-AGENT x e0 :0.3)) (galopante-adj e0 x )))
 (B (name stampede)(=>(^(S#ANIMAL e0 :0.3)(SS#ANIMAL%ACTION e0 e0 :0.3)(R#ACTION-AGENT x e0 :0.3)) (galope-nn e0 x )))
 (B (name stampede)(=>(^(S#ANIMAL e0 :0.3)(SS#ANIMAL%ACTION e0 e0 :0.3)(R#ACTION-AGENT x e0 :0.3)) (galopante-nn e0 x )))
+(B (name stampede)(=>(^(S#ANIMAL e0 :0.3)(SS#ANIMAL%ACTION e0 e0 :0.3)(R#ACTION-AGENT x e0 :0.3)) (reproducción-nn e0 x )))
 
 (B (name animalmap)(=>(I#ANIMAL x :0.9)(S#ANIMAL x)))
 ;(B (name animal-typemap)(=>(I#ANIMAL%TYPE x y :0.9)(SS#ANIMAL%TYPE x y)))
