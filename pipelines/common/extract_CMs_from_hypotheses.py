@@ -108,113 +108,59 @@ def collectVars(struc,superkey,equalities):
 	output = []
 
 	for arg in struc[superkey]:
-		if not arg.startswith('_'): 
+		if not arg.startswith('_') and not arg in output: 
 			output.append(arg)
 			if equalities.has_key(arg):
 				for a in equalities[arg]: output.append(a)
 		for (subd,subarg) in struc[superkey][arg]:
-			if not subarg.startswith('_'): 
+			if not subarg.startswith('_') and not arg in output: 
 				output.append(subarg)
 				if equalities.has_key(subarg):
 					for a in equalities[subarg]: output.append(a)
 	return output
 
-def isLinkedbyParse(v1,v2,word_props,equalities,been,pathlength):
+def collectVars2(struc,domain,subdomain):
+	output = dict()
+
+	for arg in struc[domain]:
+		if not arg.startswith('_'): 
+			output[arg]=1
+
+		for (subd,subarg) in struc[domain][arg]:
+			if not subarg.startswith('_'): 
+				output[subarg]=1
+
+	return output
+
+def isLinkedbyParse(v1,v2,word_props,equalities,input_been,pathlength):
 	if v1==v2: return pathlength
 
 	pathlength += 1
 	if pathlength == 9: return pathlength
 
+	been = list(input_been)
 	if (v1,v2) in been: return 9
 	been.append((v1,v2))
 	been.append((v2,v1))
 
-	#print (v1,v2)
+	#print (v1,v2,pathlength)
 
 	#if equalities.has_key(v1) and equalities[v1].has_key(v2): return 2
 
-	for (propName,args) in word_props:
-		if v1 in args and v2 in args: 
-			#print propName + ' ' + v1 + ' ' + v2
-			return pathlength
-
-	pl = 9
-	npl = 9
+	nbrs = []
 	for (propName,args) in word_props:
 		if v1 in args:
-			if len(args)>1: 
-				i1 = args.index(v1)
-				if i1==0: 
-					npl = isLinkedbyParse(args[1],v2,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					if len(args)>2:
-						npl = isLinkedbyParse(args[2],v2,word_props,equalities,been,pathlength)
-						if npl<pl: pl=npl
-						if len(args)>3:
-							npl = isLinkedbyParse(args[3],v2,word_props,equalities,been,pathlength)
-							if npl<pl: pl=npl
-				elif i1==1:
-					npl = isLinkedbyParse(args[0],v2,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					if len(args)>2:
-						npl = isLinkedbyParse(args[2],v2,word_props,equalities,been,pathlength)
-						if npl<pl: pl=npl
-						if len(args)>3:
-							npl = isLinkedbyParse(args[3],v2,word_props,equalities,been,pathlength)
-							if npl<pl: pl=npl
-				elif i1==2:
-					npl = isLinkedbyParse(args[0],v2,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					npl = isLinkedbyParse(args[1],v2,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					if len(args)>3:
-						npl = isLinkedbyParse(args[3],v2,word_props,equalities,been,pathlength)
-						if npl<pl: pl=npl
-				elif i1==3:
-					npl = isLinkedbyParse(args[0],v2,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					npl = isLinkedbyParse(args[1],v2,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					npl = isLinkedbyParse(args[2],v2,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-		elif v2 in args:
-			if len(args)>1: 
-				i2 = args.index(v2)
-				if i2==0: 
-					npl = isLinkedbyParse(args[1],v1,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					if len(args)>2:
-						npl = isLinkedbyParse(args[2],v1,word_props,equalities,been,pathlength)
-						if npl<pl: pl=npl
-						if len(args)>3:
-							npl = isLinkedbyParse(args[3],v1,word_props,equalities,been,pathlength)
-							if npl<pl: pl=npl
-				elif i2==1:
-					npl = isLinkedbyParse(args[0],v1,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					if len(args)>2:
-						npl = isLinkedbyParse(args[2],v1,word_props,equalities,been,pathlength)
-						if npl<pl: pl=npl
-						if len(args)>3:
-							npl = isLinkedbyParse(args[3],v1,word_props,equalities,been,pathlength)
-							if npl<pl: pl=npl
-				elif i2==2:
-					npl = isLinkedbyParse(args[0],v1,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					npl = isLinkedbyParse(args[1],v1,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					if len(args)>3:
-						npl = isLinkedbyParse(args[3],v1,word_props,equalities,been,pathlength)
-						if npl<pl: pl=npl
-				elif i2==3:
-					npl = isLinkedbyParse(args[0],v1,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					npl = isLinkedbyParse(args[1],v1,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
-					npl = isLinkedbyParse(args[2],v1,word_props,equalities,been,pathlength)
-					if npl<pl: pl=npl
+			if v2 in args: return pathlength
 
+			for a in args:
+				if a!=v1: nbrs.append(a)
+
+	pl = 9
+	for n in nbrs:
+		npl = isLinkedbyParse(n,v2,word_props,equalities,been,pathlength)
+		if npl<pl: pl = npl
 	return pl
+
 
 def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	targets = dict()	
@@ -295,6 +241,8 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	#print json.dumps(subtargets, ensure_ascii=False)
 	#print json.dumps(sources, ensure_ascii=False)
 	#print json.dumps(subsources, ensure_ascii=False)
+	#print json.dumps(word_props, ensure_ascii=False)
+	#exit(0)
 
 	for el1 in equalities.keys():
 		for el2 in equalities[el1].keys():
@@ -309,6 +257,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	#print json.dumps(target_strucs, ensure_ascii=False)
 	#print json.dumps(source_strucs, ensure_ascii=False)
 	#print json.dumps(equalities, ensure_ascii=False)
+	#exit(0)
 
 	output_struct_item = {}
 	if not LCCannotation: output_struct_item["id"] = id
@@ -328,12 +277,13 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 		Tdomains = []
 
 		for targ in target_strucs[targetS]: 			
-			if len(target_strucs[targetS][targ])==0: 
+			if len(target_strucs[targetS][targ])==0 and (targetS,targetS) not in Tdomains: 
 				Tdomains.append((targetS,targetS))
 			else: 		
 				for (tsubd,tsubarg) in target_strucs[targetS][targ]:
-					Tdomains.append((targetS,tsubd))
+					if (targetS,tsubd) not in Tdomains: Tdomains.append((targetS,tsubd))
 
+		#print "Tdomans:"
 		#print json.dumps(Tdomains, ensure_ascii=False)
 		#print json.dumps(tV, ensure_ascii=False)
 		
@@ -356,6 +306,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 						if link<2: break
 					Sdomains.append((sourceS,ssubS,(1-0.05-0.1*link)))
 					#print "%s,%s,%s" % (sourceS,ssubS,(1-0.05-0.1*link))
+					#exit(0)
 
 					for (t,ts) in Tdomains:
 						for (s,ss,c) in Sdomains:
@@ -409,23 +360,13 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	else: output_struct_item["sourceConceptSubDomain"] = data[4]
 
 	targetArgs = dict()
-	if subtargets.has_key(data[1]):
-		for args in subtargets[data[1]]:
-			targetArgs[args[0]]=1
-	if subsubtargets.has_key(data[2]):
-		for args in subsubtargets[data[2]]:
-			targetArgs[args[0]]=1
-
 	sourceArgs = dict()
-	if sources.has_key(data[3]):
-		for args in sources[data[3]]:
-			sourceArgs[args[0]]=1
-	if subsources.has_key(data[4]):
-		for args in subsources[data[4]]:
-			sourceArgs[args[0]]=1
 
-	targetWords = wordStr2print(targetArgs,word_props,equalities)
-	sourceWords = wordStr2print(sourceArgs,word_props,equalities)
+	targetArgs = collectVars2(target_strucs,data[1],data[2])
+	sourceArgs = collectVars2(source_strucs,data[3],data[4])
+
+	targetWords = wordStr2print(targetArgs,word_props,())
+	sourceWords = wordStr2print(sourceArgs,word_props,())
 
 	mapping_str = wordStr2print_Mapping(mappings,word_props,equalities)
 
