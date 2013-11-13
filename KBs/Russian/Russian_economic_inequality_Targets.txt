@@ -118,11 +118,19 @@
 
 ; MONEY
 (B (name dengi) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (деньги-nn e0 x)))
+(B (name dengi) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (денюжки-nn e0 x)))
+(B (name dengi) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (денюжка-nn e0 x)))
+(B (name dengi) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (деньжата-nn e0 x)))
 (B (name nalichnye) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (наличные-nn e0 x)))
 (B (name nalichnye) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (миллион-nn e0 x)))
 (B (name nalichnye) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (миллиард-nn e0 x)))
 (B (name nalichnye) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (валюта-nn e0 x)))
+
+(B (name nalichnye) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (рубль-nn e0 x)))
+(B (name nalichnye) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (доллар-nn e0 x)))
+
 (B (name denezhnyj) (=>(^(TS#WEALTH e0:0.3)(TSS#MONEY e0 e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)) (денежный-adj e0 y)))
+
 
 ; SOCIAL CLASS
 

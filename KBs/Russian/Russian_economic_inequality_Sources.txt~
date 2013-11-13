@@ -367,6 +367,7 @@
 
 (B (name vorovstvo) (=>(^(S#CRIME e0 :0.45)(SS#CRIME%TYPE x e0 :0.45)) (мошенничество-nn e0 x)))
 (B (name vorovstvo) (=>(^(S#CRIME e0 :0.45)(SS#CRIME%TYPE x e0 :0.45)) (спекуляция-nn e0 x)))
+(B (name vorovstvo) (=>(^(S#CRIME e0 :0.45)(SS#CRIME%TYPE x e0 :0.45)) (шантаж-nn e0 x)))
 (B (name vorovstvo) (=>(^(S#CRIME e0 :0.45)(SS#CRIME%TYPE x e0 :0.45)) (насилие-nn e0 x)))
 
 (B (name vorovstvo) (=>(^(S#CRIME e0 :0.45)(SS#CRIME%TYPE x e0 :0.45)) (бандитизм-nn e0 x)))
@@ -422,6 +423,7 @@
 (B (name bandit) (=>(^(S#CRIME e0 :0.45)(SS#PERPETRATOR x e0 :0.45))(жулик-nn e0 x)))
 (B (name bandit) (=>(^(S#CRIME e0 :0.45)(SS#PERPETRATOR x e0 :0.45))(жулье-nn e0 x)))
 (B (name bandit) (=>(^(S#CRIME e0 :0.45)(SS#PERPETRATOR x e0 :0.45))(жульё-nn e0 x)))
+(B (name bandit) (=>(^(S#CRIME e0 :0.45)(SS#PERPETRATOR x e0 :0.45))(шантажист-nn e0 x)))
 
 (B (name vorjuga) (=>(^(S#CRIME e0 :0.45)(SS#PERPETRATOR e0 e0 :0.45)) (вороватый-adj e0 x)))
 
@@ -486,6 +488,7 @@
 (B (name puty) (=>(^(S#CONFINEMENT u :0.45)(SS#CONFINEMENT%RESTRAINTS x u :0.45)) (путы-nn e0 x)))
 (B (name puty) (=>(^(S#CONFINEMENT u :0.45)(SS#CONFINEMENT%RESTRAINTS x u :0.45)) (оковы-nn e0 x)))
 (B (name puty) (=>(^(S#CONFINEMENT u :0.45)(SS#CONFINEMENT%RESTRAINTS x u :0.45)) (окова-nn e0 x)))
+(B (name puty) (=>(^(S#CONFINEMENT u :0.45)(SS#CONFINEMENT%RESTRAINTS x u :0.45)) (кандалы-nn e0 x)))
 (B (name puty) (=>(^(S#CONFINEMENT u :0.45)(SS#CONFINEMENT%RESTRAINTS x u :0.45)) (цепь-nn e0 x)))
 (B (name udavka) (=>(^(S#CONFINEMENT u :0.45)(SS#CONFINEMENT%RESTRAINTS x u :0.45))(удавка-nn e0 x)))
 (B (name barjer) (=>(^(S#CONFINEMENT u :0.45)(SS#CONFINEMENT%RESTRAINTS x u :0.45))(барьер-nn e0 x)))
@@ -684,6 +687,8 @@
 (B (name hozjain) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER x e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(пахан-nn e0 x)))
 (B (name hozjain) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER x e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(король-nn e0 x)))
 (B (name hozjain) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER x e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(князь-nn e0 x)))
+(B (name hozjain) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER x e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(князек-nn e0 x)))
+(B (name hozjain) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER x e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(князёк-nn e0 x)))
 
 (B (name pravit) (=>(^(S#ENSLAVEMENT e0 :0.33)(SS#MASTER e0 e0 :0.33)(R#ENSLAVEMENT-AGENT x e0 :0.33))(править-vb e0 x y u)))
 (B (name upravljat) (=>(^(S#ENSLAVEMENT e0 :0.33)(SS#MASTER e0 e0 :0.33)(R#ENSLAVEMENT-AGENT x e0 :0.33))(управлять-vb e0 x y u)))
@@ -1238,14 +1243,17 @@
 
 (B (name bloated)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_BODY_WEIGHT x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (жирный-adj e0 x)))
 (B (name bloated)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_BODY_WEIGHT x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (толстый-adj e0 x)))
-(B (name engorged)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_BODY_WEIGHT x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (разжиреший-adj e0 x)))
+(B (name engorged)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_BODY_WEIGHT x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (разжиревший-adj e0 x)))
 (B (name engorged)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_BODY_WEIGHT x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (жир-nn e0 x)))
+
+(B (name engorged)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_BODY_WEIGHT x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (разжиреть-vb e0 x y z)))
+(B (name engorged)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_BODY_WEIGHT x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (жиреть-vb e0 x y z)))
+(B (name engorged)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_BODY_WEIGHT x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (жировать-vb e0 x y z)))
 
 ;EXCESS CONSUMPTION
 
 (B (name feast)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (пожирать-vb e0 x y u)))
 (B (name feast)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (сжирать-vb e0 x y u)))
-(B (name feast)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (жировать-vb e0 x y u)))
 (B (name feast)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (поглотить-vb e0 x y u)))
 (B (name feast)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (поглощать-vb e0 x y u)))
 (B (name feast)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (обожраться-vb e0 x y u)))
@@ -1661,6 +1669,7 @@
 (B (name duty)(=>(^(S#MORAL_DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (обязанность-nn e0 x)))
 (B (name duty)(=>(^(S#MORAL_DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (обязательство-nn e0 x)))
 (B (name due)(=>(^(S#MORAL_DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (долг-nn e0 x)))
+(B (name due)(=>(^(S#MORAL_DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (залог-nn e0 x)))
 (B (name due)(=>(^(S#MORAL_DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (мораль-nn e0 x)))
 
 (B (name due)(=>(^(S#MORAL_DUTY e0 :0.45)(SS#REMUNERATION e0 e0 :0.45)) (обязать-vb e0 x y z)))
@@ -2089,12 +2098,17 @@
 
 ; ACTIONS
 
-(B (name play)(=>(^(S#GAME e0 :0.45)(SS#GAME%ACTIONS x e0 :0.45)) (старт-nn e0 x)))
-(B (name play)(=>(^(S#GAME e0 :0.45)(SS#GAME%ACTIONS e0 e0 :0.45)) (стартовый-adj e0 x)))
-(B (name play)(=>(^(S#GAME e0 :0.45)(SS#GAME%ACTIONS x e0 :0.45)) (финиш-nn e0 x)))
-(B (name play)(=>(^(S#GAME e0 :0.45)(SS#GAME%ACTIONS e0 e0 :0.45)) (финишный-adj e0 x)))
+;(B (name play)(=>(^(S#GAME e0 :0.45)(SS#GAME%ACTIONS x e0 :0.45)) (старт-nn e0 x)))
+;(B (name play)(=>(^(S#GAME e0 :0.45)(SS#GAME%ACTIONS e0 e0 :0.45)) (стартовый-adj e0 x)))
+;(B (name play)(=>(^(S#GAME e0 :0.45)(SS#GAME%ACTIONS x e0 :0.45)) (финиш-nn e0 x)))
+;(B (name play)(=>(^(S#GAME e0 :0.45)(SS#GAME%ACTIONS e0 e0 :0.45)) (финишный-adj e0 x)))
 
 (B (name playvb)(=>(^(S#GAME e0 :0.3)(SS#GAME%ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (играть-vb e0 x y u)))
+(B (name playvb)(=>(^(S#GAME e0 :0.3)(SS#GAME%ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (сыграть-vb e0 x y u)))
+(B (name playvb)(=>(^(S#GAME e0 :0.3)(SS#GAME%ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (проиграть-vb e0 x y u)))
+(B (name playvb)(=>(^(S#GAME e0 :0.3)(SS#GAME%ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (выиграть-vb e0 x y u)))
+(B (name playvb)(=>(^(S#GAME e0 :0.3)(SS#GAME%ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (пасовать-vb e0 x y u)))
+(B (name playvb)(=>(^(S#GAME e0 :0.3)(SS#GAME%ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (спасовать-vb e0 x y u)))
 
 ; OUTCOMES
 
