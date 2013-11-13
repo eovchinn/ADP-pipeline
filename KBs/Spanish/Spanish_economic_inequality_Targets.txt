@@ -57,8 +57,8 @@
 
 ;(B (name clase) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (clase-nn e0 x)))
 ;(B (name social) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS e0 :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (social-adj e0 x)))
-(B (name middle-class) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (^(clase-nn e1 x)(medio-adj e0 x))))
-(B (name upper-class) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (^(alta-adj e0 x)(clase-nn e1 x))))
+(B (name middle-class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (^(clase-nn e1 x)(medio-adj e0 x))))
+(B (name upper-class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (^(alta-adj e0 x)(clase-nn e1 x))))
 
 ; RICH PERSON
 (B (name rico) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 0.3) (T#ECONOMIC_INEQUALITY u :0.3)) (rico-adj e0 y)))

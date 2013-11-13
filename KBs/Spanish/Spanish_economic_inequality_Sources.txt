@@ -1170,7 +1170,7 @@
 (B (name detener-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(TS#POVERTY w) (detener-vb e0 x y z)(a-in e1 e0 w))))
 (B (name lanzar-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(TS#POVERTY w) (lanzar-vb e0 x y z)(en-in e1 e0 w))))
 (B (name lanzar-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(TS#POVERTY w) (lanzar-vb e0 x y z)(a-in e1 e0 w))))
-;(B (name reach)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(TS#WEALTH_AND_SOCIAL_CLASS y)(alcanzar-vb e0 x y z))))
+(B (name reach)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(TS#WEALTH_AND_SOCIAL_CLASS y)(alcanzar-vb e0 x y z))))
 (B (name reach)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(TS#WEALTH y)(alcanzar-vb e0 x y z))))
 ;(B (name reach)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (alcanzar-vb e0 x y z)))
 
