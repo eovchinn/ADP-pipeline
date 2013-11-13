@@ -830,7 +830,7 @@
 ; STRUCTURE
 (B (name estructura)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%STRUCTURE x e0 :0.45)) (estructura-nn e0 x)))
 (B (name edificio)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%STRUCTURE x e0 :0.45)) (edificio-nn e0 x)))
-(B (name fundación)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%STRUCTURE x e0 :0.45)) (fundación-nn e0 x)))
+;(B (name fundación)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%STRUCTURE x e0 :0.45)) (fundación-nn e0 x)))
 (B (name sótano)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%STRUCTURE x e0 :0.45)) (sótano-nn e0 x)))
 (B (name construcción)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%STRUCTURE x e0 :0.45)) (construcción-nn e0 x)))
 (B (name form)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%STRUCTURE x e0 :0.45)) (forma-nn e0 x)))
@@ -838,9 +838,10 @@
 ; CREATION_DESTRUCTION
 (B (name construir)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (construir-vb e0 x y u)))
 (B (name edificar)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (edificar-vb e0 x y u)))
-(B (name generar)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (^(TS#WEATLH y)(generar-vb e0 x y u))))
+(B (name generar)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (^(TS#WEALTH y)(generar-vb e0 x y u))))
 (B (name crear)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (crear-vb e0 x y u)))
 (B (name crear)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (fabricar-vb e0 x y u)))
+(B (name crear)(=>(^(S#BUILDING e0 :0.3)(SS#BUILDING%CREATION_DESTRUCTION e0 e0 :0.3)(R#CREATING e0 e0 :0.3)) (formar-vb e0 x y u)))
 
 (B (name generación)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%CREATION_DESTRUCTION x e0 :0.45)) (^(generación-nn e0 x)(de-in e1 x y)(TS#WEALTH y))))
 (B (name creación)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%CREATION_DESTRUCTION x e0 :0.45)) (creación-nn e0 x)))
@@ -1068,7 +1069,7 @@
 ; SCHISM
 ;TYPE
 (B (name cisma)(=>(^(S#SCHISM e0 :0.45)(SS#SCHISM%TYPE x e0 :0.45)) (cisma-nn e0 x)))
-(B (name brecha)(=>(^(S#SCHISM e0 :0.45)(SS#SCHISM%TYPE x e0 :0.45)) (brecha-nn e0 x))
+(B (name brecha)(=>(^(S#SCHISM e0 :0.45)(SS#SCHISM%TYPE x e0 :0.45)) (brecha-nn e0 x)))
 (B (name separación)(=>(^(S#SCHISM e0 :0.45)(SS#SCHISM%TYPE x e0 :0.45)) (separación-nn e0 x)))
 (B (name divisoria)(=>(^(S#SCHISM e0 :0.45)(SS#SCHISM%TYPE x e0 :0.45)) (divisoria-nn e0 x)))
 (B (name extensión)(=>(^(S#SCHISM e0 :0.45)(SS#SCHISM%TYPE x e0 :0.45)) (extensión-nn e0 x)))
@@ -1140,11 +1141,11 @@
 (B (name franja)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION x e0 :0.45)) (franja-nn e0 x)))
 (B (name frontera)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION x e0 :0.45)) (frontera-nn e0 x)))
 
-(B (name vivir-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (viver-vb e0 x y z)(en-in e1 e0 w))))
-(B (name vivir-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION e0 e0 w :0.45)) (^(TS#WEALTH w) (viver-vb e0 x y z)(en-in e1 e0 w))))
+(B (name vivir-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (vivir-vb e0 x y z)(en-in e1 e0 w))))
+(B (name vivir-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION e0 e0 w :0.45)) (^(TS#WEALTH w) (vivir-vb e0 x y z)(en-in e1 e0 w))))
 (B (name reside-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (residir-vb e0 x y z)(en-in e1 e0 w))))
 (B (name permanecer-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (permanecer-vb e0 x y z)(en-in e1 e0 w))))
-(B (name permanecer)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (permanecer-vb e0 x y z)))))
+(B (name permanecer)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (permanecer-vb e0 x y z))))
 (B (name nacido-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#PHYSICAL_LOCATION%DEFINED_REGION e0 e0 w :0.45)) (^(TS#POVERTY w) (nacido-adj e0 x)(en-in e1 x w))))
 
 ;MOVEMENT_INTO
@@ -1169,7 +1170,9 @@
 (B (name detener-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(TS#POVERTY w) (detener-vb e0 x y z)(a-in e1 e0 w))))
 (B (name lanzar-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(TS#POVERTY w) (lanzar-vb e0 x y z)(en-in e1 e0 w))))
 (B (name lanzar-en)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(TS#POVERTY w) (lanzar-vb e0 x y z)(a-in e1 e0 w))))
-(B (name reach)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(TS#WEALTH_AND_SOCIAL_CLASS)(alcanzar-vb e0 x y z))))
+;(B (name reach)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(TS#WEALTH_AND_SOCIAL_CLASS y)(alcanzar-vb e0 x y z))))
+(B (name reach)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(TS#WEALTH y)(alcanzar-vb e0 x y z))))
+;(B (name reach)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%MOVEMENT_INTO e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (alcanzar-vb e0 x y z)))
 
 ;EXIT
 (B (name surgir)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#PHYSICAL_LOCATION%EXIT e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (surgir-vb e0 x y u)))
@@ -1193,6 +1196,9 @@
 (B (name punto)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (punto-nn e0 x)))
 
 (B (name medular)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (medular-nn e0 x)))
+
+(B (name low)(=>(^(S#VERTICAL_SCALE e0 :0.33)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.33)(R#FIXED-POINT x e0 :0.33)) (bajo-adj e0 x)))
+(B (name high)(=>(^(S#VERTICAL_SCALE e0 :0.33)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.33)(R#FIXED-POINT x e0 :0.33)) (alto-adj e0 x)))
 
 (B (name low)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(bajo-adj e0 x)(TS#TAXATION x))))
 (B (name high)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(alto-adj e0 x)(TS#TAXATION x))))
@@ -1618,6 +1624,7 @@
 (B (name movement)(=>(^(S#MOVEMENT e0 :0.45)(SS#MOVEMENT%MOVEMENT x e0 :0.45)) (movimiento-nn e0 x)))
 (B (name mobility)(=>(^(S#MOVEMENT e0 :0.45)(SS#MOVEMENT%MOVEMENT x e0 :0.45)) (movilidad-nn e0 x)))
 (B (name mobility)(=>(^(S#MOVEMENT e0 :0.45)(SS#MOVEMENT%MOVEMENT x e0 :0.45)) (paso-nn e0 x)))
+(B (name mobility)(=>(^(S#MOVEMENT e0 :0.45)(SS#MOVEMENT%MOVEMENT x e0 :0.45)) (círculo-nn e0 x)))
 
 (B (name move)(=>(^(S#MOVEMENT e0 :0.45)(SS#MOVEMENT%MOVEMENT e0 e0 :0.45)) (mover-vb e0 x y z)))
 (B (name move)(=>(^(S#MOVEMENT e0 :0.45)(SS#MOVEMENT%MOVEMENT e0 e0 :0.45)) (pasar-vb e0 x y z)))
