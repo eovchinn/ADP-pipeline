@@ -16,11 +16,10 @@
 4	آمد	آمد#آی	V	V	_	0	ROOT	_	_
 5	.	_	PUNC	PUNC	_	4	PUNC	_	_
 
-1	بیماری	بیمار	N	N	_	4	SBJ	_	_
-2	علاج	علاج	N	N	_	1	MOZ	_	_
-3	ناپذیر	ناپذیر	ADJ	ADJ	_	4	MOS	_	_
-4	نیست	#هست	V	V	_	0	ROOT	_	_
-5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+1	بیماری	بیمار	N	N	_	3	SBJ	_	_
+2	علاج-ناپذیر	علاج-ناپذیر	ADJ	ADJ	_	3	MOS	_	_
+3	نیست	#هست	V	V	_	0	ROOT	_	_
+4	.	_	PUNC	PUNC	_	3	PUNC	_	_
 
 1	بیماری	بیمار	N	N	_	3	SBJ	_	_
 2	علاج-ناپذیر	علاج-ناپذیر	ADJ	ADJ	_	3	MOS	_	_
@@ -33,7 +32,7 @@
 4	.	_	PUNC	PUNC	_	3	PUNC	_	_
 
 1	این	این	PREM	PREM	_	2	NPREMOD	_	_
-2	نوش-دارویی	نوش-دارویی	N	N	_	4	SBJ	_	_
+2	نوش-دارویی	نوش-دارو	N	N	_	4	SBJ	_	_
 3	بیش	بیش	ADJ	ADJ	_	4	MOS	_	_
 4	نیست	#هست	V	V	_	0	ROOT	_	_
 5	.	_	PUNC	PUNC	_	4	PUNC	_	_
@@ -58,11 +57,10 @@
 
 1	این	این	PREM	PREM	_	3	NPREMOD	_	_
 2	یک	یک	PRENUM	PRENUM	_	3	NPREMOD	_	_
-3	بیماری	بیمار	N	N	_	0	ROOT	_	_
-4	همه	همه	N	N	_	6	SBJ	_	_
-5	گیر	گیر	ADJ	ADJ	_	6	MOS	_	_
-6	است	#است	V	V	_	0	ROOT	_	_
-7	.	_	PUNC	PUNC	_	6	PUNC	_	_
+3	بیماری	بیمار	N	N	_	5	SBJ	_	_
+4	همه-گیر	همه-گیر	ADJ	ADJ	_	5	MOS	_	_
+5	است	#است	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
 
 1	این	این	PREM	PREM	_	3	NPREMOD	_	_
 2	یک	یک	PRENUM	PRENUM	_	3	NPREMOD	_	_
@@ -162,19 +160,15 @@
 5	.	_	PUNC	PUNC	_	4	PUNC	_	_
 
 1	این	این	PREM	PREM	_	2	NPREMOD	_	_
-2	جزر	جزر	N	N	_	6	SBJ	_	_
-3	و	_	CONJ	CONJ	_	2	NCONJ	_	_
-4	مد	مد	N	N	_	3	POSDEP	_	_
-5	دریا	دریا	N	N	_	6	MOS	_	_
-6	است	#است	V	V	_	0	ROOT	_	_
-7	.	_	PUNC	PUNC	_	6	PUNC	_	_
+2	جزر-و-مد	جزر-و-مد	N	N	_	4	SBJ	_	_
+3	دریا	دریا	N	N	_	4	MOS	_	_
+4	است	#است	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
 
 1	این	این	PREM	PREM	_	2	NPREMOD	_	_
-2	جزر	جزر	N	N	_	5	SBJ	_	_
-3	و	_	CONJ	CONJ	_	2	NCONJ	_	_
-4	مد	مد	N	N	_	3	POSDEP	_	_
-5	است	#است	V	V	_	0	ROOT	_	_
-6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+2	جزر-و-مد	جزر-و-مد	N	N	_	3	MOS	_	_
+3	است	#است	V	V	_	0	ROOT	_	_
+4	.	_	PUNC	PUNC	_	3	PUNC	_	_
 
 1	او	او	PR	PR	_	5	SBJ	_	_
 2	لباسم	لباس	N	N	_	5	OBJ	_	_
@@ -183,21 +177,18 @@
 5	داد	داد#ده	V	V	_	0	ROOT	_	_
 6	.	_	PUNC	PUNC	_	5	PUNC	_	_
 
-1	تیر	تیر	N	N	_	5	SBJ	_	_
-2	اندازی	اندازی	N	N	_	1	MOZ	_	_
-3	کار	کار	N	N	_	5	MOS	_	_
-4	خوبی	خوب	ADJ	ADJ	_	3	NPOSTMOD	_	_
-5	نیست	#هست	V	V	_	0	ROOT	_	_
-6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+1	تیر-اندازی	تیر-اندازی	N	N	_	4	SBJ	_	_
+2	کار	کار	N	N	_	4	MOS	_	_
+3	خوبی	خوب	ADJ	ADJ	_	2	NPOSTMOD	_	_
+4	نیست	#هست	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
 
-1	آنها	آن-ها	PR	PR	_	7	SBJ	_	_
-2	هرج	هرج	N	N	_	7	OBJ	_	_
-3	و	_	CONJ	CONJ	_	2	NCONJ	_	_
-4	مرج	مرج	N	N	_	3	POSDEP	_	_
-5	را	را	POSTP	POSTP	_	2	ACC-CASE	_	_
-6	برطرف	برطرف	ADJ	ADJ	_	7	NVE	_	_
-7	کردند	کرد#کن	V	V	_	0	ROOT	_	_
-8	.	_	PUNC	PUNC	_	7	PUNC	_	_
+1	آنها	آن-ها	PR	PR	_	5	SBJ	_	_
+2	هرج-و-مرج	هرج-و-مرج	N	N	_	5	OBJ	_	_
+3	را	را	POSTP	POSTP	_	2	ACC-CASE	_	_
+4	برطرف	برطرف	ADJ	ADJ	_	5	NVE	_	_
+5	کردند	کرد#کن	V	V	_	0	ROOT	_	_
+6	.	_	PUNC	PUNC	_	5	PUNC	_	_
 
 1	آنها	آن-ها	PR	PR	_	3	SBJ	_	_
 2	هجوم	هجوم	N	N	_	3	NVE	_	_
@@ -219,11 +210,10 @@
 5	است	#است	V	V	_	0	ROOT	_	_
 6	.	_	PUNC	PUNC	_	5	PUNC	_	_
 
-1	او	او	PR	PR	_	4	SBJ	_	_
-2	هفت	هفت	PRENUM	PRENUM	_	3	NPREMOD	_	_
-3	تیر	تیر	N	N	_	4	OBJ	_	_
-4	دارد	داشت#دار	V	V	_	0	ROOT	_	_
-5	.	_	PUNC	PUNC	_	4	PUNC	_	_
+1	او	او	PR	PR	_	3	SBJ	_	_
+2	هفت-تیر	هفت-تیر	N	N	_	3	OBJ	_	_
+3	دارد	داشت#دار	V	V	_	0	ROOT	_	_
+4	.	_	PUNC	PUNC	_	3	PUNC	_	_
 
 1	او	او	PR	PR	_	6	OBJ	_	_
 2	را	را	POSTP	POSTP	_	1	ACC-CASE	_	_
@@ -277,12 +267,11 @@
 5	زد	زد#زن	V	V	_	0	ROOT	_	_
 6	.	_	PUNC	PUNC	_	5	PUNC	_	_
 
-1	او	او	PR	PR	_	0	ROOT	_	_
-2	اشتباه	اشتباه	N	N	_	5	SBJ	_	_
-3	هدف	هدف	N	N	_	2	MOZ	_	_
-4	گیری	گیری	N	N	_	5	NVE	_	_
-5	کرد	کرد#کن	V	V	_	0	ROOT	_	_
-6	.	_	PUNC	PUNC	_	5	PUNC	_	_
+1	او	او	PR	PR	_	4	SBJ	_	_
+2	اشتباه	اشتباه	N	N	_	4	OBJ	_	_
+3	هدف-گیری	هدف-گیری	N	N	_	4	NVE	_	_
+4	کرد	کرد#کن	V	V	_	0	ROOT	_	_
+5	.	_	PUNC	PUNC	_	4	PUNC	_	_
 
 1	او	او	PR	PR	_	5	OBJ	_	_
 2	را	را	POSTP	POSTP	_	1	ACC-CASE	_	_
@@ -291,16 +280,14 @@
 5	درآوردند	درآورد#درآور	V	V	_	0	ROOT	_	_
 6	.	_	PUNC	PUNC	_	5	PUNC	_	_
 
-1	او	او	PR	PR	_	9	SBJ	_	_
-2	در	در	PREP	PREP	_	9	ADV	_	_
-3	پیچ	پیچ	N	N	_	2	POSDEP	_	_
-4	و	_	CONJ	CONJ	_	3	NCONJ	_	_
-5	خم	خم	N	N	_	4	POSDEP	_	_
-6	این	این	PREM	PREM	_	7	NPREMOD	_	_
-7	راه	راه	N	N	_	9	SBJ	_	_
-8	گم	گم	ADJ	ADJ	_	9	MOS	_	_
-9	شد	شد#شو	V	V	_	0	ROOT	_	_
-10	.	_	PUNC	PUNC	_	9	PUNC	_	_
+1	او	او	PR	PR	_	7	SBJ	_	_
+2	در	در	PREP	PREP	_	7	ADV	_	_
+3	پیچ-و-خم	پیچ-و-خم	N	N	_	2	POSDEP	_	_
+4	این	این	PREM	PREM	_	5	NPREMOD	_	_
+5	راه	راه	N	N	_	3	MOZ	_	_
+6	گم	گم	ADJ	ADJ	_	7	MOS	_	_
+7	شد	شد#شو	V	V	_	0	ROOT	_	_
+8	.	_	PUNC	PUNC	_	7	PUNC	_	_
 
 1	سرنوشتشان	سرنوشتشان	N	N	_	5	SBJ	_	_
 2	با	با	PREP	PREP	_	4	NPP	_	_
