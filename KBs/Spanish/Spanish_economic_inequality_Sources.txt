@@ -340,7 +340,7 @@
 (B (name of-stream) (=>(R#STREAMING y x :0.9)(^(SS#MOVEMENT x e)(of-in e1 x y))))
 
 ; DANGER
-(B (name tsunami) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%DANGER y e0 :0.45))(tsunami-nn e0 y)))
+(B (name tsunami) (=>(^(S#BODY_OF_WATER e0 :0.47)(SS#BODY_OF_WATER%DANGER y e0 :0.47))(tsunami-nn e0 y)))
 (B (name swamp) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%DANGER y e0 :0.45))(pantano-nn e0 y)))
 (B (name mire) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%DANGER y e0 :0.45))(fango-nn e0 y)))
 (B (name submarino) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%DANGER y e0 :0.45))(submarino-nn e0 y)))
@@ -736,8 +736,13 @@ WEALTH_AND_SOCIAL_CLASS
 
 ;QUANTITY
 (B (name caudal)(=>(^(S#RESOURCE e0 :0.45)(SS#RESOURCE%QUANTITY_SIZE x e0 :0.45)) (caudal-nn e0 x)))
+(B (name cut)(=>(^(S#RESOURCE e0 :0.47)(SS#RESOURCE%QUANTITY_SIZE x e0 :0.47)) (recorte-nn e0 x)))
+(B (name reduction)(=>(^(S#RESOURCE e0 :0.47)(SS#RESOURCE%QUANTITY_SIZE x e0 :0.47)) (reducción-nn e0 x)))
+(B (name reduction)(=>(^(S#RESOURCE e0 :0.47)(SS#RESOURCE%QUANTITY_SIZE x e0 :0.47)) (^(reducción-nn e0 x)(TS#TAXATION u))))
+(B (name tax-cuts)(=>(^(S#RESOURCE e0 :0.45)(SS#RESOURCE%QUANTITY_SIZE x e0 :0.45)) (^(recorte-nn e0 x)(TS#TAXATION u))))
 
 (B (name agotar)(=>(^(S#RESOURCE e0 :0.45)(SS#RESOURCE%QUANTITY_SIZE y e0 :0.45)) (agotar-vb e0 x y u)))
+(B (name agotar)(=>(^(S#RESOURCE e0 :0.45)(SS#RESOURCE%QUANTITY_SIZE y e0 :0.45)) (cortar-vb e0 x y u)))
 
 ;DEVELOP RESOURCES
 (B (name inertir)(=>(^(S#RESOURCE e0 :0.3)(SS#RESOURCE%DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (inertir-vb e0 x y u)))
@@ -1113,6 +1118,10 @@ WEALTH_AND_SOCIAL_CLASS
 ; NATURAL PHYSICAL FORCE
 ; TYPE
 (B (name avalancha)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#NATURAL_PHYSICAL_FORCE%TYPE x e0 :0.45)) (avalancha-nn e0 x)))
+(B (name rain)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#NATURAL_PHYSICAL_FORCE%TYPE x e0 :0.45)) (lluvia-nn e0 x)))
+(B (name downpour)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#NATURAL_PHYSICAL_FORCE%TYPE x e0 :0.45)) (aguacero-nn e0 x)))
+(B (name rain-shower)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#NATURAL_PHYSICAL_FORCE%TYPE x e0 :0.45)) (chaparrón-nn e0 x)))
+
 (B (name tsunami)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#NATURAL_PHYSICAL_FORCE%TYPE x e0 :0.45)) (tsunami-nn e0 x)))
 (B (name diluvio)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#NATURAL_PHYSICAL_FORCE%TYPE x e0 :0.45)) (diluvio-nn e0 x)))
 (B (name inundación)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#NATURAL_PHYSICAL_FORCE%TYPE x e0 :0.45)) (inundación-nn e0 x)))
@@ -1209,8 +1218,8 @@ WEALTH_AND_SOCIAL_CLASS
 (B (name low)(=>(^(S#VERTICAL_SCALE e0 :0.33)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.33)(R#FIXED-POINT x e0 :0.33)) (bajo-adj e0 x)))
 (B (name high)(=>(^(S#VERTICAL_SCALE e0 :0.33)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.33)(R#FIXED-POINT x e0 :0.33)) (alto-adj e0 x)))
 
-(B (name low)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(bajo-adj e0 x)(TS#TAXATION x))))
-(B (name high)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(alto-adj e0 x)(TS#TAXATION x))))
+(B (name low)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(bajo-adj e0 x)(TS#TAXATION u))))
+(B (name high)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(alto-adj e0 x)(TS#TAXATION u))))
 (B (name low)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(bajo-adj e0 x)(TS#WEALTH_AND_SOCIAL_CLASS x))))
 (B (name high)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(alto-adj e0 x)(TS#WEALTH_AND_SOCIAL_CLASS x))))
 (B (name middle)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%POSITION_ON_A_SCALE e0 e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (^(media-adj e0 x)(TS#WEALTH_AND_SOCIAL_CLASS x))))
@@ -1227,11 +1236,11 @@ WEALTH_AND_SOCIAL_CLASS
 (B (name elevate)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE e0 e0 :0.3)(R#MOVE-UP e0 e0 :0.3)) (verticalmente-rb e0 x)))
 
 
-(B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (aumentar-vb e0 x y z)))
-(B (name increase-nn)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-UP x e0 :0.3)) (aumento-nn e0 x)))
+(B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(TS#TAXATION w)(aumentar-vb e0 x y z))))
+(B (name increase-nn)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-UP x e0 :0.3)) (^(TS#TAXATION w) (aumento-nn e0 x))))
 
-(B (name decrease-nn)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-DOWN x e0 :0.3)) (disminución-nn e0 x)))
-(B (name disminuir)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (disminuir-vb e0 x y u)))
+(B (name decrease-nn)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-DOWN x e0 :0.3)) (^(TS#TAXATION w) (disminución-nn e0 x))))
+(B (name disminuir)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(TS#TAXATION w)(disminuir-vb e0 x y u))))
 (B (name caer)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (caer-vb e0 x y u)))
 (B (name soltar)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (soltar-vb e0 x y u)))
 (B (name plomada)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#VERTICAL_SCALE%MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (plomada-vb e0 x y u)))
@@ -1416,7 +1425,7 @@ WEALTH_AND_SOCIAL_CLASS
 
 ; CHANGE-OF-STATE
 (B (name crecer)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#POVERTY x)(crecer-vb e0 x y u))))
-(B (name crecer)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#TAXATION x)(crecer-vb e0 x y u))))
+(B (name crecer)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#TAXATION w)(crecer-vb e0 x y u))))
 (B (name crecer)(=>(^(S#PLANT e0 :0.2)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.2)(R#CHANGING-THING x e0 :0.2)) (crecer-vb e0 x y u)))
 (B (name crecer)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#WEALTH x)(crecer-vb e0 x y u))))
 (B (name crecer)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#WEALTH_AND_SOCIAL_CLASS x)(crecer-vb e0 x y u))))
@@ -1485,13 +1494,13 @@ WEALTH_AND_SOCIAL_CLASS
 
 ; ACTION
 (B (name comer)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL%ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#POVERTY x)(comer-vb e0 x y u))))
-(B (name comer)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL%ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION x)(comer-vb e0 x y u))))
+(B (name comer)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL%ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION w)(comer-vb e0 x y u))))
 (B (name masticar)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL%ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#POVERTY x)(masticar-vb e0 x y u))))
-(B (name masticar)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL%ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION x)(masticar-vb e0 x y u))))
+(B (name masticar)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL%ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION w)(masticar-vb e0 x y u))))
 (B (name digerir)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL%ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#POVERTY x)(digerir-vb e0 x y u))))
-(B (name digerir)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL%ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION x)(digerir-vb e0 x y u))))
+(B (name digerir)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL%ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION w)(digerir-vb e0 x y u))))
 (B (name tragarse)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL%ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#POVERTY x)(tragarse-vb e0 x y u))))
-(B (name tragarse)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL%ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION x)(tragarse-vb e0 x y u))))
+(B (name tragarse)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL%ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(TS#TAXATION w)(tragarse-vb e0 x y u))))
 
 
 (B (name tocar)(=>(^(S#ANIMAL e0 :0.23)(SS#ANIMAL%ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (tocar-vb e0 x y u)))
