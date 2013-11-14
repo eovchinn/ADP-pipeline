@@ -73,7 +73,7 @@
 (B (name mahale3) (=>(mahale e1 y) (منطقه-nn e0 y)))
 (B (name mahale3) (=>(mahale e1 y) (بخش-nn e0 y)))
 (B (name slum) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (فقیرنشین-adj e1 y)))
-(B (name slum) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (^(فقیر-adj e1 y)(نشین-adj e2 y))))
+(B (name slum) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) ^((فقیر-adj e1 y)(نشین-adj e2 y))))
 (B (name shantytown) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (حلبی-آباد-nn e0 y)))
 
 
@@ -196,7 +196,7 @@
 (B (name taxpayer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3))(^(مالی-nn e0 x)(پردازان-nn e1 y)(nn e3 x y))))
 (B (name ratepayer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3)) (مالیات-پرداز-nn e0 y)))
 (B (name tax-payer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3)) (خراج-گذار-nn e0 y)))
-(B (name tax-payer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3)) (^(خراج-nn e0 x)(گذار-nn e1 y)(nn e3 x y))))
+(B (name tax-payer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3)) (خراج-nn e0 x)(گذار-nn e1 y)(nn e3 x y)))
 (B (name tax-payer2) (=>(^(TS#TAXATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y x :0.3)) (^(مالیات-nn e0 x)(دهنده-nn e1 y)(nn e2 x y))))
 
 
