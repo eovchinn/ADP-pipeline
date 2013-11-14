@@ -55,10 +55,8 @@
  
 (B (name invalid) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (علیل-nn e0 y)))
 (B (name patient) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (ناخوش-nn e0 y)))
-(B (name patient) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (مبتلا-nn e0 y))) 
+ 
 (B (name suffer-from) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y x :0.3))(^(رنج-بردن-vb e0 y u1 u2)(از-in e1 e0 x))))
-(B (name suffer-from) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y x :0.3))(^(ابتلا-nn e0 y u1 u2)(به-in e1 e0 x))))
-(B (name suffer-from) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y x :0.3))(ابتلا-nn e0 y u1 u2)))
  
 ; OF - DISEASE
 (B (name of-disease) (=>(R#SICK y x :0.9)(^(S#DISEASE x)(of-in e1 x y)))) 
@@ -351,7 +349,7 @@
  
 (B (name escape)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(فرار-nn e1 z)(kardan e0 x y z))))
 (B (name get-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(خارج-nn e1 z)(kardan e0 y x z))))
-(B (name get-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(خارج-nn e1 z)(shodan e0 x z))))
+(B (name get-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(خارج-nn e1 z)(shodan e0 x y z))))
 (B (name get-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(خارج-adj e1 z)(شد‫#‬شو-vb e0 x u1 z))))
 (B (name break-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (گریخت#گریز-vb e0 x y u)))
 (B (name liberate)(=>(^(S#CONFINEMENT u1 :0.3)(SS#EXIT e0 u1 :0.3)(R#EXIT-AGENT x e0 :0.3) (R#EXIT-PATIENT y e0 :0.3))  (^(آزاد-nn e1 z)(kardan e0 x y z))))
@@ -434,9 +432,9 @@
 (B (name flow) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(تراوش-nn e1 z)(kardan e0 x y z))))
 (B (name leak) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(روان-nn e1 z)(kardan e0 y x z))))
 (B (name stream) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(جاری-nn e1 z)(kardan e0 y x z))))
-(B (name leak) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(روان-nn e1 z)(shodan e0 x z))))
+(B (name leak) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(روان-nn e1 z)(shodan e0 x y z))))
 (B (name leak) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(روان-adj e1 z)(شد‫#‬شو-vb e0 x u1 z))))
-(B (name stream) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(جاری-nn e1 z)(shodan e0 x z))))
+(B (name stream) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(جاری-nn e1 z)(shodan e0 x y z))))
 (B (name leak) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(جاری-adj e1 z)(شد‫#‬شو-vb e0 x u1 z))))
 
  
@@ -458,7 +456,7 @@
 (B (name tsunami) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#DANGER y e0 :0.45))(سونامی-nn e0 y)))
 (B (name underwater) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#DANGER y e0 :0.45))(زیرآبی-nn e0 y)))
  
-(B (name drown) (=>(^(S#BODY_OF_WATER y :0.3)(SS#DANGER e0 y :0.3)(R#DROWN-PATIENT x e0 :0.3))(^(غرق-nn e1 z)(shodan e0 x z))))
+(B (name drown) (=>(^(S#BODY_OF_WATER y :0.3)(SS#DANGER e0 y :0.3)(R#DROWN-PATIENT x e0 :0.3))(^(غرق-nn e1 z)(shodan e0 x y z))))
  
 (B (name watermap)(=>(I#BODY_OF_WATER x :0.9)(S#BODY_OF_WATER x)))
 (B (name watertypemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
@@ -829,16 +827,16 @@
  
 ;MOVEMENT DOWNWARD
 (B (name slide) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(لغزید#لغز-vb e0 x y z))))
-(B (name drop) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(سقوط-nn e1 z)(kardan e0 x y z))))
-(B (name sink) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(سقوط-nn e1 z)(kardan e0 x y z))))
+(B (name drop) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(سقوط-nn e1 z)(kardan e0 x y z)))))
+(B (name sink) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(سقوط-nn e1 z)(kardan e0 x y z)))))
 (B (name tumble) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(افتاد#افت-vb e0 x y z))))
 
-(B (name slip) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(لیز-nn e1 z)(khordan e0 x y z))))
-(B (name slip) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(سر-nn e1 z)(khordan e0 x y z))))
-(B (name fall) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(پایین-nn e1 z)(aamadan e0 x y z))))
-(B (name fall) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(پایین-nn e1 z)(raftan e0 x y z))))
-(B (name fall) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(فرو-nn e1 z)(raftan e0 x y z))))
-(B (name plunge) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(شیرجه-nn e1 z)(raftan e0 x y z))))
+(B (name slip) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(لیز-nn e1 z)(khordan e0 x y z)))))
+(B (name slip) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(سر-nn e1 z)(khordan e0 x y z)))))
+(B (name fall) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(پایین-nn e1 z)(aamadan e0 x y z)))))
+(B (name fall) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(پایین-nn e1 z)(raftan e0 x y z)))))
+(B (name fall) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(فرو-nn e1 z)(raftan e0 x y z)))))
+(B (name plunge) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(شیرجه-nn e1 z)(raftan e0 x y z)))))
  
 ;MOVEMENT UPWARD
 (B (name hover-above) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(شناور-nn e1 z)(boodan e0 x y z))))
@@ -984,7 +982,6 @@
 ; COMPONENT
 (B (name backbone)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (^(ستون-nn e0 x)(فقره-nn e1 y)(nn e2 x y))))
 (B (name face)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (چهره-nn e0 x)))
-(B (name face)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (صورت-nn e0 x)))
 (B (name hand)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (دست-nn e0 x)))
 (B (name hand)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (پوست-nn e0 x)))
 (B (name hand)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (قلب-nn e0 x)))
@@ -1033,7 +1030,6 @@
 ; STRUCTURE
 (B (name building)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (ساختمان-nn e0 x)))
 (B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (بناء-nn e0 x)))
-(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (ساختار-nn e0 x)))
 (B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (بنا-nn e0 x)))
 (B (name edifice)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (عمارت-nn e0 x)))
 (B (name basement)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (زیرزمین-nn e0 x)))
@@ -1093,7 +1089,7 @@
 (B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT x e0 :0.45)) (تکیه-گاه‫-‬ها-nn e0 x)))
 (B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT x e0 :0.45)) (تکیه-گاه‫-‬های-nn e0 x)))
 
-(B (name ruin)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT e0 e0 :0.3 :0.45)) (^(متحمل-nn e1 z)(shodan e0 x z))))
+(B (name ruin)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT e0 e0 :0.3 :0.45)) (^(متحمل-nn e1 z)(shodan e0 x y z))))
 (B (name ruin)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT e0 e0 :0.3 :0.45)) (^(تحمل-nn e1 z)(kardan e0 x y z))))
  
 (B (name buildingmap)(=>(I#BUILDING x :0.9)(S#BUILDING x)))
@@ -1119,14 +1115,14 @@
  
 ;OPEN PATH
 (B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE x e1)(باز-adj e0 x)))) 
-(B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(روان-nn e1 z)(kardan e0 x y z))))
-(B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(باز-nn e1 z)(kardan e0 x y z))))
-(B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(هموار-nn e1 z)(kardan e0 x y z))))
+(B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(روان-nn e1 z)(kardan e0 x y z)))))
+(B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(باز-nn e1 z)(kardan e0 x y z)))))
+(B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(هموار-nn e1 z)(kardan e0 x y z)))))
 
 (B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(گشود#گش-vb e0 x y z))))
 (B (name build-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(راهسازی-nn e0 x y z))))
 
-(B (name forge-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(جلو-nn e1 z)(raftan e0 x y z))))
+(B (name forge-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(جلو-nn e1 z)(raftan e0 x y z)))))
 
 ;OBSTRUCTED PATH
 (B (name closed-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1) (SS#TYPE x e1)(بسته-adj e0 x))))
@@ -1134,12 +1130,12 @@
 (B (name jammed-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1) (SS#TYPE x e1)(متراکم-adj e0 x))))
  
 (B (name close-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(بست#بند-vb e0 x y z))))
-(B (name block-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(بند-nn e1 z)(aavardan e0 x y z))))
+(B (name block-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(بند-nn e1 z)(aavardan e0 x y z)))))
 
-(B (name obstruct-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(مانع-nn e1 z)(shodan e0 x z))))
-(B (name jam-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(متراکم-nn e1 z)(kardan e0 x y z))))
+(B (name obstruct-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(مانع-nn e1 z)(shodan e0 x y z)))))
+(B (name jam-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(متراکم-nn e1 z)(kardan e0 x y z)))))
 (B (name barricade) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH e0 e0 :0.45)) (^(سد-nn e1 z)(kardan e0 x y z))))
-(B (name barricade) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH e0 e0 :0.45)) (^(سد-nn e1 z)(shodan e0 x z))))
+(B (name barricade) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH e0 e0 :0.45)) (^(سد-nn e1 z)(shodan e0 x y z))))
  
 (B (name barricadenn) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH x e0 :0.45)) (^(مانع-nn e0 y )(nn e1 y x))))
 (B (name barricadenn) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH x e0 :0.45)) (^(سد-nn e0 y )(nn e1 y x))))
@@ -1176,13 +1172,13 @@
 ;POSSESSION
 ;##RI: "have" is likely very important here, but might generate a lot of FPs.
 ;(B (name have)(=>(^(S#PHYSICAL_OBJECT y :0.33)(SS#POSSESSION e0 y :0.33)(R#POSSESSOR x :0.33)) (داشت#دار-vb e0 x y u)))
-(B (name possess)(=>(^(S#PHYSICAL_OBJECT y :0.33)(SS#POSSESSION e0 y :0.33)(R#POSSESSOR x e0 :0.33)) (^(دارا-nn e1 z)(shodan e0 x z))))
-(B (name own)(=>(^(S#PHYSICAL_OBJECT y :0.33)(SS#POSSESSION e0 y :0.33)(R#POSSESSOR x e0 :0.33)) (^(صاحب-nn e1 z)(shodan e0 x z))))
+(B (name possess)(=>(^(S#PHYSICAL_OBJECT y :0.33)(SS#POSSESSION e0 y :0.33)(R#POSSESSOR x e0 :0.33)) (^(دارا-nn e1 z)(shodan e0 x y z))))
+(B (name own)(=>(^(S#PHYSICAL_OBJECT y :0.33)(SS#POSSESSION e0 y :0.33)(R#POSSESSOR x e0 :0.33)) (^(صاحب-nn e1 z)(shodan e0 x y z))))
 
 ;TRANSFER
 (B (name receive)(=>(^(S#PHYSICAL_OBJECT e0 :0.33)(SS#TRANSFER e0 e0 :0.33)(R#RECEIVER x e0 :0.33)) (گرفت#گیر-vb e0 x y u)))
-(B (name obtain)(=>(^(S#PHYSICAL_OBJECT e0 :0.33)(SS#TRANSFER e0 e0 :0.33)(R#RECEIVER x e0 :0.33))(^(بدست-nn e1 z)(shodan e0 x z))))
-(B (name deliver)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23))(^(تحویل-nn e1 z)(shodan e0 x z))))
+(B (name obtain)(=>(^(S#PHYSICAL_OBJECT e0 :0.33)(SS#TRANSFER e0 e0 :0.33)(R#RECEIVER x e0 :0.33))(^(بدست-nn e1 z)(shodan e0 x y z))))
+(B (name deliver)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23))(^(تحویل-nn e1 z)(shodan e0 x y z))))
 (B (name hand)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23))(دادن-vb e0 x y u)))
 
 (B (name toss)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23)) (انداخت#انداز-vb e0 x y u)))
@@ -1320,7 +1316,6 @@
 ;TYPE
 (B (name schism)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (تفرقه-nn e0 x)))
 (B (name gap)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (شکاف-nn e0 x)))
-(B (name gap)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (فاصله-nn e0 x)))
 (B (name chasm)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (وقفه-nn e0 x)))
 (B (name separation)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (جدایی-nn e0 x)))
 (B (name divide)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (^(تقسیم-nn e1 z)(kardan e0 x y z))))
@@ -1394,15 +1389,14 @@
 (B (name live-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(زندگی-vb e0 x y z)(در-in e1 e0 w))))
 (B (name live-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(سکونت-vb e0 x y z)(در-in e1 e0 w))))
 
-(B (name reside-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(ساکن-nn e1 z)(shodan e0 x z)(در-in e1 e0 w))))
+(B (name reside-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(ساکن-nn e1 z)(shodan e0 x y z)(در-in e1 e0 w))))
 
 (B (name stay-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(ماند#مان-vb e0 x y z)(در-in e1 e0 w))))
-(B (name born-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(متولد-nn e1 z)(shodan e0 x z)(در-in e1 e0 w))))
-** 
+(B (name born-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(متولد-nn e1 z)(shodan e0 x y z)(در-in e1 e0 w))))
+ 
 ;MOVEMENT-INTO
-(B (name enter)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#MOVEMENT_INTO x e0 :0.45)) (ورود-nn e0 x)))
-(B (name enter)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#MOVEMENT_INTO x e0 :0.45)) (^(وارد-nn e1 z)(shodan e0 x z))))
-(B (name pushnn)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#MOVEMENT_INTO x e0 :0.45)) (فشار-nn e0 x))) 
+(B (name pushnn)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#MOVEMENT_INTO x e0 :0.45)) (فشار-nn e0 x)))
+ 
 (B (name push-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(هل-nn e1 z)(dadan e0 x y z)(besooye e0 w))))
 (B (name drive-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(راند#ران-vb e0 x y z)(besooye e0 w))))
 (B (name draw-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(کشید#کش-vb e0 x y z)(besooye e0 w))))
@@ -1416,7 +1410,7 @@
 ;EXIT
 (B (name emerge)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (^(بیرون-nn e1 z)(aamadan e0 x z))))
 (B (name emerge)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (^(در-nn e1 z)(aamadan e0 x z))))
-(B (name exit)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (^(خارج-nn e1 z)(shodan e0 x z))))
+(B (name exit)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (^(خارج-nn e1 z)(shodan e0 x y z))))
  
 (B (name passport)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#EXIT x e0 :0.45)) (گذرنامه-nn e0 x)))
 (B (name ticket)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#EXIT x e0 :0.45)) (بلیط-nn e0 x)))
@@ -1440,7 +1434,7 @@
 (B (name leap)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (پرید#پر-vb e0 x y u)))
 (B (name leap)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (جهید#جه-vb e0 x y u)))
 (B (name leap)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (جهش-nn e1 e0)))
-(B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(زیاد-nn e1 z)(shodan e0 x z))))
+(B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(زیاد-nn e1 z)(shodan e0 x y z))))
 (B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (ازدیاد-nn e1 e0)))
 (B (name spiral)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(اوج-nn e1 z)(gereftan e0 x y z))))
 (B (name raise)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23))(^(بالا-nn e1 z)(bordan e0 x y z))))
@@ -1449,7 +1443,7 @@
 (B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (کاست#کاه-vb e0 x y u)))
 (B (name fall)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(سقوط-nn e1 z)(kardan e0 x y z))))
 (B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (چکید#چک-vb e0 x y u)))
-(B (name plummet)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(نازل-nn e1 z)(shodan e0 x z))))
+(B (name plummet)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(نازل-nn e1 z)(shodan e0 x y z))))
 (B (name plummet)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23))  (تنزل-nn e1 e0))) 
 (B (name freeze)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-STOP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(ثابت-nn e1 z)(kardan e0 x y z))))
 (B (name freeze)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-STOP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(تثبیت-nn e1 z)(kardan e0 x y z))))
@@ -1508,7 +1502,7 @@
  
 ;GOAL DIRECTED
 ;TYPE
-;(B (name goal)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (هدف-nn e0 x)))
+(B (name goal)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (هدف-nn e0 x)))
 (B (name force)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (نیرو-nn e0 x)))
 (B (name achievement)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (موفقیت-nn e0 x)))
  
@@ -1784,7 +1778,7 @@
  
 ; CULTIVATION
 (B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (^(سبز-nn e1 z)(kardan e0 x y z))))
-(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (^(سبز-nn e1 z)(shodan e0 x z))))
+(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (^(سبز-nn e1 z)(shodan e0 x y z))))
 
 ; OUTCOME
 (B (name reap)(=>(^(S#CROP e0 :0.23)(SS#OUTCOME e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP x e0 :0.23)) (چید#چین-vb e0 x y u)))
@@ -1901,8 +1895,6 @@
 (B (name bear)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#LIVING e0 e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (زایید#زا-vb e0 y)))
 (B (name stabilize)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (^(پایدار-nn e1 z)(kardan e0 x y z))))
 (B (name sink) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT e0 e0 :0.45))(^(غرق-nn e1 z)(shodan e0 y u z))))
-(B (name sink) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT e0 e0 :0.45))(غرق-nn e1 z)))
-(B (name sink) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT e0 e0 :0.45))(غرق-adj e1 z)))
 (B (name suffer) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (^(رنج-nn e1 z)(bordan e0 y u z))))
 (B (name paint)(=>(^(S#DARKNESS x e0 :0.3)(SS#MOVEMENT_IN_THE_RANGE x e0 :0.3)(R#DARK y e0 :0.3))(^(رنگ-nn e1 z)(kardan e0 x y z))))
 (B (name sink) (=>(^(SS#MOVEMENT_DOWNWARD e0 e2 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e2)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1) (dig-vb e0 x y z)(غرق-شدن-adj e1 y))))
