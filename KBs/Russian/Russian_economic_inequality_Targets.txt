@@ -70,7 +70,7 @@
 (B (name getto) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (гетто-nn e0 y)))
 
 ; DEBT
-(B (name dolg) (=>(^(TS#POVERTY u1 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#DEBT x u1 :0.3)) (долг-nn e0 x)))
+(B (name dolg) (=>(^(TS#POVERTY e0 :0.2)(T#ECONOMIC-INEQUALITY u :0.2)(TSS#DEBT x e0 :0.2)) (долг-nn e0 x)))
 (B (name dolg) (=>(^(TS#POVERTY u1 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#DEBT x u1 :0.3)) (задолженность-nn e0 x)))
 (B (name dolgovoj) (=>(^(TS#POVERTY u1 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#DEBT x u1 :0.3)) (долговой-adj e0 x)))
 (B (name dolgovoj) (=>(^(TS#POVERTY u1 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#DEBT e0 u1 :0.3)) (задолжать-vb e0 x y z)))
