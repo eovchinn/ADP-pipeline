@@ -472,6 +472,8 @@
 (B (name vozmezdie) (=>(^(S#CRIME u :0.45)(SS#PUNISHMENT x u :0.45)) (возмездие-nn e0 x)))
 (B (name vozmezdie) (=>(^(S#CRIME u :0.45)(SS#PUNISHMENT x u :0.45)) (взыскание-nn e0 x)))
 
+(B (name vozmezdie) (=>(^(S#CRIME u :0.45)(SS#PUNISHMENT x u :0.45)) (преследование-nn e0 x)))
+
 (B (name vozmezdie) (=>(^(S#CRIME u :0.45)(SS#PUNISHMENT x u :0.45)) (надзиратель-nn e0 x)))
 
 (B (name nakazat) (=>(^(S#CRIME u1 :0.2)(SS#PUNISHMENT e0 u1 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2))(наказать-vb e0 x y u)))
@@ -481,6 +483,7 @@
 (B (name prigovorit) (=>(^(S#CRIME u1 :0.2)(SS#PUNISHMENT e0 u1 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2)) (приговорить-vb e0 x y u)))
 (B (name prigovorit) (=>(^(S#CRIME u1 :0.2)(SS#PUNISHMENT e0 u1 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2)) (приговаривать-vb e0 x y u)))
 (B (name prigovorit) (=>(^(S#CRIME u1 :0.2)(SS#PUNISHMENT e0 u1 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2)) (взыскать-vb e0 x y u)))
+(B (name prigovorit) (=>(^(S#CRIME u1 :0.2)(SS#PUNISHMENT e0 u1 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2)) (преследовать-vb e0 x y u)))
 
 ;(B (name nakazannyj) (=>(^(S#PUNISHMENT e0 :0.45)(R#PUNISHMENT-VICTIM x e0 :0.45))(наказанный-adj e0 x)))
 ;(B (name nakazannyj) (=>(^(S#PUNISHMENT e0 :0.45)(R#PUNISHMENT-VICTIM x e0 :0.45))(приговоренный-adj e0 x)))
@@ -497,7 +500,11 @@
 (B (name zhertva)(=>(^(SS#VICTIM x e0 :0.4)(R#VICTIM x e0 :0.4)) (^(жертва-nn e0 x)(S#CRIME e1 :0.45)(SS#TYPE y e1 :0.45)(of-in e2 x y))))
 (B (name zhertva)(=>(^(S#CRIME e0 :0.3)(SS#VICTIM x e0 :0.3)(R#VICTIM x e0 :0.3)) (жертвами-nn e0 x)))
 
+(B (name zhertva)(=>(^(S#CRIME e0 :0.3)(SS#VICTIM x e0 :0.3)(R#VICTIM x e0 :0.3)) (пострадавший-nn e0 x)))
+(B (name zhertva)(=>(^(S#CRIME e0 :0.3)(SS#VICTIM x e0 :0.3)(R#VICTIM x e0 :0.3)) (пострадавший-adj e0 x)))
+
 (B (name zhertva)(=>(^(S#CRIME e0 :0.3)(SS#VICTIM e0 e0 :0.3)(R#VICTIM x e0 :0.3)) (пострадать-vb e0 x y z)))
+(B (name zhertva)(=>(^(S#CRIME e0 :0.3)(SS#VICTIM e0 e0 :0.3)(R#VICTIM x e0 :0.3)) (страдать-vb e0 x y z)))
 
 ; CONFINEMENT 
 
@@ -669,6 +676,7 @@
 (B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#ABYSS%EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(вытаскивать-vb e0 x y u) (из-in e1 e0 z))))
 (B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#ABYSS%EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(подняться-vb e0 x y u) (из-in e1 e0 z))))
 (B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#ABYSS%EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(подниматься-vb e0 x y u) (из-in e1 e0 z))))
+(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#ABYSS%EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(выскочить-vb e0 x y u) (из-in e1 e0 z))))
 
 (B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#ABYSS%EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (выкарабкаться-vb e0 x y u)))
 (B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#ABYSS%EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (вылезти-vb e0 x y u)))
@@ -679,6 +687,7 @@
 (B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#ABYSS%EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (вытаскивать-vb e0 x y u)))
 (B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#ABYSS%EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (подняться-vb e0 x y u)))
 (B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#ABYSS%EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (подниматься-vb e0 x y u)))
+(B (name vykarabkatsja-iz) (=>(^(S#ABYSS z :0.3)(SS#ABYSS%EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (выскочить-vb e0 x y u)))
 
 (B (name vybratsja-iz) (=>(^(S#ABYSS z :0.3)(SS#ABYSS%EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(S#ABYSS e1)(выбраться-vb e0 x y u))))
 (B (name vybratsja-iz) (=>(^(S#ABYSS z :0.3)(SS#ABYSS%EXIT e0 z :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(S#ABYSS e1)(выбираться-vb e0 x y u))))
