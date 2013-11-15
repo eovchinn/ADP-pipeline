@@ -113,7 +113,7 @@ def collectVars(struc,superkey,equalities):
 			if equalities.has_key(arg):
 				for a in equalities[arg]: output.append(a)
 		for (subd,subarg) in struc[superkey][arg]:
-			if not subarg.startswith('_') and not arg in output: 
+			if not subarg.startswith('_') and not subarg in output: 
 				output.append(subarg)
 				if equalities.has_key(subarg):
 					for a in equalities[subarg]: output.append(a)
@@ -178,6 +178,10 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 		if "sourceFrame" in LCCannotation and "targetFrame" in LCCannotation and "targetConceptSubDomain" in LCCannotation:
 			if LCCannotation["sourceFrame"] and len(LCCannotation["sourceFrame"])>0:
 				if LCCannotation["targetFrame"] and len(LCCannotation["targetFrame"])>0:
+					if LCCannotation["targetFrame"] == 'DEBT':
+						LCCannotation["targetFrame"] = 'POVERTY'
+					elif LCCannotation["targetFrame"] == 'MONEY':
+						LCCannotation["targetFrame"] = 'WEALTH'
 					if LCCannotation["targetConceptSubDomain"] and len(LCCannotation["targetConceptSubDomain"])>0:
 						sourceTask = True
 
