@@ -1,0 +1,59 @@
+[
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "معافیت,معافیت", 
+                "explanation": "", 
+                "sourceInLm": true, 
+                "target": "مالیات", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "TAXATION", 
+        "targetConceptSubDomain": "TAXATION", 
+        "sourceConceptSubDomain": "RELIEF", 
+        "isiDescription": "", 
+        "sourceFrame": "PHYSICAL_BURDEN", 
+        "isiAbductiveExplanation": "یک-nn(e0,x0) ^ از-in(e1,x0,x1) ^ مخاطب-nn(e2,x1) ^ خبرآنلاین-nn(e3,x2) ^ نوشت#نویس-vb(e4,x0,e8,u4) ^ این(e6,x3) ^ همه-nn(e7,x3) ^ گفت#گو-vb(e8,x3,u8,u9) ^ مشمول-adj(e9,u10) ^ معافیت-nn(e10,x4) ^ مالیات-nn(e11,x5) ^ شست#شو-vb(e12,u11,u12,u10) ^ اصلا-nn(e13,x6) ^ شرط-nn(e14,x7) ^ لازم-adj(e15,x7) ^ برای-in(e16,x7,x8) ^ معاف-adj(e17,u17) ^ شدن-nn(e18,x8) ^ از-in(e19,x8,x9) ^ پرداخت-nn(e20,x9) ^ پول-nn(e21,x10) ^ از-in(e22,e26,x11) ^ درآمد-nn(e23,x11) ^ به-in(e24,e26,x12) ^ دولت-nn(e25,x12) ^ چیست-vb(e26,x6,u25,u26) ^ NVE(e30,x2,e4) ^ nn(e31,x4,x5) ^ nn(e32,x6,x7) ^ nn(e33,x9,x10) ^ !=(e31,e32,e33) ^ !=(e1,e19,e22) ^ S#PHYSICAL_BURDEN(e10) ^ SS#RELIEF(x4,e10) ^ TS#TAXATION(x5) ^ T#ECONOMIC-INEQUALITY(_0) ^ TS#WEALTH(x10) ^ T#ECONOMIC-INEQUALITY(_1) ^ TSS#MONEY(x10,x10) ^ I#PHYSICAL_BURDEN(_2) ^ I#RELIEF(x4,e10) ^ =(_1,_0)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,TAXATION,TAXATION,PHYSICAL_BURDEN,RELIEF,0.85\nECONOMIC_INEQUALITY,WEALTH,MONEY,PHYSICAL_BURDEN,RELIEF,0.05\n%%END_CM_LIST", 
+        "id": "10"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "مالیات,کمرشکن", 
+                "explanation": "CAUSE-HARM[کمرشکن]", 
+                "sourceInLm": true, 
+                "target": "مالیات", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "TAXATION", 
+        "targetConceptSubDomain": "TAXATION", 
+        "sourceConceptSubDomain": "TYPE", 
+        "isiDescription": "", 
+        "sourceFrame": "PHYSICAL_HARM", 
+        "isiAbductiveExplanation": "مالیات-nn(e0,x0) ^ کمرشکن-adj(e1,x0) ^ بسیار-nn(e2,x1) ^ از-in(e3,x1,x6) ^ مرد-nn(e4,x2) ^ را(e5,u3) ^ زیر-in(e6,e9,x3) ^ خط-nn(e7,x3) ^ فقر-nn(e8,x4) ^ برد#بر-vb(e9,x0,x1,u8) ^ NVE(e12,x4,e9) ^ م(e13,x6) ^ of-in(e14,x2,x6) ^ person(e15,x6) ^ !=(e4,e13) ^ TS#TAXATION(x0) ^ T#ECONOMIC-INEQUALITY(_3) ^ S#PHYSICAL_HARM(e1) ^ SS#TYPE(x0,e1) ^ S#VERTICAL_SCALE(e6) ^ SS#CONTRAST_OF_POSITIONS(e6,e6) ^ R#BELOW(e9,e6) ^ S#PHYSICAL_LOCATION(e7) ^ SS#DEFINED_REGION(x3,e7) ^ TS#POVERTY(x4) ^ T#ECONOMIC-INEQUALITY(_4) ^ bordan(e9,x0,x1,x4) ^ I#PHYSICAL_HARM(e1) ^ I#TYPE(x0,e1) ^ I#VERTICAL_SCALE(e6) ^ I#PHYSICAL_LOCATION(e7) ^ I#DEFINED_REGION(x3,e7) ^ M#CAUSE-HARM(e1) ^ =(_4,_3)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,TAXATION,TAXATION,PHYSICAL_HARM,TYPE,0.95\nECONOMIC_INEQUALITY,TAXATION,TAXATION,PHYSICAL_HARM,TYPE,0.95\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,CONTRAST_OF_POSITIONS,0.75\nECONOMIC_INEQUALITY,TAXATION,TAXATION,PHYSICAL_HARM,TYPE,0.95\nECONOMIC_INEQUALITY,TAXATION,TAXATION,VERTICAL_SCALE,CONTRAST_OF_POSITIONS,0.75\nECONOMIC_INEQUALITY,TAXATION,TAXATION,PHYSICAL_LOCATION,DEFINED_REGION,0.75\nECONOMIC_INEQUALITY,POVERTY,POVERTY,PHYSICAL_HARM,TYPE,0.85\nECONOMIC_INEQUALITY,POVERTY,POVERTY,PHYSICAL_HARM,TYPE,0.85\nECONOMIC_INEQUALITY,POVERTY,POVERTY,VERTICAL_SCALE,CONTRAST_OF_POSITIONS,0.75\nECONOMIC_INEQUALITY,POVERTY,POVERTY,PHYSICAL_HARM,TYPE,0.85\nECONOMIC_INEQUALITY,POVERTY,POVERTY,VERTICAL_SCALE,CONTRAST_OF_POSITIONS,0.75\nECONOMIC_INEQUALITY,POVERTY,POVERTY,PHYSICAL_LOCATION,DEFINED_REGION,0.75\n%%END_CM_LIST", 
+        "id": "20"
+    }, 
+    {
+        "targetConceptDomain": "ECONOMIC_INEQUALITY", 
+        "annotationMappings": [
+            {
+                "source": "زد#زن", 
+                "explanation": "CAUSE-HARM[بادآورده,کسب,زد#زن], CAUSING-THING-H[بادآورده,زد#زن,کسب; بادآورده,کسب,زد#زن], HARM-VICTIM[تعادل,شد#شو; بادآورده,کسب,زد#زن], CAUSE-HARM[بادآورده,کسب,زد#زن], LARGE-AMOUNT-OF[_9]", 
+                "sourceInLm": true, 
+                "target": "فلاکت", 
+                "targetInLm": true
+            }
+        ], 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
+        "sourceConceptSubDomain": "TYPE", 
+        "isiDescription": "", 
+        "sourceFrame": "PHYSICAL_HARM", 
+        "isiAbductiveExplanation": "کسب-nn(e0,x0) ^ نامشروع-adj(e1,x0) ^ ثروت-nn(e3,x1) ^ بادآورده-adj(e4,x0) ^ تعادل-nn(e5,e24) ^ اجتماعی-adj(e6,e24) ^ را(e7,u4) ^ به-in(e8,e10,x3) ^ هم(e9,x3) ^ زد#زن-vb(e10,x0,e24,u9) ^ شمار-nn(e12,x4) ^ در-in(e13,e17,x5) ^ رفاه-nn(e14,x5) ^ وب-nn(e15,x6) ^ درد-nn(e16,x7) ^ فرورفت#فرورو-vb(e17,x4,u14,u15) ^ گروه-nn(e19,x8) ^ دچاربی-nn(e20,x9) ^ پولی-adj(e21,x9) ^ فلاکت-nn(e23,x10) ^ شد#شو-vb(e24,u19,x8,u21) ^ NVE(e27,x7,e17) ^ nn(e28,x5,x6) ^ nn(e29,x8,x9) ^ person(e30,x3) ^ !=(e28,e29) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_5) ^ S#NATURAL_PHYSICAL_FORCE(e4) ^ SS#TYPE(x0,e4) ^ S#PHYSICAL_HARM(e10) ^ SS#TYPE(e10,e10) ^ R#HARM-VICTIM(e24,e10) ^ R#HARM-AGENT(x0,e10) ^ S#DISEASE(e16) ^ SS#SYMPTOMS(x7,e16) ^ S#BODY_OF_WATER(_6) ^ SS#DANGER(e17,_6) ^ R#DROWN-PATIENT(x4,e17) ^ TS#POVERTY(x10) ^ T#ECONOMIC-INEQUALITY(_7) ^ I#NATURAL_PHYSICAL_FORCE(e4) ^ I#PHYSICAL_HARM(e10) ^ I#TYPE(e10,e10) ^ I#DISEASE(_8) ^ I#SYMPTOMS(x7,e16) ^ I#BODY_OF_WATER(_6) ^ M#CAUSE-HARM(e10) ^ M#CAUSING-THING-H(x0,e10) ^ M#HARM-VICTIM(e24,e10) ^ M#CAUSE-HARM(e10) ^ M#LARGE-AMOUNT-OF(_9) ^ =(e4,x0,e10) ^ =(_5,_7)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,PHYSICAL_HARM,TYPE,0.05\nECONOMIC_INEQUALITY,POVERTY,POVERTY,PHYSICAL_HARM,TYPE,0.05\nECONOMIC_INEQUALITY,POVERTY,POVERTY,NATURAL_PHYSICAL_FORCE,TYPE,0.05\nECONOMIC_INEQUALITY,POVERTY,POVERTY,PHYSICAL_HARM,TYPE,0.05\nECONOMIC_INEQUALITY,POVERTY,POVERTY,NATURAL_PHYSICAL_FORCE,TYPE,0.05\nECONOMIC_INEQUALITY,POVERTY,POVERTY,DISEASE,SYMPTOMS,0.05\nECONOMIC_INEQUALITY,POVERTY,POVERTY,PHYSICAL_HARM,TYPE,0.05\nECONOMIC_INEQUALITY,POVERTY,POVERTY,NATURAL_PHYSICAL_FORCE,TYPE,0.05\nECONOMIC_INEQUALITY,POVERTY,POVERTY,DISEASE,SYMPTOMS,0.05\nECONOMIC_INEQUALITY,POVERTY,POVERTY,BODY_OF_WATER,DANGER,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,PHYSICAL_HARM,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,PHYSICAL_HARM,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,NATURAL_PHYSICAL_FORCE,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,PHYSICAL_HARM,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,NATURAL_PHYSICAL_FORCE,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,DISEASE,SYMPTOMS,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,PHYSICAL_HARM,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,NATURAL_PHYSICAL_FORCE,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,DISEASE,SYMPTOMS,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,BODY_OF_WATER,DANGER,0.05\n%%END_CM_LIST", 
+        "id": "56"
+    }
+]
