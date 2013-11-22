@@ -113,7 +113,7 @@ def collectVars(struc,superkey,equalities):
 			if equalities.has_key(arg):
 				for a in equalities[arg]: output.append(a)
 		for (subd,subarg) in struc[superkey][arg]:
-			if not subarg.startswith('_') and not arg in output: 
+			if not subarg.startswith('_') and not subarg in output: 
 				output.append(subarg)
 				if equalities.has_key(subarg):
 					for a in equalities[subarg]: output.append(a)
@@ -177,8 +177,12 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	if LCCannotation:
 		if "sourceFrame" in LCCannotation and "targetFrame" in LCCannotation and "targetConceptSubDomain" in LCCannotation:
 			if LCCannotation["sourceFrame"] and len(LCCannotation["sourceFrame"])>0:
-				if LCCannotation["targetFrame"] and len(LCCannotation["targetFrame"])>0:
-					if LCCannotation["targetConceptSubDomain"] and len(LCCannotation["targetConceptSubDomain"])>0:
+				if LCCannotation["targetConceptSubDomain"] and len(LCCannotation["targetConceptSubDomain"])>0:
+					if LCCannotation["targetConceptSubDomain"] == 'DEBT':
+						LCCannotation["targetConceptSubDomain"] = 'POVERTY'
+					elif LCCannotation["targetConceptSubDomain"] == 'MONEY':
+						LCCannotation["targetConceptSubDomain"] = 'WEALTH'					
+					if LCCannotation["targetFrame"] and len(LCCannotation["targetFrame"])>0:
 						sourceTask = True
 
 	prop_pattern = re.compile('([^\(]+)\(([^\)]+)\)')
@@ -197,12 +201,12 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 				targets[prop_name[2:]].append(args)
 			elif prop_name.startswith('TS#'):
 				dname = prop_name[3:]
-				if not sourceTask or dname == LCCannotation["targetFrame"]:
+				if not sourceTask or dname == LCCannotation["targetConceptSubDomain"]:
 					if not subtargets.has_key(dname): subtargets[dname] = []
 					subtargets[dname].append(args)
 			elif prop_name.startswith('TSS#'):
 				dname = prop_name[4:]
-				if not sourceTask or dname == LCCannotation["targetConceptSubDomain"]:
+				if not sourceTask or dname == LCCannotation["targetFrame"]:
 					if not subsubtargets.has_key(dname): subsubtargets[dname] = []
 					subsubtargets[dname].append(args)
 			elif prop_name.startswith('S#'):
@@ -321,7 +325,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	if len(Tdomains)==0 or len(Sdomains)==0:
 		if len(Tdomains)==0:
 			if sourceTask:
-				Tdomains.append((LCCannotation["targetFrame"],LCCannotation["targetConceptSubDomain"]))
+				Tdomains.append((LCCannotation["targetConceptSubDomain"],LCCannotation["targetFrame"]))
 			else:
 				Tdomains.append(('POVERTY','POVERTY'))
 
@@ -353,8 +357,8 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	output_struct_item['isiAbductiveExplanation'] = inputString + explanationAppendix.encode("utf-8")
 	output_struct_item["targetConceptDomain"] = 'ECONOMIC_INEQUALITY'
 	data = bestCM.split(',')
-	output_struct_item["targetFrame"] = data[1]
-	output_struct_item["targetConceptSubDomain"] = data[2]
+	output_struct_item["targetConceptSubDomain"] = data[1]
+	output_struct_item["targetFrame"] = data[2]
 	output_struct_item["sourceFrame"] = data[3]
 	if data[4]=='-': output_struct_item["sourceConceptSubDomain"] = 'TYPE'
 	else: output_struct_item["sourceConceptSubDomain"] = data[4]

@@ -104,6 +104,8 @@
  
 ; RICH PERSON
 (B (name rich) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (ثروتمند-adj e0 y)))
+(B (name rich) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (خرپول-adj e0 y)))
+(B (name rich) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (خرپولتر-adj e0 y)))
 (B (name richer) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (ثروتمندتر-adj e0 y)))
 (B (name richest) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (ثروتمندترین-adj e0 y)))
 (B (name rich) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (پولدار-adj e0 y)))

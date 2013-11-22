@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<henry-output parameter="-m infer -d 3 -t 4 -O proofgraph,statistics -T 60 -e /Users/niloofar/henry-n700/models/h93.py -b /Users/niloofar/Metaphor-ADP/KBs/Farsi/Farsi_compiled_KB.da">
+<result-inference target="10">
+<observed size="32" domain_size="0">
+یک-nn(e0,x0) ^ از-in(e1,x0,x1) ^ مخاطب-nn(e2,x1) ^ خبرآنلاین-nn(e3,x2) ^ نوشت#نویس-vb(e4,x0,e8,u4) ^ این(e6,x3) ^ همه-nn(e7,x3) ^ گفت#گو-vb(e8,x3,u8,u9) ^ مشمول-adj(e9,u10) ^ معافیت-nn(e10,x4) ^ مالیات-nn(e11,x5) ^ شست#شو-vb(e12,u11,u12,u10) ^ اصلا-nn(e13,x6) ^ شرط-nn(e14,x7) ^ لازم-adj(e15,x7) ^ برای-in(e16,x7,x8) ^ معاف-adj(e17,u17) ^ شدن-nn(e18,x8) ^ از-in(e19,x8,x9) ^ پرداخت-nn(e20,x9) ^ پول-nn(e21,x10) ^ از-in(e22,e26,x11) ^ درآمد-nn(e23,x11) ^ به-in(e24,e26,x12) ^ دولت-nn(e25,x12) ^ چیست-vb(e26,x6,u25,u26) ^ NVE(e30,x2,e4) ^ nn(e31,x4,x5) ^ nn(e32,x6,x7) ^ nn(e33,x9,x10) ^ !=(e31,e32,e33) ^ !=(e1,e19,e22)
+</observed>
+<hypothesis score="-31.201">
+یک-nn(e0,x0) ^ از-in(e1,x0,x1) ^ مخاطب-nn(e2,x1) ^ خبرآنلاین-nn(e3,x2) ^ نوشت#نویس-vb(e4,x0,e8,u4) ^ این(e6,x3) ^ همه-nn(e7,x3) ^ گفت#گو-vb(e8,x3,u8,u9) ^ مشمول-adj(e9,u10) ^ معافیت-nn(e10,x4) ^ مالیات-nn(e11,x5) ^ شست#شو-vb(e12,u11,u12,u10) ^ اصلا-nn(e13,x6) ^ شرط-nn(e14,x7) ^ لازم-adj(e15,x7) ^ برای-in(e16,x7,x8) ^ معاف-adj(e17,u17) ^ شدن-nn(e18,x8) ^ از-in(e19,x8,x9) ^ پرداخت-nn(e20,x9) ^ پول-nn(e21,x10) ^ از-in(e22,e26,x11) ^ درآمد-nn(e23,x11) ^ به-in(e24,e26,x12) ^ دولت-nn(e25,x12) ^ چیست-vb(e26,x6,u25,u26) ^ NVE(e30,x2,e4) ^ nn(e31,x4,x5) ^ nn(e32,x6,x7) ^ nn(e33,x9,x10) ^ !=(e31,e32,e33) ^ !=(e1,e19,e22) ^ S#PHYSICAL_BURDEN(e10) ^ SS#RELIEF(x4,e10) ^ TS#TAXATION(x5) ^ T#ECONOMIC-INEQUALITY(_0) ^ TS#WEALTH(x10) ^ T#ECONOMIC-INEQUALITY(_1) ^ TSS#MONEY(x10,x10) ^ I#PHYSICAL_BURDEN(_2) ^ I#RELIEF(x4,e10) ^ =(_1,_0)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_TSS#MONEY_38":-0.301 "!HYPOTHESIZED_nn_29":-1.001 "!HYPOTHESIZED_TS#WEALTH_36":-0.301 "!HYPOTHESIZED_مالیات-nn_10":-1.001 "!HYPOTHESIZED_از-in_18":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_35":-0.451 "!HYPOTHESIZED_خبرآنلاین-nn_3":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_37":-0.301 "!HYPOTHESIZED_معاف-adj_16":-1.001 "!EXPLAINED_S#PHYSICAL_BURDEN_32":0.45 "!HYPOTHESIZED_اصلا-nn_12":-1.001 "!HYPOTHESIZED_از-in_21":-1.001 "!HYPOTHESIZED_همه-nn_6":-1.001 "!EXPLAINED_مالیات-nn_10":1 "!HYPOTHESIZED_I#PHYSICAL_BURDEN_39":-0.406 "!HYPOTHESIZED_این_5":-1.001 "!HYPOTHESIZED_لازم-adj_14":-1.001 "!HYPOTHESIZED_چیست-vb_25":-1.001 "!HYPOTHESIZED_دولت-nn_24":-1.001 "!HYPOTHESIZED_شدن-nn_17":-1.001 "!HYPOTHESIZED_I#RELIEF_40":-0.406 "!HYPOTHESIZED_!=_31":-1.001 "!HYPOTHESIZED_!=_30":-1.001 "!HYPOTHESIZED_درآمد-nn_22":-1.001 "!HYPOTHESIZED_SS#RELIEF_33":-0.451 "!HYPOTHESIZED_شست#شو-vb_11":-1.001 "!EXPLAINED_پول-nn_20":1 "!HYPOTHESIZED_نوشت#نویس-vb_4":-1.001 "!EXPLAINED_معافیت-nn_9":1 "!HYPOTHESIZED_مشمول-adj_8":-1.001 "!HYPOTHESIZED_TS#TAXATION_34":-0.451 "!HYPOTHESIZED_از-in_1":-1.001 "!HYPOTHESIZED_یک-nn_0":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_35":0.45 "!HYPOTHESIZED_nn_27":-1.001 "!HYPOTHESIZED_به-in_23":-1.001 "!HYPOTHESIZED_NVE_26":-1.001 "!HYPOTHESIZED_گفت#گو-vb_7":-1.001 "!HYPOTHESIZED_پول-nn_20":-1.001 "!HYPOTHESIZED_S#PHYSICAL_BURDEN_32":-0.451 "!HYPOTHESIZED_شرط-nn_13":-1.001 "!HYPOTHESIZED_پرداخت-nn_19":-1.001 "!HYPOTHESIZED_برای-in_15":-1.001 "!EXPLAINED_SS#RELIEF_33":0.45 "!HYPOTHESIZED_معافیت-nn_9":-1.001 "!HYPOTHESIZED_مخاطب-nn_2":-1.001 "!HYPOTHESIZED_nn_28":-1.001 
+</vector>
+<statistics>
+<time total="0.0546072" prepare="0.05288" ilp="0.0017271" />
+<ilp solution="Optimal" variables="165" constraints="179" />
+<search-space literals="41" axiom="13" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">یک-nn(e0,x0):0:1.00</literal>
+<literal id="1" type="2" active="yes">از-in(e1,x0,x1):1:1.00</literal>
+<unification l1="1" l2="18" unifier="" active="no" />
+<unification l1="1" l2="21" unifier="" active="no" />
+<literal id="2" type="2" active="yes">مخاطب-nn(e2,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">خبرآنلاین-nn(e3,x2):3:1.00</literal>
+<literal id="4" type="2" active="yes">نوشت#نویس-vb(e4,x0,e8,u4):4:1.00</literal>
+<literal id="5" type="2" active="yes">این(e6,x3):5:1.00</literal>
+<literal id="6" type="2" active="yes">همه-nn(e7,x3):6:1.00</literal>
+<literal id="7" type="2" active="yes">گفت#گو-vb(e8,x3,u8,u9):7:1.00</literal>
+<literal id="8" type="2" active="yes">مشمول-adj(e9,u10):8:1.00</literal>
+<literal id="9" type="2" active="yes">معافیت-nn(e10,x4):9:1.00</literal>
+<literal id="10" type="2" active="yes">مالیات-nn(e11,x5):10:1.00</literal>
+<literal id="11" type="2" active="yes">شست#شو-vb(e12,u11,u12,u10):11:1.00</literal>
+<literal id="12" type="2" active="yes">اصلا-nn(e13,x6):12:1.00</literal>
+<literal id="13" type="2" active="yes">شرط-nn(e14,x7):13:1.00</literal>
+<literal id="14" type="2" active="yes">لازم-adj(e15,x7):14:1.00</literal>
+<literal id="15" type="2" active="yes">برای-in(e16,x7,x8):15:1.00</literal>
+<literal id="16" type="2" active="yes">معاف-adj(e17,u17):16:1.00</literal>
+<literal id="17" type="2" active="yes">شدن-nn(e18,x8):17:1.00</literal>
+<literal id="18" type="2" active="yes">از-in(e19,x8,x9):18:1.00</literal>
+<unification l1="18" l2="1" unifier="" active="no" />
+<unification l1="18" l2="21" unifier="" active="no" />
+<literal id="19" type="2" active="yes">پرداخت-nn(e20,x9):19:1.00</literal>
+<literal id="20" type="2" active="yes">پول-nn(e21,x10):20:1.00</literal>
+<literal id="21" type="2" active="yes">از-in(e22,e26,x11):21:1.00</literal>
+<unification l1="21" l2="1" unifier="" active="no" />
+<unification l1="21" l2="18" unifier="" active="no" />
+<literal id="22" type="2" active="yes">درآمد-nn(e23,x11):22:1.00</literal>
+<literal id="23" type="2" active="yes">به-in(e24,e26,x12):23:1.00</literal>
+<literal id="24" type="2" active="yes">دولت-nn(e25,x12):24:1.00</literal>
+<literal id="25" type="2" active="yes">چیست-vb(e26,x6,u25,u26):25:1.00</literal>
+<literal id="26" type="2" active="yes">NVE(e30,x2,e4):26:1.00</literal>
+<literal id="27" type="2" active="yes">nn(e31,x4,x5):27:1.00</literal>
+<unification l1="27" l2="28" unifier="" active="no" />
+<unification l1="27" l2="29" unifier="" active="no" />
+<literal id="28" type="2" active="yes">nn(e32,x6,x7):28:1.00</literal>
+<unification l1="28" l2="27" unifier="" active="no" />
+<unification l1="28" l2="29" unifier="" active="no" />
+<literal id="29" type="2" active="yes">nn(e33,x9,x10):29:1.00</literal>
+<unification l1="29" l2="27" unifier="" active="no" />
+<unification l1="29" l2="28" unifier="" active="no" />
+<literal id="30" type="2" active="yes">!=(e31,e32,e33):30:1.00</literal>
+<literal id="31" type="2" active="yes">!=(e1,e19,e22):31:1.00</literal>
+<literal id="32" type="3" active="yes">S#PHYSICAL_BURDEN(e10):32:0.45</literal>
+<literal id="33" type="3" active="yes">SS#RELIEF(x4,e10):33:0.45</literal>
+<literal id="34" type="3" active="yes">TS#TAXATION(x5):34:0.45</literal>
+<literal id="35" type="3" active="yes">T#ECONOMIC-INEQUALITY(_0):35:0.45</literal>
+<unification l1="35" l2="37" unifier="_0=_1" active="yes" />
+<literal id="36" type="3" active="yes">TS#WEALTH(x10):36:0.30</literal>
+<literal id="37" type="3" active="yes">T#ECONOMIC-INEQUALITY(_1):37:0.30</literal>
+<unification l1="37" l2="35" unifier="_0=_1" active="yes" />
+<literal id="38" type="3" active="yes">TSS#MONEY(x10,x10):38:0.30</literal>
+<literal id="39" type="3" active="yes">I#PHYSICAL_BURDEN(_2):39:0.41</literal>
+<literal id="40" type="3" active="yes">I#RELIEF(x4,e10):40:0.41</literal>
+<explanation name="reliefmap" active="yes" axiom="">40 => 33</explanation>
+<explanation name="money" active="yes" axiom="">36 ^ 37 ^ 38 => 20</explanation>
+<explanation name="exemption" active="yes" axiom="">32 ^ 33 => 9</explanation>
+<explanation name="physical-burdenmap" active="yes" axiom="">39 => 32</explanation>
+<explanation name="tax" active="yes" axiom="">34 ^ 35 => 10</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="20">
+<observed size="15" domain_size="0">
+مالیات-nn(e0,x0) ^ کمرشکن-adj(e1,x0) ^ بسیار-nn(e2,x1) ^ از-in(e3,x1,x6) ^ مرد-nn(e4,x2) ^ را(e5,u3) ^ زیر-in(e6,e9,x3) ^ خط-nn(e7,x3) ^ فقر-nn(e8,x4) ^ برد#بر-vb(e9,x0,x1,u8) ^ NVE(e12,x4,e9) ^ م(e13,x6) ^ of-in(e14,x2,x6) ^ person(e15,x6) ^ !=(e4,e13)
+</observed>
+<hypothesis score="-13.6325">
+مالیات-nn(e0,x0) ^ کمرشکن-adj(e1,x0) ^ بسیار-nn(e2,x1) ^ از-in(e3,x1,x6) ^ مرد-nn(e4,x2) ^ را(e5,u3) ^ زیر-in(e6,e9,x3) ^ خط-nn(e7,x3) ^ فقر-nn(e8,x4) ^ برد#بر-vb(e9,x0,x1,u8) ^ NVE(e12,x4,e9) ^ م(e13,x6) ^ of-in(e14,x2,x6) ^ person(e15,x6) ^ !=(e4,e13) ^ TS#TAXATION(x0) ^ T#ECONOMIC-INEQUALITY(_3) ^ S#PHYSICAL_HARM(e1) ^ SS#TYPE(x0,e1) ^ S#VERTICAL_SCALE(e6) ^ SS#CONTRAST_OF_POSITIONS(e6,e6) ^ R#BELOW(e9,e6) ^ S#PHYSICAL_LOCATION(e7) ^ SS#DEFINED_REGION(x3,e7) ^ TS#POVERTY(x4) ^ T#ECONOMIC-INEQUALITY(_4) ^ bordan(e9,x0,x1,x4) ^ I#PHYSICAL_HARM(e1) ^ I#TYPE(x0,e1) ^ I#VERTICAL_SCALE(e6) ^ I#PHYSICAL_LOCATION(e7) ^ I#DEFINED_REGION(x3,e7) ^ M#CAUSE-HARM(e1) ^ =(_4,_3)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_فقر-nn_8":-1.001 "!HYPOTHESIZED_کمرشکن-adj_1":-1.001 "!HYPOTHESIZED_S#PHYSICAL_HARM_17":-0.451 "!HYPOTHESIZED_مالیات-nn_0":-1.001 "!HYPOTHESIZED_را_5":-1.001 "!HYPOTHESIZED_TS#TAXATION_15":-0.451 "!EXPLAINED_NVE_10":1 "!EXPLAINED_برد#بر-vb_9":1 "!EXPLAINED_زیر-in_6":1 "!HYPOTHESIZED_of-in_12":-1.001 "!HYPOTHESIZED_S#PHYSICAL_LOCATION_22":-0.451 "!HYPOTHESIZED_R#BELOW_21":-0.301 "!HYPOTHESIZED_!=_14":-1.001 "!HYPOTHESIZED_I#DEFINED_REGION_35":-0.406 "!HYPOTHESIZED_S#VERTICAL_SCALE_19":-0.301 "!EXPLAINED_I#PHYSICAL_HARM_30":0.405 "!HYPOTHESIZED_م_11":-1.001 "!EXPLAINED_S#VERTICAL_SCALE_19":0.3 "!HYPOTHESIZED_خط-nn_7":-1.001 "!EXPLAINED_مالیات-nn_0":1 "!HYPOTHESIZED_person_13":-1.001 "!EXPLAINED_فقر-nn_8":1 "!EXPLAINED_SS#TYPE_18":0.45 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_16":-0.451 "!HYPOTHESIZED_I#PHYSICAL_HARM_30":-0.406 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_25":-0.451 "!HYPOTHESIZED_I#TYPE_31":-0.406 "!HYPOTHESIZED_بسیار-nn_2":-1.001 "!HYPOTHESIZED_M#CAUSE-HARM_38":-0.3655 "!HYPOTHESIZED_برد#بر-vb_9":-1.001 "!EXPLAINED_خط-nn_7":1 "!HYPOTHESIZED_مرد-nn_4":-1.001 "!HYPOTHESIZED_زیر-in_6":-1.001 "!HYPOTHESIZED_از-in_3":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_25":0.45 "!HYPOTHESIZED_I#VERTICAL_SCALE_33":-0.271 "!EXPLAINED_S#PHYSICAL_HARM_17":0.45 "!HYPOTHESIZED_SS#TYPE_18":-0.451 "!EXPLAINED_SS#DEFINED_REGION_23":0.45 "!HYPOTHESIZED_SS#DEFINED_REGION_23":-0.451 "!HYPOTHESIZED_TS#POVERTY_24":-0.451 "!HYPOTHESIZED_NVE_10":-1.001 "!EXPLAINED_کمرشکن-adj_1":1 "!HYPOTHESIZED_I#PHYSICAL_LOCATION_34":-0.406 "!EXPLAINED_S#PHYSICAL_LOCATION_22":0.45 "!HYPOTHESIZED_SS#CONTRAST_OF_POSITIONS_20":-0.301 "!HYPOTHESIZED_bordan_26":-1.801 
+</vector>
+<statistics>
+<time total="0.0276442" prepare="0.025285" ilp="0.00235915" />
+<ilp solution="Optimal" variables="138" constraints="184" />
+<search-space literals="39" axiom="46" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">مالیات-nn(e0,x0):0:1.00</literal>
+<literal id="1" type="2" active="yes">کمرشکن-adj(e1,x0):1:1.00</literal>
+<literal id="2" type="2" active="yes">بسیار-nn(e2,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">از-in(e3,x1,x6):3:1.00</literal>
+<literal id="4" type="2" active="yes">مرد-nn(e4,x2):4:1.00</literal>
+<literal id="5" type="2" active="yes">را(e5,u3):5:1.00</literal>
+<literal id="6" type="2" active="yes">زیر-in(e6,e9,x3):6:1.00</literal>
+<literal id="7" type="2" active="yes">خط-nn(e7,x3):7:1.00</literal>
+<literal id="8" type="2" active="yes">فقر-nn(e8,x4):8:1.00</literal>
+<literal id="9" type="2" active="yes">برد#بر-vb(e9,x0,x1,u8):9:1.00</literal>
+<literal id="10" type="2" active="yes">NVE(e12,x4,e9):10:1.00</literal>
+<literal id="11" type="2" active="yes">م(e13,x6):11:1.00</literal>
+<literal id="12" type="2" active="yes">of-in(e14,x2,x6):12:1.00</literal>
+<literal id="13" type="2" active="yes">person(e15,x6):13:1.00</literal>
+<literal id="14" type="2" active="yes">!=(e4,e13):14:1.00</literal>
+<literal id="15" type="3" active="yes">TS#TAXATION(x0):15:0.45</literal>
+<literal id="16" type="3" active="yes">T#ECONOMIC-INEQUALITY(_3):16:0.45</literal>
+<unification l1="16" l2="25" unifier="_3=_4" active="yes" />
+<literal id="17" type="3" active="yes">S#PHYSICAL_HARM(e1):17:0.45</literal>
+<literal id="18" type="3" active="yes">SS#TYPE(x0,e1):18:0.45</literal>
+<literal id="19" type="3" active="yes">S#VERTICAL_SCALE(e6):19:0.30</literal>
+<literal id="20" type="3" active="yes">SS#CONTRAST_OF_POSITIONS(e6,e6):20:0.30</literal>
+<literal id="21" type="3" active="yes">R#BELOW(e9,e6):21:0.30</literal>
+<literal id="22" type="3" active="yes">S#PHYSICAL_LOCATION(e7):22:0.45</literal>
+<literal id="23" type="3" active="yes">SS#DEFINED_REGION(x3,e7):23:0.45</literal>
+<literal id="24" type="3" active="yes">TS#POVERTY(x4):24:0.45</literal>
+<literal id="25" type="3" active="yes">T#ECONOMIC-INEQUALITY(_4):25:0.45</literal>
+<unification l1="25" l2="16" unifier="_3=_4" active="yes" />
+<literal id="26" type="3" active="yes">bordan(e9,x0,x1,x4):26:1.80</literal>
+<literal id="27" type="3" active="no">S#GAME(e9):27:0.30</literal>
+<literal id="28" type="3" active="no">SS#OUTCOMES(e9,e9):28:0.30</literal>
+<literal id="29" type="3" active="no">R#PLAYER(x0,e9):29:0.30</literal>
+<literal id="30" type="3" active="yes">I#PHYSICAL_HARM(e1):30:0.41</literal>
+<literal id="31" type="3" active="yes">I#TYPE(x0,e1):31:0.41</literal>
+<unification l1="31" l2="32" unifier="" active="no" />
+<literal id="32" type="3" active="no">I#TYPE(x0,e1):32:0.41</literal>
+<unification l1="32" l2="31" unifier="" active="no" />
+<literal id="33" type="3" active="yes">I#VERTICAL_SCALE(e6):33:0.27</literal>
+<literal id="34" type="3" active="yes">I#PHYSICAL_LOCATION(e7):34:0.41</literal>
+<literal id="35" type="3" active="yes">I#DEFINED_REGION(x3,e7):35:0.41</literal>
+<literal id="36" type="3" active="no">I#GAME(e9):36:0.27</literal>
+<literal id="37" type="3" active="no">I#OUTCOMES(e9,e9):37:0.27</literal>
+<literal id="38" type="3" active="yes">M#CAUSE-HARM(e1):38:0.36</literal>
+<explanation name="defined-regionmap" active="yes" axiom="">35 => 23</explanation>
+<explanation name="tax" active="yes" axiom="">15 ^ 16 => 0</explanation>
+<explanation name="kamarshekan" active="yes" axiom="">17 ^ 18 => 1</explanation>
+<explanation name="gamemap" active="no" axiom="">36 => 27</explanation>
+<explanation name="game-outcomesmap" active="no" axiom="">37 => 28</explanation>
+<explanation name="below" active="yes" axiom="">19 ^ 20 ^ 21 => 6</explanation>
+<explanation name="physical-harm4" active="yes" axiom="">38 => 30</explanation>
+<explanation name="line" active="yes" axiom="">22 ^ 23 => 7</explanation>
+<explanation name="poverty" active="yes" axiom="">24 ^ 25 => 8</explanation>
+<explanation name="bordan" active="yes" axiom="">26 => 9</explanation>
+<explanation name="win" active="no" axiom="">27 ^ 28 ^ 29 => 9</explanation>
+<explanation name="bordan" active="yes" axiom="">26 => 10</explanation>
+<explanation name="physical-harm-map" active="yes" axiom="">30 => 17</explanation>
+<explanation name="dis-typemap" active="yes" axiom="">31 => 18</explanation>
+<explanation name="struggle-typemap" active="no" axiom="">32 => 18</explanation>
+<explanation name="vertical-scalemap" active="yes" axiom="">33 => 19</explanation>
+<explanation name="physical-locationmap" active="yes" axiom="">34 => 22</explanation>
+</proofgraph>
+</result-inference>
+<result-inference target="56">
+<observed size="26" domain_size="0">
+کسب-nn(e0,x0) ^ نامشروع-adj(e1,x0) ^ ثروت-nn(e3,x1) ^ بادآورده-adj(e4,x0) ^ تعادل-nn(e5,e24) ^ اجتماعی-adj(e6,e24) ^ را(e7,u4) ^ به-in(e8,e10,x3) ^ هم(e9,x3) ^ زد#زن-vb(e10,x0,e24,u9) ^ شمار-nn(e12,x4) ^ در-in(e13,e17,x5) ^ رفاه-nn(e14,x5) ^ وب-nn(e15,x6) ^ درد-nn(e16,x7) ^ فرورفت#فرورو-vb(e17,x4,u14,u15) ^ گروه-nn(e19,x8) ^ دچاربی-nn(e20,x9) ^ پولی-adj(e21,x9) ^ فلاکت-nn(e23,x10) ^ شد#شو-vb(e24,u19,x8,u21) ^ NVE(e27,x7,e17) ^ nn(e28,x5,x6) ^ nn(e29,x8,x9) ^ person(e30,x3) ^ !=(e28,e29)
+</observed>
+<hypothesis score="-24.123">
+کسب-nn(e0,x0) ^ نامشروع-adj(e1,x0) ^ ثروت-nn(e3,x1) ^ بادآورده-adj(e4,x0) ^ تعادل-nn(e5,e24) ^ اجتماعی-adj(e6,e24) ^ را(e7,u4) ^ به-in(e8,e10,x3) ^ هم(e9,x3) ^ زد#زن-vb(e10,x0,e24,u9) ^ شمار-nn(e12,x4) ^ در-in(e13,e17,x5) ^ رفاه-nn(e14,x5) ^ وب-nn(e15,x6) ^ درد-nn(e16,x7) ^ فرورفت#فرورو-vb(e17,x4,u14,u15) ^ گروه-nn(e19,x8) ^ دچاربی-nn(e20,x9) ^ پولی-adj(e21,x9) ^ فلاکت-nn(e23,x10) ^ شد#شو-vb(e24,u19,x8,u21) ^ NVE(e27,x7,e17) ^ nn(e28,x5,x6) ^ nn(e29,x8,x9) ^ person(e30,x3) ^ !=(e28,e29) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_5) ^ S#NATURAL_PHYSICAL_FORCE(e4) ^ SS#TYPE(x0,e4) ^ S#PHYSICAL_HARM(e10) ^ SS#TYPE(e10,e10) ^ R#HARM-VICTIM(e24,e10) ^ R#HARM-AGENT(x0,e10) ^ S#DISEASE(e16) ^ SS#SYMPTOMS(x7,e16) ^ S#BODY_OF_WATER(_6) ^ SS#DANGER(e17,_6) ^ R#DROWN-PATIENT(x4,e17) ^ TS#POVERTY(x10) ^ T#ECONOMIC-INEQUALITY(_7) ^ I#NATURAL_PHYSICAL_FORCE(e4) ^ I#PHYSICAL_HARM(e10) ^ I#TYPE(e10,e10) ^ I#DISEASE(_8) ^ I#SYMPTOMS(x7,e16) ^ I#BODY_OF_WATER(_6) ^ M#CAUSE-HARM(e10) ^ M#CAUSING-THING-H(x0,e10) ^ M#HARM-VICTIM(e24,e10) ^ M#CAUSE-HARM(e10) ^ M#LARGE-AMOUNT-OF(_9) ^ =(e4,x0,e10) ^ =(_5,_7)
+</hypothesis>
+<vector score="0">
+"!HYPOTHESIZED_M#HARM-VICTIM_52":-0.175 "!HYPOTHESIZED_person_24":-1.001 "!HYPOTHESIZED_I#BODY_OF_WATER_49":-0.271 "!EXPLAINED_زد#زن-vb_9":1 "!HYPOTHESIZED_رفاه-nn_12":-1.001 "!EXPLAINED_SS#TYPE_29":0.45 "!HYPOTHESIZED_در-in_11":-1.001 "!EXPLAINED_درد-nn_14":1 "!HYPOTHESIZED_گروه-nn_16":-1.001 "!EXPLAINED_M#CAUSE-HARM_50":0.174 "!HYPOTHESIZED_R#DROWN-PATIENT_38":-0.301 "!HYPOTHESIZED_ثروت-nn_2":-1.001 "!HYPOTHESIZED_به-in_7":-1.001 "!HYPOTHESIZED_دچاربی-nn_17":-1.001 "!HYPOTHESIZED_S#NATURAL_PHYSICAL_FORCE_28":-0.451 "!HYPOTHESIZED_SS#TYPE_29":-0.451 "!EXPLAINED_R#HARM-VICTIM_32":0.2 "!HYPOTHESIZED_فلاکت-nn_19":-1.001 "!HYPOTHESIZED_SS#TYPE_31":-0.201 "!EXPLAINED_فرورفت#فرورو-vb_15":1 "!HYPOTHESIZED_فرورفت#فرورو-vb_15":-1.001 "!HYPOTHESIZED_M#CAUSING-THING-H_51":-0.175 "!HYPOTHESIZED_S#PHYSICAL_HARM_30":-0.201 "!EXPLAINED_فلاکت-nn_19":1 "!HYPOTHESIZED_S#DISEASE_34":-0.451 "!HYPOTHESIZED_nn_23":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_40":0.45 "!EXPLAINED_I#BODY_OF_WATER_49":0.27 "!HYPOTHESIZED_I#DISEASE_47":-0.406 "!HYPOTHESIZED_درد-nn_14":-1.001 "!EXPLAINED_S#NATURAL_PHYSICAL_FORCE_28":0.45 "!HYPOTHESIZED_I#PHYSICAL_HARM_44":-0.181 "!EXPLAINED_بادآورده-adj_3":1 "!HYPOTHESIZED_I#TYPE_45":-0.181 "!HYPOTHESIZED_NVE_21":-1.001 "!HYPOTHESIZED_نامشروع-adj_1":-1.001 "!HYPOTHESIZED_شمار-nn_10":-1.001 "!HYPOTHESIZED_M#CAUSE-HARM_50":-0.175 "!HYPOTHESIZED_nn_22":-1.001 "!HYPOTHESIZED_R#HARM-AGENT_33":-0.201 "!HYPOTHESIZED_زد#زن-vb_9":-1.001 "!HYPOTHESIZED_!=_25":-1.001 "!HYPOTHESIZED_بادآورده-adj_3":-1.001 "!HYPOTHESIZED_TS#POVERTY_39":-0.451 "!HYPOTHESIZED_تعادل-nn_4":-1.001 "!EXPLAINED_I#PHYSICAL_HARM_44":0.18 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_40":-0.451 "!HYPOTHESIZED_S#BODY_OF_WATER_36":-0.301 "!HYPOTHESIZED_وب-nn_13":-1.001 "!HYPOTHESIZED_پولی-adj_18":-1.001 "!HYPOTHESIZED_R#HARM-VICTIM_32":-0.201 "!HYPOTHESIZED_I#NATURAL_PHYSICAL_FORCE_41":-0.406 "!EXPLAINED_R#HARM-AGENT_33":0.2 "!EXPLAINED_SS#SYMPTOMS_35":0.45 "!HYPOTHESIZED_TS#WEALTH_26":-0.451 "!EXPLAINED_ثروت-nn_2":1 "!EXPLAINED_S#DISEASE_34":0.45 "!HYPOTHESIZED_SS#SYMPTOMS_35":-0.451 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_27":-0.451 "!HYPOTHESIZED_شد#شو-vb_20":-1.001 "!HYPOTHESIZED_هم_8":-1.001 "!HYPOTHESIZED_I#SYMPTOMS_48":-0.406 "!HYPOTHESIZED_کسب-nn_0":-1.001 "!HYPOTHESIZED_SS#DANGER_37":-0.301 "!HYPOTHESIZED_را_6":-1.001 "!HYPOTHESIZED_M#LARGE-AMOUNT-OF_58":-0.217 "!EXPLAINED_SS#TYPE_31":0.2 "!HYPOTHESIZED_M#CAUSE-HARM_57":-0.163 "!EXPLAINED_S#BODY_OF_WATER_36":0.3 "!EXPLAINED_S#PHYSICAL_HARM_30":0.2 "!HYPOTHESIZED_اجتماعی-adj_5":-1.001 
+</vector>
+<statistics>
+<time total="0.0721741" prepare="0.047354" ilp="0.0248201" />
+<ilp solution="Optimal" variables="234" constraints="324" />
+<search-space literals="59" axiom="54" />
+</statistics>
+<proofgraph>
+<literal id="0" type="2" active="yes">کسب-nn(e0,x0):0:1.00</literal>
+<literal id="1" type="2" active="yes">نامشروع-adj(e1,x0):1:1.00</literal>
+<literal id="2" type="2" active="yes">ثروت-nn(e3,x1):2:1.00</literal>
+<literal id="3" type="2" active="yes">بادآورده-adj(e4,x0):3:1.00</literal>
+<literal id="4" type="2" active="yes">تعادل-nn(e5,e24):4:1.00</literal>
+<literal id="5" type="2" active="yes">اجتماعی-adj(e6,e24):5:1.00</literal>
+<literal id="6" type="2" active="yes">را(e7,u4):6:1.00</literal>
+<literal id="7" type="2" active="yes">به-in(e8,e10,x3):7:1.00</literal>
+<literal id="8" type="2" active="yes">هم(e9,x3):8:1.00</literal>
+<literal id="9" type="2" active="yes">زد#زن-vb(e10,x0,e24,u9):9:1.00</literal>
+<literal id="10" type="2" active="yes">شمار-nn(e12,x4):10:1.00</literal>
+<literal id="11" type="2" active="yes">در-in(e13,e17,x5):11:1.00</literal>
+<literal id="12" type="2" active="yes">رفاه-nn(e14,x5):12:1.00</literal>
+<literal id="13" type="2" active="yes">وب-nn(e15,x6):13:1.00</literal>
+<literal id="14" type="2" active="yes">درد-nn(e16,x7):14:1.00</literal>
+<literal id="15" type="2" active="yes">فرورفت#فرورو-vb(e17,x4,u14,u15):15:1.00</literal>
+<literal id="16" type="2" active="yes">گروه-nn(e19,x8):16:1.00</literal>
+<literal id="17" type="2" active="yes">دچاربی-nn(e20,x9):17:1.00</literal>
+<literal id="18" type="2" active="yes">پولی-adj(e21,x9):18:1.00</literal>
+<literal id="19" type="2" active="yes">فلاکت-nn(e23,x10):19:1.00</literal>
+<literal id="20" type="2" active="yes">شد#شو-vb(e24,u19,x8,u21):20:1.00</literal>
+<literal id="21" type="2" active="yes">NVE(e27,x7,e17):21:1.00</literal>
+<literal id="22" type="2" active="yes">nn(e28,x5,x6):22:1.00</literal>
+<unification l1="22" l2="23" unifier="" active="no" />
+<literal id="23" type="2" active="yes">nn(e29,x8,x9):23:1.00</literal>
+<unification l1="23" l2="22" unifier="" active="no" />
+<literal id="24" type="2" active="yes">person(e30,x3):24:1.00</literal>
+<literal id="25" type="2" active="yes">!=(e28,e29):25:1.00</literal>
+<literal id="26" type="3" active="yes">TS#WEALTH(x1):26:0.45</literal>
+<literal id="27" type="3" active="yes">T#ECONOMIC-INEQUALITY(_5):27:0.45</literal>
+<unification l1="27" l2="40" unifier="_5=_7" active="yes" />
+<literal id="28" type="3" active="yes">S#NATURAL_PHYSICAL_FORCE(e4):28:0.45</literal>
+<literal id="29" type="3" active="yes">SS#TYPE(x0,e4):29:0.45</literal>
+<unification l1="29" l2="31" unifier="x0=e10, e4=e10" active="yes" />
+<literal id="30" type="3" active="yes">S#PHYSICAL_HARM(e10):30:0.20</literal>
+<literal id="31" type="3" active="yes">SS#TYPE(e10,e10):31:0.20</literal>
+<unification l1="31" l2="29" unifier="x0=e10" active="yes" />
+<literal id="32" type="3" active="yes">R#HARM-VICTIM(e24,e10):32:0.20</literal>
+<literal id="33" type="3" active="yes">R#HARM-AGENT(x0,e10):33:0.20</literal>
+<literal id="34" type="3" active="yes">S#DISEASE(e16):34:0.45</literal>
+<literal id="35" type="3" active="yes">SS#SYMPTOMS(x7,e16):35:0.45</literal>
+<literal id="36" type="3" active="yes">S#BODY_OF_WATER(_6):36:0.30</literal>
+<literal id="37" type="3" active="yes">SS#DANGER(e17,_6):37:0.30</literal>
+<literal id="38" type="3" active="yes">R#DROWN-PATIENT(x4,e17):38:0.30</literal>
+<literal id="39" type="3" active="yes">TS#POVERTY(x10):39:0.45</literal>
+<literal id="40" type="3" active="yes">T#ECONOMIC-INEQUALITY(_7):40:0.45</literal>
+<unification l1="40" l2="27" unifier="_5=_7" active="yes" />
+<literal id="41" type="3" active="yes">I#NATURAL_PHYSICAL_FORCE(e4):41:0.41</literal>
+<literal id="42" type="3" active="no">I#TYPE(x0,e4):42:0.41</literal>
+<unification l1="42" l2="43" unifier="" active="no" />
+<unification l1="42" l2="45" unifier="x0=e10, e4=e10" active="no" />
+<unification l1="42" l2="46" unifier="x0=e10, e4=e10" active="no" />
+<literal id="43" type="3" active="no">I#TYPE(x0,e4):43:0.41</literal>
+<unification l1="43" l2="42" unifier="" active="no" />
+<unification l1="43" l2="45" unifier="x0=e10, e4=e10" active="no" />
+<unification l1="43" l2="46" unifier="x0=e10, e4=e10" active="no" />
+<literal id="44" type="3" active="yes">I#PHYSICAL_HARM(e10):44:0.18</literal>
+<literal id="45" type="3" active="yes">I#TYPE(e10,e10):45:0.18</literal>
+<unification l1="45" l2="42" unifier="x0=e10" active="no" />
+<unification l1="45" l2="43" unifier="x0=e10" active="no" />
+<unification l1="45" l2="46" unifier="" active="no" />
+<literal id="46" type="3" active="no">I#TYPE(e10,e10):46:0.18</literal>
+<unification l1="46" l2="42" unifier="x0=e10" active="no" />
+<unification l1="46" l2="43" unifier="x0=e10" active="no" />
+<unification l1="46" l2="45" unifier="" active="no" />
+<literal id="47" type="3" active="yes">I#DISEASE(_8):47:0.41</literal>
+<literal id="48" type="3" active="yes">I#SYMPTOMS(x7,e16):48:0.41</literal>
+<literal id="49" type="3" active="yes">I#BODY_OF_WATER(_6):49:0.27</literal>
+<literal id="50" type="3" active="yes">M#CAUSE-HARM(e10):50:0.17</literal>
+<unification l1="50" l2="53" unifier="" active="no" />
+<unification l1="50" l2="55" unifier="" active="no" />
+<unification l1="50" l2="57" unifier="" active="yes" />
+<literal id="51" type="3" active="yes">M#CAUSING-THING-H(x0,e10):51:0.17</literal>
+<unification l1="51" l2="54" unifier="" active="no" />
+<literal id="52" type="3" active="yes">M#HARM-VICTIM(e24,e10):52:0.17</literal>
+<unification l1="52" l2="56" unifier="" active="no" />
+<literal id="53" type="3" active="no">M#CAUSE-HARM(e10):53:0.17</literal>
+<unification l1="53" l2="50" unifier="" active="no" />
+<unification l1="53" l2="55" unifier="" active="no" />
+<unification l1="53" l2="57" unifier="" active="no" />
+<literal id="54" type="3" active="no">M#CAUSING-THING-H(x0,e10):54:0.17</literal>
+<unification l1="54" l2="51" unifier="" active="no" />
+<literal id="55" type="3" active="no">M#CAUSE-HARM(e10):55:0.17</literal>
+<unification l1="55" l2="50" unifier="" active="no" />
+<unification l1="55" l2="53" unifier="" active="no" />
+<unification l1="55" l2="57" unifier="" active="no" />
+<literal id="56" type="3" active="no">M#HARM-VICTIM(e24,e10):56:0.17</literal>
+<unification l1="56" l2="52" unifier="" active="no" />
+<literal id="57" type="3" active="yes">M#CAUSE-HARM(e10):57:0.16</literal>
+<unification l1="57" l2="50" unifier="" active="yes" />
+<unification l1="57" l2="53" unifier="" active="no" />
+<unification l1="57" l2="55" unifier="" active="no" />
+<literal id="58" type="3" active="yes">M#LARGE-AMOUNT-OF(_9):58:0.22</literal>
+<explanation name="wealth" active="yes" axiom="">26 ^ 27 => 2</explanation>
+<explanation name="body_of_water" active="yes" axiom="">58 => 49</explanation>
+<explanation name="tornado" active="yes" axiom="">28 ^ 29 => 3</explanation>
+<explanation name="natural-physical-forcemap" active="yes" axiom="">41 => 28</explanation>
+<explanation name="dis-typemap" active="no" axiom="">42 => 29</explanation>
+<explanation name="struggle-typemap" active="no" axiom="">43 => 29</explanation>
+<explanation name="physical-harm-map" active="yes" axiom="">44 => 30</explanation>
+<explanation name="dis-typemap" active="yes" axiom="">45 => 31</explanation>
+<explanation name="struggle-typemap" active="no" axiom="">46 => 31</explanation>
+<explanation name="physical-harm" active="yes" axiom="">50 ^ 51 ^ 52 => 32</explanation>
+<explanation name="physical-harm3" active="no" axiom="">55 ^ 56 => 32</explanation>
+<explanation name="beat" active="yes" axiom="">30 ^ 31 ^ 32 ^ 33 => 9</explanation>
+<explanation name="physical-harm" active="yes" axiom="">50 ^ 51 ^ 52 => 33</explanation>
+<explanation name="physical-harm2" active="no" axiom="">53 ^ 54 => 33</explanation>
+<explanation name="dismap" active="yes" axiom="">47 => 34</explanation>
+<explanation name="symptomsmap" active="yes" axiom="">48 => 35</explanation>
+<explanation name="watermap" active="yes" axiom="">49 => 36</explanation>
+<explanation name="pain" active="yes" axiom="">34 ^ 35 => 14</explanation>
+<explanation name="drown" active="yes" axiom="">36 ^ 37 ^ 38 => 15</explanation>
+<explanation name="squalor" active="yes" axiom="">39 ^ 40 => 19</explanation>
+<explanation name="physical-harm" active="yes" axiom="">50 ^ 51 ^ 52 => 44</explanation>
+<explanation name="physical-harm2" active="no" axiom="">53 ^ 54 => 44</explanation>
+<explanation name="physical-harm3" active="no" axiom="">55 ^ 56 => 44</explanation>
+<explanation name="physical-harm4" active="yes" axiom="">57 => 44</explanation>
+</proofgraph>
+</result-inference>
+</henry-output>

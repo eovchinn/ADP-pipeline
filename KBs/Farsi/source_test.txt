@@ -1,0 +1,1912 @@
+;general farsi axioms
+
+
+(B (name shodan) (=>(shodan e0 x y :0.9)(^(شد‫#‬شو-vb e0 x u1 u2)(NVE e6 y e0))))
+(B (name gashtan) (=>(shodan e0 x y :0.9)(^(گشت‫#‬گرد-vb e0 x u1 u2)(NVE e6 y e0))))
+(B (name shodan) (=>(boodan e0 x y :0.9)(^(بود#باش-vb e0 x u1 u2)(NVE e6 y e0)))) ;;; check konam ke boodan chejoori miad
+(B (name kardan) (=>(kardan e0 x y z :0.9)(^(کرد‫#‬کن-vb e0 x y u2)(NVE e6 z e0))))
+(B (name kardan) (=>(kardan e0 x y z :0.9)(^(ساخت#ساز-vb e0 x y u2)(NVE e6 z e0))))
+(B (name nemoodan) (=>(kardan e0 x y z :0.9)(^(نمود‫#‬نما-vb e0 x y u2)(NVE e6 z e0))))
+(B (name yaftan) (=>(yaftan e0 x y :0.9)(^(یافت‫#‬یاب-vb e0 x u1 u2)(NVE e6 y e0))))
+(B (name gereftan) (=>(gereftan e0 x y :0.9)(^(گرفت‫#‬گیر-vb e0 x u1 u2)(NVE e6 y e0))))
+(B (name besooye) (=>(besooye e0 x)(^(به-in e1 e0 x)(سوی-nn e6 x))))
+(B (name be-sooye) (=>(besooye e0 x)(بسوی-in e2 e0 x)))
+(B (name dadan) (=>(dadan e0 x y z :0.9)(^(داد#ده-vb e0 x y u2)(NVE e6 z e0))))
+(B (name aamadan) (=>(aamadan e0 x z :0.9)(^(آمد#آ-vb e0 x u1 u2)(NVE e6 z e0))))
+(B (name zadan) (=>(zadan e0 x y z :0.9)(^(زد#زن-vb e0 x y u2)(NVE e6 z e0))))
+(B (name aavadran) (=>(aavadran e0 x y z :0.9)(^(آورد#آور-vb e0 x y u2)(NVE e6 z e0))))
+(B (name bordan) (=>(bordan e0 x y z :0.9)(^(برد#بر-vb e0 x y u2)(NVE e6 z e0))))
+(B (name keshidan) (=>(keshidan e0 x y z :0.9)(^(کشید#کش-vb e0 x y u2)(NVE e6 z e0))))
+(B (name raftan) (=>(raftan e0 x y z :0.9)(^(رفت#رو-vb e0 x y u2)(NVE e6 z e0))))
+(B (name dashtan) (=>(dashtan e0 x y z :0.9)(^(داشت#دار-vb e0 x y u2)(NVE e6 z e0))))
+(B (name khordan) (=>(khordan e0 x y z :0.9)(^(خورد#خور-vb e0 x y u2)(NVE e6 z e0))))
+
+
+; DISEASE
+(B (name disease) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (مرض-nn e0 x)))
+(B (name illness) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (بیماری-nn e0 x)))
+(B (name disorder) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (کسالت-nn e0 x)))
+(B (name sickness) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (ناخوشی-nn e0 x)))
+(B (name malum) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (مضر-nn e0 x)))
+(B (name morbus) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (مرض-nn e0 x)))
+(B (name malady) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (عارضه-nn e0 x)))
+(B (name malaise) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (احساس-مرض-nn e0 x)))
+(B (name ailment) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (بیماری-مزمن-nn e0 x)))
+(B (name affliction) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (رنجوری-nn e0 x)))
+(B (name medical-condition) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (^(وضعیت-nn e0 x)(پزشکی-adj e1 x))))
+(B (name health-problem) (=>(^(S#DISEASE e1 :0.45)(SS#TYPE y e1 :0.45)) (^(سلامت-nn e0 x)(مشکل-nn e1 y)(nn e2 y x))))
+(B (name health-problem) (=>(^(S#DISEASE e1 :0.45)(SS#TYPE y e1 :0.45)) (^(سلامتی-nn e0 x)(مشکل-nn e1 y)(nn e2 y x))))
+ 
+(B (name plague) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (طاعون-nn e0 x)))
+(B (name cancer) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (سرطان-nn e0 x)))
+(B (name infection) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (عفونت-nn e0 x)))
+(B (name blight) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE x e0 :0.45)) (آفت-nn e0 x)))
+ 
+
+; SICK
+(B (name sick) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (بیمار-adj e0 y)))
+(B (name ill) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (مریض-adj e0 y)))
+(B (name sore) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (مجروح-adj e0 y)))
+(B (name diseased) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (بیمار-adj e0 y)))
+(B (name handicapped) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (معلول-adj e0 y)))
+(B (name disabled) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (ناتوان-adj e0 y)))
+ 
+(B (name crippled) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (چلاق-adj e0 y)))
+ 
+(B (name invalid) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (علیل-nn e0 y)))
+(B (name patient) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (ناخوش-nn e0 y)))
+ 
+(B (name suffer-from) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y x :0.3))(^(رنج-بردن-vb e0 y u1 u2)(از-in e1 e0 x))))
+ 
+; OF - DISEASE
+(B (name of-disease) (=>(R#SICK y x :0.9)(^(S#DISEASE x)(of-in e1 x y)))) 
+(B (name of-disease) (=>(R#SICK y x :0.9)(^(S#DISEASE x)(nn e1 x y)))) 
+
+
+
+; TREATMENT
+ 
+(B (name treatment) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(درمان-nn e0 x)))
+(B (name operation) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(جراحی-nn e0 x)))
+(B (name therapy) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(معالجه-nn e0 x)))
+(B (name diagnosis) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(تشخیص-nn e0 x)))
+(B (name diagnostic) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(تشخیصی-adj e0 x)))
+; (B (name examination)(=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45)) (معاینه-nn e0 x)))
+(B (name prescription)(=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45)) (نسخه-nn e0 x)))
+ 
+(B (name doctor) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(پزشک-nn e1 y)))
+(B (name doctor) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(درمانگر-nn e1 y)))
+(B (name doctor) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(درمانگران-nn e1 y)))
+(B (name doctor) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(درمانگرها-nn e1 y)))
+(B (name doctor) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(دکتر-nn e1 y)))
+(B (name healer) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(مرهم-nn e1 y)))
+(B (name healer) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(التیام-دهنده-nn e1 y)))
+(B (name healer) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(^(التیام-nn e1 x)(دهنده-nn e2 y)(nn e3 x y))))
+(B (name healer) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(^(التیام-nn e1 x)(بخش-nn e2 y)(nn e3 x y))))
+(B (name healer) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(^(شفا-nn e1 x)(دهنده-nn e2 y)(nn e3 x y))))
+(B (name healer) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(^(شفا-nn e1 x)(بخش-nn e2 y)(nn e3 x y))))
+(B (name physician) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(طبیب-nn e1 y)))
+(B (name suregon) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(جراح-nn e1 y)))
+(B (name medic) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(پزشکی-nn e1 y)))
+(B (name medicament) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(دوا-nn e1 y)))
+(B (name remedy) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(درمان-nn e1 y)))
+(B (name antibiotic)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x x :0.3)(R#CURE-AGENT x e0 :0.3)) (آنتی-بیوتیک-nn e1 x)))
+(B (name antibiotic)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x x :0.3)(R#CURE-AGENT x e0 :0.3)) (^(آنتی-nn e1 x)(بیوتیک-nn e2 y)(nn e3 x y))))
+(B (name medicine)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x x :0.3)(R#CURE-AGENT x e0 :0.3)) (دوا-nn e1 x)))
+(B (name drug)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x x :0.3) (R#CURE-AGENT x e0 :0.3)) (دارو-nn e1 x)))
+(B (name pill)(=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT x x :0.3)(R#CURE-AGENT x e0 :0.3)) (قرص-nn e1 x)))
+(B (name bandage) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(پانسمان-nn e1 y)))
+(B (name band-aid) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3))(^(چسب-nn e1 x)(زخم-nn e2 y)(nn e3 x y))))
+ 
+(B (name treat) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (^(درمان-nn e1 z)(kardan e2 y x z))))
+(B (name prescribe) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT e0 u :0.3)(R#CURE-AGENT y e0 :0.3)) (^(تجویز-nn e1 z)(kardan e2 y x z))))
+(B (name diagnose) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (^(تشخیص-nn e1 z)(داد‫#‬ده e2 y x u2)(NVE e3 z e2))))
+(B (name alleviate) (=>(^(S#DISEASE e0 :0.3)(SS#TREATMENT e0 x :0.3)(R#CURE-AGENT y e0 :0.3)) (^(آرام-nn e1 z)(kardan e2 y x z))))
+(B (name dissect) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT e0 u :0.3)(R#CURE-AGENT y e0 :0.3)) (^(کالبدشکافی-nn e1 z)(kardan e2 y x z))))
+(B (name dissect) (=>(^(S#DISEASE u :0.3)(SS#TREATMENT e0 u :0.3)(R#CURE-AGENT y e0 :0.3)) (^(کالبد-nn e1 w)(شکافی-nn e3 z)(kardan e2 y x z))))
+ 
+(B (name of-treatment) (=>(S#DISEASE y e0 :0.9)(^(SS#TREATMENT x y)(of-in e1 x y))))
+(B (name of-treatment) (=>(S#DISEASE y e0 :0.9)(^(SS#TREATMENT x y)(nn e1 x y))))
+ 
+; CURE
+ 
+(B (name cure) (=>(^(S#DISEASE u :0.45)(SS#CURE x u :0.45))(علاج-nn e0 x)))
+(B (name panacea) (=>(^(S#DISEASE u :0.45)(SS#CURE x u :0.45))(اکسیر-nn e0 x)))
+(B (name cure-all)(=>(^(S#DISEASE e0 :0.45)(SS#CURE x e0 :0.45)) (نوشدارو-nn e0 x)))
+ 
+(B (name unrecoverable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e1 x :0.2)(R#SICK y e1 :0.1))(بی-درمان-adj e1 y)))
+(B (name incurable) (=>(^(S#DISEASE e0 :0.2)(SS#CURE e1 x :0.2)(R#SICK y e1 :0.1)) (علاج-ناپذیر-adj e1 y)))
+ 
+
+(B (name recover) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.3)(R#SICK y e0 :0.3))(^(بهبود-nn e0 x)(yaftan e0 y z))))
+
+(B (name recuperate) (=>(^(S#DISEASE x :0.3)(SS#CURE e0 e0 :0.3)(R#SICK y x :0.3)) (^(نیرو-nn e1 x1)(تازه-adj e3 x1)(یافت#یاب-vb e0 y x1 u3))))
+
+(B (name convalesce) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.3)(R#SICK y x :0.3))(^(دوره-nn e1 x1)(نقاهت-nn e2 x2)(nn e3 x1 x2)(گذراند#گذران-vb e0 y x1 u3))))
+ 
+(B (name recovery) (=>(^(S#DISEASE e0 :0.45)(SS#CURE e0 x :0.45)) (بهبود-nn x e1)))
+(B (name recuperation) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.45)) (بهبودی-nn e1)))
+(B (name convalescence) (=>(^(S#DISEASE e0 :0.3)(SS#CURE e0 x :0.45)) (^(دوره-nn e1 x)(نقاهت-nn e2 y)(nn e3 x y))))
+ 
+ 
+; OF - CURE
+(B (name for-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE x y)(برای-in e1 x y))))
+(B (name for-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE x y)(جهت-in e1 x y))))
+ 
+; FROM_AGAINST - CURE
+; (B (name from-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE e0 y)(بواسطه-in e1 e0 y))))
+; (B (name against-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE e0 y)(علیه-in e1 e0 y))))
+; (B (name against-cure) (=>(S#DISEASE y :0.9)(^(SS#CURE e0 y)(ضد-in e1 e0 y))))
+
+ 
+; EPIDEMIC
+(B (name epidemic2) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE e0 e0 :0.45)) (واگیر-adj e0 y)))
+(B (name epidemic2) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE e0 e0 :0.45)) (واگیردار-adj e0 y)))
+(B (name pandemia) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE y e0 :0.45)) (همه-گیر-nn e0 y)))
+(B (name virus) (=>(^(S#DISEASE e0 :0.45)(SS#TYPE y e0 :0.45)) (ویروس-nn e0 y)))
+ 
+; OF - EPIDEMIC
+(B (name of-epidemic) (=>(S#DISEASE y :0.9)(^(SS#TYPE x y u)(nn e1 x y))))
+  
+
+; SYMPTOM
+(B (name symptom) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (^(علامت-nn e0 y)(بیماری-nn e1 z)(nn e2 y z))))
+(B (name symptom) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (^(علامتها-nn e0 y)(بیماری-nn e1 z)(nn e2 y z))))
+(B (name symptom) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (^(علامتهای-nn e0 y)(بیماری-nn e1 z)(nn e2 y z))))
+(B (name symptom) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (^(علامات-nn e0 y)(بیماری-nn e1 z)(nn e2 y z))))
+(B (name symptom) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (علائم-nn e0 y)))
+(B (name symptomatic) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS e0 e0 :0.45)) (نشانه-بیماری-adj e0 y)))
+ 
+(B (name bleeding) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS e0 e0 :0.45))(خون-ریزی-nn e0 y)))
+(B (name bleeding) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS e0 e0 :0.45))(خونریزی-nn e0 y)))
+(B (name wound) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (زخم-nn e0 y)))
+(B (name wound) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (خراش-nn e0 y)))
+(B (name pain) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (درد-nn e0 y)))
+(B (name scar) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (جای-زخم-nn e0 y)))
+(B (name fever) (=>(^(S#DISEASE e0 :0.45) (SS#SYMPTOMS y e0 :0.45)) (تب-nn e0 y)))
+ 
+
+(B (name ache) (=>(^(S#DISEASE e0 :0.3)(SS#SYMPTOMS e0 e0 :0.3)(R#SICK y e0 :0.3))(^(کشیدن-nn e1 z)(keshidan e0 y u z))))
+(B (name ache) (=>(^(S#DISEASE e0 :0.3)(SS#SYMPTOMS e0 e0 :0.3)(R#SICK y e0 :0.3))(^(خون-nn e1 z)(aamadan e0 y z))))
+ 
+; OF - SYMPTOM
+;(B (name of-symptom) (=>(S#DISEASE y :0.9)(^(SS#SYMPTOMS x y)(nn e1 x y))))
+;(B (name of-symptom) (=>(S#DISEASE y :0.9)(^(SS#SYMPTOMS x y)(of-in e1 x y))))
+ 
+(B (name dismap)(=>(I#DISEASE e0 :0.9)(S#DISEASE x)))
+(B (name dis-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name curemap)(=>(I#CURE x y :0.9)(SS#CURE x y)))
+(B (name treatmentmap)(=>(I#TREATMENT x y :0.9)(SS#TREATMENT x y)))
+(B (name symptomsmap)(=>(I#SYMPTOMS x y :0.9)(SS#SYMPTOMS x y)))
+
+
+; CRIME
+;TYPE
+(B (name crime)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (جرم-nn e0 x)))
+(B (name offence)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (بزه-nn e0 x)))
+(B (name felony)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (جنایت-nn e0 x)))
+(B (name delinquency)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (تخلف-nn e0 x)))
+
+(B (name racism)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(نژاد-nn e0 x)(پرستی-nn e1 y)(nn e2 x y))))
+
+(B (name racism)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (نژادپرستی-nn e0 x)))
+ 
+(B (name misdeed)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(بد-nn e0 x)(کرداری-nn e1 y)(nn e2 x y))))
+(B (name misdeed)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (بدکرداری-nn e0 x)))
+(B (name misdeed)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (بزهکاری-nn e0 x)))
+(B (name misdeed)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(بزه-nn e0 x)(کاری-nn e1 y)(nn e2 x y))))
+(B (name misdeed)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(تبه-nn e0 x)(کاری-nn e1 y)(nn e2 x y))))
+(B (name malefaction)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (تبهکاری-nn e0 x)))
+(B (name violation)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (تخطی-nn e0 x)))
+ 
+(B (name guilty-conduct)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(بزه‫-‬کارانه-adj e1 x)))
+(B (name guilty-conduct)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(بزهکارانه-adj e1 x)))
+(B (name guilty-conduct)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(مجرمانه-adj e1 x)))
+(B (name public-wrong)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(^(عمومی-adj e1 x)(اشتباه-nn e0 x))))
+(B (name criminal-wrong)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(^(جنایی-adj e1 x)(اشتباه-nn e0 x))))
+(B (name criminal-act) (=>(S#CRIME e1 :0.9)(^(جنایی-adj e1 x)(عمل-nn e0 x))))
+ 
+(B (name rape)(=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (تجاوز-nn e0 x)))
+ 
+(B (name rapev) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (^(تجاوز-nn e1 z)(kardan e0 x y z))))
+(B (name violate) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (^(نقض-nn e1 z)(kardan e0 x y z))))
+(B (name kill) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (کشت#کش-vb e0 x y u)))
+ 
+; THEFT
+(B (name steal) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#THEME z e0 :0.2)) (^(سرقت-nn e1 z)(kardan e0 x y z))))
+(B (name steal) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#THEME z e0 :0.2)) (دزدید#دزد-vb e0 x z u2)))
+
+(B (name pilfer) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2) (R#THEME z e0 :0.2)) (^(کش-nn e1 a)(raftan e0 x z a))))
+(B (name pinch) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2) (R#THEME z e0 :0.2)) (قاپید#قاپ-vb e0 x z u2)))
+(B (name pinch) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2) (R#THEME z e0 :0.2)) (قاپید#قاپ-vb e0 x z u2)))
+(B (name pinch) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2) (R#THEME z e0 :0.2)) (قاپید#قاپ-vb e0 x z u2)))
+(B (name plunder) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2) (R#THEME z e0 :0.2)) (^(غارت-nn e1 z)(kardan e0 x y z))))
+ 
+(B (name theft) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (سرقت-nn e0 x)))
+(B (name larceny) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (دستبرد-nn e0 x)))
+(B (name stealage) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (دزدی-nn e0 x)))
+(B (name stealing) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(راه-nn e0 x)(زنی-nn e1 y)(nn e2 x y))))
+(B (name stealing) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(یغما-nn e0 x)(گری-nn e1 y)(nn e2 x y))))
+(B (name stealing) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (راهزنی-nn e0 x)))
+(B (name thievery) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (غارت-nn e0 x)))
+(B (name thievery) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (یغماگری-nn e0 x)))
+(B (name thievery) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45)) (یغما‫-‬گری-nn e0 x)))
+(B (name pillage) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(تاراج-nn e0 x)))
+(B (name plundering) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(غارتگری-nn e0 x)))
+(B (name booty) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(یغما-nn e0 x)))
+(B (name plunder) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(چپاول-nn e0 x)))
+ 
+ 
+(B (name rob) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (ربود#ربا-vb e0 x y u)))
+(B (name mug) (=>(^(S#CRIME e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#VICTIM y e0 :0.2)) (^(دستبرد-nn e1 a)(zadan e0 x z a))))
+
+; FROM - CRIME
+(B (name from-theft) (=>(R#CRIME_VICTIM y :0.9)(^(SS#CRIME_TYPE e0)(از-in e1 e0 y))))
+(B (name from-theft) (=>(R#CRIME_VICTIM y :0.9)(^(SS#CRIME_TYPE e0)(به-in e1 e0 y))))
+ 
+(B (name violence) (=>(^(S#CRIME e0 :0.45)(SS#TYPE x e0 :0.45))(خشونت-nn e0 x)))
+
+
+;PERPETRATOR
+(B (name bandit)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (جانی-nn e0 x)))
+(B (name criminal2)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (جنایی-adj e0 x)))
+(B (name delinquent)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (خاطی-nn e0 x)))
+(B (name offender)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (متجاوز-nn e0 x)))
+(B (name convict)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (مجرم-nn e0 x)))
+(B (name outlaw)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (یاغی-nn e0 x)))
+(B (name culprit)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (مقصر-nn e0 x)))
+(B (name malefactor)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (تبه-کار-nn e0 x)))
+(B (name malefactor)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (تبهکار-nn e0 x)))
+(B (name prostitute)(=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (فاحشه-nn e0 x)))
+(B (name thief) (=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (سارق-nn e0 x)))
+(B (name pilferer) (=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (دزد-nn e0 x)))
+(B (name mugger) (=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (غارتگر-nn e0 x)))
+(B (name robber) (=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (راهزن-nn e0 x)))
+(B (name burglar) (=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (جیب‫-‬بر-nn e0 x)))
+(B (name plunderer) (=>(^(S#CRIME e0 :0.3)(SS#PERPETRATOR x e0 :0.3)(R#AGENT x e0 :0.3)) (چپاولگر-nn e0 x)))
+ 
+ 
+; PUNISHMENT
+(B (name punishment)(=>(^(S#CRIME u :0.45)(SS#PUNISHMENT x u :0.45)) (مجازات-nn e0 x)))
+(B (name penalty)(=>(^(S#CRIME u :0.45)(SS#PUNISHMENT x u :0.45)) (جریمه-nn e0 x)))
+(B (name sentence)(=>(^(S#CRIME u :0.45)(SS#PUNISHMENT x u :0.45)) (حکم-nn e0 x)))
+(B (name conviction)(=>(^(S#CRIME u :0.45)(SS#PUNISHMENT x u :0.45)) (سرزنش-nn e0 x)))
+(B (name mulct)(=>(^(S#CRIME u :0.45)(SS#PUNISHMENT x u :0.45)) (غرامت-nn e0 x)))
+(B (name fine)(=>(^(S#CRIME u :0.45)(SS#PUNISHMENT x u :0.45)) (جریمه-nn e0 x)))
+(B (name scourge)(=>(^(S#CRIME u :0.45)(SS#PUNISHMENT x u :0.45)) (گوشمالی-nn e0 x)))
+ 
+(B (name punitive)(=>(^(S#CRIME u :0.45)(SS#PUNISHMENT x u :0.45)) (تنبیهی-adj e0 x)))
+ 
+(B (name prison-sentence)(=>(^(S#CRIME y :0.45)(SS#PUNISHMENT y y :0.45)) (^(زندان-nn e0 x)(nn e1 y x)(حکم-nn e2 y))))
+(B (name life-sentence)(=>(^(S#CRIME y :0.45)(SS#PUNISHMENT y y :0.45)) (^(ابد-nn e0 x)(nn e1 y x)(حبس-nn e2 y))))
+ 
+(B (name condemn) (=>(^(S#CRIME e0 :0.2)(SS#PUNISHMENT e0 e0 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2)) (^(محکوم-nn e1 z)(kardan e0 x y z))))
+(B (name punish) (=>(^(S#CRIME e0 :0.2)(SS#PUNISHMENT e0 e0 :0.2)(R#PUNISHMENT-AGENT x e0 :0.2)(R#PUNISHMENT-VICTIM y e0 :0.2)) (^(ادب-nn e1 z)(kardan e0 x y z))))
+ 
+; VICTIM
+(B (name victim)(=>(^(S#CRIME e0 :0.3)(SS#VICTIM x e0 :0.3)(R#VICTIM x e0 :0.3)) (قربانی-nn e0 x)))
+ 
+
+
+(B (name crimemap)(=>(I#CRIME x :0.9)(S#CRIME x)))
+(B (name crime-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name crime-perpetratorsmap)(=>(I#PERPETRATOR x y :0.9)(SS#PERPETRATOR x y)))
+(B (name punishmentmap)(=>(I#PUNISHMENT x y :0.9)(SS#PUNISHMENT x y)))
+(B (name crime-perpetratorsmap)(=>(I#VICTIM x y :0.9)(SS#VICTIM x y)))
+
+
+
+ 
+; CONFINEMENT
+; CONFINEMENT-CONFINED_SPACE
+(B (name prison) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (زندان-nn e0 x)))
+(B (name jail) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (محبس-nn e0 x)))
+(B (name cage) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (حبس-nn e0 x)))
+
+(B (name dungeon) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (^(سیاه-nn e0 x)(چال-nn e1 y)(nn e2 x y))))
+(B (name penitentiary) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (ندامتگاه-nn e0 x)))
+(B (name dead-end) (=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (محبس-nn e0 x)))
+(B (name alcatraz)(=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (آلکاتراز-nn e0 x)))
+(B (name cell)(=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (سلول-nn e0 x)))
+(B (name closet)(=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (قفس-nn e0 x)))
+(B (name closet)(=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (انفرادی-nn e0 x)))
+(B (name closet)(=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE x e0 :0.45)) (^(بند-nn e0 x)(عمومی-nn e1 y)(nn e2 x y))))
+
+
+;add prison cell, jail cell
+(B (name stuck)(=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE e0 e0 :0.45)) (گیر-nn e0 x)))
+(B (name stuck)(=>(^(S#CONFINEMENT e0 :0.45)(SS#CONFINED_SPACE e0 e0 :0.45)) (محبوس-nn e0 x))) 
+
+(B (name imprison) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(^(به-in e2 e0 z)(زندان-nn e1 z)(افکند#افکن-vb e0 x y u5))))
+(B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(^(نگه-nn e1 z)(dashtan e0 x y z))))
+(B (name incarcerate) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(^(حبس-nn e1 z)(kardan e0 x y z))))
+(B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(^(قفل-nn e1 z)(kardan e0 x y z))))
+(B (name confine) (=>(^(S#CONFINEMENT e0 :0.2)(SS#CONFINED_SPACE e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(^(قفل-nn e1 z)(zadan e0 x y z))))
+
+; RESTRAINTS
+(B (name trap) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45)) (تله-nn e0 x)))
+(B (name net) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45))(دام-nn e0 x)))
+(B (name handcuffs) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45))(^(دست-nn e0 x)(بند-nn e1 y)(nn e2 x y))))
+(B (name handcuffs) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45))(دستبند-nn e0 x)))
+(B (name chain) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45))(زنجیر-nn e0 x)))
+(B (name chain) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45))(غل-nn e0 x)))
+(B (name bondage) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45))(اسارت-nn e0 x)))
+(B (name bond) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45))(قید-nn e0 x)))
+(B (name bond) (=>(^(S#CONFINEMENT u :0.45)(SS#RESTRAINTS x u :0.45))(بند-nn e0 x)))
+(B (name grip) (=>(^(S#CONFINEMENT e0 :0.45)(SS#RESTRAINTS x e0 :0.45))(چنگ-nn e0 x)))
+ 
+(B (name catch) (=>(^(S#CONFINEMENT e0 :0.2)(SS#RESTRAINTS e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(گرفت‫#‬گیر-vb e0 x y u)))
+(B (name grip) (=>(^(S#CONFINEMENT e0 :0.2)(SS#RESTRAINTS e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(^(دستگیر-nn e1 z)(kardan e0 x y z))))
+(B (name handcuff) (=>(^(S#CONFINEMENT e0 :0.2)(SS#RESTRAINTS e0 e0 :0.2)(R#AGENT x e0 :0.2)(R#PATIENT y e0 :0.2))(^(دستبند-nn e1 z)(zadan e0 x y z))))
+ 
+; EXIT
+(B (name door)(=>(^(S#CONFINEMENT e0 :0.45)(SS#EXIT x e0 :0.45)) (در-nn e0 x)))
+(B (name ladder)(=>(^(S#CONFINEMENT e0 :0.45)(SS#EXIT x e0 :0.45)) (پلکان-nn e0 x)))
+(B (name rope)(=>(^(S#CONFINEMENT e0 :0.45)(SS#EXIT x e0 :0.45)) (طناب-nn e0 x)))
+(B (name trampoline)(=>(^(S#CONFINEMENT e0 :0.45)(SS#EXIT x e0 :0.45)) (تور-nn e0 x)))
+(B (name lifeline)(=>(^(S#CONFINEMENT e0 :0.45)(SS#EXIT x e0 :0.45)) (^(طناب-nn e0 x)(نجات-nn e1 y)(nn e2 x y))))
+(B (name escape)(=>(^(S#CONFINEMENT e0 :0.45)(SS#EXIT x e0 :0.45)) (فرار-nn e0 x)))
+ 
+(B (name escape)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(فرار-nn e1 z)(kardan e0 x y z))))
+(B (name get-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(خارج-nn e1 z)(kardan e0 y x z))))
+(B (name get-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(خارج-nn e1 z)(shodan e0 x y z))))
+(B (name get-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (^(خارج-adj e1 z)(شد‫#‬شو-vb e0 x u1 z))))
+(B (name break-out-of)(=>(^(S#CONFINEMENT e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ESCAPE-AGENT x e0 :0.3)) (گریخت#گریز-vb e0 x y u)))
+(B (name liberate)(=>(^(S#CONFINEMENT u1 :0.3)(SS#EXIT e0 u1 :0.3)(R#EXIT-AGENT x e0 :0.3) (R#EXIT-PATIENT y e0 :0.3))  (^(آزاد-nn e1 z)(kardan e0 x y z))))
+ 
+(B (name break-restraints) (=>(^(S#CONFINEMENT e0 :0.45) (SS#EXIT e0 e0 :0.45)) (^(S#CONFINEMENT e1)(SS#RESTRAINTS y e1)(شکست#شکن-vb e0 x y z))))
+ 
+(B (name confinementmap)(=>(I#CONFINEMENT x :0.9)(S#CONFINEMENT x)))
+(B (name confinedspacemap)(=>(I#CONFINED_SPACE x y :0.9)(SS#CONFINED_SPACE x y)))
+(B (name confinement-restraintsmap)(=>(I#RESTRAINTS x y :0.9)(SS#RESTRAINTS x y)))
+(B (name exitmap)(=>(I#EXIT x y :0.9)(SS#EXIT x y)))
+
+
+ 
+; ENSLAVEMENT
+;SERVANT
+(B (name slave) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(برده-nn e0 x)))
+(B (name servant) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#SERVANT e0 e0 :0.3)(R#ENSLAVEMENT-PATIENT x e0 :0.3))(نوکر-nn e0 x)))
+ 
+;OPPRESSION
+(B (name slavery) (=>(^(S#ENSLAVEMENT e0 :0.45)(SS#OPPRESSION x e0 :0.45))(بردگی-nn e0 x)))
+(B (name enslavement) (=>(^(S#ENSLAVEMENT e0 :0.45)(SS#OPPRESSION x e0 :0.45))(غلامی-nn e0 x)))
+(B (name enslave) (=>(^(S#ENSLAVEMENT e0 :0.2)(SS#OPPRESSION e0 e0 :0.2)(R#ENSLAVEMENT-PATIENT y e0 :0.2)(R#ENSLAVEMENT-AGENT x e0 :0.2))(غلام-nn e0 x y u)))
+ 
+(B (name oppressive) (=>(^(S#ENSLAVEMENT e0 :0.45)(SS#OPPRESSION x e0 :0.45))(ستمگر-adj e0 x)))
+(B (name oppressive) (=>(^(S#ENSLAVEMENT e0 :0.45)(SS#OPPRESSION x e0 :0.45))(ظالم-adj e0 x)))
+ 
+;MASTER
+(B (name master) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER e0 e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(ارباب-nn e0 x)))
+(B (name master) (=>(^(S#ENSLAVEMENT e0 :0.3)(SS#MASTER e0 e0 :0.3)(R#ENSLAVEMENT-AGENT x e0 :0.3))(^(برده-nn e0 x)(دار-nn e1 y)(nn e2 x y))))
+ 
+(B (name reign) (=>(^(S#ENSLAVEMENT e0 :0.33)(SS#MASTER e0 e0 :0.33)(R#ENSLAVEMENT-AGENT x e0 :0.33))(^(حکمرانی-nn e1 z)(kardan e0 y x z))))
+(B (name rule) (=>(^(S#ENSLAVEMENT e0 :0.33)(SS#MASTER e0 e0 :0.33)(R#ENSLAVEMENT-AGENT x e0 :0.33))(^(حکومت-nn e1 z)(kardan e0 y x z))))
+(B (name subject) (=>(^(S#ENSLAVEMENT e0 :0.33)(SS#MASTER e0 e0 :0.33)(R#ENSLAVEMENT-AGENT x e0 :0.33))(^(مطیع-nn e1 z)(kardan e0 y x z))))
+
+ 
+(B (name enslavementmap)(=>(I#ENSLAVEMENT x :0.9)(S#ENSLAVEMENT x)))
+(B (name servantmap)(=>(I#SERVANT x y :0.9)(SS#SERVANT x y)))
+(B (name oppressionmap)(=>(I#OPPRESSION x y :0.9)(SS#OPPRESSION x y)))
+(B (name mastermap)(=>(I#MASTER x y :0.9)(SS#MASTER x y)))
+
+
+ 
+; BODY-OF-WATER
+ 
+(B (name water) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45))(آب-nn e0 x)))
+(B (name sea-water) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (آب-دریا-nn e0 x)))
+(B (name sea-water) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (^(آب-nn e0 x)(دریا-nn e1 y)(nn e2 x y))))
+ 
+(B (name sea) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (دریا-nn e0 y)))
+(B (name ocean) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (اقیانوس-nn e0 y)))
+(B (name river) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#TYPE x e0 :0.45)) (رودخانه-nn e0 y)))
+ 
+; OF - BODY_OF_WATER
+(B (name of-body-of-water) (=>(R#MATTER x y :0.9)(^(SS#BODY_OF_WATER_TYPE y)(از-in e1 y x))))
+ 
+;##RI: commenting out drink and thirst because they aren't in the government lists for now.
+; DRINK
+; (B (name drink) (=>(^(S#BODY_OF_WATER u :0.2)(SS#DRINK e0 u y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2)) (نوشید#نوش-vb e0 x y u2)))
+; (B (name gulp) (=>(^(S#BODY_OF_WATER u :0.2)(SS#DRINK e0 u y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2)) (آشامید#آشام-vb e0 x y u2)))
+; (B (name imbibe) (=>(^(S#BODY_OF_WATER u :0.2)(SS#DRINK e0 u y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2)) (درکشید#درکش-vb e0 x y u2)))
+; (B (name imbibe) (=>(^(S#BODY_OF_WATER u :0.2)(SS#DRINK e0 u y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2)) (سرکشید#کش-vb e0 x y u2)))
+; (B (name sip) (=>(^(S#BODY_OF_WATER u :0.2)(SS#DRINK e0 u y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2)) (چشید#چش-vb e0 x y u2)))
+ 
+; (B (name drink2) (=>(^(S#BODY_OF_WATER y :0.45) (SS#DRINK x y y :0.45))(آشامیدنی-nn e0 x)))
+; (B (name gulp) (=>(^(S#BODY_OF_WATER y :0.45) (SS#DRINK x y y :0.45))(جرعه-nn e0 x)))
+; (B (name sip) (=>(^(S#BODY_OF_WATER y :0.45) (SS#DRINK x y y :0.45))(جرعه-nn e0 x)))
+; (B (name swig) (=>(^(S#BODY_OF_WATER y :0.45) (SS#DRINK x y y :0.45))(جرعه-nn e0 x)))
+ 
+; THIRST
+; (B (name thirst) (=>(^(S#BODY_OF_WATER y :0.3) (SS#THIRST x y :0.3)(R#DRINKER x e0 :0.3))(تشنگی-nn e0 x)))
+; (B (name thirsty) (=>(^(S#BODY_OF_WATER y :0.3) (SS#THIRST e0 y :0.3)(R#DRINKER x e0 :0.3))(تشنه-adj e0 x)))
+; (B (name thirstier) (=>(^(S#BODY_OF_WATER y :0.3) (SS#THIRST e0 y :0.3)(R#DRINKER x e0 :0.3))(تشنه-تر-adj e0 x)))
+ 
+; OF - THIRST
+(B (name of-thirst) (=>(R#THIRST-OBJECT y e0 :0.9)(^(SS#BODY_OF_WATER_THIRST x)(nn e1 x y))))
+
+
+ 
+; MOVEMENT
+(B (name flow) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(تراوش-nn e1 z)(kardan e0 x y z))))
+(B (name leak) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(روان-nn e1 z)(kardan e0 y x z))))
+(B (name stream) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(جاری-nn e1 z)(kardan e0 y x z))))
+(B (name leak) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(روان-nn e1 z)(shodan e0 x y z))))
+(B (name leak) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(روان-adj e1 z)(شد‫#‬شو-vb e0 x u1 z))))
+(B (name stream) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(جاری-nn e1 z)(shodan e0 x y z))))
+(B (name leak) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(جاری-adj e1 z)(شد‫#‬شو-vb e0 x u1 z))))
+
+ 
+(B (name stream2) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(رود-nn e0 y)))
+(B (name flow2) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(جریان-nn e0 y)))
+(B (name leak2) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(نشت-nn e0 y)))
+(B (name wave) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(موج-nn e0 y)))
+(B (name tide) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(جزر-و-مد-nn e0 y)))
+(B (name flood) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(سیل-nn e0 y)))
+(B (name flood) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT y e0 :0.45))(سیلاب-nn e0 y)))
+ 
+(B (name awash) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT e0 e0 :0.45))(لبریز-adj e0 y)))
+ 
+; OF - MOVEMENT
+(B (name of-stream) (=>(R#STREAMING y e0 :0.9)(^(SS#MOVEMENT x e)(nn e1 x y))))
+(B (name of-stream) (=>(R#STREAMING y e0 :0.9)(^(SS#MOVEMENT x e)(of-in e1 x y))))
+ 
+; DANGER
+(B (name tsunami) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#DANGER y e0 :0.45))(سونامی-nn e0 y)))
+(B (name underwater) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#DANGER y e0 :0.45))(زیرآبی-nn e0 y)))
+ 
+(B (name drown) (=>(^(S#BODY_OF_WATER y :0.3)(SS#DANGER e0 y :0.3)(R#DROWN-PATIENT x e0 :0.3))(^(غرق-nn e1 z)(shodan e0 x y z))))
+ 
+(B (name watermap)(=>(I#BODY_OF_WATER x :0.9)(S#BODY_OF_WATER x)))
+(B (name watertypemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name drinkmap)(=>(I#DRINK x y y :0.9)(SS#DRINK x y y)))
+(B (name thirstmap)(=>(I#THIRST x y y :0.9)(SS#THIRST x y y)))
+(B (name streammap)(=>(I#MOVEMENT x y :0.9)(SS#MOVEMENT x y)))
+ 
+;##RI: material and cut are not in the approved gvmt. lists, so I've taken them out.
+; ; MATERIAL
+; ; CUT
+; (B (name cut) (=>(^(S#MATERIAL y :0.3)(SS#MATERIAL-CUT e0 y y :0.3)(R#CUT-AGENT x e0 :0.3))(^(برش-nn e1 z)(dadan e0 x y z))))
+; (B (name cut2) (=>(^(S#MATERIAL y :0.45)(SS#MATERIAL-CUT e0 y y :0.45))(^(nn e1 x y)(برش-nn e0 x))))
+; (B (name cut3) (=>(^(S#MATERIAL y :0.45)(SS#MATERIAL-CUT e0 y y :0.45))(^(از-in e1 x y)(قطع-nn e0 x))))
+; (B (name cut4) (=>(^(S#MATERIAL y :0.48)(SS#MATERIAL-CUT e0 y y :0.48))(بریدگی-nn e0 x)))
+ 
+; (B (name materialmap)(=>(I#MATERIAL x :0.9)(S#MATERIAL x)))
+; (B (name cutmap)(=>(I#MATERIAL-CUT x y y :0.9)(SS#MATERIAL-CUT x y y)))
+ 
+; ; ORGANISM
+; ; GROWTH
+; (B (name grow) (=>(^(S#ORGANISM x :0.45)(SS#GROW e0 x x :0.45))(^(رشد-nn e1 z)(kardan e0 x y z))))
+
+; (B (name of-growth) (=>(^(S#ORGANISM y :0.45)(SS#GROW e0 y y :0.45))(^(nn e1 x y)(رشد-nn e0 x))))
+; (B (name growth) (=>(^(S#ORGANISM y :0.47)(SS#GROW e0 y y :0.47))(ترقی-nn e0 x)))
+; (B (name growth) (=>(^(S#ORGANISM y :0.47)(SS#GROW e0 y y :0.47))(رشد-nn e0 x)))
+; (B (name growth) (=>(^(S#ORGANISM y :0.47)(SS#GROW e0 y y :0.47))(بالندگی-nn e0 x)))
+; (B (name growth) (=>(^(S#ORGANISM y :0.47)(SS#GROW e0 y y :0.47))(شکوفایی-nn e0 x)))
+ 
+; (B (name organismmap)(=>(I#ORGANISM x :0.9)(S#ORGANISM x)))
+; (B (name growmap)(=>(I#GROW x y y :0.9)(SS#GROW x y y)))
+
+
+ 
+; STRUGGLE
+ 
+(B (name war) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(جنگ-nn e0 x)))
+(B (name fight) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(نبرد-nn e0 x)))
+(B (name struggle) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(کشمکش-nn e0 x)))
+(B (name combat) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(مبارزه-nn e0 x)))
+(B (name battle) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(رزم-nn e0 x)))
+(B (name gunshot) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(تیر-اندازی-nn e0 x)))
+(B (name chaos) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45))(هرج-و-مرج-nn e0 x)))
+ 
+(B (name attack) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (حمله-nn e0 x)))
+(B (name assault) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (یورش-nn e0 x)))
+(B (name barrage) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (^(رگبار-nn e0 x)(گلوله-nn e1 y)(nn e2 x y))))
+(B (name barrage) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (^(رگبار-nn e0 x)(مسلسل-nn e1 y)(nn e2 x y))))
+; I'm not sure this fits here
+;(B (name insult) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (خونریزی-nn e0 x)))
+;(B (name insult) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (توهین-nn e0 x)))
+(B (name invasion) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (تعرض-nn e0 x)))
+ 
+(B (name combat) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE e0 e0 :0.3)(R#STRUGGLE-AGENT x e0 :0.3))(^(مبارزه-nn e1 z)(kardan e0 x y z))))
+(B (name struggle) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE e0 e0 :0.3)(R#STRUGGLE-AGENT x e0 :0.3))(^(نزاع-nn e1 z)(kardan e0 x y z))))
+(B (name battle) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE e0 e0 :0.3)(R#STRUGGLE-AGENT x e0 :0.3))(^(جنگ-nn e1 z)(kardan e0 x y z))))
+(B (name fight) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE e0 e0 :0.3)(R#STRUGGLE-AGENT x e0 :0.3))(^(نبرد-nn e1 z)(kardan e0 x y z))))
+(B (name combat) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE e0 e0 :0.3)(R#STRUGGLE-AGENT x e0 :0.3))(^(حمله-nn e1 z)(kardan e0 x y z))))
+(B (name attack) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (^(بمباران-nn e1 z)(kardan e0 x y z))))
+(B (name bombvb) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (^(مطیع-nn e1 z)(kardan e0 x y z))))
+(B (name insult) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#BATTLE-ENEMY y e0 :0.2)) (^(خونریزی-nn e1 z)(kardan e0 x y z))))
+(B (name invade) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (تاخت#تاز-vb e0 x y u2)))
+(B (name fight) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE e0 e0 :0.3)(R#STRUGGLE-AGENT x e0 :0.3))(جنگید#جنگ-vb e0 x u1 u2)))
+
+
+(B (name assail) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (^(هجوم-nn e1 z)(aavardan e0 x y z))))
+(B (name charge) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (^(متهم-nn e1 z)(kardan e0 x y z))))
+(B (name defeat) (=>(^(S#STRUGGLE u :0.2) (SS#TYPE e0 u :0.2)(R#STRUGGLE-AGENT x e0 :0.2) (R#STRUGGLE-ENEMY y e0 :0.2)) (^(شکست-nn e1 z)(dadan e0 x y z))))
+(B (name fight-with) (=> (S#STRUGGLE y x :0.90)(^(SS#TYPE x y)(با-in x y))))
+(B (name fight-against) (=> (S#STRUGGLE y x :0.90)(^(SS#TYPE x y)(علیه-in x y))))
+(B (name fight-against) (=> (S#STRUGGLE y x :0.90)(^(SS#TYPE x y)(برابر-in x y))))
+
+(B (name fight-of) (=> (R#STRUGGLE-AGENT y x :0.90)(^(SS#STRUGGLE_TYPE x)(درباره-in x y))))
+(B (name fight-on) (=> (R#STRUGGLE-AGENT y x :0.90)(^(SS#STRUGGLE_TYPE x)(سر-nn e1 y)(nn e2 y z))))
+(B (name fight-at) (=> (R#STRUGGLE-AGENT y x :0.90)(^(SS#STRUGGLE_TYPE x)(در-in x y))))
+ 
+
+(B (name enemy) (=>(^(S#STRUGGLE u :0.3) (SS#ADVERSARY x u :0.3))(دشمن-nn e1 x)))
+(B (name adversary) (=>(^(S#STRUGGLE u :0.3) (SS#ADVERSARY x u :0.3))(عدو-nn e1 x)))
+(B (name rival) (=>(^(S#STRUGGLE u :0.3) (SS#ADVERSARY x u :0.3))(رقیب-nn e1 x)))
+(B (name opponent) (=>(^(S#STRUGGLE u :0.3) (SS#ADVERSARY x u :0.3))(حریف-nn e1 x)))
+ 
+(B (name enemy-of) (=> (R#STRUGGLE-AGENT y e0 :0.90)(^(SS#STRUGGLE_ADVERSARY x e0)(nn e1 x y))))
+(B (name enemy-of) (=> (R#STRUGGLE-AGENT y e0 :0.90)(^(SS#STRUGGLE_ADVERSARY x e0)(of-in e1 x y))))
+ 
+;WE MIGHT WANT TO DO SOMETHING ELSE WITH THESE
+(B (name soldier) (=>(^(S#STRUGGLE u :0.45)(SS#ADVERSARY x u :0.45))(سرباز-nn e0 x)))
+(B (name army) (=>(^(S#STRUGGLE u :0.45)(SS#ADVERSARY x u :0.45))(ارتش-nn e0 x)))
+(B (name gunner) (=>(^(S#STRUGGLE u :0.45)(SS#ADVERSARY x u :0.45))(توپچی-nn e0 x)))
+(B (name shooter) (=>(^(S#STRUGGLE u :0.45)(SS#ADVERSARY x u :0.45))(تیرانداز-nn e0 x)))
+ 
+;##RI: weapon is not a gvmt approved sub-dimension
+; (B (name weapon) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(اسلحه-nn e0 y)))
+; (B (name weapon) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(سلاح-nn e0 y)))
+; (B (name gun) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(تفنگ-nn e0 y)))
+; (B (name knife) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(چاقو-nn e0 y)))
+; (B (name bomb) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(بمب-nn e0 y)))
+; (B (name artillery) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(توپخانه-nn e0 y)))
+; (B (name revolver) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(هفت-تیر-nn e0 y)))
+; (B (name sword) (=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON y e0 :0.45))(شمشیر-nn e0 y)))
+; (B (name ammunition)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45))(مهمات-nn e0 x)))
+; (B (name bayonet)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (سرنیزه-nn e0 x)))
+; (B (name bomb)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (نارنجک-nn e0 x)))
+; (B (name bullet)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (گلوله-nn e0 x)))
+; (B (name cannon)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (توپ-nn e0 x)))
+; (B (name laser)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (لیزر-nn e0 x)))
+; (B (name machine-gun)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (مسلسل-nn e1 y)))
+; (B (name minigun)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (تیربار-nn e0 x)))
+; (B (name pistol)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (تپانچه-nn e0 x)))
+; (B (name rifle)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (تفنگ-nn e0 x)))
+; (B (name spear)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (نیزه-nn e0 x)))
+; (B (name trigger)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (ماشه-nn e0 x)))
+; (B (name uzi)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (یوزی-nn e0 x)))
+ 
+; (B (name armory)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45))(زراد-خانه-nn e0 x)))
+; (B (name arsenal)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (^(انبار-nn e0 x)(مهمات-nn e1 y)(nn e2 x y))))
+
+
+
+(B (name weapon) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(اسلحه-nn e0 x)))
+(B (name gun) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(^(جنگ-nn e0 y)(افزار-nn e1 x)(nn e2 y x))))
+(B (name gun) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(جنگ-افزار-nn e0 x)))
+(B (name knife) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(چاقو-nn e0 x)))
+(B (name bomb) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(بمب-nn e0 x)))
+(B (name artillery) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(توپخانه-nn e0 x)))
+(B (name revolver) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(هفت-تیر-nn e0 x)))
+(B (name sword) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(شمشیر-nn e0 x)))
+(B (name ammunition) (=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(مهمات-nn e0 x)))
+(B (name bayonet)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (سرنیزه-nn e0 x)))
+(B (name bomb)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (نارنجک-nn e0 x)))
+(B (name bullet)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (گلوله-nn e0 x)))
+(B (name cannon)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (توپ-nn e0 x)))
+(B (name laser)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (لیزر-nn e0 x)))
+(B (name minigun)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (تیربار-nn e0 x)))
+(B (name minigun)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (مسلسل-nn e0 x)))
+(B (name pistol)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (تپانچه-nn e0 x)))
+(B (name rifle)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (تفنگ-nn e0 x)))
+(B (name spear)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (نیزه-nn e0 x)))
+(B (name trigger)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (ماشه-nn e0 x)))
+(B (name uzi)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33)) (یوزی-nn e0 x)))
+ 
+
+(B (name armory)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(^(زراد-nn e0 y)(خانه-nn e1 x)(nn e2 y x))))
+(B (name armory)(=>(^(S#STRUGGLE e0 :0.33)(SS#TYPE x e0 :0.33)(R#WEAPON x e0 :0.33))(زراد-خانه-nn e0 x)))
+; (B (name arsenal)(=>(^(S#STRUGGLE e0 :0.45)(SS#WEAPON x e0 :0.45)) (^(انبار-nn e0 x)(مهمات-nn e1 y)(nn e2 x y))))
+ 
+(B (name strugglemap)(=>(I#STRUGGLE x :0.9)(S#STRUGGLE x)))
+(B (name struggle-typemap)(=>(I#TYPE x e0 :0.9)(SS#TYPE x e0)))
+(B (name adversarymap)(=>(I#ADVERSARY x u :0.9)(SS#ADVERSARY x u)))
+;(B (name weaponmap)(=>(I#WEAPON x e0 :0.9)(SS#WEAPON x e0)))
+ 
+
+; ABYSS
+ 
+(B (name abyss) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (قعر-nn e0 x)))
+(B (name hell) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (جهنم-nn e0 x)))
+(B (name sinkhole) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (گودال-nn e0 x)))
+(B (name hole) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (حفره-nn e0 x)))
+(B (name hole) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (چاله-nn e0 x)))
+(B (name chasm) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (پرتگاه -nn e0 x)))
+(B (name pit) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (گودال-nn e0 x)))
+(B (name cave) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (غار-nn e0 x)))
+(B (name abysm) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (مغاک-nn e0 x)))
+(B (name trench) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (خندق-nn e0 x)))
+(B (name black-hole) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (^(سیاه-adj e0 x)(چاله-nn e1 x))))
+(B (name bottomless-pit) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE x e0 :0.45)) (^(بی-انتها-adj e0 x)(گودال-nn e1 x))))
+ 
+(B (name abyssal) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE e0 e0 e0 :0.45)) (عمیق-adj e0 x)))
+(B (name abysmal) (=>(^(S#ABYSS e0 :0.45)(SS#TYPE e0 e0 e0 :0.45)) (ژرف-adj e0 x)))
+
+
+; DEPTH
+(B (name depth) (=>(^(S#ABYSS e0 :0.45)(SS#DEPTH x e0 :0.45)) (عمق-nn e0 x)))
+(B (name deep2) (=>(^(S#ABYSS e0 :0.3)(SS#DEPTH x e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (عمیق-adj e0 x)))
+(B (name deeper) (=>(^(S#ABYSS e0 :0.3)(SS#DEPTH x e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (ژرف-adj e0 x)))
+(B (name deepest) (=>(^(S#ABYSS e0 :0.3)(SS#DEPTH x e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (عمیق-ترین-adj e0 x)))
+(B (name deep3) (=>(^(S#ABYSS e0 :0.45)(SS#DEPTH x e0 :0.45)) (عمیقا-rb e0 x)))
+ 
+(B (name depth-of) (=> (R#ABYSS-THEME y e0 :0.90)(^(SS#ABYSS_DEPTH x)(of-in e1 x y))))
+(B (name depth-of) (=> (R#ABYSS-THEME y e0 :0.90)(^(SS#ABYSS_DEPTH x)(nn e1 x y))))
+ 
+
+; ENTRANCE
+;##RI: Should these nouns look for an ABYSS-TYPE to trigger?
+(B (name verge)(=>(^(S#ABYSS e0 :0.45)(SS#ENTRANCE x e0 :0.45)) (حاشیه-nn e0 x)))
+(B (name edge)(=>(^(S#ABYSS e0 :0.45)(SS#ENTRANCE x e0 :0.45)) (لبه-nn e0 x)))
+(B (name border)(=>(^(S#ABYSS e0 :0.45)(SS#ENTRANCE x e0 :0.45)) (مرز-nn e0 x)))
+(B (name borderline)(=>(^(S#ABYSS e0 :0.45)(SS#ENTRANCE x e0 :0.45)) (سرحد-nn e0 x)))
+(B (name brink)(=>(^(S#ABYSS e0 :0.45)(SS#ENTRANCE x e0 :0.45)) (کناره-nn e0 x)))
+(B (name cliff)(=>(^(S#ABYSS e0 :0.45)(SS#ENTRANCE x e0 :0.45)) (صخره-nn e0 x)))
+(B (name precipice)(=>(^(S#ABYSS e0 :0.45)(SS#ENTRANCE x e0 :0.45)) (پرتگاه-nn e0 x)))
+(B (name push-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(هل-nn e1 z)(dadan e0 x y z)(درون-in e1 e0 z))))
+(B (name suck-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(مکید#مک-vb e0 x y u2)(درون-in e1 e0 z))))
+(B (name drag-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(کشید#کش-vb e0 x y u2)(درون-in e1 e0 z))))
+(B (name plunge-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(فرو#برد#بر-vb e0 x y u2)(درون-in e1 e0 z))))
+(B (name throw-into) (=>(^(SS#ENTRANCE e0 e2 :0.1)(R#ABYSS-THEME y e2 :0.1)(R#ABYSS-CAUSE x e2 :0.2)) (^(S#ABYSS e2)(SS#TYPE z e2)(انداخت#انداز-vb e0 x y u2)(درون-in e1 e0 z)))) 
+(B (name fall-into) (=>(^(S#ABYSS e0 :0.3)(SS#ENTRANCE e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(سقوط-nn e1 z)(kardan e0 y x z))))
+ 
+
+
+; EXIT
+(B (name climb-out-of) (=>(^(S#ABYSS e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(بیرون-nn e1 u2)(آمد#آی-vb e0 x y u) (از-in e2 e0 z))))
+(B (name climb-out-of) (=>(^(S#ABYSS e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(بیرون-nn e1 u2)(کشید#کش-vb e0 x y u) (از-in e2 e0 z))))
+(B (name climb-out-of) (=>(^(S#ABYSS e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(بیرون-nn e1 u2)(جست#جه-vb e0 x y u) (از-in e2 e0 z))))
+(B (name climb-out-of) (=>(^(S#ABYSS e0 :0.3)(SS#EXIT e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (^(برآمد#برآ-vb e0 x y u) (از-in e2 e0 z))))
+ 
+(B (name abyssmap)(=>(I#ABYSS x :0.9)(S#ABYSS x)))
+(B (name abysstypemap)(=>(I#TYPE x e0 :0.9)(SS#TYPE x e0)))
+(B (name abyssentrancemap)(=>(I#ENTRANCE x y :0.9)(SS#ENTRANCE x y)))
+(B (name abyssexitmap)(=>(I#EXIT x y :0.9)(SS#EXIT x y)))
+ 
+
+
+; BURDEN
+; WEIGHT
+ 
+(B (name burden) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (بار-nn e0 x)))
+(B (name weight) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (وزن-nn e0 x)))
+(B (name load) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (محموله-nn e0 x)))
+(B (name loading) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (بارگیری-nn e0 x)))
+(B (name encumbrance) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (سربار-nn e0 x)))
+(B (name burden) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (سنگینی-nn e0 x)))
+ 
+(B (name heavy) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT e0 e0 :0.45)) (سنگین-adj e0 x)))
+(B (name heavy-weight) (=>(^(S#PHYSICAL_BURDEN y :0.45)(SS#WEIGHT y y :0.45)) (^(سنگین-adj e0 x)(وزن-nn e1 y))))
+(B (name heavy-load) (=>(^(S#PHYSICAL_BURDEN y :0.45)(SS#WEIGHT y y :0.45)) (^(سنگین-adj e0 x)(بار-nn e1 y))))
+ 
+(B (name loadvb) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#WEIGHT e0 e0 :0.2)(R#PHYSICAL_BURDEN-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (^(بار-nn e1 z)(kardan e0 x y z))))
+ 
+ 
+
+;RELIEF
+(B (name relief) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (تسکین-nn e0 x)))
+(B (name ease) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (آسودگی-nn e0 x)))
+(B (name easing) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (کاهش-nn e0 x)))
+(B (name lightening) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (سبکی-nn e0 x)))
+ 
+(B (name lighten) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#RELIEF e0 e0 :0.2)(R#RELIEF-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (^(سبک-nn e1 z)(kardan e0 x y z))))
+(B (name easevb) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#RELIEF e0 e0 :0.2)(R#RELIEF-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (^(راحت-nn e1 z)(kardan e0 x y z))))
+(B (name aid) (=>(^(S#PHYSICAL_BURDEN e0 :0.2)(SS#RELIEF e0 e0 :0.2)(R#RELIEF-CAUSE x e0 :0.2)(R#PHYSICAL_BURDEN-VICTIM y e0 :0.2)) (^(کمک-nn e1 z)(kardan e0 x y z))))
+ 
+(B (name evasion) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (گریز-nn e0 x)))
+(B (name evasion) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (فرار-nn e0 x)))
+ 
+(B (name evade) (=>(^(S#PHYSICAL_BURDEN e0 :0.3)(SS#RELIEF x e0 :0.3)(R#EVADE-AGENT x e0 :0.3)) (^(طفره-nn e1 z)(raftan e0 x y z))))
+ 
+
+:PHYSICAL DISTRESS
+(B (name unsustainable)(=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_DISTRESS e0 e0 :0.45)) (ناپایدار-adj e0 y)))
+(B (name unsustainable)(=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_DISTRESS e0 e0 :0.45)) (نا‫-‬پایدار-adj e0 y)))
+  
+(B (name physical-burdenmap) (=>(I#PHYSICAL_BURDEN e0 :0.9) (S#PHYSICAL_BURDEN x)))
+(B (name weightmap) (=>(I#WEIGHT x y :0.9) (SS#WEIGHT x y)))
+(B (name reliefmap) (=>(I#RELIEF x y :0.9) (SS#RELIEF x y)))
+(B (name physical-distressmap) (=>(I#PHYSICAL_DISTRESS x y :0.9) (SS#PHYSICAL_DISTRESS x y)))
+
+
+; PHYSICAL HARM
+; TYPE
+
+(B (name bite) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(گاز-nn e1 z)(gereftan e0 x y z))))
+(B (name harm) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(صدمه-nn e1 z)(zadan e0 x y z))))
+(B (name torture) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(آزار-nn e1 z)(رساند#رسان-vb e0 x y z))))
+(B (name injure) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(نیش-nn e1 z)(zadan e0 x y z))))
+(B (name sting) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(سلاخی-nn e1 z)(kardan e0 x y z))))
+
+
+(B (name hurt) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(اذیت-nn e1 z)(kardan e0 x y z))))
+(B (name beat) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(زد#زن-vb e0 x y u2)))
+(B (name crush) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(له-nn e1 z)(kardan e0 x y z))))
+(B (name crush) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(له-nn e1 z)(shodan e0 y x z))))
+(B (name screw) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(پیچاند#پیچان-vb e0 x y u2)))
+(B (name maim) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(معیوب-nn e1 z)(kardan e0 x y z))))
+(B (name poison) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(مسموم-nn e1 z)(kardan e0 x y z))))
+(B (name strangle) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(خفه-nn e1 z)(kardan e0 x y z))))
+(B (name slash) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(اذیت-nn e1 z)(kardan e0 x y z))))
+(B (name cut) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(برید#بر-vb e0 x y u2)))
+(B (name erode) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(ساییده-nn e1 z)(shodan e0 y x z))))
+(B (name hobble) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(لنگید#لنگ-vb e0 x y u2)))
+(B (name target) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(خرد-nn e1 z)(kardan e0 x y z))))
+(B (name target) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(شکست#شکن-vb e0 x y u2)))
+
+(B (name target) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(هدف-nn e1 z)(gereftan e0 x y z))))
+(B (name target) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE e0 e0 :0.2)(R#HARM-VICTIM y e0 :0.2)(R#HARM-AGENT x e0 :0.2))(^(هدف-گیری-nn e1 z)(kardan e0 x y z))))
+
+
+(B (name hurtn) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(صدمه-nn e0 x)))
+(B (name cutn) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(بریدگی-nn e0 x)))
+(B (name slashn) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(برش-nn e0 x)))
+(B (name biten) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(نیش-nn e0 x)))
+(B (name harmn) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(آسیب-nn e0 x)))
+(B (name torturen) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(شکنجه-nn e0 x)))
+(B (name maimn) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(صدمه-nn e0 x)))
+(B (name trauman) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(زخم-nn e0 x)))
+(B (name injuryn) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(صدمه-nn e0 x)))
+;(B (name screwn) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(پیچ-خوردگی-nn e0 x)))
+(B (name poisonn)(=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#TYPE x e0 :0.45)) (زهر-nn e0 x)))
+(B (name venom)(=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#TYPE x e0 :0.45)) (سم-nn e0 x)))
+(B (name stingn)(=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#TYPE x e0 :0.45)) (نیش-nn e0 x)))
+ (B (name hitn)(=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#TYPE x e0 :0.45)) (ضربت-nn e0 x)))
+(B (name crippling)(=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#TYPE e0 e0 :0.45)) (فلج-adj e0 x)))
+(B (name soul-crushing)(=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#TYPE e0 e0 :0.45)) (^(سوهان-nn e0 x)(روح-nn e1 y)(nn e2 x y))))
+(B (name toxic)(=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#TYPE x e0 :0.45)) (سمی-adj e0 x)))
+(B (name poisonous)(=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#TYPE x e0 :0.45)) (زهرآلود-adj e0 x)))
+ 
+
+;RESTRAINT
+
+(B (name bring-to-knees)(=>(^(S#PHYSICAL_HARM e0 :0.23)(SS#RESTRAINT e0 e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(درآورد#درآور-vb e0 x y u)(به-in e1 e0 z) (زانو-nn e2 z))))
+(B (name hobble)(=>(^(S#PHYSICAL_HARM e0 :0.23)(SS#RESTRAINT e0 e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(مانع-nn e1 z)(shodan e0 y x z))))
+(B (name overwhelmed)(=>(^(S#PHYSICAL_HARM e0 :0.23)(SS#RESTRAINT e0 e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(غرق-nn e1 z)(shodan e0 y x z))))
+(B (name overwhelmed)(=>(^(S#PHYSICAL_HARM e0 :0.23)(SS#RESTRAINT e0 e0 :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(غرق-nn e1 z)(kardan e0 x y z))))
+(B (name bury)(=>(^(S#PHYSICAL_HARM z :0.23)(SS#RESTRAINT e0 z :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(دفن-nn e1 z)(kardan e0 x y z))))
+(B (name curb)(=>(^(S#PHYSICAL_HARM z :0.23)(SS#RESTRAINT e0 z :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(محدود-nn e1 z)(kardan e0 x y z))))
+(B (name impair)(=>(^(S#PHYSICAL_HARM z :0.23)(SS#RESTRAINT e0 z :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(خراب-nn e1 z)(kardan e0 x y z))))
+(B (name constrict)(=>(^(S#PHYSICAL_HARM z :0.23)(SS#RESTRAINT e0 z :0.23)(R#HARM-AGENT x e0 :0.23)(R#HARM-VICTIM y e0 :0.23)) (^(تنگ-nn e1 z)(kardan e0 x y z))))
+ 
+;PROTECTION
+(B (name shield) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(سپر-nn e0 x)))
+(B (name shelter) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(پناه-nn e0 x)))
+(B (name protection) (=>(^(S#PHYSICAL_HARM u :0.45)(SS#PROTECTION x u :0.45))(محافظت-nn e0 x)))
+ 
+(B (name shieldvb) (=>(^(S#PHYSICAL_HARM u :0.2)(SS#PROTECTION e0 u :0.2)(R#PROTECT-PATIENT y e0 :0.2)(R#PROTECT-AGENT x e0 :0.2))(^(سپر-nn e1 z)(shodan e0 y w z)(nn e2 z y))))
+ 
+(B (name from-theft) (=>(R#HARM-VICTIM y :0.9)(^(S#PHYSICAL_HARM-PROTECTION e0)(از-in e1 e0 y))))
+(B (name from-theft) (=>(R#HARM-VICTIM y :0.9)(^(S#PHYSICAL_HARM-PROTECTION e0)(nn e1 e0 y))))
+ 
+(B (name physical-harm-map) (=>(I#PHYSICAL_HARM x :0.9) (S#PHYSICAL_HARM x)))
+(B (name physical-harm-typemap) (=>(I#TYPE x y :0.9) (SS#TYPE x y)))
+(B (name physical-harm-restraintmap) (=>(I#RESTRAINT x y :0.9) (SS#RESTRAINT x y)))
+(B (name physical-harm-protectionmap) (=>(I#PROTECTION x y :0.9) (SS#PROTECTION x y)))
+ 
+ ; MAZE
+; CONFUSING PATHWAYS
+(B (name web)(=>(^(S#MAZE e0 :0.45)(SS#CONFUSING_PATHWAYS x e0 :0.45)) (تار-nn e0 x)))
+(B (name knot)(=>(^(S#MAZE e0 :0.45)(SS#CONFUSING_PATHWAYS x e0 :0.45)) (گره-nn e0 x)))
+; Katya and Ross decided to change these based on illogical output
+(B (name maze)(=>(^(S#MAZE e0 :0.45)(SS#CONFUSING_PATHWAYS x e0 :0.45))(پیچ-و-خم-nn e0 x)))
+(B (name labyrinth)(=>(^(S#MAZE e0 :0.45)(SS#CONFUSING_PATHWAYS x e0 :0.45))(پیچیدگی-nn e0 x)))
+
+
+
+; NAVIGATION
+ 
+(B (name navigate) (=>(^(S#MAZE z :0.3) (SS#NAVIGATION e0 z :0.3)(R#NAVIGATION-AGENT x e0 :0.3))(^(هدایت-nn e1 z)(kardan e0 x y z))))
+ 
+; OBSTRUCTION
+(B (name snarl)(=>(^(S#MAZE e0 :0.45)(SS#OBSTRUCTION x e0 :0.45)) (گره-nn e0 x)))
+(B (name catch)(=>(^(S#MAZE e0 :0.45)(SS#OBSTRUCTION x e0 :0.45)) (گرفتگی-nn e0 x)))
+ 
+(B (name catchvb)(=>(^(S#MAZE z :0.23)(SS#OBSTRUCTION e0 z :0.23)(R#OBSTRUCTION-AGENT x e0 :0.23)(R#OBSTRUCTION-PATIENT y e0 :0.23)) (گرفت#گیر-vb e0 x y u)))
+
+(B (name tanglevb)(=>(^(S#MAZE z :0.3)(SS#OBSTRUCTION e0 z :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3))(^(گرفتار-nn e1 z)(kardan e0 x y z))))
+(B (name snarlvb)(=>(^(S#MAZE z :0.3)(SS#OBSTRUCTION e0 z :0.3)(R#OBSTRUCTION-PATIENT y e0 :0.3)) (^(گره-nn e1 z)(khordan e0 x y z))))
+ 
+(B (name mazemap)(=>(I#MAZE x :0.9)(S#MAZE x)))
+(B (name maze-confusing-pathwaysmap)(=>(I#CONFUSING_PATHWAYS x y :0.9)(SS#CONFUSING_PATHWAYS x y)))
+(B (name maze-navigationmap)(=>(I#NAVIGATION x y :0.9)(SS#NAVIGATION x y)))
+(B (name maze-obstructionmap)(=>(I#OBSTRUCTION x y :0.9)(SS#OBSTRUCTION x y)))
+ 
+; LOW POINT
+ 
+; BOTTOM OF ECONOMIC SCALE
+(B (name the-pits) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE x e0 :0.45))(کف-nn e0 x)))
+;(B (name low) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE x e0 :0.45))(پایین-nn e0 x)))
+;(B (name low) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE e0 e0 :0.45))(کم-adj e0 x)))
+(B (name rock-bottom) (=>(^(S#LOW_POINT e2 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE y e2 :0.45))(نازلترین-adj e2 y)))
+(B (name bottom-of-the-heap) (=>(^(S#LOW_POINT e0 :0.45)(SS#BOTTOM_OF_ENCONOMIC_SCALE x e0 :0.45))(^(ته-nn e0 x)(دیگ-nn e1 y)(nn e2 x y))))
+ 
+;MOVEMENT DOWNWARD
+(B (name slide) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(لغزید#لغز-vb e0 x y z))))
+(B (name drop) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(سقوط-nn e1 z)(kardan e0 x y z)))))
+(B (name sink) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(سقوط-nn e1 z)(kardan e0 x y z)))))
+(B (name tumble) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(افتاد#افت-vb e0 x y z))))
+
+(B (name slip) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(لیز-nn e1 z)(khordan e0 x y z)))))
+(B (name slip) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(سر-nn e1 z)(khordan e0 x y z)))))
+(B (name fall) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(پایین-nn e1 z)(aamadan e0 x y z)))))
+(B (name fall) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(پایین-nn e1 z)(raftan e0 x y z)))))
+(B (name fall) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(فرو-nn e1 z)(raftan e0 x y z)))))
+(B (name plunge) (=>(^(SS#MOVEMENT_DOWNWARD e0 e1 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e1)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1)(^(شیرجه-nn e1 z)(raftan e0 x y z)))))
+ 
+;MOVEMENT UPWARD
+(B (name hover-above) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(شناور-nn e1 z)(boodan e0 x y z))))
+(B (name jump) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(جهش-nn e1 z)))
+(B (name jump) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(جهش-nn e1 z)(kardan e0 x y z))))
+(B (name jump) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(پرش-nn e1 z)))
+(B (name jump) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(پرش-nn e1 z)(kardan e0 x y z))))
+(B (name jump) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(صعود-nn e1 z)))
+(B (name jump) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(صعود-nn e1 z)(kardan e0 x y z))))
+
+(B (name rise-above) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(بالا-nn e1 z)(raftan e0 x y z)(از-in e1 e0 w))))
+(B (name rise-from) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(بالا-nn e1 z)(zadan e0 x y z)(از-in e1 e0 w))))
+(B (name rise) (=>(^(S#LOW_POINT a :0.3)(SS#MOVEMENT_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(بالا-nn e1 z)(aamadan e0 x y z))))
+
+
+ 
+(B (name lowpointmap)(=>(I#LOW_POINT x :0.9)(S#LOW_POINT x)))
+(B (name bottom-of-econ-scale-map)(=>(I#BOTTOM_OF_ENCONOMIC_SCALE x y :0.9)(SS#BOTTOM_OF_ENCONOMIC_SCALE x y)))
+(B (name movement-downwardmap)(=>(I#MOVEMENT_DOWNWARD x y :0.9)(SS#MOVEMENT_DOWNWARD x y)))
+(B (name movement-upwardmap)(=>(I#MOVEMENT_UPWARD x y :0.9)(SS#MOVEMENT_UPWARD x y)))
+
+
+ 
+; HIGH POINT
+ 
+; TOP OF ECONOMIC SCALE
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(نوک-nn e0 x)))
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(اوج-nn e0 x))) 
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(راس-nn e0 x)))
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(بالا-nn e0 x)))
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(قله-nn e0 x)))
+(B (name dno) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(تاج-nn e0 x)))
+ 
+;MOVEMENT BACKWARD DOWNWARD
+ 
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(سقوط-nn e1 z)(kardan e0 x y z))))
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(لغزید#لغز-vb e0 x u u1)))
+(B (name spolzat) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_BACKWARD_DOWNWARD e0 u :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(لیز-nn e1 z)(khordan e0 x y z))))
+ 
+;MOVEMENT FORWARD UPWARD
+ 
+(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(^(صعود-nn e1 z)(kardan e0 x y z))))
+(B (name podnjatsja) (=>(^(S#HIGH_POINT u :0.3)(SS#MOVEMENT_FORWARD_UPWARD e0 u :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(برخاست#برخيز-vb e0 x u u1)))
+ 
+
+: RESOURCE
+; SUBSTANCE
+(B (name mass)(=>(^(S#RESOURCE e0 :0.45)(SS#SUBSTANCE x e0 :0.45)) (جرم-nn e0 x)))
+(B (name material)(=>(^(S#RESOURCE e0 :0.45)(SS#SUBSTANCE x e0 :0.45)) (ماده-nn e0 x)))
+(B (name concentration)(=>(^(S#RESOURCE e0 :0.45)(SS#SUBSTANCE x e0 :0.45)) (غلظت-nn e0 x)))
+(B (name concentration)(=>(^(S#RESOURCE e0 :0.45)(SS#SUBSTANCE x e0 :0.45)) (چگالی-nn e0 x)))
+(B (name concentrate)(=>(^(S#RESOURCE e0 :0.45)(SS#SUBSTANCE x e0 :0.45)) (انباشت-nn e0 x)))
+(B (name concentrate)(=>(^(S#RESOURCE e0 :0.45)(SS#SUBSTANCE x e0 :0.45)) (عصاره-nn e0 x)))
+(B (name concentrate)(=>(^(S#RESOURCE e0 :0.45)(SS#SUBSTANCE x e0 :0.45)) (چکیده-nn e0 x)))
+
+ 
+;QUANTITY
+(B (name fortune)(=>(^(S#RESOURCE e0 :0.45)(SS#QUANTITY_SIZE x e0 :0.45)) (دارایی-nn e0 x)))
+ 
+(B (name sliver)(=>(^(S#RESOURCE e0 :0.3)(SS#QUANTITY_SIZE x e0 :0.3)(R#SMALL-AMOUNT x e0 :0.3)) (خرده-nn e0 x)))
+ 
+(B (name sparse)(=>(^(S#RESOURCE e0 :0.3)(SS#QUANTITY_SIZE e0 e0 :0.3)(R#SMALL-AMOUNT x e0 :0.3)) (تنک-adj e0 x)))
+ 
+(B (name deplete)(=>(^(S#RESOURCE e0 :0.45)(SS#QUANTITY_SIZE y e0 :0.45)) (^(خالی-nn e1 z)(kardan e0 x y z))))
+ 
+;DEVELOP RESOURCES
+(B (name invest)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (^(سرمایه-گذاری-nn e1 z)(kardan e0 x y z))))
+(B (name invest)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (^(جمع-nn e1 z)(kardan e0 x y z))))
+
+;(B (name grow)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (زیاد-شدن-vb e0 x y u)))
+
+(B (name deposit)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (سپرد#سپار-vb e0 x y u)))
+(B (name deposit)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (اندوخت#اندوز-vb e0 x y u)))
+(B (name accumulate)(=>(^(S#RESOURCE e0 :0.3)(SS#DEVELOP_RESOURCES x e0 :0.3)(R#DEVELOPER x e0 :0.3)) (انباشت#انبار-vb e0 x y u)))
+ 
+(B (name bank)(=>(^(S#RESOURCE e0 :0.45)(SS#DEVELOP_RESOURCES x e0 :0.45)) (بانک-nn e0 x)))
+(B (name investment)(=>(^(S#RESOURCE e0 :0.45)(SS#DEVELOP_RESOURCES x e0 :0.45)) (سرمایه-گذاری-nn e0 x)))
+(B (name accumulation)(=>(^(S#RESOURCE e0 :0.45)(SS#DEVELOP_RESOURCES x e0 :0.45)) (انباشتگی-nn e0 x)))
+(B (name accumulation)(=>(^(S#RESOURCE e0 :0.45)(SS#DEVELOP_RESOURCES x e0 :0.45)) (افزونگی-nn e0 x)))
+(B (name growth)(=>(^(S#RESOURCE e0 :0.45)(SS#DEVELOP_RESOURCES x e0 :0.45)) (افزایش-nn e0 x)))
+(B (name growth)(=>(^(S#RESOURCE e0 :0.45)(SS#DEVELOP_RESOURCES x e0 :0.45)) (رشد-nn e0 x)))
+
+;DISTRIBUTION
+
+
+(B (name transfer)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (^(منتقل-nn e1 z)(kardan e0 x y z))))
+(B (name distribute)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (^(پخش-nn e1 z)(kardan e0 x y z))))
+(B (name distribute)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (^(توزیع-nn e1 z)(kardan e0 x y z))))
+(B (name spread)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (^(منتشر-nn e1 z)(kardan e0 x y z))))
+(B (name underwrite)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#SUPPORTER x e0 :0.33)) (^(تعهد-nn e1 z)(kardan e0 x y z))))
+(B (name sort)(=>(^(S#RESOURCE e0 :0.33)(SS#DISTRIBUTION x e0 :0.33) (R#DISTRIBUTOR x e0 :0.33)) (^(جور-nn e1 z)(kardan e0 x y z))))
+
+ 
+(B (name distribution)(=>(^(S#RESOURCE e0 :0.45)(SS#DISTRIBUTION x e0 :0.45)) (پخش-nn e0 x)))
+(B (name accumulation)(=>(^(S#RESOURCE e0 :0.45)(SS#DEVELOP_RESOURCES x e0 :0.45)) (توزیع-nn e0 x)))
+ 
+(B (name resourcemap)(=>(I#RESOURCE x :0.9)(S#RESOURCE x)))
+(B (name substancemap)(=>(I#SUBSTANCE x y :0.9)(SS#SUBSTANCE x y)))
+(B (name quantitymap)(=>(I#QUANTITY_SIZE x y :0.9)(SS#QUANTITY_SIZE x y)))
+(B (name distributionmap)(=>(I#DISTRIBUTION x y :0.9)(SS#DISTRIBUTION x y)))
+(B (name develop-resourcesmap)(=>(I#DEVELOP_RESOURCES x y :0.9)(SS#DEVELOP_RESOURCES x y)))
+
+; ;HUMAN_BODY
+; ;DEATH
+; (B (name dying)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (مرد#میر-vb e0 x y u)))
+; (B (name breathe-last-breath)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(کشید#کش-vb e0 x y u)(آخر-adj e1 z)(نفس-nn e2 y))))
+; (B (name decay)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (درگذشت#درگذر-vb e0 x y u)))
+; (B (name decay)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(درگذشت-nn e1 e0)(nn e2 e0 x))))
+; (B (name decay)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(رحلت-nn e1 e0)(nn e2 e0 x))))
+; (B (name decay)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(ارتحال-nn e1 e0)(nn e2 e0 x))))
+; (B (name decay)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(مردن-nn e1 e0)(nn e2 e0 x))))
+; (B (name decay)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(مرگ-nn e1 e0)(nn e2 e0 x))))
+; (B (name death)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATHe0 :0.3 x)) (مرگ-nn e0 x)))
+; (B (name decay)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (درگذشت-nn e1 e0)))
+; (B (name decay)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (رحلت-nn e1 e0)))
+; (B (name decay)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (ارتحال-nn e1 e0)))
+; (B (name decay)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (مردن-nn e1 e0)))
+
+
+; (B (name decay)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (تباه-شدن-vb e0 x y u)))
+; (B (name perish)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (هلاک-شدن-vb e0 x y u)))
+; (B (name rot)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (فاسد-شدن-vb e0 x y u)))
+; (B (name rot-away)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(rot-vb e0 x y u)(away-rb e1 e0))))
+; (B (name take-last-breath)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (^(take-vb e0 x y u)(last-adj e1 y)(breath-nn e2 y))))
+; (B (name wither)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (پژمرده-شدن-vb e0 x y u)))
+ 
+; (B (name dead)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (مرده-adj e0 x)))
+; (B (name deceased)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (مرحوم-adj e0 x)))
+ 
+; (B (name deceasedn)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATH e0 e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (deceased-nn e0 x)))
+; (B (name fatality)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#DEATHe0 :0.3 x)(R#DEATH-PATIENT x e0 :0.3)) (مرگ-و-میر-nn e0 x)))
+
+; ;LIVING
+; (B (name live)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#LIVING e0 e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (زیستن-vb e0 x y u)))
+; (B (name thrive)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#LIVING e0 e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (رشد-کردن-vb e0 x y u)))
+; (B (name flourish)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#LIVING e0 e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (شکفتن-vb e0 x y u)))
+ 
+; (B (name alive)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#LIVING e0 e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (زنده-adj e0 y)))
+ 
+; ;HEALTH
+; (B (name reviving)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#HEALTH x e0 :0.3)(R#DEATH-PATIENT x e0 :0.3)) (زنده-شدن-vb e0 x y u)))
+ 
+; COMPONENT
+(B (name backbone)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (^(ستون-nn e0 x)(فقره-nn e1 y)(nn e2 x y))))
+(B (name face)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (چهره-nn e0 x)))
+(B (name hand)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (دست-nn e0 x)))
+(B (name hand)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (پوست-nn e0 x)))
+(B (name hand)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (قلب-nn e0 x)))
+(B (name hand)(=>(^(S#HUMAN_BODY e0 :0.45)(SS#COMPONENT x e0 :0.45)) (مغز-nn e0 x)))
+
+(B (name human-bodymap)(=>(I#HUMAN_BODY x :0.9)(S#HUMAN_BODY x)))
+; (B (name human-body-deathmap)(=>(I#DEATHx :0.9)(SS#DEATH x y)))
+; (B (name human-body-livingmap)(=>(I#LIVINGx :0.9)(SS#LIVING x y)))
+; (B (name human-body-healthmap)(=>(I#HEALTH x y :0.9)(SS#HEALTH x y)))
+(B (name human-body-componentmap)(=>(I#COMPONENT x y :0.9)(SS#COMPONENT x y)))
+
+;VICTIM
+;SUFFERER
+; (B (name threatened)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (ترسیده-adj e0 x)))
+; (B (name victim)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (قربانی-nn e0 x)))
+; (B (name prey)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x e0 :0.3)(R#VICTIMIZE-PATIENT x e0 :0.3)) (صید-nn e0 x)))
+; (B (name sufferer)(=>(^(S#VICTIM e0 :0.3)(SS#SUFFERER x:0.3 x)(R#VICTIMIZE-PATIENT x e0 :0.3)) (متحمل-nn e0 x)))
+ 
+; ;VICTIMIZER
+; (B (name vampire)(=>(^(S#VICTIM z :0.3)(SS#VICTIMIZER x z :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (خون آشام-nn e0 x)))
+; (B (name victimizer)(=>(^(S#VICTIM z :0.3)(SS#VICTIMIZER x z :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (قربانی-کننده-nn e0 x)))
+; (B (name dracula)(=>(^(S#VICTIM z :0.3)(SS#VICTIMIZER x z :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (دراکولا-nn e0 x)))
+ 
+; (B (name victimize)(=>(^(S#VICTIM y :0.3)(SS#VICTIMIZER e0 y :0.3)(R#VICTIMIZE-AGENT x e0 :0.3)) (قربانی-کردن-vb e0 x y u)))
+
+; ;CHAMPION
+; (B (name champion)(=>(^(S#VICTIM z :0.3)(SS#CHAMPION x z :0.3)(R#CHAMPION x e0 :0.3)) (قهرمان-nn e0 x)))
+; (B (name knight)(=>(^(S#VICTIM z :0.3)(SS#CHAMPION x z :0.3)(R#CHAMPION x e0 :0.3)) (دلاور-nn e0 x)))
+; (B (name superman)(=>(^(S#VICTIM z :0.3)(SS#CHAMPION x z :0.3)(R#CHAMPION x e0 :0.3)) (ابرمرد-nn e0 x)))
+; (B (name superhero)(=>(^(S#VICTIM z :0.3)(SS#CHAMPION x z :0.3)(R#CHAMPION x e0 :0.3)) (ابرقهرمان-nn e0 x)))
+ 
+; (B (name save)(=>(^(S#VICTIM y :0.3)(SS#CHAMPION e0 y :0.3)(R#CHAMPION x e0 :0.3)) (قربانی-کردن-vb e0 x y u)))
+ 
+; (B (name victimmap)(=>(I#VICTIM x :0.9)(S#VICTIM x)))
+; (B (name sufferermap)(=>(I#SUFFERER x y :0.9)(SS#SUFFERER x y)))
+; (B (name victimizermap)(=>(I#VICTIMIZER x y :0.9)(SS#VICTIMIZER x y)))
+; (B (name championmap)(=>(I#CHAMPION x y :0.9)(SS#CHAMPION x y)))
+
+; BUILDING
+; TYPE
+(B (name house)(=>(^(S#BUILDING e0 :0.45)(SS#TYPE x e0 :0.45)) (خانه-nn e0 x)))
+(B (name home)(=>(^(S#BUILDING e0 :0.45)(SS#TYPE x e0 :0.45)) (مسکن-nn e0 x)))
+(B (name skyscraper)(=>(^(S#BUILDING e0 :0.45)(SS#TYPE x e0 :0.45)) (آسمانخراش-nn e0 x)))
+(B (name mansion)(=>(^(S#BUILDING e0 :0.45)(SS#TYPE x e0 :0.45)) (عمارت-nn e0 x)))
+ 
+; STRUCTURE
+(B (name building)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (ساختمان-nn e0 x)))
+(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (بناء-nn e0 x)))
+(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (بنا-nn e0 x)))
+(B (name edifice)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (عمارت-nn e0 x)))
+(B (name basement)(=>(^(S#BUILDING e0 :0.45)(SS#STRUCTURE x e0 :0.45)) (زیرزمین-nn e0 x)))
+ 
+; CREATION_DESTRUCTION
+(B (name build)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (ساخت#ساز-vb e0 x y u)))
+(B (name construct)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (^(احداث-nn e1 z)(kardan e0 x y z))))
+(B (name construct)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (احداث-nn e1 e0)))
+(B (name fix)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (^(درست-nn e1 z)(kardan e0 x y z))))
+(B (name fix)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (^(تعمیر-nn e1 z)(kardan e0 x y z))))
+(B (name destroy)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (^(خراب-nn e1 z)(kardan e0 x y z))))
+(B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#DESTRUCTION e0 e0 :0.3)) (^(ویران-nn e1 z)(kardan e0 x y z))))
+
+(B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION x e0 :0.3 :0.3)(R#DESTRUCTION x e0 :0.3)) (تخریب-nn e0 x)))
+
+(B (name ruin)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION x e0 :0.3 :0.3)(R#DESTRUCTION x e0 :0.3)) (ساختارشکنی-nn e0 x)))
+ 
+; COMPONENTS
+(B (name foundation)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (پی-nn e0 x)))
+(B (name base)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (شالوده-nn e0 x)))
+(B (name base)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (زیربنا-nn e0 x)))
+(B (name base)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (زیربنای-nn e0 x)))
+(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (زیربنا‫-‬ها-nn e0 x)))
+(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (زیربناها-nn e0 x)))
+(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (زیربناهای-nn e0 x)))
+(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (زیربنا‫-‬های-nn e0 x)))
+ 
+(B (name building-block)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (بلوک-nn e0 x)))
+(B (name support-beam)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (تیرچه-nn e2 y)))
+(B (name support-beam)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (ستون-nn e2 y)))
+(B (name support-beam)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (پایه-nn e2 y)))
+(B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (بلوک-nn e0 x)))
+(B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (تیرآهن-nn e0 x)))
+(B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (تیراهن-nn e0 x)))
+(B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (سازه-nn e0 x)))
+(B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (سیمان-nn e0 x)))
+(B (name brick)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (آجر-nn e0 x)))
+(B (name concrete)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (بتن-nn e0 x)))
+(B (name mortar)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (ملات-nn e0 x)))
+;##RI: sand might evoke weakness as opposed to support?
+;(B (name sand)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (شن-nn e0 x)))
+(B (name stone)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (سنگ-nn e0 x)))
+(B (name wall)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (دیوار-nn e0 x)))
+(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (زیرساز-nn e0 x)))
+(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (زیرسازی-nn e0 x)))
+(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (زیرسازها-nn e0 x)))
+(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (زیرسازهای-nn e0 x)))
+
+(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (زیرساخت-nn e0 x)))
+(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (زیرساختها-nn e0 x)))
+(B (name structure)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (زیرساختهای-nn e0 x)))
+
+; SUPPORT
+(B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT x e0 :0.45)) (تکیه-گاه-nn e0 x)))
+(B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT x e0 :0.45)) (تکیه-گاهها-nn e0 x)))
+(B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT x e0 :0.45)) (تکیه-گاههای-nn e0 x)))
+(B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT x e0 :0.45)) (تکیه-گاه‫-‬ها-nn e0 x)))
+(B (name cement)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT x e0 :0.45)) (تکیه-گاه‫-‬های-nn e0 x)))
+
+(B (name ruin)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT e0 e0 :0.3 :0.45)) (^(متحمل-nn e1 z)(shodan e0 x y z))))
+(B (name ruin)(=>(^(S#BUILDING e0 :0.45)(SS#SUPPORT e0 e0 :0.3 :0.45)) (^(تحمل-nn e1 z)(kardan e0 x y z))))
+ 
+(B (name buildingmap)(=>(I#BUILDING x :0.9)(S#BUILDING x)))
+(B (name structuremap)(=>(I#STRUCTURE x y :0.9)(SS#STRUCTURE x y)))
+(B (name creation_destructionmap)(=>(I#CREATION-DESTRUCTION x y :0.9)(SS#CREATION_DESTRUCTION x y)))
+(B (name componentsmap)(=>(I#COMPONENTS x y :0.9)(SS#COMPONENTS x y)))
+
+; PATHWAY
+; TYPE
+(B (name pathway)(=>(^(S#PATHWAY e0 :0.45)(SS#TYPE x e0 :0.45)) (گذرگاه-nn e0 x)))
+(B (name road-to)(=>(^(S#PATHWAY e0 :0.45)(SS#TYPE x e0 :0.45)) (جاده-nn e0 x)))
+(B (name road)(=>(^(S#PATHWAY e0 :0.45)(SS#TYPE x e0 :0.45)) (راه-nn e0 x)))
+(B (name path)(=>(^(S#PATHWAY e0 :0.45)(SS#TYPE x e0 :0.45)) (مسیر-nn e0 x)))
+(B (name bridge)(=>(^(S#PATHWAY e0 :0.45)(SS#TYPE x e0 :0.45)) (پل-nn e0 x)))
+(B (name passage)(=>(^(S#PATHWAY e0 :0.45)(SS#TYPE x e0 :0.45)) (گذر-nn e0 x)))
+(B (name route)(=>(^(S#PATHWAY e0 :0.45)(SS#TYPE x e0 :0.45)) (مسیر-nn e0 x)))
+(B (name street)(=>(^(S#PATHWAY e0 :0.45)(SS#TYPE x e0 :0.45)) (خیابان-nn e0 x)))
+(B (name avenue)(=>(^(S#PATHWAY e0 :0.45)(SS#TYPE x e0 :0.45)) (خیابان-nn e0 x)))
+(B (name trail)(=>(^(S#PATHWAY e0 :0.45)(SS#TYPE x e0 :0.45)) (دنباله-nn e0 x)))
+(B (name corridor)(=>(^(S#PATHWAY e0 :0.45)(SS#TYPE x e0 :0.45)) (دالان-nn e0 x)))
+(B (name corridor)(=>(^(S#PATHWAY e0 :0.45)(SS#TYPE x e0 :0.45)) (راهرو-nn e0 x)))
+(B (name walkway)(=>(^(S#PATHWAY e0 :0.45)(SS#TYPE x e0 :0.45)) (گردشگاه-nn e0 x)))
+ 
+;OPEN PATH
+(B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE x e1)(باز-adj e0 x)))) 
+(B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(روان-nn e1 z)(kardan e0 x y z)))))
+(B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(باز-nn e1 z)(kardan e0 x y z)))))
+(B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(هموار-nn e1 z)(kardan e0 x y z)))))
+
+(B (name open-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(گشود#گش-vb e0 x y z))))
+(B (name build-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(راهسازی-nn e0 x y z))))
+
+(B (name forge-path) (=>(SS#OPEN_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(جلو-nn e1 z)(raftan e0 x y z)))))
+
+;OBSTRUCTED PATH
+(B (name closed-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1) (SS#TYPE x e1)(بسته-adj e0 x))))
+(B (name clogged-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1) (SS#TYPE x e1)(مسدود-adj e0 x))))
+(B (name jammed-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1) (SS#TYPE x e1)(متراکم-adj e0 x))))
+ 
+(B (name close-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(بست#بند-vb e0 x y z))))
+(B (name block-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(بند-nn e1 z)(aavardan e0 x y z)))))
+
+(B (name obstruct-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(مانع-nn e1 z)(shodan e0 x y z)))))
+(B (name jam-path) (=>(SS#OBSTRUCTED_PATH e0 e1 :0.9) (^(S#PATHWAY e1)(SS#TYPE y e1)(^(متراکم-nn e1 z)(kardan e0 x y z)))))
+(B (name barricade) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH e0 e0 :0.45)) (^(سد-nn e1 z)(kardan e0 x y z))))
+(B (name barricade) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH e0 e0 :0.45)) (^(سد-nn e1 z)(shodan e0 x y z))))
+ 
+(B (name barricadenn) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH x e0 :0.45)) (^(مانع-nn e0 y )(nn e1 y x))))
+(B (name barricadenn) (=>(^(S#PATHWAY e0 :0.45) (SS#OBSTRUCTED_PATH x e0 :0.45)) (^(سد-nn e0 y )(nn e1 y x))))
+  
+(B (name pathwaymap)(=>(I#PATHWAY x :0.9)(S#PATHWAY x)))
+(B (name pathway-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name open-pathmap)(=>(I#OPEN_PATH x y :0.9)(SS#OPEN_PATH x y)))
+(B (name obstructed-pathmap)(=>(I#OBSTRUCTED_PATH x y :0.9)(SS#OBSTRUCTED_PATH x y)))
+
+;PORTAL
+;MEANS OF ENTRY
+(B (name gateway)(=>(^(S#PORTAL e0 :0.45)(SS#MEANS_OF_ENTRY x e0 :0.45)) (دروازه-nn e0 x)))
+(B (name door)(=>(^(S#PORTAL e0 :0.45)(SS#MEANS_OF_ENTRY x e0 :0.45)) (در-nn e0 x)))
+(B (name threshold)(=>(^(S#PORTAL e0 :0.45)(SS#MEANS_OF_ENTRY x e0 :0.45)) (آستان-nn e0 x)))
+(B (name doorway)(=>(^(S#PORTAL e0 :0.45)(SS#MEANS_OF_ENTRY x e0 :0.45)) (درگاه-nn e0 x)))
+(B (name entrance)(=>(^(S#PORTAL e0 :0.45)(SS#MEANS_OF_ENTRY x e0 :0.45)) (ورودی-nn e0 x)))
+(B (name entry)(=>(^(S#PORTAL e0 :0.45)(SS#MEANS_OF_ENTRY x e0 :0.45)) (مدخل-nn e0 x)))
+(B (name entryway)(=>(^(S#PORTAL e0 :0.45)(SS#MEANS_OF_ENTRY x e0 :0.45)) (آستانه-nn e0 x)))
+(B (name gate)(=>(^(S#PORTAL e0 :0.45)(SS#MEANS_OF_ENTRY x e0 :0.45)) (دریچه-nn e0 x)))
+(B (name portal)(=>(^(S#PORTAL e0 :0.45)(SS#MEANS_OF_ENTRY x e0 :0.45)) (باب-nn e0 x)))
+(B (name turnstile)(=>(^(S#PORTAL e0 :0.45)(SS#MEANS_OF_ENTRY x e0 :0.45)) (نرده-گردان-nn e0 x)))
+ 
+;OBSTACLES
+(B (name narrow) (=>(SS#OBSTACLES e0 :0.90) (^(SS#PORTAL_MEANS_OF_ENTRY x)(باریک-adj e0 x))))
+ 
+(B (name portalmap)(=>(I#PORTAL e0 :0.9)(S#PORTAL x)))
+(B (name meansofentrymap)(=>(I#MEANS_OF_ENTRY x y :0.9)(SS#MEANS_OF_ENTRY x y)))
+(B (name obstaclesmap)(=>(I#OBSTACLES x y :0.9)(SS#OBSTACLES x y)))
+ 
+;PHYSICAL OBJECT
+; PHYSICAL OBJECT TYPE
+(B (name mass)(=>(^(S#PHYSICAL_OBJECT e0 :0.45)(SS#PHYSTICAL-OBJECT-TYPE x e0 :0.45)) (جرم-nn e0 x)))
+ 
+;POSSESSION
+;##RI: "have" is likely very important here, but might generate a lot of FPs.
+;(B (name have)(=>(^(S#PHYSICAL_OBJECT y :0.33)(SS#POSSESSION e0 y :0.33)(R#POSSESSOR x :0.33)) (داشت#دار-vb e0 x y u)))
+(B (name possess)(=>(^(S#PHYSICAL_OBJECT y :0.33)(SS#POSSESSION e0 y :0.33)(R#POSSESSOR x e0 :0.33)) (^(دارا-nn e1 z)(shodan e0 x y z))))
+(B (name own)(=>(^(S#PHYSICAL_OBJECT y :0.33)(SS#POSSESSION e0 y :0.33)(R#POSSESSOR x e0 :0.33)) (^(صاحب-nn e1 z)(shodan e0 x y z))))
+
+;TRANSFER
+(B (name receive)(=>(^(S#PHYSICAL_OBJECT e0 :0.33)(SS#TRANSFER e0 e0 :0.33)(R#RECEIVER x e0 :0.33)) (گرفت#گیر-vb e0 x y u)))
+(B (name obtain)(=>(^(S#PHYSICAL_OBJECT e0 :0.33)(SS#TRANSFER e0 e0 :0.33)(R#RECEIVER x e0 :0.33))(^(بدست-nn e1 z)(shodan e0 x y z))))
+(B (name deliver)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23))(^(تحویل-nn e1 z)(shodan e0 x y z))))
+(B (name hand)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23))(دادن-vb e0 x y u)))
+
+(B (name toss)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23)) (انداخت#انداز-vb e0 x y u)))
+
+(B (name throw)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23)) (^(پرتاب-nn e1 z)(kardan e0 x y z))))
+; ##RI: These will overgenerate like crazy, so I'm not adding them.
+;(B (name get)(=>(^(S#PHYSICAL_OBJECT e0 :0.33)(SS#TRANSFER e0 e0 :0.33)(R#RECEIVER x e0 :0.33)) (کسب-کردن-vb e0 x y u)))
+;(B (name give)(=>(^(S#PHYSICAL_OBJECT e0 :0.23)(SS#TRANSFER e0 e0 :0.23) (R#GIVER x e0 :0.23)(R#RECEIVER u e0 :0.23)) (رساند#رسان-vb e0 x y u)))
+ 
+ 
+(B (name physical-objectmap)(=>(I#PHYSICAL_OBJECT x :0.9)(S#PHYSICAL_OBJECT x)))
+(B (name physical-object-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name possessionmap)(=>(I#POSSESSION x y :0.9)(SS#POSSESSION x y)))
+(B (name transfermap)(=>(I#TRANSFER x y :0.9)(SS#TRANSFER x y)))
+ 
+;DARKNESS
+(B (name darkness)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (تاریکی-nn e0 x)))
+(B (name blackness)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (سیاهی-nn e0 x)))
+(B (name cave)(=>(^(S#DARKNESS e0 :0.45)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (غار-nn e0 x)))
+(B (name dark-days)(=>(^(S#DARKNESS e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (^(تاریک-adj e0 x)(روز-nn e1 x))))
+(B (name dark-cloud)(=>(^(S#DARKNESS e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT e0 e0 :0.3)(R#DARK x e0 :0.3)) (^(تیره-adj e0 x)(ابر-nn e1 x))))
+ 
+ 
+(B (name dark)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.3)(R#DARK x e0 :0.3)) (تیره-adj e0 x)))
+ 
+;MOVEMENT
+(B (name darken)(=>(^(S#DARKNESS x e0 :0.3)(SS#MOVEMENT_IN_THE_RANGE x e0 :0.3)(R#DARK y e0 :0.3))(^(تیره-nn e1 z)(kardan e0 x y z))))
+
+
+ 
+(B (name darknessmap)(=>(I#DARKNESS x :0.9)(S#DARKNESS x)))
+(B (name dark-end-of-rangemap)(=>(I#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y :0.9)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y)))
+(B (name darkness-movementmap)(=>(I#MOVEMENT x y :0.9)(SS#MOVEMENT x y)))
+ 
+;LIGHT
+ 
+(B (name light)(=>(^(S#DARKNESS e0 :0.45)(SS#LIGHT_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (نور-nn e0 x)))
+(B (name sun)(=>(^(S#DARKNESS e0 :0.45)(SS#LIGHT_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (خورشید-nn e0 x)))
+ 
+(B (name light-a)(=>(^(S#DARKNESS x e0 :0.3)(SS#LIGHT_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.3)(R#LIGHT x e0 :0.3)) (پرتو-adj e0 x)))
+(B (name sun)(=>(^(S#DARKNESS x e0 :0.3)(SS#LIGHT_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.3)(R#LIGHT x e0 :0.3)) (آفتابی-adj e0 x)))
+
+(B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#MOVEMENT e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (^(روشن-nn e1 z)(kardan e0 x y z))))
+ 
+; ILLUMINATION
+(B (name shine)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (درخشید#درخش-vb e0 x y z)))
+
+(B (name illuminate)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (^(درخشان-nn e1 z)(kardan e0 x y z))))
+(B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (درخشان-nn e0 x)))
+(B (name dark)(=>(^(S#LIGHT e0 e0 :0.3)(SS#ILLUMINATION e0 e0 :0.3)(R#LIGHT x e0 :0.3)) (روشن-سازی-nn e0 x)))
+
+ 
+(B (name darknessmap)(=>(I#DARKNESS x :0.9)(S#DARKNESS x)))
+(B (name dark-end-of-rangemap)(=>(I#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y :0.9)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x y)))
+(B (name darkness-movementmap)(=>(I#MOVEMENT x y :0.9)(SS#MOVEMENT x y)))
+ 
+; BODY WEIGHT
+;EXCESS BODY WEIGHT
+(B (name fatter)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_BODY_WEIGHT x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (فربه-adj e0 x)))
+(B (name fatter)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_BODY_WEIGHT x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (چاق-adj e0 x)))
+;EXCESS CONSUMPTION
+(B (name gluttony)(=>(^(S#OBESITY e0 :0.45)(SS#EXCESS_CONSUMPTION x e0 :0.45)) (شکم-پرستی-nn e0 x)))
+(B (name gluttony)(=>(^(S#OBESITY e0 :0.45)(SS#EXCESS_CONSUMPTION x e0 :0.45)) (شکم‫-‬پرست-nn e0 x)))
+
+ 
+;##RI: This will probably over-generate
+;(B (name eat)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (خورد#خور-vb e0 x y u)))
+ 
+(B (name ravenous)(=>(^(S#OBESITY e0 :0.3)(SS#EXCESS_CONSUMPTION x e0 :0.3)(R#OVERWEIGHT x e0 :0.3)) (گرسنه-adj e0 x)))
+ 
+(B (name obesitymap)(=>(I#OBESITY x :0.9)(S#OBESITY x)))
+(B (name excess-body-weightmap)(=>(I#BODY-WEIGHT x y :0.9)(SS#EXCESS_BODY_WEIGHT x y)))
+(B (name excess-consumptionmap)(=>(I#CONSUMPTION x y :0.9)(SS#EXCESS_CONSUMPTION x y)))
+
+
+; PARASITE
+; DESTRUCTIVE BEING
+(B (name leech)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (زالو-nn e0 x)))
+(B (name parasite)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (انگل-nn e0 x)))
+(B (name louse)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (شپش-nn e0 x)))
+(B (name mosquito)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (پشه-nn e0 x)))
+(B (name bloodsucker)(=>(^(S#PARASITE e0 :0.45)(SS#DESTRUCTIVE_BEING x e0 :0.45)) (خون-آشام-nn e0 x)))
+ 
+(B (name suck-the-blood)(=>(^(S#PARASITE e0 :0.33)(SS#ACTION e0 e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(مکید#مک-vb e0 x y u)(خون-nn e1 y))))
+(B (name suck-the-blood)(=>(^(S#PARASITE e0 :0.33)(SS#ACTION e0 e0 :0.33)(R#PARASITE-AGENT x e0 :0.33)) (^(کشید#کش-vb e0 x y u)(خون-nn e1 y))))
+(B (name leech)(=>(^(S#PARASITE e0 :0.3)(SS#ACTION e0 e0 :0.3)(R#PARASITE-AGENT x e0 :0.3)) (زالو-nn e1 x)))
+ 
+(B (name parasitemap)(=>(I#PARASITE x :0.9)(S#PARASITE x)))
+(B (name destructive-beingmap)(=>(I#DESTRUCTIVE_BEING x y :0.9)(SS#DESTRUCTIVE_BEING x y)))
+ 
+;VISION
+;BLINDNESS
+(B (name blind)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#BLIND x e0 :0.3)) (کور-adj e0 x)))
+(B (name blind)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#BLIND x e0 :0.3)) (نابینا-adj e0 x)))
+ 
+(B (name blindness)(=>(^(S#VISION e0 :0.45)(SS#BLINDNESS x e0 :0.45)) (کوری-nn e0 x)))
+(B (name blindvb)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#BLIND y e0 :0.3)) (^(کور-nn e1 z)(kardan e0 x y z))))
+ 
+(B (name invisible)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#INVISIBLE x e0 :0.3)) (نامریی-adj e0 x)))
+(B (name hidden)(=>(^(S#VISION e0 :0.3)(SS#BLINDNESS e0 e0 :0.3)(R#INVISIBLE x e0 :0.3)) (پنهان-adj e0 x)))
+ 
+;SEEING
+(B (name open-eyes)(=>(^(S#VISION e1 :0.45)(SS#SEEING x e1 :0.45)) (^(باز-adj e0 x)(چشم-nn e1 x))))
+ 
+(B (name see)(=>(^(S#VISION e0 :0.3)(SS#SEEING x e0 e0 :0.3)(R#SIGHTED y e0 :0.3)) (دیدن-vb e0 x y z)))
+ 
+(B (name visionmap)(=>(I#VISION x :0.9)(S#VISION x)))
+(B (name blindnessmap)(=>(I#BLINDNESS x y :0.9)(SS#BLINDNESS x y)))
+(B (name seeingmap)(=>(I#SEEING x y :0.9)(SS#SEEING x y)))
+ 
+; MONSTER
+; TYPE
+(B (name monster)(=>(^(S#MONSTER e0 :0.45)(SS#TYPE x e0 :0.45)) (هیولا-nn e0 x)))
+(B (name frankenstein)(=>(^(S#MONSTER e0 :0.45)(SS#TYPE x e0 :0.45)) (فرانکشتاین-nn e0 x)))
+(B (name beast)(=>(^(S#MONSTER e0 :0.45)(SS#TYPE x e0 :0.45)) (جانور-nn e0 x)))
+(B (name creature)(=>(^(S#MONSTER e0 :0.45)(SS#TYPE x e0 :0.45)) (مخلوق-nn e0 x)))
+(B (name fiend)(=>(^(S#MONSTER e0 :0.45)(SS#TYPE x e0 :0.45)) (دیو-nn e0 x)))
+(B (name giant)(=>(^(S#MONSTER e0 :0.45)(SS#TYPE x e0 :0.45)) (غول-nn e0 x)))
+(B (name troll)(=>(^(S#MONSTER e0 :0.45)(SS#TYPE x e0 :0.45)) (جن-nn e0 x)))
+(B (name zombie)(=>(^(S#MONSTER e0 :0.45)(SS#TYPE x e0 :0.45)) (^(مرده-nn e0 x)(متحرک-adj e1 x))))
+;(B (name specter)(=>(^(S#MONSTER e0 :0.45)(SS#TYPE x e0 :0.45)) (شبح-nn e0 x)))
+(B (name vampire)(=>(^(S#MONSTER e0 :0.45)(SS#TYPE x e0 :0.45)) (خون‫-‬آشام-nn e0 x)))
+(B (name dragon)(=>(^(S#MONSTER e0 :0.45)(SS#TYPE x e0 :0.45)) (اژدها-nn e0 x)))
+(B (name godzilla)(=>(^(S#MONSTER e0 :0.45)(SS#TYPE x e0 :0.45)) (گودزیلا-nn e0 x)))
+ 
+; ACTION
+(B (name scare)(=>(SS#ACTION e0 e1 :0.9) (^(S#MONSTER e1)(SS#TYPE x e1)(ترساند#ترسان-vb e0 x y u))))
+(B (name suck)(=>(SS#ACTION e0 e1 :0.9) (^(S#MONSTER e1)(SS#TYPE x e1)(مکید#مک-vb e0 x y u))))
+ 
+(B (name monstermap)(=>(I#MONSTER x :0.9)(S#MONSTER x)))
+(B (name monster-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name monster-typemap)(=>(I#ACTION x y :0.9)(SS#ACTION x y)))
+ 
+; SCHISM
+;TYPE
+(B (name schism)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (تفرقه-nn e0 x)))
+(B (name gap)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (شکاف-nn e0 x)))
+(B (name chasm)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (وقفه-nn e0 x)))
+(B (name separation)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (جدایی-nn e0 x)))
+(B (name divide)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (^(تقسیم-nn e1 z)(kardan e0 x y z))))
+(B (name expanse)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (گسترش-nn e0 x)))
+ 
+; DISTANCES
+ 
+(B (name schismmap)(=>(I#SCHISM x :0.9)(S#SCHISM x)))
+(B (name schism-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name schism-distancesmap)(=>(I#DISTANCES x y :0.9)(SS#DISTANCES x y)))
+ 
+; FORCEFUL EXTRACTION
+; TYPE
+(B (name squeeze)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (فشرد#فشار-vb e0 x y u)))
+(B (name wring)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (چلاند#چل-vb e0 x y u)))
+(B (name vacuum)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (مکید#مک-vb e0 x y u)))
+(B (name extract)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (^(بیرون-nn e1 z)(keshidan e0 x y z))))
+(B (name wrest)(=>(^(S#FORCEFUL_EXTRACTION x e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#EXTRACTION-AGENT x e0 :0.3)) (پیچاند#پیچان-vb e0 x y u)))
+(B (name extraction)(=>(^(S#FORCEFUL_EXTRACTION e0 :0.45)(SS#TYPE x e0 :0.45)) (استخراج-nn e0 x)))
+(B (name extortion)(=>(^(S#FORCEFUL_EXTRACTION e0 :0.45)(SS#TYPE x e0 :0.45)) (اخاذی-nn e0 x)))
+ 
+(B (name leech)(=>(^(S#FORCEFUL_EXTRACTION e0 :0.45)(SS#TYPE x e0 :0.45)) (زالو-nn e0 x)))
+(B (name parasite)(=>(^(S#FORCEFUL_EXTRACTION e0 :0.45)(SS#TYPE x e0 :0.45)) (انگل-nn e0 x)))
+(B (name bloodsucker_fe)(=>(^(S#FORCEFUL_EXTRACTION e0 :0.45)(SS#TYPE x e0 :0.45)) (خون-آشام-nn e0 x)))
+ 
+ 
+(B (name forceful-extractionmap)(=>(I#FORCEFUL_EXTRACTION x :0.9)(S#FORCEFUL_EXTRACTION x)))
+(B (name forceful-extraction-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+
+ 
+; NATURAL PHYSICAL FORCE
+; TYPE
+(B (name avalanche)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (بهمن-nn e0 x)))
+(B (name tsunami)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (سونامی-nn e0 x)))
+(B (name deluge)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (طوفان-nn e0 x)))
+(B (name flood)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (سیل-nn e0 x)))
+(B (name tornado)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (گردباد-nn e0 x)))
+(B (name hurricane)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (تندباد-nn e0 x)))
+(B (name natural-disaster)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (^(طبیعی-adj e0 x)(فاجعه-nn e1 x))))
+(B (name twister)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (گردباد-nn e0 x)))
+(B (name typhoon)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (توفان-nn e0 x)))
+(B (name earthquake)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (زلزله-nn e0 x)))
+(B (name eruption)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (فوران-nn e0 x)))
+(B (name hailstorm)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (تگرگ-nn e0 x)))
+(B (name storm)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (کولاک-nn e0 x)))
+(B (name drought)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (خشکسالی-nn e0 x)))
+(B (name heat-wave)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (^(گرما-nn e1 y)(موج-nn e0 x)(nn e2 x y))))
+(B (name rock-slide)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (^(سنگ-nn e0 y)(ریزش-nn e1 x)(nn e2 x y))))
+ 
+; RESULT
+(B (name destroy)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.23)(SS#RESULT e0 e0 :0.23)(R#DESTROY-AGENT x e0 :0.23)(R#DESTROY-PATIENT y e0 :0.23)) (^(ویران-nn e1 z)(kardan e0 x y z))))
+ 
+(B (name disappearing)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.3)(SS#RESULT x e0 :0.3)(R#DESTROY-PATIENT x e0 :0.3)) (ناپدید-adj e0 x)))
+(B (name disappearing)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.3)(SS#RESULT x e0 :0.3)(R#DESTROY-PATIENT x e0 :0.3)) (گم-adj e0 x)))
+ 
+(B (name natural-physical-forcemap)(=>(I#NATURAL_PHYSICAL_FORCE x :0.9)(S#NATURAL_PHYSICAL_FORCE x)))
+(B (name natural-physical-force-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name natural-physical-force-resultmap)(=>(I#RESULT x y :0.9)(SS#RESULT x y)))
+
+ 
+; PHYSICAL LOCATION
+; DEFINED_REGION
+(B (name boundary)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (کرانه-nn e0 x)))
+(B (name destination)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (مقصد-nn e0 x)))
+(B (name edge)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (کناره-nn e0 x)))
+(B (name margin)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (حاشیه-nn e0 x)))
+(B (name fringe)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (لبه-nn e0 x)))
+(B (name borderline)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (سرحد-nn e0 x)))
+ 
+(B (name live-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(زیستن-vb e0 x y z)(در-in e1 e0 w))))
+(B (name live-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(زندگی-vb e0 x y z)(در-in e1 e0 w))))
+(B (name live-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(سکونت-vb e0 x y z)(در-in e1 e0 w))))
+
+(B (name reside-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(ساکن-nn e1 z)(shodan e0 x y z)(در-in e1 e0 w))))
+
+(B (name stay-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(ماند#مان-vb e0 x y z)(در-in e1 e0 w))))
+(B (name born-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(متولد-nn e1 z)(shodan e0 x y z)(در-in e1 e0 w))))
+ 
+;MOVEMENT-INTO
+(B (name pushnn)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#MOVEMENT_INTO x e0 :0.45)) (فشار-nn e0 x)))
+ 
+(B (name push-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(هل-nn e1 z)(dadan e0 x y z)(besooye e0 w))))
+(B (name drive-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(راند#ران-vb e0 x y z)(besooye e0 w))))
+(B (name draw-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(کشید#کش-vb e0 x y z)(besooye e0 w))))
+(B (name drag-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(کشاند#کشان-vb e0 x y z)(besooye e0 w))))
+(B (name move-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(حرکت-nn e1 z)(dadan e0 x y z)(besooye e0 w))))
+
+(B (name nudge-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(اشاره-nn e1 z)(kardan e0 x y z)(besooye e0 w))))
+(B (name throw-into)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#MOVEMENT_INTO x e0 e0 :0.23)(R#PROPEL-AGENT x e0 :0.23)(R#PROPEL-PATIENT y e0 :0.23)) (^(انداخت#انداز-vb e0 x y z)(besooye e0 w))))
+
+ 
+;EXIT
+(B (name emerge)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (^(بیرون-nn e1 z)(aamadan e0 x z))))
+(B (name emerge)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (^(در-nn e1 z)(aamadan e0 x z))))
+(B (name exit)(=>(^(S#PHYSICAL_LOCATION e0 :0.23)(SS#EXIT x e0 e0 :0.23)(R#EXIT-AGENT x e0 :0.23)) (^(خارج-nn e1 z)(shodan e0 x y z))))
+ 
+(B (name passport)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#EXIT x e0 :0.45)) (گذرنامه-nn e0 x)))
+(B (name ticket)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#EXIT x e0 :0.45)) (بلیط-nn e0 x)))
+(B (name exit)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#EXIT x e0 :0.45)) (خروج-nn e0 x)))
+(B (name exit)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#EXIT x e0 :0.45)) (خروجی-nn e0 x)))
+(B (name pathway-out-of)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#EXIT x e0 :0.45)) (^(گریزگاه-nn e1 x))))
+ 
+(B (name physical-locationmap)(=>(I#PHYSICAL_LOCATION x :0.9)(S#PHYSICAL_LOCATION x)))
+(B (name defined-regionmap)(=>(I#DEFINED_REGION x y :0.9)(SS#DEFINED_REGION x y)))
+(B (name movement-intomap)(=>(I#MOVEMENT_INTO x y :0.9)(SS#MOVEMENT_INTO x y)))
+(B (name physical-location-exitmap)(=>(I#EXIT x y :0.9)(SS#EXIT x y)))
+
+
+  ; VERTICAL SCALE
+; POSITION ON A SCALE
+(B (name peak)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (تراز-nn e0 x)))
+(B (name peak)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#POSITION_ON_A_SCALE x e0 :0.3)(R#FIXED-POINT x e0 :0.3)) (ردیف-nn e0 x)))
+
+ 
+; MOVEMENT ON THE SCALE
+(B (name leap)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (پرید#پر-vb e0 x y u)))
+(B (name leap)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (جهید#جه-vb e0 x y u)))
+(B (name leap)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (جهش-nn e1 e0)))
+(B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(زیاد-nn e1 z)(shodan e0 x y z))))
+(B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (ازدیاد-nn e1 e0)))
+(B (name spiral)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(اوج-nn e1 z)(gereftan e0 x y z))))
+(B (name raise)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23))(^(بالا-nn e1 z)(bordan e0 x y z))))
+(B (name rise)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-UP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(بالا-nn e1 z)(raftan e0 x y z))))
+ 
+(B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (کاست#کاه-vb e0 x y u)))
+(B (name fall)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(سقوط-nn e1 z)(kardan e0 x y z))))
+(B (name drop)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (چکید#چک-vb e0 x y u)))
+(B (name plummet)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(نازل-nn e1 z)(shodan e0 x y z))))
+(B (name plummet)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-DOWN e0 e0 :0.23)(R#MOVER x e0 :0.23))  (تنزل-nn e1 e0))) 
+(B (name freeze)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-STOP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(ثابت-nn e1 z)(kardan e0 x y z))))
+(B (name freeze)(=>(^(S#VERTICAL_SCALE e0 :0.23)(SS#MOVEMENT_ON_THE_SCALE e0 e0 :0.23)(R#MOVE-STOP e0 e0 :0.23)(R#MOVER x e0 :0.23)) (^(تثبیت-nn e1 z)(kardan e0 x y z))))
+ 
+(B (name increase)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-UP x e0 :0.3)) (افزایش-nn e0 x)))
+(B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-DOWN x e0 :0.3)) (کاهش-nn e0 x)))
+(B (name decrease)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#MOVEMENT_ON_THE_SCALE x e0 :0.3)(R#MOVE-DOWN x e0 :0.3)) (افت-nn e0 x)))
+ 
+; CONTRAST OF POSITIONS
+(B (name higher)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (بالاتر-adj e0 x)))
+(B (name above)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (مافوق-adj e0 x)))
+ 
+(B (name lower)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (پایینتر-adj e0 x)))
+(B (name lower)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (پایین-تر-adj e0 x)))
+(B (name below)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#BELOW x e0 :0.3)) (زیر-in e0 x y)))
+ 
+(B (name vertical-scalemap)(=>(I#VERTICAL_SCALE x :0.9)(S#VERTICAL_SCALE x)))
+(B (name position-on-a-scalemap)(=>(I#POSITION_ON_A_SCALE x y :0.9)(SS#POSITION_ON_A_SCALE x y)))
+(B (name movement-on-the-scalemap)(=>(I#MOVEMENT_ON_THE_SCALE x y :0.9)(SS#MOVEMENT_ON_THE_SCALE x y)))
+(B (name contrast-of-positionsmap)(=>(I#CONTRAST-OF-POSITIONS x y :0.9)(SS#CONTRAST-OF-POSITIONS x y)))
+
+; MORAL DUTY
+; REMUNERATION
+(B (name duty)(=>(^(S#MORAL_DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (وظیفه-nn e0 x)))
+(B (name due)(=>(^(S#MORAL_DUTY e0 :0.45)(SS#REMUNERATION x e0 :0.45)) (تکلیف-nn e0 x)))
+ 
+(B (name MORAL_DUTYmap)(=>(I#MORAL_DUTY e0 :0.9)(S#MORAL_DUTY x)))
+(B (name remunerationmap)(=>(I#REMUNERATION x y :0.9)(SS#REMUNERATION x y)))
+ 
+; MEDICINE
+; ADMINISTRATION
+(B (name inject)(=>(^(S#MEDICINE e0 :0.45)(SS#ADMINISTRATION x e0 :0.45)(R#ADMINISTRATION-AGENT x e0 :0.33)) (^(تزریق-nn e1 z)(kardan e0 x y z))))
+ 
+;(B (name shot)(=>(^(S#MEDICINE e0 :0.45)(SS#ADMINISTRATION x e0 :0.45)) (تزریق-nn e0 x)))
+;(B (name injection)(=>(^(S#MEDICINE e0 :0.45)(SS#ADMINISTRATION x e0 :0.45)) (تزریق-nn e0 x)))
+ 
+(B (name medicinemap)(=>(I#MEDICINE x :0.9)(S#MEDICINE x)))
+(B (name administrationmap)(=>(I#ADMINISTRATION x y :0.9)(SS#ADMINISTRATION x y)))
+ 
+;RIGHT
+;TYPE
+(B (name right-to)(=>(^(S#RIGHT e0 :0.45)(SS#TYPE x e0 :0.45)) (^(حق-nn e0 x)(nn e1 x y ))))
+(B (name inalienable-right)(=>(^(S#RIGHT e0 :0.45)(SS#TYPE x e0 :0.45)) (^(مسلم-adj e0 x)(حق-nn e1 x ))))
+ 
+ 
+(B (name rightmap)(=>(I#RIGHT x :0.9)(S#RIGHT x)))
+(B (name right-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+ 
+ 
+;COMPETITION
+;TYPE
+(B (name fair-shot-at)(=>(^(S#COMPETITION e1 :0.45)(SS#COMPONENT x e1 :0.45)) (^(منصفانه-adj e0 x)(ضربه-nn e1 x)(بر-in e3 x y))))
+ 
+(B (name competitionmap)(=>(I#COMPETITION x :0.9)(S#COMPETITION x)))
+(B (name competition-componentmap)(=>(I#COMPONENT x y :0.9)(SS#COMPONENT x y)))
+ 
+;GOAL DIRECTED
+;TYPE
+(B (name goal)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (هدف-nn e0 x)))
+(B (name force)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (نیرو-nn e0 x)))
+(B (name achievement)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#TYPE x e0 :0.45)) (موفقیت-nn e0 x)))
+ 
+;RISK
+(B (name high-stakes-bet)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#RISK x e0 e0 :0.45)) (^(پر-مخاطره-adj e0 x)(شرط-nn e1 x))))
+(B (name high-stakes-bet)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#RISK x e0 e0 :0.45)) (^(پرخطر-adj e0 x)(شرط-nn e1 x))))
+ 
+;OBSTACLES
+(B (name roadblock)(=>(^(S#GOAL_DIRECTED e0 :0.45)(SS#OBSTACLES x e0 :0.45)) (مانع-nn e0 x)))
+ 
+ 
+(B (name goal-directedmap)(=>(I#GOAL_DIRECTED x :0.9)(S#GOAL_DIRECTED x)))
+(B (name goal-directed-riskmap)(=>(I#RISK x y :0.9)(SS#RISK x y)))
+(B (name goal-directed-obstaclesmap)(=>(I#OBSTACLES x y :0.9)(SS#OBSTACLES x y)))
+ 
+ 
+;FOOD
+;TYPE
+ 
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (غذا-nn e0 x)))
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (نان-nn e0 x)))
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (گوشت-nn e0 x)))
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#TYPE x e0 :0.45)) (هویج-nn e0 x)))
+ 
+;CONSUMPTION
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#CONSUMPTION x e0 :0.45)) (مزه-nn e0 x)))
+(B (name taste-of)(=>(^(S#FOOD e0 :0.3)(SS#CONSUMPTION x e0 :0.3)(R#TASTE-OBJECT y e0 :0.3)) (^(طعم-nn e0 x)(nn e1 x y))))
+ 
+(B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (چشید#چش-vb e0 x y u)))
+(B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (^(مصرف-nn e1 z)(kardan e0 x y z))))
+(B (name taste)(=>(^(S#FOOD e0 :0.23)(SS#CONSUMPTION e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (خورد#خور-vb e0 x y u)))
+ 
+(B (name foodmap)(=>(I#FOOD x :0.9)(S#FOOD x)))
+(B (name food-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name food-consumptionmap)(=>(I#CONSUMPTION x y :0.9)(SS#CONSUMPTION x y)))
+ 
+
+ ; ADDICTION
+; TYPE
+; (B (name addiction)(=>(^(S#ADDICTION e0 :0.45)(SS#TYPE x e0 :0.45)) (اعتیاد-nn e0 x)))
+
+(B (name drug)(=>(^(S#ADDICTION e0 :0.3)(SS#TYPE x e0 :0.3)(R#SUBSTANCE x e0 :0.3)) (^(ماده-nn e0 x)(مخدر-nn e1 y)(nn e2 x y))))
+(B (name drug)(=>(^(S#ADDICTION e0 :0.3)(SS#TYPE x e0 :0.3)(R#SUBSTANCE x e0 :0.3)) (^(ماده-nn e0 x)(مخدر-adj e1 x))))
+
+(B (name intoxication)(=>(^(S#ADDICTION e0 :0.45)(SS#TYPE x e0 :0.45)) (مستی-nn e0 x)))
+ 
+; COMPULSION
+(B (name addiction)(=>(^(S#ADDICTION e0 :0.45)(SS#COMPULSION x e0 :0.45)) (اعتیاد-nn e0 x)))
+(B (name habit)(=>(^(S#ADDICTION e0 :0.45)(SS#COMPULSION x e0 :0.45)) (عادت-nn e0 x)))
+(B (name addicted)(=>(^(S#ADDICTION e0 :0.45)(SS#COMPULSION x e0 :0.45)) (معتاد-adj e0 x)))
+ 
+; RESULT
+(B (name drunk)(=>(^(S#ADDICTION e0 :0.3)(SS#RESULT e0 e0 :0.3)(R#ADDICTED x e0 :0.3)) (مخمور-adj e0 x)))
+(B (name drunk)(=>(^(S#ADDICTION e0 :0.3)(SS#RESULT e0 e0 :0.3)(R#ADDICTED x e0 :0.3)) (مست-adj e0 x)))
+ 
+(B (name addictionmap)(=>(I#ADDICTION x :0.9)(S#ADDICTION x)))
+(B (name addiction-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name addiction-compulsionmap)(=>(I#COMPULSION x y :0.9)(SS#COMPULSION x y)))
+(B (name addiction-resultmap)(=>(I#RESULT x y :0.9)(SS#RESULT x y)))
+ 
+; BLOOD_SYSTEM
+; COMPONENT
+(B (name blood)(=>(^(S#BLOOD_SYSTEM e0 :0.3)(SS#COMPONENT x e0 :0.3)(R#BLOOD x e0 :0.3)) (خون-nn e0 x)))
+(B (name vein)(=>(^(S#BLOOD_SYSTEM e0 :0.45)(SS#COMPONENT x e0 :0.45)) (ورید-nn e0 x)))
+(B (name artery)(=>(^(S#BLOOD_SYSTEM e0 :0.45)(SS#COMPONENT x e0 :0.45)) (شریان-nn e0 x)))
+ 
+; MOVEMENT
+(B (name flow)(=>(SS#MOVEMENT e0 e1 :0.9) (^(flow-vb e0 x y z)(S#BLOOD_SYSTEM e1)(SS#COMPONENT x e1))))
+ 
+(B (name blood-systemmap)(=>(I#BLOOD_SYSTEM x :0.9)(S#BLOOD_SYSTEM x)))
+(B (name blood-system-componentmap)(=>(I#COMPONENT x y :0.9)(SS#COMPONENT x y)))
+(B (name blood-system-movementmap)(=>(I#MOVEMENT x y :0.9)(SS#MOVEMENT x y)))
+ 
+ 
+; ENERGY
+; TYPE
+(B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (انرژی-nn e0 x)))
+(B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (سوخت-nn e0 x)))
+(B (name energy)(=>(^(S#ENERGY e0 :0.45)(SS#TYPE x e0 :0.45)) (باتری-nn e0 x)))
+ 
+; RESULT
+(B (name fuel)(=>(^(S#ENERGY e0 :0.23)(SS#RESULT e0 e0 :0.23)(R#RESULT-AGENT x e0 :0.23)(R#RESULT-PATIENT x e0 :0.23)) (^(سوخت-گیری-nn e1 z)(kardan e0 x y z))))
+ 
+(B (name energymap)(=>(I#ENERGY x :0.9)(S#ENERGY x)))
+(B (name energy-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name energy-resultmap)(=>(I#RESULT x y :0.9)(SS#RESULT x y)))
+ 
+; GOD
+; TYPE
+(B (name god)(=>(^(S#A_GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (خدا-nn e0 x)))
+(B (name idol)(=>(^(S#A_GOD e0 :0.45)(SS#TYPE x e0 :0.45)) (معبود-nn e0 x)))
+ 
+; VENERATION
+(B (name worship)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (پرستش-nn e0 x y u)))
+
+(B (name worship)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (پرستید#پرست-nn e0 x y u)))
+
+(B (name pray)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (^(دعا-nn e1 z)(kardan e0 x y z))))
+(B (name pray)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (^(مناجات-nn e1 z)(kardan e0 x y z))))
+(B (name bow-to)(=>(^(S#A_GOD e0 :0.3)(SS#VENERATION e0 e0 :0.3)(R#WORSHIP-AGENT x e0 :0.3)) (^(تعظیم کردن-vb e0 x y u)(به-in e1 e0 z))))
+ 
+(B (name godmap)(=>(I#GOD x :0.9)(S#A_GOD x)))
+(B (name god-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name god-venerationmap)(=>(I#VENERATION x y :0.9)(SS#VENERATION x y)))
+ 
+; ACCIDENT
+; TYPE
+(B (name accident)(=>(^(S#ACCIDENT e0 :0.45)(SS#TYPE x e0 :0.45)) (تصادف-nn e0 x)))
+(B (name accident)(=>(^(S#ACCIDENT e0 :0.45)(SS#TYPE x e0 :0.45)) (فاجعه-nn e0 x)))
+(B (name accident)(=>(^(S#ACCIDENT e0 :0.45)(SS#TYPE x e0 :0.45)) (بلا-nn e0 x)))
+(B (name accident)(=>(^(S#ACCIDENT e0 :0.45)(SS#TYPE x e0 :0.45)) (سقوط-nn e0 x)))
+ 
+(B (name accidentmap)(=>(I#ACCIDENT x :0.9)(S#ACCIDENT x)))
+(B (name accident-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+ 
+ 
+; PLANT
+; TYPE
+(B (name plant)(=>(^(S#PLANT e0 :0.45)(SS#TYPE x e0 :0.45)) (گیاه-nn e0 x)))
+(B (name tree)(=>(^(S#PLANT e0 :0.45)(SS#TYPE x e0 :0.45)) (درخت-nn e0 x)))
+(B (name weed)(=>(^(S#PLANT e0 :0.3)(SS#TYPE x e0 :0.3)(R#UNWANTED x e0 :0.3)) (علف-nn e0 x)))
+(B (name flower)(=>(^(S#PLANT e0 :0.45)(SS#TYPE x e0 :0.45)) (گل-nn e0 x)))
+(B (name grass)(=>(^(S#PLANT e0 :0.45)(SS#TYPE x e0 :0.45)) (چمن-nn e0 x)))
+ 
+; PARTS
+(B (name root)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-ROOT x e0 :0.3)) (ریشه-nn e0 x)))
+(B (name fruit)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-EXTERNAL x e0 :0.3)) (میوه-nn e0 x)))
+(B (name seed)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-GENESIS x e0 :0.3)) (دانه-nn e0 x)))
+(B (name leaf)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-EXTERNAL x e0 :0.3)) (برگ-nn e0 x)))
+(B (name leaf)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-EXTERNAL x e0 :0.3)) (شاخه-nn e0 x)))
+(B (name leaf)(=>(^(S#PLANT e0 :0.3)(SS#PARTS x e0 :0.3)(R#PLANT-EXTERNAL x e0 :0.3)) (تنه-nn e0 x)))
+ 
+; CHANGE_OF_STATE
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (روییدن-vb e0 x y u)))
+(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE x e0 :0.3)) (رویش-nn e0 x)))
+ 
+(B (name plant-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name plant-partsmap)(=>(I#PARTS x y :0.9)(SS#PARTS x y)))
+(B (name plant-change-of-statemap)(=>(I#CHANGE_OF_STATE x y :0.9)(SS#CHANGE_OF_STATE x y)))
+
+ 
+; ANIMAL
+; COMPONENT
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (پوزه-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (فک-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (نیش-nn e0 x)))
+(B (name face)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (دم-nn e0 x)))
+ 
+; FUNCTION
+(B (name swallow)(=>(^(S#ANIMAL e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (بلعید#بلع-vb e0 x y u)))
+ 
+
+
+; ACTION
+(B (name eat)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (خورد#خور-vb e0 x y u)))
+;(B (name grow)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23))(^(رشد-nn e1 z)(kardan e0 x y z))))
+(B (name digest)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(هضم-nn e1 z)(kardan e0 x y z))))
+(B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23))(^(دوام-nn e1 z)(aavadran e0 x y z))))
+(B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (گزید#گز-vb e0 x y u)))
+(B (name outlive)(=>(^(S#ANIMAL e0 :0.23)(SS#ACTION e0 e0 :0.23)(R#ACTION-AGENT x e0 :0.23)(R#ACTION-PATIENT y e0 :0.23)) (^(نیش-nn e1 z)(zadan e0 x y z))))
+ 
+(B (name animalmap)(=>(I#ANIMAL x :0.9)(S#ANIMAL x)))
+(B (name animal-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name animal-componentmap)(=>(I#COMPONENT x y :0.9)(SS#COMPONENT x y)))
+(B (name animal-functionmap)(=>(I#FUNCTION x y :0.9)(SS#FUNCTION x y)))
+(B (name animal-actionmap)(=>(I#ACTION x y :0.9)(SS#ACTION x y)))
+ 
+; MACHINE
+; TYPE
+(B (name machine)(=>(^(S#MACHINE e0 :0.45)(SS#TYPE x e0 :0.45)) (ماشین-nn e0 x)))
+(B (name mechanism)(=>(^(S#MACHINE e0 :0.45)(SS#TYPE x e0 :0.45)) (سازوکار-nn e0 x)))
+ 
+; PARTS
+(B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (موتور-nn e0 x)))
+(B (name engine)(=>(^(S#MACHINE e0 :0.45)(SS#PARTS x e0 :0.45)) (چرخ-nn e0 x)))
+ 
+; FUNCTION
+(B (name turn)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (چرخید#چرخ-vb e0 x y u)))
+(B (name repair)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23))(^(تعمیر-nn e1 z)(kardan e0 x y z))))
+(B (name fuel)(=>(^(S#MACHINE e0 :0.23)(SS#FUNCTION e0 e0 :0.23)(R#FUNCTION-AGENT x e0 :0.23)(R#FUNCTION-PATIENT y e0 :0.23)) (^(سوخت-گیری-nn e1 z)(kardan e0 x y z))))
+ 
+ 
+(B (name machinemap)(=>(I#MACHINE x :0.9)(S#MACHINE x)))
+(B (name machine-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name machine-partsmap)(=>(I#PARTS x y :0.9)(SS#PARTS x y)))
+(B (name machine-functionmap)(=>(I#FUNCTION x y :0.9)(SS#FUNCTION x y)))
+ 
+; DESTROYER
+; DESTRUCTIVE FORCE
+(B (name destroyer)(=>(^(S#DESTROYER e0 :0.45)(SS#DESTRUCTIVE_FORCE x e0 :0.45)) (ویرانگر-nn e0 x)))
+(B (name destruction)(=>(^(S#DESTROYER e0 :0.45)(SS#DESTRUCTIVE_FORCE x e0 :0.45)) (ویرانی-nn e0 x)))
+ 
+(B (name destroy)(=>(^(S#DESTROYER e0 :0.23)(SS#DESTRUCTIVE_FORCE e0 e0 :0.23)(R#DESTRUCTIVE_FORCE-AGENT x e0 :0.23)(R#DESTRUCTIVE_FORCE-PATIENT y e0 :0.23)) (^(نابود-nn e1 z)(kardan e0 x y z))))
+ 
+(B (name destroyermap)(=>(I#DESTROYER x :0.9)(S#DESTROYER x)))
+(B (name destroyer-DESTRUCTIVE_FORCEmap)(=>(I#DESTRUCTIVE_FORCE x y :0.9)(SS#DESTRUCTIVE_FORCE x y)))
+ 
+
+; GEOGRAPHIC FEATURE
+; TYPE
+(B (name mountain)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#MOUNTAIN x e0 :0.3)) (کوه-nn e0 x)))
+(B (name himalayas)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#MOUNTAIN x e0 :0.3)) (هیمالیا-nn e0 x)))
+(B (name ocean)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#OCEAN x e0 :0.3)) (اقیانوس-nn e0 x)))
+(B (name sea)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#OCEAN x e0 :0.3)) (دریا-nn e0 x)))
+(B (name prairie)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (چمن-زار-nn e0 x)))
+(B (name prairie)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (دشت-nn e0 x)))
+(B (name prairie)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (چمنزار-nn e0 x)))
+(B (name valley)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (دره-nn e0 x)))
+(B (name valley)(=>(^(S#GEOGRAPHIC_FEATURE e0 :0.3)(SS#TYPE x e0 :0.3)(R#VALLEY x e0 :0.3)) (واحه-nn e0 x)))
+ 
+(B (name geographic-featuremap)(=>(I#GEOGRAPHIC_FEATURE x :0.9)(S#GEOGRAPHIC_FEATURE x)))
+(B (name geographic-feature-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+ 
+; ENABLER
+; LUBRICANT
+(B (name lubrication)(=>(^(S#ENABLER e0 :0.45)(SS#LUBRICANT x e0 :0.45)) (روغنکاری-nn e0 x)))
+(B (name lubricant)(=>(^(S#ENABLER e0 :0.45)(SS#LUBRICANT x e0 :0.45)) (چرب-کننده-nn e0 x)))
+(B (name oil)(=>(^(S#ENABLER e0 :0.45)(SS#LUBRICANT x e0 :0.45)) (روغن-nn e0 x)))
+(B (name grease)(=>(^(S#ENABLER e0 :0.45)(SS#LUBRICANT x e0 :0.45)) (گریس-nn e0 x)))
+
+(B (name oilvb)(=>(^(S#ENABLER e0 :0.3)(SS#LUBRICANT e0 e0 :0.3)(R#LUBRICATED y e0 :0.3)) (^(روغن-کاری-nn e1 z)(kardan e0 x y z))))
+ 
+(B (name enablermap)(=>(I#ENABLER x :0.9)(S#ENABLER x)))
+(B (name enabler-lubricantmap)(=>(I#LUBRICANT x y :0.9)(SS#LUBRICANT x y)))
+ 
+; GAME
+; TYPE
+(B (name chess)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (شطرنج-nn e0 x)))
+(B (name chess-game)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(شطرنج-nn e0 x)(nn e1 y x)(بازی-nn e2 y))))
+(B (name chess-match)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(شطرنج-nn e0 x)(nn e1 y x)(مسابقه-nn e2 y))))
+(B (name poker)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (پوکر-nn e0 x)))
+(B (name poker-game)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (^(پوکر-nn e0 x)(nn e1 y x)(بازی-nn e2 y))))
+(B (name uno)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (ورق-بازی-nn e0 x)))
+(B (name uno)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (بازی-nn e0 x)))
+(B (name uno)(=>(^(S#GAME e0 :0.45)(SS#TYPE x e0 :0.45)) (قمار-nn e0 x)))
+
+ 
+; COMPONENTS
+(B (name chip)(=>(^(S#GAME e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (مهره-nn e0 x)))
+(B (name pawn)(=>(^(S#GAME e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (سرباز-nn e0 x)))
+ 
+ 
+; ACTIONS
+(B (name play)(=>(^(S#GAME e0 :0.45)(SS#ACTIONS x e0 :0.45)) (بازی-nn e0 x))) 
+(B (name playvb)(=>(^(S#GAME e0 :0.3)(SS#ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (^(بازی-nn e1 z)(kardan e0 x y z))))
+(B (name assistvb)(=>(^(S#GAME e0 :0.3)(SS#ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (^(شرکت-nn e1 z)(kardan e0 x y z))))
+ 
+; OUTCOMES
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (برد#بر-vb e0 x y u)))
+(B (name lose)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (باخت#باز-vb e0 x y u)))
+ 
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (برنده-nn e0 x)))
+(B (name lose)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (بازنده-nn e0)))
+ 
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES x e0 :0.3)) (پیروزی-nn e0 x)))
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES x e0 :0.3)) (فتح-nn e0 x)))
+ 
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#OUTCOMES x e0 :0.3)) (شکست-nn e0 x)))
+ 
+(B (name gamemap)(=>(I#GAME x :0.9)(S#GAME x)))
+(B (name game-typemap)(=>(I#TYPE x y :0.9)(SS#TYPE x y)))
+(B (name game-componentsmap)(=>(I#COMPONENTS x y :0.9)(SS#COMPONENTS x y)))
+(B (name game-actionsmap)(=>(I#ACTIONS x y :0.9)(SS#ACTIONS x y)))
+(B (name game-outcomesmap)(=>(I#OUTCOMES x y :0.9)(SS#OUTCOMES x y)))
+ 
+; CROP
+; PLANTING
+(B (name seed)(=>(^(S#CROP e0 :0.3)(SS#PLANTING x e0 :0.3)(R#CROP x e0 :0.3)) (دانه-nn e0 x)))
+(B (name crop)(=>(^(S#CROP e0 :0.3)(SS#PLANTING x e0 :0.3)(R#CROP x e0 :0.3)) (محصول-nn e0 x)))
+ 
+(B (name sow)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (بذر-پاشیدن-vb e0 x y u)))
+(B (name plant)(=>(^(S#CROP e0 :0.23)(SS#PLANTING e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (کاشت#کار-vb e0 x y u)))
+ 
+; CULTIVATION
+(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (^(سبز-nn e1 z)(kardan e0 x y z))))
+(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CULTIVATION e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP y e0 :0.23)) (^(سبز-nn e1 z)(shodan e0 x y z))))
+
+; OUTCOME
+(B (name reap)(=>(^(S#CROP e0 :0.23)(SS#OUTCOME e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP x e0 :0.23)) (چید#چین-vb e0 x y u)))
+(B (name harvest)(=>(^(S#CROP e0 :0.23)(SS#OUTCOME e0 e0 :0.23)(R#GARDENER x e0 :0.23)(R#CROP x e0 :0.23)) (^(درو-nn e1 z)(kardan e0 x y z))))
+ 
+
+(B (name bumper-crop)(=>(^(S#CROP e0 :0.3)(SS#OUTCOME x e0 :0.3)(R#CROP y e0 :0.3)) (^(زیادی-nn e0 x)(محصول-nn e2 y)(nn y x))))
+(B (name bumper-crop)(=>(^(S#CROP e0 :0.3)(SS#OUTCOME x e0 :0.3)(R#CROP y e0 :0.3)) (^(زیادی-nn e0 y)(محصول-nn e2 x)(nn y x))))
+(B (name bumper-crop)(=>(^(S#CROP e0 :0.3)(SS#OUTCOME x e0 :0.3)(R#CROP y e0 :0.3)) (^(اضافه-nn e0 y)(محصول-nn e2 x)(nn y x))))
+(B (name bumper-crop)(=>(^(S#CROP e0 :0.3)(SS#OUTCOME x e0 :0.3)(R#CROP y e0 :0.3)) (^(مازاد-nn e0 y)(محصول-nn e2 x)(nn y x))))
+
+(B (name harvestn)(=>(^(S#CROP e0 :0.3)(SS#OUTCOME x e0 :0.3)(R#CROP y e0 :0.3)) (خرمن-nn e0 x)))
+ 
+(B (name cropmap)(=>(I#CROP x :0.9)(S#CROP x)))
+(B (name crop-plantingmap)(=>(I#PLANTING x y :0.9)(SS#PLANTING x y)))
+(B (name crop-cultivationmap)(=>(I#CULTIVATION x y :0.9)(SS#CULTIVATION x y)))
+(B (name crop-outcomemap)(=>(I#OUTCOME x y :0.9)(SS#OUTCOME x y)))
+
+
+; A RIGHT
+; TYPE
+(B (name right)(=>(^(S#A_RIGHT e0 :0.45)(SS#TYPE x e0 :0.45)) (بجا-nn e0 x)))
+(B (name right)(=>(^(S#A_RIGHT e0 :0.45)(SS#TYPE x e0 :0.45)) (مناسب-nn e0 x)))
+(B (name right-for)(=>(^(S#A_RIGHT e0 :0.45)(SS#TYPE x e0 :0.45)) (^(مناسب-nn e0 x)(برای -in e1 x y))))
+(B (name right-for)(=>(^(S#A_RIGHT e0 :0.45)(SS#TYPE x e0 :0.45)) (^(مناسب-nn e0 x)(nn e1 x y))))
+ 
+; IMPURITY
+; TYPE
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE x e0 :0.45)) (خاک-nn e0 x)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE x e0 :0.45)) (غبار-nn e0 x)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE x e0 :0.45)) (زباله-nn e0 x)))
+ 
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (کثیف-adj e0 x)))
+ 
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (لجن-nn e0 x)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (لکه-nn e0 x)))
+(B (name god)(=>(^(S#IMPURITY e0 :0.45)(SS#TYPE e0 e0 :0.45)) (کثافت-nn e0 x)))
+
+#------new-----
+(B (name location)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (محل-nn e0 x)))
+
+(B (name dimension)(=>(^(S#RESOURCE e0 :0.45)(SS#QUANTITY_SIZE x e0 :0.45)) (بعد-nn e0 x)))
+
+(B (name pain) (=>(^(S#PHYSICAL_HARM e0 :0.2)(SS#TYPE x e0 :0.2))(رنج-nn e0 x)))
+
+(B (name view)(=>(^(S#VISION e1 :0.45)(SS#SEEING x e1 :0.45)) (نما-nn e1 x)))
+
+(B (name donkey)(=>(^(S#ANIMAL e0 :0.45)(SS#TYPE x e0 :0.45)) (خر-nn e0 x)))
+
+(B (name exemption) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (معافیت-nn e0 x)))
+
+(B (name ceiling)(=>(^(S#BUILDING e0 :0.45)(SS#COMPONENTS x e0 :0.45)) (سقف-nn e0 x)))
+
+(B (name distance)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (فاصله-nn e0 x)))
+
+(B (name green)(=>(^(S#PLANT e0 :0.45)(SS#TYPE x e0 :0.45)) (سبز-adj e0 x)))   
+
+(B (name line)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (خط-nn e0 x)))
+
+(B (name line)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (خط-nn e0 x)))
+
+(B (name society) (=>(^(S#HIGH_POINT e0 :0.45)(SS#TOP_OF_ECONOMIC_SCALE x e0 :0.45))(جامعه-nn e0 x)))
+
+(B (name infestation) (=>(^(S#STRUGGLE e0 :0.45)(SS#TYPE x e0 :0.45)) (هجوم-nn e0 x)))
+
+(B (name distance)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (فاصله-nn e0 x)))
+
+(B (name line)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (خط-nn e0 x)))
+
+(B (name distance)(=>(^(S#SCHISM e0 :0.45)(SS#TYPE x e0 :0.45)) (فاصله-nn e0 x)))
+
+(B (name line)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (خط-nn e0 x)))
+
+(B (name painless) (=>(^(S#DISEASE e0 :0.45)(SS#CURE x e0 :0.45)) (بی-درد-nn e1)))
+
+(B (name elimination) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (رفع-nn e0 x)))
+
+(B (name level)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (سطح-nn e0 x)))
+
+(B (name prevention) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(پیشگیری-nn e0 x)))
+
+(B (name silent)(=>(^(S#DARKNESS x e0 :0.3)(SS#DARK_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.3)(R#DARK x e0 :0.3)) (خاموش-adj e0 x)))
+
+(B (name factor)(=>(^(S#RESOURCE e0 :0.45)(SS#DISTRIBUTION x e0 :0.45)) (عامل-nn e0 x)))
+
+(B (name volume)(=>(^(S#RESOURCE e0 :0.45)(SS#QUANTITY_SIZE x e0 :0.45)) (حجم-nn e0 x)))
+
+(B (name heaven) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#RELIEF x e0 :0.45)) (بهشت-nn e0 x)))
+
+(B (name tension)(=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#PHYSICAL_DISTRESS e0 e0 :0.45)) (تنش-nn e0 y)))
+
+(B (name line)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION x e0 :0.45)) (خط-nn e0 x)))
+
+(B (name fragile)(=>(^(S#PHYSICAL_OBJECT e0 :0.45)(SS#PHYSICAL-OBJECT-TYPE x e0 :0.45)) (شکننده-nn e0 x)))
+
+(B (name injustice) (=>(^(S#ENSLAVEMENT e0 :0.45)(SS#OPPRESSION x e0 :0.45))(بیداد-nn e0 x)))
+
+(B (name claw)(=>(^(S#ANIMAL e0 :0.45)(SS#COMPONENT x e0 :0.45)) (پنجه-nn e0 x)))
+
+(B (name class)(=>(^(S#RESOURCE e0 :0.45)(SS#DISTRIBUTION x e0 :0.45)) (طبقه-nn e0 x)))
+
+(B (name reflection)(=>(^(S#DARKNESS e0 :0.45)(SS#LIGHT_END_OF_RANGE_OF_DARKNESS_LIGHT x e0 :0.45)) (بازتاب-nn e0 x)))
+
+(B (name free)(=>(^(S#CONFINEMENT e0 :0.45)(SS#EXIT x e0 :0.45)) (رها-nn e0 x)))
+
+(B (name pressure) (=>(^(S#PHYSICAL_BURDEN e0 :0.45)(SS#WEIGHT x e0 :0.45)) (فشار-nn e0 x)))
+
+(B (name shock) (=>(^(S#DISEASE u :0.45)(SS#TREATMENT x u :0.45))(شوک-nn e0 x)))
+
+(B (name catastrophe)(=>(^(S#PHYSICAL_HARM e0 :0.45)(SS#TYPE x e0 :0.45)) (مصیبت-nn e0 x)))
+
+
+
+(B (name bear)(=>(^(S#HUMAN_BODY e0 :0.3)(SS#LIVING e0 e0 :0.3)(R#LIVING-PATIENT x e0 :0.3)) (زایید#زا-vb e0 y)))
+(B (name stabilize)(=>(^(S#BUILDING e0 :0.3)(SS#CREATION_DESTRUCTION e0 e0 :0.3 :0.3)(R#CREATING e0 e0 :0.3)) (^(پایدار-nn e1 z)(kardan e0 x y z))))
+(B (name sink) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#MOVEMENT e0 e0 :0.45))(^(غرق-nn e1 z)(shodan e0 y u z))))
+(B (name suffer) (=>(^(S#DISEASE e0 :0.3)(SS#TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (^(رنج-nn e1 z)(bordan e0 y u z))))
+(B (name paint)(=>(^(S#DARKNESS x e0 :0.3)(SS#MOVEMENT_IN_THE_RANGE x e0 :0.3)(R#DARK y e0 :0.3))(^(رنگ-nn e1 z)(kardan e0 x y z))))
+(B (name sink) (=>(^(SS#MOVEMENT_DOWNWARD e0 e2 :0.3)(R#MOVE-D-PATIENT x e0 :0.3))(^(S#LOW_POINT e2)(SS#BOTTOM_OF_ENCONOMIC_SCALE u e1) (dig-vb e0 x y z)(غرق-شدن-adj e1 y))))
+(B (name percolate) (=>(^(S#BODY_OF_WATER y :0.3)(SS#MOVEMENT e0 y :0.3)(R#STREAMING x e0 :0.3))(^(نفوذ-nn e1 z)(kardan e0 x y z))))
+(B (name be-in)(=>(^(S#PHYSICAL_LOCATION e0 :0.45)(SS#DEFINED_REGION e0 e0 w :0.45)) (^(بود#باش-vb e0 x y z)(در-in e1 e0 w))))
+
+
+
+
+(B (name rocket) (=>(^(S#HIGH_POINT a :0.3)(SS#MOVEMENT_FORWARD_UPWARD e0 a :0.3)(R#MOVE-U-PATIENT x e0 :0.3))(با-سرعت-بالا-فتن-vb e0 x y z)))
+(B (name buckle) (=>(^(S#STRUGGLE e0 :0.3) (SS#TYPE e0 e0 :0.3)(R#STRUGGLE-AGENT x e0 :0.3))(دست-و-پنجه-نرم-کردن-vb e0 x u1 u2)))
+(B (name rising)(=>(^(S#VERTICAL_SCALE e0 :0.3)(SS#CONTRAST_OF_POSITIONS e0 e0 :0.3)(R#ABOVE x e0 :0.3)) (بالا-رونده-adj e0 x)))
+(B (name gone-with-the-wind)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.3)(SS#RESULT x e0 :0.3)(R#DESTROY-PATIENT x e0 :0.3)) (بر-باد-رفته-adj e0 x)))
+(B (name eolian)(=>(^(S#NATURAL_PHYSICAL_FORCE e0 :0.45)(SS#TYPE x e0 :0.45)) (باد-آورده-nn e0 x)))
+(B (name eradicate)(=>(^(S#PLANT e0 :0.3)(SS#CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (ریشه-کن-کردن-vb e0 x y u)))

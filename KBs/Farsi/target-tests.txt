@@ -1,0 +1,236 @@
+
+;general farsi axioms
+
+(B (name shodan) (=>(shodan e0 x y :0.9)(^(شد‫#‬شو-vb e0 x u1 u2)(NVE e6 y e0))))
+(B (name gashtan) (=>(shodan e0 x y :0.9)(^(گشت‫#‬گرد-vb e0 x u1 u2)(NVE e6 y e0))))
+(B (name kardan) (=>(kardan e0 x y :0.9)(^(کرد‫#‬کن-vb e0 x u1 u2)(NVE e6 y e0))))
+(B (name nemoodan) (=>(kardan e0 x y :0.9)(^(نمود‫#‬نما-vb e0 x u1 u2)(NVE e6 y e0))))
+(B (name yaftan) (=>(yaftan e0 x y :0.9)(^(یافت‫#‬یاب-vb e0 x u1 u2)(NVE e6 y e0))))
+(B (name gereftan) (=>(yaftan e0 x y :0.9)(^(گرفت‫#‬گیر-vb e0 x u1 u2)(NVE e6 y e0))))
+
+
+; POVERTY
+ 
+(B (name poverty) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45))(فقر-nn e0 x)))
+(B (name poorness) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (تنگدستی-nn e0 x)))
+(B (name indigence) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (تهی-دستی-nn e0 x)))
+(B (name penury) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (بینوایی-nn e0 x)))
+(B (name beggary) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (گدایی-nn e0 x)))
+(B (name misery) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (بدبختی-nn e0 x)))
+(B (name bareness) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (بی-چیزی-nn e0 x)))
+(B (name need) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (نیاز-nn e0 x)))
+(B (name necessity) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (نیازمندی-nn e0 x)))
+(B (name squalor) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (فلاکت-nn e0 x)))
+(B (name bankruptcy) (=>(^(TS#POVERTY x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (افلاس-nn e0 x)))
+
+
+; POVERTY/WEALTH
+(B (name inequality) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(نا-برابری-nn e0 x)))
+(B (name inequality) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(نابرابری-nn e0 x)))
+(B (name inequity) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY x :0.45))(بی-عدالتی-nn e0 x)))
+
+
+; POOR
+(B (name poor) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (فقیر-adj e0 y)))
+(B (name poorer) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (فقیرتر-adj e0 y)))
+(B (name poorest) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (فقیرترین-adj e0 y)))
+(B (name broke) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (ورشکسته-adj e0 y)))
+(B (name bankrupt) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (ورشکسته-adj e0 y)))
+(B (name destitute) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (نیازمند-adj e0 y)))
+(B (name impoverished) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (مستمند-adj e0 y)))
+(B (name lean) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (نزار-adj e0 y)))
+(B (name needy) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (محتاج-adj e0 y)))
+(B (name shabby) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (ژنده-adj e0 y)))
+(B (name indigent) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (تنگدست-adj e0 y)))
+(B (name homeless) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (بی-خانمان-adj e0 y)))
+ 
+
+; POOR PERSON
+(B (name poor2) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (مستمند-nn e0 x)))
+(B (name pauper) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (فقیر-nn e0 y)))
+(B (name peasant) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (رعیت-nn e0 y)))
+(B (name mendicant) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (سائل-nn e0 y)))
+(B (name beggar) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (گدا-nn e0 y)))
+(B (name hobo) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (دوره-گردی-nn e0 y)))
+(B (name hobo) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (دوره-گرد-nn e0 y)))
+
+(B (name homelessnn) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (بی-خانمانی-nn e0 y)))
+(B (name homelessnn) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (بی-خانمان-nn e0 y)))
+
+; BECOME POOR
+ 
+(B (name become-poor) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (^(shodan e1 x y)(فقیر-adj e0 y))))
+(B (name grow-poor) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR x e0 :0.3)) (^(shodan e1 x y)(فقیر-adj e0 y))))
+ 
+; OF - POOR
+(B (name of-poor) (=>(R#POOR y x :0.9)(^(TS#POVERTY x)(nn e1 x y))))
+
+
+; POOR AREA
+(B (name mahale1) (=>(mahale e1 y) (راسته-nn e0 y)))
+(B (name mahale2) (=>(mahale e1 y) (محله-nn e0 y)))
+(B (name mahale3) (=>(mahale e1 y) (ناحیه-nn e0 y)))
+(B (name mahale3) (=>(mahale e1 y) (منطقه-nn e0 y)))
+(B (name mahale3) (=>(mahale e1 y) (بخش-nn e0 y)))
+(B (name slum) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (فقیرنشین-adj e1 y)))
+(B (name slum) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (^(فقیر-adj e1 y)(نشین-adj e2 y))))
+(B (name shantytown) (=>(^(TS#POVERTY e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#POOR y e0 :0.3)) (حلبی-آباد-nn e0 y)))
+
+
+; DEBT
+(B (name debt) (=>(^(TS#POVERTY u1 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#DEBT x u1 :0.3)) (بدهی-nn e0 x)))
+(B (name debt) (=>(^(TS#POVERTY u1 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#DEBT x u1 :0.3)) (معوقات-nn e0 x)))
+(B (name arrears) (=>(^(TS#POVERTY u1 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#DEBT x u1 :0.3)) (بدهی-معوقه-nn e0 x)))
+(B (name arrears) (=>(^(TS#POVERTY u1 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#DEBT x u1 :0.3)) (^(بدهی-nn e0 x)(معوقه-adj e1 x))))
+ 
+; WEALTH
+(B (name wealth) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (ثروت-nn e0 x)))
+(B (name wealthynn) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (متمول-nn e0 x)))
+(B (name richness) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (ثروتمندی-nn e0 x)))
+(B (name rich) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (غنی-nn e0 x)))
+(B (name resplendence) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (زرق-و-برق-nn e0 x)))
+(B (name resplendence) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(زرق-nn e0 x)(برق-nn e1 y))))
+(B (name resplendence) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(پرزرق-nn e0 x)(برق-nn e1 y))))
+(B (name gorgeousness) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (جلوه-nn e0 x)))
+(B (name luxury) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (تجمل-nn e0 x)))
+(B (name treasure) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (گنج-nn e0 x)))
+(B (name profusion) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (فراوانی-nn e0 x)))
+(B (name means) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (سرمایه-nn e0 x)))
+(B (name affluence) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (وفور-nn e0 x)))
+(B (name property) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (دارایی-nn e0 x)))
+(B (name property) (=>(^(TS#WEALTH x :0.1)(T#ECONOMIC-INEQUALITY u :0.1)) (^(دیوار-nn e0 x)(خیابان-nn e1 x))))
+(B (name middle-class) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(متوسط-adj e0 x)(طبقه-nn e1 x))))
+(B (name upper-class) (=>(^(TS#WEALTH x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(بالا-adj e0 x)(طبقه-nn e1 x))))
+ 
+; RICH PERSON
+(B (name rich) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (ثروتمند-adj e0 y)))
+(B (name richer) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (ثروتمندتر-adj e0 y)))
+(B (name richest) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (ثروتمندترین-adj e0 y)))
+(B (name rich) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (پولدار-adj e0 y)))
+(B (name richer) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (پولدارتر-adj e0 y)))
+(B (name richest) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (پولدارترین-adj e0 y)))
+(B (name rich) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (غنی-adj e0 y)))
+(B (name richer) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (غنیتر-adj e0 y)))
+(B (name richest) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (غنیترین-adj e0 y)))
+(B (name rich) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (توانگر-adj e0 y)))
+(B (name richer) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (توانگرتر-adj e0 y)))
+(B (name richest) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (توانگرترین-adj e0 y)))
+(B (name prosperous) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (مرفه-adj e0 y)))
+(B (name money-bags) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (توانگر-nn e0 y)))
+(B (name rich) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (ثروتمندان-nn e0 y)))
+(B (name rich) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (غنی-nn e0 y)))
+(B (name rich) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (اغنیا-nn e0 y)))
+(B (name rich) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (اغنیاء-nn e0 y)))
+(B (name multi-millionaire) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (^(مولتی‌-nn e0 y)(میلیونر-nn e1 y))))
+(B (name multi-millionaire) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (مولتی‌-میلیونر-nn e0 y)))
+(B (name billionaire) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (میلیاردر-nn e0 y)))
+(B (name billionaire) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (ترلیاردر-nn e0 y)))
+(B (name billionaire) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (بیلیونر-nn e0 y)))
+(B (name millionaire) (=>(^(TS#WEALTH e0 :0.3)(R#RICH y e0 :0.3) (T#ECONOMIC-INEQUALITY u :0.3)) (میلیونر-nn e0 y)))
+ 
+(B (name wealthy) (=>(^(TS#WEALTH e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#RICH x e0 :0.3)) (پولدار-adj e0 x)))
+(B (name wealthy) (=>(^(TS#WEALTH e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#RICH x e0 :0.3)) (غنی-adj e0 x)))
+ 
+; BE RICH
+(B (name prosper) (=>(^(TS#WEALTH e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#RICH x e0 :0.3)) (^(کامیاب-adj e0 x)(shodan e0 x y))))
+; (B (name thrive) (=>(^(TS#WEALTH e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#RICH x e0 :0.3)) (رونق-nn e0 y)(yaftan e0 x y)))
+ 
+; OF - WEALTH
+(B (name of-rich) (=>(R#RICH y x :0.9)(^(TS#WEALTH x)(nn e1 x y))))
+
+
+; MONEY
+(B (name money) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (پول-nn e0 x)))
+(B (name cash) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (نقد-nn e0 x)))
+(B (name coin) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (سکه-nn e0 x)))
+(B (name cent) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (سنت-nn e0 x)))
+(B (name penny) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (پنی-nn e0 x)))
+(B (name dime) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (ده-سنتی-nn e0 x)))
+(B (name nickel) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (پنج-سنتی-nn e0 x)))
+(B (name quarter) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (بیست-و-پنج-سنتی-nn e0 x)))
+(B (name currency) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (پول-رایج-nn e0 x)))
+(B (name dollar) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (دلار-nn e0 x)))
+(B (name greenback) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (اسکناس-nn e0 x)))
+(B (name euro) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (یورو-nn e0 x)))
+(B (name peso) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (پسو-nn e0 x)))
+(B (name rupee) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (روپیه-nn e0 x)))
+(B (name yen) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (ین-nn e0 x)))
+(B (name gold) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (طلا-nn e0 x)))
+(B (name silver) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (نقره-nn e0 x)))
+(B (name income) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (درامد-nn e0 x)))
+(B (name salary) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (حقوق-nn e0 x)))
+(B (name wage) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (دستمزد-nn e0 x)))
+(B (name wallet) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (^(کیف-nn e0 x)(پول-nn e2 y)(nn e3 x y))))
+(B (name checkbook) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (^(دفترچه-nn e0 x)(چک-nn e1 y)(nn e5 x y))))
+(B (name credit-card) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (^(اعتبار-nn e0 y)(کارت-nn e2 x)(nn e3 x y))))
+(B (name credit-card) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (^(اعتباری-adj e0 x)(کارت-nn e2 x))))
+ 
+
+; SOCIAL CLASS
+(B (name social-class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(اجتماعی-adj e0 x)(طبقه-nn e1 x))))
+(B (name middle-class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(متوسط-adj e0 x)(طبقه-nn e1 x))))
+(B (name economy-class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(اقتصادی-adj e0 x)(طبقه-nn e1 x))))
+(B (name class) (=>(^(TS#WEALTH_AND_SOCIAL_CLASS x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (طبقه-nn e0 x)))
+
+
+; TAXATION
+(B (name tax) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (مالیات-nn e0 x)))
+(B (name tax) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (^(مالیات-بر--nn e0 x)(بر-in e1 x y)(درآمد-nn e2 y))))
+(B (name tax) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (مالیات-بر-درآمد-nn e0 x)))
+(B (name taxation) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (مالیات-گذاری-nn e0 x)))
+(B (name impost) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (خراج-nn e0 x)))
+(B (name tribute) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (باج-nn e0 x)))
+(B (name contribution) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (سهم-nn e0 x)))
+(B (name duty) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (عوارض-گمرکی-nn e0 x)))
+(B (name toll) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (عوارض-nn e0 x)))
+(B (name assessment) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (وضع-مالیات-nn e0 x)))
+(B (name custom) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (حقوق-گمرکی-nn e0 x)))
+(B (name custom) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (گمرک-nn e0 x)))
+(B (name custom) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (گمرکات-nn e0 x)))
+(B (name custom) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (گمرکی-nn e0 x)))
+(B (name levy) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (وصول-مالیات-nn e0 x)))
+(B (name fiscal) (=>(^(TS#TAXATION x :0.45)(T#ECONOMIC-INEQUALITY u :0.45)) (مالی-adj e0 x)))
+(B (name taxpayer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3))(مالیات-دهنده-nn e0 y)))
+(B (name taxpayer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3))(^(مالی-nn e0 x)(دهنده-adj e1 y))))
+(B (name taxpayer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3))(^(مالی-nn e0 x)(دهندگان-nn e1 x)(nn e3 x y))))
+(B (name taxpayer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3))(^(مالی-nn e0 x)(پردازان-nn e1 y)(nn e3 x y))))
+(B (name ratepayer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3)) (مالیات-پرداز-nn e0 y)))
+(B (name tax-payer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3)) (خراج-گذار-nn e0 y)))
+(B (name tax-payer) (=>(^(TS#TAXATION e0 :0.3)( T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y e0 :0.3)) (^(خراج-nn e0 x)(گذار-nn e1 y)(nn e3 x y))))
+(B (name tax-payer2) (=>(^(TS#TAXATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3) (R#TAX-PAYER y x :0.3)) (^(مالیات-nn e0 x)(دهنده-nn e1 y)(nn e2 x y))))
+
+
+; ACCESS TO EDUCATION
+
+; (B (name access-to-education) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION y x :0.3)) (^(access-nn e0 x)(to-in e1 x y)(education-nn e2 y))))
+
+; (B (name access-education) (=>(^(TS#ACCESS-TO-EDUCATION e2 :0.2)(T#ECONOMIC-INEQUALITY u :0.2)(R#EDUCATION y x :0.2)(R#EDUCATED x e0 :0.2)) (^(access-vb e0 x y u)(education-nn e2 y))))
+
+; (B (name get-education) (=>(^(TS#ACCESS-TO-EDUCATION e2 :0.2)(T#ECONOMIC-INEQUALITY u :0.2)(R#EDUCATION y x :0.2)(R#EDUCATED x e0 :0.2)) (^(get-vb e0 x y u)(education-nn e2 y))))
+
+
+; (B (name education) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x e0 :0.3)) (education-nn e0 x)))
+
+; (B (name higher-learning) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x e0 :0.3)) (^(higher-adj e1 x )(learning-nn e0 x))))
+
+
+; (B (name educate) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educate-vb e0 u1 x u2)))
+
+
+; (B (name educational) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educational-adj e0 x)))
+
+; (B (name educated) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (educated-adj e0 x)))
+; (B (name well-educated) (=>(^(TS#ACCESS-TO-EDUCATION e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATED x e0 :0.3)) (well-educated-adj e0 x)))
+
+
+; (B (name school) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (school-nn e0 x)))
+
+; (B (name academy) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (academy-nn e0 x)))
+
+; (B (name institute) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (institute-nn e0 x)))
+; (B (name classroom) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (classroom-nn e0 x)))
+
+; (B (name college) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (college-nn e0 x)))
+
+; (B (name student) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (student-nn e0 x)))
+; (B (name university) (=>(^(TS#ACCESS-TO-EDUCATION x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(R#EDUCATION x x :0.3)) (university-nn e0 x)))
