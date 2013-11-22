@@ -839,6 +839,8 @@ WEALTH_AND_SOCIAL_CLASS
 ; TYPE
 (B (name casa)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%TYPE x e0 :0.45)) (casa-nn e0 x)))
 (B (name palacio)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%TYPE x e0 :0.45)) (palacio-nn e0 x)))
+(B (name factory)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%TYPE e0 e0 :0.45)) (fabricá-vb e0 x y z)))
+(B (name factory)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%TYPE x e0 :0.45)) (fabricá-nn e0 x)))
 
 ; STRUCTURE
 (B (name estructura)(=>(^(S#BUILDING e0 :0.45)(SS#BUILDING%STRUCTURE x e0 :0.45)) (estructura-nn e0 x)))
@@ -1044,6 +1046,7 @@ WEALTH_AND_SOCIAL_CLASS
 
 ;SEEING
 (B (name abiertos-ojos)(=>(^(S#VISION e0 :0.45)(SS#VISION%SEEING x e0 :0.45)) (^(abiertos-adj e0 x)(ojos-nn e1 x))))
+(B (name exhibitionism)(=>(^(S#VISION e0 :0.45)(SS#VISION%SEEING x e0 :0.45)) (exhibicionismo-nn e0 x)))
 ;(B (name ver)(=>(^(S#VISION e0 :0.3)(SS#VISION%SEEING e0 e0 :0.3)(R#SIGHTED y e0 :0.3)) (ver-vb e0 x y z)))
 
 (B (name visionmap)(=>(I#VISION x :0.9)(S#VISION x)))
