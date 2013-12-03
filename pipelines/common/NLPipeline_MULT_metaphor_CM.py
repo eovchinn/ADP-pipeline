@@ -201,19 +201,21 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
                 except Exception:
                     failed += 1
                     try:
-                        fl = open("/lfs1/vzaytsev/misc/fails/failed_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
-                        fl.write("REASON: JOINING FAILED\n")
-                        fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
-                        fl.close()
+                        #fl = open("/lfs1/vzaytsev/misc/fails/failed_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
+                        #fl.write("REASON: JOINING FAILED\n")
+                        #fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
+                        #fl.close()
+                        pass
                     except:
                         pass
             else: 
                 failed += 1
                 try:
-                    fl = open("/lfs1/vzaytsev/misc/fails/failed_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
-                    fl.write("REASON: ABDUCTION PROCESSING FAILED\n")
-                    fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
-                    fl.close()
+                    #fl = open("/lfs1/vzaytsev/misc/fails/failed_linguisticMetaphor.%d.txt" % int(annotation["sentenceId"]), "w")
+                    #fl.write("REASON: ABDUCTION PROCESSING FAILED\n")
+                    #fl.write(annotation["linguisticMetaphor"].encode("utf-8"))
+                    #fl.close()
+                    pass
                 except:
                     pass
 
