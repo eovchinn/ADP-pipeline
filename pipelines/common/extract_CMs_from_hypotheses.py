@@ -48,18 +48,20 @@ def wordStr2print(Args,WordProps,Equalities):
 	
 	return output_str[1:]
 
-def wordStr2print_Mapping(labeledProps,WordProps,Equalities):
+def wordStr2print_Mapping(mappings,WordProps,Equalities):
 	output_str = ''
-	for (propName,args) in labeledProps:
-		output_str += ', ' + propName + '['
-		words_str = ''
-		for arg in args:			
-			words = findWords(arg,WordProps,Equalities,True)
-			words_str += '; ' + words
-		if len(words_str)>0:	
-			words_str = words_str[2:]
 
-		output_str += words_str + ']' 
+	for propName in mappings.keys():
+		for args in mappings[propName]:
+			output_str += ', ' + propName + '['
+			words_str = ''
+			for arg in args:			
+				words = findWords(arg,WordProps,Equalities,True)
+				words_str += '; ' + words
+			if len(words_str)>0:	
+				words_str = words_str[2:]
+
+			output_str += words_str + ']' 
 
 	#print json.dumps(output_str[2:], ensure_ascii=False)
 	return output_str[2:]
@@ -168,7 +170,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	subsubtargets = dict()
 	sources = dict()
 	subsources = dict()
-	mappings = []
+	mappings = dict()
 	roles = []
 	word_props = []
 	equalities = defaultdict(dict)
@@ -198,31 +200,33 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 
 			if prop_name.startswith('T#'):
 				if not targets.has_key(prop_name[2:]): targets[prop_name[2:]] = []
-				targets[prop_name[2:]].append(args)
+				if args not in targets[prop_name[2:]]: targets[prop_name[2:]].append(args)
 			elif prop_name.startswith('TS#'):
 				dname = prop_name[3:]
 				if not sourceTask or dname == LCCannotation["targetConceptSubDomain"]:
 					if not subtargets.has_key(dname): subtargets[dname] = []
-					subtargets[dname].append(args)
+					if args not in subtargets[dname]: subtargets[dname].append(args)
 			elif prop_name.startswith('TSS#'):
 				dname = prop_name[4:]
 				if not sourceTask or dname == LCCannotation["targetFrame"]:
 					if not subsubtargets.has_key(dname): subsubtargets[dname] = []
-					subsubtargets[dname].append(args)
+					if args not in subsubtargets[dname]: subsubtargets[dname].append(args)
 			elif prop_name.startswith('S#'):
 				dname = prop_name[2:]
 				if not sourceTask or dname == LCCannotation["sourceFrame"]:
 					if not sources.has_key(dname): sources[dname] = []
-					sources[dname].append(args)
+					if args not in sources[dname]: sources[dname].append(args)
 			elif prop_name.startswith('SS#'):
 				ss_data = prop_name[3:].split('%')
 				if len(ss_data)>1: prop_name = ss_data[1]
 				else: prop_name = ss_data[0]
 
 				if not subsources.has_key(prop_name): subsources[prop_name] = []
-				subsources[prop_name].append(args)
+				if args not in subsources[prop_name]:  subsources[prop_name].append(args)
 			elif prop_name.startswith('M#'):
-				mappings.append((prop_name[2:],args))
+				mname = prop_name[2:]
+				if not mappings.has_key(mname): mappings[mname] = []
+				if args not in mappings[mname]: mappings[mname].append(args)
 			elif prop_name.startswith('R#'):
 				pass
 			elif prop_name.startswith('I#'):
@@ -246,6 +250,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	#print json.dumps(sources, ensure_ascii=False)
 	#print json.dumps(subsources, ensure_ascii=False)
 	#print json.dumps(word_props, ensure_ascii=False)
+	#print json.dumps(mappings, ensure_ascii=False)
 	#exit(0)
 
 	for el1 in equalities.keys():
@@ -372,6 +377,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	targetWords = wordStr2print(targetArgs,word_props,())
 	sourceWords = wordStr2print(sourceArgs,word_props,())
 
+	#print json.dumps(mappings, ensure_ascii=False)
 	mapping_str = wordStr2print_Mapping(mappings,word_props,equalities)
 
 	annotationMappings_struc = dict()
