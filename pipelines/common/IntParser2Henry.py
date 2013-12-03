@@ -109,6 +109,7 @@ def main():
 					prop_name = matchObj.group(3)
 					prop_name = re.sub(r"[\s_:./]+",'-',prop_name)
 
+					#don't include predicates not containing letters or numbers
 					if not bool(re.search('[a-z0-9]', prop_name, re.IGNORECASE)):
 						continue
 
