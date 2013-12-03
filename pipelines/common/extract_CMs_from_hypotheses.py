@@ -55,9 +55,10 @@ def wordStr2print_Mapping(mappings,WordProps,Equalities):
 		for args in mappings[propName]:
 			output_str += ', ' + propName + '['
 			words_str = ''
-			for arg in args:			
-				words = findWords(arg,WordProps,Equalities,True)
-				words_str += '; ' + words
+			#for arg in args:	
+			#output only first ARG		
+			words = findWords(args[0],WordProps,Equalities,True)
+			words_str += '; ' + words
 			if len(words_str)>0:	
 				words_str = words_str[2:]
 
