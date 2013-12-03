@@ -107,11 +107,10 @@ def main():
 					else: word_id = 'ID'+str(prop_id_counter)
 
 					prop_name = matchObj.group(3)
-					prop_name.replace(' ','-')
-					prop_name.replace('_','-')
-					prop_name.replace(':','-')
-					prop_name.replace('.','-')
-					prop_name.replace('/','-')
+					prop_name = re.sub(r"[\s_:./]+",'-',prop_name)
+
+					if not bool(re.search('[a-z0-9]', prop_name, re.IGNORECASE)):
+						continue
 
 					if matchObj.group(5): prop_args = matchObj.group(5)
 					else: prop_args = ''

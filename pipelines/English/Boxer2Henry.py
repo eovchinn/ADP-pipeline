@@ -218,11 +218,12 @@ def main():
 
 					# Normalize predicate name
 					prop_name = matchObj.group(2)
-					prop_name.replace(' ','-')
-					prop_name.replace('_','-')
-					prop_name.replace(':','-')
-					prop_name.replace('.','-')
-					prop_name.replace('/','-')
+					prop_name = re.sub(r"[\s_:./]+",'-',prop_name)
+
+					#don't include predicates not containing letters or numbers
+					if not bool(re.search('[a-z0-9]', prop_name, re.IGNORECASE)):
+						continue
+
 					propMatchObj = prop_name_pattern.match(prop_name)
 					
 					# Set predicate name to which nonmerge constraints are applied
