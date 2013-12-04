@@ -43,26 +43,32 @@ def wordStr2print(Args,WordProps,Equalities):
 	output_str = ''
 
 	for arg in Args:
-		newwords = findWords(arg,WordProps,Equalities,False)
-		if len(newwords)>0:	output_str += ',' + findWords(arg,WordProps,Equalities,False)
-	
-	return output_str[1:]
+		words = findWords(arg,WordProps,Equalities,False)
+		for word in words:
+			output_str += ',' + word
+			
+	if len(output_str)>0: return output_str[1:]
+	return ''
 
 def wordStr2print_Mapping(mappings,WordProps,Equalities):
 	output_str = ''
 
 	for propName in mappings.keys():
-		for args in mappings[propName]:
-			output_str += ', ' + propName + '['
+		words = []
+
+		for args in mappings[propName]:	
 			words_str = ''
 			#for arg in args:	
-			#output only first ARG		
-			words = findWords(args[0],WordProps,Equalities,True)
-			words_str += '; ' + words
-			if len(words_str)>0:	
-				words_str = words_str[2:]
+			#output only first ARG instead of all
+			newwords = findWords(args[0],WordProps,Equalities,True)
+			for word in newwords:
+				if not word in words: words.append(word)
 
-			output_str += words_str + ']' 
+		output_str += ', ' + propName + '['
+		for word in words:
+			output_str += word + ','
+
+		output_str = output_str[:-1] + ']' 
 
 	#print json.dumps(output_str[2:], ensure_ascii=False)
 	return output_str[2:]
@@ -73,25 +79,27 @@ def findWords(ARG,WordProps,Equalities,isMapping):
 
 	all_args.append(ARG)
 
-	output_str = ''
+	words = []
 	for arg in all_args:
 		if not arg.startswith('_') and not arg.startswith('u'):
 			for (propName,args) in WordProps:
 				if arg == args[0] and (propName.endswith('-vb') or propName.endswith('-rb') or propName.endswith('-adj') or propName.endswith('-nn')):
-					if propName.endswith('-adj'): output_str += ',' + propName[:-4]
-					else: output_str += ',' + propName[:-3]
+					if propName.endswith('-adj'): 
+						if not propName[:-4] in words: words.append(propName[:-4])
+					else: 
+						if not propName[:-3] in words: words.append(propName[:-3])
 				elif len(args)>1 and arg ==args[1] :
-					if propName.endswith('-nn'): output_str += ',' + propName[:-3]
-					elif propName=='person': output_str += ',person'
+					if propName.endswith('-nn'): 
+						if not propName[:-3] in words: words.append(propName[:-3])
+					elif propName=='person': 
+						if not 'person' in words: words.append('person')
 				#TODO: enable when Boxer starts working correctly
 				#elif propName=='subset-of' and arg==args[2] :
 				#	output_str += ',' + findWords(args[1],WordProps,Equalities,isMapping)
 	
-	if len(output_str)>0: 
-		return output_str[1:]
-
-	if isMapping:	return ARG		
-	return ''
+	if len(words)==0 and isMapping: return [ARG]
+		
+	return words
 
 def createDStruc(superD,subD):
 	outputstrucs = defaultdict(dict)
@@ -164,6 +172,40 @@ def isLinkedbyParse(v1,v2,word_props,equalities,input_been,pathlength):
 		if npl<pl: pl = npl
 	return pl
 
+def filterMappings(BestArgs,mappings):
+	bestMapping = dict()
+	toremove = dict()
+
+	for predName in mappings:
+		for args in mappings[predName]:
+			included = False
+			for arg in args:
+				if arg in BestArgs:
+					included = True
+					break
+			if included:
+				if not bestMapping.has_key(predName): bestMapping[predName] = []
+				bestMapping[predName].append(args)
+			else:
+				if not toremove.has_key(predName): toremove[predName] = []
+				toremove[predName].append(args)
+
+	for predName in toremove:
+		for args in toremove[predName]:
+			included = False
+			for arg in args:
+				for predName2 in bestMapping:
+					for args2 in bestMapping[predName2]:
+						if arg in args2:
+							included = True
+							break
+					if included: break
+				if included: break
+			if included:
+				if not bestMapping.has_key(predName): bestMapping[predName] = []
+				bestMapping[predName].append(args)
+
+	return bestMapping
 
 def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	targets = dict()	
@@ -298,6 +340,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 		#print json.dumps(tV, ensure_ascii=False)
 		
 		Sdomains = []
+		bestSVars = []
 		for sourceS in source_strucs:
 			for sarg in source_strucs[sourceS]:
 				for (ssubS,ssarg) in source_strucs[sourceS][sarg]:
@@ -309,10 +352,10 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 						for sv in sargs:
 							newlink = isLinkedbyParse(tv,sv,word_props,equalities,[],0)
 							#print "%s,%s,%s,%s,%s,%s" % (targetS,sourceS,ssubS,tv,sv,newlink)
-							if newlink<2:
+							if newlink<link: 
 								link=newlink
-								break
-							elif newlink<link: link=newlink
+								if newlink<2:
+									break
 						if link<2: break
 					Sdomains.append((sourceS,ssubS,(1-0.05-0.1*link)))
 					#print "%s,%s,%s" % (sourceS,ssubS,(1-0.05-0.1*link))
@@ -378,6 +421,7 @@ def extract_CM_mapping(id,inputString,DESCRIPTION,LCCannotation):
 	targetWords = wordStr2print(targetArgs,word_props,())
 	sourceWords = wordStr2print(sourceArgs,word_props,())
 
+	mappings = filterMappings(targetArgs.keys()+sourceArgs.keys(),mappings)
 	#print json.dumps(mappings, ensure_ascii=False)
 	mapping_str = wordStr2print_Mapping(mappings,word_props,equalities)
 
