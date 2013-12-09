@@ -1849,7 +1849,7 @@
 (B (name leaf)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%PARTS x e0 :0.3)(R#PLANT-EXTERNAL x e0 :0.3)) (trunk-nn e0 x)))
 
 ; CHANGE_OF_STATE
-(B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#POVERTY x)(grow-vb e0 x y u))))
+(B (name growx)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#POVERTY x)(grow-vb e0 x y u))))
 (B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#WEALTH x)(grow-vb e0 x y u))))
 (B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#WEALTH_AND_SOCIAL_CLASS x)(grow-vb e0 x y u))))
 (B (name grow)(=>(^(S#PLANT e0 :0.3)(SS#PLANT%CHANGE_OF_STATE e0 e0 :0.3)(R#CHANGING-THING x e0 :0.3)) (^(TS#WEALTH_AND_SOCIAL_CLASS x)(blossom-vb e0 x y u))))
