@@ -33,8 +33,8 @@
 (B (name abyss) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.33)(M#THING-CAUSING-NOT-FUNCTION x e0 :0.33)(M#CAUSE-CONFINEMENT e0 :0.33)) (I#ABYSS e0)))
 
 ; ABYSS-EXIT
-(B (name abyss-exit) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-EXIT-IMMOBILITY e0 :0.45)) (^(I#ABYSS e0)(I#ABYSS%EXIT e0 e0))))
-(B (name abyss-exit2) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-EXIT-IMMOBILITY e0 :0.45)(M#CAUSING-THING-RF x e0 :0.45)) (^(I#ABYSS e0)(I#ABYSS%EXIT e0 e0) (R#ABYSS-EXIT-CAUSE x e0))))
+(B (name abyss-exit) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-EXIT-CONFINEMENT e0 :0.45)) (^(I#ABYSS e0)(I#ABYSS%EXIT e0 e0))))
+(B (name abyss-exit2) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-EXIT-CONFINEMENT e0 :0.45)(M#CAUSING-THING-RF x e0 :0.45)) (^(I#ABYSS e0)(I#ABYSS%EXIT e0 e0) (R#ABYSS-EXIT-CAUSE x e0))))
 
 ; ABYSS-DEEP
 (B (name deep) (=> (^(M#INTENSIFY-CAUSE-NOT-FUNCTION e0 :0.45) (M#INTENSIFY-CAUSE-CONFINEMENT e0 :0.45) (M#ABYSS e1 :0.45)) (I#ABYSS%DEPTH e0 x)))
@@ -410,9 +410,9 @@
 ; DEPTH
 (B (name depth) (=>(^(S#ABYSS e0 :0.45)(SS#ABYSS%DEPTH x e0 :0.45)) (depth-nn e0 x)))
 (B (name deep) (=>(^(S#ABYSS e0 :0.45)(SS#ABYSS%DEPTH x e0 :0.45)) (deep-nn e0 x)))
-(B (name deep2) (=>(^(S#ABYSS e0 :0.3)(SS#ABYSS%DEPTH x e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (deep-adj e0 x)))
-(B (name deeper) (=>(^(S#ABYSS e0 :0.3)(SS#ABYSS%DEPTH x e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (deeper-adj e0 x)))
-(B (name deepest) (=>(^(S#ABYSS e0 :0.3)(SS#ABYSS%DEPTH x e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (deepest-adj e0 x)))
+(B (name deep2) (=>(^(S#ABYSS e0 :0.3)(SS#ABYSS%DEPTH e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (deep-adj e0 x)))
+(B (name deeper) (=>(^(S#ABYSS e0 :0.3)(SS#ABYSS%DEPTH e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (deeper-adj e0 x)))
+(B (name deepest) (=>(^(S#ABYSS e0 :0.3)(SS#ABYSS%DEPTH e0 e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (deepest-adj e0 x)))
 (B (name deep3) (=>(^(S#ABYSS e0 :0.45)(SS#ABYSS%DEPTH x e0 :0.45)) (deeply-rb e0 x)))
 (B (name ever-deepening) (=>(^(S#ABYSS e0 :0.3)(SS#ABYSS%DEPTH x e0 :0.3)(R#ABYSS-THEME x e0 :0.3)) (ever-deepening-adj e0 x)))
 
