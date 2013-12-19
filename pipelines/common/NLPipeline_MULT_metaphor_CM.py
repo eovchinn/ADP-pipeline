@@ -56,6 +56,17 @@ DESCRIPTION = "Abductive engine output; " \
               "annotationMappings: Target-Source mapping structures. " \
               "isiAbductiveExplanation: Target-Source mapping (metaphor interpretation) as logical form found by abduction."
 
+def extract_parses(inputString):
+    output_struct = dict()
+
+    p = re.compile('.+\(\s*name\s+([^\)]+)\)')
+
+    for line in inputString.splitlines():
+        match_obj = p.match(line)
+        if match_obj:
+            target = match_obj.group(1)
+            output_struct[target] = line
+    return output_struct
 
 def extract_hypotheses(inputString):
     output_struct = dict()
@@ -68,7 +79,6 @@ def extract_hypotheses(inputString):
 
     for line in inputString.splitlines():
 
-        output_struct_item = {}
         match_obj = p.match(line)
 
         if match_obj:
@@ -81,24 +91,16 @@ def extract_hypotheses(inputString):
             hypothesis_found = False
 
         elif hypothesis_found:
-            hypothesis = line
-
-        elif line.startswith("<unification"):
-            unification = True
-
-        elif line.startswith("<explanation"):
-            explanation = True
-
-        elif line.startswith("</result-inference>"):
-
-            #output_struct_item = extract_CM_mapping(target, hypothesis, DESCRIPTION)
-            #print json.dumps(hypothesis, ensure_ascii=False)
-            #print json.dumps(output_struct_item, ensure_ascii=False, indent=4)
-
-            output_struct[target] = hypothesis
-
-            #output_struct.append(output_struct_item)
+            output_struct[target] = line
             target = ""
+
+        #elif line.startswith("<unification"):
+        #    unification = True
+
+        #elif line.startswith("<explanation"):
+        #    explanation = True
+
+        #elif line.startswith("</result-inference>"):
 
     #print json.dumps(output_struct, ensure_ascii=False)
     return output_struct
@@ -180,7 +182,7 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
     henry_output = henry_pipeline.communicate(input=parser_output)[0]
     hypotheses = extract_hypotheses(henry_output)
 
-    #print json.dumps(hypotheses, ensure_ascii=False) 
+    parses = extract_parses(parser_output)
 
     processed, failed, empty = 0, 0, 0
 
@@ -192,7 +194,7 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
         if "sentenceId" in annotation:
             sID = str(annotation["sentenceId"])
             if sID in hypotheses.keys():
-                CM_output = extract_CM_mapping(0,hypotheses[sID],DESCRIPTION,annotation)
+                CM_output = extract_CM_mapping(sID,hypotheses[sID],parses[sID],DESCRIPTION,annotation)
                 try:
                     for annot_property in CM_output.keys():
                         if CM_output.get(annot_property):
@@ -224,6 +226,7 @@ def ADP(request_body_dict, input_metaphors, language, with_pdf_content):
     #                                                                            empty,
     #                                                                            total - processed))
 
+    #return json.dumps(request_body_dict, ensure_ascii=False)
     return request_body_dict
 
 

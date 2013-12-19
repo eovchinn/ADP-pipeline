@@ -78,6 +78,17 @@
 ; OF - WEALTH
 (B (name de-rich) (=>(R#RICH  y x :0.9)(^(TS#WEALTH x)(de-in e1 x y))))
 
+; MONEY
+(B (name money) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (dinero-nn e0 x)))
+(B (name cash) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (efectivo-nn e0 x)))
+(B (name coin) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (ceca-nn e0 x)))
+(B (name cent) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (moneda-nn e0 x)))
+(B (name penny) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (plata-nn e0 x)))
+(B (name dime) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (pisto-nn e0 x)))
+(B (name nickel) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (divisa-nn e0 x)))
+(B (name quarter) (=>(^(TS#WEALTH x :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY x x :0.3)) (peso-nn e0 x)))
+(B (name currency) (=>(^(TS#WEALTH e0 :0.3)(T#ECONOMIC-INEQUALITY u :0.3)(TSS#MONEY e0 e0 :0.3)) (monetario-adj e0 x)))
+
 
 ; SOCIAL CLASS
 (B (name clase-social) (=>(^(TS#WEALTH_AND_SOCIAL-CLASS x :0.45)(T#ECONOMIC_INEQUALITY u :0.45)) (^(social-adj e0 x)(clase-nn e1 x))))

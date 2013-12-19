@@ -77,7 +77,7 @@ def extract_hypotheses(inputString):
 
         elif line.startswith("</result-inference>"):
 
-            output_struct_item = extract_CM_mapping(target, hypothesis, '' , None)
+            output_struct_item = extract_CM_mapping(target, hypothesis, '', '' , None)
             #print json.dumps(hypothesis, ensure_ascii=False)
             #print json.dumps(output_struct_item, ensure_ascii=False, indent=4)
 
@@ -193,7 +193,7 @@ def main():
 			henry_input += ' ' + pa.input
 
 		if OS=='linux':
-			HENRY = HENRY_DIR + '/bin/henry -m infer' + henry_input + ' -e ' + HENRY_DIR + '/models/h93.py -d 3 -t 4 -O proofgraph,statistics -T 60'
+			HENRY = HENRY_DIR + '/bin/henry -m infer' + henry_input + ' -e ' + HENRY_DIR + '/models/h93.py -d 5 -t 4 -O proofgraph,statistics -T 60'
 		elif OS=='darwin':
 			HENRY = HENRY_DIR + '/bin/henry -m infer -d 3 -t 4 -O proofgraph,statistics -T 60 -e  '+ HENRY_DIR + '/models/h93.py ' + henry_input		
 
