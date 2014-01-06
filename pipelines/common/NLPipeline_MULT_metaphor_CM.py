@@ -93,6 +93,7 @@ def extract_hypotheses(inputString):
         elif hypothesis_found:
             output_struct[target] = line
             target = ""
+            hypothesis_found = False
 
         #elif line.startswith("<unification"):
         #    unification = True
