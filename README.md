@@ -60,6 +60,5 @@ git clone https://github.com/metaphor-adp/Metaphor-ADP
 
 **Contact**
 
-- Ekaterina Ovchinnikova (katya-AT-isi.edu)
-- Jerry Hobbs (hobbs-AT-isi.edu)
+- Katya Ovchinnikova (e.ovchinnikova-AT-gmail.com)
 
