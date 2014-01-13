@@ -25,5 +25,5 @@ optional arguments:
 Alternative: `run_English.sh` runs the full processing pipline for tokenizing and parsing English text:
 
 ```
-./run_russian.sh [<path to input file> [<path to output dir]]
+./run_English.sh [<path to input file> [<path to output dir]]
 ```
