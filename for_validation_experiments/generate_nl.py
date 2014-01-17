@@ -5,33 +5,45 @@ import json
 import re
 
 grow_set = set([u'THING-INCREASING', u'CAUSE-INCREASE-AMOUNT'])
+eradicate_set =set([u'THING-NOT-EXISTING', u'CAUSE-NOT-EXIST', u'THING-CAUSING-NON-EXISTENCE'])
+no_agent_eradicate_set=set([u'THING-NOT-EXISTING', u'CAUSE-NOT-EXIST'])
 
 def lm_category(log):
     if re.search(u"^CAUSE",log):
-        lm_type = "causer"
-    elif re.search(u"^THING",log):
-        lm_type = "thing"
+        lm_type = "cause"
+    elif re.search(u"^THING-CAUSING",log):
+        lm_type = "agent"
+    elif re.search(u"^THING-",log):
+        lm_type = "patient"
     return lm_type
 
 def process_explanation(exp):
-    log_list = []
+    logic_list = []
     lms = {}
     for e in exp:
-        e = e.strip()
+        e = e.strip().rstrip("]")
+        #print e
         logic = e.split("[")[0]
-        lm = e.split("[")[1].rstrip("]")
-        log_list.append(logic)
+        #print logic
+        lm_list = e.split("[")[1].rstrip("]").split(",")
+        logic_list.append(logic)
         lm_type = lm_category(logic)
-        lms[lm_type] = lm
-    log_set = set(log_list)
-    if log_set == grow_set:
-        print('{} causes an increased amount of {}'.format(lms['causer'],lms['thing']))
+        for word in lm_list:
+            lms[lm_type] = word
+    logic_set = set(logic_list)
+    #print log_set
+    if logic_set == grow_set:
+        print('{} denotes an increased amount of {}'.format(lms['cause'],lms['patient']))
+    if logic_set == eradicate_set:
+        print('{} denotes that {} causes {} to stop existing'.format(lms['cause'],lms['agent'],lms['patient']))
+    if logic_set == no_agent_eradicate_set:
+        print('{} denotes that there is an effort to stop the existence of {} '.format(lms['cause'],lms['patient']))
         
 
 def generate_language(data):
     for jline in data:
         mappings = jline["annotationMappings"][0]
-        exp_list = mappings["explanation"].split(",")
+        exp_list = mappings["explanation"].split("],")
         process_explanation(exp_list)
 
 
