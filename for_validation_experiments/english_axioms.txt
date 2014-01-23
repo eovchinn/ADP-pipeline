@@ -14,10 +14,11 @@
 
 (B (name fight2)(=> (^(M#CAUSE-NOT-EXIST x :0.32)(M#EXISTING-THING y x :0.32)(M#THING-CAUSING-NOT-EXIST x e1 :0.32)) (^(I#STRUGGLE x)(R#STRUGGLE-ENEMY y x))))
 (B (name fight3)(=> (^(M#CAUSE-NOT-EXIST x :0.46)(M#THING-CAUSING-NOT-EXIST z x :0.46)) (^(I#STRUGGLE x)(R#STRUGGLE-AGENT z x)))) 
-(B (name fight4)(=> (M#CAUSE-NOT-EXIST e0 :0.9) (I#STRUGGLE e0)))
+;(B (name fight4)(=> (M#CAUSE-NOT-EXIST e0 :0.9) (I#STRUGGLE e0)))
 (B (name fight5)(=>(^(M#CAUSE-NOT-EXIST e0 :0.45)(M#THING-NOT-EXISTING y e0 :0.45))(^(I#STRUGGLE e0)(R#STRUGGLE-TARGET y x))))
 
-(B (name weapon)(=> (^(M#ENABLE-FIGHT x e1 :0.45)(M#STRUGGLE%TYPE e1 :0.45)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0))))
+(B (name weapon)(=> (^(M#ENABLE-STRUGGLE x e1 :0.45)(M#STRUGGLE%TYPE e1 :0.45)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0))))
+(B (name weapon2)(=> (^(M#ENABLE-STRUGGLE x e1 :0.3)(M#STRUGGLE%TYPE e1 :0.3)(M#THING-NOT-EXISTING y e0 :0.3)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0)(R#WEAPON-TARGET y x))))
 
 (B (name enemy)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#THING-CAUSING-NOT-FUNCTION x e1 :0.3)(M#FUNCTION-AGENT z e1 :0.3)) (^ (I#STRUGGLE-ADVERSARY x e0)(R#STRUGGLE-AGENT z e0))))
 (B (name enemy2)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#THING-CAUSING-NOT-FUNCTION x e1 :0.45)) (I#STRUGGLE-ADVERSARY x e0)))
@@ -36,13 +37,16 @@
 
 ; ABYSS-EXIT
 (B (name abyss-exit) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-EXIT-CONFINEMENT e0 :0.45)) (^(I#ABYSS e0)(I#ABYSS%EXIT e0 e0))))
-(B (name abyss-exit2) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-EXIT-CONFINEMENT e0 :0.45)(M#CAUSING-THING-RF x e0 :0.45)) (^(I#ABYSS e0)(I#ABYSS%EXIT e0 e0) (R#ABYSS-EXIT-CAUSE x e0))))
+
+;(B (name abyss-exit2) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-EXIT-CONFINEMENT e0 :0.45)(M#CAUSING-THING-RF x e0 :0.45)) (^(I#ABYSS e0)(I#ABYSS%EXIT e0 e0) (R#ABYSS-EXIT-CAUSE x e0))))
+(B (name abyss-exit3) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.23) (M#CAUSE-EXIT-CONFINEMENT e0 :0.23)(M#THING-THAT-CONFINED z :0.23)(M#THING-THAT-STOPPED-FUNCTION z :0.23)) (^(I#ABYSS e0)(I#ABYSS%EXIT e0 e0) (R#ABYSS-THEME z e))))
+;(B (name abyss-exit4) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-EXIT-CONFINEMENT e0 :0.45)(M#CAUSING-THING-RF x e0 :0.45)) (^(I#ABYSS e0)(I#ABYSS%EXIT e0 e0) (R#ABYSS-EXIT-CAUSE x e0)(R#ABYSS-THEME z e))))
 
 ; ABYSS-DEEP
 (B (name deep) (=> (^(M#INTENSIFY-CAUSE-NOT-FUNCTION e0 :0.45) (M#INTENSIFY-CAUSE-CONFINEMENT e0 :0.45)) (I#ABYSS%DEPTH e0 x)))
 
 ; CROP
-(B (name crop) (=>(M#OUTCOME e0 :0.9) (^(I#CROP e0)(I#CROP%TYPE x e0))))
+(B (name crop) (=>(M#OUTCOME-OF-ACTION e0 :0.9) (^(I#CROP e0)(I#CROP%TYPE x e0))))
 
 (B (name grow_crop) (=>(^(M#CAUSE-INCREASE-AMOUNT e0 :0.45)(M#THING-INCREASING x e0 :0.45)) (^(I#CROP e0)(I#CROP%CULTIVATION e0 e0)(R#GROWER x e0))))
 
@@ -53,7 +57,7 @@
 (B (name price2) (=>(^(M#UNFORTUNATE-CONSEQUENCE-OF-DESIRED-THING e0 :0.45)(M#THING-DESIRED y e0 :0.45)) (^(I#PRICE e0)(I#PRICE%TYPE x e0)(R#PRICE-REWARD y e0))))
 
 ;VIOLENCE
-(B (name violence) (=> (^(M#CAUSE-NOT-FUNCTION x e0 :0.3)(M#CAUSE-FEAR x e0 :0.3)(M#THING-CAUSING-NOT-FUNCTION-FEAR x e0 :0.3)) (^(I#VIOLENCE y)(I#VIOLENCE%TYPE x y))))
+(B (name violence) (=> (^(M#CAUSE-NOT-FUNCTION x e0 :0.23)(M#CAUSE-FEAR x e0 :0.23)(M#THING-CAUSING-NOT-FUNCTION x e0 :0.23) (M#THING-CAUSING-FEAR x e0 :0.23)) (^(I#VIOLENCE y)(I#VIOLENCE%TYPE x y))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;LMS;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -69,7 +73,7 @@
 ; PRICE
 (B (name price) (=>(^(S#PRICE e0 :0.45)(SS#PRICE%TYPE x e0 :0.45))(price-nn e0 x)))
 
-(B (name price-of) (=>(^(S#PRICE e0 :0.3)(SS#PRICE%TYPE x e0 :0.3) (R#PRICE-REWARD y e0 :0.3))(^(price-nn e0 x)(of-in e1 x y))))
+(B (name price-of) (=>(^(S#PRICE e0 :0.28)(SS#PRICE%TYPE x e0 :0.28) (R#PRICE-REWARD y e0 :0.28))(^(price-nn e0 x)(of-in e1 x y))))
 
 ;PAYMENT
 ;(B (name pay) (=>(^(S#PRICE e0 :0.23)(SS#PRICE%PAYMENT e0 e0 :0.23)(R#PAYMENT-AGENT x e0 :0.23) (R#PAYMENT-PATIENT y e0 :0.23))(pay-vb e0 x y z)))
@@ -84,11 +88,12 @@
 
 (B (name combat) (=>(^(S#STRUGGLE e0 :0.23) (SS#STRUGGLE%TYPE e0 e0 :0.23)(R#STRUGGLE-AGENT x e0 :0.23)(R#STRUGGLE-PATIENT y e0 :0.23))(combat-vb e0 x y z)))
 (B (name fight) (=>(^(S#STRUGGLE e0 :0.23) (SS#STRUGGLE%TYPE e0 e0 :0.23)(R#STRUGGLE-AGENT x e0 :0.23)(R#STRUGGLE-PATIENT y e0 :0.23))(fight-vb e0 x y z)))
-
+;FIX THIS - args for STRUGGLE (fight against poverty Meta 6)
 (B (name fight-with) (=> (S#STRUGGLE y x :0.90)(^(SS#STRUGGLE%TYPE x y)(with-in x y))))
 (B (name fight-against) (=> (^(S#STRUGGLE y x :0.45)(R#STRUGGLE-TARGET y x :0.45))(^(SS#STRUGGLE%TYPE x e0)(against-in e1 x y))))
 
 (B (name weapon) (=>(^(S#STRUGGLE e0 :0.45)(SS#STRUGGLE%WEAPON y e0 :0.45))(weapon-nn e0 y)))
+(B (name weapon-against) (=> (^(S#STRUGGLE y x :0.45)(R#WEAPON-TARGET y x :0.45))(^(SS#STRUGGLE%WEAPON x e0)(against-in e1 x y))))
 
 (B (name strugglemap)(=>(I#STRUGGLE x :0.9)(S#STRUGGLE x)))
 (B (name struggle-typemap)(=>(I#STRUGGLE%TYPE x e0 :0.9)(SS#STRUGGLE%TYPE x e0)))
@@ -157,8 +162,8 @@
 
 ; EXIT
 
-(B (name pull-out-of) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%EXIT e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(pull-vb e0 x y u)(out-in e1 e0)(of-in e2 e0 z))))
-(B (name lift-out-of) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%EXIT e0 e0 :0.2)(R#ABYSS-THEME y e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(lift-vb e0 x y u) (out-in e1 e0) (of-in e2 e0 z))))
+(B (name pull-out-of) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%EXIT e0 e0 :0.2)(R#ABYSS-THEME z e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(pull-vb e0 x y u)(out-in e1 e0)(of-in e2 e0 z))))
+(B (name lift-out-of) (=>(^(S#ABYSS e0 :0.2)(SS#ABYSS%EXIT e0 e0 :0.2)(R#ABYSS-THEME z e0 :0.2)(R#ABYSS-EXIT-CAUSE x e0 :0.2)) (^(lift-vb e0 x y u) (out-in e1 e0) (of-in e2 e0 z))))
 
 (B (name abyssmap)(=>(I#ABYSS x :0.9)(S#ABYSS x)))
 (B (name abysstypemap)(=>(I#ABYSS%TYPE x e0 :0.9)(SS#ABYSS%TYPE x e0)))
@@ -169,10 +174,13 @@
 ; CROP
 ; PLANTING
 (B (name crop)(=>(^(S#CROP e0 :0.3)(SS#CROP%TYPE x e0 :0.3)(R#CROP x e0 :0.3)) (crop-nn e0 x)))
+(B (name seed)(=>(^(S#CROP e0 :0.3)(SS#CROP%TYPE x e0 :0.3)(R#SEED x e0 :0.3)) (seed-nn e0 x)))
 
 ; CULTIVATION
 (B (name grow)(=>(^(S#CROP e0 :0.3)(SS#CROP%CULTIVATION e0 e0 :0.3)(R#GROWER x e0 :0.3)) (^(TS#POVERTY x)(grow-vb e0 x y u))))
-(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CROP%CULTIVATION e0 e0 :0.23)(R#GROW-AGENT x e0 :0.23)(R#GROW-PATIENT y e0 :0.23)) (^(TS#POVERTY y)(grow-vb e0 x y u))))
+(B (name grow)(=>(^(S#CROP e0 :0.23)(SS#CROP%CULTIVATION e0 e0 :0.23)(R#GROW-AGENT x e0 :0.23)(R#GROW-PATIENT y e0 :0.23))(^(TS#POVERTY y)(grow-vb e0 x y u))))
+(B (name harvest)(=>(^(S#CROP e0 :0.3)(SS#CROP%CULTIVATION e0 e0 :0.3)(R#GROWER x e0 :0.3)) (^(TS#POVERTY x)(harvest-vb e0 x y u))))
+(B (name harvest)(=>(^(S#CROP e0 :0.23)(SS#CROP%CULTIVATION e0 e0 :0.23)(R#GROW-AGENT x e0 :0.23)(R#GROW-PATIENT y e0 :0.23)) (^(TS#POVERTY y)(harvest-vb e0 x y u))))
 
 (B (name cropmap)(=>(I#CROP x :0.9)(S#CROP x)))
 (B (name crop-typemap)(=>(I#CROP%TYPE x y :0.9)(SS#CROP%TYPE x y)))

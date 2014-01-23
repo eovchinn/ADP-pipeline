@@ -157,7 +157,7 @@ id(7,7).
 7018 poverty NN poverty O 
 7019 . . . O 
 [7001]:there-v(e37,x0) & [7012]:person(e36,x0) & [7004]:number-n(e35,x10) & []:subset_of(e34,x8,x9) & []:subset_of(e33,x6,x9) & [7007]:local-a(e32,x8) & [7010]:campaign-n(e31,x8) & [7009]:national-a(e30,x6) & []:subset_of(e29,x6,x7) & []:subset_of(e28,x5,x7) & [7007]:local-a(e27,x6) & [7010,7010]:campaign-n(e26,x6) & [7009]:national-a(e25,x5) & [7010]:campaign-n(e24,x5) & []:not(e22,e23) & [7006]:equal(e23,x9,x7) & []:equal(e21,x9,x4) & [7014]:join-v(x3,x0,x4,u20) & [7016]:help-v(x12,x0,x13,u19) & [7018]:poverty-n(e18,x14) & [7017]:combat-v(x13,x0,x14,u17) & [7005]:of-p(e16,x10,x9) & [7002]:equal(e15,x0,x10)
-%%% Poverty is a war that can be conquer but it will take a lot of hard work and dedication ! 
+%%% Poverty is a war that can be conquered but it will take a lot of hard work and dedication ! 
 id(8,8).
 8001 Poverty NN poverty O 
 8002 is VBZ be O 
@@ -166,7 +166,7 @@ id(8,8).
 8005 that WDT that O 
 8006 can MD can O 
 8007 be VB be O 
-8008 conquer NN conquer O 
+8008 conquered VBN conquer O 
 8009 but CC but O 
 8010 it PRP it O 
 8011 will MD will O 
@@ -179,7 +179,7 @@ id(8,8).
 8018 and CC and O 
 8019 dedication NN dedication O 
 8020 ! . ! O 
-[8001]:poverty-n(e25,x6) & [8004]:war-n(e24,x9) & []:equal(e23,x9,x8) & [8008]:conquer-n(e22,x10) & [8007]:equal(e21,x8,x10) & [8002]:equal(e20,x6,x9) & [8010]:neuter(e19,x1) & [8014]:lot-n(e18,x4) & [8016]:hard-a(e17,x2) & [8017]:work-n(e16,x2) & []:subset_of(e15,x2,x3) & [8019]:dedication-n(e14,x1) & []:subset_of(e13,x1,x3) & [8015]:of-p(e12,x4,x3) & [8012]:take-v(x0,x1,x4,u11)
+[8001]:poverty-n(e24,x6) & [8004]:war-n(e23,x9) & []:equal(e22,x9,x8) & [8008]:conquer-v(x7,u20,x8,u21) & [8002]:equal(e19,x6,x9) & [8010]:neuter(e18,x1) & [8014]:lot-n(e17,x4) & [8016]:hard-a(e16,x2) & [8017]:work-n(e15,x2) & []:subset_of(e14,x2,x3) & [8019]:dedication-n(e13,x1) & []:subset_of(e12,x1,x3) & [8015]:of-p(e11,x4,x3) & [8012]:take-v(x0,x1,x4,u10)
 %%% Education is the best weapon against Poverty . 
 id(9,9).
 9001 Education NNP Education O 
