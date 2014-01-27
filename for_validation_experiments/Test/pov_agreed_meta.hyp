@@ -11,7 +11,7 @@ great-adj(e14,x4) ^ step-nn(e13,x4) ^ forward-rb(e12,x4) ^ make-vb(x3,u10,x4,u11
 "!EXPLAINED_poverty-nn_4":1 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_9":-0.451 "!HYPOTHESIZED_fight-nn_7":-1.001 "!HYPOTHESIZED_R#STRUGGLE-TARGET_14":-0.6535 "!HYPOTHESIZED_step-nn_1":-1.001 "!HYPOTHESIZED_make-vb_3":-1.001 "!HYPOTHESIZED_great-adj_0":-1.001 "!HYPOTHESIZED_I#STRUGGLE_12":-0.406 "!EXPLAINED_SS#STRUGGLE%TYPE_11":0.45 "!EXPLAINED_against-in_5":1 "!EXPLAINED_M#CAUSE-NOT-EXIST_17":0.475875 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_16":-0.3655 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_17":-0.476875 "!HYPOTHESIZED_TS#POVERTY_8":-0.451 "!HYPOTHESIZED_SS#STRUGGLE%TYPE_11":-0.451 "!EXPLAINED_R#STRUGGLE-TARGET_14":0.6525 "!HYPOTHESIZED_S#STRUGGLE_10":-0.451 "!HYPOTHESIZED_continue-vb_6":-1.001 "!HYPOTHESIZED_forward-rb_2":-1.001 "!HYPOTHESIZED_M#THING-NOT-EXISTING_18":-0.476875 "!HYPOTHESIZED_against-in_5":-1.001 "!HYPOTHESIZED_S#STRUGGLE_13":-0.6535 "!EXPLAINED_I#STRUGGLE_12":0.405 "!HYPOTHESIZED_poverty-nn_4":-1.001 "!EXPLAINED_fight-nn_7":1 "!EXPLAINED_S#STRUGGLE_13":0.6525 "!EXPLAINED_S#STRUGGLE_10":0.45 
 </vector>
 <statistics>
-<time total="0.119771" prepare="0.0956111" ilp="0.0241601" />
+<time total="0.130631" prepare="0.107284" ilp="0.0233471" />
 <ilp solution="Optimal" variables="73" constraints="93" />
 <search-space literals="19" axiom="15" />
 </statistics>
@@ -59,7 +59,7 @@ think-vb(x5,x0,x8,u45) ^ poverty-nn(e44,x10) ^ against-in(e43,x2,x10) ^ in-in(e4
 "!HYPOTHESIZED_skill-nn_25":-1.001 "!HYPOTHESIZED_have-vb_13":-1.001 "!HYPOTHESIZED_think-vb_0":-1.001 "!HYPOTHESIZED_I#STRUGGLE_36":-0.406 "!HYPOTHESIZED_whq_15":-1.001 "!EXPLAINED_poverty-nn_1":1 "!HYPOTHESIZED_young-adj_4":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_40":-0.3655 "!HYPOTHESIZED_thing_18":-1.001 "!HYPOTHESIZED_TS#POVERTY_32":-0.451 "!EXPLAINED_R#STRUGGLE-TARGET_38":0.6525 "!EXPLAINED_S#STRUGGLE_37":0.6525 "!HYPOTHESIZED_!=_29":-1.001 "!HYPOTHESIZED_ensure-vb_14":-1.001 "!EXPLAINED_M#CAUSE-NOT-EXIST_41":0.475875 "!HYPOTHESIZED_!=_30":-1.001 "!HYPOTHESIZED_M#THING-NOT-EXISTING_42":-0.476875 "!HYPOTHESIZED_from-in_17":-1.001 "!HYPOTHESIZED_war-nn_24":-1.001 "!HYPOTHESIZED_know-vb_16":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_41":-0.476875 "!HYPOTHESIZED_step-nn_23":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_33":-0.451 "!HYPOTHESIZED_!=_28":-1.001 "!HYPOTHESIZED_!=_31":-1.001 "!HYPOTHESIZED_important-adj_22":-1.001 "!HYPOTHESIZED_thing_6":-1.001 "!HYPOTHESIZED_in-in_3":-1.001 "!HYPOTHESIZED_R#STRUGGLE-TARGET_38":-0.6535 "!HYPOTHESIZED_most-rb_21":-1.001 "!HYPOTHESIZED_full-adj_9":-1.001 "!HYPOTHESIZED_poverty-nn_1":-1.001 "!EXPLAINED_SS#STRUGGLE%TYPE_35":0.45 "!HYPOTHESIZED_employment-nn_10":-1.001 "!HYPOTHESIZED_SS#STRUGGLE%TYPE_35":-0.451 "!EXPLAINED_S#STRUGGLE_34":0.45 "!HYPOTHESIZED_need-vb_7":-1.001 "!HYPOTHESIZED_person_26":-1.001 "!HYPOTHESIZED_S#STRUGGLE_34":-0.451 "!EXPLAINED_against-in_2":1 "!HYPOTHESIZED_!=_27":-1.001 "!EXPLAINED_war-nn_24":1 "!HYPOTHESIZED_people-nn_5":-1.001 "!HYPOTHESIZED_in-in_8":-1.001 "!HYPOTHESIZED_S#STRUGGLE_37":-0.6535 "!HYPOTHESIZED_president-lyndon-johnson-nn_19":-1.001 "!HYPOTHESIZED_gain-vb_11":-1.001 "!HYPOTHESIZED_per_20":-1.001 "!HYPOTHESIZED_against-in_2":-1.001 "!HYPOTHESIZED_order-nn_12":-1.001 "!EXPLAINED_I#STRUGGLE_36":0.405 
 </vector>
 <statistics>
-<time total="0.0516679" prepare="0.0475399" ilp="0.00412798" />
+<time total="0.0614848" prepare="0.0577838" ilp="0.00370097" />
 <ilp solution="Optimal" variables="156" constraints="148" />
 <search-space literals="43" axiom="15" />
 </statistics>
@@ -135,7 +135,7 @@ weapon-nn(e19,x5) ^ poverty-nn(e18,x4) ^ against-in(e17,x5,x4) ^ as-in(e16,x1,x5
 "!HYPOTHESIZED_M#ENABLE-FIGHT_22":-0.3655 "!EXPLAINED_S#STRUGGLE_15":0.45 "!HYPOTHESIZED_africa-nn_6":-1.001 "!HYPOTHESIZED_of-in_11":-1.001 "!HYPOTHESIZED_of-in_8":-1.001 "!EXPLAINED_I#STRUGGLE%WEAPON_20":0.405 "!HYPOTHESIZED_weapon-nn_0":-1.001 "!HYPOTHESIZED_!=_14":-1.001 "!HYPOTHESIZED_!=_13":-1.001 "!HYPOTHESIZED_I#STRUGGLE_19":-0.406 "!HYPOTHESIZED_loc_7":-1.001 "!HYPOTHESIZED_topic_4":-1.001 "!HYPOTHESIZED_TS#POVERTY_17":-0.451 "!HYPOTHESIZED_I#STRUGGLE%WEAPON_20":-0.406 "!HYPOTHESIZED_M#STRUGGLE%TYPE_23":-0.3655 "!HYPOTHESIZED_potential-nn_12":-1.001 "!HYPOTHESIZED_as-in_3":-1.001 "!EXPLAINED_weapon-nn_0":1 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_18":-0.451 "!EXPLAINED_I#STRUGGLE_19":0.405 "!HYPOTHESIZED_SS#STRUGGLE%WEAPON_16":-0.451 "!EXPLAINED_SS#STRUGGLE%WEAPON_16":0.45 "!HYPOTHESIZED_S#STRUGGLE_15":-0.451 "!HYPOTHESIZED_against-in_2":-1.001 "!HYPOTHESIZED_exploit-vb_5":-1.001 "!HYPOTHESIZED_poverty-nn_1":-1.001 "!HYPOTHESIZED_energy-nn_10":-1.001 "!HYPOTHESIZED_huge-adj_9":-1.001 "!EXPLAINED_poverty-nn_1":1 
 </vector>
 <statistics>
-<time total="0.0444398" prepare="0.0425079" ilp="0.00193191" />
+<time total="0.0419509" prepare="0.039995" ilp="0.00195599" />
 <ilp solution="Optimal" variables="86" constraints="88" />
 <search-space literals="24" axiom="19" />
 </statistics>
@@ -186,7 +186,7 @@ war-nn(e23,x8) ^ start-vb(x7,x6,x8,u22) ^ people-nn(e21,x6) ^ equal(e20,x6,x5) ^
 "!EXPLAINED_R#STRUGGLE-AGENT_21":0.23 "!HYPOTHESIZED_want-vb_6":-1.001 "!HYPOTHESIZED_terrorism-nn_4":-1.001 "!HYPOTHESIZED_war-nn_0":-1.001 "!EXPLAINED_S#STRUGGLE_17":0.45 "!HYPOTHESIZED_nam_12":-1.001 "!HYPOTHESIZED_nam_10":-1.001 "!EXPLAINED_M#CAUSE-NOT-EXIST_34":0.20102 "!HYPOTHESIZED_!=_16":-1.001 "!EXPLAINED_SS#STRUGGLE%TYPE_18":0.45 "!HYPOTHESIZED_!=_15":-1.001 "!HYPOTHESIZED_!=_14":-1.001 "!HYPOTHESIZED_!=_13":-1.001 "!EXPLAINED_poverty-nn_11":1 "!HYPOTHESIZED_M#THING-CAUSING-NOT-EXIST_35":-0.20202 "!EXPLAINED_SS#STRUGGLE%TYPE_20":0.23 "!HYPOTHESIZED_I#STRUGGLE_29":-0.208 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_26":-0.451 "!HYPOTHESIZED_start-vb_1":-1.001 "!HYPOTHESIZED_SS#STRUGGLE%TYPE_20":-0.231 "!HYPOTHESIZED_equal_3":-1.001 "!HYPOTHESIZED_poverty-nn_11":-1.001 "!HYPOTHESIZED_R#STRUGGLE-PATIENT_22":-0.231 "!HYPOTHESIZED_R#STRUGGLE-AGENT_21":-0.231 "!HYPOTHESIZED_S#STRUGGLE_19":-0.231 "!HYPOTHESIZED_equal_7":-1.001 "!HYPOTHESIZED_people-nn_2":-1.001 "!EXPLAINED_fight-vb_5":1 "!HYPOTHESIZED_S#STRUGGLE_17":-0.451 "!EXPLAINED_war-nn_9":1 "!HYPOTHESIZED_SS#STRUGGLE%TYPE_18":-0.451 "!EXPLAINED_S#STRUGGLE_19":0.23 "!HYPOTHESIZED_TS#POVERTY_25":-0.451 "!HYPOTHESIZED_war-nn_9":-1.001 "!HYPOTHESIZED_fight-vb_5":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_34":-0.20202 "!HYPOTHESIZED_on-in_8":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_47":-0.1873 "!EXPLAINED_war-nn_0":1 "!EXPLAINED_I#STRUGGLE_29":0.207 "!HYPOTHESIZED_I#STRUGGLE%TYPE_30":-0.208 
 </vector>
 <statistics>
-<time total="0.420859" prepare="0.104618" ilp="0.316241" />
+<time total="0.390895" prepare="0.095392" ilp="0.295503" />
 <ilp solution="Optimal" variables="312" constraints="881" />
 <search-space literals="51" axiom="17" />
 </statistics>
@@ -403,7 +403,7 @@ rethink-vb(x3,x4,x0,u10) ^ radically-rb(e9,x3) ^ poverty-nn(e8,x2) ^ fight-vb(x1
 "!EXPLAINED_poverty-nn_2":1 "!HYPOTHESIZED_person_5":-1.001 "!HYPOTHESIZED_way-nn_4":-1.001 "!EXPLAINED_S#STRUGGLE_8":0.23 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_7":-0.451 "!HYPOTHESIZED_M#THING-CAUSING-NON-EXISTENCE_15":-0.2011 "!EXPLAINED_R#STRUGGLE-PATIENT_11":0.23 "!HYPOTHESIZED_R#STRUGGLE-AGENT_10":-0.231 "!HYPOTHESIZED_TS#POVERTY_6":-0.451 "!HYPOTHESIZED_SS#STRUGGLE%TYPE_9":-0.231 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_19":-0.1873 "!HYPOTHESIZED_radically-rb_1":-1.001 "!HYPOTHESIZED_I#STRUGGLE_12":-0.208 "!EXPLAINED_M#CAUSE-NOT-EXIST_14":0.2001 "!HYPOTHESIZED_R#STRUGGLE-PATIENT_11":-0.231 "!HYPOTHESIZED_I#STRUGGLE%TYPE_13":-0.208 "!EXPLAINED_fight-vb_3":1 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_14":-0.2011 "!HYPOTHESIZED_M#THING-NOT-EXISTING_16":-0.2011 "!HYPOTHESIZED_rethink-vb_0":-1.001 "!EXPLAINED_SS#STRUGGLE%TYPE_9":0.23 "!HYPOTHESIZED_fight-vb_3":-1.001 "!HYPOTHESIZED_poverty-nn_2":-1.001 "!EXPLAINED_R#STRUGGLE-AGENT_10":0.23 "!EXPLAINED_I#STRUGGLE_12":0.207 "!HYPOTHESIZED_S#STRUGGLE_8":-0.231 
 </vector>
 <statistics>
-<time total="0.0435889" prepare="0.0318279" ilp="0.011761" />
+<time total="0.043021" prepare="0.0315168" ilp="0.0115042" />
 <ilp solution="Optimal" variables="76" constraints="143" />
 <search-space literals="20" axiom="16" />
 </statistics>
@@ -457,7 +457,7 @@ philosopher-nn(e61,x18) ^ subset-of(e60,x18,x19) ^ professor-nn(e59,x17) ^ rel(e
 "!HYPOTHESIZED_S#STRUGGLE_63":-0.6535 "!HYPOTHESIZED_rel_6":-1.001 "!HYPOTHESIZED_part-nn_8":-1.001 "!HYPOTHESIZED_!=_46":-1.001 "!HYPOTHESIZED_issue-nn_41":-1.001 "!HYPOTHESIZED_male_31":-1.001 "!HYPOTHESIZED_per_26":-1.001 "!HYPOTHESIZED_!=_48":-1.001 "!HYPOTHESIZED_professor-nn_2":-1.001 "!HYPOTHESIZED_!=_51":-1.001 "!HYPOTHESIZED_work-nn_33":-1.001 "!HYPOTHESIZED_of-in_9":-1.001 "!HYPOTHESIZED_per_36":-1.001 "!HYPOTHESIZED_S#STRUGGLE_60":-0.451 "!HYPOTHESIZED_M#THING-NOT-EXISTING_68":-0.476875 "!HYPOTHESIZED_org_30":-1.001 "!HYPOTHESIZED_columbia-university-nn_37":-1.001 "!HYPOTHESIZED_!=_45":-1.001 "!HYPOTHESIZED_SS#STRUGGLE%TYPE_61":-0.451 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_66":-0.3655 "!HYPOTHESIZED_!=_52":-1.001 "!HYPOTHESIZED_book-nn_22":-1.001 "!HYPOTHESIZED_at-in_18":-1.001 "!HYPOTHESIZED_org_28":-1.001 "!HYPOTHESIZED_thomas-pogge-nn_25":-1.001 "!HYPOTHESIZED_TS#POVERTY_58":-0.451 "!HYPOTHESIZED_org_38":-1.001 "!EXPLAINED_S#STRUGGLE_63":0.6525 "!HYPOTHESIZED_!=_44":-1.001 "!HYPOTHESIZED_philosopher-nn_14":-1.001 "!HYPOTHESIZED_!=_54":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_67":-0.476875 "!HYPOTHESIZED_!=_53":-1.001 "!HYPOTHESIZED_fight-nn_34":-1.001 "!HYPOTHESIZED_subset-of_19":-1.001 "!HYPOTHESIZED_org_40":-1.001 "!HYPOTHESIZED_subset-of_5":-1.001 "!HYPOTHESIZED_!=_43":-1.001 "!HYPOTHESIZED_dedicate-vb_10":-1.001 "!HYPOTHESIZED_!=_55":-1.001 "!HYPOTHESIZED_to-in_13":-1.001 "!HYPOTHESIZED_of-in_32":-1.001 "!HYPOTHESIZED_thomas-pogge-nn_35":-1.001 "!HYPOTHESIZED_!=_42":-1.001 "!EXPLAINED_SS#STRUGGLE%TYPE_61":0.45 "!HYPOTHESIZED_major-adj_7":-1.001 "!HYPOTHESIZED_professor-nn_16":-1.001 "!HYPOTHESIZED_!=_56":-1.001 "!HYPOTHESIZED_usa-nn_29":-1.001 "!HYPOTHESIZED_rel_17":-1.001 "!EXPLAINED_poverty-nn_11":1 "!EXPLAINED_R#STRUGGLE-TARGET_64":0.6525 "!HYPOTHESIZED_philosopher-nn_0":-1.001 "!HYPOTHESIZED_rel_3":-1.001 "!HYPOTHESIZED_on-in_23":-1.001 "!EXPLAINED_I#STRUGGLE_62":0.405 "!HYPOTHESIZED_usa-nn_39":-1.001 "!HYPOTHESIZED_R#STRUGGLE-TARGET_64":-0.6535 "!EXPLAINED_fight-nn_34":1 "!HYPOTHESIZED_several-adj_21":-1.001 "!HYPOTHESIZED_!=_57":-1.001 "!HYPOTHESIZED_subset-of_15":-1.001 "!HYPOTHESIZED_write-vb_24":-1.001 "!HYPOTHESIZED_subset-of_1":-1.001 "!HYPOTHESIZED_I#STRUGGLE_62":-0.406 "!EXPLAINED_S#STRUGGLE_60":0.45 "!HYPOTHESIZED_!=_47":-1.001 "!EXPLAINED_against-in_12":1 "!HYPOTHESIZED_rel_20":-1.001 "!HYPOTHESIZED_against-in_12":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_59":-0.451 "!HYPOTHESIZED_!=_49":-1.001 "!HYPOTHESIZED_!=_50":-1.001 "!HYPOTHESIZED_poverty-nn_11":-1.001 "!HYPOTHESIZED_columbia-university-nn_27":-1.001 "!EXPLAINED_M#CAUSE-NOT-EXIST_67":0.475875 "!HYPOTHESIZED_at-in_4":-1.001 
 </vector>
 <statistics>
-<time total="0.121666" prepare="0.108421" ilp="0.0132451" />
+<time total="0.10973" prepare="0.0958371" ilp="0.0138931" />
 <ilp solution="Optimal" variables="367" constraints="812" />
 <search-space literals="69" axiom="20" />
 </statistics>
@@ -607,7 +607,7 @@ there-vb(e37,x0) ^ person(e36,x0) ^ number-nn(e35,x10) ^ subset-of(e34,x8,x9) ^ 
 "!EXPLAINED_R#STRUGGLE-PATIENT_33":0.23 "!HYPOTHESIZED_join-vb_17":-1.001 "!HYPOTHESIZED_person_1":-1.001 "!HYPOTHESIZED_national-adj_7":-1.001 "!EXPLAINED_SS#STRUGGLE%TYPE_31":0.23 "!HYPOTHESIZED_campaign-nn_13":-1.001 "!HYPOTHESIZED_poverty-nn_19":-1.001 "!EXPLAINED_S#STRUGGLE_30":0.23 "!HYPOTHESIZED_equal_15":-1.001 "!HYPOTHESIZED_of-in_21":-1.001 "!EXPLAINED_M#CAUSE-NOT-EXIST_36":0.2001 "!HYPOTHESIZED_I#STRUGGLE%TYPE_35":-0.208 "!HYPOTHESIZED_SS#STRUGGLE%TYPE_31":-0.231 "!HYPOTHESIZED_equal_16":-1.001 "!HYPOTHESIZED_national-adj_12":-1.001 "!EXPLAINED_R#STRUGGLE-AGENT_32":0.23 "!EXPLAINED_combat-vb_20":1 "!HYPOTHESIZED_help-vb_18":-1.001 "!HYPOTHESIZED_S#STRUGGLE_30":-0.231 "!HYPOTHESIZED_equal_22":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_41":-0.1873 "!HYPOTHESIZED_there-vb_0":-1.001 "!HYPOTHESIZED_!=_23":-1.001 "!HYPOTHESIZED_campaign-nn_6":-1.001 "!HYPOTHESIZED_I#STRUGGLE_34":-0.208 "!HYPOTHESIZED_M#THING-CAUSING-NON-EXISTENCE_37":-0.2011 "!HYPOTHESIZED_!=_25":-1.001 "!HYPOTHESIZED_local-adj_5":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_36":-0.2011 "!HYPOTHESIZED_R#STRUGGLE-AGENT_32":-0.231 "!HYPOTHESIZED_subset-of_3":-1.001 "!HYPOTHESIZED_subset-of_4":-1.001 "!HYPOTHESIZED_local-adj_10":-1.001 "!HYPOTHESIZED_!=_24":-1.001 "!EXPLAINED_I#STRUGGLE_34":0.207 "!HYPOTHESIZED_M#THING-NOT-EXISTING_38":-0.2011 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_29":-0.451 "!HYPOTHESIZED_subset-of_9":-1.001 "!HYPOTHESIZED_TS#POVERTY_28":-0.451 "!HYPOTHESIZED_campaign-nn_11":-1.001 "!HYPOTHESIZED_!=_27":-1.001 "!EXPLAINED_poverty-nn_19":1 "!HYPOTHESIZED_not_14":-1.001 "!HYPOTHESIZED_combat-vb_20":-1.001 "!HYPOTHESIZED_subset-of_8":-1.001 "!HYPOTHESIZED_number-nn_2":-1.001 "!HYPOTHESIZED_R#STRUGGLE-PATIENT_33":-0.231 "!HYPOTHESIZED_!=_26":-1.001 
 </vector>
 <statistics>
-<time total="0.069762" prepare="0.058743" ilp="0.011019" />
+<time total="0.069139" prepare="0.057795" ilp="0.011344" />
 <ilp solution="Optimal" variables="192" constraints="261" />
 <search-space literals="42" axiom="21" />
 </statistics>
@@ -701,58 +701,53 @@ there-vb(e37,x0) ^ person(e36,x0) ^ number-nn(e35,x10) ^ subset-of(e34,x8,x9) ^ 
 </proofgraph>
 </result-inference>
 <result-inference target="8">
-<observed size="17" domain_size="0">
-poverty-nn(e25,x6) ^ war-nn(e24,x9) ^ equal(e23,x9,x8) ^ conquer-nn(e22,x10) ^ equal(e21,x8,x10) ^ equal(e20,x6,x9) ^ neuter(e19,x1) ^ lot-nn(e18,x4) ^ hard-adj(e17,x2) ^ work-nn(e16,x2) ^ subset-of(e15,x2,x3) ^ dedication-nn(e14,x1) ^ subset-of(e13,x1,x3) ^ of-in(e12,x4,x3) ^ take-vb(x0,x1,x4,u11) ^ !=(e15,e13) ^ !=(e23,e21,e20)
+<observed size="16" domain_size="0">
+poverty-nn(e24,x6) ^ war-nn(e23,x9) ^ equal(e22,x9,x8) ^ conquer-vb(x7,u20,x8,u21) ^ equal(e19,x6,x9) ^ neuter(e18,x1) ^ lot-nn(e17,x4) ^ hard-adj(e16,x2) ^ work-nn(e15,x2) ^ subset-of(e14,x2,x3) ^ dedication-nn(e13,x1) ^ subset-of(e12,x1,x3) ^ of-in(e11,x4,x3) ^ take-vb(x0,x1,x4,u10) ^ !=(e14,e12) ^ !=(e22,e19)
 </observed>
-<hypothesis score="-16.6935">
-poverty-nn(e25,x6) ^ war-nn(e24,x9) ^ equal(e23,x9,x8) ^ conquer-nn(e22,x10) ^ equal(e21,x8,x10) ^ equal(e20,x6,x9) ^ neuter(e19,x1) ^ lot-nn(e18,x4) ^ hard-adj(e17,x2) ^ work-nn(e16,x2) ^ subset-of(e15,x2,x3) ^ dedication-nn(e14,x1) ^ subset-of(e13,x1,x3) ^ of-in(e12,x4,x3) ^ take-vb(x0,x1,x4,u11) ^ !=(e15,e13) ^ !=(e23,e21,e20) ^ TS#POVERTY(x6) ^ T#ECONOMIC-INEQUALITY(_8) ^ S#STRUGGLE(e24) ^ SS#STRUGGLE%TYPE(x9,e24) ^ I#STRUGGLE(e24) ^ I#STRUGGLE%TYPE(x9,e24) ^ M#CAUSE-NOT-EXIST(e24)
+<hypothesis score="-15.6925">
+poverty-nn(e24,x6) ^ war-nn(e23,x9) ^ equal(e22,x9,x8) ^ conquer-vb(x7,u20,x8,u21) ^ equal(e19,x6,x9) ^ neuter(e18,x1) ^ lot-nn(e17,x4) ^ hard-adj(e16,x2) ^ work-nn(e15,x2) ^ subset-of(e14,x2,x3) ^ dedication-nn(e13,x1) ^ subset-of(e12,x1,x3) ^ of-in(e11,x4,x3) ^ take-vb(x0,x1,x4,u10) ^ !=(e14,e12) ^ !=(e22,e19) ^ TS#POVERTY(x6) ^ T#ECONOMIC-INEQUALITY(_8) ^ S#STRUGGLE(e23) ^ SS#STRUGGLE%TYPE(x9,e23) ^ I#STRUGGLE(e23) ^ I#STRUGGLE%TYPE(x9,e23) ^ M#CAUSE-NOT-EXIST(e23)
 </hypothesis>
 <vector score="0">
-"!HYPOTHESIZED_subset-of_12":-1.001 "!HYPOTHESIZED_war-nn_1":-1.001 "!HYPOTHESIZED_subset-of_10":-1.001 "!HYPOTHESIZED_conquer-nn_3":-1.001 "!HYPOTHESIZED_!=_16":-1.001 "!HYPOTHESIZED_of-in_13":-1.001 "!HYPOTHESIZED_!=_15":-1.001 "!HYPOTHESIZED_I#STRUGGLE_21":-0.406 "!HYPOTHESIZED_neuter_6":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_23":-0.3655 "!EXPLAINED_SS#STRUGGLE%TYPE_20":0.45 "!HYPOTHESIZED_TS#POVERTY_17":-0.451 "!HYPOTHESIZED_SS#STRUGGLE%TYPE_20":-0.451 "!HYPOTHESIZED_equal_2":-1.001 "!HYPOTHESIZED_equal_4":-1.001 "!HYPOTHESIZED_equal_5":-1.001 "!HYPOTHESIZED_S#STRUGGLE_19":-0.451 "!HYPOTHESIZED_dedication-nn_11":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_18":-0.451 "!HYPOTHESIZED_lot-nn_7":-1.001 "!HYPOTHESIZED_work-nn_9":-1.001 "!EXPLAINED_I#STRUGGLE_21":0.405 "!EXPLAINED_S#STRUGGLE_19":0.45 "!HYPOTHESIZED_poverty-nn_0":-1.001 "!HYPOTHESIZED_hard-adj_8":-1.001 "!HYPOTHESIZED_I#STRUGGLE%TYPE_22":-0.406 "!HYPOTHESIZED_take-vb_14":-1.001 "!EXPLAINED_war-nn_1":1 "!EXPLAINED_poverty-nn_0":1 
+"!HYPOTHESIZED_take-vb_13":-1.001 "!HYPOTHESIZED_war-nn_1":-1.001 "!HYPOTHESIZED_subset-of_11":-1.001 "!HYPOTHESIZED_hard-adj_7":-1.001 "!HYPOTHESIZED_of-in_12":-1.001 "!HYPOTHESIZED_!=_15":-1.001 "!EXPLAINED_SS#STRUGGLE%TYPE_19":0.45 "!HYPOTHESIZED_!=_14":-1.001 "!HYPOTHESIZED_I#STRUGGLE_20":-0.406 "!HYPOTHESIZED_neuter_5":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_22":-0.3655 "!HYPOTHESIZED_TS#POVERTY_16":-0.451 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_17":-0.451 "!HYPOTHESIZED_subset-of_9":-1.001 "!HYPOTHESIZED_equal_2":-1.001 "!HYPOTHESIZED_equal_4":-1.001 "!HYPOTHESIZED_dedication-nn_10":-1.001 "!HYPOTHESIZED_S#STRUGGLE_18":-0.451 "!HYPOTHESIZED_lot-nn_6":-1.001 "!HYPOTHESIZED_conquer-vb_3":-1.001 "!HYPOTHESIZED_work-nn_8":-1.001 "!EXPLAINED_S#STRUGGLE_18":0.45 "!EXPLAINED_I#STRUGGLE_20":0.405 "!HYPOTHESIZED_SS#STRUGGLE%TYPE_19":-0.451 "!HYPOTHESIZED_poverty-nn_0":-1.001 "!HYPOTHESIZED_I#STRUGGLE%TYPE_21":-0.406 "!EXPLAINED_war-nn_1":1 "!EXPLAINED_poverty-nn_0":1 
 </vector>
 <statistics>
-<time total="0.037096" prepare="0.035064" ilp="0.00203204" />
-<ilp solution="Optimal" variables="96" constraints="95" />
-<search-space literals="24" axiom="20" />
+<time total="0.0563622" prepare="0.0547571" ilp="0.00160503" />
+<ilp solution="Optimal" variables="85" constraints="78" />
+<search-space literals="23" axiom="20" />
 </statistics>
 <proofgraph>
-<literal id="0" type="2" active="yes">poverty-nn(e25,x6):0:1.00</literal>
-<literal id="1" type="2" active="yes">war-nn(e24,x9):1:1.00</literal>
-<literal id="2" type="2" active="yes">equal(e23,x9,x8):2:1.00</literal>
+<literal id="0" type="2" active="yes">poverty-nn(e24,x6):0:1.00</literal>
+<literal id="1" type="2" active="yes">war-nn(e23,x9):1:1.00</literal>
+<literal id="2" type="2" active="yes">equal(e22,x9,x8):2:1.00</literal>
 <unification l1="2" l2="4" unifier="" active="no" />
-<unification l1="2" l2="5" unifier="" active="no" />
-<literal id="3" type="2" active="yes">conquer-nn(e22,x10):3:1.00</literal>
-<literal id="4" type="2" active="yes">equal(e21,x8,x10):4:1.00</literal>
+<literal id="3" type="2" active="yes">conquer-vb(x7,u20,x8,u21):3:1.00</literal>
+<literal id="4" type="2" active="yes">equal(e19,x6,x9):4:1.00</literal>
 <unification l1="4" l2="2" unifier="" active="no" />
-<unification l1="4" l2="5" unifier="" active="no" />
-<literal id="5" type="2" active="yes">equal(e20,x6,x9):5:1.00</literal>
-<unification l1="5" l2="2" unifier="" active="no" />
-<unification l1="5" l2="4" unifier="" active="no" />
-<literal id="6" type="2" active="yes">neuter(e19,x1):6:1.00</literal>
-<literal id="7" type="2" active="yes">lot-nn(e18,x4):7:1.00</literal>
-<literal id="8" type="2" active="yes">hard-adj(e17,x2):8:1.00</literal>
-<literal id="9" type="2" active="yes">work-nn(e16,x2):9:1.00</literal>
-<literal id="10" type="2" active="yes">subset-of(e15,x2,x3):10:1.00</literal>
-<unification l1="10" l2="12" unifier="" active="no" />
-<literal id="11" type="2" active="yes">dedication-nn(e14,x1):11:1.00</literal>
-<literal id="12" type="2" active="yes">subset-of(e13,x1,x3):12:1.00</literal>
-<unification l1="12" l2="10" unifier="" active="no" />
-<literal id="13" type="2" active="yes">of-in(e12,x4,x3):13:1.00</literal>
-<literal id="14" type="2" active="yes">take-vb(x0,x1,x4,u11):14:1.00</literal>
-<literal id="15" type="2" active="yes">!=(e15,e13):15:1.00</literal>
-<literal id="16" type="2" active="yes">!=(e23,e21,e20):16:1.00</literal>
-<literal id="17" type="3" active="yes">TS#POVERTY(x6):17:0.45</literal>
-<literal id="18" type="3" active="yes">T#ECONOMIC-INEQUALITY(_8):18:0.45</literal>
-<literal id="19" type="3" active="yes">S#STRUGGLE(e24):19:0.45</literal>
-<literal id="20" type="3" active="yes">SS#STRUGGLE%TYPE(x9,e24):20:0.45</literal>
-<literal id="21" type="3" active="yes">I#STRUGGLE(e24):21:0.41</literal>
-<literal id="22" type="3" active="yes">I#STRUGGLE%TYPE(x9,e24):22:0.41</literal>
-<literal id="23" type="3" active="yes">M#CAUSE-NOT-EXIST(e24):23:0.36</literal>
-<explanation name="poverty" active="yes" axiom="">17 ^ 18 => 0</explanation>
-<explanation name="war" active="yes" axiom="">19 ^ 20 => 1</explanation>
-<explanation name="strugglemap" active="yes" axiom="">21 => 19</explanation>
-<explanation name="struggle-typemap" active="yes" axiom="">22 => 20</explanation>
-<explanation name="fight4" active="yes" axiom="">23 => 21</explanation>
+<literal id="5" type="2" active="yes">neuter(e18,x1):5:1.00</literal>
+<literal id="6" type="2" active="yes">lot-nn(e17,x4):6:1.00</literal>
+<literal id="7" type="2" active="yes">hard-adj(e16,x2):7:1.00</literal>
+<literal id="8" type="2" active="yes">work-nn(e15,x2):8:1.00</literal>
+<literal id="9" type="2" active="yes">subset-of(e14,x2,x3):9:1.00</literal>
+<unification l1="9" l2="11" unifier="" active="no" />
+<literal id="10" type="2" active="yes">dedication-nn(e13,x1):10:1.00</literal>
+<literal id="11" type="2" active="yes">subset-of(e12,x1,x3):11:1.00</literal>
+<unification l1="11" l2="9" unifier="" active="no" />
+<literal id="12" type="2" active="yes">of-in(e11,x4,x3):12:1.00</literal>
+<literal id="13" type="2" active="yes">take-vb(x0,x1,x4,u10):13:1.00</literal>
+<literal id="14" type="2" active="yes">!=(e14,e12):14:1.00</literal>
+<literal id="15" type="2" active="yes">!=(e22,e19):15:1.00</literal>
+<literal id="16" type="3" active="yes">TS#POVERTY(x6):16:0.45</literal>
+<literal id="17" type="3" active="yes">T#ECONOMIC-INEQUALITY(_8):17:0.45</literal>
+<literal id="18" type="3" active="yes">S#STRUGGLE(e23):18:0.45</literal>
+<literal id="19" type="3" active="yes">SS#STRUGGLE%TYPE(x9,e23):19:0.45</literal>
+<literal id="20" type="3" active="yes">I#STRUGGLE(e23):20:0.41</literal>
+<literal id="21" type="3" active="yes">I#STRUGGLE%TYPE(x9,e23):21:0.41</literal>
+<literal id="22" type="3" active="yes">M#CAUSE-NOT-EXIST(e23):22:0.36</literal>
+<explanation name="poverty" active="yes" axiom="">16 ^ 17 => 0</explanation>
+<explanation name="war" active="yes" axiom="">18 ^ 19 => 1</explanation>
+<explanation name="strugglemap" active="yes" axiom="">20 => 18</explanation>
+<explanation name="struggle-typemap" active="yes" axiom="">21 => 19</explanation>
+<explanation name="fight4" active="yes" axiom="">22 => 20</explanation>
 </proofgraph>
 </result-inference>
 <result-inference target="9">
@@ -766,7 +761,7 @@ against-in(e16,x1,x0) ^ equal(e15,x2,x1) ^ education-nn(e13,x2) ^ nam(e14,x2) ^ 
 "!HYPOTHESIZED_SS#STRUGGLE%WEAPON_19":-0.451 "!EXPLAINED_S#STRUGGLE_16":0.45 "!EXPLAINED_M#STRUGGLE%TYPE_30":0.729 "!HYPOTHESIZED_weapon-nn_4":-1.001 "!HYPOTHESIZED_M#ENABLE-FIGHT_27":-0.3655 "!EXPLAINED_I#STRUGGLE%WEAPON_25":0.405 "!EXPLAINED_I#STRUGGLE%WEAPON_23":0.405 "!HYPOTHESIZED_!=_15":-1.001 "!HYPOTHESIZED_loc_11":-1.001 "!HYPOTHESIZED_I#STRUGGLE_24":-0.406 "!HYPOTHESIZED_!=_14":-1.001 "!HYPOTHESIZED_!=_13":-1.001 "!HYPOTHESIZED_M#STRUGGLE%TYPE_28":-0.3655 "!HYPOTHESIZED_I#STRUGGLE_22":-0.406 "!HYPOTHESIZED_!=_12":-1.001 "!EXPLAINED_M#ENABLE-FIGHT_29":0.729 "!EXPLAINED_poverty-nn_10":1 "!HYPOTHESIZED_equal_8":-1.001 "!HYPOTHESIZED_weapon-nn_9":-1.001 "!EXPLAINED_weapon-nn_9":1 "!HYPOTHESIZED_imp_5":-1.001 "!HYPOTHESIZED_best-adj_6":-1.001 "!EXPLAINED_weapon-nn_4":1 "!HYPOTHESIZED_nam_3":-1.001 "!HYPOTHESIZED_equal_1":-1.001 "!HYPOTHESIZED_I#STRUGGLE%WEAPON_23":-0.406 "!HYPOTHESIZED_M#STRUGGLE%TYPE_30":-0.73 "!HYPOTHESIZED_I#STRUGGLE%WEAPON_25":-0.406 "!EXPLAINED_SS#STRUGGLE%WEAPON_19":0.45 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_21":-0.451 "!HYPOTHESIZED_S#STRUGGLE_18":-0.451 "!HYPOTHESIZED_poverty-nn_10":-1.001 "!HYPOTHESIZED_not_7":-1.001 "!HYPOTHESIZED_education-nn_2":-1.001 "!EXPLAINED_SS#STRUGGLE%WEAPON_17":0.45 "!HYPOTHESIZED_SS#STRUGGLE%WEAPON_17":-0.451 "!EXPLAINED_I#STRUGGLE_24":0.405 "!HYPOTHESIZED_S#STRUGGLE_16":-0.451 "!HYPOTHESIZED_against-in_0":-1.001 "!EXPLAINED_S#STRUGGLE_18":0.45 "!HYPOTHESIZED_M#ENABLE-FIGHT_29":-0.73 "!EXPLAINED_I#STRUGGLE_22":0.405 "!HYPOTHESIZED_TS#POVERTY_20":-0.451 
 </vector>
 <statistics>
-<time total="0.0494781" prepare="0.04529" ilp="0.00418806" />
+<time total="0.05019" prepare="0.046" ilp="0.00418997" />
 <ilp solution="Optimal" variables="133" constraints="150" />
 <search-space literals="32" axiom="14" />
 </statistics>
@@ -843,13 +838,13 @@ against-in(e16,x1,x0) ^ equal(e15,x2,x1) ^ education-nn(e13,x2) ^ nam(e14,x2) ^ 
 livelihood-nn(e36,x9) ^ of-in(e35,x10,x9) ^ system-nn(e34,x10) ^ subset-of(e33,x10,x11) ^ survival-nn(e32,x7) ^ of-in(e31,x8,x7) ^ skill-nn(e30,x8) ^ subset-of(e29,x8,x11) ^ support-vb(x6,x1,x11,u28) ^ poor-adj(e27,x14) ^ people-nn(e26,x14) ^ help-vb(x13,x1,x14,u25) ^ poverty-nn(e24,x16) ^ combat-vb(x15,x1,x16,u23) ^ propose-vb(x3,x1,x6,u22) ^ neuter(e21,x2) ^ of-in(e20,x1,x2) ^ action-nn(e19,x0) ^ of-in(e18,x1,x0) ^ programme-nn(e17,x1) ^ !=(e33,e29) ^ !=(e35,e31,e20,e18)
 </observed>
 <hypothesis score="-20.7305">
-livelihood-nn(e36,x9) ^ of-in(e35,x10,x9) ^ system-nn(e34,x10) ^ subset-of(e33,x10,x11) ^ survival-nn(e32,x7) ^ of-in(e31,x8,x7) ^ skill-nn(e30,x8) ^ subset-of(e29,x8,x11) ^ support-vb(x6,x1,x11,u28) ^ poor-adj(e27,x14) ^ people-nn(e26,x14) ^ help-vb(x13,x1,x14,u25) ^ poverty-nn(e24,x16) ^ combat-vb(x15,x1,x16,u23) ^ propose-vb(x3,x1,x6,u22) ^ neuter(e21,x2) ^ of-in(e20,x1,x2) ^ action-nn(e19,x0) ^ of-in(e18,x1,x0) ^ programme-nn(e17,x1) ^ !=(e33,e29) ^ !=(e35,e31,e20,e18) ^ TS#POVERTY(e27) ^ T#ECONOMIC-INEQUALITY(_12) ^ R#POOR(x14,e27) ^ TS#POVERTY(x16) ^ T#ECONOMIC-INEQUALITY(_13) ^ S#STRUGGLE(x15) ^ SS#STRUGGLE%TYPE(x15,x15) ^ R#STRUGGLE-AGENT(x1,x15) ^ R#STRUGGLE-PATIENT(x16,x15) ^ I#STRUGGLE(x15) ^ I#STRUGGLE%TYPE(x15,x15) ^ M#CAUSE-NOT-EXIST(x15) ^ M#THING-CAUSING-NON-EXISTENCE(x1,x15) ^ M#THING-NOT-EXISTING(x16,x15) ^ M#CAUSE-NOT-EXIST(x15) ^ =(_12,_13) ^ =(x16,e27)
+livelihood-nn(e36,x9) ^ of-in(e35,x10,x9) ^ system-nn(e34,x10) ^ subset-of(e33,x10,x11) ^ survival-nn(e32,x7) ^ of-in(e31,x8,x7) ^ skill-nn(e30,x8) ^ subset-of(e29,x8,x11) ^ support-vb(x6,x1,x11,u28) ^ poor-adj(e27,x14) ^ people-nn(e26,x14) ^ help-vb(x13,x1,x14,u25) ^ poverty-nn(e24,x16) ^ combat-vb(x15,x1,x16,u23) ^ propose-vb(x3,x1,x6,u22) ^ neuter(e21,x2) ^ of-in(e20,x1,x2) ^ action-nn(e19,x0) ^ of-in(e18,x1,x0) ^ programme-nn(e17,x1) ^ !=(e33,e29) ^ !=(e35,e31,e20,e18) ^ TS#POVERTY(e27) ^ T#ECONOMIC-INEQUALITY(_12) ^ R#POOR(x14,e27) ^ TS#POVERTY(x16) ^ T#ECONOMIC-INEQUALITY(_13) ^ S#STRUGGLE(x15) ^ SS#STRUGGLE%TYPE(x15,x15) ^ R#STRUGGLE-AGENT(x1,x15) ^ R#STRUGGLE-PATIENT(x16,x15) ^ I#STRUGGLE(x15) ^ I#STRUGGLE%TYPE(x15,x15) ^ M#CAUSE-NOT-EXIST(x15) ^ M#THING-CAUSING-NON-EXISTENCE(x1,x15) ^ M#THING-NOT-EXISTING(x16,x15) ^ M#CAUSE-NOT-EXIST(x15) ^ =(x16,e27) ^ =(_12,_13)
 </hypothesis>
 <vector score="0">
 "!EXPLAINED_TS#POVERTY_25":0.45 "!HYPOTHESIZED_M#THING-CAUSING-NON-EXISTENCE_34":-0.2011 "!HYPOTHESIZED_support-vb_8":-1.001 "!HYPOTHESIZED_!=_21":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_38":-0.1873 "!EXPLAINED_I#STRUGGLE_31":0.207 "!HYPOTHESIZED_M#THING-NOT-EXISTING_35":-0.2011 "!EXPLAINED_R#STRUGGLE-PATIENT_30":0.23 "!EXPLAINED_T#ECONOMIC-INEQUALITY_26":0.45 "!EXPLAINED_S#STRUGGLE_27":0.23 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_23":-0.301 "!HYPOTHESIZED_subset-of_7":-1.001 "!HYPOTHESIZED_system-nn_2":-1.001 "!EXPLAINED_poor-adj_9":1 "!HYPOTHESIZED_!=_20":-1.001 "!HYPOTHESIZED_SS#STRUGGLE%TYPE_28":-0.231 "!HYPOTHESIZED_TS#POVERTY_25":-0.451 "!HYPOTHESIZED_help-vb_11":-1.001 "!HYPOTHESIZED_of-in_16":-1.001 "!HYPOTHESIZED_of-in_5":-1.001 "!HYPOTHESIZED_of-in_18":-1.001 "!HYPOTHESIZED_R#POOR_24":-0.301 "!HYPOTHESIZED_R#STRUGGLE-PATIENT_30":-0.231 "!HYPOTHESIZED_poor-adj_9":-1.001 "!EXPLAINED_combat-vb_13":1 "!HYPOTHESIZED_poverty-nn_12":-1.001 "!HYPOTHESIZED_propose-vb_14":-1.001 "!EXPLAINED_M#CAUSE-NOT-EXIST_33":0.2001 "!HYPOTHESIZED_subset-of_3":-1.001 "!HYPOTHESIZED_neuter_15":-1.001 "!HYPOTHESIZED_programme-nn_19":-1.001 "!HYPOTHESIZED_I#STRUGGLE_31":-0.208 "!EXPLAINED_SS#STRUGGLE%TYPE_28":0.23 "!HYPOTHESIZED_action-nn_17":-1.001 "!HYPOTHESIZED_I#STRUGGLE%TYPE_32":-0.208 "!HYPOTHESIZED_livelihood-nn_0":-1.001 "!HYPOTHESIZED_S#STRUGGLE_27":-0.231 "!EXPLAINED_poverty-nn_12":1 "!HYPOTHESIZED_combat-vb_13":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_33":-0.2011 "!HYPOTHESIZED_TS#POVERTY_22":-0.301 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_26":-0.451 "!HYPOTHESIZED_people-nn_10":-1.001 "!HYPOTHESIZED_survival-nn_4":-1.001 "!HYPOTHESIZED_R#STRUGGLE-AGENT_29":-0.231 "!HYPOTHESIZED_skill-nn_6":-1.001 "!EXPLAINED_R#STRUGGLE-AGENT_29":0.23 "!HYPOTHESIZED_of-in_1":-1.001 
 </vector>
 <statistics>
-<time total="0.0999589" prepare="0.088985" ilp="0.0109739" />
+<time total="0.0929527" prepare="0.0822558" ilp="0.0106969" />
 <ilp solution="Optimal" variables="168" constraints="244" />
 <search-space literals="39" axiom="24" />
 </statistics>
@@ -935,13 +930,13 @@ livelihood-nn(e36,x9) ^ of-in(e35,x10,x9) ^ system-nn(e34,x10) ^ subset-of(e33,x
 n’t-vb(x11,x0,x20,u65) ^ income-nn(e64,x21) ^ as-in(e63,x1,x21) ^ count-vb(x20,x0,x1,u62) ^ imp(e45,x12,x15) ^ as-in(e61,x16) ^ quantity-adj(e60,x16) ^ analyst-nn(e59,x16) ^ favor-vb(x15,x16,x0,u58) ^ card(e57,x19,3.9) ^ card(e56,x19,1000000) ^ 5-4(e55,x19) ^ people-nn(e54,x19) ^ lift-vb(x18,x16,x19,u53) ^ poverty-nn(e52,x17) ^ of-in(e51,x18,x17) ^ out-in(e50,x18) ^ respectively-rb(e49,x18) ^ show-vb(x13,x16,x18,u48) ^ count-vb(x12,u46,x0,u47) ^ report-vb(x8,x2,e45,u44) ^ official-adj(e43,x0) ^ poverty-nn(e42,x3) ^ of-in(e41,x0,x3) ^ measure-nn(e40,x0) ^ or(e25,e31,e38) ^ snap-nn(e38,x1) ^ nam(e39,x1) ^ benefit-nn(e37,x1) ^ food-nn(e36,x6) ^ of-in(e35,x7,x6) ^ stamp-nn(e34,x7) ^ eitc-nn(e31,x1) ^ org(e32,x1) ^ benefit-nn(e30,x1) ^ food-nn(e29,x4) ^ of-in(e28,x5,x4) ^ stamp-nn(e27,x5) ^ census-bureau-nn(e23,x2) ^ org(e24,x2) ^ thing(e22,x0) ^ !=(e36,e29) ^ !=(e34,e27) ^ !=(e37,e30) ^ !=(e38,e39) ^ !=(e23,e24) ^ !=(e31,e32) ^ !=(e23,e24) ^ !=(e51,e41,e35,e28) ^ !=(e63,e61) ^ !=(e32,e24) ^ !=(e57,e56)
 </observed>
 <hypothesis score="-48.134">
-n’t-vb(x11,x0,x20,u65) ^ income-nn(e64,x21) ^ as-in(e63,x1,x21) ^ count-vb(x20,x0,x1,u62) ^ imp(e45,x12,x15) ^ as-in(e61,x16) ^ quantity-adj(e60,x16) ^ analyst-nn(e59,x16) ^ favor-vb(x15,x16,x0,u58) ^ card(e57,x19,3.9) ^ card(e56,x19,1000000) ^ 5-4(e55,x19) ^ people-nn(e54,x19) ^ lift-vb(x18,x16,x19,u53) ^ poverty-nn(e52,x17) ^ of-in(e51,x18,x17) ^ out-in(e50,x18) ^ respectively-rb(e49,x18) ^ show-vb(x13,x16,x18,u48) ^ count-vb(x12,u46,x0,u47) ^ report-vb(x8,x2,e45,u44) ^ official-adj(e43,x0) ^ poverty-nn(e42,x3) ^ of-in(e41,x0,x3) ^ measure-nn(e40,x0) ^ or(e25,e31,e38) ^ snap-nn(e38,x1) ^ nam(e39,x1) ^ benefit-nn(e37,x1) ^ food-nn(e36,x6) ^ of-in(e35,x7,x6) ^ stamp-nn(e34,x7) ^ eitc-nn(e31,x1) ^ org(e32,x1) ^ benefit-nn(e30,x1) ^ food-nn(e29,x4) ^ of-in(e28,x5,x4) ^ stamp-nn(e27,x5) ^ census-bureau-nn(e23,x2) ^ org(e24,x2) ^ thing(e22,x0) ^ !=(e36,e29) ^ !=(e34,e27) ^ !=(e37,e30) ^ !=(e38,e39) ^ !=(e23,e24) ^ !=(e31,e32) ^ !=(e23,e24) ^ !=(e51,e41,e35,e28) ^ !=(e63,e61) ^ !=(e32,e24) ^ !=(e57,e56) ^ S#ABYSS(x18) ^ SS#ABYSS%EXIT(x18,x18) ^ R#ABYSS-THEME(x19,x18) ^ R#ABYSS-EXIT-CAUSE(x16,x18) ^ TS#POVERTY(x17) ^ T#ECONOMIC-INEQUALITY(_14) ^ I#ABYSS(x18) ^ I#ABYSS%EXIT(x18,x18) ^ M#CAUSE-RESUME-FUNCTION(x18) ^ M#CAUSE-EXIT-CONFINEMENT(x18) ^ =(u47,u62) ^ =(x17,x3) ^ =(x20,x12) ^ =(x0,x1,u46) ^ =(e42,e52)
+n’t-vb(x11,x0,x20,u65) ^ income-nn(e64,x21) ^ as-in(e63,x1,x21) ^ count-vb(x20,x0,x1,u62) ^ imp(e45,x12,x15) ^ as-in(e61,x16) ^ quantity-adj(e60,x16) ^ analyst-nn(e59,x16) ^ favor-vb(x15,x16,x0,u58) ^ card(e57,x19,3.9) ^ card(e56,x19,1000000) ^ 5-4(e55,x19) ^ people-nn(e54,x19) ^ lift-vb(x18,x16,x19,u53) ^ poverty-nn(e52,x17) ^ of-in(e51,x18,x17) ^ out-in(e50,x18) ^ respectively-rb(e49,x18) ^ show-vb(x13,x16,x18,u48) ^ count-vb(x12,u46,x0,u47) ^ report-vb(x8,x2,e45,u44) ^ official-adj(e43,x0) ^ poverty-nn(e42,x3) ^ of-in(e41,x0,x3) ^ measure-nn(e40,x0) ^ or(e25,e31,e38) ^ snap-nn(e38,x1) ^ nam(e39,x1) ^ benefit-nn(e37,x1) ^ food-nn(e36,x6) ^ of-in(e35,x7,x6) ^ stamp-nn(e34,x7) ^ eitc-nn(e31,x1) ^ org(e32,x1) ^ benefit-nn(e30,x1) ^ food-nn(e29,x4) ^ of-in(e28,x5,x4) ^ stamp-nn(e27,x5) ^ census-bureau-nn(e23,x2) ^ org(e24,x2) ^ thing(e22,x0) ^ !=(e36,e29) ^ !=(e34,e27) ^ !=(e37,e30) ^ !=(e38,e39) ^ !=(e23,e24) ^ !=(e31,e32) ^ !=(e23,e24) ^ !=(e51,e41,e35,e28) ^ !=(e63,e61) ^ !=(e32,e24) ^ !=(e57,e56) ^ S#ABYSS(x18) ^ SS#ABYSS%EXIT(x18,x18) ^ R#ABYSS-THEME(x19,x18) ^ R#ABYSS-EXIT-CAUSE(x16,x18) ^ TS#POVERTY(x17) ^ T#ECONOMIC-INEQUALITY(_14) ^ I#ABYSS(x18) ^ I#ABYSS%EXIT(x18,x18) ^ M#CAUSE-RESUME-FUNCTION(x18) ^ M#CAUSE-EXIT-CONFINEMENT(x18) ^ =(u47,u62) ^ =(x17,x3) ^ =(x20,x12) ^ =(u46,x0,x1) ^ =(e42,e52)
 </hypothesis>
 <vector score="0">
 "!HYPOTHESIZED_SS#ABYSS%EXIT_53":-0.601 "!HYPOTHESIZED_I#ABYSS_72":-0.541 "!HYPOTHESIZED_!=_46":-1.001 "!HYPOTHESIZED_!=_48":-1.001 "!HYPOTHESIZED_as-in_2":-1.001 "!HYPOTHESIZED_!=_51":-1.001 "!EXPLAINED_lift-vb_13":1 "!HYPOTHESIZED_nam_27":-1.001 "!HYPOTHESIZED_!=_45":-1.001 "!HYPOTHESIZED_of-in_36":-1.001 "!EXPLAINED_I#ABYSS%EXIT_73":0.54 "!HYPOTHESIZED_poverty-nn_14":-1.001 "!HYPOTHESIZED_out-in_16":-1.001 "!HYPOTHESIZED_lift-vb_13":-1.001 "!HYPOTHESIZED_show-vb_18":-1.001 "!HYPOTHESIZED_respectively-rb_17":-1.001 "!HYPOTHESIZED_stamp-nn_31":-1.001 "!HYPOTHESIZED_of-in_30":-1.001 "!HYPOTHESIZED_TS#POVERTY_56":-0.451 "!HYPOTHESIZED_!=_44":-1.001 "!HYPOTHESIZED_favor-vb_8":-1.001 "!HYPOTHESIZED_count-vb_19":-1.001 "!HYPOTHESIZED_imp_4":-1.001 "!EXPLAINED_I#ABYSS_72":0.54 "!HYPOTHESIZED_official-adj_21":-1.001 "!HYPOTHESIZED_count-vb_3":-1.001 "!HYPOTHESIZED_snap-nn_26":-1.001 "!HYPOTHESIZED_poverty-nn_22":-1.001 "!HYPOTHESIZED_S#ABYSS_52":-0.601 "!HYPOTHESIZED_M#CAUSE-RESUME-FUNCTION_209":-0.487 "!HYPOTHESIZED_food-nn_35":-1.001 "!HYPOTHESIZED_benefit-nn_28":-1.001 "!HYPOTHESIZED_org_39":-1.001 "!HYPOTHESIZED_!=_43":-1.001 "!HYPOTHESIZED_quantity-adj_6":-1.001 "!HYPOTHESIZED_food-nn_29":-1.001 "!HYPOTHESIZED_of-in_15":-1.001 "!HYPOTHESIZED_R#ABYSS-THEME_54":-0.601 "!HYPOTHESIZED_stamp-nn_37":-1.001 "!HYPOTHESIZED_analyst-nn_7":-1.001 "!HYPOTHESIZED_org_33":-1.001 "!HYPOTHESIZED_measure-nn_24":-1.001 "!HYPOTHESIZED_!=_42":-1.001 "!HYPOTHESIZED_people-nn_12":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_57":-0.451 "!HYPOTHESIZED_as-in_5":-1.001 "!EXPLAINED_count-vb_19":1 "!HYPOTHESIZED_income-nn_1":-1.001 "!HYPOTHESIZED_R#ABYSS-EXIT-CAUSE_55":-0.601 "!HYPOTHESIZED_or_25":-1.001 "!HYPOTHESIZED_!=_41":-1.001 "!HYPOTHESIZED_eitc-nn_32":-1.001 "!HYPOTHESIZED_5-4_11":-1.001 "!HYPOTHESIZED_report-vb_20":-1.001 "!HYPOTHESIZED_census-bureau-nn_38":-1.001 "!HYPOTHESIZED_thing_40":-1.001 "!EXPLAINED_S#ABYSS_52":0.6 "!HYPOTHESIZED_card_9":-1.001 "!HYPOTHESIZED_of-in_23":-1.001 "!HYPOTHESIZED_M#CAUSE-EXIT-CONFINEMENT_210":-0.487 "!EXPLAINED_SS#ABYSS%EXIT_53":0.6 "!EXPLAINED_poverty-nn_22":1 "!HYPOTHESIZED_I#ABYSS%EXIT_73":-0.541 "!HYPOTHESIZED_!=_47":-1.001 "!EXPLAINED_of-in_15":1 "!EXPLAINED_out-in_16":1 "!HYPOTHESIZED_benefit-nn_34":-1.001 "!HYPOTHESIZED_!=_49":-1.001 "!HYPOTHESIZED_n’t-vb_0":-1.001 "!HYPOTHESIZED_card_10":-1.001 "!HYPOTHESIZED_!=_50":-1.001 "!EXPLAINED_poverty-nn_14":1 "!EXPLAINED_as-in_5":1 
 </vector>
 <statistics>
-<time total="61.7264" prepare="1.529" ilp="60.1974" />
+<time total="61.5761" prepare="1.50992" ilp="60.0661" />
 <ilp solution="SubOptimal" variables="6369" constraints="7741" />
 <search-space literals="266" axiom="14" />
 </statistics>
@@ -11865,7 +11860,7 @@ more-adj(e31,x5) ^ us$(e30,x5) ^ card(e29,x5,5000000000) ^ issue-vb(x4,x1,x5,u28
 "!EXPLAINED_S#ABYSS_24":0.6 "!HYPOTHESIZED_card_2":-1.001 "!HYPOTHESIZED_issue-vb_3":-1.001 "!EXPLAINED_of-in_15":1 "!HYPOTHESIZED_help-vb_11":-1.001 "!HYPOTHESIZED_poor-adj_9":-1.001 "!HYPOTHESIZED_globe-nn_18":-1.001 "!HYPOTHESIZED_of-in_15":-1.001 "!EXPLAINED_SS#ABYSS%EXIT_25":0.6 "!HYPOTHESIZED_equal_8":-1.001 "!HYPOTHESIZED_then-rb_4":-1.001 "!HYPOTHESIZED_R#POOR_23":-0.301 "!EXPLAINED_poverty-nn_14":1 "!HYPOTHESIZED_I#ABYSS_30":-0.541 "!HYPOTHESIZED_M#CAUSE-EXIT-CONFINEMENT_39":-0.487 "!HYPOTHESIZED_!=_20":-1.001 "!EXPLAINED_TS#POVERTY_28":0.45 "!HYPOTHESIZED_!=_19":-1.001 "!HYPOTHESIZED_pull-vb_12":-1.001 "!EXPLAINED_I#ABYSS%EXIT_31":0.54 "!HYPOTHESIZED_million-nn_7":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_22":-0.301 "!HYPOTHESIZED_SS#ABYSS%EXIT_25":-0.601 "!HYPOTHESIZED_org_17":-1.001 "!EXPLAINED_poor-adj_9":1 "!HYPOTHESIZED_R#ABYSS-THEME_26":-0.601 "!HYPOTHESIZED_us$_1":-1.001 "!HYPOTHESIZED_poverty-nn_14":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_29":0.45 "!HYPOTHESIZED_around-in_10":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_29":-0.451 "!HYPOTHESIZED_TS#POVERTY_28":-0.451 "!HYPOTHESIZED_grameen-bank-nn_16":-1.001 "!HYPOTHESIZED_I#ABYSS%EXIT_31":-0.541 "!HYPOTHESIZED_since-in_5":-1.001 "!HYPOTHESIZED_R#ABYSS-EXIT-CAUSE_27":-0.601 "!EXPLAINED_pull-vb_12":1 "!HYPOTHESIZED_S#ABYSS_24":-0.601 "!HYPOTHESIZED_out-in_13":-1.001 "!EXPLAINED_out-in_13":1 "!EXPLAINED_I#ABYSS_30":0.54 "!HYPOTHESIZED_TS#POVERTY_21":-0.301 "!HYPOTHESIZED_literally-rb_6":-1.001 "!HYPOTHESIZED_M#CAUSE-RESUME-FUNCTION_38":-0.487 "!HYPOTHESIZED_more-adj_0":-1.001 
 </vector>
 <statistics>
-<time total="0.0660532" prepare="0.060452" ilp="0.00560117" />
+<time total="0.0656936" prepare="0.0600998" ilp="0.00559378" />
 <ilp solution="Optimal" variables="145" constraints="231" />
 <search-space literals="40" axiom="17" />
 </statistics>
@@ -11944,7 +11939,7 @@ thing-nn(e39,x7) ^ equal(e38,x7,x6) ^ work-vb(x5,x6,u36,u37) ^ million-nn(e35,x4
 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_30":-0.451 "!EXPLAINED_S#ABYSS_25":0.6 "!HYPOTHESIZED_lift-vb_14":-1.001 "!HYPOTHESIZED_R#ABYSS-EXIT-CAUSE_28":-0.601 "!HYPOTHESIZED_left-nn_12":-1.001 "!EXPLAINED_of-in_16":1 "!HYPOTHESIZED_thing-nn_0":-1.001 "!HYPOTHESIZED_little-rb_6":-1.001 "!HYPOTHESIZED_to-in_7":-1.001 "!HYPOTHESIZED_not_11":-1.001 "!HYPOTHESIZED_about-in_20":-1.001 "!HYPOTHESIZED_claim-vb_19":-1.001 "!HYPOTHESIZED_of-in_16":-1.001 "!EXPLAINED_lift-vb_14":1 "!HYPOTHESIZED_thing_10":-1.001 "!EXPLAINED_SS#ABYSS%EXIT_26":0.6 "!EXPLAINED_left-nn_22":1 "!EXPLAINED_poverty-nn_15":1 "!HYPOTHESIZED_I#ABYSS_31":-0.541 "!HYPOTHESIZED_want-vb_18":-1.001 "!HYPOTHESIZED_!=_23":-1.001 "!HYPOTHESIZED_of-in_4":-1.001 "!EXPLAINED_I#ABYSS%EXIT_32":0.54 "!HYPOTHESIZED_left-nn_22":-1.001 "!HYPOTHESIZED_work-vb_2":-1.001 "!HYPOTHESIZED_SS#ABYSS%EXIT_26":-0.601 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_ultimately-rb_21":-1.001 "!HYPOTHESIZED_equal_1":-1.001 "!HYPOTHESIZED_for-in_5":-1.001 "!HYPOTHESIZED_R#ABYSS-THEME_27":-0.601 "!HYPOTHESIZED_million-nn_3":-1.001 "!HYPOTHESIZED_about-in_13":-1.001 "!HYPOTHESIZED_poverty-nn_15":-1.001 "!HYPOTHESIZED_M#CAUSE-EXIT-CONFINEMENT_40":-0.487 "!HYPOTHESIZED_TS#POVERTY_29":-0.451 "!HYPOTHESIZED_offer-vb_8":-1.001 "!HYPOTHESIZED_I#ABYSS%EXIT_32":-0.541 "!EXPLAINED_out-in_17":1 "!HYPOTHESIZED_S#ABYSS_25":-0.601 "!EXPLAINED_I#ABYSS_31":0.54 "!HYPOTHESIZED_people-nn_9":-1.001 "!HYPOTHESIZED_M#CAUSE-RESUME-FUNCTION_39":-0.487 "!HYPOTHESIZED_out-in_17":-1.001 
 </vector>
 <statistics>
-<time total="0.0723479" prepare="0.064127" ilp="0.00822091" />
+<time total="0.0794768" prepare="0.0641499" ilp="0.015327" />
 <ilp solution="Optimal" variables="163" constraints="274" />
 <search-space literals="41" axiom="15" />
 </statistics>
@@ -12025,7 +12020,7 @@ not(e10,x2) ^ thing(e22,x5) ^ college-nn(e21,x3) ^ of-in(e20,x4,x3) ^ degree-nn(
 "!EXPLAINED_S#ABYSS_15":0.6 "!HYPOTHESIZED_thing_1":-1.001 "!HYPOTHESIZED_I#ABYSS%EXIT_22":-0.541 "!HYPOTHESIZED_of-in_11":-1.001 "!HYPOTHESIZED_M#CAUSE-RESUME-FUNCTION_29":-0.487 "!HYPOTHESIZED_M#CAUSE-EXIT-CONFINEMENT_30":-0.487 "!HYPOTHESIZED_college-nn_2":-1.001 "!HYPOTHESIZED_get-vb_5":-1.001 "!HYPOTHESIZED_card_7":-1.001 "!HYPOTHESIZED_!=_14":-1.001 "!EXPLAINED_of-in_11":1 "!HYPOTHESIZED_!=_13":-1.001 "!HYPOTHESIZED_I#ABYSS_21":-0.541 "!EXPLAINED_poverty-nn_10":1 "!EXPLAINED_SS#ABYSS%EXIT_16":0.6 "!HYPOTHESIZED_of-in_3":-1.001 "!EXPLAINED_lift-vb_9":1 "!HYPOTHESIZED_degree-nn_4":-1.001 "!HYPOTHESIZED_lift-vb_9":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_20":-0.451 "!HYPOTHESIZED_TS#POVERTY_19":-0.451 "!HYPOTHESIZED_poverty-nn_10":-1.001 "!HYPOTHESIZED_assure-vb_6":-1.001 "!EXPLAINED_I#ABYSS%EXIT_22":0.54 "!HYPOTHESIZED_not_0":-1.001 "!EXPLAINED_I#ABYSS_21":0.54 "!HYPOTHESIZED_S#ABYSS_15":-0.601 "!HYPOTHESIZED_R#ABYSS-THEME_17":-0.601 "!HYPOTHESIZED_out-in_12":-1.001 "!HYPOTHESIZED_thing_8":-1.001 "!HYPOTHESIZED_SS#ABYSS%EXIT_16":-0.601 "!EXPLAINED_out-in_12":1 "!HYPOTHESIZED_R#ABYSS-EXIT-CAUSE_18":-0.601 
 </vector>
 <statistics>
-<time total="0.0558949" prepare="0.050868" ilp="0.00502682" />
+<time total="0.0560551" prepare="0.0510631" ilp="0.00499201" />
 <ilp solution="Optimal" variables="118" constraints="192" />
 <search-space literals="31" axiom="14" />
 </statistics>
@@ -12094,7 +12089,7 @@ thing(e37,x5) ^ people-nn(e36,x2) ^ poor-adj(e35,x2) ^ so-rb(e34,x2) ^ qualify-v
 "!HYPOTHESIZED_I#ABYSS%EXIT_29":-0.541 "!HYPOTHESIZED_S#ABYSS_22":-0.601 "!HYPOTHESIZED_neuter_9":-1.001 "!HYPOTHESIZED_thing_0":-1.001 "!EXPLAINED_S#ABYSS_22":0.6 "!EXPLAINED_of-in_15":1 "!EXPLAINED_TS#POVERTY_26":0.45 "!HYPOTHESIZED_of-in_15":-1.001 "!HYPOTHESIZED_M#CAUSE-RESUME-FUNCTION_36":-0.487 "!EXPLAINED_SS#ABYSS%EXIT_23":0.6 "!HYPOTHESIZED_poor-adj_2":-1.001 "!HYPOTHESIZED_M#CAUSE-EXIT-CONFINEMENT_37":-0.487 "!EXPLAINED_poverty-nn_14":1 "!HYPOTHESIZED_R#POOR_21":-0.301 "!HYPOTHESIZED_harder-rb_17":-1.001 "!HYPOTHESIZED_I#ABYSS_28":-0.541 "!HYPOTHESIZED_SS#ABYSS%EXIT_23":-0.601 "!EXPLAINED_poor-adj_2":1 "!HYPOTHESIZED_assistance-nn_6":-1.001 "!HYPOTHESIZED_able-adj_16":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_27":-0.451 "!HYPOTHESIZED_require-vb_8":-1.001 "!HYPOTHESIZED_pull-vb_12":-1.001 "!EXPLAINED_people-nn_11":1 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_20":-0.301 "!HYPOTHESIZED_TS#POVERTY_19":-0.301 "!HYPOTHESIZED_for-in_7":-1.001 "!EXPLAINED_I#ABYSS_28":0.54 "!HYPOTHESIZED_R#ABYSS-THEME_24":-0.601 "!HYPOTHESIZED_poverty-nn_14":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_27":0.45 "!HYPOTHESIZED_people-nn_1":-1.001 "!HYPOTHESIZED_so-rb_3":-1.001 "!EXPLAINED_I#ABYSS%EXIT_29":0.54 "!HYPOTHESIZED_before-in_5":-1.001 "!HYPOTHESIZED_qualify-vb_4":-1.001 "!HYPOTHESIZED_TS#POVERTY_26":-0.451 "!EXPLAINED_pull-vb_12":1 "!HYPOTHESIZED_R#ABYSS-EXIT-CAUSE_25":-0.601 "!HYPOTHESIZED_out-in_13":-1.001 "!HYPOTHESIZED_people-nn_11":-1.001 "!HYPOTHESIZED_much-rb_18":-1.001 "!EXPLAINED_out-in_13":1 "!HYPOTHESIZED_make-vb_10":-1.001 
 </vector>
 <statistics>
-<time total="0.0686772" prepare="0.063024" ilp="0.00565314" />
+<time total="0.0668299" prepare="0.061209" ilp="0.00562096" />
 <ilp solution="Optimal" variables="142" constraints="229" />
 <search-space literals="38" axiom="18" />
 </statistics>
@@ -12173,7 +12168,7 @@ not(e9,x5) ^ male(e30,x4) ^ mention-vb(x5,x4,u28,u29) ^ statistic-adj(e27,x5) ^ 
 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_33":-0.082 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_30":-0.451 "!EXPLAINED_S#ABYSS_26":0.3 "!HYPOTHESIZED_tim_10":-1.001 "!HYPOTHESIZED_bureau-nn_9":-1.001 "!HYPOTHESIZED_M#CAUSE-CONFINEMENT_35":-0.082 "!HYPOTHESIZED_datum-nn_11":-1.001 "!HYPOTHESIZED_of-in_12":-1.001 "!HYPOTHESIZED_statistic-adj_3":-1.001 "!HYPOTHESIZED_I#ABYSS%DEPTH_32":-0.271 "!HYPOTHESIZED_census-nn_7":-1.001 "!HYPOTHESIZED_tim_8":-1.001 "!HYPOTHESIZED_M#INTENSIFY-CAUSE-CONFINEMENT_37":-0.1225 "!HYPOTHESIZED_SS#ABYSS%DEPTH_27":-0.301 "!HYPOTHESIZED_release-nn_13":-1.001 "!EXPLAINED_poverty-nn_15":1 "!HYPOTHESIZED_I#ABYSS_31":-0.271 "!HYPOTHESIZED_deep-adj_14":-1.001 "!HYPOTHESIZED_!=_22":-1.001 "!HYPOTHESIZED_extent-nn_21":-1.001 "!HYPOTHESIZED_!=_23":-1.001 "!HYPOTHESIZED_among-in_17":-1.001 "!EXPLAINED_I#ABYSS%DEPTH_32":0.27 "!HYPOTHESIZED_of-in_6":-1.001 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_today-nn_5":-1.001 "!HYPOTHESIZED_!=_25":-1.001 "!HYPOTHESIZED_male_1":-1.001 "!EXPLAINED_SS#ABYSS%DEPTH_27":0.3 "!HYPOTHESIZED_poverty-nn_15":-1.001 "!HYPOTHESIZED_from-in_20":-1.001 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION_34":-0.082 "!HYPOTHESIZED_kid-nn_16":-1.001 "!HYPOTHESIZED_one_4":-1.001 "!HYPOTHESIZED_TS#POVERTY_29":-0.451 "!HYPOTHESIZED_R#ABYSS-THEME_28":-0.301 "!HYPOTHESIZED_equal_19":-1.001 "!HYPOTHESIZED_not_0":-1.001 "!HYPOTHESIZED_M#INTENSIFY-CAUSE-NOT-FUNCTION_36":-0.1225 "!EXPLAINED_I#ABYSS_31":0.27 "!HYPOTHESIZED_S#ABYSS_26":-0.301 "!EXPLAINED_deep-adj_14":1 "!HYPOTHESIZED_mention-vb_2":-1.001 "!HYPOTHESIZED_of-in_18":-1.001 
 </vector>
 <statistics>
-<time total="0.0603189" prepare="0.0583229" ilp="0.00199604" />
+<time total="0.0628321" prepare="0.0608561" ilp="0.00197601" />
 <ilp solution="Optimal" variables="145" constraints="167" />
 <search-space literals="38" axiom="16" />
 </statistics>
@@ -12243,7 +12238,7 @@ deep-adj(e49,x10) ^ —-vb(x14,u47,x10,u48) ^ income-nn(e46,x13) ^ half-nn(e45,x
 "!EXPLAINED_I#ABYSS%DEPTH_43":0.27 "!HYPOTHESIZED_share-nn_24":-1.001 "!HYPOTHESIZED_!=_35":-1.001 "!HYPOTHESIZED_record-nn_14":-1.001 "!HYPOTHESIZED_below-in_10":-1.001 "!HYPOTHESIZED_of-in_7":-1.001 "!HYPOTHESIZED_income-nn_2":-1.001 "!HYPOTHESIZED_of-in_9":-1.001 "!HYPOTHESIZED_!=_33":-1.001 "!HYPOTHESIZED_M#INTENSIFY-CAUSE-CONFINEMENT_48":-0.1225 "!HYPOTHESIZED_with-in_11":-1.001 "!EXPLAINED_SS#ABYSS%DEPTH_38":0.3 "!HYPOTHESIZED_poverty-nn_4":-1.001 "!HYPOTHESIZED_to-in_22":-1.001 "!EXPLAINED_S#ABYSS_37":0.3 "!HYPOTHESIZED_go-vb_19":-1.001 "!HYPOTHESIZED_half-nn_3":-1.001 "!HYPOTHESIZED_highest-adj_29":-1.001 "!HYPOTHESIZED_I#ABYSS_42":-0.271 "!HYPOTHESIZED_SS#ABYSS%DEPTH_38":-0.301 "!HYPOTHESIZED_nam_26":-1.001 "!HYPOTHESIZED_deep-adj_0":-1.001 "!HYPOTHESIZED_americans-nn_25":-1.001 "!HYPOTHESIZED_of-in_5":-1.001 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION_45":-0.082 "!HYPOTHESIZED_level-nn_32":-1.001 "!HYPOTHESIZED_I#ABYSS%DEPTH_43":-0.271 "!HYPOTHESIZED_datum-nn_17":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_41":-0.451 "!HYPOTHESIZED_R#ABYSS-THEME_39":-0.301 "!HYPOTHESIZED_TS#POVERTY_40":-0.451 "!HYPOTHESIZED_on-in_15":-1.001 "!HYPOTHESIZED_in-in_12":-1.001 "!HYPOTHESIZED_—-nn_8":-1.001 "!HYPOTHESIZED_!=_36":-1.001 "!HYPOTHESIZED_also-rb_23":-1.001 "!HYPOTHESIZED_—-vb_1":-1.001 "!HYPOTHESIZED_hit-vb_16":-1.001 "!EXPLAINED_deep-adj_0":1 "!HYPOTHESIZED_not_30":-1.001 "!HYPOTHESIZED_t-1975XXXX_21":-1.001 "!EXPLAINED_poverty-nn_4":1 "!HYPOTHESIZED_M#CAUSE-CONFINEMENT_46":-0.082 "!HYPOTHESIZED_S#ABYSS_37":-0.301 "!HYPOTHESIZED_of-in_13":-1.001 "!HYPOTHESIZED_M#INTENSIFY-CAUSE-NOT-FUNCTION_47":-0.1225 "!HYPOTHESIZED_back-rb_20":-1.001 "!HYPOTHESIZED_equal_31":-1.001 "!HYPOTHESIZED_!=_34":-1.001 "!EXPLAINED_I#ABYSS_42":0.27 "!HYPOTHESIZED_with-in_18":-1.001 "!HYPOTHESIZED_line-nn_6":-1.001 "!HYPOTHESIZED_level-nn_27":-1.001 "!HYPOTHESIZED_imp_28":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_44":-0.082 
 </vector>
 <statistics>
-<time total="0.0915232" prepare="0.0856152" ilp="0.00590801" />
+<time total="0.0850778" prepare="0.0823479" ilp="0.00272989" />
 <ilp solution="Optimal" variables="198" constraints="249" />
 <search-space literals="49" axiom="16" />
 </statistics>
@@ -12332,7 +12327,7 @@ thing(e21,x4) ^ thing(e20,x3) ^ of-in(e19,x4,x3) ^ struggle-vb(x2,x4,u17,u18) ^ 
 "!HYPOTHESIZED_thing_0":-1.001 "!HYPOTHESIZED_thing_1":-1.001 "!EXPLAINED_poverty-nn_7":1 "!HYPOTHESIZED_hard-adj_4":-1.001 "!HYPOTHESIZED_of-in_8":-1.001 "!HYPOTHESIZED_I#ABYSS%EXIT_20":-0.541 "!HYPOTHESIZED_!=_12":-1.001 "!HYPOTHESIZED_I#ABYSS_19":-0.541 "!HYPOTHESIZED_!=_11":-1.001 "!EXPLAINED_SS#ABYSS%EXIT_14":0.6 "!HYPOTHESIZED_of-in_2":-1.001 "!HYPOTHESIZED_out-in_6":-1.001 "!EXPLAINED_pull-vb_5":1 "!HYPOTHESIZED_acceptance-nn_9":-1.001 "!HYPOTHESIZED_TS#POVERTY_17":-0.451 "!HYPOTHESIZED_M#CAUSE-EXIT-CONFINEMENT_28":-0.487 "!HYPOTHESIZED_struggle-vb_3":-1.001 "!HYPOTHESIZED_find-vb_10":-1.001 "!EXPLAINED_of-in_8":1 "!EXPLAINED_I#ABYSS%EXIT_20":0.54 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_18":-0.451 "!HYPOTHESIZED_pull-vb_5":-1.001 "!EXPLAINED_out-in_6":1 "!HYPOTHESIZED_R#ABYSS-EXIT-CAUSE_16":-0.601 "!HYPOTHESIZED_M#CAUSE-RESUME-FUNCTION_27":-0.487 "!HYPOTHESIZED_poverty-nn_7":-1.001 "!EXPLAINED_I#ABYSS_19":0.54 "!EXPLAINED_S#ABYSS_13":0.6 "!HYPOTHESIZED_R#ABYSS-THEME_15":-0.601 "!HYPOTHESIZED_SS#ABYSS%EXIT_14":-0.601 "!HYPOTHESIZED_S#ABYSS_13":-0.601 
 </vector>
 <statistics>
-<time total="0.0560491" prepare="0.0496302" ilp="0.00641894" />
+<time total="0.0607851" prepare="0.054424" ilp="0.00636101" />
 <ilp solution="Optimal" variables="115" constraints="200" />
 <search-space literals="29" axiom="14" />
 </statistics>
@@ -12399,7 +12394,7 @@ deep-adj(e23,x3) ^ in-in(e22,x1,x3) ^ nearly-rb(e21,x6) ^ half-nn(e20,x6) ^ scra
 "!HYPOTHESIZED_M#CAUSE-CONFINEMENT_27":-0.082 "!EXPLAINED_I#ABYSS%DEPTH_24":0.27 "!HYPOTHESIZED_half-nn_3":-1.001 "!EXPLAINED_poverty-nn_6":1 "!HYPOTHESIZED_S#ABYSS_18":-0.301 "!HYPOTHESIZED_of-in_10":-1.001 "!HYPOTHESIZED_!=_17":-1.001 "!HYPOTHESIZED_in-in_1":-1.001 "!EXPLAINED_S#ABYSS_18":0.3 "!HYPOTHESIZED_card_13":-1.001 "!HYPOTHESIZED_!=_16":-1.001 "!HYPOTHESIZED_I#ABYSS_23":-0.271 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION_26":-0.082 "!HYPOTHESIZED_card_14":-1.001 "!HYPOTHESIZED_SS#ABYSS%DEPTH_19":-0.301 "!HYPOTHESIZED_below-in_9":-1.001 "!HYPOTHESIZED_M#INTENSIFY-CAUSE-CONFINEMENT_29":-0.1225 "!HYPOTHESIZED_of-in_7":-1.001 "!HYPOTHESIZED_represent-vb_11":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_22":-0.451 "!HYPOTHESIZED_R#ABYSS-THEME_20":-0.301 "!EXPLAINED_SS#ABYSS%DEPTH_19":0.3 "!HYPOTHESIZED_I#ABYSS%DEPTH_24":-0.271 "!HYPOTHESIZED_living-nn_12":-1.001 "!EXPLAINED_deep-adj_0":1 "!HYPOTHESIZED_M#INTENSIFY-CAUSE-NOT-FUNCTION_28":-0.1225 "!HYPOTHESIZED_by-in_5":-1.001 "!HYPOTHESIZED_deep-adj_0":-1.001 "!EXPLAINED_I#ABYSS_23":0.27 "!HYPOTHESIZED_poverty-nn_6":-1.001 "!HYPOTHESIZED_scrape-vb_4":-1.001 "!HYPOTHESIZED_nearly-rb_2":-1.001 "!HYPOTHESIZED_TS#POVERTY_21":-0.451 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_25":-0.082 "!HYPOTHESIZED_people-nn_15":-1.001 "!HYPOTHESIZED_line-nn_8":-1.001 
 </vector>
 <statistics>
-<time total="0.0463431" prepare="0.0444891" ilp="0.00185394" />
+<time total="0.0455019" prepare="0.043541" ilp="0.00196099" />
 <ilp solution="Optimal" variables="110" constraints="130" />
 <search-space literals="30" axiom="16" />
 </statistics>
@@ -12457,7 +12452,7 @@ card(e30,x3,13.5) ^ percent-nn(e29,x3) ^ subset-of(e28,x3,x4) ^ card(e27,x2,10.9
 "!HYPOTHESIZED_M#CAUSE-CONFINEMENT_36":-0.082 "!EXPLAINED_S#ABYSS_27":0.3 "!HYPOTHESIZED_subset-of_10":-1.001 "!HYPOTHESIZED_nam_13":-1.001 "!HYPOTHESIZED_card_0":-1.001 "!HYPOTHESIZED_card_3":-1.001 "!HYPOTHESIZED_I#ABYSS%DEPTH_33":-0.271 "!HYPOTHESIZED_latinos-nn_14":-1.001 "!HYPOTHESIZED_americans-nn_12":-1.001 "!HYPOTHESIZED_african-adj_11":-1.001 "!HYPOTHESIZED_per_15":-1.001 "!EXPLAINED_poverty-nn_17":1 "!HYPOTHESIZED_deep-adj_16":-1.001 "!HYPOTHESIZED_subset-of_2":-1.001 "!HYPOTHESIZED_SS#ABYSS%DEPTH_28":-0.301 "!HYPOTHESIZED_!=_22":-1.001 "!EXPLAINED_I#ABYSS%DEPTH_33":0.27 "!HYPOTHESIZED_!=_23":-1.001 "!HYPOTHESIZED_imp_5":-1.001 "!HYPOTHESIZED_I#ABYSS_32":-0.271 "!HYPOTHESIZED_of-in_6":-1.001 "!EXPLAINED_SS#ABYSS%DEPTH_28":0.3 "!HYPOTHESIZED_!=_26":-1.001 "!HYPOTHESIZED_subset-of_8":-1.001 "!HYPOTHESIZED_subset-of_9":-1.001 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_M#INTENSIFY-CAUSE-CONFINEMENT_38":-0.1225 "!HYPOTHESIZED_!=_25":-1.001 "!HYPOTHESIZED_in-in_18":-1.001 "!HYPOTHESIZED_last-adj_21":-1.001 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION_35":-0.082 "!HYPOTHESIZED_poverty-nn_17":-1.001 "!HYPOTHESIZED_R#ABYSS-THEME_29":-0.301 "!HYPOTHESIZED_respectively-rb_7":-1.001 "!HYPOTHESIZED_percent-nn_4":-1.001 "!HYPOTHESIZED_TS#POVERTY_30":-0.451 "!HYPOTHESIZED_M#INTENSIFY-CAUSE-NOT-FUNCTION_37":-0.1225 "!HYPOTHESIZED_percent-nn_1":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_34":-0.082 "!EXPLAINED_I#ABYSS_32":0.27 "!HYPOTHESIZED_year-nn_19":-1.001 "!HYPOTHESIZED_S#ABYSS_27":-0.301 "!HYPOTHESIZED_in-in_20":-1.001 "!EXPLAINED_deep-adj_16":1 "!EXPLAINED_percent-nn_4":1 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_31":-0.451 
 </vector>
 <statistics>
-<time total="0.0483429" prepare="0.04582" ilp="0.00252295" />
+<time total="0.047195" prepare="0.044776" ilp="0.00241899" />
 <ilp solution="Optimal" variables="165" constraints="186" />
 <search-space literals="39" axiom="16" />
 </statistics>
@@ -12538,7 +12533,7 @@ imp(e18,x3,x10) ^ be-vb(x10,x2,x11,u45) ^ of-in(e44,x8,x2) ^ subconscious-adj(e4
 "!HYPOTHESIZED_sickness-nn_20":-1.001 "!HYPOTHESIZED_person_5":-1.001 "!EXPLAINED_I#CROP%TYPE_39":0.27 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_37":-0.451 "!HYPOTHESIZED_S#CROP_33":-0.301 "!HYPOTHESIZED_crop-nn_16":-1.001 "!HYPOTHESIZED_I#CROP%TYPE_39":-0.271 "!HYPOTHESIZED_of-in_8":-1.001 "!HYPOTHESIZED_imbedded-adj_10":-1.001 "!HYPOTHESIZED_of-in_12":-1.001 "!HYPOTHESIZED_subconscious-adj_3":-1.001 "!HYPOTHESIZED_because-in_14":-1.001 "!HYPOTHESIZED_negative-adj_27":-1.001 "!HYPOTHESIZED_M#OUTCOME_40":-0.487 "!HYPOTHESIZED_neuter_25":-1.001 "!HYPOTHESIZED_person_26":-1.001 "!HYPOTHESIZED_imp_0":-1.001 "!EXPLAINED_poverty-nn_17":1 "!HYPOTHESIZED_person_15":-1.001 "!HYPOTHESIZED_in-in_13":-1.001 "!EXPLAINED_I#CROP_38":0.27 "!HYPOTHESIZED_of-in_2":-1.001 "!HYPOTHESIZED_I#CROP_38":-0.271 "!HYPOTHESIZED_R#CROP_35":-0.301 "!EXPLAINED_SS#CROP%TYPE_34":0.3 "!HYPOTHESIZED_such-adj_7":-1.001 "!HYPOTHESIZED_!=_31":-1.001 "!HYPOTHESIZED_soil-nn_29":-1.001 "!HYPOTHESIZED_!=_30":-1.001 "!HYPOTHESIZED_seed-nn_28":-1.001 "!HYPOTHESIZED_rel_22":-1.001 "!EXPLAINED_crop-nn_16":1 "!HYPOTHESIZED_thought-nn_6":-1.001 "!HYPOTHESIZED_!=_32":-1.001 "!HYPOTHESIZED_become-vb_9":-1.001 "!EXPLAINED_S#CROP_33":0.3 "!HYPOTHESIZED_allow-vb_11":-1.001 "!HYPOTHESIZED_harvest-vb_24":-1.001 "!HYPOTHESIZED_poverty-nn_17":-1.001 "!HYPOTHESIZED_mind-nn_4":-1.001 "!HYPOTHESIZED_SS#CROP%TYPE_34":-0.301 "!HYPOTHESIZED_TS#POVERTY_36":-0.451 "!HYPOTHESIZED_be-vb_1":-1.001 "!HYPOTHESIZED_disharmony-nn_21":-1.001 "!HYPOTHESIZED_of-in_23":-1.001 "!HYPOTHESIZED_subset-of_19":-1.001 "!HYPOTHESIZED_subset-of_18":-1.001 
 </vector>
 <statistics>
-<time total="0.0891442" prepare="0.085427" ilp="0.00371718" />
+<time total="0.0802867" prepare="0.0766919" ilp="0.00359488" />
 <ilp solution="Optimal" variables="183" constraints="320" />
 <search-space literals="41" axiom="16" />
 </statistics>
@@ -12623,7 +12618,7 @@ thing(e23,x4) ^ of-in(e22,x7,x4) ^ subset-of(e21,x6,x7) ^ subset-of(e20,x5,x7) ^
 "!HYPOTHESIZED_I#CROP%TYPE_23":-0.271 "!HYPOTHESIZED_crop-nn_12":-1.001 "!HYPOTHESIZED_thing_0":-1.001 "!EXPLAINED_poverty-nn_6":1 "!EXPLAINED_I#CROP_22":0.27 "!EXPLAINED_SS#CROP%TYPE_20":0.3 "!HYPOTHESIZED_!=_16":-1.001 "!HYPOTHESIZED_nation-nn_13":-1.001 "!HYPOTHESIZED_!=_15":-1.001 "!HYPOTHESIZED_!=_14":-1.001 "!EXPLAINED_S#CROP_19":0.3 "!HYPOTHESIZED_spread-vb_8":-1.001 "!HYPOTHESIZED_of-in_1":-1.001 "!HYPOTHESIZED_subset-of_2":-1.001 "!HYPOTHESIZED_subset-of_3":-1.001 "!HYPOTHESIZED_I#CROP_22":-0.271 "!HYPOTHESIZED_collectively-rb_11":-1.001 "!HYPOTHESIZED_of-in_7":-1.001 "!HYPOTHESIZED_TS#POVERTY_17":-0.451 "!EXPLAINED_crop-nn_12":1 "!HYPOTHESIZED_S#CROP_19":-0.301 "!HYPOTHESIZED_SS#CROP%TYPE_20":-0.301 "!HYPOTHESIZED_R#CROP_21":-0.301 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_18":-0.451 "!EXPLAINED_I#CROP%TYPE_23":0.27 "!HYPOTHESIZED_allow-vb_10":-1.001 "!HYPOTHESIZED_poverty-nn_6":-1.001 "!HYPOTHESIZED_suffocate-vb_9":-1.001 "!HYPOTHESIZED_sorrow-nn_5":-1.001 "!HYPOTHESIZED_sigh-nn_4":-1.001 "!HYPOTHESIZED_M#OUTCOME_24":-0.487 
 </vector>
 <statistics>
-<time total="0.0486019" prepare="0.0469029" ilp="0.00169897" />
+<time total="0.0403039" prepare="0.0387349" ilp="0.00156903" />
 <ilp solution="Optimal" variables="89" constraints="93" />
 <search-space literals="25" axiom="15" />
 </statistics>
@@ -12676,7 +12671,7 @@ poverty-nn(e25,x3) ^ cash-nn(e24,x7) ^ of-in(e23,x8,x7) ^ crop-nn(e22,x8) ^ equa
 "!HYPOTHESIZED_S#CROP_24":-0.301 "!HYPOTHESIZED_!=_17":-1.001 "!HYPOTHESIZED_loc_16":-1.001 "!HYPOTHESIZED_of-in_12":-1.001 "!HYPOTHESIZED_manufactured-adj_10":-1.001 "!EXPLAINED_I#CROP_27":0.27 "!HYPOTHESIZED_M#OUTCOME_29":-0.487 "!HYPOTHESIZED_loc_8":-1.001 "!HYPOTHESIZED_suffering-nn_9":-1.001 "!HYPOTHESIZED_I#CROP%TYPE_28":-0.271 "!EXPLAINED_SS#CROP%TYPE_25":0.3 "!HYPOTHESIZED_I#CROP_27":-0.271 "!HYPOTHESIZED_earth-nn_15":-1.001 "!HYPOTHESIZED_of-in_2":-1.001 "!HYPOTHESIZED_in-in_11":-1.001 "!HYPOTHESIZED_place-nn_14":-1.001 "!EXPLAINED_S#CROP_24":0.3 "!HYPOTHESIZED_imp_5":-1.001 "!HYPOTHESIZED_!=_20":-1.001 "!HYPOTHESIZED_crop-nn_3":-1.001 "!HYPOTHESIZED_!=_21":-1.001 "!HYPOTHESIZED_!=_19":-1.001 "!HYPOTHESIZED_!=_18":-1.001 "!HYPOTHESIZED_cash-nn_1":-1.001 "!HYPOTHESIZED_haiti-nn_7":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_23":-0.451 "!EXPLAINED_crop-nn_3":1 "!HYPOTHESIZED_equal_4":-1.001 "!HYPOTHESIZED_SS#CROP%TYPE_25":-0.301 "!HYPOTHESIZED_R#CROP_26":-0.301 "!HYPOTHESIZED_poverty-nn_0":-1.001 "!EXPLAINED_I#CROP%TYPE_28":0.27 "!HYPOTHESIZED_on-in_6":-1.001 "!HYPOTHESIZED_equal_13":-1.001 "!HYPOTHESIZED_TS#POVERTY_22":-0.451 "!EXPLAINED_poverty-nn_0":1 
 </vector>
 <statistics>
-<time total="0.048744" prepare="0.0465019" ilp="0.00224209" />
+<time total="0.0441558" prepare="0.042222" ilp="0.00193381" />
 <ilp solution="Optimal" variables="118" constraints="129" />
 <search-space literals="30" axiom="15" />
 </statistics>
@@ -12736,7 +12731,7 @@ reflect-vb(x8,x3,x2,u18) ^ simply-rb(e17,x8) ^ rather-rb(e16,x8) ^ neuter(e15,x3
 "!EXPLAINED_poverty-nn_6":1 "!HYPOTHESIZED_of-in_8":-1.001 "!EXPLAINED_SS#PRICE%TYPE_13":0.6 "!HYPOTHESIZED_neuter_3":-1.001 "!HYPOTHESIZED_M#THING-DESIRED_22":-0.6355 "!EXPLAINED_SS#PRICE%TYPE_11":0.45 "!HYPOTHESIZED_simply-rb_1":-1.001 "!HYPOTHESIZED_equal_9":-1.001 "!HYPOTHESIZED_fact-nn_4":-1.001 "!EXPLAINED_I#PRICE_17":0.405 "!HYPOTHESIZED_S#PRICE_10":-0.451 "!HYPOTHESIZED_I#PRICE%TYPE_18":-0.406 "!EXPLAINED_price-nn_5":1 "!HYPOTHESIZED_S#PRICE_12":-0.601 "!HYPOTHESIZED_rather-rb_2":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_16":-0.451 "!HYPOTHESIZED_TS#POVERTY_15":-0.451 "!EXPLAINED_R#PRICE-REWARD_14":0.6 "!HYPOTHESIZED_SS#PRICE%TYPE_11":-0.451 "!EXPLAINED_of-in_8":1 "!EXPLAINED_S#PRICE_12":0.6 "!HYPOTHESIZED_SS#PRICE%TYPE_13":-0.601 "!EXPLAINED_S#PRICE_10":0.45 "!EXPLAINED_I#PRICE%TYPE_18":0.405 "!HYPOTHESIZED_R#PRICE-REWARD_14":-0.601 "!HYPOTHESIZED_peace-nn_7":-1.001 "!HYPOTHESIZED_price-nn_5":-1.001 "!HYPOTHESIZED_I#PRICE_17":-0.406 "!HYPOTHESIZED_poverty-nn_6":-1.001 "!HYPOTHESIZED_M#UNFORTUNATE-CONSEQUENCE-OF-DESIRED-THING_21":-0.6355 "!HYPOTHESIZED_reflect-vb_0":-1.001 
 </vector>
 <statistics>
-<time total="0.146713" prepare="0.058532" ilp="0.088181" />
+<time total="0.136228" prepare="0.054605" ilp="0.0816228" />
 <ilp solution="Optimal" variables="149" constraints="220" />
 <search-space literals="33" axiom="14" />
 </statistics>
@@ -12859,7 +12854,7 @@ poverty-nn(e20,x1) ^ person(e19,x1) ^ pay-vb(x8,x1,x0,u18) ^ hope-nn(e17,x6) ^ s
 "!HYPOTHESIZED_have-vb_8":-1.001 "!HYPOTHESIZED_person_1":-1.001 "!HYPOTHESIZED_subset-of_4":-1.001 "!EXPLAINED_SS#PRICE%TYPE_16":0.45 "!HYPOTHESIZED_subset-of_6":-1.001 "!HYPOTHESIZED_!=_12":-1.001 "!HYPOTHESIZED_price-nn_11":-1.001 "!HYPOTHESIZED_TS#POVERTY_13":-0.451 "!EXPLAINED_I#PRICE_17":0.405 "!HYPOTHESIZED_I#PRICE%TYPE_18":-0.406 "!HYPOTHESIZED_S#PRICE_15":-0.451 "!HYPOTHESIZED_SS#PRICE%TYPE_16":-0.451 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_14":-0.451 "!HYPOTHESIZED_for-in_7":-1.001 "!EXPLAINED_price-nn_11":1 "!EXPLAINED_I#PRICE%TYPE_18":0.405 "!HYPOTHESIZED_M#UNFORTUNATE-CONSEQUENCE_19":-0.73 "!EXPLAINED_S#PRICE_15":0.45 "!HYPOTHESIZED_freedom-nn_5":-1.001 "!HYPOTHESIZED_poverty-nn_0":-1.001 "!HYPOTHESIZED_pay-vb_2":-1.001 "!HYPOTHESIZED_I#PRICE_17":-0.406 "!HYPOTHESIZED_sometimes-rb_9":-1.001 "!EXPLAINED_poverty-nn_0":1 "!HYPOTHESIZED_equal_10":-1.001 "!HYPOTHESIZED_hope-nn_3":-1.001 
 </vector>
 <statistics>
-<time total="0.0253158" prepare="0.0238299" ilp="0.00148582" />
+<time total="0.0250521" prepare="0.023566" ilp="0.00148606" />
 <ilp solution="Optimal" variables="70" constraints="69" />
 <search-space literals="20" axiom="11" />
 </statistics>
@@ -12905,7 +12900,7 @@ poverty-nn(e15,x3) ^ pay-vb(x5,x1,u13,u14) ^ efficient-adj(e12,x4) ^ economy-nn(
 "!HYPOTHESIZED_I#PRICE_13":-0.406 "!HYPOTHESIZED_pay-vb_1":-1.001 "!HYPOTHESIZED_I#PRICE%TYPE_14":-0.406 "!EXPLAINED_I#PRICE%TYPE_14":0.405 "!EXPLAINED_S#PRICE_11":0.45 "!HYPOTHESIZED_M#UNFORTUNATE-CONSEQUENCE_15":-0.73 "!HYPOTHESIZED_economy-nn_3":-1.001 "!EXPLAINED_SS#PRICE%TYPE_12":0.45 "!HYPOTHESIZED_S#PRICE_11":-0.451 "!HYPOTHESIZED_TS#POVERTY_9":-0.451 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_10":-0.451 "!EXPLAINED_poverty-nn_0":1 "!HYPOTHESIZED_price-nn_6":-1.001 "!EXPLAINED_I#PRICE_13":0.405 "!HYPOTHESIZED_for-in_4":-1.001 "!EXPLAINED_price-nn_6":1 "!HYPOTHESIZED_SS#PRICE%TYPE_12":-0.451 "!HYPOTHESIZED_society-nn_8":-1.001 "!HYPOTHESIZED_of-in_7":-1.001 "!HYPOTHESIZED_efficient-adj_2":-1.001 "!HYPOTHESIZED_poverty-nn_0":-1.001 "!HYPOTHESIZED_equal_5":-1.001 
 </vector>
 <statistics>
-<time total="0.0374508" prepare="0.0359819" ilp="0.0014689" />
+<time total="0.0296371" prepare="0.028209" ilp="0.00142813" />
 <ilp solution="Optimal" variables="54" constraints="59" />
 <search-space literals="16" axiom="15" />
 </statistics>
@@ -12945,7 +12940,7 @@ person(e52,x3) ^ arrive-vb(x7,x3,u50,u51) ^ representative-nn(e49,x6) ^ subset-o
 "!HYPOTHESIZED_I#PRICE%TYPE_70":-0.406 "!HYPOTHESIZED_!=_35":-1.001 "!HYPOTHESIZED_person_24":-1.001 "!HYPOTHESIZED_see-vb_30":-1.001 "!HYPOTHESIZED_world-nn_14":-1.001 "!HYPOTHESIZED_unwilling-adj_31":-1.001 "!EXPLAINED_SS#PRICE%TYPE_54":0.45 "!HYPOTHESIZED_of-in_7":-1.001 "!HYPOTHESIZED_south-nn_33":-1.001 "!HYPOTHESIZED_of-in_9":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_52":0.45 "!HYPOTHESIZED_have-vb_26":-1.001 "!EXPLAINED_of-in_17":1 "!HYPOTHESIZED_S#PRICE_43":-0.601 "!HYPOTHESIZED_distort-vb_28":-1.001 "!HYPOTHESIZED_M#THING-DESIRED_100":-0.6355 "!HYPOTHESIZED_of-in_17":-1.001 "!HYPOTHESIZED_price-nn_32":-1.001 "!EXPLAINED_poverty-nn_16":1 "!HYPOTHESIZED_poverty-nn_23":-1.001 "!HYPOTHESIZED_I#PRICE_69":-0.406 "!EXPLAINED_TS#POVERTY_51":0.45 "!HYPOTHESIZED_SS#PRICE%TYPE_54":-0.451 "!HYPOTHESIZED_S#PRICE_53":-0.451 "!HYPOTHESIZED_loc_34":-1.001 "!HYPOTHESIZED_TS#POVERTY_51":-0.451 "!HYPOTHESIZED_wealth-nn_5":-1.001 "!HYPOTHESIZED_imp_25":-1.001 "!HYPOTHESIZED_nam_13":-1.001 "!EXPLAINED_I#PRICE_69":0.405 "!HYPOTHESIZED_third-nn_19":-1.001 "!HYPOTHESIZED_!=_38":-1.001 "!HYPOTHESIZED_contact-nn_29":-1.001 "!HYPOTHESIZED_nam_20":-1.001 "!HYPOTHESIZED_as-in_8":-1.001 "!HYPOTHESIZED_nam_15":-1.001 "!HYPOTHESIZED_short-term-adj_10":-1.001 "!EXPLAINED_price-nn_32":1 "!HYPOTHESIZED_world-nn_21":-1.001 "!HYPOTHESIZED_!=_36":-1.001 "!HYPOTHESIZED_!=_39":-1.001 "!EXPLAINED_SS#PRICE%TYPE_44":0.6 "!HYPOTHESIZED_subset-of_3":-1.001 "!HYPOTHESIZED_subset-of_4":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_50":-0.451 "!EXPLAINED_S#PRICE_43":0.6 "!HYPOTHESIZED_!=_42":-1.001 "!HYPOTHESIZED_in-in_27":-1.001 "!EXPLAINED_R#PRICE-REWARD_45":0.6 "!HYPOTHESIZED_equal_18":-1.001 "!EXPLAINED_I#PRICE%TYPE_70":0.405 "!HYPOTHESIZED_!=_37":-1.001 "!EXPLAINED_poverty-nn_23":1 "!HYPOTHESIZED_nam_22":-1.001 "!HYPOTHESIZED_!=_41":-1.001 "!HYPOTHESIZED_R#PRICE-REWARD_45":-0.601 "!HYPOTHESIZED_TS#POVERTY_49":-0.451 "!HYPOTHESIZED_SS#PRICE%TYPE_44":-0.601 "!HYPOTHESIZED_third-nn_12":-1.001 "!HYPOTHESIZED_success-nn_11":-1.001 "!EXPLAINED_S#PRICE_53":0.45 "!HYPOTHESIZED_person_0":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_52":-0.451 "!HYPOTHESIZED_!=_40":-1.001 "!HYPOTHESIZED_opportunity-nn_6":-1.001 "!HYPOTHESIZED_M#UNFORTUNATE-CONSEQUENCE-OF-DESIRED-THING_99":-0.6355 "!HYPOTHESIZED_poverty-nn_16":-1.001 "!HYPOTHESIZED_arrive-vb_1":-1.001 "!HYPOTHESIZED_representative-nn_2":-1.001 
 </vector>
 <statistics>
-<time total="7.3238" prepare="0.239354" ilp="7.08445" />
+<time total="6.7686" prepare="0.223633" ilp="6.54497" />
 <ilp solution="Optimal" variables="728" constraints="1190" />
 <search-space literals="101" axiom="14" />
 </statistics>
@@ -13705,7 +13700,7 @@ person(e52,x3) ^ arrive-vb(x7,x3,u50,u51) ^ representative-nn(e49,x6) ^ subset-o
 "!EXPLAINED_”-nn_26":1 "!EXPLAINED_S#PRICE_34":0.45 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_33":-0.451 "!EXPLAINED_poverty-nn_4":1 "!HYPOTHESIZED_neuter_28":-1.001 "!HYPOTHESIZED_I#PRICE_38":-0.406 "!HYPOTHESIZED_“-adj_16":-1.001 "!HYPOTHESIZED_thing_6":-1.001 "!HYPOTHESIZED_”-nn_26":-1.001 "!HYPOTHESIZED_subset-of_5":-1.001 "!HYPOTHESIZED_well-rb_20":-1.001 "!HYPOTHESIZED_equal_24":-1.001 "!HYPOTHESIZED_down-rb_13":-1.001 "!HYPOTHESIZED_!=_29":-1.001 "!HYPOTHESIZED_price-nn_17":-1.001 "!HYPOTHESIZED_equal_21":-1.001 "!HYPOTHESIZED_subset-of_3":-1.001 "!HYPOTHESIZED_inflict-vb_9":-1.001 "!HYPOTHESIZED_M#UNFORTUNATE-CONSEQUENCE_42":-0.73 "!HYPOTHESIZED_nam_27":-1.001 "!HYPOTHESIZED_prepare-vb_23":-1.001 "!HYPOTHESIZED_I#PRICE%TYPE_39":-0.406 "!HYPOTHESIZED_worth-adj_18":-1.001 "!HYPOTHESIZED_SS#PRICE%TYPE_35":-0.451 "!HYPOTHESIZED_!=_31":-1.001 "!HYPOTHESIZED_that-in_7":-1.001 "!HYPOTHESIZED_S#PRICE_34":-0.451 "!HYPOTHESIZED_!=_30":-1.001 "!HYPOTHESIZED_rel_22":-1.001 "!HYPOTHESIZED_“-rb_0":-1.001 "!HYPOTHESIZED_deficit-nn_11":-1.001 "!EXPLAINED_I#PRICE%TYPE_39":0.405 "!HYPOTHESIZED_price-nn_25":-1.001 "!HYPOTHESIZED_get-vb_12":-1.001 "!EXPLAINED_I#PRICE_38":0.405 "!EXPLAINED_price-nn_17":1 "!EXPLAINED_price-nn_25":1 "!HYPOTHESIZED_rise-vb_1":-1.001 "!HYPOTHESIZED_TS#POVERTY_32":-0.451 "!HYPOTHESIZED_pay-vb_19":-1.001 "!HYPOTHESIZED_unemployment-nn_2":-1.001 "!EXPLAINED_SS#PRICE%TYPE_35":0.45 "!HYPOTHESIZED_people-nn_10":-1.001 "!HYPOTHESIZED_on-in_14":-1.001 "!HYPOTHESIZED_poverty-nn_4":-1.001 "!HYPOTHESIZED_”-nn_8":-1.001 "!HYPOTHESIZED_subset-of_15":-1.001 
 </vector>
 <statistics>
-<time total="0.063364" prepare="0.0548501" ilp="0.00851393" />
+<time total="0.0607471" prepare="0.052284" ilp="0.00846314" />
 <ilp solution="Optimal" variables="177" constraints="173" />
 <search-space literals="44" axiom="10" />
 </statistics>
@@ -13802,7 +13797,7 @@ imp(e9,e15,e19) ^ poor-adj(e19,x2) ^ all(e18,e19) ^ by-in(e17,e19,x0) ^ then-rb(
 "!EXPLAINED_SS#PRICE%TYPE_24":0.45 "!EXPLAINED_SS#PRICE%TYPE_21":0.6 "!EXPLAINED_poverty-nn_6":1 "!HYPOTHESIZED_universal-adj_5":-1.001 "!EXPLAINED_TS#POVERTY_18":0.45 "!EXPLAINED_S#PRICE_23":0.45 "!HYPOTHESIZED_of-in_8":-1.001 "!HYPOTHESIZED_I#PRICE_29":-0.406 "!HYPOTHESIZED_all_2":-1.001 "!HYPOTHESIZED_R#PRICE-REWARD_22":-0.601 "!EXPLAINED_S#PRICE_20":0.6 "!HYPOTHESIZED_!=_14":-1.001 "!HYPOTHESIZED_per_13":-1.001 "!HYPOTHESIZED_imp_0":-1.001 "!HYPOTHESIZED_then-rb_4":-1.001 "!HYPOTHESIZED_equal_9":-1.001 "!HYPOTHESIZED_price-nn_11":-1.001 "!HYPOTHESIZED_poor-adj_1":-1.001 "!HYPOTHESIZED_person_10":-1.001 "!EXPLAINED_poor-adj_1":1 "!HYPOTHESIZED_SS#PRICE%TYPE_24":-0.451 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_16":-0.301 "!HYPOTHESIZED_TS#POVERTY_15":-0.301 "!HYPOTHESIZED_SS#PRICE%TYPE_21":-0.601 "!HYPOTHESIZED_TS#POVERTY_18":-0.451 "!EXPLAINED_of-in_8":1 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_19":-0.451 "!EXPLAINED_price-nn_11":1 "!HYPOTHESIZED_I#PRICE%TYPE_30":-0.406 "!EXPLAINED_T#ECONOMIC-INEQUALITY_19":0.45 "!HYPOTHESIZED_S#PRICE_20":-0.601 "!HYPOTHESIZED_god-nn_12":-1.001 "!HYPOTHESIZED_virtue-nn_7":-1.001 "!HYPOTHESIZED_S#PRICE_23":-0.451 "!HYPOTHESIZED_by-in_3":-1.001 "!HYPOTHESIZED_poverty-nn_6":-1.001 "!HYPOTHESIZED_R#POOR_17":-0.301 
 </vector>
 <statistics>
-<time total="0.158421" prepare="0.0723169" ilp="0.0861039" />
+<time total="0.161971" prepare="0.0786741" ilp="0.083297" />
 <ilp solution="Optimal" variables="199" constraints="287" />
 <search-space literals="43" axiom="17" />
 </statistics>
@@ -13959,7 +13954,7 @@ or(e15,x5,x9) ^ well-being-nn(e28,x10) ^ have-vb(x9,x2,x10,u27) ^ inequality-nn(
 "!HYPOTHESIZED_!=_18":-1.001 "!HYPOTHESIZED_better-adj_14":-1.001 "!HYPOTHESIZED_!=_21":-1.001 "!HYPOTHESIZED_I#PRICE_47":-0.541 "!HYPOTHESIZED_TS#POVERTY_33":-0.451 "!HYPOTHESIZED_at-in_5":-1.001 "!HYPOTHESIZED_S#PRICE_30":-0.601 "!HYPOTHESIZED_!=_19":-1.001 "!HYPOTHESIZED_S#PRICE_43":-0.451 "!HYPOTHESIZED_of-in_4":-1.001 "!HYPOTHESIZED_R#PRICE-REWARD_32":-0.601 "!HYPOTHESIZED_!=_20":-1.001 "!HYPOTHESIZED_I#PRICE%TYPE_52":-0.541 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_42":-0.451 "!EXPLAINED_I#PRICE%TYPE_52":0.54 "!HYPOTHESIZED_M#UNFORTUNATE-CONSEQUENCE_100":-0.73 "!HYPOTHESIZED_price-nn_16":-1.001 "!HYPOTHESIZED_I#PRICE%TYPE_88":-0.406 "!HYPOTHESIZED_poverty-nn_7":-1.001 "!EXPLAINED_poverty-nn_7":1 "!HYPOTHESIZED_!=_23":-1.001 "!HYPOTHESIZED_equality-nn_6":-1.001 "!HYPOTHESIZED_price-nn_17":-1.001 "!EXPLAINED_TS#WEALTH_AND_SOCIAL_CLASS_41":0.45 "!EXPLAINED_inequality-nn_11":1 "!HYPOTHESIZED_S#PRICE_27":-0.601 "!EXPLAINED_T#ECONOMIC-INEQUALITY_34":0.45 "!EXPLAINED_price-nn_16":1 "!HYPOTHESIZED_or_0":-1.001 "!EXPLAINED_I#PRICE_51":0.54 "!HYPOTHESIZED_!=_22":-1.001 "!HYPOTHESIZED_M#UNFORTUNATE-CONSEQUENCE_93":-1.8235 "!EXPLAINED_SS#PRICE%TYPE_31":0.6 "!HYPOTHESIZED_SS#PRICE%TYPE_31":-0.601 "!HYPOTHESIZED_inequality-nn_11":-1.001 "!HYPOTHESIZED_well-being-nn_1":-1.001 "!HYPOTHESIZED_SS#PRICE%TYPE_28":-0.601 "!EXPLAINED_SS#PRICE%TYPE_28":0.6 "!EXPLAINED_SS#PRICE%TYPE_44":0.45 "!EXPLAINED_S#PRICE_43":0.45 "!EXPLAINED_inequality-nn_3":1 "!HYPOTHESIZED_neuter_15":-1.001 "!EXPLAINED_price-nn_17":1 "!HYPOTHESIZED_I#PRICE_51":-0.541 "!EXPLAINED_T#ECONOMIC-INEQUALITY_42":0.45 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_at-in_13":-1.001 "!EXPLAINED_I#PRICE_47":0.54 "!HYPOTHESIZED_have-vb_2":-1.001 "!EXPLAINED_of-in_12":1 "!EXPLAINED_of-in_4":1 "!EXPLAINED_S#PRICE_30":0.6 "!EXPLAINED_I#PRICE_87":0.405 "!HYPOTHESIZED_SS#PRICE%TYPE_44":-0.451 "!HYPOTHESIZED_inequality-nn_3":-1.001 "!HYPOTHESIZED_TS#WEALTH_AND_SOCIAL_CLASS_25":-0.451 "!HYPOTHESIZED_at-in_9":-1.001 "!EXPLAINED_S#PRICE_27":0.6 "!EXPLAINED_I#PRICE%TYPE_88":0.405 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_26":-0.451 "!HYPOTHESIZED_have-vb_10":-1.001 "!HYPOTHESIZED_R#PRICE-REWARD_29":-0.601 "!EXPLAINED_M#UNFORTUNATE-CONSEQUENCE_93":1.8225 "!HYPOTHESIZED_I#PRICE_87":-0.406 "!HYPOTHESIZED_TS#WEALTH_AND_SOCIAL_CLASS_41":-0.451 "!HYPOTHESIZED_of-in_12":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_34":-0.451 "!HYPOTHESIZED_of-in_8":-1.001 
 </vector>
 <statistics>
-<time total="60.6656" prepare="0.645697" ilp="60.0199" />
+<time total="60.6673" prepare="0.631421" ilp="60.0359" />
 <ilp solution="SubOptimal" variables="2528" constraints="3071" />
 <search-space literals="163" axiom="15" />
 </statistics>
@@ -18031,7 +18026,7 @@ nearly-rb(e48,x8) ^ card(e47,x8,43.6) ^ card(e46,x8,1000000) ^ people-nn(e45,x8)
 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_44":-0.451 "!HYPOTHESIZED_wealthiest-adj_29":-1.001 "!HYPOTHESIZED_country-nn_27":-1.001 "!EXPLAINED_poverty-nn_5":1 "!HYPOTHESIZED_!=_40":-1.001 "!HYPOTHESIZED_!=_41":-1.001 "!HYPOTHESIZED_card_1":-1.001 "!HYPOTHESIZED_!=_42":-1.001 "!HYPOTHESIZED_card_2":-1.001 "!HYPOTHESIZED_annual-adj_7":-1.001 "!HYPOTHESIZED_card_12":-1.001 "!HYPOTHESIZED_of-in_14":-1.001 "!HYPOTHESIZED_for-in_13":-1.001 "!HYPOTHESIZED_card_17":-1.001 "!HYPOTHESIZED_less-adj_10":-1.001 "!HYPOTHESIZED_!=_39":-1.001 "!HYPOTHESIZED_for-in_19":-1.001 "!HYPOTHESIZED_!=_38":-1.001 "!HYPOTHESIZED_!=_35":-1.001 "!HYPOTHESIZED_live-vb_4":-1.001 "!HYPOTHESIZED_!=_34":-1.001 "!HYPOTHESIZED_!=_37":-1.001 "!HYPOTHESIZED_mean-vb_15":-1.001 "!HYPOTHESIZED_imp_9":-1.001 "!HYPOTHESIZED_!=_36":-1.001 "!HYPOTHESIZED_loc_26":-1.001 "!HYPOTHESIZED_united-states-nn_25":-1.001 "!HYPOTHESIZED_rel_23":-1.001 "!HYPOTHESIZED_year-nn_20":-1.001 "!HYPOTHESIZED_income-nn_8":-1.001 "!HYPOTHESIZED_world-nn_33":-1.001 "!HYPOTHESIZED_not_30":-1.001 "!HYPOTHESIZED_equal_6":-1.001 "!HYPOTHESIZED_people-nn_3":-1.001 "!HYPOTHESIZED_TS#POVERTY_43":-0.451 "!HYPOTHESIZED_dollar_11":-1.001 "!HYPOTHESIZED_imp_28":-1.001 "!HYPOTHESIZED_equal_31":-1.001 "!HYPOTHESIZED_in-in_24":-1.001 "!HYPOTHESIZED_nearly-rb_0":-1.001 "!HYPOTHESIZED_in-in_22":-1.001 "!HYPOTHESIZED_in-in_21":-1.001 "!HYPOTHESIZED_country-nn_32":-1.001 "!HYPOTHESIZED_family-nn_16":-1.001 "!HYPOTHESIZED_poverty-nn_5":-1.001 "!HYPOTHESIZED_of-in_18":-1.001 
 </vector>
 <statistics>
-<time total="0.0580158" prepare="0.0548079" ilp="0.00320792" />
+<time total="0.068527" prepare="0.064821" ilp="0.00370598" />
 <ilp solution="Optimal" variables="218" constraints="288" />
 <search-space literals="45" axiom="10" />
 </statistics>
@@ -18123,7 +18118,7 @@ today-nn(e37,x4) ^ of-in(e36,x3,x4) ^ number-nn(e35,x3) ^ subset-of(e34,x0,x10) 
 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_30":-0.451 "!HYPOTHESIZED_equal_16":-1.001 "!HYPOTHESIZED_equal_14":-1.001 "!HYPOTHESIZED_card_19":-1.001 "!EXPLAINED_poverty-nn_7":1 "!HYPOTHESIZED_not_13":-1.001 "!HYPOTHESIZED_card_10":-1.001 "!HYPOTHESIZED_subset-of_5":-1.001 "!HYPOTHESIZED_!=_28":-1.001 "!HYPOTHESIZED_of-in_1":-1.001 "!HYPOTHESIZED_equal_8":-1.001 "!HYPOTHESIZED_card_23":-1.001 "!HYPOTHESIZED_subset-of_3":-1.001 "!HYPOTHESIZED_than-in_15":-1.001 "!HYPOTHESIZED_card_20":-1.001 "!HYPOTHESIZED_live-vb_6":-1.001 "!HYPOTHESIZED_today-nn_0":-1.001 "!HYPOTHESIZED_americans-nn_21":-1.001 "!HYPOTHESIZED_in-in_17":-1.001 "!HYPOTHESIZED_!=_26":-1.001 "!HYPOTHESIZED_nam_22":-1.001 "!HYPOTHESIZED_!=_27":-1.001 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_!=_25":-1.001 "!HYPOTHESIZED_older-adj_4":-1.001 "!HYPOTHESIZED_number-nn_2":-1.001 "!HYPOTHESIZED_estimate-nn_12":-1.001 "!HYPOTHESIZED_TS#POVERTY_29":-0.451 "!HYPOTHESIZED_more-adj_11":-1.001 "!HYPOTHESIZED_show-vb_18":-1.001 "!HYPOTHESIZED_poverty-nn_7":-1.001 "!HYPOTHESIZED_card_9":-1.001 
 </vector>
 <statistics>
-<time total="0.0373998" prepare="0.0341709" ilp="0.0032289" />
+<time total="0.0452332" prepare="0.0426102" ilp="0.00262308" />
 <ilp solution="Optimal" variables="153" constraints="197" />
 <search-space literals="31" axiom="9" />
 </statistics>
@@ -18201,7 +18196,7 @@ point-vb(x13,x6,u63,u64) ^ accord-vb(x12,u60,u61,u62) ^ sponsor-vb(x11,x5,x6,u59
 "!HYPOTHESIZED_roxbury-nn_32":-1.001 "!HYPOTHESIZED_rel_6":-1.001 "!HYPOTHESIZED_!=_46":-1.001 "!HYPOTHESIZED_rel_21":-1.001 "!HYPOTHESIZED_in-in_23":-1.001 "!HYPOTHESIZED_!=_48":-1.001 "!HYPOTHESIZED_point-vb_0":-1.001 "!HYPOTHESIZED_!=_51":-1.001 "!EXPLAINED_poverty-nn_15":1 "!HYPOTHESIZED_percent-nn_11":-1.001 "!HYPOTHESIZED_to-in_24":-1.001 "!HYPOTHESIZED_imp_35":-1.001 "!HYPOTHESIZED_subset-of_7":-1.001 "!HYPOTHESIZED_TS#POVERTY_57":-0.451 "!HYPOTHESIZED_!=_45":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_54":-0.451 "!HYPOTHESIZED_where_9":-1.001 "!HYPOTHESIZED_of-in_17":-1.001 "!HYPOTHESIZED_to-in_3":-1.001 "!HYPOTHESIZED_!=_52":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_58":0.45 "!HYPOTHESIZED_accord-vb_1":-1.001 "!HYPOTHESIZED_study-nn_25":-1.001 "!HYPOTHESIZED_!=_44":-1.001 "!HYPOTHESIZED_cluster-nn_34":-1.001 "!HYPOTHESIZED_poverty-nn_15":-1.001 "!HYPOTHESIZED_loc_29":-1.001 "!HYPOTHESIZED_sponsor-vb_2":-1.001 "!EXPLAINED_TS#POVERTY_57":0.45 "!HYPOTHESIZED_per_33":-1.001 "!HYPOTHESIZED_boston-foundation-nn_26":-1.001 "!HYPOTHESIZED_densest-adj_36":-1.001 "!HYPOTHESIZED_cluster-nn_39":-1.001 "!HYPOTHESIZED_!=_43":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_56":-0.451 "!HYPOTHESIZED_equal_38":-1.001 "!HYPOTHESIZED_TS#POVERTY_53":-0.451 "!HYPOTHESIZED_!=_42":-1.001 "!HYPOTHESIZED_dorchester-nn_28":-1.001 "!HYPOTHESIZED_need-nn_5":-1.001 "!EXPLAINED_TS#POVERTY_55":0.45 "!EXPLAINED_poverty-nn_18":1 "!EXPLAINED_T#ECONOMIC-INEQUALITY_56":0.45 "!EXPLAINED_need-nn_5":1 "!HYPOTHESIZED_childhood-nn_16":-1.001 "!HYPOTHESIZED_concentrated-adj_4":-1.001 "!HYPOTHESIZED_!=_41":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_58":-0.451 "!HYPOTHESIZED_state-nn_40":-1.001 "!HYPOTHESIZED_of-in_13":-1.001 "!HYPOTHESIZED_live-vb_14":-1.001 "!HYPOTHESIZED_loc_27":-1.001 "!HYPOTHESIZED_not_37":-1.001 "!HYPOTHESIZED_loc_31":-1.001 "!HYPOTHESIZED_subset-of_8":-1.001 "!HYPOTHESIZED_TS#POVERTY_55":-0.451 "!HYPOTHESIZED_!=_47":-1.001 "!HYPOTHESIZED_in-in_22":-1.001 "!HYPOTHESIZED_mattapan-nn_30":-1.001 "!HYPOTHESIZED_!=_49":-1.001 "!HYPOTHESIZED_child-nn_12":-1.001 "!HYPOTHESIZED_card_10":-1.001 "!HYPOTHESIZED_!=_50":-1.001 "!HYPOTHESIZED_poverty-nn_18":-1.001 "!HYPOTHESIZED_of-in_20":-1.001 "!HYPOTHESIZED_in-in_19":-1.001 
 </vector>
 <statistics>
-<time total="0.243527" prepare="0.116131" ilp="0.127396" />
+<time total="0.279003" prepare="0.131254" ilp="0.147749" />
 <ilp solution="Optimal" variables="383" constraints="1951" />
 <search-space literals="62" axiom="10" />
 </statistics>
@@ -18336,7 +18331,7 @@ more-adj(e37,x9) ^ card(e36,x9,1) ^ card(e35,x8,3) ^ black-adj(e34,x8) ^ kids—
 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_34":-0.451 "!HYPOTHESIZED_t-XXXXXX31_15":-1.001 "!HYPOTHESIZED_card_1":-1.001 "!HYPOTHESIZED_card_2":-1.001 "!HYPOTHESIZED_youth—live-nn_11":-1.001 "!HYPOTHESIZED_full-adj_6":-1.001 "!HYPOTHESIZED_kid-nn_21":-1.001 "!HYPOTHESIZED_card_7":-1.001 "!EXPLAINED_poverty-nn_12":1 "!HYPOTHESIZED_!=_28":-1.001 "!HYPOTHESIZED_percent-nn_16":-1.001 "!HYPOTHESIZED_kids—a-nn_4":-1.001 "!HYPOTHESIZED_!=_29":-1.001 "!HYPOTHESIZED_life-nn_23":-1.001 "!HYPOTHESIZED_poverty-nn_24":-1.001 "!EXPLAINED_poverty-nn_24":1 "!HYPOTHESIZED_in-in_9":-1.001 "!HYPOTHESIZED_in-in_13":-1.001 "!HYPOTHESIZED_latino-nn_19":-1.001 "!HYPOTHESIZED_of-in_5":-1.001 "!HYPOTHESIZED_topic_27":-1.001 "!HYPOTHESIZED_black-adj_10":-1.001 "!EXPLAINED_percent-nn_16":1 "!HYPOTHESIZED_!=_31":-1.001 "!HYPOTHESIZED_!=_30":-1.001 "!HYPOTHESIZED_loc_20":-1.001 "!EXPLAINED_black-adj_10":1 "!HYPOTHESIZED_!=_32":-1.001 "!HYPOTHESIZED_poverty-nn_12":-1.001 "!HYPOTHESIZED_percent-nn_8":-1.001 "!HYPOTHESIZED_in-in_25":-1.001 "!HYPOTHESIZED_black-adj_3":-1.001 "!HYPOTHESIZED_TS#POVERTY_33":-0.451 "!HYPOTHESIZED_of-in_22":-1.001 "!HYPOTHESIZED_subset-of_17":-1.001 "!HYPOTHESIZED_of-in_26":-1.001 "!HYPOTHESIZED_of-in_18":-1.001 "!HYPOTHESIZED_subset-of_14":-1.001 "!HYPOTHESIZED_more-adj_0":-1.001 
 </vector>
 <statistics>
-<time total="0.0870097" prepare="0.0720768" ilp="0.0149329" />
+<time total="0.0943191" prepare="0.078836" ilp="0.0154831" />
 <ilp solution="Optimal" variables="212" constraints="503" />
 <search-space literals="37" axiom="9" />
 </statistics>
@@ -18429,7 +18424,7 @@ not(e7,x4) ^ card(e19,x6,89) ^ percent-nn(e18,x6) ^ equal(e17,x6,x5) ^ live-vb(x
 "!HYPOTHESIZED_equal_3":-1.001 "!HYPOTHESIZED_percent-nn_2":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_13":-0.451 "!HYPOTHESIZED_have-vb_10":-1.001 "!HYPOTHESIZED_in-in_6":-1.001 "!HYPOTHESIZED_poverty-nn_5":-1.001 "!HYPOTHESIZED_degree-nn_9":-1.001 "!HYPOTHESIZED_college-nn_7":-1.001 "!HYPOTHESIZED_card_1":-1.001 "!HYPOTHESIZED_not_0":-1.001 "!HYPOTHESIZED_therefore-rb_11":-1.001 "!HYPOTHESIZED_of-in_8":-1.001 "!HYPOTHESIZED_live-vb_4":-1.001 "!EXPLAINED_poverty-nn_5":1 "!HYPOTHESIZED_TS#POVERTY_12":-0.451 
 </vector>
 <statistics>
-<time total="0.0199919" prepare="0.0192249" ilp="0.000766993" />
+<time total="0.0231049" prepare="0.022172" ilp="0.000932932" />
 <ilp solution="Optimal" variables="45" constraints="37" />
 <search-space literals="14" axiom="9" />
 </statistics>
@@ -18462,7 +18457,7 @@ card(e27,x7,60) ^ card(e26,x7,1000000) ^ people-nn(e25,x7) ^ half(e24,x6) ^ in-i
 "!HYPOTHESIZED_card_0":-1.001 "!EXPLAINED_poverty-nn_7":1 "!HYPOTHESIZED_card_1":-1.001 "!HYPOTHESIZED_in-in_4":-1.001 "!HYPOTHESIZED_of-in_11":-1.001 "!HYPOTHESIZED_rel_5":-1.001 "!HYPOTHESIZED_extreme-adj_13":-1.001 "!HYPOTHESIZED_thing_10":-1.001 "!HYPOTHESIZED_mexican-adj_16":-1.001 "!HYPOTHESIZED_in-in_8":-1.001 "!EXPLAINED_poverty-nn_14":1 "!HYPOTHESIZED_live-vb_6":-1.001 "!EXPLAINED_live-vb_12":1 "!HYPOTHESIZED_population-nn_17":-1.001 "!HYPOTHESIZED_half_3":-1.001 "!HYPOTHESIZED_!=_19":-1.001 "!HYPOTHESIZED_!=_18":-1.001 "!HYPOTHESIZED_in-in_15":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_21":-0.451 "!HYPOTHESIZED_people-nn_2":-1.001 "!HYPOTHESIZED_poverty-nn_14":-1.001 "!HYPOTHESIZED_live-vb_12":-1.001 "!HYPOTHESIZED_poverty-nn_7":-1.001 "!HYPOTHESIZED_card_9":-1.001 "!HYPOTHESIZED_TS#POVERTY_20":-0.451 
 </vector>
 <statistics>
-<time total="0.0373912" prepare="0.0338571" ilp="0.00353408" />
+<time total="0.0415349" prepare="0.0374579" ilp="0.00407696" />
 <ilp solution="Optimal" variables="114" constraints="98" />
 <search-space literals="24" axiom="9" />
 </statistics>
@@ -18526,7 +18521,7 @@ almost-rb(e34,x4) ^ card(e33,x4,40) ^ cent-nn(e32,x3) ^ per-in(e31,x4,x3) ^ imp(
 "!HYPOTHESIZED_loc_18":-1.001 "!HYPOTHESIZED_maya-nn_17":-1.001 "!HYPOTHESIZED_among-in_20":-1.001 "!HYPOTHESIZED_card_1":-1.001 "!HYPOTHESIZED_of-in_10":-1.001 "!HYPOTHESIZED_card_5":-1.001 "!HYPOTHESIZED_almost-rb_0":-1.001 "!EXPLAINED_poverty-nn_12":1 "!HYPOTHESIZED_proportion-nn_21":-1.001 "!HYPOTHESIZED_subset-of_6":-1.001 "!HYPOTHESIZED_per-in_3":-1.001 "!HYPOTHESIZED_in-in_13":-1.001 "!HYPOTHESIZED_cent-nn_2":-1.001 "!HYPOTHESIZED_!=_22":-1.001 "!HYPOTHESIZED_imp_4":-1.001 "!HYPOTHESIZED_!=_23":-1.001 "!HYPOTHESIZED_even-rb_16":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_26":-0.451 "!HYPOTHESIZED_subset-of_8":-1.001 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_age-vb_9":-1.001 "!EXPLAINED_child-nn_19":1 "!HYPOTHESIZED_child-nn_14":-1.001 "!HYPOTHESIZED_younger-adj_7":-1.001 "!HYPOTHESIZED_poverty-nn_12":-1.001 "!HYPOTHESIZED_child-nn_19":-1.001 "!HYPOTHESIZED_higher-adj_15":-1.001 "!HYPOTHESIZED_TS#POVERTY_25":-0.451 "!HYPOTHESIZED_live-vb_11":-1.001 
 </vector>
 <statistics>
-<time total="0.0323679" prepare="0.0308809" ilp="0.00148702" />
+<time total="0.0358789" prepare="0.0341809" ilp="0.00169802" />
 <ilp solution="Optimal" variables="99" constraints="72" />
 <search-space literals="27" axiom="9" />
 </statistics>
@@ -18578,7 +18573,7 @@ imp(e7,e8,x4) ^ community-nn(e17,x5) ^ in-in(e16,x1,x5) ^ say-vb(x4,x0,x1,u15) ^
 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_13":-0.451 "!HYPOTHESIZED_in-in_2":-1.001 "!HYPOTHESIZED_what_8":-1.001 "!HYPOTHESIZED_imp_0":-1.001 "!EXPLAINED_poverty-nn_4":1 "!HYPOTHESIZED_person_10":-1.001 "!HYPOTHESIZED_say-vb_3":-1.001 "!HYPOTHESIZED_cost-nn_6":-1.001 "!HYPOTHESIZED_neuter_11":-1.001 "!HYPOTHESIZED_--in_7":-1.001 "!HYPOTHESIZED_precisely-rb_9":-1.001 "!HYPOTHESIZED_poverty-nn_4":-1.001 "!HYPOTHESIZED_community-nn_1":-1.001 "!HYPOTHESIZED_TS#POVERTY_12":-0.451 "!HYPOTHESIZED_of-in_5":-1.001 
 </vector>
 <statistics>
-<time total="0.0363972" prepare="0.0356061" ilp="0.000791073" />
+<time total="0.0241032" prepare="0.0231361" ilp="0.000967026" />
 <ilp solution="Optimal" variables="45" constraints="37" />
 <search-space literals="14" axiom="9" />
 </statistics>
@@ -18611,7 +18606,7 @@ child-nn(e24,x3) ^ of-in(e23,x4,x3) ^ poverty-nn(e22,x4) ^ person(e21,x1) ^ imp(
 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_30":-0.451 "!EXPLAINED_poverty-nn_2":1 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_33":-0.451 "!HYPOTHESIZED_child-nn_0":-1.001 "!HYPOTHESIZED_of-in_10":-1.001 "!HYPOTHESIZED_cost-vb_5":-1.001 "!HYPOTHESIZED_person_3":-1.001 "!EXPLAINED_of-in_10":1 "!HYPOTHESIZED_imp_13":-1.001 "!HYPOTHESIZED_child-nn_9":-1.001 "!HYPOTHESIZED_!=_28":-1.001 "!EXPLAINED_poverty-nn_11":1 "!HYPOTHESIZED_thing_17":-1.001 "!HYPOTHESIZED_of-in_1":-1.001 "!HYPOTHESIZED_socially-rb_15":-1.001 "!HYPOTHESIZED_!=_22":-1.001 "!EXPLAINED_of-in_1":1 "!HYPOTHESIZED_imp_4":-1.001 "!HYPOTHESIZED_!=_23":-1.001 "!HYPOTHESIZED_person_12":-1.001 "!HYPOTHESIZED_!=_20":-1.001 "!EXPLAINED_TS#POVERTY_29":0.45 "!HYPOTHESIZED_!=_21":-1.001 "!HYPOTHESIZED_!=_19":-1.001 "!HYPOTHESIZED_!=_26":-1.001 "!HYPOTHESIZED_!=_18":-1.001 "!HYPOTHESIZED_!=_27":-1.001 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_!=_25":-1.001 "!HYPOTHESIZED_poverty-nn_11":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_33":0.45 "!EXPLAINED_R#POOR_35":2.61 "!HYPOTHESIZED_both_16":-1.001 "!HYPOTHESIZED_TS#POVERTY_29":-0.451 "!HYPOTHESIZED_both_7":-1.001 "!HYPOTHESIZED_poverty-nn_2":-1.001 "!HYPOTHESIZED_financially-rb_6":-1.001 "!EXPLAINED_TS#POVERTY_32":0.45 "!HYPOTHESIZED_TS#POVERTY_32":-0.451 "!HYPOTHESIZED_thing_8":-1.001 "!HYPOTHESIZED_R#POOR_34":-1.306 "!HYPOTHESIZED_R#POOR_35":-2.611 "!HYPOTHESIZED_cost-vb_14":-1.001 
 </vector>
 <statistics>
-<time total="0.0653389" prepare="0.0461888" ilp="0.01915" />
+<time total="0.066339" prepare="0.0507369" ilp="0.0156021" />
 <ilp solution="Optimal" variables="152" constraints="132" />
 <search-space literals="36" axiom="9" />
 </statistics>
@@ -18701,7 +18696,7 @@ there-vb(e35,x8) ^ or(e25,e32,e34) ^ other-adj(e34,x12) ^ equal(e33,x8,x12) ^ mi
 "!HYPOTHESIZED_equal_15":-1.001 "!HYPOTHESIZED_at-in_21":-1.001 "!HYPOTHESIZED_elderly-nn_7":-1.001 "!HYPOTHESIZED_of-in_9":-1.001 "!HYPOTHESIZED_of-in_13":-1.001 "!HYPOTHESIZED_child-nn_6":-1.001 "!HYPOTHESIZED_still-rb_11":-1.001 "!EXPLAINED_poverty-nn_17":1 "!HYPOTHESIZED_there-vb_0":-1.001 "!HYPOTHESIZED_!=_23":-1.001 "!HYPOTHESIZED_risk-nn_12":-1.001 "!HYPOTHESIZED_!=_26":-1.001 "!HYPOTHESIZED_subset-of_20":-1.001 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_innocent-adj_5":-1.001 "!HYPOTHESIZED_!=_25":-1.001 "!HYPOTHESIZED_or_1":-1.001 "!HYPOTHESIZED_equal_3":-1.001 "!HYPOTHESIZED_million-nn_4":-1.001 "!HYPOTHESIZED_terrorize-vb_16":-1.001 "!HYPOTHESIZED_poverty-nn_17":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_28":-0.451 "!HYPOTHESIZED_yet-rb_22":-1.001 "!HYPOTHESIZED_other-adj_2":-1.001 "!HYPOTHESIZED_hunger-nn_19":-1.001 "!HYPOTHESIZED_TS#POVERTY_27":-0.451 "!HYPOTHESIZED_subset-of_18":-1.001 "!HYPOTHESIZED_equal_10":-1.001 "!HYPOTHESIZED_rel_8":-1.001 "!HYPOTHESIZED_people-nn_14":-1.001 
 </vector>
 <statistics>
-<time total="0.03845" prepare="0.036725" ilp="0.00172496" />
+<time total="0.044076" prepare="0.042141" ilp="0.00193501" />
 <ilp solution="Optimal" variables="116" constraints="109" />
 <search-space literals="29" axiom="9" />
 </statistics>
@@ -18759,7 +18754,7 @@ poverty-nn(e30,x6) ^ form-nn(e29,x11) ^ terrorism-nn(e28,x10) ^ of-in(e27,x11,x1
 "!HYPOTHESIZED_person_17":-1.001 "!HYPOTHESIZED_of-in_3":-1.001 "!HYPOTHESIZED_thing_12":-1.001 "!HYPOTHESIZED_terrorism-nn_2":-1.001 "!HYPOTHESIZED_TS#POVERTY_19":-0.451 "!HYPOTHESIZED_love-vb_13":-1.001 "!HYPOTHESIZED_of-in_14":-1.001 "!HYPOTHESIZED_neuter_5":-1.001 "!HYPOTHESIZED_of-in_6":-1.001 "!HYPOTHESIZED_equal_4":-1.001 "!HYPOTHESIZED_threaten-vb_15":-1.001 "!EXPLAINED_poverty-nn_0":1 "!HYPOTHESIZED_form-nn_1":-1.001 "!HYPOTHESIZED_life-nn_16":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_20":-0.451 "!HYPOTHESIZED_cause-vb_11":-1.001 "!HYPOTHESIZED_live-vb_8":-1.001 "!HYPOTHESIZED_victim-nn_7":-1.001 "!HYPOTHESIZED_fear-nn_9":-1.001 "!HYPOTHESIZED_!=_18":-1.001 "!HYPOTHESIZED_in-in_10":-1.001 "!HYPOTHESIZED_poverty-nn_0":-1.001 
 </vector>
 <statistics>
-<time total="0.0399721" prepare="0.0384061" ilp="0.00156593" />
+<time total="0.0477509" prepare="0.045938" ilp="0.00181293" />
 <ilp solution="Optimal" variables="84" constraints="89" />
 <search-space literals="21" axiom="9" />
 </statistics>
@@ -18805,7 +18800,7 @@ poverty-nn(e6,x1) ^ economic-adj(e5,x2) ^ terrorism-nn(e4,x2) ^ equal(e3,x1,x2) 
 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_5":-0.451 "!HYPOTHESIZED_TS#POVERTY_4":-0.451 "!HYPOTHESIZED_economic-adj_1":-1.001 "!EXPLAINED_poverty-nn_0":1 "!HYPOTHESIZED_poverty-nn_0":-1.001 "!HYPOTHESIZED_equal_3":-1.001 "!HYPOTHESIZED_terrorism-nn_2":-1.001 
 </vector>
 <statistics>
-<time total="0.00969982" prepare="0.00901294" ilp="0.000686884" />
+<time total="0.011066" prepare="0.010287" ilp="0.000778913" />
 <ilp solution="Optimal" variables="21" constraints="21" />
 <search-space literals="6" axiom="4" />
 </statistics>
@@ -18830,7 +18825,7 @@ say-vb(x4,x2,e18,u31) ^ not(e18,e30) ^ we(e30,x6) ^ clinician-nn(e29,x6) ^ or(e2
 "!EXPLAINED_disease-nn_9":1 "!HYPOTHESIZED_poverty-nn_8":-1.001 "!HYPOTHESIZED_I#DISEASE%TYPE_23":-0.406 "!HYPOTHESIZED_male_14":-1.001 "!HYPOTHESIZED_of-in_11":-1.001 "!HYPOTHESIZED_!=_17":-1.001 "!HYPOTHESIZED_comprehend-vb_13":-1.001 "!HYPOTHESIZED_time-nn_15":-1.001 "!HYPOTHESIZED_say-vb_0":-1.001 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION_25":-0.3655 "!HYPOTHESIZED_we_2":-1.001 "!HYPOTHESIZED_disease-nn_9":-1.001 "!EXPLAINED_SS#DISEASE%TYPE_21":0.45 "!HYPOTHESIZED_temperament-nn_16":-1.001 "!HYPOTHESIZED_perhaps-rb_5":-1.001 "!HYPOTHESIZED_SS#DISEASE%TYPE_21":-0.451 "!HYPOTHESIZED_TS#POVERTY_18":-0.451 "!EXPLAINED_I#DISEASE%TYPE_23":0.405 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_19":-0.451 "!HYPOTHESIZED_I#DISEASE_22":-0.406 "!HYPOTHESIZED_S#DISEASE_20":-0.451 "!HYPOTHESIZED_or_4":-1.001 "!HYPOTHESIZED_clinician-nn_3":-1.001 "!EXPLAINED_I#DISEASE_22":0.405 "!EXPLAINED_S#DISEASE_20":0.45 "!HYPOTHESIZED_have-vb_7":-1.001 "!EXPLAINED_poverty-nn_8":1 "!HYPOTHESIZED_have-vb_6":-1.001 "!HYPOTHESIZED_not_1":-1.001 "!HYPOTHESIZED_society-nn_10":-1.001 "!HYPOTHESIZED_equal_12":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_24":-0.3655 
 </vector>
 <statistics>
-<time total="0.0398769" prepare="0.0380309" ilp="0.00184608" />
+<time total="0.0486441" prepare="0.046694" ilp="0.00195003" />
 <ilp solution="Optimal" variables="91" constraints="89" />
 <search-space literals="26" axiom="16" />
 </statistics>
@@ -18882,7 +18877,7 @@ not(e9,e23) ^ poverty-nn(e23,x1) ^ incurable-adj(e22,x7) ^ cancer-nn(e21,x7) ^ s
 "!HYPOTHESIZED_subset-of_12":-1.001 "!EXPLAINED_treatment-nn_9":1 "!HYPOTHESIZED_subset-of_4":-1.001 "!HYPOTHESIZED_!=_14":-1.001 "!HYPOTHESIZED_vaccination-nn_10":-1.001 "!HYPOTHESIZED_cancer-nn_3":-1.001 "!HYPOTHESIZED_subset-of_7":-1.001 "!EXPLAINED_SS#DISEASE%TREATMENT_22":1 "!HYPOTHESIZED_S#DISEASE_19":-0.451 "!EXPLAINED_SS#DISEASE%TYPE_20":0.45 "!HYPOTHESIZED_condition-nn_5":-1.001 "!HYPOTHESIZED_with-in_11":-1.001 "!EXPLAINED_SS#DISEASE%TYPE_18":0.45 "!EXPLAINED_cancer-nn_3":1 "!HYPOTHESIZED_subset-of_8":-1.001 "!HYPOTHESIZED_SS#DISEASE%TYPE_20":-0.451 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_16":-0.451 "!HYPOTHESIZED_TS#POVERTY_15":-0.451 "!HYPOTHESIZED_S#DISEASE_17":-0.451 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION_30":-0.3655 "!HYPOTHESIZED_SS#DISEASE%TYPE_18":-0.451 "!HYPOTHESIZED_I#DISEASE_23":-0.406 "!HYPOTHESIZED_S#DISEASE_21":-1.001 "!EXPLAINED_S#DISEASE_17":0.45 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_29":-0.3655 "!HYPOTHESIZED_I#DISEASE%TREATMENT_28":-0.901 "!EXPLAINED_I#DISEASE%TYPE_24":0.405 "!EXPLAINED_I#DISEASE_23":0.405 "!EXPLAINED_S#DISEASE_21":1 "!HYPOTHESIZED_know-vb_6":-1.001 "!HYPOTHESIZED_not_0":-1.001 "!HYPOTHESIZED_incurable-adj_2":-1.001 "!HYPOTHESIZED_poverty-nn_1":-1.001 "!HYPOTHESIZED_SS#DISEASE%TREATMENT_22":-1.001 "!EXPLAINED_S#DISEASE_19":0.45 "!HYPOTHESIZED_equal_13":-1.001 "!HYPOTHESIZED_treatment-nn_9":-1.001 "!HYPOTHESIZED_I#DISEASE%TYPE_24":-0.406 "!EXPLAINED_condition-nn_5":1 "!EXPLAINED_poverty-nn_1":1 
 </vector>
 <statistics>
-<time total="0.121819" prepare="0.0646369" ilp="0.0571821" />
+<time total="0.145331" prepare="0.0735011" ilp="0.07183" />
 <ilp solution="Optimal" variables="189" constraints="252" />
 <search-space literals="37" axiom="15" />
 </statistics>
@@ -19011,7 +19006,7 @@ whq(e9,e11,x5) ^ take-vb(x5,x0,x4,u12) ^ amount-adj(e11,x4) ^ money-nn(e10,x4) ^
 "!EXPLAINED_poverty-nn_4":1 "!HYPOTHESIZED_take-vb_1":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_8":-0.451 "!HYPOTHESIZED_R#CURE-PATIENT_12":-0.231 "!EXPLAINED_S#DISEASE_9":0.23 "!HYPOTHESIZED_TS#POVERTY_7":-0.451 "!HYPOTHESIZED_neuter_6":-1.001 "!EXPLAINED_cure-vb_5":1 "!HYPOTHESIZED_money-nn_3":-1.001 "!HYPOTHESIZED_amount-adj_2":-1.001 "!EXPLAINED_R#CURE-AGENT_11":0.23 "!HYPOTHESIZED_cure-vb_5":-1.001 "!HYPOTHESIZED_whq_0":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_17":-0.2632 "!EXPLAINED_I#DISEASE_13":0.207 "!HYPOTHESIZED_I#DISEASE_13":-0.208 "!EXPLAINED_SS#DISEASE%CURE_10":0.23 "!HYPOTHESIZED_S#DISEASE_9":-0.231 "!EXPLAINED_R#CURE-PATIENT_12":0.23 "!EXPLAINED_I#DISEASE%CURE_14":0.207 "!HYPOTHESIZED_I#DISEASE%CURE_14":-0.208 "!HYPOTHESIZED_M#THING-NOT-EXISTING_19":-0.2632 "!HYPOTHESIZED_SS#DISEASE%CURE_10":-0.231 "!HYPOTHESIZED_poverty-nn_4":-1.001 "!HYPOTHESIZED_M#THING-CAUSING-NOT-EXIST_18":-0.2632 "!HYPOTHESIZED_R#CURE-AGENT_11":-0.231 
 </vector>
 <statistics>
-<time total="0.0380471" prepare="0.0302651" ilp="0.00778198" />
+<time total="0.038939" prepare="0.0350831" ilp="0.00385594" />
 <ilp solution="Optimal" variables="73" constraints="140" />
 <search-space literals="20" axiom="12" />
 </statistics>
@@ -19064,7 +19059,7 @@ thing(e30,x8) ^ capitalism-nn(e29,x11) ^ poverty-nn(e28,x10) ^ cure-vb(x9,x11,x1
 "!EXPLAINED_poverty-nn_2":1 "!HYPOTHESIZED_in-in_7":-1.001 "!HYPOTHESIZED_affirm-vb_8":-1.001 "!HYPOTHESIZED_thing_0":-1.001 "!HYPOTHESIZED_R#CURE-AGENT_23":-0.231 "!HYPOTHESIZED_capitalism-nn_1":-1.001 "!HYPOTHESIZED_topmost-adj_15":-1.001 "!HYPOTHESIZED_by-in_10":-1.001 "!HYPOTHESIZED_M#THING-NOT-EXISTING_31":-0.2632 "!EXPLAINED_R#CURE-AGENT_23":0.23 "!HYPOTHESIZED_loc_14":-1.001 "!HYPOTHESIZED_experience-vb_4":-1.001 "!EXPLAINED_cure-vb_3":1 "!HYPOTHESIZED_!=_17":-1.001 "!HYPOTHESIZED_R#CURE-PATIENT_24":-0.231 "!HYPOTHESIZED_america-nn_13":-1.001 "!HYPOTHESIZED_SS#DISEASE%CURE_22":-0.231 "!EXPLAINED_I#DISEASE%CURE_26":0.207 "!HYPOTHESIZED_M#THING-CAUSING-NOT-EXIST_30":-0.2632 "!HYPOTHESIZED_list-vb_6":-1.001 "!HYPOTHESIZED_in-in_11":-1.001 "!EXPLAINED_SS#DISEASE%CURE_22":0.23 "!HYPOTHESIZED_also-rb_12":-1.001 "!HYPOTHESIZED_!=_18":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-EXIST_29":-0.2632 "!HYPOTHESIZED_I#DISEASE_25":-0.208 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_20":-0.451 "!HYPOTHESIZED_TS#POVERTY_19":-0.451 "!HYPOTHESIZED_equal_5":-1.001 "!HYPOTHESIZED_cure-vb_3":-1.001 "!HYPOTHESIZED_S#DISEASE_21":-0.231 "!HYPOTHESIZED_support-nn_9":-1.001 "!EXPLAINED_I#DISEASE_25":0.207 "!EXPLAINED_S#DISEASE_21":0.23 "!HYPOTHESIZED_poverty-nn_2":-1.001 "!HYPOTHESIZED_I#DISEASE%CURE_26":-0.208 "!HYPOTHESIZED_post-nn_16":-1.001 "!EXPLAINED_R#CURE-PATIENT_24":0.23 
 </vector>
 <statistics>
-<time total="0.0439942" prepare="0.0406761" ilp="0.00331807" />
+<time total="0.0505772" prepare="0.0463011" ilp="0.00427604" />
 <ilp solution="Optimal" variables="115" constraints="166" />
 <search-space literals="32" axiom="12" />
 </statistics>
@@ -19131,7 +19126,7 @@ free-adj(e31,x10) ^ people-nn(e30,x10) ^ work-vb(x9,x10,u28,u29) ^ together-rb(e
 "!HYPOTHESIZED_equal_16":-1.001 "!HYPOTHESIZED_poverty-nn_9":-1.001 "!HYPOTHESIZED_in-in_6":-1.001 "!HYPOTHESIZED_I#DISEASE%TREATMENT_32":-0.271 "!HYPOTHESIZED_I#DISEASE%TREATMENT_30":-0.271 "!EXPLAINED_medicine-nn_17":1 "!HYPOTHESIZED_together-rb_3":-1.001 "!EXPLAINED_medicine-nn_14":1 "!EXPLAINED_SS#DISEASE%TREATMENT_24":0.3 "!HYPOTHESIZED_stand-vb_8":-1.001 "!HYPOTHESIZED_R#CURE-AGENT_25":-0.301 "!HYPOTHESIZED_against-in_10":-1.001 "!EXPLAINED_SS#DISEASE%TREATMENT_27":0.3 "!HYPOTHESIZED_imp_15":-1.001 "!HYPOTHESIZED_prosperity-nn_13":-1.001 "!HYPOTHESIZED_free-adj_0":-1.001 "!HYPOTHESIZED_work-vb_4":-1.001 "!HYPOTHESIZED_!=_20":-1.001 "!HYPOTHESIZED_I#DISEASE_29":-0.271 "!HYPOTHESIZED_!=_19":-1.001 "!HYPOTHESIZED_!=_18":-1.001 "!HYPOTHESIZED_work-vb_2":-1.001 "!HYPOTHESIZED_S#DISEASE_26":-0.301 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_22":-0.451 "!HYPOTHESIZED_S#DISEASE_23":-0.301 "!HYPOTHESIZED_equal_7":-1.001 "!HYPOTHESIZED_generate-vb_12":-1.001 "!HYPOTHESIZED_I#DISEASE_31":-0.271 "!EXPLAINED_S#DISEASE_26":0.3 "!HYPOTHESIZED_people-nn_1":-1.001 "!HYPOTHESIZED_competition-nn_5":-1.001 "!EXPLAINED_poverty-nn_9":1 "!HYPOTHESIZED_SS#DISEASE%TREATMENT_27":-0.301 "!EXPLAINED_S#DISEASE_23":0.3 "!HYPOTHESIZED_SS#DISEASE%TREATMENT_24":-0.301 "!HYPOTHESIZED_as-in_11":-1.001 "!HYPOTHESIZED_medicine-nn_14":-1.001 "!HYPOTHESIZED_TS#POVERTY_21":-0.451 "!HYPOTHESIZED_R#CURE-AGENT_28":-0.301 "!HYPOTHESIZED_medicine-nn_17":-1.001 
 </vector>
 <statistics>
-<time total="0.0534911" prepare="0.0514472" ilp="0.00204396" />
+<time total="0.0624189" prepare="0.060183" ilp="0.00223589" />
 <ilp solution="Optimal" variables="132" constraints="152" />
 <search-space literals="33" axiom="13" />
 </statistics>
@@ -19205,7 +19200,7 @@ imp(e21,e40,e41) ^ not(e41,x16) ^ person(e47,x15) ^ treat-vb(x16,x15,x0,u46) ^ i
 "!EXPLAINED_M#THING-CAUSING-NOT-FUNCTION_58":0.3645 "!HYPOTHESIZED_!=_32":-1.001 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION_58":-0.3655 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION_53":-0.3655 "!EXPLAINED_SS#VIOLENCE%TYPE_41":0.45 "!HYPOTHESIZED_rel_21":-1.001 "!HYPOTHESIZED_in-in_23":-1.001 "!EXPLAINED_I#DISEASE_46":0.405 "!HYPOTHESIZED_SS#DISEASE%TYPE_39":-0.451 "!HYPOTHESIZED_SS#VIOLENCE%TYPE_41":-0.451 "!EXPLAINED_S#VIOLENCE_40":0.45 "!HYPOTHESIZED_subset-of_17":-1.001 "!HYPOTHESIZED_S#DISEASE_42":-0.451 "!HYPOTHESIZED_broken-adj_18":-1.001 "!HYPOTHESIZED_I#VIOLENCE%TYPE_49":-0.406 "!HYPOTHESIZED_form-nn_28":-1.001 "!HYPOTHESIZED_R#CURE-AGENT_35":-0.301 "!HYPOTHESIZED_I#DISEASE%TREATMENT_45":-0.271 "!HYPOTHESIZED_I#DISEASE_44":-0.271 "!HYPOTHESIZED_entire-adj_26":-1.001 "!EXPLAINED_disease-nn_9":1 "!EXPLAINED_S#DISEASE_38":0.45 "!HYPOTHESIZED_!=_30":-1.001 "!EXPLAINED_S#DISEASE_42":0.45 "!HYPOTHESIZED_unemployment-nn_11":-1.001 "!HYPOTHESIZED_S#VIOLENCE_40":-0.451 "!HYPOTHESIZED_disease-nn_9":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_52":-0.3655 "!EXPLAINED_I#VIOLENCE_48":0.405 "!EXPLAINED_SS#DISEASE%TREATMENT_34":0.3 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION-FEAR_56":-0.244 "!HYPOTHESIZED_subset-of_12":-1.001 "!EXPLAINED_SS#DISEASE%SYMPTOMS_43":0.45 "!HYPOTHESIZED_!=_31":-1.001 "!EXPLAINED_SS#DISEASE%TYPE_39":0.45 "!EXPLAINED_symptom-nn_29":1 "!HYPOTHESIZED_M#CAUSE-FEAR_55":-0.244 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_54":-0.244 "!HYPOTHESIZED_community-nn_27":-1.001 "!HYPOTHESIZED_equal_25":-1.001 "!EXPLAINED_poverty-nn_8":1 "!EXPLAINED_treat-vb_3":1 "!HYPOTHESIZED_infect-vb_24":-1.001 "!HYPOTHESIZED_fail-vb_15":-1.001 "!HYPOTHESIZED_I#DISEASE%TYPE_47":-0.406 "!EXPLAINED_M#CAUSE-NOT-FUNCTION_57":0.3645 "!HYPOTHESIZED_I#DISEASE_46":-0.406 "!HYPOTHESIZED_equal_10":-1.001 "!EXPLAINED_S#DISEASE_33":0.3 "!HYPOTHESIZED_not_1":-1.001 "!HYPOTHESIZED_person_2":-1.001 "!HYPOTHESIZED_violence-nn_13":-1.001 "!HYPOTHESIZED_symptom-nn_29":-1.001 "!HYPOTHESIZED_poverty-nn_8":-1.001 "!EXPLAINED_violence-nn_13":1 "!EXPLAINED_I#DISEASE%TYPE_47":0.405 "!HYPOTHESIZED_just-rb_6":-1.001 "!HYPOTHESIZED_I#VIOLENCE_48":-0.406 "!HYPOTHESIZED_subset-of_14":-1.001 "!HYPOTHESIZED_of-in_22":-1.001 "!HYPOTHESIZED_I#DISEASE_50":-0.406 "!HYPOTHESIZED_isolation-nn_4":-1.001 "!HYPOTHESIZED_treat-vb_3":-1.001 "!HYPOTHESIZED_then-rb_7":-1.001 "!HYPOTHESIZED_subset-of_20":-1.001 "!HYPOTHESIZED_S#DISEASE_38":-0.451 "!HYPOTHESIZED_S#DISEASE_33":-0.301 "!HYPOTHESIZED_in-in_5":-1.001 "!HYPOTHESIZED_SS#DISEASE%TREATMENT_34":-0.301 "!EXPLAINED_I#DISEASE_50":0.405 "!HYPOTHESIZED_home-nn_19":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_37":-0.451 "!HYPOTHESIZED_TS#POVERTY_36":-0.451 "!HYPOTHESIZED_I#DISEASE%SYMPTOMS_51":-0.406 "!HYPOTHESIZED_school-nn_16":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_57":-0.3655 "!HYPOTHESIZED_imp_0":-1.001 "!EXPLAINED_I#VIOLENCE%TYPE_49":0.405 "!HYPOTHESIZED_SS#DISEASE%SYMPTOMS_43":-0.451 "!EXPLAINED_M#CAUSE-NOT-FUNCTION_52":0.3645 
 </vector>
 <statistics>
-<time total="0.123556" prepare="0.105117" ilp="0.0184388" />
+<time total="0.145577" prepare="0.122673" ilp="0.0229039" />
 <ilp solution="Optimal" variables="251" constraints="310" />
 <search-space literals="59" axiom="24" />
 </statistics>
@@ -19333,7 +19328,7 @@ poverty-nn(e39,x0) ^ crime-nn(e38,x16) ^ certain-adj(e37,x15) ^ degree-nn(e36,x1
 "!EXPLAINED_TS#POVERTY_25":0.45 "!HYPOTHESIZED_S#CRIME_27":-0.451 "!HYPOTHESIZED_neuter_9":-1.001 "!HYPOTHESIZED_crime-nn_1":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_35":-0.301 "!HYPOTHESIZED_TS#POVERTY_34":-0.301 "!HYPOTHESIZED_I#CRIME%PERPETRATOR_45":-0.271 "!EXPLAINED_T#ECONOMIC-INEQUALITY_26":0.45 "!EXPLAINED_TS#POVERTY_34":0.3 "!HYPOTHESIZED_R#POOR_31":-0.301 "!HYPOTHESIZED_R#AGENT_39":-0.301 "!HYPOTHESIZED_S#CRIME_37":-0.301 "!HYPOTHESIZED_equal_16":-1.001 "!EXPLAINED_S#CRIME_37":0.3 "!HYPOTHESIZED_equal_5":-1.001 "!HYPOTHESIZED_TS#POVERTY_25":-0.451 "!EXPLAINED_poverty-nn_0":1 "!HYPOTHESIZED_although-in_6":-1.001 "!HYPOTHESIZED_crime-nn_14":-1.001 "!EXPLAINED_S#CRIME_27":0.45 "!EXPLAINED_poor-adj_13":1 "!HYPOTHESIZED_!=_23":-1.001 "!HYPOTHESIZED_subset-of_19":-1.001 "!HYPOTHESIZED_thing-in_8":-1.001 "!HYPOTHESIZED_male_7":-1.001 "!EXPLAINED_crime-nn_14":1 "!EXPLAINED_crime-nn_1":1 "!EXPLAINED_SS#CRIME%PERPETRATOR_38":0.3 "!HYPOTHESIZED_not-rb_10":-1.001 "!EXPLAINED_SS#CRIME%TYPE_28":0.45 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_30":-0.301 "!HYPOTHESIZED_poor-adj_13":-1.001 "!HYPOTHESIZED_I#CRIME%TYPE_41":-0.406 "!HYPOTHESIZED_a_21":-1.001 "!HYPOTHESIZED_degree-nn_3":-1.001 "!HYPOTHESIZED_SS#CRIME%TYPE_28":-0.451 "!HYPOTHESIZED_R#POOR_36":-0.301 "!EXPLAINED_T#ECONOMIC-INEQUALITY_35":0.3 "!EXPLAINED_criminal-adj_20":1 "!EXPLAINED_R#POOR_36":0.3 "!HYPOTHESIZED_certain-adj_2":-1.001 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_SS#CRIME%PERPETRATOR_38":-0.301 "!HYPOTHESIZED_equal_18":-1.001 "!HYPOTHESIZED_not_12":-1.001 "!EXPLAINED_poor-nn_17":1 "!HYPOTHESIZED_poor-nn_17":-1.001 "!HYPOTHESIZED_poverty-nn_0":-1.001 "!HYPOTHESIZED_I#CRIME_44":-0.271 "!HYPOTHESIZED_subset-of_15":-1.001 "!HYPOTHESIZED_criminal-adj_20":-1.001 "!HYPOTHESIZED_TS#POVERTY_29":-0.301 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_26":-0.451 "!HYPOTHESIZED_in-in_22":-1.001 "!HYPOTHESIZED_say-vb_11":-1.001 "!HYPOTHESIZED_to-in_4":-1.001 
 </vector>
 <statistics>
-<time total="0.148186" prepare="0.0888839" ilp="0.0593021" />
+<time total="0.172742" prepare="0.105005" ilp="0.0677371" />
 <ilp solution="Optimal" variables="239" constraints="381" />
 <search-space literals="50" axiom="18" />
 </statistics>
@@ -19477,7 +19472,7 @@ person(e40,x2) ^ poverty-nn(e39,x16) ^ crime-nn(e38,x17) ^ equal(e37,x16,x17) ^ 
 "!HYPOTHESIZED_SS#CRIME%TYPE_30":-0.451 "!EXPLAINED_I#CRIME%TYPE_32":0.405 "!EXPLAINED_I#CRIME_31":0.405 "!EXPLAINED_crime-nn_2":1 "!EXPLAINED_S#CRIME_29":0.45 "!HYPOTHESIZED_person_0":-1.001 "!HYPOTHESIZED_convince-vb_12":-1.001 "!HYPOTHESIZED_thing-nn_10":-1.001 "!HYPOTHESIZED_of-in_16":-1.001 "!HYPOTHESIZED_thing-nn_15":-1.001 "!HYPOTHESIZED_cannot-vb_4":-1.001 "!HYPOTHESIZED_in-in_9":-1.001 "!HYPOTHESIZED_time-nn_6":-1.001 "!HYPOTHESIZED_person_17":-1.001 "!EXPLAINED_SS#CRIME%TYPE_30":0.45 "!HYPOTHESIZED_person_11":-1.001 "!HYPOTHESIZED_!=_23":-1.001 "!HYPOTHESIZED_I#CRIME%TYPE_32":-0.406 "!HYPOTHESIZED_!=_26":-1.001 "!HYPOTHESIZED_amount-nn_13":-1.001 "!HYPOTHESIZED_I#CRIME_31":-0.406 "!HYPOTHESIZED_!=_24":-1.001 "!HYPOTHESIZED_subset-of_21":-1.001 "!HYPOTHESIZED_!=_25":-1.001 "!HYPOTHESIZED_equal_3":-1.001 "!HYPOTHESIZED_crime-nn_2":-1.001 "!HYPOTHESIZED_short-adj_5":-1.001 "!HYPOTHESIZED_S#CRIME_29":-0.451 "!HYPOTHESIZED_like-vb_20":-1.001 "!HYPOTHESIZED_M#AGAINST-SOCIETY-ACTION_33":-0.7381 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_28":-0.451 "!HYPOTHESIZED_equal_19":-1.001 "!HYPOTHESIZED_TS#POVERTY_27":-0.451 "!HYPOTHESIZED_show-vb_18":-1.001 "!HYPOTHESIZED_poverty-nn_1":-1.001 "!HYPOTHESIZED_hope-nn_7":-1.001 "!HYPOTHESIZED_of-in_22":-1.001 "!EXPLAINED_thing-nn_15":1 "!HYPOTHESIZED_rel_8":-1.001 "!HYPOTHESIZED_subset-of_14":-1.001 "!EXPLAINED_poverty-nn_1":1 
 </vector>
 <statistics>
-<time total="0.0563769" prepare="0.0525088" ilp="0.0038681" />
+<time total="0.07324" prepare="0.0687852" ilp="0.00445485" />
 <ilp solution="Optimal" variables="156" constraints="279" />
 <search-space literals="34" axiom="17" />
 </statistics>
@@ -19549,7 +19544,7 @@ further-adj(e67,x21) ^ note-nn(e66,x21) ^ refer-vb(x20,x21,u64,u65) ^ thing(e63,
 "!HYPOTHESIZED_loc_40":-1.001 "!HYPOTHESIZED_I#CRIME%TYPE_63":-0.406 "!HYPOTHESIZED_ostentation-nn_19":-1.001 "!HYPOTHESIZED_!=_46":-1.001 "!HYPOTHESIZED_refer-vb_2":-1.001 "!HYPOTHESIZED_between-in_25":-1.001 "!HYPOTHESIZED_!=_48":-1.001 "!HYPOTHESIZED_subset-of_22":-1.001 "!HYPOTHESIZED_!=_51":-1.001 "!HYPOTHESIZED_of-in_7":-1.001 "!HYPOTHESIZED_SS#CRIME%TYPE_61":-0.451 "!HYPOTHESIZED_nam_44":-1.001 "!HYPOTHESIZED_fact-nn_28":-1.001 "!HYPOTHESIZED_journalist-nn_13":-1.001 "!HYPOTHESIZED_!=_45":-1.001 "!HYPOTHESIZED_subset-of_24":-1.001 "!HYPOTHESIZED_!=_52":-1.001 "!HYPOTHESIZED_M#AGAINST-SOCIETY-ACTION_64":-0.7381 "!EXPLAINED_TS#POVERTY_58":0.45 "!HYPOTHESIZED_subset-of_18":-1.001 "!HYPOTHESIZED_east-nn_34":-1.001 "!HYPOTHESIZED_hyne-vb_16":-1.001 "!HYPOTHESIZED_”-nn_43":-1.001 "!HYPOTHESIZED_TS#POVERTY_58":-0.451 "!EXPLAINED_penury-nn_17":1 "!EXPLAINED_crime-nn_41":1 "!HYPOTHESIZED_TS#POVERTY_56":-0.451 "!HYPOTHESIZED_between-in_23":-1.001 "!HYPOTHESIZED_gap-nn_33":-1.001 "!HYPOTHESIZED_I#CRIME_62":-0.406 "!HYPOTHESIZED_writer-nn_11":-1.001 "!HYPOTHESIZED_!=_54":-1.001 "!HYPOTHESIZED_!=_53":-1.001 "!HYPOTHESIZED_crime-nn_41":-1.001 "!EXPLAINED_T#ECONOMIC-INEQUALITY_59":0.45 "!HYPOTHESIZED_time-nn_42":-1.001 "!HYPOTHESIZED_subset-of_12":-1.001 "!EXPLAINED_”-nn_43":1 "!HYPOTHESIZED_loc_35":-1.001 "!HYPOTHESIZED_poverty-nn_6":-1.001 "!EXPLAINED_poverty-nn_6":1 "!HYPOTHESIZED_nam_30":-1.001 "!HYPOTHESIZED_further-adj_0":-1.001 "!HYPOTHESIZED_!=_55":-1.001 "!EXPLAINED_S#CRIME_60":0.45 "!HYPOTHESIZED_S#CRIME_60":-0.451 "!HYPOTHESIZED_loc_38":-1.001 "!HYPOTHESIZED_end-nn_36":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_57":-0.451 "!HYPOTHESIZED_as-in_5":-1.001 "!HYPOTHESIZED_subset-of_21":-1.001 "!HYPOTHESIZED_unavoidable-adj_26":-1.001 "!HYPOTHESIZED_extreme-adj_32":-1.001 "!HYPOTHESIZED_of-in_14":-1.001 "!HYPOTHESIZED_penury-nn_17":-1.001 "!HYPOTHESIZED_socially-rb_9":-1.001 "!HYPOTHESIZED_social-adj_27":-1.001 "!EXPLAINED_SS#CRIME%TYPE_61":0.45 "!HYPOTHESIZED_london-nn_37":-1.001 "!EXPLAINED_I#CRIME_62":0.405 "!HYPOTHESIZED_note-nn_1":-1.001 "!HYPOTHESIZED_”-nn_29":-1.001 "!HYPOTHESIZED_subset-of_15":-1.001 "!HYPOTHESIZED_conscious-adj_10":-1.001 "!HYPOTHESIZED_equal_31":-1.001 "!HYPOTHESIZED_west-end-nn_39":-1.001 "!HYPOTHESIZED_!=_47":-1.001 "!HYPOTHESIZED_thing_3":-1.001 "!EXPLAINED_I#CRIME%TYPE_63":0.405 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_59":-0.451 "!HYPOTHESIZED_!=_49":-1.001 "!HYPOTHESIZED_!=_50":-1.001 "!HYPOTHESIZED_“-vb_8":-1.001 "!HYPOTHESIZED_to-in_4":-1.001 "!HYPOTHESIZED_of-in_20":-1.001 
 </vector>
 <statistics>
-<time total="0.118838" prepare="0.106574" ilp="0.0122638" />
+<time total="0.134834" prepare="0.121789" ilp="0.0130451" />
 <ilp solution="Optimal" variables="343" constraints="839" />
 <search-space literals="65" axiom="18" />
 </statistics>
@@ -19691,7 +19686,7 @@ powerful-adj(e25,x8) ^ indictment-nn(e24,x8) ^ racial-adj(e23,x6) ^ discriminati
 "!EXPLAINED_SS#CRIME%TYPE_21":0.45 "!HYPOTHESIZED_indictment-nn_1":-1.001 "!EXPLAINED_I#CRIME%TYPE_23":0.405 "!HYPOTHESIZED_in-in_7":-1.001 "!EXPLAINED_poverty-nn_5":1 "!HYPOTHESIZED_of-in_10":-1.001 "!HYPOTHESIZED_of-in_11":-1.001 "!HYPOTHESIZED_!=_17":-1.001 "!HYPOTHESIZED_of-in_8":-1.001 "!HYPOTHESIZED_!=_16":-1.001 "!HYPOTHESIZED_subset-of_4":-1.001 "!EXPLAINED_S#CRIME_20":0.45 "!HYPOTHESIZED_powerful-adj_0":-1.001 "!EXPLAINED_crime-nn_15":1 "!HYPOTHESIZED_iniquity-nn_14":-1.001 "!HYPOTHESIZED_I#CRIME_22":-0.406 "!HYPOTHESIZED_today-nn_6":-1.001 "!HYPOTHESIZED_discrimination-nn_3":-1.001 "!HYPOTHESIZED_subset-of_9":-1.001 "!HYPOTHESIZED_TS#POVERTY_18":-0.451 "!EXPLAINED_I#CRIME_22":0.405 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_19":-0.451 "!HYPOTHESIZED_I#CRIME%TYPE_23":-0.406 "!HYPOTHESIZED_crime-nn_15":-1.001 "!HYPOTHESIZED_racial-adj_2":-1.001 "!HYPOTHESIZED_S#CRIME_20":-0.451 "!HYPOTHESIZED_M#AGAINST-SOCIETY-ACTION_24":-0.7381 "!HYPOTHESIZED_SS#CRIME%TYPE_21":-0.451 "!HYPOTHESIZED_equal_12":-1.001 "!HYPOTHESIZED_poverty-nn_5":-1.001 "!HYPOTHESIZED_more-rb_13":-1.001 
 </vector>
 <statistics>
-<time total="0.06037" prepare="0.058126" ilp="0.002244" />
+<time total="0.065522" prepare="0.0628939" ilp="0.00262809" />
 <ilp solution="Optimal" variables="107" constraints="147" />
 <search-space literals="25" axiom="17" />
 </statistics>
@@ -19748,7 +19743,7 @@ poverty-nn(e14,x3) ^ violence-nn(e13,x4) ^ of-in(e12,x0,x4) ^ equal(e11,x3,x0) ^
 "!EXPLAINED_I#VIOLENCE%TYPE_17":0.405 "!HYPOTHESIZED_form-nn_4":-1.001 "!HYPOTHESIZED_SS#VIOLENCE%TYPE_15":-0.451 "!HYPOTHESIZED_I#VIOLENCE_16":-0.406 "!HYPOTHESIZED_!=_11":-1.001 "!HYPOTHESIZED_form-nn_9":-1.001 "!HYPOTHESIZED_!=_10":-1.001 "!HYPOTHESIZED_equal_8":-1.001 "!HYPOTHESIZED_TS#POVERTY_12":-0.451 "!HYPOTHESIZED_of-in_2":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_13":-0.451 "!HYPOTHESIZED_imp_5":-1.001 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION-FEAR_20":-0.244 "!HYPOTHESIZED_equal_3":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_18":-0.244 "!HYPOTHESIZED_not_7":-1.001 "!HYPOTHESIZED_violence-nn_1":-1.001 "!HYPOTHESIZED_S#VIOLENCE_14":-0.451 "!HYPOTHESIZED_M#CAUSE-FEAR_19":-0.244 "!EXPLAINED_I#VIOLENCE_16":0.405 "!EXPLAINED_S#VIOLENCE_14":0.45 "!EXPLAINED_SS#VIOLENCE%TYPE_15":0.45 "!EXPLAINED_violence-nn_1":1 "!HYPOTHESIZED_poverty-nn_0":-1.001 "!HYPOTHESIZED_worst-adj_6":-1.001 "!HYPOTHESIZED_I#VIOLENCE%TYPE_17":-0.406 "!EXPLAINED_poverty-nn_0":1 
 </vector>
 <statistics>
-<time total="0.029494" prepare="0.027771" ilp="0.00172305" />
+<time total="0.0373101" prepare="0.035356" ilp="0.00195408" />
 <ilp solution="Optimal" variables="80" constraints="97" />
 <search-space literals="21" axiom="13" />
 </statistics>
@@ -19797,7 +19792,7 @@ of-in(e43,x5,x13) ^ society-nn(e42,x5) ^ country-nn(e41,x10) ^ not(e39,e40) ^ eq
 "!HYPOTHESIZED_M#CAUSE-FEAR_43":-0.244 "!EXPLAINED_I#VIOLENCE_38":0.405 "!EXPLAINED_violence-nn_21":1 "!HYPOTHESIZED_I#VIOLENCE%TYPE_41":-0.406 "!EXPLAINED_SS#VIOLENCE%TYPE_37":0.45 "!HYPOTHESIZED_S#VIOLENCE_36":-0.451 "!HYPOTHESIZED_violence-nn_21":-1.001 "!HYPOTHESIZED_policy-nn_18":-1.001 "!HYPOTHESIZED_violence-nn_26":-1.001 "!EXPLAINED_S#VIOLENCE_36":0.45 "!HYPOTHESIZED_goal-nn_20":-1.001 "!HYPOTHESIZED_society-nn_1":-1.001 "!EXPLAINED_I#VIOLENCE_40":0.405 "!HYPOTHESIZED_of-in_19":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_42":-0.244 "!HYPOTHESIZED_TS#POVERTY_32":-0.451 "!HYPOTHESIZED_!=_29":-1.001 "!HYPOTHESIZED_!=_30":-1.001 "!HYPOTHESIZED_SS#VIOLENCE%TYPE_35":-0.451 "!HYPOTHESIZED_country-nn_2":-1.001 "!HYPOTHESIZED_not_24":-1.001 "!EXPLAINED_SS#VIOLENCE%TYPE_35":0.45 "!HYPOTHESIZED_S#VIOLENCE_34":-0.451 "!HYPOTHESIZED_of-in_16":-1.001 "!HYPOTHESIZED_peaceful-adj_8":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_33":-0.451 "!HYPOTHESIZED_!=_28":-1.001 "!HYPOTHESIZED_equal_4":-1.001 "!HYPOTHESIZED_!=_31":-1.001 "!HYPOTHESIZED_thing_6":-1.001 "!EXPLAINED_violence-nn_26":1 "!HYPOTHESIZED_I#VIOLENCE%TYPE_39":-0.406 "!HYPOTHESIZED_recognize-vb_13":-1.001 "!HYPOTHESIZED_equal_25":-1.001 "!HYPOTHESIZED_foreign-adj_17":-1.001 "!EXPLAINED_M#THING-CAUSING-NOT-FUNCTION-FEAR_47":0.486 "!HYPOTHESIZED_SS#VIOLENCE%TYPE_37":-0.451 "!HYPOTHESIZED_into-in_10":-1.001 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION-FEAR_47":-0.487 "!HYPOTHESIZED_be-vb_14":-1.001 "!HYPOTHESIZED_person_15":-1.001 "!EXPLAINED_M#CAUSE-NOT-FUNCTION_45":0.486 "!EXPLAINED_poverty-nn_11":1 "!EXPLAINED_M#CAUSE-FEAR_46":0.486 "!HYPOTHESIZED_M#CAUSE-FEAR_46":-0.487 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION-FEAR_44":-0.244 "!EXPLAINED_I#VIOLENCE%TYPE_41":0.405 "!HYPOTHESIZED_help-vb_5":-1.001 "!HYPOTHESIZED_transform-vb_7":-1.001 "!HYPOTHESIZED_imp_22":-1.001 "!HYPOTHESIZED_greatest-adj_23":-1.001 "!HYPOTHESIZED_!=_27":-1.001 "!HYPOTHESIZED_of-in_0":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_45":-0.487 "!HYPOTHESIZED_I#VIOLENCE_40":-0.406 "!HYPOTHESIZED_equal_12":-1.001 "!EXPLAINED_S#VIOLENCE_34":0.45 "!HYPOTHESIZED_not_3":-1.001 "!EXPLAINED_I#VIOLENCE%TYPE_39":0.405 "!HYPOTHESIZED_poverty-nn_11":-1.001 "!HYPOTHESIZED_entity-nn_9":-1.001 "!HYPOTHESIZED_I#VIOLENCE_38":-0.406 
 </vector>
 <statistics>
-<time total="0.0860672" prepare="0.081609" ilp="0.00445819" />
+<time total="0.089231" prepare="0.083946" ilp="0.00528502" />
 <ilp solution="Optimal" variables="201" constraints="231" />
 <search-space literals="48" axiom="13" />
 </statistics>
@@ -19906,7 +19901,7 @@ because-in(e12,e11,e7) ^ poverty-nn(e11,x5) ^ slow-adj(e10,x6) ^ violence-nn(e9,
 "!EXPLAINED_poverty-nn_1":1 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION-FEAR_14":-0.244 "!EXPLAINED_violence-nn_3":1 "!HYPOTHESIZED_I#VIOLENCE_10":-0.406 "!HYPOTHESIZED_TS#POVERTY_6":-0.451 "!HYPOTHESIZED_event_5":-1.001 "!HYPOTHESIZED_slow-adj_2":-1.001 "!HYPOTHESIZED_violence-nn_3":-1.001 "!HYPOTHESIZED_poverty-nn_1":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_12":-0.244 "!HYPOTHESIZED_equal_4":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_7":-0.451 "!HYPOTHESIZED_S#VIOLENCE_8":-0.451 "!HYPOTHESIZED_because-in_0":-1.001 "!EXPLAINED_S#VIOLENCE_8":0.45 "!EXPLAINED_I#VIOLENCE%TYPE_11":0.405 "!HYPOTHESIZED_I#VIOLENCE%TYPE_11":-0.406 "!EXPLAINED_I#VIOLENCE_10":0.405 "!HYPOTHESIZED_SS#VIOLENCE%TYPE_9":-0.451 "!HYPOTHESIZED_M#CAUSE-FEAR_13":-0.244 "!EXPLAINED_SS#VIOLENCE%TYPE_9":0.45 
 </vector>
 <statistics>
-<time total="0.0248017" prepare="0.0232549" ilp="0.00154686" />
+<time total="0.0218499" prepare="0.0201519" ilp="0.00169802" />
 <ilp solution="Optimal" variables="53" constraints="78" />
 <search-space literals="15" axiom="8" />
 </statistics>
@@ -19945,7 +19940,7 @@ poverty-nn(e31,x0) ^ person(e30,x0) ^ neuter(e29,x0) ^ structural-adj(e28,x2) ^ 
 "!HYPOTHESIZED_part-nn_12":-1.001 "!EXPLAINED_SS#VIOLENCE%TYPE_27":0.45 "!HYPOTHESIZED_person_6":-1.001 "!HYPOTHESIZED_person_1":-1.001 "!HYPOTHESIZED_everyday-adj_10":-1.001 "!HYPOTHESIZED_see-vb_9":-1.001 "!HYPOTHESIZED_neuter_2":-1.001 "!HYPOTHESIZED_of-in_14":-1.001 "!HYPOTHESIZED_I#VIOLENCE%TYPE_29":-0.406 "!HYPOTHESIZED_accept-vb_11":-1.001 "!HYPOTHESIZED_neuter_7":-1.001 "!HYPOTHESIZED_when_18":-1.001 "!HYPOTHESIZED_person_8":-1.001 "!HYPOTHESIZED_equal_20":-1.001 "!HYPOTHESIZED_reality-nn_16":-1.001 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION-FEAR_32":-0.244 "!HYPOTHESIZED_!=_22":-1.001 "!HYPOTHESIZED_!=_23":-1.001 "!HYPOTHESIZED_I#VIOLENCE_28":-0.406 "!HYPOTHESIZED_in-in_17":-1.001 "!HYPOTHESIZED_!=_21":-1.001 "!HYPOTHESIZED_destiny-nn_13":-1.001 "!HYPOTHESIZED_cause-vb_15":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_25":-0.451 "!EXPLAINED_I#VIOLENCE_28":0.405 "!HYPOTHESIZED_which_5":-1.001 "!HYPOTHESIZED_structural-adj_3":-1.001 "!HYPOTHESIZED_M#CAUSE-FEAR_31":-0.244 "!HYPOTHESIZED_S#VIOLENCE_26":-0.451 "!EXPLAINED_violence-nn_4":1 "!HYPOTHESIZED_violence-nn_4":-1.001 "!EXPLAINED_S#VIOLENCE_26":0.45 "!HYPOTHESIZED_SS#VIOLENCE%TYPE_27":-0.451 "!EXPLAINED_I#VIOLENCE%TYPE_29":0.405 "!HYPOTHESIZED_poverty-nn_0":-1.001 "!HYPOTHESIZED_TS#POVERTY_24":-0.451 "!HYPOTHESIZED_consider-vb_19":-1.001 "!EXPLAINED_poverty-nn_0":1 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_30":-0.244 
 </vector>
 <statistics>
-<time total="0.0403659" prepare="0.038415" ilp="0.00195098" />
+<time total="0.0501549" prepare="0.0478079" ilp="0.00234699" />
 <ilp solution="Optimal" variables="121" constraints="127" />
 <search-space literals="33" axiom="13" />
 </statistics>
@@ -20010,7 +20005,7 @@ variety-nn(e46,x14) ^ institution-nn(e45,x13) ^ equal(e44,x13,x12) ^ function-vb
 "!HYPOTHESIZED_or_28":-1.001 "!HYPOTHESIZED_!=_32":-1.001 "!HYPOTHESIZED_domination-nn_27":-1.001 "!HYPOTHESIZED_rel_21":-1.001 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION-FEAR_43":-0.244 "!HYPOTHESIZED_subset-of_10":-1.001 "!HYPOTHESIZED_!=_33":-1.001 "!HYPOTHESIZED_M#CAUSE-FEAR_42":-0.244 "!HYPOTHESIZED_in-in_24":-1.001 "!EXPLAINED_SS#VIOLENCE%TYPE_36":0.45 "!HYPOTHESIZED_I#VIOLENCE%TYPE_40":-0.406 "!HYPOTHESIZED_S#VIOLENCE_35":-0.451 "!HYPOTHESIZED_poverty-nn_14":-1.001 "!HYPOTHESIZED_of-in_4":-1.001 "!HYPOTHESIZED_org_26":-1.001 "!HYPOTHESIZED_of-in_19":-1.001 "!HYPOTHESIZED_subset-of_11":-1.001 "!HYPOTHESIZED_zapatistas-nn_25":-1.001 "!EXPLAINED_violent-adj_13":1 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_41":-0.244 "!HYPOTHESIZED_!=_31":-1.001 "!HYPOTHESIZED_state-nn_30":-1.001 "!HYPOTHESIZED_so-called-adj_16":-1.001 "!HYPOTHESIZED_function-vb_3":-1.001 "!HYPOTHESIZED_outside-in_5":-1.001 "!HYPOTHESIZED_of-in_15":-1.001 "!HYPOTHESIZED_variety-nn_0":-1.001 "!HYPOTHESIZED_paramilitary-adj_9":-1.001 "!HYPOTHESIZED_violent-adj_13":-1.001 "!HYPOTHESIZED_create-vb_7":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_38":-0.451 "!HYPOTHESIZED_TS#POVERTY_37":-0.451 "!EXPLAINED_S#VIOLENCE_35":0.45 "!HYPOTHESIZED_equal_2":-1.001 "!HYPOTHESIZED_SS#VIOLENCE%TYPE_36":-0.451 "!HYPOTHESIZED_harassment-nn_12":-1.001 "!HYPOTHESIZED_institution-nn_1":-1.001 "!HYPOTHESIZED_I#VIOLENCE_39":-0.406 "!HYPOTHESIZED_low-adj_17":-1.001 "!HYPOTHESIZED_intensity-nn_18":-1.001 "!HYPOTHESIZED_warfare-nn_20":-1.001 "!HYPOTHESIZED_!=_34":-1.001 "!EXPLAINED_I#VIOLENCE_39":0.405 "!HYPOTHESIZED_in-in_22":-1.001 "!HYPOTHESIZED_climate-nn_8":-1.001 "!EXPLAINED_I#VIOLENCE%TYPE_40":0.405 "!HYPOTHESIZED_of-in_6":-1.001 "!EXPLAINED_poverty-nn_14":1 "!HYPOTHESIZED_today-nn_23":-1.001 "!HYPOTHESIZED_market-nn_29":-1.001 
 </vector>
 <statistics>
-<time total="0.077986" prepare="0.075053" ilp="0.00293303" />
+<time total="0.0848417" prepare="0.0818179" ilp="0.00302386" />
 <ilp solution="Optimal" variables="179" constraints="203" />
 <search-space literals="44" axiom="13" />
 </statistics>
@@ -20094,7 +20089,7 @@ call-vb(x8,x3,u30,u31) ^ importantly-rb(e29,x8) ^ more-rb(e28,x8) ^ but-in(e27,x
 "!HYPOTHESIZED_poverty-nn_8":-1.001 "!HYPOTHESIZED_hilfiker-nn_13":-1.001 "!EXPLAINED_SS#VIOLENCE%TYPE_25":0.45 "!HYPOTHESIZED_for-in_11":-1.001 "!HYPOTHESIZED_for-in_12":-1.001 "!HYPOTHESIZED_I#VIOLENCE%TYPE_29":-0.406 "!HYPOTHESIZED_per_14":-1.001 "!HYPOTHESIZED_of-in_16":-1.001 "!HYPOTHESIZED_sister-nn_20":-1.001 "!HYPOTHESIZED_person_15":-1.001 "!HYPOTHESIZED_justice-nn_4":-1.001 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION-FEAR_32":-0.244 "!HYPOTHESIZED_in-in_10":-1.001 "!HYPOTHESIZED_!=_22":-1.001 "!HYPOTHESIZED_!=_23":-1.001 "!HYPOTHESIZED_live-vb_6":-1.001 "!HYPOTHESIZED_I#VIOLENCE_28":-0.406 "!HYPOTHESIZED_!=_21":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_27":-0.451 "!HYPOTHESIZED_more-rb_2":-1.001 "!EXPLAINED_I#VIOLENCE_28":0.405 "!HYPOTHESIZED_equal_5":-1.001 "!HYPOTHESIZED_M#CAUSE-FEAR_31":-0.244 "!EXPLAINED_S#VIOLENCE_24":0.45 "!HYPOTHESIZED_S#VIOLENCE_24":-0.451 "!HYPOTHESIZED_SS#VIOLENCE%TYPE_25":-0.451 "!HYPOTHESIZED_violent-adj_7":-1.001 "!EXPLAINED_poverty-nn_8":1 "!EXPLAINED_I#VIOLENCE%TYPE_29":0.405 "!HYPOTHESIZED_TS#POVERTY_26":-0.451 "!HYPOTHESIZED_but-in_3":-1.001 "!HYPOTHESIZED_call-vb_0":-1.001 "!HYPOTHESIZED_importantly-rb_1":-1.001 "!HYPOTHESIZED_subset-of_18":-1.001 "!EXPLAINED_violent-adj_7":1 "!HYPOTHESIZED_subset-of_17":-1.001 "!HYPOTHESIZED_brother-nn_19":-1.001 "!HYPOTHESIZED_everyday-adj_9":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_30":-0.244 
 </vector>
 <statistics>
-<time total="0.0413702" prepare="0.0394781" ilp="0.00189209" />
+<time total="0.0496931" prepare="0.047502" ilp="0.00219107" />
 <ilp solution="Optimal" variables="118" constraints="121" />
 <search-space literals="33" axiom="14" />
 </statistics>
@@ -20155,7 +20150,7 @@ thing-in(e44,x15) ^ money-nn(e43,x14) ^ spend-vb(x13,x15,x14,u42) ^ bomb-nn(e41,
 "!EXPLAINED_need-nn_7":1 "!HYPOTHESIZED_!=_32":-1.001 "!HYPOTHESIZED_bomb-nn_3":-1.001 "!HYPOTHESIZED_government-nn_11":-1.001 "!HYPOTHESIZED_bomb-nn_17":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_43":-0.244 "!EXPLAINED_S#VIOLENCE_39":0.45 "!HYPOTHESIZED_!=_33":-1.001 "!EXPLAINED_I#VIOLENCE%TYPE_42":0.405 "!HYPOTHESIZED_of-in_10":-1.001 "!HYPOTHESIZED_of-in_27":-1.001 "!HYPOTHESIZED_thing-in_0":-1.001 "!HYPOTHESIZED_!=_29":-1.001 "!HYPOTHESIZED_!=_30":-1.001 "!HYPOTHESIZED_exacerbate-vb_21":-1.001 "!EXPLAINED_TS#POVERTY_37":0.45 "!HYPOTHESIZED_need-nn_7":-1.001 "!EXPLAINED_I#VIOLENCE_41":0.405 "!HYPOTHESIZED_of-in_5":-1.001 "!HYPOTHESIZED_on-in_16":-1.001 "!HYPOTHESIZED_!=_31":-1.001 "!HYPOTHESIZED_M#CAUSE-FEAR_44":-0.244 "!HYPOTHESIZED_by-in_24":-1.001 "!HYPOTHESIZED_human-adj_6":-1.001 "!HYPOTHESIZED_on-in_22":-1.001 "!EXPLAINED_violence-nn_25":1 "!HYPOTHESIZED_spend-vb_2":-1.001 "!HYPOTHESIZED_violence-nn_25":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_36":-0.451 "!HYPOTHESIZED_subset-of_14":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_38":-0.451 "!HYPOTHESIZED_TS#POVERTY_37":-0.451 "!HYPOTHESIZED_perpetuate-nn_13":-1.001 "!EXPLAINED_poverty-nn_18":1 "!HYPOTHESIZED_event_23":-1.001 "!HYPOTHESIZED_instead-in_4":-1.001 "!HYPOTHESIZED_person_26":-1.001 "!HYPOTHESIZED_address-vb_15":-1.001 "!HYPOTHESIZED_!=_34":-1.001 "!EXPLAINED_SS#VIOLENCE%TYPE_40":0.45 "!HYPOTHESIZED_subset-of_8":-1.001 "!HYPOTHESIZED_person_9":-1.001 "!HYPOTHESIZED_I#VIOLENCE%TYPE_42":-0.406 "!EXPLAINED_T#ECONOMIC-INEQUALITY_38":0.45 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION-FEAR_45":-0.244 "!HYPOTHESIZED_money-nn_1":-1.001 "!HYPOTHESIZED_S#VIOLENCE_39":-0.451 "!HYPOTHESIZED_of-in_12":-1.001 "!HYPOTHESIZED_poverty-nn_18":-1.001 "!HYPOTHESIZED_I#VIOLENCE_41":-0.406 "!HYPOTHESIZED_society-nn_28":-1.001 "!HYPOTHESIZED_SS#VIOLENCE%TYPE_40":-0.451 "!HYPOTHESIZED_of-in_20":-1.001 "!HYPOTHESIZED_TS#POVERTY_35":-0.451 "!HYPOTHESIZED_in-in_19":-1.001 
 </vector>
 <statistics>
-<time total="0.0983911" prepare="0.089937" ilp="0.00845408" />
+<time total="0.114698" prepare="0.103873" ilp="0.0108249" />
 <ilp solution="Optimal" variables="234" constraints="565" />
 <search-space literals="46" axiom="14" />
 </statistics>
@@ -20258,7 +20253,7 @@ promising-adj(e39,x12) ^ starting-nn(e38,x11) ^ of-in(e37,x12,x11) ^ point-nn(e3
 "!HYPOTHESIZED_immediate-adj_5":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_34":-0.451 "!EXPLAINED_I#VIOLENCE%TYPE_36":0.405 "!EXPLAINED_violent-adj_10":1 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION-FEAR_39":-0.244 "!HYPOTHESIZED_of-in_13":-1.001 "!HYPOTHESIZED_I#VIOLENCE_35":-0.406 "!HYPOTHESIZED_!=_28":-1.001 "!EXPLAINED_poverty-nn_11":1 "!HYPOTHESIZED_!=_29":-1.001 "!HYPOTHESIZED_dent-nn_6":-1.001 "!HYPOTHESIZED_I#VIOLENCE%TYPE_36":-0.406 "!HYPOTHESIZED_life-nn_21":-1.001 "!HYPOTHESIZED_point-nn_3":-1.001 "!HYPOTHESIZED_in-in_8":-1.001 "!HYPOTHESIZED_of-in_2":-1.001 "!HYPOTHESIZED_quantity-adj_23":-1.001 "!HYPOTHESIZED_make-vb_7":-1.001 "!HYPOTHESIZED_starting-nn_1":-1.001 "!HYPOTHESIZED_nam_25":-1.001 "!HYPOTHESIZED_!=_26":-1.001 "!HYPOTHESIZED_represent-vb_16":-1.001 "!HYPOTHESIZED_however-rb_17":-1.001 "!HYPOTHESIZED_debilitating-nn_20":-1.001 "!HYPOTHESIZED_!=_27":-1.001 "!HYPOTHESIZED_subset-of_9":-1.001 "!HYPOTHESIZED_SS#VIOLENCE%TYPE_32":-0.451 "!HYPOTHESIZED_M#CAUSE-FEAR_38":-0.244 "!HYPOTHESIZED_S#VIOLENCE_31":-0.451 "!HYPOTHESIZED_!=_30":-1.001 "!HYPOTHESIZED_undermine-vb_14":-1.001 "!HYPOTHESIZED_namibians-nn_24":-1.001 "!HYPOTHESIZED_poverty-nn_11":-1.001 "!HYPOTHESIZED_equal_4":-1.001 "!HYPOTHESIZED_org_19":-1.001 "!EXPLAINED_I#VIOLENCE_35":0.405 "!EXPLAINED_S#VIOLENCE_31":0.45 "!HYPOTHESIZED_so-rb_22":-1.001 "!HYPOTHESIZED_big-nn_18":-1.001 "!EXPLAINED_SS#VIOLENCE%TYPE_32":0.45 "!HYPOTHESIZED_promising-adj_0":-1.001 "!HYPOTHESIZED_violent-adj_10":-1.001 "!HYPOTHESIZED_TS#POVERTY_33":-0.451 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_37":-0.244 "!HYPOTHESIZED_equal_12":-1.001 "!HYPOTHESIZED_subset-of_15":-1.001 
 </vector>
 <statistics>
-<time total="0.0519929" prepare="0.049943" ilp="0.00204992" />
+<time total="0.061482" prepare="0.059222" ilp="0.00225997" />
 <ilp solution="Optimal" variables="144" constraints="137" />
 <search-space literals="40" axiom="13" />
 </statistics>
@@ -20322,13 +20317,13 @@ promising-adj(e39,x12) ^ starting-nn(e38,x11) ^ of-in(e37,x12,x11) ^ point-nn(e3
 there-vb(e73,x16) ^ quantity-adj(e72,x27) ^ reason-nn(e71,x27) ^ equal(e70,x16,x27) ^ goal-nn(e69,x13) ^ subset-of(e68,x13,x14) ^ subset-of(e67,x5,x14) ^ accomplish-vb(x12,x16,x14,u66) ^ poverty-nn(e65,x6) ^ of-in(e64,x11,x6) ^ burn-nn(e63,x11) ^ imp(e55,e56,x24) ^ equal(e62,x23,x26) ^ enter-vb(x25,x26,x2,u61) ^ within-in(e60,x11,x23) ^ of-in(e59,x4,x11) ^ consider-vb(x24,x16,x4,u58) ^ when(e57,x12,x24) ^ person-nn(e56,x23) ^ card(e54,x10,1) ^ work-vb(x9,x10,u52,u53) ^ poverty-nn(e51,x8) ^ of-in(e50,x3,x8) ^ towards-in(e49,x9,x3) ^ whether-in(e48,x9,e36) ^ neuter(e47,x6) ^ or(e36,e39,x21) ^ joy-nn(e46,x22) ^ of-in(e45,x0,x22) ^ feel-vb(x21,x0,u43,u44) ^ person-nn(e42,x20) ^ help-vb(x19,x0,x20,u41) ^ when(e40,x21,x19) ^ travel-nn(e39,x18) ^ of-in(e38,x1,x18) ^ equal(e37,x6,x1) ^ rel(e35,x9,x16) ^ moral-adj(e34,x5) ^ indignation-nn(e33,x5) ^ violence-nn(e32,x4) ^ endeavor-nn(e31,x2) ^ end-nn(e30,x3) ^ excitement-nn(e29,x1) ^ rush-nn(e28,x0) ^ !=(e64,e59,e50,e45,e38) ^ !=(e57,e40) ^ !=(e70,e62,e37) ^ !=(e68,e67)
 </observed>
 <hypothesis score="-45.686">
-there-vb(e73,x16) ^ quantity-adj(e72,x27) ^ reason-nn(e71,x27) ^ equal(e70,x16,x27) ^ goal-nn(e69,x13) ^ subset-of(e68,x13,x14) ^ subset-of(e67,x5,x14) ^ accomplish-vb(x12,x16,x14,u66) ^ poverty-nn(e65,x6) ^ of-in(e64,x11,x6) ^ burn-nn(e63,x11) ^ imp(e55,e56,x24) ^ equal(e62,x23,x26) ^ enter-vb(x25,x26,x2,u61) ^ within-in(e60,x11,x23) ^ of-in(e59,x4,x11) ^ consider-vb(x24,x16,x4,u58) ^ when(e57,x12,x24) ^ person-nn(e56,x23) ^ card(e54,x10,1) ^ work-vb(x9,x10,u52,u53) ^ poverty-nn(e51,x8) ^ of-in(e50,x3,x8) ^ towards-in(e49,x9,x3) ^ whether-in(e48,x9,e36) ^ neuter(e47,x6) ^ or(e36,e39,x21) ^ joy-nn(e46,x22) ^ of-in(e45,x0,x22) ^ feel-vb(x21,x0,u43,u44) ^ person-nn(e42,x20) ^ help-vb(x19,x0,x20,u41) ^ when(e40,x21,x19) ^ travel-nn(e39,x18) ^ of-in(e38,x1,x18) ^ equal(e37,x6,x1) ^ rel(e35,x9,x16) ^ moral-adj(e34,x5) ^ indignation-nn(e33,x5) ^ violence-nn(e32,x4) ^ endeavor-nn(e31,x2) ^ end-nn(e30,x3) ^ excitement-nn(e29,x1) ^ rush-nn(e28,x0) ^ !=(e64,e59,e50,e45,e38) ^ !=(e57,e40) ^ !=(e70,e62,e37) ^ !=(e68,e67) ^ TS#POVERTY(x6) ^ T#ECONOMIC-INEQUALITY(_109) ^ S#VIOLENCE(e32) ^ SS#VIOLENCE%TYPE(x4,e32) ^ I#VIOLENCE(e32) ^ I#VIOLENCE%TYPE(x4,e32) ^ M#CAUSE-NOT-FUNCTION(x4,_111) ^ M#CAUSE-FEAR(x4,_111) ^ M#THING-CAUSING-NOT-FUNCTION-FEAR(x4,_111) ^ =(e65,e51) ^ =(x6,x8) ^ =(e42,e56) ^ =(x20,x23)
+there-vb(e73,x16) ^ quantity-adj(e72,x27) ^ reason-nn(e71,x27) ^ equal(e70,x16,x27) ^ goal-nn(e69,x13) ^ subset-of(e68,x13,x14) ^ subset-of(e67,x5,x14) ^ accomplish-vb(x12,x16,x14,u66) ^ poverty-nn(e65,x6) ^ of-in(e64,x11,x6) ^ burn-nn(e63,x11) ^ imp(e55,e56,x24) ^ equal(e62,x23,x26) ^ enter-vb(x25,x26,x2,u61) ^ within-in(e60,x11,x23) ^ of-in(e59,x4,x11) ^ consider-vb(x24,x16,x4,u58) ^ when(e57,x12,x24) ^ person-nn(e56,x23) ^ card(e54,x10,1) ^ work-vb(x9,x10,u52,u53) ^ poverty-nn(e51,x8) ^ of-in(e50,x3,x8) ^ towards-in(e49,x9,x3) ^ whether-in(e48,x9,e36) ^ neuter(e47,x6) ^ or(e36,e39,x21) ^ joy-nn(e46,x22) ^ of-in(e45,x0,x22) ^ feel-vb(x21,x0,u43,u44) ^ person-nn(e42,x20) ^ help-vb(x19,x0,x20,u41) ^ when(e40,x21,x19) ^ travel-nn(e39,x18) ^ of-in(e38,x1,x18) ^ equal(e37,x6,x1) ^ rel(e35,x9,x16) ^ moral-adj(e34,x5) ^ indignation-nn(e33,x5) ^ violence-nn(e32,x4) ^ endeavor-nn(e31,x2) ^ end-nn(e30,x3) ^ excitement-nn(e29,x1) ^ rush-nn(e28,x0) ^ !=(e64,e59,e50,e45,e38) ^ !=(e57,e40) ^ !=(e70,e62,e37) ^ !=(e68,e67) ^ TS#POVERTY(x6) ^ T#ECONOMIC-INEQUALITY(_109) ^ S#VIOLENCE(e32) ^ SS#VIOLENCE%TYPE(x4,e32) ^ I#VIOLENCE(e32) ^ I#VIOLENCE%TYPE(x4,e32) ^ M#CAUSE-NOT-FUNCTION(x4,_111) ^ M#CAUSE-FEAR(x4,_111) ^ M#THING-CAUSING-NOT-FUNCTION-FEAR(x4,_111) ^ =(x20,x23) ^ =(e65,e51) ^ =(x6,x8) ^ =(e42,e56)
 </hypothesis>
 <vector score="0">
 "!HYPOTHESIZED_accomplish-vb_7":-1.001 "!HYPOTHESIZED_!=_46":-1.001 "!HYPOTHESIZED_enter-vb_13":-1.001 "!HYPOTHESIZED_within-in_14":-1.001 "!HYPOTHESIZED_when_17":-1.001 "!HYPOTHESIZED_rel_36":-1.001 "!HYPOTHESIZED_moral-adj_37":-1.001 "!HYPOTHESIZED_work-vb_20":-1.001 "!HYPOTHESIZED_of-in_9":-1.001 "!EXPLAINED_I#VIOLENCE%TYPE_55":0.405 "!HYPOTHESIZED_M#CAUSE-FEAR_57":-0.244 "!HYPOTHESIZED_!=_45":-1.001 "!EXPLAINED_violence-nn_39":1 "!HYPOTHESIZED_card_19":-1.001 "!HYPOTHESIZED_or_26":-1.001 "!HYPOTHESIZED_equal_35":-1.001 "!HYPOTHESIZED_person-nn_30":-1.001 "!EXPLAINED_S#VIOLENCE_52":0.45 "!HYPOTHESIZED_subset-of_6":-1.001 "!HYPOTHESIZED_!=_44":-1.001 "!HYPOTHESIZED_quantity-adj_1":-1.001 "!HYPOTHESIZED_end-nn_41":-1.001 "!HYPOTHESIZED_joy-nn_27":-1.001 "!HYPOTHESIZED_there-vb_0":-1.001 "!HYPOTHESIZED_when_32":-1.001 "!EXPLAINED_poverty-nn_21":1 "!HYPOTHESIZED_I#VIOLENCE%TYPE_55":-0.406 "!HYPOTHESIZED_whether-in_24":-1.001 "!HYPOTHESIZED_endeavor-nn_40":-1.001 "!HYPOTHESIZED_subset-of_5":-1.001 "!HYPOTHESIZED_goal-nn_4":-1.001 "!HYPOTHESIZED_SS#VIOLENCE%TYPE_53":-0.451 "!EXPLAINED_poverty-nn_8":1 "!HYPOTHESIZED_of-in_15":-1.001 "!HYPOTHESIZED_feel-vb_29":-1.001 "!HYPOTHESIZED_poverty-nn_21":-1.001 "!HYPOTHESIZED_equal_3":-1.001 "!HYPOTHESIZED_S#VIOLENCE_52":-0.451 "!HYPOTHESIZED_rush-nn_43":-1.001 "!HYPOTHESIZED_T#ECONOMIC-INEQUALITY_49":-0.451 "!EXPLAINED_I#VIOLENCE_54":0.405 "!HYPOTHESIZED_poverty-nn_8":-1.001 "!HYPOTHESIZED_TS#POVERTY_48":-0.451 "!HYPOTHESIZED_of-in_22":-1.001 "!HYPOTHESIZED_reason-nn_2":-1.001 "!HYPOTHESIZED_neuter_25":-1.001 "!HYPOTHESIZED_I#VIOLENCE_54":-0.406 "!HYPOTHESIZED_person-nn_18":-1.001 "!HYPOTHESIZED_help-vb_31":-1.001 "!HYPOTHESIZED_excitement-nn_42":-1.001 "!HYPOTHESIZED_burn-nn_10":-1.001 "!HYPOTHESIZED_M#CAUSE-NOT-FUNCTION_56":-0.244 "!EXPLAINED_person-nn_30":1 "!HYPOTHESIZED_indignation-nn_38":-1.001 "!HYPOTHESIZED_imp_11":-1.001 "!HYPOTHESIZED_of-in_28":-1.001 "!HYPOTHESIZED_equal_12":-1.001 "!HYPOTHESIZED_towards-in_23":-1.001 "!HYPOTHESIZED_M#THING-CAUSING-NOT-FUNCTION-FEAR_58":-0.244 "!HYPOTHESIZED_violence-nn_39":-1.001 "!HYPOTHESIZED_!=_47":-1.001 "!HYPOTHESIZED_of-in_34":-1.001 "!HYPOTHESIZED_consider-vb_16":-1.001 "!HYPOTHESIZED_travel-nn_33":-1.001 "!EXPLAINED_SS#VIOLENCE%TYPE_53":0.45 
 </vector>
 <statistics>
-<time total="0.155501" prepare="0.121286" ilp="0.034215" />
+<time total="0.18" prepare="0.14113" ilp="0.0388701" />
 <ilp solution="Optimal" variables="329" constraints="1330" />
 <search-space literals="59" axiom="13" />
 </statistics>
