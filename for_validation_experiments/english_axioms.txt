@@ -14,11 +14,13 @@
 
 (B (name fight2)(=> (^(M#CAUSE-NOT-EXIST x :0.32)(M#EXISTING-THING y x :0.32)(M#THING-CAUSING-NOT-EXIST x e1 :0.32)) (^(I#STRUGGLE x)(R#STRUGGLE-ENEMY y x))))
 (B (name fight3)(=> (^(M#CAUSE-NOT-EXIST x :0.46)(M#THING-CAUSING-NOT-EXIST z x :0.46)) (^(I#STRUGGLE x)(R#STRUGGLE-AGENT z x)))) 
-(B (name fight4)(=> (M#CAUSE-NOT-EXIST e0 :0.9) (I#STRUGGLE%TYPE e0)))
+(B (name fight4)(=> (M#CAUSE-NOT-EXIST e0 :0.9) (I#%STRUGGLE%TYPE e0)))
 (B (name fight5)(=>(^(M#CAUSE-NOT-EXIST e0 :0.45)(M#THING-NOT-EXISTING y e0 :0.45))(^(I#STRUGGLE e0)(R#STRUGGLE-TARGET y x))))
 
-(B (name weapon)(=> (^(M#ENABLE-STRUGGLE x e1 :0.45)(I#STRUGGLE%TYPE y e1 :0.45)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0))))
-(B (name weapon2)(=> (^(M#ENABLE-STRUGGLE x e1 :0.3)(I#STRUGGLE%TYPE z e1 :0.3)(M#THING-NOT-EXISTING y e0 :0.3)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0)(R#WEAPON-TARGET y x))))
+;(B (name weapon)(=> (^(M#ENABLE-STRUGGLE x e1 :0.45)(I#STRUGGLE%TYPE y e1 :0.45)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0))))
+(B (name weapon)(=> (^(M#ENABLE-STRUGGLE x e1 :0.45)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0))))
+;(B (name weapon2)(=> (^(M#ENABLE-STRUGGLE x e1 :0.3)(I#STRUGGLE%TYPE z e1 :0.3)(M#THING-NOT-EXISTING y e0 :0.3)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0)(R#WEAPON-TARGET y x))))
+(B (name weapon2)(=> (^(M#ENABLE-STRUGGLE x e1 :0.3)(M#THING-NOT-EXISTING y e0 :0.3)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0)(R#WEAPON-TARGET y x))))
 
 (B (name enemy)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#THING-CAUSING-NOT-FUNCTION x e1 :0.3)(M#FUNCTION-AGENT z e1 :0.3)) (^ (I#STRUGGLE-ADVERSARY x e0)(R#STRUGGLE-AGENT z e0))))
 (B (name enemy2)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#THING-CAUSING-NOT-FUNCTION x e1 :0.45)) (I#STRUGGLE-ADVERSARY x e0)))
@@ -115,8 +117,8 @@
 (B (name fight-with) (=> (S#STRUGGLE y x :0.90)(^(SS#STRUGGLE%TYPE x y)(with-in x y))))
 (B (name fight-against) (=> (^(S#STRUGGLE y x :0.45)(R#STRUGGLE-TARGET y x :0.45))(^(SS#STRUGGLE%TYPE x e0)(against-in e1 x y))))
 
-(B (name weapon) (=>(^(S#STRUGGLE e0 :0.45)(SS#STRUGGLE%WEAPON y e0 :0.45))(weapon-nn e0 y)))
-(B (name weapon-against) (=> (^(S#STRUGGLE y x :0.45)(R#WEAPON-TARGET y x :0.45))(^(SS#STRUGGLE%WEAPON x e0)(against-in e1 x y))))
+(B (name weapon) (=>(^(S#STRUGGLE e0 :0.3)(SS#STRUGGLE%WEAPON y e0 :0.3)(SS#STRUGGLE%TYPE u u2 :0.3))(weapon-nn e0 y)))
+(B (name weapon-against) (=> (^(S#STRUGGLE y x :0.3)(R#WEAPON-TARGET y x :0.3) (SS#STRUGGLE%TYPE u u2 :0.3))(^(SS#STRUGGLE%WEAPON x e0)(against-in e1 x y))))
 
 (B (name strugglemap)(=>(I#STRUGGLE x :0.9)(S#STRUGGLE x)))
 (B (name struggle-typemap)(=>(I#STRUGGLE%TYPE x e0 :0.9)(SS#STRUGGLE%TYPE x e0)))
