@@ -14,7 +14,7 @@
 
 (B (name fight2)(=> (^(M#CAUSE-NOT-EXIST x :0.32)(M#EXISTING-THING y x :0.32)(M#THING-CAUSING-NOT-EXIST x e1 :0.32)) (^(I#STRUGGLE x)(R#STRUGGLE-ENEMY y x))))
 (B (name fight3)(=> (^(M#CAUSE-NOT-EXIST x :0.46)(M#THING-CAUSING-NOT-EXIST z x :0.46)) (^(I#STRUGGLE x)(R#STRUGGLE-AGENT z x)))) 
-(B (name fight4)(=> (M#CAUSE-NOT-EXIST e0 :0.9) (I#%STRUGGLE%TYPE e0)))
+(B (name fight4)(=> (M#CAUSE-NOT-EXIST e0 :0.9) (I#STRUGGLE%TYPE e0)))
 (B (name fight5)(=>(^(M#CAUSE-NOT-EXIST e0 :0.45)(M#THING-NOT-EXISTING y e0 :0.45))(^(I#STRUGGLE e0)(R#STRUGGLE-TARGET y x))))
 
 (B (name weapon)(=> (^(M#ENABLE-STRUGGLE x e1 :0.45)(I#STRUGGLE%TYPE y e1 :0.45)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0))))
