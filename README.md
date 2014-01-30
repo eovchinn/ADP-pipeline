@@ -60,5 +60,5 @@ git clone https://github.com/metaphor-adp/Metaphor-ADP
 
 **Contact**
 
-- Katya Ovchinnikova (e.ovchinnikova-AT-gmail.com)
+- Katya Ovchinnikova (e.ovchinnikova@gmail.com)
 
