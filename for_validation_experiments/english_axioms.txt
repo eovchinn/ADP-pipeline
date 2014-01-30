@@ -12,7 +12,7 @@
 
 (B (name fight)(=>(^(M#CAUSE-NOT-EXIST e0 :0.3)(M#THING-CAUSING-NON-EXISTENCE z e0 :0.3)(M#THING-NOT-EXISTING y e0 :0.3))(^(I#STRUGGLE e0)(R#STRUGGLE-PATIENT y x)(R#STRUGGLE-AGENT z x))))
 
-(B (name fight2)(=> (^(M#CAUSE-NOT-EXIST x :0.32)(M#EXISTING-THING y x :0.32)(M#THING-CAUSING-NOT-EXIST x e1 :0.32)) (^(I#STRUGGLE x)(R#STRUGGLE-ENEMY y x))))
+(B (name fight2)(=> (^(M#CAUSE-NOT-EXIST x :0.3)(M#EXISTING-THING y x :0.3)(M#THING-CAUSING-NOT-EXIST x e1 :0.3)) (^(I#STRUGGLE x)(R#STRUGGLE-ENEMY y x))))
 (B (name fight3)(=> (^(M#CAUSE-NOT-EXIST x :0.46)(M#THING-CAUSING-NOT-EXIST z x :0.46)) (^(I#STRUGGLE x)(R#STRUGGLE-AGENT z x)))) 
 (B (name fight4)(=> (M#CAUSE-NOT-EXIST e0 :0.9) (I#STRUGGLE%TYPE x e0)))
 (B (name fight5)(=>(^(M#CAUSE-NOT-EXIST e0 :0.45)(M#THING-NOT-EXISTING y e0 :0.45))(^(I#STRUGGLE e0)(R#STRUGGLE-TARGET y x))))
@@ -20,7 +20,7 @@
 ;(B (name weapon)(=> (^(M#ENABLE-STRUGGLE x e1 :0.45)(I#STRUGGLE%TYPE y e1 :0.45)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0))))
 (B (name weapon)(=> (^(M#ENABLE-STRUGGLE x e1 :0.45)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0))))
 ;(B (name weapon2)(=> (^(M#ENABLE-STRUGGLE x e1 :0.3)(I#STRUGGLE%TYPE z e1 :0.3)(M#THING-NOT-EXISTING y e0 :0.3)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0)(R#WEAPON-TARGET y x))))
-(B (name weapon2)(=> (^(M#ENABLE-STRUGGLE x e1 :0.3)(M#THING-NOT-EXISTING y e0 :0.3)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0)(R#WEAPON-TARGET y x))))
+(B (name weapon2)(=> (^(M#ENABLE-CAUSE-NOT-EXIST x e0 :0.3)(M#CAUSE-NOT-EXIST u x :0.3)(M#THING-NOT-EXISTING y e0 :0.3)) (^(I#STRUGGLE e0)(I#STRUGGLE%WEAPON x e0)(R#WEAPON-TARGET y x))))
 
 (B (name enemy)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#THING-CAUSING-NOT-FUNCTION x e1 :0.3)(M#FUNCTION-AGENT z e1 :0.3)) (^ (I#STRUGGLE-ADVERSARY x e0)(R#STRUGGLE-AGENT z e0))))
 (B (name enemy2)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#THING-CAUSING-NOT-FUNCTION x e1 :0.45)) (I#STRUGGLE-ADVERSARY x e0)))
@@ -47,7 +47,7 @@
 (B (name deep) (=> (^(M#INTENSIFY-CAUSE-NOT-FUNCTION e0 :0.45) (M#INTENSIFY-REDUCE-OPTIONS e0 :0.45)) (I#ABYSS%DEPTH e0 x)))
 
 ; CROP
-(B (name crop) (=>(M#OUTCOME-OF-ACTION e0 :0.9) (^(I#CROP e0)(I#CROP%TYPE x e0))))
+(B (name crop) (=>(M#OUTCOME-OF-ACTION e0 :0.9) (^(I#CROP%TYPE x e0)(R#CROP x e0))))
 
 (B (name grow_crop) (=>(^(M#CAUSE-INCREASE-AMOUNT e0 :0.45)(M#THING-INCREASING x e0 :0.45)) (^(I#CROP e0)(I#CROP%CULTIVATION e0 e0)(R#GROWER x e0))))
 
@@ -200,6 +200,8 @@
 ; PLANTING
 (B (name crop)(=>(^(S#CROP e0 :0.3)(SS#CROP%TYPE x e0 :0.3)(R#CROP x e0 :0.3)) (crop-nn e0 x)))
 (B (name seed)(=>(^(S#CROP e0 :0.3)(SS#CROP%TYPE x e0 :0.3)(R#SEED x e0 :0.3)) (seed-nn e0 x)))
+
+(B (name crop-of)(=>(^(S#CROP e0 :0.23)(SS#CROP%TYPE x e0 :0.23)(R#CROP x e0 :0.23)(R#CROP-OUTCOME y e0 :0.23)) (^(crop-nn e0 x)(of-in e1 x y))))
 
 ; CULTIVATION
 (B (name grow)(=>(^(S#CROP e0 :0.3)(SS#CROP%CULTIVATION e0 e0 :0.3)(R#GROWER x e0 :0.3)) (^(TS#POVERTY x)(grow-vb e0 x y u))))

@@ -7,17 +7,34 @@ import re
 grow_set = set([u'THING-INCREASING', u'CAUSE-INCREASE-AMOUNT'])
 eradicate_set =set([u'THING-NOT-EXISTING', u'CAUSE-NOT-EXIST', u'THING-CAUSING-NON-EXISTENCE'])
 no_agent_eradicate_set=set([u'THING-NOT-EXISTING', u'CAUSE-NOT-EXIST'])
+exit_abyss_set = set([u'THING-THAT-LIMITED-OPTIONS', u'CAUSE-INCREASE-OPTIONS', u'THING-THAT-STOPPED-FUNCTION', u'CAUSE-RESUME-FUNCTION'])
 
 def lm_category(log):
-    if re.search(u"^CAUSE",log):
-        lm_type = "cause"
-    elif re.search(u"^THING-CAUSING",log):
-        lm_type = "agent"
-    elif re.search(u"^THING-",log):
-        lm_type = "patient"
+    if re.search(u"^CAUSE\-INCREASE\-AMOUNT",log):
+        lm_type = "cause_inc_am"
+    elif re.search(u"^CAUSE\-NOT-\EXIST",log):
+        lm_type = "cause_not_exist"   
+    elif re.search(u"^CAUSE-RESUME-FUNCTION",log):
+        lm_type = "cause_resume_function"   
+    elif re.search(u"^CAUSE-INCREASE-OPTIONS",log):
+        lm_type = "cause_increase_options"                   
+             
+    elif re.search(u"^THING-CAUSING-NON-EXISTING",log):
+        lm_type = "agent_not_exist"
+    elif re.search(u"^THING-THAT-LIMITED-OPTIONS",log):
+        lm_type = "agent_limit_options" 
+    elif re.search(u"^THING-THAT-STOPPED-FUNCTION",log):
+        lm_type = "agent_stop_function" 
+
+        
+    elif re.search(u"^THING-INCREASING",log):
+        lm_type = "patient_increase"
+    elif re.search(u"^THING-NOT-EXISTING",log):
+        lm_type = "patient_not_exist"
+               
     return lm_type
 
-def process_explanation(exp):
+def process_explanation(exp,s_id):
     logic_list = []
     lms = {}
     for e in exp:
@@ -30,21 +47,28 @@ def process_explanation(exp):
         lm_type = lm_category(logic)
         for word in lm_list:
             lms[lm_type] = word
-    logic_set = set(logic_list)
-    #print log_set
+    logic_set = set(logic_list)    
     if logic_set == grow_set:
-        print('{} denotes an increased amount of {}'.format(lms['cause'],lms['patient']))
+        print s_id
+        print('{} denotes an increased amount of {}'.format(lms['cause_inc_an'],lms['patient_increase']))
     if logic_set == eradicate_set:
-        print('{} denotes that {} causes {} to stop existing'.format(lms['cause'],lms['agent'],lms['patient']))
+        print s_id        
+        print('{} denotes that {} causes {} to stop existing'.format(lms['cause_not_exist'],lms['agent_not_exist'],lms['patient_not_exist']))
     if logic_set == no_agent_eradicate_set:
-        print('{} denotes that there is an effort to stop the existence of {} '.format(lms['cause'],lms['patient']))
+        print s_id        
+        print('{} denotes that there is an effort to stop the existence of {} '.format(lms['cause_not_exist'],lms['patient_not_exist']))
+    if logic_set == exit_abyss_set:
+        print s_id        
+        print('{} denotes that {} had limited options, but options will increase; {} denotes that {} had caused something not to function, but functionality will resume'.format(lms['cause_increase_options'],lms['agent_limit_options'],lms['cause_resume_function'],lms['agent_stop_function']))        
         
 
 def generate_language(data):
     for jline in data:
+        #print jline
         mappings = jline["annotationMappings"][0]
         exp_list = mappings["explanation"].split("],")
-        process_explanation(exp_list)
+        sent_id = jline["sid"]
+        process_explanation(exp_list,sent_id)
 
 
         
