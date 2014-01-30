@@ -131,16 +131,22 @@ def wordStr2print_Mapping(mappings,WordProps,Equalities):
 	for propName in mappings.keys():
 		words = []
 
+		firstargs = []
 		for args in mappings[propName]:	
 			#for arg in args:	
 			#output only first ARG instead of all
+			firstargs.append(args[0])
 			newwords = findWords(args[0],WordProps,Equalities,True)
 			for word in newwords:
 				if not word in words: words.append(word)
 
 		output_str += ', ' + propName + '['
-		for word in words:
-			output_str += word + ','
+		if len(words)>0:
+			for word in words:
+				output_str += word + ','
+		else:
+			for arg in firstargs:
+				output_str += arg + ','
 
 		output_str = output_str[:-1] + ']' 
 
