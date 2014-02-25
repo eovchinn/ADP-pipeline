@@ -1,4 +1,5 @@
-#! /usr/bin/python
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 import argparse
 import json
@@ -16,6 +17,7 @@ price_set = set([u'THING-DESIRED', u'CAUSE-NEGATIVE-CONSEQUENCE-OF-DESIRED-THING
 live_in_set = set([u'CAUSE-EXPERIENCE-SOMETHING',u'EXPERIENCER','THING-EXPERIENCED'])
 
 def lm_category(log):
+    lm_type = ''
     if re.search(u"^CAUSE\-INCREASE\-AMOUNT",log):
         lm_type = "cause_inc_am"
     elif re.search(u"^CAUSE\-NOT-\EXIST",log):
@@ -64,12 +66,12 @@ def lm_category(log):
     elif re.search(u"^PREPARATION-FOR-OUTCOME",log):
         lm_type = "preparation"
         
-    else:
-        print log
+    #else:
+        #print log
         
     return lm_type
 
-def process_explanation(exp,s_id):
+def process_explanation(exp,s_id,lang):
     logic_list = []
     lms = {}
     for e in exp:
@@ -77,50 +79,78 @@ def process_explanation(exp,s_id):
         #print e
         logic = e.split("[")[0]
         #print logic
+        lm_type = lm_category(logic)
+	if len(lm_type)==0: continue
+
         lm_list = e.split("[")[1].rstrip("]").split(",")
         logic_list.append(logic)
-        lm_type = lm_category(logic)
         for word in lm_list:
             lms[lm_type] = word
     logic_set = set(logic_list)    
     if logic_set == grow_set:
         print s_id
-        print('{} denotes an increased amount of {}'.format(lms['cause_inc_an'],lms['patient_increase']))
+        if lang=='EN':
+		print('{} denotes an increased amount of {}'.format(lms['cause_inc_an'],lms['patient_increase']))
+	else:
+		print lms['cause_inc_an'] + u' означает что увеличилось количество ' + lms['patient_increase']
     if logic_set == eradicate_set:
-        print s_id        
-        print('{} denotes that {} causes {} to stop existing'.format(lms['cause_not_exist'],lms['agent_not_exist'],lms['patient_not_exist']))
+        print s_id
+        if lang=='EN':        
+        	print('{} denotes that {} causes {} to stop existing'.format(lms['cause_not_exist'],lms['agent_not_exist'],lms['patient_not_exist']))
+	else:
+		print lms['cause_not_exist'] + u' прекращает существование ' + lms['patient_not_exist']
     if logic_set == no_agent_eradicate_set:
-        print s_id        
-        print('{} denotes that there is an effort to stop the existence of {} '.format(lms['cause_not_exist'],lms['patient_not_exist']))
+        print s_id    
+        if lang=='EN':    
+        	print('{} denotes that there is an effort to stop the existence of {} '.format(lms['cause_not_exist'],lms['patient_not_exist']))
+	else:
+		print lms['cause_not_exist'] + u' означает что есть попытка избавиться от ' + lms['patient_not_exist']
     if logic_set == exit_abyss_set:
-        print s_id        
-        print('{} denotes that {} had limited options, but options will increase; {} denotes that {} had caused something not to function, but functionality will resume'.format(lms['cause_increase_options'],lms['agent_limit_options'],lms['cause_resume_function'],lms['agent_stop_function']))    
+        print s_id      
+        if lang=='EN':      
+        	print('{} denotes that {} had limited options, but options will increase; {} denotes that {} had caused something not to function, but functionality will resume'.format(lms['cause_increase_options'],lms['agent_limit_options'],lms['cause_resume_function'],lms['agent_stop_function']))    
+	else:
+		print lms['cause_increase_options'] + u' означает что возможности у ' + lms['agent_limit_options'] + u' ограничены; ' + lms['cause_resume_function'] + u' означает что ' + lms['agent_stop_function'] + u' вызвал ограничение каких-то функций, но эти функции возобновятся'
     if logic_set == harvest_crop_seed_set:
         print s_id
-        print('{} denotes that {} was a preparation so that {} is realizing the outcome, {} in this case, of some action, which is denoted by {}'.format(lms['cause_realize_outcome'],lms['preparation'],lms['agent_realize'],lms['outcome'],lms['cause-outcome']))
+        if lang=='EN':      
+        	print('{} denotes that {} was a preparation so that {} is realizing the outcome, {} in this case, of some action, which is denoted by {}'.format(lms['cause_realize_outcome'],lms['preparation'],lms['agent_realize'],lms['outcome'],lms['cause-outcome']))
+		
     if logic_set == crop_outcome_set:
         print s_id
-        print('{} denotes that {} is the outcome of some action'.format(lms['cause-outcome'],lms['outcome']))   
+        if lang=='EN':      
+        	print('{} denotes that {} is the outcome of some action'.format(lms['cause-outcome'],lms['outcome']))   
     if logic_set == crop_set:
         print s_id
-        print('{} denotes that poverty is the outcome of some action'.format(lms['cause-outcome']))                     
+	if lang=='EN':      
+        	print('{} denotes that poverty is the outcome of some action'.format(lms['cause-outcome']))                     
     if logic_set == deep_abyss_set:
         print s_id
-        print('{} implies that the experiencer of poverty has severely limited options and cannot function'.format(lms['cause-sev-not-function']))
+	if lang=='EN':      
+        	print('{} implies that the experiencer of poverty has severely limited options and cannot function'.format(lms['cause-sev-not-function']))
+	else:
+		print lms['cause-sev-not-function'] + u' означает, что тот, кто испытывает бедность, имеет очень ограниченные возможности и не может нормально фунционировать'
     if logic_set == price_set:
         print s_id
-        print('{} implies that poverty is a negative consequence that must be accepted to attain {}'.format(lms['cause-neg-consequence'],lms['patient_desire']))  
+	if lang=='EN':      
+        	print('{} implies that poverty is a negative consequence that must be accepted to attain {}'.format(lms['cause-neg-consequence'],lms['patient_desire']))  
+	else:
+		print lms['cause-neg-consequence'] + u' означает, что бедность - это негативные последствия достижения ' + lms['patient_desire']
     if logic_set == live_in_set:
         print s_id
-        print('{} implies that {} experiences {}'.format(lms['cause-experience'],lms['patient_experience'],lms['experience-event']))                
+	if lang=='EN':      
+        	print('{} implies that {} experiences {}'.format(lms['cause-experience'],lms['patient_experience'],lms['experience-event'])) 
+	else:
+		print  lms['cause-experience'] + u' означает, что ' + lms['patient_experience'] + u' переживает ' + lms['experience-event']
         
 
-def generate_language(data):
+def generate_language(data,lang):
     for jline in data:
         mappings = jline["annotationMappings"][0]
-        exp_list = mappings["explanation"].split("],")
-        sent_id = jline["sid"]
-        process_explanation(exp_list,sent_id)
+	if len(mappings["explanation"])>0:
+        	exp_list = mappings["explanation"].split("],")
+        	sent_id = jline["sid"]
+        	process_explanation(exp_list,sent_id,lang)
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
@@ -131,14 +161,22 @@ def parse_arguments():
         help="Input file of axioms.",
         required=True,
         default=None)  
+    parser.add_argument(
+        "-l",
+        "--lang",
+        help="Input language.",
+        required=False,
+        default="EN") 
     pa = parser.parse_args()  
-    return pa.input
+    return pa
 
-def main(pa_input):
+def main(pa_input,lang):
     infile = open(pa_input,"r")
     json_data = json.load(infile)
-    generate_language(json_data)
+    generate_language(json_data,lang)
 
 if __name__ == "__main__":
-    pa_infile = parse_arguments()
-    main(pa_infile)
+    pa = parse_arguments()
+    pa_infile = pa.input
+    lang = pa.lang
+    main(pa_infile,lang)
