@@ -134,6 +134,7 @@
 (B (name disease) (=>(^(S#DISEASE e0 :0.45)(SS#DISEASE%TYPE x e0 :0.45)) (disease-nn e0 x)))
 (B (name cancer) (=>(^(S#DISEASE e0 :0.45)(SS#DISEASE%TYPE x e0 :0.45)) (cancer-nn e0 x)))
 (B (name condition) (=>(^(S#DISEASE e0 :0.45)(SS#DISEASE%TYPE x e0 :0.45)) (condition-nn e0 x)))
+(B (name sick) (=>(^(S#DISEASE e0 :0.3)(SS#DISEASE%TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (sick-adj e0 y)))
 (B (name disease-of) (=>(^(S#DISEASE e0 :0.3)(SS#DISEASE%TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (^(disease-nn e0 x)(of-in e1 x y))))
 
 ; TREATMENT
@@ -262,9 +263,81 @@
 
 (B (name victory) (=>(^(S#VICTORY e0 :0.45)(SS#VICTORY%TYPE x e0 :0.45))(victory-nn e0 x)))
 (B (name victorymap)(=>(I#VICTORY x :0.9)(S#VICTORY x)))
-(B (name victory-typemap)(=>(I#VICTORY%TYPE x e0 :0.9)(SS#POWER%TYPE x e0)))
+(B (name victory-typemap)(=>(I#VICTORY%TYPE x e0 :0.9)(SS#VICTORY%TYPE x e0)))
+
+;SECURITY
+
+(B (name protection) (=>(^(S#SECURITY e0 :0.45)(SS#SECURITY%TYPE x e0 :0.45))(protection-nn e0 x)))
+(B (name security) (=>(^(S#SECURITY e0 :0.45)(SS#SECURITY%TYPE x e0 :0.45))(security-nn e0 x)))
+(B (name protect)(=>(^(S#SECURITY e0 :0.23)(SS#TYPE e0 e0 :0.23)(R#PROTECT-AGENT x e0 :0.23)(R#PROTECT-PATIENT y e0 :0.23)) (protect-vb e0 x y z)))
+(B (name securitymap)(=>(I#SECURITY x :0.9)(S#SECURITY x)))
+(B (name security-typemap)(=>(I#SECURITY%TYPE x e0 :0.9)(SS#SECURITY%TYPE x e0)))
+
+;WATER
+(B (name river) (=> (^(S#WATER e0 :0.45)(SS#WATER%TYPE x e0 :0.45)) (river-nn e0 x)))
+(B (name flow) (=> (^(S#WATER e0 :0.45)(SS#WATER%TYPE x e0 :0.45)) (flow-nn e0 x)))
+(B (name ocean) (=> (^(S#WATER e0 :0.45)(SS#WATER%TYPE x e0 :0.45)) (ocean-nn e0 x)))
+; MOVEMENT
+(B (name flow) (=>(^(S#WATER e0 :0.3)(SS#WATER%MOVEMENT e0 e0 :0.3)(R#STREAMING x e0 :0.3))(flow-vb e0 x y z)))
+
+(B (name watermap)(=>(I#WATER x :0.9)(S#WATER x)))
+(B (name water-typemap)(=>(I#WATER%TYPE x e0 :0.9)(SS#WATER%TYPE x e0)))
+(B (name water-movementmap)(=>(I#WATER%MOVEMENT x e0 :0.9)(SS#WATER%MOVEMENT x e0)))
+
+;CONSUMPTION
+(B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#FOOD%TASTE x e0 :0.45)) (taste-nn e0 x)))
+(B (name taste-vb)(=>(^(S#FOOD e0 :0.23)(SS#FOOD%TASTE e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (taste-vb e0 x y u)))
+
+(B (name eat)(=>(^(S#FOOD e0 :0.23)(SS#FOOD%CONSUMPTION e0 e0 :0.23)(R#EAT-AGENT x e0 :0.23)(R#EAT-OBJECT y e0 :0.23)) (eat-vb e0 x y u)))
+
+(B (name foodmap)(=>(I#FOOD x :0.9)(S#FOOD x)))
+(B (name food-typemap)(=>(I#FOOD%TASTE x e0 :0.9)(SS#FOOD%TASTE x e0)))
+(B (name food-typemap)(=>(I#FOOD%CONSUMPTION x e0 :0.9)(SS#FOOD%CONSUMPTION x e0)))
+
+; BLOOD
+; COMPONENT
+(B (name blood)(=>(^(S#BLOOD e0 :0.3)(SS#BLOOD%COMPONENT x e0 :0.3)(R#BLOOD x e0 :0.3)) (blood-nn e0 x)))
 
 
+(B (name bloodmap)(=>(I#BLOOD x :0.9)(S#BLOOD x)))
+(B (name blood-typemap)(=>(I#BLOOD%COMPONENT x e0 :0.9)(SS#BLOOD%COMPONENT x e0)))
+
+;GAME
+(B (name game)(=>(^(S#GAME e0 :0.45)(SS#GAME%TYPE x e0 :0.45)) (game-nn e0 x)))
+(B (name game-of)(=>(^(S#GAME e0 :0.3)(SS#GAME%TYPE x e0 :0.3)(R#GAME-THING y e0 :0.3)) (^(game-nn e0 x)(of-in e1 x y))))
+
+(B (name play)(=>(^(S#GAME e0 :0.45)(SS#GAME%ACTIONS x e0 :0.45)) (play-nn e0 x)))
+(B (name playvb)(=>(^(S#GAME e0 :0.3)(SS#GAME%ACTIONS e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (play-vb e0 x y u)))
+
+(B (name win)(=>(^(S#GAME e0 :0.3)(SS#GAME%OUTCOMES e0 e0 :0.3)(R#PLAYER x e0 :0.3)) (win-vb e0 x y u)))
+
+(B (name gamemap)(=>(I#GAME x :0.9)(S#GAME x)))
+(B (name game-typemap)(=>(I#GAME%TYPE x e0 :0.9)(SS#GAME%TYPE x e0)))
+(B (name game-typemap)(=>(I#GAME%ACTIONS x e0 :0.9)(SS#GAME%ACTIONS x e0)))
+(B (name game-typemap)(=>(I#GAME%OUTCOMES x e0 :0.9)(SS#GAME%OUTCOMES x e0)))
+
+; DRUG
+; TYPE
+(B (name drug)(=>(^(S#DRUG e0 :0.45)(SS#DRUG%TYPE x e0 :0.45)) (drug-nn e0 x)))
+
+(B (name addiction)(=>(^(S#DRUG e0 :0.45)(SS#DRUG%ADDICTION x e0 :0.45)) (addiction-nn e0 x)))
+(B (name drug-addict)(=>(^(S#DRUG e0 :0.3)(SS#DRUG%ADDICTION x e0 :0.3)(R#ADDICTED y :0.3)) (^(drug-nn e0 x)(of-in e1 y x)(addict-nn e2 y))))
+
+(B (name drunk)(=>(^(S#DRUG e0 :0.3)(SS#DRUG%EFFECT e0 e0 :0.3)(R#UNDER-INFLUENCE x :0.3)) (drunk-adj e0 x)))
+
+(B (name drugmap)(=>(I#DRUG x :0.9)(S#DRUG x)))
+(B (name drug-typemap)(=>(I#DRUG%TYPE x e0 :0.9)(SS#DRUG%TYPE x e0)))
+(B (name drug-typemap)(=>(I#DRUG%ADDICTION x e0 :0.9)(SS#DRUG%ADDICTION x e0)))
+(B (name drug-typemap)(=>(I#DRUG%EFFECT x e0 :0.9)(SS#DRUG%EFFECT x e0)))
+
+; BODY
+(B (name body)(=>(^(S#BODY x :0.45)(SS#TYPE x e0 :0.45)) (body-nn e0 x)))
+
+(B (name hand)(=>(^(S#BODY x :0.45)(SS#TYPE x e0 :0.45)) (hand-nn e0 x)))
+(B (name head)(=>(^(S#BODY x :0.45)(SS#TYPE x e0 :0.45)) (head-nn e0 x)))
+
+(B (name bodymap)(=>(I#BODY x :0.9)(S#BODY x)))
+(B (name body-typemap)(=>(I#BODY%TYPE x e0 :0.9)(SS#BODY%TYPE x e0)))
 ; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ; TARGET WORDS;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

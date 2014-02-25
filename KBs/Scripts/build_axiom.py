@@ -120,7 +120,7 @@ def main():
         "-p",
         "--pos",
         help="Part of speech for the lexical entry. Must be one of:"
-        "Noun, verb-intransitive, verb-transitive. "
+        "noun, verb, adjective. "
         "Required to build an axiom.",
         required=True,
         )

@@ -396,7 +396,7 @@
 
 
 ; MOVEMENT
-(B (name flow) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(flow-vb e0 x u1 u2)))
+(B (name flow) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(flow-vb e0 x y z)))
 (B (name leak) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(leak-vb e0 x u1 u2)))
 (B (name stream) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(stream-vb e0 x u1 u2)))
 (B (name stream) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(stagnate-vb e0 x u1 u2)))
