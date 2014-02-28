@@ -1,0 +1,2 @@
+;DEMOCRACY
+(B (name democracy) (=>(^(TS#DEMOCRACY x :0.45)(T#DEMOCRACY u :0.45))(دمکراسی-nn e0 x)))
