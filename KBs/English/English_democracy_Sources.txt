@@ -1,0 +1,60 @@
+; BODY-OF-WATER
+
+(B (name water) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%TYPE x e0 :0.45))(water-nn e0 x)))
+(B (name sea-water) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%TYPE x e0 :0.45)) (sea-water-nn e0 x)))
+
+(B (name sea) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%TYPE x e0 :0.45)) (sea-nn e0 x)))
+(B (name ocean) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%TYPE x e0 :0.45)) (ocean-nn e0 x)))
+(B (name river) (=> (^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%TYPE x e0 :0.45)) (river-nn e0 x)))
+
+; OF - BODY_OF_WATER
+(B (name of-body-of-water) (=>(R#MATTER x y :0.9)(^(SS#BODY_OF_WATER_TYPE y)(of-in e1 y x))))
+
+; OF - THIRST
+(B (name of-thirst) (=>(R#THIRST-OBJECT y e0 :0.9)(^(SS#BODY_OF_WATER_THIRST x)(of-in e1 x y))))
+
+
+; MOVEMENT
+(B (name flow) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(flow-vb e0 x y z)))
+(B (name leak) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(leak-vb e0 x u1 u2)))
+(B (name stream) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(stream-vb e0 x u1 u2)))
+(B (name stream) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#STREAMING x e0 :0.3))(stagnate-vb e0 x u1 u2)))
+(B (name absorb) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#ABSORBING x e0 :0.3))(absorb-vb e0 x u1 u2)))
+(B (name dampen) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%MOVEMENT x e0 :0.3)(R#DAMPENING x e0 :0.3))(dampen-vb e0 x u1 u2)))
+
+(B (name stream2) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%MOVEMENT y e0 :0.45))(stream-nn e0 y)))
+(B (name flow2) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%MOVEMENT y e0 :0.45))(flow-nn e0 y)))
+(B (name leak2) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%MOVEMENT y e0 :0.45))(leak-nn e0 y)))
+(B (name wave) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%MOVEMENT y e0 :0.45))(wave-nn e0 y)))
+(B (name tide) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%MOVEMENT y e0 :0.45))(tide-nn e0 y)))
+(B (name rising-tide) (=>(^(S#BODY_OF_WATER e1 :0.45)(SS#BODY_OF_WATER%MOVEMENT x e1 :0.45)) (^(rising-adj e0 x)(tide-nn e1 x))))
+
+(B (name absorption) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%MOVEMENT y e0 :0.45))(absorption-nn e0 y)))
+(B (name fountain) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%MOVEMENT y e0 :0.45))(fountain-nn e0 y)))
+
+(B (name awash) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%MOVEMENT e0 e0 :0.45))(awash-adj e0 y)))
+(B (name stagnant) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%MOVEMENT e0 e0 :0.45))(stagnant-adj e0 y)))
+
+; OF - MOVEMENT
+(B (name of-stream) (=>(R#STREAMING y e0 :0.9)(^(SS#MOVEMENT x e)(of-in e1 x y))))
+
+; DANGER
+(B (name flood) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%DANGER y e0 :0.45))(flood-nn e0 y)))
+(B (name tsunami) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%DANGER y e0 :0.45))(tsunami-nn e0 y)))
+(B (name swamp) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%DANGER y e0 :0.45))(swamp-nn e0 y)))
+(B (name mire) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%DANGER y e0 :0.45))(mire-nn e0 y)))
+(B (name underwater) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%DANGER y e0 :0.45))(underwater-nn e0 y)))
+(B (name underwater) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%DANGER y e0 :0.45))(whirpool-nn e0 y)))
+
+(B (name underwater) (=>(^(S#BODY_OF_WATER e0 :0.45)(SS#BODY_OF_WATER%DANGER y e0 :0.45))(inundation-nn e0 y)))
+
+(B (name drown) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%DANGER e0 e0 :0.3)(R#DROWN-PATIENT x e0 :0.3))(drown-vb e0 x u1 u2)))
+(B (name flood) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%DANGER e0 e0 :0.3)(R#DROWN-PATIENT x e0 :0.3))(flood-vb e0 x u1 u2)))
+(B (name swamp) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%DANGER e0 e0 :0.3)(R#DROWN-PATIENT y e0 :0.3))(swamp-vb e0 x y u2)))
+(B (name mire) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%DANGER e0 e0 :0.3)(R#DROWN-PATIENT x e0 :0.3))(mire-vb e0 x u1 u2)))
+(B (name mired) (=>(^(S#BODY_OF_WATER e0 :0.3)(SS#BODY_OF_WATER%DANGER e0 e0 :0.3)(R#DROWN-PATIENT x e0 :0.3))(mired-adj e0 x)))
+
+(B (name watermap)(=>(I#BODY_OF_WATER x :0.9)(S#BODY_OF_WATER x)))
+(B (name watertypemap)(=>(I#BODY_OF_WATER%TYPE x y :0.9)(SS#BODY_OF_WATER%TYPE x y)))
+(B (name movementmap)(=>(I#BODY_OF_WATER%MOVEMENT x y :0.9)(SS#BODY_OF_WATER%MOVEMENT x y)))
+(B (name dangermap)(=>(I#BODY_OF_WATER%DANGER x y :0.9)(SS#BODY_OF_WATER%DANGER x y)))

@@ -18,14 +18,20 @@ live_in_set = set([u'CAUSE-EXPERIENCE-SOMETHING',u'EXPERIENCER','THING-EXPERIENC
 
 def lm_category(log):
     lm_type = ''
-    if re.search(u"^CAUSE\-INCREASE\-AMOUNT",log):
+    if re.search(u"^CAUSE-INCREASE-AMOUNT",log):
         lm_type = "cause_inc_am"
-    elif re.search(u"^CAUSE\-NOT-\EXIST",log):
-        lm_type = "cause_not_exist"   
+    elif re.search(u"^CAUSE-NOT-EXIST",log):
+        lm_type = "cause_not_exist"
+    elif re.search(u"^CAUSE-PROBLEM-NOT-EXIST",log):
+        lm_type = "cause_problem_not_exist"        
+    elif re.search(u"^CAUSE-NOT-FUNCTION",log):
+        lm_type = "cause_not_function"           
     elif re.search(u"^CAUSE-RESUME-FUNCTION",log):
         lm_type = "cause_resume_function"   
     elif re.search(u"^CAUSE-INCREASE-OPTIONS",log):
         lm_type = "cause_increase_options"  
+    elif re.search(u"^CAUSE-LIMIT-OPTIONS",log):
+        lm_type = "cause_limit_options"          
     elif re.search(u"^CAUSE-REALIZE-OUTCOME",log):
         lm_type = "cause_realize_outcome"
     elif re.search(u"^CAUSE-OUTCOME-OF-ACTION",log):
@@ -105,17 +111,15 @@ def process_explanation(exp,s_id,lang):
         	print('{} denotes that there is an effort to stop the existence of {} '.format(lms['cause_not_exist'],lms['patient_not_exist']))
 	else:
 		print lms['cause_not_exist'] + u' означает что есть попытка избавиться от ' + lms['patient_not_exist']
-    if logic_set == exit_abyss_set:
-        print s_id      
-        if lang=='EN':      
-        	print('{} denotes that {} had limited options, but options will increase; {} denotes that {} had caused something not to function, but functionality will resume'.format(lms['cause_increase_options'],lms['agent_limit_options'],lms['cause_resume_function'],lms['agent_stop_function']))    
-	else:
-		print lms['cause_increase_options'] + u' означает что возможности у ' + lms['agent_limit_options'] + u' ограничены; ' + lms['cause_resume_function'] + u' означает что ' + lms['agent_stop_function'] + u' вызвал ограничение каких-то функций, но эти функции возобновятся'
+
+        
+    #CROP
     if logic_set == harvest_crop_seed_set:
         print s_id
         if lang=='EN':      
         	print('{} denotes that {} was a preparation so that {} is realizing the outcome, {} in this case, of some action, which is denoted by {}'.format(lms['cause_realize_outcome'],lms['preparation'],lms['agent_realize'],lms['outcome'],lms['cause-outcome']))
-		
+
+
     if logic_set == crop_outcome_set:
         print s_id
         if lang=='EN':      
@@ -123,13 +127,22 @@ def process_explanation(exp,s_id,lang):
     if logic_set == crop_set:
         print s_id
 	if lang=='EN':      
-        	print('{} denotes that poverty is the outcome of some action'.format(lms['cause-outcome']))                     
+        	print('{} denotes that poverty is the outcome of some action'.format(lms['cause-outcome']))    
+    #ABYSS
     if logic_set == deep_abyss_set:
         print s_id
 	if lang=='EN':      
         	print('{} implies that the experiencer of poverty has severely limited options and cannot function'.format(lms['cause-sev-not-function']))
 	else:
 		print lms['cause-sev-not-function'] + u' означает, что тот, кто испытывает бедность, имеет очень ограниченные возможности и не может нормально фунционировать'
+    if logic_set == exit_abyss_set:
+        print s_id      
+        if lang=='EN':      
+        	print('{} denotes that {} had limited options, but options will increase; {} denotes that {} had caused something not to function, but functionality will resume'.format(lms['cause_increase_options'],lms['agent_limit_options'],lms['cause_resume_function'],lms['agent_stop_function']))    
+	else:
+		print lms['cause_increase_options'] + u' означает что возможности у ' + lms['agent_limit_options'] + u' ограничены; ' + lms['cause_resume_function'] + u' означает что ' + lms['agent_stop_function'] + u' вызвал ограничение каких-то функций, но эти функции возобновятся'        
+
+    #PRICE
     if logic_set == price_set:
         print s_id
 	if lang=='EN':      
