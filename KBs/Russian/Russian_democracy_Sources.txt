@@ -97,33 +97,8 @@
 (B (name techvb) (=>(^(S#BODY_OF_WATER y :0.45)(SS#BODY_OF_WATER%DANGER e0 y :0.45))(потонуть-vb e0 x u1 u2)))
 (B (name techvb) (=>(^(S#BODY_OF_WATER y :0.45)(SS#BODY_OF_WATER%DANGER e0 y :0.45))(затонуть-vb e0 x u1 u2)))
 
-; SHOAL
-;(B (name mel) (=>(^(S#ВОДА_WATER x :0.45)(SS#МЕЛЬ_SHOAL y x :0.45))(мель-nn e0 y)))
-;(B (name melkovodje) (=>(^(S#ВОДА_WATER x :0.45)(SS#МЕЛЬ_SHOAL y x :0.45)) (мелководье-nn e0 y)))
-;(B (name obmelchat) (=>(^(S#ВОДА_WATER y :0.3)(SS#МЕЛЬ_SHOAL e0 y :0.3)(R#STREAMING x e0 :0.3))(обмельчать-vb e0 x u1 u2)))
-;(B (name melchat) (=>(^(S#ВОДА_WATER y :0.3)(SS#МЕЛЬ_SHOAL e0 y :0.3)(R#STREAMING x e0 :0.3)) (мельчать-vb e0 x u1 u2)))
-
-; DROUGHT
-;(B (name vysohnut) (=>(^(S#ВОДА_WATER y :0.3) (SS#ЗАСУХА_DROUGHT e0 y :0.3)(R#STREAMING x e0 :0.3))(высохнуть-vb e0 x u1 u2)))
-;(B (name vysyhat) (=>(^(S#ВОДА_WATER y :0.3) (SS#ЗАСУХА_DROUGHT e0 y :0.3)(R#STREAMING x e0 :0.3)) (высыхать-vb e0 x u1 u2)))
-;(B (name peresohnut) (=>(^(S#ВОДА_WATER y :0.3) (SS#ЗАСУХА_DROUGHT e0 y :0.3)(R#STREAMING x e0 :0.3)) (пересохнуть-vb e0 x u1 u2)))
-;(B (name peresyhat) (=>(^(S#ВОДА_WATER y :0.3) (SS#ЗАСУХА_DROUGHT e0 y :0.3)(R#STREAMING x e0 :0.3)) (пересыхать-vb e0 x u1 u2)))
-;(B (name zaesohnut) (=>(^(S#ВОДА_WATER y :0.3) (SS#ЗАСУХА_DROUGHT e0 y :0.3)(R#STREAMING x e0 :0.3)) (засохнуть-vb e0 x u1 u2)))
-;(B (name zaresyhat) (=>(^(S#ВОДА_WATER y :0.3) (SS#ЗАСУХА_DROUGHT e0 y :0.3)(R#STREAMING x e0 :0.3)) (засыхать-vb e0 x u1 u2)))
-
-; DRINK
-;(B (name pit) (=>(^(S#BODY_OF_WATER y :0.2)(SS#DRINK e0 y:0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2))  (пить-vb e0 x y u2)))
-;(B (name vypit) (=>(^(S#BODY_OF_WATER y :0.2)(SS#DRINK e0 y :0.2)(R#DRINKER x e0 :0.2)(R#MATTER y u :0.2)) (выпить-vb e0 x y u2)))
-;(B (name napitsja) (=>(^(S#WATER y :0.3)(SS#DRINK e0 y :0.3)(R#DRINKER x e0 :0.3)) (напиться-vb e0 x u1 u2)))
-;(B (name utolit-zhazhdu) (=>(^(S#WATER u :0.3)(SS#DRINK e0 u :0.3)(R#DRINKER x e0 :0.3))(^(утолить-vb e0 x z u2)(жажда-nn e2 z))))
-;(B (name utoljat-zhazhdu) (=>(^(S#WATER u :0.3)(SS#DRINK e0 u :0.3)(R#DRINKER x e0 :0.3)) (^(утолять-vb e0 x z u2)(жажда-nn e2 z))))
-
-; THIRST
-;(B (name zhazhda) (=>(^(S#BODY_OF_WATER y :0.3) (SS#THIRST x :0.3)(R#DRINKER x e0 :0.3))(жажда-nn e0 x)))
-
-; OF - THIRST
-;(B (name of-thirst) (=>(R#THIRST-OBJECT y x :0.9)(^(SS#THIRST x u)(of-in e1 x y))))
 
 (B (name watermap)(=>(I#BODY_OF_WATER x :0.9)(S#BODY_OF_WATER x)))
 (B (name watertypemap)(=>(I#BODY_OF_WATER%TYPE x y :0.9)(SS#BODY_OF_WATER%TYPE x y)))
-(B (name streammap)(=>(I#MOVEMENT x y :0.9)(SS#BODY_OF_WATER%MOVEMENT x y)))
+(B (name streammap)(=>(I#BODY_OF_WATER%MOVEMENT x y :0.9)(SS#BODY_OF_WATER%MOVEMENT x y)))
+(B (name streammap)(=>(I#BODY_OF_WATER%DANGER x y :0.9)(SS#BODY_OF_WATER%DANGER x y)))

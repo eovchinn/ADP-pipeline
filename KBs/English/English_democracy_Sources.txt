@@ -63,3 +63,9 @@
 (B (name watertypemap)(=>(I#BODY_OF_WATER%TYPE x y :0.9)(SS#BODY_OF_WATER%TYPE x y)))
 (B (name movementmap)(=>(I#BODY_OF_WATER%MOVEMENT x y :0.9)(SS#BODY_OF_WATER%MOVEMENT x y)))
 (B (name dangermap)(=>(I#BODY_OF_WATER%DANGER x y :0.9)(SS#BODY_OF_WATER%DANGER x y)))
+
+; ENERGY
+(B (name power) (=>(^(S#ENERGY e0 :0.45)(SS#ENERGY%TYPE e0 e0 :0.45))(power-vb e0 x y z)))
+
+(B (name watermap)(=>(I#ENERGY x :0.9)(S#ENERGY x)))
+(B (name watertypemap)(=>(I#ENERGY%TYPE x y :0.9)(SS#ENERGY%TYPE x y)))

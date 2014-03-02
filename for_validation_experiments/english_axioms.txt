@@ -51,6 +51,7 @@
 (B (name cancer) (=>(^(S#DISEASE e0 :0.45)(SS#DISEASE%TYPE x e0 :0.45)) (cancer-nn e0 x)))
 (B (name condition) (=>(^(S#DISEASE e0 :0.45)(SS#DISEASE%TYPE x e0 :0.45)) (condition-nn e0 x)))
 (B (name sick) (=>(^(S#DISEASE e0 :0.3)(SS#DISEASE%TYPE e0 e0 :0.3)(R#SICK y e0 :0.3)) (sick-adj e0 y)))
+(B (name sick) (=>(^(S#DISEASE e0 :0.45)(SS#DISEASE%TYPE x e0 :0.45)) (sick-nn e0 x)))
 (B (name disease-of) (=>(^(S#DISEASE e0 :0.3)(SS#DISEASE%TYPE x e0 :0.3)(R#SICK y e0 :0.3)) (^(disease-nn e0 x)(of-in e1 x y))))
 
 ; TREATMENT
@@ -174,6 +175,7 @@
 (B (name rule) (=>(^(S#POWER e0 :0.2)(SS#POWER%COMMAND e0 e0 :0.2)(R#COMMAND-AGENT x e0 :0.2)(R#COMMAND-PATIENT y e0 :0.2))(rule-nn e0 x y z)))
 (B (name powermap)(=>(I#POWER x :0.9)(S#POWER x)))
 (B (name power-typemap)(=>(I#POWER%TYPE x e0 :0.9)(SS#POWER%TYPE x e0)))
+(B (name power-typemap)(=>(I#POWER%COMMAND x e0 :0.9)(SS#POWER%COMMAND x e0)))
 
 ;VICTORY
 
@@ -185,7 +187,7 @@
 
 (B (name protection) (=>(^(S#SECURITY e0 :0.45)(SS#SECURITY%TYPE x e0 :0.45))(protection-nn e0 x)))
 (B (name security) (=>(^(S#SECURITY e0 :0.45)(SS#SECURITY%TYPE x e0 :0.45))(security-nn e0 x)))
-(B (name protect)(=>(^(S#SECURITY e0 :0.23)(SS#TYPE e0 e0 :0.23)(R#PROTECT-AGENT x e0 :0.23)(R#PROTECT-PATIENT y e0 :0.23)) (protect-vb e0 x y z)))
+(B (name protect)(=>(^(S#SECURITY e0 :0.23)(SS#SECURITY%TYPE e0 e0 :0.23)(R#PROTECT-AGENT x e0 :0.23)(R#PROTECT-PATIENT y e0 :0.23)) (protect-vb e0 x y z)))
 (B (name securitymap)(=>(I#SECURITY x :0.9)(S#SECURITY x)))
 (B (name security-typemap)(=>(I#SECURITY%TYPE x e0 :0.9)(SS#SECURITY%TYPE x e0)))
 
@@ -193,6 +195,8 @@
 (B (name river) (=> (^(S#WATER e0 :0.45)(SS#WATER%TYPE x e0 :0.45)) (river-nn e0 x)))
 (B (name flow) (=> (^(S#WATER e0 :0.45)(SS#WATER%TYPE x e0 :0.45)) (flow-nn e0 x)))
 (B (name ocean) (=> (^(S#WATER e0 :0.45)(SS#WATER%TYPE x e0 :0.45)) (ocean-nn e0 x)))
+(B (water-of) (=>(R#WATER-COMPARISON y e0 :0.9)(^(I#WATER%TYPE x e0)(of-in e1 x y))))
+
 ; MOVEMENT
 (B (name flow) (=>(^(S#WATER e0 :0.3)(SS#WATER%MOVEMENT e0 e0 :0.3)(R#STREAMING x e0 :0.3))(flow-vb e0 x y z)))
 

@@ -73,11 +73,31 @@
 (B (name violence) (=> (^(M#CAUSE-NOT-FUNCTION x e0 :0.45)(M#THING-CAUSING-NOT-FUNCTION x e0 :0.45)) (^(I#VIOLENCE e0)(I#VIOLENCE%TYPE x e0))))
 
 ;TERRORISM
-(B (name terrorism) (=> (^(M#CAUSE-NOT-FUNCTION x e0 :0.45)(M#THING-CAUSING-NOT-FUNCTION y e0 :0.45)) (^(I#TERRORISM e0)(I#TERRORISM%TYPE x e0)(R#TERRORIZE-AGENT y e0))))
+(B (name terrorism) (=> (^(M#CAUSE-NOT-FUNCTION x e0 :0.45)(M#THING-CAUSING-NOT-FUNCTION y e0 :0.45)) (^(I#TERRORISM%TYPE x e0)(R#TERRORIZE-AGENT y e0))))
 
 (B (name terrorism2) (=> (M#CAUSE-NOT-FUNCTION x e0 :0.9) (I#TERRORISM%TYPE x e0)))
 
 
 
 ;RESOURCE
-(B (name resource) (=> (^(M#CAUSE-FUNCTION x e0 :0.9)) (^(I#RESOURCE e0)(I#RESOURCE%TYPE x e0))))
+(B (name resource) (=> (^(M#CAUSE-FUNCTION x e0 :0.9)) (I#RESOURCE%TYPE x e0)))
+
+;POWER
+(B (name rule) (=> (^(M#PROVIDE-CONTROL x e0 :0.9)) (I#POWER%COMMAND x e0)))
+
+(B (name power) (=> (^(M#PROVIDE-CONTROL x e0 :0.9)) (I#POWER%TYPE x e0)))
+
+;VICTORY
+(B (name victory) (=> (^(M#ACHIEVEMENT-OF-GOAL x e0 :0.9)) (I#VICTORY%TYPE x e0)))
+
+
+;PROTECTION
+(B (name protect) (=> (^(M#CAUSE-ALLOW-FUNCTION e0 e0 :0.3)(M#THING-ALLOWING x e0 :0.3)(M#THING-FUNCTIONING y e0 :0.3)) (^(I#SECURITY%TYPE e0 e0)(R#PROTECT-AGENT x e0)(R#PROTECT-PATIENT y e0))))
+
+(B (name security) (=> (^(M#CAUSE-ALLOW-FUNCTION x e0 :0.9)) (I#SECURITY%TYPE x e0)))
+
+;WATER
+(B (name water)(=> (M#LARGE-AMOUNT x e0 :0.8) (I#WATER%TYPE x e0)))
+(B (name body_of_water)(=> (^(M#LARGE-AMOUNT x e0 :0.45)(M#AMOUNT-THING y e0 :0.45)) (^(I#WATER%TYPE x e0)(R#WATER-COMPARISON y e0))))
+; MOVEMENT
+(B (name water-movement) (=>(^(M#LIQUID-MOVE-FREELY e0 :0.3)(M#LIQUID-THING x :0.3))  (^(I#WATER%MOVEMENT e0 e0)(R#STREAMING x e0))))
