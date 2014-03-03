@@ -113,3 +113,8 @@
 ;BLOOD
 (B (name blood) (=> (^(M#CAUSE-FUNCTION x e0 :0.9)) (I#BLOOD%COMPONENT x e0)))
 (B (name blood-of) (=> (^(M#CAUSE-FUNCTION x e0 :0.45)(M#THING-FUNCTIONING y e0 :0.45)) (^(I#BLOOD%COMPONENT x e0)(R#BLOOD-RECEIVER y e0))))
+
+;DRUG
+(B (name drunk) (=> (^(M#CAUSE-NOT-FUNCTION x e0 :0.45)(M#CAUSE-BAD-JUDGEMENT x e0 :0.45)) (I#DRUG%TYPE x e0)))
+
+(B (name addicted) (=> (^(M#CAUSE-NOT-FUNCTION x e0 :0.3)(M#CAUSE-BAD-JUDGEMENT x e0 :0.3)(M#CAUSE-OBSESSION x e0 :0.3)) (I#DRUG%ADDICTION x e0)))

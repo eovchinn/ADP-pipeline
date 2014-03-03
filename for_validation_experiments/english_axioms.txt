@@ -246,12 +246,15 @@
 (B (name drug-addict)(=>(^(S#DRUG e0 :0.3)(SS#DRUG%ADDICTION x e0 :0.3)(R#ADDICTED y :0.3)) (^(drug-nn e0 x)(of-in e1 y x)(addict-nn e2 y))))
 
 (B (name drunk)(=>(^(S#DRUG e0 :0.3)(SS#DRUG%EFFECT e0 e0 :0.3)(R#UNDER-INFLUENCE x :0.3)) (drunk-adj e0 x)))
-(B (name drunk)(=>(^(S#DRUG e0 :0.45)(SS#DRUG%EFFECT x e0 :045)) (drunk-nn e0 x)))
+(B (name drunk)(=>(^(S#DRUG e0 :0.45)(SS#DRUG%EFFECT x e0 :0.45)) (drunk-nn e0 x)))
+
+(B (name rehab)(=>(^(S#DRUG e0 :0.45)(SS#DRUG%RECOVERY x e0 :0.45)) (rehab-nn e0 x)))
 
 (B (name drugmap)(=>(I#DRUG x :0.9)(S#DRUG x)))
 (B (name drug-typemap)(=>(I#DRUG%TYPE x e0 :0.9)(SS#DRUG%TYPE x e0)))
-(B (name drug-typemap)(=>(I#DRUG%ADDICTION x e0 :0.9)(SS#DRUG%ADDICTION x e0)))
-(B (name drug-typemap)(=>(I#DRUG%EFFECT x e0 :0.9)(SS#DRUG%EFFECT x e0)))
+(B (name drug-addictionmap)(=>(I#DRUG%ADDICTION x e0 :0.9)(SS#DRUG%ADDICTION x e0)))
+(B (name drug-effectmap)(=>(I#DRUG%EFFECT x e0 :0.9)(SS#DRUG%EFFECT x e0)))
+(B (name drug-recoverymap)(=>(I#DRUG%RECOVERY x e0 :0.9)(SS#DRUG%RECOVERY x e0)))
 
 ; BODY
 (B (name body)(=>(^(S#BODY x :0.45)(SS#TYPE x e0 :0.45)) (body-nn e0 x)))
