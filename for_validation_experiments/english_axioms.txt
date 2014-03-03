@@ -206,6 +206,7 @@
 
 ;CONSUMPTION
 (B (name taste)(=>(^(S#FOOD e0 :0.45)(SS#FOOD%TASTE x e0 :0.45)) (taste-nn e0 x)))
+(B (name taste-of)(=>(^(S#FOOD e0 :0.3)(SS#FOOD%TASTE x e0 :0.3)(R#TASTE-OBJECT y e0 :0.3)) (^(taste-nn e0 x)(of-in e1 x y))))
 (B (name taste-vb)(=>(^(S#FOOD e0 :0.23)(SS#FOOD%TASTE e0 e0 :0.23)(R#TASTE-AGENT x e0 :0.23)(R#TASTE-OBJECT y e0 :0.23)) (taste-vb e0 x y u)))
 
 (B (name eat)(=>(^(S#FOOD e0 :0.23)(SS#FOOD%CONSUMPTION e0 e0 :0.23)(R#EAT-AGENT x e0 :0.23)(R#EAT-OBJECT y e0 :0.23)) (eat-vb e0 x y u)))
@@ -216,7 +217,8 @@
 
 ; BLOOD
 ; COMPONENT
-(B (name blood)(=>(^(S#BLOOD e0 :0.3)(SS#BLOOD%COMPONENT x e0 :0.3)(R#BLOOD x e0 :0.3)) (blood-nn e0 x)))
+(B (name blood)(=>(^(S#BLOOD e0 :0.45)(SS#BLOOD%COMPONENT x e0 :0.45)) (blood-nn e0 x)))
+(B (name blood-of)(=>(^(S#BLOOD e0 :0.3)(SS#BLOOD%COMPONENT x e0 :0.3)(R#BLOOD-RECEIVER y e0 :0.3)) (^(blood-nn e0 x)(of-in e1 x y))))
 
 
 (B (name bloodmap)(=>(I#BLOOD x :0.9)(S#BLOOD x)))
@@ -244,6 +246,7 @@
 (B (name drug-addict)(=>(^(S#DRUG e0 :0.3)(SS#DRUG%ADDICTION x e0 :0.3)(R#ADDICTED y :0.3)) (^(drug-nn e0 x)(of-in e1 y x)(addict-nn e2 y))))
 
 (B (name drunk)(=>(^(S#DRUG e0 :0.3)(SS#DRUG%EFFECT e0 e0 :0.3)(R#UNDER-INFLUENCE x :0.3)) (drunk-adj e0 x)))
+(B (name drunk)(=>(^(S#DRUG e0 :0.45)(SS#DRUG%EFFECT x e0 :045)) (drunk-nn e0 x)))
 
 (B (name drugmap)(=>(I#DRUG x :0.9)(S#DRUG x)))
 (B (name drug-typemap)(=>(I#DRUG%TYPE x e0 :0.9)(SS#DRUG%TYPE x e0)))
