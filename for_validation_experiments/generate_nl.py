@@ -13,6 +13,7 @@ deep_abyss_set = set([u'CAUSE-SEVERE-NOT-FUNCTION',u'CAUSE-SEVERE-REDUCE-OPTIONS
 harvest_crop_seed_set = set([u'CAUSE-OUTCOME-OF-ACTION', u'CAUSE-REALIZE-OUTCOME', u'PREPARATION-FOR-OUTCOME', u'THING-REALIZING',u'OUTCOME-OF-ACTION']) 
 crop_outcome_set = set([u'CAUSE-OUTCOME-OF-ACTION',u'OUTCOME-OF-ACTION']) 
 crop_set = set([u'CAUSE-OUTCOME-OF-ACTION']) 
+resource_set = set([u'CAUSE-FUNCTION']) 
 price_set = set([u'THING-DESIRED', u'CAUSE-NEGATIVE-CONSEQUENCE-OF-DESIRED-THING'])
 live_in_set = set([u'CAUSE-EXPERIENCE-SOMETHING',u'EXPERIENCER','THING-EXPERIENCED'])
 
@@ -26,6 +27,8 @@ def lm_category(log):
         lm_type = "cause_problem_not_exist"        
     elif re.search(u"^CAUSE-NOT-FUNCTION",log):
         lm_type = "cause_not_function"           
+    elif re.search(u"^CAUSE-FUNCTION",log):
+        lm_type = "cause-function"           
     elif re.search(u"^CAUSE-RESUME-FUNCTION",log):
         lm_type = "cause_resume_function"   
     elif re.search(u"^CAUSE-INCREASE-OPTIONS",log):
@@ -71,13 +74,18 @@ def lm_category(log):
         lm_type = "outcome"
     elif re.search(u"^PREPARATION-FOR-OUTCOME",log):
         lm_type = "preparation"
-        
-    #else:
-        #print log
-        
     return lm_type
 
-def process_explanation(exp,s_id,lang,target_sub):
+
+def prune_lm_list(lm_list,lm_type,target_lms,source_lms):
+    if lm_type == "cause-neg-consequence":
+        for dup in set(lm_list).intersection(target_lms):
+            lm_list.remove(dup)
+    if lm_type == "cause-function":
+        for dup in set(lm_list).intersection(target_lms):
+            lm_list.remove(dup)
+
+def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
     logic_list = []
     lms = {}
     unexpressed = re.compile(u"x\d+")
@@ -85,15 +93,16 @@ def process_explanation(exp,s_id,lang,target_sub):
         e = e.strip().rstrip("]")
         #print e
         logic = e.split("[")[0]
-        #print logic
         lm_type = lm_category(logic)
 	if len(lm_type)==0: continue
 
         lm_list = e.split("[")[1].rstrip("]").split(",")
         logic_list.append(logic)
+        prune_lm_list(lm_list,lm_type,target_lms,source_lms)
         for word in lm_list:
             if unexpressed.search(word):
                 word = "some entity"
+
             lms[lm_type] = word
     logic_set = set(logic_list)    
     if logic_set == grow_set:
@@ -163,6 +172,12 @@ def process_explanation(exp,s_id,lang,target_sub):
         	print('{} implies that {} experiences {}'.format(lms['cause-experience'],lms['patient_experience'],lms['experience-event'])) 
 	else:
 		print  lms['cause-experience'] + u' означает, что ' + lms['patient_experience'] + u' переживает ' + lms['experience-event']
+
+    #RESOURCE
+    if logic_set == resource_set:
+        print s_id
+	if lang=='EN':      
+        	print('{} implies that money causes those who have it to function'.format(lms['cause-function']))  
         
 
 def generate_language(data,lang):
@@ -170,10 +185,11 @@ def generate_language(data,lang):
         mappings = jline["annotationMappings"][0]
 	if len(mappings["explanation"])>0:
             exp_list = mappings["explanation"].split("],")
-            source_dom = mappings["source"]
+            source_lms = mappings["source"].split(",")
+            target_lms = mappings["target"].split(",")
             target_sub = jline["targetConceptSubDomain"]
             sent_id = jline["sid"]
-            process_explanation(exp_list,sent_id,lang,target_sub)
+            process_explanation(exp_list,sent_id,lang,target_sub,target_lms,source_lms)
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
