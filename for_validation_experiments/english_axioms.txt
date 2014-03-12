@@ -257,13 +257,15 @@
 (B (name drug-recoverymap)(=>(I#DRUG%RECOVERY x e0 :0.9)(SS#DRUG%RECOVERY x e0)))
 
 ; BODY
-(B (name body)(=>(^(S#BODY x :0.45)(SS#TYPE x e0 :0.45)) (body-nn e0 x)))
+(B (name body)(=>(^(S#BODY e0 :0.45)(SS#BODY%TYPE x e0 :0.45)) (body-nn e0 x)))
 
-(B (name hand)(=>(^(S#BODY x :0.45)(SS#TYPE x e0 :0.45)) (hand-nn e0 x)))
-(B (name head)(=>(^(S#BODY x :0.45)(SS#TYPE x e0 :0.45)) (head-nn e0 x)))
+(B (name hand)(=>(^(S#BODY e0 :0.3)(SS#BODY%PART x e0 :0.3)(R#HAND x :0.3)) (hand-nn e0 x)))
+(B (name hand-of)(=>(^(S#BODY e0 :0.23)(SS#BODY%PART x e0 :0.23)(R#HAND x :0.23)(R#CONTROLLER y :0.23)) (^(hand-nn e0 x)(of-in e1 x y))))
+(B (name head)(=>(^(S#BODY e0 :0.3)(SS#BODY%PART x e0 :0.3)(R#HEAD x :0.3)) (head-nn e0 x)))
 
 (B (name bodymap)(=>(I#BODY x :0.9)(S#BODY x)))
 (B (name body-typemap)(=>(I#BODY%TYPE x e0 :0.9)(SS#BODY%TYPE x e0)))
+(B (name body-partmap)(=>(I#BODY%PART x e0 :0.9)(SS#BODY%PART x e0)))
 ; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
 ; TARGET WORDS;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

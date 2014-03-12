@@ -77,9 +77,10 @@ def lm_category(log):
         
     return lm_type
 
-def process_explanation(exp,s_id,lang):
+def process_explanation(exp,s_id,lang,target_sub):
     logic_list = []
     lms = {}
+    unexpressed = re.compile(u"x\d+")
     for e in exp:
         e = e.strip().rstrip("]")
         #print e
@@ -91,6 +92,8 @@ def process_explanation(exp,s_id,lang):
         lm_list = e.split("[")[1].rstrip("]").split(",")
         logic_list.append(logic)
         for word in lm_list:
+            if unexpressed.search(word):
+                word = "some entity"
             lms[lm_type] = word
     logic_set = set(logic_list)    
     if logic_set == grow_set:
@@ -105,13 +108,18 @@ def process_explanation(exp,s_id,lang):
         	print('{} denotes that {} causes {} to stop existing'.format(lms['cause_not_exist'],lms['agent_not_exist'],lms['patient_not_exist']))
 	else:
 		print lms['cause_not_exist'] + u' прекращает существование ' + lms['patient_not_exist']
-    if logic_set == no_agent_eradicate_set:
+    if logic_set == no_agent_eradicate_set and target_sub != "WEALTH":
         print s_id    
         if lang=='EN':    
         	print('{} denotes that there is an effort to stop the existence of {} '.format(lms['cause_not_exist'],lms['patient_not_exist']))
 	else:
 		print lms['cause_not_exist'] + u' означает что есть попытка избавиться от ' + lms['patient_not_exist']
-
+    elif logic_set == no_agent_eradicate_set and target_sub == "WEALTH":
+        print s_id    
+        if lang=='EN':    
+        	print('{} denotes that {} does not exist'.format(lms['cause_not_exist'],lms['patient_not_exist']))
+	else:
+		print lms['cause_not_exist'] + u' означает что есть попытка избавиться от ' + lms['patient_not_exist']
         
     #CROP
     if logic_set == harvest_crop_seed_set:
@@ -161,9 +169,11 @@ def generate_language(data,lang):
     for jline in data:
         mappings = jline["annotationMappings"][0]
 	if len(mappings["explanation"])>0:
-        	exp_list = mappings["explanation"].split("],")
-        	sent_id = jline["sid"]
-        	process_explanation(exp_list,sent_id,lang)
+            exp_list = mappings["explanation"].split("],")
+            source_dom = mappings["source"]
+            target_sub = jline["targetConceptSubDomain"]
+            sent_id = jline["sid"]
+            process_explanation(exp_list,sent_id,lang,target_sub)
 
 def parse_arguments():
     parser = argparse.ArgumentParser(

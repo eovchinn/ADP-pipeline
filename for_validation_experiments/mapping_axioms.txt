@@ -100,6 +100,11 @@
 (B (name water)(=> (M#LARGE-AMOUNT x e0 :0.8) (I#WATER%TYPE x e0)))
 (B (name body_of_water)(=> (^(M#LARGE-AMOUNT x e0 :0.45)(M#AMOUNT-THING y e0 :0.45)) (^(I#WATER%TYPE x e0)(R#WATER-COMPARISON y e0))))
 
+;BODY
+(B (name body)(=> (M#LARGE-AMOUNT x e0 :0.8) (I#BODY%TYPE x e0)))
+(B (name hand)(=> (M#CAUSE-LOSE-SELF-CONTROL x e0 :0.8) (^(I#BODY%PART x e0)(R#HAND x e0))))
+(B (name handof)(=> (^(M#CAUSE-LOSE-SELF-CONTROL x e0 :0.3)(M#THING-GAINING-CONTROL y e0 :0.3)) (^(I#BODY%PART x e0)(R#HAND x)(R#CONTROLLER y))))
+
 ; MOVEMENT
 (B (name water-movement) (=>(^(M#LIQUID-MOVE-FREELY e0 :0.3)(M#LIQUID-THING x :0.3))  (^(I#WATER%MOVEMENT e0 e0)(R#STREAMING x e0))))
 
