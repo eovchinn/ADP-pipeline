@@ -70,7 +70,8 @@
 
 
 ;VIOLENCE
-(B (name violence) (=> (^(M#CAUSE-NOT-FUNCTION x e0 :0.45)(M#THING-CAUSING-NOT-FUNCTION x e0 :0.45)) (^(I#VIOLENCE e0)(I#VIOLENCE%TYPE x e0))))
+(B (name violence) (=> (^(M#CAUSE-NOT-FUNCTION x e0 :0.45)) (I#VIOLENCE%TYPE x e0)))
+(B (name violence) (=> (^(M#CAUSE-NOT-FUNCTION x e0 :0.45)(M#THING-CAUSING-NOT-FUNCTION x e0 :0.45)) (^(I#VIOLENCE%TYPE e0 e0)(R#VIOLENT x e0))))
 
 ;TERRORISM
 (B (name terrorism) (=> (^(M#CAUSE-NOT-FUNCTION x e0 :0.45)(M#THING-CAUSING-NOT-FUNCTION y e0 :0.45)) (^(I#TERRORISM%TYPE x e0)(R#TERRORIZE-AGENT y e0))))
