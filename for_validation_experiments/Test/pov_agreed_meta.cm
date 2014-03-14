@@ -630,20 +630,20 @@
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
-                "source": "", 
-                "explanation": "", 
-                "sourceInLm": false, 
+                "source": "live", 
+                "explanation": "CAUSE-EXPERIENCE-SOMETHING[live], EXPERIENCER[x10], THING-EXPERIENCED[poverty]", 
+                "sourceInLm": true, 
                 "target": "poverty", 
                 "targetInLm": true
             }
         ], 
         "targetFrame": "POVERTY", 
         "targetConceptSubDomain": "POVERTY", 
-        "sourceConceptSubDomain": "TYPE", 
+        "sourceConceptSubDomain": "DEFINED-REGION", 
         "isiDescription": "", 
         "sid": "35", 
-        "sourceFrame": "STRUGGLE", 
-        "isiAbductiveExplanation": "more-adj(e37,x9) ^ card(e36,x9,1) ^ card(e35,x8,3) ^ black-adj(e34,x8) ^ kids—a-nn(e33,x7) ^ of-in(e32,x8,x7) ^ full-adj(e31,x8) ^ card(e30,x8,36) ^ percent-nn(e29,x8) ^ in-in(e28,x9,x8) ^ black-adj(e27,x5) ^ youth—live-nn(e26,x5) ^ poverty-nn(e25,x4) ^ in-in(e24,x5,x4) ^ subset-of(e23,x5,x6) ^ t-XXXXXX31(e22,x3) ^ percent-nn(e21,x3) ^ subset-of(e20,x3,x6) ^ of-in(e19,x9,x6) ^ latino-nn(e17,x2) ^ loc(e18,x2) ^ kid-nn(e16,x1) ^ of-in(e15,x2,x1) ^ life-nn(e14,x2) ^ poverty-nn(e13,x0) ^ in-in(e12,x2,x0) ^ of-in(e11,x9,x2) ^ topic(e10,x9) ^ !=(e17,e18) ^ !=(e32,e19,e15,e11) ^ !=(e28,e24,e12) ^ !=(e23,e20) ^ !=(e36,e35,e30) ^ TS#POVERTY(x4) ^ T#ECONOMIC-INEQUALITY(_52) ^ =(x4,x0) ^ =(e13,e25) ^ =(e27,e34) ^ =(x8,x3,x5) ^ =(e21,e29)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,STRUGGLE,TYPE,0.001\n%%END_CM_LIST"
+        "sourceFrame": "PHYSICAL-LOCATION", 
+        "isiAbductiveExplanation": "more-adj(e39,x10) ^ card(e38,x10,1) ^ card(e37,x9,3) ^ black-adj(e36,x9) ^ kid-nn(e35,x9) ^ full-adj(e34,x8) ^ card(e33,x8,36) ^ percent-nn(e32,x8) ^ black-adj(e31,x7) ^ youth-nn(e30,x7) ^ of-in(e29,x8,x7) ^ ---in(e28,x9,x8) ^ in-in(e27,x10,x9) ^ live-vb(x6,x10,u25,u26) ^ poverty-nn(e24,x4) ^ subset-of(e23,x4,x5) ^ t-XXXXXX31(e22,x3) ^ percent-nn(e21,x3) ^ latino-nn(e19,x2) ^ loc(e20,x2) ^ kid-nn(e18,x1) ^ of-in(e17,x2,x1) ^ life-nn(e16,x2) ^ of-in(e15,x3,x2) ^ subset-of(e14,x3,x5) ^ in-in(e13,x6,x5) ^ poverty-nn(e12,x0) ^ in-in(e11,x6,x0) ^ !=(e19,e20) ^ !=(e29,e17,e15) ^ !=(e27,e13,e11) ^ !=(e23,e14) ^ !=(e38,e37,e33) ^ TS#POVERTY(x4) ^ T#ECONOMIC-INEQUALITY(_52) ^ TS#POVERTY(x0) ^ T#ECONOMIC-INEQUALITY(_53) ^ S#PHYSICAL-LOCATION(x6) ^ SS#PHYSICAL-LOCATION%DEFINED-REGION(x6,x6) ^ R#LOCATION-AGENT(x10,x6) ^ R#REGION(x0,x6) ^ I#PHYSICAL-LOCATION(x6) ^ I#PHYSICAL-LOCATION%DEFINED-REGION(x6,x6) ^ M#CAUSE-EXPERIENCE-SOMETHING(x6,x6) ^ M#THING-EXPERIENCED(x0,x6) ^ M#EXPERIENCER(x10,x6) ^ =(x7,x9,x1) ^ =(x8,x3) ^ =(_52,_53) ^ =(e21,e32) ^ =(e31,e36) ^ =(e35,e18)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,PHYSICAL-LOCATION,DEFINED-REGION,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -928,7 +928,7 @@
         "isiDescription": "", 
         "sid": "51", 
         "sourceFrame": "CRIME", 
-        "isiAbductiveExplanation": "poverty-nn(e39,x0) ^ crime-nn(e38,x16) ^ certain-adj(e37,x15) ^ degree-nn(e36,x15) ^ to-in(e35,x16,x15) ^ equal(e34,x0,x16) ^ although-in(e33,e38,x4) ^ male(e32,x0) ^ thing-in(e31,x3) ^ neuter(e30,x3) ^ not-rb(e29,x3) ^ say-vb(x4,x3,e29,u28) ^ not(e17,e27) ^ poor-adj(e27,x10) ^ crime-nn(e26,x10) ^ subset-of(e25,x10,x11) ^ equal(e24,x0,x8) ^ poor-nn(e23,x12) ^ equal(e22,x8,x12) ^ subset-of(e21,x0,x11) ^ criminal-adj(e20,x11) ^ a(e19,x11) ^ in-in(e18,e20,x4) ^ !=(e34,e24,e22) ^ !=(e25,e21) ^ TS#POVERTY(x0) ^ T#ECONOMIC-INEQUALITY(_72) ^ S#CRIME(e38) ^ SS#CRIME%TYPE(x16,e38) ^ TS#POVERTY(e27) ^ T#ECONOMIC-INEQUALITY(_73) ^ R#POOR(x10,e27) ^ TS#POVERTY(e23) ^ T#ECONOMIC-INEQUALITY(_74) ^ R#POOR(x12,e23) ^ S#CRIME(e20) ^ SS#CRIME%PERPETRATOR(x11,e20) ^ R#AGENT(x11,e20) ^ I#CRIME%TYPE(x16,e38) ^ I#CRIME(e20) ^ I#CRIME%PERPETRATOR(x11,e20) ^ M#AGAINST-SOCIETY-ACTION(e38,x16) ^ M#AGAINST-SOCIETY-ACTION(e20) ^ M#AGAINST-SOCIETY-ACTOR(x11,e20) ^ =(_72,_73,_74) ^ =(e27,x0,e23) ^ =(x10,x16,x12) ^ =(e38,e26,e20)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,CRIME,TYPE,0.95\nECONOMIC_INEQUALITY,POVERTY,POVERTY,CRIME,PERPETRATOR,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "poverty-nn(e39,x0) ^ crime-nn(e38,x16) ^ certain-adj(e37,x15) ^ degree-nn(e36,x15) ^ to-in(e35,x16,x15) ^ equal(e34,x0,x16) ^ although-in(e33,e38,x4) ^ male(e32,x0) ^ thing-in(e31,x3) ^ neuter(e30,x3) ^ not-rb(e29,x3) ^ say-vb(x4,x3,e29,u28) ^ not(e17,e27) ^ poor-adj(e27,x10) ^ crime-nn(e26,x10) ^ subset-of(e25,x10,x11) ^ equal(e24,x0,x8) ^ poor-nn(e23,x12) ^ equal(e22,x8,x12) ^ subset-of(e21,x0,x11) ^ criminal-adj(e20,x11) ^ a(e19,x11) ^ in-in(e18,e20,x4) ^ !=(e34,e24,e22) ^ !=(e25,e21) ^ TS#POVERTY(x0) ^ T#ECONOMIC-INEQUALITY(_72) ^ S#CRIME(e38) ^ SS#CRIME%TYPE(x16,e38) ^ TS#POVERTY(e27) ^ T#ECONOMIC-INEQUALITY(_73) ^ R#POOR(x10,e27) ^ TS#POVERTY(e23) ^ T#ECONOMIC-INEQUALITY(_74) ^ R#POOR(x12,e23) ^ S#CRIME(e20) ^ SS#CRIME%PERPETRATOR(x11,e20) ^ R#AGENT(x11,e20) ^ I#CRIME%TYPE(x16,e38) ^ I#CRIME(e20) ^ I#CRIME%PERPETRATOR(x11,e20) ^ M#AGAINST-SOCIETY-ACTION(e38,x16) ^ M#AGAINST-SOCIETY-ACTION(e20) ^ M#AGAINST-SOCIETY-ACTOR(x11,e20) ^ =(x10,x16,x12) ^ =(e38,e26,e20) ^ =(_72,_73,_74) ^ =(e27,x0,e23)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,CRIME,TYPE,0.95\nECONOMIC_INEQUALITY,POVERTY,POVERTY,CRIME,PERPETRATOR,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -1156,6 +1156,6 @@
         "isiDescription": "", 
         "sid": "63", 
         "sourceFrame": "VIOLENCE", 
-        "isiAbductiveExplanation": "there-vb(e73,x16) ^ quantity-adj(e72,x27) ^ reason-nn(e71,x27) ^ equal(e70,x16,x27) ^ goal-nn(e69,x13) ^ subset-of(e68,x13,x14) ^ subset-of(e67,x5,x14) ^ accomplish-vb(x12,x16,x14,u66) ^ poverty-nn(e65,x6) ^ of-in(e64,x11,x6) ^ burn-nn(e63,x11) ^ imp(e55,e56,x24) ^ equal(e62,x23,x26) ^ enter-vb(x25,x26,x2,u61) ^ within-in(e60,x11,x23) ^ of-in(e59,x4,x11) ^ consider-vb(x24,x16,x4,u58) ^ when(e57,x12,x24) ^ person-nn(e56,x23) ^ card(e54,x10,1) ^ work-vb(x9,x10,u52,u53) ^ poverty-nn(e51,x8) ^ of-in(e50,x3,x8) ^ towards-in(e49,x9,x3) ^ whether-in(e48,x9,e36) ^ neuter(e47,x6) ^ or(e36,e39,x21) ^ joy-nn(e46,x22) ^ of-in(e45,x0,x22) ^ feel-vb(x21,x0,u43,u44) ^ person-nn(e42,x20) ^ help-vb(x19,x0,x20,u41) ^ when(e40,x21,x19) ^ travel-nn(e39,x18) ^ of-in(e38,x1,x18) ^ equal(e37,x6,x1) ^ rel(e35,x9,x16) ^ moral-adj(e34,x5) ^ indignation-nn(e33,x5) ^ violence-nn(e32,x4) ^ endeavor-nn(e31,x2) ^ end-nn(e30,x3) ^ excitement-nn(e29,x1) ^ rush-nn(e28,x0) ^ !=(e64,e59,e50,e45,e38) ^ !=(e57,e40) ^ !=(e70,e62,e37) ^ !=(e68,e67) ^ TS#POVERTY(x6) ^ T#ECONOMIC-INEQUALITY(_90) ^ S#VIOLENCE(e32) ^ SS#VIOLENCE%TYPE(x4,e32) ^ I#VIOLENCE(e32) ^ I#VIOLENCE%TYPE(x4,e32) ^ M#CAUSE-NOT-FUNCTION(x4,e32) ^ =(x20,x23) ^ =(e51,e65) ^ =(x8,x6) ^ =(e56,e42)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,VIOLENCE,TYPE,0.75\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "there-vb(e73,x16) ^ quantity-adj(e72,x27) ^ reason-nn(e71,x27) ^ equal(e70,x16,x27) ^ goal-nn(e69,x13) ^ subset-of(e68,x13,x14) ^ subset-of(e67,x5,x14) ^ accomplish-vb(x12,x16,x14,u66) ^ poverty-nn(e65,x6) ^ of-in(e64,x11,x6) ^ burn-nn(e63,x11) ^ imp(e55,e56,x24) ^ equal(e62,x23,x26) ^ enter-vb(x25,x26,x2,u61) ^ within-in(e60,x11,x23) ^ of-in(e59,x4,x11) ^ consider-vb(x24,x16,x4,u58) ^ when(e57,x12,x24) ^ person-nn(e56,x23) ^ card(e54,x10,1) ^ work-vb(x9,x10,u52,u53) ^ poverty-nn(e51,x8) ^ of-in(e50,x3,x8) ^ towards-in(e49,x9,x3) ^ whether-in(e48,x9,e36) ^ neuter(e47,x6) ^ or(e36,e39,x21) ^ joy-nn(e46,x22) ^ of-in(e45,x0,x22) ^ feel-vb(x21,x0,u43,u44) ^ person-nn(e42,x20) ^ help-vb(x19,x0,x20,u41) ^ when(e40,x21,x19) ^ travel-nn(e39,x18) ^ of-in(e38,x1,x18) ^ equal(e37,x6,x1) ^ rel(e35,x9,x16) ^ moral-adj(e34,x5) ^ indignation-nn(e33,x5) ^ violence-nn(e32,x4) ^ endeavor-nn(e31,x2) ^ end-nn(e30,x3) ^ excitement-nn(e29,x1) ^ rush-nn(e28,x0) ^ !=(e64,e59,e50,e45,e38) ^ !=(e57,e40) ^ !=(e70,e62,e37) ^ !=(e68,e67) ^ TS#POVERTY(x6) ^ T#ECONOMIC-INEQUALITY(_90) ^ S#VIOLENCE(e32) ^ SS#VIOLENCE%TYPE(x4,e32) ^ I#VIOLENCE(e32) ^ I#VIOLENCE%TYPE(x4,e32) ^ M#CAUSE-NOT-FUNCTION(x4,e32) ^ =(x8,x6) ^ =(e56,e42) ^ =(x20,x23) ^ =(e51,e65)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,VIOLENCE,TYPE,0.75\n%%END_CM_LIST"
     }
 ]

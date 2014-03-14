@@ -243,6 +243,7 @@
 (B (name drug)(=>(^(S#DRUG e0 :0.45)(SS#DRUG%TYPE x e0 :0.45)) (drug-nn e0 x)))
 
 (B (name addiction)(=>(^(S#DRUG e0 :0.45)(SS#DRUG%ADDICTION x e0 :0.45)) (addiction-nn e0 x)))
+(B (addiction-to) (=>(R#ADDICTIVE-SUBSTANCE y e0 :0.9)(^(I#DRUGY%ADDICTION x e0)(to-in e1 x y))))
 (B (name drug-addict)(=>(^(S#DRUG e0 :0.3)(SS#DRUG%ADDICTION x e0 :0.3)(R#ADDICTED y :0.3)) (^(drug-nn e0 x)(of-in e1 y x)(addict-nn e2 y))))
 
 (B (name drunk)(=>(^(S#DRUG e0 :0.3)(SS#DRUG%EFFECT e0 e0 :0.3)(R#UNDER-INFLUENCE x :0.3)) (drunk-adj e0 x)))
@@ -258,6 +259,7 @@
 
 ; BODY
 (B (name body)(=>(^(S#BODY e0 :0.45)(SS#BODY%TYPE x e0 :0.45)) (body-nn e0 x)))
+(B (body-of) (=>(R#BODY-COMPARISON y e0 :0.9)(^(I#BODY%TYPE x e0)(of-in e1 x y))))
 
 (B (name hand)(=>(^(S#BODY e0 :0.3)(SS#BODY%PART x e0 :0.3)(R#HAND x :0.3)) (hand-nn e0 x)))
 (B (name hand-of)(=>(^(S#BODY e0 :0.23)(SS#BODY%PART x e0 :0.23)(R#HAND x :0.23)(R#CONTROLLER y :0.23)) (^(hand-nn e0 x)(of-in e1 x y))))
