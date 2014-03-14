@@ -869,7 +869,7 @@ id(34,33).
 34042 Foundation NNP Foundation I-LOC 
 34043 . . . O 
 [34003]:point-v(x13,x6,u63,u64) & [34034]:accord-v(x12,u60,u61,u62) & [34038]:sponsor-v(x11,x5,x6,u59) & [34035]:to(e58,x12,x6) & [34005]:concentrated-a(e57,x10) & [34006]:need-n(e56,x10) & [34009]:rel(e55,x4,x3) & []:subset_of(e54,x4,x9) & []:subset_of(e53,x2,x9) & [34015]:where(e52,x9,x17) & [34016]:card(e51,x19,42) & [34017]:percent-n(e50,x19) & [34019]:child-n(e49,x18) & [34018]:of-p(e48,x19,x18) & [34020]:live-v(x17,x19,u46,u47) & [34022]:poverty-n(e45,x16) & [34028]:childhood-n(e44,x14) & []:of(e43,x15,x14) & [34029]:poverty-n(e42,x15) & [34030]:in-p(e41,x15,x0) & [34027]:of-p(e40,x1,x15) & [34023]:rel(e39,x16,x1) & [34021]:in-p(e38,x17,x16) & [34007]:in-p(e37,x10,x9) & [34004]:to(e36,x13,x10) & [34037,34002]:study-n(e35,x6) & [34041,34042]:boston_foundation-n(e33,x5) & [34041,34042]:loc(e34,x5) & [34008]:dorchester-n(e31,x4) & [34008]:loc(e32,x4) & [34010]:mattapan-n(e29,x3) & [34010]:loc(e30,x3) & [34013]:roxbury-n(e27,x2) & [34013]:per(e28,x2) & [34026]:cluster-n(e26,x1) & []:imp(e21,e23,e25) & [34025]:densest-a(e25,x1,x7) & []:not(e23,e24) & []:equal(e24,x1,x7) & [34026]:cluster-n(e22,x7) & [34032]:state-n(e20,x0)
-%%% More than one in three black kids—a full 36 percent of black youth—live in poverty and 31 percent of Latino kids lives in poverty . 
+%%% More than one in three black kids - a full 36 percent of black youth - live in poverty and 31 percent of Latino kids lives in poverty . 
 id(35,34).
 35001 More JJR more O 
 35002 than IN than O 
@@ -877,26 +877,30 @@ id(35,34).
 35004 in IN in O 
 35005 three CD three O 
 35006 black JJ black O 
-35007 kids—a NN kids—a O 
-35008 full JJ full O 
-35009 36 CD 36 I-PCT 
-35010 percent NN percent I-PCT 
-35011 of IN of O 
-35012 black JJ black O 
-35013 youth—live NN youth—live O 
-35014 in IN in O 
-35015 poverty NN poverty I-DAT 
-35016 and CC and I-DAT 
-35017 31 CD 31 I-DAT 
-35018 percent NN percent I-PCT 
-35019 of IN of I-LOC 
-35020 Latino NNP Latino I-LOC 
-35021 kids NNS kid O 
-35022 lives NNS life O 
-35023 in IN in O 
-35024 poverty NN poverty O 
-35025 . . . O 
-[35001]:more-a(e37,x9) & [35003]:card(e36,x9,1) & [35005]:card(e35,x8,3) & [35006]:black-a(e34,x8) & [35007]:kids—a-n(e33,x7) & []:of(e32,x8,x7) & [35008]:full-a(e31,x8) & [35009]:card(e30,x8,36) & [35010]:percent-n(e29,x8) & [35004]:in-p(e28,x9,x8) & [35012]:black-a(e27,x5) & [35013]:youth—live-n(e26,x5) & [35015]:poverty-n(e25,x4) & [35014]:in-p(e24,x5,x4) & []:subset_of(e23,x5,x6) & [35017]:t_XXXXXX31(e22,x3) & [35018]:percent-n(e21,x3) & []:subset_of(e20,x3,x6) & [35011]:of-p(e19,x9,x6) & [35020]:latino-n(e17,x2) & [35020]:loc(e18,x2) & [35021]:kid-n(e16,x1) & []:of(e15,x2,x1) & [35022]:life-n(e14,x2) & [35024]:poverty-n(e13,x0) & [35023]:in-p(e12,x2,x0) & [35019]:of-p(e11,x9,x2) & []:topic(e10,x9)
+35007 kids NNS kid O 
+35008 - IN - O 
+35009 a DT a O 
+35010 full JJ full O 
+35011 36 CD 36 I-PCT 
+35012 percent NN percent I-PCT 
+35013 of IN of O 
+35014 black JJ black O 
+35015 youth NN youth O 
+35016 - : - O 
+35017 live VBP live O 
+35018 in IN in O 
+35019 poverty NN poverty O 
+35020 and CC and O 
+35021 31 CD 31 I-DAT 
+35022 percent NN percent I-PCT 
+35023 of IN of I-LOC 
+35024 Latino NNP Latino I-LOC 
+35025 kids NNS kid O 
+35026 lives NNS life O 
+35027 in IN in O 
+35028 poverty NN poverty O 
+35029 . . . O 
+[35001]:more-a(e39,x10) & [35003]:card(e38,x10,1) & [35005]:card(e37,x9,3) & [35006]:black-a(e36,x9) & [35007]:kid-n(e35,x9) & [35010]:full-a(e34,x8) & [35011]:card(e33,x8,36) & [35012]:percent-n(e32,x8) & [35014]:black-a(e31,x7) & [35015]:youth-n(e30,x7) & [35013]:of-p(e29,x8,x7) & [35008]: --p(e28,x9,x8) & [35004]:in-p(e27,x10,x9) & [35017]:live-v(x6,x10,u25,u26) & [35019]:poverty-n(e24,x4) & []:subset_of(e23,x4,x5) & [35021]:t_XXXXXX31(e22,x3) & [35022]:percent-n(e21,x3) & [35024]:latino-n(e19,x2) & [35024]:loc(e20,x2) & [35025]:kid-n(e18,x1) & []:of(e17,x2,x1) & [35026]:life-n(e16,x2) & [35023]:of-p(e15,x3,x2) & []:subset_of(e14,x3,x5) & [35018]:in-p(e13,x6,x5) & [35028]:poverty-n(e12,x0) & [35027]:in-p(e11,x6,x0)
 %%% Therefore , 89 % who live in poverty do NOT have a college degree . 
 id(36,35).
 36001 Therefore RB therefore O 

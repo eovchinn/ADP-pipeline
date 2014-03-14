@@ -6,7 +6,7 @@ import json
 import re
 
 grow_set = set([u'THING-INCREASING', u'CAUSE-INCREASE-AMOUNT'])
-eradicate_set =set([u'THING-NOT-EXISTING', u'CAUSE-NOT-EXIST', u'THING-CAUSING-NON-EXISTENCE'])
+eradicate_set =set([u'THING-NOT-EXISTING', u'CAUSE-NOT-EXIST', u'THING-CAUSING-NOT-EXIST'])
 no_agent_eradicate_set=set([u'THING-NOT-EXISTING', u'CAUSE-NOT-EXIST'])
 exit_abyss_set = set([u'THING-THAT-LIMITED-OPTIONS', u'CAUSE-INCREASE-OPTIONS', u'THING-THAT-STOPPED-FUNCTION', u'CAUSE-RESUME-FUNCTION'])
 deep_abyss_set = set([u'CAUSE-SEVERE-NOT-FUNCTION',u'CAUSE-SEVERE-REDUCE-OPTIONS'])
@@ -16,6 +16,7 @@ crop_set = set([u'CAUSE-OUTCOME-OF-ACTION'])
 crime_set = set([u'AGAINST-SOCIETY-ACTION']) 
 resource_set = set([u'CAUSE-FUNCTION']) 
 terror_set = set([u'CAUSE-NOT-FUNCTION']) 
+disease_set = set([u'CAUSE-NOT-FUNCTION','THING-NOT-FUNCTIONING']) 
 medicine_set = set([u'CAUSE-PROBLEM-NOT-EXIST']) 
 treatment_set = set([u'CAUSE-PROBLEM-NOT-EXIST','CAUSE-NOT-FUNCTION']) 
 blood_set = set([u'CAUSE-FUNCTION', u'THING-FUNCTIONING'])
@@ -68,7 +69,7 @@ def lm_category(log):
     elif re.search(u"^AGAINST-SOCIETY-ACTION",log):
         lm_type = "against-society-action"          
 
-    elif re.search(u"^THING-CAUSING-NON-EXISTING",log):
+    elif re.search(u"^THING-CAUSING-NOT-EXIST",log):
         lm_type = "agent-not-exist"
     elif re.search(u"^THING-THAT-LIMITED-OPTIONS",log):
         lm_type = "agent-limit-options" 
@@ -87,6 +88,8 @@ def lm_category(log):
         lm_type = "patient-increase"
     elif re.search(u"^THING-FUNCTIONING",log):
         lm_type = "patient-function"
+    elif re.search(u"^THING-NOT-FUNCTIONING",log):
+        lm_type = "patient-not-function"
     elif re.search(u"^THING-NOT-EXISTING",log):
         lm_type = "patient-not-exist"
     elif re.search(u"^THING-DESIRED",log):
@@ -243,6 +246,12 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
         print s_id
 	if lang=='EN':      
         	print('{} implies that poverty is causing some entity not to function'.format(lms['cause-not-function']))  
+
+    #DISEASE
+    if logic_set == disease_set:
+        print s_id
+	if lang=='EN':      
+        	print('{} implies that poverty is causing {} not to function'.format(lms['cause-not-function'],lms['patient-not-function']))  
 
     #MEDICINE
     if logic_set == medicine_set:
