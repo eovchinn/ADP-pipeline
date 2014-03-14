@@ -1,47 +1,3 @@
-; PAIN
-(B (name pain2) (=> (^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#THING-CAUSING-NOT-FUNCTION x e0 :0.45)) (^(I#PAIN y)(I#PAIN%TYPE x y))))
-
-; DISEASE 
-
-;(B (name disease)(=> (^(M#CAUSE-NOT-FUNCTION e0 :0.3)(M#THING-CAUSING-NOT-FUNCTION x e0 :0.3)(M#FUNCTION-AGENT y e0 :0.3)) (^ (I#DISEASE x)(I#DISEASE%TYPE x x)(R#SICK y x))))
-(B (name disease) (=> (^(M#CAUSE-NOT-FUNCTION e0 :0.45)(M#THING-NOT-FUNCTIONING y e0 :0.45)) (^(I#DISEASE%TYPE x e0)(R#SICK y e0))))
-(B (name disease2) (=> (M#CAUSE-NOT-FUNCTION x :0.9) (I#DISEASE%TYPE x e0)))
-
-;(B (name cure)(=> (^(M#CAUSE-NOT-EXIST e1 :0.3)(M#THING-CAUSING-NOT-EXIST y e1 :0.3)(M#EXISTING-THING x e1 :0.3)) (^(I#DISEASE%CURE e0 e0)(R#CURE-AGENT y e0)(R#SICK x d)(S#DISEASE d))))
-(B (name cure)(=> (^(M#CAUSE-NOT-EXIST e0 :0.45)(M#THING-CAUSING-NOT-EXIST x e0 :0.45)) (^(I#DISEASE e0) (I#DISEASE%CURE e0 e0)(R#CURE-AGENT x e0))))
-(B (name cure2)(=> (^(M#CAUSE-NOT-EXIST e0 :0.3)(M#THING-CAUSING-NOT-EXIST x e0 :0.3)(M#THING-NOT-EXISTING y e0 :0.3)) (^(I#DISEASE e0) (I#DISEASE%CURE e0 e0)(R#CURE-AGENT x e0)(R#CURE-PATIENT y e0))))
-
-(B (name treatment)(=> (^(M#CAUSE-PROBLEM-NOT-EXIST e0 :0.3)) (^(I#DISEASE%TREATMENT e0 e0))))
-
-; STRUGGLE 
-
-(B (name fight)(=>(^(M#CAUSE-NOT-EXIST x e0 :0.1)(M#THING-CAUSING-NON-EXISTENCE z e0 :0.1)(M#THING-NOT-EXISTING y e0 :0.1))(^(I#STRUGGLE%TYPE x e0)(R#STRUGGLE-PATIENT y x)(R#STRUGGLE-AGENT z x))))
-(B (name fight2)(=>(^(M#CAUSE-NOT-EXIST x e0 :0.3)(M#THING-NOT-EXISTING y e0 :0.3))(^(I#STRUGGLE%TYPE x e0)(R#STRUGGLE-TARGET y x))))
-
-(B (name weapon2)(=> (^(M#CAUSE-NOT-EXIST x e0 :0.1)(M#THING-NOT-EXISTING y x :0.1)) (^(I#STRUGGLE%WEAPON x e0)(R#WEAPON-TARGET y x))))
-
-(B (name enemy)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.3)(M#THING-CAUSING-NOT-FUNCTION x e1 :0.3)(M#FUNCTION-AGENT z e1 :0.3)) (^ (I#STRUGGLE%ADVERSARY x e0)(R#STRUGGLE-AGENT z e0))))
-(B (name enemy2)(=> (^(M#CAUSE-NOT-FUNCTION e1 :0.45)(M#THING-CAUSING-NOT-FUNCTION x e1 :0.45)) (I#STRUGGLE%ADVERSARY x e0)))
-
-; PRICE 
-
-(B (name price) (=>(M#CAUSE-NEGATIVE-CONSEQUENCE-OF-DESIRED-THING x :0.9) (I#PRICE%TYPE x e0)))
-(B (name price2) (=>(^(M#CAUSE-NEGATIVE-CONSEQUENCE-OF-DESIRED-THING x :0.3)(M#THING-DESIRED y e0 :0.3)) (^(I#PRICE%TYPE x e0)(R#PRICE-REWARD y e0))))
-(B (name pay) (=>(^(M#CAUSE-EXCHANGE-NEGATIVE-POSITIVE x :0.3)(M#THING-DESIRED y e0 :0.3)) (^(I#PRICE%PAYMENT x e0)(R#PRICE-REWARD y e1))))
-
-; ABYSS
-(B (name abyss) (=>(^(M#CAUSE-NOT-FUNCTION e0 :0.23)(M#THING-CAUSING-NOT-FUNCTION e0 x :0.23)(M#CAUSE-LIMIT-OPTIONS e0 :0.23)(M#THING-CAUSING-LIMIT-OPTIONS x e0 :0.23)) (I#ABYSS%TYPE e0 u)))
-
-; ABYSS-EXIT
-(B (name abyss-exit) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-INCREASE-OPTIONS e0 :0.45)) (^(I#ABYSS e0)(I#ABYSS%EXIT e0 e0))))
-
-;(B (name abyss-exit2) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.45) (M#CAUSE-INCREASE-OPTIONS e0 :0.45)(M#CAUSING-THING-RF x e0 :0.45)(M#THING-CAUSING-INCREASED-OPTIONS)) (^(I#ABYSS e0)(I#ABYSS%EXIT e0 e0) (R#ABYSS-EXIT-CAUSE x e0))))
-(B (name abyss-exit3) (=> (^(M#CAUSE-RESUME-FUNCTION e0 :0.23) (M#CAUSE-INCREASE-OPTIONS e0 :0.23)(M#THING-THAT-LIMITED-OPTIONS z :0.23)(M#THING-THAT-STOPPED-FUNCTION z :0.23)) (^(I#ABYSS e0)(I#ABYSS%EXIT e0 e0) (R#ABYSS-THEME z e))))
-
-; ABYSS-DEEP
-;(B (name deep) (=> (^(M#CAUSE-SEVERE-NOT-FUNCTION e0 :0.23) (M#THING-CAUSING-NOT-FUNCTION e0 x :0.23) (M#CAUSE-SEVERE-REDUCE-OPTIONS e0 :0.23) (M#THING-CAUSING-LIMIT-OPTIONS e0 x :0.23)) (I#ABYSS%DEPTH e0 x)))
-(B (name deep) (=> (^(M#CAUSE-SEVERE-NOT-FUNCTION e0 :0.23) (M#CAUSE-SEVERE-REDUCE-OPTIONS e0 :0.23)) (I#ABYSS%DEPTH e0 x)))
-
 ;;;;;;;;;;;;;; 
 ;SOURCE WORDS;
 ;;;;;;;;;;;;;;
@@ -49,12 +5,15 @@
 ; PAIN
 
 (B (name pain) (=>(^(S#DISEASE e0 :0.45)(SS#DISEASE%SYMPTOMS x e0 :0.45))(боль-nn e0 x)))
+(B (name pain-of-poverty) (=>(^(S#DISEASE e0 :0.2)(SS#DISEASE%SYMPTOMS x e0 :0.2)(R#SICK y e0 :0.2)) (^(боль-nn e0 x)(of-in e1 x y)(TS#POVERTY y))))
+(B (name pain-of) (=>(^(S#DISEASE e0 :0.31)(SS#DISEASE%SYMPTOMS x e0 :0.31)(R#SICK y e0 :0.31)) (^(боль-nn e0 x)(of-in e1 x y))))
 
 
 ; DISEASE
 
-(B (name disease) (=>(^(S#DISEASE e0 :0.45)(SS#DISEASE%TYPE x e0 :0.45))(болезнь-nn e0 x)))
-(B (name disease) (=>(^(S#DISEASE e0 :0.3)(SS#DISEASE%TYPE y e0 :0.3))(^(болезнь-nn e0 x)(of-in e1 x y))))
+(B (name disease) (=>(^(S#DISEASE e0 :0.49)(SS#DISEASE%TYPE x e0 :0.49))(болезнь-nn e0 x)))
+(B (name disease-of-poverty) (=>(^(S#DISEASE e0 :0.2)(SS#DISEASE%TYPE y e0 :0.2)(SS#DISEASE%TYPE x e0 :0.2)) (^(болезнь-nn e0 x)(of-in e1 x y)(TS#POVERTY y))))
+(B (name disease-of) (=>(^(S#DISEASE e0 :0.31)(SS#DISEASE%TYPE x e0 :0.31)(R#SICK y e0 :0.31)) (^(болезнь-nn e0 x)(of-in e1 x y))))
 (B (name chronical) (=>(^(S#DISEASE x :0.45)(SS#DISEASE%TYPE e0 x :0.45))(хронический-adj e0 x)))
 (B (name chronical) (=>(^(S#DISEASE e0 :0.3)(SS#DISEASE%TYPE x e0 :0.3)(R#SICK y e0 :0.3))(парализовать-vb e0 x y z)))
 
@@ -66,6 +25,7 @@
 
 (B (name cure-from) (=>(^(S#DISEASE w :0.2)(SS#DISEASE%TREATMENT e0 w :0.2)(R#CURE-AGENT x e0 :0.2))(^(лечить-vb e0 x y z)(от-in e1 e0 w))))
 (B (name cure) (=>(^(S#DISEASE y :0.3)(SS#DISEASE%TREATMENT e0 y :0.3)(R#CURE-AGENT x e0 :0.3))(лечить-vb e0 x y z)))
+(B (name treatment) (=>(^(S#DISEASE e0 :0.45)(SS#DISEASE%TREATMENT x e0 :0.45))(лечение-nn e0 x)))
 (B (name cure-from) (=>(^(S#DISEASE y :0.2)(SS#DISEASE%TREATMENT e0 y :0.2)(R#CURE-AGENT x e0 :0.2)(R#MEDICINE w e0))(^(лечить-vb e0 x y z)(instr e1 e0 w))))
 
 (B (name dismap)(=>(I#DISEASE x :0.9)(S#DISEASE x)))
@@ -117,19 +77,25 @@
 
 ; POWER
 
-(B (name ruling) (=>(^(S#POWER e0 :0.45)(SS#POWER%MASTER e0 e0 :0.45))(господство-nn e0 x)))
-(B (name power) (=>(^(S#POWER e0 :0.45)(SS#POWER%MASTER e0 e0 :0.45))(власть-nn e0 x)))
+(B (name power) (=>(^(S#POWER e0 :0.45)(SS#POWER%TYPE x e0 :0.45))(господство-nn e0 x)))
+(B (name power) (=>(^(S#POWER e0 :0.45)(SS#POWER%TYPE x e0 :0.45))(власть-nn e0 x)))
 
-(B (name rule) (=>(^(S#POWER e0 :0.33)(SS#POWER%MASTER e0 e0 :0.33)(R#POWER-AGENT x e0 :0.33))(править-vb e0 x y u)))
-(B (name rule2) (=>(^(S#POWER e0 :0.33)(SS#POWER%MASTER e0 e0 :0.33)(R#POWER-AGENT x e0 :0.33))(господствовать-vb e0 x y u)))
+(B (name rule) (=>(^(S#POWER e0 :0.2)(SS#POWER%COMMAND e0 e0 :0.2)(R#COMMAND-AGENT x e0 :0.2)(R#COMMAND-PATIENT y e0 :0.2))(править-vb e0 x y z)))
+(B (name rule2) (=>(^(S#POWER e0 :0.2)(SS#POWER%COMMAND e0 e0 :0.2)(R#COMMAND-AGENT x e0 :0.2)(R#COMMAND-PATIENT y e0 :0.2))(господствовать-vb e0 x y z)))
 
 (B (name powermap)(=>(I#POWER x :0.9)(S#POWER x)))
-(B (name mastermap)(=>(I#POWER%MASTER x y :0.9)(SS#POWER%MASTER x y)))
+(B (name power-typemap)(=>(I#POWER%TYPE x e0 :0.9)(SS#POWER%TYPE x e0)))
+(B (name power-typemap)(=>(I#POWER%COMMAND x e0 :0.9)(SS#POWER%COMMAND x e0)))
 
 ; BODY
 
-(B (name hand) (=>(^(S#BODY u :0.45) (SS#BODY%BODY-PART x u :0.45))(рука-nn e1 x)))
-(B (name heart) (=>(^(S#BODY u :0.45) (SS#BODY%BODY-PART x u :0.45))(сердце-nn e1 x)))
+(B (name body)(=>(^(S#BODY e0 :0.45)(SS#BODY%TYPE x e0 :0.45)) (тело-nn e0 x)))
+
+(B (name hand)(=>(^(S#BODY e0 :0.3)(SS#BODY%PART x e0 :0.3)(R#HAND x e0 :0.3)) (рука-nn e0 x)))
+(B (name hand-of)(=>(^(S#BODY e0 :0.23)(SS#BODY%PART x e0 :0.23)(R#HAND x e0 :0.23)(R#CONTROLLER y x :0.23)) (^(рука-nn e0 x)(of-in e1 x y))))
+
+(B (name head)(=>(^(S#BODY e0 :0.3)(SS#BODY%PART x e0 :0.3)(R#HEART x :0.3)) (сердце-nn e0 x)))
+(B (name hand-of)(=>(^(S#BODY e0 :0.23)(SS#BODY%PART x e0 :0.23)(R#HEART x e0 :0.23)) (^(сердце-nn e0 x)(of-in e1 x y))))
 
 (B (name bodymap)(=>(I#BODY x :0.9)(S#BODY x)))
 (B (name bodypartmap)(=>(I#BODY%BODY-PART x y :0.9)(SS#BODY%BODY-PART x y)))
@@ -238,11 +204,12 @@
 
 ; BLOOD
 
-(B (name blood)(=>(^(S#BLOOD-SYSTEM e0 :0.3)(SS#BLOOD-SYSTEM%COMPONENT x e0 :0.3)(R#BLOOD x e0 :0.3)) (кровь-nn e0 x)))
-(B (name blood-system)(=>(^(S#BLOOD-SYSTEM e0 :0.45)(SS#BLOOD-SYSTEM%COMPONENT x e0 :0.45)) (^(кровеносный-adj e0 x)(система-nn e1 x))))
+(B (name blood)(=>(^(S#BLOOD e0 :0.3)(SS#BLOOD%COMPONENT x e0 :0.3)(R#BLOOD x e0 :0.3)) (кровь-nn e0 x)))
+(B (name blood-of)(=>(^(S#BLOOD e0 :0.3)(SS#BLOOD%COMPONENT x e0 :0.3)(R#BLOOD-RECEIVER y e0 :0.3)) (^(кровь-nn e0 x)(of-in e1 x y))))
+(B (name BLOOD)(=>(^(S#BLOOD e0 :0.45)(SS#BLOOD%COMPONENT x e0 :0.45)) (^(кровеносный-adj e0 x)(система-nn e1 x))))
 
-(B (name bloodmap)(=>(I#BLOOD-SYSTEM x :0.9)(S#BLOOD-SYSTEM x)))
-(B (name bloodcompmap)(=>(I#BLOOD-SYSTEM%COMPONENT x y :0.9)(SS#BLOOD-SYSTEM%COMPONENT x y)))
+(B (name bloodmap)(=>(I#BLOOD x :0.9)(S#BLOOD x)))
+(B (name bloodcompmap)(=>(I#BLOOD%COMPONENT x y :0.9)(SS#BLOOD%COMPONENT x y)))
 
 ; GAME
 
