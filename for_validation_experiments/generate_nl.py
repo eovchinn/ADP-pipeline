@@ -6,6 +6,8 @@ import json
 import re
 
 grow_set = set([u'THING-INCREASING', u'CAUSE-INCREASE-AMOUNT'])
+game_set = set([u'GAME-STAKES', u'CAUSE-BINARY-OUTCOME'])
+play_set = set([u'CAUSE-ATTEMPT-POSITIVE-OUTCOME', u'CAUSE-BINARY-OUTCOME'])
 eradicate_set =set([u'THING-NOT-EXISTING', u'CAUSE-NOT-EXIST', u'THING-CAUSING-NOT-EXIST'])
 no_agent_eradicate_set=set([u'THING-NOT-EXISTING', u'CAUSE-NOT-EXIST'])
 exit_abyss_set = set([u'THING-THAT-LIMITED-OPTIONS', u'CAUSE-INCREASE-OPTIONS', u'THING-THAT-STOPPED-FUNCTION', u'CAUSE-RESUME-FUNCTION'])
@@ -56,6 +58,8 @@ def lm_category(log):
         lm_type = "cause-limit-options"          
     elif re.search(u"^CAUSE-DRAIN-RESOURCES",log):
         lm_type = "cause-drain-resources"          
+    elif re.search(u"^CAUSE-BINARY-OUTCOME",log):
+        lm_type = "cause-binary-outcome"          
 
 
     elif re.search(u"^CAUSE-REALIZE-OUTCOME",log):
@@ -77,6 +81,8 @@ def lm_category(log):
         lm_type = "give-control"          
     elif re.search(u"^AGAINST-SOCIETY-ACTION",log):
         lm_type = "against-society-action"          
+    elif re.search(u"^GAME-STAKES",log):
+        lm_type = "game-stakes"          
 
     elif re.search(u"^THING-CAUSING-NOT-EXIST",log):
         lm_type = "agent-not-exist"
@@ -168,25 +174,25 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
     if logic_set == grow_set:
         print s_id
         if lang=='EN':
-		print('{} denotes an increased amount of {}'.format(lms['cause-inc-an'],lms['patient-increase']))
+		print('"{}" denotes an increased amount of "{}"'.format(lms['cause-inc-an'],lms['patient-increase']))
 	else:
 		print lms['cause-inc-an'] + u' означает что увеличилось количество ' + lms['patient-increase']
     if logic_set == eradicate_set:
         print s_id
         if lang=='EN':        
-        	print('{} denotes that {} causes {} to stop existing'.format(lms['cause-not-exist'],lms['agent-not-exist'],lms['patient-not-exist']))
+        	print('"{}" denotes that "{}" causes "{}" to stop existing'.format(lms['cause-not-exist'],lms['agent-not-exist'],lms['patient-not-exist']))
 	else:
 		print lms['cause-not-exist'] + u' прекращает существование ' + lms['patient-not-exist']
     if logic_set == no_agent_eradicate_set and target_sub != "WEALTH":
         print s_id    
         if lang=='EN':    
-        	print('{} denotes that there is an effort to stop the existence of {} '.format(lms['cause-not-exist'],lms['patient-not-exist']))
+        	print('"{}" denotes that there is an effort to stop the existence of "{}" '.format(lms['cause-not-exist'],lms['patient-not-exist']))
 	else:
 		print lms['cause-not-exist'] + u' означает что есть попытка избавиться от ' + lms['patient-not-exist']
     elif logic_set == no_agent_eradicate_set and target_sub == "WEALTH":
         print s_id    
         if lang=='EN':    
-        	print('{} denotes that {} does not exist'.format(lms['cause-not-exist'],lms['patient-not-exist']))
+        	print('"{}" denotes that "{}" does not exist'.format(lms['cause-not-exist'],lms['patient-not-exist']))
 	else:
 		print lms['cause-not-exist'] + u' означает что есть попытка избавиться от ' + lms['patient-not-exist']
         
@@ -194,28 +200,28 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
     if logic_set == harvest_crop_seed_set:
         print s_id
         if lang=='EN':      
-        	print('{} denotes that {} was a preparation so that {} is realizing the outcome, {} in this case, of some action, which is denoted by {}'.format(lms['cause-realize-outcome'],lms['preparation'],lms['agent-realize'],lms['outcome'],lms['cause-outcome']))
+        	print('"{}" denotes that "{}" was a preparation so that "{}" is realizing the outcome, "{}" in this case, of some action, which is denoted by "{}"'.format(lms['cause-realize-outcome'],lms['preparation'],lms['agent-realize'],lms['outcome'],lms['cause-outcome']))
 
 
     if logic_set == crop_outcome_set:
         print s_id
         if lang=='EN':      
-        	print('{} denotes that {} is the outcome of some action'.format(lms['cause-outcome'],lms['outcome']))   
+        	print('"{}" denotes that "{}" is the outcome of some action'.format(lms['cause-outcome'],lms['outcome']))   
     if logic_set == crop_set:
         print s_id
 	if lang=='EN':      
-        	print('{} denotes that poverty is the outcome of some action'.format(lms['cause-outcome']))    
+        	print('"{}" denotes that poverty is the outcome of some action'.format(lms['cause-outcome']))    
     #ABYSS
     if logic_set == deep_abyss_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that the experiencer of poverty has severely limited options and cannot function'.format(lms['cause-sev-not-function']))
+        	print('"{}" implies that the experiencer of poverty has severely limited options and cannot function'.format(lms['cause-sev-not-function']))
 	else:
 		print lms['cause-sev-not-function'] + u' означает, что тот, кто испытывает бедность, имеет очень ограниченные возможности и не может нормально фунционировать'
     if logic_set == exit_abyss_set:
         print s_id      
         if lang=='EN':      
-        	print('{} denotes that {} had limited options, but options will increase; {} denotes that {} had caused something not to function, but functionality will resume'.format(lms['cause-increase-options'],lms['agent-limit-options'],lms['cause-resume-function'],lms['agent-stop-function']))    
+        	print('"{}" denotes that "{}" had limited options, but options will increase; "{}" denotes that "{}" had caused something not to function, but functionality will resume'.format(lms['cause-increase-options'],lms['agent-limit-options'],lms['cause-resume-function'],lms['agent-stop-function']))    
 	else:
 		print lms['cause-increase-options'] + u' означает что возможности у ' + lms['agent-limit-options'] + u' ограничены; ' + lms['cause-resume-function'] + u' означает что ' + lms['agent-stop-function'] + u' вызвал ограничение каких-то функций, но эти функции возобновятся'        
 
@@ -223,24 +229,24 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
     if logic_set == price_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that poverty is a negative consequence that must be accepted to attain {}'.format(lms['cause-neg-consequence'],lms['patient-desire']))  
+        	print('"{}" implies that poverty is a negative consequence that must be accepted to attain "{}"'.format(lms['cause-neg-consequence'],lms['patient-desire']))  
 	else:
 		print lms['cause-neg-consequence'] + u' означает, что бедность - это негативные последствия достижения ' + lms['patient-desire']
     if logic_set == no_desire_price_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that poverty is a negative consequence that must be accepted to attain some entity'.format(lms['cause-neg-consequence']))  
+        	print('"{}" implies that poverty is a negative consequence that must be accepted to attain some entity'.format(lms['cause-neg-consequence']))  
     #PAY
     if logic_set == pay_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that poverty is a negative consequence that must be accepted to attain {}; {} implies that there is a willing exchange'.format(lms['cause-neg-consequence'],lms['patient-desire'],lms['cause-exchange']))  
+        	print('"{}" implies that poverty is a negative consequence that must be accepted to attain "{}"; "{}" implies that there is a willing exchange'.format(lms['cause-neg-consequence'],lms['patient-desire'],lms['cause-exchange']))  
 
 
     if logic_set == live_in_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that {} experiences {}'.format(lms['cause-experience'],lms['patient-experience'],lms['experience-event'])) 
+        	print('"{}" implies that "{}" experiences "{}"'.format(lms['cause-experience'],lms['patient-experience'],lms['experience-event'])) 
 	else:
 		print  lms['cause-experience'] + u' означает, что ' + lms['patient-experience'] + u' переживает ' + lms['experience-event']
 
@@ -248,88 +254,94 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
     if logic_set == resource_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that money causes those who have it to function'.format(lms['cause-function']))  
+        	print('"{}" implies that money causes those who have it to function'.format(lms['cause-function']))  
 
     #BLOOD
     if logic_set == blood_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that money causes {} to function'.format(lms['cause-function'],lms['patient-function']))  
+        	print('"{}" implies that money causes "{}" to function'.format(lms['cause-function'],lms['patient-function']))  
     #POWER
     if logic_set == rule_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that money provides control'.format(lms['give-control']))  
+        	print('"{}" implies that money provides control'.format(lms['give-control']))  
     #COST
     if logic_set == cost_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that {} is using up resources'.format(lms['cause-drain-resources'],lms['agent-drain']))  
+        	print('"{}" implies that "{}" is using up resources'.format(lms['cause-drain-resources'],lms['agent-drain']))  
     #TERROR
     if logic_set == terror_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that poverty is causing some entity not to function'.format(lms['cause-not-function']))  
+        	print('"{}" implies that poverty is causing some entity not to function'.format(lms['cause-not-function']))  
 
     #DISEASE
     if logic_set == disease_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that poverty is causing {} not to function'.format(lms['cause-not-function'],lms['patient-not-function']))  
+        	print('"{}" implies that poverty is causing "{}" not to function'.format(lms['cause-not-function'],lms['patient-not-function']))  
 
     #MEDICINE
     if logic_set == medicine_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that there is something that can lessen the effects of poverty'.format(lms['cause-problem-not-exist']))  
+        	print('"{}" implies that there is something that can lessen the effects of poverty'.format(lms['cause-problem-not-exist']))  
 
     #TREATMENT
     if logic_set == treatment_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that poverty causes some entity to not function; {} implies that there is something that can cause poverty to not exist'.format(lms['cause-not-function'],lms['cause-problem-not-exist']))  
+        	print('"{}" implies that poverty causes some entity to not function; "{}" implies that there is something that can cause poverty to not exist'.format(lms['cause-not-function'],lms['cause-problem-not-exist']))  
 
     #CRIME
     if logic_set == crime_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that poverty is a deliberate act that harms society'.format(lms['against-society-action']))
+        	print('"{}" implies that poverty is a deliberate act that harms society'.format(lms['against-society-action']))
 
     #BODY
     if logic_set == body_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that there is a large amount of {}'.format(lms['imply-large-amount'],lms['thing-large-amount']))
+        	print('"{}" implies that there is a large amount of "{}"'.format(lms['imply-large-amount'],lms['thing-large-amount']))
 
     #HAND
     if logic_set == hand_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that someone has lost self-control due to the influence of {}'.format(lms['cause-lose-control'],lms['controller']))
+        	print('"{}" implies that someone has lost self-control due to the influence of "{}"'.format(lms['cause-lose-control'],lms['controller']))
 
     #HEAD
     if logic_set == head_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that money has become an important factor'.format(lms['important']))
+        	print('"{}" implies that money has become an important factor'.format(lms['important']))
 
     #PROTECT
     if logic_set == protect_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that {} allows {} to function'.format(lms['cause-allow-function'],lms['agent-allow-function'],lms['patient-function']))
+        	print('"{}" implies that "{}" allows "{}" to function'.format(lms['cause-allow-function'],lms['agent-allow-function'],lms['patient-function']))
 
     #PROTECTION
     if logic_set == protection_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that the possessor of {} is able to function'.format(lms['cause-allow-function'],",".join(target_lms)))
+        	print('"{}" implies that the possessor of "{}" is able to function'.format(lms['cause-allow-function'],",".join(target_lms)))
 
     #HEAD
     if logic_set == head_set:
         print s_id
 	if lang=='EN':      
-        	print('{} implies that money has become an important factor'.format(lms['important']))
+        	print('"{}" implies that money has become an important factor'.format(lms['important']))
+
+    #GAME
+    if logic_set == game_set:
+        print s_id
+	if lang=='EN':      
+        	print('"{}" implies that there are two possible outcomes, one positive and one negative, associated with the idea of "{}"'.format(lms['cause-binary-outcome'],lms['game-stakes']))
         
 
 def generate_language(data,lang):

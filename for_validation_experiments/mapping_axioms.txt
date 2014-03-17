@@ -129,3 +129,13 @@
 (B (name drunk) (=> (^(M#HAS-BAD-JUDGEMENT x e0 :0.45)(M#THING-NOT-FUNCTIONING x e0 :0.45)) (^(I#DRUG%EFFECT e0 e0)(R#UNDER-INFLUENCE x e0))))
 
 (B (name drunk2) (=> (^(M#CAUSE-NOT-FUNCTION x e0 :0.45)(M#CAUSE-BAD-JUDGEMENT x e0 :0.45)) (I#DRUG%EFFECT x e0)))
+
+;GAME
+(B (name game-of)(=> (^(M#CAUSE-BINARY-OUTCOME x e0 :0.3)(M#GAME-STAKES y e0 :0.3)) (^(I#GAME%TYPE x e0)(R#GAME-THING y e0))))
+(B (name game)(=> (^(M#CAUSE-BINARY-OUTCOME x e0 :0.3)) (^(I#GAME%TYPE x e0))))
+
+(B (name play)(=> (^(M#CAUSE-ATTEMPT-POSITIVE-OUTCOME x e0 :0.1)(M#ATTEMPT-AGENT y e0 :0.1)) (^(I#GAME%ACTIONS x e0)(R#PLAYER y e0))))
+
+(B (name play)(=> (^(M#CAUSE-ATTEMPT-POSITIVE-OUTCOME x e0 :0.9)) (^(I#GAME%ACTIONS x e0))))
+
+(B (name win)(=> (^(M#CAUSE-ATTAIN-POSITIVE-OUTCOME x e0 :0.3)(M#WIN-AGENT y e0 :0.3)) (^(I#GAME%OUTCOMES x e0)(R#PLAYER y e0))))
