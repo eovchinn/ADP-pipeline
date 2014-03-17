@@ -20,23 +20,32 @@ disease_set = set([u'CAUSE-NOT-FUNCTION','THING-NOT-FUNCTIONING'])
 medicine_set = set([u'CAUSE-PROBLEM-NOT-EXIST']) 
 treatment_set = set([u'CAUSE-PROBLEM-NOT-EXIST','CAUSE-NOT-FUNCTION']) 
 blood_set = set([u'CAUSE-FUNCTION', u'THING-FUNCTIONING'])
+protect_set = set([u'CAUSE-ALLOW-FUNCTION', u'THING-ALLOWING',u'THING-FUNCTIONING'])
+protection_set = set([u'CAUSE-ALLOW-FUNCTION'])
 cost_set = set([u'CAUSE-DRAIN-RESOURCES', u'THING-DRAINING'])
 price_set = set([u'THING-DESIRED', u'CAUSE-NEGATIVE-CONSEQUENCE-OF-DESIRED-THING'])
 no_desire_price_set = set([u'CAUSE-NEGATIVE-CONSEQUENCE-OF-DESIRED-THING'])
 pay_set = set([u'THING-DESIRED', u'CAUSE-NEGATIVE-CONSEQUENCE-OF-DESIRED-THING','CAUSE-EXCHANGE-NEGATIVE-POSITIVE'])
 live_in_set = set([u'CAUSE-EXPERIENCE-SOMETHING',u'EXPERIENCER','THING-EXPERIENCED'])
 rule_set = set([u'PROVIDE-CONTROL'])
+head_set = set([u'INDICATE-IMPORTANCE'])
+body_set = set([u'LARGE-AMOUNT',u'THING-LARGE-AMOUNT'])
+hand_set = set([u'CAUSE-LOSE-SELF-CONTROL',u'THING-GAINING-CONTROL'])
 
 def lm_category(log):
     lm_type = ''
     if re.search(u"^CAUSE-INCREASE-AMOUNT",log):
         lm_type = "cause-inc-am"
+    elif re.search(u"^CAUSE-LOSE-SELF-CONTROL",log):
+        lm_type = "cause-lose-control"
     elif re.search(u"^CAUSE-NOT-EXIST",log):
         lm_type = "cause-not-exist"
     elif re.search(u"^CAUSE-PROBLEM-NOT-EXIST",log):
         lm_type = "cause-problem-not-exist"        
     elif re.search(u"^CAUSE-NOT-FUNCTION",log):
         lm_type = "cause-not-function"           
+    elif re.search(u"^CAUSE-ALLOW-FUNCTION",log):
+        lm_type = "cause-allow-function"           
     elif re.search(u"^CAUSE-FUNCTION",log):
         lm_type = "cause-function"           
     elif re.search(u"^CAUSE-RESUME-FUNCTION",log):
@@ -75,6 +84,8 @@ def lm_category(log):
         lm_type = "agent-limit-options" 
     elif re.search(u"^THING-THAT-STOPPED-FUNCTION",log):
         lm_type = "agent-stop-function" 
+    elif re.search(u"^THING-ALLOWING",log):
+        lm_type = "agent-allow-function" 
     elif re.search(u"^THING-REALIZING",log):
         lm_type = "agent-realize"
     elif re.search(u"^THING-DRAINING",log):
@@ -96,11 +107,24 @@ def lm_category(log):
         lm_type = "patient-desire" 
 
     elif re.search(u"^THING-EXPERIENCED",log):
-        lm_type = "experience-event"  
+        lm_type = "experience-event" 
+    elif re.search(u"^THING-GAINING-CONTROL",log):
+        lm_type = "controller" 
+ 
     elif re.search(u"^OUTCOME-OF-ACTION",log):
         lm_type = "outcome"
     elif re.search(u"^PREPARATION-FOR-OUTCOME",log):
         lm_type = "preparation"
+
+    elif re.search(u"^LARGE-AMOUNT",log):
+        lm_type = "imply-large-amount"
+    elif re.search(u"^INDICATE-IMPORTANCE",log):
+        lm_type = "important"
+    elif re.search(u"^THING-LARGE-AMOUNT",log):
+        lm_type = "thing-large-amount"
+
+
+
     return lm_type
 
 
@@ -270,6 +294,42 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
         print s_id
 	if lang=='EN':      
         	print('{} implies that poverty is a deliberate act that harms society'.format(lms['against-society-action']))
+
+    #BODY
+    if logic_set == body_set:
+        print s_id
+	if lang=='EN':      
+        	print('{} implies that there is a large amount of {}'.format(lms['imply-large-amount'],lms['thing-large-amount']))
+
+    #HAND
+    if logic_set == hand_set:
+        print s_id
+	if lang=='EN':      
+        	print('{} implies that someone has lost self-control due to the influence of {}'.format(lms['cause-lose-control'],lms['controller']))
+
+    #HEAD
+    if logic_set == head_set:
+        print s_id
+	if lang=='EN':      
+        	print('{} implies that money has become an important factor'.format(lms['important']))
+
+    #PROTECT
+    if logic_set == protect_set:
+        print s_id
+	if lang=='EN':      
+        	print('{} implies that {} allows {} to function'.format(lms['cause-allow-function'],lms['agent-allow-function'],lms['patient-function']))
+
+    #PROTECTION
+    if logic_set == protection_set:
+        print s_id
+	if lang=='EN':      
+        	print('{} implies that the possessor of {} is able to function'.format(lms['cause-allow-function'],",".join(target_lms)))
+
+    #HEAD
+    if logic_set == head_set:
+        print s_id
+	if lang=='EN':      
+        	print('{} implies that money has become an important factor'.format(lms['important']))
         
 
 def generate_language(data,lang):

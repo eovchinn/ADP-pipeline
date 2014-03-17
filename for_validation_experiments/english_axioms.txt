@@ -259,11 +259,11 @@
 
 ; BODY
 (B (name body)(=>(^(S#BODY e0 :0.45)(SS#BODY%TYPE x e0 :0.45)) (body-nn e0 x)))
-(B (body-of) (=>(R#BODY-COMPARISON y e0 :0.9)(^(I#BODY%TYPE x e0)(of-in e1 x y))))
+(B (body-of) (=>(R#BODY-COMPARISON y e0 :0.45)(^(I#BODY%TYPE x e0)(of-in e1 x y))))
 
-(B (name hand)(=>(^(S#BODY e0 :0.3)(SS#BODY%PART x e0 :0.3)(R#HAND x :0.3)) (hand-nn e0 x)))
-(B (name hand-of)(=>(^(S#BODY e0 :0.23)(SS#BODY%PART x e0 :0.23)(R#HAND x :0.23)(R#CONTROLLER y :0.23)) (^(hand-nn e0 x)(of-in e1 x y))))
-(B (name head)(=>(^(S#BODY e0 :0.3)(SS#BODY%PART x e0 :0.3)(R#HEAD x :0.3)) (head-nn e0 x)))
+;(B (name hand)(=>(^(S#BODY e0 :0.3)(SS#BODY%PART x e0 :0.3)(R#HAND x :0.3)) (hand-nn e0 x)))
+(B (name hand-of)(=>(^(S#BODY e0 :0.23)(SS#BODY%PART x e0 :0.23)(R#HAND x e0 :0.23)(R#CONTROLLER y e0 :0.23)) (^(hand-nn e0 x)(of-in e1 x y))))
+(B (name head)(=>(^(S#BODY e0 :0.3)(SS#BODY%PART x e0 :0.3)(R#HEAD x e0 :0.3)) (head-nn e0 x)))
 
 (B (name bodymap)(=>(I#BODY x :0.9)(S#BODY x)))
 (B (name body-typemap)(=>(I#BODY%TYPE x e0 :0.9)(SS#BODY%TYPE x e0)))

@@ -4,9 +4,9 @@
         "annotationMappings": [
             {
                 "source": "resource", 
-                "explanation": "CAUSE-FUNCTION[money,resource]", 
+                "explanation": "CAUSE-FUNCTION[money,person,resource]", 
                 "sourceInLm": true, 
-                "target": "money", 
+                "target": "money,person", 
                 "targetInLm": true
             }
         ], 
@@ -16,26 +16,26 @@
         "isiDescription": "", 
         "sid": "1", 
         "sourceFrame": "RESOURCE", 
-        "isiAbductiveExplanation": "money-nn(e55,x8) ^ equal(e54,x8,x11) ^ accept-vb(e4,x1,e55,u53) ^ unconsciously-rb(e52,e4) ^ feel-vb(e5,x1,e38,u51) ^ or(e38,e19,e27) ^ covet-vb(e27,x1,x11,u50) ^ waste-vb(e19,x1,u48,u49) ^ neglect-vb(e21,u46,x20,u47) ^ for-in(e45,e19,e21) ^ abuse-vb(e23,u43,x22,u44) ^ for-in(e42,e19,e23) ^ avoid-vb(e25,u40,x24,u41) ^ for-in(e39,e19,e25) ^ then-rb(e37,e5) ^ of-in(e36,x11,x1) ^ resource-nn(e35,x11) ^ imp(e30,e32,e34) ^ greatest-adj(e34,x11,x14) ^ not(e32,e33) ^ equal(e33,x11,x14) ^ resource-nn(e31,x14) ^ person(e29,x1) ^ thing(e28,x11) ^ !=(e35,e31) ^ !=(e29,e29) ^ !=(e45,e42,e39) ^ !=(e54,e33) ^ TS#WEALTH(x8) ^ T#ECONOMIC-INEQUALITY(_0) ^ TSS#MONEY(x8,x8) ^ S#RESOURCE(e35) ^ SS#RESOURCE%TYPE(x11,e35) ^ S#RESOURCE(e31) ^ SS#RESOURCE%TYPE(x14,e31) ^ I#RESOURCE(e35) ^ I#RESOURCE%TYPE(x11,e35) ^ I#RESOURCE(e31) ^ I#RESOURCE%TYPE(x14,e31) ^ M#CAUSE-FUNCTION(x11,e35) ^ M#CAUSE-FUNCTION(x14,e31)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,TYPE,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "of-in(e40,x1,x12) ^ resource-nn(e39,x1) ^ imp(e34,e36,e38) ^ greatest-adj(e38,x1,x14) ^ not(e36,e37) ^ equal(e37,x1,x14) ^ resource-nn(e35,x14) ^ money-nn(e33,x12) ^ person(e32,x12) ^ equal(e31,x12,x1) ^ accept-vb(x4,x0,e33,u30) ^ unconsciously-rb(e29,x4) ^ feel-vb(x3,x0,e17,u28) ^ or(e17,x9,x10) ^ neuter(e27,x11) ^ covet-vb(x10,x0,x11,u26) ^ waste-vb(x9,x0,u24,u25) ^ neglect-vb(x8,u22,x0,u23) ^ abuse-vb(x7,u20,x0,u21) ^ avoid-vb(x6,u18,x0,u19) ^ then-rb(e16,x3) ^ person(e15,x0) ^ !=(e15,e15) ^ !=(e39,e35) ^ !=(e32,e15) ^ !=(e37,e31) ^ S#RESOURCE(e39) ^ SS#RESOURCE%TYPE(x1,e39) ^ S#RESOURCE(e35) ^ SS#RESOURCE%TYPE(x14,e35) ^ TS#WEALTH(x12) ^ T#ECONOMIC-INEQUALITY(_0) ^ TSS#MONEY(x12,x12) ^ I#RESOURCE(e39) ^ I#RESOURCE%TYPE(x1,e39) ^ I#RESOURCE(e35) ^ I#RESOURCE%TYPE(x14,e35) ^ M#CAUSE-FUNCTION(x1,e39) ^ M#CAUSE-FUNCTION(x14,e35)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "resource", 
-                "explanation": "CAUSE-FUNCTION[resource,capital,income,wealth]", 
+                "explanation": "CAUSE-FUNCTION[resource,income,wealth,capital]", 
                 "sourceInLm": true, 
-                "target": "capital,income,wealth", 
+                "target": "income,wealth,capital", 
                 "targetInLm": true
             }
         ], 
-        "targetFrame": "WEALTH", 
+        "targetFrame": "MONEY", 
         "targetConceptSubDomain": "WEALTH", 
         "sourceConceptSubDomain": "TYPE", 
         "isiDescription": "", 
         "sid": "2", 
         "sourceFrame": "RESOURCE", 
-        "isiAbductiveExplanation": "while-in(e83,s7,e73) ^ regular-adj(s7,x6) ^ income-nn(e82,x6) ^ household-nn(e81,x14) ^ imp(e76,e78,e80) ^ most-adj(e80,x14,x16) ^ not(e78,e79) ^ equal(e79,x14,x16) ^ household-nn(e77,x16) ^ for-in(e75,x10,x14) ^ equal(e74,x6,x10) ^ wealth-nn(e73,x20) ^ important-adj(s25,x24) ^ resource-nn(e72,x24) ^ equal(e71,x20,x24) ^ also-rb(e70,s25) ^ as-in(e69,s25,e27) ^ may(e27,x10,e51,u68) ^ or(e51,e31,e40) ^ or(e61,e44,e48) ^ capital-nn(e67,x47) ^ of-in(e66,x46,x47) ^ growth-nn(e65,x46) ^ generate-vb(e48,x10,x46,u64) ^ income-nn(e63,x43) ^ generate-vb(e44,x10,x43,u62) ^ use-vb(e40,u60,x10,e61) ^ draw-vb(e31,u58,x10,u59) ^ down-rb(e57,e31) ^ living-nn(e56,x36) ^ of-in(e55,x35,x36) ^ expense-nn(e54,x35) ^ finance-vb(e37,x34,x35,u53) ^ for-in(e52,e31,e37) ^ main-adj(s11,x10) ^ economic-adj(s12,x10) ^ resource-nn(e50,x10) ^ thing(e49,x10) ^ !=(e48,e44) ^ !=(e81,e77) ^ !=(e75,e52) ^ !=(e66,e55) ^ !=(e79,e74,e71) ^ !=(e51,e61) ^ TS#WEALTH(x6) ^ T#ECONOMIC-INEQUALITY(_1) ^ TSS#MONEY(x6,x6) ^ TS#WEALTH(x20) ^ T#ECONOMIC-INEQUALITY(_2) ^ S#RESOURCE(e72) ^ SS#RESOURCE%TYPE(x24,e72) ^ TS#WEALTH(x47) ^ T#ECONOMIC-INEQUALITY(_3) ^ I#RESOURCE(e72) ^ I#RESOURCE%TYPE(x24,e72) ^ M#CAUSE-FUNCTION(x24,e72) ^ =(e82,e63) ^ =(_1,_2,_3) ^ =(e50,e72) ^ =(x10,x24) ^ =(x20,x43,x47,x6)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,RESOURCE,TYPE,0.95\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,TYPE,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "while-in(e61,e60,e50) ^ regular-adj(e60,x21) ^ income-nn(e59,x21) ^ household-nn(e58,x22) ^ imp(e53,e55,e57) ^ most-adj(e57,x22,x23) ^ not(e55,e56) ^ equal(e56,x22,x23) ^ household-nn(e54,x23) ^ for-in(e52,x0,x22) ^ equal(e51,x21,x0) ^ wealth-nn(e50,x4) ^ important-adj(e49,x19) ^ resource-nn(e48,x19) ^ equal(e47,x4,x19) ^ also-rb(e46,e49) ^ as-in(e45,e49,e28) ^ neuter(e44,x4) ^ or(e28,x8,x12) ^ or(e37,x14,x16) ^ capital-nn(e43,x17) ^ of-in(e42,x18,x17) ^ growth-nn(e41,x18) ^ generate-vb(x16,x0,x18,u40) ^ income-nn(e39,x15) ^ generate-vb(x14,x0,x15,u38) ^ use-vb(x12,x0,e37,u36) ^ draw-vb(x8,u34,x4,u35) ^ down-rb(e33,x8) ^ living-nn(e32,x10) ^ of-in(e31,x11,x10) ^ expense-nn(e30,x11) ^ finance-vb(x9,x4,x11,u29) ^ main-adj(e27,x0) ^ economic-adj(e26,x0) ^ resource-nn(e25,x0) ^ neuter(e24,x0) ^ !=(e58,e54) ^ !=(x16,x14) ^ !=(e44,e24) ^ !=(e44,e24) ^ !=(e42,e31) ^ !=(e56,e51,e47) ^ !=(e28,e37) ^ TS#WEALTH(x21) ^ T#ECONOMIC-INEQUALITY(_1) ^ TSS#MONEY(x21,x21) ^ TS#WEALTH(x4) ^ T#ECONOMIC-INEQUALITY(_2) ^ S#RESOURCE(e48) ^ SS#RESOURCE%TYPE(x19,e48) ^ TS#WEALTH(x17) ^ T#ECONOMIC-INEQUALITY(_3) ^ I#RESOURCE(e48) ^ I#RESOURCE%TYPE(x19,e48) ^ M#CAUSE-FUNCTION(x19,e48) ^ =(x0,x19) ^ =(_1,_2,_3) ^ =(e59,e39) ^ =(e48,e25) ^ =(x17,x4,x21,x15)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,TYPE,0.95\nECONOMIC_INEQUALITY,WEALTH,WEALTH,RESOURCE,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -54,14 +54,14 @@
         "isiDescription": "", 
         "sid": "3", 
         "sourceFrame": "RESOURCE", 
-        "isiAbductiveExplanation": "money-nn(e12,x1) ^ resource-nn(e11,x4) ^ not(e8,e10) ^ reward-nn(e10,x6) ^ rel(e9,x4,x6) ^ equal(e7,x1,x4) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_5) ^ TSS#MONEY(x1,x1) ^ S#RESOURCE(e11) ^ SS#RESOURCE%TYPE(x4,e11) ^ I#RESOURCE(e11) ^ I#RESOURCE%TYPE(x4,e11) ^ M#CAUSE-FUNCTION(x4,e11)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,TYPE,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e9,x1) ^ resource-nn(e8,x2) ^ not(e5,e7) ^ reward-nn(e7,x3) ^ rel(e6,x2,x3) ^ equal(e4,x1,x2) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_5) ^ TSS#MONEY(x1,x1) ^ S#RESOURCE(e8) ^ SS#RESOURCE%TYPE(x2,e8) ^ I#RESOURCE(e8) ^ I#RESOURCE%TYPE(x2,e8) ^ M#CAUSE-FUNCTION(x2,e8)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "resource", 
-                "explanation": "CAUSE-FUNCTION[rich,money,resource]", 
+                "explanation": "CAUSE-FUNCTION[money,rich,resource]", 
                 "sourceInLm": true, 
                 "target": "rich,money", 
                 "targetInLm": true
@@ -73,7 +73,7 @@
         "isiDescription": "", 
         "sid": "4", 
         "sourceFrame": "RESOURCE", 
-        "isiAbductiveExplanation": "subset-of(e50,x3,x1) ^ subset-of(e49,x5,x1) ^ rich-adj(s13,x12) ^ people-nn(e48,x12) ^ of-in(e47,x14,x12) ^ money-nn(e46,x14) ^ national-adj(s18,x17) ^ resource-nn(e45,x17) ^ equal(e44,x17,x21) ^ use-vb(e22,u42,x21,u43) ^ imp(e40,e41,_G19590) ^ person(e41,x24) ^ equal(e39,x14,x17) ^ say-vb(e10,x1,s13,u38) ^ filmmaker-nn(e36,x3) ^ nam(e37,x3) ^ michigan-nn(e34,x6) ^ nam(e35,x6) ^ equal(e33,x5,x6) ^ native-nn(e32,x7) ^ of-in(e31,x5,x7) ^ michael-nn(e29,x8) ^ per(e30,x8) ^ equal(e28,x5,x8) ^ moore-nn(e26,x5) ^ per(e27,x5) ^ !=(e34,e35) ^ !=(e36,e37) ^ !=(e29,e30) ^ !=(e26,e27) ^ !=(e47,e31) ^ !=(e44,e39,e33,e28) ^ !=(e30,e27) ^ !=(e37,e35) ^ !=(e50,e49) ^ TS#WEALTH(s13) ^ R#RICH(x12,s13) ^ T#ECONOMIC-INEQUALITY(_6) ^ TS#WEALTH(x14) ^ T#ECONOMIC-INEQUALITY(_7) ^ TSS#MONEY(x14,x14) ^ S#RESOURCE(e45) ^ SS#RESOURCE%TYPE(x17,e45) ^ R#RICH(x12,x14) ^ I#RESOURCE(e45) ^ I#RESOURCE%TYPE(x17,e45) ^ M#CAUSE-FUNCTION(x17,e45) ^ =(s13,x14) ^ =(_6,_7)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,RESOURCE,TYPE,0.95\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,TYPE,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "subset-of(e34,x2,x5) ^ subset-of(e33,x1,x5) ^ rich-adj(e32,x8) ^ people-nn(e31,x8) ^ of-in(e30,x7,x8) ^ money-nn(e29,x7) ^ national-adj(e28,x10) ^ resource-nn(e27,x10) ^ use-vb(x11,u25,x10,u26) ^ imp(e23,e24,_G1424) ^ person(e24,x12) ^ equal(e22,x7,x10) ^ say-vb(x3,x5,e32,u21) ^ filmmaker-nn(e19,x2) ^ nam(e20,x2) ^ michigan-nn(e17,x1) ^ nam(e18,x1) ^ native-nn(e16,x0) ^ of-in(e15,x1,x0) ^ michael-moore-nn(e13,x1) ^ per(e14,x1) ^ !=(e17,e18) ^ !=(e19,e20) ^ !=(e13,e14) ^ !=(e13,e14) ^ !=(e30,e15) ^ !=(e20,e18) ^ !=(e34,e33) ^ TS#WEALTH(e32) ^ R#RICH(x8,e32) ^ T#ECONOMIC-INEQUALITY(_6) ^ TS#WEALTH(x7) ^ T#ECONOMIC-INEQUALITY(_7) ^ TSS#MONEY(x7,x7) ^ S#RESOURCE(e27) ^ SS#RESOURCE%TYPE(x10,e27) ^ R#RICH(x8,x7) ^ I#RESOURCE(e27) ^ I#RESOURCE%TYPE(x10,e27) ^ M#CAUSE-FUNCTION(x10,e27) ^ =(x7,e32) ^ =(_7,_6)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,RESOURCE,TYPE,0.95\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -82,7 +82,7 @@
                 "source": "resource", 
                 "explanation": "CAUSE-FUNCTION[exchange,resource]", 
                 "sourceInLm": true, 
-                "target": "wealth,money", 
+                "target": "money,wealth", 
                 "targetInLm": true
             }
         ], 
@@ -92,7 +92,7 @@
         "isiDescription": "", 
         "sid": "5", 
         "sourceFrame": "RESOURCE", 
-        "isiAbductiveExplanation": "or(e51,e52,e43) ^ can(e43,x2,e47,u100) ^ life-nn(e99,x46) ^ consume-vb(e47,x2,x46,u98) ^ life-nn(e97,x48) ^ take-vb(e49,x2,x48,u96) ^ over-rb(e95,e49) ^ not(e52,e94) ^ thing(e94,x8) ^ that(e93,x8,s12) ^ we(s12,x11) ^ exchange-nn(e92,x11) ^ or(e57,e73,e91) ^ service-nn(e91,x28) ^ wealth-nn(e90,x29) ^ --in(e89,x28,x29) ^ for-in(e88,x11,x28) ^ resource-nn(e87,x32) ^ frame-nn(e86,x33) ^ mind-nn(e85,x34) ^ power-nn(e84,x35) ^ equal(e83,x35,x36) ^ can(e37,x36,e40,u82) ^ serve-vb(e40,x36,u80,u81) ^ strengthen-vb(e41,x36,u78,u79) ^ rel(e77,x34,x35) ^ of-in(e76,x33,x34) ^ rel(e75,x32,x33) ^ equal(e74,x11,x32) ^ product-nn(e73,x14) ^ for-in(e72,x11,x14) ^ resource-nn(e71,x17) ^ frame-nn(e70,x18) ^ mind-nn(e69,x19) ^ power-nn(e68,x20) ^ equal(e67,x20,x21) ^ can(e22,x21,e25,u66) ^ serve-vb(e25,x21,u64,u65) ^ strengthen-vb(e26,x21,u62,u63) ^ rel(e61,x19,x20) ^ of-in(e60,x18,x19) ^ rel(e59,x17,x18) ^ equal(e58,x11,x17) ^ equal(e56,x2,x8) ^ just-rb(e55,e94) ^ money-nn(e54,x6) ^ unlike-in(e53,e94,x6) ^ thing(e50,x2) ^ !=(e88,e72) ^ !=(e41,e26) ^ !=(e40,e25) ^ !=(e37,e22) ^ !=(e74,e58) ^ !=(e84,e68) ^ !=(e75,e59) ^ !=(e87,e71) ^ !=(e76,e60) ^ !=(e86,e70) ^ !=(e77,e61) ^ !=(e85,e69) ^ !=(e99,e97) ^ !=(e88,e72) ^ !=(e76,e60) ^ !=(e83,e74,e67,e58,e56) ^ !=(e94,e50) ^ !=(e43,e37,e22) ^ !=(e77,e75,e61,e59) ^ !=(e51,e57) ^ TS#WEALTH(x29) ^ T#ECONOMIC-INEQUALITY(_8) ^ S#RESOURCE(e87) ^ SS#RESOURCE%TYPE(x32,e87) ^ S#POWER(e84) ^ SS#POWER%TYPE(x35,e84) ^ S#RESOURCE(e71) ^ SS#RESOURCE%TYPE(x17,e71) ^ S#POWER(e68) ^ SS#POWER%TYPE(x20,e68) ^ TS#WEALTH(x6) ^ T#ECONOMIC-INEQUALITY(_9) ^ TSS#MONEY(x6,x6) ^ I#RESOURCE(e87) ^ I#RESOURCE%TYPE(x32,e87) ^ I#POWER(e84) ^ I#POWER%TYPE(x35,e84) ^ I#RESOURCE(e71) ^ I#RESOURCE%TYPE(x17,e71) ^ I#POWER(e68) ^ I#POWER%TYPE(x20,e68) ^ M#CAUSE-FUNCTION(x32,e87) ^ M#PROVIDE-CONTROL(x35,e84) ^ M#CAUSE-FUNCTION(x17,e71) ^ M#PROVIDE-CONTROL(x20,e68) ^ =(_9,_8) ^ =(x29,x6)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,TYPE,0.75\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,POWER,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,RESOURCE,TYPE,0.75\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "or(e29,e30,x28) ^ neuter(e82,x26) ^ life-nn(e81,x27) ^ consume-vb(x28,x26,x27,u80) ^ neuter(e79,x27) ^ life-nn(e78,x26) ^ take-vb(x25,x27,x26,u77) ^ over-rb(e76,x25) ^ not(e30,e75) ^ neuter(e75,x0) ^ thing(e74,x3) ^ equal(e73,x0,x3) ^ we(e72,x2) ^ exchange-nn(e71,x2) ^ or(e34,e51,e70) ^ service-nn(e70,x16) ^ wealth-nn(e69,x15) ^ --in(e68,x16,x15) ^ for-in(e67,x2,x16) ^ resource-nn(e66,x24) ^ frame-nn(e65,x23) ^ mind-nn(e64,x22) ^ power-nn(e63,x21) ^ equal(e62,x21,x20) ^ serve-vb(x19,x20,u60,u61) ^ equal(e59,x21,x18) ^ strengthen-vb(x17,x18,u57,u58) ^ rel(e56,x22,x21) ^ of-in(e55,x23,x22) ^ rel(e54,x24,x23) ^ equal(e53,x2,x24) ^ rel(e52,x19,x3) ^ product-nn(e51,x5) ^ for-in(e50,x2,x5) ^ resource-nn(e49,x13) ^ frame-nn(e48,x12) ^ mind-nn(e47,x11) ^ power-nn(e46,x10) ^ equal(e45,x10,x9) ^ serve-vb(x8,x9,u43,u44) ^ equal(e42,x10,x7) ^ strengthen-vb(x6,x7,u40,u41) ^ rel(e39,x11,x10) ^ of-in(e38,x12,x11) ^ rel(e37,x13,x12) ^ equal(e36,x2,x13) ^ rel(e35,x8,x3) ^ just-rb(e33,e74) ^ money-nn(e32,x0) ^ unlike-in(e31,e74,x0) ^ !=(e67,e50) ^ !=(e82,e79) ^ !=(e53,e36) ^ !=(x17,x6) ^ !=(x19,x8) ^ !=(e63,e46) ^ !=(e54,e37) ^ !=(e66,e49) ^ !=(e55,e38) ^ !=(e65,e48) ^ !=(e56,e39) ^ !=(e64,e47) ^ !=(e81,e78) ^ !=(e67,e50) ^ !=(e82,e79,e75) ^ !=(e55,e38) ^ !=(e73,e62,e59,e53,e45,e42,e36) ^ !=(e56,e54,e52,e39,e37,e35) ^ !=(e29,e34) ^ TS#WEALTH(x15) ^ T#ECONOMIC-INEQUALITY(_8) ^ S#RESOURCE(e66) ^ SS#RESOURCE%TYPE(x24,e66) ^ S#POWER(e63) ^ SS#POWER%TYPE(x21,e63) ^ S#RESOURCE(e49) ^ SS#RESOURCE%TYPE(x13,e49) ^ S#POWER(e46) ^ SS#POWER%TYPE(x10,e46) ^ TS#WEALTH(x0) ^ T#ECONOMIC-INEQUALITY(_9) ^ TSS#MONEY(x0,x0) ^ I#RESOURCE(e66) ^ I#RESOURCE%TYPE(x24,e66) ^ I#POWER(e63) ^ I#POWER%TYPE(x21,e63) ^ I#RESOURCE(e49) ^ I#RESOURCE%TYPE(x13,e49) ^ I#POWER(e46) ^ I#POWER%TYPE(x10,e46) ^ M#CAUSE-FUNCTION(x24,e66) ^ M#PROVIDE-CONTROL(x21,e63) ^ M#CAUSE-FUNCTION(x13,e49) ^ M#PROVIDE-CONTROL(x10,e46) ^ =(x0,x15) ^ =(_9,_8)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,TYPE,0.75\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.75\nECONOMIC_INEQUALITY,WEALTH,WEALTH,POWER,TYPE,0.75\nECONOMIC_INEQUALITY,WEALTH,WEALTH,RESOURCE,TYPE,0.75\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -111,7 +111,7 @@
         "isiDescription": "", 
         "sid": "6", 
         "sourceFrame": "RESOURCE", 
-        "isiAbductiveExplanation": "money-nn(e8,x1) ^ renewable-adj(s5,x4) ^ resource-nn(e7,x4) ^ equal(e6,x1,x4) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_10) ^ TSS#MONEY(x1,x1) ^ S#RESOURCE(e7) ^ SS#RESOURCE%TYPE(x4,e7) ^ I#RESOURCE(e7) ^ I#RESOURCE%TYPE(x4,e7) ^ M#CAUSE-FUNCTION(x4,e7)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,TYPE,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e6,x1) ^ renewable-adj(e5,x2) ^ resource-nn(e4,x2) ^ equal(e3,x1,x2) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_10) ^ TSS#MONEY(x1,x1) ^ S#RESOURCE(e4) ^ SS#RESOURCE%TYPE(x2,e4) ^ I#RESOURCE(e4) ^ I#RESOURCE%TYPE(x2,e4) ^ M#CAUSE-FUNCTION(x2,e4)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -130,7 +130,7 @@
         "isiDescription": "", 
         "sid": "7", 
         "sourceFrame": "RESOURCE", 
-        "isiAbductiveExplanation": "or(e18,e19,e20) ^ wealth-nn(e20,x1) ^ money-nn(e19,x1) ^ imp(e13,e16,e17) ^ like-in(e17,x1,x7) ^ resource-nn(e16,x7) ^ not(e14,e15) ^ equal(e15,x7,x9) ^ resource-nn(e12,x9) ^ !=(e16,e12) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_11) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_12) ^ TSS#MONEY(x1,x1) ^ S#RESOURCE(e16) ^ SS#RESOURCE%TYPE(x7,e16) ^ S#RESOURCE(e12) ^ SS#RESOURCE%TYPE(x9,e12) ^ I#RESOURCE(e16) ^ I#RESOURCE%TYPE(x7,e16) ^ I#RESOURCE(e12) ^ I#RESOURCE%TYPE(x9,e12) ^ M#CAUSE-FUNCTION(x7,e16) ^ M#CAUSE-FUNCTION(x9,e12) ^ =(_11,_12)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "or(e8,e9,e10) ^ wealth-nn(e10,x1) ^ money-nn(e9,x1) ^ imp(e3,e6,e7) ^ like-in(e7,x1,x2) ^ resource-nn(e6,x2) ^ not(e4,e5) ^ equal(e5,x2,x2) ^ !=(e6,e6) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_11) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_12) ^ TSS#MONEY(x1,x1) ^ S#RESOURCE(e6) ^ SS#RESOURCE%TYPE(x2,e6) ^ I#RESOURCE(e6) ^ I#RESOURCE%TYPE(x2,e6) ^ M#CAUSE-FUNCTION(x2,e6) ^ =(_12,_11)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,RESOURCE,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -149,7 +149,7 @@
         "isiDescription": "", 
         "sid": "8", 
         "sourceFrame": "POWER", 
-        "isiAbductiveExplanation": "money-nn(e27,x3) ^ of-in(e26,x2,x3) ^ rule-nn(e25,x2) ^ equal(e24,x2,x4) ^ world-nn(e23,x4) ^ subset-of(e22,x2,x1) ^ subset-of(e21,x6,x1) ^ will(e7,x1,e11,u20) ^ accept-vb(e15,x1,x13,u19) ^ have-vb(e11,x1,e15,u18) ^ have-not-nn(e17,x6) ^ fact-nn(e16,x13) ^ !=(e22,e21) ^ TS#WEALTH(x3) ^ T#ECONOMIC-INEQUALITY(_13) ^ TSS#MONEY(x3,x3) ^ S#POWER(e25) ^ SS#POWER%COMMAND(x2,e25) ^ I#POWER(e25) ^ I#POWER%COMMAND(x2,e25) ^ M#PROVIDE-CONTROL(x2,e25)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,COMMAND,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e19,x5) ^ of-in(e18,x6,x5) ^ rule-nn(e17,x6) ^ equal(e16,x6,x4) ^ world-nn(e15,x4) ^ subset-of(e14,x6,x7) ^ subset-of(e13,x1,x7) ^ accept-vb(x8,x7,x0,u12) ^ have-vb(x2,x7,x8,u11) ^ have-not-nn(e10,x1) ^ fact-nn(e9,x0) ^ !=(e14,e13) ^ TS#WEALTH(x5) ^ T#ECONOMIC-INEQUALITY(_13) ^ TSS#MONEY(x5,x5) ^ S#POWER(e17) ^ SS#POWER%COMMAND(x6,e17) ^ I#POWER(e17) ^ I#POWER%COMMAND(x6,e17) ^ M#PROVIDE-CONTROL(x6,e17)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,COMMAND,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -168,7 +168,7 @@
         "isiDescription": "", 
         "sid": "9", 
         "sourceFrame": "POWER", 
-        "isiAbductiveExplanation": "will(e3,x1,e11,u44) ^ money-nn(e43,x10) ^ of-in(e42,x8,x10) ^ reflect-vb(e11,x1,x8,u41) ^ also-rb(e40,e3) ^ could(e5,x1,e13,u39) ^ usher-vb(e13,x1,u37,u38) ^ general-election-adj(s17,x16) ^ candidate-nn(e36,x16) ^ equal(e35,x16,x18) ^ participate-vb(e19,x18,u33,u34) ^ in-in(e32,e19,x21) ^ of-in(e31,x15,x16) ^ in-in(e30,e13,x15) ^ power-nn(e29,x8) ^ thing(e28,x1) ^ end-nn(e27,x15) ^ public-adj(s22,x21) ^ financing-nn(e26,x23) ^ of-in(e25,x21,x23) ^ system-nn(e24,x21) ^ !=(e42,e31,e25) ^ !=(e32,e30) ^ TS#WEALTH(x10) ^ T#ECONOMIC-INEQUALITY(_14) ^ TSS#MONEY(x10,x10) ^ S#POWER(e29) ^ SS#POWER%TYPE(x8,e29) ^ I#POWER(e29) ^ I#POWER%TYPE(x8,e29) ^ M#PROVIDE-CONTROL(x8,e29)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e28,x7) ^ of-in(e27,x3,x7) ^ reflect-vb(x8,x7,x3,u26) ^ also-rb(e25,x8) ^ neuter(e24,x7) ^ usher-vb(x6,x7,u22,u23) ^ general-election-adj(e21,x5) ^ candidate-nn(e20,x5) ^ participate-vb(x4,x5,u18,u19) ^ in-in(e17,x4,x1) ^ of-in(e16,x2,x5) ^ in-in(e15,x6,x2) ^ power-nn(e14,x3) ^ end-nn(e13,x2) ^ public-adj(e12,x1) ^ financing-nn(e11,x0) ^ of-in(e10,x1,x0) ^ system-nn(e9,x1) ^ !=(e27,e16,e10) ^ !=(e17,e15) ^ TS#WEALTH(x7) ^ T#ECONOMIC-INEQUALITY(_14) ^ TSS#MONEY(x7,x7) ^ S#POWER(e14) ^ SS#POWER%TYPE(x3,e14) ^ I#POWER(e14) ^ I#POWER%TYPE(x3,e14) ^ M#PROVIDE-CONTROL(x3,e14)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -187,7 +187,7 @@
         "isiDescription": "", 
         "sid": "10", 
         "sourceFrame": "POWER", 
-        "isiAbductiveExplanation": "thing(e15,x1) ^ of-in(e14,x2,x1) ^ enormous-adj(s3,x2) ^ wealth-nn(e13,x4) ^ of-in(e12,x2,x4) ^ rule-nn(e11,x2) ^ equal(e10,x2,x1) ^ world-nn(e9,x5) ^ of-in(e8,x1,x5) ^ today-nn(e7,x1) ^ topic(x2,u6) ^ !=(e14,e12,e8) ^ TS#WEALTH(x4) ^ T#ECONOMIC-INEQUALITY(_15) ^ S#POWER(e11) ^ SS#POWER%COMMAND(x2,e11) ^ I#POWER(e11) ^ I#POWER%COMMAND(x2,e11) ^ M#PROVIDE-CONTROL(x2,e11)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,POWER,COMMAND,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "neuter(e14,x0) ^ of-in(e13,x3,x0) ^ enormous-adj(e12,x3) ^ wealth-nn(e11,x2) ^ of-in(e10,x3,x2) ^ rule-nn(e9,x3) ^ equal(e8,x3,x1) ^ world-nn(e7,x0) ^ of-in(e6,x1,x0) ^ today-nn(e5,x1) ^ topic(e4,x3) ^ !=(e13,e10,e6) ^ TS#WEALTH(x2) ^ T#ECONOMIC-INEQUALITY(_15) ^ S#POWER(e9) ^ SS#POWER%COMMAND(x3,e9) ^ I#POWER(e9) ^ I#POWER%COMMAND(x3,e9) ^ M#PROVIDE-CONTROL(x3,e9)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,POWER,COMMAND,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -206,7 +206,7 @@
         "isiDescription": "", 
         "sid": "11", 
         "sourceFrame": "POWER", 
-        "isiAbductiveExplanation": "money-nn(e29,x4) ^ of-in(e28,x3,x4) ^ subset-of(e27,x3,x1) ^ subset-of(e26,x6,x1) ^ increase-vb(e7,x1,u24,u25) ^ subset-of(e23,x9,x8) ^ subset-of(e22,x10,x8) ^ quantity-nn(e21,x9) ^ quality-nn(e20,x10) ^ in-in(e19,e7,x8) ^ in-in(e18,e7,x12) ^ power-nn(e17,x3) ^ thing(e16,x3) ^ of-in(e15,x6,x3) ^ availability-nn(e14,x6) ^ view-nn(e13,x12) ^ !=(e27,e26,e23,e22) ^ !=(e28,e15) ^ !=(e19,e18) ^ TS#WEALTH(x4) ^ T#ECONOMIC-INEQUALITY(_16) ^ TSS#MONEY(x4,x4) ^ S#POWER(e17) ^ SS#POWER%TYPE(x3,e17) ^ I#POWER(e17) ^ I#POWER%TYPE(x3,e17) ^ M#PROVIDE-CONTROL(x3,e17)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e25,x7) ^ of-in(e24,x1,x7) ^ subset-of(e23,x1,x8) ^ neuter(e22,x2) ^ of-in(e21,x6,x2) ^ availability-nn(e20,x6) ^ subset-of(e19,x6,x8) ^ increase-vb(x5,x8,u17,u18) ^ subset-of(e16,x3,x4) ^ subset-of(e15,x2,x4) ^ quantity-nn(e14,x3) ^ quality-nn(e13,x2) ^ in-in(e12,x5,x4) ^ in-in(e11,x5,x0) ^ power-nn(e10,x1) ^ view-nn(e9,x0) ^ !=(e23,e19,e16,e15) ^ !=(e24,e21) ^ !=(e12,e11) ^ TS#WEALTH(x7) ^ T#ECONOMIC-INEQUALITY(_16) ^ TSS#MONEY(x7,x7) ^ S#POWER(e10) ^ SS#POWER%TYPE(x1,e10) ^ I#POWER(e10) ^ I#POWER%TYPE(x1,e10) ^ M#PROVIDE-CONTROL(x1,e10)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -225,7 +225,7 @@
         "isiDescription": "", 
         "sid": "12", 
         "sourceFrame": "POWER", 
-        "isiAbductiveExplanation": "money-nn(e20,x1) ^ power-nn(e19,x5) ^ subset-of(e18,x5,x4) ^ knowledge-nn(e17,x6) ^ equal(e16,x6,x7) ^ apply-vb(e8,u14,x7,u15) ^ time-nn(e13,x9) ^ over-in(e12,e8,x9) ^ subset-of(e11,x6,x4) ^ equal(e10,x1,x4) ^ !=(e18,e11) ^ !=(e16,e10) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_17) ^ TSS#MONEY(x1,x1) ^ S#POWER(e19) ^ SS#POWER%TYPE(x5,e19) ^ I#POWER(e19) ^ I#POWER%TYPE(x5,e19) ^ M#PROVIDE-CONTROL(x5,e19)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e16,x1) ^ power-nn(e15,x5) ^ subset-of(e14,x5,x6) ^ knowledge-nn(e13,x4) ^ apply-vb(x3,u11,x4,u12) ^ time-nn(e10,x2) ^ over-in(e9,x3,x2) ^ subset-of(e8,x4,x6) ^ equal(e7,x1,x6) ^ !=(e14,e8) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_17) ^ TSS#MONEY(x1,x1) ^ S#POWER(e15) ^ SS#POWER%TYPE(x5,e15) ^ I#POWER(e15) ^ I#POWER%TYPE(x5,e15) ^ M#PROVIDE-CONTROL(x5,e15)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -234,7 +234,7 @@
                 "source": "power", 
                 "explanation": "PROVIDE-CONTROL[power]", 
                 "sourceInLm": true, 
-                "target": "person,money", 
+                "target": "money", 
                 "targetInLm": true
             }
         ], 
@@ -244,7 +244,7 @@
         "isiDescription": "", 
         "sid": "13", 
         "sourceFrame": "POWER", 
-        "isiAbductiveExplanation": "person(e33,x1) ^ of-in(e32,x2,x1) ^ credulity-nn(e31,x2) ^ money-nn(e30,x1) ^ that(e29,x1,e9) ^ thing(e28,x1) ^ quote-in(e27,x8) ^ would(e9,x8,e21,u26) ^ imp(e21,e22,e16) ^ touch-vb(e16,x8,u24,u25) ^ not(e22,s14) ^ dangerous-adj(s14,x1) ^ so-rb(e23,s14) ^ of-in(e20,x4,x1) ^ in-in(e19,x2,x4) ^ topic(x2,u18) ^ quote-in(s5,x4) ^ power-nn(e17,x4) ^ !=(e27,s5) ^ !=(e32,e20) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_18) ^ TSS#MONEY(x1,x1) ^ S#POWER(e17) ^ SS#POWER%TYPE(x4,e17) ^ I#POWER(e17) ^ I#POWER%TYPE(x4,e17) ^ M#PROVIDE-CONTROL(x4,e17)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "person(e26,x3) ^ of-in(e25,x5,x3) ^ credulity-nn(e24,x5) ^ money-nn(e23,x4) ^ of-in(e22,x0,x4) ^ in-in(e21,x5,x0) ^ topic(e20,x5) ^ quote-in(e19,x3) ^ be-vb(x2,x3,e12,u18) ^ imp(e12,e13,x7) ^ touch-vb(x7,x3,u16,u17) ^ not(e13,e15) ^ dangerous-adj(e15,x0) ^ so-rb(e14,x0) ^ rel(e11,x2,x4) ^ quote-in(e10,x0) ^ power-nn(e9,x0) ^ neuter(e8,x0) ^ !=(e19,e10) ^ !=(e25,e22) ^ TS#WEALTH(x4) ^ T#ECONOMIC-INEQUALITY(_18) ^ TSS#MONEY(x4,x4) ^ S#POWER(e9) ^ SS#POWER%TYPE(x0,e9) ^ I#POWER(e9) ^ I#POWER%TYPE(x0,e9) ^ M#PROVIDE-CONTROL(x0,e9)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -263,14 +263,14 @@
         "isiDescription": "", 
         "sid": "14", 
         "sourceFrame": "POWER", 
-        "isiAbductiveExplanation": "money-nn(e43,x1) ^ power-nn(e42,x4) ^ equal(e41,x1,x4) ^ imp(e29,s7,e10) ^ money-nn(e40,x9) ^ will(e10,x9,s16,u39) ^ concentrated-adj(s16,x9) ^ substantially-rb(e38,s16) ^ in-in(e37,e10,x6) ^ equal(e36,x13,x14) ^ imp(e32,e33,e25) ^ of-in(e35,x18,x23) ^ pay-vb(e25,x14,x18,u34) ^ equal(e33,x18,x20) ^ in-in(e31,e10,x13) ^ political-adj(s7,x6) ^ power-nn(e30,x6) ^ government-nn(e28,x13) ^ public-adj(s21,x20) ^ officer-nn(e27,x20) ^ state-nn(e26,x23) ^ !=(e43,e40) ^ !=(e29,e32) ^ !=(e41,e36,e33) ^ !=(e37,e31) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_19) ^ TSS#MONEY(x1,x1) ^ S#POWER(e42) ^ SS#POWER%TYPE(x4,e42) ^ TS#WEALTH(x9) ^ T#ECONOMIC-INEQUALITY(_20) ^ TSS#MONEY(x9,x9) ^ S#PRICE(e25) ^ SS#PRICE%PAYMENT(e25,e25) ^ R#PAYMENT-AGENT(x14,e25) ^ R#PAYMENT-PATIENT(x18,e25) ^ I#POWER(e42) ^ I#POWER%TYPE(x4,e42) ^ I#PRICE(e25) ^ I#PRICE%PAYMENT(e25,e25) ^ M#PROVIDE-CONTROL(x4,e42) ^ =(_19,_20) ^ =(x4,x6) ^ =(x9,x1) ^ =(e42,e30)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,PRICE,PAYMENT,0.05\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e31,x4) ^ power-nn(e30,x11) ^ equal(e29,x4,x11) ^ imp(e16,e18,e28) ^ money-nn(e28,x8) ^ concentrated-adj(e27,x8) ^ substantially-rb(e26,x8) ^ in-in(e25,e27,x5) ^ equal(e24,x2,x6) ^ imp(e20,e21,x10) ^ of-in(e23,x9,x0) ^ pay-vb(x10,x6,x9,u22) ^ equal(e21,x1,x9) ^ in-in(e19,e27,x2) ^ political-adj(e18,x5) ^ power-nn(e17,x5) ^ government-nn(e15,x2) ^ public-adj(e14,x1) ^ officer-nn(e13,x1) ^ state-nn(e12,x0) ^ !=(e31,e28) ^ !=(e16,e20) ^ !=(e29,e24,e21) ^ !=(e25,e19) ^ TS#WEALTH(x4) ^ T#ECONOMIC-INEQUALITY(_19) ^ TSS#MONEY(x4,x4) ^ S#POWER(e30) ^ SS#POWER%TYPE(x11,e30) ^ TS#WEALTH(x8) ^ T#ECONOMIC-INEQUALITY(_20) ^ TSS#MONEY(x8,x8) ^ S#PRICE(x10) ^ SS#PRICE%PAYMENT(x10,x10) ^ R#PAYMENT-AGENT(x6,x10) ^ R#PAYMENT-PATIENT(x9,x10) ^ I#POWER(e30) ^ I#POWER%TYPE(x11,e30) ^ I#PRICE(x10) ^ I#PRICE%PAYMENT(x10,x10) ^ M#PROVIDE-CONTROL(x11,e30) ^ =(x5,x11) ^ =(x4,x8) ^ =(e30,e17) ^ =(_19,_20)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,PRICE,PAYMENT,0.05\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "power", 
-                "explanation": "PROVIDE-CONTROL[power]", 
+                "explanation": "PROVIDE-CONTROL[person,power]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -282,7 +282,7 @@
         "isiDescription": "", 
         "sid": "15", 
         "sourceFrame": "POWER", 
-        "isiAbductiveExplanation": "influence-nn(e34,x2) ^ subset-of(e33,x2,x1) ^ manipulation-nn(e32,x3) ^ subset-of(e31,x3,x1) ^ for-in(e30,x5,x1) ^ money-nn(e29,x6) ^ of-in(e28,x5,x6) ^ equal(e27,x5,x5) ^ know-vb(s9,x8) ^ well-rb(e26,s9) ^ for-in(e25,e27,s9) ^ quantity-adj(e24,x10) ^ question-nn(e23,x10) ^ rel(e22,e27,x10) ^ do-vb(e12,x13,x11,u21) ^ person(e20,x13) ^ else-rb(x13,u19) ^ when(e18,e27,e12) ^ especially-rb(e17,e27) ^ power-nn(e16,x5) ^ thing(e15,x5) ^ !=(e16,e16) ^ !=(e30,e25) ^ !=(e33,e31) ^ TS#WEALTH(x6) ^ T#ECONOMIC-INEQUALITY(_21) ^ TSS#MONEY(x6,x6) ^ S#POWER(e16) ^ SS#POWER%TYPE(x5,e16) ^ I#POWER(e16) ^ I#POWER%TYPE(x5,e16) ^ M#PROVIDE-CONTROL(x5,e16)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "influence-nn(e29,x8) ^ subset-of(e28,x8,x9) ^ manipulation-nn(e27,x7) ^ subset-of(e26,x7,x9) ^ for-in(e25,x0,x9) ^ money-nn(e24,x6) ^ of-in(e23,x0,x6) ^ neuter(e22,x1) ^ equal(e21,x0,x1) ^ quantity-adj(e20,x4) ^ question-nn(e19,x4) ^ rel(e18,e21,x4) ^ do-vb(x2,x1,x3,u17) ^ person(e16,x1) ^ else-rb(e15,x1) ^ when(e14,e21,x2) ^ especially-rb(e13,e21) ^ know-vb(e12,x0) ^ well-rb(e11,x0) ^ power-nn(e10,x0) ^ !=(e10,e10) ^ !=(e28,e26) ^ TS#WEALTH(x6) ^ T#ECONOMIC-INEQUALITY(_21) ^ TSS#MONEY(x6,x6) ^ S#POWER(e10) ^ SS#POWER%TYPE(x0,e10) ^ I#POWER(e10) ^ I#POWER%TYPE(x0,e10) ^ M#PROVIDE-CONTROL(x0,e10)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -301,7 +301,7 @@
         "isiDescription": "", 
         "sid": "16", 
         "sourceFrame": "VICTORY", 
-        "isiAbductiveExplanation": "wealth-nn(e14,x3) ^ of-in(e13,x1,x3) ^ hollow-adj(s7,x6) ^ victory-nn(e12,x6) ^ equal(e11,x1,x6) ^ often-rb(e10,s7) ^ consequently-rb(e9,s7) ^ attainment-nn(e8,x1) ^ TS#WEALTH(x3) ^ T#ECONOMIC-INEQUALITY(_22) ^ S#VICTORY(e12) ^ SS#VICTORY%TYPE(x6,e12) ^ I#VICTORY(e12) ^ I#VICTORY%TYPE(x6,e12) ^ M#ACHIEVEMENT-OF-GOAL(x6,e12)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,VICTORY,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "wealth-nn(e11,x2) ^ of-in(e10,x0,x2) ^ hollow-adj(e9,x3) ^ victory-nn(e8,x3) ^ equal(e7,x0,x3) ^ often-rb(e6,e9) ^ consequently-rb(e5,e9) ^ attainment-nn(e4,x0) ^ TS#WEALTH(x2) ^ T#ECONOMIC-INEQUALITY(_22) ^ S#VICTORY(e8) ^ SS#VICTORY%TYPE(x3,e8) ^ I#VICTORY(e8) ^ I#VICTORY%TYPE(x3,e8) ^ M#ACHIEVEMENT-OF-GOAL(x3,e8)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,VICTORY,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -320,16 +320,16 @@
         "isiDescription": "", 
         "sid": "17", 
         "sourceFrame": "VICTORY", 
-        "isiAbductiveExplanation": "imp(e12,e13,e17) ^ victory-nn(e17,x10) ^ equal(e16,x2,x10) ^ in-in(e15,e17,x6) ^ and(e14,e17) ^ money-nn(e13,x2) ^ current-adj(s7,x6) ^ economic-adj(s8,x6) ^ climate-nn(e11,x6) ^ S#VICTORY(e17) ^ SS#VICTORY%TYPE(x10,e17) ^ TS#WEALTH(x2) ^ T#ECONOMIC-INEQUALITY(_23) ^ TSS#MONEY(x2,x2) ^ I#VICTORY(e17) ^ I#VICTORY%TYPE(x10,e17) ^ M#ACHIEVEMENT-OF-GOAL(x10,e17)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,VICTORY,TYPE,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "imp(e7,e8,e12) ^ victory-nn(e12,x3) ^ equal(e11,x1,x3) ^ in-in(e10,e12,x0) ^ and(e9,e12) ^ money-nn(e8,x1) ^ current-adj(e6,x0) ^ economic-adj(e5,x0) ^ climate-nn(e4,x0) ^ S#VICTORY(e12) ^ SS#VICTORY%TYPE(x3,e12) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_23) ^ TSS#MONEY(x1,x1) ^ I#VICTORY(e12) ^ I#VICTORY%TYPE(x3,e12) ^ M#ACHIEVEMENT-OF-GOAL(x3,e12)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,VICTORY,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "protect", 
-                "explanation": "CAUSE-ALLOW-FUNCTION[protect], THING-ALLOWING[rich,people,wealth], THING-FUNCTIONING[rich,wealth,people]", 
+                "explanation": "CAUSE-ALLOW-FUNCTION[protect], THING-ALLOWING[rich,people,wealth], THING-FUNCTIONING[city]", 
                 "sourceInLm": true, 
-                "target": "rich,wealth", 
+                "target": "wealth,rich,people", 
                 "targetInLm": true
             }
         ], 
@@ -339,7 +339,7 @@
         "isiDescription": "", 
         "sid": "18", 
         "sourceFrame": "SECURITY", 
-        "isiAbductiveExplanation": "rich-nn(e26,x2) ^ nam(e27,x2) ^ equal(e25,x1,x2) ^ people-nn(e24,x1) ^ of-in(e23,x9,x1) ^ wealth-nn(e22,x9) ^ thing(e21,x1) ^ protect-vb(e11,x9,x1,u20) ^ high-adj(s13,x12) ^ like-in(e19,e11,s13) ^ strong-adj(s5,x4) ^ wall-nn(e18,x4) ^ city-nn(e17,x6) ^ round-vb(e7,x4,x6,u16) ^ imagine-vb(e8,x1,e7,u15) ^ however-rb(e14,e8) ^ !=(e26,e27) ^ TS#WEALTH(x2) ^ T#ECONOMIC-INEQUALITY(_24) ^ TS#WEALTH(x9) ^ T#ECONOMIC-INEQUALITY(_25) ^ S#SECURITY(e11) ^ SS#SECURITY%TYPE(e11,e11) ^ R#PROTECT-AGENT(x9,e11) ^ R#PROTECT-PATIENT(x1,e11) ^ I#SECURITY(e11) ^ I#SECURITY%TYPE(e11,e11) ^ M#CAUSE-ALLOW-FUNCTION(e11,e11) ^ M#THING-ALLOWING(x9,e11) ^ M#THING-FUNCTIONING(x1,e11) ^ M#CAUSE-ALLOW-FUNCTION(e11,e11) ^ =(_24,_25) ^ =(x9,x2)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,SECURITY,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "rich-nn(e22,x5) ^ nam(e23,x5) ^ people-nn(e21,x5) ^ strong-adj(e20,x4) ^ wall-nn(e19,x4) ^ city-nn(e18,x0) ^ round-vb(x3,x4,x0,u17) ^ thing(e16,x0) ^ of-in(e15,x8,x0) ^ wealth-nn(e14,x8) ^ protect-vb(x7,x8,x0,u13) ^ high-adj(e12,x6) ^ like-in(e11,x7,x6) ^ imagine-vb(x1,x5,x7,u10) ^ however-rb(e9,x1) ^ !=(e22,e23) ^ TS#WEALTH(x5) ^ T#ECONOMIC-INEQUALITY(_24) ^ TS#WEALTH(x8) ^ T#ECONOMIC-INEQUALITY(_25) ^ S#SECURITY(x7) ^ SS#SECURITY%TYPE(x7,x7) ^ R#PROTECT-AGENT(x8,x7) ^ R#PROTECT-PATIENT(x0,x7) ^ I#SECURITY(x7) ^ I#SECURITY%TYPE(x7,x7) ^ M#CAUSE-ALLOW-FUNCTION(x7,x7) ^ M#THING-ALLOWING(x8,x7) ^ M#THING-FUNCTIONING(x0,x7) ^ M#CAUSE-ALLOW-FUNCTION(x7,x7) ^ =(x5,x8) ^ =(_24,_25)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,SECURITY,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -348,7 +348,7 @@
                 "source": "protect", 
                 "explanation": "CAUSE-ALLOW-FUNCTION[protect], THING-ALLOWING[rich,wealth], THING-FUNCTIONING[wealth,rich]", 
                 "sourceInLm": true, 
-                "target": "wealth,rich", 
+                "target": "rich,wealth", 
                 "targetInLm": true
             }
         ], 
@@ -358,7 +358,7 @@
         "isiDescription": "", 
         "sid": "19", 
         "sourceFrame": "SECURITY", 
-        "isiAbductiveExplanation": "wealth-nn(e63,x13) ^ protect-vb(e16,x13,x15,u62) ^ life-nn(e61,x19) ^ of-in(e60,x18,x19) ^ from-in(e59,e16,x18) ^ while-in(e58,e16,s24) ^ vulnerable-adj(s24,x22) ^ total-adj(s26,x25) ^ disaster-nn(e57,x25) ^ to-in(e56,s24,x25) ^ easily-rb(e55,s24) ^ not(e45,e30) ^ resource-nn(e54,x28) ^ equal(e53,x28,x32) ^ fall-vb(e33,x32,u51,u52) ^ thing(e50,x34) ^ on-in(e49,e33,x34) ^ back-rb(e48,e33) ^ have-vb(e30,x22,x28,u47) ^ for-in(e46,s24,e30) ^ be-vb(e11,x6,e16,u44) ^ explain-vb(e4,x1,e11,u43) ^ whybray-nn(e41,x1) ^ org(e42,x1) ^ main-adj(s7,x6) ^ point-nn(e40,x8) ^ of-in(e39,x6,x8) ^ “-nn(e38,x6) ^ rich-nn(e37,x15) ^ vicissitude-nn(e36,x18) ^ poor-nn(e35,x22) ^ !=(e41,e42) ^ !=(e60,e39) ^ TS#WEALTH(x13) ^ T#ECONOMIC-INEQUALITY(_26) ^ S#SECURITY(e16) ^ SS#SECURITY%TYPE(e16,e16) ^ R#PROTECT-AGENT(x13,e16) ^ R#PROTECT-PATIENT(x15,e16) ^ S#RESOURCE(e54) ^ SS#RESOURCE%TYPE(x28,e54) ^ TS#WEALTH(x15) ^ T#ECONOMIC-INEQUALITY(_27) ^ TS#POVERTY(e35) ^ T#ECONOMIC-INEQUALITY(_28) ^ R#POOR(x22,e35) ^ I#SECURITY(e16) ^ I#SECURITY%TYPE(e16,e16) ^ M#CAUSE-ALLOW-FUNCTION(e16,e16) ^ M#THING-ALLOWING(x13,e16) ^ M#THING-FUNCTIONING(x15,e16) ^ I#RESOURCE(e54) ^ I#RESOURCE%TYPE(x28,e54) ^ M#CAUSE-ALLOW-FUNCTION(e16,e16) ^ M#CAUSE-FUNCTION(x28,e54) ^ =(_26,_27,_28) ^ =(x15,x13)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,RESOURCE,TYPE,0.75\nECONOMIC_INEQUALITY,WEALTH,WEALTH,RESOURCE,TYPE,0.55\nECONOMIC_INEQUALITY,POVERTY,POVERTY,SECURITY,TYPE,0.65\nECONOMIC_INEQUALITY,WEALTH,WEALTH,SECURITY,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "wealth-nn(e51,x13) ^ protect-vb(x12,x13,x2,u50) ^ life-nn(e49,x11) ^ of-in(e48,x1,x11) ^ from-in(e47,x12,x1) ^ while-in(e46,x12,e45) ^ vulnerable-adj(e45,x0) ^ total-adj(e44,x20) ^ disaster-nn(e43,x20) ^ to-in(e42,e45,x20) ^ easily-rb(e41,e45) ^ not(e33,x15) ^ resource-nn(e40,x17) ^ fall-vb(x19,x17,u38,u39) ^ back-rb(e37,x19) ^ thing(e36,x18) ^ on-in(e35,x19,x18) ^ have-vb(x15,x0,x17,u34) ^ be-vb(x8,x4,x12,u32) ^ explain-vb(x6,x5,x8,u31) ^ whybray-nn(e29,x5) ^ org(e30,x5) ^ main-adj(e28,x4) ^ point-nn(e27,x3) ^ of-in(e26,x4,x3) ^ “-nn(e25,x4) ^ rich-nn(e24,x2) ^ vicissitude-nn(e23,x1) ^ poor-nn(e22,x0) ^ !=(e29,e30) ^ !=(e48,e26) ^ TS#WEALTH(x13) ^ T#ECONOMIC-INEQUALITY(_26) ^ S#SECURITY(x12) ^ SS#SECURITY%TYPE(x12,x12) ^ R#PROTECT-AGENT(x13,x12) ^ R#PROTECT-PATIENT(x2,x12) ^ S#RESOURCE(e40) ^ SS#RESOURCE%TYPE(x17,e40) ^ TS#WEALTH(x2) ^ T#ECONOMIC-INEQUALITY(_27) ^ TS#POVERTY(e22) ^ T#ECONOMIC-INEQUALITY(_28) ^ R#POOR(x0,e22) ^ I#SECURITY(x12) ^ I#SECURITY%TYPE(x12,x12) ^ M#CAUSE-ALLOW-FUNCTION(x12,x12) ^ M#THING-ALLOWING(x13,x12) ^ M#THING-FUNCTIONING(x2,x12) ^ I#RESOURCE(e40) ^ I#RESOURCE%TYPE(x17,e40) ^ M#CAUSE-ALLOW-FUNCTION(x12,x12) ^ M#CAUSE-FUNCTION(x17,e40) ^ =(_27,_28,_26) ^ =(x13,x2)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,RESOURCE,TYPE,0.75\nECONOMIC_INEQUALITY,WEALTH,WEALTH,RESOURCE,TYPE,0.55\nECONOMIC_INEQUALITY,POVERTY,POVERTY,SECURITY,TYPE,0.65\nECONOMIC_INEQUALITY,WEALTH,WEALTH,SECURITY,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -377,16 +377,16 @@
         "isiDescription": "", 
         "sid": "20", 
         "sourceFrame": "SECURITY", 
-        "isiAbductiveExplanation": "thing(e53,x6) ^ or(e48,e11,e25) ^ underlie-vb(e25,x6,x22,u52) ^ equal(e51,e25,x27) ^ underlie-vb(e11,x6,x8,u50) ^ equal(e49,e11,x14) ^ be-vb(e4,x1,e53,u47) ^ but-in(e46,e4) ^ truth-nn(e45,x1) ^ frantic-adj(s9,x8) ^ behavior-nn(e44,x8) ^ belief-nn(e43,x14) ^ person(e42,x8) ^ money-nn(e41,x18) ^ security-nn(e40,x19) ^ give-vb(e20,x18,x19,x8) ^ frantic-adj(s23,x22) ^ feeling-nn(e39,x22) ^ belief-nn(e38,x27) ^ person(e37,x33) ^ money-nn(e36,x31) ^ security-nn(e35,x32) ^ give-vb(e34,x31,x32,x33) ^ !=(e41,e36) ^ !=(e42,e37) ^ !=(e20,e34) ^ !=(e40,e35) ^ !=(e51,e49) ^ !=(e43,e38) ^ !=(e25,e11) ^ !=(e42,e37) ^ !=(e51,e49) ^ TS#WEALTH(x18) ^ T#ECONOMIC-INEQUALITY(_29) ^ TSS#MONEY(x18,x18) ^ S#SECURITY(e40) ^ SS#SECURITY%TYPE(x19,e40) ^ TS#WEALTH(x31) ^ T#ECONOMIC-INEQUALITY(_30) ^ TSS#MONEY(x31,x31) ^ S#SECURITY(e35) ^ SS#SECURITY%TYPE(x32,e35) ^ I#SECURITY(e40) ^ I#SECURITY%TYPE(x19,e40) ^ I#SECURITY(e35) ^ I#SECURITY%TYPE(x32,e35) ^ M#CAUSE-ALLOW-FUNCTION(x19,e40) ^ M#CAUSE-ALLOW-FUNCTION(x32,e35) ^ =(x22,x8) ^ =(s9,s23) ^ =(_29,_30) ^ =(x31,x18)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,SECURITY,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "thing(e43,x18) ^ person(e42,x18) ^ person(e41,x17) ^ or(e36,x20,x22) ^ underlie-vb(x22,x18,x2,u40) ^ equal(e39,x22,x1) ^ underlie-vb(x20,x18,x5,u38) ^ equal(e37,x20,x4) ^ be-vb(x15,x6,e43,u35) ^ but-in(e34,x15) ^ truth-nn(e33,x6) ^ frantic-adj(e32,x5) ^ behavior-nn(e31,x5) ^ belief-nn(e30,x4) ^ money-nn(e29,x14) ^ security-nn(e28,x13) ^ give-vb(x12,x14,x13,x18) ^ frantic-adj(e27,x2) ^ feeling-nn(e26,x2) ^ belief-nn(e25,x1) ^ money-nn(e24,x10) ^ security-nn(e23,x9) ^ give-vb(x8,x10,x9,x17) ^ !=(e29,e24) ^ !=(e42,e41) ^ !=(x12,x8) ^ !=(e28,e23) ^ !=(e39,e37) ^ !=(e30,e25) ^ !=(x22,x20) ^ !=(e39,e37) ^ !=(e42,e41) ^ TS#WEALTH(x14) ^ T#ECONOMIC-INEQUALITY(_29) ^ TSS#MONEY(x14,x14) ^ S#SECURITY(e28) ^ SS#SECURITY%TYPE(x13,e28) ^ TS#WEALTH(x10) ^ T#ECONOMIC-INEQUALITY(_30) ^ TSS#MONEY(x10,x10) ^ S#SECURITY(e23) ^ SS#SECURITY%TYPE(x9,e23) ^ I#SECURITY(e28) ^ I#SECURITY%TYPE(x13,e28) ^ I#SECURITY(e23) ^ I#SECURITY%TYPE(x9,e23) ^ M#CAUSE-ALLOW-FUNCTION(x13,e28) ^ M#CAUSE-ALLOW-FUNCTION(x9,e23) ^ =(_30,_29) ^ =(x10,x14) ^ =(x5,x2) ^ =(e27,e32)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,SECURITY,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "protect", 
-                "explanation": "CAUSE-ALLOW-FUNCTION[protect], THING-ALLOWING[rich,wealth], THING-FUNCTIONING[x3]", 
+                "explanation": "CAUSE-ALLOW-FUNCTION[protect], THING-ALLOWING[rich,wealth], THING-FUNCTIONING[x1]", 
                 "sourceInLm": true, 
-                "target": "rich,wealth", 
+                "target": "wealth,rich", 
                 "targetInLm": true
             }
         ], 
@@ -396,16 +396,16 @@
         "isiDescription": "", 
         "sid": "21", 
         "sourceFrame": "SECURITY", 
-        "isiAbductiveExplanation": "protect-vb(e5,x1,x3,u16) ^ poverty-nn(e15,x6) ^ destroy-vb(e9,x6,x8,u14) ^ wealth-nn(e12,x1) ^ org(e13,x1) ^ rich-adj(e11,x3) ^ poor-nn(e10,x8) ^ !=(e12,e13) ^ S#SECURITY(e5) ^ SS#SECURITY%TYPE(e5,e5) ^ R#PROTECT-AGENT(x1,e5) ^ R#PROTECT-PATIENT(x3,e5) ^ TS#POVERTY(x6) ^ T#ECONOMIC-INEQUALITY(_31) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_32) ^ TS#WEALTH(e11) ^ R#RICH(x3,e11) ^ T#ECONOMIC-INEQUALITY(_33) ^ TS#POVERTY(e10) ^ T#ECONOMIC-INEQUALITY(_34) ^ R#POOR(x8,e10) ^ I#SECURITY(e5) ^ I#SECURITY%TYPE(e5,e5) ^ M#CAUSE-ALLOW-FUNCTION(e5,e5) ^ M#THING-ALLOWING(x1,e5) ^ M#THING-FUNCTIONING(x3,e5) ^ M#CAUSE-ALLOW-FUNCTION(e5,e5) ^ =(_31,_32,_33,_34) ^ =(e11,x1) ^ =(e10,x6)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,SECURITY,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,SECURITY,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "protect-vb(x5,x2,x1,u12) ^ poverty-nn(e11,x4) ^ destroy-vb(x3,x4,x0,u10) ^ wealth-nn(e8,x2) ^ org(e9,x2) ^ rich-adj(e7,x1) ^ poor-nn(e6,x0) ^ !=(e8,e9) ^ S#SECURITY(x5) ^ SS#SECURITY%TYPE(x5,x5) ^ R#PROTECT-AGENT(x2,x5) ^ R#PROTECT-PATIENT(x1,x5) ^ TS#POVERTY(x4) ^ T#ECONOMIC-INEQUALITY(_31) ^ TS#WEALTH(x2) ^ T#ECONOMIC-INEQUALITY(_32) ^ TS#WEALTH(e7) ^ R#RICH(x1,e7) ^ T#ECONOMIC-INEQUALITY(_33) ^ TS#POVERTY(e6) ^ T#ECONOMIC-INEQUALITY(_34) ^ R#POOR(x0,e6) ^ I#SECURITY(x5) ^ I#SECURITY%TYPE(x5,x5) ^ M#CAUSE-ALLOW-FUNCTION(x5,x5) ^ M#THING-ALLOWING(x2,x5) ^ M#THING-FUNCTIONING(x1,x5) ^ M#CAUSE-ALLOW-FUNCTION(x5,x5) ^ =(x4,e6) ^ =(_31,_32,_33,_34) ^ =(x2,e7)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,SECURITY,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,SECURITY,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
-                "source": "protection,very", 
-                "explanation": "CAUSE-ALLOW-FUNCTION[very,protection]", 
+                "source": "protection", 
+                "explanation": "CAUSE-ALLOW-FUNCTION[protection]", 
                 "sourceInLm": true, 
-                "target": "wealth,such", 
+                "target": "wealth", 
                 "targetInLm": true
             }
         ], 
@@ -415,14 +415,14 @@
         "isiDescription": "", 
         "sid": "22", 
         "sourceFrame": "SECURITY", 
-        "isiAbductiveExplanation": "wealth-nn(e17,x6) ^ such-adj(x6,u16) ^ very-rb(x7,u15) ^ limited-adj(s8,x7) ^ protection-nn(e14,x7) ^ give-vb(e9,x6,x7,u13) ^ seem-vb(e4,x1,e9,u12) ^ now-rb(e11,e4) ^ thing(e10,x1) ^ TS#WEALTH(x6) ^ T#ECONOMIC-INEQUALITY(_35) ^ S#SECURITY(e14) ^ SS#SECURITY%TYPE(x7,e14) ^ I#SECURITY(e14) ^ I#SECURITY%TYPE(x7,e14) ^ M#CAUSE-ALLOW-FUNCTION(x7,e14)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,SECURITY,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "wealth-nn(e14,x5) ^ such-adj(e13,x5) ^ very-rb(e12,x4) ^ limited-adj(e11,x4) ^ protection-nn(e10,x4) ^ give-vb(x3,x5,x4,u9) ^ seem-vb(x1,x0,x3,u8) ^ now-rb(e7,x1) ^ neuter(e6,x0) ^ TS#WEALTH(x5) ^ T#ECONOMIC-INEQUALITY(_35) ^ S#SECURITY(e10) ^ SS#SECURITY%TYPE(x4,e10) ^ I#SECURITY(e10) ^ I#SECURITY%TYPE(x4,e10) ^ M#CAUSE-ALLOW-FUNCTION(x4,e10)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,SECURITY,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
-                "source": "security", 
-                "explanation": "CAUSE-ALLOW-FUNCTION[security]", 
+                "source": "power,person", 
+                "explanation": "PROVIDE-CONTROL[power,person]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -433,8 +433,8 @@
         "sourceConceptSubDomain": "TYPE", 
         "isiDescription": "", 
         "sid": "23", 
-        "sourceFrame": "SECURITY", 
-        "isiAbductiveExplanation": "think-vb(e3,x1,e15,u28) ^ quote-in(s7,x6) ^ money-nn(e27,x6) ^ subset-of(e26,x9,x8) ^ subset-of(e25,x10,x8) ^ security-nn(e24,x9) ^ subset-of(e23,x11,x10) ^ subset-of(e22,x12,x10) ^ status-nn(e21,x11) ^ subset-of(e20,x13,x12) ^ subset-of(e19,x14,x12) ^ comfort-nn(e18,x13) ^ power-nn(e17,x14) ^ give-vb(e15,x6,x8,x1) ^ person(e16,x1) ^ !=(e26,e25,e23,e22,e20,e19) ^ TS#WEALTH(x6) ^ T#ECONOMIC-INEQUALITY(_36) ^ TSS#MONEY(x6,x6) ^ S#SECURITY(e24) ^ SS#SECURITY%TYPE(x9,e24) ^ S#POWER(e17) ^ SS#POWER%TYPE(x14,e17) ^ I#SECURITY(e24) ^ I#SECURITY%TYPE(x9,e24) ^ I#POWER(e17) ^ I#POWER%TYPE(x14,e17) ^ M#CAUSE-ALLOW-FUNCTION(x9,e24) ^ M#PROVIDE-CONTROL(x14,e17)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,SECURITY,TYPE,0.75\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.55\n%%END_CM_LIST"
+        "sourceFrame": "POWER", 
+        "isiAbductiveExplanation": "think-vb(x2,x0,x3,u26) ^ quote-in(e25,x11) ^ money-nn(e24,x11) ^ subset-of(e23,x9,x10) ^ subset-of(e22,x8,x10) ^ security-nn(e21,x9) ^ subset-of(e20,x7,x8) ^ subset-of(e19,x6,x8) ^ status-nn(e18,x7) ^ subset-of(e17,x5,x6) ^ subset-of(e16,x4,x6) ^ comfort-nn(e15,x5) ^ power-nn(e14,x4) ^ person(e13,x4) ^ give-vb(x3,x11,x10,x4) ^ person(e12,x0) ^ !=(e13,e12) ^ !=(e23,e22,e20,e19,e17,e16) ^ TS#WEALTH(x11) ^ T#ECONOMIC-INEQUALITY(_36) ^ TSS#MONEY(x11,x11) ^ S#SECURITY(e21) ^ SS#SECURITY%TYPE(x9,e21) ^ S#POWER(e14) ^ SS#POWER%TYPE(x4,e14) ^ I#SECURITY(e21) ^ I#SECURITY%TYPE(x9,e21) ^ I#POWER(e14) ^ I#POWER%TYPE(x4,e14) ^ M#CAUSE-ALLOW-FUNCTION(x9,e21) ^ M#PROVIDE-CONTROL(x4,e14)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,SECURITY,TYPE,0.75\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -453,7 +453,7 @@
         "isiDescription": "", 
         "sid": "24", 
         "sourceFrame": "SECURITY", 
-        "isiAbductiveExplanation": "money-nn(e29,x1) ^ security-nn(e28,x2) ^ autonomy-nn(e27,x3) ^ status-nn(e26,x4) ^ self-esteem-nn(e25,x5) ^ control-nn(e24,x6) ^ influence-nn(e23,x8) ^ other-nn(e22,x9) ^ over-in(e21,x8,x9) ^ subset-of(e20,x8,x7) ^ choice-nn(e19,x10) ^ subset-of(e18,x10,x7) ^ rel(e17,x6,x7) ^ rel(e16,x5,x6) ^ rel(e15,x4,x5) ^ rel(e14,x3,x4) ^ rel(e13,x2,x3) ^ person(e12,x3) ^ give-vb(e11,x1,x2,x3) ^ !=(e20,e18) ^ !=(e17,e16,e15,e14,e13) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_37) ^ TSS#MONEY(x1,x1) ^ S#SECURITY(e28) ^ SS#SECURITY%TYPE(x2,e28) ^ I#SECURITY(e28) ^ I#SECURITY%TYPE(x2,e28) ^ M#CAUSE-ALLOW-FUNCTION(x2,e28)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,SECURITY,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e28,x10) ^ security-nn(e27,x9) ^ autonomy-nn(e26,x8) ^ status-nn(e25,x7) ^ self-esteem-nn(e24,x6) ^ control-nn(e23,x5) ^ influence-nn(e22,x3) ^ other-nn(e21,x2) ^ over-in(e20,x3,x2) ^ subset-of(e19,x3,x4) ^ choice-nn(e18,x1) ^ subset-of(e17,x1,x4) ^ rel(e16,x5,x4) ^ rel(e15,x6,x5) ^ rel(e14,x7,x6) ^ rel(e13,x8,x7) ^ rel(e12,x9,x8) ^ person(e11,x1) ^ give-vb(x0,x10,x9,x1) ^ !=(e19,e17) ^ !=(e16,e15,e14,e13,e12) ^ TS#WEALTH(x10) ^ T#ECONOMIC-INEQUALITY(_37) ^ TSS#MONEY(x10,x10) ^ S#SECURITY(e27) ^ SS#SECURITY%TYPE(x9,e27) ^ I#SECURITY(e27) ^ I#SECURITY%TYPE(x9,e27) ^ M#CAUSE-ALLOW-FUNCTION(x9,e27)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,SECURITY,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -472,14 +472,14 @@
         "isiDescription": "", 
         "sid": "25", 
         "sourceFrame": "WATER", 
-        "isiAbductiveExplanation": "thing(e48,x1) ^ of-in(e47,x1,x3) ^ say-vb(e4,x1,e16,u46) ^ few-adj(s14,x13) ^ sign-nn(e45,x13) ^ additional-adj(s19,x18) ^ money-nn(e44,x18) ^ will(e20,x18,e23,u43) ^ flow-vb(e23,x18,u41,u42) ^ new-adj(s28,x27) ^ effort-nn(e40,x27) ^ support-vb(e29,x26,x27,u39) ^ for-in(e38,e23,e29) ^ contain-vb(e16,x9,x13,u37) ^ anyway-rb(e36,e4) ^ scientist-nn(e35,x3) ^ administration-nn(e34,x7) ^ of-in(e33,x9,x7) ^ 17-1-page-adj(s10,x9) ^ research-nn(e32,x11) ^ of-in(e31,x9,x11) ^ plan-nn(e30,x9) ^ !=(e47,e33,e31) ^ TS#WEALTH(x18) ^ T#ECONOMIC-INEQUALITY(_38) ^ TSS#MONEY(x18,x18) ^ S#WATER(e23) ^ SS#WATER%MOVEMENT(e23,e23) ^ R#STREAMING(x18,e23) ^ I#WATER(e23) ^ I#WATER%MOVEMENT(e23,e23) ^ M#LIQUID-MOVE-FREELY(e23) ^ M#LIQUID-THING(x18)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,WATER,MOVEMENT,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "thing(e36,x6) ^ of-in(e35,x6,x3) ^ say-vb(x5,x6,x7,u34) ^ few-adj(e33,x9) ^ sign-nn(e32,x9) ^ additional-adj(e31,x13) ^ money-nn(e30,x13) ^ flow-vb(x12,x13,u28,u29) ^ new-adj(e27,x15) ^ effort-nn(e26,x15) ^ support-vb(x14,x13,x15,u25) ^ contain-vb(x7,x1,x9,u24) ^ anyway-rb(e23,x5) ^ scientist-nn(e22,x3) ^ administration-nn(e21,x2) ^ of-in(e20,x1,x2) ^ 17-1-page-adj(e19,x1) ^ research-nn(e18,x0) ^ of-in(e17,x1,x0) ^ plan-nn(e16,x1) ^ !=(e35,e20,e17) ^ TS#WEALTH(x13) ^ T#ECONOMIC-INEQUALITY(_38) ^ TSS#MONEY(x13,x13) ^ S#WATER(x12) ^ SS#WATER%MOVEMENT(x12,x12) ^ R#STREAMING(x13,x12) ^ I#WATER(x12) ^ I#WATER%MOVEMENT(x12,x12) ^ M#LIQUID-MOVE-FREELY(x12) ^ M#LIQUID-THING(x13)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,WATER,MOVEMENT,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "river", 
-                "explanation": "LARGE-AMOUNT[river], AMOUNT-THING[money]", 
+                "explanation": "LARGE-AMOUNT[river], THING-LARGE-AMOUNT[money]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -491,14 +491,14 @@
         "isiDescription": "", 
         "sid": "26", 
         "sourceFrame": "WATER", 
-        "isiAbductiveExplanation": "of-in(e27,x2,x1) ^ river-nn(e26,x2) ^ money-nn(e25,x1) ^ of-in(e24,x2,x1) ^ mean-vb(e3,x2,e7,u23) ^ thing(e22,x1) ^ can(e7,x1,e14,u21) ^ far-rb(s11,x10) ^ more-adj(e20,x10) ^ single-adj(s13,x12) ^ vote-nn(e19,x12) ^ than-in(e18,x10,x12) ^ offer-vb(e14,x1,x10,u17) ^ course-nn(e16,x5) ^ of-in(e15,e3,x5) ^ !=(e27,e24,e15) ^ S#WATER(e26) ^ SS#WATER%TYPE(x2,e26) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_39) ^ TSS#MONEY(x1,x1) ^ I#WATER(e26) ^ I#WATER%TYPE(x2,e26) ^ R#WATER-COMPARISON(x1,e26) ^ M#LARGE-AMOUNT(x2,e26) ^ M#LARGE-AMOUNT(x2,e26) ^ M#AMOUNT-THING(x1,e26)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,WATER,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "thing(e22,x0) ^ of-in(e21,x4,x0) ^ river-nn(e20,x4) ^ money-nn(e19,x3) ^ of-in(e18,x4,x3) ^ mean-vb(x2,x4,x5,u17) ^ thing(e16,x6) ^ far-rb(e15,x7) ^ more-adj(e14,x7) ^ single-adj(e13,x6) ^ vote-nn(e12,x6) ^ than-in(e11,x7,x6) ^ offer-vb(x5,x6,x7,u10) ^ course-nn(e9,x0) ^ of-in(e8,x2,x0) ^ !=(e22,e16) ^ !=(e21,e18,e8) ^ S#WATER(e20) ^ SS#WATER%TYPE(x4,e20) ^ TS#WEALTH(x3) ^ T#ECONOMIC-INEQUALITY(_39) ^ TSS#MONEY(x3,x3) ^ I#WATER(e20) ^ I#WATER%TYPE(x4,e20) ^ R#WATER-COMPARISON(x3,e20) ^ M#LARGE-AMOUNT(x4,e20) ^ M#LARGE-AMOUNT(x4,e20) ^ M#THING-LARGE-AMOUNT(x3,e20)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,WATER,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "flow", 
-                "explanation": "LARGE-AMOUNT[flow], AMOUNT-THING[wealth]", 
+                "explanation": "LARGE-AMOUNT[flow], THING-LARGE-AMOUNT[wealth]", 
                 "sourceInLm": true, 
                 "target": "wealth", 
                 "targetInLm": true
@@ -510,14 +510,14 @@
         "isiDescription": "", 
         "sid": "27", 
         "sourceFrame": "WATER", 
-        "isiAbductiveExplanation": "age-vb(e17,x2) ^ subset-of(e16,x2,s1) ^ inter-generational-adj(s4,x3) ^ wealth-nn(e15,x5) ^ of-in(e14,x3,x5) ^ flow-nn(e13,x3) ^ card(e12,x6,2) ^ indonesian-adj(s7,x6) ^ community-nn(e11,x6) ^ in-in(e10,x3,x6) ^ subset-of(e9,x3,s1) ^ topic(s1,u8) ^ !=(e16,e9) ^ TS#WEALTH(x5) ^ T#ECONOMIC-INEQUALITY(_40) ^ S#WATER(e13) ^ SS#WATER%TYPE(x3,e13) ^ I#WATER(e13) ^ I#WATER%TYPE(x3,e13) ^ R#WATER-COMPARISON(x5,e13) ^ M#LARGE-AMOUNT(x3,e13) ^ M#LARGE-AMOUNT(x3,e13) ^ M#AMOUNT-THING(x5,e13)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,WATER,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "age-vb(e16,x3) ^ subset-of(e15,x3,x4) ^ inter-generational-adj(e14,x2) ^ wealth-nn(e13,x1) ^ of-in(e12,x2,x1) ^ flow-nn(e11,x2) ^ card(e10,x0,2) ^ indonesian-adj(e9,x0) ^ community-nn(e8,x0) ^ in-in(e7,x2,x0) ^ subset-of(e6,x2,x4) ^ topic(e5,x4) ^ !=(e15,e6) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_40) ^ S#WATER(e11) ^ SS#WATER%TYPE(x2,e11) ^ I#WATER(e11) ^ I#WATER%TYPE(x2,e11) ^ R#WATER-COMPARISON(x1,e11) ^ M#LARGE-AMOUNT(x2,e11) ^ M#LARGE-AMOUNT(x2,e11) ^ M#THING-LARGE-AMOUNT(x1,e11)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,WATER,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "flow", 
-                "explanation": "LARGE-AMOUNT[flow], AMOUNT-THING[money]", 
+                "explanation": "LARGE-AMOUNT[flow], THING-LARGE-AMOUNT[money,channel]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -529,14 +529,14 @@
         "isiDescription": "", 
         "sid": "28", 
         "sourceFrame": "WATER", 
-        "isiAbductiveExplanation": "special-interest-adj(s2,x1) ^ money-nn(e35,x1) ^ politics-nn(e34,x3) ^ in-in(e33,x1,x3) ^ thing(e32,x1) ^ of-in(e31,x11,x1) ^ flow-nn(e30,x11) ^ equal(e29,x1,x1) ^ water-nn(e28,x9) ^ equal(e27,x9,x10) ^ block-vb(e12,x10,x11,u26) ^ card(e25,x13,1) ^ direction-nn(e24,x13) ^ channel-nn(e23,x14) ^ in-in(e22,x13,x14) ^ only-adj(e21,x13) ^ in-in(e20,e12,x13) ^ like-in(e19,e29,x9) ^ thing(e18,x5) ^ to-in(e17,e12,x5) ^ say-vb(e6,u16,x1,e12) ^ !=(e29,e27) ^ !=(e32,e18) ^ !=(e33,e22,e20) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_41) ^ TSS#MONEY(x1,x1) ^ S#WATER(e30) ^ SS#WATER%TYPE(x11,e30) ^ I#WATER(e30) ^ I#WATER%TYPE(x11,e30) ^ R#WATER-COMPARISON(x1,e30) ^ M#LARGE-AMOUNT(x11,e30) ^ M#LARGE-AMOUNT(x11,e30) ^ M#AMOUNT-THING(x1,e30)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,WATER,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "special-interest-adj(e30,x5) ^ money-nn(e29,x5) ^ politics-nn(e28,x4) ^ in-in(e27,x5,x4) ^ of-in(e26,x0,x6) ^ flow-nn(e25,x0) ^ equal(e24,x5,x6) ^ water-nn(e23,x9) ^ neuter(e22,x6) ^ block-vb(x8,x9,x0,u21) ^ card(e20,x7,1) ^ direction-nn(e19,x7) ^ channel-nn(e18,x6) ^ in-in(e17,x7,x6) ^ only-adj(e16,x7) ^ in-in(e15,x8,x7) ^ like-in(e14,e24,x9) ^ thing(e13,x2) ^ to-in(e12,x8,x2) ^ say-vb(x1,x5,x8,u11) ^ !=(e27,e17,e15) ^ TS#WEALTH(x5) ^ T#ECONOMIC-INEQUALITY(_41) ^ TSS#MONEY(x5,x5) ^ S#WATER(e25) ^ SS#WATER%TYPE(x0,e25) ^ I#WATER(e25) ^ I#WATER%TYPE(x0,e25) ^ R#WATER-COMPARISON(x6,e25) ^ M#LARGE-AMOUNT(x0,e25) ^ M#LARGE-AMOUNT(x0,e25) ^ M#THING-LARGE-AMOUNT(x6,e25)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,WATER,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "flow", 
-                "explanation": "LARGE-AMOUNT[flow], AMOUNT-THING[wealth]", 
+                "explanation": "LARGE-AMOUNT[flow], THING-LARGE-AMOUNT[wealth]", 
                 "sourceInLm": true, 
                 "target": "wealth", 
                 "targetInLm": true
@@ -548,7 +548,7 @@
         "isiDescription": "", 
         "sid": "29", 
         "sourceFrame": "WATER", 
-        "isiAbductiveExplanation": "demographic-adj(s2,x1) ^ research-nn(e21,x1) ^ wealth-nn(e20,x4) ^ of-in(e19,x3,x4) ^ flow-nn(e18,x3) ^ on-in(e17,x1,x3) ^ object-nn(e16,x8) ^ contention-nn(e15,x9) ^ of-in(e14,x8,x9) ^ equal(e13,x1,x8) ^ card(e12,x6,3) ^ decade-nn(e11,x6) ^ for-in(e10,e16,x6) ^ !=(e19,e14) ^ TS#WEALTH(x4) ^ T#ECONOMIC-INEQUALITY(_42) ^ S#WATER(e18) ^ SS#WATER%TYPE(x3,e18) ^ I#WATER(e18) ^ I#WATER%TYPE(x3,e18) ^ R#WATER-COMPARISON(x4,e18) ^ M#LARGE-AMOUNT(x3,e18) ^ M#LARGE-AMOUNT(x3,e18) ^ M#AMOUNT-THING(x4,e18)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,WATER,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "demographic-adj(e19,x4) ^ research-nn(e18,x4) ^ wealth-nn(e17,x2) ^ of-in(e16,x3,x2) ^ flow-nn(e15,x3) ^ on-in(e14,x4,x3) ^ object-nn(e13,x6) ^ contention-nn(e12,x5) ^ of-in(e11,x6,x5) ^ equal(e10,x4,x6) ^ card(e9,x0,3) ^ decade-nn(e8,x0) ^ for-in(e7,e13,x0) ^ !=(e16,e11) ^ TS#WEALTH(x2) ^ T#ECONOMIC-INEQUALITY(_42) ^ S#WATER(e15) ^ SS#WATER%TYPE(x3,e15) ^ I#WATER(e15) ^ I#WATER%TYPE(x3,e15) ^ R#WATER-COMPARISON(x2,e15) ^ M#LARGE-AMOUNT(x3,e15) ^ M#LARGE-AMOUNT(x3,e15) ^ M#THING-LARGE-AMOUNT(x2,e15)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,WATER,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -567,14 +567,14 @@
         "isiDescription": "", 
         "sid": "30", 
         "sourceFrame": "WATER", 
-        "isiAbductiveExplanation": "thing(e67,x1) ^ damaged-adj(s26,x25) ^ tie-nn(e66,x25) ^ restore-vb(e27,x1,x25,u65) ^ to-in(e64,e27,x29) ^ hope-vb(e3,x1,e27,u63) ^ of-in(e62,x5,x7) ^ new-adj(s10,x9) ^ step-nn(e61,x9) ^ on-in(e60,x9,x12) ^ equal(e59,x9,x13) ^ aim-vb(e14,u57,x13,u58) ^ money-nn(e56,x16) ^ choke-vb(e17,x15,x16,u55) ^ off-rb(e54,e17) ^ at-in(e53,e14,e17) ^ flow-vb(e18,x15,u51,u52) ^ terrorist-adj(s20,x19) ^ group-nn(e50,x19) ^ to-in(e49,e18,x19) ^ charitable-adj(s22,x21) ^ organization-nn(e48,x21) ^ through-in(e47,e18,x21) ^ for-in(e46,e17,e18) ^ announce-vb(e23,x5,x9,u45) ^ while(e44,e23,e3) ^ united-nn(e42,x30) ^ loc(e43,x30) ^ equal(e41,x29,x30) ^ states-nn(e39,x29) ^ loc(e40,x29) ^ government-nn(e38,x5) ^ saudi-nn(e36,x8) ^ loc(e37,x8) ^ equal(e35,x7,x8) ^ arabia-nn(e33,x7) ^ loc(e34,x7) ^ tuesday-nn(e31,x12) ^ tim(e32,x12) ^ !=(e33,e34) ^ !=(e31,e32) ^ !=(e42,e43) ^ !=(e39,e40) ^ !=(e36,e37) ^ !=(e43,e40,e37,e34) ^ !=(e59,e41,e35) ^ !=(e64,e49) ^ TS#WEALTH(x16) ^ T#ECONOMIC-INEQUALITY(_43) ^ TSS#MONEY(x16,x16) ^ S#WATER(e18) ^ SS#WATER%MOVEMENT(e18,e18) ^ R#STREAMING(x15,e18) ^ I#WATER(e18) ^ I#WATER%MOVEMENT(e18,e18) ^ M#LIQUID-MOVE-FREELY(e18) ^ M#LIQUID-THING(x15)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,WATER,MOVEMENT,0.75\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "damaged-adj(e48,x17) ^ tie-nn(e47,x17) ^ restore-vb(x16,x15,x17,u46) ^ to-in(e45,x16,x0) ^ hope-vb(x13,x15,x16,u44) ^ of-in(e43,x3,x2) ^ new-adj(e42,x12) ^ step-nn(e41,x12) ^ on-in(e40,x12,x1) ^ aim-vb(x11,u38,x12,u39) ^ at-in(e37,x11,x10) ^ money-nn(e36,x9) ^ choke-vb(x8,x10,x9,u35) ^ off-rb(e34,x8) ^ flow-vb(x7,x10,u32,u33) ^ terrorist-adj(e31,x6) ^ group-nn(e30,x6) ^ to-in(e29,x7,x6) ^ charitable-adj(e28,x5) ^ organization-nn(e27,x5) ^ through-in(e26,x7,x5) ^ announce-vb(x4,x3,x12,u25) ^ united-states-nn(e23,x0) ^ loc(e24,x0) ^ government-nn(e22,x3) ^ saudi-arabia-nn(e20,x2) ^ loc(e21,x2) ^ tuesday-nn(e18,x1) ^ tim(e19,x1) ^ !=(e20,e21) ^ !=(e18,e19) ^ !=(e23,e24) ^ !=(e23,e24) ^ !=(e20,e21) ^ !=(e24,e21) ^ !=(e45,e29) ^ TS#WEALTH(x9) ^ T#ECONOMIC-INEQUALITY(_43) ^ TSS#MONEY(x9,x9) ^ S#WATER(x7) ^ SS#WATER%MOVEMENT(x7,x7) ^ R#STREAMING(x10,x7) ^ I#WATER(x7) ^ I#WATER%MOVEMENT(x7,x7) ^ M#LIQUID-MOVE-FREELY(x7) ^ M#LIQUID-THING(x10)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,WATER,MOVEMENT,0.75\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "flow", 
-                "explanation": "LARGE-AMOUNT[flow], AMOUNT-THING[money]", 
+                "explanation": "LARGE-AMOUNT[flow], THING-LARGE-AMOUNT[portfolio]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -586,7 +586,7 @@
         "isiDescription": "", 
         "sid": "31", 
         "sourceFrame": "WATER", 
-        "isiAbductiveExplanation": "imp(e40,e11,e23) ^ oversee-vb(e23,x13,e28,u60) ^ improper-adj(s27,x26) ^ trading-nn(e59,x26) ^ could(e28,x26,e31,u58) ^ prevent-vb(e31,u56,x26,u57) ^ fund-nn(e55,x8) ^ of-in(e54,x7,x8) ^ director-nn(e53,x7) ^ more-adj(s10,x9) ^ attention-nn(e52,x9) ^ pay-vb(e11,x7,x9,u51) ^ money-nn(e50,x14) ^ of-in(e49,x13,x14) ^ in-in(e48,x13,x15) ^ of-in(e47,x15,x17) ^ to-in(e46,e11,x13) ^ money-nn(e45,x19) ^ of-in(e44,x18,x19) ^ out-in(e43,x18,x20) ^ of-in(e42,x20,x21) ^ to-in(e41,e11,x18) ^ add-vb(e4,x1,e40,u39) ^ spitzer-nn(e37,x1) ^ per(e38,x1) ^ flow-nn(e36,x13) ^ portfolio-nn(e35,x17) ^ flow-nn(e34,x18) ^ portfolio-nn(e33,x21) ^ thing(e32,x13) ^ !=(e47,e42) ^ !=(e49,e44) ^ !=(e50,e45) ^ !=(e36,e34) ^ !=(e46,e41) ^ !=(e37,e38) ^ !=(e35,e33) ^ !=(e54,e49,e47,e44,e42) ^ !=(e46,e41) ^ S#PRICE(e11) ^ SS#PRICE%PAYMENT(e11,e11) ^ R#PAYMENT-AGENT(x7,e11) ^ R#PAYMENT-PATIENT(x9,e11) ^ TS#WEALTH(x14) ^ T#ECONOMIC-INEQUALITY(_44) ^ TSS#MONEY(x14,x14) ^ TS#WEALTH(x19) ^ T#ECONOMIC-INEQUALITY(_45) ^ TSS#MONEY(x19,x19) ^ S#WATER(e36) ^ SS#WATER%TYPE(x13,e36) ^ S#WATER(e34) ^ SS#WATER%TYPE(x18,e34) ^ I#PRICE(e11) ^ I#PRICE%PAYMENT(e11,e11) ^ I#WATER(e36) ^ I#WATER%TYPE(x13,e36) ^ I#WATER(e34) ^ I#WATER%TYPE(x18,e34) ^ R#WATER-COMPARISON(x19,e34) ^ R#WATER-COMPARISON(x19,e34) ^ M#LARGE-AMOUNT(x18,e34) ^ M#AMOUNT-THING(x19,e34) ^ M#LARGE-AMOUNT(x18,e34) ^ =(x19,x14) ^ =(_44,_45)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,PRICE,PAYMENT,0.75\nECONOMIC_INEQUALITY,WEALTH,MONEY,WATER,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "imp(e24,x9,x14) ^ oversee-vb(x14,x7,x15,u46) ^ improper-adj(e45,x16) ^ trading-nn(e44,x16) ^ prevent-vb(x15,u42,x16,u43) ^ fund-nn(e41,x11) ^ of-in(e40,x12,x11) ^ director-nn(e39,x12) ^ more-adj(e38,x10) ^ attention-nn(e37,x10) ^ pay-vb(x9,x12,x10,u36) ^ money-nn(e35,x8) ^ of-in(e34,x3,x8) ^ in-in(e33,x3) ^ of-in(e32,x3,x2) ^ to-in(e31,x9,x3) ^ money-nn(e30,x7) ^ of-in(e29,x1,x7) ^ out-in(e28,x1) ^ of-in(e27,x1,x0) ^ to-in(e26,x9,x1) ^ thing(e25,x7) ^ add-vb(x5,x4,e24,u23) ^ spitzer-nn(e21,x4) ^ per(e22,x4) ^ flow-nn(e20,x3) ^ portfolio-nn(e19,x2) ^ flow-nn(e18,x1) ^ portfolio-nn(e17,x0) ^ !=(e35,e30) ^ !=(e32,e27) ^ !=(e34,e29) ^ !=(e31,e26) ^ !=(e21,e22) ^ !=(e19,e17) ^ !=(e20,e18) ^ !=(e40,e34,e32,e29,e27) ^ !=(e31,e26) ^ S#PRICE(x9) ^ SS#PRICE%PAYMENT(x9,x9) ^ R#PAYMENT-AGENT(x12,x9) ^ R#PAYMENT-PATIENT(x10,x9) ^ TS#WEALTH(x8) ^ T#ECONOMIC-INEQUALITY(_44) ^ TSS#MONEY(x8,x8) ^ TS#WEALTH(x7) ^ T#ECONOMIC-INEQUALITY(_45) ^ TSS#MONEY(x7,x7) ^ S#WATER(e20) ^ SS#WATER%TYPE(x3,e20) ^ S#WATER(e18) ^ SS#WATER%TYPE(x1,e18) ^ I#PRICE(x9) ^ I#PRICE%PAYMENT(x9,x9) ^ I#WATER(e20) ^ I#WATER%TYPE(x3,e20) ^ I#WATER(e18) ^ I#WATER%TYPE(x1,e18) ^ R#WATER-COMPARISON(x0,e18) ^ R#WATER-COMPARISON(x2,e20) ^ M#LARGE-AMOUNT(x3,e20) ^ M#LARGE-AMOUNT(x3,e20) ^ M#THING-LARGE-AMOUNT(x2,e20) ^ M#LARGE-AMOUNT(x3,e20) ^ M#THING-LARGE-AMOUNT(x2,e20) ^ =(_44,_45) ^ =(x7,x8)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,PRICE,PAYMENT,0.75\nECONOMIC_INEQUALITY,WEALTH,MONEY,WATER,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -605,14 +605,14 @@
         "isiDescription": "", 
         "sid": "32", 
         "sourceFrame": "WATER", 
-        "isiAbductiveExplanation": "equal(e53,x6,x13) ^ begin-vb(e21,x19,e24,u52) ^ flow-vb(e24,x19,u50,u51) ^ in-in(e49,e24,x26) ^ wait-vb(e15,x13,e21,u48) ^ among-in(e47,x1,x6) ^ steve-nn(e45,x2) ^ per(e46,x2) ^ equal(e44,x1,x2) ^ meads-nn(e42,x1) ^ per(e43,x1) ^ 6-12,35-1(e40,x6) ^ sco(e41,x6) ^ alaska-nn(e38,x7) ^ nam(e39,x7) ^ equal(e37,x6,x7) ^ subset-of(e36,x8,x6) ^ subset-of(e35,x9,x6) ^ man-nn(e34,x8) ^ subset-of(e33,x10,x9) ^ subset-of(e32,x11,x9) ^ woman-nn(e31,x10) ^ child-nn(e30,x11) ^ money-nn(e29,x19) ^ october-nn(e27,x26) ^ tim(e28,x26) ^ !=(e38,e39) ^ !=(e40,e41) ^ !=(e27,e28) ^ !=(e45,e46) ^ !=(e42,e43) ^ !=(e46,e43) ^ !=(e53,e44,e37) ^ !=(e36,e35,e33,e32) ^ S#WATER(e24) ^ SS#WATER%MOVEMENT(e24,e24) ^ R#STREAMING(x19,e24) ^ TS#WEALTH(x19) ^ T#ECONOMIC-INEQUALITY(_46) ^ TSS#MONEY(x19,x19) ^ I#WATER(e24) ^ I#WATER%MOVEMENT(e24,e24) ^ M#LIQUID-MOVE-FREELY(e24) ^ M#LIQUID-THING(x19)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,WATER,MOVEMENT,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "begin-vb(x13,x1,x14,u35) ^ flow-vb(x14,x1,u33,u34) ^ in-in(e32,x14,x0) ^ wait-vb(x9,x6,x13,u31) ^ among-in(e30,x7,x6) ^ steve-meads-nn(e28,x7) ^ per(e29,x7) ^ 6-12,35-1(e27,x6) ^ alaska-nn(e25,x6) ^ nam(e26,x6) ^ subset-of(e24,x5,x6) ^ subset-of(e23,x4,x6) ^ man-nn(e22,x5) ^ subset-of(e21,x3,x4) ^ subset-of(e20,x2,x4) ^ woman-nn(e19,x3) ^ child-nn(e18,x2) ^ money-nn(e17,x1) ^ october-nn(e15,x0) ^ tim(e16,x0) ^ !=(e25,e26) ^ !=(e15,e16) ^ !=(e28,e29) ^ !=(e28,e29) ^ !=(e24,e23,e21,e20) ^ S#WATER(x14) ^ SS#WATER%MOVEMENT(x14,x14) ^ R#STREAMING(x1,x14) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_46) ^ TSS#MONEY(x1,x1) ^ I#WATER(x14) ^ I#WATER%MOVEMENT(x14,x14) ^ M#LIQUID-MOVE-FREELY(x14) ^ M#LIQUID-THING(x1)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,WATER,MOVEMENT,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "ocean", 
-                "explanation": "LARGE-AMOUNT[ocean], AMOUNT-THING[money]", 
+                "explanation": "LARGE-AMOUNT[ocean], THING-LARGE-AMOUNT[money]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -624,16 +624,16 @@
         "isiDescription": "", 
         "sid": "33", 
         "sourceFrame": "WATER", 
-        "isiAbductiveExplanation": "equal(e30,x5,x6) ^ male(e29,x1) ^ draft-vb(e7,x6,x1,u28) ^ rel(e27,x3,x5) ^ leave-vb(e8,x1,x3,u26) ^ sign-vb(e9,x1,u24,u25) ^ with-in(e23,e9,x11) ^ ocean-nn(e22,x1) ^ money-nn(e21,x12) ^ of-in(e20,x1,x12) ^ for-in(e19,e9,x1) ^ for-in(e18,e8,e9) ^ seattle-nn(e16,x3) ^ loc(e17,x3) ^ team-nn(e15,x5) ^ texas-nn(e13,x11) ^ org(e14,x11) ^ !=(e13,e14) ^ !=(e16,e17) ^ !=(e19,e18) ^ S#WATER(e22) ^ SS#WATER%TYPE(x1,e22) ^ TS#WEALTH(x12) ^ T#ECONOMIC-INEQUALITY(_47) ^ TSS#MONEY(x12,x12) ^ I#WATER(e22) ^ I#WATER%TYPE(x1,e22) ^ R#WATER-COMPARISON(x12,e22) ^ M#LARGE-AMOUNT(x1,e22) ^ M#LARGE-AMOUNT(x1,e22) ^ M#AMOUNT-THING(x12,e22)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,WATER,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "equal(e25,x1,x8) ^ male(e24,x3) ^ draft-vb(x7,x8,x3,u23) ^ rel(e22,x2,x1) ^ leave-vb(x6,x3,x2,u21) ^ sign-vb(x5,x3,u19,u20) ^ with-in(e18,x5,x0) ^ ocean-nn(e17,x4) ^ money-nn(e16,x3) ^ of-in(e15,x4,x3) ^ for-in(e14,x5,x4) ^ seattle-nn(e12,x2) ^ loc(e13,x2) ^ team-nn(e11,x1) ^ texas-nn(e9,x0) ^ org(e10,x0) ^ !=(e9,e10) ^ !=(e12,e13) ^ S#WATER(e17) ^ SS#WATER%TYPE(x4,e17) ^ TS#WEALTH(x3) ^ T#ECONOMIC-INEQUALITY(_47) ^ TSS#MONEY(x3,x3) ^ I#WATER(e17) ^ I#WATER%TYPE(x4,e17) ^ R#WATER-COMPARISON(x3,e17) ^ M#LARGE-AMOUNT(x4,e17) ^ M#LARGE-AMOUNT(x4,e17) ^ M#THING-LARGE-AMOUNT(x3,e17)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,WATER,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
-                "source": "disease", 
-                "explanation": "CAUSE-NOT-FUNCTION[money,person,disease]", 
+                "source": "disease,person", 
+                "explanation": "CAUSE-NOT-FUNCTION[person,money,disease]", 
                 "sourceInLm": true, 
-                "target": "money,person", 
+                "target": "person,money", 
                 "targetInLm": true
             }
         ], 
@@ -643,14 +643,14 @@
         "isiDescription": "", 
         "sid": "34", 
         "sourceFrame": "DISEASE", 
-        "isiAbductiveExplanation": "see-vb(e2,x1,u20,u21) ^ so-rb(e19,e2) ^ money-nn(e18,x1) ^ person(e17,x1) ^ of-in(e16,x8,x1) ^ head-nn(e15,x8) ^ disease-nn(e14,x5) ^ equal(e13,x5,x6) ^ spread-vb(e7,x6,u11,u12) ^ throughout-in(e10,e7,x8) ^ equal(e9,x1,x5) ^ !=(e13,e9) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_48) ^ TSS#MONEY(x1,x1) ^ S#BODY(e15) ^ SS#BODY%PART(x8,e15) ^ R#HEAD(x8) ^ S#DISEASE(e14) ^ SS#DISEASE%TYPE(x5,e14) ^ I#BODY(e15) ^ I#BODY%PART(x8,e15) ^ I#DISEASE(e14) ^ I#DISEASE%TYPE(x5,e14) ^ M#CAUSE-NOT-FUNCTION(x5)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BODY,PART,0.85\nECONOMIC_INEQUALITY,WEALTH,MONEY,DISEASE,TYPE,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "person(e20,x1) ^ see-vb(x2,x1,u18,u19) ^ so-rb(e17,x2) ^ money-nn(e16,x1) ^ disease-nn(e15,x4) ^ equal(e14,x4,x6) ^ spread-vb(x5,x6,u12,u13) ^ person(e11,x4) ^ of-in(e10,x3,x4) ^ head-nn(e9,x3) ^ throughout-in(e8,x5,x3) ^ equal(e7,x1,x4) ^ !=(e20,e11) ^ !=(e14,e7) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_48) ^ TSS#MONEY(x1,x1) ^ S#DISEASE(e15) ^ SS#DISEASE%TYPE(x4,e15) ^ S#BODY(e9) ^ SS#BODY%PART(x3,e9) ^ R#HEAD(x3,e9) ^ I#DISEASE(e15) ^ I#DISEASE%TYPE(x4,e15) ^ I#BODY(e9) ^ I#BODY%PART(x3,e9) ^ M#INDICATE-IMPORTANCE(x3,e9) ^ M#CAUSE-NOT-FUNCTION(x4)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BODY,PART,0.85\nECONOMIC_INEQUALITY,WEALTH,MONEY,DISEASE,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "disease", 
-                "explanation": "CAUSE-NOT-FUNCTION[”,disease]", 
+                "explanation": "CAUSE-NOT-FUNCTION[money,disease]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -662,16 +662,16 @@
         "isiDescription": "", 
         "sid": "35", 
         "sourceFrame": "DISEASE", 
-        "isiAbductiveExplanation": "equal(e24,x1,x10) ^ thing(e23,x1) ^ money-nn(e22,x5) ^ of-in(e21,x1,x5) ^ ”-nn(e20,x1) ^ equal(e19,x1,x6) ^ drive-vb(e7,x6,x4,u18) ^ all(e17,e7) ^ of-in(e16,x4,x1) ^ “-vb(e8,x1,x4,u15) ^ disease-nn(e14,x10) ^ love-nn(e13,x4) ^ thing(e12,x4) ^ !=(e23,e23) ^ !=(e23,e12) ^ !=(e21,e16) ^ !=(e24,e19) ^ TS#WEALTH(x5) ^ T#ECONOMIC-INEQUALITY(_49) ^ TSS#MONEY(x5,x5) ^ S#DISEASE(e14) ^ SS#DISEASE%TYPE(x10,e14) ^ I#DISEASE(e14) ^ I#DISEASE%TYPE(x10,e14) ^ M#CAUSE-NOT-FUNCTION(x10)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DISEASE,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "equal(e19,x4,x0) ^ money-nn(e18,x4) ^ of-in(e17,x6,x4) ^ ”-nn(e16,x6) ^ equal(e15,x6,x5) ^ neuter(e14,x4) ^ drive-vb(x3,x5,x4,u13) ^ all(e12,x3) ^ of-in(e11,x1,x6) ^ “-vb(x2,x4,x1,u10) ^ disease-nn(e9,x0) ^ love-nn(e8,x1) ^ !=(e14,e14) ^ !=(e17,e11) ^ !=(e19,e15) ^ TS#WEALTH(x4) ^ T#ECONOMIC-INEQUALITY(_49) ^ TSS#MONEY(x4,x4) ^ S#DISEASE(e9) ^ SS#DISEASE%TYPE(x0,e9) ^ I#DISEASE(e9) ^ I#DISEASE%TYPE(x0,e9) ^ M#CAUSE-NOT-FUNCTION(x0)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DISEASE,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "disease", 
-                "explanation": "CAUSE-NOT-FUNCTION[certain,person,wealth,disease]", 
+                "explanation": "CAUSE-NOT-FUNCTION[certain,wealth,person,disease]", 
                 "sourceInLm": true, 
-                "target": "wealth", 
+                "target": "certain,wealth,person", 
                 "targetInLm": true
             }
         ], 
@@ -681,7 +681,7 @@
         "isiDescription": "", 
         "sid": "36", 
         "sourceFrame": "DISEASE", 
-        "isiAbductiveExplanation": "certain-nn(e31,x2) ^ nam(e32,x2) ^ equal(e30,x1,x2) ^ wealth-nn(e29,x1) ^ person(e28,x2) ^ disease-nn(e27,x5) ^ equal(e26,x5,x6) ^ become-vb(e7,x6,s11,u25) ^ easier-adj(s11,x6) ^ equal(e24,x15,x16) ^ become-vb(e17,x2,x16,u23) ^ achieve-vb(e18,x13,x15,u22) ^ for-in(e21,e7,e18) ^ equal(e20,x1,x5) ^ wealthier-adj(e19,x15) ^ !=(e31,e32) ^ !=(e30,e26,e24,e20) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_50) ^ S#DISEASE(e27) ^ SS#DISEASE%TYPE(x5,e27) ^ I#DISEASE(e27) ^ I#DISEASE%TYPE(x5,e27) ^ M#CAUSE-NOT-FUNCTION(x5) ^ =(x2,x6) ^ =(u25,u23) ^ =(e17,e7) ^ =(s11,x16)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,DISEASE,TYPE,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "certain-nn(e20,x1) ^ nam(e21,x1) ^ wealth-nn(e19,x1) ^ person(e18,x1) ^ disease-nn(e17,x6) ^ equal(e16,x6,x5) ^ become-vb(x4,x5,u14,u15) ^ easier-adj(e13,x5) ^ become-vb(x8,x1,x0,u12) ^ achieve-vb(x7,x5,x0,u11) ^ equal(e10,x1,x6) ^ wealthier-adj(e9,x0) ^ !=(e20,e21) ^ !=(e16,e10) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_50) ^ S#DISEASE(e17) ^ SS#DISEASE%TYPE(x6,e17) ^ I#DISEASE(e17) ^ I#DISEASE%TYPE(x6,e17) ^ M#CAUSE-NOT-FUNCTION(x6) ^ =(x5,x1) ^ =(u12,u15) ^ =(x4,x8) ^ =(x0,u14)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,DISEASE,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -700,14 +700,14 @@
         "isiDescription": "", 
         "sid": "37", 
         "sourceFrame": "DISEASE", 
-        "isiAbductiveExplanation": "money-nn(e10,x1) ^ make-vb(e5,x1,x3,u9) ^ world-nn(e8,x4) ^ of-in(e7,x3,x4) ^ sick-nn(e6,x3) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_51) ^ TSS#MONEY(x1,x1) ^ S#DISEASE(e6) ^ SS#DISEASE%TYPE(x3,e6) ^ I#DISEASE(e6) ^ I#DISEASE%TYPE(x3,e6) ^ M#CAUSE-NOT-FUNCTION(x3)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DISEASE,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e8,x3) ^ make-vb(x2,x3,x1,u7) ^ world-nn(e6,x0) ^ of-in(e5,x1,x0) ^ sick-nn(e4,x1) ^ TS#WEALTH(x3) ^ T#ECONOMIC-INEQUALITY(_51) ^ TSS#MONEY(x3,x3) ^ S#DISEASE(e4) ^ SS#DISEASE%TYPE(x1,e4) ^ I#DISEASE(e4) ^ I#DISEASE%TYPE(x1,e4) ^ M#CAUSE-NOT-FUNCTION(x1)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DISEASE,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "disease", 
-                "explanation": "THING-NOT-FUNCTIONING[soul], CAUSE-NOT-FUNCTION[wealth,disease]", 
+                "explanation": "THING-NOT-FUNCTIONING[soul], CAUSE-NOT-FUNCTION[disease,wealth]", 
                 "sourceInLm": true, 
                 "target": "wealth", 
                 "targetInLm": true
@@ -719,14 +719,14 @@
         "isiDescription": "", 
         "sid": "38", 
         "sourceFrame": "DISEASE", 
-        "isiAbductiveExplanation": "disease-nn(e13,x5) ^ of-in(e12,x5,x7) ^ equal(e11,x1,x5) ^ wealth-nn(e9,x1) ^ org(e10,x1) ^ soul-nn(e8,x7) ^ !=(e9,e10) ^ S#DISEASE(e13) ^ SS#DISEASE%TYPE(x5,e13) ^ S#DISEASE(e13) ^ SS#DISEASE%TYPE(x5,e13) ^ R#SICK(x7,e13) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_52) ^ I#DISEASE(e13) ^ I#DISEASE%TYPE(x5,e13) ^ M#CAUSE-NOT-FUNCTION(e13) ^ M#THING-NOT-FUNCTIONING(x7,e13) ^ M#CAUSE-NOT-FUNCTION(x5) ^ =(e13,x5)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,DISEASE,TYPE,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "disease-nn(e9,x3) ^ of-in(e8,x3,x0) ^ equal(e7,x1,x3) ^ wealth-nn(e5,x1) ^ org(e6,x1) ^ soul-nn(e4,x0) ^ !=(e5,e6) ^ S#DISEASE(e9) ^ SS#DISEASE%TYPE(x3,e9) ^ S#DISEASE(e9) ^ SS#DISEASE%TYPE(x3,e9) ^ R#SICK(x0,e9) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_52) ^ I#DISEASE(e9) ^ I#DISEASE%TYPE(x3,e9) ^ M#CAUSE-NOT-FUNCTION(e9) ^ M#THING-NOT-FUNCTIONING(x0,e9) ^ M#CAUSE-NOT-FUNCTION(x3) ^ =(e9,x3)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,DISEASE,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
-                "source": "person,taste", 
-                "explanation": "CAUSE-EXPERIENCE[person,taste], THING-BEING-EXPERIENCED[x5]", 
+                "source": "taste", 
+                "explanation": "CAUSE-EXPERIENCE[taste], THING-BEING-EXPERIENCED[x4]", 
                 "sourceInLm": true, 
                 "target": "person,wealth", 
                 "targetInLm": true
@@ -738,14 +738,14 @@
         "isiDescription": "", 
         "sid": "39", 
         "sourceFrame": "FOOD", 
-        "isiAbductiveExplanation": "person(e30,x1) ^ would(e2,x1,e9,u29) ^ male(e28,x4) ^ male(e27,x1) ^ of-in(e26,x13,x1) ^ mansion-nn(e25,x13) ^ go-vb(e9,x1,e12,u24) ^ visit-vb(e12,x1,x4,u23) ^ at-in(e22,e12,x13) ^ person(e21,x4) ^ taste-nn(e20,x1) ^ subset-of(e19,x4,x5) ^ subset-of(e18,x6,x5) ^ wealth-nn(e17,x4) ^ privilege-nn(e16,x6) ^ of-in(e15,x1,x5) ^ have-vb(e7,x4,x1,u14) ^ !=(e30,e21) ^ !=(e26,e15) ^ !=(e30,e21) ^ !=(e19,e18) ^ !=(e28,e27) ^ S#FOOD(e20) ^ SS#FOOD%TASTE(x1,e20) ^ R#TASTE-OBJECT(x5,e20) ^ TS#WEALTH(x4) ^ T#ECONOMIC-INEQUALITY(_53) ^ I#FOOD(e20) ^ I#FOOD%TASTE(x1,e20) ^ M#CAUSE-EXPERIENCE(x1,e20) ^ M#THING-BEING-EXPERIENCED(x5,e20)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,FOOD,TASTE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "person(e24,x3) ^ go-vb(x6,x3,x8,u23) ^ male(e22,x1) ^ male(e21,x0) ^ visit-vb(x8,x3,x1,u20) ^ of-in(e19,x7,x0) ^ mansion-nn(e18,x7) ^ at-in(e17,x8,x7) ^ person(e16,x0) ^ taste-nn(e15,x1) ^ subset-of(e14,x0,x4) ^ subset-of(e13,x3,x4) ^ wealth-nn(e12,x0) ^ privilege-nn(e11,x3) ^ of-in(e10,x1,x4) ^ have-vb(x2,x0,x1,u9) ^ !=(e24,e16) ^ !=(e24,e16) ^ !=(e22,e21) ^ !=(e19,e10) ^ !=(e14,e13) ^ S#FOOD(e15) ^ SS#FOOD%TASTE(x1,e15) ^ R#TASTE-OBJECT(x4,e15) ^ TS#WEALTH(x0) ^ T#ECONOMIC-INEQUALITY(_53) ^ I#FOOD(e15) ^ I#FOOD%TASTE(x1,e15) ^ M#CAUSE-EXPERIENCE(x1,e15) ^ M#THING-BEING-EXPERIENCED(x4,e15)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,FOOD,TASTE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "eat", 
-                "explanation": "THING-NOT-EXISTING[money], THING-CAUSING-NOT-EXIST[surgery,treatment,person], CAUSE-NOT-EXIST[eat]", 
+                "explanation": "THING-NOT-EXISTING[money], THING-CAUSING-NOT-EXIST[treatment,surgery], CAUSE-NOT-EXIST[eat]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -757,7 +757,7 @@
         "isiDescription": "", 
         "sid": "40", 
         "sourceFrame": "FOOD", 
-        "isiAbductiveExplanation": "pay-vb(e3,x1,u60,u61) ^ imp(e51,e52,e11) ^ equal(e59,x5,x10) ^ pay-vb(e11,u57,x10,u58) ^ imp(e54,e55,e56) ^ for-in(e56,e11,x13) ^ equal(e55,x13,x15) ^ for-in(e53,e3,x5) ^ equal(e52,x5,x7) ^ imp(e41,e42,e50) ^ equal(e50,x18,x22) ^ imp(e44,e45,e30) ^ equal(e49,x24,x28) ^ have-vb(e29,x7,x28,u48) ^ eat-vb(e30,x22,x24,u47) ^ up-rb(e46,e30) ^ equal(e45,x24,x26) ^ for-in(e43,e3,x18) ^ equal(e42,x18,x19) ^ person(e40,x1) ^ cancer-nn(e39,x8) ^ of-in(e38,x7,x8) ^ treatment-nn(e37,x7) ^ surgery-nn(e36,x15) ^ cancer-nn(e35,x20) ^ of-in(e34,x19,x20) ^ treatment-nn(e33,x19) ^ money-nn(e32,x26) ^ person(e31,x7) ^ !=(e53,e43) ^ !=(e37,e33) ^ !=(e39,e35) ^ !=(e51,e54,e41,e44) ^ !=(e40,e31) ^ !=(e38,e34) ^ !=(e59,e55,e52,e50,e49,e45,e42) ^ !=(e56,e53,e43) ^ S#PRICE(e3) ^ SS#PRICE%PAYMENT(e3,e3) ^ R#PAYMENT-AGENT(x1,e3) ^ R#PAYMENT-PATIENT(u60,e3) ^ S#PRICE(e3) ^ SS#PRICE%PAYMENT(e3,e3) ^ R#PRICE-REWARD(x18,e43) ^ R#PAYMENT-PATIENT(u60,e3) ^ S#PRICE(e11) ^ SS#PRICE%PAYMENT(e11,e11) ^ R#PRICE-REWARD(x13,e56) ^ R#PAYMENT-PATIENT(x10,e11) ^ S#FOOD(e30) ^ SS#FOOD%CONSUMPTION(e30,e30) ^ R#EAT-AGENT(x22,e30) ^ R#EAT-OBJECT(x24,e30) ^ S#DISEASE(e39) ^ SS#DISEASE%TYPE(x8,e39) ^ S#DISEASE(e37) ^ SS#DISEASE%TREATMENT(x7,e37) ^ S#DISEASE(e35) ^ SS#DISEASE%TYPE(x20,e35) ^ S#DISEASE(e33) ^ SS#DISEASE%TREATMENT(x19,e33) ^ TS#WEALTH(x26) ^ T#ECONOMIC-INEQUALITY(_54) ^ TSS#MONEY(x26,x26) ^ I#PRICE(e3) ^ I#PRICE%PAYMENT(e3,e3) ^ M#CAUSE-EXCHANGE-NEGATIVE-POSITIVE(e3) ^ M#THING-DESIRED(x13,e3) ^ M#CAUSE-EXCHANGE-NEGATIVE-POSITIVE(e3) ^ M#THING-DESIRED(x18,e3) ^ I#FOOD(e30) ^ I#FOOD%CONSUMPTION(e30,e30) ^ M#CAUSE-NOT-EXIST(e30) ^ M#THING-CAUSING-NOT-EXIST(x22,e30) ^ M#THING-NOT-EXISTING(x24,e30) ^ I#DISEASE(e39) ^ I#DISEASE%TYPE(x8,e39) ^ I#DISEASE(e37) ^ I#DISEASE%TREATMENT(x7,e37) ^ I#DISEASE%TYPE(x20,e35) ^ I#DISEASE%TREATMENT(x19,e33) ^ M#CAUSE-NOT-FUNCTION(x8) ^ M#CAUSE-PROBLEM-NOT-EXIST(x7) ^ M#CAUSE-NOT-FUNCTION(x20) ^ M#CAUSE-PROBLEM-NOT-EXIST(x19) ^ =(x7,x19) ^ =(x13,x18) ^ =(x10,u60) ^ =(e3,e11) ^ =(e33,e39) ^ =(e37,e35) ^ =(x8,x20)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,PRICE,PAYMENT,0.05\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,CONSUMPTION,0.85\nECONOMIC_INEQUALITY,WEALTH,MONEY,DISEASE,TYPE,0.75\nECONOMIC_INEQUALITY,WEALTH,MONEY,DISEASE,TREATMENT,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "pay-vb(x7,x0,u42,u43) ^ imp(e34,e35,x14) ^ pay-vb(x14,u40,x13,u41) ^ imp(e37,e38,e39) ^ for-in(e39,x14,x15) ^ equal(e38,x4,x15) ^ for-in(e36,x7,x13) ^ equal(e35,x6,x13) ^ imp(e25,e26,e33) ^ equal(e33,x8,x9) ^ imp(e28,e29,x11) ^ have-vb(x12,x0,x10,u32) ^ eat-vb(x11,x9,x10,u31) ^ up-rb(e30,x11) ^ equal(e29,x1,x10) ^ for-in(e27,x7,x8) ^ equal(e26,x3,x8) ^ cancer-nn(e24,x5) ^ of-in(e23,x6,x5) ^ treatment-nn(e22,x6) ^ surgery-nn(e21,x4) ^ cancer-nn(e20,x2) ^ of-in(e19,x3,x2) ^ treatment-nn(e18,x3) ^ money-nn(e17,x1) ^ person(e16,x0) ^ !=(e36,e27) ^ !=(e22,e18) ^ !=(e24,e20) ^ !=(e34,e37,e25,e28) ^ !=(e23,e19) ^ !=(e39,e36,e27) ^ !=(e38,e35,e33,e29,e26) ^ S#PRICE(x7) ^ SS#PRICE%PAYMENT(x7,x7) ^ R#PAYMENT-AGENT(x0,x7) ^ R#PAYMENT-PATIENT(u42,x7) ^ S#PRICE(x7) ^ SS#PRICE%PAYMENT(x7,x7) ^ R#PRICE-REWARD(x8,e27) ^ R#PAYMENT-PATIENT(u42,x7) ^ S#PRICE(x14) ^ SS#PRICE%PAYMENT(x14,x14) ^ R#PRICE-REWARD(x15,e39) ^ R#PAYMENT-PATIENT(x13,x14) ^ S#FOOD(x11) ^ SS#FOOD%CONSUMPTION(x11,x11) ^ R#EAT-AGENT(x9,x11) ^ R#EAT-OBJECT(x10,x11) ^ S#DISEASE(e24) ^ SS#DISEASE%TYPE(x5,e24) ^ S#DISEASE(e22) ^ SS#DISEASE%TREATMENT(x6,e22) ^ S#DISEASE(e20) ^ SS#DISEASE%TYPE(x2,e20) ^ S#DISEASE(e18) ^ SS#DISEASE%TREATMENT(x3,e18) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_54) ^ TSS#MONEY(x1,x1) ^ I#PRICE(x7) ^ I#PRICE%PAYMENT(x7,x7) ^ M#CAUSE-EXCHANGE-NEGATIVE-POSITIVE(x7) ^ M#THING-DESIRED(x15,x7) ^ M#CAUSE-EXCHANGE-NEGATIVE-POSITIVE(x7) ^ M#THING-DESIRED(x8,x7) ^ I#FOOD(x11) ^ I#FOOD%CONSUMPTION(x11,x11) ^ M#CAUSE-NOT-EXIST(x11) ^ M#THING-CAUSING-NOT-EXIST(x9,x11) ^ M#THING-NOT-EXISTING(x10,x11) ^ I#DISEASE(e24) ^ I#DISEASE%TYPE(x5,e24) ^ I#DISEASE(e22) ^ I#DISEASE%TREATMENT(x6,e22) ^ I#DISEASE%TYPE(x2,e20) ^ I#DISEASE%TREATMENT(x3,e18) ^ M#CAUSE-NOT-FUNCTION(x5) ^ M#CAUSE-PROBLEM-NOT-EXIST(x6) ^ M#CAUSE-NOT-FUNCTION(x2) ^ M#CAUSE-PROBLEM-NOT-EXIST(x3) ^ =(e24,e18) ^ =(x14,x7) ^ =(x5,x2) ^ =(x3,x6) ^ =(e20,e22) ^ =(x15,x8) ^ =(u42,x13)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,PRICE,PAYMENT,0.75\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,CONSUMPTION,0.85\nECONOMIC_INEQUALITY,WEALTH,MONEY,DISEASE,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,MONEY,DISEASE,TREATMENT,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -776,7 +776,7 @@
         "isiDescription": "", 
         "sid": "41", 
         "sourceFrame": "FOOD", 
-        "isiAbductiveExplanation": "long-adj(s2,x1) ^ string-nn(e79,x1) ^ death-nn(e78,x3) ^ in-in(e77,x3,x5) ^ of-in(e76,x1,x3) ^ imp(e62,e63,e20) ^ eat-vb(e20,x1,x16,u75) ^ up-rb(e74,e20) ^ while-in(e73,e20,e29) ^ nursing-nn(e72,x25) ^ of-in(e71,x23,x25) ^ equal(e70,x23,x26) ^ love-vb(e28,u68,x27,u69) ^ one-nn(e67,x27) ^ die-vb(e29,x26,x27,u66) ^ take-vb(e32,x23,x31,u65) ^ on-in(e64,e32,x36) ^ equal(e63,x16,x18) ^ long-adj(s7,x6) ^ string-nn(e61,x6) ^ death-nn(e60,x8) ^ in-in(e59,x8,x9) ^ of-in(e58,x6,x8) ^ lose-vb(e10,u56,x6,u57) ^ in-in(e55,e10,x12) ^ family-nn(e54,x5) ^ money-nn(e53,x18) ^ process-nn(e52,x23) ^ thing(e51,x5) ^ of-in(e50,x31,x5) ^ toll-nn(e49,x31) ^ blanche-nn(e47,x34) ^ loc(e48,x34) ^ of-in(e46,x36,x34) ^ psyche-nn(e45,x36) ^ family-nn(e44,x9) ^ end-nn(e43,x13) ^ of-in(e42,x12,x13) ^ belle-nn(e40,x14) ^ tim(e41,x14) ^ equal(e39,x12,x14) ^ reve-nn(e37,x12) ^ tim(e38,x12) ^ !=(e47,e48) ^ !=(e54,e44) ^ !=(s2,s7) ^ !=(e79,e61) ^ !=(e77,e59) ^ !=(e76,e58) ^ !=(e78,e60) ^ !=(e37,e38) ^ !=(e40,e41) ^ !=(e76,e71,e58,e50,e46,e42) ^ !=(e70,e63,e39) ^ !=(e77,e59,e55) ^ !=(e41,e38) ^ S#FOOD(e20) ^ SS#FOOD%CONSUMPTION(e20,e20) ^ R#EAT-AGENT(x1,e20) ^ R#EAT-OBJECT(x16,e20) ^ TS#WEALTH(x18) ^ T#ECONOMIC-INEQUALITY(_55) ^ TSS#MONEY(x18,x18) ^ I#FOOD(e20) ^ I#FOOD%CONSUMPTION(e20,e20) ^ M#CAUSE-NOT-EXIST(e20) ^ M#THING-CAUSING-NOT-EXIST(x1,e20) ^ M#THING-NOT-EXISTING(x16,e20)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,CONSUMPTION,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "long-adj(e62,x12) ^ string-nn(e61,x12) ^ death-nn(e60,x11) ^ in-in(e59,x11,x7) ^ of-in(e58,x12,x11) ^ imp(e42,e43,x16) ^ eat-vb(x16,x12,x13,u57) ^ up-rb(e56,x16) ^ while-in(e55,x16,x19) ^ of-in(e54,x14,x18) ^ toll-nn(e53,x14) ^ nursing-nn(e52,x21) ^ of-in(e51,x2,x21) ^ love-vb(x20,u49,x18,u50) ^ one-nn(e48,x18) ^ die-vb(x19,x2,x18,u47) ^ thing(e46,x18) ^ take-vb(x17,x2,x14,u45) ^ on-in(e44,x17,x0) ^ equal(e43,x3,x13) ^ long-adj(e41,x10) ^ string-nn(e40,x10) ^ death-nn(e39,x9) ^ in-in(e38,x9,x6) ^ of-in(e37,x10,x9) ^ lose-vb(x8,u35,x10,u36) ^ in-in(e34,x8,x5) ^ family-nn(e33,x7) ^ money-nn(e32,x3) ^ process-nn(e31,x2) ^ blanche-nn(e29,x1) ^ loc(e30,x1) ^ of-in(e28,x0,x1) ^ psyche-nn(e27,x0) ^ family-nn(e26,x6) ^ end-nn(e25,x4) ^ of-in(e24,x5,x4) ^ belle-reve-nn(e22,x5) ^ tim(e23,x5) ^ !=(e29,e30) ^ !=(e33,e26) ^ !=(e62,e41) ^ !=(e61,e40) ^ !=(e59,e38) ^ !=(e58,e37) ^ !=(e60,e39) ^ !=(e22,e23) ^ !=(e22,e23) ^ !=(e58,e54,e51,e37,e28,e24) ^ !=(e59,e38,e34) ^ S#FOOD(x16) ^ SS#FOOD%CONSUMPTION(x16,x16) ^ R#EAT-AGENT(x12,x16) ^ R#EAT-OBJECT(x13,x16) ^ TS#WEALTH(x3) ^ T#ECONOMIC-INEQUALITY(_55) ^ TSS#MONEY(x3,x3) ^ I#FOOD(x16) ^ I#FOOD%CONSUMPTION(x16,x16) ^ M#CAUSE-NOT-EXIST(x16) ^ M#THING-CAUSING-NOT-EXIST(x12,x16) ^ M#THING-NOT-EXISTING(x13,x16)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,CONSUMPTION,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -795,14 +795,14 @@
         "isiDescription": "", 
         "sid": "42", 
         "sourceFrame": "FOOD", 
-        "isiAbductiveExplanation": "once-rb(e42,e8,e24) ^ person(e41,x6) ^ money-nn(e40,x7) ^ taste-vb(e8,x6,x7,u39) ^ or(e24,e16,e23) ^ female(e38,x18) ^ of-in(e37,x19,x18) ^ personal-adj(s20,x19) ^ value-nn(e36,x19) ^ lot-nn(e35,x18) ^ equal(e34,x18,x21) ^ valuable-adj(s22,x21) ^ less-rb(e33,s22) ^ seem-vb(e23,x19,x18,u32) ^ male(e31,x11) ^ of-in(e30,x12,x11) ^ personal-adj(s13,x12) ^ value-nn(e29,x12) ^ lot-nn(e28,x11) ^ equal(e27,x11,x14) ^ valuable-adj(s15,x14) ^ less-rb(e26,s15) ^ seem-vb(e16,x12,x11,u25) ^ !=(s20,s13) ^ !=(e36,e29) ^ !=(e35,e28) ^ !=(e33,e26) ^ !=(s22,s15) ^ !=(e23,e16) ^ !=(e37,e30) ^ !=(e34,e27) ^ TS#WEALTH(x7) ^ T#ECONOMIC-INEQUALITY(_56) ^ TSS#MONEY(x7,x7) ^ S#FOOD(e8) ^ SS#FOOD%TASTE(e8,e8) ^ R#TASTE-AGENT(x6,e8) ^ R#TASTE-OBJECT(x7,e8) ^ I#FOOD(e8) ^ I#FOOD%TASTE(e8,e8) ^ M#CAUSE-EXPERIENCE(e8) ^ M#THING-CAUSING-EXPERIENCE(x6,e8) ^ M#THING-BEING-EXPERIENCED(x7,e8) ^ M#CAUSE-EXPERIENCE(e8,e8) ^ M#THING-BEING-EXPERIENCED(x7,e8)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,TASTE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "once-rb(e32,x9,e12) ^ person(e31,x11) ^ money-nn(e30,x10) ^ taste-vb(x9,x11,x10,u29) ^ of-in(e28,x1,x6) ^ personal-adj(e27,x1) ^ value-nn(e26,x1) ^ of-in(e25,x0,x8) ^ personal-adj(e24,x0) ^ value-nn(e23,x0) ^ or(e12,x5,x7) ^ female(e22,x8) ^ lot-nn(e21,x8) ^ valuable-adj(e20,x8) ^ less-rb(e19,x8) ^ seem-vb(x7,x0,x8,u18) ^ male(e17,x6) ^ lot-nn(e16,x6) ^ valuable-adj(e15,x6) ^ less-rb(e14,x6) ^ seem-vb(x5,x1,x6,u13) ^ !=(e27,e24) ^ !=(e26,e23) ^ !=(e21,e16) ^ !=(e19,e14) ^ !=(e20,e15) ^ !=(x7,x5) ^ !=(e28,e25) ^ TS#WEALTH(x10) ^ T#ECONOMIC-INEQUALITY(_56) ^ TSS#MONEY(x10,x10) ^ S#FOOD(x9) ^ SS#FOOD%TASTE(x9,x9) ^ R#TASTE-AGENT(x11,x9) ^ R#TASTE-OBJECT(x10,x9) ^ I#FOOD(x9) ^ I#FOOD%TASTE(x9,x9) ^ M#CAUSE-EXPERIENCE(x9) ^ M#THING-CAUSING-EXPERIENCE(x11,x9) ^ M#THING-BEING-EXPERIENCED(x10,x9) ^ M#CAUSE-EXPERIENCE(x9,x9) ^ M#THING-BEING-EXPERIENCED(x10,x9)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,TASTE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "taste", 
-                "explanation": "THING-CAUSING-EXPERIENCE[assistant], CAUSE-EXPERIENCE[taste], THING-BEING-EXPERIENCED[x7]", 
+                "explanation": "THING-CAUSING-EXPERIENCE[assistant], CAUSE-EXPERIENCE[taste], THING-BEING-EXPERIENCED[x5]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -814,7 +814,7 @@
         "isiDescription": "", 
         "sid": "43", 
         "sourceFrame": "FOOD", 
-        "isiAbductiveExplanation": "whq(e12,e13,s5) ^ corrupted-adj(s5,x4) ^ politician-businessman-nn(e23,x4) ^ of-in(e22,x2,x4) ^ not(e14,e11) ^ money-nn(e21,x8) ^ subset-of(e20,x8,x7) ^ money-nn(e19,x9) ^ of-in(e18,x10,x9) ^ worth-nn(e17,x10) ^ subset-of(e16,x10,x7) ^ taste-vb(e11,x2,x7,u15) ^ assistant-nn(e13,x2) ^ !=(e20,e16) ^ !=(e22,e18) ^ TS#WEALTH(x8) ^ T#ECONOMIC-INEQUALITY(_57) ^ TSS#MONEY(x8,x8) ^ S#FOOD(e11) ^ SS#FOOD%TASTE(e11,e11) ^ R#TASTE-AGENT(x2,e11) ^ R#TASTE-OBJECT(x7,e11) ^ I#FOOD(e11) ^ I#FOOD%TASTE(e11,e11) ^ M#CAUSE-EXPERIENCE(e11) ^ M#THING-CAUSING-EXPERIENCE(x2,e11) ^ M#THING-BEING-EXPERIENCED(x7,e11) ^ M#CAUSE-EXPERIENCE(e11,e11) ^ M#THING-BEING-EXPERIENCED(x7,e11) ^ =(x8,x9) ^ =(e21,e19)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,TASTE,0.75\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "not(e7,e8) ^ whq(e8,e9,x1) ^ corrupted-adj(e19,x6) ^ politician-businessman-nn(e18,x6) ^ of-in(e17,x0,x6) ^ money-nn(e16,x4) ^ subset-of(e15,x4,x5) ^ money-nn(e14,x3) ^ of-in(e13,x2,x3) ^ worth-nn(e12,x2) ^ subset-of(e11,x2,x5) ^ taste-vb(x1,x0,x5,u10) ^ assistant-nn(e9,x0) ^ !=(e15,e11) ^ !=(e17,e13) ^ TS#WEALTH(x4) ^ T#ECONOMIC-INEQUALITY(_57) ^ TSS#MONEY(x4,x4) ^ S#FOOD(x1) ^ SS#FOOD%TASTE(x1,x1) ^ R#TASTE-AGENT(x0,x1) ^ R#TASTE-OBJECT(x5,x1) ^ I#FOOD(x1) ^ I#FOOD%TASTE(x1,x1) ^ M#CAUSE-EXPERIENCE(x1) ^ M#THING-CAUSING-EXPERIENCE(x0,x1) ^ M#THING-BEING-EXPERIENCED(x5,x1) ^ M#CAUSE-EXPERIENCE(x1,x1) ^ M#THING-BEING-EXPERIENCED(x5,x1) ^ =(x4,x3) ^ =(e16,e14)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,TASTE,0.75\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -833,26 +833,26 @@
         "isiDescription": "", 
         "sid": "44", 
         "sourceFrame": "FOOD", 
-        "isiAbductiveExplanation": "imp(e16,e17,e12) ^ equal(e23,x4,x8) ^ mean-vb(e9,u21,x8,u22) ^ for-in(e20,e9,x11) ^ eat-vb(e12,x1,x4,u19) ^ up-rb(e18,e12) ^ equal(e17,x4,x6) ^ manager-nn(e15,x1) ^ money-nn(e14,x6) ^ poor-nn(e13,x11) ^ !=(e23,e17) ^ S#FOOD(e12) ^ SS#FOOD%CONSUMPTION(e12,e12) ^ R#EAT-AGENT(x1,e12) ^ R#EAT-OBJECT(x4,e12) ^ TS#WEALTH(x6) ^ T#ECONOMIC-INEQUALITY(_59) ^ TSS#MONEY(x6,x6) ^ TS#POVERTY(e13) ^ T#ECONOMIC-INEQUALITY(_60) ^ R#POOR(x11,e13) ^ I#FOOD(e12) ^ I#FOOD%CONSUMPTION(e12,e12) ^ M#CAUSE-NOT-EXIST(e12) ^ M#THING-CAUSING-NOT-EXIST(x1,e12) ^ M#THING-NOT-EXISTING(x4,e12) ^ =(_59,_60)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,FOOD,CONSUMPTION,0.05\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,CONSUMPTION,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "imp(e9,e10,x4) ^ mean-vb(x5,u14,x3,u15) ^ for-in(e13,x5,x0) ^ eat-vb(x4,x2,x3,u12) ^ up-rb(e11,x4) ^ equal(e10,x1,x3) ^ manager-nn(e8,x2) ^ money-nn(e7,x1) ^ poor-nn(e6,x0) ^ S#FOOD(x4) ^ SS#FOOD%CONSUMPTION(x4,x4) ^ R#EAT-AGENT(x2,x4) ^ R#EAT-OBJECT(x3,x4) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_59) ^ TSS#MONEY(x1,x1) ^ TS#POVERTY(e6) ^ T#ECONOMIC-INEQUALITY(_60) ^ R#POOR(x0,e6) ^ I#FOOD(x4) ^ I#FOOD%CONSUMPTION(x4,x4) ^ M#CAUSE-NOT-EXIST(x4) ^ M#THING-CAUSING-NOT-EXIST(x2,x4) ^ M#THING-NOT-EXISTING(x3,x4) ^ =(_59,_60)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,FOOD,CONSUMPTION,0.55\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,CONSUMPTION,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
-                "source": "taste,person", 
-                "explanation": "CAUSE-EXPERIENCE[person,taste], THING-BEING-EXPERIENCED[person,wealth]", 
+                "source": "taste", 
+                "explanation": "CAUSE-EXPERIENCE[taste], THING-BEING-EXPERIENCED[wealth]", 
                 "sourceInLm": true, 
-                "target": "person,wealth", 
+                "target": "poverty,person", 
                 "targetInLm": true
             }
         ], 
-        "targetFrame": "WEALTH", 
-        "targetConceptSubDomain": "WEALTH", 
+        "targetFrame": "POVERTY", 
+        "targetConceptSubDomain": "POVERTY", 
         "sourceConceptSubDomain": "TASTE", 
         "isiDescription": "", 
         "sid": "45", 
         "sourceFrame": "FOOD", 
-        "isiAbductiveExplanation": "person(e16,x1) ^ rise-vb(e2,x1,u14,u15) ^ dire-adj(s4,x3) ^ poverty-nn(e13,x3) ^ from-in(e12,e2,x3) ^ person(e11,x5) ^ taste-nn(e10,x1) ^ wealth-nn(e9,x5) ^ of-in(e8,x1,x5) ^ get-vb(e6,x5,x1,u7) ^ !=(e16,e11) ^ TS#POVERTY(x3) ^ T#ECONOMIC-INEQUALITY(_61) ^ S#FOOD(e10) ^ SS#FOOD%TASTE(x1,e10) ^ S#FOOD(e10) ^ SS#FOOD%TASTE(x1,e10) ^ R#TASTE-OBJECT(x5,e10) ^ TS#WEALTH(x5) ^ T#ECONOMIC-INEQUALITY(_62) ^ I#FOOD(e10) ^ I#FOOD%TASTE(x1,e10) ^ M#CAUSE-EXPERIENCE(x1,e10) ^ M#THING-BEING-EXPERIENCED(x5,e10) ^ =(_61,_62)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,FOOD,TASTE,0.75\nECONOMIC_INEQUALITY,WEALTH,WEALTH,FOOD,TASTE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "rise-vb(x4,x3,u13,u14) ^ dire-adj(e12,x3) ^ poverty-nn(e11,x3) ^ from-in(e10,x4,x3) ^ person(e9,x3) ^ taste-nn(e8,x2) ^ wealth-nn(e7,x1) ^ of-in(e6,x2,x1) ^ get-vb(x0,x3,x2,u5) ^ TS#POVERTY(x3) ^ T#ECONOMIC-INEQUALITY(_61) ^ S#FOOD(e8) ^ SS#FOOD%TASTE(x2,e8) ^ S#FOOD(e8) ^ SS#FOOD%TASTE(x2,e8) ^ R#TASTE-OBJECT(x1,e8) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_62) ^ I#FOOD(e8) ^ I#FOOD%TASTE(x2,e8) ^ M#CAUSE-EXPERIENCE(x2,e8) ^ M#THING-BEING-EXPERIENCED(x1,e8) ^ =(_61,_62)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,FOOD,TASTE,0.85\nECONOMIC_INEQUALITY,WEALTH,WEALTH,FOOD,TASTE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -871,7 +871,7 @@
         "isiDescription": "", 
         "sid": "46", 
         "sourceFrame": "FOOD", 
-        "isiAbductiveExplanation": "dad-nn(e55,x9) ^ loan-nn(e54,x10) ^ equal(e53,x10,x14) ^ card(e52,x15,3) ^ house-nn(e51,x15) ^ build-vb(e16,x14,x15,u50) ^ take-vb(e12,x9,x10,u49) ^ out-rb(e48,e12) ^ be-vb(e4,x1,e12,u47) ^ well-rb(e46,e4) ^ imp(e36,e37,e24) ^ equal(e45,x18,x22) ^ have-vb(e23,x1,x22,u44) ^ eat-vb(e24,x6,x18,u43) ^ up-rb(e42,e24) ^ with-in(e41,e24,x26) ^ not(e38,e28) ^ sell-vb(e28,x26,u39,u40) ^ equal(e37,x18,x20) ^ problem-nn(e35,x1) ^ loan-nn(e34,x7) ^ of-in(e33,x6,x7) ^ payment-nn(e32,x6) ^ money-nn(e31,x20) ^ male(e30,x1) ^ house-nn(e29,x26) ^ !=(e53,e45,e37) ^ S#FOOD(e24) ^ SS#FOOD%CONSUMPTION(e24,e24) ^ R#EAT-AGENT(x6,e24) ^ R#EAT-OBJECT(x18,e24) ^ TS#WEALTH(x20) ^ T#ECONOMIC-INEQUALITY(_63) ^ TSS#MONEY(x20,x20) ^ I#FOOD(e24) ^ I#FOOD%CONSUMPTION(e24,e24) ^ M#CAUSE-NOT-EXIST(e24) ^ M#THING-CAUSING-NOT-EXIST(x6,e24) ^ M#THING-NOT-EXISTING(x18,e24) ^ =(x7,x10) ^ =(x26,x15) ^ =(e51,e29) ^ =(e54,e34)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,CONSUMPTION,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "dad-nn(e41,x14) ^ loan-nn(e40,x13) ^ card(e39,x16,3) ^ house-nn(e38,x16) ^ build-vb(x15,x13,x16,u37) ^ take-vb(x11,x14,x13,u36) ^ out-rb(e35,x11) ^ be-vb(x5,x4,x11,u34) ^ well-rb(e33,x5) ^ imp(e24,e25,x8) ^ have-vb(x9,x1,x7,u32) ^ eat-vb(x8,x1,x7,u31) ^ up-rb(e30,x8) ^ not(e26,x10) ^ with-in(e29,x8,x0) ^ sell-vb(x10,x0,u27,u28) ^ equal(e25,x2,x7) ^ problem-nn(e23,x4) ^ loan-nn(e22,x3) ^ of-in(e21,x1,x3) ^ payment-nn(e20,x1) ^ money-nn(e19,x2) ^ male(e18,x1) ^ house-nn(e17,x0) ^ S#FOOD(x8) ^ SS#FOOD%CONSUMPTION(x8,x8) ^ R#EAT-AGENT(x1,x8) ^ R#EAT-OBJECT(x7,x8) ^ TS#WEALTH(x2) ^ T#ECONOMIC-INEQUALITY(_63) ^ TSS#MONEY(x2,x2) ^ I#FOOD(x8) ^ I#FOOD%CONSUMPTION(x8,x8) ^ M#CAUSE-NOT-EXIST(x8) ^ M#THING-CAUSING-NOT-EXIST(x1,x8) ^ M#THING-NOT-EXISTING(x7,x8) ^ =(e40,e22) ^ =(x13,x3) ^ =(e17,e38) ^ =(x0,x16)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,CONSUMPTION,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -890,26 +890,26 @@
         "isiDescription": "", 
         "sid": "47", 
         "sourceFrame": "FOOD", 
-        "isiAbductiveExplanation": "thing(e38,x7) ^ tackle-vb(e11,x7,x9,u37) ^ prefabricated-adj(s16,x15) ^ part-nn(e36,x15) ^ pushbutton-nn(e35,x17) ^ like-in(e34,x15,x17) ^ of-in(e33,x13,x15) ^ eat-vb(e20,x13,x19,u32) ^ up-rb(e31,e20) ^ quickly-rb(e30,e20) ^ learn-vb(e5,x3,e20,u29) ^ soon-rb(e28,e5) ^ while(e27,e5,e11) ^ cost-nn(e26,x10) ^ of-in(e25,x9,x10) ^ problem-nn(e24,x9) ^ person(e23,x3) ^ use-nn(e22,x13) ^ money-nn(e21,x19) ^ !=(e33,e25) ^ S#FOOD(e20) ^ SS#FOOD%CONSUMPTION(e20,e20) ^ R#EAT-AGENT(x13,e20) ^ R#EAT-OBJECT(x19,e20) ^ S#COST(e26) ^ SS#COST%TYPE(x10,e26) ^ TS#WEALTH(x19) ^ T#ECONOMIC-INEQUALITY(_64) ^ TSS#MONEY(x19,x19) ^ I#FOOD(e20) ^ I#FOOD%CONSUMPTION(e20,e20) ^ M#CAUSE-NOT-EXIST(e20) ^ M#THING-CAUSING-NOT-EXIST(x13,e20) ^ M#THING-NOT-EXISTING(x19,e20) ^ I#COST(e26) ^ I#COST%TYPE(x10,e26)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,COST,TYPE,0.45\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,CONSUMPTION,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "tackle-vb(x11,x12,x3,u29) ^ prefabricated-adj(e28,x10) ^ part-nn(e27,x10) ^ pushbutton-nn(e26,x9) ^ like-in(e25,x10,x9) ^ of-in(e24,x1,x10) ^ eat-vb(x8,x1,x0,u23) ^ up-rb(e22,x8) ^ quickly-rb(e21,x8) ^ learn-vb(x5,x4,x8,u20) ^ soon-rb(e19,x5) ^ cost-nn(e18,x2) ^ of-in(e17,x3,x2) ^ problem-nn(e16,x3) ^ person(e15,x4) ^ use-nn(e14,x1) ^ money-nn(e13,x0) ^ !=(e24,e17) ^ S#FOOD(x8) ^ SS#FOOD%CONSUMPTION(x8,x8) ^ R#EAT-AGENT(x1,x8) ^ R#EAT-OBJECT(x0,x8) ^ S#COST(e18) ^ SS#COST%TYPE(x2,e18) ^ TS#WEALTH(x0) ^ T#ECONOMIC-INEQUALITY(_64) ^ TSS#MONEY(x0,x0) ^ I#FOOD(x8) ^ I#FOOD%CONSUMPTION(x8,x8) ^ M#CAUSE-NOT-EXIST(x8) ^ M#THING-CAUSING-NOT-EXIST(x1,x8) ^ M#THING-NOT-EXISTING(x0,x8) ^ I#COST(e18) ^ I#COST%TYPE(x2,e18)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,COST,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,MONEY,FOOD,CONSUMPTION,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "blood", 
-                "explanation": "CAUSE-FUNCTION[means,money,blood], THING-FUNCTIONING[society]", 
+                "explanation": "CAUSE-FUNCTION[money,means,blood], THING-FUNCTIONING[society]", 
                 "sourceInLm": true, 
                 "target": "money,means", 
                 "targetInLm": true
             }
         ], 
-        "targetFrame": "WEALTH", 
+        "targetFrame": "MONEY", 
         "targetConceptSubDomain": "WEALTH", 
         "sourceConceptSubDomain": "COMPONENT", 
         "isiDescription": "", 
         "sid": "48", 
         "sourceFrame": "BLOOD", 
-        "isiAbductiveExplanation": "money-nn(e27,x1) ^ civilized-adj(s7,x6) ^ society-nn(e26,x6) ^ imp(e20,s12,s15) ^ simple-adj(s15,x14) ^ barter-nn(e25,x14) ^ except-in(e24,x11,x14) ^ of-in(e23,x9,x11) ^ rel(e22,x6,x9) ^ commercial-adj(s12,x11) ^ trade-nn(e21,x11) ^ of-in(e19,x4,x6) ^ equal(e18,x1,x4) ^ blood-nn(e17,x4) ^ means-nn(e16,x9) ^ !=(e23,e19) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_65) ^ TSS#MONEY(x1,x1) ^ S#BLOOD(e17) ^ SS#BLOOD%COMPONENT(x4,e17) ^ R#BLOOD-RECEIVER(x6,e17) ^ S#BLOOD(e17) ^ SS#BLOOD%COMPONENT(x4,e17) ^ TS#WEALTH(x9) ^ T#ECONOMIC-INEQUALITY(_66) ^ I#BLOOD%COMPONENT(x4,e17) ^ I#BLOOD(e17) ^ I#BLOOD%COMPONENT(x4,e17) ^ M#CAUSE-FUNCTION(x4,e17) ^ M#CAUSE-FUNCTION(x4,e17) ^ M#THING-FUNCTIONING(x6,e17) ^ =(_65,_66) ^ =(x9,x1)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,BLOOD,COMPONENT,0.95\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e21,x3) ^ civilized-adj(e20,x4) ^ society-nn(e19,x4) ^ imp(e11,e13,e18) ^ simple-adj(e18,x6) ^ barter-nn(e17,x6) ^ except-in(e16,x5,x6) ^ of-in(e15,x0,x5) ^ rel(e14,x4,x0) ^ commercial-adj(e13,x5) ^ trade-nn(e12,x5) ^ of-in(e10,x1,x4) ^ equal(e9,x3,x1) ^ blood-nn(e8,x1) ^ means-nn(e7,x0) ^ !=(e15,e10) ^ TS#WEALTH(x3) ^ T#ECONOMIC-INEQUALITY(_65) ^ TSS#MONEY(x3,x3) ^ S#BLOOD(e8) ^ SS#BLOOD%COMPONENT(x1,e8) ^ R#BLOOD-RECEIVER(x4,e8) ^ S#BLOOD(e8) ^ SS#BLOOD%COMPONENT(x1,e8) ^ TS#WEALTH(x0) ^ T#ECONOMIC-INEQUALITY(_66) ^ I#BLOOD%COMPONENT(x1,e8) ^ I#BLOOD(e8) ^ I#BLOOD%COMPONENT(x1,e8) ^ M#CAUSE-FUNCTION(x1,e8) ^ M#CAUSE-FUNCTION(x1,e8) ^ M#THING-FUNCTIONING(x4,e8) ^ =(x0,x3) ^ =(_65,_66)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,BLOOD,COMPONENT,0.95\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -928,7 +928,7 @@
         "isiDescription": "", 
         "sid": "49", 
         "sourceFrame": "BLOOD", 
-        "isiAbductiveExplanation": "money-nn(e12,x1) ^ of-in(e11,x4,x6) ^ equal(e10,x1,x4) ^ blood-nn(e9,x4) ^ planet-nn(e8,x6) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_67) ^ TSS#MONEY(x1,x1) ^ S#BLOOD(e9) ^ SS#BLOOD%COMPONENT(x4,e9) ^ R#BLOOD-RECEIVER(x6,e9) ^ S#BLOOD(e9) ^ SS#BLOOD%COMPONENT(x4,e9) ^ I#BLOOD%COMPONENT(x4,e9) ^ M#CAUSE-FUNCTION(x4,e9) ^ M#THING-FUNCTIONING(x6,e9) ^ I#BLOOD(e9) ^ I#BLOOD%COMPONENT(x4,e9) ^ M#CAUSE-FUNCTION(x4,e9)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e8,x3) ^ of-in(e7,x1,x0) ^ equal(e6,x3,x1) ^ blood-nn(e5,x1) ^ planet-nn(e4,x0) ^ TS#WEALTH(x3) ^ T#ECONOMIC-INEQUALITY(_67) ^ TSS#MONEY(x3,x3) ^ S#BLOOD(e5) ^ SS#BLOOD%COMPONENT(x1,e5) ^ R#BLOOD-RECEIVER(x0,e5) ^ S#BLOOD(e5) ^ SS#BLOOD%COMPONENT(x1,e5) ^ I#BLOOD%COMPONENT(x1,e5) ^ M#CAUSE-FUNCTION(x1,e5) ^ M#THING-FUNCTIONING(x0,e5) ^ I#BLOOD(e5) ^ I#BLOOD%COMPONENT(x1,e5) ^ M#CAUSE-FUNCTION(x1,e5)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -947,7 +947,7 @@
         "isiDescription": "", 
         "sid": "50", 
         "sourceFrame": "BLOOD", 
-        "isiAbductiveExplanation": "money-nn(e21,x1) ^ of-in(e20,x7,x9) ^ equal(e19,x1,x7) ^ money-nn(e18,x3) ^ must(e4,x3,e12,u17) ^ circulate-vb(e12,x3,u15,u16) ^ blood-nn(e14,x7) ^ state-nn(e13,x9) ^ !=(e21,e18) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_68) ^ TSS#MONEY(x1,x1) ^ S#BLOOD(e14) ^ SS#BLOOD%COMPONENT(x7,e14) ^ R#BLOOD-RECEIVER(x9,e14) ^ TS#WEALTH(x3) ^ T#ECONOMIC-INEQUALITY(_69) ^ TSS#MONEY(x3,x3) ^ S#BLOOD(e14) ^ SS#BLOOD%COMPONENT(x7,e14) ^ I#BLOOD%COMPONENT(x7,e14) ^ I#BLOOD(e14) ^ I#BLOOD%COMPONENT(x7,e14) ^ M#CAUSE-FUNCTION(x7,e14) ^ M#CAUSE-FUNCTION(x7,e14) ^ M#THING-FUNCTIONING(x9,e14) ^ =(_68,_69) ^ =(x3,x1)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e13,x5) ^ of-in(e12,x1,x0) ^ equal(e11,x5,x1) ^ money-nn(e10,x3) ^ circulate-vb(x2,x3,u8,u9) ^ blood-nn(e7,x1) ^ state-nn(e6,x0) ^ !=(e13,e10) ^ TS#WEALTH(x5) ^ T#ECONOMIC-INEQUALITY(_68) ^ TSS#MONEY(x5,x5) ^ S#BLOOD(e7) ^ SS#BLOOD%COMPONENT(x1,e7) ^ R#BLOOD-RECEIVER(x0,e7) ^ TS#WEALTH(x3) ^ T#ECONOMIC-INEQUALITY(_69) ^ TSS#MONEY(x3,x3) ^ S#BLOOD(e7) ^ SS#BLOOD%COMPONENT(x1,e7) ^ I#BLOOD%COMPONENT(x1,e7) ^ I#BLOOD(e7) ^ I#BLOOD%COMPONENT(x1,e7) ^ M#CAUSE-FUNCTION(x1,e7) ^ M#CAUSE-FUNCTION(x1,e7) ^ M#THING-FUNCTIONING(x0,e7) ^ =(_68,_69) ^ =(x5,x3)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -966,7 +966,7 @@
         "isiDescription": "", 
         "sid": "51", 
         "sourceFrame": "BLOOD", 
-        "isiAbductiveExplanation": "as-in(e28,e24,e23) ^ imp(e24,e25,e9) ^ know-vb(e9,x7,u26,u27) ^ person(e25,x7) ^ of-in(e23,x15,x17) ^ equal(e22,x11,x15) ^ money-nn(e21,x11) ^ blood-nn(e20,x15) ^ economy-nn(e19,x17) ^ S#BLOOD(e20) ^ SS#BLOOD%COMPONENT(x15,e20) ^ R#BLOOD-RECEIVER(x17,e20) ^ TS#WEALTH(x11) ^ T#ECONOMIC-INEQUALITY(_70) ^ TSS#MONEY(x11,x11) ^ S#BLOOD(e20) ^ SS#BLOOD%COMPONENT(x15,e20) ^ I#BLOOD%COMPONENT(x15,e20) ^ M#CAUSE-FUNCTION(x15,e20) ^ M#THING-FUNCTIONING(x17,e20) ^ I#BLOOD(e20) ^ I#BLOOD%COMPONENT(x15,e20) ^ M#CAUSE-FUNCTION(x15,e20)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "as-in(e18,e14,e13) ^ imp(e14,e15,x8) ^ know-vb(x8,x7,u16,u17) ^ person(e15,x7) ^ of-in(e13,x1,x0) ^ equal(e12,x2,x1) ^ money-nn(e11,x2) ^ blood-nn(e10,x1) ^ economy-nn(e9,x0) ^ S#BLOOD(e10) ^ SS#BLOOD%COMPONENT(x1,e10) ^ R#BLOOD-RECEIVER(x0,e10) ^ TS#WEALTH(x2) ^ T#ECONOMIC-INEQUALITY(_70) ^ TSS#MONEY(x2,x2) ^ S#BLOOD(e10) ^ SS#BLOOD%COMPONENT(x1,e10) ^ I#BLOOD%COMPONENT(x1,e10) ^ M#CAUSE-FUNCTION(x1,e10) ^ M#THING-FUNCTIONING(x0,e10) ^ I#BLOOD(e10) ^ I#BLOOD%COMPONENT(x1,e10) ^ M#CAUSE-FUNCTION(x1,e10)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -985,16 +985,16 @@
         "isiDescription": "", 
         "sid": "52", 
         "sourceFrame": "BLOOD", 
-        "isiAbductiveExplanation": "money-nn(e34,x10) ^ of-in(e33,x8,x10) ^ goods-nn(e32,x16) ^ of-in(e31,x14,x16) ^ allow-vb(e17,x8,x14,u30) ^ throughout-in(e29,e17,x19) ^ be-vb(e12,x8,e17,u28) ^ money-nn(e27,x1) ^ community-nn(e26,x6) ^ of-in(e25,x4,x6) ^ equal(e24,x1,x4) ^ blood-nn(e23,x4) ^ purpose-nn(e22,x8) ^ distribution-nn(e21,x14) ^ community-nn(e20,x19) ^ !=(e33,e31,e25) ^ TS#WEALTH(x10) ^ T#ECONOMIC-INEQUALITY(_71) ^ TSS#MONEY(x10,x10) ^ S#BLOOD(e23) ^ SS#BLOOD%COMPONENT(x4,e23) ^ R#BLOOD-RECEIVER(x6,e23) ^ S#BLOOD(e23) ^ SS#BLOOD%COMPONENT(x4,e23) ^ I#BLOOD(e23) ^ I#BLOOD%COMPONENT(x4,e23) ^ M#CAUSE-FUNCTION(x4,e23) ^ M#CAUSE-FUNCTION(x4,e23) ^ M#THING-FUNCTIONING(x6,e23) ^ =(e20,e26) ^ =(e27,e34) ^ =(x10,x1) ^ =(x19,x6)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e26,x9) ^ of-in(e25,x2,x9) ^ goods-nn(e24,x11) ^ of-in(e23,x1,x11) ^ allow-vb(x10,x2,x1,u22) ^ throughout-in(e21,x10,x0) ^ be-vb(x7,x2,x10,u20) ^ money-nn(e19,x5) ^ community-nn(e18,x6) ^ of-in(e17,x3,x6) ^ equal(e16,x5,x3) ^ blood-nn(e15,x3) ^ purpose-nn(e14,x2) ^ distribution-nn(e13,x1) ^ community-nn(e12,x0) ^ !=(e25,e23,e17) ^ TS#WEALTH(x9) ^ T#ECONOMIC-INEQUALITY(_71) ^ TSS#MONEY(x9,x9) ^ S#BLOOD(e15) ^ SS#BLOOD%COMPONENT(x3,e15) ^ R#BLOOD-RECEIVER(x6,e15) ^ S#BLOOD(e15) ^ SS#BLOOD%COMPONENT(x3,e15) ^ I#BLOOD(e15) ^ I#BLOOD%COMPONENT(x3,e15) ^ M#CAUSE-FUNCTION(x3,e15) ^ M#CAUSE-FUNCTION(x3,e15) ^ M#THING-FUNCTIONING(x6,e15) ^ =(e19,e26) ^ =(x0,x6) ^ =(e18,e12) ^ =(x5,x9)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
-                "source": "blood,person", 
-                "explanation": "CAUSE-FUNCTION[money,soul,blood,person], THING-FUNCTIONING[system]", 
+                "source": "blood", 
+                "explanation": "CAUSE-FUNCTION[money,person,soul,blood], THING-FUNCTIONING[system]", 
                 "sourceInLm": true, 
-                "target": "money", 
+                "target": "money,person", 
                 "targetInLm": true
             }
         ], 
@@ -1004,7 +1004,7 @@
         "isiDescription": "", 
         "sid": "53", 
         "sourceFrame": "BLOOD", 
-        "isiAbductiveExplanation": "money-nn(e28,x1) ^ of-in(e27,x4,x6) ^ equal(e26,x1,x4) ^ thing(e25,x1) ^ not(e22,e10) ^ should(e10,x1,e23,u24) ^ equal(e23,x1,x15) ^ blood-nn(e21,x4) ^ person(e20,x4) ^ of-in(e19,x6,x4) ^ economic-adj(s7,x6) ^ system-nn(e18,x6) ^ soul-nn(e17,x15) ^ !=(e27,e19) ^ !=(e26,e23) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_73) ^ TSS#MONEY(x1,x1) ^ S#BLOOD(e21) ^ SS#BLOOD%COMPONENT(x4,e21) ^ R#BLOOD-RECEIVER(x6,e21) ^ S#BLOOD(e21) ^ SS#BLOOD%COMPONENT(x4,e21) ^ S#BLOOD(e21) ^ SS#BLOOD%COMPONENT(x4,e21) ^ R#BLOOD-RECEIVER(x6,e21) ^ I#BLOOD(e21) ^ I#BLOOD%COMPONENT(x4,e21) ^ M#CAUSE-FUNCTION(x4,e21) ^ M#THING-FUNCTIONING(x6,e21) ^ M#CAUSE-FUNCTION(x4,e21)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e17,x3) ^ person(e16,x3) ^ of-in(e15,x1,x2) ^ equal(e14,x3,x1) ^ not(e12,e13) ^ equal(e13,x1,x0) ^ blood-nn(e11,x1) ^ of-in(e10,x2,x3) ^ economic-adj(e9,x2) ^ system-nn(e8,x2) ^ neuter(e7,x1) ^ soul-nn(e6,x0) ^ !=(e15,e10) ^ !=(e14,e13) ^ TS#WEALTH(x3) ^ T#ECONOMIC-INEQUALITY(_73) ^ TSS#MONEY(x3,x3) ^ S#BLOOD(e11) ^ SS#BLOOD%COMPONENT(x1,e11) ^ R#BLOOD-RECEIVER(x2,e11) ^ S#BLOOD(e11) ^ SS#BLOOD%COMPONENT(x1,e11) ^ S#BLOOD(e11) ^ SS#BLOOD%COMPONENT(x1,e11) ^ R#BLOOD-RECEIVER(x2,e11) ^ I#BLOOD(e11) ^ I#BLOOD%COMPONENT(x1,e11) ^ M#CAUSE-FUNCTION(x1,e11) ^ M#THING-FUNCTIONING(x2,e11) ^ M#CAUSE-FUNCTION(x1,e11)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -1023,7 +1023,7 @@
         "isiDescription": "", 
         "sid": "54", 
         "sourceFrame": "BLOOD", 
-        "isiAbductiveExplanation": "could(e3,x1,e8,u46) ^ analogy-nn(e45,x6) ^ --in(e44,x6,e43) ^ society-nn(e43,x21) ^ of-in(e42,x17,x21) ^ like-in(e41,x10,x17) ^ money-nn(e40,x14) ^ of-in(e39,x23,x25) ^ equal(e38,x14,x23) ^ make-vb(e8,x1,x6,u37) ^ then-rb(e36,e3) ^ person-nn(e35,x1) ^ education-nn(e34,x11) ^ of-in(e33,x10,x11) ^ system-nn(e32,x10) ^ “-adj(s18,x17) ^ brain-nn(e31,x19) ^ of-in(e30,x17,x19) ^ ”-nn(e29,x17) ^ blood-nn(e28,x23) ^ brain-nn(e27,x25) ^ !=(e42,e39,e33,e30) ^ TS#WEALTH(x14) ^ T#ECONOMIC-INEQUALITY(_74) ^ TSS#MONEY(x14,x14) ^ S#BLOOD(e28) ^ SS#BLOOD%COMPONENT(x23,e28) ^ R#BLOOD-RECEIVER(x25,e28) ^ S#BLOOD(e28) ^ SS#BLOOD%COMPONENT(x23,e28) ^ I#BLOOD%COMPONENT(x23,e28) ^ I#BLOOD(e28) ^ I#BLOOD%COMPONENT(x23,e28) ^ M#CAUSE-FUNCTION(x23,e28) ^ M#THING-FUNCTIONING(x25,e28) ^ M#CAUSE-FUNCTION(x23,e28) ^ =(e31,e27) ^ =(x25,x19)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "analogy-nn(e33,x9) ^ --in(e32,x9,e31) ^ society-nn(e31,x13) ^ of-in(e30,x3,x13) ^ like-in(e29,x5,x3) ^ money-nn(e28,x11) ^ of-in(e27,x1,x0) ^ equal(e26,x11,x1) ^ make-vb(x7,x6,x9,u25) ^ then-rb(e24,x7) ^ person-nn(e23,x6) ^ education-nn(e22,x4) ^ of-in(e21,x5,x4) ^ system-nn(e20,x5) ^ “-adj(e19,x3) ^ brain-nn(e18,x2) ^ of-in(e17,x3,x2) ^ ”-nn(e16,x3) ^ blood-nn(e15,x1) ^ brain-nn(e14,x0) ^ !=(e30,e27,e21,e17) ^ TS#WEALTH(x11) ^ T#ECONOMIC-INEQUALITY(_74) ^ TSS#MONEY(x11,x11) ^ S#BLOOD(e15) ^ SS#BLOOD%COMPONENT(x1,e15) ^ R#BLOOD-RECEIVER(x0,e15) ^ S#BLOOD(e15) ^ SS#BLOOD%COMPONENT(x1,e15) ^ I#BLOOD%COMPONENT(x1,e15) ^ I#BLOOD(e15) ^ I#BLOOD%COMPONENT(x1,e15) ^ M#CAUSE-FUNCTION(x1,e15) ^ M#THING-FUNCTIONING(x0,e15) ^ M#CAUSE-FUNCTION(x1,e15) ^ =(x0,x2) ^ =(e18,e14)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -1042,7 +1042,7 @@
         "isiDescription": "", 
         "sid": "55", 
         "sourceFrame": "BLOOD", 
-        "isiAbductiveExplanation": "money-nn(e21,x1) ^ of-in(e20,x6,x8) ^ subset-of(e19,x6,x4) ^ exchange-nn(e18,x11) ^ of-in(e17,x10,x11) ^ subset-of(e16,x10,x4) ^ equal(e15,x1,x4) ^ blood-nn(e14,x6) ^ economy-nn(e13,x8) ^ basis-nn(e12,x10) ^ !=(e19,e16) ^ !=(e20,e17) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_75) ^ TSS#MONEY(x1,x1) ^ S#BLOOD(e14) ^ SS#BLOOD%COMPONENT(x6,e14) ^ R#BLOOD-RECEIVER(x8,e14) ^ S#BLOOD(e14) ^ SS#BLOOD%COMPONENT(x6,e14) ^ I#BLOOD(e14) ^ I#BLOOD%COMPONENT(x6,e14) ^ M#CAUSE-FUNCTION(x6,e14) ^ M#CAUSE-FUNCTION(x6,e14) ^ M#THING-FUNCTIONING(x8,e14)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e16,x4) ^ of-in(e15,x2,x1) ^ subset-of(e14,x2,x6) ^ exchange-nn(e13,x5) ^ of-in(e12,x0,x5) ^ subset-of(e11,x0,x6) ^ equal(e10,x4,x6) ^ blood-nn(e9,x2) ^ economy-nn(e8,x1) ^ basis-nn(e7,x0) ^ !=(e14,e11) ^ !=(e15,e12) ^ TS#WEALTH(x4) ^ T#ECONOMIC-INEQUALITY(_75) ^ TSS#MONEY(x4,x4) ^ S#BLOOD(e9) ^ SS#BLOOD%COMPONENT(x2,e9) ^ R#BLOOD-RECEIVER(x1,e9) ^ S#BLOOD(e9) ^ SS#BLOOD%COMPONENT(x2,e9) ^ I#BLOOD(e9) ^ I#BLOOD%COMPONENT(x2,e9) ^ M#CAUSE-FUNCTION(x2,e9) ^ M#CAUSE-FUNCTION(x2,e9) ^ M#THING-FUNCTIONING(x1,e9)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -1061,14 +1061,14 @@
         "isiDescription": "", 
         "sid": "56", 
         "sourceFrame": "BLOOD", 
-        "isiAbductiveExplanation": "money-nn(e45,x1) ^ society-nn(e44,x17) ^ of-in(e43,x15,x17) ^ equal(e42,x1,x15) ^ subset-of(e41,x4,x3) ^ subset-of(e40,x5,x3) ^ computer-nn(e39,x4) ^ subset-of(e38,x6,x5) ^ subset-of(e37,x7,x5) ^ ad-nn(e36,x6) ^ subset-of(e35,x8,x7) ^ subset-of(e34,x9,x7) ^ promotion-nn(e33,x8) ^ web-nn(e32,x10) ^ of-in(e31,x9,x10) ^ site-nn(e30,x9) ^ money-nn(e29,x11) ^ keep-vb(e19,x11,e22,u28) ^ go-vb(e22,x15,u26,u27) ^ require-vb(e13,x3,e19,x11) ^ all(e25,e13) ^ blood-nn(e24,x15) ^ thing(e23,x15) ^ !=(e41,e40,e38,e37,e35,e34) ^ !=(e43,e31) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_76) ^ TSS#MONEY(x1,x1) ^ S#BLOOD(e24) ^ SS#BLOOD%COMPONENT(x15,e24) ^ R#BLOOD-RECEIVER(x17,e24) ^ S#BLOOD(e24) ^ SS#BLOOD%COMPONENT(x15,e24) ^ I#BLOOD(e24) ^ I#BLOOD%COMPONENT(x15,e24) ^ M#CAUSE-FUNCTION(x15,e24) ^ M#CAUSE-FUNCTION(x15,e24) ^ M#THING-FUNCTIONING(x17,e24) ^ =(x11,x1) ^ =(e29,e45)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e41,x1) ^ society-nn(e40,x17) ^ of-in(e39,x0,x17) ^ equal(e38,x1,x0) ^ subset-of(e37,x11,x12) ^ subset-of(e36,x10,x12) ^ computer-nn(e35,x11) ^ subset-of(e34,x9,x10) ^ subset-of(e33,x8,x10) ^ ad-nn(e32,x9) ^ subset-of(e31,x7,x8) ^ subset-of(e30,x6,x8) ^ promotion-nn(e29,x7) ^ web-nn(e28,x5) ^ of-in(e27,x6,x5) ^ site-nn(e26,x6) ^ money-nn(e25,x4) ^ thing(e24,x1) ^ keep-vb(x15,x4,x16,u23) ^ go-vb(x16,x1,u21,u22) ^ require-vb(x2,x12,x15,u20) ^ all(e19,x2) ^ blood-nn(e18,x0) ^ !=(e37,e36,e34,e33,e31,e30) ^ !=(e39,e27) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_76) ^ TSS#MONEY(x1,x1) ^ S#BLOOD(e18) ^ SS#BLOOD%COMPONENT(x0,e18) ^ R#BLOOD-RECEIVER(x17,e18) ^ S#BLOOD(e18) ^ SS#BLOOD%COMPONENT(x0,e18) ^ I#BLOOD(e18) ^ I#BLOOD%COMPONENT(x0,e18) ^ M#CAUSE-FUNCTION(x0,e18) ^ M#CAUSE-FUNCTION(x0,e18) ^ M#THING-FUNCTIONING(x17,e18) ^ =(x4,x1) ^ =(e25,e41)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "blood", 
-                "explanation": "LARGE-AMOUNT[body], CAUSE-FUNCTION[money,blood], THING-FUNCTIONING[body]", 
+                "explanation": "CAUSE-FUNCTION[money,blood], THING-FUNCTIONING[body]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -1080,7 +1080,7 @@
         "isiDescription": "", 
         "sid": "57", 
         "sourceFrame": "BLOOD", 
-        "isiAbductiveExplanation": "since-in(e35,e34,e30) ^ money-nn(e34,x6) ^ equal(e33,x11,x13) ^ politic-adj(s14,x13) ^ of-in(e32,x9,x11) ^ equal(e31,x6,x9) ^ monopoly-nn(e30,x16) ^ not(e24,e29) ^ form-nn(e29,x20) ^ pleurisy-nn(e28,x21) ^ of-in(e27,x20,x21) ^ equal(e26,x16,x20) ^ surprisingly-rb(e25,e29) ^ blood-nn(e23,x9) ^ body-nn(e22,x11) ^ !=(e32,e27) ^ !=(e33,e31,e26) ^ TS#WEALTH(x6) ^ T#ECONOMIC-INEQUALITY(_78) ^ TSS#MONEY(x6,x6) ^ S#BLOOD(e23) ^ SS#BLOOD%COMPONENT(x9,e23) ^ R#BLOOD-RECEIVER(x11,e23) ^ S#BLOOD(e23) ^ SS#BLOOD%COMPONENT(x9,e23) ^ S#BODY(e22) ^ SS#BODY%TYPE(x11,e22) ^ I#BLOOD(e23) ^ I#BLOOD%COMPONENT(x9,e23) ^ I#BODY(e22) ^ I#BODY%TYPE(x11,e22) ^ M#CAUSE-FUNCTION(x9,e23) ^ M#CAUSE-FUNCTION(x9,e23) ^ M#THING-FUNCTIONING(x11,e23) ^ M#LARGE-AMOUNT(x11,e22)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BODY,TYPE,0.85\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "since-in(e24,e23,e13) ^ money-nn(e23,x10) ^ politic-adj(e22,x0) ^ of-in(e21,x1,x0) ^ equal(e20,x10,x1) ^ not(e13,e19) ^ monopoly-nn(e19,x6) ^ form-nn(e18,x8) ^ pleurisy-nn(e17,x7) ^ of-in(e16,x8,x7) ^ equal(e15,x6,x8) ^ surprisingly-rb(e14,e18) ^ blood-nn(e12,x1) ^ body-nn(e11,x0) ^ !=(e21,e16) ^ !=(e20,e15) ^ TS#WEALTH(x10) ^ T#ECONOMIC-INEQUALITY(_78) ^ TSS#MONEY(x10,x10) ^ S#BLOOD(e12) ^ SS#BLOOD%COMPONENT(x1,e12) ^ R#BLOOD-RECEIVER(x0,e12) ^ S#BLOOD(e12) ^ SS#BLOOD%COMPONENT(x1,e12) ^ S#BODY(e11) ^ SS#BODY%TYPE(x0,e11) ^ I#BLOOD(e12) ^ I#BLOOD%COMPONENT(x1,e12) ^ I#BODY(e11) ^ I#BODY%TYPE(x0,e11) ^ M#CAUSE-FUNCTION(x1,e12) ^ M#CAUSE-FUNCTION(x1,e12) ^ M#THING-FUNCTIONING(x0,e12)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BODY,TYPE,0.85\nECONOMIC_INEQUALITY,WEALTH,MONEY,BLOOD,COMPONENT,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -1099,7 +1099,7 @@
         "isiDescription": "", 
         "sid": "58", 
         "sourceFrame": "GAME", 
-        "isiAbductiveExplanation": "zero-sum-adj(s12,x11) ^ game-nn(e53,x11) ^ equal(e52,x1,x11) ^ thing(e51,x4) ^ be-vb(e5,x4,u49,u50) ^ card(e48,x4,1) ^ equal(e47,x4,x17) ^ get-vb(e18,x17,s21,u46) ^ wealthier-adj(s21,x17) ^ for-in(e45,x7,x4) ^ person-nn(e44,x4) ^ not(e42,e43) ^ equal(e43,x23,x4) ^ person-nn(e41,x23) ^ equal(e40,x23,x27) ^ get-vb(e28,x27,s31,u39) ^ poorer-adj(s31,x27) ^ for-in(e38,x7,x23) ^ wealth-nn(e36,x1) ^ org(e37,x1) ^ way-nn(e35,x7) ^ imp(e32,e33,e34) ^ equal(e34,x7,x14) ^ way-nn(e33,x14) ^ !=(e35,e33) ^ !=(e44,e41) ^ !=(e36,e37) ^ !=(e45,e38) ^ !=(e52,e47,e43,e40,e34) ^ S#GAME(e53) ^ SS#GAME%TYPE(x11,e53) ^ TS#POVERTY(s31) ^ T#ECONOMIC-INEQUALITY(_79) ^ R#POOR(x27,s31) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_80) ^ I#GAME(e53) ^ I#GAME%TYPE(x11,e53) ^ =(_79,_80) ^ =(x17,x27) ^ =(u46,u39) ^ =(s31,s21) ^ =(e28,e18)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,GAME,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,GAME,TYPE,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "zero-sum-adj(e37,x12) ^ game-nn(e36,x12) ^ equal(e35,x1,x12) ^ thing(e34,x5) ^ be-vb(x6,x5,u32,u33) ^ card(e31,x5,1) ^ person-nn(e30,x5) ^ get-vb(x11,x5,u28,u29) ^ wealthier-adj(e27,x5) ^ for-in(e26,x0,x5) ^ not(e24,e25) ^ equal(e25,x9,x9) ^ person-nn(e23,x9) ^ get-vb(x10,x9,u21,u22) ^ poorer-adj(e20,x9) ^ for-in(e19,x0,x9) ^ wealth-nn(e17,x1) ^ org(e18,x1) ^ way-nn(e16,x0) ^ imp(e13,e14,e15) ^ equal(e15,x2,x0) ^ way-nn(e14,x2) ^ !=(e16,e14) ^ !=(e23,e23) ^ !=(e17,e18) ^ !=(e26,e19) ^ !=(e35,e25,e15) ^ S#GAME(e36) ^ SS#GAME%TYPE(x12,e36) ^ TS#POVERTY(e20) ^ T#ECONOMIC-INEQUALITY(_79) ^ R#POOR(x9,e20) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_80) ^ I#GAME(e36) ^ I#GAME%TYPE(x12,e36) ^ =(u22,u29) ^ =(u21,u28) ^ =(x5,x9) ^ =(_79,_80) ^ =(x10,x11) ^ =(e23,e30)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,POVERTY,POVERTY,GAME,TYPE,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,GAME,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -1108,7 +1108,7 @@
                 "source": "play", 
                 "explanation": "", 
                 "sourceInLm": true, 
-                "target": "money", 
+                "target": "money,person", 
                 "targetInLm": true
             }
         ], 
@@ -1118,7 +1118,7 @@
         "isiDescription": "", 
         "sid": "59", 
         "sourceFrame": "GAME", 
-        "isiAbductiveExplanation": "play-vb(e6,x1,u20,u21) ^ money-nn(e19,x7) ^ afraid-adj(s8,x1) ^ equal(e18,x7,x10) ^ lose-vb(e11,x9,x10,u17) ^ of-in(e16,s8,e11) ^ with-in(e15,e6,x7) ^ mean-vb(e4,x1,e6,u14) ^ thing(e13,x1) ^ person(e12,x1) ^ S#GAME(e6) ^ SS#GAME%ACTIONS(e6,e6) ^ R#PLAYER(x1,e6) ^ TS#WEALTH(x7) ^ T#ECONOMIC-INEQUALITY(_81) ^ TSS#MONEY(x7,x7) ^ I#GAME(e6) ^ I#GAME%ACTIONS(e6,e6)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,GAME,ACTIONS,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "play-vb(x5,x4,u19,u20) ^ money-nn(e18,x4) ^ person(e17,x4) ^ afraid-adj(e16,x4) ^ of-in(e15,e16,x8) ^ equal(e14,x4,x7) ^ lose-vb(x6,x8,x7,u13) ^ with-in(e12,x5,x4) ^ mean-vb(x1,x0,x5,u11) ^ neuter(e10,x0) ^ S#GAME(x5) ^ SS#GAME%ACTIONS(x5,x5) ^ R#PLAYER(x4,x5) ^ TS#WEALTH(x4) ^ T#ECONOMIC-INEQUALITY(_81) ^ TSS#MONEY(x4,x4) ^ I#GAME(x5) ^ I#GAME%ACTIONS(x5,x5)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,GAME,ACTIONS,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -1137,26 +1137,26 @@
         "isiDescription": "", 
         "sid": "60", 
         "sourceFrame": "GAME", 
-        "isiAbductiveExplanation": "whq(e36,s10,e13) ^ equal(e47,x9,x15) ^ start-vb(e16,x15,e21,u46) ^ off-rb(s19,x1) ^ than-in(e45,s19) ^ play-vb(e21,x20,u43,u44) ^ money-nn(e42,x22) ^ with-in(e41,e21,x22) ^ by-in(e40,s19,e21) ^ government–and-vb(e13,u39,x9,x3) ^ in-in(e38,e13,x1) ^ better-adj(s10,x9) ^ way-nn(e37,x9) ^ person(e35,x1) ^ of-in(e34,x3,x1) ^ smart-nn(e32,x4) ^ org(e33,x4) ^ equal(e31,x3,x4) ^ summer-nn(e29,x5) ^ org(e30,x5) ^ equal(e28,x3,x5) ^ challenge-nn(e26,x6) ^ org(e27,x6) ^ equal(e25,x3,x6) ^ theme-nn(e24,x3) ^ week-nn(e23,x1) ^ !=(e32,e33) ^ !=(e29,e30) ^ !=(e26,e27) ^ !=(e47,e31,e28,e25) ^ !=(e33,e30,e27) ^ S#GAME(e21) ^ SS#GAME%ACTIONS(e21,e21) ^ R#PLAYER(x20,e21) ^ TS#WEALTH(x22) ^ T#ECONOMIC-INEQUALITY(_82) ^ TSS#MONEY(x22,x22) ^ I#GAME(e21) ^ I#GAME%ACTIONS(e21,e21)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,GAME,ACTIONS,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "whq(e20,e22,x3) ^ start-vb(x6,x2,x8,u32) ^ off-rb(e31,x0) ^ than-in(e30,x0) ^ by-in(e29,x0,x9) ^ play-vb(x8,x9,u27,u28) ^ money-nn(e26,x7) ^ with-in(e25,x8,x7) ^ government–and-vb(x3,u24,x2,x1) ^ in-in(e23,x3,x0) ^ better-adj(e22,x2) ^ way-nn(e21,x2) ^ person(e19,x0) ^ of-in(e18,x1,x0) ^ smart-nn(e16,x1) ^ org(e17,x1) ^ summer-nn(e14,x1) ^ org(e15,x1) ^ challenge-nn(e12,x1) ^ org(e13,x1) ^ theme-nn(e11,x1) ^ week-nn(e10,x0) ^ !=(e16,e17) ^ !=(e14,e15) ^ !=(e12,e13) ^ !=(e17,e15,e13) ^ S#GAME(x8) ^ SS#GAME%ACTIONS(x8,x8) ^ R#PLAYER(x9,x8) ^ TS#WEALTH(x7) ^ T#ECONOMIC-INEQUALITY(_82) ^ TSS#MONEY(x7,x7) ^ I#GAME(x8) ^ I#GAME%ACTIONS(x8,x8)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,GAME,ACTIONS,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
-                "source": "win,game,person", 
+                "source": "win,game", 
                 "explanation": "", 
                 "sourceInLm": true, 
-                "target": "wealth", 
+                "target": "wealth,person", 
                 "targetInLm": true
             }
         ], 
         "targetFrame": "WEALTH", 
         "targetConceptSubDomain": "WEALTH", 
-        "sourceConceptSubDomain": "TYPE", 
+        "sourceConceptSubDomain": "OUTCOMES", 
         "isiDescription": "", 
         "sid": "61", 
         "sourceFrame": "GAME", 
-        "isiAbductiveExplanation": "imp(e35,e4,e21) ^ equal(e46,x15,x18) ^ create-vb(e21,x18,x20,u45) ^ equal(e44,x15,s27) ^ here-rb(s27,x26) ^ so-rb(e43,e44) ^ thing(e42,x2) ^ wealth-nn(e41,x3) ^ create-vb(e4,x2,x3,u40) ^ equal(e39,x7,x12) ^ win-vb(e13,x7,x12,u38) ^ want-vb(e10,x7,e13,u37) ^ equal(e36,e4,x7) ^ game-nn(e34,x7) ^ person(e33,x7) ^ simple-nn(e32,x16) ^ of-in(e31,x15,x16) ^ formula-nn(e30,x15) ^ wealth-nn(e28,x20) ^ org(e29,x20) ^ !=(e28,e29) ^ !=(e46,e44,e39,e36) ^ TS#WEALTH(x3) ^ T#ECONOMIC-INEQUALITY(_83) ^ S#GAME(e13) ^ SS#GAME%OUTCOMES(e13,e13) ^ R#PLAYER(x7,e13) ^ S#GAME(e34) ^ SS#GAME%TYPE(x7,e34) ^ I#GAME(e13) ^ I#GAME%OUTCOMES(e13,e13) ^ I#GAME%TYPE(x7,e34) ^ =(e41,e28) ^ =(u45,u40) ^ =(x18,x2) ^ =(x3,x20) ^ =(e13,e34) ^ =(e21,e4)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,GAME,OUTCOMES,0.05\nECONOMIC_INEQUALITY,WEALTH,WEALTH,GAME,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "imp(e22,x6,x13) ^ equal(e34,x2,x14) ^ create-vb(x13,x14,x0,u33) ^ equal(e32,x2,e31) ^ here-rb(e31,x15) ^ so-rb(e30,e32) ^ thing(e29,x7) ^ wealth-nn(e28,x4) ^ create-vb(x6,x7,x4,u27) ^ person(e26,x4) ^ win-vb(x10,x4,x3,u25) ^ want-vb(x8,x4,x10,u24) ^ equal(e23,x6,x3) ^ game-nn(e21,x3) ^ simple-nn(e20,x1) ^ of-in(e19,x2,x1) ^ formula-nn(e18,x2) ^ wealth-nn(e16,x0) ^ org(e17,x0) ^ !=(e16,e17) ^ !=(e34,e32,e23) ^ TS#WEALTH(x4) ^ T#ECONOMIC-INEQUALITY(_83) ^ S#GAME(x10) ^ SS#GAME%OUTCOMES(x10,x10) ^ R#PLAYER(x4,x10) ^ S#GAME(e21) ^ SS#GAME%TYPE(x3,e21) ^ I#GAME(x10) ^ I#GAME%OUTCOMES(x10,x10) ^ I#GAME%TYPE(x3,e21) ^ =(u27,u33) ^ =(x13,x6) ^ =(e16,e28) ^ =(x10,e21) ^ =(x14,x7) ^ =(x4,x0)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,GAME,OUTCOMES,0.85\nECONOMIC_INEQUALITY,WEALTH,WEALTH,GAME,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -1165,7 +1165,7 @@
                 "source": "play", 
                 "explanation": "", 
                 "sourceInLm": true, 
-                "target": "money,person,income", 
+                "target": "income,money", 
                 "targetInLm": true
             }
         ], 
@@ -1175,13 +1175,13 @@
         "isiDescription": "", 
         "sid": "62", 
         "sourceFrame": "GAME", 
-        "isiAbductiveExplanation": "money-nn(e38,x1) ^ not(e35,e11) ^ equal(e37,x1,x10) ^ do-vb(e11,x1,x10,u36) ^ have-vb(e2,x1,e17,u34) ^ in-in(e33,e2,x3) ^ more-adj(s16,x15) ^ income-nn(e32,x15) ^ generate-vb(e17,x1,x15,u31) ^ order-nn(e30,x3) ^ actually-rb(e29,e2) ^ person(e28,x1) ^ can(e7,x1,e19,u27) ^ play-vb(e19,x1,u25,u26) ^ equal(e24,x6,x20) ^ with-in(e23,e19,x20) ^ in-in(e22,e2,x6) ^ way-nn(e21,x6) ^ !=(e37,e24) ^ !=(e33,e22) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_85) ^ TSS#MONEY(x1,x1) ^ TS#WEALTH(x15) ^ T#ECONOMIC-INEQUALITY(_86) ^ TSS#MONEY(x15,x15) ^ S#GAME(e19) ^ SS#GAME%ACTIONS(e19,e19) ^ R#PLAYER(x1,e19) ^ I#GAME(e19) ^ I#GAME%ACTIONS(e19,e19) ^ =(_85,_86) ^ =(x15,x1)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,GAME,ACTIONS,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e26,x5) ^ not(e24,x9) ^ do-vb(x9,x0,x5,u25) ^ have-vb(x4,x5,x7,u23) ^ in-in(e22,x4,x2) ^ more-adj(e21,x8) ^ income-nn(e20,x8) ^ generate-vb(x7,x5,x8,u19) ^ order-nn(e18,x2) ^ actually-rb(e17,x4) ^ person(e16,x2) ^ play-vb(x1,x2,u14,u15) ^ with-in(e13,x1,x0) ^ in-in(e12,x4,x0) ^ person(e11,x0) ^ way-nn(e10,x0) ^ !=(e16,e11) ^ !=(e22,e12) ^ TS#WEALTH(x5) ^ T#ECONOMIC-INEQUALITY(_85) ^ TSS#MONEY(x5,x5) ^ TS#WEALTH(x8) ^ T#ECONOMIC-INEQUALITY(_86) ^ TSS#MONEY(x8,x8) ^ S#GAME(x1) ^ SS#GAME%ACTIONS(x1,x1) ^ R#PLAYER(x2,x1) ^ I#GAME(x1) ^ I#GAME%ACTIONS(x1,x1) ^ =(_86,_85) ^ =(x5,x8)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,GAME,ACTIONS,0.75\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
-                "source": "game,play", 
+                "source": "game,person,play", 
                 "explanation": "", 
                 "sourceInLm": true, 
                 "target": "wealth", 
@@ -1194,7 +1194,7 @@
         "isiDescription": "", 
         "sid": "63", 
         "sourceFrame": "GAME", 
-        "isiAbductiveExplanation": "equal(e29,x1,x3) ^ discover-vb(e4,x3,e27,u28) ^ wealth-nn(e27,x9) ^ game-nn(e26,x13) ^ subset-of(e25,x13,x12) ^ subset-of(e24,x1,x12) ^ equal(e23,x9,x12) ^ start-vb(e6,x1,e17,u22) ^ play-vb(e17,x1,x15,u21) ^ better-rb(e20,e6) ^ person(e19,x1) ^ game-nn(e18,x15) ^ !=(e25,e24) ^ !=(e29,e23) ^ TS#WEALTH(x9) ^ T#ECONOMIC-INEQUALITY(_87) ^ S#GAME(e26) ^ SS#GAME%TYPE(x13,e26) ^ S#GAME(e17) ^ SS#GAME%ACTIONS(e17,e17) ^ R#PLAYER(x1,e17) ^ I#GAME%TYPE(x13,e26) ^ I#GAME(e17) ^ I#GAME%ACTIONS(e17,e17) ^ =(x15,x13) ^ =(e17,e26,e18)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,GAME,ACTIONS,0.75\nECONOMIC_INEQUALITY,WEALTH,WEALTH,GAME,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "discover-vb(x5,x1,e20,u21) ^ wealth-nn(e20,x8) ^ game-nn(e19,x9) ^ person(e18,x9) ^ subset-of(e17,x9,x10) ^ equal(e16,x8,x10) ^ start-vb(x3,x1,x6,u15) ^ play-vb(x6,x1,x0,u14) ^ better-rb(e13,x3) ^ person(e12,x1) ^ game-nn(e11,x0) ^ !=(e18,e12) ^ TS#WEALTH(x8) ^ T#ECONOMIC-INEQUALITY(_87) ^ S#GAME(e19) ^ SS#GAME%TYPE(x9,e19) ^ S#GAME(x6) ^ SS#GAME%ACTIONS(x6,x6) ^ R#PLAYER(x1,x6) ^ I#GAME%TYPE(x9,e19) ^ I#GAME(x6) ^ I#GAME%ACTIONS(x6,x6) ^ =(e11,e19,x6) ^ =(x0,x9)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,GAME,ACTIONS,0.75\nECONOMIC_INEQUALITY,WEALTH,WEALTH,GAME,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -1213,7 +1213,7 @@
         "isiDescription": "", 
         "sid": "64", 
         "sourceFrame": "GAME", 
-        "isiAbductiveExplanation": "equal(e84,x1,x2) ^ ’ve-vb(e3,x2,e80,u83) ^ imp(e80,e81,e16) ^ get-vb(e16,x2,x14,u82) ^ thing(e81,x14) ^ equal(e79,x1,x6) ^ together-rb(s7,x6) ^ down-rb(e78,s7) ^ work-vb(e77,x1) ^ subset-of(e76,x1,x5) ^ straighten-vb(e8,x1,x5,u75) ^ out-rb(e74,e8) ^ just-rb(s10,x9) ^ jot-nn(e73,x9) ^ rel(e72,e8,x9) ^ thing(e71,x1) ^ on-in(e70,e8,x1) ^ of-in(e69,x19,x1) ^ wealth-nn(e68,x20) ^ of-in(e67,x19,x20) ^ creation-nn(e66,x21) ^ of-in(e65,x19,x21) ^ plan-nn(e64,x19) ^ person(e63,x1) ^ formulate-vb(e22,x18,x19,u62) ^ expert-nn(e61,x27) ^ consult-vb(e28,x23,x27,u60) ^ finalize-vb(e29,x23,u58,u59) ^ unless-in(e57,e29,e33) ^ sure-adj(s32,x1) ^ whq(e53,e54,e41) ^ do-vb(e41,x1,x39,u56) ^ of-in(e55,s32,x39) ^ thing(e54,x39) ^ experience-vb(e33,u51,x1,u52) ^ wealth-nn(e50,x37) ^ of-in(e49,x36,x37) ^ building-nn(e48,x36) ^ of-in(e47,x35,x36) ^ in-in(e46,e33,x35) ^ before-in(e45,e28,e29) ^ sure-adj(s25,e28) ^ for-in(e44,e8,e22) ^ once-rb(e43,e8) ^ game-nn(e42,x35) ^ !=(e63,e63) ^ !=(e81,e71,e54) ^ !=(e69,e67,e65,e55,e49,e47) ^ !=(e84,e79) ^ S#GAME(e42) ^ SS#GAME%TYPE(x35,e42) ^ R#GAME-THING(x36,e42) ^ TS#WEALTH(x20) ^ T#ECONOMIC-INEQUALITY(_88) ^ S#GAME(e42) ^ SS#GAME%TYPE(x35,e42) ^ I#GAME(e42) ^ I#GAME%TYPE(x35,e42) ^ =(x20,x37) ^ =(e28,x1) ^ =(e68,e50) ^ =(s32,s25)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,GAME,TYPE,0.75\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "person(e70,x3) ^ imp(e67,e68,x24) ^ get-vb(x24,x3,x23,u69) ^ thing(e68,x23) ^ together-rb(e66,x1) ^ down-rb(e65,x1) ^ work-vb(e64,x1) ^ subset-of(e63,x1,x5) ^ straighten-vb(x4,x3,x5,u62) ^ out-rb(e61,x4) ^ just-rb(e60,x3) ^ jot-nn(e59,x3) ^ rel(e58,x4,x3) ^ neuter(e57,x1) ^ on-in(e56,x4,x1) ^ once-rb(e55,x4) ^ person(e54,x1) ^ of-in(e53,x10,x1) ^ wealth-nn(e52,x9) ^ of-in(e51,x10,x9) ^ creation-nn(e50,x8) ^ of-in(e49,x10,x8) ^ plan-nn(e48,x10) ^ formulate-vb(x7,x3,x10,u47) ^ expert-nn(e46,x12) ^ consult-vb(x15,x3,x12,u45) ^ finalize-vb(x14,x3,u43,u44) ^ unless-in(e42,x14,x18) ^ person(e41,x12) ^ person(e40,x16) ^ sure-adj(e39,x16) ^ whq(e35,e36,x22) ^ do-vb(x22,x12,x21,u38) ^ of-in(e37,e39,x21) ^ thing(e36,x21) ^ experience-vb(x18,u33,x12,u34) ^ wealth-nn(e32,x16) ^ of-in(e31,x17,x16) ^ building-nn(e30,x17) ^ of-in(e29,x0,x17) ^ in-in(e28,x18,x0) ^ before-in(e27,x15,x14) ^ sure-adj(e26,x3,x15) ^ game-nn(e25,x0) ^ !=(e41,e40) ^ !=(e68,e36) ^ !=(e53,e51,e49,e37,e31,e29) ^ !=(e70,e54,e41,e40) ^ S#GAME(e25) ^ SS#GAME%TYPE(x0,e25) ^ R#GAME-THING(x17,e25) ^ TS#WEALTH(x9) ^ T#ECONOMIC-INEQUALITY(_88) ^ S#GAME(e25) ^ SS#GAME%TYPE(x0,e25) ^ I#GAME(e25) ^ I#GAME%TYPE(x0,e25) ^ =(x16,x9) ^ =(e52,e32)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,GAME,TYPE,0.75\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -1222,7 +1222,7 @@
                 "source": "game", 
                 "explanation": "", 
                 "sourceInLm": true, 
-                "target": "wealth", 
+                "target": "person,wealth", 
                 "targetInLm": true
             }
         ], 
@@ -1232,16 +1232,16 @@
         "isiDescription": "", 
         "sid": "65", 
         "sourceFrame": "GAME", 
-        "isiAbductiveExplanation": "quotell(e3,x1,e6,u21) ^ focus-vb(e6,x1,u19,u20) ^ wealth-nn(e18,x12) ^ of-in(e17,x9,x12) ^ subset-of(e16,x9,x7) ^ on-in(e15,e6,x7) ^ person(e14,x1) ^ inner-adj(s10,x9) ^ outer-adj(s11,x9) ^ game-nn(e13,x9) ^ TS#WEALTH(x12) ^ T#ECONOMIC-INEQUALITY(_90) ^ S#GAME(e13) ^ SS#GAME%TYPE(x9,e13) ^ R#GAME-THING(x12,e13) ^ S#GAME(e13) ^ SS#GAME%TYPE(x9,e13) ^ I#GAME(e13) ^ I#GAME%TYPE(x9,e13)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,GAME,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "person(e13,x1) ^ focus-vb(x3,x1,u11,u12) ^ wealth-nn(e10,x1) ^ of-in(e9,x0,x1) ^ subset-of(e8,x0,x2) ^ on-in(e7,x3,x2) ^ inner-adj(e6,x0) ^ outer-adj(e5,x0) ^ game-nn(e4,x0) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_90) ^ S#GAME(e4) ^ SS#GAME%TYPE(x0,e4) ^ R#GAME-THING(x1,e4) ^ S#GAME(e4) ^ SS#GAME%TYPE(x0,e4) ^ I#GAME(e4) ^ I#GAME%TYPE(x0,e4)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,GAME,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
-                "source": "addiction,person,drug", 
-                "explanation": "CAUSE-NOT-FUNCTION[addiction,person,money,drug], CAUSE-BAD-JUDGEMENT[addiction,person,money,drug], CAUSE-OBSESSION[drug,money,addiction,person]", 
+                "source": "addiction,drug", 
+                "explanation": "CAUSE-NOT-FUNCTION[money,person,drug,addiction], CAUSE-BAD-JUDGEMENT[money,person,drug,addiction], CAUSE-OBSESSION[money,person,drug,addiction]", 
                 "sourceInLm": true, 
-                "target": "money", 
+                "target": "money,person", 
                 "targetInLm": true
             }
         ], 
@@ -1251,7 +1251,7 @@
         "isiDescription": "", 
         "sid": "66", 
         "sourceFrame": "DRUG", 
-        "isiAbductiveExplanation": "money-nn(e31,x1) ^ drug-nn(e30,x8) ^ equal(e29,x1,x8) ^ drug-nn(e28,x4) ^ of-in(e27,x3,x4) ^ addiction-nn(e26,x3) ^ can(e5,x3,e11,u25) ^ of-in(e24,x9,x3) ^ standard-nn(e23,x9) ^ person(e22,x3) ^ make-vb(e11,x3,x9,u21) ^ imp(e17,e18,e20) ^ of-in(e20,x14,x3) ^ lower-adj(s16,x14) ^ for-in(e19,e11,s16) ^ thing(e18,x14) ^ !=(e27,e24,e20) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_91) ^ TSS#MONEY(x1,x1) ^ S#DRUG(e30) ^ SS#DRUG%TYPE(x8,e30) ^ S#DRUG(e26) ^ SS#DRUG%ADDICTION(x3,e26) ^ I#DRUG(e30) ^ I#DRUG%TYPE(x8,e30) ^ I#DRUG%ADDICTION(x3,e26) ^ M#CAUSE-NOT-FUNCTION(x8,e30) ^ M#CAUSE-BAD-JUDGEMENT(x8,e30) ^ M#CAUSE-NOT-FUNCTION(x3,e26) ^ M#CAUSE-BAD-JUDGEMENT(x3,e26) ^ M#CAUSE-OBSESSION(x3,e26) ^ =(x3,x8,x4) ^ =(e26,e30,e28)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,TYPE,0.95\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,ADDICTION,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e23,x2) ^ drug-nn(e22,x7) ^ equal(e21,x2,x7) ^ drug-nn(e20,x3) ^ of-in(e19,x4,x3) ^ addiction-nn(e18,x4) ^ person(e17,x2) ^ of-in(e16,x0,x2) ^ standard-nn(e15,x0) ^ make-vb(x1,x4,x0,u14) ^ person(e13,x0) ^ imp(e8,e9,e12) ^ of-in(e12,x6,x0) ^ lower-adj(e11,x4) ^ rel(e10,x4,x6) ^ thing(e9,x6) ^ !=(e19,e16,e12) ^ !=(e17,e13) ^ TS#WEALTH(x2) ^ T#ECONOMIC-INEQUALITY(_91) ^ TSS#MONEY(x2,x2) ^ S#DRUG(e22) ^ SS#DRUG%TYPE(x7,e22) ^ S#DRUG(e18) ^ SS#DRUG%ADDICTION(x4,e18) ^ I#DRUG(e22) ^ I#DRUG%TYPE(x7,e22) ^ I#DRUG%ADDICTION(x4,e18) ^ M#CAUSE-NOT-FUNCTION(x7,e22) ^ M#CAUSE-BAD-JUDGEMENT(x7,e22) ^ M#CAUSE-NOT-FUNCTION(x4,e18) ^ M#CAUSE-BAD-JUDGEMENT(x4,e18) ^ M#CAUSE-OBSESSION(x4,e18) ^ =(x4,x7,x3) ^ =(e20,e18,e22)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,TYPE,0.95\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,ADDICTION,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -1260,7 +1260,7 @@
                 "source": "drug", 
                 "explanation": "CAUSE-BAD-JUDGEMENT[money,cash,drug], CAUSE-NOT-FUNCTION[money,cash,drug]", 
                 "sourceInLm": true, 
-                "target": "money,cash", 
+                "target": "cash,money", 
                 "targetInLm": true
             }
         ], 
@@ -1270,7 +1270,7 @@
         "isiDescription": "", 
         "sid": "68", 
         "sourceFrame": "DRUG", 
-        "isiAbductiveExplanation": "loc(e133,x2) ^ equal(e131,x1,x2) ^ w-nn(e129,x3) ^ loc(e130,x3) ^ equal(e128,x1,x3) ^ ]-nn(e126,x4) ^ loc(e127,x4) ^ equal(e125,x1,x4) ^ e-nn(e124,x1) ^ equal(e123,x18,x20) ^ view-vb(e21,x20,x18,u122) ^ reserve-nn(e121,x25) ^ of-in(e120,x24,x25) ^ fund-nn(e119,x24) ^ of-in(e118,x23,x24) ^ in-in(e117,e21,x23) ^ use-vb(e29,u115,x28,u116) ^ imp(e108,e109,e114) ^ to-in(e114,e29,x31) ^ when(e113,e29,e42) ^ of-in(e112,x37,x40) ^ of-in(e111,x35,x37) ^ require-vb(e42,x35,x23,u110) ^ extent-nn(e109,x31) ^ for-in(e107,e21,e29) ^ of-in(e106,x16,x18) ^ at-in(e105,x1,x16) ^ entirely-rb(e104,e21) ^ happen-vb(e7,x6,u102,u103) ^ subset-of(e101,x6,x8) ^ subset-of(e100,x9,x8) ^ natural-adj(s10,x6) ^ sympathy-nn(e99,x6) ^ intelligible-adj(s11,x9) ^ sympathy-nn(e98,x9) ^ imp(e84,e87,e97) ^ between-in(e97,x8,x44) ^ that-in(e96,x8,e51) ^ employ-vb(e51,x23,x49,u95) ^ time-nn(e94,x52) ^ when(e93,x52,e92) ^ money-nn(e92,x55) ^ useful-adj(s56,x55) ^ to-in(e91,s56,x18) ^ at-in(e90,e51,x52) ^ largely-rb(e89,e51) ^ from-in(e88,e7,x8) ^ money-nn(e87,x45) ^ of-in(e86,x44,x45) ^ market-nn(e85,x44) ^ always-rb(e83,e7) ^ thing(e82,x6) ^ person(e81,x2) ^ overwhelm-vb(e12,x6,x2,u80) ^ fund-nn(e79,x13) ^ with-in(e78,e12,x13) ^ when(e77,e12,e76) ^ money-nn(e76,x58) ^ drug-nn(e75,x61) ^ equal(e74,x58,x61) ^ always-rb(e73,e12) ^ mercy-nn(e72,x16) ^ bank-nn(e70,x18) ^ org(e71,x18) ^ light-nn(e69,x23) ^ state-nn(e68,x35) ^ internal-adj(s38,x37) ^ circulation-nn(e67,x37) ^ country-nn(e66,x40) ^ thing(e65,x23) ^ of-in(e64,x49,x18) ^ cash-nn(e63,x49) ^ person(e62,x18) ^ !=(e70,e71) ^ !=(e82,e82) ^ !=(e83,e73) ^ !=(e129,e130) ^ !=(e126,e127) ^ !=(e99,e98) ^ !=(e133,e130,e127) ^ !=(e82,e65) ^ !=(e113,e93,e77) ^ !=(e120,e118,e112,e111,e106,e86,e64) ^ !=(e131,e128,e125,e123,e74) ^ !=(e108,e84) ^ !=(e81,e62) ^ !=(e114,e91) ^ !=(e105,e90) ^ !=(e101,e100) ^ TS#WEALTH(x55) ^ T#ECONOMIC-INEQUALITY(_92) ^ TSS#MONEY(x55,x55) ^ S#DRUG(e75) ^ SS#DRUG%TYPE(x61,e75) ^ TS#WEALTH(x49) ^ T#ECONOMIC-INEQUALITY(_95) ^ TSS#MONEY(x49,x49) ^ I#DRUG(e75) ^ I#DRUG%TYPE(x61,e75) ^ M#CAUSE-NOT-FUNCTION(x61,e75) ^ M#CAUSE-BAD-JUDGEMENT(x61,e75) ^ =(e87,e76,e92) ^ =(_95,_92) ^ =(e119,e79) ^ =(x58,x49,x55,x45) ^ =(x13,x24)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,TYPE,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "loc(e109,x7) ^ w-nn(e106,x7) ^ loc(e107,x7) ^ ]-nn(e104,x7) ^ loc(e105,x7) ^ e-nn(e103,x7) ^ person(e102,x7) ^ equal(e101,x0,x32) ^ view-vb(x31,x32,x7,u100) ^ reserve-nn(e99,x29) ^ of-in(e98,x30,x29) ^ fund-nn(e97,x30) ^ of-in(e96,x5,x30) ^ in-in(e95,x31,x5) ^ use-vb(x33,u93,x32,u94) ^ imp(e86,e87,e92) ^ to-in(e92,x33,x34) ^ when(e91,x33,x36) ^ of-in(e90,x3,x2) ^ of-in(e89,x4,x3) ^ require-vb(x36,x4,x0,u88) ^ extent-nn(e87,x34) ^ of-in(e85,x6,x0) ^ at-in(e84,x7,x6) ^ entirely-rb(e83,x31) ^ happen-vb(x14,x7,u81,u82) ^ always-rb(e80,x14) ^ subset-of(e79,x12,x13) ^ subset-of(e78,x11,x13) ^ natural-adj(e77,x12) ^ sympathy-nn(e76,x12) ^ intelligible-adj(e75,x11) ^ sympathy-nn(e74,x11) ^ imp(e59,e62,e73) ^ between-in(e73,x13,x20) ^ that-in(e72,x13,x24) ^ employ-vb(x24,x0,x1,u71) ^ time-nn(e70,x23) ^ when(e69,x23,e68) ^ money-nn(e68,x26) ^ useful-adj(e67,x26) ^ to-in(e66,e67,x0) ^ at-in(e65,x24,x23) ^ largely-rb(e64,x24) ^ from-in(e63,x14,x13) ^ money-nn(e62,x19) ^ of-in(e61,x20,x19) ^ market-nn(e60,x20) ^ neuter(e58,x7) ^ person(e57,x9) ^ overwhelm-vb(x10,x7,x9,u56) ^ fund-nn(e55,x9) ^ with-in(e54,x10,x9) ^ when(e53,x10,e52) ^ money-nn(e52,x17) ^ drug-nn(e51,x18) ^ equal(e50,x17,x18) ^ always-rb(e49,x10) ^ mercy-nn(e48,x6) ^ bank-nn(e46,x0) ^ org(e47,x0) ^ light-nn(e45,x5) ^ state-nn(e44,x4) ^ internal-adj(e43,x3) ^ circulation-nn(e42,x3) ^ country-nn(e41,x2) ^ neuter(e40,x0) ^ of-in(e39,x1,x0) ^ cash-nn(e38,x1) ^ person(e37,x0) ^ !=(e46,e47) ^ !=(e58,e58) ^ !=(e80,e49) ^ !=(e106,e107) ^ !=(e104,e105) ^ !=(e76,e74) ^ !=(e109,e107,e105) ^ !=(e102,e57,e37) ^ !=(e91,e69,e53) ^ !=(e58,e40) ^ !=(e98,e96,e90,e89,e85,e61,e39) ^ !=(e101,e50) ^ !=(e86,e59) ^ !=(e92,e66) ^ !=(e84,e65) ^ !=(e79,e78) ^ TS#WEALTH(x26) ^ T#ECONOMIC-INEQUALITY(_92) ^ TSS#MONEY(x26,x26) ^ S#DRUG(e51) ^ SS#DRUG%TYPE(x18,e51) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_95) ^ TSS#MONEY(x1,x1) ^ I#DRUG(e51) ^ I#DRUG%TYPE(x18,e51) ^ M#CAUSE-NOT-FUNCTION(x18,e51) ^ M#CAUSE-BAD-JUDGEMENT(x18,e51) ^ =(e62,e52,e68) ^ =(_92,_95) ^ =(x17,x1,x26,x19) ^ =(x30,x9) ^ =(e97,e55)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -1289,14 +1289,14 @@
         "isiDescription": "", 
         "sid": "69", 
         "sourceFrame": "DRUG", 
-        "isiAbductiveExplanation": "imp(e86,e87,e8) ^ must(e8,x6,e11,u90) ^ react-vb(e11,x6,u88,u89) ^ equal(e87,x6,x1) ^ would(e3,x1,e17,u85) ^ astronomical-adj(s14,x13) ^ sum-nn(e84,x13) ^ that(e83,x13,e59) ^ whq(e59,e60,e61) ^ imp(e61,e62,e82) ^ that(e82,x23,e34) ^ wait-nn(e81,x27) ^ until-in(e80,x27,x29) ^ subset-of(e79,x32,x30) ^ subset-of(e78,x1,x30) ^ take-vb(e34,x27,x30,u77) ^ not(e63,e39) ^ give-vb(e41,x23,u75,u76) ^ because-in(e74,e41,e73) ^ drug-nn(e73,x48) ^ equal(e72,x48,x49) ^ powerful-adj(s50,x49) ^ as-rb(e71,s50) ^ equal(e70,x44,x48) ^ ready-adj(s37,e41) ^ or(e67,e68,e69) ^ cigaret-nn(e69,x38) ^ cocaine-nn(e68,x38) ^ as-in(e66,s37,x38) ^ reason-rel(e65,s37,x20) ^ be-vb(e39,x1,s37,u64) ^ person(e62,x23) ^ reason(e60,x20) ^ cost-vb(e17,x1,x13,x16) ^ person(e58,x1) ^ government-nn(e57,x29) ^ first-adj(s33,x32) ^ step-nn(e56,x32) ^ thing(e55,x1) ^ money-nn(e54,x44) ^ person(e53,x16) ^ !=(e83,e82) ^ !=(e87,e72,e70) ^ !=(e86,e61) ^ !=(e62,e58,e53) ^ !=(e79,e78) ^ S#DRUG(e73) ^ SS#DRUG%TYPE(x48,e73) ^ S#COST(e17) ^ SS#COST%TYPE(e17,e17) ^ R#COST-CAUSE(x1,e17) ^ R#COST-PATIENT(x13,e17) ^ TS#WEALTH(x44) ^ T#ECONOMIC-INEQUALITY(_96) ^ TSS#MONEY(x44,x44) ^ I#DRUG(e73) ^ I#DRUG%TYPE(x48,e73) ^ I#COST(e17) ^ I#COST%TYPE(e17,e17) ^ M#CAUSE-DRAIN-RESOURCES(e17) ^ M#THING-DRAINING(x1,e17) ^ M#CAUSE-NOT-FUNCTION(x48,e73) ^ M#CAUSE-BAD-JUDGEMENT(x48,e73)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,COST,TYPE,0.45\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,TYPE,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "imp(e58,e59,x21) ^ react-vb(x21,x20,u60,u61) ^ equal(e59,x3,x20) ^ thing(e57,x6) ^ astronomical-adj(e56,x5) ^ sum-nn(e55,x5) ^ person(e54,x3) ^ cost-vb(x4,x6,x5,x3) ^ thing(e53,x3) ^ whq(e26,e27,e28) ^ not(e28,e29) ^ imp(e29,e30,x12) ^ give-vb(x17,x8,u51,u52) ^ because-in(e50,x17,e49) ^ drug-nn(e49,x19) ^ powerful-adj(e48,x19) ^ as-rb(e47,x19) ^ equal(e46,x0,x19) ^ ready-adj(e45,x8,x17) ^ or(e42,e43,e44) ^ cigaret-nn(e44,x14) ^ cocaine-nn(e43,x14) ^ as-in(e41,x8,x14) ^ reason-rel(e40,x17,x7) ^ be-vb(x12,x3,x17,u39) ^ rel(e38,x12,x5) ^ wait-nn(e37,x10) ^ until-in(e36,x10,x2) ^ subset-of(e35,x1,x11) ^ thing(e34,x10) ^ subset-of(e33,x10,x11) ^ take-vb(x9,x10,x11,u32) ^ rel(e31,x9,x8) ^ person(e30,x8) ^ reason(e27,x7) ^ money-nn(e25,x0) ^ government-nn(e24,x2) ^ first-adj(e23,x1) ^ step-nn(e22,x1) ^ !=(e54,e30) ^ !=(e59,e46) ^ !=(e58,e29) ^ !=(e38,e31) ^ !=(e35,e33) ^ !=(e57,e53,e34) ^ S#COST(x4) ^ SS#COST%TYPE(x4,x4) ^ R#COST-CAUSE(x6,x4) ^ R#COST-PATIENT(x5,x4) ^ S#DRUG(e49) ^ SS#DRUG%TYPE(x19,e49) ^ TS#WEALTH(x0) ^ T#ECONOMIC-INEQUALITY(_96) ^ TSS#MONEY(x0,x0) ^ I#COST(x4) ^ I#COST%TYPE(x4,x4) ^ M#CAUSE-DRAIN-RESOURCES(x4) ^ M#THING-DRAINING(x6,x4) ^ I#DRUG(e49) ^ I#DRUG%TYPE(x19,e49) ^ M#CAUSE-NOT-FUNCTION(x19,e49) ^ M#CAUSE-BAD-JUDGEMENT(x19,e49)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,COST,TYPE,0.55\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
-                "source": "drug", 
-                "explanation": "CAUSE-NOT-FUNCTION[drug], CAUSE-BAD-JUDGEMENT[drug], CAUSE-OBSESSION[drug]", 
+                "source": "drug,person", 
+                "explanation": "CAUSE-NOT-FUNCTION[”,person,drug], CAUSE-BAD-JUDGEMENT[”,person,drug], CAUSE-OBSESSION[”,person,drug]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -1308,14 +1308,14 @@
         "isiDescription": "", 
         "sid": "70", 
         "sourceFrame": "DRUG", 
-        "isiAbductiveExplanation": "that(e37,x1,e9) ^ see-vb(e9,x1,x7,u36) ^ imp(e29,s17,e35) ^ money-nn(e35,x20) ^ of-in(e34,x16,x20) ^ equal(e33,x1,x16) ^ “-adj(s17,x16) ^ slave-nn(e32,x18) ^ of-in(e31,x16,x18) ^ ”-nn(e30,x16) ^ drug-nn(e28,x13) ^ of-in(e27,x12,x13) ^ addict-nn(e26,x12) ^ as-in(e25,e29,x12) ^ be-vb(e5,x1,e29,u24) ^ way-nn(e23,x1) ^ world-nn(e22,x7) ^ person(e21,x1) ^ !=(e34,e31,e27) ^ TS#WEALTH(x20) ^ T#ECONOMIC-INEQUALITY(_97) ^ TSS#MONEY(x20,x20) ^ S#DRUG(e28) ^ SS#DRUG%ADDICTION(x13,e28) ^ R#ADDICTED(x12) ^ S#DRUG(e28) ^ SS#DRUG%TYPE(x13,e28) ^ I#DRUG%ADDICTION(x13,e28) ^ I#DRUG(e28) ^ I#DRUG%TYPE(x13,e28) ^ M#CAUSE-NOT-FUNCTION(x13,e28) ^ M#CAUSE-BAD-JUDGEMENT(x13,e28) ^ M#CAUSE-OBSESSION(x13,e28) ^ M#CAUSE-NOT-FUNCTION(x13,e28) ^ M#CAUSE-BAD-JUDGEMENT(x13,e28)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,TYPE,0.55\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,ADDICTION,0.55\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "person(e29,x5) ^ imp(e21,e25,e28) ^ money-nn(e28,x10) ^ of-in(e27,x9,x10) ^ equal(e26,x5,x9) ^ “-adj(e25,x9) ^ slave-nn(e24,x8) ^ of-in(e23,x9,x8) ^ ”-nn(e22,x9) ^ drug-nn(e20,x5) ^ of-in(e19,x6,x5) ^ addict-nn(e18,x6) ^ as-in(e17,e21,x6) ^ be-vb(x3,x1,e29,u16) ^ see-vb(x2,x1,x0,u15) ^ rel(e14,x2,x1) ^ way-nn(e13,x1) ^ person(e12,x1) ^ world-nn(e11,x0) ^ !=(e29,e12) ^ !=(e27,e23,e19) ^ TS#WEALTH(x10) ^ T#ECONOMIC-INEQUALITY(_97) ^ TSS#MONEY(x10,x10) ^ S#DRUG(e20) ^ SS#DRUG%ADDICTION(x5,e20) ^ R#ADDICTED(x6) ^ S#DRUG(e20) ^ SS#DRUG%TYPE(x5,e20) ^ I#DRUG%ADDICTION(x5,e20) ^ I#DRUG(e20) ^ I#DRUG%TYPE(x5,e20) ^ M#CAUSE-NOT-FUNCTION(x5,e20) ^ M#CAUSE-BAD-JUDGEMENT(x5,e20) ^ M#CAUSE-OBSESSION(x5,e20) ^ M#CAUSE-NOT-FUNCTION(x5,e20) ^ M#CAUSE-BAD-JUDGEMENT(x5,e20)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,TYPE,0.85\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,ADDICTION,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
-                "source": "drug,most", 
-                "explanation": "CAUSE-BAD-JUDGEMENT[money,most,drug], CAUSE-NOT-FUNCTION[money,most,drug]", 
+                "source": "drug", 
+                "explanation": "CAUSE-BAD-JUDGEMENT[money,drug], CAUSE-NOT-FUNCTION[money,drug]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -1327,7 +1327,7 @@
         "isiDescription": "", 
         "sid": "71", 
         "sourceFrame": "DRUG", 
-        "isiAbductiveExplanation": "equal(e17,x1,x7) ^ money-nn(e15,x1) ^ nam(e16,x1) ^ america-nn(e13,x5) ^ loc(e14,x5) ^ of-in(e12,x7,x5) ^ most-rb(x7,u11) ^ powerful-adj(s8,x7) ^ drug-nn(e10,x7) ^ !=(e15,e16) ^ !=(e13,e14) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_98) ^ TSS#MONEY(x1,x1) ^ S#DRUG(e10) ^ SS#DRUG%TYPE(x7,e10) ^ I#DRUG(e10) ^ I#DRUG%TYPE(x7,e10) ^ M#CAUSE-NOT-FUNCTION(x7,e10) ^ M#CAUSE-BAD-JUDGEMENT(x7,e10)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,TYPE,0.95\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "equal(e12,x2,x0) ^ money-nn(e10,x2) ^ nam(e11,x2) ^ america-nn(e8,x1) ^ loc(e9,x1) ^ of-in(e7,x0,x1) ^ most-rb(e6,x0) ^ powerful-adj(e5,x0) ^ drug-nn(e4,x0) ^ !=(e10,e11) ^ !=(e8,e9) ^ TS#WEALTH(x2) ^ T#ECONOMIC-INEQUALITY(_98) ^ TSS#MONEY(x2,x2) ^ S#DRUG(e4) ^ SS#DRUG%TYPE(x0,e4) ^ I#DRUG(e4) ^ I#DRUG%TYPE(x0,e4) ^ M#CAUSE-NOT-FUNCTION(x0,e4) ^ M#CAUSE-BAD-JUDGEMENT(x0,e4)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,TYPE,0.95\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -1346,14 +1346,14 @@
         "isiDescription": "", 
         "sid": "72", 
         "sourceFrame": "DRUG", 
-        "isiAbductiveExplanation": "addiction-nn(e30,x4) ^ subset-of(e29,x6,x5) ^ subset-of(e28,x7,x5) ^ wealth-nn(e27,x6) ^ power-nn(e26,x7) ^ to-in(e25,x4,x5) ^ equal(e24,x4,x8) ^ will(e9,x8,e16,u23) ^ of-in(e22,x12,x14) ^ bring-vb(e16,x8,x12,x14) ^ down-rb(e21,e16) ^ equal(e20,x1,x4) ^ rest-nn(e19,x12) ^ way-nn(e18,x14) ^ person(e17,x14) ^ !=(e24,e20) ^ !=(e29,e28) ^ S#DRUG(e30) ^ SS#DRUG%ADDICTION(x4,e30) ^ TS#WEALTH(x6) ^ T#ECONOMIC-INEQUALITY(_99) ^ S#POWER(e26) ^ SS#POWER%TYPE(x7,e26) ^ I#DRUG(e30) ^ I#DRUG%ADDICTION(x4,e30) ^ I#POWER(e26) ^ I#POWER%TYPE(x7,e26) ^ M#CAUSE-NOT-FUNCTION(x4,e30) ^ M#CAUSE-BAD-JUDGEMENT(x4,e30) ^ M#CAUSE-OBSESSION(x4,e30) ^ M#PROVIDE-CONTROL(x7,e26)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,POWER,TYPE,0.75\nECONOMIC_INEQUALITY,WEALTH,WEALTH,DRUG,ADDICTION,0.75\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "there-vb(e23,x3) ^ addiction-nn(e22,x9) ^ subset-of(e21,x7,x8) ^ subset-of(e20,x5,x8) ^ wealth-nn(e19,x7) ^ power-nn(e18,x5) ^ to-in(e17,x9,x8) ^ equal(e16,x9,x6) ^ of-in(e15,x1,x0) ^ person(e14,x5) ^ bring-vb(x4,x6,x1,x5) ^ down-rb(e13,x4) ^ equal(e12,x3,x9) ^ rest-nn(e11,x1) ^ way-nn(e10,x0) ^ !=(e21,e20) ^ !=(e16,e12) ^ S#DRUG(e22) ^ SS#DRUG%ADDICTION(x9,e22) ^ TS#WEALTH(x7) ^ T#ECONOMIC-INEQUALITY(_99) ^ S#POWER(e18) ^ SS#POWER%TYPE(x5,e18) ^ I#DRUG(e22) ^ I#DRUG%ADDICTION(x9,e22) ^ I#POWER(e18) ^ I#POWER%TYPE(x5,e18) ^ M#CAUSE-NOT-FUNCTION(x9,e22) ^ M#CAUSE-BAD-JUDGEMENT(x9,e22) ^ M#CAUSE-OBSESSION(x9,e22) ^ M#PROVIDE-CONTROL(x5,e18)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,POWER,TYPE,0.75\nECONOMIC_INEQUALITY,WEALTH,WEALTH,DRUG,ADDICTION,0.75\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "drunk", 
-                "explanation": "", 
+                "explanation": "CAUSE-BAD-JUDGEMENT[drunk], CAUSE-NOT-FUNCTION[drunk]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -1365,14 +1365,14 @@
         "isiDescription": "", 
         "sid": "73", 
         "sourceFrame": "DRUG", 
-        "isiAbductiveExplanation": "quantity-nn(e37,x1) ^ drunk-nn(e36,x4) ^ subset-of(e35,x6,x5) ^ subset-of(e34,x7,x5) ^ money-nn(e33,x6) ^ neglectful-nn(e32,x7) ^ with-in(e31,x4,x5) ^ risk-nn(e30,x8) ^ of-in(e29,x4,x8) ^ rel(e28,x3,x4) ^ of-in(e27,x1,x3) ^ should(e9,x1,e12,u26) ^ send-vb(e12,u24,x1,u25) ^ long-adj(s17,x16) ^ time-nn(e23,x16) ^ ago-rb(x16,u22) ^ rehab-vb(e18,x15,x16,u21) ^ for-in(e20,e12,e18) ^ company-nn(e19,x3) ^ !=(e29,e27) ^ !=(e35,e34) ^ S#DRUG(e36) ^ SS#DRUG%EFFECT(x4,e36) ^ TS#WEALTH(x6) ^ T#ECONOMIC-INEQUALITY(_100) ^ TSS#MONEY(x6,x6) ^ I#DRUG(e36) ^ I#DRUG%EFFECT(x4,e36)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,EFFECT,0.75\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "quantity-nn(e28,x8) ^ drunk-nn(e27,x7) ^ subset-of(e26,x5,x6) ^ subset-of(e25,x4,x6) ^ money-nn(e24,x5) ^ neglectful-nn(e23,x4) ^ with-in(e22,x7,x6) ^ risk-nn(e21,x3) ^ of-in(e20,x7,x3) ^ rel(e19,x0,x7) ^ of-in(e18,x8,x0) ^ send-vb(x2,u16,x8,u17) ^ long-adj(e15,x10) ^ time-nn(e14,x10) ^ ago-rb(e13,x10) ^ rehab-vb(x9,x8,x10,u12) ^ company-nn(e11,x0) ^ !=(e26,e25) ^ !=(e20,e18) ^ S#DRUG(e27) ^ SS#DRUG%EFFECT(x7,e27) ^ TS#WEALTH(x5) ^ T#ECONOMIC-INEQUALITY(_100) ^ TSS#MONEY(x5,x5) ^ I#DRUG(e27) ^ I#DRUG%EFFECT(x7,e27) ^ M#CAUSE-NOT-FUNCTION(x7,e27) ^ M#CAUSE-BAD-JUDGEMENT(x7,e27)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,EFFECT,0.75\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
-                "source": "drunk", 
-                "explanation": "", 
+                "source": "price", 
+                "explanation": "THING-DESIRED[record], CAUSE-NEGATIVE-CONSEQUENCE-OF-DESIRED-THING[price]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -1380,18 +1380,18 @@
         ], 
         "targetFrame": "MONEY", 
         "targetConceptSubDomain": "WEALTH", 
-        "sourceConceptSubDomain": "EFFECT", 
+        "sourceConceptSubDomain": "TYPE", 
         "isiDescription": "", 
         "sid": "74", 
-        "sourceFrame": "DRUG", 
-        "isiAbductiveExplanation": "not(e32,e5) ^ secret-nn(e48,x4) ^ be-vb(e5,x1,e13,x4) ^ become-vb(e13,x10,s27,u47) ^ drunk-adj(s27,x10) ^ money-nn(e46,x15) ^ with-in(e45,e13,x15) ^ lately-rb(e44,e13) ^ major-adj(s17,x16) ^ auction-nn(e43,x16) ^ with-in(e42,e13,x16) ^ record-nn(e41,x19) ^ of-in(e40,x18,x19) ^ price-nn(e39,x18) ^ artist-nn(e38,x20) ^ equal(e37,x20,x21) ^ old-adj(s22,x21) ^ equal(e36,x20,x23) ^ new-adj(s24,x23) ^ for-in(e35,x18,x20) ^ raise-vb(e25,x16,x18,u34) ^ routinely-rb(e33,e25) ^ thing(e31,x1) ^ art-nn(e30,x11) ^ of-in(e29,x10,x11) ^ market-nn(e28,x10) ^ !=(e40,e29) ^ !=(e37,e36) ^ !=(e45,e42) ^ S#DRUG(s27) ^ SS#DRUG%EFFECT(s27,s27) ^ R#UNDER-INFLUENCE(x10) ^ TS#WEALTH(x15) ^ T#ECONOMIC-INEQUALITY(_101) ^ TSS#MONEY(x15,x15) ^ S#PRICE(e39) ^ SS#PRICE%TYPE(x18,e39) ^ R#PRICE-REWARD(x19,e39) ^ S#PRICE(e39) ^ SS#PRICE%TYPE(x18,e39) ^ S#PRICE(e39) ^ SS#PRICE%TYPE(x18,e39) ^ R#PRICE-REWARD(x19,e39) ^ I#DRUG(s27) ^ I#DRUG%EFFECT(s27,s27) ^ I#PRICE(e39) ^ I#PRICE%TYPE(x18,e39) ^ M#CAUSE-NEGATIVE-CONSEQUENCE-OF-DESIRED-THING(x18) ^ M#THING-DESIRED(x19,e39) ^ M#CAUSE-NEGATIVE-CONSEQUENCE-OF-DESIRED-THING(x18)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,EFFECT,0.75\nECONOMIC_INEQUALITY,WEALTH,MONEY,PRICE,TYPE,0.65\n%%END_CM_LIST"
+        "sourceFrame": "PRICE", 
+        "isiAbductiveExplanation": "not(e18,x4) ^ secret-nn(e37,x5) ^ be-vb(x4,x2,x13,x5) ^ become-vb(x13,x1,u35,u36) ^ drunk-adj(e34,x1) ^ money-nn(e33,x12) ^ with-in(e32,x13,x12) ^ lately-rb(e31,x13) ^ major-adj(e30,x11) ^ auction-nn(e29,x11) ^ with-in(e28,x13,x11) ^ record-nn(e27,x9) ^ of-in(e26,x10,x9) ^ price-nn(e25,x10) ^ artist-nn(e24,x8) ^ old-adj(e23,x8) ^ new-adj(e22,x8) ^ for-in(e21,x10,x8) ^ raise-vb(x7,x11,x10,u20) ^ routinely-rb(e19,x7) ^ neuter(e17,x2) ^ art-nn(e16,x0) ^ of-in(e15,x1,x0) ^ market-nn(e14,x1) ^ !=(e32,e28) ^ !=(e26,e15) ^ S#DRUG(e34) ^ SS#DRUG%EFFECT(e34,e34) ^ R#UNDER-INFLUENCE(x1) ^ TS#WEALTH(x12) ^ T#ECONOMIC-INEQUALITY(_101) ^ TSS#MONEY(x12,x12) ^ S#PRICE(e25) ^ SS#PRICE%TYPE(x10,e25) ^ R#PRICE-REWARD(x9,e25) ^ S#PRICE(e25) ^ SS#PRICE%TYPE(x10,e25) ^ S#PRICE(e25) ^ SS#PRICE%TYPE(x10,e25) ^ R#PRICE-REWARD(x9,e25) ^ I#DRUG(e34) ^ I#DRUG%EFFECT(e34,e34) ^ I#PRICE(e25) ^ I#PRICE%TYPE(x10,e25) ^ M#CAUSE-NEGATIVE-CONSEQUENCE-OF-DESIRED-THING(x10) ^ M#THING-DESIRED(x9,e25) ^ M#CAUSE-NOT-FUNCTION(e34,e34) ^ M#CAUSE-BAD-JUDGEMENT(e34,e34) ^ M#CAUSE-NEGATIVE-CONSEQUENCE-OF-DESIRED-THING(x10)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,DRUG,EFFECT,0.65\nECONOMIC_INEQUALITY,WEALTH,MONEY,PRICE,TYPE,0.65\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "body", 
-                "explanation": "LARGE-AMOUNT[body]", 
+                "explanation": "LARGE-AMOUNT[body], THING-LARGE-AMOUNT[wealth]", 
                 "sourceInLm": true, 
                 "target": "wealth", 
                 "targetInLm": true
@@ -1403,14 +1403,14 @@
         "isiDescription": "", 
         "sid": "75", 
         "sourceFrame": "BODY", 
-        "isiAbductiveExplanation": "die-vb(e5,x3,u61,u62) ^ t-1763XXXX(e60,x6) ^ in-in(e59,e5,x6) ^ whq(e49,e50,e15) ^ wealth-nn(e58,x22) ^ of-in(e57,x20,x22) ^ in-in(e56,x20,x24) ^ equal(e55,x11,x20) ^ say-vb(e14,u54,x11,e58) ^ inherit-vb(e15,x8,x11,u53) ^ t-1763XXXX(e52,x16) ^ in-in(e51,e15,x16) ^ thing(e50,x11) ^ male(e48,x1) ^ of-in(e47,x3,x1) ^ uncle-nn(e46,x3) ^ john-nn(e44,x9) ^ per(e45,x9) ^ equal(e43,x8,x9) ^ hancock-nn(e41,x8) ^ per(e42,x8) ^ body-nn(e40,x20) ^ imp(e35,e37,e39) ^ greatest-adj(e39,x20,x27) ^ not(e37,e38) ^ equal(e38,x20,x27) ^ body-nn(e36,x27) ^ new-nn(e33,x25) ^ loc(e34,x25) ^ equal(e32,x24,x25) ^ england-nn(e30,x24) ^ loc(e31,x24) ^ !=(e33,e34) ^ !=(e30,e31) ^ !=(e40,e36) ^ !=(e59,e51) ^ !=(e60,e52) ^ !=(e44,e45) ^ !=(e41,e42) ^ !=(e34,e31) ^ !=(e60,e52) ^ !=(e57,e47) ^ !=(e55,e43,e38,e32) ^ !=(e45,e42) ^ !=(e59,e56,e51) ^ TS#WEALTH(x22) ^ T#ECONOMIC-INEQUALITY(_102) ^ S#BODY(e40) ^ SS#BODY%TYPE(x20,e40) ^ S#BODY(e36) ^ SS#BODY%TYPE(x27,e36) ^ I#BODY(e40) ^ I#BODY%TYPE(x20,e40) ^ I#BODY(e36) ^ I#BODY%TYPE(x27,e36) ^ M#LARGE-AMOUNT(x20,e40) ^ M#LARGE-AMOUNT(x27,e36)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,BODY,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "die-vb(x7,x3,u40,u41) ^ t-1763XXXX(e39,x6) ^ in-in(e38,x7,x6) ^ whq(e28,e29,x10) ^ wealth-nn(e37,x14) ^ of-in(e36,x1,x14) ^ in-in(e35,x1,x0) ^ equal(e34,x8,x1) ^ say-vb(x11,x8,e37,u33) ^ inherit-vb(x10,x2,x8,u32) ^ t-1763XXXX(e31,x9) ^ in-in(e30,x10,x9) ^ thing(e29,x8) ^ male(e27,x4) ^ of-in(e26,x3,x4) ^ uncle-nn(e25,x3) ^ john-hancock-nn(e23,x2) ^ per(e24,x2) ^ body-nn(e22,x1) ^ imp(e17,e19,e21) ^ greatest-adj(e21,x1,x5) ^ not(e19,e20) ^ equal(e20,x1,x5) ^ body-nn(e18,x5) ^ new-england-nn(e15,x0) ^ loc(e16,x0) ^ !=(e15,e16) ^ !=(e15,e16) ^ !=(e22,e18) ^ !=(e38,e30) ^ !=(e39,e31) ^ !=(e23,e24) ^ !=(e23,e24) ^ !=(e39,e31) ^ !=(e36,e26) ^ !=(e34,e20) ^ !=(e38,e35,e30) ^ TS#WEALTH(x14) ^ T#ECONOMIC-INEQUALITY(_102) ^ S#BODY(e22) ^ SS#BODY%TYPE(x1,e22) ^ S#BODY(e18) ^ SS#BODY%TYPE(x5,e18) ^ I#BODY(e22) ^ I#BODY%TYPE(x1,e22) ^ I#BODY(e18) ^ I#BODY%TYPE(x5,e18) ^ R#BODY-COMPARISON(x14,e22) ^ M#LARGE-AMOUNT(x1,e22) ^ M#THING-LARGE-AMOUNT(x14,e22)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,BODY,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "body", 
-                "explanation": "LARGE-AMOUNT[body]", 
+                "explanation": "LARGE-AMOUNT[body], THING-LARGE-AMOUNT[money]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -1422,7 +1422,7 @@
         "isiDescription": "", 
         "sid": "76", 
         "sourceFrame": "BODY", 
-        "isiAbductiveExplanation": "subset-of(e41,x3,x1) ^ not(e39,e40) ^ subset-of(e40,x14,x1) ^ essential-adj(s5,x4) ^ claim-nn(e38,x4) ^ have-vb(e6,x1,x4,u37) ^ money-nn(e36,x10) ^ of-in(e35,x8,x10) ^ equal(e34,x8,x11) ^ generate-vb(e12,u32,x11,u33) ^ imp(e30,s19,_G13540) ^ human-adj(s19,x18) ^ activity-nn(e31,x18) ^ to-in(e29,e6,x8) ^ topic(x8,u28) ^ people-nn(e27,x3) ^ fat-nn(e25,x15) ^ org(e26,x15) ^ equal(e24,x14,x15) ^ cats-nn(e22,x14) ^ org(e23,x14) ^ enormous-adj(s9,x8) ^ body-nn(e21,x8) ^ !=(e22,e23) ^ !=(e25,e26) ^ !=(e34,e24) ^ !=(e26,e23) ^ !=(e41,e40) ^ TS#WEALTH(x10) ^ T#ECONOMIC-INEQUALITY(_103) ^ TSS#MONEY(x10,x10) ^ S#BODY(e21) ^ SS#BODY%TYPE(x8,e21) ^ I#BODY(e21) ^ I#BODY%TYPE(x8,e21) ^ M#LARGE-AMOUNT(x8,e21)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BODY,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "subset-of(e28,x2,x7) ^ not(e26,e27) ^ subset-of(e27,x0,x7) ^ essential-adj(e25,x6) ^ claim-nn(e24,x6) ^ have-vb(x5,x7,x6,u23) ^ money-nn(e22,x4) ^ of-in(e21,x1,x4) ^ generate-vb(x3,u19,x1,u20) ^ imp(e16,e18,_G20769) ^ human-adj(e18,x8) ^ activity-nn(e17,x8) ^ to-in(e15,x5,x1) ^ topic(e14,x1) ^ people-nn(e13,x2) ^ fat-cats-nn(e11,x0) ^ org(e12,x0) ^ enormous-adj(e10,x1) ^ body-nn(e9,x1) ^ !=(e11,e12) ^ !=(e11,e12) ^ !=(e28,e27) ^ TS#WEALTH(x4) ^ T#ECONOMIC-INEQUALITY(_103) ^ TSS#MONEY(x4,x4) ^ S#BODY(e9) ^ SS#BODY%TYPE(x1,e9) ^ I#BODY(e9) ^ I#BODY%TYPE(x1,e9) ^ R#BODY-COMPARISON(x4,e9) ^ M#LARGE-AMOUNT(x1,e9) ^ M#THING-LARGE-AMOUNT(x4,e9)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BODY,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
@@ -1441,14 +1441,14 @@
         "isiDescription": "", 
         "sid": "77", 
         "sourceFrame": "BODY", 
-        "isiAbductiveExplanation": "thing(e22,x1) ^ event-nn(e5,x1,x3,u21) ^ fall-vb(e7,x6,u19,u20) ^ money-nn(e18,x11) ^ of-in(e17,x9,x11) ^ into-in(e16,e7,x9) ^ from-in(e15,e5,e7) ^ yourself(s4,x3) ^ prevent-nn(e13,x3) ^ nam(e14,x3) ^ evil-adj(s10,x9) ^ hand-nn(e12,x9) ^ !=(e5,e13,e14) ^ TS#WEALTH(x11) ^ T#ECONOMIC-INEQUALITY(_104) ^ TSS#MONEY(x11,x11) ^ S#BODY(e12) ^ SS#BODY%PART(x9,e12) ^ R#HAND(x9) ^ R#CONTROLLER(x11) ^ I#BODY(e12) ^ I#BODY%PART(x9,e12) ^ M#CAUSE-LOSE-SELF-CONTROL(x9,e12) ^ M#THING-GAINING-CONTROL(x11,e12)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BODY,PART,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "thing(e19,x6) ^ event-nn(x5,x6,x1,u18) ^ from-in(e17,x5,x4) ^ fall-vb(x3,x4,u15,u16) ^ money-nn(e14,x2) ^ of-in(e13,x0,x2) ^ into-in(e12,x3,x0) ^ yourself(e11,x1) ^ prevent-nn(e9,x1) ^ nam(e10,x1) ^ evil-adj(e8,x0) ^ hand-nn(e7,x0) ^ !=(x5,e9,e10) ^ TS#WEALTH(x2) ^ T#ECONOMIC-INEQUALITY(_104) ^ TSS#MONEY(x2,x2) ^ S#BODY(e7) ^ SS#BODY%PART(x0,e7) ^ R#HAND(x0,e7) ^ R#CONTROLLER(x2,e7) ^ I#BODY(e7) ^ I#BODY%PART(x0,e7) ^ M#CAUSE-LOSE-SELF-CONTROL(x0,e7) ^ M#THING-GAINING-CONTROL(x2,e7)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BODY,PART,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "hand", 
-                "explanation": "THING-GAINING-CONTROL[x14], CAUSE-LOSE-SELF-CONTROL[hand]", 
+                "explanation": "THING-GAINING-CONTROL[x15], CAUSE-LOSE-SELF-CONTROL[hand]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -1460,14 +1460,14 @@
         "isiDescription": "", 
         "sid": "78", 
         "sourceFrame": "BODY", 
-        "isiAbductiveExplanation": "show-vb(e4,x1,x2,u75) ^ will(e8,x6,e11,u74) ^ fall-vb(e11,x6,u72,u73) ^ subset-of(e71,x15,x14) ^ subset-of(e70,x16,x14) ^ money-nn(e69,x15) ^ subset-of(e68,x17,x16) ^ subset-of(e67,x18,x16) ^ greed-nn(e66,x17) ^ power-nn(e65,x18) ^ of-in(e64,x13,x14) ^ into-in(e63,e11,x13) ^ get-vb(e19,x6,s22,u62) ^ involve-vb(s22,x6) ^ illegal-adj(s25,x24) ^ activity-nn(e61,x24) ^ location(e60,x28) ^ equal(e59,x24,x29) ^ get-vb(e30,x29,u57,u58) ^ in-in(e56,e30,x28) ^ want-vb(e31,x13,u54,u55) ^ in-in(e53,e31,x28) ^ subset-of(e52,x24,x23) ^ whq(e48,e49,e35) ^ want-vb(e35,x13,x33,u51) ^ subset-of(e50,x33,x23) ^ thing(e49,x33) ^ in-in(e47,s22,x23) ^ great-nn(e45,x2) ^ org(e46,x2) ^ equal(e44,x1,x2) ^ gatsby-nn(e42,x1) ^ org(e43,x1) ^ person(e41,x2) ^ way-nn(e40,x7) ^ of-in(e39,x6,x7) ^ people-nn(e38,x6) ^ hand-nn(e37,x13) ^ thing(e36,x13) ^ !=(e42,e43) ^ !=(e45,e46) ^ !=(e64,e39) ^ !=(e59,e44) ^ !=(e49,e36) ^ !=(e56,e53,e47) ^ !=(e46,e43) ^ !=(e71,e70,e68,e67,e52,e50) ^ TS#WEALTH(x15) ^ T#ECONOMIC-INEQUALITY(_105) ^ TSS#MONEY(x15,x15) ^ S#POWER(e65) ^ SS#POWER%TYPE(x18,e65) ^ S#BODY(e37) ^ SS#BODY%PART(x13,e37) ^ R#HAND(x13) ^ R#CONTROLLER(x14) ^ S#BODY(e37) ^ SS#BODY%PART(x13,e37) ^ R#HAND(x13) ^ I#POWER(e65) ^ I#POWER%TYPE(x18,e65) ^ I#BODY%PART(x13,e37) ^ I#BODY(e37) ^ I#BODY%PART(x13,e37) ^ M#PROVIDE-CONTROL(x18,e65) ^ M#CAUSE-LOSE-SELF-CONTROL(x13,e37) ^ M#THING-GAINING-CONTROL(x14,e37) ^ =(u54,x33) ^ =(x29,x6) ^ =(e31,e35) ^ =(u51,u55) ^ =(e30,e19) ^ =(u57,s22) ^ =(u58,u62)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BODY,PART,0.75\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.65\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "fall-vb(x16,x0,u61,u62) ^ subset-of(e60,x14,x15) ^ subset-of(e59,x13,x15) ^ money-nn(e58,x14) ^ subset-of(e57,x12,x13) ^ subset-of(e56,x11,x13) ^ greed-nn(e55,x12) ^ power-nn(e54,x11) ^ of-in(e53,x3,x15) ^ into-in(e52,x16,x3) ^ get-vb(x10,x0,u50,u51) ^ involve-vb(e49,x0) ^ illegal-adj(e48,x6) ^ activity-nn(e47,x6) ^ location(e46,x20) ^ get-vb(x21,x6,u44,u45) ^ in-in(e43,x21,x20) ^ thing(e42,x20) ^ want-vb(x19,x20,u40,u41) ^ in-in(e39,x19,x20) ^ subset-of(e38,x6,x8) ^ whq(e34,e35,x18) ^ want-vb(x18,x0,x17,u37) ^ subset-of(e36,x17,x8) ^ thing(e35,x17) ^ in-in(e33,e49,x8) ^ person(e32,x6) ^ show-vb(x5,x1,x6,u31) ^ way-nn(e30,x4) ^ of-in(e29,x0,x4) ^ hand-nn(e28,x3) ^ way-nn(e27,x2) ^ of-in(e26,x0,x2) ^ people-nn(e25,x0) ^ thing(e24,x0) ^ great-gatsby-nn(e22,x1) ^ org(e23,x1) ^ !=(e30,e27) ^ !=(e22,e23) ^ !=(e22,e23) ^ !=(e25,e25) ^ !=(e53,e29,e26) ^ !=(e42,e35,e24) ^ !=(e43,e39,e33) ^ !=(e60,e59,e57,e56,e38,e36) ^ TS#WEALTH(x14) ^ T#ECONOMIC-INEQUALITY(_105) ^ TSS#MONEY(x14,x14) ^ S#POWER(e54) ^ SS#POWER%TYPE(x11,e54) ^ S#BODY(e28) ^ SS#BODY%PART(x3,e28) ^ R#HAND(x3,e28) ^ R#CONTROLLER(x15,e28) ^ I#POWER(e54) ^ I#POWER%TYPE(x11,e54) ^ I#BODY(e28) ^ I#BODY%PART(x3,e28) ^ M#CAUSE-LOSE-SELF-CONTROL(x3,e28) ^ M#THING-GAINING-CONTROL(x15,e28) ^ M#PROVIDE-CONTROL(x11,e54) ^ =(x0,x20,x6) ^ =(x18,x19) ^ =(u45,u51) ^ =(x17,u40) ^ =(x10,x21) ^ =(u44,u50) ^ =(u37,u41)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BODY,PART,0.75\nECONOMIC_INEQUALITY,WEALTH,MONEY,POWER,TYPE,0.65\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "body", 
-                "explanation": "LARGE-AMOUNT[body]", 
+                "explanation": "LARGE-AMOUNT[body], THING-LARGE-AMOUNT[wealth]", 
                 "sourceInLm": true, 
                 "target": "wealth", 
                 "targetInLm": true
@@ -1479,14 +1479,14 @@
         "isiDescription": "", 
         "sid": "79", 
         "sourceFrame": "BODY", 
-        "isiAbductiveExplanation": "great-adj(s2,x1) ^ of-in(e63,x3,x1) ^ material-nn(e62,x4) ^ of-in(e61,x3,x4) ^ aspect-nn(e60,x3) ^ in-in(e59,s2,x3) ^ incomparably-rb(e58,s2) ^ of-in(e57,x5,x1) ^ body-nn(e56,x5) ^ wealth-nn(e55,x1) ^ of-in(e54,x5,x1) ^ thing(e53,x1) ^ of-in(e52,x10,x1) ^ energy-nn(e51,x10) ^ of-in(e50,x7,x10) ^ in-in(e49,x5,x7) ^ equal(e48,x12,x13) ^ conceive-vb(e14,u46,x13,u47) ^ equal(e45,x12,x15) ^ build-vb(e16,x17,x15,u44) ^ up-rb(e43,e16) ^ genius-nn(e42,x18) ^ individual-adj(s20,x19) ^ man-nn(e41,x19) ^ of-in(e40,x18,x19) ^ subset-of(e39,x18,x17) ^ group-nn(e38,x24) ^ man-nn(e37,x25) ^ of-in(e36,x24,x25) ^ of-in(e35,x22,x24) ^ subset-of(e34,x22,x17) ^ in-in(e33,x5,x12) ^ in-in(e32,s2,x5) ^ subset-of(e31,x8,x7) ^ subset-of(e30,x9,x7) ^ diversity-nn(e29,x8) ^ sweep-nn(e28,x9) ^ industry-nn(e27,x12) ^ limitless-adj(s23,x22) ^ enterprise-nn(e26,x22) ^ !=(e63,e61,e57,e54,e52,e50,e40,e36,e35) ^ !=(e48,e45) ^ !=(e59,e49,e33,e32) ^ !=(e39,e34,e31,e30) ^ S#BODY(e56) ^ SS#BODY%TYPE(x5,e56) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_106) ^ I#BODY(e56) ^ I#BODY%TYPE(x5,e56) ^ M#LARGE-AMOUNT(x5,e56) ^ =(x25,x19) ^ =(e37,e41)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,BODY,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "great-adj(e61,x6) ^ of-in(e60,x19,x6) ^ material-nn(e59,x18) ^ of-in(e58,x19,x18) ^ aspect-nn(e57,x19) ^ in-in(e56,e61,x19) ^ incomparably-rb(e55,e61) ^ of-in(e54,x16,x6) ^ body-nn(e53,x16) ^ wealth-nn(e52,x15) ^ of-in(e51,x16,x15) ^ neuter(e50,x6) ^ of-in(e49,x5,x2) ^ in-in(e48,x16,x5) ^ equal(e47,x1,x14) ^ conceive-vb(x13,u45,x14,u46) ^ equal(e44,x1,x12) ^ build-vb(x11,x10,x12,u43) ^ up-rb(e42,x11) ^ genius-nn(e41,x9) ^ individual-adj(e40,x8) ^ man-nn(e39,x8) ^ of-in(e38,x9,x8) ^ subset-of(e37,x9,x10) ^ group-nn(e36,x7) ^ man-nn(e35,x6) ^ of-in(e34,x7,x6) ^ of-in(e33,x0,x7) ^ subset-of(e32,x0,x10) ^ in-in(e31,x16,x1) ^ in-in(e30,e61,x16) ^ subset-of(e29,x4,x5) ^ subset-of(e28,x3,x5) ^ diversity-nn(e27,x4) ^ sweep-nn(e26,x3) ^ of-in(e25,x2,x6) ^ energy-nn(e24,x2) ^ industry-nn(e23,x1) ^ limitless-adj(e22,x0) ^ enterprise-nn(e21,x0) ^ !=(e37,e32,e29,e28) ^ !=(e60,e58,e54,e51,e49,e38,e34,e33,e25) ^ !=(e47,e44) ^ !=(e56,e48,e31,e30) ^ S#BODY(e53) ^ SS#BODY%TYPE(x16,e53) ^ TS#WEALTH(x15) ^ T#ECONOMIC-INEQUALITY(_106) ^ I#BODY(e53) ^ I#BODY%TYPE(x16,e53) ^ R#BODY-COMPARISON(x15,e53) ^ M#LARGE-AMOUNT(x16,e53) ^ M#THING-LARGE-AMOUNT(x15,e53) ^ =(e35,e39) ^ =(x6,x8)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,BODY,TYPE,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
-                "source": "head,rear", 
-                "explanation": "", 
+                "source": "head", 
+                "explanation": "INDICATE-IMPORTANCE[head]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -1498,14 +1498,14 @@
         "isiDescription": "", 
         "sid": "80", 
         "sourceFrame": "BODY", 
-        "isiAbductiveExplanation": "money-nn(e51,x2) ^ that(e50,x2,e10) ^ of-in(e49,x5,x1) ^ quote-in(s6,x5) ^ head-nn(e48,x5) ^ thing(e47,x1) ^ rear-adj(x5,u46) ^ imp(e43,e44,e45) ^ subset-of(e45,x13,x8) ^ situation-nn(e44,x13) ^ equal(e42,x1,x9) ^ not(e37,e16) ^ can(e16,x9,e19,u41) ^ have-vb(e19,x9,x1,u40) ^ for-in(e39,e19,x21) ^ all(e38,e19) ^ subset-of(e36,x1,x8) ^ in-in(e35,x5,x8) ^ will(e10,x5,e23,u34) ^ ruin-vb(e23,x5,x1,u33) ^ imp(e29,e30,x25) ^ else-rb(x25,u32) ^ for-in(e31,e23,x25) ^ person(e30,x25) ^ let-vb(e4,x1,x2,u28) ^ group(e27,x21) ^ !=(e39,e31) ^ !=(e43,e29) ^ !=(e45,e36) ^ TS#WEALTH(x2) ^ T#ECONOMIC-INEQUALITY(_107) ^ TSS#MONEY(x2,x2) ^ S#BODY(e48) ^ SS#BODY%PART(x5,e48) ^ R#HEAD(x5) ^ I#BODY(e48) ^ I#BODY%PART(x5,e48)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BODY,PART,0.75\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "thing(e37,x6) ^ money-nn(e36,x3) ^ let-vb(x5,x6,x3,u35) ^ of-in(e34,x1,x3) ^ quote-in(e33,x1) ^ head-nn(e32,x1) ^ rear-adj(e31,x1) ^ imp(e28,e29,e30) ^ subset-of(e30,x10,x4) ^ situation-nn(e29,x10) ^ thing(e27,x1) ^ neuter(e26,x1) ^ not(e21,x8) ^ equal(e25,x1,x9) ^ have-vb(x8,x9,x1,u24) ^ for-in(e23,x8,x0) ^ all(e22,x8) ^ subset-of(e20,x1,x4) ^ in-in(e19,x1,x4) ^ neuter(e18,x3) ^ ruin-vb(x2,x1,x3,u17) ^ imp(e13,e14,e16) ^ else-rb(e16,x7) ^ for-in(e15,x2,x7) ^ person(e14,x7) ^ rel(e12,x2,x3) ^ group(e11,x0) ^ !=(e23,e15) ^ !=(e26,e18) ^ !=(e37,e27) ^ !=(e28,e13) ^ !=(e30,e20) ^ TS#WEALTH(x3) ^ T#ECONOMIC-INEQUALITY(_107) ^ TSS#MONEY(x3,x3) ^ S#BODY(e32) ^ SS#BODY%PART(x1,e32) ^ R#HEAD(x1,e32) ^ I#BODY(e32) ^ I#BODY%PART(x1,e32) ^ M#INDICATE-IMPORTANCE(x1,e32)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BODY,PART,0.85\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "hand", 
-                "explanation": "THING-GAINING-CONTROL[x4], CAUSE-LOSE-SELF-CONTROL[hand]", 
+                "explanation": "THING-GAINING-CONTROL[x12], CAUSE-LOSE-SELF-CONTROL[hand]", 
                 "sourceInLm": true, 
                 "target": "wealth", 
                 "targetInLm": true
@@ -1517,14 +1517,14 @@
         "isiDescription": "", 
         "sid": "82", 
         "sourceFrame": "BODY", 
-        "isiAbductiveExplanation": "subset-of(e55,x5,x4) ^ subset-of(e54,x6,x4) ^ wealth-nn(e53,x5) ^ power-nn(e52,x6) ^ of-in(e51,x1,x4) ^ represent-vb(e7,u49,x1,u50) ^ animism-nn(e48,x9) ^ of-in(e47,x8,x9) ^ —-nn(e46,x10) ^ of-in(e45,x8,x10) ^ engine-nn(e44,x8) ^ through-in(e43,e7,x8) ^ gun-nn(e42,x11) ^ supernatural-adj(s18,x17) ^ agency-nn(e41,x17) ^ of-in(e40,x14,x17) ^ equal(e39,x14,x19) ^ control-nn(e38,x20) ^ subset-of(e37,x23,x21) ^ subset-of(e36,x25,x21) ^ of-in(e35,x20,x21) ^ dispute-vb(e26,x19,x20,u34) ^ equal(e33,x11,x14) ^ hidden-adj(s2,x1) ^ hand-nn(e32,x1) ^ physical-adj(s15,x14) ^ presence-nn(e31,x14) ^ land-nn(e30,x23) ^ thing(e29,x1) ^ of-in(e28,x25,x1) ^ people-nn(e27,x25) ^ !=(e55,e54,e37,e36) ^ !=(e51,e47,e45,e40,e35,e28) ^ !=(e39,e33) ^ TS#WEALTH(x5) ^ T#ECONOMIC-INEQUALITY(_108) ^ S#POWER(e52) ^ SS#POWER%TYPE(x6,e52) ^ S#BODY(e32) ^ SS#BODY%PART(x1,e32) ^ R#HAND(x1) ^ R#CONTROLLER(x4) ^ S#BODY(e32) ^ SS#BODY%PART(x1,e32) ^ R#HAND(x1) ^ R#CONTROLLER(x4) ^ S#BODY(e32) ^ SS#BODY%PART(x1,e32) ^ R#HAND(x1) ^ R#CONTROLLER(x4) ^ S#BODY(e32) ^ SS#BODY%PART(x1,e32) ^ R#HAND(x1) ^ R#CONTROLLER(x4) ^ S#BODY(e32) ^ SS#BODY%PART(x1,e32) ^ R#HAND(x1) ^ R#CONTROLLER(x4) ^ S#BODY(e32) ^ SS#BODY%PART(x1,e32) ^ R#HAND(x1) ^ S#BODY(e32) ^ SS#BODY%PART(x1,e32) ^ R#HAND(x1) ^ R#CONTROLLER(x4) ^ I#POWER(e52) ^ I#POWER%TYPE(x6,e52) ^ I#BODY%PART(x1,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ I#BODY%PART(x1,e32) ^ I#BODY%PART(x1,e32) ^ I#BODY%PART(x1,e32) ^ I#BODY%PART(x1,e32) ^ I#BODY(e32) ^ I#BODY%PART(x1,e32) ^ I#BODY%PART(x1,e32) ^ M#PROVIDE-CONTROL(x6,e52) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32) ^ M#CAUSE-LOSE-SELF-CONTROL(x1,e32) ^ M#THING-GAINING-CONTROL(x4,e32)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,POWER,TYPE,0.75\nECONOMIC_INEQUALITY,WEALTH,WEALTH,BODY,PART,0.75\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "subset-of(e49,x11,x12) ^ subset-of(e48,x10,x12) ^ wealth-nn(e47,x11) ^ power-nn(e46,x10) ^ of-in(e45,x2,x12) ^ represent-vb(x9,u43,x2,u44) ^ animism-nn(e42,x7) ^ of-in(e41,x8,x7) ^ —-nn(e40,x6) ^ of-in(e39,x8,x6) ^ engine-nn(e38,x8) ^ through-in(e37,x9,x8) ^ gun-nn(e36,x5) ^ of-in(e35,x3,x14) ^ people-nn(e34,x3) ^ supernatural-adj(e33,x17) ^ agency-nn(e32,x17) ^ of-in(e31,x1,x17) ^ equal(e30,x1,x16) ^ control-nn(e29,x14) ^ subset-of(e28,x0,x15) ^ neuter(e27,x14) ^ subset-of(e26,x3,x15) ^ of-in(e25,x14,x15) ^ dispute-vb(x13,x16,x14,u24) ^ equal(e23,x5,x1) ^ hidden-adj(e22,x2) ^ hand-nn(e21,x2) ^ physical-adj(e20,x1) ^ presence-nn(e19,x1) ^ land-nn(e18,x0) ^ !=(e49,e48,e28,e26) ^ !=(e45,e41,e39,e35,e31,e25) ^ !=(e30,e23) ^ TS#WEALTH(x11) ^ T#ECONOMIC-INEQUALITY(_108) ^ S#POWER(e46) ^ SS#POWER%TYPE(x10,e46) ^ S#BODY(e21) ^ SS#BODY%PART(x2,e21) ^ R#HAND(x2,e21) ^ R#CONTROLLER(x12,e21) ^ I#POWER(e46) ^ I#POWER%TYPE(x10,e46) ^ I#BODY(e21) ^ I#BODY%PART(x2,e21) ^ M#CAUSE-LOSE-SELF-CONTROL(x2,e21) ^ M#THING-GAINING-CONTROL(x12,e21) ^ M#PROVIDE-CONTROL(x10,e46)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,WEALTH,POWER,TYPE,0.75\nECONOMIC_INEQUALITY,WEALTH,WEALTH,BODY,PART,0.75\n%%END_CM_LIST"
     }, 
     {
         "targetConceptDomain": "ECONOMIC_INEQUALITY", 
         "annotationMappings": [
             {
                 "source": "body", 
-                "explanation": "LARGE-AMOUNT[body]", 
+                "explanation": "LARGE-AMOUNT[money,body], THING-LARGE-AMOUNT[value]", 
                 "sourceInLm": true, 
                 "target": "money", 
                 "targetInLm": true
@@ -1536,6 +1536,6 @@
         "isiDescription": "", 
         "sid": "83", 
         "sourceFrame": "BODY", 
-        "isiAbductiveExplanation": "money-nn(e15,x1) ^ value-nn(e14,x8) ^ of-in(e13,x4,x8) ^ equal(e12,x1,x4) ^ “-adj(s5,x4) ^ body-nn(e11,x6) ^ of-in(e10,x4,x6) ^ ”-nn(e9,x4) ^ !=(e13,e10) ^ TS#WEALTH(x1) ^ T#ECONOMIC-INEQUALITY(_109) ^ TSS#MONEY(x1,x1) ^ S#BODY(e11) ^ SS#BODY%TYPE(x6,e11) ^ I#BODY(e11) ^ I#BODY%TYPE(x6,e11) ^ M#LARGE-AMOUNT(x6,e11)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BODY,TYPE,0.85\n%%END_CM_LIST"
+        "isiAbductiveExplanation": "money-nn(e8,x2) ^ value-nn(e7,x3) ^ of-in(e6,x0,x3) ^ equal(e5,x2,x0) ^ body-nn(e4,x0) ^ TS#WEALTH(x2) ^ T#ECONOMIC-INEQUALITY(_109) ^ TSS#MONEY(x2,x2) ^ S#BODY(e4) ^ SS#BODY%TYPE(x0,e4) ^ I#BODY(e4) ^ I#BODY%TYPE(x0,e4) ^ R#BODY-COMPARISON(x3,e4) ^ M#LARGE-AMOUNT(x0,e4) ^ M#THING-LARGE-AMOUNT(x3,e4)\n%%BEGIN_CM_LIST\nECONOMIC_INEQUALITY,WEALTH,MONEY,BODY,TYPE,0.95\n%%END_CM_LIST"
     }
 ]
