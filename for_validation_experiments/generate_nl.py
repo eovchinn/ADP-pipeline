@@ -7,6 +7,7 @@ import re
 
 grow_set = set([u'THING-INCREASING', u'CAUSE-INCREASE-AMOUNT'])
 game_set = set([u'GAME-STAKES', u'CAUSE-BINARY-OUTCOME'])
+flow_set = set([u'LIQUID-THING', u'LIQUID-MOVE-FREELY'])
 play_set = set([u'CAUSE-ATTEMPT-POSITIVE-OUTCOME', u'CAUSE-BINARY-OUTCOME'])
 eradicate_set =set([u'THING-NOT-EXISTING', u'CAUSE-NOT-EXIST', u'THING-CAUSING-NOT-EXIST'])
 no_agent_eradicate_set=set([u'THING-NOT-EXISTING', u'CAUSE-NOT-EXIST'])
@@ -19,6 +20,8 @@ crime_set = set([u'AGAINST-SOCIETY-ACTION'])
 resource_set = set([u'CAUSE-FUNCTION']) 
 terror_set = set([u'CAUSE-NOT-FUNCTION']) 
 disease_set = set([u'CAUSE-NOT-FUNCTION','THING-NOT-FUNCTIONING']) 
+drug_set = set([u'CAUSE-NOT-FUNCTION','CAUSE-BAD-JUDGEMENT']) 
+addiction_set = set([u'CAUSE-NOT-FUNCTION','CAUSE-BAD-JUDGEMENT','CAUSE-OBSESSION']) 
 medicine_set = set([u'CAUSE-PROBLEM-NOT-EXIST']) 
 treatment_set = set([u'CAUSE-PROBLEM-NOT-EXIST','CAUSE-NOT-FUNCTION']) 
 blood_set = set([u'CAUSE-FUNCTION', u'THING-FUNCTIONING'])
@@ -42,6 +45,10 @@ def lm_category(log):
         lm_type = "cause-lose-control"
     elif re.search(u"^CAUSE-NOT-EXIST",log):
         lm_type = "cause-not-exist"
+    elif re.search(u"^CAUSE-BAD-JUDGEMENT",log):
+        lm_type = "cause-bad-judgement"
+    elif re.search(u"^CAUSE-OBSESSION",log):
+        lm_type = "cause-obsession"
     elif re.search(u"^CAUSE-PROBLEM-NOT-EXIST",log):
         lm_type = "cause-problem-not-exist"        
     elif re.search(u"^CAUSE-NOT-FUNCTION",log):
@@ -122,6 +129,11 @@ def lm_category(log):
     elif re.search(u"^PREPARATION-FOR-OUTCOME",log):
         lm_type = "preparation"
 
+    elif re.search(u"^LIQUID-MOVE-FREELY",log):
+        lm_type = "liquid-move"
+    elif re.search(u"^LIQUID-THING",log):
+        lm_type = "liquid"
+
     elif re.search(u"^LARGE-AMOUNT",log):
         lm_type = "imply-large-amount"
     elif re.search(u"^INDICATE-IMPORTANCE",log):
@@ -136,6 +148,8 @@ def lm_category(log):
 
 def prune_lm_list(lm_list,lm_type,target_lms,source_lms):
     source_lms.discard(u'person')
+    if len(target_lms) > 1:
+        target_lms.discard(u'person')
     if lm_type == "cause-neg-consequence":
         for dup in set(lm_list).difference(source_lms):
             lm_list.remove(dup)
@@ -157,7 +171,6 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
     unexpressed = re.compile(u"x\d+")
     for e in exp:
         e = e.strip().rstrip("]")
-        #print e
         logic = e.split("[")[0]
         lm_type = lm_category(logic)
 	if len(lm_type)==0: continue
@@ -341,6 +354,24 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
 	if lang=='EN':      
         	print('"{}" implies that money has become an important factor'.format(lms['important']))
 
+    #DRUG
+    if logic_set == drug_set:
+        print s_id
+	if lang=='EN':      
+        	print('"{}" implies that some entity has reduced functionality due to "{}"'.format(lms['cause-bad-judgement'],",".join(target_lms)))
+
+    #ADDICTION
+    if logic_set == addiction_set:
+        print s_id
+	if lang=='EN':      
+        	print('"{}" implies that some entity has reduced functionality and is preoccupied with "{}"'.format(lms['cause-obsession'],",".join(target_lms)))
+
+    #FLOW
+    if logic_set == flow_set:
+        print s_id
+	if lang=='EN':      
+        	print('"{}" implies that "{}" is available for transfer and use'.format(lms['liquid-move'],lms['liquid']))
+
     #GAME
     if logic_set == game_set:
         print s_id
@@ -356,7 +387,7 @@ def generate_language(data,lang):
 	if len(mappings["explanation"])>0:
             exp_list = mappings["explanation"].split("],")
             source_lms = set(mappings["source"].split(","))
-            target_lms = mappings["target"].split(",")
+            target_lms = set(mappings["target"].split(","))
             target_sub = jline["targetConceptSubDomain"]
             sent_id = jline["sid"]
             process_explanation(exp_list,sent_id,lang,target_sub,target_lms,source_lms)

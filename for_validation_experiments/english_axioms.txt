@@ -193,12 +193,15 @@
 
 ;WATER
 (B (name river) (=> (^(S#WATER e0 :0.45)(SS#WATER%TYPE x e0 :0.45)) (river-nn e0 x)))
-(B (name flow) (=> (^(S#WATER e0 :0.45)(SS#WATER%TYPE x e0 :0.45)) (flow-nn e0 x)))
+
 (B (name ocean) (=> (^(S#WATER e0 :0.45)(SS#WATER%TYPE x e0 :0.45)) (ocean-nn e0 x)))
 (B (water-of) (=>(R#WATER-COMPARISON y e0 :0.9)(^(I#WATER%TYPE x e0)(of-in e1 x y))))
 
 ; MOVEMENT
 (B (name flow) (=>(^(S#WATER e0 :0.3)(SS#WATER%MOVEMENT e0 e0 :0.3)(R#STREAMING x e0 :0.3))(flow-vb e0 x y z)))
+
+(B (name flow) (=> (^(S#WATER e0 :0.45)(SS#WATER%MOVEMENT x e0 :0.45)) (flow-nn e0 x)))
+(B (flow-of) (=>(R#STREAMING y e0 :0.9)(^(I#WATER%MOVEMENT x e0)(of-in e1 x y))))
 
 (B (name watermap)(=>(I#WATER x :0.9)(S#WATER x)))
 (B (name water-typemap)(=>(I#WATER%TYPE x e0 :0.9)(SS#WATER%TYPE x e0)))
