@@ -170,7 +170,7 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
                 word = "some entity"
 
             lms[lm_type] = word
-    logic_set = set(logic_list)    
+    logic_set = set(logic_list)  
     if logic_set == grow_set:
         print s_id
         if lang=='EN':
@@ -261,11 +261,15 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
         print s_id
 	if lang=='EN':      
         	print('"{}" implies that money causes "{}" to function'.format(lms['cause-function'],lms['patient-function']))  
+	else:
+		print lms['cause-function'] + u' означает, что деньги позволяют функционировать ' + lms['patient-function']
     #POWER
     if logic_set == rule_set:
         print s_id
 	if lang=='EN':      
-        	print('"{}" implies that money provides control'.format(lms['give-control']))  
+        	print('"{}" implies that money provides control'.format(lms['give-control'])) 
+	else:
+		print lms['give-control'] + u' означает, что деньги дают контроль '
     #COST
     if logic_set == cost_set:
         print s_id
@@ -342,6 +346,8 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
         print s_id
 	if lang=='EN':      
         	print('"{}" implies that there are two possible outcomes, one positive and one negative, associated with the idea of "{}"'.format(lms['cause-binary-outcome'],lms['game-stakes']))
+	else:
+		print  lms['cause-binary-outcome'] + u' означает, что есть два возможных исхода: положительный и отрицательный, связанные с идеей' + lms['game-stakes'] 
         
 
 def generate_language(data,lang):
