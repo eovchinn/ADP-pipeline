@@ -102,7 +102,8 @@
 (B (name body_of_water)(=> (^(M#LARGE-AMOUNT x e0 :0.45)(M#THING-LARGE-AMOUNT y e0 :0.45)) (^(I#WATER%TYPE x e0)(R#WATER-COMPARISON y e0))))
 
 ; MOVEMENT
-(B (name water-movement) (=>(^(M#LIQUID-MOVE-FREELY e0 :0.3)(M#LIQUID-THING x :0.3))  (^(I#WATER%MOVEMENT e0 e0)(R#STREAMING x e0))))
+(B (name water-movement) (=>(^(M#LIQUID-MOVE-FREELY e0 :0.3)(M#LIQUID-THING x :0.3))  (^(I#WATER%MOVEMENT e0 y)(R#STREAMING x e0))))
+(B (name water-movement2) (=>(^(M#LIQUID-MOVE-FREELY x :0.3)(M#LIQUID-THING y :0.3))  (^(I#WATER%MOVEMENT x e0)(R#STREAMING y e0))))
 
 
 ;BODY

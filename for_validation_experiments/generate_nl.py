@@ -7,15 +7,22 @@ import re
 
 grow_set = set([u'THING-INCREASING', u'CAUSE-INCREASE-AMOUNT'])
 game_set = set([u'GAME-STAKES', u'CAUSE-BINARY-OUTCOME'])
+no_stakes_game_set = set([u'CAUSE-BINARY-OUTCOME'])
+play_game_set = set([u'CAUSE-BINARY-OUTCOME',u'ATTEMPT-AGENT',u'CAUSE-ATTEMPT-POSITIVE-OUTCOME'])
+play_set = set([u'ATTEMPT-AGENT',u'CAUSE-ATTEMPT-POSITIVE-OUTCOME'])
 flow_set = set([u'LIQUID-THING', u'LIQUID-MOVE-FREELY'])
-play_set = set([u'CAUSE-ATTEMPT-POSITIVE-OUTCOME', u'CAUSE-BINARY-OUTCOME'])
+no_liquid_flow_set = set([u'LIQUID-MOVE-FREELY'])
+no_agent_play_game_set = set([u'CAUSE-ATTEMPT-POSITIVE-OUTCOME', u'CAUSE-BINARY-OUTCOME'])
 eradicate_set =set([u'THING-NOT-EXISTING', u'CAUSE-NOT-EXIST', u'THING-CAUSING-NOT-EXIST'])
 no_agent_eradicate_set=set([u'THING-NOT-EXISTING', u'CAUSE-NOT-EXIST'])
+taste_set =set([u'THING-BEING-EXPERIENCED', u'CAUSE-EXPERIENCE', u'THING-CAUSING-EXPERIENCE'])
+no_agent_taste_set=set([u'THING-BEING-EXPERIENCED', u'CAUSE-EXPERIENCE'])
 exit_abyss_set = set([u'THING-THAT-LIMITED-OPTIONS', u'CAUSE-INCREASE-OPTIONS', u'THING-THAT-STOPPED-FUNCTION', u'CAUSE-RESUME-FUNCTION'])
 deep_abyss_set = set([u'CAUSE-SEVERE-NOT-FUNCTION',u'CAUSE-SEVERE-REDUCE-OPTIONS'])
 harvest_crop_seed_set = set([u'CAUSE-OUTCOME-OF-ACTION', u'CAUSE-REALIZE-OUTCOME', u'PREPARATION-FOR-OUTCOME', u'THING-REALIZING',u'OUTCOME-OF-ACTION']) 
 crop_outcome_set = set([u'CAUSE-OUTCOME-OF-ACTION',u'OUTCOME-OF-ACTION']) 
 crop_set = set([u'CAUSE-OUTCOME-OF-ACTION']) 
+victory_set = set([u'ACHIEVEMENT-OF-GOAL']) 
 crime_set = set([u'AGAINST-SOCIETY-ACTION']) 
 resource_set = set([u'CAUSE-FUNCTION']) 
 terror_set = set([u'CAUSE-NOT-FUNCTION']) 
@@ -49,6 +56,8 @@ def lm_category(log):
         lm_type = "cause-bad-judgement"
     elif re.search(u"^CAUSE-OBSESSION",log):
         lm_type = "cause-obsession"
+    elif re.search(u"^CAUSE-EXPERIENCE",log):
+        lm_type = "cause-experience"
     elif re.search(u"^CAUSE-PROBLEM-NOT-EXIST",log):
         lm_type = "cause-problem-not-exist"        
     elif re.search(u"^CAUSE-NOT-FUNCTION",log):
@@ -67,6 +76,8 @@ def lm_category(log):
         lm_type = "cause-drain-resources"          
     elif re.search(u"^CAUSE-BINARY-OUTCOME",log):
         lm_type = "cause-binary-outcome"          
+    elif re.search(u"^CAUSE-ATTEMPT-POSITIVE-OUTCOME",log):
+        lm_type = "cause-attempt-outcome"          
 
 
     elif re.search(u"^CAUSE-REALIZE-OUTCOME",log):
@@ -93,6 +104,8 @@ def lm_category(log):
 
     elif re.search(u"^THING-CAUSING-NOT-EXIST",log):
         lm_type = "agent-not-exist"
+    elif re.search(u"^THING-CAUSING-EXPERIENCE",log):
+        lm_type = "agent-experience"
     elif re.search(u"^THING-THAT-LIMITED-OPTIONS",log):
         lm_type = "agent-limit-options" 
     elif re.search(u"^THING-THAT-STOPPED-FUNCTION",log):
@@ -103,11 +116,15 @@ def lm_category(log):
         lm_type = "agent-realize"
     elif re.search(u"^THING-DRAINING",log):
         lm_type = "agent-drain"
+    elif re.search(u"^ATTEMPT-AGENT",log):
+        lm_type = "agent-attempt"
 
 
         
     elif re.search(u"^EXPERIENCER",log):
         lm_type = "patient-experience"        
+    elif re.search(u"^THING-BEING-EXPERIENCED",log):
+        lm_type = "thing-experience"
     elif re.search(u"^THING-INCREASING",log):
         lm_type = "patient-increase"
     elif re.search(u"^THING-FUNCTIONING",log):
@@ -133,6 +150,9 @@ def lm_category(log):
         lm_type = "liquid-move"
     elif re.search(u"^LIQUID-THING",log):
         lm_type = "liquid"
+
+    elif re.search(u"^ACHIEVEMENT-OF-GOAL",log):
+        lm_type = "acheivement"
 
     elif re.search(u"^LARGE-AMOUNT",log):
         lm_type = "imply-large-amount"
@@ -160,6 +180,9 @@ def prune_lm_list(lm_list,lm_type,target_lms,source_lms):
         for dup in set(lm_list).difference(source_lms):
             lm_list.remove(dup)
     if lm_type == "give-control":
+        for dup in set(lm_list).difference(source_lms):
+            lm_list.remove(dup)
+    if lm_type == "cause-binary-outcome":
         for dup in set(lm_list).difference(source_lms):
             lm_list.remove(dup)
 
@@ -318,6 +341,12 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
 	if lang=='EN':      
         	print('"{}" implies that poverty is a deliberate act that harms society'.format(lms['against-society-action']))
 
+    #VICTORY
+    if logic_set == victory_set:
+        print s_id
+	if lang=='EN':      
+        	print('"{}" implies that some entity has acheived a goal'.format(lms['acheivement']))
+
     #BODY
     if logic_set == body_set:
         print s_id
@@ -372,6 +401,24 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
 	if lang=='EN':      
         	print('"{}" implies that "{}" is available for transfer and use'.format(lms['liquid-move'],lms['liquid']))
 
+    #FLOW-NO-LIQUID
+    if logic_set == no_liquid_flow_set:
+        print s_id
+	if lang=='EN':      
+        	print('"{}" implies that some entity is available for transfer and use'.format(lms['liquid-move']))
+
+    #TASTE
+    if logic_set == taste_set:
+        print s_id
+	if lang=='EN':      
+        	print('"{}" implies that "{}" is experiencing "{}"'.format(lms['cause-experience'],lms['agent-experience'],lms['thing-experience']))
+
+    #NO-AGENT-TASTE
+    if logic_set == no_agent_taste_set:
+        print s_id
+	if lang=='EN':      
+        	print('"{}" implies that some entity is experiencing "{}"'.format(lms['cause-experience'],lms['thing-experience']))
+
     #GAME
     if logic_set == game_set:
         print s_id
@@ -380,6 +427,24 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
 	else:
 		print  lms['cause-binary-outcome'] + u' означает, что есть два возможных исхода: положительный и отрицательный, связанные с идеей' + lms['game-stakes'] 
         
+
+    #GAME
+    if logic_set == no_stakes_game_set:
+        print s_id
+	if lang=='EN':      
+        	print('"{}" implies that there are two possible outcomes, one positive and one negative'.format(lms['cause-binary-outcome']))
+
+    #PLAY-GAME
+    if logic_set == play_game_set:
+        print s_id
+	if lang=='EN':      
+        	print('"{}" implies that there are two possible outcomes, one positive and one negative; "{}" implies that "{}" is attempting to achieve a positive outcome'.format(lms['cause-binary-outcome'],lms['cause-attempt-outcome'],lms['agent-attempt']))
+
+    #PLAY
+    if logic_set == play_set:
+        print s_id
+	if lang=='EN':      
+        	print('"{}" implies that "{}" is attempting to achieve a positive outcome'.format(lms['cause-attempt-outcome'],lms['agent-attempt']))
 
 def generate_language(data,lang):
     for jline in data:
