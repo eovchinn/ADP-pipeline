@@ -200,8 +200,6 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
 
         lm_list = e.split("[")[1].rstrip("]").split(",")
         logic_list.append(logic)
-	print s_id 
-	print logic_list
         prune_lm_list(lm_list,lm_type,target_lms,source_lms)
         for word in lm_list:
             if unexpressed.search(word):
@@ -442,18 +440,24 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
         print s_id
 	if lang=='EN':      
         	print('"{}" implies that there are two possible outcomes, one positive and one negative'.format(lms['cause-binary-outcome']))
+	else:
+		print  lms['cause-binary-outcome'] + u' означает, что есть два возможных исхода: положительный и отрицательный'
 
     #PLAY-GAME
     if logic_set == play_game_set:
         print s_id
 	if lang=='EN':      
         	print('"{}" implies that there are two possible outcomes, one positive and one negative; "{}" implies that "{}" is attempting to achieve a positive outcome'.format(lms['cause-binary-outcome'],lms['cause-attempt-outcome'],lms['agent-attempt']))
+	else:
+		print  lms['cause-binary-outcome'] + u' означает, что есть два возможных исхода: положительный и отрицательный; ' + lms['cause-attempt-outcome'] + u' означает, что ' + lms['agent-attempt'] +  u' старается достичь положительного исхода'
 
     #PLAY
     if logic_set == play_set:
         print s_id
 	if lang=='EN':      
         	print('"{}" implies that "{}" is attempting to achieve a positive outcome'.format(lms['cause-attempt-outcome'],lms['agent-attempt']))
+	else:
+		print  lms['cause-attempt-outcome'] + u' означает, что ' + lms['agent-attempt'] +  u' старается достичь положительного исхода'
 
 def generate_language(data,lang):
     for jline in data:
