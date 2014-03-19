@@ -200,6 +200,8 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
 
         lm_list = e.split("[")[1].rstrip("]").split(",")
         logic_list.append(logic)
+	print s_id 
+	print logic_list
         prune_lm_list(lm_list,lm_type,target_lms,source_lms)
         for word in lm_list:
             if unexpressed.search(word):
@@ -207,6 +209,7 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
 
             lms[lm_type] = word
     logic_set = set(logic_list)  
+    #print logic_set
     if logic_set == grow_set:
         print s_id
         if lang=='EN':
@@ -352,6 +355,8 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
         print s_id
 	if lang=='EN':      
         	print('"{}" implies that there is a large amount of "{}"'.format(lms['imply-large-amount'],lms['thing-large-amount']))
+	else:
+		print lms['imply-large-amount'] + u' означает что есть большое количество ' + lms['thing-large-amount']
 
     #HAND
     if logic_set == hand_set:
@@ -400,12 +405,16 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
         print s_id
 	if lang=='EN':      
         	print('"{}" implies that "{}" is available for transfer and use'.format(lms['liquid-move'],lms['liquid']))
+	else:
+		print lms['liquid-move'] + u' означает что ' + lms['liquid'] + u' может перемещаться и использоваться'
 
     #FLOW-NO-LIQUID
     if logic_set == no_liquid_flow_set:
         print s_id
 	if lang=='EN':      
         	print('"{}" implies that some entity is available for transfer and use'.format(lms['liquid-move']))
+	else:
+		print lms['liquid-move'] + u' означает что некий объект может перемещаться и использоваться'
 
     #TASTE
     if logic_set == taste_set:
