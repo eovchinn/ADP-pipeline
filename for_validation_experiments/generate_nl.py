@@ -207,6 +207,7 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
 
             lms[lm_type] = word
     logic_set = set(logic_list)  
+    #print logic_set
     if logic_set == grow_set:
         print s_id
         if lang=='EN':
@@ -352,6 +353,8 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
         print s_id
 	if lang=='EN':      
         	print('"{}" implies that there is a large amount of "{}"'.format(lms['imply-large-amount'],lms['thing-large-amount']))
+	else:
+		print lms['imply-large-amount'] + u' означает что есть большое количество ' + lms['thing-large-amount']
 
     #HAND
     if logic_set == hand_set:
@@ -400,12 +403,16 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
         print s_id
 	if lang=='EN':      
         	print('"{}" implies that "{}" is available for transfer and use'.format(lms['liquid-move'],lms['liquid']))
+	else:
+		print lms['liquid-move'] + u' означает что ' + lms['liquid'] + u' может перемещаться и использоваться'
 
     #FLOW-NO-LIQUID
     if logic_set == no_liquid_flow_set:
         print s_id
 	if lang=='EN':      
         	print('"{}" implies that some entity is available for transfer and use'.format(lms['liquid-move']))
+	else:
+		print lms['liquid-move'] + u' означает что некий объект может перемещаться и использоваться'
 
     #TASTE
     if logic_set == taste_set:
@@ -433,18 +440,24 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
         print s_id
 	if lang=='EN':      
         	print('"{}" implies that there are two possible outcomes, one positive and one negative'.format(lms['cause-binary-outcome']))
+	else:
+		print  lms['cause-binary-outcome'] + u' означает, что есть два возможных исхода: положительный и отрицательный'
 
     #PLAY-GAME
     if logic_set == play_game_set:
         print s_id
 	if lang=='EN':      
         	print('"{}" implies that there are two possible outcomes, one positive and one negative; "{}" implies that "{}" is attempting to achieve a positive outcome'.format(lms['cause-binary-outcome'],lms['cause-attempt-outcome'],lms['agent-attempt']))
+	else:
+		print  lms['cause-binary-outcome'] + u' означает, что есть два возможных исхода: положительный и отрицательный; ' + lms['cause-attempt-outcome'] + u' означает, что ' + lms['agent-attempt'] +  u' старается достичь положительного исхода'
 
     #PLAY
     if logic_set == play_set:
         print s_id
 	if lang=='EN':      
         	print('"{}" implies that "{}" is attempting to achieve a positive outcome'.format(lms['cause-attempt-outcome'],lms['agent-attempt']))
+	else:
+		print  lms['cause-attempt-outcome'] + u' означает, что ' + lms['agent-attempt'] +  u' старается достичь положительного исхода'
 
 def generate_language(data,lang):
     for jline in data:
