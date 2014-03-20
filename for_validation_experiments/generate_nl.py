@@ -321,7 +321,7 @@ def process_explanation(exp,s_id,lang,target_sub,target_lms,source_lms):
     if logic_set == disease_set:
         print s_id
 	if lang=='EN':      
-        	print('"{}" implies that poverty is causing "{}" not to function'.format(lms['cause-not-function'],lms['patient-not-function']))  
+        	print('"{}" implies that "{}" is causing "{}" not to function'.format(lms['cause-not-function'],",".join(target_lms),lms['patient-not-function']))  
 
     #MEDICINE
     if logic_set == medicine_set:
