@@ -143,3 +143,25 @@
 (B (name play)(=> (^(M#CAUSE-ATTEMPT-POSITIVE-OUTCOME x e0 :0.9)) (^(I#GAME%ACTIONS x e0))))
 
 (B (name win)(=> (^(M#CAUSE-ATTAIN-POSITIVE-OUTCOME x e0 :0.3)(M#WIN-AGENT y e0 :0.3)) (^(I#GAME%OUTCOMES x e0)(R#PLAYER y e0))))
+
+;FEAR 
+;(B (name fear) (=> (M#CAUSE-NOT-FUNCTION x :0.9) (I#FEAR%TYPE x e0)))
+(B (name fear) (=> (^(M#CAUSE-NOT-FUNCTION x :0.45)(M#INDICATE-DANGER x :0.45)) (I#FEAR%TYPE x e0)))
+
+;DEATH
+(B (name death) (=> (M#CAUSE-NOT-FUNCTION x :0.9) (I#DEATH%TYPE x e0)))
+
+;PAIN
+(B (name pain) (=> (^(M#CAUSE-NOT-FUNCTION x :0.45)(M#INDICATE-DISEASE x :0.45)) (I#DISEASE%SYMPTOMS x e0)))
+
+;DESPAIR
+(B (name despair) (=> (M#CAUSE-LOSE-HOPE-OF-IMPROVEMENT x :0.9) (I#DESPAIR%TYPE x e0)))
+
+;FREEDOM
+(B (name freedom) (=> (M#ALLOW-INDEPENDENT-FUNCTION x :0.9) (I#CONFINEMENT-EXIT x e0)))
+(B (name freedom2) (=> (^(M#ALLOW-INDEPENDENT-FUNCTION e0 u :0.1)(M#INDEPENDENT-AGENT x e0 :0.1)) (^(I#CONFINEMENT-EXIT e0 u)(R#ESCAPE-AGENT x e0))))
+
+;GOD
+(B (name god) (=> (M#MOST-IMPORTANT x :0.9) (I#A-GOD%TYPE x e0)))
+(B (name worship) (=> (^(M#CONSIDER-MOST-IMPORTANT e0 :0.45)(M#CONSIDERING-AGENT x :0.45)) (^(I#VENERATION e0 e0)(R#WORSHIP-AGENT))))
+(B (name god) (=> (M#PLACE-OF-IMPORTANCE x :0.9) (I#VENERATION x e0)))
