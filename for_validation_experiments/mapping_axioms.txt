@@ -170,3 +170,11 @@
 (B (name freedom) (=> (^(M#WIDELY-AVAILABLE x e0 :0.45)(M#PHYSICAL-OBJECT x e0 :0.45)) (I#WARE%TYPE x e0)))
 
 (B (name buy) (=> (^(M#ALLOW-WIDE-AVAILABILITY e0 :0.45)) (I#WARE%BUY e0 u)))
+
+;GLORY
+(B (name glory) (=> (M#HIGHLY-DESIRABLE x :0.9) (I#GLORY%TYPE x e0)))
+
+
+;PATH
+(B (name path) (=> (M#ALLOW-ACCESS-TO x :0.9) (I#PATH%TYPE x e0)))
+(B (name path) (=> (^(M#ALLOW-ACCESS-TO x :0.45)(M#DESIRABLE-THING y :0.45)) (^(I#PATH%TYPE x e0)(R#PATH%DESTINATION y e0))))
