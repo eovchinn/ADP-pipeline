@@ -1,7 +1,7 @@
-Metaphor-ADP
+Abduction-based Discource Processing System
 ============
 
-This is a repository of the ISI metaphor project team. Here we store all the resources and tools constituting 
+In this repository, we store all the resources and tools constituting 
 our Natural Language Understanding system based on Abductive Reasoning implemented for 4 languages:
 
 - English
@@ -60,5 +60,20 @@ git clone https://github.com/metaphor-adp/Metaphor-ADP
 
 **Contact**
 
-- Katya Ovchinnikova (e.ovchinnikova@gmail.com)
+- Katya Ovchinnikova (e.ovchinnikova@gmail.com, www.ovchinnikova.me)
 
+---
+
+**Publications**
+
+Inoue, N., E. Ovchinnikova, K. Inui and J. R. Hobbs (2014). Weighted Abduction for Discourse Processing Based on Integer Linear Programming. In Sukthankar, G., Goldman, R. P., Geib, S., Pynadath, D. V., Hung, H. B. (eds.) : Plan, Activity, and Intent Recognition, pp. 33-55. [Link]
+
+Ovchinnikova, E., Israel, R., Wertheim, S., Zaytsev, V., Montazeri, N, and Hobbs, J. (2014). Abductive Inference for Interpretation of Metaphors. In Proc. of ACL 2014 Workshop on Metaphor in NLP. Baltimore, MD., to appear. 
+
+Ovchinnikova, E., N. Montazeri, T. Alexandrov, J. R. Hobbs, M. C. McCord and R. Mulkar-Mehta (2013). Abductive Reasoning with a Large Knowledge Base for Discourse Processing. In Hunt, H., Bos, J. and Pulman, S. (eds.) : Computing Meaning, vol. 4, pp. 104-124. [PDF]
+
+Ovchinnikova, E. (2012). Integration of World Knowledge for Natural Language Understanding, Atlantis Press, Springer. 
+
+Inoue, N., E. Ovchinnikova, K. Inui, and J. R. Hobbs (2012). Coreference Resolution with ILP-based Weighted Abduction. In Proceedings of COLING 2012, pp.1291-1308. [PDF]
+
+Ovchinnikova, E., N. Montazeri, T. Alexandrov, J. R. Hobbs, M. C. McCord and R. Mulkar-Mehta (2011). Abductive Reasoning with a Large Knowledge Base for Discourse Processing. In Proceedings the 9th International Conference on Computational Semantics (IWCS'11), pp. 225-234. [Link]
