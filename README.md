@@ -66,14 +66,14 @@ git clone https://github.com/metaphor-adp/Metaphor-ADP
 
 **Publications**
 
-Inoue, N., E. Ovchinnikova, K. Inui and J. R. Hobbs (2014). Weighted Abduction for Discourse Processing Based on Integer Linear Programming. In Sukthankar, G., Goldman, R. P., Geib, S., Pynadath, D. V., Hung, H. B. (eds.) : Plan, Activity, and Intent Recognition, pp. 33-55. [Link]
+Inoue, N., E. Ovchinnikova, K. Inui and J. R. Hobbs (2014). Weighted Abduction for Discourse Processing Based on Integer Linear Programming. In Sukthankar, G., Goldman, R. P., Geib, S., Pynadath, D. V., Hung, H. B. (eds.) : Plan, Activity, and Intent Recognition, pp. 33-55. [[Link]](http://store.elsevier.com/Plan-Activity-and-Intent-Recognition/isbn-9780123985323/)
 
 Ovchinnikova, E., Israel, R., Wertheim, S., Zaytsev, V., Montazeri, N, and Hobbs, J. (2014). Abductive Inference for Interpretation of Metaphors. In Proc. of ACL 2014 Workshop on Metaphor in NLP. Baltimore, MD., to appear. 
 
-Ovchinnikova, E., N. Montazeri, T. Alexandrov, J. R. Hobbs, M. C. McCord and R. Mulkar-Mehta (2013). Abductive Reasoning with a Large Knowledge Base for Discourse Processing. In Hunt, H., Bos, J. and Pulman, S. (eds.) : Computing Meaning, vol. 4, pp. 104-124. [PDF]
+Ovchinnikova, E., N. Montazeri, T. Alexandrov, J. R. Hobbs, M. C. McCord and R. Mulkar-Mehta (2013). Abductive Reasoning with a Large Knowledge Base for Discourse Processing. In Hunt, H., Bos, J. and Pulman, S. (eds.) : Computing Meaning, vol. 4, pp. 104-124. [[PDF]](http://ovchinnikova.me/papers/IWCS-bookchap-final3.pdf)
 
-Ovchinnikova, E. (2012). Integration of World Knowledge for Natural Language Understanding, Atlantis Press, Springer. 
+Ovchinnikova, E. (2012). Integration of World Knowledge for Natural Language Understanding, Atlantis Press, Springer.[[Link]](http://www.springer.com/computer/ai/book/978-94-91216-52-7)
 
-Inoue, N., E. Ovchinnikova, K. Inui, and J. R. Hobbs (2012). Coreference Resolution with ILP-based Weighted Abduction. In Proceedings of COLING 2012, pp.1291-1308. [PDF]
+Inoue, N., E. Ovchinnikova, K. Inui, and J. R. Hobbs (2012). Coreference Resolution with ILP-based Weighted Abduction. In Proceedings of COLING 2012, pp.1291-1308. [[PDF]](http://ovchinnikova.me/papers/coling2012_final.pdf)
 
-Ovchinnikova, E., N. Montazeri, T. Alexandrov, J. R. Hobbs, M. C. McCord and R. Mulkar-Mehta (2011). Abductive Reasoning with a Large Knowledge Base for Discourse Processing. In Proceedings the 9th International Conference on Computational Semantics (IWCS'11), pp. 225-234. [Link]
+Ovchinnikova, E., N. Montazeri, T. Alexandrov, J. R. Hobbs, M. C. McCord and R. Mulkar-Mehta (2011). Abductive Reasoning with a Large Knowledge Base for Discourse Processing. In Proceedings the 9th International Conference on Computational Semantics (IWCS'11), pp. 225-234. [[Link]](http://www.aclweb.org/anthology/W/W11/W11-0124.pdf)
