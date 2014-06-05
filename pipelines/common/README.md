@@ -36,8 +36,8 @@ optional arguments:
 
 **COMPONENTS**
 
-* [English semantic parsing pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/English)
-* [Spanish semantic parsing pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Spanish)
-* [Russian semantic parsing pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Russian)
-* [Farsi semantic parsing pipeline](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Farsi)
+* [English semantic parsing pipeline](https://github.com/eovchinn/ADP-pipeline/tree/master/pipelines/English)
+* [Spanish semantic parsing pipeline](https://github.com/eovchinn/ADP-pipeline/tree/master/pipelines/Spanish)
+* [Russian semantic parsing pipeline](https://github.com/eovchinn/ADP-pipeline/tree/master/pipelines/Russian)
+* [Farsi semantic parsing pipeline](https://github.com/eovchinn/ADP-pipeline/tree/master/pipelines/Farsi)
 * [Henry abductive reasoner](https://github.com/naoya-i/henry-n700)
