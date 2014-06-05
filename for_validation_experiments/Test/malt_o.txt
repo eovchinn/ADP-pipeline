@@ -1,4 +1,0 @@
-1	.	.	S	S	SENT	0	ROOT	_	_
-
-1	{{{power1}}}!!!	<unknown>	S	S	SENT	0	ROOT	_	_
-

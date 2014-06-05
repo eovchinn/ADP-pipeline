@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<henry-output parameter="-m infer -d 3 -t 2 -O proofgraph,statistics -T 60 -e /Users/raisrael/ISI/adp_home/henry-n700/models/h93.py /Users/raisrael/ISI/Metaphor-ADP/for_validation_experiments/Test/russian_wealth_sents_meta.par -b russian_compiled.da">
-</henry-output>
