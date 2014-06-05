@@ -9,10 +9,10 @@ and scripts for running the whole abduction-based discrourse processing.
 **Semantic parsing pipelines**
 
 Semantic parsing pipelines are implemented for 4 languages:
-- [English](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/English)
-- [Spanish](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Spanish)
-- [Russian](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Russian)
-- [Farsi](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/pipelines/Farsi)
+- [English](https://github.com/eovchinn/ADP-pipeline/tree/master/pipelines/English)
+- [Spanish](https://github.com/eovchinn/ADP-pipeline/tree/master/pipelines/Spanish)
+- [Russian](https://github.com/eovchinn/ADP-pipeline/tree/master/pipelines/Russian)
+- [Farsi](https://github.com/eovchinn/ADP-pipeline/tree/master/pipelines/Farsi)
 
 The pipelines take unrelated sentences or coherent text as input.
 
@@ -40,7 +40,7 @@ The pipelines output logical forms for the input text fragments. A logical form
 is a conjunction of propositions, which have generalized eventuality arguments that can be used for 
 showing relationships among the propositions. We use logical representations of natural language texts as 
 described in [[Hobbs, 1995]](http://www.isi.edu/~hobbs/op-acl85.pdf). The description of the logical form generation
-can be found [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/INSTRUCTIONS.md).
+can be found [here](https://github.com/eovchinn/ADP-pipeline/blob/master/pipelines/INSTRUCTIONS.md).
 
 Output example English:
 
@@ -78,8 +78,8 @@ logical forms of sentences need to be converted into observations.
 
 Observations are generated from logical forms by the following scripts:
 
-- [Boxer2Henry.py](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/English/Boxer2Henry.py) (for English)
-- [IntParser2Henry.py](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/common/IntParser2Henry.py) (for other languages)
+- [Boxer2Henry.py](https://github.com/eovchinn/ADP-pipeline/blob/master/pipelines/English/Boxer2Henry.py) (for English)
+- [IntParser2Henry.py](https://github.com/eovchinn/ADP-pipeline/blob/master/pipelines/common/IntParser2Henry.py) (for other languages)
 
 
 The format of an observation is as follows:
@@ -108,7 +108,7 @@ Example:
 **Abductive inference**
 
 [ILP-based abductive reasoner](https://github.com/naoya-i/henry-n700) briefly described [here](http://code.google.com/p/henry-n700/)
-is used to obtain interpretations for observations given a [knowledge base](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/KBs/README.md).
+is used to obtain interpretations for observations given a [knowledge base](https://github.com/eovchinn/ADP-pipeline/blob/master/KBs/README.md).
 The reasoner produces flat first order logic interpretations in textual format and proof graphs in PDF format.
 
 Example of an abductive output in textual format:
@@ -133,13 +133,13 @@ for-in(e18,x0,x1) ^ begin-vb(x5,x0,u16,u17) ^ fight-nn(e15,x4) ^ labor-nn(e14,x2
 
 ```
 
-A ![proofgraph](https://raw.github.com/metaphor-adp/Metaphor-ADP/master/docs/pics/proofgraph_example.pdf) 
+A ![proofgraph](https://raw.github.com/eovchinn/ADP-pipeline/master/docs/pics/proofgraph_example.pdf) 
 corresponds to this interpretation.
 
 ---
 
 **RUNNING abduction-based discrourse processing**
 
-[NLPipeline_MULT_stdinout.py](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/common/NLPipeline_MULT_stdinout.py) script running multilinguial abduction-based discourse processing 
-is described [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/common/README.md).
+[NLPipeline_MULT_stdinout.py](https://github.com/eovchinn/ADP-pipeline/blob/master/pipelines/common/NLPipeline_MULT_stdinout.py) script running multilinguial abduction-based discourse processing 
+is described [here](https://github.com/eovchinn/ADP-pipeline/blob/master/pipelines/common/README.md).
 
