@@ -1,9 +1,0 @@
-1	نشانه	نشانه	N	N	_	7	SBJ	_	_
-2	های	های	N	N	_	1	MOZ	_	_
-3	بیماری	بیمار	N	N	_	2	MOZ	_	_
-4	در	در	PREP	PREP	_	7	ADV	_	_
-5	او	او	PR	PR	_	4	POSDEP	_	_
-6	برطرف	برطرف	ADJ	ADJ	_	7	NVE	_	_
-7	شد	شد#شو	V	V	_	0	ROOT	_	_
-8	.	_	PUNC	PUNC	_	7	PUNC	_	_
-

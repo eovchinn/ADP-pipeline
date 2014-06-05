@@ -1,4 +1,0 @@
-male
-female
-neuter
-thing

@@ -1,1 +1,0 @@
-(O (name 1) (^ (clear-adj e10 x3 :1:1-1:[1004]) (path-nn e9 x3 :1:1-2:[1005]) (success-nn e8 x2 :1:1-3:[1007]) (to-in e7 x3 x2 :1:1-4:[1006]) (equal e6 x0 x3 :1:1-5:[1002]) (education-nn e4 x0 :1:1-6:[1001]) (nam e5 x0 :1:1-7:[1001]) (!= e4 e5)))

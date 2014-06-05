@@ -1,9 +1,0 @@
-person thing
-per thing
-person neuter
-per neuter
-thing female
-thing male
-neuter female
-neuter male
-female male

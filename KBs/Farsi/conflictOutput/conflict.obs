@@ -1,7 +1,0 @@
-(O (name 1) (^ (ahdaf-nn e0 x0 :1:1-1:[1001]) (ba-in e1 e5 x1 :1:1-2:[1002]) (hm e2 x1 :1:1-3:[1003]) (nasazgary-nn e4 x3 :1:1-4:[1005]) (dasht#dar-vb e5 x0 u3 u4 :1:1-5:[1006])))
-(O (name 2) (^ (av e0 x0 :1:2-1:[2001]) (jngyd#jng-vb e1 x0 u1 u2 :1:2-2:[2002])))
-(O (name 3) (^ (av e0 x0 :1:3-1:[3001]) (az-in e1 x3 x1 :1:3-2:[3002]) (aslhh-nn e2 x1 :1:3-3:[3003]) (ay-nn e3 x2 :1:3-4:[3004]) (jdyd-adj e4 x2 :1:3-5:[3005]) (astfadh-nn e5 x3 :1:3-6:[3006]) (krd#kn-vb e6 x0 u4 u5 :1:3-7:[3007]) (NVE e9 x3 e6 :1:3-8:[ID8]) (nn e10 x1 x2 :1:3-9:[ID9])))
-(O (name 4) (^ (av e0 x0 :1:4-1:[4001]) (khvast#khvah-vb e1 u0 u1 u2 :1:4-2:[4002]) (yk e2 x1 :1:4-3:[4003]) (tpanchh-nn e3 x1 :1:4-4:[4004]) (bh-kar-nn e4 x2 :1:4-5:[4005]) (grft#gyr-vb e5 x1 u5 u6 :1:4-6:[4006]) (NVE e8 x2 e5 :1:4-7:[ID7])))
-(O (name 5) (^ (astemal-nn e0 x0 :1:5-1:[5001]) (hr e1 x1 :1:5-2:[5002]) (nve-nn e2 x1 :1:5-3:[5003]) (slah-nn e3 x2 :1:5-4:[5004]) (jngy-adj e4 x2 :1:5-5:[5005]) (mmnve-adj e5 x2 :1:5-6:[5006])))
-(O (name 6) (^ (dshmn-nn e0 x0 :1:6-1:[6001]) (_ e1 x0 e6 :1:6-2:[6002]) (ghlb-nn e2 x1 :1:6-3:[6003]) (nzm-nn e3 x2 :1:6-4:[6004]) (ra e4 u2 :1:6-5:[6005]) (hdf-nn e5 x3 :1:6-6:[6006]) (grft#gyr-vb e6 u3 x1 u5 :1:6-7:[6007]) (mharb-nn e8 x4 :1:6-8:[6009]) (hst#bash-vb e9 x0 u8 u9 :1:6-9:[6010]) (NVE e12 x3 e6 :1:6-10:[ID10]) (nn e13 x1 x2 :1:6-11:[ID11])))
-(O (name 7) (^ (ks-nn e0 x0 :1:7-1:[7001]) (_ e1 x0 e3 :1:7-2:[7002]) (hghshan-nn e2 x1 :1:7-3:[7003]) (khvrdh-shdh-ast-vb e3 u2 u3 u4 :1:7-4:[7004]) (NVE e5 x1 e3 :1:7-5:[ID5])))

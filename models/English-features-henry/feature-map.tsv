@@ -1,8 +1,0 @@
-/^Script.+$/ NC_COMMON_SCHEMA 1
-/^FN.+$/ FN_COMMON_FRAME 1
-/^synset([0-9])(.+)\.1$/ WN_COMMON_SYNSET_\1 1
-/^(male|female|neuter|person|thing)\.1$/ PRN_MATCH_\1 1
-/^(per|org|loc|ttl|nam)\.1$/ NE_MATCH_\1 1
-/^(.+?)-(nn|vb|adj|in|rb)\.1$/ STR_MATCH_COMP_\2 1
-/^.+?-(nn|vb|adj|in|rb)\.1$/ WORD_FREQ_\1 $wordfreq
-/^.+?-(nn|vb|adj|in|rb)\.1$/ ABST_LEVEL_\1 $abstlevel

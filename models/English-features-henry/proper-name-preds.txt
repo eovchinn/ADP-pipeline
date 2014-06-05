@@ -1,5 +1,0 @@
-per
-org
-loc
-ttl
-nam

@@ -1,6 +1,0 @@
-<META>_N 10_N ._PUNC ._PUNC
-یکی_N از_PREP مخاطبان_N خبرآنلاین_N می-نویسد_V :_PUNC این_PREM همه_N می-گویند_V مشمول_ADJ معافیت_N مالیاتی_N می-شوید_V اصلا_N شرایط_N لازم_ADJ برای_PREP معاف_ADJ شدن_N از_PREP پرداخت_N پول_N از_PREP درآمد_N به_PREP دولت_N چیست_V ؟_PUNC ._PUNC
-<META>_N 20_N ._PUNC ._PUNC
-مالیات-های_N کمرشکن_ADJ بسیاری_N از_PREP مردم_N را_POSTP زیر_PREP خط_N فقر_N برده-است_V ._PUNC
-<META>_N 56_PRENUM ._PUNC ._PUNC
-کسبهای_N نامشروع_ADJ و_CONJ ثروتهای_N بادآورده_ADJ تعادل_N اجتماعی_ADJ را_POSTP به_PREP هم_PR می-زند_V :_PUNC شماری_N در_PREP رفاه_N وبی_N دردی_N فرومی-روند_V و_CONJ گروهی_N دچاربی_N پولی_ADJ و_CONJ فلاکت_N می-شوند_V ._PUNC
