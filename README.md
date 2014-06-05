@@ -13,7 +13,7 @@ The system is largely based on ideas summarized in [[Hobbs, 1993]](http://www.is
 
 Our abductive Natural Language Understanding pipeline is shown below. 
 
-![Fig.](https://raw.github.com/metaphor-adp/Metaphor-ADP/master/docs/pics/pipeline-pic.png)
+![Fig.](https://raw.github.com/eovchinn/ADP-pipeline/master/docs/pics/pipeline-pic.png)
 
 Text fragments are given as input to the pipeline. The text fragments are parsed. 
 For Russian and Spanish tagging, we use [TreeTagger](http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/). 
@@ -32,21 +32,21 @@ Logical forms and a knowledge base are input to the [abductive reasoner](http://
 [[Inoue et al., 2012]](http://www.cl.ecei.tohoku.ac.jp/~naoya-i/resources/jelia2012_paper.pdf). The reasoner produces flat first order logic interpretations in the textual format 
 and proof graphs in the PDF format.
 
-More details about each component can be found [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/README.md).
+More details about each component can be found [here](https://github.com/eovchinn/ADP-pipeline/blob/master/pipelines/README.md).
 
 ---
 
 **Installation and running**
 
-- Clone Metaphor-ADP repository
+- Clone ADP-pipeline repository
  
 ```
-git clone https://github.com/metaphor-adp/Metaphor-ADP
+git clone https://github.com/eovchinn/ADP-pipeline
 ```
 
-- Install external packages and software; see instructions [here](https://github.com/metaphor-adp/Metaphor-ADP/tree/master/installation)
+- Install external packages and software; see instructions [here](https://github.com/eovchinn/ADP-pipeline/tree/master/installation)
 
-- Run the system; see instructions [here](https://github.com/metaphor-adp/Metaphor-ADP/blob/master/pipelines/common/README.md)
+- Run the system; see instructions [here](https://github.com/eovchinn/ADP-pipeline/blob/master/pipelines/common/README.md)
 
 ---
 
@@ -60,7 +60,7 @@ git clone https://github.com/metaphor-adp/Metaphor-ADP
 
 **Contact**
 
-- Katya Ovchinnikova (e.ovchinnikova@gmail.com, www.ovchinnikova.me)
+- Author: Katya Ovchinnikova (e.ovchinnikova@gmail.com, www.ovchinnikova.me)
 
 ---
 
