@@ -60,7 +60,7 @@ git clone https://github.com/eovchinn/ADP-pipeline
 
 **Contact**
 
-- Author: Katya Ovchinnikova (e.ovchinnikova@gmail.com, www.ovchinnikova.me)
+- Katya Ovchinnikova (e.ovchinnikova@gmail.com, www.ovchinnikova.me)
 
 ---
 
