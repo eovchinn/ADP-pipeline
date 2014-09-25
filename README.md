@@ -70,7 +70,7 @@ Inoue, N., E. Ovchinnikova, K. Inui and J. R. Hobbs (2014). Weighted Abduction f
 
 Ovchinnikova, E., Israel, R., Wertheim, S., Zaytsev, V., Montazeri, N, and Hobbs, J. (2014). Abductive Inference for Interpretation of Metaphors. In Proc. of ACL 2014 Workshop on Metaphor in NLP, pp. 33--41. [[PDF]](http://acl2014.org/acl2014/W14-23/pdf/W14-2305.pdf)
 
-Ovchinnikova, E., N. Montazeri, T. Alexandrov, J. R. Hobbs, M. C. McCord and R. Mulkar-Mehta (2013). Abductive Reasoning with a Large Knowledge Base for Discourse Processing. In Hunt, H., Bos, J. and Pulman, S. (eds.) : Computing Meaning, vol. 4, pp. 104-124. [[PDF]](http://ovchinnikova.me/papers/IWCS-bookchap-final3.pdf)
+Ovchinnikova, E., N. Montazeri, T. Alexandrov, J. R. Hobbs, M. C. McCord and R. Mulkar-Mehta (2014). Abductive Reasoning with a Large Knowledge Base for Discourse Processing. In Hunt, H., Bos, J. and Pulman, S. (eds.) : Computing Meaning, vol. 4, pp. 104-124. [[PDF]](http://ovchinnikova.me/papers/IWCS-bookchap-final3.pdf)
 
 Ovchinnikova, E. (2012). Integration of World Knowledge for Natural Language Understanding, Atlantis Press, Springer. [[Link]](http://www.springer.com/computer/ai/book/978-94-91216-52-7)
 
