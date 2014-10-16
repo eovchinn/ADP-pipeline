@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export GUROBI_HOME=$ADP_HOME/gurobi56/linux64
+export GUROBI_HOME=$ADP_HOME/gurobi563/linux64
 export GRB_LICENSE_FILE=$ADP_HOME/gurobi.lic
 
 if [ X"$PATH" == X ]; then
