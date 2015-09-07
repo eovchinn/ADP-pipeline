@@ -19,7 +19,7 @@ if setvars == "yes":
     
     f.write("\n#Metaphor ADP\n")
     f.write("export ADP_HOME="+install_dir+"\n")
-    f.write("export GUROBI_HOME=$ADP_HOME/gurobi511/linux32\n")
+    f.write("export GUROBI_HOME=$ADP_HOME/gurobi563/linux32\n")
     f.write("export GRB_LICENSE_FILE=$ADP_HOME/gurobi.lic\n")
 
     if os.environ.get('PATH') is None:
