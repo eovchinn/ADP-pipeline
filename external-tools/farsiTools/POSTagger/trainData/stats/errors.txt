@@ -1,4 +1,0 @@
-13	خروشیده 
-ای	خروشیده 
-ای	V	ACT	person=1|attachment=ISO|number=SING|tma=GN|senID=31978	10	PRD	_	_
-
